@@ -1,10 +1,10 @@
 package hg;
 
+import ai.a7;
 import ai.cb;
 import ai.qa;
 import ai.wa;
 import ai.x9;
-import ai.z6;
 import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
@@ -33,7 +33,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -51,23 +51,23 @@ import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.m10;
 import org.telegram.ui.Components.mo0;
 import org.telegram.ui.Components.oo0;
-import org.telegram.ui.Components.s81;
 import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.t81;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yq;
-import org.telegram.ui.ey;
-import org.telegram.ui.jv;
+import org.telegram.ui.cy;
+import org.telegram.ui.hv;
+import org.telegram.ui.lx;
 import org.telegram.ui.nx;
-import org.telegram.ui.px;
-import org.telegram.ui.ua1;
-import org.telegram.ui.x00;
+import org.telegram.ui.sa1;
+import org.telegram.ui.v00;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class h0 extends hm0 {
-    public x00 A0;
+    public v00 A0;
     public int B0;
     public int C0;
     public int D0;
@@ -81,7 +81,7 @@ public abstract class h0 extends hm0 {
     public String R;
     public int S;
     public int T;
-    public px U;
+    public nx U;
     public final int V;
     public boolean W;
     public boolean X;
@@ -100,14 +100,14 @@ public abstract class h0 extends hm0 {
     public final int h0;
     public final s4.k i0;
     public final y j0;
-    public ua1 k0;
+    public sa1 k0;
     public final long l0;
     public long n0;
     public View o0;
     public p6 p0;
     public ArrayList q0;
     public ah.o r;
-    public final ey r0;
+    public final cy r0;
     public final int s0;
     public ArrayList t0;
     public final ArrayList u0;
@@ -136,7 +136,7 @@ public abstract class h0 extends hm0 {
     public int Y = -1;
     public boolean m0 = false;
 
-    public h0(Context context, ey eyVar, int i10, int i11, s4.k kVar, boolean z10) {
+    public h0(Context context, cy cyVar, int i10, int i11, s4.k kVar, boolean z10) {
         int i12 = UserConfig.selectedAccount;
         this.s0 = i12;
         this.t0 = new ArrayList();
@@ -149,11 +149,11 @@ public abstract class h0 extends hm0 {
         this.G0 = true;
         this.H0 = true;
         this.i0 = kVar;
-        this.r0 = eyVar;
+        this.r0 = cyVar;
         oo0 oo0Var = (oo0) this;
         y yVar = new y(oo0Var);
         this.j0 = yVar;
-        yVar.a = new ag.b(oo0Var, 21);
+        yVar.a = new a4.l(oo0Var, 22);
         yVar.p = z10;
         this.e = context;
         this.V = i10;
@@ -233,19 +233,19 @@ public abstract class h0 extends hm0 {
             return true;
         }
         boolean z10 = obj instanceof TLRPC.User;
-        ey eyVar = this.r0;
+        cy cyVar = this.r0;
         if (z10) {
-            return ((TLRPC.User) obj).bot ? eyVar.A2 : eyVar.z2;
+            return ((TLRPC.User) obj).bot ? cyVar.A2 : cyVar.z2;
         }
         if (!(obj instanceof TLRPC.Chat)) {
             return false;
         }
         TLRPC.Chat chat = (TLRPC.Chat) obj;
-        return ChatObject.isChannel(chat) ? eyVar.y2 : ChatObject.isMegagroup(chat) ? eyVar.v2 || eyVar.w2 : eyVar.v2 || eyVar.x2;
+        return ChatObject.isChannel(chat) ? cyVar.y2 : ChatObject.isMegagroup(chat) ? cyVar.v2 || cyVar.w2 : cyVar.v2 || cyVar.x2;
     }
 
     public final void G(String str) {
-        px pxVar;
+        nx nxVar;
         String str2;
         String str3;
         this.w0 = str;
@@ -256,8 +256,8 @@ public abstract class h0 extends hm0 {
             arrayList2.clear();
             int size = this.t0.size();
             for (int i10 = 0; i10 < size; i10++) {
-                px pxVar2 = this.U;
-                if ((pxVar2 == null || pxVar2.a() != ((g0) this.t0.get(i10)).c) && F(((g0) this.t0.get(i10)).a)) {
+                nx nxVar2 = this.U;
+                if ((nxVar2 == null || nxVar2.a() != ((g0) this.t0.get(i10)).c) && F(((g0) this.t0.get(i10)).a)) {
                     arrayList2.add((g0) this.t0.get(i10));
                 }
             }
@@ -267,7 +267,7 @@ public abstract class h0 extends hm0 {
         int size2 = this.t0.size();
         for (int i11 = 0; i11 < size2; i11++) {
             g0 g0Var = (g0) this.t0.get(i11);
-            if (g0Var != null && g0Var.a != null && (((pxVar = this.U) == null || pxVar.a() != g0Var.c) && F(((g0) this.t0.get(i11)).a))) {
+            if (g0Var != null && g0Var.a != null && (((nxVar = this.U) == null || nxVar.a() != g0Var.c) && F(((g0) this.t0.get(i11)).a))) {
                 TLObject tLObject = g0Var.a;
                 if (tLObject instanceof TLRPC.Chat) {
                     TLRPC.Chat chat = (TLRPC.Chat) tLObject;
@@ -300,7 +300,7 @@ public abstract class h0 extends hm0 {
         return spannableStringBuilder;
     }
 
-    public final ua1 I() {
+    public final sa1 I() {
         return this.k0;
     }
 
@@ -534,8 +534,8 @@ public abstract class h0 extends hm0 {
 
     public final void Q() {
         if ((this.Q == 0 || this.O == 0) && this.g0 == this.d0) {
-            px pxVar = this.U;
-            if (pxVar == null || pxVar.a() == 0 || this.X) {
+            nx nxVar = this.U;
+            if (nxVar == null || nxVar.a() == 0 || this.X) {
                 W(this.g0, this.Z);
             } else {
                 V(this.g0, this.Z);
@@ -650,17 +650,17 @@ public abstract class h0 extends hm0 {
                 boolean z11 = i11 != 11;
                 boolean z12 = i11 == 2 || i11 == 11;
                 boolean z13 = i11 == 0;
-                px pxVar = this.U;
-                yVar.h(null, true, true, z10, z11, z12, 0L, z13, 0, 0, pxVar != null ? pxVar.a() : 0L, null);
+                nx nxVar = this.U;
+                yVar.h(null, true, true, z10, z11, z12, 0L, z13, 0, 0, nxVar != null ? nxVar.a() : 0L, null);
             }
             this.N = false;
             this.d0 = 0;
             this.D0 = 0;
             this.G0 = true;
             this.H0 = true;
-            px pxVar2 = this.U;
-            if (pxVar2 != null) {
-                pxVar2.d(false, true);
+            nx nxVar2 = this.U;
+            if (nxVar2 != null) {
+                nxVar2.d(false, true);
             }
             if (this.h0 != 15) {
                 X(null);
@@ -670,9 +670,9 @@ public abstract class h0 extends hm0 {
             l();
             this.y0.clear();
             this.z0 = false;
-            x00 x00Var = this.A0;
-            if (x00Var != null) {
-                ((jv) x00Var).i(false, null, this.y0, false);
+            v00 v00Var = this.A0;
+            if (v00Var != null) {
+                ((hv) v00Var).i(false, null, this.y0, false);
                 return;
             }
             return;
@@ -696,9 +696,9 @@ public abstract class h0 extends hm0 {
                 this.H0 = true;
                 this.D0 = 0;
                 l();
-                px pxVar3 = this.U;
-                if (pxVar3 != null) {
-                    pxVar3.d(false, false);
+                nx nxVar3 = this.U;
+                if (nxVar3 != null) {
+                    nxVar3.d(false, false);
                 }
             } else {
                 MessagesStorage.getInstance(yVar2.m).getStorageQueue().postRunnable(new x1(yVar2, 1));
@@ -712,9 +712,9 @@ public abstract class h0 extends hm0 {
         this.G0 = true;
         this.H0 = true;
         l();
-        px pxVar4 = this.U;
-        if (pxVar4 != null) {
-            pxVar4.d(true, false);
+        nx nxVar4 = this.U;
+        if (nxVar4 != null) {
+            nxVar4.d(true, false);
         }
         if (trim != null) {
             String trim2 = trim.trim();
@@ -751,8 +751,8 @@ public abstract class h0 extends hm0 {
     }
 
     public final void V(int i10, String str) {
-        px pxVar = this.U;
-        if (pxVar == null || pxVar.a() == 0 || this.V == 0) {
+        nx nxVar = this.U;
+        if (nxVar == null || nxVar.a() == 0 || this.V == 0) {
             return;
         }
         if (TextUtils.isEmpty(this.Z) && TextUtils.isEmpty(str)) {
@@ -832,7 +832,7 @@ public abstract class h0 extends hm0 {
                     this.d = false;
                 }
                 if (str.equals(this.Z) && this.a0 == this.c.a && !arrayList.isEmpty() && this.g0 == this.d0) {
-                    MessageObject messageObject = (MessageObject) i2.d.h(1, arrayList);
+                    MessageObject messageObject = (MessageObject) i2.e.h(1, arrayList);
                     tL_messages_searchGlobal.offset_id = messageObject.getId();
                     tL_messages_searchGlobal.offset_rate = this.c0;
                     tL_messages_searchGlobal.offset_peer = MessagesController.getInstance(i12).getInputPeer(MessageObject.getPeerId(messageObject.messageOwner.peer_id));
@@ -850,9 +850,9 @@ public abstract class h0 extends hm0 {
             }
             int i15 = this.D0 - 1;
             this.D0 = i15;
-            px pxVar = this.U;
-            if (pxVar != null) {
-                pxVar.d(i15 > 0, true);
+            nx nxVar = this.U;
+            if (nxVar != null) {
+                nxVar.d(i15 > 0, true);
                 this.U.c();
             }
         }
@@ -861,8 +861,8 @@ public abstract class h0 extends hm0 {
     public final void X(String str) {
         ArrayList arrayList = this.F;
         arrayList.clear();
-        px pxVar = this.U;
-        if (pxVar == null || pxVar.a() == 0) {
+        nx nxVar = this.U;
+        if (nxVar == null || nxVar.a() == 0) {
             return;
         }
         if (!TextUtils.isEmpty(str)) {
@@ -1412,7 +1412,7 @@ public abstract class h0 extends hm0 {
                                             FileLog.e(e);
                                             charSequence3 = str;
                                             str2 = r52;
-                                            h6Var.s(false, false);
+                                            h6Var.t(false, false);
                                             if (user == null) {
                                             }
                                             charSequence5 = charSequence3;
@@ -1428,8 +1428,8 @@ public abstract class h0 extends hm0 {
                                             h6Var.C0 = r0Var;
                                             h6Var.setOnSponsoredOptionsClick(new o(this, 0));
                                             h6Var.setAd(!z12 ? (TLRPC.TL_sponsoredPeer) obj : charSequence4);
-                                            h6Var.t(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
-                                            h6Var.s(this.U.a.I2.contains(Long.valueOf(h6Var.getDialogId())), dialogId != h6Var.getDialogId() ? z14 : false);
+                                            h6Var.u(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
+                                            h6Var.t(this.U.a.I2.contains(Long.valueOf(h6Var.getDialogId())), dialogId != h6Var.getDialogId() ? z14 : false);
                                             return;
                                         }
                                     } else {
@@ -1441,7 +1441,7 @@ public abstract class h0 extends hm0 {
                                     e = e7;
                                     charSequence4 = null;
                                 }
-                                h6Var.s(false, false);
+                                h6Var.t(false, false);
                                 if (user == null && user.id == this.l0 && this.h0 != 16) {
                                     charSequence5 = charSequence4;
                                     z13 = true;
@@ -1473,8 +1473,8 @@ public abstract class h0 extends hm0 {
                                         h6Var.C0 = r0Var2;
                                         h6Var.setOnSponsoredOptionsClick(new o(this, 0));
                                         h6Var.setAd(!z12 ? (TLRPC.TL_sponsoredPeer) obj : charSequence4);
-                                        h6Var.t(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
-                                        h6Var.s(this.U.a.I2.contains(Long.valueOf(h6Var.getDialogId())), dialogId != h6Var.getDialogId() ? z14 : false);
+                                        h6Var.u(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
+                                        h6Var.t(this.U.a.I2.contains(Long.valueOf(h6Var.getDialogId())), dialogId != h6Var.getDialogId() ? z14 : false);
                                     } else {
                                         ((SpannableStringBuilder) charSequence5).append((CharSequence) ", ").append((CharSequence) formatPluralStringSpaced2);
                                     }
@@ -1485,12 +1485,12 @@ public abstract class h0 extends hm0 {
                                 h6Var.C0 = r0Var22;
                                 h6Var.setOnSponsoredOptionsClick(new o(this, 0));
                                 h6Var.setAd(!z12 ? (TLRPC.TL_sponsoredPeer) obj : charSequence4);
-                                h6Var.t(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
-                                h6Var.s(this.U.a.I2.contains(Long.valueOf(h6Var.getDialogId())), dialogId != h6Var.getDialogId() ? z14 : false);
+                                h6Var.u(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
+                                h6Var.t(this.U.a.I2.contains(Long.valueOf(h6Var.getDialogId())), dialogId != h6Var.getDialogId() ? z14 : false);
                             }
                             charSequence4 = null;
                             str2 = r52;
-                            h6Var.s(false, false);
+                            h6Var.t(false, false);
                             if (user == null) {
                             }
                             charSequence5 = charSequence3;
@@ -1509,14 +1509,14 @@ public abstract class h0 extends hm0 {
                             h6Var.C0 = r0Var222;
                             h6Var.setOnSponsoredOptionsClick(new o(this, 0));
                             h6Var.setAd(!z12 ? (TLRPC.TL_sponsoredPeer) obj : charSequence4);
-                            h6Var.t(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
-                            h6Var.s(this.U.a.I2.contains(Long.valueOf(h6Var.getDialogId())), dialogId != h6Var.getDialogId() ? z14 : false);
+                            h6Var.u(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
+                            h6Var.t(this.U.a.I2.contains(Long.valueOf(h6Var.getDialogId())), dialogId != h6Var.getDialogId() ? z14 : false);
                         }
                     }
                     charSequence3 = charSequence2;
                     charSequence4 = null;
                     str2 = r52;
-                    h6Var.s(false, false);
+                    h6Var.t(false, false);
                     if (user == null) {
                     }
                     charSequence5 = charSequence3;
@@ -1532,8 +1532,8 @@ public abstract class h0 extends hm0 {
                     h6Var.C0 = r0Var2222;
                     h6Var.setOnSponsoredOptionsClick(new o(this, 0));
                     h6Var.setAd(!z12 ? (TLRPC.TL_sponsoredPeer) obj : charSequence4);
-                    h6Var.t(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
-                    h6Var.s(this.U.a.I2.contains(Long.valueOf(h6Var.getDialogId())), dialogId != h6Var.getDialogId() ? z14 : false);
+                    h6Var.u(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
+                    h6Var.t(this.U.a.I2.contains(Long.valueOf(h6Var.getDialogId())), dialogId != h6Var.getDialogId() ? z14 : false);
                 }
                 r52 = 0;
                 charSequence2 = charSequence;
@@ -1542,7 +1542,7 @@ public abstract class h0 extends hm0 {
                 charSequence3 = charSequence2;
                 charSequence4 = null;
                 str2 = r52;
-                h6Var.s(false, false);
+                h6Var.t(false, false);
                 if (user == null) {
                 }
                 charSequence5 = charSequence3;
@@ -1558,8 +1558,8 @@ public abstract class h0 extends hm0 {
                 h6Var.C0 = r0Var22222;
                 h6Var.setOnSponsoredOptionsClick(new o(this, 0));
                 h6Var.setAd(!z12 ? (TLRPC.TL_sponsoredPeer) obj : charSequence4);
-                h6Var.t(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
-                h6Var.s(this.U.a.I2.contains(Long.valueOf(h6Var.getDialogId())), dialogId != h6Var.getDialogId() ? z14 : false);
+                h6Var.u(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
+                h6Var.t(this.U.a.I2.contains(Long.valueOf(h6Var.getDialogId())), dialogId != h6Var.getDialogId() ? z14 : false);
                 break;
             case 1:
                 final u3 u3Var = (u3) view;
@@ -1578,16 +1578,16 @@ public abstract class h0 extends hm0 {
                         public final void onClick(View view2) {
                             switch (i25) {
                                 case 0:
-                                    px pxVar = this.b.U;
-                                    if (pxVar != null) {
-                                        pxVar.b();
+                                    nx nxVar = this.b.U;
+                                    if (nxVar != null) {
+                                        nxVar.b();
                                         break;
                                     }
                                     break;
                                 case 1:
-                                    nx nxVar = ((oo0) this.b).K0;
-                                    mo0 mo0Var = nxVar.v0;
-                                    oo0 oo0Var = nxVar.b0;
+                                    lx lxVar = ((oo0) this.b).K0;
+                                    mo0 mo0Var = lxVar.v0;
+                                    oo0 oo0Var = lxVar.b0;
                                     String str10 = oo0Var.y;
                                     ArrayList arrayList14 = oo0Var.x;
                                     int i26 = oo0Var.w;
@@ -1603,26 +1603,26 @@ public abstract class h0 extends hm0 {
                                         mo0Var.Y = str10;
                                         mo0Var.N(true);
                                     }
-                                    nxVar.q0 = true;
-                                    nxVar.t0.h1(0, 0);
-                                    nxVar.R();
-                                    s81 s81Var = nxVar.M;
-                                    if (s81Var != null && s81Var.getCurrentTabId() != 1) {
-                                        nxVar.M.d(1, 1);
+                                    lxVar.q0 = true;
+                                    lxVar.t0.h1(0, 0);
+                                    lxVar.R();
+                                    t81 t81Var = lxVar.M;
+                                    if (t81Var != null && t81Var.getCurrentTabId() != 1) {
+                                        lxVar.M.d(1, 1);
                                     }
-                                    mo0Var.Y(nxVar.K0);
+                                    mo0Var.Y(lxVar.K0);
                                     break;
                                 case 2:
-                                    px pxVar2 = this.b.U;
-                                    if (pxVar2 != null) {
-                                        pxVar2.b();
+                                    nx nxVar2 = this.b.U;
+                                    if (nxVar2 != null) {
+                                        nxVar2.b();
                                         break;
                                     }
                                     break;
                                 default:
-                                    px pxVar3 = this.b.U;
-                                    if (pxVar3 != null) {
-                                        pxVar3.b();
+                                    nx nxVar3 = this.b.U;
+                                    if (nxVar3 != null) {
+                                        nxVar3.b();
                                         break;
                                     }
                                     break;
@@ -1645,16 +1645,16 @@ public abstract class h0 extends hm0 {
                             public final void onClick(View view2) {
                                 switch (i19) {
                                     case 0:
-                                        px pxVar = this.b.U;
-                                        if (pxVar != null) {
-                                            pxVar.b();
+                                        nx nxVar = this.b.U;
+                                        if (nxVar != null) {
+                                            nxVar.b();
                                             break;
                                         }
                                         break;
                                     case 1:
-                                        nx nxVar = ((oo0) this.b).K0;
-                                        mo0 mo0Var = nxVar.v0;
-                                        oo0 oo0Var = nxVar.b0;
+                                        lx lxVar = ((oo0) this.b).K0;
+                                        mo0 mo0Var = lxVar.v0;
+                                        oo0 oo0Var = lxVar.b0;
                                         String str10 = oo0Var.y;
                                         ArrayList arrayList14 = oo0Var.x;
                                         int i26 = oo0Var.w;
@@ -1670,26 +1670,26 @@ public abstract class h0 extends hm0 {
                                             mo0Var.Y = str10;
                                             mo0Var.N(true);
                                         }
-                                        nxVar.q0 = true;
-                                        nxVar.t0.h1(0, 0);
-                                        nxVar.R();
-                                        s81 s81Var = nxVar.M;
-                                        if (s81Var != null && s81Var.getCurrentTabId() != 1) {
-                                            nxVar.M.d(1, 1);
+                                        lxVar.q0 = true;
+                                        lxVar.t0.h1(0, 0);
+                                        lxVar.R();
+                                        t81 t81Var = lxVar.M;
+                                        if (t81Var != null && t81Var.getCurrentTabId() != 1) {
+                                            lxVar.M.d(1, 1);
                                         }
-                                        mo0Var.Y(nxVar.K0);
+                                        mo0Var.Y(lxVar.K0);
                                         break;
                                     case 2:
-                                        px pxVar2 = this.b.U;
-                                        if (pxVar2 != null) {
-                                            pxVar2.b();
+                                        nx nxVar2 = this.b.U;
+                                        if (nxVar2 != null) {
+                                            nxVar2.b();
                                             break;
                                         }
                                         break;
                                     default:
-                                        px pxVar3 = this.b.U;
-                                        if (pxVar3 != null) {
-                                            pxVar3.b();
+                                        nx nxVar3 = this.b.U;
+                                        if (nxVar3 != null) {
+                                            nxVar3.b();
                                             break;
                                         }
                                         break;
@@ -1727,16 +1727,16 @@ public abstract class h0 extends hm0 {
                                     public final void onClick(View view2) {
                                         switch (i26) {
                                             case 0:
-                                                px pxVar = this.b.U;
-                                                if (pxVar != null) {
-                                                    pxVar.b();
+                                                nx nxVar = this.b.U;
+                                                if (nxVar != null) {
+                                                    nxVar.b();
                                                     break;
                                                 }
                                                 break;
                                             case 1:
-                                                nx nxVar = ((oo0) this.b).K0;
-                                                mo0 mo0Var = nxVar.v0;
-                                                oo0 oo0Var = nxVar.b0;
+                                                lx lxVar = ((oo0) this.b).K0;
+                                                mo0 mo0Var = lxVar.v0;
+                                                oo0 oo0Var = lxVar.b0;
                                                 String str10 = oo0Var.y;
                                                 ArrayList arrayList142 = oo0Var.x;
                                                 int i262 = oo0Var.w;
@@ -1752,26 +1752,26 @@ public abstract class h0 extends hm0 {
                                                     mo0Var.Y = str10;
                                                     mo0Var.N(true);
                                                 }
-                                                nxVar.q0 = true;
-                                                nxVar.t0.h1(0, 0);
-                                                nxVar.R();
-                                                s81 s81Var = nxVar.M;
-                                                if (s81Var != null && s81Var.getCurrentTabId() != 1) {
-                                                    nxVar.M.d(1, 1);
+                                                lxVar.q0 = true;
+                                                lxVar.t0.h1(0, 0);
+                                                lxVar.R();
+                                                t81 t81Var = lxVar.M;
+                                                if (t81Var != null && t81Var.getCurrentTabId() != 1) {
+                                                    lxVar.M.d(1, 1);
                                                 }
-                                                mo0Var.Y(nxVar.K0);
+                                                mo0Var.Y(lxVar.K0);
                                                 break;
                                             case 2:
-                                                px pxVar2 = this.b.U;
-                                                if (pxVar2 != null) {
-                                                    pxVar2.b();
+                                                nx nxVar2 = this.b.U;
+                                                if (nxVar2 != null) {
+                                                    nxVar2.b();
                                                     break;
                                                 }
                                                 break;
                                             default:
-                                                px pxVar3 = this.b.U;
-                                                if (pxVar3 != null) {
-                                                    pxVar3.b();
+                                                nx nxVar3 = this.b.U;
+                                                if (nxVar3 != null) {
+                                                    nxVar3.b();
                                                     break;
                                                 }
                                                 break;
@@ -1792,16 +1792,16 @@ public abstract class h0 extends hm0 {
                                     public final void onClick(View view2) {
                                         switch (i27) {
                                             case 0:
-                                                px pxVar = this.b.U;
-                                                if (pxVar != null) {
-                                                    pxVar.b();
+                                                nx nxVar = this.b.U;
+                                                if (nxVar != null) {
+                                                    nxVar.b();
                                                     break;
                                                 }
                                                 break;
                                             case 1:
-                                                nx nxVar = ((oo0) this.b).K0;
-                                                mo0 mo0Var = nxVar.v0;
-                                                oo0 oo0Var = nxVar.b0;
+                                                lx lxVar = ((oo0) this.b).K0;
+                                                mo0 mo0Var = lxVar.v0;
+                                                oo0 oo0Var = lxVar.b0;
                                                 String str10 = oo0Var.y;
                                                 ArrayList arrayList142 = oo0Var.x;
                                                 int i262 = oo0Var.w;
@@ -1817,26 +1817,26 @@ public abstract class h0 extends hm0 {
                                                     mo0Var.Y = str10;
                                                     mo0Var.N(true);
                                                 }
-                                                nxVar.q0 = true;
-                                                nxVar.t0.h1(0, 0);
-                                                nxVar.R();
-                                                s81 s81Var = nxVar.M;
-                                                if (s81Var != null && s81Var.getCurrentTabId() != 1) {
-                                                    nxVar.M.d(1, 1);
+                                                lxVar.q0 = true;
+                                                lxVar.t0.h1(0, 0);
+                                                lxVar.R();
+                                                t81 t81Var = lxVar.M;
+                                                if (t81Var != null && t81Var.getCurrentTabId() != 1) {
+                                                    lxVar.M.d(1, 1);
                                                 }
-                                                mo0Var.Y(nxVar.K0);
+                                                mo0Var.Y(lxVar.K0);
                                                 break;
                                             case 2:
-                                                px pxVar2 = this.b.U;
-                                                if (pxVar2 != null) {
-                                                    pxVar2.b();
+                                                nx nxVar2 = this.b.U;
+                                                if (nxVar2 != null) {
+                                                    nxVar2.b();
                                                     break;
                                                 }
                                                 break;
                                             default:
-                                                px pxVar3 = this.b.U;
-                                                if (pxVar3 != null) {
-                                                    pxVar3.b();
+                                                nx nxVar3 = this.b.U;
+                                                if (nxVar3 != null) {
+                                                    nxVar3.b();
                                                     break;
                                                 }
                                                 break;
@@ -1929,9 +1929,9 @@ public abstract class h0 extends hm0 {
                                                 break;
                                             default:
                                                 h0 h0Var2 = this.b;
-                                                ey eyVar = h0Var2.r0;
+                                                cy cyVar = h0Var2.r0;
                                                 u3 u3Var2 = u3Var;
-                                                i80 H2 = i80.H(eyVar, u3Var2);
+                                                i80 H2 = i80.H(cyVar, u3Var2);
                                                 for (e0 e0Var : e0.values()) {
                                                     boolean z18 = e0Var.a == h0Var2.c.a;
                                                     H2.i(new x9(h0Var2, z18, u3Var2, e0Var, 4), LocaleController.getString(e0Var.b), z18);
@@ -1986,9 +1986,9 @@ public abstract class h0 extends hm0 {
                                                 break;
                                             default:
                                                 h0 h0Var2 = this.b;
-                                                ey eyVar = h0Var2.r0;
+                                                cy cyVar = h0Var2.r0;
                                                 u3 u3Var2 = u3Var;
-                                                i80 H2 = i80.H(eyVar, u3Var2);
+                                                i80 H2 = i80.H(cyVar, u3Var2);
                                                 for (e0 e0Var : e0.values()) {
                                                     boolean z18 = e0Var.a == h0Var2.c.a;
                                                     H2.i(new x9(h0Var2, z18, u3Var2, e0Var, 4), LocaleController.getString(e0Var.b), z18);
@@ -2007,11 +2007,11 @@ public abstract class h0 extends hm0 {
                         }
                         if (runnable == null) {
                             if (spannableStringBuilder == null) {
-                                u3Var.c(str6, LocaleController.getString(z15 ? R.string.ShowMore : R.string.ShowLess), new z6(3, runnable));
+                                u3Var.c(str6, LocaleController.getString(z15 ? R.string.ShowMore : R.string.ShowLess), new a7(3, runnable));
                                 u3Var.setRightTextMargin(16);
                                 break;
                             } else {
-                                u3Var.c(str6, spannableStringBuilder, new z6(4, runnable));
+                                u3Var.c(str6, spannableStringBuilder, new a7(4, runnable));
                                 u3Var.setRightTextMargin(6);
                                 break;
                             }
@@ -2062,7 +2062,7 @@ public abstract class h0 extends hm0 {
             case 8:
                 h6 h6Var2 = (h6) view;
                 ContactsController.Contact contact = (ContactsController.Contact) J(i16);
-                h6Var2.t(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), lk.g(new StringBuilder("+"), contact.shortPhones.get(0), jf.b.c()), false, false);
+                h6Var2.u(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), kk.g(new StringBuilder("+"), contact.shortPhones.get(0), jf.b.c()), false, false);
                 break;
         }
     }
@@ -2107,19 +2107,19 @@ public abstract class h0 extends hm0 {
                 view2 = k4Var;
                 break;
             case 6:
-                ua1 ua1Var = new ua1(context, 2, d6Var);
-                ua1Var.setSelectorDrawableColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i6, false));
-                ua1Var.setTag(9);
-                ua1Var.setItemAnimator(null);
-                ua1Var.setLayoutAnimation(null);
+                sa1 sa1Var = new sa1(context, 2, d6Var);
+                sa1Var.setSelectorDrawableColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i6, false));
+                sa1Var.setTag(9);
+                sa1Var.setItemAnimator(null);
+                sa1Var.setLayoutAnimation(null);
                 a0 a0Var = new a0(i12);
                 a0Var.j1(0);
-                ua1Var.setLayoutManager(a0Var);
-                ua1Var.setAdapter(new b0(this.s0, this.e, null, false, i11 == 3));
-                ua1Var.setOnItemClickListener(new wa(this, 13));
-                ua1Var.setOnItemLongClickListener(new w(this));
-                this.k0 = ua1Var;
-                view = ua1Var;
+                sa1Var.setLayoutManager(a0Var);
+                sa1Var.setAdapter(new b0(this.s0, this.e, null, false, i11 == 3));
+                sa1Var.setOnItemClickListener(new wa(this, 13));
+                sa1Var.setOnItemLongClickListener(new w(this));
+                this.k0 = sa1Var;
+                view = sa1Var;
                 view2 = view;
                 break;
             case 7:
@@ -2141,7 +2141,7 @@ public abstract class h0 extends hm0 {
                 int i13 = org.telegram.ui.ActionBar.h6.G6;
                 textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i13, false));
                 textView.setTypeface(AndroidUtilities.bold());
-                lk.m(R.string.SearchMessagesFilterEmptyTitle, textView, 17);
+                kk.m(R.string.SearchMessagesFilterEmptyTitle, textView, 17);
                 d0Var.addView(textView, z5.t(-1, -2, 1, 0, 8, 0, 9));
                 TextView textView2 = new TextView(context);
                 d0Var.a = textView2;

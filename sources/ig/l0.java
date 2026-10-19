@@ -35,23 +35,23 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.iu;
 import org.telegram.ui.Components.oc;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.s61;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.v61;
 import org.telegram.ui.Components.yb;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 import org.telegram.ui.web.BotWebViewContainer$WebViewProxy;
-import rg.s2;
+import rg.t2;
 import yh.e4;
 import yh.g4;
 import yh.x3;
 import yh.x4;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -64,8 +64,8 @@ public final /* synthetic */ class l0 implements Utilities.Callback {
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
-        s61 s61Var;
-        s61 s61Var2;
+        t61 t61Var;
+        t61 t61Var2;
         int i10;
         TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway;
         switch (this.a) {
@@ -84,9 +84,9 @@ public final /* synthetic */ class l0 implements Utilities.Callback {
                 if (a0Var != null) {
                     a0Var.i(tL_connectedBot3 != null ? tL_connectedBot3.recipients : null);
                 }
-                a71 a71Var = t0Var.c;
-                if (a71Var != null && (s61Var = a71Var.W2) != null) {
-                    s61Var.N(true);
+                b71 b71Var = t0Var.c;
+                if (b71Var != null && (t61Var = b71Var.W2) != null) {
+                    t61Var.N(true);
                 }
                 t0Var.Y(true);
                 t0Var.T = true;
@@ -103,9 +103,9 @@ public final /* synthetic */ class l0 implements Utilities.Callback {
                 bundle.putInt("chatMode", 5);
                 bundle.putLong("user_id", x1Var.getUserConfig().getClientUserId());
                 bundle.putString("quick_reply", (String) obj);
-                sn snVar = new sn(bundle);
-                snVar.C9 = true;
-                x1Var.presentFragment(snVar);
+                qn qnVar = new qn(bundle);
+                qnVar.C9 = true;
+                x1Var.presentFragment(qnVar);
                 break;
             case 3:
                 AndroidUtilities.hideKeyboard((q1) this.b);
@@ -157,7 +157,7 @@ public final /* synthetic */ class l0 implements Utilities.Callback {
                                 }
                             }
                             if (spannableStringBuilder2.length() > 0) {
-                                ki.a aVar4 = (ki.a) i2.d.h(1, arrayList3);
+                                ki.a aVar4 = (ki.a) i2.e.h(1, arrayList3);
                                 if (w3.B3(aVar4.b)) {
                                     SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder(c6.A(aVar4.b));
                                     spannableStringBuilder5.append((CharSequence) spannableStringBuilder2);
@@ -197,7 +197,7 @@ public final /* synthetic */ class l0 implements Utilities.Callback {
                             h2Var2.h();
                         }
                         w3Var.f3.onContentChanged();
-                        w3Var.post(new hi.t(24, n3Var, arrayList3.isEmpty() ? null : (ki.a) i2.d.h(1, arrayList3)));
+                        w3Var.post(new hi.t(24, n3Var, arrayList3.isEmpty() ? null : (ki.a) i2.e.h(1, arrayList3)));
                         break;
                     }
                 }
@@ -224,48 +224,48 @@ public final /* synthetic */ class l0 implements Utilities.Callback {
                 AndroidUtilities.runOnUIThread((Runnable) obj, 80L);
                 break;
             case 9:
-                org.telegram.ui.web.y0 y0Var = ((BotWebViewContainer$WebViewProxy) this.b).b;
+                org.telegram.ui.web.x0 x0Var = ((BotWebViewContainer$WebViewProxy) this.b).b;
                 StringBuilder sb2 = new StringBuilder("window.navigator.__share__receive(");
                 sb2.append(((Boolean) obj).booleanValue() ? "" : "'abort'");
                 sb2.append(")");
-                y0Var.d(sb2.toString());
+                x0Var.d(sb2.toString());
                 break;
             case 10:
-                org.telegram.ui.web.g1 g1Var = (org.telegram.ui.web.g1) this.b;
-                g1Var.e = (ArrayList) obj;
-                u61 u61Var = g1Var.a;
-                if (u61Var.G) {
-                    u61Var.W2.N(true);
+                org.telegram.ui.web.f1 f1Var = (org.telegram.ui.web.f1) this.b;
+                f1Var.e = (ArrayList) obj;
+                v61 v61Var = f1Var.a;
+                if (v61Var.G) {
+                    v61Var.W2.N(true);
                     break;
                 }
                 break;
             case 11:
-                org.telegram.ui.web.y1 y1Var = (org.telegram.ui.web.y1) this.b;
-                y1Var.n = ((ArrayList) obj).size();
-                u61 u61Var2 = y1Var.a;
-                if (u61Var2 != null && (s61Var2 = u61Var2.W2) != null && u61Var2.G) {
-                    s61Var2.N(true);
+                org.telegram.ui.web.x1 x1Var2 = (org.telegram.ui.web.x1) this.b;
+                x1Var2.n = ((ArrayList) obj).size();
+                v61 v61Var2 = x1Var2.a;
+                if (v61Var2 != null && (t61Var2 = v61Var2.W2) != null && v61Var2.G) {
+                    t61Var2.N(true);
                     break;
                 }
                 break;
             case 12:
-                qg.d0 d0Var = (qg.d0) this.b;
-                qg.h1 h1Var = (qg.h1) obj;
-                qg.e1 e1Var = d0Var.a;
-                if (h1Var != null) {
-                    float currentWeight = e1Var.getCurrentWeight();
-                    h1Var.f = currentWeight;
-                    double d = d0Var.p;
+                qg.e0 e0Var = (qg.e0) this.b;
+                qg.i1 i1Var = (qg.i1) obj;
+                qg.f1 f1Var2 = e0Var.a;
+                if (i1Var != null) {
+                    float currentWeight = f1Var2.getCurrentWeight();
+                    i1Var.f = currentWeight;
+                    double d = e0Var.p;
                     if (d > 0.0d) {
-                        h1Var.f = (float) ((d / d0Var.q) * currentWeight);
+                        i1Var.f = (float) ((d / e0Var.q) * currentWeight);
                     }
-                    if (h1Var.a.o() == 4) {
-                        h1Var.k *= h1Var.f;
+                    if (i1Var.a.o() == 4) {
+                        i1Var.k *= i1Var.f;
                     }
                 }
-                qg.s0 painting = e1Var.getPainting();
+                qg.t0 painting = f1Var2.getPainting();
                 if (painting.L == null) {
-                    painting.f.f(new qg.o0(painting, h1Var, 1));
+                    painting.f.f(new qg.p0(painting, i1Var, 1));
                     break;
                 }
                 break;
@@ -286,37 +286,37 @@ public final /* synthetic */ class l0 implements Utilities.Callback {
                 }
                 break;
             case 15:
-                s2 s2Var = (s2) this.b;
-                s2Var.n = (Bitmap) obj;
+                t2 t2Var = (t2) this.b;
+                t2Var.n = (Bitmap) obj;
                 Paint paint = new Paint(1);
-                s2Var.s = paint;
-                Bitmap bitmap = s2Var.n;
+                t2Var.s = paint;
+                Bitmap bitmap = t2Var.n;
                 Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                 BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-                s2Var.r = bitmapShader;
+                t2Var.r = bitmapShader;
                 paint.setShader(bitmapShader);
                 ColorMatrix colorMatrix = new ColorMatrix();
                 AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, h6.I.q() ? 0.08f : 0.25f);
                 AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, h6.I.q() ? -0.02f : -0.07f);
-                s2Var.s.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-                s2Var.v = new Matrix();
+                t2Var.s.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                t2Var.v = new Matrix();
                 break;
             case 16:
                 rh.c cVar = (rh.c) this.b;
                 rh.e eVar = (rh.e) obj;
                 cVar.h = eVar;
                 cVar.c.a(eVar, true);
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.a2(cVar, 16), 200L);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.z1(cVar, 16), 200L);
                 break;
             case 17:
                 ((sg.k0) this.b).F1((HashMap) obj);
                 break;
             case 18:
-                sg.x1 x1Var2 = (sg.x1) this.b;
+                sg.x1 x1Var3 = (sg.x1) this.b;
                 boolean isEnabled = LiteMode.isEnabled(131072);
-                if (x1Var2.d != isEnabled) {
-                    x1Var2.d = isEnabled;
-                    x1Var2.invalidate();
+                if (x1Var3.d != isEnabled) {
+                    x1Var3.d = isEnabled;
+                    x1Var3.invalidate();
                     break;
                 }
                 break;

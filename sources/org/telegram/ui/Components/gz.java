@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class gz extends FrameLayout implements ne.d {
     public hq E;
@@ -65,7 +65,7 @@ public abstract class gz extends FrameLayout implements ne.d {
         frameLayout.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(18.0f), z10 ? tzVar.w(0.06f) : tzVar.A(org.telegram.ui.ActionBar.h6.Ie)));
         frameLayout.setClipToOutline(true);
         float dp = AndroidUtilities.dp(18.0f);
-        ci.n1 n1Var = zf.j0.a;
+        ci.o1 o1Var = zf.j0.a;
         frameLayout.setOutlineProvider(new zf.i0(0, dp));
         int i13 = 2;
         if (i10 == 2) {
@@ -246,14 +246,14 @@ public abstract class gz extends FrameLayout implements ne.d {
                             gzVar.g(false);
                             break;
                         default:
-                            lx0 lx0Var = (lx0) obj;
+                            mx0 mx0Var = (mx0) obj;
                             gz gzVar2 = this.b;
                             tz tzVar2 = gzVar2.G;
                             fz fzVar2 = gzVar2.r;
-                            if (lx0Var != null) {
-                                if (fzVar2.getSelectedCategory() != lx0Var) {
-                                    gzVar2.c(lx0Var.a, false);
-                                    fzVar2.G1(lx0Var);
+                            if (mx0Var != null) {
+                                if (fzVar2.getSelectedCategory() != mx0Var) {
+                                    gzVar2.c(mx0Var.a, false);
+                                    fzVar2.G1(mx0Var);
                                     break;
                                 } else {
                                     gzVar2.c(null, false);
@@ -290,14 +290,14 @@ public abstract class gz extends FrameLayout implements ne.d {
                             gzVar.g(false);
                             break;
                         default:
-                            lx0 lx0Var = (lx0) obj;
+                            mx0 mx0Var = (mx0) obj;
                             gz gzVar2 = this.b;
                             tz tzVar2 = gzVar2.G;
                             fz fzVar2 = gzVar2.r;
-                            if (lx0Var != null) {
-                                if (fzVar2.getSelectedCategory() != lx0Var) {
-                                    gzVar2.c(lx0Var.a, false);
-                                    fzVar2.G1(lx0Var);
+                            if (mx0Var != null) {
+                                if (fzVar2.getSelectedCategory() != mx0Var) {
+                                    gzVar2.c(mx0Var.a, false);
+                                    fzVar2.G1(mx0Var);
                                     break;
                                 } else {
                                     gzVar2.c(null, false);
@@ -427,7 +427,7 @@ public abstract class gz extends FrameLayout implements ne.d {
     }
 
     @Override // ne.d
-    public final void u(int i10, float f7, float f10, ne.e eVar) {
+    public final void r(int i10, float f7, float f10, ne.e eVar) {
         if (i10 == 0) {
             View view = this.e;
             view.setAlpha(f7);
@@ -436,6 +436,6 @@ public abstract class gz extends FrameLayout implements ne.d {
     }
 
     @Override // ne.d
-    public final /* synthetic */ void E(float f7, int i10) {
+    public final /* synthetic */ void H(float f7, int i10) {
     }
 }

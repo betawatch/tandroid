@@ -1,46 +1,70 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class gq0 implements org.telegram.ui.Components.jm0 {
-    public final /* synthetic */ lq0 a;
+public final class gq0 implements org.telegram.ui.Cells.r5 {
+    public final /* synthetic */ hq0 a;
 
-    public gq0(lq0 lq0Var) {
-        this.a = lq0Var;
+    public gq0(hq0 hq0Var) {
+        this.a = hq0Var;
     }
 
-    @Override // org.telegram.ui.Components.jm0
-    public final void a(boolean z10) {
-        org.telegram.ui.ActionBar.d5 d5Var;
-        lq0 lq0Var = this.a;
-        lq0Var.W = z10 ? 1 : 0;
-        if (z10) {
-            d5Var = ((org.telegram.ui.ActionBar.n2) lq0Var).parentLayout;
-            d5Var.getView().requestDisallowInterceptTouchEvent(true);
+    public final void a() {
+        qn qnVar;
+        TLRPC.Chat chat;
+        jq0 jq0Var = this.a.d;
+        if (!jq0Var.I || (qnVar = jq0Var.U) == null || (chat = qnVar.e) == null || ChatObject.hasAdminRights(chat) || !chat.slowmode_enabled || jq0Var.W == 2) {
+            return;
         }
-        lq0Var.K.d1(true);
-    }
-
-    @Override // org.telegram.ui.Components.jm0
-    public final boolean b(int i10) {
-        return this.a.L.j(i10) == 0;
-    }
-
-    @Override // org.telegram.ui.Components.jm0
-    public final void c(View view, boolean z10) {
-        if (z10 == this.a.X && (view instanceof org.telegram.ui.Cells.s5)) {
-            org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
-            s5Var.w.c(s5Var);
+        org.telegram.ui.Components.f5.t0(jq0Var, LocaleController.getString(R.string.Slowmode), LocaleController.getString(R.string.SlowmodeSelectSendError), null);
+        if (jq0Var.W == 1) {
+            jq0Var.W = 2;
         }
     }
 
-    @Override // org.telegram.ui.Components.jm0
-    public final boolean d(int i10) {
-        lq0 lq0Var = this.a;
-        MediaController.AlbumEntry albumEntry = lq0Var.J;
-        return lq0Var.b.containsKey(albumEntry != null ? Integer.valueOf(albumEntry.photos.get(i10).imageId) : ((MediaController.SearchImage) lq0Var.f.get(i10)).id);
+    @Override // org.telegram.ui.Cells.r5
+    public final void c(org.telegram.ui.Cells.s5 s5Var) {
+        boolean z10;
+        int intValue = ((Integer) s5Var.getTag()).intValue();
+        jq0 jq0Var = this.a.d;
+        MediaController.AlbumEntry albumEntry = jq0Var.J;
+        int i10 = -1;
+        if (albumEntry != null) {
+            MediaController.PhotoEntry photoEntry = albumEntry.photos.get(intValue);
+            boolean containsKey = jq0Var.b.containsKey(Integer.valueOf(photoEntry.imageId));
+            z10 = !containsKey;
+            if (!containsKey && jq0Var.H > 0 && jq0Var.b.size() >= jq0Var.H) {
+                a();
+                return;
+            }
+            if (jq0Var.e && !containsKey) {
+                i10 = jq0Var.c.size();
+            }
+            s5Var.b(i10, z10, true);
+            jq0Var.Y(intValue, photoEntry);
+        } else {
+            AndroidUtilities.hideKeyboard(jq0Var.getParentActivity().getCurrentFocus());
+            MediaController.SearchImage searchImage = (MediaController.SearchImage) jq0Var.f.get(intValue);
+            boolean containsKey2 = jq0Var.b.containsKey(searchImage.id);
+            z10 = !containsKey2;
+            if (!containsKey2 && jq0Var.H > 0 && jq0Var.b.size() >= jq0Var.H) {
+                a();
+                return;
+            }
+            if (jq0Var.e && !containsKey2) {
+                i10 = jq0Var.c.size();
+            }
+            s5Var.b(i10, z10, true);
+            jq0Var.Y(intValue, searchImage);
+        }
+        jq0Var.i0(z10 ? 1 : 2);
+        jq0Var.s0.a();
     }
 }

@@ -1,19 +1,19 @@
 package hi;
 
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ sn b;
+    public final /* synthetic */ qn b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ int d;
 
-    public /* synthetic */ o0(int i10, sn snVar, boolean z10) {
+    public /* synthetic */ o0(int i10, qn qnVar, boolean z10) {
         this.d = i10;
-        this.b = snVar;
+        this.b = qnVar;
         this.c = z10;
     }
 
@@ -22,12 +22,12 @@ public final /* synthetic */ class o0 implements Runnable {
         switch (this.a) {
             case 0:
                 int i10 = this.d;
-                sn snVar = this.b;
+                qn qnVar = this.b;
                 if (i10 != 2) {
-                    snVar.Z9();
-                    snVar.cc();
+                    qnVar.Z9();
+                    qnVar.cc();
                 }
-                t0.f(xc.a0(snVar), i10, this.c);
+                t0.f(xc.a0(qnVar), i10, this.c);
                 break;
             default:
                 boolean z10 = this.c;
@@ -36,8 +36,8 @@ public final /* synthetic */ class o0 implements Runnable {
         }
     }
 
-    public /* synthetic */ o0(sn snVar, boolean z10, int i10) {
-        this.b = snVar;
+    public /* synthetic */ o0(qn qnVar, boolean z10, int i10) {
+        this.b = qnVar;
         this.c = z10;
         this.d = i10;
     }

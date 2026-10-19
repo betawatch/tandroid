@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import ci.k4;
+import ci.l4;
 import ig.l0;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,17 +25,17 @@ import org.telegram.ui.Cells.q8;
 import org.telegram.ui.Cells.t3;
 import org.telegram.ui.Cells.u3;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.rx0;
 import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.sx0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.xp;
+import qg.n;
 import s4.b1;
 import s4.o0;
-import u2.q0;
 import w7.z5;
 import yg.k;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class h extends pg.b {
     public final d6 d;
@@ -56,7 +56,7 @@ public final class h extends pg.b {
         this.d = d6Var;
         l0 l0Var = new l0(this, 24);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(UserConfig.selectedAccount);
-        messagesStorage.getStorageQueue().postRunnable(new q0(5, messagesStorage, l0Var));
+        messagesStorage.getStorageQueue().postRunnable(new uf.c(4, messagesStorage, l0Var));
     }
 
     @Override // org.telegram.ui.Components.hm0
@@ -138,7 +138,7 @@ public final class h extends pg.b {
             }
             if (i12 == 5) {
                 try {
-                    ((rx0) view).b.getImageReceiver().startAnimation();
+                    ((sx0) view).b.getImageReceiver().startAnimation();
                     return;
                 } catch (Exception unused) {
                     return;
@@ -174,10 +174,10 @@ public final class h extends pg.b {
                 u3Var.setText(Emoji.replaceWithRestrictedEmoji(gVar.g, u3Var.getTextView(), (Runnable) null));
                 if (!TextUtils.isEmpty(gVar.h)) {
                     CharSequence charSequence2 = gVar.h;
-                    org.telegram.ui.web.c cVar = gVar.m;
+                    n nVar = gVar.m;
                     t3 t3Var = u3Var.b;
                     t3Var.c(charSequence2, false, true);
-                    t3Var.setOnClickListener(cVar);
+                    t3Var.setOnClickListener(nVar);
                     t3Var.setVisibility(0);
                 }
             }
@@ -195,8 +195,8 @@ public final class h extends pg.b {
             w9 w9Var = kVar.c;
             w9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
             w9Var.setImageDrawable(drawable);
-            k4 k4Var = kVar.d;
-            k4Var.k(charSequence3);
+            l4 l4Var = kVar.d;
+            l4Var.k(charSequence3);
             boolean[] zArr = kVar.s;
             zArr[0] = false;
             kVar.setSubtitle(charSequence4);
@@ -205,7 +205,7 @@ public final class h extends pg.b {
             if (xpVar != null) {
                 xpVar.setAlpha(1.0f);
             }
-            k4Var.i(null);
+            l4Var.i(null);
         } else {
             TLRPC.User user = gVar.c;
             if (user != null) {
@@ -276,11 +276,11 @@ public final class h extends pg.b {
         } else {
             d6 d6Var = this.d;
             if (i10 == 5) {
-                rx0 rx0Var = new rx0(context, null, 1, d6Var);
-                rx0Var.d.setText(LocaleController.getString(R.string.NoResult));
-                rx0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                rx0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
-                kVar = rx0Var;
+                sx0 sx0Var = new sx0(context, null, 1, d6Var);
+                sx0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                sx0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                sx0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
+                kVar = sx0Var;
             } else {
                 boolean z10 = this.h;
                 if (i10 == 7) {

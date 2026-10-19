@@ -1,6 +1,6 @@
 package l2;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public interface i {
     long a(long j10);
@@ -13,7 +13,7 @@ public interface i {
 
     m2.j g(long j10);
 
-    long o(long j10, long j11);
+    long p(long j10, long j11);
 
     boolean s();
 
@@ -21,5 +21,5 @@ public interface i {
 
     long w(long j10);
 
-    long x(long j10, long j11);
+    long y(long j10, long j11);
 }

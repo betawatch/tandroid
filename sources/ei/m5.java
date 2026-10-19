@@ -15,12 +15,12 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.e11;
 import org.telegram.ui.Components.od0;
-import org.telegram.ui.Components.p31;
+import org.telegram.ui.Components.q31;
 import org.telegram.ui.Components.up0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class m5 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -50,19 +50,19 @@ public final class m5 extends LinearLayout {
         switch (this.a) {
             case 4:
                 super.dispatchDraw(canvas);
-                ((d11) this.b).e(canvas, ((od0) this.c).getX() - AndroidUtilities.dp(50.0f), getHeight() / 2.0f);
+                ((e11) this.b).e(canvas, ((od0) this.c).getX() - AndroidUtilities.dp(50.0f), getHeight() / 2.0f);
                 break;
             case 5:
                 canvas.save();
                 org.telegram.ui.Components.f6 f6Var = (org.telegram.ui.Components.f6) this.b;
-                p31 p31Var = (p31) this.c;
-                float e = f6Var.e(p31Var.w);
+                q31 q31Var = (q31) this.c;
+                float e = f6Var.e(q31Var.w);
                 if (e > 0.0f) {
-                    if (p31Var.c == null) {
-                        p31Var.c = new up0(this);
+                    if (q31Var.c == null) {
+                        q31Var.c = new up0(this);
                     }
                     canvas.translate(getWidth() / 2.0f, getHeight() / 2.0f);
-                    p31Var.c.a(canvas, e);
+                    q31Var.c.a(canvas, e);
                     canvas.translate((-getWidth()) / 2.0f, (-getHeight()) / 2.0f);
                 }
                 super.dispatchDraw(canvas);
@@ -131,7 +131,7 @@ public final class m5 extends LinearLayout {
         switch (this.a) {
             case 8:
                 super.onAttachedToWindow();
-                getViewTreeObserver().addOnPreDrawListener((org.telegram.ui.Wallet.z4) this.b);
+                getViewTreeObserver().addOnPreDrawListener((org.telegram.ui.Wallet.a5) this.b);
                 getViewTreeObserver().addOnWindowFocusChangeListener(((org.telegram.ui.Wallet.i9) this.c).H);
                 break;
             default:
@@ -144,7 +144,7 @@ public final class m5 extends LinearLayout {
     public void onDetachedFromWindow() {
         switch (this.a) {
             case 8:
-                getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.Wallet.z4) this.b);
+                getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.Wallet.a5) this.b);
                 getViewTreeObserver().removeOnWindowFocusChangeListener(((org.telegram.ui.Wallet.i9) this.c).H);
                 super.onDetachedFromWindow();
                 break;
@@ -266,14 +266,14 @@ public final class m5 extends LinearLayout {
         super(context);
         this.a = 8;
         this.c = i9Var;
-        this.b = new org.telegram.ui.Wallet.z4(3, this);
+        this.b = new org.telegram.ui.Wallet.a5(3, this);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m5(p31 p31Var, Context context) {
+    public m5(q31 q31Var, Context context) {
         super(context);
         this.a = 5;
-        this.c = p31Var;
+        this.c = q31Var;
         this.b = new org.telegram.ui.Components.f6(this, 360L, bs.h);
     }
 

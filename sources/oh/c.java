@@ -17,7 +17,7 @@ import org.telegram.ui.Components.bs;
 import w7.z5;
 import zf.p;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class c extends FrameLayout implements ne.d, y5 {
     public ShapeDrawable a;
@@ -87,13 +87,8 @@ public final class c extends FrameLayout implements ne.d, y5 {
         return this.e.f;
     }
 
-    public void setPack(TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
-        this.d.setText(tL_messages_stickerSet.set.short_name);
-        this.c.d(!tL_messages_stickerSet.documents.isEmpty() ? tL_messages_stickerSet.documents.get(0) : null, null, null, null, false, false);
-    }
-
     @Override // ne.d
-    public final void u(int i10, float f7, float f10, e eVar) {
+    public final void r(int i10, float f7, float f10, e eVar) {
         ShapeDrawable shapeDrawable = this.a;
         if (shapeDrawable != null) {
             shapeDrawable.setAlpha((int) (f7 * 255.0f));
@@ -101,7 +96,12 @@ public final class c extends FrameLayout implements ne.d, y5 {
         invalidate();
     }
 
+    public void setPack(TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+        this.d.setText(tL_messages_stickerSet.set.short_name);
+        this.c.d(!tL_messages_stickerSet.documents.isEmpty() ? tL_messages_stickerSet.documents.get(0) : null, null, null, null, false, false);
+    }
+
     @Override // ne.d
-    public final /* synthetic */ void E(float f7, int i10) {
+    public final /* synthetic */ void H(float f7, int i10) {
     }
 }

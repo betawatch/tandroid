@@ -1,41 +1,108 @@
 package ai;
 
-import android.text.Spanned;
-import android.text.style.ClickableSpan;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.s10;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y6 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e7 b;
+public final class y6 extends FrameLayout {
+    public final l2 a;
+    public final x6 b;
+    public final x6 c;
+    public final x6 d;
+    public boolean e;
+    public final s10 f;
+    public final RectF h;
 
-    public /* synthetic */ y6(e7 e7Var, int i10) {
-        this.a = i10;
-        this.b = e7Var;
+    public y6(Context context, org.telegram.ui.ActionBar.d6 d6Var, l2 l2Var) {
+        super(context);
+        this.f = new s10();
+        this.h = new RectF();
+        this.a = l2Var;
+        x6 x6Var = new x6(context, d6Var);
+        this.b = x6Var;
+        x6 x6Var2 = new x6(context, d6Var);
+        this.c = x6Var2;
+        x6 x6Var3 = new x6(context, d6Var);
+        this.d = x6Var3;
+        addView(x6Var, w7.z5.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
+        addView(x6Var2, w7.z5.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
+        addView(x6Var3, w7.z5.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        View.OnClickListener onClickListener;
-        switch (this.a) {
-            case 0:
-                CharSequence text = this.b.v.getText();
-                if (text instanceof Spanned) {
-                    ClickableSpan[] clickableSpanArr = (ClickableSpan[]) ((Spanned) text).getSpans(0, text.length(), ClickableSpan.class);
-                    if (clickableSpanArr.length > 0) {
-                        clickableSpanArr[0].onClick(view);
-                        break;
-                    }
-                }
-                break;
-            default:
-                e7 e7Var = this.b;
-                if (e7Var.O.getVisibility() == 0 && (onClickListener = e7Var.U) != null) {
-                    onClickListener.onClick(view);
-                    break;
-                }
-                break;
+    public final void a(o6 o6Var, float f7, boolean z10, o6 o6Var2, float f10, boolean z11, o6 o6Var3, float f11, boolean z12) {
+        l2 l2Var = this.a;
+        x6 x6Var = this.b;
+        if (o6Var != null) {
+            if (z10) {
+                f7 = Math.max(0.5f, f7);
+            }
+            x6Var.setVisibility(0);
+            x6Var.e(o6Var.a, o6Var.b, l2Var);
+            x6Var.setTranslationY(AndroidUtilities.dp(36.0f) * ((f7 - 0.5f) / 1.5f));
+        } else {
+            x6Var.setVisibility(4);
         }
+        x6 x6Var2 = this.c;
+        if (o6Var2 != null) {
+            float f12 = f10;
+            if (z11) {
+                f12 = Math.max(0.5f, f12);
+            }
+            float f13 = (f12 - 0.5f) / 1.5f;
+            x6Var2.setVisibility(0);
+            x6Var2.e(o6Var2.a, o6Var2.b, l2Var);
+            x6Var2.setTranslationY(AndroidUtilities.dp(36.0f) * f13);
+            if (z11 && f13 <= 0.0f && !this.e) {
+                this.e = true;
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                ofFloat.addUpdateListener(new ah.c0(x6Var2, 4));
+                ofFloat.setDuration(180L);
+                ofFloat.start();
+            }
+        } else {
+            x6Var2.setVisibility(4);
+        }
+        x6 x6Var3 = this.d;
+        if (o6Var3 == null) {
+            x6Var3.setVisibility(4);
+            return;
+        }
+        float f14 = f11;
+        if (z12) {
+            f14 = Math.max(0.5f, f14);
+        }
+        x6Var3.setVisibility(0);
+        x6Var3.e(o6Var3.a, o6Var3.b, l2Var);
+        x6Var3.setTranslationY(AndroidUtilities.dp(36.0f) * ((f14 - 0.5f) / 1.5f));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
+        super.dispatchDraw(canvas);
+        canvas.save();
+        float width = getWidth();
+        float dp = AndroidUtilities.dp(8.0f);
+        RectF rectF = this.h;
+        rectF.set(0.0f, 0.0f, width, dp);
+        s10 s10Var = this.f;
+        s10Var.b(canvas, rectF, 1, 1.0f);
+        rectF.set(0.0f, getHeight() - AndroidUtilities.dp(8.0f), getWidth(), getHeight());
+        s10Var.b(canvas, rectF, 3, 1.0f);
+        canvas.restore();
+        canvas.restore();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(37.66f), TLObject.FLAG_30));
     }
 }

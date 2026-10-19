@@ -1,18 +1,87 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class w01 implements org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ b11 a;
-    public final /* synthetic */ String b;
+import android.content.SharedPreferences;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationsController;
+import org.telegram.messenger.NotificationsSettingsFacade;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ w01(b11 b11Var, String str) {
-        this.a = b11Var;
-        this.b = str;
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* loaded from: classes3.dex */
+public final class w01 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ z01 b;
+
+    public w01(z01 z01Var, String str) {
+        this.b = z01Var;
+        this.a = str;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        b11.W(this.a, this.b);
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        z01 z01Var = this.b;
+        long j10 = z01Var.f;
+        long j11 = z01Var.e;
+        String str = this.a;
+        if (i10 == -1) {
+            if (!z01Var.h && z01Var.n) {
+                i17 = ((org.telegram.ui.ActionBar.n2) z01Var).currentAccount;
+                MessagesController.getNotificationsSettings(i17).edit().putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 0).apply();
+            }
+        } else if (i10 == 1) {
+            i11 = ((org.telegram.ui.ActionBar.n2) z01Var).currentAccount;
+            SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i11);
+            SharedPreferences.Editor edit = notificationsSettings.edit();
+            edit.putBoolean(NotificationsSettingsFacade.PROPERTY_CUSTOM + str, true);
+            i12 = ((org.telegram.ui.ActionBar.n2) z01Var).currentAccount;
+            TLRPC.Dialog dialog = (TLRPC.Dialog) MessagesController.getInstance(i12).dialogs_dict.f(j11);
+            if (z01Var.n) {
+                edit.putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 0);
+                if (j10 == 0) {
+                    i16 = ((org.telegram.ui.ActionBar.n2) z01Var).currentAccount;
+                    MessagesStorage.getInstance(i16).setDialogFlags(j11, 0L);
+                    if (dialog != null) {
+                        dialog.notify_settings = new TLRPC.TL_peerNotifySettings();
+                    }
+                }
+            } else {
+                edit.putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 2);
+                if (j10 == 0) {
+                    i13 = ((org.telegram.ui.ActionBar.n2) z01Var).currentAccount;
+                    NotificationsController.getInstance(i13).removeNotificationsForDialog(j11);
+                    i14 = ((org.telegram.ui.ActionBar.n2) z01Var).currentAccount;
+                    MessagesStorage.getInstance(i14).setDialogFlags(j11, 1L);
+                    if (dialog != null) {
+                        TLRPC.TL_peerNotifySettings tL_peerNotifySettings = new TLRPC.TL_peerNotifySettings();
+                        dialog.notify_settings = tL_peerNotifySettings;
+                        tL_peerNotifySettings.mute_until = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                    }
+                }
+            }
+            edit.apply();
+            i15 = ((org.telegram.ui.ActionBar.n2) z01Var).currentAccount;
+            NotificationsController.getInstance(i15).updateServerNotificationsSettings(j11, j10);
+            if (z01Var.r != null) {
+                ek0 ek0Var = new ek0();
+                ek0Var.d = j11;
+                ek0Var.b = true;
+                int c10 = org.telegram.messenger.g0.c(NotificationsSettingsFacade.PROPERTY_NOTIFY, str, notificationsSettings, 0);
+                ek0Var.c = c10;
+                if (c10 != 0) {
+                    ek0Var.a = org.telegram.messenger.g0.c(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL, str, notificationsSettings, 0);
+                }
+                z01Var.r.r(ek0Var);
+            }
+        }
+        z01Var.finishFragment();
     }
 }

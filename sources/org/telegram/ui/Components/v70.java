@@ -31,9 +31,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public class v70 extends j71 implements NotificationCenter.NotificationCenterDelegate {
+public class v70 extends k71 implements NotificationCenter.NotificationCenterDelegate {
     public final a0.h T;
     public final u70 U;
     public final org.telegram.ui.ActionBar.v1 V;
@@ -52,8 +52,8 @@ public class v70 extends j71 implements NotificationCenter.NotificationCenterDel
     public ValueAnimator i0;
     public v30 j0;
     public int k0;
-    public org.telegram.ui.i60 l0;
-    public org.telegram.ui.wt m0;
+    public org.telegram.ui.g60 l0;
+    public org.telegram.ui.ut m0;
     public ArrayList n0;
     public int o0;
     public final float p0;
@@ -99,7 +99,7 @@ public class v70 extends j71 implements NotificationCenter.NotificationCenterDel
         }
         u70 u70Var = new u70(this, context);
         this.U = u70Var;
-        this.d.setOnItemClickListener(new org.telegram.ui.yb(this, j10, n2Var, hVar, context));
+        this.d.setOnItemClickListener(new org.telegram.ui.wb(this, j10, n2Var, hVar, context));
         ai.u1 u1Var2 = this.d;
         n70 n70Var = new n70();
         n70Var.o = bs.f;
@@ -118,7 +118,7 @@ public class v70 extends j71 implements NotificationCenter.NotificationCenterDel
         h20 h20Var = new h20(context, d6Var, false);
         this.t0 = h20Var;
         h20Var.setImageResource(R.drawable.floating_check);
-        h20Var.setOnClickListener(new ai.q3(this, context, j10, 4));
+        h20Var.setOnClickListener(new ai.t3(this, context, j10, 4));
         h20Var.e(false, false);
         h20Var.setContentDescription(LocaleController.getString(R.string.Next));
         this.containerView.addView(h20Var, h20.b());
@@ -217,14 +217,14 @@ public class v70 extends j71 implements NotificationCenter.NotificationCenterDel
             for (int i10 = 0; i10 < hVar.m(); i10++) {
                 arrayList.add(Long.valueOf(hVar.j(i10)));
             }
-            org.telegram.ui.ny nyVar = (org.telegram.ui.ny) v70Var.m0.b;
-            ArrayList arrayList2 = nyVar.e;
+            org.telegram.ui.ly lyVar = (org.telegram.ui.ly) v70Var.m0.b;
+            ArrayList arrayList2 = lyVar.e;
             arrayList2.clear();
             arrayList2.addAll(arrayList);
-            nyVar.Z();
-            org.telegram.ui.my myVar = nyVar.f;
-            if (myVar != null) {
-                myVar.a();
+            lyVar.Z();
+            org.telegram.ui.ky kyVar = lyVar.f;
+            if (kyVar != null) {
+                kyVar.a();
             }
             v70Var.dismiss();
             return;
@@ -251,14 +251,14 @@ public class v70 extends j71 implements NotificationCenter.NotificationCenterDel
             String format = String.format("%d", Integer.valueOf(hVar.m()));
             int indexOf = TextUtils.indexOf(spannableStringBuilder, format);
             if (indexOf >= 0) {
-                spannableStringBuilder.setSpan(new c61(AndroidUtilities.bold()), indexOf, format.length() + indexOf, 33);
+                spannableStringBuilder.setSpan(new d61(AndroidUtilities.bold()), indexOf, format.length() + indexOf, 33);
             }
             b2Var.T = spannableStringBuilder;
         } else {
             b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("AddMembersAlertNamesText", R.string.AddMembersAlertNamesText, sb2, chat.title));
         }
         alertDialog$Builder.k(LocaleController.getString(R.string.Add), new tv(v70Var, 7));
-        i2.d.r(R.string.Cancel, alertDialog$Builder, null);
+        i2.e.r(R.string.Cancel, alertDialog$Builder, null);
     }
 
     public static /* synthetic */ void P(v70 v70Var, TLRPC.TL_error tL_error, TLObject tLObject) {
@@ -289,20 +289,20 @@ public class v70 extends j71 implements NotificationCenter.NotificationCenterDel
         for (int i10 = 0; i10 < hVar.m(); i10++) {
             arrayList.add(MessagesController.getInstance(v70Var.currentAccount).getUser(Long.valueOf(hVar.j(i10))));
         }
-        org.telegram.ui.i60 i60Var = v70Var.l0;
-        if (i60Var != null) {
-            i60Var.i(0, arrayList);
+        org.telegram.ui.g60 g60Var = v70Var.l0;
+        if (g60Var != null) {
+            g60Var.i(0, arrayList);
         }
         v70Var.dismiss();
     }
 
-    @Override // org.telegram.ui.Components.j71
-    public final h71 D(Context context) {
+    @Override // org.telegram.ui.Components.k71
+    public final i71 D(Context context) {
         return new m70(this, context);
     }
 
-    @Override // org.telegram.ui.Components.j71
-    public final void F(MotionEvent motionEvent, ei.e2 e2Var) {
+    @Override // org.telegram.ui.Components.k71
+    public final void E(MotionEvent motionEvent, ei.e2 e2Var) {
         org.telegram.ui.ActionBar.n2 n2Var;
         if (motionEvent.getAction() == 0) {
             this.x0 = this.y;
@@ -318,8 +318,8 @@ public class v70 extends j71 implements NotificationCenter.NotificationCenterDel
         } else {
             n2Var = null;
         }
-        if (n2Var instanceof org.telegram.ui.sn) {
-            boolean U9 = ((org.telegram.ui.sn) n2Var).U9();
+        if (n2Var instanceof org.telegram.ui.qn) {
+            boolean U9 = ((org.telegram.ui.qn) n2Var).U9();
             this.w0 = true;
             AndroidUtilities.runOnUIThread(new yt(this, e2Var, 18), U9 ? 200L : 0L);
         } else {
@@ -330,8 +330,8 @@ public class v70 extends j71 implements NotificationCenter.NotificationCenterDel
         }
     }
 
-    @Override // org.telegram.ui.Components.j71
-    public final void H(String str) {
+    @Override // org.telegram.ui.Components.k71
+    public final void G(String str) {
         r70 r70Var = this.W;
         if (r70Var.h != null) {
             Utilities.searchQueue.cancelRunnable(r70Var.h);
@@ -369,8 +369,8 @@ public class v70 extends j71 implements NotificationCenter.NotificationCenterDel
         return true;
     }
 
-    public final void Z(org.telegram.ui.wt wtVar) {
-        this.m0 = wtVar;
+    public final void Z(org.telegram.ui.ut utVar) {
+        this.m0 = utVar;
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.dialogsNeedReload);
         this.n0 = new ArrayList(MessagesController.getInstance(this.currentAccount).dialogsServerOnly);
         c0();
@@ -480,7 +480,7 @@ public class v70 extends j71 implements NotificationCenter.NotificationCenterDel
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(this.h0, z12 ? 1.0f : 0.0f);
                 this.i0 = ofFloat;
                 ofFloat.addUpdateListener(new l6(this, 28));
-                this.i0.addListener(new org.telegram.ui.ho(14, this, z12));
+                this.i0.addListener(new org.telegram.ui.fo(14, this, z12));
                 this.i0.setDuration(150L);
                 this.i0.start();
             } else {
@@ -553,7 +553,7 @@ public class v70 extends j71 implements NotificationCenter.NotificationCenterDel
         }
     }
 
-    @Override // org.telegram.ui.Components.j71, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.Components.k71, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
     public final void dismiss() {
         super.dismiss();
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.dialogsNeedReload);
@@ -567,8 +567,8 @@ public class v70 extends j71 implements NotificationCenter.NotificationCenterDel
             if (findActivity instanceof LaunchActivity) {
                 LaunchActivity launchActivity = (LaunchActivity) findActivity;
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) launchActivity.O().getFragmentStack().get(launchActivity.O().getFragmentStack().size() - 1);
-                if (n2Var instanceof org.telegram.ui.sn) {
-                    ((org.telegram.ui.sn) n2Var).Y9(true, true);
+                if (n2Var instanceof org.telegram.ui.qn) {
+                    ((org.telegram.ui.qn) n2Var).Y9(true, true);
                 }
             }
         }

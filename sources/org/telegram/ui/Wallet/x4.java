@@ -1,37 +1,31 @@
 package org.telegram.ui.Wallet;
 
 import android.content.Context;
-import android.view.View;
+import android.graphics.Canvas;
+import android.graphics.drawable.ShapeDrawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.us;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class x4 extends View {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n5 b;
+public final class x4 extends us {
+    public final ShapeDrawable G;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ x4(n5 n5Var, Context context, int i10) {
+    public x4(o5 o5Var, Context context) {
         super(context);
-        this.a = i10;
-        this.b = n5Var;
+        this.G = org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(22.0f), o5Var.getThemedColor(org.telegram.ui.ActionBar.h6.d6));
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                int size = View.MeasureSpec.getSize(i10);
-                n5 n5Var = this.b;
-                n5Var.Y.measure(View.MeasureSpec.makeMeasureSpec(Math.max(0, size - AndroidUtilities.dp(24.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
-                setMeasuredDimension(size, AndroidUtilities.dp(36.0f) + n5Var.Y.getMeasuredHeight());
-                break;
-            default:
-                n5 n5Var2 = this.b;
-                n5Var2.d.measure(i10, View.MeasureSpec.makeMeasureSpec(0, 0));
-                setMeasuredDimension(View.MeasureSpec.getSize(i10), n5Var2.d.getMeasuredHeight());
-                break;
+    @Override // org.telegram.ui.Components.us, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int ceil = (int) Math.ceil(getMetadata().g.a);
+        if (ceil > 0) {
+            int width = getWidth();
+            ShapeDrawable shapeDrawable = this.G;
+            shapeDrawable.setBounds(0, 0, width, ceil);
+            shapeDrawable.setAlpha((int) (getMetadata().c.a * 255.0f));
+            shapeDrawable.draw(canvas);
         }
+        super.dispatchDraw(canvas);
     }
 }

@@ -3,17 +3,17 @@ package m;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.TextView;
-import w7.m6;
+import w7.l6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class u {
     public final TextView a;
-    public final l2.f b;
+    public final k2.w0 b;
 
     public u(TextView textView) {
         this.a = textView;
-        this.b = new l2.f(textView);
+        this.b = new k2.w0(textView);
     }
 
     public final void a(AttributeSet attributeSet, int i10) {
@@ -29,10 +29,10 @@ public final class u {
     }
 
     public final void b(boolean z10) {
-        ((m6) this.b.b).b(z10);
+        ((l6) this.b.b).b(z10);
     }
 
     public final void c(boolean z10) {
-        ((m6) this.b.b).c(z10);
+        ((l6) this.b.b).c(z10);
     }
 }

@@ -23,11 +23,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import org.telegram.messenger.MediaController;
-import u2.a1;
+import u2.z0;
 import v7.b8;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final byte[] a;
@@ -47,7 +47,7 @@ public abstract class c {
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r38v14 java.util.List), method size: 3238
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r7v2 java.util.List), method size: 3238
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
@@ -61,7 +61,7 @@ public abstract class c {
         throw new UnsupportedOperationException("Method not decompiled: w3.c.b(e2.x, int, int, int, int, java.lang.String, boolean, b2.s, e2.j0, int):void");
     }
 
-    public static a1 c(int i10, x xVar) {
+    public static z0 c(int i10, x xVar) {
         xVar.N(i10 + 12);
         xVar.O(1);
         d(xVar);
@@ -80,7 +80,7 @@ public abstract class c {
         d(xVar);
         String e = v0.e(xVar.A());
         if ("audio/mpeg".equals(e) || "audio/vnd.dts".equals(e) || "audio/vnd.dts.hd".equals(e)) {
-            return new a1(e, null, -1L, -1L);
+            return new z0(e, null, -1L, -1L);
         }
         xVar.O(4);
         long C = xVar.C();
@@ -93,7 +93,7 @@ public abstract class c {
         if (j10 <= 0) {
             j10 = -1;
         }
-        return new a1(e, bArr, j10, C > 0 ? C : -1L);
+        return new z0(e, bArr, j10, C > 0 ? C : -1L);
     }
 
     public static int d(x xVar) {
@@ -296,7 +296,7 @@ public abstract class c {
         return null;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:329:0x099e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:329:0x099f, code lost:
     
         r0 = r22;
      */
@@ -304,8 +304,8 @@ public abstract class c {
     
         if (r11 == 0) goto L52;
      */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x0aed  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x0b09  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x0aee  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x0b0a  */
     /* JADX WARN: Removed duplicated region for block: B:410:0x015d  */
     /* JADX WARN: Removed duplicated region for block: B:413:0x016e  */
     /* JADX WARN: Removed duplicated region for block: B:417:0x01b0  */
@@ -314,8 +314,8 @@ public abstract class c {
     /* JADX WARN: Removed duplicated region for block: B:435:0x022b  */
     /* JADX WARN: Removed duplicated region for block: B:444:0x024a  */
     /* JADX WARN: Removed duplicated region for block: B:446:0x0254  */
-    /* JADX WARN: Removed duplicated region for block: B:598:0x0593  */
-    /* JADX WARN: Removed duplicated region for block: B:652:0x0692  */
+    /* JADX WARN: Removed duplicated region for block: B:598:0x0594  */
+    /* JADX WARN: Removed duplicated region for block: B:652:0x0693  */
     /* JADX WARN: Removed duplicated region for block: B:684:0x01fd A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:686:0x01c2  */
     /* JADX WARN: Removed duplicated region for block: B:687:0x01b3  */
@@ -661,8 +661,8 @@ public abstract class c {
                                                                     j24 = j26;
                                                                 }
                                                                 j16 = j24;
-                                                                StringBuilder m19 = i2.d.m("size: ", x10, "x", x11, "\npalette: ");
-                                                                m19.append(new d9.l(", ").e(arrayList6));
+                                                                StringBuilder m19 = i2.e.m("size: ", x10, "x", x11, "\npalette: ");
+                                                                m19.append(new d9.l(", ", 0).e(arrayList6));
                                                                 m19.append("\n");
                                                                 String sb2 = m19.toString();
                                                                 String str6 = m0.a;
@@ -1152,8 +1152,8 @@ public abstract class c {
                                 j18 = j38;
                                 qVar3 = qVar2;
                                 boolean z21 = z15;
-                                i2.d.w(sb3, qVar3.a, ": remainingSynchronizationSamples ", i74, ", remainingSamplesAtTimestampDelta ");
-                                i2.d.w(sb3, i77, ", remainingSamplesInChunk ", i26, ", remainingTimestampDeltaChanges ");
+                                i2.e.w(sb3, qVar3.a, ": remainingSynchronizationSamples ", i74, ", remainingSamplesAtTimestampDelta ");
+                                i2.e.w(sb3, i77, ", remainingSamplesInChunk ", i26, ", remainingTimestampDeltaChanges ");
                                 sb3.append(i69);
                                 sb3.append(", remainingSamplesAtTimestampOffset ");
                                 sb3.append(i73);
@@ -1968,24 +1968,24 @@ public abstract class c {
         return t0Var3;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0b41, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x0b42, code lost:
     
-        if (r10 == null) goto L478;
+        if (r10 == null) goto L479;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0b43, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0b44, code lost:
     
         r0 = r10.a;
         r1 = "video/dolby-vision";
      */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x0b4d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0b4e, code lost:
     
-        if (r1 != null) goto L481;
+        if (r1 != null) goto L482;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0b4f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0b50, code lost:
     
         return;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x0b50, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0b51, code lost:
     
         r2 = new b2.v();
         r2.a = java.lang.Integer.toString(r62);
@@ -2005,61 +2005,61 @@ public abstract class c {
         r2.v = r34;
         r2.d = r63;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x0b93, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x0b94, code lost:
     
-        if (r16 == null) goto L484;
+        if (r16 == null) goto L485;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x0b95, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0b96, code lost:
     
         r29 = r16.array();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x0b9e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x0b9f, code lost:
     
         r2.H = new b2.n(r8, r30, r9, r29, r31, r32);
         r10 = r37;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x0bb3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x0bb4, code lost:
     
-        if (r10 == null) goto L488;
+        if (r10 == null) goto L489;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x0bb5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0bb6, code lost:
     
         r2.h = v7.b8.e(r10.a);
         r2.i = v7.b8.e(r10.b);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x0bda, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x0bdb, code lost:
     
         r66.d = new b2.w(r2);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x0be1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x0be2, code lost:
     
         return;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:36:0x0bc6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:36:0x0bc7, code lost:
     
         r10 = r38;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x0bc8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x0bc9, code lost:
     
-        if (r10 == null) goto L491;
+        if (r10 == null) goto L492;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x0bca, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0bcb, code lost:
     
         r2.h = v7.b8.e(r10.a);
         r2.i = v7.b8.e(r10.b);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x0b9c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x0b9d, code lost:
     
         r29 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x0b49, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x0b4a, code lost:
     
         r0 = r18;
         r1 = r35;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:445:0x0983, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:445:0x0984, code lost:
     
-        if (r1 != 3) goto L423;
+        if (r1 != 3) goto L424;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -2104,6 +2104,7 @@ public abstract class c {
         int i40;
         String str5;
         int i41;
+        le.b bVar;
         String str6;
         int i42;
         int i43;
@@ -2149,7 +2150,7 @@ public abstract class c {
         int i59 = 8;
         int i60 = 8;
         z zVar = null;
-        a1 a1Var = null;
+        z0 z0Var = null;
         qi.e eVar2 = null;
         while (true) {
             if (i48 - i46 >= i47) {
@@ -2450,7 +2451,7 @@ public abstract class c {
                             if (m11 == 1986361461) {
                                 xVar.N(i61 + 8);
                                 int i110 = xVar.b;
-                                uc.b bVar = null;
+                                le.b bVar2 = null;
                                 while (i110 - i61 < m10) {
                                     xVar.N(i110);
                                     int m12 = xVar.m();
@@ -2473,12 +2474,13 @@ public abstract class c {
                                                 int A9 = xVar.A();
                                                 str5 = str10;
                                                 i41 = i110;
-                                                bVar = new uc.b(new bc.d((A9 & 1) == 1, (A9 & 2) == 2, (A9 & 8) == i50));
+                                                bVar = new le.b(new bc.d((A9 & 1) == 1, (A9 & 2) == 2, (A9 & 8) == i50), 27);
                                             } else {
                                                 i111 += m13;
                                                 i50 = 8;
                                             }
                                         }
+                                        bVar2 = bVar;
                                     } else {
                                         str5 = str10;
                                         i41 = i110;
@@ -2487,9 +2489,9 @@ public abstract class c {
                                     str10 = str5;
                                     i50 = 8;
                                 }
-                                l2.f fVar = bVar == null ? null : new l2.f(bVar, 25);
-                                if (fVar != null) {
-                                    bc.d dVar = (bc.d) ((uc.b) fVar.b).a;
+                                k2.w0 w0Var = bVar2 == null ? null : new k2.w0(bVar2, 28);
+                                if (w0Var != null) {
+                                    bc.d dVar = (bc.d) ((le.b) w0Var.b).b;
                                     if (eVar4 == null || ((n0) eVar4.a).size() < 2) {
                                         i40 = i51;
                                         if (i40 == -1) {
@@ -2745,13 +2747,13 @@ public abstract class c {
                                                 str8 = str3;
                                             } else if (m11 == 1702061171) {
                                                 c3.b.b(null, str4 == null);
-                                                a1 c10 = c(i61, xVar);
+                                                z0 c10 = c(i61, xVar);
                                                 String str15 = (String) c10.c;
                                                 byte[] bArr6 = (byte[]) c10.d;
                                                 if (bArr6 != null) {
                                                     list = n0.y(bArr6);
                                                 }
-                                                a1Var = c10;
+                                                z0Var = c10;
                                                 str8 = str15;
                                                 eVar2 = eVar;
                                             } else if (m11 == 1651798644) {
@@ -2831,7 +2833,7 @@ public abstract class c {
                                                 int i130 = bArr7[7] & 255;
                                                 String str16 = m0.a;
                                                 Locale locale2 = Locale.US;
-                                                StringBuilder m15 = i2.d.m("apv1.apvf", i128, ".apvl", i129, ".apvb");
+                                                StringBuilder m15 = i2.e.m("apv1.apvf", i128, ".apvl", i129, ".apvb");
                                                 m15.append(i130);
                                                 str9 = m15.toString();
                                                 x1 y10 = n0.y(bArr7);

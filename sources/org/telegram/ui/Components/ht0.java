@@ -1,31 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class ht0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ lu0 b;
-    public final /* synthetic */ sv0 c;
+public final class ht0 extends g.o {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ ViewGroup e;
 
-    public /* synthetic */ ht0(sv0 sv0Var, lu0 lu0Var, int i10) {
-        this.a = i10;
-        this.c = sv0Var;
-        this.b = lu0Var;
+    public /* synthetic */ ht0(ViewGroup viewGroup, Object obj, int i10) {
+        this.c = i10;
+        this.e = viewGroup;
+        this.d = obj;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
+    @Override // g.o
+    public final int i(int i10) {
+        int i11;
+        switch (this.c) {
             case 0:
-                this.c.n1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                this.b.h.invalidate();
-                break;
+                mu0 mu0Var = (mu0) this.d;
+                s4.g0 adapter = mu0Var.r.getAdapter();
+                tv0 tv0Var = (tv0) this.e;
+                nv0 nv0Var = tv0Var.I;
+                if (adapter == nv0Var) {
+                    if (nv0Var.j(i10) == 2) {
+                        return mu0Var.s.J;
+                    }
+                    return 1;
+                }
+                if (tv0.p(tv0Var, adapter) == -1) {
+                    return 1;
+                }
+                ((qv0) adapter).getClass();
+                return 1;
             default:
-                this.c.n1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                this.b.h.invalidate();
-                break;
+                di.h hVar = (di.h) this.d;
+                t61 t61Var = ((b71) this.e).W2;
+                if (t61Var == null) {
+                    return hVar.J;
+                }
+                g61 G = t61Var.G(i10);
+                return (G == null || (i11 = G.u) == -1) ? hVar.J : i11;
         }
     }
 }

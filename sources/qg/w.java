@@ -1,57 +1,43 @@
 package qg;
 
 import android.content.Context;
-import android.widget.LinearLayout;
+import android.graphics.Color;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.ao;
 import org.telegram.ui.Components.t2;
-import org.telegram.ui.ul0;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class w extends LinearLayout {
-    public final v a;
-    public final v b;
-    public final v c;
-    public final EditTextBoldCursor d;
+public final class w extends FrameLayout {
+    public final TextView a;
+    public final s b;
+    public final EditTextBoldCursor c;
+    public int d;
     public boolean e;
-    public final /* synthetic */ x f;
+    public final /* synthetic */ y f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w(x xVar, Context context) {
+    public w(y yVar, Context context) {
         super(context);
-        this.f = xVar;
-        setOrientation(1);
-        setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
-        v vVar = new v(xVar, context);
-        this.a = vVar;
-        vVar.a(0);
-        addView(vVar, z5.p(-1, -2, 0.0f, 0, 0, 0, 0, 16));
-        v vVar2 = new v(xVar, context);
-        this.b = vVar2;
-        vVar2.a(1);
-        addView(vVar2, z5.p(-1, -2, 0.0f, 0, 0, 0, 0, 16));
-        v vVar3 = new v(xVar, context);
-        this.c = vVar3;
-        vVar3.a(2);
-        addView(vVar3, z5.p(-1, -2, 0.0f, 0, 0, 0, 0, 16));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(0);
-        linearLayout.setGravity(21);
-        addView(linearLayout, z5.c(64.0f, -1));
+        this.f = yVar;
         TextView textView = new TextView(context);
-        textView.setTextColor(-1711276033);
-        textView.setTextSize(1, 16.0f);
-        textView.setText(LocaleController.getString(R.string.PaintPaletteSlidersHexColor).toUpperCase());
-        textView.setTypeface(AndroidUtilities.bold());
-        linearLayout.addView(textView, z5.k(0.0f, 0.0f, 8.0f, 0.0f, -2, -2));
+        this.a = textView;
+        org.telegram.messenger.g0.m(14.0f, -1711276033, 1, textView);
+        addView(textView, z5.d(-2, -2.0f, 3, 8.0f, 0.0f, 8.0f, 0.0f));
+        s sVar = new s(yVar, context);
+        this.b = sVar;
+        addView(sVar, z5.d(-1, -1.0f, 3, 0.0f, 16.0f, 78.0f, 0.0f));
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
-        this.d = editTextBoldCursor;
+        this.c = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 16.0f);
         editTextBoldCursor.setBackground(h6.c0(AndroidUtilities.dp(10.0f), 436207615));
         editTextBoldCursor.setPadding(0, 0, 0, 0);
@@ -60,10 +46,52 @@ public final class w extends LinearLayout {
         editTextBoldCursor.setSingleLine();
         editTextBoldCursor.setImeOptions(6);
         editTextBoldCursor.setImeActionLabel(LocaleController.getString(R.string.Done), 6);
+        editTextBoldCursor.setInputType(2);
         editTextBoldCursor.setTypeface(AndroidUtilities.bold());
-        editTextBoldCursor.addTextChangedListener(new ul0(this));
-        editTextBoldCursor.setOnFocusChangeListener(new ah.u0(this, 7));
-        editTextBoldCursor.setOnEditorActionListener(new t2(5));
-        linearLayout.addView(editTextBoldCursor, z5.n(72, 36));
+        editTextBoldCursor.addTextChangedListener(new ao(this));
+        editTextBoldCursor.setOnFocusChangeListener(new ah.u0(this, 6));
+        editTextBoldCursor.setOnEditorActionListener(new t2(4));
+        addView(editTextBoldCursor, z5.e(72, 36, 85));
+    }
+
+    public final void a(int i10) {
+        this.d = i10;
+        this.b.c = i10;
+        TextView textView = this.a;
+        if (i10 == 0) {
+            textView.setText(LocaleController.getString(R.string.PaintPaletteSlidersRed).toUpperCase());
+        } else if (i10 == 1) {
+            textView.setText(LocaleController.getString(R.string.PaintPaletteSlidersGreen).toUpperCase());
+        } else if (i10 == 2) {
+            textView.setText(LocaleController.getString(R.string.PaintPaletteSlidersBlue).toUpperCase());
+        }
+        b();
+    }
+
+    public final void b() {
+        this.e = true;
+        s sVar = this.b;
+        sVar.d = i0.a.o(sVar.e.f, 255);
+        sVar.a();
+        sVar.invalidate();
+        EditTextBoldCursor editTextBoldCursor = this.c;
+        int selectionStart = editTextBoldCursor.getSelectionStart();
+        int selectionEnd = editTextBoldCursor.getSelectionEnd();
+        int i10 = this.d;
+        y yVar = this.f;
+        if (i10 == 0) {
+            editTextBoldCursor.setText(String.valueOf(Color.red(yVar.f)));
+        } else if (i10 == 1) {
+            editTextBoldCursor.setText(String.valueOf(Color.green(yVar.f)));
+        } else if (i10 == 2) {
+            editTextBoldCursor.setText(String.valueOf(Color.blue(yVar.f)));
+        }
+        editTextBoldCursor.setSelection(selectionStart, selectionEnd);
+        this.e = false;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
     }
 }

@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.h6;
 import t7.u;
 import u2.f0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class f {
     public boolean a;
@@ -45,7 +45,7 @@ public final class f {
 
     public f0 b(int i10) {
         d9.u uVar;
-        d9.u nVar;
+        d9.u oVar;
         HashMap hashMap = (HashMap) this.e;
         f0 f0Var = (f0) hashMap.get(Integer.valueOf(i10));
         if (f0Var != null) {
@@ -63,12 +63,12 @@ public final class f {
                     if (i10 != 2) {
                         final int i13 = 3;
                         if (i10 == 3) {
-                            nVar = new i2.n(Class.forName("androidx.media3.exoplayer.rtsp.RtspMediaSource$Factory").asSubclass(f0.class), 3);
+                            oVar = new i2.o(Class.forName("androidx.media3.exoplayer.rtsp.RtspMediaSource$Factory").asSubclass(f0.class), 3);
                         } else {
                             if (i10 != 4) {
-                                throw new IllegalArgumentException(i2.d.j(i10, "Unrecognized contentType: "));
+                                throw new IllegalArgumentException(i2.e.j(i10, "Unrecognized contentType: "));
                             }
-                            nVar = new d9.u() { // from class: u2.p
+                            oVar = new d9.u() { // from class: u2.p
                                 @Override // d9.u
                                 public final Object get() {
                                     switch (i13) {
@@ -79,12 +79,12 @@ public final class f {
                                         case 2:
                                             return q.e((Class) this, bVar);
                                         default:
-                                            return new y0(bVar, (c3.m) ((jg.f) this).c);
+                                            return new x0(bVar, (c3.m) ((jg.f) this).c);
                                     }
                                 }
                             };
                         }
-                        uVar2 = nVar;
+                        uVar2 = oVar;
                     } else {
                         final Class asSubclass = HlsMediaSource$Factory.class.asSubclass(f0.class);
                         uVar = new d9.u() { // from class: u2.p
@@ -98,7 +98,7 @@ public final class f {
                                     case 2:
                                         return q.e((Class) asSubclass, bVar);
                                     default:
-                                        return new y0(bVar, (c3.m) ((jg.f) asSubclass).c);
+                                        return new x0(bVar, (c3.m) ((jg.f) asSubclass).c);
                                 }
                             }
                         };
@@ -116,7 +116,7 @@ public final class f {
                                 case 2:
                                     return q.e((Class) asSubclass2, bVar);
                                 default:
-                                    return new y0(bVar, (c3.m) ((jg.f) asSubclass2).c);
+                                    return new x0(bVar, (c3.m) ((jg.f) asSubclass2).c);
                             }
                         }
                     };
@@ -136,7 +136,7 @@ public final class f {
                             case 2:
                                 return q.e((Class) asSubclass3, bVar);
                             default:
-                                return new y0(bVar, (c3.m) ((jg.f) asSubclass3).c);
+                                return new x0(bVar, (c3.m) ((jg.f) asSubclass3).c);
                         }
                     }
                 };

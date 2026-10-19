@@ -1,6 +1,6 @@
 package yh;
 
-import ai.m6;
+import ai.n6;
 import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class n3 extends org.telegram.ui.ActionBar.e1 {
     public final int L;
@@ -26,7 +26,7 @@ public final class n3 extends org.telegram.ui.ActionBar.e1 {
         this.c.setScaleY(1.2f);
         a(2);
         setBackground(null);
-        this.c.addOnAttachStateChangeListener(new m6(this, 14));
+        this.c.addOnAttachStateChangeListener(new n6(this, 14));
     }
 
     @Override // org.telegram.ui.ActionBar.e1, android.widget.FrameLayout, android.view.View

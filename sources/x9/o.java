@@ -13,7 +13,7 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
 import sg.y;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class o {
     public final Context a;
@@ -30,9 +30,9 @@ public final class o {
     public final com.google.firebase.messaging.r l;
     public final j m;
     public final u9.a n;
-    public final le.b o;
+    public final te.b o;
 
-    public o(l9.h hVar, u uVar, u9.a aVar, r rVar, t9.a aVar2, t9.a aVar3, ca.c cVar, ExecutorService executorService, j jVar, le.b bVar) {
+    public o(l9.h hVar, u uVar, u9.a aVar, r rVar, t9.a aVar2, t9.a aVar3, ca.c cVar, ExecutorService executorService, j jVar, te.b bVar) {
         this.b = rVar;
         hVar.a();
         this.a = hVar.a;
@@ -56,7 +56,7 @@ public final class o {
         if (!Boolean.TRUE.equals(((ThreadLocal) rVar.e).get())) {
             throw new IllegalStateException("Not running on background worker thread as intended.");
         }
-        oVar.d.O();
+        oVar.d.R();
         if (Log.isLoggable("FirebaseCrashlytics", 2)) {
             Log.v("FirebaseCrashlytics", "Initialization marker file was created.", null);
         }

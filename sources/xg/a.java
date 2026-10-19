@@ -17,8 +17,7 @@ import android.text.TextUtils;
 import android.text.style.RelativeSizeSpan;
 import android.util.StateSet;
 import android.view.MotionEvent;
-import ci.e;
-import i2.d;
+import i2.e;
 import ig.l0;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -45,11 +44,11 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Cells.z;
-import org.telegram.ui.Components.dx0;
+import org.telegram.ui.Components.ex0;
 import org.telegram.ui.Components.h9;
 import ug.r;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class a {
     public static final HashMap Y;
@@ -107,8 +106,8 @@ public final class a {
     static {
         HashMap hashMap = new HashMap();
         Y = hashMap;
-        d.q(1, hashMap, "1⃣", 3, "2⃣");
-        d.q(6, hashMap, "3⃣", 12, "4⃣");
+        e.q(1, hashMap, "1⃣", 3, "2⃣");
+        e.q(6, hashMap, "3⃣", 12, "4⃣");
         hashMap.put(24, "5⃣");
     }
 
@@ -153,7 +152,7 @@ public final class a {
                     this.X = false;
                     MessageObject messageObject2 = this.T;
                     if (messageObject2 != null && messageObject2.messageOwner != null) {
-                        r.d(messageObject2, new l0(messageObject2, 19), new e(24));
+                        r.d(messageObject2, new l0(messageObject2, 19), new ci.e(24));
                         return false;
                     }
                 }
@@ -639,9 +638,9 @@ public final class a {
             Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
             float dp2 = AndroidUtilities.dp(2.0f);
             TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-            this.w = dx0.c(spannableStringBuilder, textPaint2, minTabletSide, alignment, dp2, truncateAt, minTabletSide, 10, true);
-            this.y = dx0.c(spannableStringBuilder3, this.E, minTabletSide, alignment, AndroidUtilities.dp(2.0f), truncateAt, minTabletSide, 10, true);
-            this.z = dx0.c(spannableStringBuilder4, this.E, minTabletSide, alignment, AndroidUtilities.dp(3.0f), truncateAt, minTabletSide, 10, true);
+            this.w = ex0.c(spannableStringBuilder, textPaint2, minTabletSide, alignment, dp2, truncateAt, minTabletSide, 10, true);
+            this.y = ex0.c(spannableStringBuilder3, this.E, minTabletSide, alignment, AndroidUtilities.dp(2.0f), truncateAt, minTabletSide, 10, true);
+            this.z = ex0.c(spannableStringBuilder4, this.E, minTabletSide, alignment, AndroidUtilities.dp(3.0f), truncateAt, minTabletSide, 10, true);
             int i18 = 0;
             for (int i19 = 0; i19 < this.w.getLineCount(); i19++) {
                 i18 = (int) Math.max(i18, Math.ceil(this.w.getLineWidth(i19)));
@@ -658,7 +657,7 @@ public final class a {
             int i22 = i18;
             String str4 = tL_messageMediaGiveaway2.prize_description;
             if (str4 != null && !str4.isEmpty()) {
-                StaticLayout c10 = dx0.c(Emoji.replaceEmoji(AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingGiveawayMsgPrizes", tL_messageMediaGiveaway2.quantity, tL_messageMediaGiveaway2.prize_description)), this.H.getFontMetricsInt(), false), this.E, i22, Layout.Alignment.ALIGN_CENTER, AndroidUtilities.dp(2.0f), TextUtils.TruncateAt.END, i22, 20, true);
+                StaticLayout c10 = ex0.c(Emoji.replaceEmoji(AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingGiveawayMsgPrizes", tL_messageMediaGiveaway2.quantity, tL_messageMediaGiveaway2.prize_description)), this.H.getFontMetricsInt(), false), this.E, i22, Layout.Alignment.ALIGN_CENTER, AndroidUtilities.dp(2.0f), TextUtils.TruncateAt.END, i22, 20, true);
                 this.x = c10;
                 this.m = AndroidUtilities.dp(22.0f) + c10.getLineBottom(c10.getLineCount() - 1);
                 String string = LocaleController.getString(org.telegram.messenger.R.string.BoostingGiveawayMsgWithDivider);
@@ -684,7 +683,7 @@ public final class a {
                     arrayList5.add(spannableStringBuilder5);
                 }
                 if (!arrayList5.isEmpty()) {
-                    this.A = dx0.c(Emoji.replaceEmoji(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingGiveAwayFromCountries", org.telegram.messenger.R.string.BoostingGiveAwayFromCountries, TextUtils.join(", ", arrayList5))), this.H.getFontMetricsInt(), false), this.H, i22, Layout.Alignment.ALIGN_CENTER, 0.0f, TextUtils.TruncateAt.END, i22, 10, true);
+                    this.A = ex0.c(Emoji.replaceEmoji(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingGiveAwayFromCountries", org.telegram.messenger.R.string.BoostingGiveAwayFromCountries, TextUtils.join(", ", arrayList5))), this.H.getFontMetricsInt(), false), this.H, i22, Layout.Alignment.ALIGN_CENTER, 0.0f, TextUtils.TruncateAt.END, i22, 10, true);
                 }
             }
             int max = Math.max(i11, Math.min(AndroidUtilities.dp(38.0f) + i22, minTabletSide));

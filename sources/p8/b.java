@@ -1,12 +1,10 @@
 package p8;
 
-import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.opengl.GLES20;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.MotionEvent;
-import android.view.TextureView;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,7 +12,8 @@ import com.google.android.gms.internal.cast.p;
 import com.google.firebase.messaging.l;
 import com.google.firebase.messaging.r;
 import e9.m;
-import i2.h0;
+import i2.e;
+import i2.i0;
 import java.nio.Buffer;
 import java.nio.FloatBuffer;
 import java.util.ArrayList;
@@ -28,30 +27,26 @@ import java.util.WeakHashMap;
 import m.s1;
 import m.s3;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.pa;
-import org.telegram.ui.it0;
-import org.telegram.ui.web.a2;
-import qg.c1;
+import org.telegram.ui.gt0;
+import org.telegram.ui.web.z1;
 import qg.d;
-import qg.e1;
+import qg.d1;
 import qg.f1;
-import qg.s0;
-import r0.i0;
+import qg.g1;
+import qg.t0;
 import rg.j;
-import rg.u2;
+import rg.v2;
 import s4.b1;
 import s4.n0;
 import s4.v;
 import s4.y;
 import sg.p1;
-import sg.t0;
-import u2.q0;
+import si.s0;
 import ug.m1;
 import ug.y0;
-import w7.r6;
+import w7.q6;
 import x7.a7;
 import x7.f;
 import x7.fa;
@@ -69,11 +64,9 @@ import z7.j1;
 import z7.ma;
 import z7.mg;
 import z7.xf;
-import zf.e;
 import zf.x;
-import zh.w;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -92,125 +85,125 @@ public final /* synthetic */ class b implements Runnable {
         float f7;
         float f10;
         int i10;
-        c1 c1Var = (c1) this.b;
-        if (!c1Var.f || c1Var.y.y) {
+        d1 d1Var = (d1) this.b;
+        if (!d1Var.f || d1Var.y.y) {
             return;
         }
-        c1.b(c1Var);
+        d1.b(d1Var);
         GLES20.glBindFramebuffer(36160, 0);
-        c1 c1Var2 = (c1) this.b;
-        GLES20.glViewport(0, 0, c1Var2.n, c1Var2.r);
+        d1 d1Var2 = (d1) this.b;
+        GLES20.glViewport(0, 0, d1Var2.n, d1Var2.r);
         GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
         GLES20.glClear(16384);
-        s0 s0Var = ((c1) this.b).y.c;
-        if (s0Var.r != null) {
-            if (s0Var.D != null && s0Var.F != null && s0Var.E) {
+        t0 t0Var = ((d1) this.b).y.c;
+        if (t0Var.r != null) {
+            if (t0Var.D != null && t0Var.F != null && t0Var.E) {
                 GLES20.glBindFramebuffer(36160, 0);
-                f1 f1Var = (f1) s0Var.r.get("videoBlur");
-                if (f1Var != null) {
-                    GLES20.glUseProgram(f1Var.a);
-                    GLES20.glUniformMatrix4fv(f1Var.d("mvpMatrix"), 1, false, FloatBuffer.wrap(s0Var.y));
-                    GLES20.glUniform1f(f1Var.d("flipy"), 0.0f);
-                    GLES20.glUniform1i(f1Var.d("texture"), 0);
+                g1 g1Var = (g1) t0Var.r.get("videoBlur");
+                if (g1Var != null) {
+                    GLES20.glUseProgram(g1Var.a);
+                    GLES20.glUniformMatrix4fv(g1Var.d("mvpMatrix"), 1, false, FloatBuffer.wrap(t0Var.y));
+                    GLES20.glUniform1f(g1Var.d("flipy"), 0.0f);
+                    GLES20.glUniform1i(g1Var.d("texture"), 0);
                     GLES20.glActiveTexture(33984);
-                    GLES20.glBindTexture(3553, s0Var.D.c());
+                    GLES20.glBindTexture(3553, t0Var.D.c());
                     GLES20.glTexParameteri(3553, 10241, 9729);
-                    GLES20.glUniform1i(f1Var.d("blured"), 1);
+                    GLES20.glUniform1i(g1Var.d("blured"), 1);
                     GLES20.glActiveTexture(33985);
-                    pa paVar = s0Var.F.m;
+                    pa paVar = t0Var.F.m;
                     GLES20.glBindTexture(3553, paVar != null ? paVar.s[2] : -1);
-                    if (s0Var.b == null || !(s0Var.i instanceof d)) {
-                        GLES20.glUniform1f(f1Var.d("eraser"), 0.0f);
+                    if (t0Var.b == null || !(t0Var.i instanceof d)) {
+                        GLES20.glUniform1f(g1Var.d("eraser"), 0.0f);
                     } else {
-                        GLES20.glUniform1f(f1Var.d("eraser"), 1.0f);
-                        GLES20.glUniform1i(f1Var.d("mask"), 2);
+                        GLES20.glUniform1f(g1Var.d("eraser"), 1.0f);
+                        GLES20.glUniform1i(g1Var.d("mask"), 2);
                         GLES20.glActiveTexture(33986);
-                        GLES20.glBindTexture(3553, s0Var.g());
+                        GLES20.glBindTexture(3553, t0Var.g());
                     }
                     GLES20.glBlendFunc(1, 0);
-                    GLES20.glVertexAttribPointer(0, 2, 5126, false, 8, (Buffer) s0Var.m);
+                    GLES20.glVertexAttribPointer(0, 2, 5126, false, 8, (Buffer) t0Var.m);
                     GLES20.glEnableVertexAttribArray(0);
-                    GLES20.glVertexAttribPointer(1, 2, 5126, false, 8, (Buffer) s0Var.n);
+                    GLES20.glVertexAttribPointer(1, 2, 5126, false, 8, (Buffer) t0Var.n);
                     GLES20.glEnableVertexAttribArray(1);
-                    synchronized (s0Var.F.h) {
+                    synchronized (t0Var.F.h) {
                         GLES20.glDrawArrays(5, 0, 4);
                     }
                 }
             }
-            if (s0Var.b != null) {
-                s0Var.n(s0Var.g(), s0Var.b, (1.0f - (s0Var.I * 0.5f)) - (s0Var.J * 0.5f));
-            } else if (s0Var.c != null) {
-                s0Var.o(s0Var.j(), s0Var.g(), s0Var.c, 1.0f);
+            if (t0Var.b != null) {
+                t0Var.n(t0Var.g(), t0Var.b, (1.0f - (t0Var.I * 0.5f)) - (t0Var.J * 0.5f));
+            } else if (t0Var.c != null) {
+                t0Var.o(t0Var.j(), t0Var.g(), t0Var.c, 1.0f);
             } else {
-                int j10 = s0Var.j();
+                int j10 = t0Var.j();
                 f7 = 0.0f;
-                f1 f1Var2 = (f1) s0Var.r.get(s0Var.G ? "maskingBlit" : "blit");
-                if (j10 != 0 && f1Var2 != null) {
-                    GLES20.glUseProgram(f1Var2.a);
+                g1 g1Var2 = (g1) t0Var.r.get(t0Var.G ? "maskingBlit" : "blit");
+                if (j10 != 0 && g1Var2 != null) {
+                    GLES20.glUseProgram(g1Var2.a);
                     f10 = 0.5f;
-                    GLES20.glUniformMatrix4fv(f1Var2.d("mvpMatrix"), 1, false, FloatBuffer.wrap(s0Var.y));
-                    GLES20.glUniform1f(f1Var2.d("alpha"), 1.0f);
-                    if (s0Var.G) {
-                        GLES20.glUniform1i(f1Var2.d("texture"), 1);
-                        GLES20.glUniform1i(f1Var2.d("mask"), 0);
-                        GLES20.glUniform1f(f1Var2.d("preview"), 0.4f);
+                    GLES20.glUniformMatrix4fv(g1Var2.d("mvpMatrix"), 1, false, FloatBuffer.wrap(t0Var.y));
+                    GLES20.glUniform1f(g1Var2.d("alpha"), 1.0f);
+                    if (t0Var.G) {
+                        GLES20.glUniform1i(g1Var2.d("texture"), 1);
+                        GLES20.glUniform1i(g1Var2.d("mask"), 0);
+                        GLES20.glUniform1f(g1Var2.d("preview"), 0.4f);
                         GLES20.glActiveTexture(33984);
                         GLES20.glBindTexture(3553, j10);
                         GLES20.glActiveTexture(33985);
-                        GLES20.glBindTexture(3553, s0Var.l.c());
+                        GLES20.glBindTexture(3553, t0Var.l.c());
                     } else {
-                        GLES20.glUniform1i(f1Var2.d("texture"), 0);
+                        GLES20.glUniform1i(g1Var2.d("texture"), 0);
                         GLES20.glActiveTexture(33984);
                         GLES20.glBindTexture(3553, j10);
                     }
                     GLES20.glBlendFunc(1, 771);
-                    GLES20.glVertexAttribPointer(0, 2, 5126, false, 8, (Buffer) s0Var.m);
+                    GLES20.glVertexAttribPointer(0, 2, 5126, false, 8, (Buffer) t0Var.m);
                     GLES20.glEnableVertexAttribArray(0);
-                    GLES20.glVertexAttribPointer(1, 2, 5126, false, 8, (Buffer) s0Var.n);
+                    GLES20.glVertexAttribPointer(1, 2, 5126, false, 8, (Buffer) t0Var.n);
                     GLES20.glEnableVertexAttribArray(1);
                     GLES20.glDrawArrays(5, 0, 4);
-                    r6.a();
-                    i10 = s0Var.q;
-                    if (i10 != 0 && s0Var.d != null && s0Var.I > f7) {
-                        s0Var.o(i10, s0Var.g(), s0Var.d, (s0Var.J * f10) + (s0Var.I * f10));
+                    q6.a();
+                    i10 = t0Var.q;
+                    if (i10 != 0 && t0Var.d != null && t0Var.I > f7) {
+                        t0Var.o(i10, t0Var.g(), t0Var.d, (t0Var.J * f10) + (t0Var.I * f10));
                     }
                 }
                 f10 = 0.5f;
-                i10 = s0Var.q;
+                i10 = t0Var.q;
                 if (i10 != 0) {
-                    s0Var.o(i10, s0Var.g(), s0Var.d, (s0Var.J * f10) + (s0Var.I * f10));
+                    t0Var.o(i10, t0Var.g(), t0Var.d, (t0Var.J * f10) + (t0Var.I * f10));
                 }
             }
             f7 = 0.0f;
             f10 = 0.5f;
-            i10 = s0Var.q;
+            i10 = t0Var.q;
             if (i10 != 0) {
             }
         }
         GLES20.glBlendFunc(1, 771);
-        c1 c1Var3 = (c1) this.b;
-        c1Var3.b.eglSwapBuffers(c1Var3.c, c1Var3.e);
-        e1 e1Var = ((c1) this.b).y;
-        if (!e1Var.s) {
-            e1Var.s = true;
-            AndroidUtilities.runOnUIThread(new a2(this, 6));
+        d1 d1Var3 = (d1) this.b;
+        d1Var3.b.eglSwapBuffers(d1Var3.c, d1Var3.e);
+        f1 f1Var = ((d1) this.b).y;
+        if (!f1Var.s) {
+            f1Var.s = true;
+            AndroidUtilities.runOnUIThread(new z1(this, 6));
         }
-        if (((c1) this.b).h) {
+        if (((d1) this.b).h) {
             return;
         }
-        ((c1) this.b).h = true;
+        ((d1) this.b).h = true;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:220:0x0517, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:188:0x047e, code lost:
     
-        if (r10 > 0) goto L176;
+        if (r10 > 0) goto L148;
      */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x0521  */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x0565  */
-    /* JADX WARN: Removed duplicated region for block: B:198:0x0578  */
-    /* JADX WARN: Removed duplicated region for block: B:200:0x058b A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:205:0x0597  */
-    /* JADX WARN: Removed duplicated region for block: B:208:0x05a2  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x0488  */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x04cc  */
+    /* JADX WARN: Removed duplicated region for block: B:166:0x04df  */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x04f2 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x04fe  */
+    /* JADX WARN: Removed duplicated region for block: B:176:0x0509  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -221,7 +214,7 @@ public final /* synthetic */ class b implements Runnable {
         b1 b1Var;
         int height;
         int R;
-        h0 h0Var;
+        i0 i0Var;
         m mVar = null;
         int i12 = 3;
         switch (this.a) {
@@ -247,9 +240,9 @@ public final /* synthetic */ class b implements Runnable {
                 a();
                 return;
             case 2:
-                j jVar = ((it0) this.b).S0;
-                if (jVar instanceof u2) {
-                    ((u2) jVar).getEditText();
+                j jVar = ((gt0) this.b).S0;
+                if (jVar instanceof v2) {
+                    ((v2) jVar).getEditText();
                     return;
                 }
                 return;
@@ -310,7 +303,7 @@ public final /* synthetic */ class b implements Runnable {
                             }
                             yVar.H.removeCallbacks(yVar.I);
                             RecyclerView recyclerView = yVar.H;
-                            WeakHashMap weakHashMap = i0.a;
+                            WeakHashMap weakHashMap = r0.i0.a;
                             recyclerView.postOnAnimation(this);
                             return;
                         }
@@ -329,7 +322,7 @@ public final /* synthetic */ class b implements Runnable {
                         }
                         yVar.H.removeCallbacks(yVar.I);
                         RecyclerView recyclerView2 = yVar.H;
-                        WeakHashMap weakHashMap2 = i0.a;
+                        WeakHashMap weakHashMap2 = r0.i0.a;
                         recyclerView2.postOnAnimation(this);
                         return;
                     }
@@ -351,16 +344,16 @@ public final /* synthetic */ class b implements Runnable {
                     }
                     yVar.H.removeCallbacks(yVar.I);
                     RecyclerView recyclerView22 = yVar.H;
-                    WeakHashMap weakHashMap22 = i0.a;
+                    WeakHashMap weakHashMap22 = r0.i0.a;
                     recyclerView22.postOnAnimation(this);
                     return;
                 }
                 return;
             case 4:
-                t0 t0Var = (t0) this.b;
+                sg.t0 t0Var = (sg.t0) this.b;
                 ArrayList arrayList = t0Var.e3;
                 if (t0Var.l3) {
-                    if (!arrayList.isEmpty() && (R = RecyclerView.R((p1) i2.d.h(1, arrayList))) >= 0) {
+                    if (!arrayList.isEmpty() && (R = RecyclerView.R((p1) e.h(1, arrayList))) >= 0) {
                         View m10 = t0Var.W2.m(R + 1);
                         if (m10 != null) {
                             t0Var.b3 = false;
@@ -373,9 +366,9 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 return;
             case 5:
-                si.s0 s0Var = (si.s0) this.b;
-                if (s0Var.W == 5 && (h0Var = s0Var.S) != null && s0Var.x) {
-                    long M0 = h0Var.M0();
+                s0 s0Var = (s0) this.b;
+                if (s0Var.W == 5 && (i0Var = s0Var.S) != null && s0Var.x) {
+                    long M0 = i0Var.M0();
                     long j12 = s0Var.G;
                     if (M0 < j12 || M0 >= s0Var.H) {
                         s0Var.S.Z0(5, j12);
@@ -417,7 +410,7 @@ public final /* synthetic */ class b implements Runnable {
                     long j13 = currentAnimationTimeMillis2 - aVar2.f;
                     aVar2.f = currentAnimationTimeMillis2;
                     dVar.G.scrollListBy((int) (j13 * ((a2 * 4.0f) + ((-4.0f) * a2 * a2)) * aVar2.d));
-                    WeakHashMap weakHashMap3 = i0.a;
+                    WeakHashMap weakHashMap3 = r0.i0.a;
                     s1Var.postOnAnimation(this);
                     return;
                 }
@@ -565,61 +558,23 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 return;
             case 14:
-                for (Thread thread : e.w.keySet()) {
+                for (Thread thread : zf.e.w.keySet()) {
                     if (!thread.isAlive()) {
-                        e.w.remove(thread);
+                        zf.e.w.remove(thread);
                     }
                 }
-                if (e.w.isEmpty()) {
-                    e.x = false;
+                if (zf.e.w.isEmpty()) {
+                    zf.e.x = false;
                     return;
                 } else {
-                    AndroidUtilities.runOnUIThread(((e) this.b).p, 5000L);
+                    AndroidUtilities.runOnUIThread(((zf.e) this.b).p, 5000L);
                     return;
                 }
-            case 15:
+            default:
                 x xVar = (x) this.b;
                 if (xVar.F.get()) {
                     xVar.invalidate();
                     xVar.H.postDelayed(this, 300L);
-                    return;
-                }
-                return;
-            default:
-                w wVar = (w) this.b;
-                CameraView cameraView = wVar.b;
-                if (!wVar.b0 || cameraView == null) {
-                    return;
-                }
-                TextureView textureView = cameraView.getTextureView();
-                int width2 = textureView.getWidth();
-                int height3 = textureView.getHeight();
-                if (width2 > 0 && height3 > 0) {
-                    if (width2 > 720 || height3 > 720) {
-                        float f11 = width2;
-                        float f12 = height3;
-                        float min = Math.min(720.0f / f11, 720.0f / f12);
-                        width2 = Math.max(1, (int) (f11 * min));
-                        height3 = Math.max(1, (int) (f12 * min));
-                    }
-                    Bitmap bitmap = ((w) this.b).e0;
-                    if (bitmap == null || bitmap.getWidth() != width2 || ((w) this.b).e0.getHeight() != height3) {
-                        ((w) this.b).e0 = Bitmap.createBitmap(width2, height3, Bitmap.Config.ARGB_8888);
-                    }
-                    try {
-                        textureView.getBitmap(((w) this.b).e0);
-                        w wVar2 = (w) this.b;
-                        xf.c a10 = w.a(wVar2, wVar2.e0);
-                        if (a10 != null) {
-                            AndroidUtilities.runOnUIThread(new q0(25, this, a10));
-                            return;
-                        }
-                    } catch (Throwable th2) {
-                        FileLog.e(th2);
-                    }
-                }
-                if (((w) this.b).b0) {
-                    ((w) this.b).a0.postDelayed(this, 150L);
                     return;
                 }
                 return;

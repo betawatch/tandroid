@@ -8,7 +8,7 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class zh extends qu {
     public boolean V;
@@ -74,8 +74,8 @@ public final class zh extends qu {
     @Override // org.telegram.ui.Components.qu
     public final void i(Menu menu) {
         org.telegram.ui.ActionBar.n2 n2Var = this.c0.f0;
-        if (n2Var instanceof org.telegram.ui.sn) {
-            org.telegram.ui.sn.n8(menu, ((org.telegram.ui.sn) n2Var).h, true, true, true, true);
+        if (n2Var instanceof org.telegram.ui.qn) {
+            org.telegram.ui.qn.n8(menu, ((org.telegram.ui.qn) n2Var).h, true, true, true, true);
         }
     }
 

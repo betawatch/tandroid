@@ -1,38 +1,99 @@
 package qg;
 
-import android.graphics.Bitmap;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Typeface;
+import android.util.Base64;
+import com.google.android.gms.internal.cast.z5;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.firebase.components.ComponentRegistrar;
+import com.google.firebase.concurrent.ExecutorsRegistrar;
+import com.google.firebase.installations.FirebaseInstallationsRegistrar;
 import java.util.ArrayList;
-import org.telegram.messenger.NotificationCenter;
+import java.util.List;
+import java.util.concurrent.ScheduledExecutorService;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.a2;
+import org.telegram.ui.ActionBar.b2;
+import rg.n2;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f0 implements Runnable {
+public final /* synthetic */ class f0 implements k0, androidx.car.app.utils.b, r9.e, qa.a, r9.d, OnFailureListener, s5.e, a2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ArrayList b;
 
-    public /* synthetic */ f0(ArrayList arrayList, int i10) {
+    public /* synthetic */ f0(int i10) {
         this.a = i10;
-        this.b = arrayList;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                l0.h = this.b;
-                l0.i = false;
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.customTypefacesLoaded, new Object[0]);
-                break;
-            default:
-                ArrayList arrayList = this.b;
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    ((Bitmap) obj).recycle();
-                }
-                break;
+    @Override // qg.k0
+    public Typeface a() {
+        return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
+    }
+
+    @Override // s5.e
+    public Object apply(Object obj) {
+        Cursor rawQuery = ((SQLiteDatabase) obj).rawQuery("SELECT distinct t._id, t.backend_name, t.priority, t.extras FROM transport_contexts AS t, events AS e WHERE e.context_id = t._id", new String[0]);
+        try {
+            ArrayList arrayList = new ArrayList();
+            while (rawQuery.moveToNext()) {
+                androidx.biometric.e a2 = l5.i.a();
+                a2.v(rawQuery.getString(1));
+                a2.d = v5.a.b(rawQuery.getInt(2));
+                String string = rawQuery.getString(3);
+                a2.c = string == null ? null : Base64.decode(string, 0);
+                arrayList.add(a2.e());
+            }
+            return arrayList;
+        } finally {
+            rawQuery.close();
         }
+    }
+
+    @Override // androidx.car.app.utils.b
+    public void call() {
+        throw null;
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(b2 b2Var, int i10) {
+        b2Var.dismiss();
+    }
+
+    @Override // r9.d
+    public Object j2(z5 z5Var) {
+        ra.d lambda$getComponents$0;
+        switch (this.a) {
+            case 8:
+                lambda$getComponents$0 = FirebaseInstallationsRegistrar.lambda$getComponents$0(z5Var);
+                return lambda$getComponents$0;
+            case 25:
+                return (ScheduledExecutorService) ExecutorsRegistrar.a.get();
+            case 26:
+                return (ScheduledExecutorService) ExecutorsRegistrar.c.get();
+            case 27:
+                return (ScheduledExecutorService) ExecutorsRegistrar.b.get();
+            default:
+                r9.n nVar = ExecutorsRegistrar.a;
+                return s9.k.a;
+        }
+    }
+
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public void onFailure(Exception exc) {
+        int i10 = n2.r0;
+    }
+
+    @Override // r9.e
+    public List v(ComponentRegistrar componentRegistrar) {
+        return componentRegistrar.getComponents();
+    }
+
+    public /* synthetic */ f0(r.a aVar, int i10, w.b bVar) {
+        this.a = 1;
+    }
+
+    @Override // qa.a
+    public void h(qa.b bVar) {
     }
 }

@@ -1,100 +1,233 @@
 package n7;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.Set;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final class z extends p {
-    public static final Object[] r;
-    public static final z s;
-    public final transient Object[] d;
-    public final transient int e;
-    public final transient Object[] f;
-    public final transient int h;
-    public final transient int n;
+public final class z extends s {
+    public static final z h;
+    public final transient m f;
 
     static {
-        Object[] objArr = new Object[0];
-        r = objArr;
-        s = new z(0, 0, 0, objArr, objArr);
+        i iVar = m.b;
+        h = new z(x.e, v.b);
     }
 
-    public z(int i10, int i11, int i12, Object[] objArr, Object[] objArr2) {
-        this.d = objArr;
-        this.e = i10;
-        this.f = objArr2;
-        this.h = i11;
-        this.n = i12;
+    public z(m mVar, Comparator comparator) {
+        super(comparator);
+        this.f = mVar;
+    }
+
+    @Override // java.util.NavigableSet
+    public final Object ceiling(Object obj) {
+        int y3 = y(obj, true);
+        m mVar = this.f;
+        if (y3 == mVar.size()) {
+            return null;
+        }
+        return mVar.get(y3);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final boolean contains(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        Object[] objArr = this.f;
-        if (objArr.length == 0) {
-            return false;
-        }
-        int rotateLeft = (int) (Integer.rotateLeft((int) (obj.hashCode() * (-862048943)), 15) * 461845907);
-        while (true) {
-            int i10 = rotateLeft & this.h;
-            Object obj2 = objArr[i10];
-            if (obj2 == null) {
-                return false;
+        if (obj != null) {
+            try {
+                if (Collections.binarySearch(this.f, obj, this.d) >= 0) {
+                    return true;
+                }
+            } catch (ClassCastException unused) {
             }
-            if (obj2.equals(obj)) {
-                return true;
-            }
-            rotateLeft = i10 + 1;
         }
+        return false;
     }
 
-    @Override // n7.i
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean containsAll(Collection collection) {
+        if (collection instanceof u) {
+            collection = ((u) collection).zza();
+        }
+        Comparator comparator = this.d;
+        if (!a.i(comparator, collection) || collection.size() <= 1) {
+            return super.containsAll(collection);
+        }
+        i listIterator = this.f.listIterator(0);
+        Iterator it = collection.iterator();
+        if (listIterator.hasNext()) {
+            Object next = it.next();
+            Object next2 = listIterator.next();
+            while (true) {
+                try {
+                    int compare = comparator.compare(next2, next);
+                    if (compare >= 0) {
+                        if (compare != 0) {
+                            break;
+                        }
+                        if (!it.hasNext()) {
+                            return true;
+                        }
+                        next = it.next();
+                    } else {
+                        if (!listIterator.hasNext()) {
+                            break;
+                        }
+                        next2 = listIterator.next();
+                    }
+                } catch (ClassCastException | NullPointerException unused) {
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override // java.util.NavigableSet
+    public final Iterator descendingIterator() {
+        return this.f.q().listIterator(0);
+    }
+
+    @Override // n7.o, java.util.Collection, java.util.Set
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof Set) {
+            Set set = (Set) obj;
+            m mVar = this.f;
+            if (mVar.size() == set.size()) {
+                if (isEmpty()) {
+                    return true;
+                }
+                Comparator comparator = this.d;
+                if (!a.i(comparator, set)) {
+                    return containsAll(set);
+                }
+                Iterator it = set.iterator();
+                try {
+                    i listIterator = mVar.listIterator(0);
+                    while (listIterator.hasNext()) {
+                        Object next = listIterator.next();
+                        Object next2 = it.next();
+                        if (next2 != null && comparator.compare(next, next2) == 0) {
+                        }
+                    }
+                    return true;
+                } catch (ClassCastException | NoSuchElementException unused) {
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override // n7.s, java.util.SortedSet
+    public final Object first() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        return this.f.get(0);
+    }
+
+    @Override // java.util.NavigableSet
+    public final Object floor(Object obj) {
+        int x10 = x(obj, true) - 1;
+        if (x10 == -1) {
+            return null;
+        }
+        return this.f.get(x10);
+    }
+
+    @Override // n7.h
     public final int h(Object[] objArr) {
-        Object[] objArr2 = this.d;
-        int i10 = this.n;
-        System.arraycopy(objArr2, 0, objArr, 0, i10);
-        return i10;
+        return this.f.h(objArr);
     }
 
-    @Override // n7.p, java.util.Collection, java.util.Set
-    public final int hashCode() {
-        return this.e;
+    @Override // java.util.NavigableSet
+    public final Object higher(Object obj) {
+        int y3 = y(obj, false);
+        m mVar = this.f;
+        if (y3 == mVar.size()) {
+            return null;
+        }
+        return mVar.get(y3);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set, java.util.NavigableSet
     public final /* synthetic */ Iterator iterator() {
-        return s().listIterator(0);
+        return this.f.listIterator(0);
     }
 
-    @Override // n7.i
+    @Override // n7.s, java.util.SortedSet
+    public final Object last() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        return this.f.get(r0.size() - 1);
+    }
+
+    @Override // java.util.NavigableSet
+    public final Object lower(Object obj) {
+        int x10 = x(obj, false) - 1;
+        if (x10 == -1) {
+            return null;
+        }
+        return this.f.get(x10);
+    }
+
+    @Override // n7.h
     public final int m() {
-        return this.n;
+        return this.f.m();
     }
 
-    @Override // n7.i
+    @Override // n7.h
     public final int n() {
-        return 0;
+        return this.f.n();
     }
 
-    @Override // n7.i
-    public final e0 o() {
-        return s().listIterator(0);
+    @Override // n7.h
+    public final d0 o() {
+        return this.f.listIterator(0);
     }
 
-    @Override // n7.i
+    @Override // n7.h
     public final Object[] p() {
-        return this.d;
+        return this.f.p();
+    }
+
+    @Override // n7.o
+    public final m s() {
+        return this.f;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final int size() {
-        return this.n;
+        return this.f.size();
     }
 
-    @Override // n7.p
-    public final n t() {
-        return n.s(this.n, this.d);
+    public final int x(Object obj, boolean z10) {
+        obj.getClass();
+        int binarySearch = Collections.binarySearch(this.f, obj, this.d);
+        return binarySearch >= 0 ? z10 ? binarySearch + 1 : binarySearch : ~binarySearch;
+    }
+
+    public final int y(Object obj, boolean z10) {
+        obj.getClass();
+        int binarySearch = Collections.binarySearch(this.f, obj, this.d);
+        return binarySearch >= 0 ? z10 ? binarySearch : binarySearch + 1 : ~binarySearch;
+    }
+
+    public final z z(int i10, int i11) {
+        m mVar = this.f;
+        if (i10 == 0) {
+            if (i11 == mVar.size()) {
+                return this;
+            }
+            i10 = 0;
+        }
+        Comparator comparator = this.d;
+        return i10 < i11 ? new z(mVar.subList(i10, i11), comparator) : s.w(comparator);
     }
 }

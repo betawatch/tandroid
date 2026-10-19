@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l9 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class l9 implements View.OnClickListener {
                 r9 r9Var = this.b;
                 if (r9Var.w != null) {
                     AndroidUtilities.hideKeyboard(r9Var.M);
-                    r9Var.f0(r9Var.w, null);
+                    r9Var.h0(r9Var.w, null);
                     break;
                 }
                 break;
@@ -32,7 +32,7 @@ public final /* synthetic */ class l9 implements View.OnClickListener {
                 r9 r9Var2 = this.b;
                 if (r9Var2.w != null) {
                     AndroidUtilities.hideKeyboard(r9Var2.M);
-                    r9Var2.f0(r9Var2.w, null);
+                    r9Var2.h0(r9Var2.w, null);
                     break;
                 }
                 break;
@@ -50,22 +50,22 @@ public final /* synthetic */ class l9 implements View.OnClickListener {
                             break;
                         } else {
                             r9Var3.R = false;
-                            r9Var3.i0(true);
+                            r9Var3.k0(true);
                             break;
                         }
                     } else {
                         r9Var3.R = false;
-                        r9Var3.i0(true);
+                        r9Var3.k0(true);
                         break;
                     }
                 } else {
                     r9Var3.R = false;
-                    r9Var3.i0(true);
+                    r9Var3.k0(true);
                     break;
                 }
                 break;
             default:
-                this.b.c0();
+                this.b.d0();
                 break;
         }
     }

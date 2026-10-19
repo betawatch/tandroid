@@ -20,7 +20,7 @@ import n6.o;
 import rb.g;
 import rb.j;
 import rb.m;
-import w7.q8;
+import w7.p8;
 import x7.da;
 import z7.bg;
 import z7.eg;
@@ -37,7 +37,7 @@ import z7.kg;
 import z7.qa;
 import z7.xf;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class f extends rb.e {
     public static final k6.c[] k = {j.c};
@@ -151,7 +151,7 @@ public final class f extends rb.e {
                     long elapsedRealtime = SystemClock.elapsedRealtime();
                     eg egVar = this.j;
                     l.h(egVar);
-                    bg bgVar = new bg(aVar.e, aVar.b, aVar.c, SystemClock.elapsedRealtime(), q8.a(aVar.d));
+                    bg bgVar = new bg(aVar.e, aVar.b, aVar.c, SystemClock.elapsedRealtime(), p8.a(aVar.d));
                     int i10 = aVar.e;
                     try {
                         if (i10 != -1) {

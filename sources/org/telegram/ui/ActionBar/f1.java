@@ -4,9 +4,9 @@ import android.view.ViewTreeObserver;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import org.telegram.ui.Components.ev;
-import org.telegram.ui.q51;
+import org.telegram.ui.o51;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f1 implements ViewTreeObserver.OnScrollChangedListener {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class f1 implements ViewTreeObserver.OnScrollChange
                 Field field = ev.f;
                 break;
             default:
-                Field field2 = q51.c;
+                Field field2 = o51.c;
                 break;
         }
     }

@@ -18,7 +18,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class y extends bb {
     public final FrameLayout X;
@@ -36,7 +36,7 @@ public final class y extends bb {
     public TL_aicompose.TL_aiComposeTone j0;
     public e k0;
     public e l0;
-    public s61 m0;
+    public t61 m0;
 
     public y(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context, null, true, false, 2, d6Var);
@@ -125,7 +125,7 @@ public final class y extends bb {
         xpVar.setDrawBackgroundAsArc(10);
         linearLayout.addView(xpVar, w7.z5.t(26, 26, 16, 0, 0, 0, 0));
         TextView textView = new TextView(context);
-        org.telegram.messenger.lk.o(org.telegram.ui.ActionBar.h6.q5, d6Var, textView, 1, 14.0f);
+        org.telegram.messenger.kk.o(org.telegram.ui.ActionBar.h6.q5, d6Var, textView, 1, 14.0f);
         textView.setText(LocaleController.getString(R.string.AIEditorStyleAddLink));
         linearLayout.addView(textView, w7.z5.t(-2, -2, 16, 9, 0, 0, 0));
         final int i13 = 2;
@@ -162,7 +162,7 @@ public final class y extends bb {
         im0Var.setPadding(i15, 0, i15, AndroidUtilities.dp(66.0f));
         this.d.setClipToPadding(false);
         this.d.p1();
-        this.d.setOnItemClickListener(new ci.x4(8, this, d6Var));
+        this.d.setOnItemClickListener(new ci.y4(8, this, d6Var));
         this.L = false;
         this.K = AndroidUtilities.dp(12.0f);
         this.v = 0.35f;
@@ -192,7 +192,7 @@ public final class y extends bb {
         d.leftMargin = i18 + i19;
         d.rightMargin += i19;
         this.containerView.addView(frameLayout5, d);
-        ei.d f7 = org.telegram.messenger.lk.f(24, context, d6Var, true);
+        ei.d f7 = org.telegram.messenger.kk.f(24, context, d6Var, true);
         this.g0 = f7;
         f7.setText(LocaleController.getString(R.string.AIEditorStyleCreate));
         f7.setOnClickListener(new org.telegram.ui.ActionBar.s1(19, this, d6Var));
@@ -338,11 +338,11 @@ public final class y extends bb {
     }
 
     public static void T(y yVar, org.telegram.ui.ActionBar.b2 b2Var) {
-        pf.c g10 = b2Var.g(-1, true, true);
-        g10.d();
+        pf.c h = b2Var.h(-1, true, true);
+        h.d();
         TL_aicompose.deleteTone deletetone = new TL_aicompose.deleteTone();
         deletetone.tone = TL_aicompose.InputAiComposeTone.from(yVar.j0);
-        ConnectionsManager.getInstance(yVar.currentAccount).sendRequestTyped(deletetone, new org.telegram.messenger.a(), new ai.s0(yVar, g10, b2Var, 5));
+        ConnectionsManager.getInstance(yVar.currentAccount).sendRequestTyped(deletetone, new org.telegram.messenger.a(), new ai.s0(yVar, h, b2Var, 5));
     }
 
     @Override // org.telegram.ui.Components.bb
@@ -359,9 +359,9 @@ public final class y extends bb {
         wVar.setSaveState(1);
         x xVar = new x(this, wVar);
         this.i0 = xVar;
-        org.telegram.ui.q51[] q51VarArr = {xVar};
+        org.telegram.ui.o51[] o51VarArr = {xVar};
         xVar.showAsDropDown(this.Y, AndroidUtilities.dp(150.0f), -AndroidUtilities.dp(390.0f), 80);
-        q51VarArr[0].b();
+        o51VarArr[0].b();
     }
 
     public final void X() {
@@ -389,9 +389,9 @@ public final class y extends bb {
 
     @Override // org.telegram.ui.Components.bb
     public final hm0 x(im0 im0Var) {
-        s61 s61Var = new s61(im0Var, getContext(), this.currentAccount, 0, true, new d(this, 2), this.resourcesProvider);
-        this.m0 = s61Var;
-        s61Var.r = false;
-        return s61Var;
+        t61 t61Var = new t61(im0Var, getContext(), this.currentAccount, 0, true, new d(this, 2), this.resourcesProvider);
+        this.m0 = t61Var;
+        t61Var.r = false;
+        return t61Var;
     }
 }

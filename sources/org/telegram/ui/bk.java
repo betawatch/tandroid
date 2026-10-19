@@ -1,40 +1,65 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import org.telegram.ui.Components.FragmentContextView;
+import android.os.Bundle;
+import android.view.View;
+import java.util.WeakHashMap;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class bk extends FragmentContextView {
-    public final /* synthetic */ int R0;
-    public final /* synthetic */ sn S0;
+public final class bk extends org.telegram.ui.Components.v81 {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ qn b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bk(sn snVar, Context context, sn snVar2, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
-        super(context, snVar2, null, true, d6Var);
-        this.R0 = i10;
-        switch (i10) {
-            case 1:
-                this.S0 = snVar;
-                super(context, snVar2, null, false, d6Var);
-                break;
-            default:
-                this.S0 = snVar;
-                break;
-        }
+    public bk(qn qnVar, Context context) {
+        this.b = qnVar;
+        this.a = context;
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i10) {
-        switch (this.R0) {
-            case 0:
-                sn snVar = this.S0;
-                snVar.M0.i(snVar.a2, i10 == 0, true);
-                break;
-            default:
-                sn snVar2 = this.S0;
-                snVar2.M0.i(snVar2.Y1, i10 == 0, true);
-                break;
+    @Override // org.telegram.ui.Components.v81
+    public final void b(View view, int i10, int i11) {
+        if (view instanceof sn) {
+            ((sn) view).a.Nc(this.b.u3);
         }
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.y.c(view);
+    }
+
+    @Override // org.telegram.ui.Components.v81
+    public final View d(int i10) {
+        Context context = this.a;
+        qn qnVar = this.b;
+        if (i10 == 0) {
+            return new en(qnVar, context);
+        }
+        Bundle bundle = new Bundle();
+        bundle.putInt("chatMode", 7);
+        bundle.putInt("searchType", i10);
+        bundle.putString("searchHashtag", qnVar.u3);
+        ak akVar = new ak(context, qnVar.getParentLayout(), bundle, 0);
+        akVar.h = false;
+        rn rnVar = akVar.a;
+        rnVar.L.a = qnVar.L;
+        rnVar.ca = qnVar.ea;
+        rnVar.da = qnVar;
+        rnVar.V8 = new g(this, 13);
+        return akVar;
+    }
+
+    @Override // org.telegram.ui.Components.v81
+    public final int e() {
+        return 3;
+    }
+
+    @Override // org.telegram.ui.Components.v81
+    public final CharSequence g(int i10) {
+        return i10 != 1 ? i10 != 2 ? LocaleController.getString(R.string.SearchThisChat) : LocaleController.getString(R.string.SearchPublicPosts) : LocaleController.getString(R.string.SearchMyMessages);
+    }
+
+    @Override // org.telegram.ui.Components.v81
+    public final int h(int i10) {
+        return i10;
     }
 }

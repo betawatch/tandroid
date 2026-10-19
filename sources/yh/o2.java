@@ -13,7 +13,7 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class o2 extends org.telegram.ui.ActionBar.f3 {
     public long b;
@@ -32,7 +32,7 @@ public final class o2 extends org.telegram.ui.ActionBar.f3 {
         linearLayout.addView(b11, z5.k(22.0f, 4.33f, 22.0f, 10.0f, -1, -2));
         ei.d dVar = new ei.d(context, d6Var, true);
         y9 G = ga.y(this.currentAccount, false).G(j10, true);
-        n2 n2Var = new n2(context, this.currentAccount, 0, false, new org.telegram.ui.Wallet.s1(7, this, G), new org.telegram.ui.web.n(24, this, dVar), null, d6Var);
+        n2 n2Var = new n2(context, this.currentAccount, 0, false, new org.telegram.ui.Wallet.s1(7, this, G), new org.telegram.ui.web.m(24, this, dVar), null, d6Var);
         n2Var.setSpanCount(3);
         n2Var.setOverScrollMode(2);
         n2Var.setScrollEnabled(false);
@@ -40,7 +40,7 @@ public final class o2 extends org.telegram.ui.ActionBar.f3 {
         dVar.g(LocaleController.getString(R.string.Gift2UnpinAlertButton), false, true);
         linearLayout.addView(dVar, z5.k(22.0f, 9.0f, 22.0f, 9.0f, -1, 48));
         dVar.setEnabled(false);
-        dVar.setOnClickListener(new ci.b4(this, G, savedStarGift, callback0Return, 16));
+        dVar.setOnClickListener(new ci.c4(this, G, savedStarGift, callback0Return, 16));
         setCustomView(linearLayout);
     }
 }

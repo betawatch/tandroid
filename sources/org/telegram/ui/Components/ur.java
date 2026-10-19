@@ -7,7 +7,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ur implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -31,11 +31,11 @@ public final /* synthetic */ class ur implements View.OnClickListener {
                 xr.T((xr) this.c, (Context) this.d, (ei.d) this.e, this.b);
                 break;
             case 1:
-                org.telegram.ui.ey eyVar = (org.telegram.ui.ey) this.c;
+                org.telegram.ui.cy cyVar = (org.telegram.ui.cy) this.c;
                 MessagesController.DialogFilter dialogFilter = (MessagesController.DialogFilter) this.d;
                 TLRPC.Dialog dialog = (TLRPC.Dialog) this.e;
-                eyVar.finishPreviewFragment();
-                AndroidUtilities.runOnUIThread(new ai.b3(eyVar, dialogFilter, dialog, this.b, 19), 100L);
+                cyVar.finishPreviewFragment();
+                AndroidUtilities.runOnUIThread(new ai.c3(cyVar, dialogFilter, dialog, this.b, 19), 100L);
                 break;
             default:
                 ug.z.Q((ug.z) this.c, (TL_stories.PrepaidGiveaway) this.d, this.b, (org.telegram.ui.ActionBar.n2) this.e);

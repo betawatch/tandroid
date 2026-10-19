@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class fo0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static org.telegram.ui.ActionBar.b2 H;
@@ -45,7 +45,7 @@ public abstract class fo0 extends FrameLayout implements NotificationCenter.Noti
     public final org.telegram.ui.ActionBar.n2 b;
     public final org.telegram.ui.ActionBar.d6 c;
     public final ai.u1 d;
-    public final ai.l5 e;
+    public final ai.m5 e;
     public LinearLayout f;
     public long h;
     public final ArrayList n;
@@ -73,13 +73,13 @@ public abstract class fo0 extends FrameLayout implements NotificationCenter.Noti
         s4.b0 b0Var = new s4.b0();
         b0Var.j1(0);
         u1Var.setLayoutManager(b0Var);
-        ai.l5 l5Var = new ai.l5(this, 3);
-        this.e = l5Var;
-        u1Var.setAdapter(l5Var);
+        ai.m5 m5Var = new ai.m5(this, 3);
+        this.e = m5Var;
+        u1Var.setAdapter(m5Var);
         u1Var.setOverScrollMode(2);
         addView(u1Var, w7.z5.c(-1.0f, -1));
         u1Var.setOnItemClickListener(new xn0(this, i10, n2Var, 0));
-        u1Var.setOnItemLongClickListener(new org.telegram.ui.ha(this, i10, n2Var, d6Var, 3));
+        u1Var.setOnItemLongClickListener(new org.telegram.ui.fa(this, i10, n2Var, d6Var, 3));
         yn0 yn0Var = new yn0();
         yn0Var.o(bs.h);
         yn0Var.n(320L);
@@ -95,7 +95,7 @@ public abstract class fo0 extends FrameLayout implements NotificationCenter.Noti
         org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
         Activity findActivity = AndroidUtilities.findActivity(context);
         View currentFocus = findActivity != null ? findActivity.getCurrentFocus() : null;
-        boolean z10 = R != null && (R.getFragmentView() instanceof jw0) && ((jw0) R.getFragmentView()).R() > AndroidUtilities.dp(20.0f);
+        boolean z10 = R != null && (R.getFragmentView() instanceof kw0) && ((kw0) R.getFragmentView()).R() > AndroidUtilities.dp(20.0f);
         org.telegram.ui.ActionBar.b2[] b2VarArr = new org.telegram.ui.ActionBar.b2[1];
         ?? e2Var = z10 ? new org.telegram.ui.ActionBar.e2(context, 0, d6Var) : new AlertDialog$Builder(context, 0, d6Var);
         String savedTagName = MessagesController.getInstance(i10).getSavedTagName(reaction);
@@ -131,9 +131,9 @@ public abstract class fo0 extends FrameLayout implements NotificationCenter.Noti
         zn0Var.setImeOptions(6);
         zn0Var.setBackgroundDrawable(null);
         zn0Var.setPadding(0, 0, AndroidUtilities.dp(42.0f), 0);
-        LinearLayout e = org.telegram.messenger.lk.e(context, 1);
+        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
         TextView textView = new TextView(context);
-        org.telegram.messenger.lk.o(i11, d6Var, textView, 1, 16.0f);
+        org.telegram.messenger.kk.o(i11, d6Var, textView, 1, 16.0f);
         textView.setText(LocaleController.getString(R.string.SavedTagLabelTagText));
         e.addView(textView, w7.z5.k(24.0f, 5.0f, 24.0f, 12.0f, -1, -2));
         e.addView(zn0Var, w7.z5.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
@@ -163,7 +163,7 @@ public abstract class fo0 extends FrameLayout implements NotificationCenter.Noti
                     }
                 }
             });
-            H.q(250L);
+            H.r(250L);
         } else {
             b2VarArr[0] = b2Var;
             b2Var.setOnDismissListener(new b1(zn0Var, 9));
@@ -255,13 +255,13 @@ public abstract class fo0 extends FrameLayout implements NotificationCenter.Noti
     }
 
     public final void e(ah.i1 i1Var, boolean z10) {
-        ai.l5 l5Var = this.e;
+        ai.m5 m5Var = this.e;
         if (i1Var == null) {
             this.h = 0L;
             if (z10) {
                 f(null);
             }
-            l5Var.l();
+            m5Var.l();
             return;
         }
         int i10 = 0;
@@ -279,7 +279,7 @@ public abstract class fo0 extends FrameLayout implements NotificationCenter.Noti
                 if (z10) {
                     f(i1Var2);
                 }
-                l5Var.l();
+                m5Var.l();
                 this.d.u0(i10);
                 return;
             }
@@ -303,7 +303,7 @@ public abstract class fo0 extends FrameLayout implements NotificationCenter.Noti
         ofFloat.addUpdateListener(new b80(this, 16));
         this.G.setInterpolator(bs.h);
         this.G.setDuration(320L);
-        this.G.addListener(new org.telegram.ui.ho(19, this, z10));
+        this.G.addListener(new org.telegram.ui.fo(19, this, z10));
         this.G.start();
     }
 
@@ -353,11 +353,11 @@ public abstract class fo0 extends FrameLayout implements NotificationCenter.Noti
             this.h = 0L;
             f(null);
         }
-        ai.l5 l5Var = this.e;
+        ai.m5 m5Var = this.e;
         if (z10) {
-            s4.o.c(new bo0(this), true).c(l5Var);
+            s4.o.c(new bo0(this), true).c(m5Var);
         } else {
-            l5Var.l();
+            m5Var.l();
         }
         boolean isPremium = UserConfig.getInstance(i10).isPremium();
         this.s = !isPremium;
@@ -381,12 +381,12 @@ public abstract class fo0 extends FrameLayout implements NotificationCenter.Noti
             linearLayout2.setOnClickListener(new u80(this, 12));
             this.f.setOrientation(0);
             w7.b6.b(this.f, 0.03f, 1.25f);
-            org.telegram.ui.v9 v9Var = new org.telegram.ui.v9(this, getContext());
+            org.telegram.ui.u9 u9Var = new org.telegram.ui.u9(this, getContext());
             int i14 = org.telegram.ui.ActionBar.h6.o6;
             org.telegram.ui.ActionBar.d6 d6Var = this.c;
-            v9Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(i14, d6Var));
-            v9Var.setTextSize(1, 12.0f);
-            v9Var.setTypeface(AndroidUtilities.bold());
+            u9Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(i14, d6Var));
+            u9Var.setTextSize(1, 12.0f);
+            u9Var.setTypeface(AndroidUtilities.bold());
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
             Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_mini_lock3).mutate();
             int i15 = org.telegram.ui.ActionBar.h6.gc;
@@ -400,8 +400,8 @@ public abstract class fo0 extends FrameLayout implements NotificationCenter.Noti
             spannableString.setSpan(yqVar, 0, spannableString.length(), 17);
             spannableStringBuilder.append((CharSequence) spannableString);
             spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.AddTagsToYourSavedMessages1));
-            v9Var.setText(spannableStringBuilder);
-            v9Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(4.0f));
+            u9Var.setText(spannableStringBuilder);
+            u9Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(4.0f));
             TextView textView = new TextView(getContext());
             textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(i14, d6Var));
             textView.setTextSize(1, 12.0f);
@@ -418,7 +418,7 @@ public abstract class fo0 extends FrameLayout implements NotificationCenter.Noti
             spannableStringBuilder2.append((CharSequence) spannableString2);
             textView.setText(spannableStringBuilder2);
             textView.setPadding(AndroidUtilities.dp(5.66f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(4.0f));
-            this.f.addView(v9Var, w7.z5.q(-2, -2, 16));
+            this.f.addView(u9Var, w7.z5.q(-2, -2, 16));
             this.f.addView(textView, w7.z5.q(-2, -2, 16));
             this.f.setPadding(AndroidUtilities.dp(7.0f), 0, 0, 0);
             this.f.setClipToPadding(false);

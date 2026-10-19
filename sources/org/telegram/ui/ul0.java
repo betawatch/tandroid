@@ -1,113 +1,56 @@
 package org.telegram.ui;
 
 import android.text.Editable;
-import android.text.TextUtils;
 import android.text.TextWatcher;
-import j$.util.Objects;
-import java.util.regex.Pattern;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class ul0 implements TextWatcher {
-    public final /* synthetic */ int a;
-    public final Object b;
-    public String c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ EditTextBoldCursor a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ vm0 c;
 
-    public /* synthetic */ ul0(xm0 xm0Var, EditTextBoldCursor editTextBoldCursor, String str, int i10) {
-        this.a = i10;
-        this.d = xm0Var;
-        this.b = editTextBoldCursor;
-        this.c = str;
+    public ul0(vm0 vm0Var, EditTextBoldCursor editTextBoldCursor, String str) {
+        this.c = vm0Var;
+        this.a = editTextBoldCursor;
+        this.b = str;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00bc  */
     @Override // android.text.TextWatcher
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void afterTextChanged(Editable editable) {
-        long parseLong;
-        int i10;
-        switch (this.a) {
-            case 0:
-                xm0.I0((xm0) this.d, (EditTextBoldCursor) this.b, this.c, editable, false);
+        boolean z10;
+        EditTextBoldCursor editTextBoldCursor = this.a;
+        int intValue = ((Integer) editTextBoldCursor.getTag()).intValue();
+        int i10 = 0;
+        while (true) {
+            if (i10 >= editable.length()) {
+                z10 = false;
                 break;
-            case 1:
-                xm0.I0((xm0) this.d, (EditTextBoldCursor) this.b, this.c, editable, false);
+            }
+            char charAt = editable.charAt(i10);
+            if ((charAt < '0' || charAt > '9') && ((charAt < 'a' || charAt > 'z') && !((charAt >= 'A' && charAt <= 'Z') || charAt == ' ' || charAt == '\'' || charAt == ',' || charAt == '.' || charAt == '&' || charAt == '-' || charAt == '/'))) {
+                z10 = true;
                 break;
-            default:
-                qg.w wVar = (qg.w) this.d;
-                qg.x xVar = wVar.f;
-                EditTextBoldCursor editTextBoldCursor = wVar.d;
-                if (!wVar.e && this.c != null && editable != null && !TextUtils.isEmpty(editable) && !Objects.equals(this.c.toString(), editable.toString())) {
-                    String obj = editable.toString();
-                    if (obj.length() > 8) {
-                        editTextBoldCursor.setText(obj.substring(2, 8).toUpperCase());
-                        editTextBoldCursor.setSelection(8);
-                        break;
-                    } else if (((Pattern) this.b).matcher(editable).find()) {
-                        int length = obj.length();
-                        if (length != 3) {
-                            if (length == 6) {
-                                i10 = ((int) Long.parseLong(obj, 16)) - 16777216;
-                            } else if (length != 8) {
-                                i10 = xVar.f;
-                            } else {
-                                parseLong = Long.parseLong(obj, 16);
-                            }
-                            if (i10 == xVar.f) {
-                                xVar.n(i10, 5);
-                                break;
-                            }
-                        } else {
-                            parseLong = Long.parseLong("FF" + obj.charAt(0) + obj.charAt(0) + obj.charAt(1) + obj.charAt(1) + obj.charAt(2) + obj.charAt(2), 16);
-                        }
-                        i10 = (int) parseLong;
-                        if (i10 == xVar.f) {
-                        }
-                    }
-                }
-                break;
+            }
+            i10++;
+        }
+        vm0 vm0Var = this.c;
+        if (z10 && !vm0Var.u0) {
+            editTextBoldCursor.setErrorText(LocaleController.getString(R.string.PassportUseLatinOnly));
+        } else {
+            vm0Var.t0[intValue] = z10;
+            vm0.I0(vm0Var, editTextBoldCursor, this.b, editable, false);
         }
     }
 
     @Override // android.text.TextWatcher
     public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 0:
-            case 1:
-                break;
-            default:
-                this.c = charSequence.toString();
-                break;
-        }
     }
 
     @Override // android.text.TextWatcher
     public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    public ul0(qg.w wVar) {
-        this.a = 2;
-        this.d = wVar;
-        this.b = Pattern.compile("^[0-9a-fA-F]*$");
-    }
-
-    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void e(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

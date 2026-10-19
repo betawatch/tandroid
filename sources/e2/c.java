@@ -17,7 +17,7 @@ import m.g3;
 import m.m1;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -268,14 +268,14 @@ public final class c {
         if (obj2.equals(obj)) {
             return;
         }
-        i2.h0 h0Var = ((i2.w) this.d).b;
+        i2.i0 i0Var = ((i2.x) this.d).b;
         ((Integer) obj2).getClass();
         Integer num = (Integer) obj;
         int intValue = num.intValue();
-        h0Var.F1();
-        h0Var.t1(1, 10, num);
-        h0Var.t1(2, 10, num);
-        h0Var.m.e(21, new i2.v(intValue, 1));
+        i0Var.F1();
+        i0Var.t1(1, 10, num);
+        i0Var.t1(2, 10, num);
+        i0Var.m.e(21, new i2.w(intValue, 1));
     }
 
     public c(f2.w wVar) {
@@ -286,11 +286,11 @@ public final class c {
         this.a = -1;
     }
 
-    public c(Object obj, Looper looper, Looper looper2, g0 g0Var, i2.w wVar) {
+    public c(Object obj, Looper looper, Looper looper2, g0 g0Var, i2.x xVar) {
         this.b = g0Var.a(looper, null);
         this.c = g0Var.a(looper2, null);
         this.e = obj;
         this.f = obj;
-        this.d = wVar;
+        this.d = xVar;
     }
 }

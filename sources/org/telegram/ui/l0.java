@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class l0 extends pf.c {
     public final /* synthetic */ int d = 1;
@@ -41,7 +41,7 @@ public final class l0 extends pf.c {
         switch (this.d) {
             case 1:
                 if (!z10) {
-                    AndroidUtilities.runOnUIThread(new vj(((en) this.g).a, 10), 250L);
+                    AndroidUtilities.runOnUIThread(new tj(((cn) this.g).a, 10), 250L);
                     break;
                 }
                 break;
@@ -75,18 +75,18 @@ public final class l0 extends pf.c {
                 super.d();
                 break;
             default:
-                en enVar = (en) this.g;
-                enVar.a.wb = ((MessageObject) this.e).getId();
-                sn snVar = enVar.a;
-                snVar.xb = 0;
-                snVar.yb = null;
+                cn cnVar = (cn) this.g;
+                cnVar.a.wb = ((MessageObject) this.e).getId();
+                qn qnVar = cnVar.a;
+                qnVar.xb = 0;
+                qnVar.yb = null;
                 ((org.telegram.ui.Cells.u1) this.f).invalidate();
                 break;
         }
     }
 
-    public l0(en enVar, MessageObject messageObject, org.telegram.ui.Cells.u1 u1Var) {
-        this.g = enVar;
+    public l0(cn cnVar, MessageObject messageObject, org.telegram.ui.Cells.u1 u1Var) {
+        this.g = cnVar;
         this.e = messageObject;
         this.f = u1Var;
     }

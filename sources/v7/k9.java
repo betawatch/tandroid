@@ -2,7 +2,7 @@ package v7;
 
 import java.util.AbstractMap;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class k9 extends h9 {
     public final /* synthetic */ a c;
@@ -14,7 +14,7 @@ public final class k9 extends h9 {
     @Override // java.util.List
     public final /* synthetic */ Object get(int i10) {
         a aVar = this.c;
-        w7.c8.a(i10, aVar.e);
+        w7.b8.a(i10, aVar.e);
         int i11 = i10 + i10;
         Object[] objArr = aVar.d;
         Object obj = objArr[i11];

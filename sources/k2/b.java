@@ -15,7 +15,7 @@ import java.util.List;
 import v7.b8;
 import v7.c9;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class b {
     public static final x1 e;
@@ -43,7 +43,7 @@ public final class b {
         aVar.x(6, 8);
         aVar.x(8, 8);
         aVar.x(14, 8);
-        h = aVar.d(true);
+        h = aVar.e(true);
     }
 
     public b(x1 x1Var, List list, List list2) {
@@ -83,7 +83,7 @@ public final class b {
         if (audioDeviceInfo == null) {
             audioDeviceInfo = Build.VERSION.SDK_INT >= 33 ? g0.a.d(e7, fVar) : null;
         }
-        e9.n0 b10 = audioDeviceInfo != null ? z0.b(audioDeviceInfo) : e;
+        e9.n0 b10 = audioDeviceInfo != null ? a1.b(audioDeviceInfo) : e;
         if (Build.VERSION.SDK_INT >= 33 && (e2.m0.P(context) || context.getPackageManager().hasSystemFeature("android.hardware.type.automotive"))) {
             return g0.a.c(e7, fVar, b10, list);
         }

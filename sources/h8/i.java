@@ -7,11 +7,11 @@ import android.os.Parcel;
 import org.telegram.messenger.GoogleMapsProvider;
 import org.telegram.messenger.IMapsProvider;
 import org.telegram.messenger.d0;
+import org.telegram.messenger.j4;
 import org.telegram.messenger.k4;
 import org.telegram.messenger.l4;
-import org.telegram.messenger.m4;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class i extends b8.b {
     public final /* synthetic */ int b = 1;
@@ -64,8 +64,8 @@ public final class i extends b8.b {
                         fVar = queryLocalInterface2 instanceof i8.f ? (i8.f) queryLocalInterface2 : new i8.f(readStrongBinder2, "com.google.android.gms.maps.internal.IGoogleMapDelegate", 9);
                     }
                     s7.b.a(parcel);
-                    m4 m4Var = (m4) ((f) this.c);
-                    m4Var.a.lambda$getMapAsync$0(m4Var.b, new c(fVar));
+                    l4 l4Var = (l4) ((f) this.c);
+                    l4Var.a.lambda$getMapAsync$0(l4Var.b, new c(fVar));
                     parcel2.writeNoException();
                     break;
                 }
@@ -74,14 +74,14 @@ public final class i extends b8.b {
                 if (i10 == 1) {
                     x6.a K0 = x6.b.K0(parcel.readStrongBinder());
                     s7.b.a(parcel);
-                    ((k4) this.c).b.accept((Location) x6.b.L0(K0));
+                    ((j4) this.c).b.accept((Location) x6.b.L0(K0));
                     parcel2.writeNoException();
                     break;
                 }
                 break;
             case 4:
                 if (i10 == 1) {
-                    ((l4) this.c).a.run();
+                    ((k4) this.c).a.run();
                     parcel2.writeNoException();
                     break;
                 }
@@ -97,14 +97,14 @@ public final class i extends b8.b {
                 break;
             case 6:
                 if (i10 == 1) {
-                    ((l4) this.c).a.run();
+                    ((k4) this.c).a.run();
                     parcel2.writeNoException();
                     break;
                 }
                 break;
             default:
                 if (i10 == 1) {
-                    ((l4) this.c).a.run();
+                    ((k4) this.c).a.run();
                     parcel2.writeNoException();
                     break;
                 }
@@ -132,26 +132,26 @@ public final class i extends b8.b {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i(k4 k4Var) {
+    public i(j4 j4Var) {
         super("com.google.android.gms.maps.internal.IOnMyLocationChangeListener", 10);
+        this.c = j4Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i(k4 k4Var) {
+        super("com.google.android.gms.maps.internal.IOnCameraMoveListener", 10);
         this.c = k4Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i(l4 l4Var) {
-        super("com.google.android.gms.maps.internal.IOnCameraMoveListener", 10);
-        this.c = l4Var;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i(l4 l4Var, byte b10) {
+    public i(k4 k4Var, byte b10) {
         super("com.google.android.gms.maps.internal.IOnMapLoadedCallback", 10);
-        this.c = l4Var;
+        this.c = k4Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i(l4 l4Var, char c10) {
+    public i(k4 k4Var, char c10) {
         super("com.google.android.gms.maps.internal.IOnCameraIdleListener", 10);
-        this.c = l4Var;
+        this.c = k4Var;
     }
 }

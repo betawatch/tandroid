@@ -1,7 +1,7 @@
 package org.telegram.ui.Components.voip;
 
 import ai.fe;
-import ai.x7;
+import ai.y7;
 import android.animation.ValueAnimator;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -41,7 +41,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
@@ -54,23 +54,23 @@ import org.telegram.ui.Components.wc0;
 import org.telegram.ui.Components.xj0;
 import org.telegram.ui.Components.yr;
 import org.telegram.ui.Components.z20;
-import org.telegram.ui.j30;
-import org.telegram.ui.s50;
+import org.telegram.ui.h30;
+import org.telegram.ui.q50;
 import org.webrtc.RendererCommon;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class t extends FrameLayout implements n0 {
     public final m A0;
     public final Rect B0;
-    public x7 C0;
+    public y7 C0;
     public int D0;
     public boolean E;
     public int E0;
     public final ChatObject.Call F;
     public int F0;
-    public final s50 G;
+    public final q50 G;
     public ValueAnimator G0;
     public boolean H;
     public int H0;
@@ -133,7 +133,7 @@ public final class t extends FrameLayout implements n0 {
     public boolean y0;
     public boolean z0;
 
-    public t(l0 l0Var, ChatObject.Call call, s50 s50Var) {
+    public t(l0 l0Var, ChatObject.Call call, q50 q50Var) {
         super(l0Var.getContext());
         this.y = new Paint(1);
         Paint paint = new Paint(1);
@@ -144,7 +144,7 @@ public final class t extends FrameLayout implements n0 {
         this.A0 = new m(this, 1);
         this.B0 = new Rect();
         this.F = call;
-        int currentAccount = s50Var.getCurrentAccount();
+        int currentAccount = q50Var.getCurrentAccount();
         this.K = currentAccount;
         yr yrVar = new yr(l0Var.getContext(), R.drawable.calls_video, -1);
         this.u0 = yrVar;
@@ -176,13 +176,13 @@ public final class t extends FrameLayout implements n0 {
         TLRPC.Chat chat = MessagesController.getInstance(currentAccount).getChat(Long.valueOf(call.chatId));
         StaticLayout staticLayout2 = new StaticLayout(LocaleController.formatString("VoipVideoNotAvailable", R.string.VoipVideoNotAvailable, LocaleController.formatPluralString("Participants", MessagesController.getInstance(currentAccount).groupCallVideoMaxParticipants, new Object[0])), textPaint, AndroidUtilities.dp(400.0f), alignment, 1.0f, 0.0f, false);
         String string3 = LocaleController.getString(R.string.VoipVideoScreenSharing);
-        o oVar = new o(this, l0Var.getContext(), call, l0Var, textPaint, staticLayout2, textPaint2, string3, textPaint2.measureText(string3), staticLayout, s50Var, string, textPaint.measureText(string));
+        o oVar = new o(this, l0Var.getContext(), call, l0Var, textPaint, staticLayout2, textPaint2, string3, textPaint2.measureText(string3), staticLayout, q50Var, string, textPaint.measureText(string));
         this.a = oVar;
         RendererCommon.ScalingType scalingType = RendererCommon.ScalingType.SCALE_ASPECT_FIT;
         p2 p2Var = oVar.d;
         p2Var.setScalingType(scalingType);
         this.x = l0Var;
-        this.G = s50Var;
+        this.G = q50Var;
         p2Var.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), new p(this));
         TextureView textureView = oVar.e;
         if (textureView != null) {
@@ -251,7 +251,7 @@ public final class t extends FrameLayout implements n0 {
         addView(textView, z5.e(-2, -2, 51));
     }
 
-    public static t c(ArrayList arrayList, j30 j30Var, l lVar, z20 z20Var, l lVar2, ChatObject.VideoParticipant videoParticipant, ChatObject.Call call, s50 s50Var) {
+    public static t c(ArrayList arrayList, h30 h30Var, l lVar, z20 z20Var, l lVar2, ChatObject.VideoParticipant videoParticipant, ChatObject.Call call, q50 q50Var) {
         t tVar;
         int i10 = 0;
         while (true) {
@@ -266,7 +266,7 @@ public final class t extends FrameLayout implements n0 {
             i10++;
         }
         if (tVar == null) {
-            tVar = new t(j30Var, call, s50Var);
+            tVar = new t(h30Var, call, q50Var);
         }
         if (lVar != null) {
             tVar.setPrimaryView(lVar);
@@ -364,7 +364,7 @@ public final class t extends FrameLayout implements n0 {
                 frameLayout.setAlpha(1.0f - l0Var.n);
                 xj0Var.setAlpha(1.0f - l0Var.n);
             } else if (this.b || this.r) {
-                if (!s50.F3 && !s50.G3) {
+                if (!q50.F3 && !q50.G3) {
                     measuredHeight = com.google.android.gms.internal.play_billing.k3.D(1.0f, l0Var.W, AndroidUtilities.dp(90.0f) * l0Var.c, measuredHeight);
                 }
                 frameLayout.setAlpha(1.0f);
@@ -528,9 +528,9 @@ public final class t extends FrameLayout implements n0 {
         l lVar = this.c;
         if (lVar != null) {
             lVar.invalidate();
-            s50 s50Var = this.G;
-            if (s50Var.X2 == this.c) {
-                s50Var.getContainerView().invalidate();
+            q50 q50Var = this.G;
+            if (q50Var.X2 == this.c) {
+                q50Var.getContainerView().invalidate();
             }
         }
         z20 z20Var = this.d;
@@ -645,7 +645,7 @@ public final class t extends FrameLayout implements n0 {
         int i12 = 1;
         if (z19 && !this.b) {
             boolean z20 = VoIPService.getSharedInstance() == null;
-            if (s50.I3 || (videoParticipant4 = this.w) == null || (this.d == null && (!ChatObject.Call.videoIsActive(videoParticipant4.participant, videoParticipant4.presentation, call) || (!call.canStreamVideo && this.w != call.videoNotAvailableParticipant)))) {
+            if (q50.I3 || (videoParticipant4 = this.w) == null || (this.d == null && (!ChatObject.Call.videoIsActive(videoParticipant4.participant, videoParticipant4.presentation, call) || (!call.canStreamVideo && this.w != call.videoNotAvailableParticipant)))) {
                 z20 = true;
             }
             if (z20 || (this.c == null && this.d == null && this.e == null && !this.h && !this.f)) {
@@ -659,14 +659,14 @@ public final class t extends FrameLayout implements n0 {
                     animate().scaleX(0.5f).scaleY(0.5f).alpha(0.0f).setListener(new ah.q0(this, this, z21, 7)).setDuration(150L).start();
                 } else {
                     if (l0Var.s) {
-                        x7 x7Var = this.C0;
-                        if (x7Var != null) {
-                            AndroidUtilities.cancelRunOnUIThread(x7Var);
+                        y7 y7Var = this.C0;
+                        if (y7Var != null) {
+                            AndroidUtilities.cancelRunOnUIThread(y7Var);
                             this.C0 = null;
                         }
-                        x7 x7Var2 = new x7(this, z21, this, 26);
-                        this.C0 = x7Var2;
-                        AndroidUtilities.runOnUIThread(x7Var2);
+                        y7 y7Var2 = new y7(this, z21, this, 26);
+                        this.C0 = y7Var2;
+                        AndroidUtilities.runOnUIThread(y7Var2);
                     } else {
                         if (z21) {
                             l0Var.removeView(this);
@@ -727,9 +727,9 @@ public final class t extends FrameLayout implements n0 {
                     }
                 }
                 this.v = true;
-                s50 s50Var = this.G;
-                if (s50Var.t2.size() > 0) {
-                    this.n0 = (o0) i2.d.A(1, s50Var.t2);
+                q50 q50Var = this.G;
+                if (q50Var.t2.size() > 0) {
+                    this.n0 = (o0) i2.e.A(1, q50Var.t2);
                 } else {
                     this.n0 = new o0();
                 }
@@ -738,9 +738,9 @@ public final class t extends FrameLayout implements n0 {
                 o0Var.c = xj0Var;
                 o0Var.c(false);
                 k(false);
-                x7 x7Var3 = this.C0;
-                if (x7Var3 != null) {
-                    AndroidUtilities.cancelRunOnUIThread(x7Var3);
+                y7 y7Var3 = this.C0;
+                if (y7Var3 != null) {
+                    AndroidUtilities.cancelRunOnUIThread(y7Var3);
                     this.C0 = null;
                 }
                 if (getParent() == null) {
@@ -790,7 +790,7 @@ public final class t extends FrameLayout implements n0 {
                 if (z13) {
                     str = null;
                 } else {
-                    boolean z23 = s50.G3 && (!l0Var.b || (this.d == null && this.c == null));
+                    boolean z23 = q50.G3 && (!l0Var.b || (this.d == null && this.c == null));
                     if (!this.b) {
                         z20 z20Var2 = this.d;
                         if (z20Var2 == null || this.c != null || l0Var.b) {
@@ -935,7 +935,7 @@ public final class t extends FrameLayout implements n0 {
                                         p2Var.animate().alpha(this.s0 ? 0.0f : 1.0f).setDuration(250L).start();
                                         oVar.invalidate();
                                     }
-                                    if (s50.I3 && this.W) {
+                                    if (q50.I3 && this.W) {
                                         if (!p2Var.isFirstFrameRendered()) {
                                             d();
                                         }
@@ -973,7 +973,7 @@ public final class t extends FrameLayout implements n0 {
                                         } else {
                                             str = null;
                                         }
-                                        if (s50.I3 && p2Var.isFirstFrameRendered()) {
+                                        if (q50.I3 && p2Var.isFirstFrameRendered()) {
                                             f();
                                             p2Var.clearFirstFrame();
                                             p2Var.setAlpha(0.0f);
@@ -1057,11 +1057,11 @@ public final class t extends FrameLayout implements n0 {
                                 }
                                 if (this.s0 != z18) {
                                 }
-                                if (s50.I3) {
+                                if (q50.I3) {
                                 }
                                 if (this.w.participant.self) {
                                 }
-                                if (s50.I3) {
+                                if (q50.I3) {
                                     f();
                                     p2Var.clearFirstFrame();
                                     p2Var.setAlpha(0.0f);
@@ -1123,11 +1123,11 @@ public final class t extends FrameLayout implements n0 {
                         }
                         if (this.s0 != z18) {
                         }
-                        if (s50.I3) {
+                        if (q50.I3) {
                         }
                         if (this.w.participant.self) {
                         }
-                        if (s50.I3) {
+                        if (q50.I3) {
                         }
                         k(true);
                     }
@@ -1184,11 +1184,11 @@ public final class t extends FrameLayout implements n0 {
                     }
                     if (this.s0 != z18) {
                     }
-                    if (s50.I3) {
+                    if (q50.I3) {
                     }
                     if (this.w.participant.self) {
                     }
-                    if (s50.I3) {
+                    if (q50.I3) {
                     }
                     k(true);
                 }
@@ -1317,7 +1317,7 @@ public final class t extends FrameLayout implements n0 {
         ChatObject.Call call = this.F;
         float f10 = call.call.rtmp_stream ? 0.0f : 1.0f;
         boolean z10 = this.d0;
-        boolean z11 = s50.F3;
+        boolean z11 = q50.F3;
         if (z10 != z11) {
             this.R = true;
             this.d0 = z11;
@@ -1344,9 +1344,9 @@ public final class t extends FrameLayout implements n0 {
         if (this.b) {
             l(0);
             this.w0 = 1.0f;
-            if (s50.G3) {
+            if (q50.G3) {
                 super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(328.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11) - AndroidUtilities.dp(4.0f), TLObject.FLAG_30));
-            } else if (s50.F3) {
+            } else if (q50.F3) {
                 int size = View.MeasureSpec.getSize(i10);
                 if (!call.call.rtmp_stream) {
                     size -= AndroidUtilities.dp(92.0f);
@@ -1361,30 +1361,30 @@ public final class t extends FrameLayout implements n0 {
             }
         } else if (this.h) {
             this.w0 = 1.0f;
-            int B2 = lk.B(14.0f, 2, Math.min(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11)));
+            int B2 = kk.B(14.0f, 2, Math.min(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11)));
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(B2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + B2, TLObject.FLAG_30));
         } else if (this.H) {
             this.w0 = 1.0f;
             int i13 = 6;
-            if ((!s50.G3 || this.e == null) && !s50.F3) {
+            if ((!q50.G3 || this.e == null) && !q50.F3) {
                 i13 = 2;
             }
             if (this.e != null) {
                 dp = View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(344.0f);
-            } else if (s50.G3) {
+            } else if (q50.G3) {
                 dp = AndroidUtilities.dp(320.0f);
             } else {
-                B = lk.B(14.0f, 2, View.MeasureSpec.getSize(i10)) + (s50.F3 ? -AndroidUtilities.dp(90.0f) : 0);
+                B = kk.B(14.0f, 2, View.MeasureSpec.getSize(i10)) + (q50.F3 ? -AndroidUtilities.dp(90.0f) : 0);
                 float f11 = (this.I / i13) * B;
                 lVar = this.e;
                 if (lVar == null) {
                     f7 = lVar.getItemHeight() - AndroidUtilities.dp(4.0f);
                     dp2 = AndroidUtilities.dp(4.0f);
                 } else {
-                    if (s50.G3) {
+                    if (q50.G3) {
                         f7 = B / 2.0f;
                     } else {
-                        f7 = B / (s50.F3 ? 3 : 2);
+                        f7 = B / (q50.F3 ? 3 : 2);
                     }
                     dp2 = AndroidUtilities.dp(2.0f);
                 }

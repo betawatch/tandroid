@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c0 implements Utilities.Callback3 {
     public final /* synthetic */ int a;
@@ -41,20 +41,20 @@ public final /* synthetic */ class c0 implements Utilities.Callback3 {
         String str2;
         switch (this.a) {
             case 0:
-                m2 m2Var = (m2) this.b;
+                n2 n2Var = (n2) this.b;
                 v0 v0Var = (v0) this.c;
                 Boolean bool = (Boolean) obj;
                 Boolean bool2 = (Boolean) obj3;
-                int i10 = m2Var.N;
+                int i10 = n2Var.N;
                 if (((Boolean) obj2).booleanValue()) {
                     TL_phone.deleteGroupCallParticipantMessages deletegroupcallparticipantmessages = new TL_phone.deleteGroupCallParticipantMessages();
-                    deletegroupcallparticipantmessages.call = m2Var.O;
+                    deletegroupcallparticipantmessages.call = n2Var.O;
                     deletegroupcallparticipantmessages.participant = MessagesController.getInstance(i10).getInputPeer(v0Var.c);
                     deletegroupcallparticipantmessages.report_spam = bool.booleanValue();
                     ConnectionsManager.getInstance(i10).sendRequest(deletegroupcallparticipantmessages, null);
                     long j10 = v0Var.c;
-                    ArrayList arrayList = m2Var.r;
-                    ArrayList arrayList2 = m2Var.s;
+                    ArrayList arrayList = n2Var.r;
+                    ArrayList arrayList2 = n2Var.s;
                     int i11 = 0;
                     boolean z10 = false;
                     while (i11 < arrayList.size()) {
@@ -69,7 +69,7 @@ public final /* synthetic */ class c0 implements Utilities.Callback3 {
                                             arrayList2.remove(i12);
                                             z10 = true;
                                         } else {
-                                            m2Var.m();
+                                            n2Var.m();
                                         }
                                     } else {
                                         i12++;
@@ -77,30 +77,30 @@ public final /* synthetic */ class c0 implements Utilities.Callback3 {
                                 }
                             }
                             arrayList.remove(i11);
-                            m2Var.e.N(true);
+                            n2Var.e.N(true);
                             i11--;
                         }
                         i11++;
                     }
                     if (z10) {
                         ConnectionsManager.getInstance(i10).getCurrentTime();
-                        Collections.sort(arrayList2, new a4.d(m2Var, 12));
-                        m2Var.n.N(true);
-                        m2Var.t();
+                        Collections.sort(arrayList2, new a4.d(n2Var, 12));
+                        n2Var.n.N(true);
+                        n2Var.t();
                     }
                 } else {
                     TL_phone.deleteGroupCallMessages deletegroupcallmessages = new TL_phone.deleteGroupCallMessages();
-                    deletegroupcallmessages.call = m2Var.O;
+                    deletegroupcallmessages.call = n2Var.O;
                     deletegroupcallmessages.messages.add(Integer.valueOf(v0Var.a));
                     ConnectionsManager.getInstance(i10).sendRequest(deletegroupcallmessages, null);
-                    m2Var.c(v0Var.a);
+                    n2Var.c(v0Var.a);
                 }
                 if (bool2.booleanValue()) {
-                    if (m2Var.M >= 0) {
-                        MessagesController.getInstance(i10).blockPeer(m2Var.M);
+                    if (n2Var.M >= 0) {
+                        MessagesController.getInstance(i10).blockPeer(n2Var.M);
                         return;
                     } else {
-                        MessagesController.getInstance(i10).deleteParticipantFromChat(-m2Var.M, MessagesController.getInstance(i10).getInputPeer(v0Var.c), false, true);
+                        MessagesController.getInstance(i10).deleteParticipantFromChat(-n2Var.M, MessagesController.getInstance(i10).getInputPeer(v0Var.c), false, true);
                         return;
                     }
                 }
@@ -138,7 +138,7 @@ public final /* synthetic */ class c0 implements Utilities.Callback3 {
                         pVar.a(false);
                         return;
                     }
-                    rg.b2 l02 = xaVar.l0(vbVar.K1.p0, true);
+                    rg.c2 l02 = xaVar.l0(vbVar.K1.p0, true);
                     lbVar.setHasRoundVideo(true);
                     vbVar.X0.s(vbVar.K1, l02, true);
                     AndroidUtilities.cancelRunOnUIThread(pVar.h);
@@ -216,7 +216,7 @@ public final /* synthetic */ class c0 implements Utilities.Callback3 {
                     return;
                 }
                 final org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(org.telegram.ui.Wallet.m0.v(), 3, null);
-                b2Var.q(500L);
+                b2Var.r(500L);
                 final long key_generate_temporary_private_key = ConferenceCall.key_generate_temporary_private_key();
                 byte[] key_to_public_key = ConferenceCall.key_to_public_key(key_generate_temporary_private_key);
                 final boolean[] zArr = new boolean[arrayList3.size()];
@@ -257,7 +257,7 @@ public final /* synthetic */ class c0 implements Utilities.Callback3 {
                                     TL_wallet.encryptedSecretPhrasePart encryptedsecretphrasepart = encryptedsecretphrasepartArr2[i17];
                                     if (encryptedsecretphrasepart == null) {
                                         TLRPC.TL_error tL_error3 = tL_errorArr2[i17];
-                                        StringBuilder l10 = i2.d.l(i17, "getSecretPhrase: part ", ": ");
+                                        StringBuilder l10 = i2.e.l(i17, "getSecretPhrase: part ", ": ");
                                         String str8 = tL_error3.text;
                                         if (str8 == null) {
                                             str8 = "NULL_ERROR";
@@ -269,7 +269,7 @@ public final /* synthetic */ class c0 implements Utilities.Callback3 {
                                         return;
                                     }
                                     if (encryptedsecretphrasepart.data.length < 33) {
-                                        StringBuilder l11 = i2.d.l(i17, "getSecretPhrase: part ", " length < 33 (len=");
+                                        StringBuilder l11 = i2.e.l(i17, "getSecretPhrase: part ", " length < 33 (len=");
                                         l11.append(encryptedsecretphrasepartArr2[i17].data.length);
                                         l11.append(")");
                                         m0.i(l11.toString());
@@ -277,7 +277,7 @@ public final /* synthetic */ class c0 implements Utilities.Callback3 {
                                         return;
                                     }
                                 }
-                                Utilities.stageQueue.postRunnable(new ai.b3(m0Var3, encryptedsecretphrasepartArr2, j11, kVar, 24));
+                                Utilities.stageQueue.postRunnable(new ai.c3(m0Var3, encryptedsecretphrasepartArr2, j11, kVar, 24));
                             }
                         }
                     }, intValue, 0);

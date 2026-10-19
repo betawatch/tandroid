@@ -1,6 +1,6 @@
 package k2;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class s implements Runnable {
             case 0:
                 u uVar = (u) ((qf.b) obj).c;
                 String str = e2.m0.a;
-                j2.f fVar = ((i2.b0) uVar).a.s;
+                j2.f fVar = ((i2.c0) uVar).a.s;
                 j2.a p5 = fVar.p();
                 fVar.q(p5, 1011, new j2.e(p5, this.b, this.c, this.d));
                 break;

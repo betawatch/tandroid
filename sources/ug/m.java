@@ -1,7 +1,7 @@
 package ug;
 
-import ai.i5;
-import ai.z4;
+import ai.a5;
+import ai.j5;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -15,7 +15,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class m extends f3 {
     public static m e;
@@ -37,7 +37,7 @@ public final class m extends f3 {
         this.b = kVar;
         kVar.setOverScrollMode(2);
         kVar.setClipToPadding(false);
-        kVar.setAdapter(new i5(zVar, y0Var));
+        kVar.setAdapter(new j5(zVar, y0Var));
         kVar.setPosition(0);
         setCustomView(kVar);
         zVar.t0 = new j(this, 0);
@@ -55,8 +55,8 @@ public final class m extends f3 {
             return;
         }
         boolean z10 = d6Var instanceof ci.b;
-        n2 z4Var = z10 ? new z4(n2Var) : n2Var;
-        m mVar = new m(n2Var.getParentActivity(), new z(z4Var, j10, prepaidGiveaway), new y0(z4Var, j10), z4Var.getResourceProvider(), z10);
+        n2 a5Var = z10 ? new a5(n2Var) : n2Var;
+        m mVar = new m(n2Var.getParentActivity(), new z(a5Var, j10, prepaidGiveaway), new y0(a5Var, j10), a5Var.getResourceProvider(), z10);
         mVar.show();
         e = mVar;
     }

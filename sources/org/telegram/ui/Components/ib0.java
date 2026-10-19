@@ -15,7 +15,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class ib0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int U = 0;
@@ -46,7 +46,7 @@ public abstract class ib0 extends FrameLayout implements NotificationCenter.Noti
     public float r;
     public float s;
     public float v;
-    public ci.x4 w;
+    public ci.y4 w;
     public fb0 x;
     public final Rect y;
 
@@ -280,7 +280,7 @@ public abstract class ib0 extends FrameLayout implements NotificationCenter.Noti
     }
 
     public boolean h() {
-        return this instanceof ci.w2;
+        return this instanceof ci.x2;
     }
 
     public final void o(boolean z10) {
@@ -346,9 +346,9 @@ public abstract class ib0 extends FrameLayout implements NotificationCenter.Noti
     public final void p(fb0 fb0Var) {
         this.x = fb0Var;
         hb0 listView = getListView();
-        ci.x4 x4Var = new ci.x4(12, this, fb0Var);
-        this.w = x4Var;
-        listView.setOnItemClickListener(x4Var);
+        ci.y4 y4Var = new ci.y4(12, this, fb0Var);
+        this.w = y4Var;
+        listView.setOnItemClickListener(y4Var);
         getListView().setOnTouchListener(new rk(this, 4));
     }
 

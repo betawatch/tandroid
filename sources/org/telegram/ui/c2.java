@@ -11,17 +11,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class c2 extends HorizontalScrollView implements org.telegram.ui.ActionBar.y5, g3 {
-    public final d70 a;
+    public final b70 a;
     public final FrameLayout b;
     public final ImageView c;
     public int d;
 
-    public c2(Context context, d70 d70Var) {
+    public c2(Context context, b70 b70Var) {
         super(context);
-        this.a = d70Var;
+        this.a = b70Var;
         FrameLayout frameLayout = new FrameLayout(context);
         this.b = frameLayout;
         addView(frameLayout, w7.z5.c(-2.0f, -2));
@@ -84,14 +84,14 @@ public final class c2 extends HorizontalScrollView implements org.telegram.ui.Ac
         ki.r a2;
         ImageView imageView = this.c;
         imageView.setImageBitmap(null);
-        d70 d70Var = this.a;
-        d70Var.getClass();
+        b70 b70Var = this.a;
+        b70Var.getClass();
         float f7 = 18;
         int dp = AndroidUtilities.dp(f7);
-        d70Var.getClass();
+        b70Var.getClass();
         imageView.setPadding(dp, 0, AndroidUtilities.dp(f7), 0);
         imageView.setLayoutParams(new FrameLayout.LayoutParams(0, 0));
-        d70Var.getClass();
+        b70Var.getClass();
         float f10 = 36;
         this.d = AndroidUtilities.dp(f10);
         if (pageblockmath == null || (a2 = ki.r.a(pageblockmath.source, AndroidUtilities.dp(20.0f), false)) == null) {
@@ -99,7 +99,7 @@ public final class c2 extends HorizontalScrollView implements org.telegram.ui.Ac
         }
         imageView.setImageBitmap(a2.a);
         int i10 = a2.b;
-        d70Var.getClass();
+        b70Var.getClass();
         int dp2 = AndroidUtilities.dp(f10) + i10;
         this.d = dp2;
         imageView.setLayoutParams(new FrameLayout.LayoutParams(dp2, a2.c));

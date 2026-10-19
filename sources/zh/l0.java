@@ -1,34 +1,23 @@
 package zh;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class l0 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ Object c;
+public final class l0 implements y2.m {
+    public final /* synthetic */ Object a;
 
-    public /* synthetic */ l0(String str, Utilities.Callback callback) {
-        this.c = str;
-        this.b = callback;
+    public /* synthetic */ l0(Object obj) {
+        this.a = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new l0(this.b, f.b(AndroidUtilities.dp(240.0f), (String) this.c)));
-                break;
-            default:
-                this.b.run((e) this.c);
-                break;
+    @Override // y2.m
+    public void a() {
+        l2.h hVar = (l2.h) this.a;
+        hVar.A.a();
+        IOException iOException = hVar.C;
+        if (iOException != null) {
+            throw iOException;
         }
-    }
-
-    public /* synthetic */ l0(Utilities.Callback callback, e eVar) {
-        this.b = callback;
-        this.c = eVar;
     }
 }

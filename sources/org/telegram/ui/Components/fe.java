@@ -5,7 +5,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fe implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -41,7 +41,7 @@ public final /* synthetic */ class fe implements Utilities.Callback {
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj3;
                 int i11 = ChatActivityEnterView.n5;
                 qd qdVar = new qd(chatActivityEnterView, (TLRPC.Document) obj2, this.g, (MessageObject.SendAnimationData) this.j, this.c, this.d, this.e, this.b, (Long) obj, this.f);
-                if (!chatActivityEnterView.p1(qdVar)) {
+                if (!chatActivityEnterView.o1(qdVar)) {
                     qdVar.run();
                     break;
                 }
@@ -49,7 +49,7 @@ public final /* synthetic */ class fe implements Utilities.Callback {
             default:
                 gg ggVar = (gg) obj3;
                 qd qdVar2 = new qd(ggVar, this.b, (MediaController.PhotoEntry) obj2, this.c, this.d, this.e, this.f, (Long) obj, this.g, this.j);
-                if (!ggVar.a.p1(qdVar2)) {
+                if (!ggVar.a.o1(qdVar2)) {
                     qdVar2.run();
                     break;
                 }

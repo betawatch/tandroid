@@ -31,17 +31,17 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ba0;
-import org.telegram.ui.Components.dx0;
-import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.ex0;
+import org.telegram.ui.Components.k61;
 import org.telegram.ui.Components.r90;
 import org.telegram.ui.Components.u90;
 import org.telegram.ui.Components.y90;
-import org.telegram.ui.yz0;
+import org.telegram.ui.wz0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout {
     public static final int a0 = AndroidUtilities.dp(76.0f);
@@ -103,7 +103,7 @@ public abstract class j extends FrameLayout {
         TextView textView = new TextView(context);
         this.h = textView;
         textView.setVisibility(8);
-        lk.o(org.telegram.ui.ActionBar.h6.z6, d6Var, textView, 1, 13.0f);
+        kk.o(org.telegram.ui.ActionBar.h6.z6, d6Var, textView, 1, 13.0f);
         textView.setLines(1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
@@ -150,9 +150,9 @@ public abstract class j extends FrameLayout {
         }
         StaticLayout.Builder hyphenationFrequency = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), org.telegram.ui.ActionBar.h6.P1, Math.max(1, i10)).setBreakStrategy(0).setHyphenationFrequency(0);
         if (LocaleController.isRTL) {
-            alignment = dx0.a();
+            alignment = ex0.a();
         } else {
-            Layout.Alignment[] alignmentArr = dx0.a;
+            Layout.Alignment[] alignmentArr = ex0.a;
             alignment = alignmentArr.length >= 5 ? alignmentArr[3] : Layout.Alignment.ALIGN_NORMAL;
         }
         return hyphenationFrequency.setAlignment(alignment).build();
@@ -300,10 +300,10 @@ public abstract class j extends FrameLayout {
             hVar2 = new h(this, layout, clickableSpan, f7);
         }
         this.F = hVar2;
-        if (clickableSpan instanceof j61) {
-            String url = ((j61) clickableSpan).getURL();
+        if (clickableSpan instanceof k61) {
+            String url = ((k61) clickableSpan).getURL();
             if (url.startsWith("@") || url.startsWith("#") || url.startsWith("$") || url.startsWith("/")) {
-                ((yz0) this).c0.e.B4(url, this.F);
+                ((wz0) this).c0.e.B4(url, this.F);
                 return;
             }
             return;

@@ -1,43 +1,40 @@
 package ai;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.l70;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s3 implements Utilities.Callback {
+public final /* synthetic */ class s3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3 c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ TLObject f;
-    public final /* synthetic */ TLObject g;
+    public final /* synthetic */ s0 b;
+    public final /* synthetic */ org.telegram.ui.Components.zc[] c;
+    public final /* synthetic */ TL_stars.UniqueStarGiftValueInfo d;
+    public final /* synthetic */ String e;
 
-    public /* synthetic */ s3(org.telegram.ui.ActionBar.f3 f3Var, Object obj, Object obj2, long j10, TLObject tLObject, TLObject tLObject2, int i10) {
+    public /* synthetic */ s3(s0 s0Var, org.telegram.ui.Components.zc[] zcVarArr, TL_stars.UniqueStarGiftValueInfo uniqueStarGiftValueInfo, String str, int i10) {
         this.a = i10;
-        this.c = f3Var;
-        this.d = obj;
-        this.e = obj2;
-        this.b = j10;
-        this.f = tLObject;
-        this.g = tLObject2;
+        this.b = s0Var;
+        this.c = zcVarArr;
+        this.d = uniqueStarGiftValueInfo;
+        this.e = str;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        String str = this.e;
+        TL_stars.UniqueStarGiftValueInfo uniqueStarGiftValueInfo = this.d;
+        org.telegram.ui.Components.zc[] zcVarArr = this.c;
+        s0 s0Var = this.b;
+        switch (i10) {
             case 0:
-                k7.Q0((k7) this.c, (pf.c) this.d, (ug.m1) this.e, this.b, (TL_stars.TL_starGiftUnique) this.f, (TL_wallet.nftItem) this.g, (TL_stars.starGiftDepositPayload) obj);
+                s0Var.run(zcVarArr[0], LocaleController.formatString(R.string.GiftValueMinPriceInfo, BillingController.getInstance().formatCurrency(uniqueStarGiftValueInfo.floor_price, uniqueStarGiftValueInfo.currency), str));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.e((l70) this.c, (org.telegram.ui.ActionBar.b2) this.d, (Context) this.e, this.b, (TLRPC.TL_chatInviteExported) this.f, (TLRPC.TL_chatInviteImporter) this.g, (TLRPC.ChannelParticipant) obj));
+                s0Var.run(zcVarArr[0], LocaleController.formatString(R.string.GiftValueAveragePriceInfo, BillingController.getInstance().formatCurrency(uniqueStarGiftValueInfo.average_price, uniqueStarGiftValueInfo.currency), str));
                 break;
         }
     }

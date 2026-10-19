@@ -1,20 +1,34 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class r71 extends o01 {
-    public final /* synthetic */ z71 G;
+public final class r71 extends org.telegram.ui.Components.f61 {
+    public static final /* synthetic */ int a = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r71(z71 z71Var, z71 z71Var2, Context context) {
-        super(context, z71Var2);
-        this.G = z71Var;
+    static {
+        org.telegram.ui.Components.f61.setup(new r71());
     }
 
-    @Override // s4.g0
-    public final void l() {
-        this.G.c.W2.N(true);
+    @Override // org.telegram.ui.Components.f61
+    public final void bindView(View view, org.telegram.ui.Components.g61 g61Var, boolean z10, org.telegram.ui.Components.t61 t61Var, org.telegram.ui.Components.b71 b71Var) {
+        ((s71) view).set(g61Var.z);
+    }
+
+    @Override // org.telegram.ui.Components.f61
+    public final boolean contentsEquals(org.telegram.ui.Components.g61 g61Var, org.telegram.ui.Components.g61 g61Var2) {
+        return g61Var.z == g61Var2.z;
+    }
+
+    @Override // org.telegram.ui.Components.f61
+    public final View createView(Context context, org.telegram.ui.Components.im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        return new s71(context, d6Var);
+    }
+
+    @Override // org.telegram.ui.Components.f61
+    public final boolean equals(org.telegram.ui.Components.g61 g61Var, org.telegram.ui.Components.g61 g61Var2) {
+        return g61Var.d == g61Var2.d;
     }
 }

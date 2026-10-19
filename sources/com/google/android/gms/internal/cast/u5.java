@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class u5 implements d6.h {
     public static final d5 b = new d5(1);
@@ -118,7 +118,7 @@ public final class u5 implements d6.h {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void g(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void h(d6.f fVar, int i10) {
         a1 a1Var = (a1) this.a;
         a1Var.h = (d6.c) fVar;
         a1.a(a1Var, i10);
@@ -143,14 +143,14 @@ public final class u5 implements d6.h {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void j(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void n(d6.f fVar, int i10) {
         a1 a1Var = (a1) this.a;
         a1Var.h = (d6.c) fVar;
         a1.a(a1Var, i10);
     }
 
     @Override // d6.h
-    public void n(d6.f fVar) {
+    public void p(d6.f fVar) {
         g6.b bVar = a1.j;
         bVar.b("onSessionStarting", new Object[0]);
         a1 a1Var = (a1) this.a;
@@ -172,19 +172,19 @@ public final class u5 implements d6.h {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void s(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void q(d6.f fVar, int i10) {
         a1 a1Var = (a1) this.a;
         a1Var.h = (d6.c) fVar;
         a1.a(a1Var, i10);
     }
 
     @Override // d6.h
-    public /* synthetic */ void u(d6.f fVar) {
+    public /* synthetic */ void r(d6.f fVar) {
         ((a1) this.a).h = (d6.c) fVar;
     }
 
     @Override // d6.h
-    public void w(d6.f fVar, String str) {
+    public void v(d6.f fVar, String str) {
         a1.j.b("onSessionStarted with sessionId = %s", str);
         a1 a1Var = (a1) this.a;
         a1Var.h = (d6.c) fVar;
@@ -197,7 +197,7 @@ public final class u5 implements d6.h {
     }
 
     @Override // d6.h
-    public void x(d6.f fVar, int i10) {
+    public void w(d6.f fVar, int i10) {
         a1.j.b("onSessionSuspended with reason = %d", Integer.valueOf(i10));
         a1 a1Var = (a1) this.a;
         a1Var.h = (d6.c) fVar;

@@ -1,63 +1,38 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class vj implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sn b;
+import android.content.Context;
+import android.view.MotionEvent;
 
-    public /* synthetic */ vj(sn snVar, int i10) {
-        this.a = i10;
-        this.b = snVar;
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* loaded from: classes3.dex */
+public final class vj extends org.telegram.ui.Components.w21 {
+    public final /* synthetic */ qn e;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vj(qn qnVar, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, i10, d6Var);
+        this.e = qnVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        sn snVar = this.b;
-        switch (i10) {
-            case 0:
-                int i11 = sn.Ic;
-                snVar.c7();
-                break;
-            case 1:
-                sn.j2(snVar);
-                break;
-            case 2:
-                sn.j2(snVar);
-                break;
-            case 3:
-                int i12 = sn.Ic;
-                snVar.Qa();
-                break;
-            case 4:
-                int i13 = sn.Ic;
-                snVar.Qa();
-                break;
-            case 5:
-                int i14 = sn.Ic;
-                snVar.Qa();
-                break;
-            case 6:
-                int i15 = sn.Ic;
-                snVar.Qa();
-                break;
-            case 7:
-                int i16 = sn.Ic;
-                snVar.Qa();
-                break;
-            case 8:
-                int i17 = sn.Ic;
-                snVar.Qa();
-                break;
-            case 9:
-                int i18 = sn.Ic;
-                snVar.Qa();
-                break;
-            default:
-                int i19 = sn.Ic;
-                snVar.Qa();
-                break;
+    @Override // org.telegram.ui.Components.w21, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.k kVar;
+        if (getAlpha() == 0.0f) {
+            return false;
         }
+        qn qnVar = this.e;
+        kVar = ((org.telegram.ui.ActionBar.n2) qnVar).actionBar;
+        if (kVar.t() || qnVar.F9()) {
+            return false;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        if (getTranslationY() != f7) {
+            invalidate();
+        }
+        super.setTranslationY(f7);
     }
 }

@@ -16,7 +16,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class bb extends org.telegram.ui.ActionBar.f3 {
     public boolean E;
@@ -161,7 +161,7 @@ public abstract class bb extends org.telegram.ui.ActionBar.f3 {
         }
         float f7 = i13;
         this.T = f7;
-        G(f7);
+        F(f7);
         int i14 = this.W;
         float f10 = 1.0f;
         xa xaVar = this.e;
@@ -320,11 +320,11 @@ public abstract class bb extends org.telegram.ui.ActionBar.f3 {
 
     @Override // org.telegram.ui.ActionBar.f3
     public void onContainerViewTranslation() {
-        G(this.T);
+        F(this.T);
         w();
     }
 
-    public final void t() {
+    public final void u() {
         im0 im0Var = this.d;
         if (im0Var == null || im0Var.getLayoutManager() == null || this.U < 0) {
             return;
@@ -406,10 +406,10 @@ public abstract class bb extends org.telegram.ui.ActionBar.f3 {
     public void C(float f7) {
     }
 
-    public void G(float f7) {
+    public void F(float f7) {
     }
 
-    public void H(jw0 jw0Var) {
+    public void G(kw0 kw0Var) {
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -446,12 +446,12 @@ public abstract class bb extends org.telegram.ui.ActionBar.f3 {
     public void D(Canvas canvas, int i10) {
     }
 
-    public void F(int i10, int i11) {
+    public void E(int i10, int i11) {
     }
 
     public bb(Context context, org.telegram.ui.ActionBar.n2 n2Var, ab abVar) {
         super(abVar.b, context, abVar.g, abVar.a);
-        jw0 jw0Var;
+        kw0 kw0Var;
         this.v = 0.4f;
         this.w = true;
         this.x = 1.0f;
@@ -477,9 +477,9 @@ public abstract class bb extends org.telegram.ui.ActionBar.f3 {
         if (z11) {
             va vaVar = new va(this, context, z12, z10);
             this.s = vaVar;
-            jw0Var = vaVar;
+            kw0Var = vaVar;
         } else {
-            jw0Var = new wa(this, context, z12, z10);
+            kw0Var = new wa(this, context, z12, z10);
         }
         im0 y3 = y(context);
         this.d = y3;
@@ -497,12 +497,12 @@ public abstract class bb extends org.telegram.ui.ActionBar.f3 {
         if (z10) {
             y3.setHasFixedSize(true);
             y3.setAdapter(x(y3));
-            setCustomView(jw0Var);
-            jw0Var.addView(y3, w7.z5.c(-2.0f, -1));
+            setCustomView(kw0Var);
+            kw0Var.addView(y3, w7.z5.c(-2.0f, -1));
         } else {
             y3.setAdapter(new za(this, x(y3), context));
-            this.containerView = jw0Var;
-            xa xaVar = new xa(this, context, jw0Var);
+            this.containerView = kw0Var;
+            xa xaVar = new xa(this, context, kw0Var);
             this.e = xaVar;
             xaVar.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.h6.h5));
             xaVar.setTitleColor(getThemedColor(org.telegram.ui.ActionBar.h6.G6));
@@ -511,15 +511,15 @@ public abstract class bb extends org.telegram.ui.ActionBar.f3 {
             xaVar.C(getThemedColor(org.telegram.ui.ActionBar.h6.y8), false);
             xaVar.setCastShadows(true);
             xaVar.setTitle(A());
-            xaVar.setActionBarMenuOnItemClick(new org.telegram.ui.ga(this, 10));
-            jw0Var.addView(y3);
-            jw0Var.addView(xaVar, w7.z5.d(-1, -2.0f, 0, 6.0f, 0.0f, 6.0f, 0.0f));
-            y3.j(new ah.d0(jw0Var, 20));
+            xaVar.setActionBarMenuOnItemClick(new org.telegram.ui.ea(this, 10));
+            kw0Var.addView(y3);
+            kw0Var.addView(xaVar, w7.z5.d(-1, -2.0f, 0, 6.0f, 0.0f, 6.0f, 0.0f));
+            y3.j(new ah.d0(kw0Var, 20));
         }
         if (i10 == 2) {
             L();
         }
-        H(jw0Var);
+        G(kw0Var);
         N();
     }
 }

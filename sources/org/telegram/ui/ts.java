@@ -1,37 +1,57 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
+import android.app.Activity;
+import android.view.View;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ts implements Runnable {
+public final /* synthetic */ class ts implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ gt b;
+    public final /* synthetic */ et b;
 
-    public /* synthetic */ ts(gt gtVar, int i10) {
+    public /* synthetic */ ts(et etVar, int i10) {
         this.a = i10;
-        this.b = gtVar;
+        this.b = etVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.b.c0 = null;
+                et etVar = this.b;
+                etVar.K = false;
+                etVar.z.invalidate();
+                etVar.n();
                 break;
             case 1:
-                gt gtVar = this.b;
-                gtVar.A.setImageBitmap((Bitmap) null);
-                org.telegram.ui.Components.zd0 zd0Var = gtVar.C;
-                if (zd0Var != null) {
-                    zd0Var.a();
-                    gtVar.z.removeView(gtVar.C);
-                    gtVar.C = null;
-                    break;
+                et etVar2 = this.b;
+                Activity activity = etVar2.w;
+                if (activity instanceof LaunchActivity) {
+                    LaunchActivity launchActivity = (LaunchActivity) activity;
+                    if (launchActivity.O() != null && launchActivity.O().getLastFragment() != null) {
+                        launchActivity.O().getLastFragment().dismissCurrentDialog();
+                    }
+                    launchActivity.t0(new PremiumPreviewFragment(0, PremiumPreviewFragment.l0(5)));
                 }
+                etVar2.K = false;
+                etVar2.z.invalidate();
+                etVar2.n();
+                break;
+            case 2:
+                et etVar3 = this.b;
+                ct ctVar = etVar3.l;
+                if (ctVar != null) {
+                    ctVar.K();
+                }
+                etVar3.p();
                 break;
             default:
-                this.b.Q.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(420L).setInterpolator(org.telegram.ui.Components.bs.h).start();
+                et etVar4 = this.b;
+                ct ctVar2 = etVar4.l;
+                if (ctVar2 != null) {
+                    ctVar2.q();
+                }
+                etVar4.p();
                 break;
         }
     }

@@ -35,7 +35,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.e11;
 import org.telegram.ui.Components.f6;
 import org.telegram.ui.Components.g80;
 import org.telegram.ui.Components.h9;
@@ -45,12 +45,11 @@ import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.Components.zq;
-import org.telegram.ui.Wallet.p9;
-import org.telegram.ui.x10;
+import org.telegram.ui.v10;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public class g1 extends FrameLayout {
     public static final int[] n0 = {-2781403, -3635939};
@@ -59,15 +58,15 @@ public class g1 extends FrameLayout {
     public final sg.c1 G;
     public final TextView H;
     public final TextView I;
-    public final p9 J;
-    public final x10 K;
+    public final rg.x1 J;
+    public final v10 K;
     public final TextView L;
     public final TextView M;
     public fb N;
     public boolean O;
     public float P;
-    public d11 Q;
-    public d11 R;
+    public e11 Q;
+    public e11 R;
     public final Rect S;
     public boolean T;
     public boolean U;
@@ -147,8 +146,8 @@ public class g1 extends FrameLayout {
         org.telegram.ui.Cells.c1.q(i11, d6Var, j10, 17);
         j10.setTextSize(1, 12.0f);
         frameLayout.addView(j10, z5.d(-1, -2.0f, 48, 0.0f, 107.0f, 0.0f, 0.0f));
-        p9 p9Var = new p9(this, context, 7);
-        this.J = p9Var;
+        rg.x1 x1Var = new rg.x1(this, context, 6);
+        this.J = x1Var;
         TextView textView2 = new TextView(context);
         this.L = textView2;
         textView2.setTextSize(1, 12.0f);
@@ -156,13 +155,13 @@ public class g1 extends FrameLayout {
         textView2.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
         textView2.setGravity(17);
         textView2.setTextColor(-13397548);
-        frameLayout.addView(p9Var, z5.d(-2, -2.0f, 81, 0.0f, 0.0f, 0.0f, 11.0f));
-        x10 x10Var = new x10(context);
-        this.K = x10Var;
-        x10Var.setBackgroundColor(-16776961);
-        p9Var.addView(x10Var, z5.c(0.0f, 0));
-        p9Var.addView(textView2, z5.e(-2, 26, 17));
-        x10Var.setBackground(new l1(h6.I.q() ? 518759725 : 1088989954));
+        frameLayout.addView(x1Var, z5.d(-2, -2.0f, 81, 0.0f, 0.0f, 0.0f, 11.0f));
+        v10 v10Var = new v10(context);
+        this.K = v10Var;
+        v10Var.setBackgroundColor(-16776961);
+        x1Var.addView(v10Var, z5.c(0.0f, 0));
+        x1Var.addView(textView2, z5.e(-2, 26, 17));
+        v10Var.setBackground(new l1(h6.I.q() ? 518759725 : 1088989954));
         TextView textView3 = new TextView(context);
         this.M = textView3;
         textView3.setTextSize(1, 10.66f);
@@ -224,7 +223,7 @@ public class g1 extends FrameLayout {
         return null;
     }
 
-    public final void a(g80 g80Var, Canvas canvas, float f7, float f10, float f11) {
+    public void a(g80 g80Var, Canvas canvas, float f7, float f10, float f11) {
         float f12;
         float f13;
         Canvas canvas2 = canvas;
@@ -287,26 +286,26 @@ public class g1 extends FrameLayout {
         }
         if (uniqueStarGift != null) {
             if (this.Q == null) {
-                this.Q = new d11(uniqueStarGift.title, 20.0f, AndroidUtilities.bold());
+                this.Q = new e11(uniqueStarGift.title, 20.0f, AndroidUtilities.bold());
             }
             if (this.R == null) {
-                this.R = new d11(LocaleController.formatPluralStringComma("Gift2CollectionNumber", uniqueStarGift.num), 13.0f, null);
+                this.R = new e11(LocaleController.formatPluralStringComma("Gift2CollectionNumber", uniqueStarGift.num), 13.0f, null);
             }
-            d11 d11Var = this.Q;
-            d11Var.p = f7 - AndroidUtilities.dp(8.0f);
+            e11 e11Var = this.Q;
+            e11Var.p = f7 - AndroidUtilities.dp(8.0f);
             float f15 = f13 - f11;
-            d11Var.c((f7 - this.Q.l()) / 2.0f, ((f10 - AndroidUtilities.dp(40.0f)) - (this.Q.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), f11, -1, canvas);
-            d11 d11Var2 = this.R;
-            d11Var2.p = f7 - AndroidUtilities.dp(8.0f);
-            d11Var2.c((f7 - this.R.l()) / 2.0f, ((f10 - AndroidUtilities.dp(19.0f)) - (this.R.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), 0.6f * f11, -1, canvas);
+            e11Var.c((f7 - this.Q.l()) / 2.0f, ((f10 - AndroidUtilities.dp(40.0f)) - (this.Q.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), f11, -1, canvas);
+            e11 e11Var2 = this.R;
+            e11Var2.p = f7 - AndroidUtilities.dp(8.0f);
+            e11Var2.c((f7 - this.R.l()) / 2.0f, ((f10 - AndroidUtilities.dp(19.0f)) - (this.R.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), 0.6f * f11, -1, canvas);
             canvas2 = canvas;
         }
-        p9 p9Var = this.J;
-        if (p9Var != null && p9Var.getVisibility() == 0) {
+        rg.x1 x1Var = this.J;
+        if (x1Var != null && x1Var.getVisibility() == 0) {
             canvas2.save();
-            canvas2.translate(p9Var.getX(), p9Var.getY());
-            canvas2.saveLayerAlpha(0.0f, 0.0f, p9Var.getWidth(), p9Var.getHeight(), (int) (p9Var.getAlpha() * (f13 - f11) * 255.0f), 31);
-            p9Var.draw(canvas2);
+            canvas2.translate(x1Var.getX(), x1Var.getY());
+            canvas2.saveLayerAlpha(0.0f, 0.0f, x1Var.getWidth(), x1Var.getHeight(), (int) (x1Var.getAlpha() * (f13 - f11) * 255.0f), 31);
+            x1Var.draw(canvas2);
             canvas2.restore();
             canvas2.restore();
         }
@@ -498,7 +497,7 @@ public class g1 extends FrameLayout {
                 TextView textView2 = this.L;
                 textView2.setVisibility(i15);
                 textView2.setTextSize(1, 12.0f);
-                x10 x10Var = this.K;
+                v10 v10Var = this.K;
                 if (!z10) {
                     textView2.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
                     textView2.setText(LocaleController.getString(R.string.Gift2TransferMine));
@@ -506,7 +505,7 @@ public class g1 extends FrameLayout {
                     int dp = AndroidUtilities.dp(13.0f);
                     int v10 = h6.v(v, 822083583);
                     int i16 = v;
-                    x10Var.setBackground(h6.j0(dp, dp, dp, dp, i16, v10, v10));
+                    v10Var.setBackground(h6.j0(dp, dp, dp, dp, i16, v10, v10));
                     textView2.setTextColor(-1);
                     imageView.setColorFilter(-1);
                     int dp2 = AndroidUtilities.dp(10.0f);
@@ -517,7 +516,7 @@ public class g1 extends FrameLayout {
                     long resellStars = starGift.getResellStars();
                     int v12 = h6.v(stargiftattributebackdrop.center_color | (-16777216), h6.m1(0.55f, stargiftattributebackdrop.pattern_color | (-16777216)));
                     textView2.setText(md.R0("XTR " + LocaleController.formatNumber(resellStars, ',')));
-                    x10Var.setBackground(new l1(1895825407, v12));
+                    v10Var.setBackground(new l1(1895825407, v12));
                     textView2.setTextColor(-1);
                     imageView.setColorFilter(-1);
                     imageView.setBackground(h6.c0(AndroidUtilities.dp(10.0f), v12));
@@ -544,7 +543,7 @@ public class g1 extends FrameLayout {
                                     }
                                     z16 = starGift instanceof TL_stars.TL_starGiftUnique;
                                     int i17 = 518759725;
-                                    x10Var.setBackground(new l1(z16 ? 1090519039 : h6.I.q() ? 518759725 : 1088989954));
+                                    v10Var.setBackground(new l1(z16 ? 1090519039 : h6.I.q() ? 518759725 : 1088989954));
                                     textView2.setTextColor(h6.I.q() ? -1333971 : -2722014);
                                     imageView.setColorFilter(h6.I.q() ? -1333971 : -2722014);
                                     int dp3 = AndroidUtilities.dp(10.0f);
@@ -569,7 +568,7 @@ public class g1 extends FrameLayout {
                             textView2.setText(md.Y0(false, sb32.toString(), 0.71f, null));
                             z16 = starGift instanceof TL_stars.TL_starGiftUnique;
                             int i172 = 518759725;
-                            x10Var.setBackground(new l1(z16 ? 1090519039 : h6.I.q() ? 518759725 : 1088989954));
+                            v10Var.setBackground(new l1(z16 ? 1090519039 : h6.I.q() ? 518759725 : 1088989954));
                             textView2.setTextColor(h6.I.q() ? -1333971 : -2722014);
                             imageView.setColorFilter(h6.I.q() ? -1333971 : -2722014);
                             int dp32 = AndroidUtilities.dp(10.0f);
@@ -598,7 +597,7 @@ public class g1 extends FrameLayout {
                     textView2.setText(md.Y0(false, sb322.toString(), 0.71f, null));
                     z16 = starGift instanceof TL_stars.TL_starGiftUnique;
                     int i1722 = 518759725;
-                    x10Var.setBackground(new l1(z16 ? 1090519039 : h6.I.q() ? 518759725 : 1088989954));
+                    v10Var.setBackground(new l1(z16 ? 1090519039 : h6.I.q() ? 518759725 : 1088989954));
                     textView2.setTextColor(h6.I.q() ? -1333971 : -2722014);
                     imageView.setColorFilter(h6.I.q() ? -1333971 : -2722014);
                     int dp322 = AndroidUtilities.dp(10.0f);
@@ -607,9 +606,9 @@ public class g1 extends FrameLayout {
                     imageView.setBackground(h6.c0(dp322, i1722));
                     textView.setBackground(h6.c0(AndroidUtilities.dp(9.0f), stargiftattributebackdrop != null ? h6.v(stargiftattributebackdrop.center_color | (-16777216), h6.m1(0.55f, stargiftattributebackdrop.pattern_color | (-16777216))) : 0));
                 }
-                p9 p9Var = this.J;
-                ((ViewGroup.MarginLayoutParams) p9Var.getLayoutParams()).topMargin = AndroidUtilities.dp(103.0f);
-                ((FrameLayout.LayoutParams) p9Var.getLayoutParams()).gravity = 49;
+                rg.x1 x1Var = this.J;
+                ((ViewGroup.MarginLayoutParams) x1Var.getLayoutParams()).topMargin = AndroidUtilities.dp(103.0f);
+                ((FrameLayout.LayoutParams) x1Var.getLayoutParams()).gravity = 49;
                 this.M.setVisibility(8);
                 this.j0 = null;
                 this.a0 = null;
@@ -634,12 +633,12 @@ public class g1 extends FrameLayout {
         TextView textView22 = this.L;
         textView22.setVisibility(i15);
         textView22.setTextSize(1, 12.0f);
-        x10 x10Var2 = this.K;
+        v10 v10Var2 = this.K;
         if (!z10) {
         }
-        p9 p9Var2 = this.J;
-        ((ViewGroup.MarginLayoutParams) p9Var2.getLayoutParams()).topMargin = AndroidUtilities.dp(103.0f);
-        ((FrameLayout.LayoutParams) p9Var2.getLayoutParams()).gravity = 49;
+        rg.x1 x1Var2 = this.J;
+        ((ViewGroup.MarginLayoutParams) x1Var2.getLayoutParams()).topMargin = AndroidUtilities.dp(103.0f);
+        ((FrameLayout.LayoutParams) x1Var2.getLayoutParams()).gravity = 49;
         this.M.setVisibility(8);
         this.j0 = null;
         this.a0 = null;
@@ -719,7 +718,7 @@ public class g1 extends FrameLayout {
         w9Var.setLayoutParams(layoutParams);
         if (this.l0 == savedStarGift) {
             c1Var.setVisibility(0);
-            c1Var.animate().alpha(savedStarGift.unsaved ? 1.0f : 0.0f).scaleX(savedStarGift.unsaved ? 1.0f : 0.4f).scaleY(savedStarGift.unsaved ? 1.0f : 0.4f).setDuration(350L).setInterpolator(bs.h).withEndAction(new u2.q0(18, this, savedStarGift)).start();
+            c1Var.animate().alpha(savedStarGift.unsaved ? 1.0f : 0.0f).scaleX(savedStarGift.unsaved ? 1.0f : 0.4f).scaleY(savedStarGift.unsaved ? 1.0f : 0.4f).setDuration(350L).setInterpolator(bs.h).withEndAction(new uf.c(17, this, savedStarGift)).start();
         } else {
             c1Var.setAlpha(savedStarGift.unsaved ? 1.0f : 0.0f);
             c1Var.setScaleX(savedStarGift.unsaved ? 1.0f : 0.4f);
@@ -767,8 +766,8 @@ public class g1 extends FrameLayout {
                 }
             }
         }
-        x10 x10Var = this.K;
-        p9 p9Var = this.J;
+        v10 v10Var = this.K;
+        rg.x1 x1Var = this.J;
         TextView textView = this.L;
         if (stargiftattributebackdrop == null || savedStarGift.gift.resell_amount == null) {
             z12 = true;
@@ -802,7 +801,7 @@ public class g1 extends FrameLayout {
             }
             textView.setTextColor(z13 ? -1 : h6.I.q() ? -1333971 : -4229632);
             int i12 = 1088989954;
-            x10Var.setBackground(new l1(z13 ? 1090519039 : h6.I.q() ? 518759725 : 1088989954));
+            v10Var.setBackground(new l1(z13 ? 1090519039 : h6.I.q() ? 518759725 : 1088989954));
             int dp3 = AndroidUtilities.dp(10.0f);
             if (z13) {
                 i12 = 1090519039;
@@ -811,8 +810,8 @@ public class g1 extends FrameLayout {
             }
             imageView.setBackground(h6.c0(dp3, i12));
             imageView.setColorFilter(z13 ? -1 : h6.I.q() ? -1333971 : -4229632);
-            ((FrameLayout.LayoutParams) p9Var.getLayoutParams()).gravity = 49;
-            ((ViewGroup.MarginLayoutParams) p9Var.getLayoutParams()).topMargin = AndroidUtilities.dp(103.0f);
+            ((FrameLayout.LayoutParams) x1Var.getLayoutParams()).gravity = 49;
+            ((ViewGroup.MarginLayoutParams) x1Var.getLayoutParams()).topMargin = AndroidUtilities.dp(103.0f);
         } else {
             textView.setVisibility(0);
             FrameLayout.LayoutParams layoutParams3 = this.E;
@@ -824,7 +823,7 @@ public class g1 extends FrameLayout {
             TL_stars.StarGift starGift2 = savedStarGift.gift;
             if (starGift2.resale_ton_only && DialogObject.getPeerDialogId(starGift2.owner_id) == UserConfig.getInstance(i11).getClientUserId()) {
                 z12 = true;
-                textView.setText(md.n1(md.V0(true, "XTR " + ((Object) md.K0(savedStarGift.gift.getResellAmount(ag.c.b).o(), 1.0f, ',')), 0.95f, yqVarArr, 0.0f, 1.0f), true));
+                textView.setText(md.n1(md.V0(true, "XTR " + ((Object) md.K0(savedStarGift.gift.getResellAmount(ag.b.b).o(), 1.0f, ',')), 0.95f, yqVarArr, 0.0f, 1.0f), true));
             } else {
                 z12 = true;
                 textView.setText(md.S0("XTR " + LocaleController.formatNumber(savedStarGift.gift.getResellStars(), ','), 0.95f, yqVarArr));
@@ -834,12 +833,12 @@ public class g1 extends FrameLayout {
                 yqVar.translate(0.0f, AndroidUtilities.dp(0.5f));
             }
             int v = h6.v(stargiftattributebackdrop.center_color | (-16777216), h6.m1(0.55f, stargiftattributebackdrop.pattern_color | (-16777216)));
-            x10Var.setBackground(new l1(1895825407, v));
+            v10Var.setBackground(new l1(1895825407, v));
             textView.setTextColor(-1);
             imageView.setBackground(h6.c0(AndroidUtilities.dp(10.0f), v));
             imageView.setColorFilter(-1);
-            ((FrameLayout.LayoutParams) p9Var.getLayoutParams()).gravity = 49;
-            ((ViewGroup.MarginLayoutParams) p9Var.getLayoutParams()).topMargin = AndroidUtilities.dp(79.0f);
+            ((FrameLayout.LayoutParams) x1Var.getLayoutParams()).gravity = 49;
+            ((ViewGroup.MarginLayoutParams) x1Var.getLayoutParams()).topMargin = AndroidUtilities.dp(79.0f);
             z13 = z14;
         }
         this.M.setVisibility(8);
@@ -1054,7 +1053,7 @@ public class g1 extends FrameLayout {
         TL_stars.StarGift starGift;
         TextView textView;
         h1 h1Var;
-        p9 p9Var;
+        rg.x1 x1Var;
         TL_stars.SavedStarGift savedStarGift;
         TL_stars.SavedStarGift savedStarGift2;
         xp xpVar;
@@ -1085,8 +1084,8 @@ public class g1 extends FrameLayout {
                         h1Var = this.f;
                         if (h1Var != null) {
                         }
-                        p9Var = this.J;
-                        if (p9Var != null) {
+                        x1Var = this.J;
+                        if (x1Var != null) {
                         }
                         savedStarGift = this.e0;
                         if (savedStarGift != null) {
@@ -1109,8 +1108,8 @@ public class g1 extends FrameLayout {
                     h1Var = this.f;
                     if (h1Var != null) {
                     }
-                    p9Var = this.J;
-                    if (p9Var != null) {
+                    x1Var = this.J;
+                    if (x1Var != null) {
                     }
                     savedStarGift = this.e0;
                     if (savedStarGift != null) {
@@ -1135,8 +1134,8 @@ public class g1 extends FrameLayout {
                     h1Var = this.f;
                     if (h1Var != null) {
                     }
-                    p9Var = this.J;
-                    if (p9Var != null) {
+                    x1Var = this.J;
+                    if (x1Var != null) {
                     }
                     savedStarGift = this.e0;
                     if (savedStarGift != null) {
@@ -1159,8 +1158,8 @@ public class g1 extends FrameLayout {
                 h1Var = this.f;
                 if (h1Var != null) {
                 }
-                p9Var = this.J;
-                if (p9Var != null) {
+                x1Var = this.J;
+                if (x1Var != null) {
                 }
                 savedStarGift = this.e0;
                 if (savedStarGift != null) {
@@ -1193,8 +1192,8 @@ public class g1 extends FrameLayout {
                         sb2.append(text);
                     }
                 }
-                p9Var = this.J;
-                if (p9Var != null && p9Var.getVisibility() == 0 && (textView2 = this.L) != null && textView2.getVisibility() == 0 && !TextUtils.isEmpty(textView2.getText())) {
+                x1Var = this.J;
+                if (x1Var != null && x1Var.getVisibility() == 0 && (textView2 = this.L) != null && textView2.getVisibility() == 0 && !TextUtils.isEmpty(textView2.getText())) {
                     sb2.append(", ");
                     sb2.append(textView2.getText());
                 }
@@ -1247,8 +1246,8 @@ public class g1 extends FrameLayout {
                 if (!TextUtils.isEmpty(text)) {
                 }
             }
-            p9Var = this.J;
-            if (p9Var != null) {
+            x1Var = this.J;
+            if (x1Var != null) {
                 sb2.append(", ");
                 sb2.append(textView2.getText());
             }

@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class hf implements Runnable {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final class hf implements Runnable {
                             chatActivityEnterView.j1(currentPage != 0 ? 1 : 2, true);
                             chatActivityEnterView.J();
                         } else if (!z11) {
-                            chatActivityEnterView.l1(false, true, false, true);
+                            chatActivityEnterView.k1(false, true, false, true);
                         }
                     }
                     if (z10 != chatActivityEnterView.x3 || z12 != chatActivityEnterView.y3) {

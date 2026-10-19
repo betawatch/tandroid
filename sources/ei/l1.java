@@ -3,10 +3,10 @@ package ei;
 import android.content.Context;
 import org.telegram.ui.Components.rx;
 import org.telegram.ui.Components.tz;
-import org.telegram.ui.n41;
-import org.telegram.ui.z51;
+import org.telegram.ui.l41;
+import org.telegram.ui.x51;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class l1 extends li.n {
     public final /* synthetic */ int q;
@@ -29,7 +29,7 @@ public final class l1 extends li.n {
                 ((tz) this.r).f0 = true;
                 break;
             case 4:
-                ((z51) this.r).w1 = true;
+                ((x51) this.r).w1 = true;
                 break;
         }
     }
@@ -47,13 +47,13 @@ public final class l1 extends li.n {
                 ((rx) this.r).Q.f0 = false;
                 break;
             case 3:
-                ((n41) this.r).R.w1 = false;
+                ((l41) this.r).R.w1 = false;
                 break;
             case 4:
-                ((z51) this.r).w1 = false;
+                ((x51) this.r).w1 = false;
                 break;
             default:
-                ((n41) this.r).R.w1 = false;
+                ((l41) this.r).R.w1 = false;
                 break;
         }
     }

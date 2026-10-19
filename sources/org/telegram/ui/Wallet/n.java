@@ -2,13 +2,10 @@ package org.telegram.ui.Wallet;
 
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.v61;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -80,27 +77,39 @@ public final /* synthetic */ class n implements Runnable {
                 AndroidUtilities.removeFromParent((ei.x3) this.b);
                 return;
             case 8:
-                j5 j5Var = (j5) this.b;
-                u61 u61Var = j5Var.c;
-                if (u61Var == null || u61Var.getScrollState() != 0) {
+                k5 k5Var = (k5) this.b;
+                v61 v61Var = k5Var.c;
+                if (v61Var == null || v61Var.getScrollState() != 0) {
                     return;
                 }
-                a71 u02 = j5Var.j.u0();
-                if ((u02 == null || u02.getScrollState() == 0) && (d = j5Var.d(j5Var.c.V2)) != null) {
-                    s4.b0 b0Var = j5Var.c.V2;
+                b71 t02 = k5Var.j.t0();
+                if ((t02 == null || t02.getScrollState() == 0) && (d = k5Var.d(k5Var.c.V2)) != null) {
+                    s4.b0 b0Var = k5Var.c.V2;
                     b0Var.getClass();
                     int i10 = new int[]{0, s4.n0.z(d) - b0Var.F()}[1];
                     if (i10 != 0) {
-                        j5Var.c.v0(0, i10, null);
+                        k5Var.c.v0(0, i10, null);
                         return;
                     }
                     return;
                 }
                 return;
             case 9:
-                ((WalletEngine2) this.b).lambda$close$53();
+                ci.i3 i3Var = (ci.i3) this.b;
+                zh.f fVar = (zh.f) i3Var.b;
+                zh.e eVar = (zh.e) i3Var.c;
+                if (eVar == null) {
+                    return;
+                }
+                fVar.a(eVar);
+                fVar.D = 0.0f;
+                i3Var.c = null;
+                i3Var.invalidate();
                 return;
             case 10:
+                ((WalletEngine2) this.b).lambda$close$53();
+                return;
+            case 11:
                 i8 i8Var = (i8) this.b;
                 boolean z10 = i8Var.h != -1;
                 if (!z10 && !i8Var.s) {
@@ -108,15 +117,15 @@ public final /* synthetic */ class n implements Runnable {
                     i8Var.d = 0.0f;
                 }
                 boolean z11 = z10 || i8Var.s || i8Var.e > 1.001f;
-                l3 l3Var = i8Var.b;
+                m3 m3Var = i8Var.b;
                 float f7 = i8Var.c;
                 float f10 = i8Var.d;
-                l3Var.r = f7;
-                l3Var.s = f10;
-                l3Var.v = z11;
-                l3Var.w = z11;
+                m3Var.r = f7;
+                m3Var.s = f10;
+                m3Var.v = z11;
+                m3Var.w = z11;
                 return;
-            case 11:
+            case 12:
                 p8 p8Var = (p8) this.b;
                 p8Var.removeSelfFromStack();
                 Runnable runnable2 = p8Var.f;
@@ -125,14 +134,11 @@ public final /* synthetic */ class n implements Runnable {
                     return;
                 }
                 return;
-            case 12:
+            case 13:
                 ((org.telegram.ui.Cells.t3) this.b).requestLayout();
                 return;
-            case 13:
-                xc.a0((r9) this.b).N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
-                return;
             default:
-                ((y9) this.b).U();
+                ((z9) this.b).U();
                 return;
         }
     }

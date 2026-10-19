@@ -13,7 +13,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.ll0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class o1 extends im0 {
     public ll0 V2;
@@ -108,7 +108,7 @@ public final class o1 extends im0 {
                     int y3 = this.Z2 ? (int) n1Var.getY() : n1Var.getTop();
                     ArrayList arrayList4 = (ArrayList) sparseArray.get(y3);
                     if (arrayList4 == null) {
-                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) i2.d.A(1, arrayList) : new ArrayList();
+                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) i2.e.A(1, arrayList) : new ArrayList();
                         sparseArray.put(y3, arrayList4);
                     }
                     arrayList4.add(n1Var);
@@ -151,7 +151,7 @@ public final class o1 extends im0 {
                     m1Var = new m1(this);
                     m1Var.l(7);
                 } else {
-                    m1Var = (m1) i2.d.A(1, arrayList2);
+                    m1Var = (m1) i2.e.A(1, arrayList2);
                 }
                 m1Var.M = R;
                 m1Var.e();

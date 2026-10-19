@@ -15,7 +15,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import ci.d6;
+import ci.e6;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
@@ -33,24 +33,25 @@ import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.j5;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.p21;
+import org.telegram.ui.Components.q21;
 import org.telegram.ui.Components.r5;
 import org.telegram.ui.Components.sd0;
 import org.telegram.ui.Components.vp;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.wc0;
-import org.telegram.ui.ey;
-import org.telegram.ui.te1;
-import org.telegram.ui.xx;
+import org.telegram.ui.cy;
+import org.telegram.ui.re1;
+import org.telegram.ui.vx;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q1 implements xx, org.telegram.ui.ActionBar.a2, mi.n, ResultCallback {
+public final /* synthetic */ class q1 implements vx, org.telegram.ui.ActionBar.a2, mi.n, ResultCallback {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ long c;
@@ -65,13 +66,13 @@ public final /* synthetic */ class q1 implements xx, org.telegram.ui.ActionBar.a
         this.e = runnable;
     }
 
-    @Override // org.telegram.ui.xx
+    @Override // org.telegram.ui.vx
     public /* synthetic */ boolean D() {
         return false;
     }
 
-    @Override // org.telegram.ui.xx
-    public /* synthetic */ boolean K(ey eyVar) {
+    @Override // org.telegram.ui.vx
+    public /* synthetic */ boolean J(cy cyVar) {
         return false;
     }
 
@@ -170,7 +171,7 @@ public final /* synthetic */ class q1 implements xx, org.telegram.ui.ActionBar.a
                             UserConfig.getInstance(i12).saveConfig(true);
                             NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.mainUserInfoChanged, new Object[0]);
                             NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_NAME));
-                            ConnectionsManager.getInstance(i12).sendRequest(updateprofile, new d6(12));
+                            ConnectionsManager.getInstance(i12).sendRequest(updateprofile, new e6(12));
                             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 3, Long.valueOf(j10));
                         }
                     }
@@ -183,7 +184,7 @@ public final /* synthetic */ class q1 implements xx, org.telegram.ui.ActionBar.a
 
     @Override // org.telegram.tgnet.ResultCallback
     public void onComplete(Object obj) {
-        p21 p21Var = (p21) this.d;
+        q21 q21Var = (q21) this.d;
         vp vpVar = (vp) this.e;
         Pair pair = (Pair) obj;
         if (pair == null || ((Long) pair.first).longValue() != this.c) {
@@ -192,10 +193,10 @@ public final /* synthetic */ class q1 implements xx, org.telegram.ui.ActionBar.a
         Drawable drawable = vpVar.b;
         if (drawable instanceof wc0) {
             wc0 wc0Var = (wc0) drawable;
-            wc0Var.s(p21.e((Bitmap) pair.second), this.b >= 0 ? 100 : -100);
-            wc0Var.t(p21Var.L);
+            wc0Var.s(q21.e((Bitmap) pair.second), this.b >= 0 ? 100 : -100);
+            wc0Var.t(q21Var.L);
         }
-        p21Var.invalidate();
+        q21Var.invalidate();
     }
 
     @Override // org.telegram.tgnet.ResultCallback
@@ -204,8 +205,8 @@ public final /* synthetic */ class q1 implements xx, org.telegram.ui.ActionBar.a
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.xx
-    public boolean w(ey eyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, te1 te1Var) {
+    @Override // org.telegram.ui.vx
+    public boolean w(cy cyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, re1 re1Var) {
         int i12;
         String str;
         boolean z12;
@@ -213,15 +214,15 @@ public final /* synthetic */ class q1 implements xx, org.telegram.ui.ActionBar.a
         TLRPC.Chat chat;
         TLRPC.Chat chat2;
         int i13;
-        ey eyVar2 = (ey) this.d;
+        cy cyVar2 = (cy) this.d;
         final TL_bots.BotVerifierSettings botVerifierSettings = (TL_bots.BotVerifierSettings) this.e;
         if (arrayList.isEmpty()) {
             return false;
         }
         final long j10 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-        Activity parentActivity = eyVar2.getParentActivity();
+        Activity parentActivity = cyVar2.getParentActivity();
         final int i14 = this.b;
-        r1 r1Var = new r1(te1Var, eyVar2, j10, i14);
+        r1 r1Var = new r1(re1Var, cyVar2, j10, i14);
         if (parentActivity == null) {
             return true;
         }
@@ -257,7 +258,7 @@ public final /* synthetic */ class q1 implements xx, org.telegram.ui.ActionBar.a
             chat2 = chat3;
         }
         boolean z13 = z12;
-        final org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(z13 ? 1 : 0, parentActivity, (org.telegram.ui.ActionBar.d6) null, z13);
+        final org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(z13 ? 1 : 0, parentActivity, (d6) null, z13);
         f3Var.fixNavigationBar();
         LinearLayout e = org.telegram.messenger.g0.e(parentActivity, z13 ? 1 : 0);
         TLRPC.User user3 = user;
@@ -269,7 +270,7 @@ public final /* synthetic */ class q1 implements xx, org.telegram.ui.ActionBar.a
         frameLayout.setBackground(h6.d0(AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), h6.x0(null, h6.ci, false)));
         w9 w9Var = new w9(parentActivity);
         w9Var.setRoundRadius(AndroidUtilities.dp(28.0f));
-        h9 h9Var = new h9((org.telegram.ui.ActionBar.d6) null);
+        h9 h9Var = new h9((d6) null);
         h9Var.p(chat2);
         w9Var.e(chat2, h9Var);
         frameLayout.addView(w9Var, z5.e(28, 28, 51));
@@ -392,7 +393,7 @@ public final /* synthetic */ class q1 implements xx, org.telegram.ui.ActionBar.a
                 } else {
                     setcustomverification.custom_description = botVerifierSettings2.custom_description;
                 }
-                ConnectionsManager.getInstance(i18).sendRequest(setcustomverification, new ai.k2(dVar2, f3Var, r1Var2, 7));
+                ConnectionsManager.getInstance(i18).sendRequest(setcustomverification, new ai.j2(dVar2, f3Var, r1Var2, 7));
             }
         });
         f3Var.smoothKeyboardAnimationEnabled = true;
@@ -422,9 +423,9 @@ public final /* synthetic */ class q1 implements xx, org.telegram.ui.ActionBar.a
         this.b = i10;
     }
 
-    public /* synthetic */ q1(ey eyVar, int i10, long j10, TL_bots.BotVerifierSettings botVerifierSettings) {
+    public /* synthetic */ q1(cy cyVar, int i10, long j10, TL_bots.BotVerifierSettings botVerifierSettings) {
         this.a = 0;
-        this.d = eyVar;
+        this.d = cyVar;
         this.b = i10;
         this.c = j10;
         this.e = botVerifierSettings;

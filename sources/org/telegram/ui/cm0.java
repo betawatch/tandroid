@@ -1,73 +1,55 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import java.util.Comparator;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class cm0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ xm0 c;
+public final class cm0 implements Comparator {
+    public final /* synthetic */ vm0 a;
 
-    public /* synthetic */ cm0(xm0 xm0Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = xm0Var;
-        this.b = z10;
+    public cm0(vm0 vm0Var) {
+        this.a = vm0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                xm0 xm0Var = this.c;
-                AnimatorSet animatorSet = xm0Var.M;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    xm0Var.M = null;
-                    break;
-                }
-                break;
-            default:
-                xm0 xm0Var2 = this.c;
-                AnimatorSet animatorSet2 = xm0Var2.M;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    xm0Var2.M = null;
-                    break;
-                }
-                break;
+    public final int a(TLRPC.SecureValueError secureValueError) {
+        if (secureValueError instanceof TLRPC.TL_secureValueError) {
+            return 0;
         }
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorFrontSide) {
+            return 1;
+        }
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorReverseSide) {
+            return 2;
+        }
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorSelfie) {
+            return 3;
+        }
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorTranslationFile) {
+            return 4;
+        }
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorTranslationFiles) {
+            return 5;
+        }
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorFile) {
+            return 6;
+        }
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorFiles) {
+            return 7;
+        }
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorData) {
+            return vm0.B0(this.a, ((TLRPC.TL_secureValueErrorData) secureValueError).field);
+        }
+        return 100;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                xm0 xm0Var = this.c;
-                AnimatorSet animatorSet = xm0Var.M;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.b) {
-                        xm0Var.N.setVisibility(4);
-                        break;
-                    } else {
-                        xm0Var.L.getContentView().setVisibility(4);
-                        break;
-                    }
-                }
-                break;
-            default:
-                xm0 xm0Var2 = this.c;
-                AnimatorSet animatorSet2 = xm0Var2.M;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    if (!this.b) {
-                        xm0Var2.P.setVisibility(4);
-                        break;
-                    } else {
-                        xm0Var2.O.setVisibility(4);
-                        break;
-                    }
-                }
-                break;
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int a2 = a((TLRPC.SecureValueError) obj);
+        int a10 = a((TLRPC.SecureValueError) obj2);
+        if (a2 < a10) {
+            return -1;
         }
+        return a2 > a10 ? 1 : 0;
     }
 }

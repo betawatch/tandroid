@@ -1,25 +1,23 @@
 package org.telegram.ui.web;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import java.io.BufferedInputStream;
-import java.io.InputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-import org.telegram.messenger.SvgHelper;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class h1 extends AsyncTask {
     public final HashMap a = new HashMap();
-    public final org.telegram.ui.Wallet.x b;
+    public final Utilities.Callback b;
     public Exception c;
 
-    public h1(org.telegram.ui.Wallet.x xVar) {
-        this.b = xVar;
+    public h1(Utilities.Callback callback) {
+        this.b = callback;
     }
 
     @Override // android.os.AsyncTask
@@ -34,11 +32,16 @@ public final class h1 extends AsyncTask {
             httpURLConnection.setRequestMethod("GET");
             httpURLConnection.setDoInput(true);
             int responseCode = httpURLConnection.getResponseCode();
-            if (responseCode >= 200 && responseCode < 300) {
-                return (httpURLConnection.getContentType() == null || !httpURLConnection.getContentType().contains("svg")) ? BitmapFactory.decodeStream(new BufferedInputStream(httpURLConnection.getInputStream())) : SvgHelper.getBitmap((InputStream) new BufferedInputStream(httpURLConnection.getInputStream()), 64, 64, false);
+            BufferedReader bufferedReader = (responseCode < 200 || responseCode >= 300) ? new BufferedReader(new InputStreamReader(httpURLConnection.getErrorStream())) : new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
+            StringBuilder sb2 = new StringBuilder();
+            while (true) {
+                String readLine = bufferedReader.readLine();
+                if (readLine == null) {
+                    bufferedReader.close();
+                    return sb2.toString();
+                }
+                sb2.append(readLine);
             }
-            httpURLConnection.disconnect();
-            return null;
         } catch (Exception e) {
             this.c = e;
             return null;
@@ -47,13 +50,13 @@ public final class h1 extends AsyncTask {
 
     @Override // android.os.AsyncTask
     public final void onPostExecute(Object obj) {
-        Bitmap bitmap = (Bitmap) obj;
-        org.telegram.ui.Wallet.x xVar = this.b;
-        if (xVar != null) {
+        String str = (String) obj;
+        Utilities.Callback callback = this.b;
+        if (callback != null) {
             if (this.c == null) {
-                xVar.run(bitmap);
+                callback.run(str);
             } else {
-                xVar.run(null);
+                callback.run(null);
             }
         }
     }

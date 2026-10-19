@@ -13,9 +13,9 @@ import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.vh1;
+import org.telegram.ui.th1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class np implements ri {
     public final /* synthetic */ wp a;
@@ -31,7 +31,7 @@ public final class np implements ri {
         kpVar.V1 = wpVar.f0;
         kpVar.c1(wpVar.v.a());
         kpVar.I1 = new mp(this, 1);
-        wp.r(wpVar, kpVar);
+        wp.s(wpVar, kpVar);
     }
 
     @Override // org.telegram.ui.Components.ri
@@ -52,14 +52,14 @@ public final class np implements ri {
                 Point realScreenSize = AndroidUtilities.getRealScreenSize();
                 Bitmap loadBitmap = ImageLoader.loadBitmap(str, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
                 loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-                kp kpVar = new kp(new vh1(file, file, ""), loadBitmap, false, 2);
+                kp kpVar = new kp(new th1(file, file, ""), loadBitmap, false, 2);
                 kpVar.V1 = wpVar.f0;
                 kpVar.F1 = false;
                 kpVar.E1 = false;
                 kpVar.n1 = 0.2f;
                 kpVar.c1(wpVar.v.a());
                 kpVar.I1 = new mp(this, 0);
-                wp.r(wpVar, kpVar);
+                wp.s(wpVar, kpVar);
             }
         } catch (Throwable th2) {
             FileLog.e(th2);
@@ -73,7 +73,7 @@ public final class np implements ri {
     }
 
     @Override // org.telegram.ui.Components.ri
-    public final void r(gh ghVar) {
+    public final void u(gh ghVar) {
         ghVar.run();
     }
 

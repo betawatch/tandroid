@@ -1,43 +1,16 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.View;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class a30 implements Runnable {
-    public final /* synthetic */ s50 a;
-
-    public a30(s50 s50Var) {
-        this.a = s50Var;
+public final class a30 extends View {
+    public a30(LaunchActivity launchActivity) {
+        super(launchActivity);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        s50 s50Var = this.a;
-        org.telegram.ui.ActionBar.j5 j5Var = s50Var.U;
-        x40 x40Var = s50Var.V;
-        if (x40Var == null || s50Var.isDismissed()) {
-            return;
-        }
-        ChatObject.Call call = s50Var.a1;
-        int i10 = call != null ? call.call.schedule_date : s50Var.k2;
-        if (i10 == 0) {
-            return;
-        }
-        int currentTime = i10 - s50Var.d.getConnectionsManager().getCurrentTime();
-        if (currentTime >= 86400) {
-            x40Var.l(LocaleController.formatPluralString("Days", Math.round(currentTime / 86400.0f), new Object[0]), false);
-        } else {
-            x40Var.l(AndroidUtilities.formatFullDuration(Math.abs(currentTime)), false);
-            if (currentTime < 0 && j5Var.getTag() == null) {
-                j5Var.setTag(1);
-                j5Var.l(LocaleController.getString(R.string.VoipChatLateBy), false);
-            }
-        }
-        s50Var.W.l(LocaleController.formatStartsTime(i10, 3), false);
-        AndroidUtilities.runOnUIThread(s50Var.w2, 1000L);
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.ui.ActionBar.k.getCurrentActionBarHeight());
     }
 }

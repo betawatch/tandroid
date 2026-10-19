@@ -70,7 +70,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -78,36 +78,36 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.c61;
 import org.telegram.ui.Components.c80;
 import org.telegram.ui.Components.cj0;
-import org.telegram.ui.Components.d11;
-import org.telegram.ui.Components.dx0;
+import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.e11;
 import org.telegram.ui.Components.ej0;
+import org.telegram.ui.Components.ex0;
 import org.telegram.ui.Components.fd;
-import org.telegram.ui.Components.fx0;
-import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.gx0;
 import org.telegram.ui.Components.jf0;
 import org.telegram.ui.Components.k61;
-import org.telegram.ui.Components.l71;
+import org.telegram.ui.Components.l61;
 import org.telegram.ui.Components.m10;
+import org.telegram.ui.Components.m71;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q21;
 import org.telegram.ui.Components.qs;
+import org.telegram.ui.Components.r21;
 import org.telegram.ui.Components.rs;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.uz;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yq;
-import org.telegram.ui.ey;
-import org.telegram.ui.o00;
-import org.telegram.ui.yw;
-import org.telegram.ui.z21;
+import org.telegram.ui.cy;
+import org.telegram.ui.m00;
+import org.telegram.ui.ww;
+import org.telegram.ui.x21;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
+public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
     public boolean A0;
     public boolean A1;
     public boolean A2;
@@ -127,7 +127,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
     public float D1;
     public boolean D2;
     public int D3;
-    public final ey D4;
+    public final cy D4;
     public boolean E;
     public int E0;
     public boolean E1;
@@ -154,7 +154,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
     public int H4;
     public int I;
     public String I0;
-    public d11 I1;
+    public e11 I1;
     public int I2;
     public int I3;
     public final o2 I4;
@@ -325,7 +325,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
     public org.telegram.ui.Components.w5 m3;
     public final ic m4;
     public float n;
-    public q21 n0;
+    public r21 n0;
     public boolean n1;
     public boolean n2;
     public org.telegram.ui.Components.w5 n3;
@@ -613,9 +613,9 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
         boolean z14 = (this.l0 <= 0 || R() || this.v2 || this.u0.w) ? false : true;
         this.w2 = z14;
         if (this.i0 != 1.0f && (z14 || this.m0 > 0.0f)) {
-            q21 q21Var = this.n0;
-            if (q21Var != null) {
-                int i15 = q21Var.f;
+            r21 r21Var = this.n0;
+            if (r21Var != null) {
+                int i15 = r21Var.f;
                 int i16 = this.l0;
                 if (i15 != i16) {
                 }
@@ -633,8 +633,8 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                     this.o0.setShader(null);
                     if (this.Y1.getBitmap() != null && !this.Y1.getBitmap().isRecycled()) {
                         this.o0.setColor(AndroidUtilities.getDominantColor(this.Y1.getBitmap()));
-                    } else if (this.Y1.getDrawable() instanceof l71) {
-                        this.o0.setColor(((l71) this.Y1.getDrawable()).a.a());
+                    } else if (this.Y1.getDrawable() instanceof m71) {
+                        this.o0.setColor(((m71) this.Y1.getDrawable()).a.a());
                     } else {
                         this.o0.setColor(this.a2.c());
                     }
@@ -668,10 +668,10 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                 canvas.restore();
             }
             int i17 = this.l0;
-            q21 q21Var2 = new q21(ApplicationLoader.applicationContext, null);
-            q21Var2.m = true;
-            q21Var2.b(i17);
-            this.n0 = q21Var2;
+            r21 r21Var2 = new r21(ApplicationLoader.applicationContext, null);
+            r21Var2.m = true;
+            r21Var2.b(i17);
+            this.n0 = r21Var2;
             if (this.o0 == null) {
             }
             int imageY222 = (int) (this.Y1.getImageY2() - AndroidUtilities.dp(9.0f));
@@ -1228,11 +1228,11 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
         }
     }
 
-    public boolean F() {
+    public boolean E() {
         return false;
     }
 
-    public final CharSequence G() {
+    public final CharSequence F() {
         TLRPC.User user;
         String string;
         int i10 = this.F0;
@@ -1268,7 +1268,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                 int length2 = string.length() + length;
                 spannableStringBuilder.append((CharSequence) string);
                 if (dialog.unread_count > 0) {
-                    spannableStringBuilder.setSpan(new c61(AndroidUtilities.bold(), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Y8, this.J4)), length, length2, 33);
+                    spannableStringBuilder.setSpan(new d61(AndroidUtilities.bold(), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Y8, this.J4)), length, length2, 33);
                 }
                 if (spannableStringBuilder.length() > 150) {
                     break;
@@ -1285,7 +1285,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
         return Emoji.replaceEmoji(spannableStringBuilder, org.telegram.ui.ActionBar.h6.F0[this.E0].getFontMetricsInt(), false);
     }
 
-    public final CharSequence H() {
+    public final CharSequence G() {
         TLRPC.User user;
         String string;
         MessagesController messagesController = MessagesController.getInstance(this.F0);
@@ -1319,7 +1319,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                 int length2 = string.length() + length;
                 spannableStringBuilder.append((CharSequence) string);
                 if (dialog.unread_count > 0) {
-                    spannableStringBuilder.setSpan(new c61(AndroidUtilities.bold(), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Y8, this.J4)), length, length2, 33);
+                    spannableStringBuilder.setSpan(new d61(AndroidUtilities.bold(), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Y8, this.J4)), length, length2, 33);
                 }
                 if (spannableStringBuilder.length() > 150) {
                     break;
@@ -1394,7 +1394,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                 valueOf = SpannableStringBuilder.valueOf(charSequence5);
             }
             if (z10) {
-                s(valueOf);
+                t(valueOf);
             }
             return valueOf;
         }
@@ -1431,7 +1431,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
             }
             CharSequence append = new SpannableStringBuilder(str2).append(AndroidUtilities.replaceNewLines(spannableString));
             if (z10) {
-                append = s(append);
+                append = t(append);
             }
             return I(append, charSequence, i10);
         }
@@ -1493,7 +1493,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                 MediaDataController.addAnimatedEmojiSpans(arrayList2, spannableString2, textPaint2 != null ? textPaint2.getFontMetricsInt() : null);
             }
             if (z10) {
-                spannableString2 = s(spannableString2);
+                spannableString2 = t(spannableString2);
             }
             return I(spannableString2, charSequence, i10);
         }
@@ -1553,7 +1553,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
             charSequence2 = ((String) charSequence2).replace('\n', ' ');
         }
         if (z10) {
-            charSequence2 = s(charSequence2);
+            charSequence2 = t(charSequence2);
         }
         SpannableStringBuilder I2 = I(charSequence2, charSequence, i10);
         if (!Q()) {
@@ -2106,7 +2106,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                 }
                 z11 = z29;
                 if (this.H0 != 0) {
-                    int i28 = z21.R;
+                    int i28 = x21.R;
                     z11 = z29;
                 }
             } else {
@@ -2403,8 +2403,8 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                     if (i13 == 0) {
                         this.Z0 = false;
                         this.b1 = false;
-                        ey eyVar = this.D4;
-                        if (eyVar == null || (P3 = eyVar.P3(i22, this.j1, i13, false)) == null || P3.isEmpty()) {
+                        cy cyVar = this.D4;
+                        if (cyVar == null || (P3 = cyVar.P3(i22, this.j1, i13, false)) == null || P3.isEmpty()) {
                             messageObject2 = null;
                         } else {
                             int size = P3.size();
@@ -2690,7 +2690,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
         boolean z38 = (this.P || (getMeasuredWidth() == 0 && getMeasuredHeight() == 0)) ? z22 : true;
         if (!z30) {
             int i42 = this.u0.y;
-            ci.c8.r(MessagesController.getInstance(i15).getStoriesController(), getDialogId());
+            ci.d8.r(MessagesController.getInstance(i15).getStoriesController(), getDialogId());
         }
         if (!z10) {
             this.c1 = (this.Z0 || this.b1) ? 1.0f : f7;
@@ -2705,7 +2705,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
         }
         if (z38) {
             if (this.w3) {
-                t();
+                u();
             } else {
                 this.A0 = true;
             }
@@ -2869,7 +2869,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
         if (arrayList != null && arrayList.size() > 1 && TextUtils.isEmpty(restrictionReason) && this.J0 == 0 && this.h2 == null) {
             this.R1 = 0;
             this.S1 = false;
-            Collections.sort(this.g1, Comparator$-CC.comparingInt(new ai.u8(10)));
+            Collections.sort(this.g1, Comparator$-CC.comparingInt(new ai.v8(10)));
             for (int i18 = 0; i18 < Math.min(3, this.g1.size()); i18++) {
                 MessageObject messageObject3 = (MessageObject) this.g1.get(i18);
                 if (messageObject3 != null && !messageObject3.needDrawBluredPreview() && (messageObject3.isPhoto() || messageObject3.isNewGif() || messageObject3.isVideo() || messageObject3.isRoundVideo() || messageObject3.isStoryMedia())) {
@@ -3098,7 +3098,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
 
     @Override // org.telegram.ui.Cells.a0, android.view.View
     public final void invalidate() {
-        if (ci.z9.x1) {
+        if (ci.aa.x1) {
             return;
         }
         super.invalidate();
@@ -3359,11 +3359,11 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
         float y3;
         StaticLayout staticLayout2;
         int i27;
-        fx0 u02;
+        gx0 u02;
         int i28;
         m2 m2Var;
-        ey eyVar;
-        yw ywVar;
+        cy cyVar;
+        ww wwVar;
         TLRPC.TL_forumTopic tL_forumTopic3;
         ej0 ej0Var2;
         TLRPC.TL_forumTopic tL_forumTopic4;
@@ -3383,7 +3383,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
             icVar3.setVisibility(4);
             return;
         }
-        boolean z24 = z23 && (r2Var4.J0 != 0 || (r2Var4.P && (tL_forumTopic3 = r2Var4.N) != null && tL_forumTopic3.id == 1)) && r2Var4.e2 != null && r2Var4.w1 == 0.0f && (eyVar = r2Var4.D4) != null && eyVar.X3() && ((ywVar = eyVar.G3) == null || !ywVar.c());
+        boolean z24 = z23 && (r2Var4.J0 != 0 || (r2Var4.P && (tL_forumTopic3 = r2Var4.N) != null && tL_forumTopic3.id == 1)) && r2Var4.e2 != null && r2Var4.w1 == 0.0f && (cyVar = r2Var4.D4) != null && cyVar.X3() && ((wwVar = cyVar.G3) == null || !wwVar.c());
         ej0 ej0Var3 = r2Var4.e2;
         float f28 = ej0Var3 != null ? ej0Var3.J : 1.0f;
         if (z24) {
@@ -3510,7 +3510,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                             f11 = measuredWidth;
                         }
                         int measuredWidth2 = (r2Var4.getMeasuredWidth() - AndroidUtilities.dp(43.0f)) - (r2Var4.y1.getIntrinsicWidth() / 2);
-                        int A = lk.A(52.0f, r2Var4.getMeasuredHeight(), 2);
+                        int A = kk.A(52.0f, r2Var4.getMeasuredHeight(), 2);
                         int intrinsicWidth = (r2Var4.y1.getIntrinsicWidth() / 2) + measuredWidth2;
                         int intrinsicHeight = (r2Var4.y1.getIntrinsicHeight() / 2) + A;
                         if (r2Var4.B1 <= f10) {
@@ -3653,7 +3653,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
             if (r2Var4.B1 >= f7) {
             }
             int measuredWidth22 = (r2Var4.getMeasuredWidth() - AndroidUtilities.dp(43.0f)) - (r2Var4.y1.getIntrinsicWidth() / 2);
-            int A2 = lk.A(52.0f, r2Var4.getMeasuredHeight(), 2);
+            int A2 = kk.A(52.0f, r2Var4.getMeasuredHeight(), 2);
             int intrinsicWidth2 = (r2Var4.y1.getIntrinsicWidth() / 2) + measuredWidth22;
             int intrinsicHeight2 = (r2Var4.y1.getIntrinsicHeight() / 2) + A2;
             if (r2Var4.B1 <= f10) {
@@ -3739,7 +3739,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                     i21 = -1;
                     o2Var = o2Var4;
                     f22 = 1.0f;
-                    i34 = canvas3.saveLayerAlpha(com.google.android.gms.internal.play_billing.k3.D(1.0f, clamp, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(z21.getRightPaddingSize() + 1)), 0.0f, r2Var4.getMeasuredWidth(), r2Var4.getMeasuredHeight(), (int) ((1.0f - r2Var4.i0) * 255.0f), 31);
+                    i34 = canvas3.saveLayerAlpha(com.google.android.gms.internal.play_billing.k3.D(1.0f, clamp, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(x21.getRightPaddingSize() + 1)), 0.0f, r2Var4.getMeasuredWidth(), r2Var4.getMeasuredHeight(), (int) ((1.0f - r2Var4.i0) * 255.0f), 31);
                     i20 = 1;
                 } else {
                     o2Var = o2Var4;
@@ -3748,7 +3748,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                     f22 = 1.0f;
                     int save = canvas3.save();
                     i20 = 1;
-                    canvas3.clipRect(com.google.android.gms.internal.play_billing.k3.D(1.0f, clamp, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(z21.getRightPaddingSize() + 1)), 0.0f, r2Var4.getMeasuredWidth(), r2Var4.getMeasuredHeight());
+                    canvas3.clipRect(com.google.android.gms.internal.play_billing.k3.D(1.0f, clamp, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(x21.getRightPaddingSize() + 1)), 0.0f, r2Var4.getMeasuredWidth(), r2Var4.getMeasuredHeight());
                     i34 = save;
                 }
                 canvas3.translate((-(r2Var4.getMeasuredWidth() - AndroidUtilities.dp(74.0f))) * 0.7f * r2Var4.i0, 0.0f);
@@ -3909,7 +3909,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                 }
                 canvas3.restore();
             }
-            if (r2Var4.F()) {
+            if (r2Var4.E()) {
                 org.telegram.ui.ActionBar.h6.b1.setBounds(r2Var4.O2, ((r2Var4.N2.getHeight() - org.telegram.ui.ActionBar.h6.b1.getIntrinsicHeight()) / 2) + r2Var4.M2, org.telegram.ui.ActionBar.h6.b1.getIntrinsicWidth() + r2Var4.O2, org.telegram.ui.ActionBar.h6.b1.getIntrinsicHeight() + ((r2Var4.N2.getHeight() - org.telegram.ui.ActionBar.h6.b1.getIntrinsicHeight()) / 2) + r2Var4.M2);
                 org.telegram.ui.ActionBar.h6.b1.draw(canvas3);
             }
@@ -4956,9 +4956,9 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                                         canvas3.scale(a2, a2, rectF8.centerX(), rectF8.centerY());
                                         r2Var3.G1.setColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var3));
                                         canvas3.drawRoundRect(rectF8, rectF8.height() / 2.0f, rectF8.height() / 2.0f, r2Var3.G1);
-                                        d11 d11Var = r2Var3.I1;
-                                        if (d11Var != null) {
-                                            d11Var.c(rectF8.left + AndroidUtilities.dp(13.0f), rectF8.centerY(), 1.0f, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Sh, d6Var3), canvas);
+                                        e11 e11Var = r2Var3.I1;
+                                        if (e11Var != null) {
+                                            e11Var.c(rectF8.left + AndroidUtilities.dp(13.0f), rectF8.centerY(), 1.0f, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Sh, d6Var3), canvas);
                                         }
                                         canvas.restore();
                                     }
@@ -5104,7 +5104,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                 if (z38) {
                     k2Var.z = 1;
                 }
-                ci.c8.h(r2Var.H0, canvas3, imageReceiver, k2Var);
+                ci.d8.h(r2Var.H0, canvas3, imageReceiver, k2Var);
                 if (k2Var.w) {
                     r2Var.y();
                 }
@@ -5404,7 +5404,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
             this.A0 = false;
             this.K4 = measuredWidth;
             try {
-                t();
+                u();
             } catch (Exception e) {
                 FileLog.e(e);
             }
@@ -5427,10 +5427,10 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
             setMeasuredDimension(size, AndroidUtilities.dp(((z10 || SharedConfig.useThreeLinesLayout) ? this.K : this.J) + ((!M() || ((z10 || SharedConfig.useThreeLinesLayout) && !Q())) ? 0 : Q() ? this.M : this.L)) + (this.s2 ? 1 : 0));
             this.Q = false;
             if (this.P && !M()) {
-                t();
+                u();
                 if (this.R) {
                     this.Q = true;
-                    t();
+                    u();
                 }
             }
         }
@@ -5631,11 +5631,11 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
 
     @Override // android.view.View
     public final boolean performAccessibilityAction(int i10, Bundle bundle) {
-        ey eyVar;
-        if (i10 != R.id.acc_action_chat_preview || (eyVar = this.D4) == null) {
+        cy cyVar;
+        if (i10 != R.id.acc_action_chat_preview || (cyVar = this.D4) == null) {
             return super.performAccessibilityAction(i10, bundle);
         }
-        eyVar.F4(this);
+        cyVar.F4(this);
         return true;
     }
 
@@ -5645,16 +5645,6 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
             getParent().requestLayout();
         }
         super.requestLayout();
-    }
-
-    public final CharSequence s(CharSequence charSequence) {
-        if (this.R1 <= 0) {
-            return charSequence;
-        }
-        SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(charSequence);
-        valueOf.insert(0, (CharSequence) " ");
-        valueOf.setSpan(new p2(AndroidUtilities.dp(((this.L4 + 2) * this.R1) + 3)), 0, 1, 33);
-        return valueOf;
     }
 
     public void setArchivedPullAnimation(ej0 ej0Var) {
@@ -5679,7 +5669,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
             return;
         }
         this.I0 = str;
-        t();
+        u();
         requestLayout();
     }
 
@@ -5721,7 +5711,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
             return;
         }
         if (this.I1 == null) {
-            this.I1 = new d11(LocaleController.getString(R.string.BotOpen), 14.0f, AndroidUtilities.bold());
+            this.I1 = new e11(LocaleController.getString(R.string.BotOpen), 14.0f, AndroidUtilities.bold());
         }
         this.E1 = z10;
         this.F1.c(false);
@@ -5730,7 +5720,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
     public void setPinForced(boolean z10) {
         this.B3 = z10;
         if (getMeasuredWidth() > 0 && getMeasuredHeight() > 0) {
-            t();
+            u();
         }
         invalidate();
     }
@@ -5802,6 +5792,16 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
         if (z10) {
             invalidate();
         }
+    }
+
+    public final CharSequence t(CharSequence charSequence) {
+        if (this.R1 <= 0) {
+            return charSequence;
+        }
+        SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(charSequence);
+        valueOf.insert(0, (CharSequence) " ");
+        valueOf.setSpan(new p2(AndroidUtilities.dp(((this.L4 + 2) * this.R1) + 3)), 0, 1, 33);
+        return valueOf;
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(11:(2:677|678)|(2:682|(8:684|685|686|687|(1:698)(1:691)|692|(2:693|(1:695)(1:696))|697))|704|685|686|687|(1:689)|698|692|(3:693|(0)(0)|695)|697) */
@@ -5967,7 +5967,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void t() {
+    public void u() {
         int i10;
         float f7;
         float f10;
@@ -6032,7 +6032,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
         TLRPC.User user2;
         CharSequence charSequence16;
         CharSequence charSequence17;
-        CharSequence G;
+        CharSequence F;
         CharSequence charSequence18;
         String str4;
         String str5;
@@ -6178,11 +6178,11 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(charSequence30);
             f10 = 16.0f;
             f7 = 17.0f;
+            for (l61 l61Var : (l61[]) spannableStringBuilder2.getSpans(0, spannableStringBuilder2.length(), l61.class)) {
+                spannableStringBuilder2.removeSpan(l61Var);
+            }
             for (k61 k61Var : (k61[]) spannableStringBuilder2.getSpans(0, spannableStringBuilder2.length(), k61.class)) {
                 spannableStringBuilder2.removeSpan(k61Var);
-            }
-            for (j61 j61Var : (j61[]) spannableStringBuilder2.getSpans(0, spannableStringBuilder2.length(), j61.class)) {
-                spannableStringBuilder2.removeSpan(j61Var);
             }
             charSequence30 = spannableStringBuilder2;
         } else {
@@ -6504,7 +6504,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                                         charSequence2 = charSequence;
                                         int intValue = MessagesController.getInstance(this.F0).getPrintingStringType(this.H0, getTopicId()).intValue();
                                         this.j2 = intValue;
-                                        fx0 u02 = org.telegram.ui.ActionBar.h6.u0(intValue);
+                                        gx0 u02 = org.telegram.ui.ActionBar.h6.u0(intValue);
                                         int dp8 = u02 != null ? AndroidUtilities.dp(3.0f) + u02.getIntrinsicWidth() : 0;
                                         SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
                                         CharSequence replace = TextUtils.replace(printingString, new String[]{"..."}, new String[]{""});
@@ -6784,7 +6784,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                                                                 spannableStringBuilder5.append(charSequence4);
                                                                 int length3 = spannableStringBuilder5.length();
                                                                 spannableStringBuilder5.append((CharSequence) LocaleController.getString(R.string.MonoforumSpan));
-                                                                spannableStringBuilder5.setSpan(new o00(LocaleController.getString(R.string.MonoforumSpan), org.telegram.ui.ActionBar.h6.y6, this.J4), length3, spannableStringBuilder5.length(), 33);
+                                                                spannableStringBuilder5.setSpan(new m00(LocaleController.getString(R.string.MonoforumSpan), org.telegram.ui.ActionBar.h6.y6, this.J4), length3, spannableStringBuilder5.length(), 33);
                                                                 charSequence22 = spannableStringBuilder5;
                                                             } else {
                                                                 escape = AndroidUtilities.escape(this.g2.title);
@@ -6932,12 +6932,12 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                                                                         this.L3 = false;
                                                                         str4 = str5;
                                                                     } else if (i37 == 3 && UserObject.isUserSelf(this.f2)) {
-                                                                        ey eyVar = this.D4;
-                                                                        str4 = LocaleController.getString((eyVar == null || !eyVar.O0) ? R.string.SavedMessagesInfo : R.string.SavedMessagesInfoQuote);
+                                                                        cy cyVar = this.D4;
+                                                                        str4 = LocaleController.getString((cyVar == null || !cyVar.O0) ? R.string.SavedMessagesInfo : R.string.SavedMessagesInfoQuote);
                                                                     } else {
                                                                         boolean z32 = this.r2;
                                                                         if (!z32 && !SharedConfig.useThreeLinesLayout && this.K0 != 0) {
-                                                                            G = H();
+                                                                            F = G();
                                                                         } else if (z32 || SharedConfig.useThreeLinesLayout || this.J0 == 0) {
                                                                             MessageObject messageObject14 = this.f1;
                                                                             if (!(messageObject14.messageOwner instanceof TLRPC.TL_messageService) || (MessageObject.isTopicActionMessage(messageObject14) && !(this.f1.messageOwner.action instanceof TLRPC.TL_messageActionTopicCreate))) {
@@ -7236,9 +7236,9 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                                                                                         str3 = null;
                                                                                         charSequence15 = charSequence18;
                                                                                         if (this.K0 == 0) {
-                                                                                            str6 = H();
-                                                                                        } else if (this.J0 != 0) {
                                                                                             str6 = G();
+                                                                                        } else if (this.J0 != 0) {
+                                                                                            str6 = F();
                                                                                         } else {
                                                                                             z26 = z15;
                                                                                             replaceEmoji = charSequence15;
@@ -7334,7 +7334,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                                                                                                 charSequence25 = string;
                                                                                                 if (z10) {
                                                                                                 }
-                                                                                                if (F()) {
+                                                                                                if (E()) {
                                                                                                 }
                                                                                                 if (LocaleController.isRTL) {
                                                                                                 }
@@ -7449,7 +7449,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                                                                                                     TextPaint textPaint6 = this.a0;
                                                                                                     float dp9 = AndroidUtilities.dp(1.0f);
                                                                                                     TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-                                                                                                    this.e3 = dx0.b(charSequence27, textPaint6, i26, dp9, i26, charSequence28 != null ? 1 : 2);
+                                                                                                    this.e3 = ex0.b(charSequence27, textPaint6, i26, dp9, i26, charSequence28 != null ? 1 : 2);
                                                                                                     max = i26;
                                                                                                     this.i3.addAll(this.j3);
                                                                                                     this.j3.clear();
@@ -7540,7 +7540,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                                                                                         this.a0 = org.telegram.ui.ActionBar.h6.H0[this.E0];
                                                                                         if (this.f1.type != 21) {
                                                                                             c0();
-                                                                                            charSequence17 = s(charSequence16);
+                                                                                            charSequence17 = t(charSequence16);
                                                                                         } else {
                                                                                             charSequence17 = charSequence16;
                                                                                         }
@@ -7555,9 +7555,9 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                                                                                 }
                                                                             }
                                                                         } else {
-                                                                            G = G();
+                                                                            F = F();
                                                                         }
-                                                                        charSequence18 = G;
+                                                                        charSequence18 = F;
                                                                         z27 = z14;
                                                                         charSequence4 = charSequence9;
                                                                         z15 = false;
@@ -7620,9 +7620,9 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                                                 string = str6;
                                                 charSequence8 = charSequence10;
                                             } else if (this.K0 != 0) {
-                                                formatString = H();
-                                            } else if (this.J0 != 0) {
                                                 formatString = G();
+                                            } else if (this.J0 != 0) {
+                                                formatString = F();
                                             } else {
                                                 TLRPC.EncryptedChat encryptedChat = this.h2;
                                                 if (encryptedChat != null) {
@@ -7637,11 +7637,11 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                                                         formatString = encryptedChat.admin_id == UserConfig.getInstance(this.F0).getClientUserId() ? LocaleController.formatString(R.string.EncryptedChatStartedOutgoing, UserObject.getFirstName(this.f2)) : LocaleController.getString(R.string.EncryptedChatStartedIncoming);
                                                     }
                                                 } else if (this.j1 == 3 && UserObject.isUserSelf(this.f2)) {
-                                                    ey eyVar2 = this.D4;
+                                                    cy cyVar2 = this.D4;
                                                     z26 = z15;
                                                     z27 = false;
                                                     z16 = false;
-                                                    replaceEmoji = LocaleController.getString((eyVar2 == null || !eyVar2.O0) ? R.string.SavedMessagesInfo : R.string.SavedMessagesInfoQuote);
+                                                    replaceEmoji = LocaleController.getString((cyVar2 == null || !cyVar2.O0) ? R.string.SavedMessagesInfo : R.string.SavedMessagesInfoQuote);
                                                     charSequence4 = " ";
                                                     string = null;
                                                     charSequence8 = charSequence3;
@@ -7990,7 +7990,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                 this.L2 = org.telegram.messenger.g0.B(15.0f, getMeasuredWidth(), i18);
             }
         }
-        if (F()) {
+        if (E()) {
             i19 = 0;
         } else {
             if (LocaleController.isRTL) {
@@ -8029,7 +8029,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                     int dp12 = AndroidUtilities.dp(5.0f) + this.L2 + i18;
                     this.T2 = dp12;
                     this.X2 = AndroidUtilities.dp(5.5f) + dp12;
-                    this.x2 = lk.D(8.0f, org.telegram.ui.ActionBar.h6.W0.getIntrinsicWidth() + dp11, this.x2);
+                    this.x2 = kk.D(8.0f, org.telegram.ui.ActionBar.h6.W0.getIntrinsicWidth() + dp11, this.x2);
                 } else {
                     int i44 = (this.L2 - i19) - dp11;
                     this.X2 = i44;
@@ -8179,7 +8179,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                             TextPaint textPaint62 = this.a0;
                             float dp92 = AndroidUtilities.dp(1.0f);
                             TextUtils.TruncateAt truncateAt2 = TextUtils.TruncateAt.END;
-                            this.e3 = dx0.b(charSequence27, textPaint62, i26, dp92, i26, charSequence28 != null ? 1 : 2);
+                            this.e3 = ex0.b(charSequence27, textPaint62, i26, dp92, i26, charSequence28 != null ? 1 : 2);
                             max = i26;
                             this.i3.addAll(this.j3);
                             this.j3.clear();
@@ -8220,7 +8220,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                         TextPaint textPaint622 = this.a0;
                         float dp922 = AndroidUtilities.dp(1.0f);
                         TextUtils.TruncateAt truncateAt22 = TextUtils.TruncateAt.END;
-                        this.e3 = dx0.b(charSequence27, textPaint622, i26, dp922, i26, charSequence28 != null ? 1 : 2);
+                        this.e3 = ex0.b(charSequence27, textPaint622, i26, dp922, i26, charSequence28 != null ? 1 : 2);
                         max = i26;
                         this.i3.addAll(this.j3);
                         this.j3.clear();
@@ -8278,7 +8278,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                     TextPaint textPaint6222 = this.a0;
                     float dp9222 = AndroidUtilities.dp(1.0f);
                     TextUtils.TruncateAt truncateAt222 = TextUtils.TruncateAt.END;
-                    this.e3 = dx0.b(charSequence27, textPaint6222, i26, dp9222, i26, charSequence28 != null ? 1 : 2);
+                    this.e3 = ex0.b(charSequence27, textPaint6222, i26, dp9222, i26, charSequence28 != null ? 1 : 2);
                     max = i26;
                     this.i3.addAll(this.j3);
                     this.j3.clear();
@@ -8377,7 +8377,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                     TextPaint textPaint62222 = this.a0;
                     float dp92222 = AndroidUtilities.dp(1.0f);
                     TextUtils.TruncateAt truncateAt2222 = TextUtils.TruncateAt.END;
-                    this.e3 = dx0.b(charSequence27, textPaint62222, i26, dp92222, i26, charSequence28 != null ? 1 : 2);
+                    this.e3 = ex0.b(charSequence27, textPaint62222, i26, dp92222, i26, charSequence28 != null ? 1 : 2);
                     max = i26;
                     this.i3.addAll(this.j3);
                     this.j3.clear();
@@ -8406,7 +8406,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                 TextPaint textPaint7 = org.telegram.ui.ActionBar.h6.B0[this.E0];
                 Layout.Alignment alignment3 = Layout.Alignment.ALIGN_NORMAL;
                 TextUtils.TruncateAt truncateAt3 = TextUtils.TruncateAt.END;
-                this.z2 = dx0.b(charSequence45, textPaint7, dp7, 0.0f, dp7, 2);
+                this.z2 = ex0.b(charSequence45, textPaint7, dp7, 0.0f, dp7, 2);
             }
             this.B2 = (this.D2 || !this.z2.isRtlCharAt(0)) ? f12 : -AndroidUtilities.dp(f13);
             this.C2 = this.z2.isRtlCharAt(0);
@@ -8548,7 +8548,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                     this.c3 += dp21;
                     this.r3 += dp21;
                 } else {
-                    this.N3 = lk.y(12.666f, this.O3, getMeasuredWidth() - AndroidUtilities.dp(15.666f));
+                    this.N3 = kk.y(12.666f, this.O3, getMeasuredWidth() - AndroidUtilities.dp(15.666f));
                 }
                 this.G3 = true;
             } else {
@@ -8572,7 +8572,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                     this.c3 += dp22;
                     this.r3 += dp22;
                 } else {
-                    int y3 = lk.y(12.666f, this.h4, getMeasuredWidth()) - AndroidUtilities.dp(15.666f);
+                    int y3 = kk.y(12.666f, this.h4, getMeasuredWidth()) - AndroidUtilities.dp(15.666f);
                     int i47 = this.O3;
                     this.e4 = y3 - (i47 != 0 ? i47 + AndroidUtilities.dp(f7) : 0);
                 }
@@ -8743,7 +8743,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                     TextPaint textPaint8 = org.telegram.ui.ActionBar.h6.G0;
                     Layout.Alignment alignment4 = Layout.Alignment.ALIGN_NORMAL;
                     TextUtils.TruncateAt truncateAt4 = TextUtils.TruncateAt.END;
-                    this.s3 = dx0.b(charSequence26, textPaint8, max, 0.0f, max, 1);
+                    this.s3 = ex0.b(charSequence26, textPaint8, max, 0.0f, max, 1);
                     this.a3 = AndroidUtilities.dp(51.0f);
                     dp4 = (this.R || !this.P) ? 0 : AndroidUtilities.dp(20.0f);
                     i24 = 0;
@@ -8762,7 +8762,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
             TextPaint textPaint82 = org.telegram.ui.ActionBar.h6.G0;
             Layout.Alignment alignment42 = Layout.Alignment.ALIGN_NORMAL;
             TextUtils.TruncateAt truncateAt42 = TextUtils.TruncateAt.END;
-            this.s3 = dx0.b(charSequence26, textPaint82, max, 0.0f, max, 1);
+            this.s3 = ex0.b(charSequence26, textPaint82, max, 0.0f, max, 1);
             this.a3 = AndroidUtilities.dp(51.0f);
             if (this.R) {
             }
@@ -8843,7 +8843,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                     TextPaint textPaint622222 = this.a0;
                     float dp922222 = AndroidUtilities.dp(1.0f);
                     TextUtils.TruncateAt truncateAt22222 = TextUtils.TruncateAt.END;
-                    this.e3 = dx0.b(charSequence27, textPaint622222, i26, dp922222, i26, charSequence28 != null ? 1 : 2);
+                    this.e3 = ex0.b(charSequence27, textPaint622222, i26, dp922222, i26, charSequence28 != null ? 1 : 2);
                     max = i26;
                     this.i3.addAll(this.j3);
                     this.j3.clear();
@@ -8869,7 +8869,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                     float dp32 = AndroidUtilities.dp(1.0f);
                     TextUtils.TruncateAt truncateAt5 = TextUtils.TruncateAt.END;
                     try {
-                        this.f3 = dx0.b(charSequence23, textPaint9, max, dp32, max, 1);
+                        this.f3 = ex0.b(charSequence23, textPaint9, max, dp32, max, 1);
                     } catch (Exception e16) {
                         e = e16;
                         max = max;
@@ -8890,7 +8890,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                         TextPaint textPaint6222222 = this.a0;
                         float dp9222222 = AndroidUtilities.dp(1.0f);
                         TextUtils.TruncateAt truncateAt222222 = TextUtils.TruncateAt.END;
-                        this.e3 = dx0.b(charSequence27, textPaint6222222, i26, dp9222222, i26, charSequence28 != null ? 1 : 2);
+                        this.e3 = ex0.b(charSequence27, textPaint6222222, i26, dp9222222, i26, charSequence28 != null ? 1 : 2);
                         max = i26;
                         this.i3.addAll(this.j3);
                         this.j3.clear();
@@ -8916,7 +8916,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                     if (!(obj instanceof ClickableSpan) && !(obj instanceof mi.h)) {
                         if (this.K0 == 0) {
                             if (!P()) {
-                                if (!(obj instanceof c61)) {
+                                if (!(obj instanceof d61)) {
                                 }
                             }
                         }
@@ -8960,7 +8960,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
                 TextPaint textPaint62222222 = this.a0;
                 float dp92222222 = AndroidUtilities.dp(1.0f);
                 TextUtils.TruncateAt truncateAt2222222 = TextUtils.TruncateAt.END;
-                this.e3 = dx0.b(charSequence27, textPaint62222222, i26, dp92222222, i26, charSequence28 != null ? 1 : 2);
+                this.e3 = ex0.b(charSequence27, textPaint62222222, i26, dp92222222, i26, charSequence28 != null ? 1 : 2);
                 max = i26;
             } else {
                 if (this.R1 > 0) {
@@ -9209,7 +9209,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
         return M() ? AndroidUtilities.dp(this.M) + dp : dp;
     }
 
-    public r2(ey eyVar, Context context, boolean z10, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+    public r2(cy cyVar, Context context, boolean z10, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.h = true;
         this.x = true;
@@ -9257,7 +9257,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
         this.I4 = new o2(this);
         k2Var.I = true;
         this.J4 = d6Var;
-        this.D4 = eyVar;
+        this.D4 = cyVar;
         org.telegram.ui.ActionBar.h6.S(context);
         this.y = false;
         this.E = false;
@@ -9286,7 +9286,7 @@ public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
 
     @Override // android.view.View
     public final void invalidate(int i10, int i11, int i12, int i13) {
-        if (ci.z9.x1) {
+        if (ci.aa.x1) {
             return;
         }
         super.invalidate(i10, i11, i12, i13);

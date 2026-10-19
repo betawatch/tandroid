@@ -1,83 +1,76 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.TextUtils;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class hl0 extends FrameLayout {
-    public final int a;
-    public final org.telegram.ui.ActionBar.d6 b;
-    public final FrameLayout c;
-    public final org.telegram.ui.Components.w9 d;
-    public final TextView e;
-    public final TextView f;
-    public final ImageView h;
-    public boolean n;
-    public String r;
+public final /* synthetic */ class hl0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vm0 b;
 
-    public hl0(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context);
+    public /* synthetic */ hl0(vm0 vm0Var, int i10) {
         this.a = i10;
-        this.b = d6Var;
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.c = frameLayout;
-        addView(frameLayout, w7.z5.d(36, 36.0f, 19, 18.5f, 0.0f, 0.0f, 0.0f));
-        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
-        this.d = w9Var;
-        w9Var.setImageResource(R.drawable.msg2_permissions);
-        int i11 = org.telegram.ui.ActionBar.h6.G6;
-        int m12 = org.telegram.ui.ActionBar.h6.m1(0.3f, org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
-        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        w9Var.setColorFilter(new PorterDuffColorFilter(m12, mode));
-        frameLayout.addView(w9Var, w7.z5.e(36, 36, 17));
-        TextView b10 = w7.d6.b(context, 15.0f, i11, true, null);
-        this.e = b10;
-        b10.setSingleLine();
-        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        b10.setEllipsize(truncateAt);
-        addView(b10, w7.z5.d(-1, -2.0f, 55, 72.0f, 8.0f, 46.0f, 0.0f));
-        int i12 = org.telegram.ui.ActionBar.h6.y6;
-        TextView b11 = w7.d6.b(context, 13.0f, i12, false, null);
-        this.f = b11;
-        b11.setSingleLine();
-        b11.setEllipsize(truncateAt);
-        addView(b11, w7.z5.d(-1, -2.0f, 55, 72.0f, 31.0f, 46.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        this.h = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.ic_ab_other);
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, i12, false), mode));
-        imageView.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.i6, d6Var), 1, -1));
-        addView(imageView, w7.z5.d(32, 32.0f, 21, 0.0f, 0.0f, 13.0f, 0.0f));
+        this.b = vm0Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.n) {
-            Paint U0 = org.telegram.ui.ActionBar.h6.U0("paintDivider", this.b);
-            if (U0 == null) {
-                U0 = org.telegram.ui.ActionBar.h6.k0;
-            }
-            canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 72.0f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 72.0f : 0.0f), getMeasuredHeight(), U0);
+    @Override // java.lang.Runnable
+    public final void run() {
+        ViewGroup viewGroup;
+        switch (this.a) {
+            case 0:
+                vm0 vm0Var = this.b;
+                ViewGroup[] viewGroupArr = vm0Var.Z;
+                if (viewGroupArr != null && (viewGroup = viewGroupArr[0]) != null && viewGroup.getVisibility() == 0) {
+                    vm0Var.Y[0].requestFocus();
+                    AndroidUtilities.showKeyboard(vm0Var.Y[0]);
+                    break;
+                }
+                break;
+            case 1:
+                vm0 vm0Var2 = this.b;
+                vm0Var2.presentFragment(vm0Var2.h1, true);
+                vm0Var2.h1 = null;
+                break;
+            case 2:
+                vm0 vm0Var3 = this.b;
+                EditTextBoldCursor[] editTextBoldCursorArr = vm0Var3.a0;
+                if (editTextBoldCursorArr != null) {
+                    vm0Var3.H1(editTextBoldCursorArr[0]);
+                    break;
+                }
+                break;
+            case 3:
+                AndroidUtilities.showKeyboard(this.b.Y[2]);
+                break;
+            case 4:
+                this.b.w1();
+                break;
+            case 5:
+                int i10 = 0;
+                while (true) {
+                    vm0 vm0Var4 = this.b;
+                    if (i10 >= vm0Var4.c0.getChildCount()) {
+                        vm0Var4.w1();
+                        vm0Var4.q1.clear();
+                        vm0Var4.p1.clear();
+                        vm0Var4.y.values.clear();
+                        vm0Var4.P1();
+                        break;
+                    } else {
+                        View childAt = vm0Var4.c0.getChildAt(i10);
+                        if (childAt instanceof um0) {
+                            vm0Var4.c0.removeView(childAt);
+                            i10--;
+                        }
+                        i10++;
+                    }
+                }
+            default:
+                this.b.finishFragment();
+                break;
         }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
     }
 }

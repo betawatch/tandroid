@@ -1,109 +1,33 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.view.View;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class dw implements org.telegram.ui.Components.n00 {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ ey b;
+public final class dw extends org.telegram.ui.Components.kt {
+    public final /* synthetic */ ay E;
 
-    public dw(Context context, ey eyVar) {
-        this.b = eyVar;
-        this.a = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dw(xx xxVar, ay ayVar) {
+        super(xxVar);
+        this.E = ayVar;
     }
 
-    public final int a(int i10) {
-        ey eyVar = this.b;
-        if (eyVar.R0 == 3) {
-            return 0;
-        }
-        if (i10 == eyVar.z0.getDefaultTabId()) {
-            return eyVar.getMessagesStorage().getMainUnreadCount();
-        }
-        ArrayList<MessagesController.DialogFilter> dialogFilters = eyVar.getMessagesController().getDialogFilters();
-        if (i10 < 0 || i10 >= dialogFilters.size()) {
-            return 0;
-        }
-        return eyVar.getMessagesController().getDialogFilters().get(i10).unreadCount;
-    }
-
-    public final void b(float f7) {
-        ey eyVar = this.b;
-        if (f7 != 1.0f || eyVar.e0[1].getVisibility() == 0 || eyVar.j2) {
-            if (eyVar.i3) {
-                eyVar.e0[0].setTranslationX((-f7) * r3.getMeasuredWidth());
-                eyVar.e0[1].setTranslationX(r3[0].getMeasuredWidth() - (f7 * eyVar.e0[0].getMeasuredWidth()));
-            } else {
-                eyVar.e0[0].setTranslationX(r3.getMeasuredWidth() * f7);
-                eyVar.e0[1].setTranslationX((f7 * r3[0].getMeasuredWidth()) - eyVar.e0[0].getMeasuredWidth());
+    @Override // s4.e1
+    public final void y() {
+        ay ayVar = this.E;
+        if (ayVar.c.L0() == 0) {
+            View m10 = ayVar.c.m(0);
+            if (m10 != null) {
+                m10.invalidate();
             }
-            if (f7 == 1.0f) {
-                dy[] dyVarArr = eyVar.e0;
-                dy dyVar = dyVarArr[0];
-                dyVarArr[0] = dyVarArr[1];
-                dyVarArr[1] = dyVar;
-                dyVar.setVisibility(8);
-                ey.c1(eyVar, true);
-                eyVar.R4(false);
-                eyVar.z0.O = false;
-                eyVar.p3(eyVar.e0[0]);
-                eyVar.e0[0].d.getClass();
-                eyVar.e0[1].d.getClass();
+            if (ayVar.v == 2) {
+                ayVar.v = 1;
             }
-        }
-    }
-
-    public final void c(org.telegram.ui.Components.p00 p00Var, boolean z10) {
-        int i10;
-        int i11;
-        ey eyVar = this.b;
-        int i12 = eyVar.e0[0].h;
-        int i13 = p00Var.a;
-        if (i12 == i13) {
-            return;
-        }
-        if (p00Var.f) {
-            eyVar.z0.i(i13);
-            i11 = ((org.telegram.ui.ActionBar.n2) eyVar).currentAccount;
-            eyVar.showDialog(new sg.k0(3, i11, this.a, eyVar, null));
-            return;
-        }
-        ArrayList<MessagesController.DialogFilter> dialogFilters = eyVar.getMessagesController().getDialogFilters();
-        if (p00Var.e || ((i10 = p00Var.a) >= 0 && i10 < dialogFilters.size())) {
-            dy dyVar = eyVar.e0[1];
-            dyVar.h = p00Var.a;
-            dyVar.setVisibility(0);
-            eyVar.e0[1].setTranslationX(r7[0].getMeasuredWidth());
-            ey.c1(eyVar, false);
-            eyVar.P4(true);
-            eyVar.i3 = z10;
-        }
-    }
-
-    public final void d(MessagesController.DialogFilter dialogFilter) {
-        boolean isChatlist = dialogFilter.isChatlist();
-        ey eyVar = this.b;
-        if (isChatlist) {
-            org.telegram.ui.Components.k10.U(eyVar, dialogFilter.id, null);
-            return;
-        }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(eyVar.getParentActivity());
-        alertDialog$Builder.a.R = LocaleController.getString(R.string.FilterDelete);
-        alertDialog$Builder.a.T = LocaleController.getString(R.string.FilterDeleteAlert);
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new zu(4, this, dialogFilter));
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        eyVar.showDialog(b2Var);
-        TextView textView = (TextView) b2Var.d(-1);
-        if (textView != null) {
-            textView.setTextColor(eyVar.getThemedColor(org.telegram.ui.ActionBar.h6.q7));
+            iw iwVar = ayVar.n;
+            if (iwVar != null) {
+                iwVar.b();
+            }
         }
     }
 }

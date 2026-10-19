@@ -15,7 +15,7 @@ import android.view.Window;
 import com.google.android.gms.internal.play_billing.k3;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class p extends s implements DialogInterface.OnCancelListener, DialogInterface.OnDismissListener {
     public Handler k0;
@@ -32,7 +32,7 @@ public class p extends s implements DialogInterface.OnCancelListener, DialogInte
     public boolean q0 = true;
     public boolean r0 = true;
     public int s0 = -1;
-    public final a6.m u0 = new a6.m(this, 6);
+    public final qb.c u0 = new qb.c(this, 7);
     public boolean z0 = false;
 
     @Override // androidx.fragment.app.s
@@ -222,7 +222,7 @@ public class p extends s implements DialogInterface.OnCancelListener, DialogInte
         j0 p5 = p();
         int i10 = this.s0;
         if (i10 < 0) {
-            throw new IllegalArgumentException(i2.d.j(i10, "Bad id: "));
+            throw new IllegalArgumentException(i2.e.j(i10, "Bad id: "));
         }
         p5.y(new h0(p5, i10), true);
         this.s0 = -1;

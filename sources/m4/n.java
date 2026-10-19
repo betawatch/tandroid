@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class n {
     public static final /* synthetic */ int a = 0;
@@ -30,7 +30,7 @@ public abstract class n {
             case 6:
                 return 6L;
             default:
-                throw new IllegalArgumentException(i2.d.j(i10, "Unrecognized FolderType: "));
+                throw new IllegalArgumentException(i2.e.j(i10, "Unrecognized FolderType: "));
         }
     }
 

@@ -22,7 +22,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class kz extends hm0 {
     public final Context c;
@@ -371,7 +371,7 @@ public final class kz extends hm0 {
                 k3Var.setHeight(AndroidUtilities.dp(8.0f));
                 return;
             } else {
-                int B = org.telegram.messenger.lk.B(82.0f, (int) Math.ceil(arrayList.size() / this.d), tzVar.h.getHeight());
+                int B = org.telegram.messenger.kk.B(82.0f, (int) Math.ceil(arrayList.size() / this.d), tzVar.h.getHeight());
                 k3Var.setHeight(B > 0 ? B : 1);
                 return;
             }
@@ -526,8 +526,8 @@ public final class kz extends hm0 {
                                 break;
                             default:
                                 org.telegram.ui.ActionBar.n2 n2Var = this.b.v.Y1;
-                                if (n2Var instanceof org.telegram.ui.sn) {
-                                    ((org.telegram.ui.sn) n2Var).da();
+                                if (n2Var instanceof org.telegram.ui.qn) {
+                                    ((org.telegram.ui.qn) n2Var).da();
                                     break;
                                 }
                                 break;
@@ -577,8 +577,8 @@ public final class kz extends hm0 {
                                 break;
                             default:
                                 org.telegram.ui.ActionBar.n2 n2Var = this.b.v.Y1;
-                                if (n2Var instanceof org.telegram.ui.sn) {
-                                    ((org.telegram.ui.sn) n2Var).da();
+                                if (n2Var instanceof org.telegram.ui.qn) {
+                                    ((org.telegram.ui.qn) n2Var).da();
                                     break;
                                 }
                                 break;
@@ -641,8 +641,8 @@ public final class kz extends hm0 {
                                 break;
                             default:
                                 org.telegram.ui.ActionBar.n2 n2Var = this.b.v.Y1;
-                                if (n2Var instanceof org.telegram.ui.sn) {
-                                    ((org.telegram.ui.sn) n2Var).da();
+                                if (n2Var instanceof org.telegram.ui.qn) {
+                                    ((org.telegram.ui.qn) n2Var).da();
                                     break;
                                 }
                                 break;

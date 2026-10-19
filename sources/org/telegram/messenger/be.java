@@ -1,43 +1,54 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
+import android.content.Context;
+import org.telegram.messenger.voip.VoIPGroupNotification;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final /* synthetic */ class be implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class be implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ be(BaseController baseController, long j10, int i10, int i11) {
-        this.a = i11;
-        this.d = baseController;
-        this.b = j10;
-        this.c = i10;
+    public /* synthetic */ be(MessagesController messagesController, long j10, int i10, int i11, long j11, TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory, boolean z10, Runnable runnable) {
+        this.h = messagesController;
+        this.c = j10;
+        this.b = i10;
+        this.e = i11;
+        this.d = j11;
+        this.n = tL_messages_affectedHistory;
+        this.f = z10;
+        this.r = runnable;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.d).lambda$approveOrRejectSuggestedMessageImpl$509(this.b, this.c, tLObject, tL_error);
-                break;
-            case 1:
-                ((TopicsController) this.d).lambda$loadTopics$7(this.b, this.c, tLObject, tL_error);
+                ((MessagesController) this.h).lambda$deleteMessagesRange$467(this.c, this.b, this.e, this.d, (TLRPC.TL_messages_affectedHistory) this.n, this.f, (Runnable) this.r);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new ai.xb((org.telegram.ui.l4) this.d, tLObject, this.c, this.b, 13));
+                VoIPGroupNotification.lambda$request$0((TLObject) this.h, this.b, this.c, this.d, this.e, this.f, (Context) this.n, (String) this.r);
                 break;
         }
     }
 
-    public /* synthetic */ be(org.telegram.ui.l4 l4Var, int i10, long j10) {
-        this.a = 2;
-        this.d = l4Var;
-        this.c = i10;
-        this.b = j10;
+    public /* synthetic */ be(TLObject tLObject, int i10, long j10, long j11, int i11, boolean z10, Context context, String str) {
+        this.h = tLObject;
+        this.b = i10;
+        this.c = j10;
+        this.d = j11;
+        this.e = i11;
+        this.f = z10;
+        this.n = context;
+        this.r = str;
     }
 }

@@ -37,9 +37,9 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.p71;
+import org.telegram.ui.Components.q71;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class p extends FrameLayout implements a {
     public float E;
@@ -56,7 +56,7 @@ public class p extends FrameLayout implements a {
     public final CropAreaView a;
     public final ImageView b;
     public final Matrix c;
-    public p71 d;
+    public q71 d;
     public g e;
     public final RectF f;
     public final RectF h;
@@ -78,7 +78,7 @@ public class p extends FrameLayout implements a {
         this.f = new RectF();
         this.h = new RectF();
         this.c = new Matrix();
-        le.b bVar = new le.b(2, false);
+        le.b bVar = new le.b(2);
         bVar.b = new float[8];
         this.s = bVar;
         this.v = new Matrix();
@@ -338,7 +338,7 @@ public class p extends FrameLayout implements a {
         o oVar = this.M;
         if (oVar != null) {
             oVar.R(false);
-            this.M.D(true);
+            this.M.E(true);
         }
     }
 
@@ -565,9 +565,9 @@ public class p extends FrameLayout implements a {
     }
 
     public int getCurrentHeight() {
-        p71 p71Var = this.d;
-        if (p71Var != null) {
-            return p71Var.getVideoHeight();
+        q71 q71Var = this.d;
+        if (q71Var != null) {
+            return q71Var.getVideoHeight();
         }
         Bitmap bitmap = this.w;
         if (bitmap == null) {
@@ -578,9 +578,9 @@ public class p extends FrameLayout implements a {
     }
 
     public int getCurrentWidth() {
-        p71 p71Var = this.d;
-        if (p71Var != null) {
-            return p71Var.getVideoWidth();
+        q71 q71Var = this.d;
+        if (q71Var != null) {
+            return q71Var.getVideoWidth();
         }
         Bitmap bitmap = this.w;
         if (bitmap == null) {
@@ -733,7 +733,7 @@ public class p extends FrameLayout implements a {
         o oVar = this.M;
         if (oVar != null) {
             oVar.R(true);
-            this.M.D(false);
+            this.M.E(false);
         }
     }
 
@@ -929,7 +929,7 @@ public class p extends FrameLayout implements a {
         matrix.postTranslate(cropAreaView.getCropCenterX(), cropAreaView.getCropCenterY());
         if (!this.x || this.J || z10) {
             q();
-            this.M.r();
+            this.M.v();
         }
         invalidate();
     }

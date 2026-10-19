@@ -11,9 +11,9 @@ import org.telegram.ui.Cells.f2;
 import org.telegram.ui.Components.r2;
 import org.telegram.ui.Wallet.q0;
 import org.telegram.ui.Wallet.s2;
-import org.telegram.ui.pa0;
+import org.telegram.ui.na0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class o0 implements Runnable {
                 AtomicBoolean atomicBoolean = (AtomicBoolean) this.e;
                 aVar.getClass();
                 atomicBoolean.set(false);
-                qf.b.o((qf.b) aVar.c, this.b, this.c);
+                qf.b.y((qf.b) aVar.c, this.b, this.c);
                 break;
             case 1:
                 ((CameraController) this.d).lambda$stopVideoRecording$17(this.e, this.b, this.c);
@@ -82,7 +82,7 @@ public final /* synthetic */ class o0 implements Runnable {
                         break;
                     } else {
                         org.telegram.ui.Wallet.m0.F("getSecretPhrase: exportSecretPhrase through password request");
-                        s2.a(m0Var2.a, new gi.c(8), null, null, null, new ci.c0(4, m0Var2, callback2), this.b, this.c, new pa0(obj, 1));
+                        s2.a(m0Var2.a, new gi.c(8), null, null, null, new ci.c0(4, m0Var2, callback2), this.b, this.c, new na0(obj, 1));
                         break;
                     }
                 } else {

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 import b5.g;
-import c5.x;
+import c5.y;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.firebase.messaging.r;
 import com.google.firebase.messaging.u;
@@ -13,7 +13,7 @@ import m.s3;
 import x9.m;
 import x9.o;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class c {
     public final o a;
@@ -34,7 +34,7 @@ public final class c {
         r rVar = mVar.e;
         u uVar = new u(mVar, currentTimeMillis, th2, currentThread);
         rVar.getClass();
-        rVar.v(new x(uVar, 9));
+        rVar.v(new y(uVar, 9));
     }
 
     public final void b() {

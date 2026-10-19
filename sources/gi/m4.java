@@ -20,10 +20,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Wallet.p5;
+import org.telegram.ui.Wallet.q5;
 import org.telegram.ui.Wallet.s5;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m4 implements Runnable {
     public final /* synthetic */ int a;
@@ -59,7 +60,7 @@ public final /* synthetic */ class m4 implements Runnable {
             case 0:
                 TLRPC.User user = (TLRPC.User) this.d;
                 TLRPC.Document document = (TLRPC.Document) this.e;
-                r4.g(this.b, user, document, this.c, new h4((org.telegram.ui.web.s) this.f, document, 0));
+                r4.g(this.b, user, document, this.c, new h4((org.telegram.ui.web.r) this.f, document, 0));
                 break;
             case 1:
                 hg.t1 t1Var = (hg.t1) this.d;
@@ -212,10 +213,10 @@ public final /* synthetic */ class m4 implements Runnable {
                 }
                 break;
             case 3:
-                k0.b bVar = (k0.b) this.d;
+                k2.w0 w0Var = (k2.w0) this.d;
                 ki.h1 h1Var2 = (ki.h1) this.e;
                 n9 n9Var2 = (n9) this.f;
-                g5 g5Var = (g5) bVar.b;
+                g5 g5Var = (g5) w0Var.b;
                 int length3 = h1Var2.length();
                 int i31 = this.b;
                 if (length3 >= i31 && h1Var2.getSelectionStart() != h1Var2.getSelectionEnd()) {
@@ -292,30 +293,30 @@ public final /* synthetic */ class m4 implements Runnable {
                 ((MediaController) this.d).lambda$loadMoreMusic$11(this.b, (TLRPC.TL_error) this.e, (TLObject) this.f, this.c);
                 break;
             case 8:
-                sn snVar = (sn) this.d;
+                qn qnVar = (qn) this.d;
                 CharacterStyle characterStyle = (CharacterStyle) this.e;
                 org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.f;
-                snVar.wb = this.b;
-                snVar.xb = this.c;
-                snVar.yb = characterStyle;
+                qnVar.wb = this.b;
+                qnVar.xb = this.c;
+                qnVar.yb = characterStyle;
                 u1Var.invalidate();
                 break;
             default:
                 s5 s5Var = (s5) this.d;
                 Context context = (Context) this.e;
-                p5 p5Var = (p5) this.f;
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.h(s5Var, new org.telegram.ui.Wallet.o5(context.getApplicationContext(), this.b, this.c, p5Var), p5Var, 14));
+                q5 q5Var = (q5) this.f;
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.h(s5Var, new p5(context.getApplicationContext(), this.b, this.c, q5Var), q5Var, 13));
                 break;
         }
     }
 
-    public /* synthetic */ m4(int i10, TLRPC.User user, TLRPC.Document document, int i11, org.telegram.ui.web.s sVar) {
+    public /* synthetic */ m4(int i10, TLRPC.User user, TLRPC.Document document, int i11, org.telegram.ui.web.r rVar) {
         this.a = 0;
         this.b = i10;
         this.d = user;
         this.e = document;
         this.c = i11;
-        this.f = sVar;
+        this.f = rVar;
     }
 
     public /* synthetic */ m4(Object obj, Object obj2, int i10, Object obj3, int i11, int i12) {
@@ -327,21 +328,21 @@ public final /* synthetic */ class m4 implements Runnable {
         this.c = i11;
     }
 
-    public /* synthetic */ m4(sn snVar, int i10, int i11, CharacterStyle characterStyle, org.telegram.ui.Cells.u1 u1Var) {
+    public /* synthetic */ m4(qn qnVar, int i10, int i11, CharacterStyle characterStyle, org.telegram.ui.Cells.u1 u1Var) {
         this.a = 8;
-        this.d = snVar;
+        this.d = qnVar;
         this.b = i10;
         this.c = i11;
         this.e = characterStyle;
         this.f = u1Var;
     }
 
-    public /* synthetic */ m4(s5 s5Var, Context context, int i10, int i11, p5 p5Var) {
+    public /* synthetic */ m4(s5 s5Var, Context context, int i10, int i11, q5 q5Var) {
         this.a = 9;
         this.d = s5Var;
         this.e = context;
         this.b = i10;
         this.c = i11;
-        this.f = p5Var;
+        this.f = q5Var;
     }
 }

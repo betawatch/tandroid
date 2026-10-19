@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class xz extends s4.s {
     public final SparseArray Q;
@@ -165,13 +165,13 @@ public class xz extends s4.s {
         super.w1(view, i10, z10);
     }
 
-    public xz(int i10, org.telegram.ui.y40 y40Var) {
+    public xz(int i10, org.telegram.ui.w40 w40Var) {
         super(i10, false);
         this.Q = new SparseArray();
         this.R = -1;
         this.W = true;
         this.X = true;
-        this.V = y40Var;
+        this.V = w40Var;
         this.U = 0;
     }
 }

@@ -1,32 +1,39 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class kz0 implements aq {
-    public final /* synthetic */ ey a;
+public final /* synthetic */ class kz0 implements Runnable {
+    public final /* synthetic */ int a;
     public final /* synthetic */ lz0 b;
 
-    public kz0(lz0 lz0Var, ey eyVar) {
+    public /* synthetic */ kz0(lz0 lz0Var, int i10) {
+        this.a = i10;
         this.b = lz0Var;
-        this.a = eyVar;
     }
 
-    @Override // org.telegram.ui.aq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        lz0 lz0Var = this.b;
-        lz0Var.b.O1 = true;
-        this.a.removeSelfFromStack();
-        NotificationCenter notificationCenter = lz0Var.b.getNotificationCenter();
-        ProfileActivity profileActivity = lz0Var.b;
-        int i11 = NotificationCenter.closeChats;
-        notificationCenter.removeObserver(profileActivity, i11);
-        lz0Var.b.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i11, new Object[0]);
-    }
-
-    @Override // org.telegram.ui.aq
-    public final void a(TLRPC.User user) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ProfileActivity profileActivity = this.b.D0;
+                yy0 yy0Var = profileActivity.D5;
+                if (yy0Var != null) {
+                    yy0Var.dismiss();
+                    profileActivity.D5 = null;
+                    break;
+                }
+                break;
+            default:
+                try {
+                    org.telegram.ui.Components.im0 currentListView = this.b.x0.O.getCurrentListView();
+                    if (currentListView != null && currentListView.getAdapter() != null) {
+                        currentListView.getAdapter().l();
+                        break;
+                    }
+                } catch (Throwable unused) {
+                    return;
+                }
+                break;
+        }
     }
 }

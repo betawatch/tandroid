@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class gp0 extends Drawable {
     public final boolean a;
@@ -23,7 +23,7 @@ public final class gp0 extends Drawable {
     public final Paint d;
     public uj0 e;
     public final Path f;
-    public final d11 g;
+    public final e11 g;
     public final Path h;
     public final Path i;
     public boolean j;
@@ -47,7 +47,7 @@ public final class gp0 extends Drawable {
         this.d = paint;
         Path path = new Path();
         this.f = path;
-        this.g = new d11(LocaleController.getString(R.string.SeekSpeedHint), 14.0f, null);
+        this.g = new e11(LocaleController.getString(R.string.SeekSpeedHint), 14.0f, null);
         Path path2 = new Path();
         this.h = path2;
         Path path3 = new Path();

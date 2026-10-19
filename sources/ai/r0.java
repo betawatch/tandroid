@@ -26,16 +26,16 @@ import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.ah0;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.oo0;
-import org.telegram.ui.Components.p71;
-import org.telegram.ui.Components.s61;
-import org.telegram.ui.ey;
-import org.telegram.ui.nx;
+import org.telegram.ui.Components.q71;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.cy;
+import org.telegram.ui.lx;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
         String str;
         String str2;
         int i10;
-        s61 s61Var;
+        t61 t61Var;
         int i11 = 3;
         int i12 = 0;
         int i13 = 0;
@@ -71,14 +71,14 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
                 a2Var.k0.N(true);
                 break;
             case 2:
-                k5 k5Var = (k5) this.b;
-                k5Var.getClass();
-                k5Var.s = new Matrix();
-                k5Var.v = new Matrix();
+                l5 l5Var = (l5) this.b;
+                l5Var.getClass();
+                l5Var.s = new Matrix();
+                l5Var.v = new Matrix();
                 Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                 BitmapShader bitmapShader = new BitmapShader((Bitmap) obj, tileMode, tileMode);
-                k5Var.r = bitmapShader;
-                Paint paint = k5Var.c;
+                l5Var.r = bitmapShader;
+                Paint paint = l5Var.c;
                 paint.setShader(bitmapShader);
                 ColorMatrix colorMatrix = new ColorMatrix();
                 AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, 0.25f);
@@ -132,37 +132,37 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
                 }
                 break;
             case 7:
-                ci.z9 z9Var = (ci.z9) this.b;
-                z9Var.k1 = false;
-                z9Var.P();
+                ci.aa aaVar = (ci.aa) this.b;
+                aaVar.k1 = false;
+                aaVar.P();
                 break;
             case 8:
-                ci.t5 t5Var = (ci.t5) obj;
-                ci.b6 b6Var = ((ci.y5) this.b).e;
+                ci.u5 u5Var = (ci.u5) obj;
+                ci.c6 c6Var = ((ci.z5) this.b).e;
                 while (true) {
-                    ArrayList arrayList = b6Var.G;
+                    ArrayList arrayList = c6Var.G;
                     if (i12 >= arrayList.size()) {
                         break;
                     } else {
-                        if (t5Var != arrayList.get(i12)) {
-                            ((ci.t5) arrayList.get(i12)).getClass();
+                        if (u5Var != arrayList.get(i12)) {
+                            ((ci.u5) arrayList.get(i12)).getClass();
                         }
                         i12++;
                     }
                 }
             case 9:
-                ci.m8 m8Var = (ci.m8) this.b;
+                ci.n8 n8Var = (ci.n8) this.b;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
-                m8Var.p = true;
+                n8Var.p = true;
                 if (storyItem != null && (str2 = storyItem.caption) != null) {
-                    m8Var.m = true;
-                    m8Var.l = str2;
-                    m8Var.f = TextUtils.isEmpty(str2);
-                    View view = m8Var.r;
+                    n8Var.m = true;
+                    n8Var.l = str2;
+                    n8Var.f = TextUtils.isEmpty(str2);
+                    View view = n8Var.r;
                     if (view != null) {
                         view.invalidate();
                     }
-                    Runnable runnable = m8Var.s;
+                    Runnable runnable = n8Var.s;
                     if (runnable != null) {
                         runnable.run();
                         break;
@@ -177,7 +177,7 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
                     arrayList2.add(str3);
                     vVar.i(true);
                 }
-                AndroidUtilities.runOnUIThread(new ci.u7(12, vVar, str3), 120L);
+                AndroidUtilities.runOnUIThread(new ci.v7(12, vVar, str3), 120L);
                 break;
             case 11:
                 ((ei.m) this.b).x(((Integer) obj).intValue());
@@ -205,7 +205,7 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
             case 14:
                 ei.s2 s2Var = (ei.s2) this.b;
                 s2Var.h(-1.0f);
-                AndroidUtilities.runOnUIThread(new ci.u7(25, s2Var, (Runnable) obj), 80L);
+                AndroidUtilities.runOnUIThread(new ci.v7(25, s2Var, (Runnable) obj), 80L);
                 break;
             case 15:
                 ((ei.q3) this.b).s.animate().translationY(((-((Integer) obj).intValue()) / 2.0f) + AndroidUtilities.dp(80.0f)).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.o1.w).start();
@@ -217,7 +217,7 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
                 if (view2 instanceof ei.k4) {
                     g4Var.getClass();
                     int R = RecyclerView.R(view2);
-                    f61 G = g4Var.W2.G(R);
+                    g61 G = g4Var.W2.G(R);
                     if (G != null) {
                         ei.k4 k4Var = (ei.k4) view2;
                         k4Var.setPosition(l4Var.b(R));
@@ -273,9 +273,9 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
                 break;
             case 19:
                 ei.z7 z7Var = (ei.z7) obj;
-                p71 p71Var = ((ei.r6) this.b).n;
-                if (p71Var != null) {
-                    p71Var.setHDRInfo(z7Var);
+                q71 q71Var = ((ei.r6) this.b).n;
+                if (q71Var != null) {
+                    q71Var.setHDRInfo(z7Var);
                     break;
                 }
                 break;
@@ -304,9 +304,9 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
                 ArrayList arrayList4 = tVar.b;
                 arrayList4.clear();
                 arrayList4.addAll((ArrayList) obj);
-                a71 a71Var = tVar.a;
-                if (a71Var != null && (s61Var = a71Var.W2) != null) {
-                    s61Var.N(true);
+                b71 b71Var = tVar.a;
+                if (b71Var != null && (t61Var = b71Var.W2) != null) {
+                    t61Var.N(true);
                     break;
                 }
                 break;
@@ -316,13 +316,13 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
             case 26:
                 TLRPC.User user = (TLRPC.User) obj;
                 oo0 oo0Var = (oo0) ((hg.h0) this.b);
-                nx nxVar = oo0Var.K0;
+                lx lxVar = oo0Var.K0;
                 if (user != null) {
-                    ey eyVar = nxVar.J0;
-                    if (eyVar != null) {
-                        eyVar.I3();
+                    cy cyVar = lxVar.J0;
+                    if (cyVar != null) {
+                        cyVar.I3();
                     }
-                    MessagesController.getInstance(nxVar.H0).openApp(user, 0);
+                    MessagesController.getInstance(lxVar.H0).openApp(user, 0);
                     oo0Var.R(user.id, user);
                     break;
                 }
@@ -333,9 +333,9 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
                 ArrayList arrayList6 = fVar.h;
                 boolean z11 = arrayList6 == null || arrayList6.isEmpty();
                 fVar.h = arrayList5;
-                a71 a71Var2 = fVar.e;
-                if (a71Var2 != null) {
-                    a71Var2.W2.N(z11);
+                b71 b71Var2 = fVar.e;
+                if (b71Var2 != null) {
+                    b71Var2.W2.N(z11);
                     break;
                 }
                 break;

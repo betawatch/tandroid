@@ -16,16 +16,16 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.TelegramMediaSession;
 import org.telegram.messenger.TranslateController;
-import org.telegram.messenger.fh;
+import org.telegram.messenger.eh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class xb implements Runnable {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class xb implements Runnable {
                 ga.y(i11, false).S();
                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U != null) {
-                    U.presentFragment(sn.W9(j10));
+                    U.presentFragment(qn.W9(j10));
                     break;
                 }
                 break;
@@ -151,12 +151,12 @@ public final /* synthetic */ class xb implements Runnable {
                 }
             case 17:
                 org.telegram.ui.Wallet.f2 f2Var = (org.telegram.ui.Wallet.f2) obj2;
-                fh fhVar = (fh) obj;
+                eh ehVar = (eh) obj;
                 f2Var.getClass();
                 TL_wallet.tonConnectGetPending tonconnectgetpending = new TL_wallet.tonConnectGetPending();
                 long j11 = this.b;
                 tonconnectgetpending.session_id = Long.valueOf(j11);
-                f2Var.f.sendRequestTyped(tonconnectgetpending, new org.telegram.messenger.a(), new org.telegram.ui.Wallet.t1(f2Var, fhVar, j11, this.c, 0));
+                f2Var.f.sendRequestTyped(tonconnectgetpending, new org.telegram.messenger.a(), new org.telegram.ui.Wallet.t1(f2Var, ehVar, j11, this.c, 0));
                 break;
             default:
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder((Context) obj2, 0, (org.telegram.ui.ActionBar.d6) obj);

@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Set;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class j extends AbstractMap implements Serializable {
     public static final Object s = new Object();
@@ -55,10 +55,10 @@ public final class j extends AbstractMap implements Serializable {
         objArr2[i12] = null;
         iArr[i10] = iArr[i12];
         iArr[i12] = 0;
-        int a2 = w7.k8.a(obj2) & i11;
-        int b10 = w7.j8.b(a2, obj);
+        int a2 = w7.j8.a(obj2) & i11;
+        int b10 = w7.i8.b(a2, obj);
         if (b10 == size) {
-            w7.j8.d(a2, i10 + 1, obj);
+            w7.i8.d(a2, i10 + 1, obj);
             return;
         }
         while (true) {
@@ -127,7 +127,7 @@ public final class j extends AbstractMap implements Serializable {
         for (int i10 = 0; i10 < this.f; i10++) {
             Object[] objArr = this.d;
             objArr.getClass();
-            if (w7.n8.a(obj, objArr[i10])) {
+            if (w7.m8.a(obj, objArr[i10])) {
                 return true;
             }
         }
@@ -142,11 +142,11 @@ public final class j extends AbstractMap implements Serializable {
         if (c()) {
             return -1;
         }
-        int a2 = w7.k8.a(obj);
+        int a2 = w7.j8.a(obj);
         int d = d();
         Object obj2 = this.a;
         obj2.getClass();
-        int b10 = w7.j8.b(a2 & d, obj2);
+        int b10 = w7.i8.b(a2 & d, obj2);
         if (b10 != 0) {
             int i10 = ~d;
             int i11 = a2 & i10;
@@ -158,7 +158,7 @@ public final class j extends AbstractMap implements Serializable {
                 if ((i13 & i10) == i11) {
                     Object[] objArr = this.c;
                     objArr.getClass();
-                    if (w7.n8.a(obj, objArr[i12])) {
+                    if (w7.m8.a(obj, objArr[i12])) {
                         return i12;
                     }
                 }
@@ -180,24 +180,24 @@ public final class j extends AbstractMap implements Serializable {
     }
 
     public final int f(int i10, int i11, int i12, int i13) {
-        Object c10 = w7.j8.c(i11);
+        Object c10 = w7.i8.c(i11);
         int i14 = i11 - 1;
         if (i13 != 0) {
-            w7.j8.d(i12 & i14, i13 + 1, c10);
+            w7.i8.d(i12 & i14, i13 + 1, c10);
         }
         Object obj = this.a;
         obj.getClass();
         int[] iArr = this.b;
         iArr.getClass();
         for (int i15 = 0; i15 <= i10; i15++) {
-            int b10 = w7.j8.b(i15, obj);
+            int b10 = w7.i8.b(i15, obj);
             while (b10 != 0) {
                 int i16 = b10 - 1;
                 int i17 = iArr[i16];
                 int i18 = ((~i10) & i17) | i15;
                 int i19 = i18 & i14;
-                int b11 = w7.j8.b(i19, c10);
-                w7.j8.d(i19, b10, c10);
+                int b11 = w7.i8.b(i19, c10);
+                w7.i8.d(i19, b10, c10);
                 iArr[i16] = ((~i14) & i18) | (b11 & i14);
                 b10 = i17 & i10;
             }
@@ -216,7 +216,7 @@ public final class j extends AbstractMap implements Serializable {
             iArr.getClass();
             Object[] objArr = this.c;
             objArr.getClass();
-            int a2 = w7.j8.a(obj, null, d, obj2, iArr, objArr, null);
+            int a2 = w7.i8.a(obj, null, d, obj2, iArr, objArr, null);
             if (a2 != -1) {
                 Object[] objArr2 = this.d;
                 objArr2.getClass();
@@ -276,7 +276,7 @@ public final class j extends AbstractMap implements Serializable {
                 highestOneBit = TLObject.FLAG_30;
             }
             int max2 = Math.max(4, highestOneBit);
-            this.a = w7.j8.c(max2);
+            this.a = w7.i8.c(max2);
             this.e = ((32 - Integer.numberOfLeadingZeros(max2 - 1)) & 31) | (this.e & (-32));
             this.b = new int[i12];
             this.c = new Object[i12];
@@ -294,19 +294,19 @@ public final class j extends AbstractMap implements Serializable {
         objArr2.getClass();
         int i13 = this.f;
         int i14 = i13 + 1;
-        int a10 = w7.k8.a(obj);
+        int a10 = w7.j8.a(obj);
         int d = d();
         int i15 = a10 & d;
         Object obj3 = this.a;
         obj3.getClass();
-        int b10 = w7.j8.b(i15, obj3);
+        int b10 = w7.i8.b(i15, obj3);
         if (b10 == 0) {
             if (i14 > d) {
                 d = f(d, (d + 1) * (d < 32 ? 4 : 2), a10, i13);
             } else {
                 Object obj4 = this.a;
                 obj4.getClass();
-                w7.j8.d(i15, i14, obj4);
+                w7.i8.d(i15, i14, obj4);
             }
             i10 = 1;
         } else {
@@ -319,7 +319,7 @@ public final class j extends AbstractMap implements Serializable {
                 i10 = 1;
                 int i21 = i20 & i16;
                 int i22 = i11;
-                if (i21 == i17 && w7.n8.a(obj, objArr[i19])) {
+                if (i21 == i17 && w7.m8.a(obj, objArr[i19])) {
                     Object obj5 = objArr2[i19];
                     objArr2[i19] = obj2;
                     return obj5;

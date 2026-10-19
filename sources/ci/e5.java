@@ -1,29 +1,43 @@
 package ci;
 
+import ai.pa;
+import android.content.Context;
 import android.text.TextUtils;
-import j$.util.Objects;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.un0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class e5 {
-    public boolean a = true;
-    public boolean b;
-    public String c;
+public final class e5 extends un0 {
+    public pa h;
+    public final /* synthetic */ u5 n;
 
-    public final boolean equals(Object obj) {
-        if (this != obj) {
-            if (obj != null && e5.class == obj.getClass()) {
-                e5 e5Var = (e5) obj;
-                boolean z10 = (TextUtils.isEmpty(this.c) && TextUtils.isEmpty(e5Var.c)) || Objects.equals(this.c, e5Var.c);
-                if (this.a != e5Var.a || this.b != e5Var.b || !z10) {
-                }
-            }
-            return false;
-        }
-        return true;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e5(u5 u5Var, Context context, b bVar) {
+        super(context, 13.0f, bVar);
+        this.n = u5Var;
     }
 
-    public final int hashCode() {
-        return Objects.hash(Boolean.valueOf(this.a), Boolean.valueOf(this.b), this.c);
+    @Override // org.telegram.ui.Components.un0
+    public final void a(String str) {
+        pa paVar = this.h;
+        if (paVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(paVar);
+        }
+        this.h = new pa(17, this, str);
+        if (TextUtils.isEmpty(str)) {
+            this.h.run();
+        } else {
+            AndroidUtilities.runOnUIThread(this.h, 300L);
+        }
+        if (this.h != null) {
+            u5 u5Var = this.n;
+            if (u5Var.Q) {
+                return;
+            }
+            u5Var.Q = true;
+            u5Var.w.E();
+            u5Var.x.h1(0, -u5Var.r.getPaddingTop());
+        }
     }
 }

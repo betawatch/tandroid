@@ -1,13 +1,12 @@
 package ea;
 
 import a1.g;
-import a6.m;
+import a4.l;
 import ai.f;
-import ai.w3;
+import ai.y3;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-import com.google.firebase.messaging.l;
 import j$.util.Objects;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -20,6 +19,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 import k5.k;
+import k5.n;
 import k5.t;
 import k5.w;
 import l5.h;
@@ -30,14 +30,14 @@ import m.s3;
 import m1.j;
 import m5.e;
 import org.json.JSONObject;
-import org.telegram.ui.web.n;
-import qg.g0;
+import org.telegram.ui.web.m;
+import qg.h0;
 import t7.u;
-import w7.j6;
+import w7.i6;
 import z9.b0;
 import z9.k0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class b {
     public Object a;
@@ -121,21 +121,21 @@ public final class b {
         a aVar = null;
         try {
             if (!j.b(2, i10)) {
-                JSONObject w9 = ((m) this.e).w();
-                if (w9 != null) {
-                    a M = ((ag.b) this.c).M(w9);
-                    f("Loaded cached settings: ", w9);
+                JSONObject u10 = ((qb.c) this.e).u();
+                if (u10 != null) {
+                    a Z = ((l) this.c).Z(u10);
+                    f("Loaded cached settings: ", u10);
                     ((u) this.d).getClass();
                     long currentTimeMillis = System.currentTimeMillis();
-                    if (j.b(3, i10) || M.c >= currentTimeMillis) {
+                    if (j.b(3, i10) || Z.c >= currentTimeMillis) {
                         try {
                             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                                 Log.v("FirebaseCrashlytics", "Returning cached settings.", null);
                             }
-                            return M;
+                            return Z;
                         } catch (Exception e) {
                             e = e;
-                            aVar = M;
+                            aVar = Z;
                             Log.e("FirebaseCrashlytics", "Failed to get cached settings", e);
                             return aVar;
                         }
@@ -225,11 +225,11 @@ public final class b {
                         default:
                             s5.g gVar3 = (s5.g) ((s5.d) this.b.c);
                             gVar3.getClass();
-                            return (Iterable) gVar3.c(new n(8, gVar3, iVar2));
+                            return (Iterable) gVar3.c(new m(8, gVar3, iVar2));
                     }
                 }
             })).booleanValue()) {
-                gVar.f(new f(bVar, iVar2, j11, 8));
+                gVar.f(new f(bVar, iVar2, j11, 9));
                 return;
             }
             final int i14 = 1;
@@ -272,7 +272,7 @@ public final class b {
                         default:
                             s5.g gVar3 = (s5.g) ((s5.d) this.b.c);
                             gVar3.getClass();
-                            return (Iterable) gVar3.c(new n(8, gVar3, iVar2));
+                            return (Iterable) gVar3.c(new m(8, gVar3, iVar2));
                     }
                 }
             });
@@ -281,7 +281,7 @@ public final class b {
             }
             int i15 = 2;
             if (a2 == null) {
-                j6.a(iVar2, "Uploader", "Unknown backend for %s, deleting event batch for it...");
+                i6.a(iVar2, "Uploader", "Unknown backend for %s, deleting event batch for it...");
                 aVar2 = new m5.a(3, -1L);
                 bArr = bArr2;
                 j10 = j11;
@@ -296,8 +296,8 @@ public final class b {
                 if (bArr2 != null) {
                     s5.c cVar2 = (s5.c) bVar.i;
                     Objects.requireNonNull(cVar2);
-                    o5.a aVar3 = (o5.a) gVar.f(new g0(cVar2, i15));
-                    l lVar = new l();
+                    o5.a aVar3 = (o5.a) gVar.f(new h0(cVar2, i15));
+                    com.google.firebase.messaging.l lVar = new com.google.firebase.messaging.l();
                     lVar.f = new HashMap();
                     lVar.d = Long.valueOf(((u5.a) bVar.g).d());
                     lVar.e = Long.valueOf(((u5.a) bVar.h).d());
@@ -366,7 +366,7 @@ public final class b {
                                 s3Var.e = str6;
                             } else {
                                 it = it3;
-                                String c10 = j6.c("CctTransportBackend");
+                                String c10 = i6.c("CctTransportBackend");
                                 if (Log.isLoggable(c10, 5)) {
                                     Log.w(c10, "Received event of unsupported encoding " + cVar4 + ". Skipping...");
                                 }
@@ -381,7 +381,7 @@ public final class b {
                         s3Var.c = Long.valueOf(hVar3.e);
                         String str7 = (String) hVar3.f.get("tz-offset");
                         s3Var.f = Long.valueOf(str7 == null ? 0L : Long.valueOf(str7).longValue());
-                        s3Var.h = new k5.n((k5.u) k5.u.a.get(hVar3.b("net-type")), (t) t.a.get(hVar3.b("mobile-subtype")));
+                        s3Var.h = new n((k5.u) k5.u.a.get(hVar3.b("net-type")), (t) t.a.get(hVar3.b("mobile-subtype")));
                         Integer num2 = hVar3.b;
                         if (num2 != null) {
                             s3Var.b = num2;
@@ -396,7 +396,7 @@ public final class b {
                         if (!str8.isEmpty()) {
                             throw new IllegalStateException("Missing required properties:".concat(str8));
                         }
-                        arrayList4.add(new k(((Long) s3Var.a).longValue(), (Integer) s3Var.b, ((Long) s3Var.c).longValue(), (byte[]) s3Var.d, (String) s3Var.e, ((Long) s3Var.f).longValue(), (k5.n) s3Var.h));
+                        arrayList4.add(new k(((Long) s3Var.a).longValue(), (Integer) s3Var.b, ((Long) s3Var.c).longValue(), (byte[]) s3Var.d, (String) s3Var.e, ((Long) s3Var.f).longValue(), (n) s3Var.h));
                         it3 = it;
                         bArr2 = bArr3;
                         j11 = j12;
@@ -436,7 +436,7 @@ public final class b {
                         f7 = bVar2.f(eVar);
                         URL url2 = (URL) f7.c;
                         if (url2 != null) {
-                            j6.a(url2, "CctTransportBackend", "Following redirect to: %s");
+                            i6.a(url2, "CctTransportBackend", "Following redirect to: %s");
                             eVar = new androidx.biometric.e(url2, (k5.i) eVar.c, (String) eVar.d, i17);
                         } else {
                             eVar = null;
@@ -459,7 +459,7 @@ public final class b {
                                 aVar = new m5.a(4, -1L);
                             } catch (IOException e) {
                                 e = e;
-                                j6.b("CctTransportBackend", "Could not make request to the backend", e);
+                                i6.b("CctTransportBackend", "Could not make request to the backend", e);
                                 i11 = 2;
                                 aVar2 = new m5.a(2, -1L);
                                 i12 = aVar2.a;
@@ -478,7 +478,7 @@ public final class b {
             }
             i12 = aVar2.a;
             if (i12 != i11) {
-                gVar.f(new w3(this, iterable, iVar, j10, 5));
+                gVar.f(new y3(this, iterable, iVar, j10, 5));
                 ((g3) this.d).U(iVar, i10 + 1, true);
                 return;
             }
@@ -486,11 +486,11 @@ public final class b {
             iVar2 = iVar;
             long j13 = j10;
             int i20 = 4;
-            gVar.f(new n(i20, bVar, iterable));
+            gVar.f(new m(i20, bVar, iterable));
             if (i12 == 1) {
                 j11 = Math.max(j13, aVar2.b);
                 if (bArr != null) {
-                    gVar.f(new g0(bVar, i20));
+                    gVar.f(new h0(bVar, i20));
                 }
             } else {
                 if (i12 == 4) {
@@ -504,7 +504,7 @@ public final class b {
                             hashMap2.put(str10, 1);
                         }
                     }
-                    gVar.f(new n(5, bVar, hashMap2));
+                    gVar.f(new m(5, bVar, hashMap2));
                 }
                 j11 = j13;
             }

@@ -18,10 +18,10 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Cells.c6;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.v01;
+import org.telegram.ui.Components.w01;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l3 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -36,9 +36,9 @@ public final /* synthetic */ class l3 implements View.OnClickListener {
     public final /* synthetic */ Object s;
     public final /* synthetic */ Object v;
 
-    public /* synthetic */ l3(ei.d dVar, v01 v01Var, MessagesController messagesController, long j10, TLRPC.User user, String[] strArr, int i10, org.telegram.ui.ActionBar.f3 f3Var, boolean z10, d6 d6Var) {
+    public /* synthetic */ l3(ei.d dVar, w01 w01Var, MessagesController messagesController, long j10, TLRPC.User user, String[] strArr, int i10, org.telegram.ui.ActionBar.f3 f3Var, boolean z10, d6 d6Var) {
         this.b = dVar;
-        this.r = v01Var;
+        this.r = w01Var;
         this.s = messagesController;
         this.c = j10;
         this.d = user;
@@ -80,16 +80,16 @@ public final /* synthetic */ class l3 implements View.OnClickListener {
                 }
                 break;
             default:
-                v01 v01Var = (v01) this.r;
-                c6 c6Var = v01Var.h;
+                w01 w01Var = (w01) this.r;
+                c6 c6Var = w01Var.h;
                 final MessagesController messagesController = (MessagesController) this.s;
                 String[] strArr = (String[]) this.v;
                 final ei.d dVar2 = this.b;
                 if (!dVar2.N) {
                     EditTextBoldCursor textView = c6Var.getTextView();
                     if (textView.getText().toString().trim().length() > 16) {
-                        float f7 = -v01Var.y;
-                        v01Var.y = f7;
+                        float f7 = -w01Var.y;
+                        w01Var.y = f7;
                         AndroidUtilities.shakeViewSpring(textView, f7);
                         BotWebViewVibrationEffect.APP_ERROR.vibrate();
                         break;
@@ -107,7 +107,7 @@ public final /* synthetic */ class l3 implements View.OnClickListener {
                         final org.telegram.ui.ActionBar.f3 f3Var2 = this.f;
                         final boolean z11 = this.h;
                         final d6 d6Var2 = this.n;
-                        connectionsManager2.sendRequestTyped(tL_messages_editChatParticipantRank, aVar, new Utilities.Callback2() { // from class: org.telegram.ui.Components.l01
+                        connectionsManager2.sendRequestTyped(tL_messages_editChatParticipantRank, aVar, new Utilities.Callback2() { // from class: org.telegram.ui.Components.m01
                             @Override // org.telegram.messenger.Utilities.Callback2
                             public final void run(Object obj, Object obj2) {
                                 TLRPC.Updates updates = (TLRPC.Updates) obj;

@@ -3,7 +3,7 @@ package hg;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import ci.t6;
+import ci.u6;
 import com.google.android.gms.internal.play_billing.k3;
 import ei.bc;
 import java.util.ArrayList;
@@ -20,29 +20,29 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Cells.r2;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.hm0;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class n1 extends hm0 implements NotificationCenter.NotificationCenterDelegate {
     public final Context c;
-    public final sn f;
+    public final qn f;
     public int h;
     public int n;
     public final d6 s;
     public final int v;
     public final boolean w;
     public String x;
-    public t6 y;
+    public u6 y;
     public final HashSet d = new HashSet();
     public final ArrayList e = new ArrayList();
     public final int r = UserConfig.selectedAccount;
     public final bc E = new bc(this, 13);
 
-    public n1(Context context, sn snVar, d6 d6Var, int i10, boolean z10) {
+    public n1(Context context, qn qnVar, d6 d6Var, int i10, boolean z10) {
         this.s = d6Var;
         this.c = context;
-        this.f = snVar;
+        this.f = qnVar;
         this.v = i10;
         this.w = z10;
     }

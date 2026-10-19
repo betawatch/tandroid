@@ -19,14 +19,14 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class w6 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
     public final x90 b;
     public final Runnable c;
 
-    public w6(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var, Runnable runnable, org.telegram.ui.vi viVar) {
+    public w6(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var, Runnable runnable, org.telegram.ui.ti tiVar) {
         super(context);
         this.a = i10;
         this.c = runnable;
@@ -38,7 +38,7 @@ public final class w6 extends FrameLayout implements NotificationCenter.Notifica
         imageView.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(80.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.K7, d6Var)));
         imageView.setImageResource(R.drawable.large_archive);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        linearLayout.addView(imageView, w7.z5.t(80, 80, 49, 0, viVar != null ? 14 : 0, 0, 14));
+        linearLayout.addView(imageView, w7.z5.t(80, 80, 49, 0, tiVar != null ? 14 : 0, 0, 14));
         TextView textView = new TextView(context);
         textView.setTextSize(1, 20.0f);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.j5, d6Var));
@@ -56,10 +56,10 @@ public final class w6 extends FrameLayout implements NotificationCenter.Notifica
         linearLayout.addView(a(R.drawable.msg_archive_archive, LocaleController.getString("ArchiveHintSection1"), LocaleController.getString("ArchiveHintSection1Info"), d6Var), w7.z5.t(-1, -2, 7, 32, 0, 32, 16));
         linearLayout.addView(a(R.drawable.msg_archive_hide, LocaleController.getString("ArchiveHintSection2"), LocaleController.getString("ArchiveHintSection2Info"), d6Var), w7.z5.t(-1, -2, 7, 32, 0, 32, 16));
         linearLayout.addView(a(R.drawable.msg_archive_stories, LocaleController.getString("ArchiveHintSection3"), LocaleController.getString("ArchiveHintSection3Info"), d6Var), w7.z5.t(-1, -2, 7, 32, 0, 32, 16));
-        if (viVar != null) {
-            ei.d f7 = org.telegram.messenger.lk.f(24, context, d6Var, true);
+        if (tiVar != null) {
+            ei.d f7 = org.telegram.messenger.kk.f(24, context, d6Var, true);
             f7.g(LocaleController.getString("GotIt"), false, true);
-            f7.setOnClickListener(new v6(0, viVar));
+            f7.setOnClickListener(new v6(0, tiVar));
             linearLayout.addView(f7, w7.z5.k(14.0f, 18.0f, 14.0f, 0.0f, -1, 48));
         }
     }

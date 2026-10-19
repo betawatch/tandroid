@@ -14,14 +14,14 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class d9 extends FrameLayout {
     public float E;
     public final /* synthetic */ e9 F;
     public long a;
     public TLRPC.Document b;
-    public final ci.j4 c;
+    public final ci.k4 c;
     public final x20 d;
     public final x20 e;
     public float f;
@@ -44,12 +44,12 @@ public abstract class d9 extends FrameLayout {
         this.r = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
         this.s = new f6(this, 200L, bs.g);
         this.w = -1.0f;
-        ci.j4 j4Var = new ci.j4(this, context, 7);
-        this.c = j4Var;
-        j4Var.getImageReceiver().setAutoRepeatCount(1);
-        j4Var.getImageReceiver().setAspectFit(true);
+        ci.k4 k4Var = new ci.k4(this, context, 7);
+        this.c = k4Var;
+        k4Var.getImageReceiver().setAutoRepeatCount(1);
+        k4Var.getImageReceiver().setAspectFit(true);
         setClipChildren(false);
-        addView(j4Var, w7.z5.e(70, 70, 17));
+        addView(k4Var, w7.z5.e(70, 70, 17));
     }
 
     public final void a(Canvas canvas, float f7, float f10, float f11, float f12, Paint paint) {
@@ -125,28 +125,28 @@ public abstract class d9 extends FrameLayout {
                 canvas2 = canvas;
                 d9Var.a(canvas2, d9Var.y, d9Var.E, measuredWidth, d9Var.x, paint);
                 float lerp2 = AndroidUtilities.lerp(AndroidUtilities.lerp(!e9Var.U ? (int) ((measuredWidth * 2.0f) * 0.7f) : AndroidUtilities.dp(70.0f), (int) (getMeasuredWidth() * 0.7f), f6Var.c), (int) (AndroidUtilities.dp(42.0f) * 0.7f), e9Var.N) / 2.0f;
-                ci.j4 j4Var = d9Var.c;
-                r5Var = j4Var.e;
+                ci.k4 k4Var = d9Var.c;
+                r5Var = k4Var.e;
                 if (r5Var != null) {
-                    ImageReceiver imageReceiver = j4Var.a;
+                    ImageReceiver imageReceiver = k4Var.a;
                     float f14 = d9Var.y - lerp2;
                     float f15 = d9Var.E - lerp2;
                     float f16 = lerp2 * 2.0f;
                     imageReceiver.setImageCoords(f14, f15, f16, f16);
-                    j4Var.a.setRoundRadius((int) (f16 * 0.13f));
-                    j4Var.a.draw(canvas2);
+                    k4Var.a.setRoundRadius((int) (f16 * 0.13f));
+                    k4Var.a.draw(canvas2);
                     return;
                 }
-                ci.f3 f3Var = r5Var.k;
-                if (f3Var != null) {
-                    f3Var.setRoundRadius((int) (2.0f * lerp2 * 0.13f));
+                ci.g3 g3Var = r5Var.k;
+                if (g3Var != null) {
+                    g3Var.setRoundRadius((int) (2.0f * lerp2 * 0.13f));
                 }
-                r5 r5Var2 = j4Var.e;
+                r5 r5Var2 = k4Var.e;
                 float f17 = d9Var.y;
                 float f18 = d9Var.E;
                 r5Var2.setBounds((int) (f17 - lerp2), (int) (f18 - lerp2), (int) (f17 + lerp2), (int) (f18 + lerp2));
-                j4Var.e.setColorFilter(d9Var.r);
-                j4Var.e.draw(canvas2);
+                k4Var.e.setColorFilter(d9Var.r);
+                k4Var.e.draw(canvas2);
                 return;
             }
             float f19 = this.y;
@@ -178,16 +178,16 @@ public abstract class d9 extends FrameLayout {
         if (!e9Var.U) {
         }
         float lerp22 = AndroidUtilities.lerp(AndroidUtilities.lerp(!e9Var.U ? (int) ((measuredWidth * 2.0f) * 0.7f) : AndroidUtilities.dp(70.0f), (int) (getMeasuredWidth() * 0.7f), f6Var.c), (int) (AndroidUtilities.dp(42.0f) * 0.7f), e9Var.N) / 2.0f;
-        ci.j4 j4Var2 = d9Var.c;
-        r5Var = j4Var2.e;
+        ci.k4 k4Var2 = d9Var.c;
+        r5Var = k4Var2.e;
         if (r5Var != null) {
         }
     }
 
     public long getDuration() {
-        ci.j4 j4Var = this.c;
-        ImageReceiver imageReceiver = j4Var.getImageReceiver();
-        r5 r5Var = j4Var.e;
+        ci.k4 k4Var = this.c;
+        ImageReceiver imageReceiver = k4Var.getImageReceiver();
+        r5 r5Var = k4Var.e;
         if (r5Var != null) {
             imageReceiver = r5Var.k;
         }
@@ -198,15 +198,15 @@ public abstract class d9 extends FrameLayout {
     }
 
     public ImageReceiver getImageReceiver() {
-        ci.j4 j4Var = this.c;
-        ImageReceiver imageReceiver = j4Var.getImageReceiver();
-        r5 r5Var = j4Var.e;
+        ci.k4 k4Var = this.c;
+        ImageReceiver imageReceiver = k4Var.getImageReceiver();
+        r5 r5Var = k4Var.e;
         if (r5Var == null) {
             return imageReceiver;
         }
-        ci.f3 f3Var = r5Var.k;
+        ci.g3 g3Var = r5Var.k;
         r5Var.setColorFilter(this.r);
-        return f3Var;
+        return g3Var;
     }
 
     @Override // android.view.View
@@ -225,18 +225,18 @@ public abstract class d9 extends FrameLayout {
     }
 
     public void setExpanded(boolean z10) {
-        ci.f3 f3Var;
+        ci.g3 g3Var;
         if (this.v == z10) {
             return;
         }
         this.v = z10;
         if (z10) {
-            ci.j4 j4Var = this.c;
-            r5 r5Var = j4Var.e;
-            if (r5Var != null && (f3Var = r5Var.k) != null) {
-                f3Var.startAnimation();
+            ci.k4 k4Var = this.c;
+            r5 r5Var = k4Var.e;
+            if (r5Var != null && (g3Var = r5Var.k) != null) {
+                g3Var.startAnimation();
             }
-            j4Var.a.startAnimation();
+            k4Var.a.startAnimation();
         }
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
         invalidate();

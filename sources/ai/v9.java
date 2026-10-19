@@ -13,7 +13,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class v9 {
     public final int a;
@@ -96,7 +96,7 @@ public final class v9 {
         TL_stars.createStarGiftCollection createstargiftcollection = new TL_stars.createStarGiftCollection();
         createstargiftcollection.peer = MessagesController.getInstance(i10).getInputPeer(j10);
         createstargiftcollection.title = str;
-        ConnectionsManager.getInstance(i10).sendRequest(createstargiftcollection, new w2(this, tL_starGiftCollection, y9Var, callback, 4));
+        ConnectionsManager.getInstance(i10).sendRequest(createstargiftcollection, new k2(this, tL_starGiftCollection, y9Var, callback, 4));
     }
 
     public final TL_stars.TL_starGiftCollection c(int i10) {
@@ -277,22 +277,22 @@ public final class v9 {
     public final void l(TL_stars.SavedStarGift savedStarGift, int i10, boolean z10) {
         Iterator it = this.h.values().iterator();
         while (it.hasNext()) {
-            ((y9) it.next()).o(savedStarGift, i10, z10);
+            ((y9) it.next()).p(savedStarGift, i10, z10);
         }
         y9 y9Var = this.g;
         if (y9Var != null) {
-            y9Var.o(savedStarGift, i10, z10);
+            y9Var.p(savedStarGift, i10, z10);
         }
     }
 
     public final void m(TL_stars.SavedStarGift savedStarGift, boolean z10) {
         Iterator it = this.h.values().iterator();
         while (it.hasNext()) {
-            ((y9) it.next()).p(savedStarGift, z10);
+            ((y9) it.next()).q(savedStarGift, z10);
         }
         y9 y9Var = this.g;
         if (y9Var != null) {
-            y9Var.p(savedStarGift, z10);
+            y9Var.q(savedStarGift, z10);
         }
     }
 

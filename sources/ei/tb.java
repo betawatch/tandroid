@@ -2,9 +2,9 @@ package ei;
 
 import android.view.ScaleGestureDetector;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.w91;
+import org.telegram.ui.Components.x91;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class tb extends ScaleGestureDetector.SimpleOnScaleGestureListener {
     public final /* synthetic */ ub a;
@@ -25,9 +25,9 @@ public final class tb extends ScaleGestureDetector.SimpleOnScaleGestureListener 
         vbVar.T1 = scaleFactor;
         vbVar.T1 = Utilities.clamp(scaleFactor, 1.0f, 0.0f);
         vbVar.B0.setZoom(vbVar.T1);
-        w91 w91Var = vbVar.V0;
-        if (w91Var != null) {
-            w91Var.b(vbVar.T1, false);
+        x91 x91Var = vbVar.V0;
+        if (x91Var != null) {
+            x91Var.b(vbVar.T1, false);
         }
         vbVar.i0(true);
         return true;

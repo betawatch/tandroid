@@ -18,9 +18,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.at;
 import org.telegram.ui.Components.ct;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class db implements Runnable {
     public final /* synthetic */ int a;
@@ -134,7 +134,7 @@ public final /* synthetic */ class db implements Runnable {
                             break;
                         }
                     } else {
-                        StringBuilder l4 = i2.d.l(i13, "Ignore incoming player command before initialization. command=", ", pid=");
+                        StringBuilder l4 = i2.e.l(i13, "Ignore incoming player command before initialization. command=", ", pid=");
                         l4.append(tVar.a.b);
                         e2.a.l("MediaSessionLegacyStub", l4.toString());
                         break;
@@ -213,13 +213,13 @@ public final /* synthetic */ class db implements Runnable {
                 }
                 break;
             default:
-                qg.s0 s0Var = (qg.s0) this.d;
-                qg.t0 t0Var = (qg.t0) this.e;
+                qg.t0 t0Var = (qg.t0) this.d;
+                qg.u0 u0Var = (qg.u0) this.e;
                 Runnable runnable = (Runnable) this.f;
                 boolean z11 = this.c;
-                s0Var.d(t0Var, this.b, z11 ? s0Var.h : null);
+                t0Var.d(u0Var, this.b, z11 ? t0Var.h : null);
                 if (z11) {
-                    s0Var.h = null;
+                    t0Var.h = null;
                 }
                 if (runnable != null) {
                     runnable.run();
@@ -238,19 +238,19 @@ public final /* synthetic */ class db implements Runnable {
         this.f = aVar;
     }
 
-    public /* synthetic */ db(s61 s61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, TLObject tLObject, int i11) {
+    public /* synthetic */ db(t61 t61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, TLObject tLObject, int i11) {
         this.a = i11;
-        this.d = s61Var;
+        this.d = t61Var;
         this.b = i10;
         this.e = tL_messages_searchGlobal;
         this.c = z10;
         this.f = tLObject;
     }
 
-    public /* synthetic */ db(qg.s0 s0Var, qg.t0 t0Var, int i10, boolean z10, Runnable runnable) {
+    public /* synthetic */ db(qg.t0 t0Var, qg.u0 u0Var, int i10, boolean z10, Runnable runnable) {
         this.a = 5;
-        this.d = s0Var;
-        this.e = t0Var;
+        this.d = t0Var;
+        this.e = u0Var;
         this.b = i10;
         this.c = z10;
         this.f = runnable;

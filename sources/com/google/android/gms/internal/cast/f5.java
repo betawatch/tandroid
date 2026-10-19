@@ -7,7 +7,7 @@ import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class f5 extends t4 {
     private static final Map zzb = new ConcurrentHashMap();
@@ -76,7 +76,7 @@ public abstract class f5 extends t4 {
             if (g10 >= 0) {
                 return g10;
             }
-            throw new IllegalStateException(i2.d.j(g10, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(i2.e.j(g10, "serialized size must be non-negative, was "));
         }
         int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
         if (i10 != Integer.MAX_VALUE) {
@@ -84,7 +84,7 @@ public abstract class f5 extends t4 {
         }
         int g11 = i6Var.g(this);
         if (g11 < 0) {
-            throw new IllegalStateException(i2.d.j(g11, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(i2.e.j(g11, "serialized size must be non-negative, was "));
         }
         this.zzd = (this.zzd & TLObject.FLAG_31) | g11;
         return g11;
@@ -133,7 +133,7 @@ public abstract class f5 extends t4 {
             if (g10 >= 0) {
                 return g10;
             }
-            throw new IllegalStateException(i2.d.j(g10, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(i2.e.j(g10, "serialized size must be non-negative, was "));
         }
         int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
         if (i10 != Integer.MAX_VALUE) {
@@ -141,7 +141,7 @@ public abstract class f5 extends t4 {
         }
         int g11 = f6.c.a(getClass()).g(this);
         if (g11 < 0) {
-            throw new IllegalStateException(i2.d.j(g11, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(i2.e.j(g11, "serialized size must be non-negative, was "));
         }
         this.zzd = (this.zzd & TLObject.FLAG_31) | g11;
         return g11;

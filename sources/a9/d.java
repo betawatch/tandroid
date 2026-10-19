@@ -18,7 +18,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class d implements ServiceConnection {
     public final /* synthetic */ int a;
@@ -58,21 +58,21 @@ public final class d implements ServiceConnection {
                 break;
             case 2:
                 com.google.android.gms.internal.play_billing.u.g("BillingClientTesting", "Billing Override Service connected.");
-                c5.d0 d0Var = (c5.d0) this.b;
+                c5.e0 e0Var = (c5.e0) this.b;
                 int i11 = com.google.android.gms.internal.play_billing.f.b;
                 if (iBinder != null) {
                     IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.apps.play.billingtestcompanion.aidl.IBillingOverrideService");
                     r22 = queryLocalInterface instanceof com.google.android.gms.internal.play_billing.g ? (com.google.android.gms.internal.play_billing.g) queryLocalInterface : new com.google.android.gms.internal.play_billing.e(iBinder, "com.google.android.apps.play.billingtestcompanion.aidl.IBillingOverrideService", 2);
                 }
-                d0Var.E = r22;
-                d0Var.D = 2;
-                int i12 = c5.e0.a;
-                i3 c10 = c5.e0.c(26, n3.b);
+                e0Var.E = r22;
+                e0Var.D = 2;
+                int i12 = c5.f0.a;
+                i3 c10 = c5.f0.c(26, n3.b);
                 Objects.requireNonNull(c10, "ApiSuccess should not be null");
-                n4.s sVar = d0Var.h;
+                n4.s sVar = e0Var.h;
                 sVar.getClass();
                 try {
-                    sVar.V(c10, (q3) sVar.b);
+                    sVar.U(c10, (q3) sVar.b);
                     break;
                 } catch (Throwable th2) {
                     com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
@@ -125,9 +125,9 @@ public final class d implements ServiceConnection {
                 break;
             case 2:
                 com.google.android.gms.internal.play_billing.u.h("BillingClientTesting", "Billing Override Service disconnected.");
-                c5.d0 d0Var = (c5.d0) this.b;
-                d0Var.E = null;
-                d0Var.D = 0;
+                c5.e0 e0Var = (c5.e0) this.b;
+                e0Var.E = null;
+                e0Var.D = 0;
                 break;
             default:
                 if (((pf.b) ((WeakReference) this.b).get()) != null) {

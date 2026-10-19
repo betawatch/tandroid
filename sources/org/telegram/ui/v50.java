@@ -1,31 +1,44 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class v50 extends org.telegram.ui.Components.voip.l {
-    public final /* synthetic */ x50 h;
+public final class v50 extends s4.o {
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ w50 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v50(x50 x50Var, Context context) {
-        super(context, true);
-        this.h = x50Var;
+    public v50(w50 w50Var, ArrayList arrayList) {
+        this.c = w50Var;
+        this.b = arrayList;
     }
 
-    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        x50 x50Var = this.h;
-        if (!x50Var.r || getParticipant() == null) {
-            return;
+    @Override // s4.o
+    public final boolean a(int i10, int i11) {
+        return true;
+    }
+
+    @Override // s4.o
+    public final boolean b(int i10, int i11) {
+        ArrayList arrayList = this.b;
+        if (i10 >= arrayList.size()) {
+            return false;
         }
-        x50Var.E(this, true);
+        w50 w50Var = this.c;
+        if (i11 < w50Var.e.size()) {
+            return ((ChatObject.VideoParticipant) arrayList.get(i10)).equals(w50Var.e.get(i11));
+        }
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.h.E(this, false);
+    @Override // s4.o
+    public final int d() {
+        return this.c.e.size();
+    }
+
+    @Override // s4.o
+    public final int e() {
+        return this.b.size();
     }
 }

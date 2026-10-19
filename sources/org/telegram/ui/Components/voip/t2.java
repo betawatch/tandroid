@@ -18,11 +18,11 @@ import android.widget.ToggleButton;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.n31;
-import org.telegram.ui.ho;
+import org.telegram.ui.Components.o31;
+import org.telegram.ui.fo;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public class t2 extends FrameLayout {
     public String E;
@@ -117,7 +117,7 @@ public class t2 extends FrameLayout {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.Q, this.P ? 1.0f : 0.0f);
             this.U = ofFloat;
             ofFloat.addUpdateListener(new s2(this, 0));
-            this.U.addListener(new n31(this, 15));
+            this.U.addListener(new o31(this, 15));
             this.U.setDuration(150L);
             this.U.start();
         }
@@ -201,7 +201,7 @@ public class t2 extends FrameLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.v = ofFloat;
         ofFloat.addUpdateListener(new ah.k0(9, this, z14));
-        this.v.addListener(new ho(26, this, z14));
+        this.v.addListener(new fo(26, this, z14));
         this.v.setDuration(150L).start();
         invalidate();
     }

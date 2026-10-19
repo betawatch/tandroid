@@ -1,7 +1,7 @@
 package kc;
 
 import b2.u0;
-import c5.b0;
+import c5.c0;
 import com.google.firebase.messaging.q;
 import e0.f0;
 import ec.h;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final int[] a = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 36, -1, -1, -1, 37, 38, -1, -1, -1, -1, 39, 40, -1, 41, 42, 43, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 44, -1, -1, -1, -1, -1, -1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, -1, -1, -1, -1, -1};
@@ -347,9 +347,9 @@ public abstract class c {
                             for (int i40 = 3; i37 < i40; i40 = 3) {
                                 androidx.biometric.e eVar4 = eVarArr[i37];
                                 int i41 = i29;
-                                int q6 = eVar4.q((ic.f) eVar4.c);
-                                if (d(q6, fVarArr[i37], cVar4) && q6 < i39) {
-                                    i39 = q6;
+                                int o10 = eVar4.o((ic.f) eVar4.c);
+                                if (d(o10, fVarArr[i37], cVar4) && o10 < i39) {
+                                    i39 = o10;
                                     i38 = i37;
                                 }
                                 i37++;
@@ -391,10 +391,10 @@ public abstract class c {
                             i10 = i28;
                             fVar2 = (ic.f) eVar5.c;
                             aVar = aVar5;
-                            b0 b0Var = fVar2.c[cVar3.ordinal()];
+                            c0 c0Var = fVar2.c[cVar3.ordinal()];
                             int i47 = fVar2.d;
-                            int i48 = b0Var.b;
-                            u0[] u0VarArr = (u0[]) b0Var.c;
+                            int i48 = c0Var.b;
+                            u0[] u0VarArr = (u0[]) c0Var.c;
                             length = u0VarArr.length;
                             i17 = i10;
                             int i49 = i17;
@@ -514,7 +514,7 @@ public abstract class c {
                                     throw new IllegalArgumentException("No data bytes provided");
                                 }
                                 if (i76 >= arrayList3.size()) {
-                                    gc.b bVar7 = (gc.b) i2.d.h(1, arrayList3);
+                                    gc.b bVar7 = (gc.b) i2.e.h(1, arrayList3);
                                     int size2 = arrayList3.size();
                                     eVar2 = eVar3;
                                     gc.b bVar8 = bVar7;
@@ -641,7 +641,7 @@ public abstract class c {
                                 }
                             }
                             if (i90 != aVar9.e()) {
-                                StringBuilder l4 = i2.d.l(i90, "Interleaving error: ", " and ");
+                                StringBuilder l4 = i2.e.l(i90, "Interleaving error: ", " and ");
                                 l4.append(aVar9.e());
                                 l4.append(" differ.");
                                 throw new q(l4.toString());
@@ -858,10 +858,10 @@ public abstract class c {
                         int i312 = 4;
                         if (z11) {
                         }
-                        b0 b0Var2 = fVar2.c[cVar3.ordinal()];
+                        c0 c0Var2 = fVar2.c[cVar3.ordinal()];
                         int i472 = fVar2.d;
-                        int i482 = b0Var2.b;
-                        u0[] u0VarArr2 = (u0[]) b0Var2.c;
+                        int i482 = c0Var2.b;
+                        u0[] u0VarArr2 = (u0[]) c0Var2.c;
                         length = u0VarArr2.length;
                         i17 = i10;
                         int i492 = i17;
@@ -886,10 +886,10 @@ public abstract class c {
                 int i3122 = 4;
                 if (z11) {
                 }
-                b0 b0Var22 = fVar2.c[cVar3.ordinal()];
+                c0 c0Var22 = fVar2.c[cVar3.ordinal()];
                 int i4722 = fVar2.d;
-                int i4822 = b0Var22.b;
-                u0[] u0VarArr22 = (u0[]) b0Var22.c;
+                int i4822 = c0Var22.b;
+                u0[] u0VarArr22 = (u0[]) c0Var22.c;
                 length = u0VarArr22.length;
                 i17 = i10;
                 int i4922 = i17;
@@ -917,10 +917,10 @@ public abstract class c {
         int i31222 = 4;
         if (z11) {
         }
-        b0 b0Var222 = fVar2.c[cVar3.ordinal()];
+        c0 c0Var222 = fVar2.c[cVar3.ordinal()];
         int i47222 = fVar2.d;
-        int i48222 = b0Var222.b;
-        u0[] u0VarArr222 = (u0[]) b0Var222.c;
+        int i48222 = c0Var222.b;
+        u0[] u0VarArr222 = (u0[]) c0Var222.c;
         length = u0VarArr222.length;
         i17 = i10;
         int i49222 = i17;
@@ -949,10 +949,10 @@ public abstract class c {
 
     public static boolean d(int i10, ic.f fVar, ic.c cVar) {
         int i11 = fVar.d;
-        b0 b0Var = fVar.c[cVar.ordinal()];
-        int i12 = b0Var.b;
+        c0 c0Var = fVar.c[cVar.ordinal()];
+        int i12 = c0Var.b;
         int i13 = 0;
-        for (u0 u0Var : (u0[]) b0Var.c) {
+        for (u0 u0Var : (u0[]) c0Var.c) {
             i13 += u0Var.a;
         }
         return i11 - (i13 * i12) >= (i10 + 7) / 8;

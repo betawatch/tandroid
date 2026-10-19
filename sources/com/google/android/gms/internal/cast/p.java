@@ -34,7 +34,7 @@ import z7.ib;
 import z7.xe;
 import z7.xf;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -268,10 +268,10 @@ public final /* synthetic */ class p implements Runnable {
                             z5 z5Var = (z5) y0Var.b;
                             aVar.d = Boolean.valueOf(((d) z5Var.c).d == 2);
                             z5.D(z5Var, new x6(aVar));
-                            w6 F = z5Var.F();
+                            w6 E = z5Var.E();
                             b bVar2 = new b(new a(i12));
-                            bVar2.c = F.h;
-                            F.c.add(bVar2);
+                            bVar2.c = E.h;
+                            E.c.add(bVar2);
                             break;
                     }
                 }
@@ -323,10 +323,10 @@ public final /* synthetic */ class p implements Runnable {
                 }
                 return;
             case 2:
-                ((l2.f) this.b).A((p4.p) this.e, (p4.m) this.c, (Collection) this.d);
+                ((k2.w0) this.b).i((p4.p) this.e, (p4.m) this.c, (Collection) this.d);
                 return;
             case 3:
-                ((l2.f) this.b).A((p4.p) this.e, (p4.m) this.c, (ArrayList) this.d);
+                ((k2.w0) this.b).i((p4.p) this.e, (p4.m) this.c, (ArrayList) this.d);
                 return;
             case 4:
                 r0.q0.h((View) this.b, (r0.v0) this.c, (mi.q) this.d);
@@ -335,7 +335,7 @@ public final /* synthetic */ class p implements Runnable {
             case 5:
                 Handler handler = (Handler) this.b;
                 if (((AtomicBoolean) this.e).compareAndSet(false, true)) {
-                    handler.removeCallbacks((u2.q0) this.d);
+                    handler.removeCallbacks((uf.c) this.d);
                     if (Looper.myLooper() == handler.getLooper()) {
                         ((tf.b) this.c).a(false);
                         return;
@@ -428,10 +428,10 @@ public final /* synthetic */ class p implements Runnable {
         this.e = new AtomicBoolean(false);
         this.b = handler;
         this.c = bVar;
-        u2.q0 q0Var = new u2.q0(1, this, bVar);
-        this.d = q0Var;
+        uf.c cVar = new uf.c(0, this, bVar);
+        this.d = cVar;
         if (j10 > 0) {
-            handler.postDelayed(q0Var, j10);
+            handler.postDelayed(cVar, j10);
         }
     }
 }

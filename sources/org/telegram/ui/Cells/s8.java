@@ -7,11 +7,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.ClippingImageView;
 import org.telegram.ui.Components.PollVotesAlert$UserCell;
-import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.k71;
 import org.telegram.ui.Components.ub;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class s8 extends org.telegram.ui.Components.s6 {
     public final /* synthetic */ int b;
@@ -67,7 +67,7 @@ public final class s8 extends org.telegram.ui.Components.s6 {
                 ((PollVotesAlert$UserCell) obj).setPlaceholderAlpha(f7);
                 break;
             case 10:
-                ((j71) obj).I(f7);
+                ((k71) obj).I(f7);
                 break;
             case 11:
                 vh.h hVar = (vh.h) obj;
@@ -190,7 +190,7 @@ public final class s8 extends org.telegram.ui.Components.s6 {
             case 9:
                 return Float.valueOf(((PollVotesAlert$UserCell) obj).getPlaceholderAlpha());
             case 10:
-                return Float.valueOf(((j71) obj).E);
+                return Float.valueOf(((k71) obj).E);
             case 11:
                 return Float.valueOf(((vh.h) obj).G);
             default:

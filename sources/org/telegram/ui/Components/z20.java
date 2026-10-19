@@ -21,11 +21,11 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class z20 extends FrameLayout implements org.telegram.ui.Components.voip.n0 {
     public final TextPaint E;
-    public final org.telegram.ui.ld F;
+    public final org.telegram.ui.jd F;
     public float G;
     public boolean H;
     public org.telegram.ui.Components.voip.o0 I;
@@ -76,10 +76,10 @@ public final class z20 extends FrameLayout implements org.telegram.ui.Components
         paint2.setStyle(Paint.Style.STROKE);
         paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
         textPaint.setColor(-1);
-        org.telegram.ui.ld ldVar = new org.telegram.ui.ld(this, context, 1);
-        this.F = ldVar;
-        ldVar.setScaleType(ImageView.ScaleType.CENTER);
-        addView(ldVar, w7.z5.c(24.0f, 24));
+        org.telegram.ui.jd jdVar = new org.telegram.ui.jd(this, context, 1);
+        this.F = jdVar;
+        jdVar.setScaleType(ImageView.ScaleType.CENTER);
+        addView(jdVar, w7.z5.c(24.0f, 24));
     }
 
     private void setSelectedProgress(float f7) {
@@ -117,7 +117,7 @@ public final class z20 extends FrameLayout implements org.telegram.ui.Components
     public final void c(Canvas canvas) {
         if (this.w != null) {
             canvas.save();
-            int A = org.telegram.messenger.lk.A(24.0f, getMeasuredWidth() - this.y, 2);
+            int A = org.telegram.messenger.kk.A(24.0f, getMeasuredWidth() - this.y, 2);
             int alpha = (int) (getAlpha() * this.s * 255.0f);
             TextPaint textPaint = this.E;
             textPaint.setAlpha(alpha);
@@ -125,11 +125,11 @@ public final class z20 extends FrameLayout implements org.telegram.ui.Components
             canvas.restore();
             canvas.save();
             canvas.translate(A, AndroidUtilities.dp(53.0f));
-            org.telegram.ui.ld ldVar = this.F;
-            if (ldVar.getDrawable() != null) {
-                ldVar.getDrawable().setAlpha((int) (getAlpha() * this.s * 255.0f));
-                ldVar.draw(canvas);
-                ldVar.getDrawable().setAlpha(255);
+            org.telegram.ui.jd jdVar = this.F;
+            if (jdVar.getDrawable() != null) {
+                jdVar.getDrawable().setAlpha((int) (getAlpha() * this.s * 255.0f));
+                jdVar.draw(canvas);
+                jdVar.getDrawable().setAlpha(255);
             }
             canvas.restore();
         }
@@ -364,13 +364,13 @@ public final class z20 extends FrameLayout implements org.telegram.ui.Components
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         a30 a30Var = this.P;
-        org.telegram.ui.s50 s50Var = a30Var.r;
+        org.telegram.ui.q50 q50Var = a30Var.r;
         if (a30Var.s && this.f != null) {
             b(true);
         }
         this.K = true;
-        if (s50Var.t2.size() > 0) {
-            this.I = (org.telegram.ui.Components.voip.o0) i2.d.A(1, s50Var.t2);
+        if (q50Var.t2.size() > 0) {
+            this.I = (org.telegram.ui.Components.voip.o0) i2.e.A(1, q50Var.t2);
         } else {
             this.I = new org.telegram.ui.Components.voip.o0();
         }

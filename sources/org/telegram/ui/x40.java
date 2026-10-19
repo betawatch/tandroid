@@ -1,140 +1,205 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Shader;
-import android.os.SystemClock;
-import org.telegram.messenger.ChatObject;
+import android.os.Bundle;
+import j$.util.Objects;
+import java.util.HashMap;
+import java.util.regex.Pattern;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class x40 extends org.telegram.ui.ActionBar.j5 {
-    public LinearGradient M0;
-    public int N0;
-    public final Matrix O0;
-    public float P0;
-    public float Q0;
-    public float R0;
-    public float S0;
-    public float T0;
-    public long U0;
-    public final /* synthetic */ s50 V0;
+public final /* synthetic */ class x40 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x40(s50 s50Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.V0 = s50Var;
-        this.O0 = new Matrix();
-        this.P0 = -1.0f;
+    public /* synthetic */ x40(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.c = obj;
+        this.b = obj2;
     }
 
-    @Override // org.telegram.ui.ActionBar.j5
-    public final void d(int i10) {
-        super.d(i10);
-        int textWidth = getTextWidth();
-        if (textWidth != this.N0) {
-            float f7 = textWidth;
-            this.T0 = 1.3f * f7;
-            float textHeight = getTextHeight();
-            float f10 = f7 * 2.0f;
-            int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ih, false);
-            int x03 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.kh, false);
-            int i11 = org.telegram.ui.ActionBar.h6.jh;
-            this.M0 = new LinearGradient(0.0f, textHeight, f10, 0.0f, new int[]{x02, x03, org.telegram.ui.ActionBar.h6.x0(null, i11, false), org.telegram.ui.ActionBar.h6.x0(null, i11, false)}, new float[]{0.0f, 0.38f, 0.76f, 1.0f}, Shader.TileMode.CLAMP);
-            getPaint().setShader(this.M0);
-            this.N0 = textWidth;
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:12:0x005e  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00c0  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x008c  */
-    @Override // org.telegram.ui.ActionBar.j5, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onDraw(Canvas canvas) {
-        float f7;
-        long j10;
-        float f10;
-        float c10;
-        float f11;
-        if (this.M0 != null) {
-            s50 s50Var = this.V0;
-            ChatObject.Call call = s50Var.a1;
-            if (call != null && call.isScheduled()) {
-                long currentTimeMillis = (s50Var.a1.call.schedule_date * 1000) - s50Var.d.getConnectionsManager().getCurrentTimeMillis();
-                if (currentTimeMillis < 0) {
-                    f7 = 1.0f;
-                } else if (currentTimeMillis < 5000) {
-                    f7 = 1.0f - (currentTimeMillis / 5000.0f);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i10 = this.a;
+        int i11 = 16;
+        int i12 = 5;
+        int i13 = 0;
+        int i14 = 1;
+        Object obj = this.b;
+        Object obj2 = this.c;
+        switch (i10) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.i90(obj2, tL_error, tLObject, obj, 14));
+                break;
+            case 1:
+                w60 w60Var = (w60) obj2;
+                if (Objects.equals(w60Var.a.e, (String) obj)) {
+                    AndroidUtilities.runOnUIThread(new lt(26, w60Var, tLObject));
+                    break;
                 }
-                Matrix matrix = this.O0;
-                matrix.reset();
-                matrix.postTranslate((-this.N0) * 0.7f * f7, 0.0f);
-                long elapsedRealtime = SystemClock.elapsedRealtime();
-                j10 = elapsedRealtime - this.U0;
-                if (j10 > 20) {
-                    j10 = 17;
-                }
-                this.U0 = elapsedRealtime;
-                f10 = this.R0;
-                if (f10 != 0.0f || this.S0 >= f10) {
-                    this.R0 = Utilities.random.nextInt(200) + 1500;
-                    this.S0 = 0.0f;
-                    if (this.P0 == -1.0f) {
-                        this.P0 = ((Utilities.random.nextInt(100) - 50) * 0.2f) / 50.0f;
+                break;
+            case 2:
+                j70 j70Var = (j70) obj2;
+                String str = (String) obj;
+                if (tLObject instanceof Vector) {
+                    Vector vector = (Vector) tLObject;
+                    if (!vector.objects.isEmpty()) {
+                        TLRPC.LangPackString langPackString = (TLRPC.LangPackString) vector.objects.get(0);
+                        if (langPackString instanceof TLRPC.TL_langPackString) {
+                            AndroidUtilities.runOnUIThread(new jq(j70Var, (TLRPC.TL_langPackString) langPackString, str, 11));
+                            break;
+                        }
                     }
-                    this.Q0 = this.P0;
-                    this.P0 = ((Utilities.random.nextInt(100) - 50) * 0.2f) / 50.0f;
                 }
-                float f12 = j10;
-                c10 = r4.c.c(f12 * 0.02f, s50Var.O0, 1.0f * f12, this.S0);
-                this.S0 = c10;
-                f11 = this.R0;
-                if (c10 > f11) {
-                    this.S0 = f11;
+                break;
+            case 3:
+                Pattern pattern = LaunchActivity.C1;
+                AndroidUtilities.runOnUIThread(new jq((LaunchActivity) obj2, tLObject, (org.telegram.ui.ActionBar.g6) obj, 18));
+                break;
+            case 4:
+                Pattern pattern2 = LaunchActivity.C1;
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.i90(obj2, tLObject, obj, tL_error, 18));
+                break;
+            case 5:
+                AndroidUtilities.runOnUIThread(new jq((ib0) obj2, tLObject, (String) obj, 20));
+                break;
+            case 6:
+                AndroidUtilities.runOnUIThread(new jq((fb0) obj2, tLObject, (TLRPC.User) obj, 21));
+                break;
+            case 7:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.i90(obj2, tLObject, obj, tL_error, 20));
+                break;
+            case 8:
+                dg0 dg0Var = (dg0) obj2;
+                Bundle bundle = (Bundle) obj;
+                if (tLObject != null && !(((TLRPC.auth_SentCode) tLObject).type instanceof TLRPC.TL_auth_sentCodeTypeFirebaseSms)) {
+                    AndroidUtilities.runOnUIThread(new jq(dg0Var, bundle, tLObject, 25));
+                    break;
+                } else {
+                    AndroidUtilities.runOnUIThread(new oc0(dg0Var, 2));
+                    break;
                 }
-                float interpolation = org.telegram.ui.Components.bs.g.getInterpolation(this.S0 / f11);
-                float f13 = this.T0;
-                float f14 = this.Q0;
-                matrix.postTranslate(((((this.P0 - f14) * interpolation) + f14) * f13) - (f13 / 2.0f), 0.0f);
-                this.M0.setLocalMatrix(matrix);
-                invalidate();
-            }
-            f7 = 0.0f;
-            Matrix matrix2 = this.O0;
-            matrix2.reset();
-            matrix2.postTranslate((-this.N0) * 0.7f * f7, 0.0f);
-            long elapsedRealtime2 = SystemClock.elapsedRealtime();
-            j10 = elapsedRealtime2 - this.U0;
-            if (j10 > 20) {
-            }
-            this.U0 = elapsedRealtime2;
-            f10 = this.R0;
-            if (f10 != 0.0f) {
-            }
-            this.R0 = Utilities.random.nextInt(200) + 1500;
-            this.S0 = 0.0f;
-            if (this.P0 == -1.0f) {
-            }
-            this.Q0 = this.P0;
-            this.P0 = ((Utilities.random.nextInt(100) - 50) * 0.2f) / 50.0f;
-            float f122 = j10;
-            c10 = r4.c.c(f122 * 0.02f, s50Var.O0, 1.0f * f122, this.S0);
-            this.S0 = c10;
-            f11 = this.R0;
-            if (c10 > f11) {
-            }
-            float interpolation2 = org.telegram.ui.Components.bs.g.getInterpolation(this.S0 / f11);
-            float f132 = this.T0;
-            float f142 = this.Q0;
-            matrix2.postTranslate(((((this.P0 - f142) * interpolation2) + f142) * f132) - (f132 / 2.0f), 0.0f);
-            this.M0.setLocalMatrix(matrix2);
-            invalidate();
+                break;
+            case 9:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.i90(obj2, tLObject, obj, tL_error, 23));
+                break;
+            case 10:
+                AndroidUtilities.runOnUIThread(new ve0((hf0) obj2, tL_error, (TL_account.confirmPhone) obj, i13));
+                break;
+            case 11:
+                AndroidUtilities.runOnUIThread(new ve0((cg0) obj2, tLObject, (HashMap) obj, i12));
+                break;
+            case 12:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.i90(obj2, tL_error, tLObject, obj, 27));
+                break;
+            case 13:
+                AndroidUtilities.runOnUIThread(new ve0((mj0) obj2, tLObject, (org.telegram.ui.Components.qy) obj, 8));
+                break;
+            case 14:
+                yl0 yl0Var = (yl0) obj2;
+                yl0Var.getClass();
+                yl0Var.a(tL_error, (TLRPC.TL_secureValue) tLObject, (TLRPC.TL_secureValue) obj);
+                break;
+            case 15:
+                AndroidUtilities.runOnUIThread(new ve0((rm0) obj2, tL_error, (TL_account.verifyPhone) obj, 14));
+                break;
+            case 16:
+                eo0 eo0Var = (eo0) obj2;
+                TLObject tLObject2 = (TLObject) obj;
+                if (!(tLObject instanceof TLRPC.TL_payments_validatedRequestedInfo)) {
+                    AndroidUtilities.runOnUIThread(new cn0(eo0Var, tL_error, tLObject2, i14));
+                    break;
+                } else {
+                    AndroidUtilities.runOnUIThread(new xg0(i11, eo0Var, (TLRPC.TL_payments_validatedRequestedInfo) tLObject));
+                    break;
+                }
+            case 17:
+                eo0 eo0Var2 = (eo0) obj2;
+                TLRPC.TL_payments_sendPaymentForm tL_payments_sendPaymentForm = (TLRPC.TL_payments_sendPaymentForm) obj;
+                if (tLObject == null) {
+                    t10 t10Var = eo0Var2.e1;
+                    if (t10Var == null || !((Boolean) t10Var.run(tL_error)).booleanValue()) {
+                        AndroidUtilities.runOnUIThread(new ve0(eo0Var2, tL_error, tL_payments_sendPaymentForm, i11));
+                        break;
+                    }
+                } else if (!(tLObject instanceof TLRPC.TL_payments_paymentResult)) {
+                    if (tLObject instanceof TLRPC.TL_payments_paymentVerificationNeeded) {
+                        AndroidUtilities.runOnUIThread(new wm0(eo0Var2, tLObject, i14));
+                        break;
+                    }
+                } else {
+                    Utilities.Callback callback = eo0Var2.c1;
+                    if (callback == null) {
+                        TLRPC.Updates updates = ((TLRPC.TL_payments_paymentResult) tLObject).updates;
+                        TLRPC.Message[] messageArr = new TLRPC.Message[1];
+                        int size = updates.updates.size();
+                        int i15 = 0;
+                        while (true) {
+                            if (i15 < size) {
+                                TLRPC.Update update = updates.updates.get(i15);
+                                if (update instanceof TL_update.TL_updateNewMessage) {
+                                    messageArr[0] = ((TL_update.TL_updateNewMessage) update).message;
+                                } else if (update instanceof TL_update.TL_updateNewChannelMessage) {
+                                    messageArr[0] = ((TL_update.TL_updateNewChannelMessage) update).message;
+                                } else {
+                                    i15++;
+                                }
+                            }
+                        }
+                        eo0Var2.getMessagesController().lambda$processUpdates$377(updates, false);
+                        AndroidUtilities.runOnUIThread(new xg0(17, eo0Var2, messageArr));
+                        break;
+                    } else {
+                        callback.run((TLRPC.TL_payments_paymentResult) tLObject);
+                        break;
+                    }
+                }
+                break;
+            case 18:
+                AndroidUtilities.runOnUIThread(new fn0((eo0) obj2, tLObject, tL_error, (TL_account.getTmpPassword) obj, 1));
+                break;
+            case 19:
+                AndroidUtilities.runOnUIThread(new fn0((xv0) obj2, tL_error, tLObject, (TL_stars.updatePaidMessagesPrice) obj, 6));
+                break;
+            case 20:
+                AndroidUtilities.runOnUIThread(new fn0((PrivacyControlActivity) obj2, tL_error, tLObject, (boolean[]) obj, 7));
+                break;
+            case 21:
+                AndroidUtilities.runOnUIThread(new jv0(i12, (PrivacySettingsActivity) obj2, (org.telegram.ui.Cells.v8) obj));
+                break;
+            case 22:
+                AndroidUtilities.runOnUIThread(new fn0((ProfileActivity) obj2, tL_error, tLObject, (String) obj, 13));
+                break;
+            case 23:
+                AndroidUtilities.runOnUIThread(new fn0((ProfileActivity) obj2, tLObject, tL_error, (int[]) obj, 10));
+                break;
+            case 24:
+                AndroidUtilities.runOnUIThread(new fn0((ProfileActivity) obj2, tLObject, (TLRPC.TL_username) obj, tL_error, 11));
+                break;
+            case 25:
+                AndroidUtilities.runOnUIThread(new fn0((uz0) obj2, tLObject, (TLRPC.TL_username) obj, tL_error, 15));
+                break;
+            case 26:
+                AndroidUtilities.runOnUIThread(new ve0((c71) obj2, tL_error, (TLRPC.TL_authorization) obj, 28));
+                break;
+            case 27:
+                AndroidUtilities.runOnUIThread(new ve0((d71) obj2, tL_error, (TLRPC.TL_authorization) obj, 29));
+                break;
+            case 28:
+                AndroidUtilities.runOnUIThread(new fn0((g71) obj2, tLObject, tL_error, (n9) obj, 18));
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new fn0((x71) obj2, tL_error, tLObject, (String) obj, 19));
+                break;
         }
-        super.onDraw(canvas);
     }
 }

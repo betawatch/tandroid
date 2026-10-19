@@ -1,110 +1,94 @@
 package org.telegram.ui;
 
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.messenger.FileLog;
+import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class me1 extends org.telegram.ui.Components.hm0 {
-    public final /* synthetic */ pe1 c;
+public final class me1 extends org.telegram.ui.Components.v81 {
+    public final ArrayList a;
+    public final /* synthetic */ ne1 b;
 
-    public me1(pe1 pe1Var) {
-        this.c = pe1Var;
+    public me1(ne1 ne1Var) {
+        this.b = ne1Var;
+        ArrayList arrayList = new ArrayList();
+        this.a = arrayList;
+        arrayList.add(new je1(0));
+        je1 je1Var = new je1(2);
+        je1Var.b = 0;
+        arrayList.add(je1Var);
+        je1 je1Var2 = new je1(2);
+        je1Var2.b = 1;
+        arrayList.add(je1Var2);
+        je1 je1Var3 = new je1(2);
+        je1Var3.b = 2;
+        arrayList.add(je1Var3);
+        je1 je1Var4 = new je1(2);
+        je1Var4.b = 3;
+        arrayList.add(je1Var4);
+        je1 je1Var5 = new je1(2);
+        je1Var5.b = 4;
+        arrayList.add(je1Var5);
     }
 
-    @Override // org.telegram.ui.Components.hm0
-    public final boolean D(s4.b1 b1Var) {
-        int i10 = b1Var.f;
-        return i10 == 3 || i10 == 2;
+    @Override // org.telegram.ui.Components.v81
+    public final void b(View view, int i10, int i11) {
+        ne1 ne1Var = this.b;
+        ne1Var.K(view, i10, ne1Var.b0, true);
     }
 
-    @Override // s4.g0
-    public final int h() {
-        pe1 pe1Var = this.c;
-        if (pe1Var.l0) {
-            return 0;
+    @Override // org.telegram.ui.Components.v81
+    public final View d(int i10) {
+        int i11;
+        ne1 ne1Var = this.b;
+        re1 re1Var = ne1Var.t0;
+        if (i10 == 1) {
+            return ne1Var.T;
         }
-        return pe1Var.k0;
+        if (i10 == 2) {
+            i11 = ((org.telegram.ui.ActionBar.n2) re1Var).currentAccount;
+            org.telegram.ui.Components.tn0 tn0Var = new org.telegram.ui.Components.tn0(i11, re1Var);
+            tn0Var.b.j(new le1(0));
+            tn0Var.setUiCallback(ne1Var);
+            return tn0Var;
+        }
+        e10 e10Var = new e10(re1Var);
+        e10Var.setChatPreviewDelegate(ne1Var.r0);
+        e10Var.setUiCallback(ne1Var);
+        e10Var.b.j(new le1(1));
+        return e10Var;
     }
 
-    @Override // s4.g0
-    public final int j(int i10) {
-        pe1 pe1Var = this.c;
-        if (i10 == pe1Var.h0 || i10 == pe1Var.e0) {
+    @Override // org.telegram.ui.Components.v81
+    public final int e() {
+        return this.a.size();
+    }
+
+    @Override // org.telegram.ui.Components.v81
+    public final CharSequence g(int i10) {
+        ArrayList arrayList = this.a;
+        if (((je1) arrayList.get(i10)).a == 0) {
+            return LocaleController.getString(R.string.SearchMessages);
+        }
+        if (((je1) arrayList.get(i10)).a == 1) {
+            return LocaleController.getString(R.string.DownloadsTabs);
+        }
+        hg.o0 o0Var = hg.q0.a3[((je1) arrayList.get(i10)).b];
+        String str = o0Var.c;
+        return str != null ? str : LocaleController.getString(o0Var.b);
+    }
+
+    @Override // org.telegram.ui.Components.v81
+    public final int h(int i10) {
+        ArrayList arrayList = this.a;
+        if (((je1) arrayList.get(i10)).a == 0) {
             return 1;
         }
-        if (i10 < pe1Var.f0 || i10 >= pe1Var.g0) {
-            return (i10 < pe1Var.i0 || i10 >= pe1Var.j0) ? 0 : 3;
+        if (((je1) arrayList.get(i10)).a == 1) {
+            return 2;
         }
-        return 2;
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        int i11;
-        View view = b1Var.a;
-        pe1 pe1Var = this.c;
-        te1 te1Var = pe1Var.t0;
-        if (j(i10) == 1) {
-            org.telegram.ui.Cells.u3 u3Var = (org.telegram.ui.Cells.u3) view;
-            if (i10 == pe1Var.e0) {
-                u3Var.setText(LocaleController.getString(R.string.Topics));
-            }
-            if (i10 == pe1Var.h0) {
-                u3Var.setText(LocaleController.getString(R.string.SearchMessages));
-            }
-        }
-        if (j(i10) == 2) {
-            org.telegram.ui.Cells.pa paVar = (org.telegram.ui.Cells.pa) view;
-            paVar.setTopic((TLRPC.TL_forumTopic) pe1Var.c0.get(i10 - pe1Var.f0));
-            paVar.d = i10 != pe1Var.g0 - 1;
-        }
-        if (j(i10) == 3) {
-            MessageObject messageObject = (MessageObject) pe1Var.d0.get(i10 - pe1Var.i0);
-            qe1 qe1Var = (qe1) view;
-            qe1Var.a5 = i10 != pe1Var.j0 - 1;
-            i11 = ((org.telegram.ui.ActionBar.n2) te1Var).currentAccount;
-            long topicId = MessageObject.getTopicId(i11, messageObject.messageOwner, true);
-            if (topicId == 0) {
-                topicId = 1;
-            }
-            TLRPC.TL_forumTopic findTopic = te1Var.s.findTopic(te1Var.a, topicId);
-            if (findTopic != null) {
-                qe1Var.Y(findTopic, messageObject.getDialogId(), messageObject, false, false);
-                qe1Var.setTopicIcon(findTopic);
-            } else {
-                FileLog.d("cant find topic " + topicId);
-            }
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r5v5, types: [org.telegram.ui.Cells.r2, org.telegram.ui.qe1] */
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        FrameLayout frameLayout;
-        boolean z10;
-        te1 te1Var = this.c.t0;
-        if (i10 == 1) {
-            frameLayout = new org.telegram.ui.Cells.u3(viewGroup.getContext(), null);
-        } else if (i10 == 2) {
-            frameLayout = new org.telegram.ui.Cells.pa(viewGroup.getContext());
-        } else {
-            if (i10 != 3) {
-                throw new RuntimeException("unsupported view type");
-            }
-            ?? qe1Var = new qe1(te1Var, viewGroup.getContext(), true);
-            z10 = ((org.telegram.ui.ActionBar.n2) te1Var).inPreviewMode;
-            qe1Var.k0 = z10;
-            frameLayout = qe1Var;
-        }
-        frameLayout.setLayoutParams(new s4.o0(-1, -2));
-        return new org.telegram.ui.Components.sl0(frameLayout);
+        return ((je1) arrayList.get(i10)).a + i10;
     }
 }

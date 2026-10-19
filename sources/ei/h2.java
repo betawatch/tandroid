@@ -9,10 +9,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.lx0;
+import org.telegram.ui.Components.mx0;
 import org.telegram.ui.Components.vn0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class h2 extends FrameLayout {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -35,7 +35,7 @@ public final class h2 extends FrameLayout {
         this.b = frameLayout;
         frameLayout.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(18.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Ie, d6Var)));
         frameLayout.setClipToOutline(true);
-        frameLayout.setOutlineProvider(new ci.n1(2));
+        frameLayout.setOutlineProvider(new ci.o1(2));
         addView(frameLayout, w7.z5.d(-1, 36.0f, 119, 10.0f, 6.0f, 10.0f, 8.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         frameLayout.addView(frameLayout2, w7.z5.d(-1, 40.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
@@ -179,13 +179,13 @@ public final class h2 extends FrameLayout {
                             h2Var.d(false);
                             break;
                         default:
-                            lx0 lx0Var = (lx0) obj;
+                            mx0 mx0Var = (mx0) obj;
                             h2 h2Var2 = this.b;
                             g2 g2Var3 = h2Var2.f;
                             if (g2Var3 != null) {
-                                if (g2Var3.getSelectedCategory() != lx0Var) {
-                                    h2Var2.f.G1(lx0Var);
-                                    String str = lx0Var.a;
+                                if (g2Var3.getSelectedCategory() != mx0Var) {
+                                    h2Var2.f.G1(mx0Var);
+                                    String str = mx0Var.a;
                                     int categoryIndex = h2Var2.f.getCategoryIndex();
                                     Utilities.Callback2 callback2 = h2Var2.v;
                                     if (callback2 != null) {
@@ -224,13 +224,13 @@ public final class h2 extends FrameLayout {
                             h2Var.d(false);
                             break;
                         default:
-                            lx0 lx0Var = (lx0) obj;
+                            mx0 mx0Var = (mx0) obj;
                             h2 h2Var2 = this.b;
                             g2 g2Var3 = h2Var2.f;
                             if (g2Var3 != null) {
-                                if (g2Var3.getSelectedCategory() != lx0Var) {
-                                    h2Var2.f.G1(lx0Var);
-                                    String str = lx0Var.a;
+                                if (g2Var3.getSelectedCategory() != mx0Var) {
+                                    h2Var2.f.G1(mx0Var);
+                                    String str = mx0Var.a;
                                     int categoryIndex = h2Var2.f.getCategoryIndex();
                                     Utilities.Callback2 callback2 = h2Var2.v;
                                     if (callback2 != null) {

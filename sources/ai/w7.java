@@ -1,56 +1,108 @@
 package ai;
 
+import android.content.DialogInterface;
+import java.util.Arrays;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.uk0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class w7 implements Utilities.Callback2 {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ Utilities.Callback2 c;
-    public final /* synthetic */ Utilities.Callback d;
+public final /* synthetic */ class w7 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean[] c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ w7(Utilities.Callback callback, boolean[] zArr, Utilities.Callback2 callback2) {
-        this.d = callback;
-        this.b = zArr;
-        this.c = callback2;
+    public /* synthetic */ w7(ga gaVar, Utilities.Callback callback, boolean[] zArr, boolean[] zArr2, Object obj, int i10) {
+        this.a = i10;
+        this.b = callback;
+        this.c = zArr;
+        this.d = zArr2;
+        this.e = obj;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        Long l4 = (Long) obj;
-        Boolean bool = (Boolean) obj2;
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                Utilities.Callback callback = this.d;
-                if (callback != null) {
-                    callback.run(Boolean.TRUE);
+                Utilities.Callback callback = (Utilities.Callback) this.b;
+                boolean[] zArr = (boolean[]) this.d;
+                Utilities.Callback2 callback2 = (Utilities.Callback2) this.e;
+                if (callback != null && !this.c[0]) {
+                    callback.run(Boolean.FALSE);
+                    if (!zArr[0]) {
+                        callback2.run("cancelled", 0L);
+                        zArr[0] = true;
+                        break;
+                    }
                 }
-                this.b[0] = true;
-                Utilities.Callback2 callback2 = this.c;
-                if (callback2 != null) {
-                    callback2.run(bool.booleanValue() ? "paid" : "failed", l4);
+                break;
+            case 1:
+                Utilities.Callback callback3 = (Utilities.Callback) this.b;
+                boolean[] zArr2 = (boolean[]) this.d;
+                Utilities.Callback callback4 = (Utilities.Callback) this.e;
+                if (callback3 != null && !this.c[0]) {
+                    callback3.run(Boolean.FALSE);
+                    if (!zArr2[0] && callback4 != null) {
+                        callback4.run("cancelled");
+                        zArr2[0] = true;
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = (TL_wallet.inputTonConnectOauthSession[]) this.b;
+                org.telegram.ui.ActionBar.f3[] f3VarArr = (org.telegram.ui.ActionBar.f3[]) this.d;
+                org.telegram.ui.ActionBar.f3[] f3VarArr2 = (org.telegram.ui.ActionBar.f3[]) this.e;
+                this.c[0] = true;
+                TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession = inputtonconnectoauthsessionArr[0];
+                if (inputtonconnectoauthsession != null) {
+                    Arrays.fill(inputtonconnectoauthsession.challenge_answer, (byte) 0);
+                    inputtonconnectoauthsessionArr[0] = null;
+                }
+                org.telegram.ui.ActionBar.f3 f3Var = f3VarArr[0];
+                if (f3Var != null) {
+                    f3Var.dismiss();
+                    f3VarArr[0] = null;
+                }
+                uk0.a = null;
+                org.telegram.ui.ActionBar.f3 f3Var2 = f3VarArr2[0];
+                if (f3Var2 != null) {
+                    f3Var2.dismiss();
+                    f3VarArr2[0] = null;
                     break;
                 }
                 break;
             default:
-                this.b[0] = true;
-                Utilities.Callback2 callback22 = this.c;
-                if (callback22 != null) {
-                    callback22.run(bool.booleanValue() ? "paid" : "failed", l4);
-                }
-                Utilities.Callback callback3 = this.d;
-                if (callback3 != null) {
-                    callback3.run(Boolean.TRUE);
+                org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) this.b;
+                ci.z7 z7Var = (ci.z7) this.d;
+                String str = (String) this.e;
+                a1Var.getClass();
+                boolean[] zArr3 = this.c;
+                if (!zArr3[0]) {
+                    zArr3[0] = true;
+                    a1Var.x(z7Var, "requested_chat_failed", org.telegram.ui.web.a1.A(str, "req_id"));
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ w7(boolean[] zArr, Utilities.Callback2 callback2, Utilities.Callback callback) {
-        this.b = zArr;
-        this.c = callback2;
-        this.d = callback;
+    public /* synthetic */ w7(org.telegram.ui.web.a1 a1Var, boolean[] zArr, ci.z7 z7Var, String str) {
+        this.a = 3;
+        this.b = a1Var;
+        this.c = zArr;
+        this.d = z7Var;
+        this.e = str;
+    }
+
+    public /* synthetic */ w7(boolean[] zArr, TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr, org.telegram.ui.ActionBar.f3[] f3VarArr, org.telegram.ui.ActionBar.f3[] f3VarArr2) {
+        this.a = 2;
+        this.c = zArr;
+        this.b = inputtonconnectoauthsessionArr;
+        this.d = f3VarArr;
+        this.e = f3VarArr2;
     }
 }

@@ -19,7 +19,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.CompoundEmoji;
 import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class ey extends im0 {
     public boolean V2;
@@ -89,7 +89,7 @@ public final class ey extends im0 {
                     int top = childAt.getTop() + ((int) childAt.getTranslationY());
                     ArrayList arrayList4 = (ArrayList) sparseArray.get(top);
                     if (arrayList4 == null) {
-                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) i2.d.A(i13, arrayList) : new ArrayList();
+                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) i2.e.A(i13, arrayList) : new ArrayList();
                         sparseArray.put(top, arrayList4);
                     }
                     arrayList4.add((cz) childAt);
@@ -149,7 +149,7 @@ public final class ey extends im0 {
                 i17++;
             }
             if (cyVar == null) {
-                cyVar = !arrayList2.isEmpty() ? (cy) i2.d.A(1, arrayList2) : new cy(this);
+                cyVar = !arrayList2.isEmpty() ? (cy) i2.e.A(1, arrayList2) : new cy(this);
                 cyVar.M = i16;
                 cyVar.e();
             }
@@ -220,7 +220,7 @@ public final class ey extends im0 {
                     int top = childAt.getTop() + ((int) childAt.getTranslationY());
                     ArrayList arrayList4 = (ArrayList) sparseArray.get(top);
                     if (arrayList4 == null) {
-                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) i2.d.A(1, arrayList) : new ArrayList();
+                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) i2.e.A(1, arrayList) : new ArrayList();
                         sparseArray.put(top, arrayList4);
                     }
                     arrayList4.add((cz) childAt);
@@ -270,7 +270,7 @@ public final class ey extends im0 {
                 i15++;
             }
             if (cyVar == null) {
-                cyVar = !arrayList2.isEmpty() ? (cy) i2.d.A(1, arrayList2) : new cy(this);
+                cyVar = !arrayList2.isEmpty() ? (cy) i2.e.A(1, arrayList2) : new cy(this);
                 cyVar.M = i14;
                 cyVar.e();
             }
@@ -418,7 +418,7 @@ public final class ey extends im0 {
         if (tzVar.f) {
             return false;
         }
-        return super.onInterceptTouchEvent(motionEvent) || org.telegram.ui.gt.q().r(motionEvent, this, tzVar.g2, this.n2);
+        return super.onInterceptTouchEvent(motionEvent) || org.telegram.ui.et.q().r(motionEvent, this, tzVar.g2, this.n2);
     }
 
     @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View

@@ -14,11 +14,12 @@ import androidx.savedstate.Recreator;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import e2.m0;
 import java.util.Map;
+import ki.t1;
 import kotlin.jvm.internal.i;
 import m.q;
 import m4.f0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class o implements j9.t, r2.k, com.google.android.gms.common.api.internal.r {
     public boolean a;
@@ -46,7 +47,7 @@ public final class o implements j9.t, r2.k, com.google.android.gms.common.api.in
                     eVar = new r2.e(mediaCodec, (HandlerThread) ((r2.b) this.c).get());
                     i10 = 0;
                 } else {
-                    eVar = new le.b(mediaCodec, 17);
+                    eVar = new t1(mediaCodec, 23);
                     i10 = 4;
                 }
                 cVar = new r2.c(mediaCodec, (HandlerThread) ((r2.b) this.b).get(), eVar, (r2.j) lVar.f);

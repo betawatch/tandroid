@@ -14,7 +14,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class q6 extends View {
     public boolean a;
@@ -160,15 +160,15 @@ public class q6 extends View {
 
     public void setEmojiColor(int i10) {
         p6 p6Var = this.c;
-        if (p6Var.a0 != i10) {
-            p6Var.a0 = i10;
-            p6Var.b0 = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
+        if (p6Var.Z != i10) {
+            p6Var.Z = i10;
+            p6Var.a0 = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
         }
         invalidate();
     }
 
     public void setEmojiColorFilter(ColorFilter colorFilter) {
-        this.c.b0 = colorFilter;
+        this.c.a0 = colorFilter;
         invalidate();
     }
 
@@ -193,7 +193,7 @@ public class q6 extends View {
     }
 
     public void setOnWidthUpdatedListener(Runnable runnable) {
-        this.c.c0 = runnable;
+        this.c.b0 = runnable;
     }
 
     public void setRightPadding(float f7) {

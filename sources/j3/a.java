@@ -14,12 +14,13 @@ import e2.x;
 import e9.l0;
 import e9.n0;
 import e9.x1;
+import i2.e;
 import java.util.List;
 import v7.k8;
 import w3.l;
 import z3.k;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class a implements o {
     public q b;
@@ -105,7 +106,7 @@ public final class a implements o {
                     v vVar = new v();
                     vVar.q = v0.n("image/heic");
                     vVar.k = new t0(bVar);
-                    i2.d.u(vVar, j02);
+                    e.u(vVar, j02);
                     this.f = 2;
                 } else {
                     this.f = 1;

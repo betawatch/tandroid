@@ -6,9 +6,9 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class vh extends org.telegram.ui.bu0 {
+public final class vh extends org.telegram.ui.zt0 {
     public final /* synthetic */ MediaController.PhotoEntry a;
     public final /* synthetic */ ti b;
 
@@ -17,7 +17,7 @@ public final class vh extends org.telegram.ui.bu0 {
         this.a = photoEntry;
     }
 
-    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
     public final void o(int i10, VideoEditedInfo videoEditedInfo, final boolean z10, final int i11, int i12, final boolean z11) {
         ti tiVar = this.b;
         tiVar.v2 = true;

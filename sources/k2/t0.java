@@ -8,7 +8,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import ci.o4;
+import ci.p4;
 import e9.x1;
 import ei.bc;
 import ig.e2;
@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class t0 implements z {
     public static final AtomicInteger c0 = new AtomicInteger();
@@ -56,9 +56,9 @@ public final class t0 implements z {
     public final androidx.biometric.e b;
     public Handler b0;
     public final m0 c;
-    public final c1 d;
+    public final d1 d;
     public final c2.u e;
-    public final b1 f;
+    public final c1 f;
     public final x1 g;
     public final ArrayDeque h;
     public int i;
@@ -80,22 +80,22 @@ public final class t0 implements z {
     public boolean y;
     public long z;
 
-    public t0(o4 o4Var) {
+    public t0(p4 p4Var) {
         int deviceId;
-        Context context = (Context) o4Var.b;
+        Context context = (Context) p4Var.b;
         this.a = context == null ? null : context.getApplicationContext();
         this.u = b2.f.i;
-        this.b = (androidx.biometric.e) o4Var.d;
+        this.b = (androidx.biometric.e) p4Var.d;
         this.i = 0;
-        this.r = (k0) o4Var.f;
+        this.r = (k0) p4Var.f;
         m0 m0Var = new m0();
         this.c = m0Var;
-        c1 c1Var = new c1();
-        c1Var.m = e2.m0.b;
-        this.d = c1Var;
+        d1 d1Var = new d1();
+        d1Var.m = e2.m0.b;
+        this.d = d1Var;
         this.e = new c2.u();
-        this.f = new b1();
-        this.g = e9.n0.z(c1Var, m0Var);
+        this.f = new c1();
+        this.g = e9.n0.z(d1Var, m0Var);
         this.H = 1.0f;
         this.Q = 0;
         this.S = new b2.g();
@@ -231,7 +231,7 @@ public final class t0 implements z {
                         case 18:
                             break;
                         default:
-                            throw new IllegalStateException(i2.d.j(i10, "Unexpected audio encoding: "));
+                            throw new IllegalStateException(i2.e.j(i10, "Unexpected audio encoding: "));
                     }
             }
             if (((byteBuffer.get(byteBuffer.position() + 5) & 248) >> 3) > 10) {
@@ -460,7 +460,7 @@ public final class t0 implements z {
         if (!this.V && q0.a(this.p)) {
             int i11 = ((b2.w) this.p.c).M;
             z10 = this.y;
-            ((y0) eVar.c).o = z10;
+            ((z0) eVar.c).o = z10;
         }
         this.y = z10;
         this.h.add(new r0(z0Var2, Math.max(0L, j10), e2.m0.Y(((o) this.p.e).b, l())));
@@ -523,9 +523,9 @@ public final class t0 implements z {
             }
             int i14 = wVar.N;
             int i15 = wVar.O;
-            c1 c1Var = this.d;
-            c1Var.i = i14;
-            c1Var.j = i15;
+            d1 d1Var = this.d;
+            d1Var.i = i14;
+            d1Var.j = i15;
             this.c.i = iArr;
             c2.k kVar = new c2.k(wVar.L, i12, i13);
             try {
@@ -611,7 +611,7 @@ public final class t0 implements z {
                     this.Y = false;
                 }
                 if (this.O && (xVar2 = this.n) != null && !g10 && !this.Y) {
-                    xVar2.k();
+                    xVar2.l();
                 }
             }
             if (q0.a(this.p)) {
@@ -805,7 +805,7 @@ public final class t0 implements z {
             r0 r0Var3 = this.w;
             j10 = r0Var3.b + B + r0Var3.d;
         }
-        long j13 = ((y0) eVar.c).q;
+        long j13 = ((z0) eVar.c).q;
         long Y = e2.m0.Y(((o) this.p.e).b, j13) + j10;
         long j14 = this.Z;
         if (j13 > j14) {
@@ -1097,7 +1097,7 @@ public final class t0 implements z {
         x xVar = this.n;
         if (xVar != null) {
             int i15 = ((o) this.p.e).a;
-            xVar.P(new u0());
+            xVar.Q(new u0());
             if (z10) {
                 this.R = true;
                 q0 q0Var4 = this.p;

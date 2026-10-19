@@ -24,7 +24,7 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import m.s3;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class g implements com.google.android.gms.common.api.c {
     public static final k6.c[] T = new k6.c[0];
@@ -426,8 +426,8 @@ public abstract class g implements com.google.android.gms.common.api.c {
     }
 
     @Override // com.google.android.gms.common.api.c
-    public final void i(ag.b bVar) {
-        ((o0) bVar.b).o.x.post(new androidx.activity.i(bVar, 14));
+    public final void i(a4.l lVar) {
+        ((o0) lVar.b).o.x.post(new androidx.activity.i(lVar, 14));
     }
 
     @Override // com.google.android.gms.common.api.c

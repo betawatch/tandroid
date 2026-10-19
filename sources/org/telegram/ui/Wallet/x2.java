@@ -9,7 +9,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class x2 extends FrameLayout {
     public final /* synthetic */ z2 a;
@@ -56,17 +56,18 @@ public final class x2 extends FrameLayout {
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         z2 z2Var = this.a;
         TextView textView = z2Var.w;
-        ci.h4 h4Var = z2Var.v;
+        ci.i4 i4Var = z2Var.v;
         x5 x5Var = z2Var.r;
-        getLocationOnScreen(z2Var.T);
+        getLocationOnScreen(z2Var.V);
         int i14 = z2Var.H.a;
         int width = getWidth();
         i0.b bVar = z2Var.H;
-        int C = i2.d.C(width - bVar.a, bVar.c, 2, i14);
-        int height = ((getHeight() - z2Var.H.d) - AndroidUtilities.dp(16.0f)) - (z2Var.c() ? h4Var.getMeasuredHeight() : 0);
-        h4Var.layout(C - (h4Var.getMeasuredWidth() / 2), height, ((h4Var.getMeasuredWidth() + 1) / 2) + C, h4Var.getMeasuredHeight() + height);
+        int C = i2.e.C(width - bVar.a, bVar.c, 2, i14);
+        int height = ((getHeight() - z2Var.H.d) - AndroidUtilities.dp(16.0f)) - (z2Var.c() ? i4Var.getMeasuredHeight() : 0);
+        i4Var.layout(C - (i4Var.getMeasuredWidth() / 2), height, ((i4Var.getMeasuredWidth() + 1) / 2) + C, i4Var.getMeasuredHeight() + height);
         int dp = AndroidUtilities.dp(36.0f) + Math.max(z2Var.H.b, AndroidUtilities.statusBarHeight);
         textView.layout(C - (textView.getMeasuredWidth() / 2), dp, ((textView.getMeasuredWidth() + 1) / 2) + C, textView.getMeasuredHeight() + dp);
+        z2Var.d();
         int measuredHeight = (textView.getVisibility() == 0 ? textView.getMeasuredHeight() + AndroidUtilities.dp(12.0f) : 0) + AndroidUtilities.dp(24.0f) + Math.max(z2Var.H.b, AndroidUtilities.statusBarHeight);
         int max = Math.max(measuredHeight, Math.min(Math.max(measuredHeight, (height - AndroidUtilities.dp(24.0f)) - x5Var.getMeasuredHeight()), (getHeight() - x5Var.getMeasuredHeight()) / 2));
         int measuredWidth = C - (x5Var.getMeasuredWidth() / 2);
@@ -74,7 +75,7 @@ public final class x2 extends FrameLayout {
         z2Var.s.layout(0, 0, getWidth(), getHeight());
         z2Var.n.layout(0, 0, getWidth(), getHeight());
         hh.d.c(z2Var.E, this);
-        z2Var.d();
+        z2Var.e();
     }
 
     @Override // android.widget.FrameLayout, android.view.View

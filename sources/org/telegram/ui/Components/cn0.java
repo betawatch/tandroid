@@ -12,7 +12,7 @@ import java.util.Map;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.SecretMediaViewer;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class cn0 extends Transition {
     public final /* synthetic */ int a;
@@ -32,9 +32,9 @@ public final class cn0 extends Transition {
             case 1:
                 transitionValues.values.put("start", Boolean.FALSE);
                 Map map = transitionValues.values;
-                oy0 oy0Var = (oy0) this.b;
-                viewGroup = ((org.telegram.ui.ActionBar.f3) oy0Var).containerView;
-                map.put("offset", Integer.valueOf(viewGroup.getTop() + oy0Var.e0));
+                py0 py0Var = (py0) this.b;
+                viewGroup = ((org.telegram.ui.ActionBar.f3) py0Var).containerView;
+                map.put("offset", Integer.valueOf(viewGroup.getTop() + py0Var.e0));
                 break;
             case 2:
                 View view = transitionValues.view;
@@ -64,23 +64,23 @@ public final class cn0 extends Transition {
             case 1:
                 transitionValues.values.put("start", Boolean.TRUE);
                 Map map = transitionValues.values;
-                oy0 oy0Var = (oy0) this.b;
-                viewGroup = ((org.telegram.ui.ActionBar.f3) oy0Var).containerView;
-                map.put("offset", Integer.valueOf(viewGroup.getTop() + oy0Var.e0));
+                py0 py0Var = (py0) this.b;
+                viewGroup = ((org.telegram.ui.ActionBar.f3) py0Var).containerView;
+                map.put("offset", Integer.valueOf(viewGroup.getTop() + py0Var.e0));
                 break;
             case 2:
                 View view = transitionValues.view;
-                org.telegram.ui.jt0 jt0Var = ((PhotoViewer) this.b).T1;
-                if (view == jt0Var) {
-                    transitionValues.values.put("scrollY", Integer.valueOf(jt0Var.getScrollY()));
+                org.telegram.ui.ht0 ht0Var = ((PhotoViewer) this.b).T1;
+                if (view == ht0Var) {
+                    transitionValues.values.put("scrollY", Integer.valueOf(ht0Var.getScrollY()));
                     break;
                 }
                 break;
             default:
                 View view2 = transitionValues.view;
-                org.telegram.ui.jt0 jt0Var2 = ((SecretMediaViewer) this.b).a0;
-                if (view2 == jt0Var2) {
-                    transitionValues.values.put("scrollY", Integer.valueOf(jt0Var2.getScrollY()));
+                org.telegram.ui.ht0 ht0Var2 = ((SecretMediaViewer) this.b).a0;
+                if (view2 == ht0Var2) {
+                    transitionValues.values.put("scrollY", Integer.valueOf(ht0Var2.getScrollY()));
                     break;
                 }
                 break;
@@ -102,7 +102,7 @@ public final class cn0 extends Transition {
                 ofFloat.addUpdateListener(new b80(this, 14));
                 return ofFloat;
             case 1:
-                int i14 = ((oy0) obj).e0;
+                int i14 = ((py0) obj).e0;
                 int intValue3 = ((Integer) transitionValues.values.get("offset")).intValue() - ((Integer) transitionValues2.values.get("offset")).intValue();
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
                 ofFloat2.setDuration(250L);
@@ -112,29 +112,29 @@ public final class cn0 extends Transition {
                 PhotoViewer photoViewer = (PhotoViewer) obj;
                 if (transitionValues.view == photoViewer.T1) {
                     ValueAnimator ofInt = ValueAnimator.ofInt(((Integer) transitionValues.values.get("scrollY")).intValue(), 0);
-                    ofInt.addListener(new org.telegram.ui.lt0(this, i13));
+                    ofInt.addListener(new org.telegram.ui.jt0(this, i13));
                     ofInt.addUpdateListener(new org.telegram.ui.e3(this, 22));
                     return ofInt;
                 }
                 if (transitionValues2.view != photoViewer.Q1 || (intValue = ((Integer) transitionValues2.values.get("translationY")).intValue()) == 0) {
                     return null;
                 }
-                ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(photoViewer.Q1, (Property<org.telegram.ui.zt0, Float>) View.TRANSLATION_Y, 0.0f, intValue);
-                ofFloat3.addListener(new org.telegram.ui.lt0(this, i12));
+                ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(photoViewer.Q1, (Property<org.telegram.ui.xt0, Float>) View.TRANSLATION_Y, 0.0f, intValue);
+                ofFloat3.addListener(new org.telegram.ui.jt0(this, i12));
                 return ofFloat3;
             default:
                 SecretMediaViewer secretMediaViewer = (SecretMediaViewer) obj;
                 if (transitionValues.view == secretMediaViewer.a0) {
                     ValueAnimator ofInt2 = ValueAnimator.ofInt(((Integer) transitionValues.values.get("scrollY")).intValue(), 0);
-                    ofInt2.addListener(new org.telegram.ui.p31(this, i13));
-                    ofInt2.addUpdateListener(new org.telegram.ui.e11(this, i11));
+                    ofInt2.addListener(new org.telegram.ui.n31(this, i13));
+                    ofInt2.addUpdateListener(new org.telegram.ui.c11(this, i11));
                     return ofInt2;
                 }
                 if (transitionValues2.view != secretMediaViewer.Z || (intValue2 = ((Integer) transitionValues2.values.get("translationY")).intValue()) == 0) {
                     return null;
                 }
-                ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(secretMediaViewer.Z, (Property<org.telegram.ui.zt0, Float>) View.TRANSLATION_Y, 0.0f, intValue2);
-                ofFloat4.addListener(new org.telegram.ui.p31(this, i12));
+                ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(secretMediaViewer.Z, (Property<org.telegram.ui.xt0, Float>) View.TRANSLATION_Y, 0.0f, intValue2);
+                ofFloat4.addListener(new org.telegram.ui.n31(this, i12));
                 return ofFloat4;
         }
     }

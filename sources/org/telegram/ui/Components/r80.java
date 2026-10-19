@@ -27,7 +27,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class r80 extends org.telegram.ui.ActionBar.f3 {
     public static ArrayList G;
@@ -104,7 +104,7 @@ public final class r80 extends org.telegram.ui.ActionBar.f3 {
         getgroupcalljoinas.peer = accountInstance.getMessagesController().getInputPeer(j10);
         b2Var.setOnCancelListener(new k80(accountInstance, accountInstance.getConnectionsManager().sendRequest(getgroupcalljoinas, new ai.d0(b2Var, j10, accountInstance, booleanCallback)), 1));
         try {
-            b2Var.q(500L);
+            b2Var.r(500L);
         } catch (Exception unused) {
         }
     }
@@ -125,7 +125,7 @@ public final class r80 extends org.telegram.ui.ActionBar.f3 {
             getgroupcalljoinas.peer = accountInstance.getMessagesController().getInputPeer(j10);
             b2Var.setOnCancelListener(new k80(accountInstance, accountInstance.getConnectionsManager().sendRequest(getgroupcalljoinas, new j80(b2Var, accountInstance, p80Var, j10, context, n2Var, i10, peer)), 0));
             try {
-                b2Var.q(500L);
+                b2Var.r(500L);
             } catch (Exception unused) {
             }
         }
@@ -230,7 +230,7 @@ public final class r80 extends org.telegram.ui.ActionBar.f3 {
         n80Var.setSelectorDrawableColor(0);
         n80Var.setGlowColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.A5, false));
         n80Var.setOnScrollListener(new o80(r80Var));
-        n80Var.setOnItemClickListener(new ci.x4(11, r80Var, chat));
+        n80Var.setOnItemClickListener(new ci.y4(11, r80Var, chat));
         if (i10 != 0) {
             viewGroup.addView(n80Var, w7.z5.d(-1, -1.0f, 51, 0.0f, 100.0f, 0.0f, 80.0f));
         } else {
@@ -246,7 +246,7 @@ public final class r80 extends org.telegram.ui.ActionBar.f3 {
         }
         TextView textView = new TextView(context);
         r80Var.e = textView;
-        org.telegram.messenger.lk.k(20.0f, 1, textView);
+        org.telegram.messenger.kk.k(20.0f, 1, textView);
         if (i10 == 2) {
             textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ng, false));
         } else {

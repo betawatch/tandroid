@@ -1,6 +1,6 @@
 package yh;
 
-import ai.k7;
+import ai.l7;
 import android.content.Context;
 import android.graphics.Matrix;
 import android.graphics.Paint;
@@ -33,11 +33,11 @@ import org.telegram.ui.Components.s40;
 import org.telegram.ui.Components.ud;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.xp;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class i0 extends org.telegram.ui.ActionBar.f3 {
     public final int E;
@@ -46,7 +46,7 @@ public final class i0 extends org.telegram.ui.ActionBar.f3 {
     public final h0 H;
     public final TL_stars.TL_starGiftUnique I;
     public final long J;
-    public ai.q4 K;
+    public ai.r4 K;
     public boolean L;
     public final y4 b;
     public final ih.k c;
@@ -65,10 +65,10 @@ public final class i0 extends org.telegram.ui.ActionBar.f3 {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public i0(Context context, d6 d6Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10) {
         super(context, (d6) null, true, true);
-        sn snVar;
+        qn qnVar;
         final int i10 = 1;
         this.c = new ih.k();
-        qh.i iVar = new qh.i(new ai.e4(this, i10));
+        qh.i iVar = new qh.i(new ai.f4(this, i10));
         this.h = iVar;
         AndroidUtilities.enableEdgeToEdge(getWindow());
         this.I = tL_starGiftUnique;
@@ -118,7 +118,7 @@ public final class i0 extends org.telegram.ui.ActionBar.f3 {
         this.containerView.setClipChildren(false);
         this.containerView.setClipToPadding(false);
         f0Var.x4 = false;
-        f0Var.i2 = !AndroidUtilities.isInMultiwindow && ((snVar = f0Var.P2) == null || !snVar.isInBubbleMode());
+        f0Var.i2 = !AndroidUtilities.isInMultiwindow && ((qnVar = f0Var.P2) == null || !qnVar.isInBubbleMode());
         f0Var.S0(false, false, false);
         f0Var.d1(true, false);
         f0Var.z1.setPadding(0, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(20.0f), 0);
@@ -176,17 +176,17 @@ public final class i0 extends org.telegram.ui.ActionBar.f3 {
                     case 0:
                         i0 i0Var = this.b;
                         if (i0Var.E - i0Var.F >= 0) {
-                            ai.q4 q4Var = i0Var.K;
-                            if (q4Var != null) {
+                            ai.r4 r4Var = i0Var.K;
+                            if (r4Var != null) {
                                 TLRPC.TL_textWithEntities textWithEntities = i0Var.n.getTextWithEntities();
                                 boolean z10 = i0Var.G;
-                                k7 k7Var = (k7) q4Var.c;
-                                i0 i0Var2 = (i0) q4Var.d;
-                                TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) q4Var.e;
-                                long j11 = q4Var.b;
-                                ag.c cVar = (ag.c) q4Var.f;
+                                l7 l7Var = (l7) r4Var.c;
+                                i0 i0Var2 = (i0) r4Var.d;
+                                TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) r4Var.e;
+                                long j11 = r4Var.b;
+                                ag.b bVar2 = (ag.b) r4Var.f;
                                 if (!i0Var2.L) {
-                                    k7Var.w2(tL_starGiftUnique2, j11, cVar, textWithEntities, z10, i0Var2);
+                                    l7Var.D2(tL_starGiftUnique2, j11, bVar2, textWithEntities, z10, i0Var2);
                                     break;
                                 }
                             }
@@ -234,7 +234,8 @@ public final class i0 extends org.telegram.ui.ActionBar.f3 {
         xpVar.b(i13, i13, h6.k7);
         xpVar.setDrawUnchecked(true);
         xpVar.a(!this.G, false);
-        y4Var.getLayout().R = new ai.e4(this, i14);
+        y4Var.getLayout().U = new ai.f4(this, i14);
+        y4Var.getLayout().T = new ai.f4(this, 3);
         xpVar.setDrawBackgroundAsArc(10);
         frameLayout.addView(xpVar, z5.d(18, 18.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
         frameLayout.setBackground(new u5(frameLayout, this.containerView, AndroidUtilities.dp(16.0f), q("paintChatActionBackground")));
@@ -251,17 +252,17 @@ public final class i0 extends org.telegram.ui.ActionBar.f3 {
                     case 0:
                         i0 i0Var = this.b;
                         if (i0Var.E - i0Var.F >= 0) {
-                            ai.q4 q4Var = i0Var.K;
-                            if (q4Var != null) {
+                            ai.r4 r4Var = i0Var.K;
+                            if (r4Var != null) {
                                 TLRPC.TL_textWithEntities textWithEntities = i0Var.n.getTextWithEntities();
                                 boolean z10 = i0Var.G;
-                                k7 k7Var = (k7) q4Var.c;
-                                i0 i0Var2 = (i0) q4Var.d;
-                                TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) q4Var.e;
-                                long j11 = q4Var.b;
-                                ag.c cVar = (ag.c) q4Var.f;
+                                l7 l7Var = (l7) r4Var.c;
+                                i0 i0Var2 = (i0) r4Var.d;
+                                TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) r4Var.e;
+                                long j11 = r4Var.b;
+                                ag.b bVar2 = (ag.b) r4Var.f;
                                 if (!i0Var2.L) {
-                                    k7Var.w2(tL_starGiftUnique2, j11, cVar, textWithEntities, z10, i0Var2);
+                                    l7Var.D2(tL_starGiftUnique2, j11, bVar2, textWithEntities, z10, i0Var2);
                                     break;
                                 }
                             }
@@ -305,17 +306,17 @@ public final class i0 extends org.telegram.ui.ActionBar.f3 {
                     case 0:
                         i0 i0Var = this.b;
                         if (i0Var.E - i0Var.F >= 0) {
-                            ai.q4 q4Var = i0Var.K;
-                            if (q4Var != null) {
+                            ai.r4 r4Var = i0Var.K;
+                            if (r4Var != null) {
                                 TLRPC.TL_textWithEntities textWithEntities = i0Var.n.getTextWithEntities();
                                 boolean z10 = i0Var.G;
-                                k7 k7Var = (k7) q4Var.c;
-                                i0 i0Var2 = (i0) q4Var.d;
-                                TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) q4Var.e;
-                                long j11 = q4Var.b;
-                                ag.c cVar = (ag.c) q4Var.f;
+                                l7 l7Var = (l7) r4Var.c;
+                                i0 i0Var2 = (i0) r4Var.d;
+                                TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) r4Var.e;
+                                long j11 = r4Var.b;
+                                ag.b bVar2 = (ag.b) r4Var.f;
                                 if (!i0Var2.L) {
-                                    k7Var.w2(tL_starGiftUnique2, j11, cVar, textWithEntities, z10, i0Var2);
+                                    l7Var.D2(tL_starGiftUnique2, j11, bVar2, textWithEntities, z10, i0Var2);
                                     break;
                                 }
                             }
@@ -340,9 +341,9 @@ public final class i0 extends org.telegram.ui.ActionBar.f3 {
         b6.b(frameLayout, 0.05f, 1.2f);
         b6.a(imageView);
         ViewGroup viewGroup3 = this.containerView;
-        qg.g0 g0Var = new qg.g0(this, 29);
+        qg.h0 h0Var2 = new qg.h0(this, 29);
         WeakHashMap weakHashMap = r0.i0.a;
-        r0.a0.i(viewGroup3, g0Var);
+        r0.a0.i(viewGroup3, h0Var2);
     }
 
     @Override // org.telegram.ui.ActionBar.f3

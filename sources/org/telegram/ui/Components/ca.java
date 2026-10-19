@@ -28,9 +28,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ua1;
+import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ca implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -114,10 +114,10 @@ public final /* synthetic */ class ca implements View.OnClickListener {
                 ql qlVar = (ql) obj;
                 rl rlVar = olVar.b;
                 ti tiVar = rlVar.b;
-                org.telegram.ui.sn snVar = (org.telegram.ui.sn) tiVar.f0;
-                if (snVar.c()) {
+                org.telegram.ui.qn qnVar = (org.telegram.ui.qn) tiVar.f0;
+                if (qnVar.c()) {
                     parentActivity = rlVar.getParentActivity();
-                    f5.L(parentActivity, snVar.a(), new q2(8, olVar, qlVar), rlVar.a);
+                    f5.L(parentActivity, qnVar.a(), new q2(8, olVar, qlVar), rlVar.a);
                     break;
                 } else {
                     f5.Z(tiVar.M1, tiVar.l1() + 1, tiVar.p1(), new org.telegram.ui.ActionBar.j3(26, olVar, qlVar));
@@ -125,9 +125,9 @@ public final /* synthetic */ class ca implements View.OnClickListener {
                 }
             case 3:
                 fo foVar = ((co) obj2).d;
-                ua1 ua1Var = foVar.s;
-                View F2 = ua1Var.F((bo) obj);
-                s4.b1 T2 = F2 != null ? ua1Var.T(F2) : null;
+                sa1 sa1Var = foVar.s;
+                View F2 = sa1Var.F((bo) obj);
+                s4.b1 T2 = F2 != null ? sa1Var.T(F2) : null;
                 if (T2 != null && (b10 = T2.b() - foVar.t0) >= 0 && b10 < foVar.K.length) {
                     fo.R(foVar, b10);
                     break;
@@ -136,17 +136,17 @@ public final /* synthetic */ class ca implements View.OnClickListener {
             case 4:
                 oo ooVar = (oo) obj2;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj;
-                org.telegram.ui.sn snVar2 = ooVar.G;
+                org.telegram.ui.qn qnVar2 = ooVar.G;
                 if (ooVar.T) {
-                    snVar2.showDialog(f5.U(ooVar.getContext(), snVar2.h, d6Var).a);
+                    qnVar2.showDialog(f5.U(ooVar.getContext(), qnVar2.h, d6Var).a);
                     break;
                 } else {
                     ko koVar = ooVar.e;
-                    if (snVar2.getParentActivity() != null) {
-                        TLRPC.Chat chat = snVar2.e;
+                    if (qnVar2.getParentActivity() != null) {
+                        TLRPC.Chat chat = qnVar2.e;
                         if (chat == null || ChatObject.canUserDoAdminAction(chat, 13)) {
-                            TLRPC.ChatFull chatFull = snVar2.Z7;
-                            TLRPC.UserFull userFull = snVar2.a8;
+                            TLRPC.ChatFull chatFull = qnVar2.Z7;
+                            TLRPC.UserFull userFull = qnVar2.a8;
                             int i17 = userFull != null ? userFull.ttl_period : chatFull != null ? chatFull.ttl_period : 0;
                             p8 p8Var = new p8(ooVar.getContext(), null, new lo(ooVar, r5), true, 0, ooVar.d0);
                             p8Var.b(i17);
@@ -163,27 +163,27 @@ public final /* synthetic */ class ca implements View.OnClickListener {
                             m1VarArr[0].setInputMethodMode(2);
                             m1VarArr[0].getContentView().setFocusableInTouchMode(true);
                             m1VarArr[0].showAtLocation(koVar, 0, (int) (ooVar.getX() + koVar.getX()), (int) koVar.getY());
-                            snVar2.j8(false, true, 0.2f);
+                            qnVar2.j8(false, true, 0.2f);
                             break;
-                        } else if (ooVar.a.f && snVar2.getParentActivity() != null && snVar2.fragmentView != null && snVar2.Z7 != null) {
-                            if (snVar2.o2 == null) {
-                                r40 r40Var = new r40(7, snVar2.getParentActivity(), snVar2.ea, true);
-                                snVar2.o2 = r40Var;
+                        } else if (ooVar.a.f && qnVar2.getParentActivity() != null && qnVar2.fragmentView != null && qnVar2.Z7 != null) {
+                            if (qnVar2.o2 == null) {
+                                r40 r40Var = new r40(7, qnVar2.getParentActivity(), qnVar2.ea, true);
+                                qnVar2.o2 = r40Var;
                                 r40Var.setAlpha(0.0f);
-                                snVar2.o2.setVisibility(4);
-                                snVar2.o2.setShowingDuration(4000L);
-                                snVar2.X0.addView(snVar2.o2, w7.z5.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
+                                qnVar2.o2.setVisibility(4);
+                                qnVar2.o2.setShowingDuration(4000L);
+                                qnVar2.X0.addView(qnVar2.o2, w7.z5.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
                             }
-                            int i18 = snVar2.Z7.ttl_period;
-                            snVar2.o2.setText(LocaleController.formatString("AutoDeleteSetInfo", R.string.AutoDeleteSetInfo, i18 > 86400 ? LocaleController.formatPluralString("Days", i18 / 86400, new Object[0]) : i18 >= 3600 ? LocaleController.formatPluralString("Hours", i18 / 3600, new Object[0]) : i18 >= 60 ? LocaleController.formatPluralString("Minutes", i18 / 60, new Object[0]) : LocaleController.formatPluralString("Seconds", i18, new Object[0])));
-                            snVar2.o2.f(snVar2.a1.getTimeItem(), true);
+                            int i18 = qnVar2.Z7.ttl_period;
+                            qnVar2.o2.setText(LocaleController.formatString("AutoDeleteSetInfo", R.string.AutoDeleteSetInfo, i18 > 86400 ? LocaleController.formatPluralString("Days", i18 / 86400, new Object[0]) : i18 >= 3600 ? LocaleController.formatPluralString("Hours", i18 / 3600, new Object[0]) : i18 >= 60 ? LocaleController.formatPluralString("Minutes", i18 / 60, new Object[0]) : LocaleController.formatPluralString("Seconds", i18, new Object[0])));
+                            qnVar2.o2.f(qnVar2.a1.getTimeItem(), true);
                             break;
                         }
                     }
                 }
                 break;
             case 5:
-                wp.o((wp) obj2, (org.telegram.ui.sn) obj);
+                wp.o((wp) obj2, (org.telegram.ui.qn) obj);
                 break;
             case 6:
                 xr.Q((xr) obj2, (TLRPC.Peer) obj);
@@ -234,11 +234,11 @@ public final /* synthetic */ class ca implements View.OnClickListener {
                 psVar.K();
                 osVar.f = !osVar.f;
                 osVar.j.X.N(true);
-                psVar.t();
+                psVar.u();
                 break;
             case 9:
                 ((ps) obj2).B0 = !r12.B0;
-                ((s61) obj).N(true);
+                ((t61) obj).N(true);
                 break;
             case 10:
                 ((nt) obj2).dismiss();
@@ -341,7 +341,7 @@ public final /* synthetic */ class ca implements View.OnClickListener {
                         k20Var.g(filter);
                         j20 j20Var = k20Var.H;
                         if (j20Var != null) {
-                            ((org.telegram.ui.jx) j20Var).c(filter);
+                            ((org.telegram.ui.hx) j20Var).g(filter);
                             break;
                         }
                     } else {
@@ -354,16 +354,16 @@ public final /* synthetic */ class ca implements View.OnClickListener {
                 ((z2) obj).run(Long.valueOf(((p20) obj2).d));
                 break;
             case 16:
-                ((org.telegram.ui.tp) obj).run();
+                ((org.telegram.ui.rp) obj).run();
                 ((f40) obj2).dismiss();
                 break;
             case 17:
                 ((i80) obj2).u();
-                ((org.telegram.ui.ac0) obj).run();
+                ((org.telegram.ui.yb0) obj).run();
                 break;
             case 18:
                 i80 i80Var2 = (i80) obj2;
-                ((org.telegram.ui.hv) obj).run();
+                ((org.telegram.ui.fv) obj).run();
                 if (i80Var2.J) {
                     i80Var2.u();
                     break;
@@ -377,25 +377,25 @@ public final /* synthetic */ class ca implements View.OnClickListener {
                 break;
             case 21:
                 aj0 aj0Var = (aj0) obj2;
-                org.telegram.ui.zu zuVar = (org.telegram.ui.zu) obj;
+                org.telegram.ui.xu xuVar = (org.telegram.ui.xu) obj;
                 if (aj0Var.J.getTag() == null) {
                     int max = (int) Math.max(1.0f, aj0Var.getValue());
-                    org.telegram.ui.pc0 pc0Var = (org.telegram.ui.pc0) zuVar.c;
-                    TLRPC.User user = (TLRPC.User) zuVar.b;
-                    if (pc0Var.getLocationController().getSharingLocationInfo(pc0Var.e0) == null) {
-                        AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(pc0Var.getParentActivity());
+                    org.telegram.ui.nc0 nc0Var = (org.telegram.ui.nc0) xuVar.c;
+                    TLRPC.User user = (TLRPC.User) xuVar.b;
+                    if (nc0Var.getLocationController().getSharingLocationInfo(nc0Var.e0) == null) {
+                        AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(nc0Var.getParentActivity());
                         String string2 = LocaleController.getString(R.string.ShareLocationAlertTitle);
                         org.telegram.ui.ActionBar.b2 b2Var2 = alertDialog$Builder2.a;
                         b2Var2.R = string2;
                         b2Var2.T = LocaleController.getString(R.string.ShareLocationAlertText);
-                        alertDialog$Builder2.k(LocaleController.getString(R.string.ShareLocationAlertButton), new hg.b2(pc0Var, user, max, i13));
+                        alertDialog$Builder2.k(LocaleController.getString(R.string.ShareLocationAlertButton), new hg.b2(nc0Var, user, max, i13));
                         alertDialog$Builder2.h(LocaleController.getString(R.string.Cancel), null);
-                        pc0Var.showDialog(b2Var2);
+                        nc0Var.showDialog(b2Var2);
                     } else {
-                        pc0Var.R.L = true;
-                        pc0Var.c.setImageResource(R.drawable.msg_location_alert2);
-                        pc0Var.l0().k(0L, 24, Integer.valueOf(max), user, null, null);
-                        pc0Var.getLocationController().setProximityLocation(pc0Var.e0, max, true);
+                        nc0Var.R.L = true;
+                        nc0Var.c.setImageResource(R.drawable.msg_location_alert2);
+                        nc0Var.l0().k(0L, 24, Integer.valueOf(max), user, null, null);
+                        nc0Var.getLocationController().setProximityLocation(nc0Var.e0, max, true);
                         r9 = 1;
                     }
                     if (r9 != 0) {
@@ -432,12 +432,12 @@ public final /* synthetic */ class ca implements View.OnClickListener {
             case 24:
                 ai.y9 y9Var = (ai.y9) obj2;
                 y9Var.e = !y9Var.e;
-                ((org.telegram.messenger.vj) obj).run();
+                ((org.telegram.messenger.uj) obj).run();
                 y9Var.j(true);
                 break;
             case 25:
-                org.telegram.ui.gt.q().v(((ky0) obj2).r.m0);
-                org.telegram.ui.gt.q().y((org.telegram.ui.Cells.e8) obj);
+                org.telegram.ui.et.q().v(((ly0) obj2).r.m0);
+                org.telegram.ui.et.q().y((org.telegram.ui.Cells.e8) obj);
                 break;
             case 26:
                 AndroidUtilities.addToClipboard((CharSequence) obj2);
@@ -453,15 +453,15 @@ public final /* synthetic */ class ca implements View.OnClickListener {
                 }
                 break;
             case 28:
-                c51 c51Var = (c51) obj2;
-                c51Var.k0 = false;
-                c51Var.K();
-                ((s61) obj).N(true);
-                c51Var.t();
+                d51 d51Var = (d51) obj2;
+                d51Var.k0 = false;
+                d51Var.K();
+                ((t61) obj).N(true);
+                d51Var.u();
                 break;
             default:
                 View.OnClickListener onClickListener = (View.OnClickListener) obj;
-                ImageView imageView = ((x41) obj2).s;
+                ImageView imageView = ((y41) obj2).s;
                 imageView.animate().rotation(imageView.getRotation() + 180.0f).setDuration(380L).setInterpolator(bs.h).start();
                 if (onClickListener != null) {
                     onClickListener.onClick(view);

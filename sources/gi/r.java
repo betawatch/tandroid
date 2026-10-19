@@ -1,7 +1,7 @@
 package gi;
 
 import ai.cb;
-import ai.q5;
+import ai.r5;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -34,7 +34,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class r {
     public static final WeakHashMap k = new WeakHashMap();
@@ -47,8 +47,8 @@ public final class r {
     public boolean f;
     public String g;
     public String h;
-    public a6.m i;
-    public q5 j;
+    public qb.c i;
+    public r5 j;
 
     public r(Context context, int i10, long j10) {
         this.a = context;
@@ -161,7 +161,7 @@ public final class r {
         } catch (Exception e) {
             FileLog.e(e);
         }
-        if (new androidx.biometric.e(new k6.h(context, 1)).i(15) == 0) {
+        if (new androidx.biometric.e(new k6.h(context, 1)).f(15) == 0) {
             str = "unknown";
             if (str == null) {
                 jSONObject.put("available", true);
@@ -247,7 +247,7 @@ public final class r {
         this.j = null;
         try {
             if (this.i == null) {
-                this.i = new a6.m(LaunchActivity.H1, f0.c.d(this.a), new p(this));
+                this.i = new qb.c(LaunchActivity.H1, f0.c.d(this.a), new p(this));
             }
             androidx.biometric.u i11 = i(z10);
             TLRPC.User user = MessagesController.getInstance(this.b).getUser(Long.valueOf(this.c));
@@ -278,13 +278,13 @@ public final class r {
                     }
                 }
             }
-            this.j = new q5(7, callback3, (i11 == null || Build.VERSION.SDK_INT >= 30) ? null : i11);
+            this.j = new r5(7, callback3, (i11 == null || Build.VERSION.SDK_INT >= 30) ? null : i11);
             if (i11 == null || (i10 = Build.VERSION.SDK_INT) >= 30) {
                 this.i.c(a2, null);
                 return;
             }
-            a6.m mVar = this.i;
-            mVar.getClass();
+            qb.c cVar = this.i;
+            cVar.getClass();
             int i12 = a2.a;
             int i13 = i12 != 0 ? i12 : 15;
             if ((i13 & 255) == 255) {
@@ -293,7 +293,7 @@ public final class r {
             if (i10 < 30 && v7.k.a(i13)) {
                 throw new IllegalArgumentException("Crypto-based authentication is not supported for device credential prior to API 30.");
             }
-            mVar.c(a2, i11);
+            cVar.c(a2, i11);
         } catch (Exception e7) {
             FileLog.e(e7);
             callback3.run(Boolean.FALSE, null, null);
@@ -331,7 +331,7 @@ public final class r {
         edit.apply();
     }
 
-    public final void l(String str, final String str2, final ai.y3 y3Var) {
+    public final void l(String str, final String str2, final ai.a4 a4Var) {
         j(str, false, str2, new Utilities.Callback3() { // from class: gi.o
             @Override // org.telegram.messenger.Utilities.Callback3
             public final void run(Object obj, Object obj2, Object obj3) {
@@ -363,7 +363,7 @@ public final class r {
                         bool = Boolean.FALSE;
                     }
                 }
-                y3Var.run(bool);
+                a4Var.run(bool);
             }
         });
     }

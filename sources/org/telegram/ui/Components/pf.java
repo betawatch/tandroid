@@ -16,7 +16,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class pf extends ng {
     public boolean e;
@@ -41,8 +41,8 @@ public final class pf extends ng {
             setWindowView(view);
             return;
         }
-        org.telegram.ui.sn snVar = chatActivityEnterView.P2;
-        if (snVar == null || snVar.getParentLayout() == null || !((ActionBarLayout) chatActivityEnterView.P2.getParentLayout()).b) {
+        org.telegram.ui.qn qnVar = chatActivityEnterView.P2;
+        if (qnVar == null || qnVar.getParentLayout() == null || !((ActionBarLayout) chatActivityEnterView.P2.getParentLayout()).b) {
             setWindowView(chatActivityEnterView.O2.getWindow().getDecorView());
         } else {
             setWindowView(chatActivityEnterView.P2.getParentLayout().getWindow().getDecorView());
@@ -65,11 +65,11 @@ public final class pf extends ng {
         ChatActivityEnterView chatActivityEnterView = this.r;
         if (chatActivityEnterView.T != chatActivityEnterView.E0.getLineCount()) {
             boolean z10 = false;
-            chatActivityEnterView.n1((chatActivityEnterView.E0.getLineCount() <= 2 || chatActivityEnterView.E0.getText() == null || TextUtils.isEmpty(chatActivityEnterView.E0.getText().toString().trim())) ? false : true);
+            chatActivityEnterView.m1((chatActivityEnterView.E0.getLineCount() <= 2 || chatActivityEnterView.E0.getText() == null || TextUtils.isEmpty(chatActivityEnterView.E0.getText().toString().trim())) ? false : true);
             if (chatActivityEnterView.E0.getLineCount() > 2 && chatActivityEnterView.E0.getText() != null && !TextUtils.isEmpty(chatActivityEnterView.E0.getText().toString().trim())) {
                 z10 = true;
             }
-            chatActivityEnterView.t1(z10);
+            chatActivityEnterView.s1(z10);
         }
     }
 
@@ -133,7 +133,7 @@ public final class pf extends ng {
     @Override // org.telegram.ui.Components.ng, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         ChatActivityEnterView chatActivityEnterView = this.r;
-        if (!chatActivityEnterView.t()) {
+        if (!chatActivityEnterView.u()) {
             if (motionEvent.getAction() == 0 && chatActivityEnterView.Z2 != null) {
                 int i10 = org.telegram.ui.ActionBar.h6.vf;
                 int i11 = ChatActivityEnterView.n5;

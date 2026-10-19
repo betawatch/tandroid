@@ -1,81 +1,86 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import java.util.Locale;
+import java.util.HashMap;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MrzRecognizer;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
+import org.telegram.messenger.SecureDocument;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class vl0 implements x9 {
-    public final /* synthetic */ xm0 a;
+public final class vl0 extends zt0 {
+    public final /* synthetic */ vm0 a;
 
-    public vl0(xm0 xm0Var) {
-        this.a = xm0Var;
+    public vl0(vm0 vm0Var) {
+        this.a = vm0Var;
     }
 
-    @Override // org.telegram.ui.x9
-    public final void F0(MrzRecognizer.Result result) {
-        boolean isEmpty = TextUtils.isEmpty(result.firstName);
-        xm0 xm0Var = this.a;
-        if (!isEmpty) {
-            xm0Var.Y[0].setText(result.firstName);
-        }
-        if (!TextUtils.isEmpty(result.middleName)) {
-            xm0Var.Y[1].setText(result.middleName);
-        }
-        if (!TextUtils.isEmpty(result.lastName)) {
-            xm0Var.Y[2].setText(result.lastName);
-        }
-        int i10 = result.gender;
-        if (i10 != 0) {
-            if (i10 == 1) {
-                xm0Var.w = "male";
-                xm0Var.Y[4].setText(LocaleController.getString(R.string.PassportMale));
-            } else if (i10 == 2) {
-                xm0Var.w = "female";
-                xm0Var.Y[4].setText(LocaleController.getString(R.string.PassportFemale));
-            }
-        }
-        if (!TextUtils.isEmpty(result.nationality)) {
-            String str = result.nationality;
-            xm0Var.s = str;
-            String str2 = (String) xm0Var.Y0.get(str);
-            if (str2 != null) {
-                xm0Var.Y[5].setText(str2);
-            }
-        }
-        if (!TextUtils.isEmpty(result.issuingCountry)) {
-            String str3 = result.issuingCountry;
-            xm0Var.v = str3;
-            String str4 = (String) xm0Var.Y0.get(str3);
-            if (str4 != null) {
-                xm0Var.Y[6].setText(str4);
-            }
-        }
-        int i11 = result.birthDay;
-        if (i11 <= 0 || result.birthMonth <= 0 || result.birthYear <= 0) {
+    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
+    public final void B(int i10) {
+        vm0 vm0Var = this.a;
+        int i11 = vm0Var.S0;
+        SecureDocument secureDocument = i11 == 1 ? vm0Var.j1 : i11 == 4 ? (SecureDocument) vm0Var.k1.get(i10) : i11 == 2 ? vm0Var.l1 : i11 == 3 ? vm0Var.m1 : (SecureDocument) vm0Var.i1.get(i10);
+        tm0 tm0Var = (tm0) vm0Var.n1.remove(secureDocument);
+        if (tm0Var == null) {
             return;
         }
-        xm0Var.Y[3].setText(String.format(Locale.US, "%02d.%02d.%d", Integer.valueOf(i11), Integer.valueOf(result.birthMonth), Integer.valueOf(result.birthYear)));
+        String m12 = vm0.m1(secureDocument);
+        int i12 = vm0Var.S0;
+        String str = null;
+        if (i12 == 1) {
+            vm0Var.j1 = null;
+            str = r4.c.h("selfie", m12);
+        } else if (i12 == 4) {
+            str = r4.c.h("translation", m12);
+        } else if (i12 == 2) {
+            vm0Var.l1 = null;
+            str = r4.c.h("front", m12);
+        } else if (i12 == 3) {
+            vm0Var.m1 = null;
+            str = r4.c.h("reverse", m12);
+        } else if (i12 == 0) {
+            str = r4.c.h("files", m12);
+        }
+        if (str != null) {
+            HashMap hashMap = vm0Var.x1;
+            if (hashMap != null) {
+                hashMap.remove(str);
+            }
+            HashMap hashMap2 = vm0Var.y1;
+            if (hashMap2 != null) {
+                hashMap2.remove(str);
+            }
+        }
+        vm0Var.R1(vm0Var.S0);
+        vm0Var.i0.removeView(tm0Var);
     }
 
-    @Override // org.telegram.ui.x9
-    public final /* synthetic */ boolean U0(String str, n9 n9Var) {
-        return false;
+    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
+    public final ju0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        if (i10 < 0) {
+            return null;
+        }
+        vm0 vm0Var = this.a;
+        if (i10 >= vm0Var.i0.getChildCount()) {
+            return null;
+        }
+        tm0 tm0Var = (tm0) vm0Var.i0.getChildAt(i10);
+        int[] iArr = new int[2];
+        tm0Var.c.getLocationInWindow(iArr);
+        ju0 ju0Var = new ju0();
+        ju0Var.b = iArr[0];
+        ju0Var.c = iArr[1];
+        ju0Var.d = vm0Var.i0;
+        ImageReceiver imageReceiver = tm0Var.c.getImageReceiver();
+        ju0Var.a = imageReceiver;
+        ju0Var.e = imageReceiver.getBitmapSafe();
+        return ju0Var;
     }
 
-    @Override // org.telegram.ui.x9
-    public final /* synthetic */ String p0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.x9
-    public final /* synthetic */ void E(String str) {
-    }
-
-    @Override // org.telegram.ui.x9
-    public final /* synthetic */ void onDismiss() {
+    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
+    public final String b0() {
+        return this.a.S0 == 1 ? LocaleController.formatString("PassportDeleteSelfieAlert", R.string.PassportDeleteSelfieAlert, new Object[0]) : LocaleController.formatString("PassportDeleteScanAlert", R.string.PassportDeleteScanAlert, new Object[0]);
     }
 }

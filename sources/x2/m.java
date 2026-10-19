@@ -10,7 +10,7 @@ import j$.util.Objects;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class m extends l {
     public final int E;
@@ -105,7 +105,7 @@ public final class m extends l {
                     if ((f7 != -1.0f || f7 >= iVar.g) && ((i23 = wVar2.j) == -1 || i23 >= iVar.h)) {
                         z12 = true;
                         this.h = z12;
-                        this.n = i2.d.e(i12, false);
+                        this.n = i2.e.e(i12, false);
                         w wVar4 = this.d;
                         float f11 = wVar4.D;
                         this.r = f11 == -1.0f && f11 >= 10.0f;
@@ -230,8 +230,8 @@ public final class m extends l {
                                         z15 = this.e;
                                         iVar2 = this.f;
                                         wVar = this.d;
-                                        if ((wVar.f & 16384) == 0 && i2.d.e(i12, iVar2.B0) && (z15 || iVar2.w0)) {
-                                            i28 = (i2.d.e(i12, false) || !this.h || !z15 || wVar.j == -1 || iVar2.G || iVar2.F || (i27 & i12) == 0) ? 1 : 2;
+                                        if ((wVar.f & 16384) == 0 && i2.e.e(i12, iVar2.B0) && (z15 || iVar2.w0)) {
+                                            i28 = (i2.e.e(i12, false) || !this.h || !z15 || wVar.j == -1 || iVar2.G || iVar2.F || (i27 & i12) == 0) ? 1 : 2;
                                         }
                                         this.J = i28;
                                     }
@@ -245,7 +245,7 @@ public final class m extends l {
                             iVar2 = this.f;
                             wVar = this.d;
                             if ((wVar.f & 16384) == 0) {
-                                if (i2.d.e(i12, false)) {
+                                if (i2.e.e(i12, false)) {
                                 }
                             }
                             this.J = i28;
@@ -266,7 +266,7 @@ public final class m extends l {
                 }
                 z12 = false;
                 this.h = z12;
-                this.n = i2.d.e(i12, false);
+                this.n = i2.e.e(i12, false);
                 w wVar42 = this.d;
                 float f112 = wVar42.D;
                 this.r = f112 == -1.0f && f112 >= 10.0f;
@@ -334,7 +334,7 @@ public final class m extends l {
             }
             z12 = true;
             this.h = z12;
-            this.n = i2.d.e(i12, false);
+            this.n = i2.e.e(i12, false);
             w wVar422 = this.d;
             float f1122 = wVar422.D;
             this.r = f1122 == -1.0f && f1122 >= 10.0f;
@@ -394,7 +394,7 @@ public final class m extends l {
         }
         z12 = false;
         this.h = z12;
-        this.n = i2.d.e(i12, false);
+        this.n = i2.e.e(i12, false);
         w wVar4222 = this.d;
         float f11222 = wVar4222.D;
         this.r = f11222 == -1.0f && f11222 >= 10.0f;

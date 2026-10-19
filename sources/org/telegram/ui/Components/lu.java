@@ -10,7 +10,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.messenger.XiaomiUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class lu extends iu {
     public Drawable c;
@@ -34,7 +34,7 @@ public final class lu extends iu {
     public final void extendActionMode(ActionMode actionMode, Menu menu) {
         qu quVar = this.e;
         if (quVar.a()) {
-            org.telegram.ui.sn.n8(menu, null, quVar.L == 3, true, true, true);
+            org.telegram.ui.qn.n8(menu, null, quVar.L == 3, true, true, true);
         } else {
             quVar.i(menu);
         }
@@ -88,7 +88,7 @@ public final class lu extends iu {
             if (!quVar.x || (muVar = quVar.d) == null) {
                 quVar.x(AndroidUtilities.usingHardwareInput ? 0 : 2);
             } else {
-                muVar.t(false);
+                muVar.u(false);
                 quVar.x = false;
                 quVar.k(true);
                 AndroidUtilities.showKeyboard(this);

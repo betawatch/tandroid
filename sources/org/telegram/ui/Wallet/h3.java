@@ -1,39 +1,43 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.u61;
+import android.view.View;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h3 implements NotificationCenter.NotificationCenterDelegate {
+public final /* synthetic */ class h3 implements o1.g {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ n3 b;
 
-    public /* synthetic */ h3(Object obj, int i10) {
+    public /* synthetic */ h3(n3 n3Var, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = n3Var;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
-        u61 u61Var;
+    @Override // o1.g
+    public final void a(o1.h hVar, float f7, float f10) {
         switch (this.a) {
             case 0:
-                m3 m3Var = (m3) this.b;
-                m3Var.getClass();
-                if (i10 == NotificationCenter.userInfoDidLoad && i11 == m3Var.w0 && m3Var.x0 != 0 && objArr.length > 1) {
-                    Object obj = objArr[0];
-                    if ((obj instanceof Long) && ((Long) obj).longValue() == m3Var.x0) {
-                        m3Var.p(m3.h((TLRPC.UserFull) objArr[1]), true);
-                        break;
-                    }
+                n3 n3Var = this.b;
+                n3Var.C = f7;
+                n3Var.a.invalidate();
+                break;
+            case 1:
+                n3 n3Var2 = this.b;
+                n3Var2.c0 = f7;
+                org.telegram.ui.Cells.w0 w0Var = n3Var2.a;
+                w0Var.invalidate();
+                if (w0Var.getParent() instanceof View) {
+                    ((View) w0Var.getParent()).invalidate();
+                    break;
                 }
                 break;
             default:
-                r9 r9Var = (r9) this.b;
-                if (!r9Var.n && (u61Var = r9Var.a) != null) {
-                    u61Var.W2.N(true);
+                n3 n3Var3 = this.b;
+                n3Var3.a0 = f7;
+                org.telegram.ui.Cells.w0 w0Var2 = n3Var3.a;
+                w0Var2.invalidate();
+                if (w0Var2.getParent() instanceof View) {
+                    ((View) w0Var2.getParent()).invalidate();
                     break;
                 }
                 break;

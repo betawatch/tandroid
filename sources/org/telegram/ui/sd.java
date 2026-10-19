@@ -1,63 +1,32 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sd implements View.OnClickListener {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ FrameLayout d;
-    public final /* synthetic */ Object e;
+public final /* synthetic */ class sd implements hf1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ie b;
+    public final /* synthetic */ TwoStepVerificationActivity c;
 
-    public /* synthetic */ sd(int i10, ei.d dVar, org.telegram.ui.ActionBar.f3 f3Var, long j10) {
-        this.b = i10;
-        this.d = dVar;
-        this.e = f3Var;
-        this.c = j10;
+    public /* synthetic */ sd(ie ieVar, TwoStepVerificationActivity twoStepVerificationActivity, int i10) {
+        this.a = i10;
+        this.b = ieVar;
+        this.c = twoStepVerificationActivity;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // org.telegram.ui.hf1
+    public final void k(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         switch (this.a) {
             case 0:
-                ke keVar = (ke) this.d;
-                Context context = (Context) this.e;
-                if (view.isEnabled()) {
-                    ei.d dVar = keVar.T0;
-                    if (!dVar.N) {
-                        dVar.setLoading(true);
-                        TLRPC.TL_payments_getStarsRevenueAdsAccountUrl tL_payments_getStarsRevenueAdsAccountUrl = new TLRPC.TL_payments_getStarsRevenueAdsAccountUrl();
-                        int i10 = this.b;
-                        tL_payments_getStarsRevenueAdsAccountUrl.peer = MessagesController.getInstance(i10).getInputPeer(this.c);
-                        ConnectionsManager.getInstance(i10).sendRequest(tL_payments_getStarsRevenueAdsAccountUrl, new xc(1, keVar, context));
-                        break;
-                    }
-                }
+                this.b.b0(tL_inputCheckPasswordSRP, this.c, false);
+                break;
+            case 1:
+                this.b.b0(tL_inputCheckPasswordSRP, this.c, true);
                 break;
             default:
-                ei.d dVar2 = (ei.d) this.d;
-                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.e;
-                TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
-                createconferencecall.random_id = Utilities.random.nextInt();
-                int i11 = this.b;
-                ConnectionsManager.getInstance(i11).sendRequest(createconferencecall, new ai.c0(i11, dVar2, f3Var, this.c));
+                this.b.b0(tL_inputCheckPasswordSRP, this.c, true);
                 break;
         }
-    }
-
-    public /* synthetic */ sd(ke keVar, int i10, long j10, Context context) {
-        this.d = keVar;
-        this.b = i10;
-        this.c = j10;
-        this.e = context;
     }
 }

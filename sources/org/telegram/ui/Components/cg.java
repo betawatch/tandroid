@@ -7,9 +7,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class cg extends org.telegram.ui.sn {
+public final class cg extends org.telegram.ui.qn {
     public boolean Rc;
     public final /* synthetic */ TLRPC.User Sc;
     public final /* synthetic */ TLRPC.User Tc;
@@ -23,13 +23,13 @@ public final class cg extends org.telegram.ui.sn {
         this.Uc = j10;
     }
 
-    @Override // org.telegram.ui.sn, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.qn, org.telegram.ui.ActionBar.n2
     public final void onBecomeFullyVisible() {
         super.onBecomeFullyVisible();
         if (this.Rc) {
             return;
         }
         this.Rc = true;
-        xc.a0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.Sc)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.Tc)), new ai.t3(this, this.Uc, 23)), R.raw.contact_check).j();
+        xc.a0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.Sc)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.Tc)), new ai.v3(this, this.Uc, 23)), R.raw.contact_check).j();
     }
 }

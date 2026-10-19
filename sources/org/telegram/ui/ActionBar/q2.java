@@ -7,9 +7,9 @@ import org.telegram.ui.Components.nl0;
 import org.telegram.ui.Components.qu;
 import org.telegram.ui.Components.tz;
 import org.telegram.ui.Components.wa0;
-import org.telegram.ui.qq;
+import org.telegram.ui.oq;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -80,10 +80,10 @@ public final /* synthetic */ class q2 implements ValueAnimator.AnimatorUpdateLis
                 wa0Var.x[i12].setAlpha(fArr[i12]);
                 break;
             case 6:
-                qq qqVar = (qq) this.c;
-                qqVar.getClass();
+                oq oqVar = (oq) this.c;
+                oqVar.getClass();
                 Float f11 = (Float) valueAnimator.getAnimatedValue();
-                nl0 nl0Var = (nl0) qqVar.d;
+                nl0 nl0Var = (nl0) oqVar.d;
                 nl0Var.b.put(this.b, f11);
                 nl0Var.d = true;
                 nl0Var.a.invalidate();

@@ -1,9 +1,10 @@
 package nf;
 
 import java.io.EOFException;
+import k2.w0;
 import m.g3;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class f {
     public final String a;
@@ -19,17 +20,17 @@ public final class f {
         byte b11;
         of.a aVar = (of.a) g3Var.b;
         long j10 = aVar.b;
-        k0.b bVar = (k0.b) g3Var.d;
+        w0 w0Var = (w0) g3Var.d;
         h hVar = (h) g3Var.c;
         int i10 = hVar.a;
         int i11 = hVar.a;
         byte b12 = 2;
         if (i10 == 2) {
-            bVar.getClass();
+            w0Var.getClass();
             byte[] bArr = new byte[3];
             int i12 = 0;
             while (i12 < 3) {
-                int read = ((com.google.firebase.messaging.d) bVar.b).read(bArr, i12, 3 - i12);
+                int read = ((com.google.firebase.messaging.d) w0Var.b).read(bArr, i12, 3 - i12);
                 if (read <= 0) {
                     throw new EOFException();
                 }
@@ -37,11 +38,11 @@ public final class f {
             }
             this.a = new String(bArr, "ISO-8859-1");
         } else {
-            bVar.getClass();
+            w0Var.getClass();
             byte[] bArr2 = new byte[4];
             int i13 = 0;
             while (i13 < 4) {
-                int read2 = ((com.google.firebase.messaging.d) bVar.b).read(bArr2, i13, 4 - i13);
+                int read2 = ((com.google.firebase.messaging.d) w0Var.b).read(bArr2, i13, 4 - i13);
                 if (read2 <= 0) {
                     throw new EOFException();
                 }
@@ -51,15 +52,15 @@ public final class f {
         }
         byte b13 = 8;
         if (i11 == 2) {
-            this.c = ((bVar.Z() & 255) << 16) | ((bVar.Z() & 255) << 8) | (bVar.Z() & 255);
+            this.c = ((w0Var.m() & 255) << 16) | ((w0Var.m() & 255) << 8) | (w0Var.m() & 255);
         } else if (i11 == 3) {
-            this.c = bVar.a0();
+            this.c = w0Var.p();
         } else {
-            this.c = bVar.b0();
+            this.c = w0Var.u();
         }
         if (i11 > 2) {
-            bVar.Z();
-            byte Z = bVar.Z();
+            w0Var.m();
+            byte m10 = w0Var.m();
             byte b14 = 64;
             if (i11 == 3) {
                 b13 = 128;
@@ -71,35 +72,35 @@ public final class f {
                 b11 = 1;
                 b14 = 4;
             }
-            boolean z10 = (b13 & Z) != 0;
+            boolean z10 = (b13 & m10) != 0;
             this.e = z10;
-            this.d = (b12 & Z) != 0;
-            boolean z11 = (Z & b14) != 0;
+            this.d = (b12 & m10) != 0;
+            boolean z11 = (m10 & b14) != 0;
             this.f = z11;
             if (i11 == 3) {
                 if (z10) {
-                    this.g = bVar.a0();
+                    this.g = w0Var.p();
                     this.c -= 4;
                 }
                 if (z11) {
-                    bVar.Z();
+                    w0Var.m();
                     this.c--;
                 }
-                if ((Z & b10) != 0) {
-                    bVar.Z();
+                if ((m10 & b10) != 0) {
+                    w0Var.m();
                     this.c--;
                 }
             } else {
-                if ((Z & b10) != 0) {
-                    bVar.Z();
+                if ((m10 & b10) != 0) {
+                    w0Var.m();
                     this.c--;
                 }
                 if (z11) {
-                    bVar.Z();
+                    w0Var.m();
                     this.c--;
                 }
-                if ((Z & b11) != 0) {
-                    this.g = bVar.b0();
+                if ((m10 & b11) != 0) {
+                    this.g = w0Var.u();
                     this.c -= 4;
                 }
             }

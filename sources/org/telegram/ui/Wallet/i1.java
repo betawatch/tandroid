@@ -8,9 +8,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.db0;
+import org.telegram.ui.bb0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i1 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class i1 implements Utilities.Callback2 {
         switch (this.a) {
             case 0:
                 f2 f2Var = this.b;
-                db0 db0Var = (db0) this.d;
+                bb0 bb0Var = (bb0) this.d;
                 String str = this.c;
                 String str2 = (String) this.e;
                 String str3 = (String) this.f;
@@ -46,7 +46,7 @@ public final /* synthetic */ class i1 implements Utilities.Callback2 {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 f2Var.getClass();
                 if (tL_error != null || tonconnectsession2 == null) {
-                    db0Var.run(null, f2.x(tL_error, "createSession"));
+                    bb0Var.run(null, f2.x(tL_error, "createSession"));
                     break;
                 } else {
                     ArrayList arrayList = f2Var.d;
@@ -60,7 +60,7 @@ public final /* synthetic */ class i1 implements Utilities.Callback2 {
                         if (tonconnectsession3.id == tonconnectsession2.id && (tonconnectsession3.manifest != null || tonconnectsession3.manifest_error != null || tonconnectsession3.closed || tonconnectsession3.closing)) {
                             tonconnectsession = tonconnectsession3;
                             f2Var.n(tonconnectsession);
-                            db0Var.run(new a2(tonconnectsession, str, str2, str3, str4), null);
+                            bb0Var.run(new a2(tonconnectsession, str, str2, str3, str4), null);
                             break;
                         } else {
                             size = i11;
@@ -68,7 +68,7 @@ public final /* synthetic */ class i1 implements Utilities.Callback2 {
                     }
                     tonconnectsession = tonconnectsession2;
                     f2Var.n(tonconnectsession);
-                    db0Var.run(new a2(tonconnectsession, str, str2, str3, str4), null);
+                    bb0Var.run(new a2(tonconnectsession, str, str2, str3, str4), null);
                 }
                 break;
             case 1:
@@ -82,7 +82,7 @@ public final /* synthetic */ class i1 implements Utilities.Callback2 {
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 f2Var2.getClass();
                 if (tL_error2 == null && tonconnectnexteventid != null) {
-                    Utilities.globalQueue.postRunnable(new ai.u7(f2Var2, j0Var, tonconnectsession4, str5, bArr, tonconnectnexteventid, xVar, 11));
+                    Utilities.globalQueue.postRunnable(new ai.v7(f2Var2, j0Var, tonconnectsession4, str5, bArr, tonconnectnexteventid, xVar, 11));
                     break;
                 } else {
                     xVar.run(f2.x(tL_error2, "getNextEventId"));
@@ -122,7 +122,7 @@ public final /* synthetic */ class i1 implements Utilities.Callback2 {
                 f2Var4.getClass();
                 if (str8 == null && j0Var2 != null) {
                     j0 b10 = j0Var2.b();
-                    Utilities.globalQueue.postRunnable(new ai.u7(f2Var4, b10, tonconnectsession6, str7, bArr3, a2Var, new x(5, b10, xVar2), 13));
+                    Utilities.globalQueue.postRunnable(new ai.v7(f2Var4, b10, tonconnectsession6, str7, bArr3, a2Var, new x(5, b10, xVar2), 13));
                     break;
                 } else {
                     if (str8 == null) {
@@ -134,10 +134,10 @@ public final /* synthetic */ class i1 implements Utilities.Callback2 {
         }
     }
 
-    public /* synthetic */ i1(f2 f2Var, db0 db0Var, String str, String str2, String str3, String str4) {
+    public /* synthetic */ i1(f2 f2Var, bb0 bb0Var, String str, String str2, String str3, String str4) {
         this.a = 0;
         this.b = f2Var;
-        this.d = db0Var;
+        this.d = bb0Var;
         this.c = str;
         this.e = str2;
         this.f = str3;

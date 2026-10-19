@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class oy implements View.OnClickListener {
     public final /* synthetic */ ty a;
@@ -30,7 +30,7 @@ public final class oy implements View.OnClickListener {
         imageView.setImageResource(R.drawable.smiles_info);
         linearLayout.addView(imageView, w7.z5.t(-2, -2, 49, 0, 15, 0, 0));
         TextView textView = new TextView(tzVar.getContext());
-        org.telegram.messenger.lk.j(15.0f, R.string.EmojiSuggestions, 1, textView);
+        org.telegram.messenger.kk.j(15.0f, R.string.EmojiSuggestions, 1, textView);
         int i10 = org.telegram.ui.ActionBar.h6.n5;
         int i11 = tz.O2;
         textView.setTextColor(tzVar.A(i10));

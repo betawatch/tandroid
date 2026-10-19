@@ -15,14 +15,14 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.g90;
 import org.telegram.ui.Components.ru;
 import org.telegram.ui.Components.xj0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class z1 extends LinearLayout {
     public boolean a;
@@ -113,7 +113,7 @@ public final class z1 extends LinearLayout {
         if (!b2Var.H) {
             return super.onInterceptTouchEvent(motionEvent);
         }
-        b2Var.p();
+        b2Var.q();
         return false;
     }
 
@@ -191,7 +191,7 @@ public final class z1 extends LinearLayout {
         }
         int paddingTop = (size2 - getPaddingTop()) - getPaddingBottom();
         int paddingLeft = (size - getPaddingLeft()) - getPaddingRight();
-        int c10 = lk.c(48.0f, paddingLeft, TLObject.FLAG_30);
+        int c10 = kk.c(48.0f, paddingLeft, TLObject.FLAG_30);
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30);
         ViewGroup viewGroup = b2Var.t0;
         if (viewGroup != null) {
@@ -199,7 +199,7 @@ public final class z1 extends LinearLayout {
             for (int i16 = 0; i16 < childCount; i16++) {
                 View childAt = b2Var.t0.getChildAt(i16);
                 if (childAt instanceof TextView) {
-                    ((TextView) childAt).setMaxWidth(AndroidUtilities.dp(lk.A(24.0f, paddingLeft, 2)));
+                    ((TextView) childAt).setMaxWidth(AndroidUtilities.dp(kk.A(24.0f, paddingLeft, 2)));
                 }
             }
             b2Var.t0.measure(makeMeasureSpec, i11);
@@ -305,7 +305,7 @@ public final class z1 extends LinearLayout {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         b2 b2Var = this.d;
         if (b2Var.H) {
-            b2Var.p();
+            b2Var.q();
             return false;
         }
         super.onTouchEvent(motionEvent);

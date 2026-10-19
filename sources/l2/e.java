@@ -9,7 +9,7 @@ import e2.m0;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class e extends o1 {
     public final long e;
@@ -122,7 +122,7 @@ public final class e extends o1 {
                 j14 = j12;
             }
             if (i12 != -1 && (c10 = ((m2.m) ((m2.a) b10.c.get(i12)).c.get(0)).c()) != null && c10.w(d) != j12) {
-                j13 = (c10.a(c10.o(j15, d)) + j13) - j15;
+                j13 = (c10.a(c10.p(j15, d)) + j13) - j15;
             }
         } else {
             z10 = true;

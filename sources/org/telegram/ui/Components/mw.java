@@ -13,7 +13,7 @@ import org.telegram.messenger.EmojiData;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mw implements ni.c, yl0, en0, ne.d {
     public final /* synthetic */ int a;
@@ -118,7 +118,7 @@ public final /* synthetic */ class mw implements ni.c, yl0, en0, ne.d {
                         i11 = AndroidUtilities.dp((r3 * 4) - (AndroidUtilities.isTablet() ? 5 : 1)) + (dvVar2.n[0] * i12);
                     }
                     if (iArr[0] - i11 < AndroidUtilities.dp(5.0f)) {
-                        i11 = org.telegram.messenger.lk.D(5.0f, iArr[0] - i11, i11);
+                        i11 = org.telegram.messenger.kk.D(5.0f, iArr[0] - i11, i11);
                     } else if ((iArr[0] - i11) + dp > AndroidUtilities.displaySize.x - AndroidUtilities.dp(5.0f)) {
                         i11 += ((iArr[0] - i11) + dp) - (AndroidUtilities.displaySize.x - AndroidUtilities.dp(5.0f));
                     }
@@ -176,7 +176,7 @@ public final /* synthetic */ class mw implements ni.c, yl0, en0, ne.d {
                             bzVar.a(arrayList2.get((i10 - tzVar.t0) + 1), true);
                         }
                     }
-                    tzVar.F(2);
+                    tzVar.E(2);
                     break;
                 }
                 break;
@@ -203,8 +203,8 @@ public final /* synthetic */ class mw implements ni.c, yl0, en0, ne.d {
                                         }
                                         tzVar2.I0 = false;
                                         axVar.B0();
-                                        tzVar2.H(kzVar.E(arrayList3.get(i14)), 0);
-                                        tzVar2.F(0);
+                                        tzVar2.G(kzVar.E(arrayList3.get(i14)), 0);
+                                        tzVar2.E(0);
                                         tzVar2.p(0);
                                         int i15 = tzVar2.G1;
                                         if (i15 <= 0 && (i15 = tzVar2.F1) <= 0) {
@@ -217,30 +217,30 @@ public final /* synthetic */ class mw implements ni.c, yl0, en0, ne.d {
                                     }
                                 } else {
                                     axVar.B0();
-                                    tzVar2.H(kzVar.E("premium"), 0);
-                                    tzVar2.F(0);
+                                    tzVar2.G(kzVar.E("premium"), 0);
+                                    tzVar2.E(0);
                                     int i16 = tzVar2.I1;
                                     exVar.k(i16, i16 > 0 ? i16 : tzVar2.E1);
                                     break;
                                 }
                             } else {
                                 axVar.B0();
-                                tzVar2.H(kzVar.E("fav"), 0);
-                                tzVar2.F(0);
+                                tzVar2.G(kzVar.E("fav"), 0);
+                                tzVar2.E(0);
                                 int i17 = tzVar2.G1;
                                 exVar.k(i17, i17 > 0 ? i17 : tzVar2.E1);
                                 break;
                             }
                         } else {
                             axVar.B0();
-                            tzVar2.H(kzVar.E("recent"), 0);
-                            tzVar2.F(0);
+                            tzVar2.G(kzVar.E("recent"), 0);
+                            tzVar2.E(0);
                             int i18 = tzVar2.F1;
                             exVar.k(i18, i18 > 0 ? i18 : tzVar2.E1);
                             break;
                         }
                     } else {
-                        tzVar2.t1.o(new b61(tzVar2.getContext(), new mx(tzVar2), tzVar2.x1, tzVar2.y1, tzVar2.z1, null, tzVar2.Z1));
+                        tzVar2.t1.o(new c61(tzVar2.getContext(), new mx(tzVar2), tzVar2.x1, tzVar2.y1, tzVar2.z1, null, tzVar2.Z1));
                         break;
                     }
                 }
@@ -265,11 +265,11 @@ public final /* synthetic */ class mw implements ni.c, yl0, en0, ne.d {
     }
 
     @Override // ne.d
-    public void u(int i10, float f7, float f10, ne.e eVar) {
+    public void r(int i10, float f7, float f10, ne.e eVar) {
         this.b.R();
     }
 
     @Override // ne.d
-    public /* synthetic */ void E(float f7, int i10) {
+    public /* synthetic */ void H(float f7, int i10) {
     }
 }

@@ -25,7 +25,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class r5 extends Drawable {
     public static SparseArray q;
@@ -33,7 +33,7 @@ public class r5 extends Drawable {
     public static boolean s;
     public static boolean t;
     public static boolean u;
-    public static final ah.j v = new ah.j(27);
+    public static final ah.j v = new ah.j(28);
     public static HashMap w;
     public boolean a;
     public ArrayList b;
@@ -45,7 +45,7 @@ public class r5 extends Drawable {
     public int h;
     public String i;
     public boolean j;
-    public ci.f3 k;
+    public ci.g3 k;
     public boolean m;
     public ColorFilter p;
     public float l = 1.0f;
@@ -142,7 +142,7 @@ public class r5 extends Drawable {
 
     public static void s(int i10, boolean z10) {
         LongSparseArray longSparseArray;
-        ci.f3 f3Var;
+        ci.g3 g3Var;
         boolean z11 = !z10;
         if (u == z11) {
             return;
@@ -153,29 +153,29 @@ public class r5 extends Drawable {
         }
         for (int i11 = 0; i11 < longSparseArray.size(); i11++) {
             r5 r5Var = (r5) longSparseArray.valueAt(i11);
-            if (r5Var != null && (f3Var = r5Var.k) != null) {
+            if (r5Var != null && (g3Var = r5Var.k) != null) {
                 if (z10) {
-                    f3Var.setAllowStartLottieAnimation(true);
-                    f3Var.setAllowStartAnimation(true);
-                    f3Var.setAutoRepeat(1);
-                    e6 animation = f3Var.getAnimation();
+                    g3Var.setAllowStartLottieAnimation(true);
+                    g3Var.setAllowStartAnimation(true);
+                    g3Var.setAutoRepeat(1);
+                    e6 animation = g3Var.getAnimation();
                     if (animation != null) {
-                        boolean z12 = f3Var.useSharedAnimationQueue;
+                        boolean z12 = g3Var.useSharedAnimationQueue;
                         if (!animation.n0) {
                             animation.v0 = z12;
                         }
                         animation.start();
                     } else {
-                        uj0 lottieAnimation = f3Var.getLottieAnimation();
+                        uj0 lottieAnimation = g3Var.getLottieAnimation();
                         if (lottieAnimation != null) {
                             lottieAnimation.start();
                         }
                     }
                 } else {
-                    f3Var.setAllowStartAnimation(false);
-                    f3Var.setAllowStartLottieAnimation(false);
-                    f3Var.setAutoRepeat(0);
-                    f3Var.stopAnimation();
+                    g3Var.setAllowStartAnimation(false);
+                    g3Var.setAllowStartLottieAnimation(false);
+                    g3Var.setAutoRepeat(0);
+                    g3Var.stopAnimation();
                 }
             }
         }
@@ -206,7 +206,7 @@ public class r5 extends Drawable {
     }
 
     public final void a(View view) {
-        if (view instanceof org.telegram.ui.b51) {
+        if (view instanceof org.telegram.ui.z41) {
             throw new RuntimeException();
         }
         this.m = false;
@@ -264,20 +264,20 @@ public class r5 extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        ci.f3 f3Var = this.k;
-        if (f3Var == null) {
+        ci.g3 g3Var = this.k;
+        if (g3Var == null) {
             return;
         }
-        f3Var.setImageCoords(getBounds());
+        g3Var.setImageCoords(getBounds());
         this.k.setAlpha(this.l);
         this.k.draw(canvas);
     }
 
     public final void e() {
         if (this.k == null) {
-            ci.f3 f3Var = new ci.f3(this, 4);
-            this.k = f3Var;
-            f3Var.setCurrentAccount(this.h);
+            ci.g3 g3Var = new ci.g3(this, 4);
+            this.k = g3Var;
+            g3Var.setCurrentAccount(this.h);
             this.k.setAllowLoadingOnAttachedOnly(true);
             if (this.g == 12) {
                 this.k.ignoreNotifications = true;
@@ -405,39 +405,39 @@ public class r5 extends Drawable {
                         if (str2 == null) {
                             this.k.setImageBitmap(new e6(new File(str2), true, 0L, 0, null, null, null, 0L, this.h, true, 512, 512, null, 0, true));
                         } else if (i12 == 8) {
-                            ci.f3 f3Var = this.k;
+                            ci.g3 g3Var = this.k;
                             TLRPC.Document document2 = this.e;
-                            f3Var.setImage(null, null, imageLocation, str, null, null, drawable, document2.size, null, document2, 1);
+                            g3Var.setImage(null, null, imageLocation, str, null, null, drawable, document2.size, null, document2, 1);
                         } else {
                             ImageLocation imageLocation3 = imageLocation;
                             String str4 = str;
                             if (z11 || !(s || i12 == 14)) {
                                 ImageLocation forDocument2 = i12 == 16 ? ImageLocation.getForDocument(closestPhotoSizeWithSize, this.e) : imageLocation2;
                                 if ("video/webm".equals(this.e.mime_type)) {
-                                    ci.f3 f3Var2 = this.k;
+                                    ci.g3 g3Var2 = this.k;
                                     ImageLocation forDocument3 = ImageLocation.getForDocument(closestPhotoSizeWithSize, this.e);
                                     String str5 = this.d + "_" + this.d;
                                     TLRPC.Document document3 = this.e;
-                                    f3Var2.setImage(null, null, forDocument3, str5, forDocument2, null, drawable, document3.size, null, document3, 1);
+                                    g3Var2.setImage(null, null, forDocument3, str5, forDocument2, null, drawable, document3.size, null, document3, 1);
                                 } else if (MessageObject.isAnimatedStickerDocument(this.e, true)) {
-                                    ci.f3 f3Var3 = this.k;
+                                    ci.g3 g3Var3 = this.k;
                                     String u11 = r4.c.u(str4, "_firstframe");
                                     TLRPC.Document document4 = this.e;
-                                    f3Var3.setImage(imageLocation3, u11, forDocument2, null, drawable, document4.size, null, document4, 1);
+                                    g3Var3.setImage(imageLocation3, u11, forDocument2, null, drawable, document4.size, null, document4, 1);
                                 } else {
-                                    ci.f3 f3Var4 = this.k;
+                                    ci.g3 g3Var4 = this.k;
                                     ImageLocation forDocument4 = ImageLocation.getForDocument(closestPhotoSizeWithSize, this.e);
                                     String str6 = this.d + "_" + this.d;
                                     TLRPC.Document document5 = this.e;
-                                    f3Var4.setImage(forDocument4, str6, forDocument2, null, drawable, document5.size, null, document5, 1);
+                                    g3Var4.setImage(forDocument4, str6, forDocument2, null, drawable, document5.size, null, document5, 1);
                                 }
                             } else {
                                 ImageLocation forDocument5 = i12 == 17 ? ImageLocation.getForDocument(closestPhotoSizeWithSize, this.e) : imageLocation2;
-                                ci.f3 f3Var5 = this.k;
+                                ci.g3 g3Var5 = this.k;
                                 ImageLocation forDocument6 = ImageLocation.getForDocument(closestPhotoSizeWithSize, this.e);
                                 String str7 = this.d + "_" + this.d;
                                 TLRPC.Document document6 = this.e;
-                                f3Var5.setImage(imageLocation3, str4, forDocument6, str7, forDocument5, null, drawable, document6.size, null, document6, 1);
+                                g3Var5.setImage(imageLocation3, str4, forDocument6, str7, forDocument5, null, drawable, document6.size, null, document6, 1);
                             }
                         }
                         w(this.k);
@@ -560,12 +560,12 @@ public class r5 extends Drawable {
     }
 
     public final void q(long j10) {
-        ci.f3 f3Var = this.k;
-        if (f3Var != null) {
+        ci.g3 g3Var = this.k;
+        if (g3Var != null) {
             if (this.g == 8) {
                 j10 = 0;
             }
-            f3Var.setCurrentTime(j10);
+            g3Var.setCurrentTime(j10);
         }
     }
 
@@ -583,9 +583,9 @@ public class r5 extends Drawable {
     public final void setAlpha(int i10) {
         float f7 = i10 / 255.0f;
         this.l = f7;
-        ci.f3 f3Var = this.k;
-        if (f3Var != null) {
-            f3Var.setAlpha(f7);
+        ci.g3 g3Var = this.k;
+        if (g3Var != null) {
+            g3Var.setAlpha(f7);
         }
     }
 
@@ -599,12 +599,12 @@ public class r5 extends Drawable {
     }
 
     public final void t(long j10) {
-        ci.f3 f3Var = this.k;
-        if (f3Var != null) {
+        ci.g3 g3Var = this.k;
+        if (g3Var != null) {
             if (this.g == 8) {
                 j10 = 0;
             }
-            if (f3Var.getLottieAnimation() != null) {
+            if (g3Var.getLottieAnimation() != null) {
                 this.k.getLottieAnimation().V(j10);
             }
             if (this.k.getAnimation() != null) {

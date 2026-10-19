@@ -15,7 +15,7 @@ import java.util.LinkedList;
 import n6.q;
 import v7.a8;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class j {
     public androidx.biometric.e a;
@@ -23,8 +23,8 @@ public final class j {
     public LinkedList c;
     public final d e;
     public final Context f;
-    public le.b g;
-    public final le.b d = new le.b(this, 26);
+    public te.b g;
+    public final te.b d = new te.b(this, 5);
     public final ArrayList h = new ArrayList();
 
     public j(d dVar, Context context) {
@@ -92,13 +92,13 @@ public final class j {
                 if (W0 == null) {
                     return;
                 }
-                this.g.b0(new androidx.biometric.e(this.e, W0));
+                this.g.d(new androidx.biometric.e(this.e, W0));
                 int size = arrayList.size();
                 int i10 = 0;
                 while (i10 < size) {
                     Object obj = arrayList.get(i10);
                     i10++;
-                    this.a.p((f) obj);
+                    this.a.n((f) obj);
                 }
                 arrayList.clear();
             } catch (RemoteException e) {

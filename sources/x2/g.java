@@ -3,7 +3,7 @@ package x2;
 import b2.w;
 import e9.b0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class g implements Comparable {
     public final boolean a;
@@ -11,7 +11,7 @@ public final class g implements Comparable {
 
     public g(w wVar, int i10) {
         this.a = (wVar.e & 1) != 0;
-        this.b = i2.d.e(i10, false);
+        this.b = i2.e.e(i10, false);
     }
 
     @Override // java.lang.Comparable

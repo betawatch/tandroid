@@ -1,19 +1,21 @@
 package i2;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class l0 {
-    public final ArrayList a;
-    public final u2.j1 b;
-    public final int c;
-    public final long d;
+    public final /* synthetic */ r0 a;
 
-    public l0(ArrayList arrayList, u2.j1 j1Var, int i10, long j10) {
-        this.a = arrayList;
-        this.b = j1Var;
-        this.c = i10;
-        this.d = j10;
+    public l0(r0 r0Var) {
+        this.a = r0Var;
+    }
+
+    public final void a() {
+        r0 r0Var = this.a;
+        if (r0Var.T) {
+            r0Var.S.getClass();
+        } else if (!r0Var.j0) {
+            return;
+        }
+        r0Var.n.f(2);
     }
 }

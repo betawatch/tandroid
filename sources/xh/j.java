@@ -34,10 +34,10 @@ import org.telegram.ui.Components.ki0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.c9;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 import tg.p;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class j extends Dialog {
     public final /* synthetic */ k E;
@@ -240,7 +240,7 @@ public final class j extends Dialog {
             n2Var.dismissCurrentDialog();
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", jVar.r.user_id);
-            n2Var.presentFragment(new sn(bundle));
+            n2Var.presentFragment(new qn(bundle));
         }
     }
 

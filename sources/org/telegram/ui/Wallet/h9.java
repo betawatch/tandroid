@@ -15,15 +15,15 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.bi;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.vf1;
+import org.telegram.ui.tf1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class h9 extends FrameLayout {
     public static final bs R = bs.h;
@@ -90,7 +90,7 @@ public final class h9 extends FrameLayout {
         TextView textView = new TextView(context);
         this.e = textView;
         int i10 = org.telegram.ui.ActionBar.h6.z6;
-        lk.o(i10, d6Var, textView, 1, 44.0f);
+        kk.o(i10, d6Var, textView, 1, 44.0f);
         textView.setTypeface(AndroidUtilities.getTypeface("fonts/gram.ttf"));
         textView.setGravity(16);
         textView.setIncludeFontPadding(false);
@@ -129,7 +129,7 @@ public final class h9 extends FrameLayout {
         t3Var.c.m(0.35f, 420L, 3.5f, bs.h);
         t3Var.setScaleProperty(0.2f);
         t3Var.setAllowCancel(true);
-        t3Var.getDrawable().c0 = new n(t3Var, 12);
+        t3Var.getDrawable().b0 = new n(t3Var, 13);
         t3Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
         t3Var.setTextSize(AndroidUtilities.dp(28.0f));
         t3Var.setTypeface(AndroidUtilities.getTypeface("fonts/gram.ttf"));
@@ -216,7 +216,7 @@ public final class h9 extends FrameLayout {
         ofFloat.setDuration(320L);
         this.h.setInterpolator(new LinearInterpolator());
         this.h.addUpdateListener(new c9(this, alpha, f7, alpha2, f10, i10, 0));
-        this.h.addListener(new vf1(this, 9));
+        this.h.addListener(new tf1(this, 9));
         this.h.start();
     }
 
@@ -353,7 +353,7 @@ public final class h9 extends FrameLayout {
         FrameLayout frameLayout = this.d;
         m6 m6Var = this.c;
         frameLayout.setTranslationX((((width - frameLayout.getLeft()) - m6Var.getLeft()) - (m6Var.getWidth() / 2.0f)) * f11);
-        frameLayout.setTranslationY(lk.z(m6Var.getHeight(), 2.0f, (((getHeight() / 2.0f) - linearLayout.getTop()) - frameLayout.getTop()) - m6Var.getTop(), f11) - (AndroidUtilities.dp(36.0f) * ((float) Math.sin(f7 * 3.141592653589793d))));
+        frameLayout.setTranslationY(kk.z(m6Var.getHeight(), 2.0f, (((getHeight() / 2.0f) - linearLayout.getTop()) - frameLayout.getTop()) - m6Var.getTop(), f11) - (AndroidUtilities.dp(36.0f) * ((float) Math.sin(f7 * 3.141592653589793d))));
         org.telegram.ui.Cells.t3 t3Var = this.f;
         int visibility = t3Var.getVisibility();
         d9 d9Var = this.b;
@@ -571,7 +571,7 @@ public final class h9 extends FrameLayout {
                     this.G = ofFloat;
                     ofFloat.setDuration(320L);
                     this.G.setInterpolator(new LinearInterpolator());
-                    this.G.addUpdateListener(new v2(this, 10));
+                    this.G.addUpdateListener(new b3(this, 9));
                     this.G.start();
                 }
                 c();

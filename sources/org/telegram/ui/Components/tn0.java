@@ -22,22 +22,22 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class tn0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public int E;
     public final Activity F;
     public final org.telegram.ui.ActionBar.n2 G;
     public boolean H;
-    public org.telegram.ui.f10 I;
-    public final org.telegram.ui.y00 J;
+    public org.telegram.ui.d10 I;
+    public final org.telegram.ui.w00 J;
     public String K;
     public String L;
     public mn0 M;
     public final nl0 N;
     public boolean O;
     public boolean P;
-    public final rx0 a;
+    public final sx0 a;
     public final ai.u1 b;
     public final sn0 c;
     public final int d;
@@ -67,7 +67,7 @@ public final class tn0 extends FrameLayout implements NotificationCenter.Notific
         this.x = -1;
         this.y = -1;
         this.E = -1;
-        this.J = new org.telegram.ui.y00(0, 0L);
+        this.J = new org.telegram.ui.w00(0, 0L);
         this.G = n2Var;
         this.F = n2Var.getParentActivity();
         this.d = i10;
@@ -91,10 +91,10 @@ public final class tn0 extends FrameLayout implements NotificationCenter.Notific
         b10Var.setUseHeaderOffset(true);
         b10Var.setViewType(3);
         b10Var.setVisibility(8);
-        rx0 rx0Var = new rx0(getContext(), b10Var, 1, null);
-        this.a = rx0Var;
-        addView(rx0Var);
-        u1Var.setEmptyView(rx0Var);
+        sx0 sx0Var = new sx0(getContext(), b10Var, 1, null);
+        this.a = sx0Var;
+        addView(sx0Var);
+        u1Var.setEmptyView(sx0Var);
         FileLoader.getInstance(i10).getCurrentLoadingFiles(arrayList);
     }
 
@@ -156,7 +156,7 @@ public final class tn0 extends FrameLayout implements NotificationCenter.Notific
             return;
         }
         SpannableString spannableString = new SpannableString(Double.toString(Math.round((z10 ? MessagesController.getInstance(i10).uploadPremiumSpeedupUpload : MessagesController.getInstance(i10).uploadPremiumSpeedupDownload) * 10.0f) / 10.0d).replaceAll("\\.0$", ""));
-        spannableString.setSpan(new c61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
+        spannableString.setSpan(new d61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
         if (n2Var.hasStoryViewer()) {
             return;
         }
@@ -266,10 +266,10 @@ public final class tn0 extends FrameLayout implements NotificationCenter.Notific
                     i7Var.f(true);
                     int id2 = i7Var.getMessage().getId();
                     long dialogId = i7Var.getMessage().getDialogId();
-                    org.telegram.ui.y00 y00Var = this.J;
-                    y00Var.a = dialogId;
-                    y00Var.b = id2;
-                    i7Var.b(this.I.b(y00Var), true);
+                    org.telegram.ui.w00 w00Var = this.J;
+                    w00Var.a = dialogId;
+                    w00Var.b = id2;
+                    i7Var.b(this.I.b(w00Var), true);
                 }
             }
             i17++;
@@ -374,7 +374,7 @@ public final class tn0 extends FrameLayout implements NotificationCenter.Notific
         super.requestLayout();
     }
 
-    public void setUiCallback(org.telegram.ui.f10 f10Var) {
-        this.I = f10Var;
+    public void setUiCallback(org.telegram.ui.d10 d10Var) {
+        this.I = d10Var;
     }
 }

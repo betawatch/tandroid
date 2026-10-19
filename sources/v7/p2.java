@@ -1,19 +1,19 @@
 package v7;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class p2 implements ja.d {
     public static final p2 a = new p2();
-    public static final ja.c b = new ja.c("durationMs", i2.d.o(r4.c.k(h.class, new e(1))));
-    public static final ja.c c = new ja.c("errorCode", i2.d.o(r4.c.k(h.class, new e(2))));
-    public static final ja.c d = new ja.c("isColdCall", i2.d.o(r4.c.k(h.class, new e(3))));
-    public static final ja.c e = new ja.c("autoManageModelOnBackground", i2.d.o(r4.c.k(h.class, new e(4))));
-    public static final ja.c f = new ja.c("autoManageModelOnLowMemory", i2.d.o(r4.c.k(h.class, new e(5))));
-    public static final ja.c g = new ja.c("isNnApiEnabled", i2.d.o(r4.c.k(h.class, new e(6))));
-    public static final ja.c h = new ja.c("eventsCount", i2.d.o(r4.c.k(h.class, new e(7))));
-    public static final ja.c i = new ja.c("otherErrors", i2.d.o(r4.c.k(h.class, new e(8))));
-    public static final ja.c j = new ja.c("remoteConfigValueForAcceleration", i2.d.o(r4.c.k(h.class, new e(9))));
-    public static final ja.c k = new ja.c("isAccelerated", i2.d.o(r4.c.k(h.class, new e(10))));
+    public static final ja.c b = new ja.c("durationMs", i2.e.o(r4.c.k(h.class, new e(1))));
+    public static final ja.c c = new ja.c("errorCode", i2.e.o(r4.c.k(h.class, new e(2))));
+    public static final ja.c d = new ja.c("isColdCall", i2.e.o(r4.c.k(h.class, new e(3))));
+    public static final ja.c e = new ja.c("autoManageModelOnBackground", i2.e.o(r4.c.k(h.class, new e(4))));
+    public static final ja.c f = new ja.c("autoManageModelOnLowMemory", i2.e.o(r4.c.k(h.class, new e(5))));
+    public static final ja.c g = new ja.c("isNnApiEnabled", i2.e.o(r4.c.k(h.class, new e(6))));
+    public static final ja.c h = new ja.c("eventsCount", i2.e.o(r4.c.k(h.class, new e(7))));
+    public static final ja.c i = new ja.c("otherErrors", i2.e.o(r4.c.k(h.class, new e(8))));
+    public static final ja.c j = new ja.c("remoteConfigValueForAcceleration", i2.e.o(r4.c.k(h.class, new e(9))));
+    public static final ja.c k = new ja.c("isAccelerated", i2.e.o(r4.c.k(h.class, new e(10))));
 
     @Override // ja.a
     public final void a(Object obj, Object obj2) {

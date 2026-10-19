@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import v7.t8;
-import w7.q9;
+import w7.p9;
 
 /* loaded from: classes.dex */
 public abstract class f extends t8 {
@@ -69,7 +69,7 @@ public abstract class f extends t8 {
             if (i10 > 1) {
                 sb2.append((CharSequence) ",");
             }
-            q9.a(sb2, obj, null);
+            p9.a(sb2, obj, null);
         }
         sb2.append((CharSequence) "]");
         return sb2.toString();

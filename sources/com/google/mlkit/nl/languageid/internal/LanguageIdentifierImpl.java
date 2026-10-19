@@ -15,8 +15,8 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
+import k2.w0;
 import k6.c;
-import l2.f;
 import n6.i;
 import n6.l;
 import n6.o;
@@ -35,7 +35,7 @@ import v7.y8;
 import v7.z8;
 import vb.e;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class LanguageIdentifierImpl implements b {
     public final y8 a;
@@ -54,9 +54,9 @@ public class LanguageIdentifierImpl implements b {
     }
 
     public static final f6 k() {
-        f fVar = new f(23);
-        fVar.b = Float.valueOf(-1.0f);
-        return new f6(fVar);
+        w0 w0Var = new w0(26);
+        w0Var.b = Float.valueOf(-1.0f);
+        return new f6(w0Var);
     }
 
     @Override // com.google.android.gms.common.api.n
@@ -99,10 +99,10 @@ public class LanguageIdentifierImpl implements b {
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 try {
                     String e = eVar2.e(str2.substring(0, Math.min(str2.length(), 200)));
-                    le.b bVar = new le.b(24, false);
-                    com.google.android.gms.internal.clearcut.e eVar3 = new com.google.android.gms.internal.clearcut.e();
-                    eVar3.b = e;
-                    bVar.b = new c7(eVar3);
+                    te.b bVar = new te.b(3, false);
+                    d9.l lVar = new d9.l();
+                    lVar.a = e;
+                    bVar.b = new c7(lVar);
                     languageIdentifierImpl.j(elapsedRealtime, z11, new e7(bVar), i6.b);
                     return e;
                 } catch (RuntimeException e7) {

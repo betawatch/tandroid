@@ -2,18 +2,11 @@ package z3;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class j extends h2.j implements d {
     public d a;
     public long b;
-
-    @Override // z3.d
-    public final int c(long j10) {
-        d dVar = this.a;
-        dVar.getClass();
-        return dVar.c(j10 - this.b);
-    }
 
     @Override // h2.j, h2.a
     public final void clear() {
@@ -22,23 +15,30 @@ public abstract class j extends h2.j implements d {
     }
 
     @Override // z3.d
-    public final long d(int i10) {
+    public final int d(long j10) {
         d dVar = this.a;
         dVar.getClass();
-        return dVar.d(i10) + this.b;
+        return dVar.d(j10 - this.b);
     }
 
     @Override // z3.d
-    public final List e(long j10) {
+    public final long k(int i10) {
         d dVar = this.a;
         dVar.getClass();
-        return dVar.e(j10 - this.b);
+        return dVar.k(i10) + this.b;
     }
 
     @Override // z3.d
-    public final int h() {
+    public final List s(long j10) {
         d dVar = this.a;
         dVar.getClass();
-        return dVar.h();
+        return dVar.s(j10 - this.b);
+    }
+
+    @Override // z3.d
+    public final int u() {
+        d dVar = this.a;
+        dVar.getClass();
+        return dVar.u();
     }
 }

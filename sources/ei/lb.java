@@ -15,18 +15,18 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.el0;
-import org.telegram.ui.Components.jw0;
+import org.telegram.ui.Components.kw0;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class lb extends r {
     public final Path R1;
     public final /* synthetic */ vb S1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lb(vb vbVar, Activity activity, FrameLayout frameLayout, jw0 jw0Var, FrameLayout frameLayout2, ci.b bVar, org.telegram.ui.Components.ja jaVar) {
-        super(activity, frameLayout, jw0Var, frameLayout2, bVar, jaVar);
+    public lb(vb vbVar, Activity activity, FrameLayout frameLayout, kw0 kw0Var, FrameLayout frameLayout2, ci.b bVar, org.telegram.ui.Components.ja jaVar) {
+        super(activity, frameLayout, kw0Var, frameLayout2, bVar, jaVar);
         this.S1 = vbVar;
         this.R1 = new Path();
     }
@@ -39,7 +39,7 @@ public final class lb extends r {
             return false;
         }
         int i11 = MessagesController.getInstance(this.U).storyCaptionLengthLimitPremium;
-        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("CaptionPremiumSubtitle", Math.round(i11 / MessagesController.getInstance(this.U).storyCaptionLengthLimitDefault), i2.d.j(i11, "")));
+        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("CaptionPremiumSubtitle", Math.round(i11 / MessagesController.getInstance(this.U).storyCaptionLengthLimitDefault), i2.e.j(i11, "")));
         int indexOf = replaceTags.toString().indexOf("__");
         if (indexOf >= 0) {
             replaceTags.replace(indexOf, indexOf + 2, (CharSequence) "");
@@ -138,9 +138,9 @@ public final class lb extends r {
         vb vbVar = this.S1;
         k6 k6Var = vbVar.b1;
         if (!vbVar.N1 && !z10) {
-            ci.h7 storiesController = MessagesController.getInstance(this.U).getStoriesController();
+            ci.i7 storiesController = MessagesController.getInstance(this.U).getStoriesController();
             int A = vbVar.A();
-            ci.b7 o10 = storiesController.o();
+            ci.c7 o10 = storiesController.o();
             if (o10 == null || !o10.a(storiesController.a, A) || ((a8Var = vbVar.K1) != null && a8Var.g)) {
                 z11 = true;
                 k6Var.setShareEnabled(z11);

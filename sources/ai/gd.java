@@ -20,30 +20,30 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.x90;
-import org.telegram.ui.f70;
+import org.telegram.ui.d70;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class gd extends e61 {
+public final class gd extends f61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        e61.setup(new gd());
+        f61.setup(new gd());
     }
 
     /* JADX WARN: Removed duplicated region for block: B:59:0x074d  */
     /* JADX WARN: Removed duplicated region for block: B:61:0x0750  */
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
+    public final void bindView(View view, g61 g61Var, boolean z10, t61 t61Var, b71 b71Var) {
         SpannableString spannableString;
         int dp;
         int i10;
@@ -53,8 +53,8 @@ public final class gd extends e61 {
         long j10;
         boolean z13;
         hd hdVar = (hd) view;
-        TL_stars.StarsTransaction starsTransaction = (TL_stars.StarsTransaction) f61Var.G;
-        boolean z14 = f61Var.q;
+        TL_stars.StarsTransaction starsTransaction = (TL_stars.StarsTransaction) g61Var.G;
+        boolean z14 = g61Var.q;
         org.telegram.ui.Components.w9 w9Var = hdVar.d;
         SpannableString spannableString2 = hdVar.v;
         SpannableString spannableString3 = hdVar.w;
@@ -101,11 +101,11 @@ public final class gd extends e61 {
         w9Var.setVisibility(8);
         w9Var2.setRoundRadius(AndroidUtilities.dp(46.0f));
         if (starsTransaction.stargift_upgrade && starsTransaction.stargift != null) {
-            w9Var2.setImageDrawable(new u6(w9Var2, starsTransaction.stargift, 46, 0.25f));
+            w9Var2.setImageDrawable(new v6(w9Var2, starsTransaction.stargift, 46, 0.25f));
             textView3.setText(LocaleController.getString(R.string.Gift2TransactionUpgraded));
             x90Var.setVisibility(8);
         } else if (starsTransaction.stargift_drop_original_details && starsTransaction.stargift != null) {
-            w9Var2.setImageDrawable(new u6(w9Var2, starsTransaction.stargift, 46, 0.25f));
+            w9Var2.setImageDrawable(new v6(w9Var2, starsTransaction.stargift, 46, 0.25f));
             textView3.setText(LocaleController.getString(R.string.Gift2TransactionRemovedDescription));
             x90Var.setVisibility(8);
         } else {
@@ -129,12 +129,12 @@ public final class gd extends e61 {
                         str = chat == null ? "" : chat.title;
                     }
                     if (starsTransaction.stargift != null) {
-                        f70 f70Var = new f70(x90Var, 16.0f, i11);
-                        f70Var.a(4.0f);
-                        f70Var.f = false;
+                        d70 d70Var = new d70(x90Var, 16.0f, i11);
+                        d70Var.a(4.0f);
+                        d70Var.f = false;
                         SpannableString spannableString4 = new SpannableString("x");
-                        spannableString4.setSpan(f70Var, 0, 1, 33);
-                        md.b1(f70Var.b, starsTransaction.stargift, 16);
+                        spannableString4.setSpan(d70Var, 0, 1, 33);
+                        md.b1(d70Var.b, starsTransaction.stargift, 16);
                         textView3.setText(str);
                         if (starsTransaction.offer) {
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x ");
@@ -221,12 +221,12 @@ public final class gd extends e61 {
                     } else if (starsTransaction.extended_media.isEmpty()) {
                         z11 = z15;
                         if (starsTransaction.photo != null) {
-                            f70 f70Var2 = new f70(x90Var, 14.0f, i11);
-                            f70Var2.a(4.0f);
-                            f70Var2.f = false;
+                            d70 d70Var2 = new d70(x90Var, 14.0f, i11);
+                            d70Var2.a(4.0f);
+                            d70Var2.f = false;
                             SpannableString spannableString5 = new SpannableString("x");
-                            spannableString5.setSpan(f70Var2, 0, 1, 33);
-                            f70Var2.b.setImage(ImageLocation.getForWebFile(WebFile.createWithWebDocument(starsTransaction.photo)), "14_14", null, null, num, 0);
+                            spannableString5.setSpan(d70Var2, 0, 1, 33);
+                            d70Var2.b.setImage(ImageLocation.getForWebFile(WebFile.createWithWebDocument(starsTransaction.photo)), "14_14", null, null, num, 0);
                             textView3.setText(str);
                             x90Var.setVisibility(z12 ? 8 : 0);
                             String str3 = starsTransaction.title;
@@ -348,7 +348,7 @@ public final class gd extends e61 {
         hdVar.setWillNotDraw(!z13);
     }
 
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     public final View createView(Context context, im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
         hd hdVar = (hd) getCached();
         return hdVar != null ? hdVar : new hd(context, i10, d6Var);

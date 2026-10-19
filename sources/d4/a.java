@@ -13,6 +13,7 @@ import android.text.style.UnderlineSpan;
 import e2.j;
 import e2.m0;
 import e2.x;
+import i2.e;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ import v7.u6;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class a implements m {
     public static final Pattern h = Pattern.compile("(?:(\\d+):)?(\\d+):(\\d+)[:.](\\d+)");
@@ -285,7 +286,7 @@ public final class a implements m {
                                         int length2 = split3.length;
                                         String str = m0.a;
                                         Locale locale = Locale.US;
-                                        StringBuilder m10 = i2.d.m("Skipping malformed 'Style:' line (expected ", i25, " values, found ", length2, "): '");
+                                        StringBuilder m10 = e.m("Skipping malformed 'Style:' line (expected ", i25, " values, found ", length2, "): '");
                                         m10.append(n12);
                                         m10.append("'");
                                         e2.a.l("SsaStyle", m10.toString());
@@ -362,7 +363,7 @@ public final class a implements m {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void g(byte[] bArr, int i10, int i11, l lVar, j jVar) {
+    public final void f(byte[] bArr, int i10, int i11, l lVar, j jVar) {
         Charset charset;
         x xVar;
         b4.b bVar;

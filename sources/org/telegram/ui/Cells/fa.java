@@ -17,9 +17,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.wc0;
-import org.telegram.ui.vn;
+import org.telegram.ui.tn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class fa extends LinearLayout {
     public org.telegram.ui.Components.u9 a;
@@ -76,8 +76,8 @@ public class fa extends LinearLayout {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         Drawable drawable = this.w;
-        if (drawable instanceof vn) {
-            ((vn) drawable).f(this);
+        if (drawable instanceof tn) {
+            ((tn) drawable).f(this);
         }
     }
 
@@ -95,8 +95,8 @@ public class fa extends LinearLayout {
             this.b = null;
         }
         Drawable drawable = this.w;
-        if (drawable instanceof vn) {
-            ((vn) drawable).g(this);
+        if (drawable instanceof tn) {
+            ((tn) drawable).g(this);
         }
     }
 
@@ -207,8 +207,8 @@ public class fa extends LinearLayout {
         if (drawable != null) {
             drawable.setCallback(this);
         }
-        if ((this.w instanceof vn) && isAttachedToWindow()) {
-            ((vn) this.w).f(this);
+        if ((this.w instanceof tn) && isAttachedToWindow()) {
+            ((tn) this.w).f(this);
         }
         invalidate();
     }

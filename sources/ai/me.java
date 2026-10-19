@@ -35,13 +35,12 @@ import org.telegram.ui.Components.u70;
 import org.telegram.ui.Components.v30;
 import org.telegram.ui.Components.yu;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.ln;
-import org.telegram.ui.np;
-import org.telegram.ui.sn;
-import org.telegram.ui.vi;
-import org.telegram.ui.zl;
+import org.telegram.ui.jn;
+import org.telegram.ui.lp;
+import org.telegram.ui.qn;
+import org.telegram.ui.xl;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class me extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -78,9 +77,9 @@ public final class me extends AnimatorListenerAdapter {
                     actionBarLayout.i0 = null;
                     actionBarLayout.g0 = null;
                     actionBarLayout.k0 = null;
-                    ln lnVar = ((org.telegram.ui.ActionBar.c5) this.b).j;
-                    if (lnVar != null) {
-                        lnVar.run();
+                    jn jnVar = ((org.telegram.ui.ActionBar.c5) this.b).j;
+                    if (jnVar != null) {
+                        jnVar.run();
                         break;
                     }
                 }
@@ -172,7 +171,7 @@ public final class me extends AnimatorListenerAdapter {
                 return;
             case 5:
                 ei.p pVar = (ei.p) obj2;
-                ((rg.b2) obj).setDraw(true);
+                ((rg.c2) obj).setDraw(true);
                 if (pVar.getParent() instanceof ViewGroup) {
                     ((ViewGroup) pVar.getParent()).removeView(pVar);
                     return;
@@ -269,9 +268,9 @@ public final class me extends AnimatorListenerAdapter {
                     actionBarLayout.i0 = null;
                     actionBarLayout.g0 = null;
                     actionBarLayout.k0 = null;
-                    ln lnVar = ((org.telegram.ui.ActionBar.c5) obj).j;
-                    if (lnVar != null) {
-                        lnVar.run();
+                    jn jnVar = ((org.telegram.ui.ActionBar.c5) obj).j;
+                    if (jnVar != null) {
+                        jnVar.run();
                         return;
                     }
                     return;
@@ -283,20 +282,20 @@ public final class me extends AnimatorListenerAdapter {
                 return;
             case 14:
                 View view3 = (View) obj;
-                sn snVar = (sn) obj2;
-                snVar.A9 = 0.0f;
-                if (animator == snVar.gb) {
+                qn qnVar = (qn) obj2;
+                qnVar.A9 = 0.0f;
+                if (animator == qnVar.gb) {
                     ViewGroup viewGroup = (ViewGroup) view3.getParent();
                     if (viewGroup != null) {
                         viewGroup.removeView(view3);
                     }
-                    snVar.Z2 = null;
-                    snVar.gb = null;
+                    qnVar.Z2 = null;
+                    qnVar.gb = null;
                     return;
                 }
                 return;
             case 15:
-                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) ((zl) obj2).b;
+                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) ((xl) obj2).b;
                 u1Var.setAlpha(1.0f);
                 u1Var.getTransitionParams().x0 = false;
                 org.telegram.ui.v0 v0Var = new org.telegram.ui.v0("alpha", 2);
@@ -308,15 +307,15 @@ public final class me extends AnimatorListenerAdapter {
                 animatorSet4.start();
                 return;
             case 16:
-                np npVar = (np) obj2;
-                npVar.L = 0.0f;
-                npVar.K = 1.0f;
+                lp lpVar = (lp) obj2;
+                lpVar.L = 0.0f;
+                lpVar.K = 1.0f;
                 ((View) obj).invalidate();
-                npVar.T.invalidate();
-                vi viVar = npVar.Y;
-                if (viVar != null) {
-                    viVar.run();
-                    npVar.Y = null;
+                lpVar.T.invalidate();
+                org.telegram.ui.ti tiVar = lpVar.Y;
+                if (tiVar != null) {
+                    tiVar.run();
+                    lpVar.Y = null;
                     return;
                 }
                 return;
@@ -363,11 +362,11 @@ public final class me extends AnimatorListenerAdapter {
                 ((org.telegram.ui.Components.rd) obj).run();
                 return;
             case 23:
-                ti tiVar = (ti) obj2;
-                animatorSet = ((org.telegram.ui.ActionBar.f3) tiVar).currentSheetAnimation;
+                ti tiVar2 = (ti) obj2;
+                animatorSet = ((org.telegram.ui.ActionBar.f3) tiVar2).currentSheetAnimation;
                 if (animatorSet != null) {
-                    animatorSet2 = ((org.telegram.ui.ActionBar.f3) tiVar).currentSheetAnimation;
-                    if (!animatorSet2.equals(animator) || (kVar = tiVar.s2) == null || kVar.f) {
+                    animatorSet2 = ((org.telegram.ui.ActionBar.f3) tiVar2).currentSheetAnimation;
+                    if (!animatorSet2.equals(animator) || (kVar = tiVar2.s2) == null || kVar.f) {
                         return;
                     }
                     ((lg) obj).run();

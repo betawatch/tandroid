@@ -1,85 +1,39 @@
 package org.telegram.ui;
 
-import android.util.SparseArray;
+import android.animation.ValueAnimator;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class ui {
-    public boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ SparseArray c;
-    public final /* synthetic */ sn d;
+public final class ui implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
 
-    public ui(sn snVar, boolean z10, SparseArray sparseArray) {
-        this.d = snVar;
-        this.b = z10;
-        this.c = sparseArray;
+    public /* synthetic */ ui(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
+        this.a = i10;
+        this.b = n2Var;
     }
 
-    public final boolean a(int i10) {
-        sn snVar = this.d;
-        int i11 = i10 - snVar.A0.J;
-        if (i11 < 0 || i11 >= snVar.u6.size()) {
-            return false;
-        }
-        MessageObject messageObject = (MessageObject) snVar.u6.get(i11);
-        if (messageObject.contentType != 0) {
-            return false;
-        }
-        SparseArray sparseArray = this.c;
-        boolean z10 = this.b;
-        if (z10 || sparseArray.get(messageObject.getId(), null) != null) {
-            return z10 && sparseArray.get(messageObject.getId(), null) != null;
-        }
-        return true;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:30:0x007c  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(int i10, boolean z10, float f7, float f10) {
-        s4.b1 K;
-        sn snVar = this.d;
-        ArrayList arrayList = snVar.u6;
-        SparseArray[] sparseArrayArr = snVar.W5;
-        int i11 = i10 - snVar.A0.J;
-        if (this.b) {
-            z10 = !z10;
-        }
-        if (i11 < 0 || i11 >= arrayList.size()) {
-            return;
-        }
-        MessageObject messageObject = (MessageObject) arrayList.get(i11);
-        if (!z10 || (sparseArrayArr[0].indexOfKey(messageObject.getId()) < 0 && sparseArrayArr[1].indexOfKey(messageObject.getId()) < 0)) {
-            if ((z10 || sparseArrayArr[0].indexOfKey(messageObject.getId()) >= 0 || sparseArrayArr[1].indexOfKey(messageObject.getId()) >= 0) && messageObject.contentType == 0) {
-                if (z10) {
-                    if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
-                        this.a = true;
-                        K = snVar.x0.K(i10);
-                        if (K != null) {
-                            View view = K.a;
-                            if (view instanceof org.telegram.ui.Cells.u1) {
-                                sn.c2(snVar, view, false, f7, f10);
-                                return;
-                            }
-                        }
-                        snVar.A6(messageObject, false, true);
-                        snVar.hc();
-                        snVar.ad(false);
-                    }
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                qn qnVar = (qn) this.b;
+                qnVar.la = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                qnVar.X0.invalidate();
+                break;
+            case 1:
+                cy cyVar = (cy) this.b;
+                cyVar.H0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View view = cyVar.fragmentView;
+                if (view != null) {
+                    view.invalidate();
+                    break;
                 }
-                this.a = false;
-                K = snVar.x0.K(i10);
-                if (K != null) {
-                }
-                snVar.A6(messageObject, false, true);
-                snVar.hc();
-                snVar.ad(false);
-            }
+                break;
+            default:
+                ((kc1) this.b).x0.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
         }
     }
 }

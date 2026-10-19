@@ -1,38 +1,30 @@
 package w7;
 
-import org.telegram.messenger.DispatchQueue;
+import android.os.Build;
+import android.util.Log;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class i6 {
-    public static DispatchQueue a;
+    public static void a(Object obj, String str, String str2) {
+        String c10 = c(str);
+        if (Log.isLoggable(c10, 3)) {
+            Log.d(c10, String.format(str2, obj));
+        }
+    }
 
-    public static void a(int i10, int i11, int[] iArr, int[] iArr2) {
-        int i12;
-        for (int i13 = 0; i13 < 315; i13++) {
-            int i14 = i13 - 7;
-            iArr2[i13] = (i14 < 0 || i14 >= 288) ? 0 : iArr[(i14 * i11) + i10];
+    public static void b(String str, String str2, Exception exc) {
+        String c10 = c(str);
+        if (Log.isLoggable(c10, 6)) {
+            Log.e(c10, str2, exc);
         }
-        int i15 = 0;
-        while (i15 < 315) {
-            iArr2[i15 + 315] = iArr2[i15];
-            int i16 = i15 + 1;
-            while (true) {
-                i12 = i15 + 15;
-                if (i16 >= i12) {
-                    break;
-                }
-                iArr2[i16 + 315] = Math.max(iArr2[i16 + 314], iArr2[i16]);
-                i16++;
-            }
-            iArr2[i15 + 644] = iArr2[i15 + 14];
-            for (int i17 = i15 + 13; i17 >= i15; i17--) {
-                iArr2[i17 + 630] = Math.max(iArr2[i17 + 631], iArr2[i17]);
-            }
-            i15 = i12;
+    }
+
+    public static String c(String str) {
+        if (Build.VERSION.SDK_INT >= 26) {
+            return "TRuntime.".concat(str);
         }
-        for (int i18 = 0; i18 < 288; i18++) {
-            iArr[(i18 * i11) + i10] = Math.max(iArr2[i18 + 630], iArr2[i18 + 329]);
-        }
+        String concat = "TRuntime.".concat(str);
+        return concat.length() > 23 ? concat.substring(0, 23) : concat;
     }
 }

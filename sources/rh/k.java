@@ -4,11 +4,11 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.b71;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class k extends a71 {
+public final class k extends b71 {
     public final /* synthetic */ int d3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

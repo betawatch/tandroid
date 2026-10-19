@@ -2,7 +2,7 @@ package ci;
 
 import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class k0 extends b {
     public final /* synthetic */ int h;
@@ -20,13 +20,13 @@ public final class k0 extends b {
             case 1:
                 int i10 = org.telegram.ui.ActionBar.h6.a7;
                 int i11 = org.telegram.ui.ActionBar.h6.h5;
-                int u10 = u(i11);
+                int w9 = w(i11);
                 SparseIntArray sparseIntArray = this.b;
-                sparseIntArray.put(i10, u10);
+                sparseIntArray.put(i10, w9);
                 sparseIntArray.put(org.telegram.ui.ActionBar.h6.d7, -15264235);
                 sparseIntArray.put(org.telegram.ui.ActionBar.h6.Xd, org.telegram.ui.ActionBar.h6.m1(0.45f, -1));
                 sparseIntArray.put(org.telegram.ui.ActionBar.h6.i5, 352321535);
-                sparseIntArray.put(org.telegram.ui.ActionBar.h6.He, u(i11));
+                sparseIntArray.put(org.telegram.ui.ActionBar.h6.He, w(i11));
                 break;
         }
     }

@@ -2,13 +2,13 @@ package org.telegram.ui;
 
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class b3 extends org.telegram.ui.ActionBar.m3 {
     @Override // org.telegram.ui.ActionBar.m3
     public final String b() {
-        org.telegram.ui.web.y0 y0Var = this.b;
-        return (y0Var == null || TextUtils.isEmpty(y0Var.getTitle())) ? super.b() : this.b.getTitle();
+        org.telegram.ui.web.x0 x0Var = this.b;
+        return (x0Var == null || TextUtils.isEmpty(x0Var.getTitle())) ? super.b() : this.b.getTitle();
     }
 
     public final void c(o3 o3Var) {
@@ -19,9 +19,9 @@ public final class b3 extends org.telegram.ui.ActionBar.m3 {
         m3Var.L();
         this.b = m3Var.getWebView();
         this.d = m3Var.getProxy();
-        org.telegram.ui.web.y0 y0Var = this.b;
-        if (y0Var != null) {
-            y0Var.onPause();
+        org.telegram.ui.web.x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.onPause();
             this.E = this.b.getTitle();
             this.F = this.b.getFavicon();
             this.x = this.b.getUrl();

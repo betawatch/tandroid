@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class c implements ka.a {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public class c implements ka.a {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void c(g2.h hVar, Uri uri, Map map, long j10, long j11, x0 x0Var) {
+    public void c(g2.h hVar, Uri uri, Map map, long j10, long j11, w0 w0Var) {
         c3.l lVar = new c3.l(hVar, j10, j11);
         this.d = lVar;
         if (((c3.o) this.c) != null) {
@@ -113,12 +113,12 @@ public class c implements ka.a {
                 i10++;
             }
             if (((c3.o) this.c) == null) {
-                String str = "None of the available extractors (" + new d9.l(", ").e(e9.s.x(e9.n0.v(e), new sg.y(7))) + ") could read the stream.";
+                String str = "None of the available extractors (" + new d9.l(", ", 0).e(e9.s.x(e9.n0.v(e), new sg.y(7))) + ") could read the stream.";
                 uri.getClass();
-                throw new t1(str, k0Var.f());
+                throw new s1(str, k0Var.f());
             }
         }
-        ((c3.o) this.c).c(x0Var);
+        ((c3.o) this.c).c(w0Var);
     }
 
     public String toString() {

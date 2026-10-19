@@ -13,9 +13,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.kv;
-import org.telegram.ui.kg0;
+import org.telegram.ui.jg0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class q1 extends im0 implements NotificationCenter.NotificationCenterDelegate, m0 {
     public final ArrayList V2;
@@ -28,7 +28,7 @@ public abstract class q1 extends im0 implements NotificationCenter.NotificationC
     public final p8.b c3;
     public final bs d3;
     public final ArrayList e3;
-    public final kg0 f3;
+    public final jg0 f3;
     public View g3;
     public boolean h3;
     public int i3;
@@ -46,7 +46,7 @@ public abstract class q1 extends im0 implements NotificationCenter.NotificationC
         this.c3 = new p8.b(t0Var, 4);
         this.d3 = new bs(0.0f, 0.5f, 0.5f, 1.0f);
         this.e3 = new ArrayList();
-        this.f3 = new kg0(15);
+        this.f3 = new jg0(15);
         this.j3 = -1;
         this.Z2 = i10;
         s4.b0 b0Var = new s4.b0();
@@ -92,13 +92,13 @@ public abstract class q1 extends im0 implements NotificationCenter.NotificationC
             }
             Collections.sort(arrayList, this.f3);
             if ((this.Y2 || this.h3) && arrayList.size() > 0 && !this.V2.isEmpty()) {
-                View view = (View) i2.d.h(1, arrayList);
+                View view = (View) i2.e.h(1, arrayList);
                 this.g3 = view;
                 x1(view, !this.Y2);
                 this.Y2 = false;
                 this.h3 = false;
-            } else if (this.g3 != i2.d.h(1, arrayList)) {
-                this.g3 = (View) i2.d.h(1, arrayList);
+            } else if (this.g3 != i2.e.h(1, arrayList)) {
+                this.g3 = (View) i2.e.h(1, arrayList);
                 if (this.b3) {
                     try {
                         performHapticFeedback(3);
@@ -138,7 +138,7 @@ public abstract class q1 extends im0 implements NotificationCenter.NotificationC
         super.onLayout(z10, i10, i11, i12, i13);
         if (this.X2 && !this.V2.isEmpty() && getChildCount() > 0) {
             this.X2 = false;
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.a2(this, 24));
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.z1(this, 24));
         }
         int i14 = this.j3;
         if (i14 > 0) {

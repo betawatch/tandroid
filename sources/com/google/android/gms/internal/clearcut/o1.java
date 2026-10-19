@@ -9,9 +9,9 @@ import java.util.Arrays;
 public abstract class o1 {
     public static final void b(o1 o1Var, byte[] bArr, int i10) {
         try {
-            ag.b bVar = new ag.b(bArr, i10);
-            o1Var.a(bVar);
-            ByteBuffer byteBuffer = (ByteBuffer) bVar.b;
+            a4.l lVar = new a4.l(bArr, i10);
+            o1Var.a(lVar);
+            ByteBuffer byteBuffer = (ByteBuffer) lVar.b;
             if (byteBuffer.remaining() == 0) {
                 return;
             }
@@ -21,7 +21,7 @@ public abstract class o1 {
         }
     }
 
-    public abstract void a(ag.b bVar);
+    public abstract void a(a4.l lVar);
 
     public final int c() {
         int[] iArr;
@@ -33,7 +33,7 @@ public abstract class o1 {
         byte[] bArr = x1Var.e;
         long j10 = x1Var.a;
         int i10 = 0;
-        int j02 = j10 != 0 ? ag.b.j0(j10) + ag.b.k0(1) : 0;
+        int m0 = j10 != 0 ? a4.l.m0(j10) + a4.l.n0(1) : 0;
         y1[] y1VarArr = x1Var.d;
         if (y1VarArr != null && y1VarArr.length > 0) {
             int i11 = 0;
@@ -48,36 +48,36 @@ public abstract class o1 {
         }
         byte[] bArr2 = n1.d;
         if (!Arrays.equals(bArr, bArr2)) {
-            j02 += ag.b.l0(bArr.length) + bArr.length + ag.b.k0(4);
+            m0 += a4.l.o0(bArr.length) + bArr.length + a4.l.n0(4);
         }
         if (!Arrays.equals(x1Var.f, bArr2)) {
             byte[] bArr3 = x1Var.f;
-            j02 += ag.b.l0(bArr3.length) + bArr3.length + ag.b.k0(6);
+            m0 += a4.l.o0(bArr3.length) + bArr3.length + a4.l.n0(6);
         }
         if (str4 != null && !str4.equals("")) {
-            j02 += ag.b.f0(8, str4);
+            m0 += a4.l.i0(8, str4);
         }
         int i12 = x1Var.c;
         if (i12 != 0) {
-            j02 += (i12 >= 0 ? ag.b.l0(i12) : 10) + ag.b.k0(11);
+            m0 += (i12 >= 0 ? a4.l.o0(i12) : 10) + a4.l.n0(11);
         }
         if (str3 != null && !str3.equals("")) {
-            j02 += ag.b.f0(13, str3);
+            m0 += a4.l.i0(13, str3);
         }
         if (str2 != null && !str2.equals("")) {
-            j02 += ag.b.f0(14, str2);
+            m0 += a4.l.i0(14, str2);
         }
         long j11 = x1Var.s;
         if (j11 != 180000) {
-            j02 += ag.b.j0((j11 >> 63) ^ (j11 << 1)) + ag.b.k0(15);
+            m0 += a4.l.m0((j11 >> 63) ^ (j11 << 1)) + a4.l.n0(15);
         }
         long j12 = x1Var.b;
         if (j12 != 0) {
-            j02 += ag.b.j0(j12) + ag.b.k0(17);
+            m0 += a4.l.m0(j12) + a4.l.n0(17);
         }
         if (!Arrays.equals(x1Var.v, bArr2)) {
             byte[] bArr4 = x1Var.v;
-            j02 += ag.b.l0(bArr4.length) + bArr4.length + ag.b.k0(18);
+            m0 += a4.l.o0(bArr4.length) + bArr4.length + a4.l.n0(18);
         }
         int[] iArr2 = x1Var.x;
         if (iArr2 != null && iArr2.length > 0) {
@@ -88,15 +88,15 @@ public abstract class o1 {
                     break;
                 }
                 int i14 = iArr[i10];
-                i13 += i14 >= 0 ? ag.b.l0(i14) : 10;
+                i13 += i14 >= 0 ? a4.l.o0(i14) : 10;
                 i10++;
             }
-            j02 = j02 + i13 + (iArr.length * 2);
+            m0 = m0 + i13 + (iArr.length * 2);
         }
         if (str != null && !str.equals("")) {
-            j02 += ag.b.f0(24, str);
+            m0 += a4.l.i0(24, str);
         }
-        return x1Var.y ? ag.b.k0(25) + 1 + j02 : j02;
+        return x1Var.y ? a4.l.n0(25) + 1 + m0 : m0;
     }
 
     public final o1 d() {

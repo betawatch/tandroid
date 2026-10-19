@@ -5,9 +5,9 @@ import ai.md;
 import android.content.SharedPreferences;
 import android.os.Looper;
 import android.util.LongSparseArray;
-import ci.f6;
-import ci.h7;
-import ci.o1;
+import ci.g6;
+import ci.i7;
+import ci.p1;
 import gi.d3;
 import ig.a2;
 import java.util.Comparator;
@@ -18,22 +18,25 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SavedMessagesController;
+import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.l2;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.k8;
+import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.r5;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.sn;
+import org.telegram.ui.og1;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements Runnable {
     public final /* synthetic */ int a;
@@ -42,86 +45,96 @@ public final /* synthetic */ class j implements Runnable {
         this.a = i10;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:71:0x00f2  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x00f7  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00ee  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x00f3  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
+        n2 X;
         switch (this.a) {
             case 0:
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
                 break;
             case 1:
-                BotWebViewVibrationEffect.APP_ERROR.vibrate();
+                n2 U = LaunchActivity.U();
+                if ((U instanceof og1) && (X = ((og1) U).X()) != null) {
+                    U = X;
+                }
+                qc Q = (U != null ? xc.a0(U) : xc.X()).Q(R.raw.ic_delete, 36, LocaleController.getString(R.string.Gift2Deleted));
+                Q.t = true;
+                Q.j();
                 break;
             case 2:
-                n2 U = LaunchActivity.U();
-                if (U != null) {
-                    U.presentFragment(new md());
-                    break;
-                }
+                BotWebViewVibrationEffect.APP_ERROR.vibrate();
                 break;
             case 3:
-                ga[][] gaVarArr = ga.S;
-                break;
-            case 4:
-                break;
-            case 5:
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
-                break;
-            case 6:
-                o1.j();
-                break;
-            case 7:
-                o1 o1Var = o1.Z;
-                o1Var.e.invalidate();
-                if (!o1Var.e.isInLayout()) {
-                    o1Var.e.requestLayout();
-                    o1Var.d.requestLayout();
-                    o1Var.f.requestLayout();
+                n2 U2 = LaunchActivity.U();
+                if (U2 != null) {
+                    U2.presentFragment(new md());
                     break;
                 }
                 break;
+            case 4:
+                ga[][] gaVarArr = ga.S;
+                break;
+            case 5:
+                break;
+            case 6:
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
+                break;
+            case 7:
+                p1.j();
+                break;
             case 8:
-                int i10 = f6.h;
+                p1 p1Var = p1.Z;
+                p1Var.e.invalidate();
+                if (!p1Var.e.isInLayout()) {
+                    p1Var.e.requestLayout();
+                    p1Var.d.requestLayout();
+                    p1Var.f.requestLayout();
+                    break;
+                }
                 break;
             case 9:
-                Comparator comparator = h7.X;
+                int i10 = g6.h;
                 break;
             case 10:
-                int i11 = ei.e0.x0;
+                Comparator comparator = i7.X;
                 break;
             case 11:
+                int i11 = ei.e0.x0;
+                break;
+            case 12:
                 Looper myLooper = Looper.myLooper();
                 if (myLooper != null) {
                     myLooper.quit();
                     break;
                 }
                 break;
-            case 12:
-                break;
             case 13:
-                MessagesController.getGlobalMainSettings().edit().putInt("storydualhint", MessagesController.getGlobalMainSettings().getInt("storydualhint", 0) + 1).apply();
                 break;
             case 14:
-                HashSet hashSet = d3.W0;
+                MessagesController.getGlobalMainSettings().edit().putInt("storydualhint", MessagesController.getGlobalMainSettings().getInt("storydualhint", 0) + 1).apply();
                 break;
             case 15:
+                HashSet hashSet = d3.W0;
                 break;
             case 16:
-                a2[] a2VarArr = a2.g;
                 break;
             case 17:
-                int i12 = ii.g.F;
+                a2[] a2VarArr = a2.g;
                 break;
             case 18:
+                int i12 = ii.g.F;
+                break;
+            case 19:
                 SharedConfig.drawActionBarShadow = !SharedConfig.drawActionBarShadow;
                 SharedConfig.saveDebugConfig();
                 AndroidUtilities.forEachViews(LaunchActivity.H1.z0.getRootView(), new ci.e(5));
                 break;
-            case 19:
+            case 20:
                 SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0);
                 String str = "Blue";
                 String string = sharedPreferences.getString("lastDayTheme", "Blue");
@@ -133,7 +146,7 @@ public final /* synthetic */ class j implements Runnable {
                 if (h6.O0(string2) == null || !h6.O0(string2).q()) {
                     string2 = "Dark Blue";
                 }
-                g6 g6Var = h6.I;
+                org.telegram.ui.ActionBar.g6 g6Var = h6.I;
                 if (string.equals(string2)) {
                     if (g6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
                         str2 = string2;
@@ -146,36 +159,36 @@ public final /* synthetic */ class j implements Runnable {
                 str = string;
                 AndroidUtilities.runOnUIThread(new ki.u(h6.I.q() ? h6.O0(str2) : h6.O0(str), 9), 200L);
                 break;
-            case 20:
+            case 21:
                 h6.E(false);
                 break;
-            case 21:
-                int i13 = sn.Ic;
-                break;
             case 22:
+                int i13 = qn.Ic;
                 break;
             case 23:
-                d1.b(true);
                 break;
             case 24:
+                d1.b(true);
+                break;
+            case 25:
                 NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
                 int i14 = NotificationCenter.didSetNewTheme;
                 Boolean bool = Boolean.TRUE;
                 globalInstance.lambda$postNotificationNameOnUIThread$1(i14, Boolean.FALSE, bool, bool);
                 break;
-            case 25:
+            case 26:
                 Pattern pattern = f5.a;
                 break;
-            case 26:
-                n2 U2 = LaunchActivity.U();
-                if (U2 != null) {
+            case 27:
+                n2 U3 = LaunchActivity.U();
+                if (U3 != null) {
                     l2 l2Var = new l2();
                     l2Var.a = true;
-                    U2.showAsSheet(new PremiumPreviewFragment(0, "schedule_repeat"), l2Var);
+                    U3.showAsSheet(new PremiumPreviewFragment(0, "schedule_repeat"), l2Var);
                     break;
                 }
                 break;
-            case 27:
+            case 28:
                 AndroidUtilities.cancelRunOnUIThread(r5.v);
                 try {
                     if (r5.q != null) {
@@ -200,11 +213,8 @@ public final /* synthetic */ class j implements Runnable {
                     return;
                 }
                 break;
-            case 28:
-                k8 k8Var = k8.T0;
-                break;
             default:
-                SavedMessagesController.openSavedMessages();
+                k8 k8Var = k8.T0;
                 break;
         }
     }

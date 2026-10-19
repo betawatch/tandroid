@@ -1,50 +1,37 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.ChatObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class gp extends org.telegram.ui.Components.e90 {
-    public final /* synthetic */ TLRPC.Chat w;
-    public final /* synthetic */ hp x;
+public final /* synthetic */ class gp implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ hp b;
+    public final /* synthetic */ String c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gp(hp hpVar, Context context, TLRPC.Chat chat, TLRPC.Chat chat2) {
-        super(context, chat);
-        this.x = hpVar;
-        this.w = chat2;
+    public /* synthetic */ gp(hp hpVar, String str, int i10) {
+        this.a = i10;
+        this.b = hpVar;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.Components.e90
-    public final boolean a(boolean z10, org.telegram.ui.Components.c90 c90Var) {
-        kp kpVar = this.x.d;
-        if (kpVar.P) {
-            return false;
-        }
-        kpVar.P = true;
-        e(new gh(18, this, c90Var), new ai.x9(this, this.w, z10, c90Var, 15));
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.e90
-    public final boolean b(boolean z10, org.telegram.ui.Components.d90 d90Var) {
-        kp kpVar = this.x.d;
-        if (kpVar.O) {
-            return false;
-        }
-        kpVar.O = true;
-        e(new gh(18, this, d90Var), new ai.x9(this, this.w, z10, d90Var, 14));
-        return true;
-    }
-
-    public final void e(gh ghVar, Runnable runnable) {
-        kp kpVar = this.x.d;
-        if (ChatObject.isChannel(kpVar.f)) {
-            runnable.run();
-        } else {
-            kpVar.getMessagesController().convertToMegaGroup(kpVar.getParentActivity(), this.w.id, kpVar, new m4.w0(22, this, runnable), ghVar);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                hp hpVar = this.b;
+                String str = this.c;
+                hpVar.getClass();
+                AndroidUtilities.runOnUIThread(new gp(hpVar, str, 1));
+                break;
+            default:
+                hp hpVar2 = this.b;
+                String str2 = this.c;
+                hpVar2.f = null;
+                Utilities.searchQueue.postRunnable(new t1(hpVar2, str2, new ArrayList(hpVar2.h.v), 28));
+                break;
         }
     }
 }

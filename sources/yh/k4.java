@@ -19,12 +19,12 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.wz;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class k4 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final int X;
@@ -34,7 +34,7 @@ public final class k4 extends bb implements NotificationCenter.NotificationCente
     public final FrameLayout b0;
     public final ei.d c0;
     public i80 d0;
-    public s61 e0;
+    public t61 e0;
     public i0.b f0;
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -78,7 +78,7 @@ public final class k4 extends bb implements NotificationCenter.NotificationCente
         FrameLayout frameLayout2 = new FrameLayout(context);
         frameLayout2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         frameLayout2.addView(dVar, z5.c(-1.0f, -1));
-        frameLayout2.setOnClickListener(new org.telegram.ui.web.c(15, this, g4Var));
+        frameLayout2.setOnClickListener(new qg.n(14, this, g4Var));
         dh.d c10 = bVar.c(frameLayout2, null, false);
         c10.o(fh.c.j(this.resourcesProvider));
         c10.q(AndroidUtilities.dp(28.0f));
@@ -140,11 +140,11 @@ public final class k4 extends bb implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        s61 s61Var;
-        if (i10 != NotificationCenter.starUserGiftsLoaded || (s61Var = this.e0) == null) {
+        t61 t61Var;
+        if (i10 != NotificationCenter.starUserGiftsLoaded || (t61Var = this.e0) == null) {
             return;
         }
-        s61Var.N(true);
+        t61Var.N(true);
         if (U()) {
             this.Y.a();
         }
@@ -165,9 +165,9 @@ public final class k4 extends bb implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.ui.Components.bb
     public final hm0 x(im0 im0Var) {
-        s61 s61Var = new s61(im0Var, getContext(), this.currentAccount, 0, false, new t3(this, 1), this.resourcesProvider);
-        this.e0 = s61Var;
-        s61Var.r = false;
-        return s61Var;
+        t61 t61Var = new t61(im0Var, getContext(), this.currentAccount, 0, false, new t3(this, 1), this.resourcesProvider);
+        this.e0 = t61Var;
+        t61Var.r = false;
+        return t61Var;
     }
 }

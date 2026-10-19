@@ -15,11 +15,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class wj extends FrameLayout {
     public final w9 a;
-    public final ci.k4 b;
+    public final ci.l4 b;
     public final org.telegram.ui.ActionBar.j5 c;
     public final xp d;
     public final h9 e;
@@ -42,15 +42,15 @@ public final class wj extends FrameLayout {
         w9Var.setRoundRadius(AndroidUtilities.dp(23.0f));
         boolean z10 = LocaleController.isRTL;
         addView(w9Var, w7.z5.d(46, 46.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 14.0f, 9.0f, z10 ? 14.0f : 0.0f, 0.0f));
-        ci.k4 k4Var = new ci.k4(context, 4);
-        this.b = k4Var;
-        NotificationCenter.listenEmojiLoading(k4Var);
-        k4Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.j5, d6Var));
-        k4Var.setTypeface(AndroidUtilities.bold());
-        k4Var.setTextSize(16);
-        k4Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+        ci.l4 l4Var = new ci.l4(context, 4);
+        this.b = l4Var;
+        NotificationCenter.listenEmojiLoading(l4Var);
+        l4Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.j5, d6Var));
+        l4Var.setTypeface(AndroidUtilities.bold());
+        l4Var.setTextSize(16);
+        l4Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z11 = LocaleController.isRTL;
-        addView(k4Var, w7.z5.d(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? 28.0f : 72.0f, 12.0f, z11 ? 72.0f : 28.0f, 0.0f));
+        addView(l4Var, w7.z5.d(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? 28.0f : 72.0f, 12.0f, z11 ? 72.0f : 28.0f, 0.0f));
         org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
         this.c = j5Var;
         j5Var.setTextSize(13);
@@ -103,10 +103,10 @@ public final class wj extends FrameLayout {
             }
         }
         CharSequence charSequence2 = this.n;
-        ci.k4 k4Var = this.b;
+        ci.l4 l4Var = this.b;
         if (charSequence2 != null) {
             this.w = null;
-            k4Var.l(charSequence2, false);
+            l4Var.l(charSequence2, false);
         } else {
             TLRPC.User user2 = this.f;
             if (user2 != null) {
@@ -114,7 +114,7 @@ public final class wj extends FrameLayout {
             } else {
                 this.w = "";
             }
-            k4Var.l(this.w, false);
+            l4Var.l(this.w, false);
         }
         setStatus(this.r);
         TLRPC.User user3 = this.f;

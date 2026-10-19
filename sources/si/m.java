@@ -14,11 +14,11 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
+import k2.w0;
 import org.telegram.messenger.MediaController;
-import org.telegram.ui.web.g2;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class m implements s {
     public long A;
@@ -122,7 +122,7 @@ public final class m implements s {
         this.m = createEncoderByType;
         MediaCodecInfo.VideoCapabilities videoCapabilities = createEncoderByType.getCodecInfo().getCapabilitiesForType(MediaController.VIDEO_MIME_TYPE).getVideoCapabilities();
         if (!videoCapabilities.isSizeSupported(i10, i10) || !videoCapabilities.areSizeAndRateSupported(i10, i10, i11)) {
-            throw new IOException(a1.g.n(i11, " fps", i2.d.m("Video encoder does not support ", i10, "x", i10, " at ")));
+            throw new IOException(a1.g.n(i11, " fps", i2.e.m("Video encoder does not support ", i10, "x", i10, " at ")));
         }
         this.f.b("video encoder configure: codec=" + this.m.getName() + ", format=" + createVideoFormat);
         this.m.configure(createVideoFormat, (Surface) null, (MediaCrypto) null, 1);
@@ -355,8 +355,8 @@ public final class m implements s {
         sb2.append(str);
         this.f.a(sb2.toString(), runtimeException);
         if (this.h.compareAndSet(false, true)) {
-            l2.f fVar = this.g.a;
-            ((s0) fVar.b).i.post(new g2(26, fVar, runtimeException));
+            w0 w0Var = this.g.a;
+            ((s0) w0Var.b).i.post(new p2.b(25, w0Var, runtimeException));
         }
     }
 

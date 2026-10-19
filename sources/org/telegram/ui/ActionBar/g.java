@@ -11,9 +11,9 @@ import org.telegram.ui.Components.ta0;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.wa0;
 import org.telegram.ui.Components.x8;
-import org.telegram.ui.eg0;
+import org.telegram.ui.dg0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class g extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -54,11 +54,11 @@ public final class g extends AnimatorListenerAdapter {
                 ((ta0) this.d).f2 = null;
                 break;
             case 5:
-                eg0 eg0Var = (eg0) this.d;
-                AnimatorSet[] animatorSetArr = eg0Var.K;
+                dg0 dg0Var = (dg0) this.d;
+                AnimatorSet[] animatorSetArr = dg0Var.K;
                 boolean z10 = this.b;
                 if (animatorSetArr[!z10 ? 1 : 0] != null && animatorSetArr[!z10 ? 1 : 0].equals(animator)) {
-                    eg0Var.K[!z10 ? 1 : 0] = null;
+                    dg0Var.K[!z10 ? 1 : 0] = null;
                     break;
                 }
                 break;
@@ -155,14 +155,14 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                eg0 eg0Var = (eg0) this.d;
-                AnimatorSet[] animatorSetArr = eg0Var.K;
+                dg0 dg0Var = (dg0) this.d;
+                AnimatorSet[] animatorSetArr = dg0Var.K;
                 boolean z12 = this.b;
-                if (animatorSetArr[!z12 ? 1 : 0] != null && animatorSetArr[!z12 ? 1 : 0].equals(animator) && !this.c && z12 && eg0Var.M.getAlpha() != 1.0f) {
-                    eg0Var.M.setAlpha(1.0f);
-                    eg0Var.M.setScaleX(1.0f);
-                    eg0Var.M.setScaleY(1.0f);
-                    eg0Var.M.setVisibility(0);
+                if (animatorSetArr[!z12 ? 1 : 0] != null && animatorSetArr[!z12 ? 1 : 0].equals(animator) && !this.c && z12 && dg0Var.M.getAlpha() != 1.0f) {
+                    dg0Var.M.setAlpha(1.0f);
+                    dg0Var.M.setScaleX(1.0f);
+                    dg0Var.M.setScaleY(1.0f);
+                    dg0Var.M.setVisibility(0);
                     break;
                 }
                 break;

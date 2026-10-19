@@ -16,16 +16,16 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import ki.t1;
-import w7.e8;
+import w7.d8;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final a0.j a = new a0.j(2);
     public static final a4.d b = new a4.d(28);
 
     public static j4.f a(Context context, List list) {
-        e8.a("FontProvider.getFontFamilyResult");
+        d8.a("FontProvider.getFontFamilyResult");
         try {
             ArrayList arrayList = new ArrayList();
             for (int i10 = 0; i10 < list.size(); i10++) {
@@ -45,7 +45,7 @@ public abstract class c {
     public static ProviderInfo b(PackageManager packageManager, d dVar, Resources resources) {
         a4.d dVar2 = b;
         a0.j jVar = a;
-        e8.a("FontProvider.getProvider");
+        d8.a("FontProvider.getProvider");
         try {
             List list = dVar.d;
             String str = dVar.a;
@@ -95,7 +95,7 @@ public abstract class c {
     }
 
     public static h[] c(Context context, d dVar, String str) {
-        e8.a("FontProvider.query");
+        d8.a("FontProvider.query");
         try {
             ArrayList arrayList = new ArrayList();
             Uri build = new Uri.Builder().scheme("content").authority(str).build();
@@ -104,9 +104,9 @@ public abstract class c {
             Cursor cursor = null;
             try {
                 String[] strArr = {"_id", "file_id", "font_ttc_index", "font_variation_settings", "font_weight", "font_italic", "result_code"};
-                e8.a("ContentQueryWrapper.query");
+                d8.a("ContentQueryWrapper.query");
                 try {
-                    cursor = t1Var.x(build, strArr, new String[]{dVar.c});
+                    cursor = t1Var.u(build, strArr, new String[]{dVar.c});
                     Trace.endSection();
                     if (cursor != null && cursor.getCount() > 0) {
                         int columnIndex = cursor.getColumnIndex("result_code");

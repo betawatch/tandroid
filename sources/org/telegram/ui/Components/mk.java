@@ -24,7 +24,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class mk extends em0 {
     public long E;
@@ -43,7 +43,7 @@ public final class mk extends em0 {
     public long x;
     public hg.o0 y;
     public ArrayList s = new ArrayList();
-    public final org.telegram.ui.y00 H = new org.telegram.ui.y00(0, 0);
+    public final org.telegram.ui.w00 H = new org.telegram.ui.w00(0, 0);
     public final ArrayList L = new ArrayList();
     public final ArrayList M = new ArrayList();
     public final ArrayList N = new ArrayList();
@@ -283,7 +283,7 @@ public final class mk extends em0 {
     public final void Z(final long j10, final long j11, final long j12, hg.o0 o0Var, final String str, boolean z10) {
         nk nkVar = this.X;
         ck ckVar = nkVar.r;
-        ci.n5 n5Var = nkVar.L;
+        ci.o5 o5Var = nkVar.L;
         Locale locale = Locale.ENGLISH;
         final String str2 = j10 + j11 + j12 + o0Var.d + str;
         String str3 = this.I;
@@ -310,7 +310,7 @@ public final class mk extends em0 {
             this.P.clear();
             this.Q.clear();
             this.S = true;
-            n5Var.setVisibility(0);
+            o5Var.setVisibility(0);
             l();
             this.T++;
             if (ckVar.getPinnedHeader() != null) {
@@ -323,7 +323,7 @@ public final class mk extends em0 {
         l();
         if (!z11) {
             k7Var.run();
-            n5Var.e(true, !z10);
+            o5Var.e(true, !z10);
         }
         if (TextUtils.isEmpty(str)) {
             arrayList.clear();
@@ -369,7 +369,7 @@ public final class mk extends em0 {
                         tL_messages_search.max_date = (int) (j19 / 1000);
                     }
                     if (z13 && str4.equals(mkVar.J) && !arrayList4.isEmpty()) {
-                        tL_messages_search.offset_id = ((MessageObject) i2.d.h(1, arrayList4)).getId();
+                        tL_messages_search.offset_id = ((MessageObject) i2.e.h(1, arrayList4)).getId();
                     } else {
                         tL_messages_search.offset_id = 0;
                     }
@@ -401,7 +401,7 @@ public final class mk extends em0 {
                         tL_messages_searchGlobal2.max_date = (int) (j15 / 1000);
                     }
                     if (z13 && str4.equals(mkVar.J) && !arrayList4.isEmpty()) {
-                        MessageObject messageObject = (MessageObject) i2.d.h(1, arrayList4);
+                        MessageObject messageObject = (MessageObject) i2.e.h(1, arrayList4);
                         tL_messages_searchGlobal2.offset_id = messageObject.getId();
                         tL_messages_searchGlobal2.offset_rate = mkVar.G;
                         TLRPC.Peer peer = messageObject.messageOwner.peer_id;
@@ -525,8 +525,8 @@ public final class mk extends em0 {
                     nkVar.I = animatorSet2;
                     ck ckVar = nkVar.r;
                     Property property = View.TRANSLATION_Y;
-                    animatorSet2.playTogether(ObjectAnimator.ofFloat(ckVar, (Property<ck, Float>) property, !z11 ? AndroidUtilities.dp(44.0f) : 0.0f), ObjectAnimator.ofFloat(q0Var, (Property<hg.q0, Float>) property, !z11 ? 0.0f : -AndroidUtilities.dp(44.0f)), ObjectAnimator.ofFloat(nkVar.J, (Property<b10, Float>) property, !z11 ? AndroidUtilities.dp(44.0f) : 0.0f), ObjectAnimator.ofFloat(nkVar.L, (Property<ci.n5, Float>) property, z11 ? AndroidUtilities.dp(44.0f) : 0.0f));
-                    nkVar.I.addListener(new org.telegram.ui.pq(this, 13));
+                    animatorSet2.playTogether(ObjectAnimator.ofFloat(ckVar, (Property<ck, Float>) property, !z11 ? AndroidUtilities.dp(44.0f) : 0.0f), ObjectAnimator.ofFloat(q0Var, (Property<hg.q0, Float>) property, !z11 ? 0.0f : -AndroidUtilities.dp(44.0f)), ObjectAnimator.ofFloat(nkVar.J, (Property<b10, Float>) property, !z11 ? AndroidUtilities.dp(44.0f) : 0.0f), ObjectAnimator.ofFloat(nkVar.L, (Property<ci.o5, Float>) property, z11 ? AndroidUtilities.dp(44.0f) : 0.0f));
+                    nkVar.I.addListener(new org.telegram.ui.nq(this, 13));
                     nkVar.I.setInterpolator(bs.g);
                     nkVar.I.setDuration(180L);
                     nkVar.I.start();
@@ -552,8 +552,8 @@ public final class mk extends em0 {
         nkVar.I = animatorSet22;
         ck ckVar2 = nkVar.r;
         Property property2 = View.TRANSLATION_Y;
-        animatorSet22.playTogether(ObjectAnimator.ofFloat(ckVar2, (Property<ck, Float>) property2, !z11 ? AndroidUtilities.dp(44.0f) : 0.0f), ObjectAnimator.ofFloat(q0Var, (Property<hg.q0, Float>) property2, !z11 ? 0.0f : -AndroidUtilities.dp(44.0f)), ObjectAnimator.ofFloat(nkVar.J, (Property<b10, Float>) property2, !z11 ? AndroidUtilities.dp(44.0f) : 0.0f), ObjectAnimator.ofFloat(nkVar.L, (Property<ci.n5, Float>) property2, z11 ? AndroidUtilities.dp(44.0f) : 0.0f));
-        nkVar.I.addListener(new org.telegram.ui.pq(this, 13));
+        animatorSet22.playTogether(ObjectAnimator.ofFloat(ckVar2, (Property<ck, Float>) property2, !z11 ? AndroidUtilities.dp(44.0f) : 0.0f), ObjectAnimator.ofFloat(q0Var, (Property<hg.q0, Float>) property2, !z11 ? 0.0f : -AndroidUtilities.dp(44.0f)), ObjectAnimator.ofFloat(nkVar.J, (Property<b10, Float>) property2, !z11 ? AndroidUtilities.dp(44.0f) : 0.0f), ObjectAnimator.ofFloat(nkVar.L, (Property<ci.o5, Float>) property2, z11 ? AndroidUtilities.dp(44.0f) : 0.0f));
+        nkVar.I.addListener(new org.telegram.ui.nq(this, 13));
         nkVar.I.setInterpolator(bs.g);
         nkVar.I.setDuration(180L);
         nkVar.I.start();

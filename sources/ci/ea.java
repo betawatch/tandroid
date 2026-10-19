@@ -1,78 +1,83 @@
 package ci;
 
 import android.graphics.Canvas;
-import java.util.ArrayList;
-import org.telegram.messenger.ImageReceiver;
+import android.view.View;
+import ei.tc;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class ea extends ImageReceiver.Decorator {
-    public final ArrayList a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
+public final class ea extends ba {
+    public final da a;
+    public final TL_stories.TL_mediaAreaWeather b;
+    public View c;
+    public final /* synthetic */ fa d;
 
-    public ea(TL_stories.StoryItem storyItem) {
-        for (int i10 = 0; i10 < storyItem.media_areas.size(); i10++) {
-            if (storyItem.media_areas.get(i10) instanceof TL_stories.TL_mediaAreaSuggestedReaction) {
-                if (this.a == null) {
-                    this.a = new ArrayList();
-                }
-                this.a.add(new ba(this, (TL_stories.TL_mediaAreaSuggestedReaction) storyItem.media_areas.get(i10)));
-            } else if (storyItem.media_areas.get(i10) instanceof TL_stories.TL_mediaAreaWeather) {
-                if (this.a == null) {
-                    this.a = new ArrayList();
-                }
-                this.a.add(new da(this, (TL_stories.TL_mediaAreaWeather) storyItem.media_areas.get(i10)));
+    public ea(fa faVar, TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather) {
+        this.d = faVar;
+        this.b = tL_mediaAreaWeather;
+        tc tcVar = new tc();
+        tcVar.c = tL_mediaAreaWeather.emoji;
+        tcVar.d = (float) tL_mediaAreaWeather.temperature_c;
+        da daVar = new da(this, ApplicationLoader.applicationContext, AndroidUtilities.density);
+        this.a = daVar;
+        daVar.setMaxWidth(AndroidUtilities.displaySize.x);
+        daVar.setIsVideo(false);
+        daVar.d(UserConfig.selectedAccount, tcVar.c);
+        daVar.setText(tcVar.a());
+        daVar.e(3, tL_mediaAreaWeather.color);
+        daVar.f();
+    }
+
+    @Override // ci.ba
+    public final void a(Canvas canvas, float f7) {
+        fa faVar = this.d;
+        double d = faVar.b;
+        double d10 = faVar.d;
+        TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather = this.b;
+        TL_stories.MediaAreaCoordinates mediaAreaCoordinates = tL_mediaAreaWeather.coordinates;
+        float f10 = (float) (((mediaAreaCoordinates.x * d10) / 100.0d) + d);
+        double d11 = faVar.c;
+        double d12 = faVar.e;
+        float f11 = (float) (((mediaAreaCoordinates.y * d12) / 100.0d) + d11);
+        float f12 = (float) ((d10 * mediaAreaCoordinates.w) / 100.0d);
+        float f13 = (float) ((d12 * mediaAreaCoordinates.h) / 100.0d);
+        canvas.save();
+        canvas.translate(f10, f11);
+        da daVar = this.a;
+        float min = Math.min(f12 / ((daVar.getWidthInternal() - daVar.getPaddingLeft()) - daVar.getPaddingRight()), f13 / ((daVar.getHeightInternal() - daVar.getPaddingTop()) - daVar.getPaddingBottom()));
+        canvas.scale(min, min);
+        double d13 = tL_mediaAreaWeather.coordinates.rotation;
+        if (d13 != 0.0d) {
+            canvas.rotate((float) d13);
+        }
+        canvas.translate(((-r3) / 2.0f) - daVar.getPaddingLeft(), ((-r6) / 2.0f) - daVar.getPaddingTop());
+        daVar.a(canvas);
+        canvas.restore();
+    }
+
+    @Override // ci.ba
+    public final void b(boolean z10) {
+        da daVar = this.a;
+        if (!z10) {
+            daVar.K = false;
+            daVar.r.onDetachedFromWindow();
+            daVar.s.onDetachedFromWindow();
+        } else {
+            daVar.K = true;
+            if (daVar.L) {
+                daVar.s.onAttachedToWindow();
+            } else {
+                daVar.r.onAttachedToWindow();
             }
         }
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.Decorator
-    public final void onAttachedToWindow(ImageReceiver imageReceiver) {
-        ArrayList arrayList = this.a;
-        if (arrayList == null) {
-            return;
-        }
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            ((aa) arrayList.get(i10)).c(imageReceiver.getParentView());
-            ((aa) arrayList.get(i10)).b(true);
-        }
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.Decorator
-    public final void onDetachedFromWidnow() {
-        ArrayList arrayList = this.a;
-        if (arrayList == null) {
-            return;
-        }
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            ((aa) arrayList.get(i10)).b(false);
-        }
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.Decorator
-    public final void onDraw(Canvas canvas, ImageReceiver imageReceiver) {
-        ArrayList arrayList = this.a;
-        if (arrayList == null) {
-            return;
-        }
-        float alpha = imageReceiver.getAlpha();
-        float centerX = imageReceiver.getCenterX();
-        float centerY = imageReceiver.getCenterY();
-        float imageWidth = imageReceiver.getImageWidth();
-        this.d = imageWidth;
-        float f7 = (16.0f * imageWidth) / 9.0f;
-        this.e = f7;
-        this.b = centerX - (imageWidth / 2.0f);
-        this.c = centerY - (f7 / 2.0f);
-        canvas.save();
-        canvas.clipRect(imageReceiver.getImageX(), imageReceiver.getImageY(), imageReceiver.getImageX2(), imageReceiver.getImageY2());
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            ((aa) arrayList.get(i10)).a(canvas, alpha);
-        }
-        canvas.restore();
+    @Override // ci.ba
+    public final void c(View view) {
+        this.c = view;
     }
 }

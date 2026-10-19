@@ -28,7 +28,7 @@ import java.util.UUID;
 import org.telegram.tgnet.ConnectionsManager;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class h implements c3.o {
     public static final byte[] O = {-94, 57, 79, 82, 90, -101, 79, 20, -94, 68, 108, 66, 124, 100, -115, -12};
@@ -55,7 +55,7 @@ public final class h implements c3.o {
     public final k0 j;
     public final e2.c o;
     public final j0 p;
-    public final a6.m q;
+    public final qb.c q;
     public x1 r;
     public int s;
     public int t;
@@ -98,7 +98,7 @@ public final class h implements c3.o {
         this.J = new j0[0];
         this.K = new j0[0];
         this.o = new e2.c(new e(this));
-        this.q = new a6.m(9);
+        this.q = new qb.c(10);
         this.N = -1L;
     }
 
@@ -148,7 +148,7 @@ public final class h implements c3.o {
         int i11 = sVar.e;
         x xVar2 = sVar.n;
         if (E != i11) {
-            StringBuilder l4 = i2.d.l(E, "Senc sample count ", " is different from fragment sample count");
+            StringBuilder l4 = i2.e.l(E, "Senc sample count ", " is different from fragment sample count");
             l4.append(sVar.e);
             throw w0.a(null, l4.toString());
         }
@@ -860,7 +860,7 @@ public final class h implements c3.o {
             ArrayDeque arrayDeque = this.m;
             e2.c cVar = this.o;
             x xVar = this.i;
-            a6.m mVar = this.q;
+            qb.c cVar2 = this.q;
             SparseArray sparseArray = this.d;
             boolean z11 = true;
             if (i13 != 0) {
@@ -965,14 +965,14 @@ public final class h implements c3.o {
                             ((f2.d) arrayDeque.peek()).d.add(eVar);
                         } else if (i18 == 1936286840) {
                             Pair k10 = k(pVar.getPosition(), xVar3);
-                            mVar.a((c3.j) k10.second);
-                            LinkedHashMap linkedHashMap = (LinkedHashMap) mVar.b;
+                            cVar2.a((c3.j) k10.second);
+                            LinkedHashMap linkedHashMap = (LinkedHashMap) cVar2.b;
                             this.B = ((Long) k10.first).longValue();
                             if (this.M) {
                                 i12 = 1;
                             } else {
                                 i12 = 1;
-                                this.I.g0(linkedHashMap.size() == 1 ? (c0) k10.second : mVar.v());
+                                this.I.g0(linkedHashMap.size() == 1 ? (c0) k10.second : cVar2.s());
                                 this.L = true;
                             }
                             if ((i14 & 256) != 0 && !this.M && linkedHashMap.size() > i12) {
@@ -1066,7 +1066,7 @@ public final class h implements c3.o {
                         }
                         sVar.a = j19;
                         this.N = -1L;
-                        this.I.g0(mVar.v());
+                        this.I.g0(cVar2.s());
                         this.M = true;
                         return 1;
                     }
@@ -1103,7 +1103,7 @@ public final class h implements c3.o {
                         xVar.K((int) this.u);
                         System.arraycopy(xVar5.a, 0, xVar.a, 0, 8);
                         pVar.readFully(xVar.a, 8, (int) (this.u - this.v));
-                        mVar.a((c3.j) k(pVar.k(), xVar).second);
+                        cVar2.a((c3.j) k(pVar.k(), xVar).second);
                     } else {
                         pVar.i((int) (this.u - j22), true);
                     }
@@ -1605,7 +1605,7 @@ public final class h implements c3.o {
                                         int A = xVar8.A();
                                         int E2 = xVar8.E();
                                         if (E2 > sVar2.e) {
-                                            StringBuilder l4 = i2.d.l(E2, "Saiz sample count ", " is greater than fragment sample count");
+                                            StringBuilder l4 = i2.e.l(E2, "Saiz sample count ", " is greater than fragment sample count");
                                             l4.append(sVar2.e);
                                             throw w0.a(null, l4.toString());
                                         }

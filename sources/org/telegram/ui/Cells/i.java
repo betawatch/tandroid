@@ -11,10 +11,10 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.Components.ee;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.qc1;
-import org.telegram.ui.so;
+import org.telegram.ui.oc1;
+import org.telegram.ui.qo;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class i extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -58,8 +58,8 @@ public final class i extends ClickableSpan {
             case 3:
                 try {
                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.b));
-                    if (xc.a((org.telegram.ui.ua) this.c)) {
-                        xc.j((org.telegram.ui.ua) this.c).j();
+                    if (xc.a((org.telegram.ui.sa) this.c)) {
+                        xc.j((org.telegram.ui.sa) this.c).j();
                         break;
                     }
                 } catch (Exception e) {
@@ -71,7 +71,7 @@ public final class i extends ClickableSpan {
                 pf.d.r(((y1) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
                 break;
             case 5:
-                pf.d.r(((so) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
+                pf.d.r(((qo) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
                 break;
             case 6:
                 ((ee) this.c).run();
@@ -83,8 +83,8 @@ public final class i extends ClickableSpan {
             case 8:
                 try {
                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.b));
-                    if (xc.a((qc1) this.c)) {
-                        xc.j((qc1) this.c).j();
+                    if (xc.a((oc1) this.c)) {
+                        xc.j((oc1) this.c).j();
                         break;
                     }
                 } catch (Exception e7) {
@@ -94,7 +94,7 @@ public final class i extends ClickableSpan {
                 break;
             default:
                 AndroidUtilities.addToClipboard((String) this.b);
-                ((org.telegram.ui.Wallet.v3) this.c).run();
+                ((org.telegram.ui.Wallet.z3) this.c).run();
                 break;
         }
     }

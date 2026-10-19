@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class nl0 {
     public final im0 a;
@@ -79,8 +79,8 @@ public final class nl0 {
             ofFloat.start();
             i10--;
         }
-        org.telegram.ui.qq qqVar = new org.telegram.ui.qq(this, (b10) view, i10, i12);
-        this.h.add(qqVar);
-        im0Var.getViewTreeObserver().addOnPreDrawListener(qqVar);
+        org.telegram.ui.oq oqVar = new org.telegram.ui.oq(this, (b10) view, i10, i12);
+        this.h.add(oqVar);
+        im0Var.getViewTreeObserver().addOnPreDrawListener(oqVar);
     }
 }

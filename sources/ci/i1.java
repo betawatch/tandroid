@@ -16,12 +16,12 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.aw0;
 import org.telegram.ui.Components.bw0;
+import org.telegram.ui.Components.cw0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i1 implements aw0, bw0, org.telegram.ui.ActionBar.a2, Continuation, r9.d, i5.e, d9.k, GenericProvider, Utilities.Callback2Return, eh.d {
+public final /* synthetic */ class i1 implements bw0, cw0, org.telegram.ui.ActionBar.a2, Continuation, r9.d, i5.e, d9.k, GenericProvider, Utilities.Callback2Return, eh.d {
     public final /* synthetic */ int a;
 
     public /* synthetic */ i1(int i10) {
@@ -46,25 +46,25 @@ public final /* synthetic */ class i1 implements aw0, bw0, org.telegram.ui.Actio
                 return Integer.valueOf(((d2.b) obj).r);
             default:
                 da.a.b.getClass();
-                return aa.b.a.m((z9.e2) obj).getBytes(Charset.forName("UTF-8"));
+                return aa.b.a.M((z9.e2) obj).getBytes(Charset.forName("UTF-8"));
         }
     }
 
-    @Override // org.telegram.ui.Components.bw0
+    @Override // org.telegram.ui.Components.cw0
     public void b(Object obj, float f7) {
-        o1 o1Var = (o1) obj;
+        p1 p1Var = (p1) obj;
         switch (this.a) {
             case 1:
-                WindowManager.LayoutParams layoutParams = o1Var.c;
-                o1Var.N = f7;
+                WindowManager.LayoutParams layoutParams = p1Var.c;
+                p1Var.N = f7;
                 layoutParams.x = (int) f7;
-                AndroidUtilities.updateViewLayout(o1Var.b, o1Var.d, layoutParams);
+                AndroidUtilities.updateViewLayout(p1Var.b, p1Var.d, layoutParams);
                 break;
             default:
-                WindowManager.LayoutParams layoutParams2 = o1Var.c;
-                o1Var.O = f7;
+                WindowManager.LayoutParams layoutParams2 = p1Var.c;
+                p1Var.O = f7;
                 layoutParams2.y = (int) f7;
-                AndroidUtilities.updateViewLayout(o1Var.b, o1Var.d, layoutParams2);
+                AndroidUtilities.updateViewLayout(p1Var.b, p1Var.d, layoutParams2);
                 break;
         }
     }
@@ -116,14 +116,14 @@ public final /* synthetic */ class i1 implements aw0, bw0, org.telegram.ui.Actio
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.bw0
     public float get(Object obj) {
-        o1 o1Var = (o1) obj;
+        p1 p1Var = (p1) obj;
         switch (this.a) {
             case 0:
-                return o1Var.N;
+                return p1Var.N;
             default:
-                return o1Var.O;
+                return p1Var.O;
         }
     }
 

@@ -6,7 +6,7 @@ import android.os.RemoteException;
 import com.google.android.gms.common.api.Status;
 import java.util.Set;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class z implements j0 {
     public final l0 a;
@@ -16,7 +16,15 @@ public final class z implements j0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.j0
-    public final e B(e eVar) {
+    public final boolean B() {
+        l0 l0Var = this.a;
+        l0Var.o.getClass();
+        l0Var.h();
+        return true;
+    }
+
+    @Override // com.google.android.gms.common.api.internal.j0
+    public final e D(e eVar) {
         l0 l0Var = this.a;
         try {
             f1 f1Var = l0Var.o.M;
@@ -47,26 +55,18 @@ public final class z implements j0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.j0
-    public final void t(int i10) {
+    public final void w(int i10) {
         l0 l0Var = this.a;
         l0Var.h();
         l0Var.p.n(i10);
     }
 
     @Override // com.google.android.gms.common.api.internal.j0
-    public final boolean y() {
-        l0 l0Var = this.a;
-        l0Var.o.getClass();
-        l0Var.h();
-        return true;
+    public final void b() {
     }
 
     @Override // com.google.android.gms.common.api.internal.j0
-    public final void e() {
-    }
-
-    @Override // com.google.android.gms.common.api.internal.j0
-    public final void x() {
+    public final void y() {
     }
 
     @Override // com.google.android.gms.common.api.internal.j0
@@ -74,6 +74,6 @@ public final class z implements j0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.j0
-    public final void s(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
+    public final void q(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
     }
 }

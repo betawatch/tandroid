@@ -19,16 +19,16 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tg0 implements aw0, bw0, org.telegram.ui.ActionBar.a2, GenericProvider, ImageReceiver.ImageReceiverDelegate, LanguageDetector.ExceptionCallback, kd0, FlagSecureReason.FlagSecureCondition {
+public final /* synthetic */ class tg0 implements bw0, cw0, org.telegram.ui.ActionBar.a2, GenericProvider, ImageReceiver.ImageReceiverDelegate, LanguageDetector.ExceptionCallback, kd0, FlagSecureReason.FlagSecureCondition {
     public final /* synthetic */ int a;
 
     public /* synthetic */ tg0(int i10) {
         this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.bw0
+    @Override // org.telegram.ui.Components.cw0
     public void b(Object obj, float f7) {
         switch (this.a) {
             case 1:
@@ -74,7 +74,7 @@ public final /* synthetic */ class tg0 implements aw0, bw0, org.telegram.ui.Acti
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.l5.a(this, i10, str, drawable);
+        org.telegram.messenger.k5.a(this, i10, str, drawable);
     }
 
     @Override // org.telegram.ui.Components.kd0
@@ -115,7 +115,7 @@ public final /* synthetic */ class tg0 implements aw0, bw0, org.telegram.ui.Acti
                 b2Var.dismiss();
                 break;
             case 11:
-                int i11 = oy0.u0;
+                int i11 = py0.u0;
                 break;
             case 12:
                 b2Var.dismiss();
@@ -134,7 +134,7 @@ public final /* synthetic */ class tg0 implements aw0, bw0, org.telegram.ui.Acti
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.bw0
     public float get(Object obj) {
         switch (this.a) {
             case 0:
@@ -150,14 +150,14 @@ public final /* synthetic */ class tg0 implements aw0, bw0, org.telegram.ui.Acti
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.l5.b(this, imageReceiver);
+        org.telegram.messenger.k5.b(this, imageReceiver);
     }
 
     @Override // org.telegram.messenger.GenericProvider
     public Object provide(Object obj) {
         switch (this.a) {
             case 7:
-                int i10 = dr0.a1;
+                int i10 = er0.b1;
                 return 0;
             case 26:
                 int dp = AndroidUtilities.dp(150.0f);
@@ -178,7 +178,7 @@ public final /* synthetic */ class tg0 implements aw0, bw0, org.telegram.ui.Acti
                 return createBitmap2;
             default:
                 Pattern pattern = LaunchActivity.C1;
-                return new org.telegram.ui.og0();
+                return new org.telegram.ui.ng0();
         }
     }
 

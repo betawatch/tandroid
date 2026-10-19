@@ -2,7 +2,7 @@ package zd;
 
 import com.google.android.gms.internal.play_billing.k3;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class j extends i {
     public static boolean b(String str, String str2) {
@@ -103,7 +103,7 @@ public abstract class j extends i {
         CharSequence charSequence;
         kotlin.jvm.internal.i.e(str, "<this>");
         if (i10 < 0) {
-            throw new IllegalArgumentException(i2.d.k(i10, "Desired length ", " is less than zero."));
+            throw new IllegalArgumentException(i2.e.k(i10, "Desired length ", " is less than zero."));
         }
         if (i10 <= str.length()) {
             charSequence = str.subSequence(0, str.length());

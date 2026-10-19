@@ -1,19 +1,63 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.webkit.WebView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class pn0 extends WebView {
-    public pn0(Context context) {
-        super(context);
+public final class pn0 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ eo0 a;
+
+    public pn0(eo0 eo0Var) {
+        this.a = eo0Var;
     }
 
-    @Override // android.webkit.WebView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        getParent().requestDisallowInterceptTouchEvent(true);
-        return super.onTouchEvent(motionEvent);
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        eo0 eo0Var = this.a;
+        if (i10 == -1) {
+            if (eo0Var.P0) {
+                return;
+            }
+            eo0Var.finishFragment();
+            return;
+        }
+        if (i10 != 1 || eo0Var.P0) {
+            return;
+        }
+        if (eo0Var.u0 != 3) {
+            AndroidUtilities.hideKeyboard(eo0Var.getParentActivity().getCurrentFocus());
+        }
+        int i11 = eo0Var.u0;
+        if (i11 == 0) {
+            eo0Var.D0(true);
+            eo0.m0(eo0Var);
+            return;
+        }
+        int i12 = 0;
+        if (i11 == 1) {
+            while (true) {
+                org.telegram.ui.Cells.j6[] j6VarArr = eo0Var.h;
+                if (i12 >= j6VarArr.length) {
+                    break;
+                }
+                if (j6VarArr[i12].b.f) {
+                    eo0Var.G0 = eo0Var.E0.shipping_options.get(i12);
+                    break;
+                }
+                i12++;
+            }
+            eo0Var.t0();
+            return;
+        }
+        if (i11 == 2) {
+            eo0.j0(eo0Var);
+        } else if (i11 == 3) {
+            eo0.k0(eo0Var);
+        } else {
+            if (i11 != 6) {
+                return;
+            }
+            eo0Var.A0(false);
+        }
     }
 }

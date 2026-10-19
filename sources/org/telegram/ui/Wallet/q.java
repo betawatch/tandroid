@@ -18,14 +18,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.l11;
 import org.telegram.ui.Components.m11;
+import org.telegram.ui.Components.n11;
 import org.telegram.ui.Components.qy;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.i01;
+import org.telegram.ui.g01;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -523,8 +523,8 @@ public final /* synthetic */ class q implements Utilities.Callback2 {
                     }
                 }
                 if (z10) {
-                    l0Var.j();
-                    l0Var.h();
+                    l0Var.k();
+                    l0Var.i();
                     return;
                 }
                 return;
@@ -532,14 +532,14 @@ public final /* synthetic */ class q implements Utilities.Callback2 {
                 x xVar = (x) this.b;
                 j0 j0Var2 = (j0) this.c;
                 b2 b2Var = (b2) this.d;
-                ai.o3 o3Var = (ai.o3) this.e;
+                ai.r3 r3Var = (ai.r3) this.e;
                 TL_wallet.tonConnectChallenge tonconnectchallenge = (TL_wallet.tonConnectChallenge) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 if (tonconnectchallenge == null || tL_error2 != null) {
                     xVar.run(f2.x(tL_error2, "registerKey"));
                     return;
                 } else {
-                    Utilities.globalQueue.postRunnable(new i01(j0Var2, b2Var, tonconnectchallenge, xVar, o3Var, 5));
+                    Utilities.globalQueue.postRunnable(new g01(j0Var2, b2Var, tonconnectchallenge, xVar, r3Var, 5));
                     return;
                 }
             case 7:
@@ -550,7 +550,7 @@ public final /* synthetic */ class q implements Utilities.Callback2 {
                 TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj;
                 String str13 = (String) obj2;
                 if (sendtransfer != null && str13 == null && f2Var.y(b2Var2) && !f2Var.i(b2Var2)) {
-                    Utilities.globalQueue.postRunnable(new i01(f2Var, sendtransfer, b2Var2, callback3, j0Var3, 6));
+                    Utilities.globalQueue.postRunnable(new g01(f2Var, sendtransfer, b2Var2, callback3, j0Var3, 6));
                     return;
                 }
                 if (str13 == null) {
@@ -593,9 +593,9 @@ public final /* synthetic */ class q implements Utilities.Callback2 {
                 }
                 nVar.setPadding(AndroidUtilities.dp(19.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(15.0f), AndroidUtilities.dp(8.0f));
                 SpannableString spannableString = new SpannableString(str16);
-                l11 l11Var = new l11();
-                l11Var.a |= 256;
-                spannableString.setSpan(new m11(l11Var, 0), 0, spannableString.length(), 33);
+                m11 m11Var = new m11();
+                m11Var.a |= 256;
+                spannableString.setSpan(new n11(m11Var, 0), 0, spannableString.length(), 33);
                 nVar.setText(spannableString);
                 nVar.setTextIsSelectable(true);
                 nVar.setOnClickListener(null);
@@ -610,7 +610,7 @@ public final /* synthetic */ class q implements Utilities.Callback2 {
                 nVar.c((nVar.getWidth() / 2.0f) - nVar.getPaddingLeft(), ((nVar.getHeight() / 2.0f) - nVar.getPaddingTop()) + nVar.getScrollY());
                 return;
             default:
-                r9.Z((r9) this.c, (m0) this.b, (TLRPC.User) this.e, (String) this.d, (TL_wallet.walletTransaction) obj, (String) obj2);
+                r9.Y((r9) this.c, (m0) this.b, (TLRPC.User) this.e, (String) this.d, (TL_wallet.walletTransaction) obj, (String) obj2);
                 return;
         }
     }

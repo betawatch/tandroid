@@ -3,9 +3,9 @@ package u2;
 import android.util.Pair;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final class b0 extends u1 {
+public final class b0 extends t1 {
     public final boolean l;
     public final b2.n1 m;
     public final b2.l1 n;
@@ -33,7 +33,7 @@ public final class b0 extends u1 {
     /* JADX WARN: Removed duplicated region for block: B:27:0x0086  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x0092  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x00cc  */
-    @Override // u2.u1
+    @Override // u2.t1
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -99,7 +99,7 @@ public final class b0 extends u1 {
                         if (a2 != null) {
                             y yVar4 = this.p;
                             yVar4.getClass();
-                            yVar4.a(a2);
+                            yVar4.b(a2);
                             return;
                         }
                         return;
@@ -136,7 +136,7 @@ public final class b0 extends u1 {
         }
     }
 
-    @Override // u2.u1
+    @Override // u2.t1
     public final void C() {
         if (this.l) {
             return;
@@ -163,7 +163,7 @@ public final class b0 extends u1 {
         if (this.o.g != null && obj.equals(z.h)) {
             obj = this.o.g;
         }
-        yVar.a(g0Var.a(obj));
+        yVar.b(g0Var.a(obj));
         return yVar;
     }
 
@@ -184,7 +184,7 @@ public final class b0 extends u1 {
         return true;
     }
 
-    @Override // u2.u1, u2.a
+    @Override // u2.t1, u2.a
     public final boolean a(b2.o0 o0Var) {
         return this.k.a(o0Var);
     }
@@ -209,19 +209,19 @@ public final class b0 extends u1 {
         super.q();
     }
 
-    @Override // u2.u1, u2.a
+    @Override // u2.t1, u2.a
     public final void t(b2.o0 o0Var) {
         if (this.s) {
             z zVar = this.o;
             b2.o1 o1Var = zVar.e;
-            this.o = new z(o1Var instanceof r1 ? new r1(((r1) o1Var).e, o0Var) : new r1(o1Var, o0Var), zVar.f, zVar.g);
+            this.o = new z(o1Var instanceof q1 ? new q1(((q1) o1Var).e, o0Var) : new q1(o1Var, o0Var), zVar.f, zVar.g);
         } else {
             this.o = new z(new a0(o0Var), b2.n1.q, z.h);
         }
         this.k.t(o0Var);
     }
 
-    @Override // u2.u1
+    @Override // u2.t1
     public final g0 z(g0 g0Var) {
         Object obj = g0Var.a;
         Object obj2 = this.o.g;

@@ -23,7 +23,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class pm0 {
     public int A;
@@ -81,7 +81,7 @@ public final class pm0 {
     public pm0(View view) {
         this.D = view;
         if (view != null) {
-            view.addOnAttachStateChangeListener(new ai.m6(this, 9));
+            view.addOnAttachStateChangeListener(new ai.n6(this, 9));
         }
         bs bsVar = bs.h;
         this.E = new i5(view, 400L, bsVar, 0);
@@ -398,7 +398,7 @@ public final class pm0 {
 
     public final void d(Canvas canvas, RectF rectF, float f7, boolean z10, boolean z11) {
         boolean z12;
-        ci.f3 f3Var;
+        ci.g3 g3Var;
         float e;
         int i10;
         p5 p5Var;
@@ -421,7 +421,7 @@ public final class pm0 {
         if (p5Var2 != null) {
             if (!this.Y) {
                 Drawable drawable = p5Var2.f[0];
-                if ((drawable instanceof r5) && (f3Var = ((r5) drawable).k) != null && f3Var.hasImageLoaded()) {
+                if ((drawable instanceof r5) && (g3Var = ((r5) drawable).k) != null && g3Var.hasImageLoaded()) {
                     this.Y = true;
                 } else {
                     z12 = false;

@@ -7,7 +7,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class v3 extends View implements r2 {
     public final org.telegram.ui.Components.p6 a;
@@ -19,7 +19,7 @@ public final class v3 extends View implements r2 {
         p6Var.n(0.35f, 300L, bs.h);
         p6Var.u(-1);
         p6Var.w(AndroidUtilities.dp(14.0f));
-        p6Var.s(AndroidUtilities.dp(1.4f), 0.0f, AndroidUtilities.dp(0.4f), 1275068416);
+        p6Var.s(AndroidUtilities.dp(1.4f), AndroidUtilities.dp(0.4f), 1275068416);
         p6Var.b = 1;
         p6Var.setCallback(this);
         p6Var.M = AndroidUtilities.displaySize.x;

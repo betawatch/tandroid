@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class ih0 extends FrameLayout {
     public final z5 a;
@@ -69,8 +69,8 @@ public abstract class ih0 extends FrameLayout {
             z5Var.setText(Emoji.replaceEmoji(str, z5Var.getPaint().getFontMetricsInt(), false));
         }
         String format = String.format("%d", Integer.valueOf(i10));
-        SpannableStringBuilder spannableStringBuilder2 = LocaleController.isRTL ? new SpannableStringBuilder(a1.g.m(i10, "% – ")) : new SpannableStringBuilder(i2.d.k(i10, " – ", "%"));
-        spannableStringBuilder2.setSpan(new c61(AndroidUtilities.bold()), 3, format.length() + 3, 33);
+        SpannableStringBuilder spannableStringBuilder2 = LocaleController.isRTL ? new SpannableStringBuilder(a1.g.m(i10, "% – ")) : new SpannableStringBuilder(i2.e.k(i10, " – ", "%"));
+        spannableStringBuilder2.setSpan(new d61(AndroidUtilities.bold()), 3, format.length() + 3, 33);
         this.b.setText(spannableStringBuilder2);
         org.telegram.ui.Cells.x1 x1Var = this.c;
         if (i12 == 0) {

@@ -29,7 +29,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class f4 extends FrameLayout {
     public boolean E;
@@ -50,7 +50,7 @@ public final class f4 extends FrameLayout {
     public Drawable T;
     public Paint U;
     public final org.telegram.ui.Components.w9 a;
-    public final ci.k4 b;
+    public final ci.l4 b;
     public final org.telegram.ui.ActionBar.j5 c;
     public final xp d;
     public final org.telegram.ui.Components.h9 e;
@@ -201,11 +201,11 @@ public final class f4 extends FrameLayout {
         boolean z11 = this.K;
         xp xpVar = this.d;
         org.telegram.ui.Components.w9 w9Var = this.a;
-        ci.k4 k4Var = this.b;
+        ci.l4 l4Var = this.b;
         org.telegram.ui.Components.h9 h9Var = this.e;
         org.telegram.ui.ActionBar.j5 j5Var = this.c;
         if (z10) {
-            ((FrameLayout.LayoutParams) k4Var.getLayoutParams()).topMargin = AndroidUtilities.dp(15.0f);
+            ((FrameLayout.LayoutParams) l4Var.getLayoutParams()).topMargin = AndroidUtilities.dp(15.0f);
             ViewGroup.LayoutParams layoutParams = w9Var.getLayoutParams();
             ViewGroup.LayoutParams layoutParams2 = w9Var.getLayoutParams();
             int dp = AndroidUtilities.dp(38.0f);
@@ -319,15 +319,15 @@ public final class f4 extends FrameLayout {
                     break;
             }
             this.x = null;
-            k4Var.l(this.h, true);
+            l4Var.l(this.h, true);
             j5Var.l(null, false);
             w9Var.f(null, "50_50", h9Var);
         } else {
             CharSequence charSequence2 = this.n;
             if (charSequence2 == null || !TextUtils.isEmpty(charSequence2)) {
-                ((FrameLayout.LayoutParams) k4Var.getLayoutParams()).topMargin = AndroidUtilities.dp(10.0f);
+                ((FrameLayout.LayoutParams) l4Var.getLayoutParams()).topMargin = AndroidUtilities.dp(10.0f);
             } else {
-                ((FrameLayout.LayoutParams) k4Var.getLayoutParams()).topMargin = AndroidUtilities.dp(19.0f);
+                ((FrameLayout.LayoutParams) l4Var.getLayoutParams()).topMargin = AndroidUtilities.dp(19.0f);
             }
             ViewGroup.LayoutParams layoutParams3 = w9Var.getLayoutParams();
             ViewGroup.LayoutParams layoutParams4 = w9Var.getLayoutParams();
@@ -372,7 +372,7 @@ public final class f4 extends FrameLayout {
                 CharSequence charSequence3 = this.h;
                 if (charSequence3 != null) {
                     this.x = null;
-                    k4Var.l(charSequence3, true);
+                    l4Var.l(charSequence3, true);
                     i11 = 0;
                 } else {
                     if (str == null) {
@@ -380,7 +380,7 @@ public final class f4 extends FrameLayout {
                     }
                     this.x = str;
                     i11 = 0;
-                    k4Var.l(str, false);
+                    l4Var.l(str, false);
                 }
                 if (this.n == null) {
                     int i14 = org.telegram.ui.ActionBar.h6.y6;
@@ -428,11 +428,11 @@ public final class f4 extends FrameLayout {
             }
             TLRPC.User user = (TLRPC.User) obj2;
             if (this.L && UserObject.isUserSelf(user)) {
-                k4Var.l(LocaleController.getString(R.string.SavedMessages), true);
+                l4Var.l(LocaleController.getString(R.string.SavedMessages), true);
                 j5Var.l(null, false);
                 h9Var.g(1);
                 w9Var.h(null, "50_50", h9Var, user);
-                ((FrameLayout.LayoutParams) k4Var.getLayoutParams()).topMargin = AndroidUtilities.dp(19.0f);
+                ((FrameLayout.LayoutParams) l4Var.getLayoutParams()).topMargin = AndroidUtilities.dp(19.0f);
                 return;
             }
             TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
@@ -465,13 +465,13 @@ public final class f4 extends FrameLayout {
             CharSequence charSequence4 = this.h;
             if (charSequence4 != null) {
                 this.x = null;
-                k4Var.l(charSequence4, true);
+                l4Var.l(charSequence4, true);
             } else {
                 if (str3 == null) {
                     str3 = UserObject.getUserName(user);
                 }
                 this.x = str3;
-                k4Var.l(str3, false);
+                l4Var.l(str3, false);
             }
             if (this.n == null) {
                 if (user.bot) {
@@ -622,15 +622,15 @@ public final class f4 extends FrameLayout {
         w9Var.setRoundRadius(AndroidUtilities.dp(24.0f));
         boolean z12 = LocaleController.isRTL;
         addView(w9Var, w7.z5.d(46, 46.0f, (z12 ? 5 : 3) | 48, z12 ? 0.0f : i11 + 13, 6.0f, z12 ? i11 + 13 : 0.0f, 0.0f));
-        ci.k4 k4Var = new ci.k4(context, 1);
-        this.b = k4Var;
-        NotificationCenter.listenEmojiLoading(k4Var);
-        k4Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(z11 ? org.telegram.ui.ActionBar.h6.ng : org.telegram.ui.ActionBar.h6.G6, d6Var));
-        k4Var.setTypeface(AndroidUtilities.bold());
-        k4Var.setTextSize(16);
-        k4Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+        ci.l4 l4Var = new ci.l4(context, 1);
+        this.b = l4Var;
+        NotificationCenter.listenEmojiLoading(l4Var);
+        l4Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(z11 ? org.telegram.ui.ActionBar.h6.ng : org.telegram.ui.ActionBar.h6.G6, d6Var));
+        l4Var.setTypeface(AndroidUtilities.bold());
+        l4Var.setTextSize(16);
+        l4Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z13 = LocaleController.isRTL;
-        addView(k4Var, w7.z5.d(-1, 20.0f, (z13 ? 5 : 3) | 48, (z13 ? 28 : 72) + i11, 10.0f, (z13 ? 72 : 28) + i11, 0.0f));
+        addView(l4Var, w7.z5.d(-1, 20.0f, (z13 ? 5 : 3) | 48, (z13 ? 28 : 72) + i11, 10.0f, (z13 ? 72 : 28) + i11, 0.0f));
         org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
         this.c = j5Var;
         j5Var.setTextSize(14);

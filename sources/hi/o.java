@@ -33,23 +33,23 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.i6;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.d50;
 import org.telegram.ui.Components.e50;
 import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.jr;
-import org.telegram.ui.lu0;
-import org.telegram.ui.sn;
+import org.telegram.ui.hr;
+import org.telegram.ui.ju0;
+import org.telegram.ui.qn;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class o extends n2 implements d50, NotificationCenter.NotificationCenterDelegate, ne.d {
     public e50 E;
@@ -62,7 +62,7 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
     public final ne.b a;
     public long b;
     public w1 c;
-    public a71 d;
+    public b71 d;
     public String e;
     public boolean f;
     public boolean h;
@@ -81,12 +81,12 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
         this.K = new m(this);
     }
 
-    public static boolean U(o oVar, f61 f61Var, View view) {
+    public static boolean U(o oVar, g61 g61Var, View view) {
         long j10;
         boolean canRemoveBotFromCommunity;
         boolean z10;
         boolean z11;
-        Object obj = f61Var.G;
+        Object obj = g61Var.G;
         if (!(obj instanceof TLRPC.Chat)) {
             if (obj instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) obj;
@@ -119,10 +119,10 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
         return false;
     }
 
-    public static void V(o oVar, f61 f61Var) {
+    public static void V(o oVar, g61 g61Var) {
         TLRPC.Chat chat;
         TLRPC.ChatPhoto chatPhoto;
-        int i10 = f61Var.d;
+        int i10 = g61Var.d;
         if (i10 == 140) {
             if (oVar.E.g() || (chatPhoto = (chat = oVar.getMessagesController().getChat(Long.valueOf(oVar.b))).photo) == null || chatPhoto.photo_big == null) {
                 return;
@@ -152,18 +152,18 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
             Bundle bundle = new Bundle();
             bundle.putLong("chat_id", oVar.b);
             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-            jr jrVar = new jr(bundle);
-            jrVar.x0(oVar.I);
-            oVar.presentFragment(jrVar);
+            hr hrVar = new hr(bundle);
+            hrVar.x0(oVar.I);
+            oVar.presentFragment(hrVar);
             return;
         }
         if (i10 == 144) {
             Bundle bundle2 = new Bundle();
             bundle2.putLong("chat_id", oVar.b);
             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 0);
-            jr jrVar2 = new jr(bundle2);
-            jrVar2.x0(oVar.I);
-            oVar.presentFragment(jrVar2);
+            hr hrVar2 = new hr(bundle2);
+            hrVar2.x0(oVar.I);
+            oVar.presentFragment(hrVar2);
             return;
         }
         if (i10 == 143) {
@@ -188,11 +188,11 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
             t0.e(oVar.J, oVar, oVar.currentAccount, oVar.H);
             return;
         }
-        Object obj = f61Var.G;
+        Object obj = g61Var.G;
         if (obj instanceof TLRPC.Chat) {
-            oVar.presentFragment(sn.W9(-((TLRPC.Chat) obj).id));
+            oVar.presentFragment(qn.W9(-((TLRPC.Chat) obj).id));
         } else if (obj instanceof TLRPC.User) {
-            oVar.presentFragment(sn.W9(((TLRPC.User) obj).id));
+            oVar.presentFragment(qn.W9(((TLRPC.User) obj).id));
         }
     }
 
@@ -204,7 +204,7 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
     }
 
     @Override // org.telegram.ui.Components.d50
-    public final void F(float f7) {
+    public final void E(float f7) {
         RadialProgressView radialProgressView = this.x;
         if (radialProgressView == null) {
             return;
@@ -213,7 +213,7 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
     }
 
     @Override // org.telegram.ui.Components.d50
-    public final void J(boolean z10, boolean z11) {
+    public final void K(boolean z10, boolean z11) {
         RadialProgressView radialProgressView = this.x;
         if (radialProgressView == null) {
             return;
@@ -292,11 +292,12 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
     public final View createView(Context context) {
         int i10 = 1;
         setHasOwnBackground(true);
-        i2.d.y(false, this.actionBar);
+        i2.e.y(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(false);
         this.actionBar.setAddToContainer(false);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 6));
+        int i11 = 6;
+        this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, i11));
         gh.c cVar = new gh.c();
         cVar.a(getThemedColor(h6.d6));
         this.actionBar.M(new bh.b(cVar), fh.c.o(this.resourceProvider), false);
@@ -312,7 +313,7 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
         String name = DialogObject.getName(this.H);
         this.e = name;
         d6 d6Var = this.resourceProvider;
-        ah.x xVar = new ah.x(context, 7);
+        ah.x xVar = new ah.x(context, i11);
         ai.t tVar = new ai.t(context, i10);
         xVar.b = tVar;
         tVar.setTextColor(h6.w0(h6.G6, d6Var));
@@ -329,8 +330,8 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
         this.n = xVar;
         tVar.setText(name);
         ((ai.t) this.n.b).setSelection(name.length());
-        int i11 = 2;
-        ((ai.t) this.n.b).addTextChangedListener(new ai.u(this, i11));
+        int i12 = 2;
+        ((ai.t) this.n.b).addTextChangedListener(new ai.u(this, i12));
         di.n nVar2 = new di.n(this, context);
         this.G = nVar2;
         nVar2.setTextColor(getThemedColor(h6.Sh));
@@ -340,7 +341,7 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
         this.G.setGravity(17);
         this.G.setVisibility(8);
         this.G.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-        this.G.setOnClickListener(new hg.r0(this, i11));
+        this.G.setOnClickListener(new hg.r0(this, i12));
         b6.a(this.G);
         this.actionBar.addView(this.G, z5.d(-2, 56.0f, 85, 0.0f, 0.0f, 12.0f, 0.0f));
         g6 g6Var = new g6(this, context);
@@ -353,12 +354,12 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
         this.x.setNoProgress(false);
         this.r.addView(this.x, z5.d(64, 64.0f, 81, 0.0f, 0.0f, 0.0f, 32.0f));
         a0(false, false);
-        a71 a71Var = new a71(this, new i(this, i10), new j(this), new j(this));
-        this.d = a71Var;
-        a71Var.setClipToPadding(false);
-        a71 a71Var2 = this.d;
-        a71Var2.W2.r = false;
-        a71Var2.p1();
+        b71 b71Var = new b71(this, new i(this, i10), new j(this), new j(this));
+        this.d = b71Var;
+        b71Var.setClipToPadding(false);
+        b71 b71Var2 = this.d;
+        b71Var2.W2.r = false;
+        b71Var2.p1();
         this.actionBar.setBackground(null);
         this.c.addView(this.d, z5.c(-1.0f, -1));
         this.c.addView(this.actionBar, z5.e(-1, -2, 48));
@@ -406,7 +407,7 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
     }
 
     @Override // org.telegram.ui.Components.d50
-    public final /* synthetic */ lu0 getCloseIntoObject() {
+    public final /* synthetic */ ju0 getCloseIntoObject() {
         return null;
     }
 
@@ -470,6 +471,14 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
         this.E.k();
     }
 
+    @Override // ne.d
+    public final void r(int i10, float f7, float f10, ne.e eVar) {
+        this.G.setAlpha(f7);
+        this.G.setScaleX(AndroidUtilities.lerp(0.75f, 1.0f, f7));
+        this.G.setScaleY(AndroidUtilities.lerp(0.75f, 1.0f, f7));
+        this.G.setVisibility(f7 > 0.0f ? 0 : 8);
+    }
+
     @Override // org.telegram.ui.ActionBar.n2
     public final void restoreSelfArgs(Bundle bundle) {
         e50 e50Var = this.E;
@@ -495,14 +504,6 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
         }
     }
 
-    @Override // ne.d
-    public final void u(int i10, float f7, float f10, ne.e eVar) {
-        this.G.setAlpha(f7);
-        this.G.setScaleX(AndroidUtilities.lerp(0.75f, 1.0f, f7));
-        this.G.setScaleY(AndroidUtilities.lerp(0.75f, 1.0f, f7));
-        this.G.setVisibility(f7 > 0.0f ? 0 : 8);
-    }
-
     @Override // org.telegram.ui.Components.d50
     public final /* synthetic */ boolean v() {
         return false;
@@ -513,6 +514,6 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
     }
 
     @Override // ne.d
-    public final /* synthetic */ void E(float f7, int i10) {
+    public final /* synthetic */ void H(float f7, int i10) {
     }
 }

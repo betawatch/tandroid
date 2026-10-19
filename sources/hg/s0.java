@@ -43,12 +43,12 @@ import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.zq;
-import org.telegram.ui.fc0;
-import org.telegram.ui.jc0;
+import org.telegram.ui.dc0;
+import org.telegram.ui.hc0;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class s0 extends c implements LocationController.LocationFetchCallback {
     public final int K;
@@ -74,7 +74,7 @@ public class s0 extends c implements LocationController.LocationFetchCallback {
     public TLRPC.TL_messageMediaVenue e0;
     public boolean f0;
     public final boolean g0;
-    public fc0 h0;
+    public dc0 h0;
     public boolean i0;
     public boolean j0;
     public boolean k0;
@@ -257,7 +257,7 @@ public class s0 extends c implements LocationController.LocationFetchCallback {
         this.Y = new ArrayList(arrayList);
         long clientUserId = UserConfig.getInstance(this.K).getClientUserId();
         for (int i10 = 0; i10 < this.Y.size(); i10++) {
-            if (((jc0) this.Y.get(i10)).a == clientUserId || ((jc0) this.Y.get(i10)).b.out) {
+            if (((hc0) this.Y.get(i10)).a == clientUserId || ((hc0) this.Y.get(i10)).b.out) {
                 this.Y.remove(i10);
                 break;
             }
@@ -629,32 +629,32 @@ public class s0 extends c implements LocationController.LocationFetchCallback {
                                 i16--;
                             }
                             if (i16 >= 0 && i16 < this.Y.size()) {
-                                jc0 jc0Var = (jc0) this.Y.get(i16);
+                                hc0 hc0Var = (hc0) this.Y.get(i16);
                                 Location location = this.O;
                                 TextView textView = v7Var.d;
                                 w9 w9Var = v7Var.a;
                                 j5 j5Var = v7Var.b;
                                 Location location2 = v7Var.v;
-                                v7Var.s = jc0Var;
-                                if (DialogObject.isUserDialog(jc0Var.a)) {
-                                    TLRPC.User user = MessagesController.getInstance(v7Var.x).getUser(Long.valueOf(jc0Var.a));
+                                v7Var.s = hc0Var;
+                                if (DialogObject.isUserDialog(hc0Var.a)) {
+                                    TLRPC.User user = MessagesController.getInstance(v7Var.x).getUser(Long.valueOf(hc0Var.a));
                                     if (user != null) {
                                         v7Var.f.m(v7Var.x, user);
                                         j5Var.l(ContactsController.formatName(user.first_name, user.last_name), false);
                                         w9Var.e(user, v7Var.f);
                                     }
                                 } else {
-                                    TLRPC.Chat chat = MessagesController.getInstance(v7Var.x).getChat(Long.valueOf(-jc0Var.a));
+                                    TLRPC.Chat chat = MessagesController.getInstance(v7Var.x).getChat(Long.valueOf(-hc0Var.a));
                                     if (chat != null) {
                                         v7Var.f.k(v7Var.x, chat);
                                         j5Var.l(chat.title, false);
                                         w9Var.e(chat, v7Var.f);
                                     }
                                 }
-                                IMapsProvider.LatLng position = jc0Var.e.getPosition();
+                                IMapsProvider.LatLng position = hc0Var.e.getPosition();
                                 location2.setLatitude(position.latitude);
                                 location2.setLongitude(position.longitude);
-                                int i17 = jc0Var.b.edit_date;
+                                int i17 = hc0Var.b.edit_date;
                                 String formatLocationUpdateDate = LocaleController.formatLocationUpdateDate(i17 != 0 ? i17 : r11.date);
                                 if (location == null) {
                                     textView.setText(formatLocationUpdateDate);

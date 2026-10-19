@@ -24,7 +24,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ry implements MediaDataController.KeywordResultCallback, e5, org.telegram.ui.ActionBar.a2, ImageReceiver.ImageReceiverDelegate, MessagesStorage.BooleanCallback, t5.b, s5.e, e2.j, x2.k {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class ry implements MediaDataController.KeywordResu
             photoEntry.ttl = a60Var.c;
             photoEntry.effectId = a60Var.d;
         }
-        m60Var.n.r(photoEntry, videoEditedInfo, z10 || a60Var == null || a60Var.a, i10 != 0 ? i10 : a60Var != null ? a60Var.b : 0, i11 != 0 ? i11 : 0, false, a60Var != null ? a60Var.e : 0L);
+        m60Var.n.s(photoEntry, videoEditedInfo, z10 || a60Var == null || a60Var.a, i10 != 0 ? i10 : a60Var != null ? a60Var.b : 0, i11 != 0 ? i11 : 0, false, a60Var != null ? a60Var.e : 0L);
         m60Var.r(false, false);
     }
 
@@ -239,7 +239,7 @@ public final /* synthetic */ class ry implements MediaDataController.KeywordResu
                         } else if (i23 == 6) {
                             cVar4 = o5.c.n;
                         } else {
-                            w7.j6.a(Integer.valueOf(i23), "SQLiteEventStore", "%n is not valid. No matched LogEventDropped-Reason found. Treated it as REASON_UNKNOWN");
+                            w7.i6.a(Integer.valueOf(i23), "SQLiteEventStore", "%n is not valid. No matched LogEventDropped-Reason found. Treated it as REASON_UNKNOWN");
                         }
                     }
                     cVar = cVar4;
@@ -298,7 +298,7 @@ public final /* synthetic */ class ry implements MediaDataController.KeywordResu
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         Bitmap bitmap;
-        p21 p21Var = (p21) this.c;
+        q21 q21Var = (q21) this.c;
         vp vpVar = (vp) this.d;
         TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) this.b;
         ImageReceiver.BitmapHolder bitmapSafe = imageReceiver.getBitmapSafe();
@@ -309,27 +309,27 @@ public final /* synthetic */ class ry implements MediaDataController.KeywordResu
         if (drawable instanceof wc0) {
             wc0 wc0Var = (wc0) drawable;
             TLRPC.WallPaperSettings wallPaperSettings = wallPaper.settings;
-            wc0Var.s(p21.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
-            wc0Var.t(p21Var.L);
-            p21Var.invalidate();
+            wc0Var.s(q21.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
+            wc0Var.t(q21Var.L);
+            q21Var.invalidate();
         }
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.l5.a(this, i10, str, drawable);
+        org.telegram.messenger.k5.a(this, i10, str, drawable);
     }
 
     @Override // org.telegram.ui.ActionBar.a2
     public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 3:
-                sv0 sv0Var = (sv0) this.c;
-                ci.s6 s6Var = (ci.s6) this.d;
+                tv0 tv0Var = (tv0) this.c;
+                ci.t6 t6Var = (ci.t6) this.d;
                 ArrayList arrayList = (ArrayList) this.b;
-                s6Var.F(arrayList);
-                xc.a0(sv0Var.v1).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("BotPreviewsDeleted", arrayList.size(), new Object[0])).j();
-                sv0Var.L(false);
+                t6Var.F(arrayList);
+                xc.a0(tv0Var.v1).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("BotPreviewsDeleted", arrayList.size(), new Object[0])).j();
+                tv0Var.L(false);
                 break;
             case 6:
                 boolean[] zArr = (boolean[]) this.c;
@@ -357,7 +357,7 @@ public final /* synthetic */ class ry implements MediaDataController.KeywordResu
         i5.d dVar = iVar.c;
         String str = hVar.a;
         String str2 = iVar.a;
-        String c10 = w7.j6.c("SQLiteEventStore");
+        String c10 = w7.i6.c("SQLiteEventStore");
         if (Log.isLoggable(c10, 3)) {
             Log.d(c10, "Storing event with priority=" + dVar + ", name=" + str + " for destination " + str2);
         }
@@ -368,7 +368,7 @@ public final /* synthetic */ class ry implements MediaDataController.KeywordResu
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.l5.b(this, imageReceiver);
+        org.telegram.messenger.k5.b(this, imageReceiver);
     }
 
     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback

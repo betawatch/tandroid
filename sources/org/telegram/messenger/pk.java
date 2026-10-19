@@ -1,26 +1,24 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pk implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ TopicsController b;
-    public final /* synthetic */ long c;
 
-    public /* synthetic */ pk(TopicsController topicsController, long j10, int i10) {
+    public /* synthetic */ pk(TopicsController topicsController, int i10) {
         this.a = i10;
         this.b = topicsController;
-        this.c = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadTopics$6(this.c);
+                this.b.lambda$applyPinnedOrder$17();
                 break;
             default:
-                this.b.lambda$processTopics$8(this.c);
+                this.b.lambda$databaseCleared$25();
                 break;
         }
     }

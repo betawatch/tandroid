@@ -2,7 +2,6 @@ package yh;
 
 import ai.y9;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
@@ -11,9 +10,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g61;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t3 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -39,33 +38,33 @@ public final /* synthetic */ class t3 implements Utilities.Callback2 {
                 y9 y9Var = k4Var.Y;
                 if (y9Var != null) {
                     ArrayList arrayList2 = y9Var.l;
-                    arrayList.add(f61.C(AndroidUtilities.dp(16.0f)));
+                    arrayList.add(g61.C(AndroidUtilities.dp(16.0f)));
                     if (y9Var.i && arrayList2.isEmpty()) {
-                        f61 o10 = f61.o(1, 34);
+                        g61 o10 = g61.o(1, 34);
                         o10.u = 1;
                         arrayList.add(o10);
-                        f61 o11 = f61.o(2, 34);
+                        g61 o11 = g61.o(2, 34);
                         o11.u = 1;
                         arrayList.add(o11);
-                        f61 o12 = f61.o(3, 34);
+                        g61 o12 = g61.o(3, 34);
                         o12.u = 1;
                         arrayList.add(o12);
-                        f61 o13 = f61.o(4, 34);
+                        g61 o13 = g61.o(4, 34);
                         o13.u = 1;
                         arrayList.add(o13);
-                        f61 o14 = f61.o(5, 34);
+                        g61 o14 = g61.o(5, 34);
                         o14.u = 1;
                         arrayList.add(o14);
-                        f61 o15 = f61.o(6, 34);
+                        g61 o15 = g61.o(6, 34);
                         o15.u = 1;
                         arrayList.add(o15);
-                        f61 o16 = f61.o(7, 34);
+                        g61 o16 = g61.o(7, 34);
                         o16.u = 1;
                         arrayList.add(o16);
-                        f61 o17 = f61.o(8, 34);
+                        g61 o17 = g61.o(8, 34);
                         o17.u = 1;
                         arrayList.add(o17);
-                        f61 o18 = f61.o(9, 34);
+                        g61 o18 = g61.o(9, 34);
                         o18.u = 1;
                         arrayList.add(o18);
                     } else {
@@ -78,7 +77,7 @@ public final /* synthetic */ class t3 implements Utilities.Callback2 {
                             TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj4;
                             if (!savedStarGift.collection_id.contains(Integer.valueOf(k4Var.X))) {
                                 int i14 = f1.a;
-                                f61 J = f61.J(f1.class);
+                                g61 J = g61.J(f1.class);
                                 J.u = 1;
                                 J.z = 0;
                                 J.G = savedStarGift;
@@ -100,18 +99,18 @@ public final /* synthetic */ class t3 implements Utilities.Callback2 {
                             while (true) {
                                 if (i11 < (i13 <= 0 ? 3 : i13)) {
                                     i11++;
-                                    f61 o19 = f61.o(i11, 34);
+                                    g61 o19 = g61.o(i11, 34);
                                     o19.u = 1;
                                     arrayList.add(o19);
                                 }
                             }
                         }
                     }
-                    arrayList.add(f61.C(AndroidUtilities.dp(68.0f)));
+                    arrayList.add(g61.C(AndroidUtilities.dp(68.0f)));
                     break;
                 }
                 break;
-            case 2:
+            default:
                 zh.d dVar = (zh.d) obj3;
                 TLRPC.ShareThemeBackdrops shareThemeBackdrops = (TLRPC.ShareThemeBackdrops) obj;
                 ArrayList arrayList3 = dVar.e;
@@ -136,28 +135,6 @@ public final /* synthetic */ class t3 implements Utilities.Callback2 {
                     Object obj5 = arrayList4.get(i11);
                     i11++;
                     ((Runnable) obj5).run();
-                }
-                break;
-            default:
-                zh.i0 i0Var = (zh.i0) obj3;
-                TLRPC.ShareTheme shareTheme = (TLRPC.ShareTheme) obj;
-                if (shareTheme != null && !i0Var.E && !i0Var.x) {
-                    int i16 = i0Var.a;
-                    zh.v0[] v0VarArr = zh.v0.d;
-                    if (v0VarArr[i16] == null) {
-                        v0VarArr[i16] = new zh.v0(i16);
-                    }
-                    v0VarArr[i16].a(i0Var.c.f, shareTheme);
-                    TLRPC.ShareTheme shareTheme2 = i0Var.H;
-                    if (shareTheme2 != null) {
-                        byte[] b10 = zh.v0.b(shareTheme);
-                        byte[] b11 = zh.v0.b(shareTheme2);
-                        if (b10 != null && Arrays.equals(b10, b11)) {
-                        }
-                    } else if (shareTheme == shareTheme2) {
-                    }
-                    i0Var.a(shareTheme);
-                    break;
                 }
                 break;
         }

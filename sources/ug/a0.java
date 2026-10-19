@@ -11,9 +11,9 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class a0 extends vg.e {
     public final /* synthetic */ b0 r;
@@ -42,16 +42,16 @@ public final class a0 extends vg.e {
         n2 n2Var = b0Var.n;
         b0Var.dismiss();
         if (tLObject instanceof TLRPC.Chat) {
-            n2Var.presentFragment(sn.W9(-((TLRPC.Chat) tLObject).id));
+            n2Var.presentFragment(qn.W9(-((TLRPC.Chat) tLObject).id));
             return;
         }
         if (tLObject instanceof TLRPC.User) {
-            n2Var.presentFragment(sn.W9(((TLRPC.User) tLObject).id));
+            n2Var.presentFragment(qn.W9(((TLRPC.User) tLObject).id));
             return;
         }
         Bundle bundle = new Bundle();
         bundle.putLong("chat_id", -DialogObject.getPeerDialogId(tL_payments_checkedGiftCode.from_id));
         bundle.putInt("message_id", tL_payments_checkedGiftCode.giveaway_msg_id);
-        n2Var.presentFragment(new sn(bundle));
+        n2Var.presentFragment(new qn(bundle));
     }
 }

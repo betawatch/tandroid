@@ -4,20 +4,20 @@ import android.net.Uri;
 import java.util.Map;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class t implements g2.h {
     public final g2.h a;
     public final int b;
-    public final u0 c;
+    public final t0 c;
     public final byte[] d;
     public int e;
 
-    public t(g2.h hVar, int i10, u0 u0Var) {
+    public t(g2.h hVar, int i10, t0 t0Var) {
         u6.g(i10 > 0);
         this.a = hVar;
         this.b = i10;
-        this.c = u0Var;
+        this.c = t0Var;
         this.d = new byte[1];
         this.e = i10;
     }
@@ -72,14 +72,14 @@ public final class t implements g2.h {
                     }
                     if (i14 > 0) {
                         e2.x xVar = new e2.x(bArr3, i14);
-                        u0 u0Var = this.c;
-                        long max = !u0Var.w ? u0Var.r : Math.max(u0Var.x.h(true), u0Var.r);
+                        t0 t0Var = this.c;
+                        long max = !t0Var.w ? t0Var.r : Math.max(t0Var.x.m(true), t0Var.r);
                         int a2 = xVar.a();
-                        c3.j0 j0Var = u0Var.v;
+                        c3.j0 j0Var = t0Var.v;
                         j0Var.getClass();
                         j0Var.d(a2, xVar);
                         j0Var.c(max, 1, a2, 0, null);
-                        u0Var.w = true;
+                        t0Var.w = true;
                     }
                 }
                 this.e = this.b;

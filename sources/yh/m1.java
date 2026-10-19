@@ -9,33 +9,33 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.x90;
-import org.telegram.ui.sa1;
+import org.telegram.ui.qa1;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class m1 extends e61 {
+public final class m1 extends f61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        e61.setup(new m1());
+        f61.setup(new m1());
     }
 
-    @Override // org.telegram.ui.Components.e61
-    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
+    @Override // org.telegram.ui.Components.f61
+    public final void bindView(View view, g61 g61Var, boolean z10, t61 t61Var, b71 b71Var) {
         n1 n1Var = (n1) view;
-        int i10 = f61Var.d;
-        ArrayList arrayList = (ArrayList) f61Var.G;
-        int i11 = f61Var.z;
-        Utilities.Callback callback = (Utilities.Callback) f61Var.H;
-        sa1 sa1Var = n1Var.a;
+        int i10 = g61Var.d;
+        ArrayList arrayList = (ArrayList) g61Var.G;
+        int i11 = g61Var.z;
+        Utilities.Callback callback = (Utilities.Callback) g61Var.H;
+        qa1 qa1Var = n1Var.a;
         ArrayList arrayList2 = n1Var.d;
         boolean z11 = n1Var.r == i10;
         n1Var.r = i10;
@@ -48,7 +48,7 @@ public final class m1 extends e61 {
                 }
                 CharSequence charSequence = i13 < arrayList.size() ? (CharSequence) arrayList.get(i13) : null;
                 if (charSequence == null) {
-                    sa1Var.removeView((View) arrayList2.remove(i12));
+                    qa1Var.removeView((View) arrayList2.remove(i12));
                     i12--;
                 } else {
                     ((TextView) arrayList2.get(i12)).setText(charSequence);
@@ -68,7 +68,7 @@ public final class m1 extends e61 {
                 x90Var.setSingleLine();
                 x90Var.setMaxLines(1);
                 b6.b(x90Var, 0.075f, 1.4f);
-                sa1Var.addView(x90Var, z5.n(-2, 26));
+                qa1Var.addView(x90Var, z5.n(-2, 26));
                 arrayList2.add(x90Var);
                 i13++;
             }
@@ -77,27 +77,27 @@ public final class m1 extends e61 {
         if (!z11) {
             n1Var.c.d(i11, true);
         }
-        sa1Var.invalidate();
+        qa1Var.invalidate();
         for (int i14 = 0; i14 < arrayList2.size(); i14++) {
             ((TextView) arrayList2.get(i14)).setOnClickListener(new org.telegram.ui.Components.a0(i14, 1, callback));
         }
     }
 
-    @Override // org.telegram.ui.Components.e61
-    public final boolean contentsEquals(f61 f61Var, f61 f61Var2) {
-        return f61Var.z == f61Var2.z && f61Var.H == f61Var2.H && equals(f61Var, f61Var2);
+    @Override // org.telegram.ui.Components.f61
+    public final boolean contentsEquals(g61 g61Var, g61 g61Var2) {
+        return g61Var.z == g61Var2.z && g61Var.H == g61Var2.H && equals(g61Var, g61Var2);
     }
 
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     public final View createView(Context context, im0 im0Var, int i10, int i11, d6 d6Var) {
         return new n1(context);
     }
 
-    @Override // org.telegram.ui.Components.e61
-    public final boolean equals(f61 f61Var, f61 f61Var2) {
-        if (f61Var.d == f61Var2.d) {
-            ArrayList arrayList = (ArrayList) f61Var.G;
-            ArrayList arrayList2 = (ArrayList) f61Var2.G;
+    @Override // org.telegram.ui.Components.f61
+    public final boolean equals(g61 g61Var, g61 g61Var2) {
+        if (g61Var.d == g61Var2.d) {
+            ArrayList arrayList = (ArrayList) g61Var.G;
+            ArrayList arrayList2 = (ArrayList) g61Var2.G;
             if (arrayList == arrayList2) {
                 return true;
             }

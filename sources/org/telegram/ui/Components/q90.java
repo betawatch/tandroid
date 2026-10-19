@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class q90 extends LinearLayout {
     public n90 E;
@@ -205,7 +205,7 @@ public class q90 extends LinearLayout {
                 }
             }
         });
-        imageView.setOnClickListener(new ci.b4(this, context, f3Var, n2Var, 13));
+        imageView.setOnClickListener(new ci.c4(this, context, f3Var, n2Var, 13));
         frameLayout.setOnClickListener(new androidx.mediarouter.app.w(this, 10));
         f();
     }
@@ -267,7 +267,7 @@ public class q90 extends LinearLayout {
         tL_messages_getChatInviteImporters.offset_user = new TLRPC.TL_inputUserEmpty();
         tL_messages_getChatInviteImporters.limit = Math.min(tL_chatInviteExported.usage, 3);
         this.y = true;
-        ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_messages_getChatInviteImporters, new org.telegram.ui.xc(18, this, tL_chatInviteExported));
+        ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_messages_getChatInviteImporters, new org.telegram.ui.vc(18, this, tL_chatInviteExported));
     }
 
     public final void d(int i10, ArrayList arrayList, boolean z10) {

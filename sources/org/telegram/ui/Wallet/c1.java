@@ -5,7 +5,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c1 implements Utilities.Callback2 {
     public final /* synthetic */ int a = 1;
@@ -43,7 +43,7 @@ public final /* synthetic */ class c1 implements Utilities.Callback2 {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 f2Var.getClass();
                 if (tL_error == null && tonconnectchallenge != null) {
-                    Utilities.globalQueue.postRunnable(new ai.l8(f2Var, j0Var, tonconnectsession, str, bArr, a2Var, tonconnectchallenge, xVar, 6));
+                    Utilities.globalQueue.postRunnable(new ai.m8(f2Var, j0Var, tonconnectsession, str, bArr, a2Var, tonconnectchallenge, xVar, 6));
                     break;
                 } else {
                     xVar.run(f2.x(tL_error, "registerKey"));
@@ -61,7 +61,7 @@ public final /* synthetic */ class c1 implements Utilities.Callback2 {
                 f2Var.getClass();
                 if (str3 == null && j0Var2 != null) {
                     j0 b10 = j0Var2.b();
-                    Utilities.globalQueue.postRunnable(new ai.l8(f2Var, b10, tonconnectsession2, str2, bArr2, jSONArray, tL_urlAuthResultRequest, new s1(1, b10, s1Var), 7));
+                    Utilities.globalQueue.postRunnable(new ai.m8(f2Var, b10, tonconnectsession2, str2, bArr2, jSONArray, tL_urlAuthResultRequest, new s1(1, b10, s1Var), 7));
                     break;
                 } else {
                     if (str3 == null) {

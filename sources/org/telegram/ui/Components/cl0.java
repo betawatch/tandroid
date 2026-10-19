@@ -44,7 +44,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class cl0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final org.telegram.ui.Cells.d1 k1 = new org.telegram.ui.Cells.d1(Float.class, "transitionProgress", 2);
@@ -219,7 +219,7 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
         u1Var.j(new kv(this, 6));
         u1Var.i(new pk0(this, 1));
         u1Var.setOnItemClickListener(new j(this, 11));
-        u1Var.setOnItemLongClickListener((yl0) new i2.r(this, i10, 9));
+        u1Var.setOnItemLongClickListener((yl0) new i2.s(this, i10, 9));
         addView(u1Var, w7.z5.c(-1.0f, -1));
         setClipChildren(false);
         setClipToPadding(false);
@@ -245,11 +245,11 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
         boolean z10 = true;
         if (bVar != null) {
             eh.e eVar = cl0Var.a1;
-            org.telegram.ui.q41 q41Var = t0Var.m.f0;
-            q41Var.x = true;
-            q41Var.setBackground(null);
-            q41Var.d();
-            q41Var.invalidate();
+            org.telegram.ui.o41 o41Var = t0Var.m.f0;
+            o41Var.x = true;
+            o41Var.setBackground(null);
+            o41Var.d();
+            o41Var.invalidate();
             dh.d c10 = bVar.c(t0Var.a, null, true);
             c10.o(eVar);
             c10.q(AndroidUtilities.dp(12.0f));
@@ -258,7 +258,7 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
         }
         ah.t0 t0Var2 = cl0Var.x0;
         bl0 bl0Var = cl0Var.g0;
-        if (bl0Var != null && !bl0Var.j()) {
+        if (bl0Var != null && !bl0Var.i()) {
             z10 = false;
         }
         t0Var2.m.setLongPressEnabled(z10);
@@ -434,7 +434,7 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
         float f20;
         float f21;
         r5 r5Var;
-        ci.f3 f3Var;
+        ci.g3 g3Var;
         int i17;
         bl0 bl0Var;
         float f22;
@@ -464,7 +464,7 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
                 }
                 i1Var = this.l0;
                 i10 = this.M0;
-                if (i1Var != null && i10 != 5 && ((bl0Var = this.g0) == null || bl0Var.j())) {
+                if (i1Var != null && i10 != 5 && ((bl0Var = this.g0) == null || bl0Var.i())) {
                     f22 = this.n0;
                     if (f22 != 1.0f) {
                         float longPressTimeout = (16.0f / (this.l0.a ? ViewConfiguration.getLongPressTimeout() : 1500.0f)) + f22;
@@ -545,13 +545,13 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
                     } else {
                         f14 = 2.0f;
                     }
-                    if (i10 == 1 || this.g0.s()) {
+                    if (i10 == 1 || this.g0.w()) {
                         i17 = save2;
                         i11 = i10;
                         rectF = rectF5;
                         f13 = f27;
                         i12 = 1;
-                        this.g0.m(canvas, rectF, this.y, getX(), getY(), 255, false);
+                        this.g0.q(canvas, rectF, this.y, getX(), getY(), 255, false);
                         canvas2 = canvas;
                     } else {
                         dh.d dVar = this.W0;
@@ -658,7 +658,7 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
                                         if (this.Q == null) {
                                             zk0Var3.setVisibility(0);
                                             zk0Var3.setAlpha(1.0f);
-                                            if (zk0Var3.getImageReceiver().hasBitmapImage() || ((r5Var = zk0Var3.e) != null && (f3Var = r5Var.k) != null && f3Var.hasBitmapImage())) {
+                                            if (zk0Var3.getImageReceiver().hasBitmapImage() || ((r5Var = zk0Var3.e) != null && (g3Var = r5Var.k) != null && g3Var.hasBitmapImage())) {
                                                 zk0Var4.setAlpha(0.0f);
                                             }
                                             f21 = 1.0f;
@@ -672,7 +672,7 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
                                             if (System.currentTimeMillis() - this.s0 > 300) {
                                                 this.s0 = System.currentTimeMillis();
                                                 u1Var2 = u1Var3;
-                                                this.g0.l(al0Var, al0Var.e, true, false);
+                                                this.g0.o(al0Var, al0Var.e, true, false);
                                                 canvas2.save();
                                                 x10 = al0Var.getX() + u1Var2.getX();
                                                 scaleX = ((al0Var.getScaleX() * al0Var.getMeasuredWidth()) - al0Var.getMeasuredWidth()) / f14;
@@ -1085,13 +1085,13 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
         float f19 = paddingTop + f7;
         drawable.setBounds((int) (f14 - f16), (int) (f17 - f16), (int) (f18 + f16), (int) (f16 + f19));
         drawable.draw(canvas);
-        boolean s10 = this.g0.s();
+        boolean w9 = this.g0.w();
         float f20 = paddingTop;
         RectF rectF2 = this.b0;
-        if (s10) {
+        if (w9) {
             rectF2.set(f14, f17, f18, f19);
             f12 = f7;
-            this.g0.m(canvas, rectF2, f12, getX(), getY(), i10, false);
+            this.g0.q(canvas, rectF2, f12, getX(), getY(), i10, false);
         } else {
             f12 = f7;
             if (this.X0 != null) {
@@ -1116,9 +1116,9 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
         float f23 = (-AndroidUtilities.dp(1.0f)) * f10;
         drawable.setBounds((int) ((width2 - f12) - f23), (int) ((lerp - f12) - f23), (int) (width2 + f12 + f23), (int) (f12 + lerp + f23));
         drawable.draw(canvas);
-        if (this.g0.s()) {
+        if (this.g0.w()) {
             rectF2.set(width2 - f11, lerp - f11, width2 + f11, lerp + f11);
-            this.g0.m(canvas, rectF2, f11, getX(), getY(), i10, false);
+            this.g0.q(canvas, rectF2, f11, getX(), getY(), i10, false);
         } else if (this.Y0 != null) {
             RectF rectF4 = AndroidUtilities.rectTmp;
             rectF4.set(width2 - f11, lerp - f11, width2 + f11, lerp + f11);
@@ -1374,7 +1374,7 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
     public final void l(View view, ah.i1 i1Var, boolean z10) {
         bl0 bl0Var = this.g0;
         if (bl0Var != null) {
-            bl0Var.l(view, i1Var, z10, true);
+            bl0Var.o(view, i1Var, z10, true);
         }
         if (this.M0 == 5) {
             try {

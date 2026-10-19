@@ -4,13 +4,13 @@ import android.graphics.Canvas;
 import android.text.Layout;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class x9 extends aa {
     public final w9 p0;
 
-    public x9(ci.q8 q8Var, org.telegram.ui.ActionBar.d6 d6Var) {
-        this.p0 = q8Var;
+    public x9(ci.r8 r8Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        this.p0 = r8Var;
         this.g0 = d6Var;
     }
 

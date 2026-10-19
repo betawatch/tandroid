@@ -1,15 +1,15 @@
 package ei;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class w5 implements qg.d1 {
+public final class w5 implements qg.e1 {
     public final /* synthetic */ xa a;
 
     public w5(xa xaVar) {
         this.a = xaVar;
     }
 
-    @Override // qg.d1
+    @Override // qg.e1
     public final void b() {
         x5 x5Var = this.a.P0;
         if (x5Var != null) {
@@ -17,7 +17,7 @@ public final class w5 implements qg.d1 {
         }
     }
 
-    @Override // qg.d1
+    @Override // qg.e1
     public final void c() {
         xa xaVar = this.a;
         if (xaVar.c1) {
@@ -28,7 +28,7 @@ public final class w5 implements qg.d1 {
         }
     }
 
-    @Override // qg.d1
+    @Override // qg.e1
     public final boolean d() {
         xa xaVar = this.a;
         boolean z10 = xaVar.J0 == null;
@@ -38,14 +38,14 @@ public final class w5 implements qg.d1 {
         return z10;
     }
 
-    @Override // qg.d1
+    @Override // qg.e1
     public final void e() {
         xa xaVar = this.a;
         xaVar.D0.a.e();
         xaVar.d1.setViewHidden(false);
     }
 
-    @Override // qg.d1
+    @Override // qg.e1
     public final void f() {
         xa xaVar = this.a;
         if (xaVar.J0 != null) {
@@ -54,7 +54,7 @@ public final class w5 implements qg.d1 {
         xaVar.d1.setViewHidden(true);
     }
 
-    @Override // qg.d1
+    @Override // qg.e1
     public final void a() {
     }
 }

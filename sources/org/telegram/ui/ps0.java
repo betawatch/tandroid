@@ -1,33 +1,69 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.graphics.Outline;
-import android.view.View;
-import android.view.ViewOutlineProvider;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import org.telegram.messenger.MediaController;
+import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class ps0 extends ViewOutlineProvider {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Object c;
+public final class ps0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ float a;
+    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ PhotoViewer c;
 
-    public /* synthetic */ ps0(Object obj, float f7, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = f7;
+    public ps0(PhotoViewer photoViewer, float f7, Runnable runnable) {
+        this.c = photoViewer;
+        this.a = f7;
+        this.b = runnable;
     }
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        switch (this.a) {
-            case 0:
-                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), (1.0f / this.b) * ((Float) ((ValueAnimator) this.c).getAnimatedValue()).floatValue() * AndroidUtilities.dp(10.0f));
-                break;
-            default:
-                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), (1.0f / this.b) * (1.0f - ((PhotoViewer) this.c).W) * AndroidUtilities.dp(10.0f));
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        PhotoViewer photoViewer = this.c;
+        photoViewer.p6 = null;
+        photoViewer.f6 = 0.0f;
+        photoViewer.b6 = 0.0f;
+        photoViewer.g6 = 0.0f;
+        float r22 = photoViewer.r2(false);
+        photoViewer.e6 = r22;
+        photoViewer.a6 = r22;
+        photoViewer.e0.invalidate();
+        CropAreaView cropAreaView = photoViewer.C1.b.a;
+        float r23 = photoViewer.r2(false);
+        cropAreaView.n0 = 0.0f;
+        cropAreaView.o0 = r23;
+        cropAreaView.p0 = 0.0f;
+        cropAreaView.q0 = 0.0f;
+        cropAreaView.invalidate();
+        photoViewer.C1.c.setRotated(false);
+        float f7 = this.a;
+        if (Math.abs(f7) > 0.0f) {
+            org.telegram.ui.Components.nf0 nf0Var = photoViewer.C1;
+            mg.f fVar = nf0Var.c;
+            if (fVar != null) {
+                fVar.b(0.0f);
+                fVar.setRotated(false);
+            }
+            if (nf0Var.b.m(f7)) {
+                photoViewer.b1.setColorFilter(new PorterDuffColorFilter(photoViewer.z1(org.telegram.ui.ActionBar.h6.zf), PorterDuff.Mode.MULTIPLY));
+            } else {
+                photoViewer.b1.setColorFilter((ColorFilter) null);
+            }
+        }
+        MediaController.CropState cropState = photoViewer.X4.c;
+        if (cropState != null) {
+            cropState.cropPy = 0.0f;
+            cropState.cropPx = 0.0f;
+            cropState.cropPh = 1.0f;
+            cropState.cropPw = 1.0f;
+        }
+        Runnable runnable = this.b;
+        if (runnable != null) {
+            runnable.run();
         }
     }
 }

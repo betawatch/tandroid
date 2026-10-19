@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class oz extends hm0 {
     public int L;
@@ -333,7 +333,7 @@ public final class oz extends hm0 {
                 k3Var.setHeight(AndroidUtilities.dp(8.0f));
                 return;
             } else {
-                int B = org.telegram.messenger.lk.B(82.0f, (int) Math.ceil(num.intValue() / tzVar.y0.d), tzVar.h.getHeight());
+                int B = org.telegram.messenger.kk.B(82.0f, (int) Math.ceil(num.intValue() / tzVar.y0.d), tzVar.h.getHeight());
                 k3Var.setHeight(B > 0 ? B : 1);
                 return;
             }
@@ -402,12 +402,11 @@ public final class oz extends hm0 {
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         View d2Var;
         ViewGroup xVar;
-        boolean z10 = true;
         Context context = this.h;
         tz tzVar = this.Q;
         switch (i10) {
             case 0:
-                d2Var = new hg.d2(2, context, tzVar.Z1, z10);
+                d2Var = new hg.d2(2, context, tzVar.Z1, true);
                 break;
             case 1:
                 d2Var = new org.telegram.ui.Cells.k3(context);
@@ -425,7 +424,7 @@ public final class oz extends hm0 {
                 d2Var.setLayoutParams(new s4.o0(-1, tzVar.b1));
                 break;
             case 5:
-                xVar = new ah.x(this, context, 18);
+                xVar = new ah.x(this, context, 17);
                 ImageView imageView = new ImageView(context);
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 imageView.setImageResource(R.drawable.stickers_empty);
@@ -434,7 +433,7 @@ public final class oz extends hm0 {
                 imageView.setTranslationY(-AndroidUtilities.dp(24.0f));
                 xVar.addView(imageView, w7.z5.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 28.0f));
                 TextView textView = new TextView(context);
-                org.telegram.messenger.lk.j(16.0f, R.string.NoStickersFound, 1, textView);
+                org.telegram.messenger.kk.j(16.0f, R.string.NoStickersFound, 1, textView);
                 textView.setTextColor(tzVar.A(i11));
                 xVar.addView(textView, w7.z5.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 9.0f));
                 xVar.setLayoutParams(new s4.o0(-1, -2));

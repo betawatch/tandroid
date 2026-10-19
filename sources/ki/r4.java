@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.i80;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -37,10 +37,10 @@ public final /* synthetic */ class r4 implements View.OnClickListener {
                     List m10 = u4Var.m();
                     if (indexOf >= 0 && indexOf < m10.size() && indexOf < arrayList.size()) {
                         final t tVar = (t) m10.get(indexOf);
-                        i80 C = u4Var.N.a.f3.C((View) arrayList.get(indexOf));
+                        i80 M = u4Var.N.a.f3.M((View) arrayList.get(indexOf));
                         boolean z10 = tVar.n;
                         final int i10 = 0;
-                        C.c(z10 ? R.drawable.msg_spoiler_off : R.drawable.msg_spoiler, LocaleController.getString(z10 ? R.string.DisablePhotoSpoiler : R.string.EnablePhotoSpoiler), new Runnable() { // from class: ki.s4
+                        M.c(z10 ? R.drawable.msg_spoiler_off : R.drawable.msg_spoiler, LocaleController.getString(z10 ? R.string.DisablePhotoSpoiler : R.string.EnablePhotoSpoiler), new Runnable() { // from class: ki.s4
                             @Override // java.lang.Runnable
                             public final void run() {
                                 a aVar3;
@@ -87,7 +87,7 @@ public final /* synthetic */ class r4 implements View.OnClickListener {
                             }
                         }, false);
                         final int i11 = 1;
-                        C.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new Runnable() { // from class: ki.s4
+                        M.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new Runnable() { // from class: ki.s4
                             @Override // java.lang.Runnable
                             public final void run() {
                                 a aVar3;
@@ -133,13 +133,13 @@ public final /* synthetic */ class r4 implements View.OnClickListener {
                                 }
                             }
                         }, true);
-                        C.a0(0.0f, -AndroidUtilities.dp(38.0f));
+                        M.a0(0.0f, -AndroidUtilities.dp(38.0f));
                         if (u4Var.H) {
-                            C.u = false;
-                            C.v = true;
-                            C.s = 0;
+                            M.u = false;
+                            M.v = true;
+                            M.s = 0;
                         }
-                        C.Z();
+                        M.Z();
                         break;
                     }
                 }
@@ -150,7 +150,7 @@ public final /* synthetic */ class r4 implements View.OnClickListener {
                 if (p3Var != null && (aVar = u4Var2.a) != null) {
                     w3 w3Var = p3Var.a;
                     w3Var.Z3 = aVar;
-                    w3Var.f3.l(0);
+                    w3Var.f3.m(0);
                     break;
                 }
                 break;

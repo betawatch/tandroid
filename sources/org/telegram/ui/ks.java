@@ -1,76 +1,24 @@
 package org.telegram.ui;
 
+import android.graphics.Canvas;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ks implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.kl0, org.telegram.ui.Components.yl0, r0.n {
-    public final /* synthetic */ ContactsActivity a;
+public final /* synthetic */ class ks implements bh.k {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.Components.im0 b;
 
-    public /* synthetic */ ks(ContactsActivity contactsActivity) {
-        this.a = contactsActivity;
+    public /* synthetic */ ks(org.telegram.ui.Components.im0 im0Var, int i10) {
+        this.a = i10;
+        this.b = im0Var;
     }
 
-    @Override // r0.n
-    public r0.k1 B0(View view, r0.k1 k1Var) {
-        int i10 = AndroidUtilities.getDefaultWindowInsets(k1Var, false).d;
-        ContactsActivity contactsActivity = this.a;
-        contactsActivity.q0 = i10;
-        contactsActivity.j0();
-        contactsActivity.i0();
-        contactsActivity.h0();
-        return r0.k1.b;
-    }
-
-    @Override // org.telegram.ui.Components.yl0
-    public boolean a(int i10, View view) {
-        ContactsActivity contactsActivity = this.a;
-        s4.g0 adapter = contactsActivity.f.getAdapter();
-        ps psVar = contactsActivity.d;
-        if (adapter == psVar) {
-            int S = psVar.S(i10);
-            int Q = contactsActivity.d.Q(i10);
-            org.telegram.ui.Components.qc qcVar = org.telegram.ui.Components.qc.w;
-            if (qcVar != null) {
-                qcVar.b();
-            }
-            if (Q < 0 || S < 0) {
-                return false;
-            }
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // bh.k
+    public final boolean a(Canvas canvas, View view, long j10) {
+        switch (this.a) {
         }
-        boolean z10 = contactsActivity.K;
-        if (!z10 && !contactsActivity.L && (view instanceof org.telegram.ui.Cells.va)) {
-            contactsActivity.r0((org.telegram.ui.Cells.va) view);
-            return true;
-        }
-        if (z10 || contactsActivity.L || !(view instanceof org.telegram.ui.Cells.h6)) {
-            return false;
-        }
-        org.telegram.ui.Cells.h6 h6Var = (org.telegram.ui.Cells.h6) view;
-        if (h6Var.getUser() != null && h6Var.getUser().contact) {
-            contactsActivity.r0(h6Var);
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.kl0
-    public void b() {
-        this.a.g0();
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        ContactsActivity contactsActivity = this.a;
-        contactsActivity.getClass();
-        a0.h hVar = contactsActivity.d0;
-        ArrayList<TLRPC.User> arrayList = new ArrayList<>(hVar.m());
-        for (int i11 = 0; i11 < hVar.m(); i11++) {
-            arrayList.add((TLRPC.User) hVar.f(hVar.j(i11)));
-        }
-        contactsActivity.getContactsController().deleteContactsUndoable(contactsActivity.getParentActivity(), contactsActivity, arrayList);
-        contactsActivity.o0();
+        return this.b.drawChild(canvas, view, j10);
     }
 }

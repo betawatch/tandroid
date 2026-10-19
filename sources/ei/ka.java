@@ -14,11 +14,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.dw0;
+import org.telegram.ui.Components.ew0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ka implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class ka implements Utilities.Callback2 {
 
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
-        dw0 dw0Var;
+        ew0 ew0Var;
         TLRPC.PhotoSize closestPhotoSizeWithSize;
         switch (this.a) {
             case 0:
@@ -113,16 +113,16 @@ public final /* synthetic */ class ka implements Utilities.Callback2 {
                             float f7 = (!(tLObject instanceof TLRPC.Photo) || (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(((TLRPC.Photo) tLObject).sizes, MediaDataController.MAX_STYLE_RUNS_COUNT)) == null) ? 1.0f : closestPhotoSizeWithSize.w / closestPhotoSizeWithSize.h;
                             if (f7 > 1.0f) {
                                 float floor = (float) Math.floor(Math.max(xaVar2.R1, z5Var.getMeasuredWidth()) * 0.5d);
-                                dw0Var = new dw0(floor, floor / f7);
+                                ew0Var = new ew0(floor, floor / f7);
                             } else {
                                 float floor2 = (float) Math.floor(Math.max(xaVar2.S1, z5Var.getMeasuredHeight()) * 0.5d);
-                                dw0Var = new dw0(f7 * floor2, floor2);
+                                ew0Var = new ew0(f7 * floor2, floor2);
                             }
-                            rg.x1 x1Var = new rg.x1(xaVar2.getContext(), xaVar2.e0(), dw0Var, tLObject);
-                            x1Var.setDelegate(xaVar2);
-                            z5Var.addView(x1Var);
+                            rg.y1 y1Var = new rg.y1(xaVar2.getContext(), xaVar2.e0(), ew0Var, tLObject);
+                            y1Var.setDelegate(xaVar2);
+                            z5Var.addView(y1Var);
                             xaVar2.f0();
-                            xaVar2.d0(x1Var);
+                            xaVar2.d0(y1Var);
                         }
                         vbVar.e(false);
                     }

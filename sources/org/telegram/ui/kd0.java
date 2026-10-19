@@ -1,40 +1,50 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class kd0 extends sr {
-    public final /* synthetic */ int h;
-    public final /* synthetic */ Object n;
+public final class kd0 extends TextView {
+    public final /* synthetic */ int a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ kd0(Object obj, Context context, int i10) {
+    public /* synthetic */ kd0(Context context, int i10) {
         super(context);
-        this.h = i10;
-        this.n = obj;
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.sr
-    public final void a() {
-        switch (this.h) {
+    @Override // android.widget.TextView, android.view.View
+    public CharSequence getAccessibilityClassName() {
+        switch (this.a) {
+            case 4:
+                return Button.class.getName();
+            default:
+                return super.getAccessibilityClassName();
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
             case 0:
-                ((od0) this.n).h(null);
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(100.0f)), TLObject.FLAG_31));
                 break;
             case 1:
-                ((ie0) this.n).h(null);
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
                 break;
             case 2:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) this.n;
-                if (passcodeActivity.E != 0) {
-                    passcodeActivity.j0();
-                    break;
-                } else {
-                    postDelayed(new ek0(this, 1), 260L);
-                    break;
-                }
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
+                break;
+            case 3:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(AndroidUtilities.dp(26.0f)), TLObject.FLAG_30));
+                break;
             default:
-                ((xf1) this.n).C0();
+                super.onMeasure(i10, i11);
                 break;
         }
     }

@@ -26,7 +26,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import m.g3;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class j0 {
     public final c0 A;
@@ -1295,7 +1295,7 @@ public abstract class j0 {
                 }
                 aVar.c(1);
                 if (K(2)) {
-                    StringBuilder l4 = i2.d.l(i15, "restoreAllState: back stack #", " (index ");
+                    StringBuilder l4 = i2.e.l(i15, "restoreAllState: back stack #", " (index ");
                     l4.append(aVar.s);
                     l4.append("): ");
                     l4.append(aVar);
@@ -1364,7 +1364,7 @@ public abstract class j0 {
                     if (!bundle4.isEmpty()) {
                         bundle3.putBundle("savedInstanceState", bundle4);
                     }
-                    p0Var.a.O(sVar2, bundle4, false);
+                    p0Var.a.Q(sVar2, bundle4, false);
                     Bundle bundle5 = new Bundle();
                     sVar2.g0.d(bundle5);
                     if (!bundle5.isEmpty()) {
@@ -1425,7 +1425,7 @@ public abstract class j0 {
                 for (i10 = 0; i10 < size2; i10++) {
                     bVarArr[i10] = new b((a) this.d.get(i10));
                     if (K(2)) {
-                        StringBuilder l4 = i2.d.l(i10, "saveAllState: adding back stack #", ": ");
+                        StringBuilder l4 = i2.e.l(i10, "saveAllState: adding back stack #", ": ");
                         l4.append(this.d.get(i10));
                         Log.v("FragmentManager", l4.toString());
                     }
@@ -1541,7 +1541,7 @@ public abstract class j0 {
             }
             this.O = m0Var2;
         } else if (uVar != null) {
-            this.O = (m0) new androidx.biometric.e(uVar.e.f(), m0.j).m(m0.class);
+            this.O = (m0) new androidx.biometric.e(uVar.e.f(), m0.j).j(m0.class);
         } else {
             this.O = new m0(false);
         }
@@ -1560,8 +1560,8 @@ public abstract class j0 {
         if (uVar3 != null) {
             androidx.activity.h hVar = uVar3.e.w;
             String h = r4.c.h("FragmentManager:", sVar != 0 ? a1.g.s(new StringBuilder(), sVar.e, ":") : "");
-            this.C = hVar.d(r4.c.u(h, "StartActivityForResult"), new e0(2), new ag.b(this, 3));
-            this.D = hVar.d(r4.c.u(h, "StartIntentSenderForResult"), new e0(0), new a6.m(this, 7));
+            this.C = hVar.d(r4.c.u(h, "StartActivityForResult"), new e0(2), new a4.l(this, 4));
+            this.D = hVar.d(r4.c.u(h, "StartIntentSenderForResult"), new e0(0), new qb.c(this, 8));
             this.E = hVar.d(r4.c.u(h, "RequestPermissions"), new e0(1), new a6.i(this, 6));
         }
         u uVar4 = this.w;

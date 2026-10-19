@@ -21,7 +21,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class xj extends li implements NotificationCenter.NotificationCenterDelegate, ne.d {
     public final rj E;
@@ -88,7 +88,7 @@ public final class xj extends li implements NotificationCenter.NotificationCente
         this.E = rjVar;
         u1Var.setAdapter(rjVar);
         u1Var.setGlowColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.A5, this.a));
-        u1Var.setOnItemClickListener(new ci.x4(10, this, d6Var));
+        u1Var.setOnItemClickListener(new ci.y4(10, this, d6Var));
         u1Var.setOnScrollListener(new ah.d0(this, 23));
         u1Var.setOnItemLongClickListener(new jj(this));
         FrameLayout.LayoutParams e = w7.z5.e(-1, 60, 51);
@@ -139,7 +139,7 @@ public final class xj extends li implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.li
-    public final void G(li liVar) {
+    public final void F(li liVar) {
         this.v.h1(0, 0);
     }
 
@@ -463,6 +463,15 @@ public final class xj extends li implements NotificationCenter.NotificationCente
         R();
     }
 
+    @Override // ne.d
+    public final void r(int i10, float f7, float f10, ne.e eVar) {
+        if (i10 == 0) {
+            si siVar = this.H;
+            siVar.setAlpha(f7);
+            siVar.setVisibility(f7 > 0.0f ? 0 : 4);
+        }
+    }
+
     public void setDelegate(oj ojVar) {
         this.J = ojVar;
     }
@@ -485,15 +494,6 @@ public final class xj extends li implements NotificationCenter.NotificationCente
     }
 
     @Override // ne.d
-    public final void u(int i10, float f7, float f10, ne.e eVar) {
-        if (i10 == 0) {
-            si siVar = this.H;
-            siVar.setAlpha(f7);
-            siVar.setVisibility(f7 > 0.0f ? 0 : 4);
-        }
-    }
-
-    @Override // ne.d
-    public final /* synthetic */ void E(float f7, int i10) {
+    public final /* synthetic */ void H(float f7, int i10) {
     }
 }

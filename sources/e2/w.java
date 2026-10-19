@@ -1,12 +1,12 @@
 package e2;
 
 import android.content.Context;
-import ci.u7;
+import ci.v7;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class w {
     public static w f;
@@ -80,6 +80,6 @@ public final class w {
         this.d = new CopyOnWriteArrayList();
         this.e = new Object();
         this.b = 0;
-        e.execute(new u7(17, this, context));
+        e.execute(new v7(17, this, context));
     }
 }

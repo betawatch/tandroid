@@ -1,36 +1,40 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class d60 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n60 b;
+import android.content.Context;
 
-    public /* synthetic */ d60(n60 n60Var, int i10) {
-        this.a = i10;
-        this.b = n60Var;
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* loaded from: classes3.dex */
+public final class d60 extends org.telegram.ui.Components.o20 {
+    public final /* synthetic */ l60 r;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d60(l60 l60Var, Context context, int i10) {
+        super(context, i10);
+        this.r = l60Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.finishFragment();
-                break;
-            case 1:
-                n60 n60Var = this.b;
-                n60Var.i0();
-                n60Var.e0();
-                break;
-            case 2:
-                n60 n60Var2 = this.b;
-                n60Var2.getClass();
-                n60Var2.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
-                break;
-            default:
-                n60 n60Var3 = this.b;
-                n60Var3.n.postOnAnimation(new d60(n60Var3, 1));
-                break;
+    @Override // org.telegram.ui.Components.o20
+    public final void a(org.telegram.ui.Components.v30 v30Var) {
+        super.a(v30Var);
+        l60.Z(this.r);
+    }
+
+    @Override // org.telegram.ui.Components.o20
+    public final void b() {
+        super.b();
+        l60.Z(this.r);
+    }
+
+    @Override // org.telegram.ui.Components.o20
+    public final void c(org.telegram.ui.Components.v30 v30Var) {
+        l60 l60Var = this.r;
+        if (v30Var == l60Var.X) {
+            l60Var.X = null;
         }
+        if (v30Var == l60Var.Y) {
+            l60Var.Y = null;
+        }
+        super.c(v30Var);
+        l60.Z(l60Var);
     }
 }

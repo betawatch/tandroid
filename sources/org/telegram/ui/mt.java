@@ -1,180 +1,70 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.os.Build;
-import android.view.View;
 import android.view.ViewGroup;
-import j$.util.Objects;
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.text.Collator;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Locale;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
+import java.util.List;
+import java.util.Timer;
 import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class mt extends org.telegram.ui.Components.em0 {
-    public final Context r;
-    public final HashMap s = new HashMap();
-    public final ArrayList v = new ArrayList();
-    public final /* synthetic */ qt w;
+public final class mt extends org.telegram.ui.Components.hm0 {
+    public final Context c;
+    public Timer d;
+    public ArrayList e;
+    public final ArrayList f = new ArrayList();
+    public final /* synthetic */ ot h;
 
-    public mt(qt qtVar, Context context, ArrayList arrayList, boolean z10) {
-        Comparator kg0Var;
-        this.w = qtVar;
-        this.r = context;
-        if (arrayList != null) {
-            for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                kt ktVar = (kt) arrayList.get(i10);
-                String upperCase = ktVar.a.substring(0, 1).toUpperCase();
-                ArrayList arrayList2 = (ArrayList) this.s.get(upperCase);
-                if (arrayList2 == null) {
-                    arrayList2 = new ArrayList();
-                    this.s.put(upperCase, arrayList2);
-                    this.v.add(upperCase);
-                }
-                arrayList2.add(ktVar);
-            }
-        } else {
-            try {
-                InputStream open = ApplicationLoader.applicationContext.getResources().getAssets().open("countries.txt");
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(open));
-                while (true) {
-                    String readLine = bufferedReader.readLine();
-                    if (readLine == null) {
-                        break;
-                    }
-                    String[] split = readLine.split(";");
-                    kt ktVar2 = new kt();
-                    ktVar2.a = split[2];
-                    ktVar2.c = split[0];
-                    String str = split[1];
-                    ktVar2.d = str;
-                    if (!str.equals("FT") || !z10) {
-                        String upperCase2 = ktVar2.a.substring(0, 1).toUpperCase();
-                        ArrayList arrayList3 = (ArrayList) this.s.get(upperCase2);
-                        if (arrayList3 == null) {
-                            arrayList3 = new ArrayList();
-                            this.s.put(upperCase2, arrayList3);
-                            this.v.add(upperCase2);
-                        }
-                        arrayList3.add(ktVar2);
-                    }
-                }
-                bufferedReader.close();
-                open.close();
-            } catch (Exception e) {
-                FileLog.e(e);
-            }
-        }
-        if (Build.VERSION.SDK_INT >= 24) {
-            Collator collator = Collator.getInstance(LocaleController.getInstance().getCurrentLocale() != null ? LocaleController.getInstance().getCurrentLocale() : Locale.getDefault());
-            Objects.requireNonNull(collator);
-            kg0Var = new ai.t5(collator, 6);
-        } else {
-            kg0Var = new kg0(16);
-        }
-        Collections.sort(this.v, kg0Var);
-        Iterator it = this.s.values().iterator();
+    public mt(ot otVar, Context context, HashMap hashMap) {
+        this.h = otVar;
+        this.c = context;
+        Iterator it = hashMap.values().iterator();
         while (it.hasNext()) {
-            Collections.sort((ArrayList) it.next(), new lt(kg0Var, 0));
+            Iterator it2 = ((List) it.next()).iterator();
+            while (it2.hasNext()) {
+                this.f.add((ht) it2.next());
+            }
         }
     }
 
-    @Override // org.telegram.ui.Components.ql0
-    public final String F(int i10) {
-        int S = S(i10);
-        ArrayList arrayList = this.v;
-        if (S == -1) {
-            S = arrayList.size() - 1;
+    @Override // org.telegram.ui.Components.hm0
+    public final boolean D(s4.b1 b1Var) {
+        return true;
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        ArrayList arrayList = this.e;
+        if (arrayList == null) {
+            return 0;
         }
-        return (String) arrayList.get(S);
+        return arrayList.size();
     }
 
-    @Override // org.telegram.ui.Components.ql0
-    public final void G(org.telegram.ui.Components.im0 im0Var, float f7, int[] iArr) {
-        iArr[0] = (int) (h() * f7);
-        iArr[1] = 0;
+    @Override // s4.g0
+    public final int j(int i10) {
+        return 0;
     }
 
-    @Override // org.telegram.ui.Components.em0
-    public final int M(int i10) {
-        ArrayList arrayList = this.v;
-        int size = ((ArrayList) this.s.get(arrayList.get(i10))).size();
-        return i10 != arrayList.size() + (-1) ? size + 1 : size;
-    }
-
-    @Override // org.telegram.ui.Components.em0
-    public final int P(int i10, int i11) {
-        return i11 < ((ArrayList) this.s.get(this.v.get(i10))).size() ? 0 : 1;
-    }
-
-    @Override // org.telegram.ui.Components.em0
-    public final int R() {
-        return this.v.size();
-    }
-
-    @Override // org.telegram.ui.Components.em0
-    public final View T(int i10, View view) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.em0
-    public final boolean V(int i10, int i11, s4.b1 b1Var) {
-        return i11 < ((ArrayList) this.s.get(this.v.get(i10))).size();
-    }
-
-    @Override // org.telegram.ui.Components.em0
-    public final void W(int i10, int i11, s4.b1 b1Var) {
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
         String str;
-        if (b1Var.f == 0) {
-            kt ktVar = (kt) ((ArrayList) this.s.get(this.v.get(i10))).get(i11);
-            org.telegram.ui.Cells.ba baVar = (org.telegram.ui.Cells.ba) b1Var.a;
-            CharSequence replaceEmoji = Emoji.replaceEmoji(qt.V(ktVar), baVar.getTextView().getPaint().getFontMetricsInt(), false);
-            if (this.w.h) {
-                str = "+" + ktVar.c;
-            } else {
-                str = null;
-            }
-            baVar.c(replaceEmoji, str, false, false);
+        ht htVar = (ht) this.e.get(i10);
+        org.telegram.ui.Cells.ba baVar = (org.telegram.ui.Cells.ba) b1Var.a;
+        CharSequence replaceEmoji = Emoji.replaceEmoji(ot.V(htVar), baVar.getTextView().getPaint().getFontMetricsInt(), false);
+        if (this.h.h) {
+            str = "+" + htVar.c;
+        } else {
+            str = null;
         }
-    }
-
-    @Override // org.telegram.ui.Components.em0
-    /* renamed from: Y, reason: merged with bridge method [inline-methods] */
-    public final kt O(int i10, int i11) {
-        if (i10 >= 0) {
-            ArrayList arrayList = this.v;
-            if (i10 < arrayList.size()) {
-                ArrayList arrayList2 = (ArrayList) this.s.get(arrayList.get(i10));
-                if (i11 >= 0 && i11 < arrayList2.size()) {
-                    return (kt) arrayList2.get(i11);
-                }
-            }
-        }
-        return null;
+        baVar.c(replaceEmoji, str, false, false);
     }
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        View U;
-        Context context = this.r;
-        if (i10 != 0) {
-            U = new org.telegram.ui.Cells.c3(context, null);
-            U.setPadding(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(8.0f));
-        } else {
-            U = qt.U(context);
-        }
-        return new org.telegram.ui.Components.sl0(U);
+        return new org.telegram.ui.Components.sl0(ot.U(this.c));
     }
 }

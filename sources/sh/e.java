@@ -17,7 +17,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.dq;
 import zf.p;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class e extends rh.e implements Drawable.Callback, ne.d {
     public final String b;
@@ -98,7 +98,7 @@ public final class e extends rh.e implements Drawable.Callback, ne.d {
     }
 
     @Override // ne.d
-    public final void u(int i10, float f7, float f10, ne.e eVar) {
+    public final void r(int i10, float f7, float f10, ne.e eVar) {
         rh.d dVar = this.h;
         if (dVar != null) {
             dVar.invalidate();
@@ -106,7 +106,7 @@ public final class e extends rh.e implements Drawable.Callback, ne.d {
     }
 
     @Override // ne.d
-    public final /* synthetic */ void E(float f7, int i10) {
+    public final /* synthetic */ void H(float f7, int i10) {
     }
 
     @Override // android.graphics.drawable.Drawable.Callback

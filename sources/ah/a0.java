@@ -45,10 +45,10 @@ import org.telegram.ui.Components.r5;
 import org.telegram.ui.Components.wo0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.yq;
-import org.telegram.ui.y41;
+import org.telegram.ui.w41;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class a0 extends n2 implements NotificationCenter.NotificationCenterDelegate {
     public final LinkedHashMap E;
@@ -320,9 +320,9 @@ public final class a0 extends n2 implements NotificationCenter.NotificationCente
                 }
                 this.n.append(spannableStringBuilder);
                 this.n.m();
-                y41 y41Var = this.b.p0;
-                if (y41Var != null) {
-                    y41Var.l();
+                w41 w41Var = this.b.p0;
+                if (w41Var != null) {
+                    w41Var.l();
                 }
                 Y(false);
             }

@@ -13,10 +13,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.yl0;
-import org.telegram.ui.ey;
-import org.telegram.ui.px;
+import org.telegram.ui.cy;
+import org.telegram.ui.nx;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w implements f0, yl0 {
     public final /* synthetic */ h0 a;
@@ -28,23 +28,23 @@ public final /* synthetic */ class w implements f0, yl0 {
     @Override // org.telegram.ui.Components.yl0
     public boolean a(int i10, View view) {
         TLRPC.User user;
-        px pxVar = this.a.U;
-        if (pxVar != null) {
+        nx nxVar = this.a.U;
+        if (nxVar != null) {
             Long l4 = (Long) view.getTag();
             long longValue = l4.longValue();
-            ey eyVar = pxVar.a;
-            if (eyVar.getParentActivity() != null && (user = eyVar.getMessagesController().getUser(l4)) != null) {
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(eyVar.getParentActivity());
+            cy cyVar = nxVar.a;
+            if (cyVar.getParentActivity() != null && (user = cyVar.getMessagesController().getUser(l4)) != null) {
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(cyVar.getParentActivity());
                 String string = LocaleController.getString(R.string.ChatHintsDeleteAlertTitle);
                 org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                 b2Var.R = string;
                 b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("ChatHintsDeleteAlert", R.string.ChatHintsDeleteAlert, ContactsController.formatName(user.first_name, user.last_name)));
-                alertDialog$Builder.k(LocaleController.getString(R.string.StickersRemove), new ci.d1(pxVar, longValue, 9));
+                alertDialog$Builder.k(LocaleController.getString(R.string.StickersRemove), new ci.d1(nxVar, longValue, 9));
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                eyVar.showDialog(b2Var);
+                cyVar.showDialog(b2Var);
                 TextView textView = (TextView) b2Var.d(-1);
                 if (textView != null) {
-                    textView.setTextColor(eyVar.getThemedColor(h6.q7));
+                    textView.setTextColor(cyVar.getThemedColor(h6.q7));
                 }
             }
         }

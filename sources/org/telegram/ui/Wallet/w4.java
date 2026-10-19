@@ -1,30 +1,15 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.us;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class w4 extends us {
-    public final ki.c2 G;
+public final class w4 implements ai.j7 {
+    public final /* synthetic */ TL_wallet.nftItem a;
+    public final /* synthetic */ o5 b;
 
-    public w4(n5 n5Var, Context context) {
-        super(context);
-        this.G = new ki.c2(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(22.0f), n5Var.getThemedColor(org.telegram.ui.ActionBar.h6.d6)), AndroidUtilities.dpf2(2.67f), AndroidUtilities.dpf2(0.67f));
-    }
-
-    @Override // org.telegram.ui.Components.us, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int ceil = (int) Math.ceil(getMetadata().g.a);
-        if (ceil > 0) {
-            int width = getWidth();
-            ki.c2 c2Var = this.G;
-            c2Var.setBounds(0, 0, width, ceil);
-            c2Var.setAlpha((int) (getMetadata().c.a * 255.0f));
-            c2Var.draw(canvas);
-        }
-        super.dispatchDraw(canvas);
+    public w4(o5 o5Var, TL_wallet.nftItem nftitem) {
+        this.b = o5Var;
+        this.a = nftitem;
     }
 }

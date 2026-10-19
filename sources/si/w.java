@@ -10,14 +10,14 @@ import org.telegram.messenger.video.MP4Builder;
 import org.telegram.messenger.video.Mp4Movie;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class w {
     public final File a;
     public final int b;
     public final boolean c;
     public final n d;
-    public final org.telegram.ui.web.n e;
+    public final org.telegram.ui.web.m e;
     public MP4Builder i;
     public MediaFormat j;
     public MediaFormat k;
@@ -37,12 +37,12 @@ public final class w {
     public long q = Long.MIN_VALUE;
     public final MediaCodec.BufferInfo t = new MediaCodec.BufferInfo();
 
-    public w(File file, int i10, boolean z10, n nVar, org.telegram.ui.web.n nVar2) {
+    public w(File file, int i10, boolean z10, n nVar, org.telegram.ui.web.m mVar) {
         this.a = file;
         this.b = i10;
         this.c = z10;
         this.d = nVar;
-        this.e = nVar2;
+        this.e = mVar;
     }
 
     public static int a(ByteBuffer byteBuffer) {
@@ -336,9 +336,9 @@ public final class w {
         if (this.v) {
             return;
         }
-        org.telegram.ui.web.n nVar = this.e;
-        s0 s0Var = (s0) nVar.b;
-        o0 o0Var = (o0) nVar.c;
+        org.telegram.ui.web.m mVar = this.e;
+        s0 s0Var = (s0) mVar.b;
+        o0 o0Var = (o0) mVar.c;
         synchronized (s0Var.g) {
             try {
                 long j11 = o0Var.c;

@@ -11,16 +11,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.s3;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.hm0;
-import org.telegram.ui.l41;
+import org.telegram.ui.j41;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class d extends hm0 {
     public final d6 c;
@@ -91,7 +91,7 @@ public final class d extends hm0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.l41] */
+    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.j41] */
     /* JADX WARN: Type inference failed for: r1v7, types: [sg.f] */
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
@@ -108,8 +108,8 @@ public final class d extends hm0 {
                 s3Var = new s3(context, 16);
             }
         } else if (this.s) {
-            ?? l41Var = new l41(context, 10);
-            LinearLayout e = lk.e(context, 0);
+            ?? j41Var = new j41(context, 10);
+            LinearLayout e = kk.e(context, 0);
             ImageView imageView = new ImageView(context);
             imageView.setImageDrawable(b1.c(context.getDrawable(R.drawable.other_2x_large), b1.d().a));
             e.addView(imageView, z5.d(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
@@ -120,8 +120,8 @@ public final class d extends hm0 {
             textView.setTextColor(h6.w0(h6.G6, d6Var));
             textView.setTypeface(AndroidUtilities.bold());
             e.addView(textView, z5.e(-2, -2, 16));
-            l41Var.addView(e, z5.e(-2, -2, 17));
-            s3Var = l41Var;
+            j41Var.addView(e, z5.e(-2, -2, 17));
+            s3Var = j41Var;
         } else {
             s3Var = new s3(context, 64);
         }

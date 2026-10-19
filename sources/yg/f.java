@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.ui.Components.v30;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class f implements View.OnKeyListener {
     public boolean a;
@@ -30,7 +30,7 @@ public final class f implements View.OnKeyListener {
                 return false;
             }
             if (keyEvent.getAction() == 1 && this.a && !arrayList.isEmpty()) {
-                hVar.a((v30) i2.d.h(1, arrayList), this.b, this.c);
+                hVar.a((v30) i2.e.h(1, arrayList), this.b, this.c);
                 return true;
             }
         }

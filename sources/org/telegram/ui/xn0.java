@@ -1,73 +1,87 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.content.ActivityNotFoundException;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.webkit.RenderProcessGoneDetail;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class xn0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ go0 c;
+public final class xn0 extends WebViewClient {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ eo0 b;
 
-    public /* synthetic */ xn0(go0 go0Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = go0Var;
-        this.b = z10;
+    public xn0(eo0 eo0Var, Context context) {
+        this.b = eo0Var;
+        this.a = context;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                go0 go0Var = this.c;
-                AnimatorSet animatorSet = go0Var.v;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    go0Var.v = null;
-                    break;
-                }
-                break;
-            default:
-                go0 go0Var2 = this.c;
-                AnimatorSet animatorSet2 = go0Var2.v;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    go0Var2.v = null;
-                    break;
-                }
-                break;
+    @Override // android.webkit.WebViewClient
+    public final void onPageFinished(WebView webView, String str) {
+        super.onPageFinished(webView, str);
+        eo0 eo0Var = this.b;
+        eo0Var.z0 = false;
+        eo0Var.H0(true, false);
+        eo0Var.K0();
+    }
+
+    @Override // android.webkit.WebViewClient
+    public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
+        eo0 eo0Var = this.b;
+        try {
+            if (!AndroidUtilities.isSafeToShow(eo0Var.getParentActivity())) {
+                return true;
+            }
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(eo0Var.getParentActivity(), 0, eo0Var.Y0);
+            alertDialog$Builder.a.R = LocaleController.getString(R.string.ChromeCrashTitle);
+            alertDialog$Builder.a.T = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new ck0(this, 10));
+            alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
+            alertDialog$Builder.o();
+            return true;
+        } catch (Exception e) {
+            FileLog.e(e);
+            return false;
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                go0 go0Var = this.c;
-                AnimatorSet animatorSet = go0Var.v;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.b) {
-                        go0Var.r.setVisibility(4);
-                        break;
-                    } else {
-                        go0Var.n.getContentView().setVisibility(4);
-                        break;
-                    }
-                }
-                break;
-            default:
-                go0 go0Var2 = this.c;
-                AnimatorSet animatorSet2 = go0Var2.v;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    if (!this.b) {
-                        go0Var2.s.setVisibility(4);
-                        break;
-                    } else {
-                        go0Var2.U.setVisibility(4);
-                        break;
-                    }
-                }
-                break;
+    @Override // android.webkit.WebViewClient
+    public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
+        Uri parse;
+        eo0 eo0Var = this.b;
+        eo0Var.y = !str.equals(eo0Var.x);
+        try {
+            parse = Uri.parse(str);
+        } catch (Exception unused) {
         }
+        if ("t.me".equals(parse.getHost())) {
+            eo0Var.t0();
+            return true;
+        }
+        if (!eo0.h1.contains(parse.getScheme())) {
+            if (!eo0.g1.contains(parse.getScheme())) {
+                try {
+                    if (eo0Var.getParentActivity() != null) {
+                        eo0Var.getParentActivity().startActivityForResult(new Intent("android.intent.action.VIEW", parse), 210);
+                        return true;
+                    }
+                } catch (ActivityNotFoundException unused2) {
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.a);
+                    alertDialog$Builder.a.R = eo0Var.p0;
+                    alertDialog$Builder.a.T = LocaleController.getString(R.string.PaymentAppNotFoundForDeeplink);
+                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
+                    alertDialog$Builder.o();
+                }
+            }
+            return super.shouldOverrideUrlLoading(webView, str);
+        }
+        return true;
     }
 }

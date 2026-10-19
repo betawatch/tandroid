@@ -71,9 +71,9 @@ import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Cells.w0;
 import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.og;
-import org.telegram.ui.in;
-import org.telegram.ui.xu0;
-import org.telegram.ui.y51;
+import org.telegram.ui.gn;
+import org.telegram.ui.vu0;
+import org.telegram.ui.w51;
 import r2.j;
 import r2.k;
 import r2.o;
@@ -81,9 +81,9 @@ import r2.x;
 import r9.d;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final class a implements y51, e, cg.a, r9.e, fa.a, n, r, y2.n, n2.n, d, og, l1, t0, k, OnFailureListener, s0, SuccessContinuation, y6.d {
+public final class a implements w51, e, cg.a, r9.e, fa.a, n, r, y2.n, n2.n, d, og, l1, t0, k, OnFailureListener, s0, SuccessContinuation, y6.d {
     public static a b;
     public final /* synthetic */ int a;
 
@@ -345,7 +345,7 @@ public final class a implements y51, e, cg.a, r9.e, fa.a, n, r, y2.n, n2.n, d, o
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ xu0 P1() {
+    public /* synthetic */ vu0 P1() {
         return null;
     }
 
@@ -568,7 +568,7 @@ public final class a implements y51, e, cg.a, r9.e, fa.a, n, r, y2.n, n2.n, d, o
     }
 
     @Override // org.telegram.ui.Components.og
-    public /* synthetic */ in p0() {
+    public /* synthetic */ gn p0() {
         return null;
     }
 

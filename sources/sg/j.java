@@ -1,7 +1,7 @@
 package sg;
 
-import ai.l5;
-import ai.t5;
+import ai.m5;
+import ai.u5;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -18,7 +18,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class j extends b {
     public final ArrayList d;
@@ -57,7 +57,7 @@ public final class j extends b {
             arrayList2.add(new h(R.drawable.menu_feature_intro, 36, LocaleController.getString(R.string.PremiumBusinessIntro), LocaleController.getString(R.string.PremiumBusinessIntroDescription)));
             arrayList2.add(new h(R.drawable.menu_premium_chatlink, 37, LocaleController.getString(R.string.PremiumBusinessChatLinks), LocaleController.getString(R.string.PremiumBusinessChatLinksDescription)));
             if (sparseIntArray != null) {
-                Collections.sort(arrayList2, new t5(sparseIntArray, 5));
+                Collections.sort(arrayList2, new u5(sparseIntArray, 5));
             }
             arrayList.add(new h(0));
             arrayList.addAll(arrayList2);
@@ -85,6 +85,6 @@ public final class j extends b {
 
     @Override // sg.b
     public final s4.g0 a() {
-        return new l5(this, 6);
+        return new m5(this, 6);
     }
 }

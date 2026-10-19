@@ -8,9 +8,9 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.ui.ua1;
+import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class bo extends org.telegram.ui.Cells.c6 {
     public final /* synthetic */ co F;
@@ -24,9 +24,9 @@ public final class bo extends org.telegram.ui.Cells.c6 {
     @Override // org.telegram.ui.Cells.c6
     public final boolean e() {
         fo foVar = this.F.d;
-        ua1 ua1Var = foVar.s;
-        View F = ua1Var.F(this);
-        s4.b1 T = F == null ? null : ua1Var.T(F);
+        sa1 sa1Var = foVar.s;
+        View F = sa1Var.F(this);
+        s4.b1 T = F == null ? null : sa1Var.T(F);
         if (T != null) {
             int b10 = T.b();
             int i10 = foVar.M;
@@ -41,9 +41,9 @@ public final class bo extends org.telegram.ui.Cells.c6 {
     public final boolean f(org.telegram.ui.Cells.c6 c6Var) {
         int b10;
         fo foVar = this.F.d;
-        ua1 ua1Var = foVar.s;
-        View F = ua1Var.F(c6Var);
-        s4.b1 T = F == null ? null : ua1Var.T(F);
+        sa1 sa1Var = foVar.s;
+        View F = sa1Var.F(c6Var);
+        s4.b1 T = F == null ? null : sa1Var.T(F);
         if (T == null || (b10 = T.b()) == -1) {
             return false;
         }
@@ -58,7 +58,7 @@ public final class bo extends org.telegram.ui.Cells.c6 {
             if (menu.findItem(R.id.copy) == null) {
                 return;
             }
-            org.telegram.ui.sn.n8(menu, ((org.telegram.ui.sn) foVar.b.f0).h, false, true, true, true);
+            org.telegram.ui.qn.n8(menu, ((org.telegram.ui.qn) foVar.b.f0).h, false, true, true, true);
         }
     }
 
@@ -80,9 +80,9 @@ public final class bo extends org.telegram.ui.Cells.c6 {
             }
         }
         super.h(c6Var, z10);
-        ua1 ua1Var = foVar.s;
-        View F = ua1Var.F(c6Var);
-        s4.b1 T = F == null ? null : ua1Var.T(F);
+        sa1 sa1Var = foVar.s;
+        View F = sa1Var.F(c6Var);
+        s4.b1 T = F == null ? null : sa1Var.T(F);
         if (T != null && (b10 = T.b()) != -1) {
             foVar.L[b10 - foVar.t0] = z10;
         }

@@ -36,7 +36,7 @@ import com.google.android.gms.tasks.Tasks;
 import e9.c2;
 import e9.n0;
 import ei.r5;
-import i2.h0;
+import i2.i0;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import java.io.File;
@@ -67,14 +67,14 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.f5;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.ny0;
+import org.telegram.ui.Components.oy0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.kg0;
+import org.telegram.ui.jg0;
 import u2.g0;
 import v7.d8;
 import v7.q7;
 import v7.u6;
-import w7.o6;
+import w7.n6;
 import z9.a2;
 import z9.l0;
 import z9.m0;
@@ -93,7 +93,7 @@ import z9.x0;
 import z9.y0;
 import z9.z1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class l implements d6 {
     public Object a;
@@ -112,7 +112,7 @@ public final class l implements d6 {
         this.f = obj6;
     }
 
-    public static void H(Drawable drawable, int i10, PorterDuff.Mode mode) {
+    public static void I(Drawable drawable, int i10, PorterDuff.Mode mode) {
         PorterDuffColorFilter h;
         int[] iArr = m1.a;
         Drawable mutate = drawable.mutate();
@@ -153,7 +153,7 @@ public final class l implements d6 {
     }
 
     public static a2 e(l0 l0Var, s3 s3Var) {
-        List p5 = ((c5.b0) s3Var.f).p();
+        List p5 = ((c5.c0) s3Var.f).p();
         ArrayList arrayList = new ArrayList();
         for (int i10 = 0; i10 < p5.size(); i10++) {
             y9.l lVar = (y9.l) p5.get(i10);
@@ -229,7 +229,7 @@ public final class l implements d6 {
         return null;
     }
 
-    public static LayerDrawable w(n2 n2Var, Context context, int i10) {
+    public static LayerDrawable v(n2 n2Var, Context context, int i10) {
         BitmapDrawable bitmapDrawable;
         BitmapDrawable bitmapDrawable2;
         BitmapDrawable bitmapDrawable3;
@@ -278,7 +278,7 @@ public final class l implements d6 {
             }
             arrayList.add(new z9.d0(str, str2));
         }
-        Collections.sort(arrayList, new kg0(26));
+        Collections.sort(arrayList, new jg0(26));
         return DesugarCollections.unmodifiableList(arrayList);
     }
 
@@ -376,7 +376,7 @@ public final class l implements d6 {
         Bundle bundle = (Bundle) this.a;
         String[] strArr2 = (String[]) Arrays.copyOf(strArr, strArr.length);
         if (strArr2.length <= 0) {
-            o6.a("String array is empty and is ignored by put method.");
+            n6.a("String array is empty and is ignored by put method.");
             return;
         }
         int i10 = 0;
@@ -388,7 +388,7 @@ public final class l implements d6 {
                 sb2.append("String at ");
                 sb2.append(i11);
                 sb2.append(" is null and is ignored by put method.");
-                o6.a(sb2.toString());
+                n6.a(sb2.toString());
             } else {
                 int i12 = 20000;
                 if (str2.length() > 20000) {
@@ -396,7 +396,7 @@ public final class l implements d6 {
                     sb3.append("String at ");
                     sb3.append(i11);
                     sb3.append(" is too long, truncating string.");
-                    o6.a(sb3.toString());
+                    n6.a(sb3.toString());
                     String str3 = strArr2[i10];
                     if (str3.length() > 20000) {
                         if (Character.isHighSurrogate(str3.charAt(19999)) && Character.isLowSurrogate(str3.charAt(20000))) {
@@ -412,7 +412,7 @@ public final class l implements d6 {
         if (i10 > 0) {
             Object[] objArr = (String[]) Arrays.copyOfRange(strArr2, 0, i10);
             if (objArr.length >= 100) {
-                o6.a("Input Array of elements is too big, cutting off.");
+                n6.a("Input Array of elements is too big, cutting off.");
                 objArr = Arrays.copyOf(objArr, 100);
             }
             bundle.putStringArray(str, (String[]) objArr);
@@ -480,7 +480,7 @@ public final class l implements d6 {
                                     arrayBlockingQueue = arrayBlockingQueue2;
                                     try {
                                         taskCompletionSource = taskCompletionSource2;
-                                        cVar.g.execute(new c5.v(cVar, bVar, taskCompletionSource2, false, 5));
+                                        cVar.g.execute(new c5.w(cVar, bVar, taskCompletionSource2, false, 5));
                                         bVar4.b("Closing task for report: " + bVar.b);
                                         taskCompletionSource.trySetResult(bVar);
                                     } catch (Throwable th2) {
@@ -608,7 +608,12 @@ public final class l implements d6 {
         bundle.putString("Firebase-Client", cVar22.a());
     }
 
-    public void G(float f7, float f10, float f11, float f12) {
+    @Override // org.telegram.ui.ActionBar.d6
+    public int G(int i10) {
+        return w(i10);
+    }
+
+    public void H(float f7, float f10, float f11, float f12) {
         Matrix matrix = (Matrix) this.f;
         matrix.reset();
         Bitmap bitmap = (Bitmap) this.c;
@@ -616,11 +621,6 @@ public final class l implements d6 {
         matrix.postScale(f11, f11);
         matrix.postTranslate(f7, f10);
         ((BitmapShader) this.e).setLocalMatrix(matrix);
-    }
-
-    @Override // org.telegram.ui.ActionBar.d6
-    public int I(int i10) {
-        return u(i10);
     }
 
     public Task J(String str, String str2, Bundle bundle) {
@@ -652,7 +652,7 @@ public final class l implements d6 {
             ((ValueAnimator) arrayList3.get(i10)).cancel();
             if (z10) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ArrayList) this.d).get(i10)).floatValue(), 0.0f);
-                ofFloat.addUpdateListener(new ny0(this, i10, 0));
+                ofFloat.addUpdateListener(new oy0(this, i10, 0));
                 ofFloat.setDuration(100L);
                 ofFloat.start();
             }
@@ -661,7 +661,7 @@ public final class l implements d6 {
             ((ValueAnimator) arrayList2.get(i11)).cancel();
             if (z10) {
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.e).get(i11)).floatValue(), 0.0f);
-                ofFloat2.addUpdateListener(new ny0(this, i11, 1));
+                ofFloat2.addUpdateListener(new oy0(this, i11, 1));
                 ofFloat2.setDuration(100L);
                 ofFloat2.start();
             }
@@ -670,7 +670,7 @@ public final class l implements d6 {
             ((ValueAnimator) arrayList.get(i12)).cancel();
             if (z10) {
                 ValueAnimator ofFloat3 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.f).get(i12)).floatValue(), 0.0f);
-                ofFloat3.addUpdateListener(new ny0(this, i12, 2));
+                ofFloat3.addUpdateListener(new oy0(this, i12, 2));
                 ofFloat3.setDuration(100L);
                 ofFloat3.start();
             }
@@ -714,7 +714,7 @@ public final class l implements d6 {
                 f(aVar, (g0) this.d, o1Var);
             }
         }
-        this.c = aVar.d(true);
+        this.c = aVar.e(true);
     }
 
     public void N() {
@@ -774,7 +774,7 @@ public final class l implements d6 {
                         fVar.b = true;
                         rVar.g = new g2.i(fVar);
                     } else {
-                        rVar.g = new c5.b0(dVar4, intValue, i11);
+                        rVar.g = new c5.c0(dVar4, intValue, i11);
                     }
                     int i12 = 28;
                     if (i10 == 29) {
@@ -821,9 +821,9 @@ public final class l implements d6 {
                 m4.x xVar2 = (m4.x) this.f;
                 if (xVar2 != null) {
                     f1 f1Var = xVar2.a.t.a;
-                    h0 h0Var = dVar2.l;
-                    if (f1Var != h0Var) {
-                        xVar2.a(h0Var);
+                    i0 i0Var = dVar2.l;
+                    if (f1Var != i0Var) {
+                        xVar2.a(i0Var);
                     }
                 }
                 ((rf.a) this.c).bringToFront();
@@ -1051,9 +1051,9 @@ public final class l implements d6 {
             m4.x xVar = (m4.x) this.f;
             if (xVar != null) {
                 f1 f1Var = xVar.a.t.a;
-                h0 h0Var = dVar.l;
-                if (f1Var != h0Var) {
-                    xVar.a(h0Var);
+                i0 i0Var = dVar.l;
+                if (f1Var != i0Var) {
+                    xVar.a(i0Var);
                 }
             }
         }
@@ -1066,7 +1066,7 @@ public final class l implements d6 {
 
     @Override // org.telegram.ui.ActionBar.d6
     public int r(int i10) {
-        return u(i10);
+        return w(i10);
     }
 
     @Override // org.telegram.ui.ActionBar.d6
@@ -1074,16 +1074,16 @@ public final class l implements d6 {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.d6
-    public int u(int i10) {
-        return ((r5) this.f).C0.get(i10, h6.x0(null, i10, false));
-    }
-
-    public rf.a v() {
+    public rf.a u() {
         if (((rf.a) this.c) == null) {
             this.c = new rf.a((LaunchActivity) this.d);
         }
         return (rf.a) this.c;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public int w(int i10) {
+        return ((r5) this.f).C0.get(i10, h6.x0(null, i10, false));
     }
 
     public ColorStateList y(Context context, int i10) {

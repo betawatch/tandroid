@@ -1,157 +1,64 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.app.Activity;
+import android.content.Context;
+import android.graphics.Rect;
 import android.view.View;
+import android.widget.ScrollView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class ex extends AnimatorListenerAdapter {
+public final class ex extends ScrollView {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ ey c;
 
-    public /* synthetic */ ex(ey eyVar, boolean z10, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ex(Context context, int i10) {
+        super(context);
         this.a = i10;
-        this.c = eyVar;
-        this.b = z10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 0:
-                ey eyVar = this.c;
-                eyVar.p3.unlock();
-                if (eyVar.w1 == animator) {
-                    if (this.b) {
-                        eyVar.e0[0].a.c1();
-                    } else {
-                        zx zxVar = eyVar.e0[0].a;
-                        if (zxVar.g1) {
-                            zxVar.g1 = false;
-                            zxVar.K0(false);
-                        }
-                    }
-                    eyVar.w1 = null;
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10;
-        org.telegram.ui.ActionBar.u0 u0Var;
-        switch (this.a) {
-            case 0:
-                ey eyVar = this.c;
-                eyVar.p3.unlock();
-                if (eyVar.w1 == animator) {
-                    eyVar.y4(false, true);
-                    boolean z10 = this.b;
-                    if (z10) {
-                        eyVar.e0[0].a.c1();
-                        vw vwVar = eyVar.E0;
-                        if (vwVar != null) {
-                            vwVar.setVisibility(8);
-                        }
-                        eyVar.r3 = true;
-                        Activity parentActivity = eyVar.getParentActivity();
-                        i10 = ((org.telegram.ui.ActionBar.n2) eyVar).classGuid;
-                        AndroidUtilities.requestAdjustResize(parentActivity, i10);
-                        eyVar.j0.setVisibility(8);
-                        yw ywVar = eyVar.G3;
-                        if (ywVar != null) {
-                            ywVar.setVisibility(8);
-                        }
-                    } else {
-                        eyVar.s3 = false;
-                        nx nxVar = eyVar.C0;
-                        if (nxVar != null) {
-                            nxVar.setVisibility(8);
-                        }
-                        tx txVar = eyVar.X;
-                        if (txVar != null) {
-                            txVar.c();
-                        }
-                        nx nxVar2 = eyVar.C0;
-                        if (nxVar2 != null) {
-                            nxVar2.A0.clear();
-                            nxVar2.J();
-                        }
-                        zx zxVar = eyVar.e0[0].a;
-                        if (zxVar.g1) {
-                            zxVar.g1 = false;
-                            zxVar.K0(false);
-                        }
-                        eyVar.r3 = false;
-                        yw ywVar2 = eyVar.G3;
-                        if (ywVar2 != null) {
-                            ywVar2.setVisibility(0);
-                        }
-                    }
-                    View view = eyVar.fragmentView;
-                    if (view != null) {
-                        view.requestLayout();
-                    }
-                    eyVar.B4(z10 ? 1.0f : 0.0f);
-                    eyVar.e0[0].a.setVerticalScrollBarEnabled(true);
-                    nx nxVar3 = eyVar.C0;
-                    if (nxVar3 != null) {
-                        nxVar3.setBackground(null);
-                    }
-                    eyVar.w1 = null;
-                    break;
-                }
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) Math.min(View.MeasureSpec.getSize(i11), Math.min(AndroidUtilities.displaySize.y * 0.35f, AndroidUtilities.dp(400.0f))), View.MeasureSpec.getMode(i11)));
                 break;
             case 1:
-                ey eyVar2 = this.c;
-                eyVar2.P3 = null;
-                if (!this.b && (u0Var = eyVar2.m0) != null) {
-                    u0Var.setVisibility(8);
-                    break;
-                }
-                break;
             default:
-                ey eyVar3 = this.c;
-                eyVar3.I = null;
-                boolean z11 = this.b;
-                eyVar3.K = z11;
-                if (!z11 && !eyVar3.L) {
-                    eyVar3.E0.setVisibility(8);
-                }
-                if (z11) {
-                    eyVar3.y3 = -AndroidUtilities.dp(81.0f);
-                    eyVar3.A4(-eyVar3.S3());
-                } else {
-                    eyVar3.A4(0.0f);
-                    eyVar3.y3 = AndroidUtilities.dp(81.0f);
-                }
-                int i11 = 0;
-                while (true) {
-                    dy[] dyVarArr = eyVar3.e0;
-                    if (i11 >= dyVarArr.length) {
-                        View view2 = eyVar3.fragmentView;
-                        if (view2 != null) {
-                            view2.requestLayout();
-                            break;
-                        }
-                    } else {
-                        dy dyVar = dyVarArr[i11];
-                        if (dyVar != null) {
-                            dyVar.a.requestLayout();
-                        }
-                        i11++;
-                    }
-                }
+                super.onMeasure(i10, i11);
+                break;
+            case 2:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(320.0f)), TLObject.FLAG_31));
+                break;
+            case 3:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(360.0f)), TLObject.FLAG_31));
+                break;
+            case 4:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(260.0f), View.MeasureSpec.getSize(i11)), View.MeasureSpec.getMode(i11)));
                 break;
         }
+    }
+
+    @Override // android.widget.ScrollView, android.view.ViewGroup
+    public boolean onRequestFocusInDescendants(int i10, Rect rect) {
+        switch (this.a) {
+            case 1:
+                return false;
+            default:
+                return super.onRequestFocusInDescendants(i10, rect);
+        }
+    }
+
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
+        switch (this.a) {
+            case 1:
+                rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
+                rect.top = AndroidUtilities.dp(20.0f) + rect.top;
+                rect.bottom = AndroidUtilities.dp(50.0f) + rect.bottom;
+                break;
+        }
+        return super.requestChildRectangleOnScreen(view, rect, z10);
     }
 }

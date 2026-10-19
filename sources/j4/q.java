@@ -4,12 +4,12 @@ import android.util.SparseArray;
 import b2.v0;
 import c3.j0;
 import e2.m0;
-import i2.n0;
+import i2.o0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class q implements i {
     public final c0 a;
@@ -22,9 +22,9 @@ public final class q implements i {
     public boolean l;
     public boolean n;
     public final boolean[] h = new boolean[3];
-    public final n0 d = new n0(7);
-    public final n0 e = new n0(8);
-    public final n0 f = new n0(6);
+    public final o0 d = new o0(7);
+    public final o0 e = new o0(8);
+    public final o0 f = new o0(6);
     public long m = -9223372036854775807L;
     public final e2.x o = new e2.x();
 
@@ -108,7 +108,7 @@ public final class q implements i {
     public final void b(long j10, int i10, int i11, long j11) {
         int i12;
         boolean z10;
-        n0 n0Var;
+        o0 o0Var;
         p pVar;
         boolean z11;
         long j12;
@@ -120,33 +120,33 @@ public final class q implements i {
         int i14;
         e2.c cVar = this.a.d;
         if (!this.l || this.k.c) {
-            n0 n0Var2 = this.d;
-            n0Var2.e(i11);
-            n0 n0Var3 = this.e;
-            n0Var3.e(i11);
+            o0 o0Var2 = this.d;
+            o0Var2.e(i11);
+            o0 o0Var3 = this.e;
+            o0Var3.e(i11);
             if (this.l) {
                 i12 = 2;
                 z10 = false;
-                if (n0Var2.d) {
-                    f2.p m10 = f2.q.m(3, n0Var2.e, (byte[]) n0Var2.f);
+                if (o0Var2.d) {
+                    f2.p m10 = f2.q.m(3, o0Var2.e, (byte[]) o0Var2.f);
                     cVar.k(m10.s);
                     this.k.d.append(m10.d, m10);
-                    n0Var2.g();
-                } else if (n0Var3.d) {
-                    f2.u uVar = new f2.u((byte[]) n0Var3.f, 4, n0Var3.e);
+                    o0Var2.g();
+                } else if (o0Var3.d) {
+                    f2.u uVar = new f2.u((byte[]) o0Var3.f, 4, o0Var3.e);
                     int f7 = uVar.f();
                     int f10 = uVar.f();
                     uVar.i();
                     this.k.e.append(f7, new f2.o(f7, f10, uVar.d()));
-                    n0Var3.g();
+                    o0Var3.g();
                 }
-            } else if (n0Var2.d && n0Var3.d) {
+            } else if (o0Var2.d && o0Var3.d) {
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(Arrays.copyOf((byte[]) n0Var2.f, n0Var2.e));
-                arrayList.add(Arrays.copyOf((byte[]) n0Var3.f, n0Var3.e));
-                f2.p m11 = f2.q.m(3, n0Var2.e, (byte[]) n0Var2.f);
+                arrayList.add(Arrays.copyOf((byte[]) o0Var2.f, o0Var2.e));
+                arrayList.add(Arrays.copyOf((byte[]) o0Var3.f, o0Var3.e));
+                f2.p m11 = f2.q.m(3, o0Var2.e, (byte[]) o0Var2.f);
                 int i15 = m11.s;
-                f2.u uVar2 = new f2.u((byte[]) n0Var3.f, 4, n0Var3.e);
+                f2.u uVar2 = new f2.u((byte[]) o0Var3.f, 4, o0Var3.e);
                 int f11 = uVar2.f();
                 int f12 = uVar2.f();
                 uVar2.i();
@@ -170,18 +170,18 @@ public final class q implements i {
                 vVar.E = m11.g;
                 vVar.u = arrayList;
                 vVar.t = i15;
-                i2.d.u(vVar, j0Var);
+                i2.e.u(vVar, j0Var);
                 this.l = true;
                 cVar.k(i15);
                 this.k.d.append(m11.d, m11);
                 this.k.e.append(f11, oVar);
-                n0Var2.g();
-                n0Var3.g();
+                o0Var2.g();
+                o0Var3.g();
             }
-            n0Var = this.f;
-            if (n0Var.e(i11)) {
-                int p5 = f2.q.p(n0Var.e, (byte[]) n0Var.f);
-                byte[] bArr2 = (byte[]) n0Var.f;
+            o0Var = this.f;
+            if (o0Var.e(i11)) {
+                int p5 = f2.q.p(o0Var.e, (byte[]) o0Var.f);
+                byte[] bArr2 = (byte[]) o0Var.f;
                 e2.x xVar = this.o;
                 xVar.L(p5, bArr2);
                 xVar.N(4);
@@ -294,8 +294,8 @@ public final class q implements i {
         }
         i12 = 2;
         z10 = false;
-        n0Var = this.f;
-        if (n0Var.e(i11)) {
+        o0Var = this.f;
+        if (o0Var.e(i11)) {
         }
         pVar = this.k;
         z11 = this.l;

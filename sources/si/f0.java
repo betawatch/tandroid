@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.p81;
 import org.telegram.ui.Components.q60;
-import org.telegram.ui.hk;
-import org.telegram.ui.re;
+import org.telegram.ui.Components.q81;
+import org.telegram.ui.fk;
+import org.telegram.ui.pe;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f0 implements Runnable {
     public final /* synthetic */ int a;
@@ -27,8 +27,8 @@ public final /* synthetic */ class f0 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         File file;
-        hk hkVar;
-        p81 p81Var;
+        fk fkVar;
+        q81 q81Var;
         switch (this.a) {
             case 0:
                 s0 s0Var = this.b;
@@ -54,7 +54,7 @@ public final /* synthetic */ class f0 implements Runnable {
                     s0Var2.H = min;
                     s0Var2.b.setSurfaceTextureListener(null);
                     s0Var2.b.setTransform(s0Var2.h);
-                    i2.h0 a2 = new i2.o(s0Var2.a).a();
+                    i2.i0 a2 = new i2.p(s0Var2.a).a();
                     s0Var2.S = a2;
                     a2.z1(s0Var2.b);
                     s0Var2.S.r0(b2.o0.b(Uri.fromFile(s0Var2.R)));
@@ -93,11 +93,11 @@ public final /* synthetic */ class f0 implements Runnable {
                         float f7 = j13 / max;
                         float f10 = j14 / max;
                         q60 q60Var = l60Var4.b;
-                        if (q60Var != null && (hkVar = ((re) q60Var).b.Y) != null && (p81Var = hkVar.f1) != null) {
+                        if (q60Var != null && (fkVar = ((pe) q60Var).b.Y) != null && (q81Var = fkVar.f1) != null) {
                             float max2 = Math.max(0.0f, Math.min(1.0f, f7));
-                            p81Var.b = max2;
-                            p81Var.c = Math.max(max2, Math.min(1.0f, f10));
-                            p81Var.invalidate();
+                            q81Var.b = max2;
+                            q81Var.c = Math.max(max2, Math.min(1.0f, f10));
+                            q81Var.invalidate();
                         }
                     }
                     s0Var2.q();

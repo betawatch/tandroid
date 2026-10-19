@@ -9,7 +9,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements d, d6 {
     public final /* synthetic */ int a;
@@ -21,8 +21,8 @@ public final /* synthetic */ class a implements d, d6 {
     }
 
     @Override // org.telegram.ui.ActionBar.d6
-    public int I(int i10) {
-        return u(i10);
+    public int G(int i10) {
+        return w(i10);
     }
 
     @Override // org.telegram.ui.ActionBar.d6
@@ -73,7 +73,7 @@ public final /* synthetic */ class a implements d, d6 {
 
     @Override // org.telegram.ui.ActionBar.d6
     public int r(int i10) {
-        return u(i10);
+        return w(i10);
     }
 
     @Override // org.telegram.ui.ActionBar.d6
@@ -82,7 +82,7 @@ public final /* synthetic */ class a implements d, d6 {
     }
 
     @Override // org.telegram.ui.ActionBar.d6
-    public int u(int i10) {
+    public int w(int i10) {
         if (i10 == h6.G8) {
             return -14145495;
         }
@@ -148,7 +148,7 @@ public final /* synthetic */ class a implements d, d6 {
             return -16777216;
         }
         d6 d6Var = this.b;
-        return d6Var != null ? d6Var.u(i10) : h6.x0(null, i10, false);
+        return d6Var != null ? d6Var.w(i10) : h6.x0(null, i10, false);
     }
 
     @Override // org.telegram.ui.ActionBar.d6

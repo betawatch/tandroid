@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class t implements s4.d0, androidx.lifecycle.a0, y9.i {
     public final /* synthetic */ int a;
@@ -45,11 +45,11 @@ public final class t implements s4.d0, androidx.lifecycle.a0, y9.i {
     }
 
     @Override // androidx.lifecycle.a0
-    public void Z(Object obj) {
+    public void Y(Object obj) {
         this.b = true;
-        a6.m mVar = (a6.m) this.c;
-        mVar.getClass();
-        SignInHubActivity signInHubActivity = (SignInHubActivity) mVar.b;
+        qb.c cVar = (qb.c) this.c;
+        cVar.getClass();
+        SignInHubActivity signInHubActivity = (SignInHubActivity) cVar.b;
         signInHubActivity.setResult(signInHubActivity.R, signInHubActivity.S);
         signInHubActivity.finish();
     }
@@ -203,7 +203,7 @@ public final class t implements s4.d0, androidx.lifecycle.a0, y9.i {
             default:
                 return super.toString();
             case 7:
-                return ((a6.m) this.c).toString();
+                return ((qb.c) this.c).toString();
         }
     }
 
@@ -240,10 +240,10 @@ public final class t implements s4.d0, androidx.lifecycle.a0, y9.i {
         this.b = z10;
     }
 
-    public t(a6.d dVar, a6.m mVar) {
+    public t(a6.d dVar, qb.c cVar) {
         this.a = 7;
         this.b = false;
-        this.c = mVar;
+        this.c = cVar;
     }
 
     public t(StringBuilder sb2) {

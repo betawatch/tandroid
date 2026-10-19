@@ -15,10 +15,10 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.iu;
-import org.telegram.ui.m51;
-import org.telegram.ui.q41;
+import org.telegram.ui.k51;
+import org.telegram.ui.o41;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class b6 extends iu {
     public final /* synthetic */ int c;
@@ -115,8 +115,8 @@ public final class b6 extends iu {
                 break;
             case 1:
                 if (z10) {
-                    ((q41) this.d).y.q();
-                    AndroidUtilities.runOnUIThread(new m51(this, 0), 200L);
+                    ((o41) this.d).y.q();
+                    AndroidUtilities.runOnUIThread(new k51(this, 0), 200L);
                 }
                 super.onFocusChanged(z10, i10, rect);
                 break;
@@ -131,7 +131,7 @@ public final class b6 extends iu {
         switch (this.c) {
             case 2:
                 super.onSizeChanged(i10, i11, i12, i13);
-                postOnAnimation(new org.telegram.ui.web.a2(this, 17));
+                postOnAnimation(new org.telegram.ui.web.z1(this, 17));
                 break;
             default:
                 super.onSizeChanged(i10, i11, i12, i13);
@@ -180,10 +180,10 @@ public final class b6 extends iu {
                 }
                 break;
             case 1:
-                if (motionEvent.getAction() != 1 || !((q41) this.d).y.u()) {
+                if (motionEvent.getAction() != 1 || !((o41) this.d).y.u()) {
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new m51(this, 1), 200L);
+                    AndroidUtilities.runOnUIThread(new k51(this, 1), 200L);
                     break;
                 }
         }

@@ -1,36 +1,23 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zx0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ oy0 b;
+public final /* synthetic */ class zx0 implements org.telegram.ui.ActionBar.q0, MessagesStorage.StringCallback {
+    public final /* synthetic */ py0 a;
 
-    public /* synthetic */ zx0(oy0 oy0Var, int i10) {
-        this.a = i10;
-        this.b = oy0Var;
+    public /* synthetic */ zx0(py0 py0Var) {
+        this.a = py0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.d.l();
-                break;
-            case 1:
-                this.b.d.l();
-                break;
-            case 2:
-                oy0.v(this.b);
-                break;
-            case 3:
-                MessagesController.getInstance(r0.currentAccount).openByUserName("stickers", this.b.L, 1);
-                break;
-            default:
-                oy0.t(this.b);
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.q0
+    public void j(int i10) {
+        py0.D(this.a, i10);
+    }
+
+    @Override // org.telegram.messenger.MessagesStorage.StringCallback
+    public void run(String str) {
+        new g50(r1.getContext(), r1.o0, null, this.a.resourcesProvider).show();
     }
 }

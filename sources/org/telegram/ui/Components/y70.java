@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y70 implements View.OnLayoutChangeListener {
     public final /* synthetic */ int a;
@@ -24,10 +24,10 @@ public final /* synthetic */ class y70 implements View.OnLayoutChangeListener {
                 }
                 break;
             default:
-                wx0 wx0Var = (wx0) this.b;
-                ai.vd vdVar = wx0Var.h;
+                xx0 xx0Var = (xx0) this.b;
+                ai.vd vdVar = xx0Var.h;
                 if (vdVar != null && vdVar.getLayout() != null) {
-                    wx0Var.F = vdVar.getLayout().getLineWidth(0);
+                    xx0Var.F = vdVar.getLayout().getLineWidth(0);
                     break;
                 }
                 break;

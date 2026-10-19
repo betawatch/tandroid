@@ -10,9 +10,9 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Cells.o9;
 import org.telegram.ui.Components.a6;
-import org.telegram.ui.xu0;
+import org.telegram.ui.vu0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class h1 implements org.telegram.ui.Cells.l1 {
     @Override // org.telegram.ui.Cells.l1
@@ -56,7 +56,7 @@ public final class h1 implements org.telegram.ui.Cells.l1 {
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public final /* synthetic */ xu0 P1() {
+    public final /* synthetic */ vu0 P1() {
         return null;
     }
 

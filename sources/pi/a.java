@@ -1,6 +1,6 @@
 package pi;
 
-import ai.u8;
+import ai.v8;
 import android.util.SparseArray;
 import j$.util.Comparator$-CC;
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class a {
     public SparseArray a;
@@ -22,7 +22,7 @@ public final class a {
         }
         this.a = new SparseArray(hashMap.size());
         ArrayList arrayList = new ArrayList(hashMap.entrySet());
-        Collections.sort(arrayList, Comparator$-CC.comparingInt(new u8(19)));
+        Collections.sort(arrayList, Comparator$-CC.comparingInt(new v8(19)));
         int size = arrayList.size();
         int i10 = 0;
         while (i10 < size) {

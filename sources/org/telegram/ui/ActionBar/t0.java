@@ -19,7 +19,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class t0 extends FrameLayout implements ne.d {
     public final ne.b a;
@@ -110,6 +110,14 @@ public class t0 extends FrameLayout implements ne.d {
         }
     }
 
+    @Override // ne.d
+    public final void r(int i10, float f7, float f10, ne.e eVar) {
+        if (i10 == 0) {
+            a();
+            invalidate();
+        }
+    }
+
     public void setData(hg.o0 o0Var) {
         this.f = o0Var;
         this.s = false;
@@ -197,14 +205,6 @@ public class t0 extends FrameLayout implements ne.d {
     }
 
     @Override // ne.d
-    public final void u(int i10, float f7, float f10, ne.e eVar) {
-        if (i10 == 0) {
-            a();
-            invalidate();
-        }
-    }
-
-    @Override // ne.d
-    public final /* synthetic */ void E(float f7, int i10) {
+    public final /* synthetic */ void H(float f7, int i10) {
     }
 }

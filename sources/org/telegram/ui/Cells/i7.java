@@ -34,7 +34,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.b10;
@@ -45,10 +45,10 @@ import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.xj0;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.zq;
-import org.telegram.ui.g10;
+import org.telegram.ui.e10;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class i7 extends FrameLayout implements DownloadController.FileDownloadProgressListener {
     public MessageObject E;
@@ -66,7 +66,7 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
     public boolean Q;
     public float R;
     public final ImageView a;
-    public final ci.j4 b;
+    public final ci.k4 b;
     public final TextView c;
     public final TextView d;
     public final org.telegram.ui.Components.z5 e;
@@ -116,15 +116,15 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
             boolean z13 = LocaleController.isRTL;
             addView(textView, w7.z5.d(32, -2.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : 16.0f, 22.0f, z13 ? 16.0f : 0.0f, 0.0f));
         }
-        ci.j4 j4Var = new ci.j4(this, context, 2);
-        this.b = j4Var;
-        j4Var.setRoundRadius(AndroidUtilities.dp(4.0f));
+        ci.k4 k4Var = new ci.k4(this, context, 2);
+        this.b = k4Var;
+        k4Var.setRoundRadius(AndroidUtilities.dp(4.0f));
         if (i10 == 1) {
             boolean z14 = LocaleController.isRTL;
-            addView(j4Var, w7.z5.d(42, 42.0f, (z14 ? 5 : 3) | 48, z14 ? 0.0f : 16.0f, 12.0f, z14 ? 16.0f : 0.0f, 0.0f));
+            addView(k4Var, w7.z5.d(42, 42.0f, (z14 ? 5 : 3) | 48, z14 ? 0.0f : 16.0f, 12.0f, z14 ? 16.0f : 0.0f, 0.0f));
         } else {
             boolean z15 = LocaleController.isRTL;
-            addView(j4Var, w7.z5.d(40, 40.0f, (z15 ? 5 : 3) | 48, z15 ? 0.0f : 12.0f, 8.0f, z15 ? 12.0f : 0.0f, 0.0f));
+            addView(k4Var, w7.z5.d(40, 40.0f, (z15 ? 5 : 3) | 48, z15 ? 0.0f : 12.0f, 8.0f, z15 ? 12.0f : 0.0f, 0.0f));
         }
         TextView textView2 = new TextView(context);
         this.c = textView2;
@@ -140,12 +140,12 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
             addView(textView2, w7.z5.d(-1, -2.0f, (z16 ? 5 : 3) | 48, z16 ? 8.0f : 72.0f, 9.0f, z16 ? 72.0f : 8.0f, 0.0f));
             f7 = 14.0f;
         } else if (i10 == 2) {
-            LinearLayout e = lk.e(context, 0);
+            LinearLayout e = kk.e(context, 0);
             boolean z17 = LocaleController.isRTL;
             addView(e, w7.z5.d(-1, -2.0f, (z17 ? 5 : 3) | 48, z17 ? 16.0f : 72.0f, 5.0f, z17 ? 72.0f : 16.0f, 0.0f));
             TextView textView3 = new TextView(context);
             this.r = textView3;
-            lk.o(org.telegram.ui.ActionBar.h6.A6, d6Var, textView3, 1, 14.0f);
+            kk.o(org.telegram.ui.ActionBar.h6.A6, d6Var, textView3, 1, 14.0f);
             f7 = 14.0f;
             if (LocaleController.isRTL) {
                 e.addView(textView3, w7.z5.l(0.0f, -2, -2));
@@ -266,7 +266,7 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
         TextView textView2 = this.c;
         ImageView imageView = this.a;
         TextView textView3 = this.d;
-        ci.j4 j4Var = this.b;
+        ci.k4 k4Var = this.b;
         if (document != null) {
             if (messageObject.isMusic()) {
                 str = null;
@@ -306,20 +306,20 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
             }
             if ((closestPhotoSizeWithSize2 instanceof TLRPC.TL_photoSizeEmpty) || closestPhotoSizeWithSize2 == null) {
                 d6Var = d6Var2;
-                j4Var.setVisibility(4);
-                j4Var.setImageBitmap(null);
+                k4Var.setVisibility(4);
+                k4Var.setImageBitmap(null);
                 textView3.setAlpha(1.0f);
                 imageView.setAlpha(1.0f);
             } else {
-                j4Var.getImageReceiver().setNeedsQualityThumb(closestPhotoSizeWithSize == null ? z11 : false);
-                j4Var.getImageReceiver().setShouldGenerateQualityThumb(closestPhotoSizeWithSize == null ? z11 : false);
-                j4Var.setVisibility(0);
+                k4Var.getImageReceiver().setNeedsQualityThumb(closestPhotoSizeWithSize == null ? z11 : false);
+                k4Var.getImageReceiver().setShouldGenerateQualityThumb(closestPhotoSizeWithSize == null ? z11 : false);
+                k4Var.setVisibility(0);
                 if (messageObject.strippedThumb != null) {
                     d6Var = d6Var2;
-                    j4Var.m(ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "40_40", null, null, messageObject.strippedThumb, null, 1, messageObject);
+                    k4Var.m(ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "40_40", null, null, messageObject.strippedThumb, null, 1, messageObject);
                 } else {
                     d6Var = d6Var2;
-                    j4Var.k(ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "40_40", ImageLocation.getForDocument(closestPhotoSizeWithSize2, document), "40_40_b", 0L, null, messageObject, 1);
+                    k4Var.k(ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "40_40", ImageLocation.getForDocument(closestPhotoSizeWithSize2, document), "40_40_b", 0L, null, messageObject, 1);
                 }
             }
             e();
@@ -340,8 +340,8 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
             textView3.setVisibility(0);
             textView3.setAlpha(1.0f);
             imageView.setAlpha(1.0f);
-            j4Var.setVisibility(4);
-            j4Var.setImageBitmap(null);
+            k4Var.setVisibility(4);
+            k4Var.setImageBitmap(null);
             this.J = null;
             if (textView != null) {
                 textView.setVisibility(8);
@@ -373,13 +373,13 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
             imageView.setVisibility(4);
         }
         int i13 = this.H;
-        ci.j4 j4Var = this.b;
+        ci.k4 k4Var = this.b;
         if (str4 == null && i10 == 0) {
             textView.setAlpha(1.0f);
             imageView.setAlpha(1.0f);
             if (i13 != 3) {
-                j4Var.setImageBitmap(null);
-                j4Var.setVisibility(4);
+                k4Var.setImageBitmap(null);
+                k4Var.setVisibility(4);
             }
         } else {
             if (str4 == null) {
@@ -403,11 +403,11 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
                 org.telegram.ui.ActionBar.d6 d6Var = this.L;
                 org.telegram.ui.ActionBar.h6.w1(M, org.telegram.ui.ActionBar.h6.w0(i11, d6Var), false);
                 org.telegram.ui.ActionBar.h6.w1(M, org.telegram.ui.ActionBar.h6.w0(i12, d6Var), true);
-                j4Var.setImageDrawable(M);
+                k4Var.setImageDrawable(M);
             } else if (i13 != 3) {
-                j4Var.f(str4, "42_42", null);
+                k4Var.f(str4, "42_42", null);
             }
-            j4Var.setVisibility(0);
+            k4Var.setVisibility(0);
         }
         setWillNotDraw(true ^ this.w);
     }
@@ -486,7 +486,7 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
         int i10 = this.H;
         org.telegram.ui.Components.z5 z5Var = this.e;
         if (i10 == 2) {
-            z5Var.setText(new SpannableStringBuilder().append((CharSequence) C).append(' ').append((CharSequence) this.I).append(' ').append(g10.d(this.E, true, 2, z5Var.getPaint())));
+            z5Var.setText(new SpannableStringBuilder().append((CharSequence) C).append(' ').append((CharSequence) this.I).append(' ').append(e10.d(this.E, true, 2, z5Var.getPaint())));
             this.r.setText(LocaleController.stringForMessageListDate(this.E.messageOwner.date));
             return;
         }
@@ -704,36 +704,36 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
 
     public void setPhoto(String str) {
         boolean endsWith = str.endsWith("mp4");
-        ci.j4 j4Var = this.b;
+        ci.k4 k4Var = this.b;
         if (endsWith) {
-            j4Var.f("vthumb://0:".concat(str), null, null);
-            j4Var.setVisibility(0);
+            k4Var.f("vthumb://0:".concat(str), null, null);
+            k4Var.setVisibility(0);
         } else if (!str.endsWith(".jpg") && !str.endsWith(".jpeg") && !str.endsWith(".png") && !str.endsWith(".gif")) {
-            j4Var.setVisibility(8);
+            k4Var.setVisibility(8);
         } else {
-            j4Var.f("thumb://0:".concat(str), null, null);
-            j4Var.setVisibility(0);
+            k4Var.f("thumb://0:".concat(str), null, null);
+            k4Var.setVisibility(0);
         }
     }
 
     public void setPhotoEntry(MediaController.PhotoEntry photoEntry) {
         String str;
         String str2 = photoEntry.thumbPath;
-        ci.j4 j4Var = this.b;
+        ci.k4 k4Var = this.b;
         if (str2 != null) {
-            j4Var.f(str2, null, org.telegram.ui.ActionBar.h6.R4);
+            k4Var.f(str2, null, org.telegram.ui.ActionBar.h6.R4);
             str = photoEntry.thumbPath;
         } else if (photoEntry.path != null) {
             if (photoEntry.isVideo) {
-                j4Var.q(0, true);
-                j4Var.f("vthumb://" + photoEntry.imageId + ":" + photoEntry.path, null, org.telegram.ui.ActionBar.h6.R4);
+                k4Var.q(0, true);
+                k4Var.f("vthumb://" + photoEntry.imageId + ":" + photoEntry.path, null, org.telegram.ui.ActionBar.h6.R4);
             } else {
-                j4Var.p(photoEntry.orientation, photoEntry.invert, true);
-                j4Var.f("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, org.telegram.ui.ActionBar.h6.R4);
+                k4Var.p(photoEntry.orientation, photoEntry.invert, true);
+                k4Var.f("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, org.telegram.ui.ActionBar.h6.R4);
             }
             str = photoEntry.path;
         } else {
-            j4Var.setImageDrawable(org.telegram.ui.ActionBar.h6.R4);
+            k4Var.setImageDrawable(org.telegram.ui.ActionBar.h6.R4);
             str = "";
         }
         File file = new File(str);

@@ -9,7 +9,7 @@ import java.lang.ref.WeakReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rk implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class rk implements View.OnTouchListener {
 
     @Override // android.view.View.OnTouchListener
     public final boolean onTouch(View view, MotionEvent motionEvent) {
-        i2.h0 h0Var;
+        i2.i0 i0Var;
         d80 d80Var;
         switch (this.a) {
             case 0:
@@ -66,15 +66,15 @@ public final /* synthetic */ class rk implements View.OnTouchListener {
                             boolean z10 = l60Var.i0;
                             l60Var.i0 = !z10;
                             si.s0.t();
-                            if (s0Var.W == 5 && (h0Var = s0Var.S) != null) {
-                                h0Var.U(!z10 ? 0.0f : 1.0f);
+                            if (s0Var.W == 5 && (i0Var = s0Var.S) != null) {
+                                i0Var.U(!z10 ? 0.0f : 1.0f);
                             }
                             VideoEditedInfo videoEditedInfo = l60Var.U;
                             if (videoEditedInfo != null) {
                                 videoEditedInfo.muted = l60Var.i0;
                             }
                             imageView.animate().cancel();
-                            org.telegram.messenger.lk.s(imageView.animate(), l60Var.i0 ? 1.0f : 0.0f, 180L);
+                            org.telegram.messenger.kk.s(imageView.animate(), l60Var.i0 ? 1.0f : 0.0f, 180L);
                         }
                     }
                 } else {
@@ -147,7 +147,7 @@ public final /* synthetic */ class rk implements View.OnTouchListener {
             case 4:
                 ib0 ib0Var = (ib0) this.b;
                 ib0Var.getClass();
-                return org.telegram.ui.gt.q().s(motionEvent, ib0Var.getListView(), ib0Var.w, null, ib0Var.a);
+                return org.telegram.ui.et.q().s(motionEvent, ib0Var.getListView(), ib0Var.w, null, ib0Var.a);
             case 5:
                 ic0 ic0Var = (ic0) this.b;
                 ic0Var.getClass();
@@ -156,7 +156,7 @@ public final /* synthetic */ class rk implements View.OnTouchListener {
                 }
                 return true;
             default:
-                return oy0.x((oy0) this.b, motionEvent);
+                return py0.x((py0) this.b, motionEvent);
         }
     }
 }

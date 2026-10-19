@@ -21,14 +21,13 @@ import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.xb;
-import org.telegram.ui.Wallet.p9;
-import org.telegram.ui.aw0;
-import org.telegram.ui.hw0;
-import org.telegram.ui.qw0;
-import org.telegram.ui.sa1;
+import org.telegram.ui.fw0;
+import org.telegram.ui.ow0;
+import org.telegram.ui.qa1;
+import org.telegram.ui.yv0;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class l1 extends hm0 {
     public final /* synthetic */ m1 c;
@@ -77,7 +76,7 @@ public final class l1 extends hm0 {
         m1 m1Var = this.c;
         int i11 = m1Var.j0;
         if (i10 >= i11 && i10 < m1Var.k0) {
-            ((aw0) view).a((qw0) m1Var.X.get(i10 - i11), i10 != m1Var.k0 - 1);
+            ((yv0) view).a((ow0) m1Var.X.get(i10 - i11), i10 != m1Var.k0 - 1);
         } else {
             if (i10 < m1Var.h0 || i10 >= m1Var.i0) {
                 return;
@@ -100,9 +99,9 @@ public final class l1 extends hm0 {
             return k3.l(a02, a02, -1, -2);
         }
         if (i10 == 0) {
-            sa1 sa1Var = new sa1(this, context, 20);
-            m1Var.s0 = sa1Var;
-            sa1Var.setOrientation(1);
+            qa1 qa1Var = new qa1(this, context, 20);
+            m1Var.s0 = qa1Var;
+            qa1Var.setOrientation(1);
             View view2 = m1Var.B0;
             if (view2 == null) {
                 m1Var.r0 = new zd(context, 1, 0, 3);
@@ -115,12 +114,12 @@ public final class l1 extends hm0 {
                 gVar.z = i11;
                 gVar.A = h6.Lj;
                 gVar.b();
-                sa1Var.addView(m1Var.r0, z5.q(160, 160, 1));
+                qa1Var.addView(m1Var.r0, z5.q(160, 160, 1));
             } else {
                 if (view2.getParent() != null) {
                     ((ViewGroup) m1Var.B0.getParent()).removeView(m1Var.B0);
                 }
-                m1Var.X(sa1Var);
+                m1Var.X(qa1Var);
             }
             if (m1Var.N0 == null) {
                 FrameLayout frameLayout = new FrameLayout(context);
@@ -147,7 +146,7 @@ public final class l1 extends hm0 {
             if (m1Var.N0.getParent() != null) {
                 ((ViewGroup) m1Var.N0.getParent()).removeView(m1Var.N0);
             }
-            sa1Var.addView(m1Var.N0, z5.p(-2, -2, 0.0f, 1, 40, 0, 40, 0));
+            qa1Var.addView(m1Var.N0, z5.p(-2, -2, 0.0f, 1, 40, 0, 40, 0));
             if (m1Var.P0 == null) {
                 Context context2 = m1Var.getContext();
                 d6Var = ((f3) m1Var).resourcesProvider;
@@ -161,18 +160,18 @@ public final class l1 extends hm0 {
             if (m1Var.P0.getParent() != null) {
                 ((ViewGroup) m1Var.P0.getParent()).removeView(m1Var.P0);
             }
-            sa1Var.addView(m1Var.P0, z5.p(-1, -2, 0.0f, 0, 24, 9, 24, 20));
+            qa1Var.addView(m1Var.P0, z5.p(-1, -2, 0.0f, 0, 24, 9, 24, 20));
             m1Var.b0(false);
             m1Var.q0 = new gi.f(context, 5);
-            p9 p9Var = new p9(this, context, 6);
-            p9Var.setClipChildren(false);
-            p9Var.addView(m1Var.q0);
-            p9Var.addView(sa1Var);
+            rg.x1 x1Var = new rg.x1(this, context, 5);
+            x1Var.setClipChildren(false);
+            x1Var.addView(m1Var.q0);
+            x1Var.addView(qa1Var);
             zd zdVar = m1Var.r0;
-            view = p9Var;
+            view = x1Var;
             if (zdVar != null) {
                 zdVar.setStarParticlesView(m1Var.q0);
-                view = p9Var;
+                view = x1Var;
             }
         } else if (i10 == 2) {
             view = new z6(context, m1Var.getThemedColor(h6.a7), 0);
@@ -182,7 +181,7 @@ public final class l1 extends hm0 {
             view = new a(context);
         } else if (i10 != 5) {
             d6Var4 = ((f3) m1Var).resourcesProvider;
-            view = new hw0(this, context, d6Var4);
+            view = new fw0(this, context, d6Var4);
         } else {
             d6Var3 = ((f3) m1Var).resourcesProvider;
             wg.d0 d0Var = new wg.d0(context, d6Var3);

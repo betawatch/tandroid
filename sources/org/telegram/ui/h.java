@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class h extends org.telegram.ui.ActionBar.n2 implements LocationController.LocationFetchCallback {
     public org.telegram.ui.Components.xj0 a;
@@ -35,8 +35,8 @@ public final class h extends org.telegram.ui.ActionBar.n2 implements LocationCon
     public int[] s;
     public final int v;
     public boolean w;
-    public zu x;
-    public gb0 y;
+    public xu x;
+    public eb0 y;
 
     public h(int i10) {
         super(null);
@@ -45,11 +45,11 @@ public final class h extends org.telegram.ui.ActionBar.n2 implements LocationCon
     }
 
     public final void Z(Runnable runnable) {
-        this.y = (gb0) runnable;
+        this.y = (eb0) runnable;
     }
 
-    public final void a0(zu zuVar) {
-        this.x = zuVar;
+    public final void a0(xu xuVar) {
+        this.x = xuVar;
     }
 
     public final void b0() {
@@ -164,7 +164,7 @@ public final class h extends org.telegram.ui.ActionBar.n2 implements LocationCon
             viewGroup.addView(this.h);
             int i16 = 0;
             for (int i17 = 3; i16 < i17; i17 = 3) {
-                LinearLayout e = org.telegram.messenger.lk.e(context, 0);
+                LinearLayout e = org.telegram.messenger.kk.e(context, 0);
                 this.h.addView(e, w7.z5.k(0.0f, 0.0f, 0.0f, i16 != i11 ? 7.0f : 0.0f, -2, -2));
                 int i18 = i16 * 2;
                 TextView textView4 = new TextView(context);
@@ -194,7 +194,7 @@ public final class h extends org.telegram.ui.ActionBar.n2 implements LocationCon
                         textViewArr[i21].setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
                         spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 1, (CharSequence) "");
                         spannableStringBuilder.replace(indexOf, indexOf + 1, (CharSequence) "");
-                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.j61(LocaleController.getString(R.string.AuthAnotherClientDownloadClientUrl), (org.telegram.ui.Components.l11) null), indexOf, lastIndexOf - 1, 33);
+                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.k61(LocaleController.getString(R.string.AuthAnotherClientDownloadClientUrl), (org.telegram.ui.Components.m11) null), indexOf, lastIndexOf - 1, 33);
                     }
                     textViewArr[i21].setText(spannableStringBuilder);
                 } else if (i16 == 1) {
@@ -255,7 +255,7 @@ public final class h extends org.telegram.ui.ActionBar.n2 implements LocationCon
                         if (hVar.getParentActivity() != null) {
                             int i22 = hVar.v;
                             if (i22 == 0) {
-                                hVar.presentFragment(new od(org.telegram.ui.Cells.c1.i(0, "step")), true);
+                                hVar.presentFragment(new md(org.telegram.ui.Cells.c1.i(0, "step")), true);
                                 break;
                             } else if (i22 == 3) {
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(hVar.getParentActivity());
@@ -268,7 +268,7 @@ public final class h extends org.telegram.ui.ActionBar.n2 implements LocationCon
                             } else if (i22 == 5) {
                                 if (hVar.getParentActivity() != null) {
                                     if (hVar.getParentActivity().checkSelfPermission("android.permission.CAMERA") == 0) {
-                                        y9.e0(hVar.getParentActivity(), false, 1, new g(hVar, 0));
+                                        w9.e0(hVar.getParentActivity(), 1, new g(hVar, 0));
                                         break;
                                     } else {
                                         hVar.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 34);
@@ -277,9 +277,9 @@ public final class h extends org.telegram.ui.ActionBar.n2 implements LocationCon
                                 }
                             } else if (i22 == 6) {
                                 hVar.presentFragment(new PasscodeActivity(1), true);
-                                gb0 gb0Var = hVar.y;
-                                if (gb0Var != null) {
-                                    AndroidUtilities.runOnUIThread(gb0Var);
+                                eb0 eb0Var = hVar.y;
+                                if (eb0Var != null) {
+                                    AndroidUtilities.runOnUIThread(eb0Var);
                                     hVar.y = null;
                                     break;
                                 }
@@ -336,7 +336,7 @@ public final class h extends org.telegram.ui.ActionBar.n2 implements LocationCon
                             if (hVar.getParentActivity() != null) {
                                 int i222 = hVar.v;
                                 if (i222 == 0) {
-                                    hVar.presentFragment(new od(org.telegram.ui.Cells.c1.i(0, "step")), true);
+                                    hVar.presentFragment(new md(org.telegram.ui.Cells.c1.i(0, "step")), true);
                                     break;
                                 } else if (i222 == 3) {
                                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(hVar.getParentActivity());
@@ -349,7 +349,7 @@ public final class h extends org.telegram.ui.ActionBar.n2 implements LocationCon
                                 } else if (i222 == 5) {
                                     if (hVar.getParentActivity() != null) {
                                         if (hVar.getParentActivity().checkSelfPermission("android.permission.CAMERA") == 0) {
-                                            y9.e0(hVar.getParentActivity(), false, 1, new g(hVar, 0));
+                                            w9.e0(hVar.getParentActivity(), 1, new g(hVar, 0));
                                             break;
                                         } else {
                                             hVar.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 34);
@@ -358,9 +358,9 @@ public final class h extends org.telegram.ui.ActionBar.n2 implements LocationCon
                                     }
                                 } else if (i222 == 6) {
                                     hVar.presentFragment(new PasscodeActivity(1), true);
-                                    gb0 gb0Var = hVar.y;
-                                    if (gb0Var != null) {
-                                        AndroidUtilities.runOnUIThread(gb0Var);
+                                    eb0 eb0Var = hVar.y;
+                                    if (eb0Var != null) {
+                                        AndroidUtilities.runOnUIThread(eb0Var);
                                         hVar.y = null;
                                         break;
                                     }
@@ -395,7 +395,7 @@ public final class h extends org.telegram.ui.ActionBar.n2 implements LocationCon
                 user = userConfig.getCurrentUser();
             }
             if (user != null) {
-                this.d.setText(LocaleController.formatString("PhoneNumberKeepButton", R.string.PhoneNumberKeepButton, org.telegram.messenger.lk.g(new StringBuilder("+"), user.phone, jf.b.c())));
+                this.d.setText(LocaleController.formatString("PhoneNumberKeepButton", R.string.PhoneNumberKeepButton, org.telegram.messenger.kk.g(new StringBuilder("+"), user.phone, jf.b.c())));
             }
             final int i23 = 3;
             this.d.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.d
@@ -413,7 +413,7 @@ public final class h extends org.telegram.ui.ActionBar.n2 implements LocationCon
                             if (hVar.getParentActivity() != null) {
                                 int i222 = hVar.v;
                                 if (i222 == 0) {
-                                    hVar.presentFragment(new od(org.telegram.ui.Cells.c1.i(0, "step")), true);
+                                    hVar.presentFragment(new md(org.telegram.ui.Cells.c1.i(0, "step")), true);
                                     break;
                                 } else if (i222 == 3) {
                                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(hVar.getParentActivity());
@@ -426,7 +426,7 @@ public final class h extends org.telegram.ui.ActionBar.n2 implements LocationCon
                                 } else if (i222 == 5) {
                                     if (hVar.getParentActivity() != null) {
                                         if (hVar.getParentActivity().checkSelfPermission("android.permission.CAMERA") == 0) {
-                                            y9.e0(hVar.getParentActivity(), false, 1, new g(hVar, 0));
+                                            w9.e0(hVar.getParentActivity(), 1, new g(hVar, 0));
                                             break;
                                         } else {
                                             hVar.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 34);
@@ -435,9 +435,9 @@ public final class h extends org.telegram.ui.ActionBar.n2 implements LocationCon
                                     }
                                 } else if (i222 == 6) {
                                     hVar.presentFragment(new PasscodeActivity(1), true);
-                                    gb0 gb0Var = hVar.y;
-                                    if (gb0Var != null) {
-                                        AndroidUtilities.runOnUIThread(gb0Var);
+                                    eb0 eb0Var = hVar.y;
+                                    if (eb0Var != null) {
+                                        AndroidUtilities.runOnUIThread(eb0Var);
                                         hVar.y = null;
                                         break;
                                     }
@@ -498,7 +498,7 @@ public final class h extends org.telegram.ui.ActionBar.n2 implements LocationCon
                             if (hVar.getParentActivity() != null) {
                                 int i222 = hVar.v;
                                 if (i222 == 0) {
-                                    hVar.presentFragment(new od(org.telegram.ui.Cells.c1.i(0, "step")), true);
+                                    hVar.presentFragment(new md(org.telegram.ui.Cells.c1.i(0, "step")), true);
                                     break;
                                 } else if (i222 == 3) {
                                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(hVar.getParentActivity());
@@ -511,7 +511,7 @@ public final class h extends org.telegram.ui.ActionBar.n2 implements LocationCon
                                 } else if (i222 == 5) {
                                     if (hVar.getParentActivity() != null) {
                                         if (hVar.getParentActivity().checkSelfPermission("android.permission.CAMERA") == 0) {
-                                            y9.e0(hVar.getParentActivity(), false, 1, new g(hVar, 0));
+                                            w9.e0(hVar.getParentActivity(), 1, new g(hVar, 0));
                                             break;
                                         } else {
                                             hVar.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 34);
@@ -520,9 +520,9 @@ public final class h extends org.telegram.ui.ActionBar.n2 implements LocationCon
                                     }
                                 } else if (i222 == 6) {
                                     hVar.presentFragment(new PasscodeActivity(1), true);
-                                    gb0 gb0Var = hVar.y;
-                                    if (gb0Var != null) {
-                                        AndroidUtilities.runOnUIThread(gb0Var);
+                                    eb0 eb0Var = hVar.y;
+                                    if (eb0Var != null) {
+                                        AndroidUtilities.runOnUIThread(eb0Var);
                                         hVar.y = null;
                                         break;
                                     }
@@ -612,7 +612,7 @@ public final class h extends org.telegram.ui.ActionBar.n2 implements LocationCon
     public final void onRequestPermissionsResultFragment(int i10, String[] strArr, int[] iArr) {
         if (getParentActivity() != null && i10 == 34) {
             if (iArr.length > 0 && iArr[0] == 0) {
-                y9.e0(getParentActivity(), false, 1, new g(this, 0));
+                w9.e0(getParentActivity(), 1, new g(this, 0));
                 return;
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());

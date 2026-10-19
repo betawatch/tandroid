@@ -15,12 +15,12 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.l11;
-import org.telegram.ui.Components.l61;
 import org.telegram.ui.Components.m11;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.n11;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public abstract class d4 {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -1052,7 +1052,7 @@ public abstract class d4 {
         int i17 = i10;
         ad.e eVar2 = eVar;
         int i18 = i15;
-        ArrayList arrayList = eVar2.a;
+        ArrayList arrayList = eVar2.b;
         while (true) {
             int i19 = iArr[0];
             if (i19 > i17) {
@@ -1061,7 +1061,7 @@ public abstract class d4 {
             a aVar = (a) list3.get(i19);
             if (!aVar.i) {
                 if (aVar.k.size() > i18) {
-                    eVar2.d(sb3);
+                    eVar2.g(sb3);
                     Long l4 = (Long) ((a) list3.get(iArr[0])).k.get(i18);
                     long longValue = l4.longValue();
                     int i20 = iArr[0];
@@ -1080,14 +1080,14 @@ public abstract class d4 {
                     sb3.append("<blockquote>");
                     ad.e eVar3 = new ad.e(1);
                     F(sb3, list3, iArr, i20, i11, i12, i13, i14, eVar3, z10, i18 + 1, map);
-                    eVar3.d(sb3);
+                    eVar3.g(sb3);
                     c(sb3, map != null ? k((TL_iv.RichText) map.get(l4)) : null);
                     sb3.append("</blockquote>");
                     i17 = i10;
                     i18 = i15;
                 } else {
                     if (w3.y3(aVar)) {
-                        eVar2.d(sb3);
+                        eVar2.g(sb3);
                         a aVar3 = (a) list3.get(iArr[0]);
                         sb3.append(((TL_iv.pageBlockDetails) aVar3.b).open ? "<details open>" : "<details>");
                         sb3.append("<summary>");
@@ -1098,7 +1098,7 @@ public abstract class d4 {
                         F(sb3, list3, iArr, i10, i11, i12, i13, i14, eVar4, true, i15, map);
                         list2 = list3;
                         i16 = i10;
-                        eVar4.d(sb3);
+                        eVar4.g(sb3);
                         int i22 = iArr[0];
                         if (i22 <= i16 && i22 < list2.size() && ((a) list2.get(iArr[0])).i) {
                             iArr[0] = iArr[0] + 1;
@@ -1109,7 +1109,7 @@ public abstract class d4 {
                         list2 = list3;
                         boolean z12 = true;
                         if (aVar.c <= 0 || l(aVar.b) == null) {
-                            eVar2.d(sb3);
+                            eVar2.g(sb3);
                             int i23 = iArr[0];
                             TL_iv.PageBlock pageBlock = aVar.b;
                             if (pageBlock instanceof TL_iv.pageBlockDivider) {
@@ -1303,7 +1303,7 @@ public abstract class d4 {
                             int i26 = aVar.c;
                             boolean z14 = aVar.d > 0;
                             while (arrayList.size() > i26) {
-                                eVar2.c(sb3);
+                                eVar2.f(sb3);
                             }
                             while (true) {
                                 str2 = "<ul>";
@@ -1316,8 +1316,8 @@ public abstract class d4 {
                                 sb3.append(str2);
                                 arrayList.add(Boolean.valueOf(z14));
                             }
-                            if (!arrayList.isEmpty() && ((Boolean) i2.d.h(1, arrayList)).booleanValue() != z14) {
-                                eVar2.c(sb3);
+                            if (!arrayList.isEmpty() && ((Boolean) i2.e.h(1, arrayList)).booleanValue() != z14) {
+                                eVar2.f(sb3);
                                 sb3.append(z14 ? "<ol>" : "<ul>");
                                 arrayList.add(Boolean.valueOf(z14));
                             }
@@ -1677,19 +1677,19 @@ public abstract class d4 {
                 i23 = Math.min(length, i10);
             } else {
                 int nextSpanTransition = spanned.nextSpanTransition(i23, length, CharacterStyle.class);
-                m11[] m11VarArr = (m11[]) spanned.getSpans(i23, nextSpanTransition, m11.class);
-                int length3 = m11VarArr.length;
+                n11[] n11VarArr = (n11[]) spanned.getSpans(i23, nextSpanTransition, n11.class);
+                int length3 = n11VarArr.length;
                 int i25 = i22;
                 int i26 = i25;
                 while (i25 < length3) {
-                    l11 l11Var = m11VarArr[i25].b;
-                    if (l11Var != null) {
-                        i26 |= l11Var.a;
+                    m11 m11Var = n11VarArr[i25].b;
+                    if (m11Var != null) {
+                        i26 |= m11Var.a;
                     }
                     i25++;
                 }
-                l61[] l61VarArr = (l61[]) spanned.getSpans(i23, nextSpanTransition, l61.class);
-                String url = l61VarArr.length > 0 ? l61VarArr[i22].getURL() : null;
+                m61[] m61VarArr = (m61[]) spanned.getSpans(i23, nextSpanTransition, m61.class);
+                String url = m61VarArr.length > 0 ? m61VarArr[i22].getURL() : null;
                 org.telegram.ui.Components.a6[] a6VarArr = (org.telegram.ui.Components.a6[]) spanned.getSpans(i23, nextSpanTransition, org.telegram.ui.Components.a6.class);
                 if (a6VarArr.length > 0) {
                     org.telegram.ui.Components.a6 a6Var = a6VarArr[i22];
@@ -2049,9 +2049,9 @@ public abstract class d4 {
             spannableStringBuilder.setSpan(new org.telegram.ui.Components.a6(j10, (Paint.FontMetricsInt) null), length, length2, 33);
         }
         if (i10 != 0) {
-            l11 l11Var = new l11();
-            l11Var.a = i10 & 114975;
-            spannableStringBuilder.setSpan(new m11(l11Var, AndroidUtilities.dp(SharedConfig.fontSize)), length, length2, 33);
+            m11 m11Var = new m11();
+            m11Var.a = i10 & 114975;
+            spannableStringBuilder.setSpan(new n11(m11Var, AndroidUtilities.dp(SharedConfig.fontSize)), length, length2, 33);
         }
         if (str2 != null) {
             spannableStringBuilder.setSpan(e6.k(str2), length, length2, 33);
@@ -2546,7 +2546,7 @@ public abstract class d4 {
                             if (arrayList3.isEmpty()) {
                                 arrayList2.add(c4Var);
                             } else {
-                                ((c4) i2.d.h(1, arrayList3)).e.add(c4Var);
+                                ((c4) i2.e.h(1, arrayList3)).e.add(c4Var);
                             }
                         }
                     } else if (str.startsWith("<!--", i12)) {
@@ -2661,7 +2661,7 @@ public abstract class d4 {
                                 if (arrayList3.isEmpty()) {
                                     arrayList2.add(c4Var2);
                                 } else {
-                                    ((c4) i2.d.h(1, arrayList3)).e.add(c4Var2);
+                                    ((c4) i2.e.h(1, arrayList3)).e.add(c4Var2);
                                 }
                                 if (!endsWith) {
                                     String str3 = c4Var2.a;
@@ -2739,7 +2739,7 @@ public abstract class d4 {
                                 if (arrayList3.isEmpty()) {
                                     arrayList2.add(c4Var3);
                                 } else {
-                                    ((c4) i2.d.h(1, arrayList3)).e.add(c4Var3);
+                                    ((c4) i2.e.h(1, arrayList3)).e.add(c4Var3);
                                 }
                             }
                         }

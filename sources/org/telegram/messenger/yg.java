@@ -1,15 +1,29 @@
 package org.telegram.messenger;
 
-import android.graphics.Canvas;
-import android.graphics.PostProcessor;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final /* synthetic */ class yg implements PostProcessor {
-    @Override // android.graphics.PostProcessor
-    public final int onPostProcess(Canvas canvas) {
-        int lambda$loadRoundAvatar$47;
-        lambda$loadRoundAvatar$47 = NotificationsController.lambda$loadRoundAvatar$47(canvas);
-        return lambda$loadRoundAvatar$47;
+public final /* synthetic */ class yg implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationsController b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+
+    public /* synthetic */ yg(NotificationsController notificationsController, long j10, int i10, int i11) {
+        this.a = i11;
+        this.b = notificationsController;
+        this.c = j10;
+        this.d = i10;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.lambda$processDeleteStory$16(this.c, this.d);
+                break;
+            default:
+                this.b.lambda$processReadStories$17(this.c, this.d);
+                break;
+        }
     }
 }

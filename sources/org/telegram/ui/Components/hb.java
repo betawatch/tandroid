@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hb implements o1.f {
     public final /* synthetic */ int a;
@@ -52,21 +52,21 @@ public final /* synthetic */ class hb implements o1.f {
                 }
                 break;
             case 5:
-                dr0 dr0Var = (dr0) this.b;
-                dr0Var.E.setVisibility(8);
-                dr0Var.z0.setVisibility(8);
-                ar0 ar0Var = dr0Var.L;
-                ar0Var.f = null;
-                ar0Var.l();
-                dr0Var.B0 = null;
-                dr0Var.M0 = false;
+                er0 er0Var = (er0) this.b;
+                er0Var.F.setVisibility(8);
+                er0Var.A0.setVisibility(8);
+                br0 br0Var = er0Var.M;
+                br0Var.f = null;
+                br0Var.l();
+                er0Var.C0 = null;
+                er0Var.N0 = false;
                 break;
             default:
-                dr0 dr0Var2 = ((kq0) this.b).d;
-                dr0Var2.F.setVisibility(8);
-                dr0Var2.G.setVisibility(8);
-                dr0Var2.y0.setVisibility(8);
-                dr0Var2.B0 = null;
+                er0 er0Var2 = ((kq0) this.b).d;
+                er0Var2.G.setVisibility(8);
+                er0Var2.H.setVisibility(8);
+                er0Var2.z0.setVisibility(8);
+                er0Var2.C0 = null;
                 break;
         }
     }

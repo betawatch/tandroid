@@ -1,8 +1,8 @@
 package ah;
 
 import ai.a2;
-import ai.h5;
-import ai.k7;
+import ai.i5;
+import ai.l7;
 import android.content.Context;
 import android.media.AudioManager;
 import ei.d4;
@@ -30,8 +30,8 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.c4;
-import org.telegram.ui.Components.gz0;
-import org.telegram.ui.Components.hs0;
+import org.telegram.ui.Components.hz0;
+import org.telegram.ui.Components.is0;
 import org.telegram.ui.Components.k10;
 import org.telegram.ui.Components.k40;
 import org.telegram.ui.Components.kw;
@@ -39,10 +39,10 @@ import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.up;
 import org.telegram.ui.Components.vp;
 import org.telegram.ui.Components.wp;
-import org.telegram.ui.jm;
-import org.telegram.ui.ko;
+import org.telegram.ui.hm;
+import org.telegram.ui.io;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -81,24 +81,24 @@ public final /* synthetic */ class t implements Runnable {
                     break;
                 }
             case 2:
-                k7 k7Var = (k7) obj;
-                k7Var.getClass();
-                k7Var.L2(k7Var.j1, AndroidUtilities.replaceTags(LocaleController.formatString(z10 ? R.string.Gift2ActionWearDone : R.string.Gift2ActionWearOffDone, k7Var.Q1())), true);
+                l7 l7Var = (l7) obj;
+                l7Var.getClass();
+                l7Var.S2(l7Var.j1, AndroidUtilities.replaceTags(LocaleController.formatString(z10 ? R.string.Gift2ActionWearDone : R.string.Gift2ActionWearOffDone, l7Var.X1())), true);
                 break;
             case 3:
-                k7 k7Var2 = ((h5) obj).T;
-                TL_stars.SavedStarGift V1 = k7Var2.V1(z10);
-                if (V1 != null) {
-                    k7Var2.e1 = true;
-                    k7Var2.F2(V1, k7Var2.G0);
+                l7 l7Var2 = ((i5) obj).T;
+                TL_stars.SavedStarGift c22 = l7Var2.c2(z10);
+                if (c22 != null) {
+                    l7Var2.e1 = true;
+                    l7Var2.M2(c22, l7Var2.G0);
                 } else {
-                    TL_stars.TL_starGiftUnique W1 = k7Var2.W1(z10);
-                    if (W1 != null) {
-                        k7Var2.e1 = true;
-                        k7Var2.D2(W1.slug, W1, k7Var2.G0);
+                    TL_stars.TL_starGiftUnique d22 = l7Var2.d2(z10);
+                    if (d22 != null) {
+                        l7Var2.e1 = true;
+                        l7Var2.K2(d22.slug, d22, l7Var2.G0);
                     }
                 }
-                k7Var2.U0 = -1;
+                l7Var2.U0 = -1;
                 qc qcVar = qc.w;
                 if (qcVar != null) {
                     qcVar.c(0L, false);
@@ -107,12 +107,12 @@ public final /* synthetic */ class t implements Runnable {
                 break;
             case 4:
                 di.r rVar = (di.r) obj;
-                hs0 hs0Var = rVar.W;
+                is0 is0Var = rVar.W;
                 if (!z10) {
-                    hs0Var.b(rVar.a.E);
+                    is0Var.b(rVar.a.E);
                     break;
                 } else {
-                    new di.u(hs0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new ai.r0(hs0Var, 10)).show();
+                    new di.u(is0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new ai.r0(is0Var, 10)).show();
                     break;
                 }
             case 5:
@@ -169,7 +169,7 @@ public final /* synthetic */ class t implements Runnable {
                 if (!z10) {
                     v2Var.s(d3Var.G, d3Var.H);
                 }
-                NotificationCenter.getInstance(v2Var.M).doOnIdle(new org.telegram.ui.web.u(v2Var, 2));
+                NotificationCenter.getInstance(v2Var.M).doOnIdle(new org.telegram.ui.web.t(v2Var, 2));
                 break;
             case 11:
                 ((hi.s0) obj).f(z10, false);
@@ -177,10 +177,10 @@ public final /* synthetic */ class t implements Runnable {
             case 12:
                 k2.u uVar2 = (k2.u) ((qf.b) obj).c;
                 String str = e2.m0.a;
-                i2.h0 h0Var = ((i2.b0) uVar2).a;
-                if (h0Var.d0 != z10) {
-                    h0Var.d0 = z10;
-                    h0Var.m.e(23, new i2.x(i11, z10));
+                i2.i0 i0Var = ((i2.c0) uVar2).a;
+                if (i0Var.d0 != z10) {
+                    i0Var.d0 = z10;
+                    i0Var.m.e(23, new i2.y(i11, z10));
                     break;
                 }
                 break;
@@ -218,16 +218,16 @@ public final /* synthetic */ class t implements Runnable {
                 pf.d.r((Context) obj, LocaleController.getString(z10 ? R.string.BotMonetizationInfoTONLink : R.string.MonetizationInfoTONLink));
                 break;
             case 24:
-                gz0 gz0Var = ((jm) obj).c.d1;
-                if (gz0Var != null && z10) {
-                    gz0Var.setVisibility(8);
+                hz0 hz0Var = ((hm) obj).c.d1;
+                if (hz0Var != null && z10) {
+                    hz0Var.setVisibility(8);
                     break;
                 }
                 break;
             case 25:
-                ko koVar = (ko) obj;
-                koVar.x0.autotranslation = z10;
-                koVar.getMessagesController().putChat(koVar.x0, false);
+                io ioVar = (io) obj;
+                ioVar.x0.autotranslation = z10;
+                ioVar.getMessagesController().putChat(ioVar.x0, false);
                 break;
             case 26:
                 wp wpVar = (wp) obj;

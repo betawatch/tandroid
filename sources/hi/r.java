@@ -17,26 +17,26 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.rx0;
+import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.sx0;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class r extends n2 implements ne.d {
     public final ne.b a;
     public long b;
     public FrameLayout c;
-    public a71 d;
+    public b71 d;
     public kh.f e;
     public LinearLayout f;
     public ei.d h;
     public ei.d n;
-    public rx0 r;
+    public sx0 r;
     public TLRPC.ChatFull s;
     public s0 v;
 
@@ -45,17 +45,17 @@ public final class r extends n2 implements ne.d {
         this.a = new ne.b(0, this, bs.h, 320L, false);
     }
 
-    public static void U(r rVar, f61 f61Var) {
-        Object obj = f61Var.G;
+    public static void U(r rVar, g61 g61Var) {
+        Object obj = g61Var.G;
         if (obj instanceof ii.e) {
             ii.e eVar = (ii.e) obj;
             long j10 = eVar.a;
             TLRPC.Chat chat = MessagesController.getInstance(rVar.currentAccount).getChat(Long.valueOf(-j10));
             TLRPC.User user = MessagesController.getInstance(rVar.currentAccount).getUser(Long.valueOf(j10));
             if (user != null) {
-                rVar.presentFragment(sn.W9(user.id));
+                rVar.presentFragment(qn.W9(user.id));
             } else if (ChatObject.isPublic(chat) || ChatObject.isInChat(chat)) {
-                rVar.presentFragment(sn.W9(-chat.id));
+                rVar.presentFragment(qn.W9(-chat.id));
             } else {
                 new ji.b(rVar.getParentActivity(), chat, new p6(29, rVar, eVar)).show();
             }
@@ -80,7 +80,7 @@ public final class r extends n2 implements ne.d {
         s0Var.d();
         this.v.e();
         final int i10 = 0;
-        i2.d.y(false, this.actionBar);
+        i2.e.y(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 7));
         this.actionBar.setTitle(LocaleController.getString(R.string.CommunityPendingRequests));
@@ -88,12 +88,12 @@ public final class r extends n2 implements ne.d {
         this.c = frameLayout;
         int i11 = h6.a7;
         frameLayout.setBackgroundColor(h6.x0(null, i11, false));
-        a71 a71Var = new a71(this, new hg.o(this, 1), new p(this), new p(this));
-        this.d = a71Var;
-        a71Var.setClipToPadding(false);
-        a71 a71Var2 = this.d;
-        a71Var2.W2.r = false;
-        a71Var2.p1();
+        b71 b71Var = new b71(this, new hg.o(this, 1), new p(this), new p(this));
+        this.d = b71Var;
+        b71Var.setClipToPadding(false);
+        b71 b71Var2 = this.d;
+        b71Var2.W2.r = false;
+        b71Var2.p1();
         this.d.j(new ah.d0(this, 10));
         this.actionBar.setAdaptiveBackground(this.d);
         this.c.addView(this.d, z5.c(-1.0f, -1));
@@ -161,9 +161,9 @@ public final class r extends n2 implements ne.d {
         });
         this.f.addView(this.h, z5.p(0, 48, 1.0f, 0, 4, 0, 4, 0));
         this.c.addView(this.f, z5.e(-1, -2, 80));
-        rx0 rx0Var = new rx0(getParentActivity(), null, 16, this.resourceProvider);
-        this.r = rx0Var;
-        rx0Var.d.setText(LocaleController.getString(R.string.NoCommunityJoinRequests));
+        sx0 sx0Var = new sx0(getParentActivity(), null, 16, this.resourceProvider);
+        this.r = sx0Var;
+        sx0Var.d.setText(LocaleController.getString(R.string.NoCommunityJoinRequests));
         this.r.e.setText(LocaleController.getString(R.string.NoCommunityJoinRequestsDescription));
         this.r.setAnimateLayoutChange(true);
         this.r.setVisibility(8);
@@ -214,7 +214,7 @@ public final class r extends n2 implements ne.d {
     }
 
     @Override // ne.d
-    public final void u(int i10, float f7, float f10, ne.e eVar) {
+    public final void r(int i10, float f7, float f10, ne.e eVar) {
         float f11 = 1.0f - f7;
         this.f.setAlpha(f11);
         this.f.setVisibility(f11 > 0.0f ? 0 : 8);
@@ -223,6 +223,6 @@ public final class r extends n2 implements ne.d {
     }
 
     @Override // ne.d
-    public final /* synthetic */ void E(float f7, int i10) {
+    public final /* synthetic */ void H(float f7, int i10) {
     }
 }

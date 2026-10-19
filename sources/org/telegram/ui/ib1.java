@@ -1,16 +1,69 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
-/* loaded from: classes3.dex */
-public final class ib1 extends s4.k {
-    public final /* synthetic */ mc1 F;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.widget.FrameLayout;
 
-    public ib1(mc1 mc1Var) {
-        this.F = mc1Var;
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* loaded from: classes3.dex */
+public final class ib1 extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final RectF b;
+    public final /* synthetic */ kc1 c;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ib1(kc1 kc1Var, Context context, int i10) {
+        super(context);
+        this.a = i10;
+        switch (i10) {
+            case 1:
+                this.c = kc1Var;
+                super(context);
+                this.b = new RectF();
+                break;
+            default:
+                this.c = kc1Var;
+                this.b = new RectF();
+                break;
+        }
     }
 
-    @Override // s4.k
-    public final void P(s4.b1 b1Var) {
-        this.F.u0.f1();
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                float measuredWidth = getMeasuredWidth();
+                float measuredHeight = getMeasuredHeight();
+                RectF rectF = this.b;
+                rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
+                kc1 kc1Var = this.c;
+                ib1 ib1Var = kc1Var.D0;
+                zb1 zb1Var = kc1Var.x0;
+                kb1 kb1Var = kc1Var.a;
+                org.telegram.ui.ActionBar.h6.s(ib1Var, zb1Var, kb1Var);
+                canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, kb1Var.n("paintChatActionBackground"));
+                if (org.telegram.ui.ActionBar.h6.b1()) {
+                    canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, kb1Var.n("paintChatActionBackgroundDarken"));
+                    break;
+                }
+                break;
+            default:
+                float measuredWidth2 = getMeasuredWidth();
+                float measuredHeight2 = getMeasuredHeight();
+                RectF rectF2 = this.b;
+                rectF2.set(0.0f, 0.0f, measuredWidth2, measuredHeight2);
+                kc1 kc1Var2 = this.c;
+                ib1 ib1Var2 = kc1Var2.E0;
+                zb1 zb1Var2 = kc1Var2.x0;
+                kb1 kb1Var2 = kc1Var2.a;
+                org.telegram.ui.ActionBar.h6.s(ib1Var2, zb1Var2, kb1Var2);
+                canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, kb1Var2.n("paintChatActionBackground"));
+                if (org.telegram.ui.ActionBar.h6.b1()) {
+                    canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, kb1Var2.n("paintChatActionBackgroundDarken"));
+                    break;
+                }
+                break;
+        }
     }
 }

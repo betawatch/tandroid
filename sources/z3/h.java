@@ -20,7 +20,7 @@ import java.util.List;
 import v7.b8;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class h implements o {
     public final m a;
@@ -113,7 +113,7 @@ public final class h implements o {
      */
     /* JADX WARN: Code restructure failed: missing block: B:56:0x008f, code lost:
     
-        r20.a.g(r20.e, 0, r20.g, r2, new yh.q0(r20, 1));
+        r20.a.f(r20.e, 0, r20.g, r2, new yh.q0(r20, 1));
         java.util.Collections.sort(r11);
         r20.i = new long[r11.size()];
         r2 = r22;

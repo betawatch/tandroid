@@ -13,10 +13,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.dj;
+import org.telegram.ui.bj;
 import w7.b6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class c extends LinearLayout {
     public static final /* synthetic */ int e = 0;
@@ -25,18 +25,18 @@ public final class c extends LinearLayout {
     public final z5 c;
     public float d;
 
-    public c(Context context, d6 d6Var, dj djVar, bh.b bVar) {
+    public c(Context context, d6 d6Var, bj bjVar, bh.b bVar) {
         super(context);
         z5 z5Var = new z5(this);
         this.b = z5Var;
         z5 z5Var2 = new z5(this);
         this.c = z5Var2;
         this.a = d6Var;
-        jh.a c10 = jh.a.c(context, bVar, djVar, d6Var);
+        jh.a c10 = jh.a.c(context, bVar, bjVar, d6Var);
         z5Var.b = c10;
         c10.setOnClickListener(new ah.f(6));
         b6.b((jh.a) z5Var.b, 0.065f, 2.0f);
-        jh.a c11 = jh.a.c(context, bVar, djVar, d6Var);
+        jh.a c11 = jh.a.c(context, bVar, bjVar, d6Var);
         z5Var2.b = c11;
         c11.setOnClickListener(new ah.f(6));
         b6.b((jh.a) z5Var2.b, 0.065f, 2.0f);

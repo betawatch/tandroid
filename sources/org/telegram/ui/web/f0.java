@@ -1,38 +1,39 @@
 package org.telegram.ui.web;
 
 import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.lh0;
-import org.telegram.ui.sn;
+import ci.z7;
+import org.json.JSONObject;
+import org.telegram.ui.cy;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class f0 extends sn {
-    public boolean Rc;
-    public final /* synthetic */ TLRPC.User Sc;
-    public final /* synthetic */ long Tc;
-    public final /* synthetic */ b1 Uc;
+public final class f0 extends cy {
+    public final /* synthetic */ boolean[] B4;
+    public final /* synthetic */ z7 C4;
+    public final /* synthetic */ a1 D4;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f0(b1 b1Var, Bundle bundle, TLRPC.User user, long j10) {
+    public f0(a1 a1Var, Bundle bundle, boolean[] zArr, z7 z7Var) {
         super(bundle);
-        this.Uc = b1Var;
-        this.Sc = user;
-        this.Tc = j10;
+        this.D4 = a1Var;
+        this.B4 = zArr;
+        this.C4 = z7Var;
     }
 
-    @Override // org.telegram.ui.sn, org.telegram.ui.ActionBar.n2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.Rc) {
+    @Override // org.telegram.ui.cy, org.telegram.ui.ActionBar.n2
+    public final void onFragmentDestroy() {
+        JSONObject jSONObject;
+        super.onFragmentDestroy();
+        boolean[] zArr = this.B4;
+        if (zArr[0]) {
             return;
         }
-        this.Rc = true;
-        xc.a0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.Sc)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.Uc.U)), new lh0(this, this.Tc, 2)), R.raw.contact_check).j();
+        zArr[0] = true;
+        try {
+            jSONObject = new JSONObject();
+        } catch (Exception unused) {
+            jSONObject = null;
+        }
+        this.D4.x(this.C4, "requested_chat_failed", jSONObject);
     }
 }

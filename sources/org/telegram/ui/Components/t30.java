@@ -8,13 +8,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class t30 extends z4.a {
-    public final /* synthetic */ org.telegram.ui.r40 c;
+    public final /* synthetic */ org.telegram.ui.p40 c;
 
-    public t30(org.telegram.ui.r40 r40Var) {
-        this.c = r40Var;
+    public t30(org.telegram.ui.p40 p40Var) {
+        this.c = p40Var;
     }
 
     @Override // z4.a

@@ -1,58 +1,26 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vs implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ gt b;
+public final class vs extends org.telegram.ui.ActionBar.m1 {
+    public final /* synthetic */ at o;
 
-    public /* synthetic */ vs(gt gtVar, int i10) {
-        this.a = i10;
-        this.b = gtVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vs(at atVar, ViewGroup viewGroup) {
+        super(viewGroup, -2, -2);
+        this.o = atVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                gt gtVar = this.b;
-                gtVar.K = false;
-                gtVar.z.invalidate();
-                gtVar.n();
-                break;
-            case 1:
-                gt gtVar2 = this.b;
-                Activity activity = gtVar2.w;
-                if (activity instanceof LaunchActivity) {
-                    LaunchActivity launchActivity = (LaunchActivity) activity;
-                    if (launchActivity.O() != null && launchActivity.O().getLastFragment() != null) {
-                        launchActivity.O().getLastFragment().dismissCurrentDialog();
-                    }
-                    launchActivity.t0(new PremiumPreviewFragment(0, PremiumPreviewFragment.l0(5)));
-                }
-                gtVar2.K = false;
-                gtVar2.z.invalidate();
-                gtVar2.n();
-                break;
-            case 2:
-                gt gtVar3 = this.b;
-                et etVar = gtVar3.l;
-                if (etVar != null) {
-                    etVar.K();
-                }
-                gtVar3.p();
-                break;
-            default:
-                gt gtVar4 = this.b;
-                et etVar2 = gtVar4.l;
-                if (etVar2 != null) {
-                    etVar2.q();
-                }
-                gtVar4.p();
-                break;
+    @Override // org.telegram.ui.ActionBar.m1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        et etVar = this.o.a;
+        etVar.k = null;
+        etVar.K = false;
+        if (etVar.R) {
+            etVar.n();
         }
     }
 }

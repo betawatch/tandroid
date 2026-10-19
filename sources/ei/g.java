@@ -16,13 +16,13 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.iu;
-import org.telegram.ui.Components.jw0;
 import org.telegram.ui.Components.kd;
+import org.telegram.ui.Components.kw0;
 import org.telegram.ui.Components.mu;
 import org.telegram.ui.Components.qu;
 import org.telegram.ui.Components.tz;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class g extends qu {
     public org.telegram.ui.Components.na V;
@@ -32,8 +32,8 @@ public final class g extends qu {
     public final /* synthetic */ m c0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(m mVar, Context context, jw0 jw0Var, int i10, ci.b bVar, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.ja jaVar) {
-        super(context, jw0Var, null, i10, true, bVar);
+    public g(m mVar, Context context, kw0 kw0Var, int i10, ci.b bVar, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.ja jaVar) {
+        super(context, kw0Var, null, i10, true, bVar);
         this.c0 = mVar;
         this.a0 = d6Var;
         this.b0 = jaVar;
@@ -73,7 +73,7 @@ public final class g extends qu {
         if (emojiView != null) {
             emojiView.H2 = true;
             emojiView.setClipToOutline(true);
-            emojiView.setOutlineProvider(new ci.n1(1));
+            emojiView.setOutlineProvider(new ci.o1(1));
         }
     }
 

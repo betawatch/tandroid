@@ -4,7 +4,7 @@ import android.content.Context;
 import com.google.android.gms.tasks.Task;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class y8 {
     public static j9 j;
@@ -35,9 +35,9 @@ public final class y8 {
         d9.b();
         this.g = str;
         rb.f a2 = rb.f.a();
-        c5.x xVar = new c5.x(this, 5);
+        c5.y yVar = new c5.y(this, 5);
         a2.getClass();
-        this.e = rb.f.b(xVar);
+        this.e = rb.f.b(yVar);
         rb.f a10 = rb.f.a();
         kVar.getClass();
         t7.p pVar = new t7.p(kVar, 1);

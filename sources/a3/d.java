@@ -1,26 +1,26 @@
 package a3;
 
-import ai.a7;
 import ai.b1;
-import ai.c6;
+import ai.b7;
 import ai.cd;
 import ai.d6;
-import ai.d7;
 import ai.dd;
+import ai.e6;
 import ai.e7;
-import ai.g6;
+import ai.f7;
 import ai.h1;
-import ai.i7;
+import ai.h6;
 import ai.j7;
+import ai.k7;
 import ai.l1;
 import ai.md;
-import ai.s5;
 import ai.t5;
 import ai.u5;
 import ai.v5;
 import ai.w5;
 import ai.wc;
-import ai.y5;
+import ai.x5;
+import ai.z5;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Typeface;
@@ -40,18 +40,18 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.yw0;
+import org.telegram.ui.Components.zw0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.t7;
-import org.telegram.ui.Wallet.u4;
 import org.telegram.ui.Wallet.v4;
-import org.telegram.ui.sn;
+import org.telegram.ui.Wallet.w4;
+import org.telegram.ui.qn;
 import sg.y0;
 import v7.y7;
 import v7.z7;
-import w7.e8;
+import w7.d8;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -89,7 +89,7 @@ public final /* synthetic */ class d implements Runnable {
                 r0.a.postVsyncCallback((e0) this.b);
                 return;
             case 3:
-                ah.f0 f0Var = (ah.f0) ((a6.m) this.b).b;
+                ah.f0 f0Var = (ah.f0) ((qb.c) this.b).b;
                 ah.e0 e0Var = f0Var.b;
                 if (e0Var != null) {
                     e0Var.d();
@@ -101,7 +101,7 @@ public final /* synthetic */ class d implements Runnable {
                 return;
             case 5:
                 n2 n2Var = ((ah.n0) this.b).f2.r;
-                if (n2Var instanceof sn) {
+                if (n2Var instanceof qn) {
                     n2Var.showDialog(new y0(n2Var, 11, false));
                     return;
                 }
@@ -130,7 +130,7 @@ public final /* synthetic */ class d implements Runnable {
                     return;
                 }
             case 8:
-                new yw0(((ai.o0) this.b).getContext()).show();
+                new zw0(((ai.o0) this.b).getContext()).show();
                 return;
             case 9:
                 AndroidUtilities.showKeyboard(((b1) this.b).d0);
@@ -142,10 +142,10 @@ public final /* synthetic */ class d implements Runnable {
                 AndroidUtilities.showKeyboard(((l1) this.b).c);
                 return;
             case 12:
-                u4 u4Var = (u4) ((j7) this.b);
-                t7 t7Var = u4Var.c.i0;
+                v4 v4Var = (v4) ((k7) this.b);
+                t7 t7Var = v4Var.c.i0;
                 if (t7Var != null) {
-                    TL_wallet.nftItem nftitem = u4Var.b;
+                    TL_wallet.nftItem nftitem = v4Var.b;
                     if (t7Var.A()) {
                         t7Var.c0(t7Var.v(nftitem));
                         return;
@@ -154,63 +154,63 @@ public final /* synthetic */ class d implements Runnable {
                 }
                 return;
             case 13:
-                v4 v4Var = (v4) ((i7) this.b);
-                t7 t7Var2 = v4Var.b.i0;
+                w4 w4Var = (w4) ((j7) this.b);
+                t7 t7Var2 = w4Var.b.i0;
                 if (t7Var2 != null) {
-                    t7Var2.b0(v4Var.a);
+                    t7Var2.b0(w4Var.a);
                     return;
                 }
                 return;
             case 14:
-                d6 d6Var = (d6) this.b;
-                d6Var.h0 = false;
-                d6Var.j0 = false;
-                d6Var.a(d6Var.W, d6Var.a0, d6Var.b0, d6Var.c0);
+                e6 e6Var = (e6) this.b;
+                e6Var.h0 = false;
+                e6Var.j0 = false;
+                e6Var.a(e6Var.W, e6Var.a0, e6Var.b0, e6Var.c0);
                 return;
             case 15:
-                ((s5) this.b).invalidateSelf();
+                ((t5) this.b).invalidateSelf();
                 return;
             case 16:
-                w5 w5Var = (w5) this.b;
-                v5 v5Var = w5Var.H;
-                if (v5Var != null) {
-                    w5 w5Var2 = v5Var.a;
-                    float[] fArr = v5Var.h;
-                    if (!v5Var.e && (i10 = v5Var.c) != 0) {
-                        if (v5Var.l) {
-                            w5Var2.a();
+                x5 x5Var = (x5) this.b;
+                w5 w5Var = x5Var.H;
+                if (w5Var != null) {
+                    x5 x5Var2 = w5Var.a;
+                    float[] fArr = w5Var.h;
+                    if (!w5Var.e && (i10 = w5Var.c) != 0) {
+                        if (w5Var.l) {
+                            x5Var2.a();
                         } else {
-                            int c13 = m1.j.c(((u5) v5Var.b.get(i10 - 1)).a);
+                            int c13 = m1.j.c(((v5) w5Var.b.get(i10 - 1)).a);
                             if (c13 == 1 || c13 == 2) {
                                 c10 = 2;
                                 c11 = 1;
-                                w5Var2.a();
-                                int i13 = v5Var.f - 1;
-                                v5Var.f = i13;
+                                x5Var2.a();
+                                int i13 = w5Var.f - 1;
+                                w5Var.f = i13;
                                 if (i13 <= 0) {
-                                    v5Var.b();
+                                    w5Var.b();
                                 }
                             } else if (c13 == 3) {
                                 char c14 = 2;
-                                float pow = 1.0f - ((float) Math.pow(1.0f - (1.0f - (v5Var.f / v5Var.g)), 3.0d));
+                                float pow = 1.0f - ((float) Math.pow(1.0f - (1.0f - (w5Var.f / w5Var.g)), 3.0d));
                                 float f7 = 1.0f - pow;
-                                if (Math.abs(v5Var.j * f7) > 1.0E-4f || Math.abs(v5Var.k * f7) > 1.0E-4f) {
+                                if (Math.abs(w5Var.j * f7) > 1.0E-4f || Math.abs(w5Var.k * f7) > 1.0E-4f) {
                                     float[] fArr2 = new float[16];
                                     c11 = 1;
-                                    float f10 = v5Var.j * f7 * 0.96f;
-                                    w5Var2.getClass();
-                                    w5.b(1.0f, 0.0f, f10, fArr2);
-                                    w5Var2.getClass();
-                                    w5.d(fArr2, fArr, fArr);
-                                    float f11 = v5Var.k * f7 * 0.96f;
-                                    w5Var2.getClass();
-                                    w5.b(0.0f, 1.0f, f11, fArr2);
-                                    w5.d(fArr2, fArr, fArr);
+                                    float f10 = w5Var.j * f7 * 0.96f;
+                                    x5Var2.getClass();
+                                    x5.b(1.0f, 0.0f, f10, fArr2);
+                                    x5Var2.getClass();
+                                    x5.d(fArr2, fArr, fArr);
+                                    float f11 = w5Var.k * f7 * 0.96f;
+                                    x5Var2.getClass();
+                                    x5.b(0.0f, 1.0f, f11, fArr2);
+                                    x5.d(fArr2, fArr, fArr);
                                 } else {
                                     c11 = 1;
                                 }
-                                float[] fArr3 = v5Var.i;
-                                float[] fArr4 = w5Var2.c;
+                                float[] fArr3 = w5Var.i;
+                                float[] fArr4 = x5Var2.c;
                                 int i14 = 0;
                                 while (i14 < 16) {
                                     float f12 = fArr[i14];
@@ -234,10 +234,10 @@ public final /* synthetic */ class d implements Runnable {
                                 fArr6[c11] = f17;
                                 fArr6[c10] = f18;
                                 float[] fArr7 = new float[3];
-                                w5.e(fArr5);
-                                w5.c(fArr5, fArr6, fArr7);
-                                w5.e(fArr7);
-                                w5.c(fArr7, fArr5, fArr6);
+                                x5.e(fArr5);
+                                x5.c(fArr5, fArr6, fArr7);
+                                x5.e(fArr7);
+                                x5.c(fArr7, fArr5, fArr6);
                                 fArr4[0] = fArr5[0];
                                 fArr4[c11] = fArr5[c11];
                                 fArr4[c10] = fArr5[c10];
@@ -247,13 +247,13 @@ public final /* synthetic */ class d implements Runnable {
                                 fArr4[8] = fArr7[0];
                                 fArr4[9] = fArr7[c11];
                                 fArr4[10] = fArr7[c10];
-                                int i15 = v5Var.f - 1;
-                                v5Var.f = i15;
+                                int i15 = w5Var.f - 1;
+                                w5Var.f = i15;
                                 if (i15 <= 0) {
-                                    System.arraycopy(v5Var.i, 0, w5Var2.c, 0, 16);
-                                    w5Var2.d = 0.0f;
-                                    w5Var2.e = 0.0f;
-                                    v5Var.b();
+                                    System.arraycopy(w5Var.i, 0, x5Var2.c, 0, 16);
+                                    x5Var2.d = 0.0f;
+                                    x5Var2.e = 0.0f;
+                                    w5Var.b();
                                 }
                             }
                         }
@@ -263,76 +263,76 @@ public final /* synthetic */ class d implements Runnable {
                 } else {
                     c10 = 2;
                     c11 = 1;
-                    if (Math.abs(w5Var.d) <= 1.0E-4f && Math.abs(w5Var.e) <= 1.0E-4f) {
+                    if (Math.abs(x5Var.d) <= 1.0E-4f && Math.abs(x5Var.e) <= 1.0E-4f) {
                         c12 = 0;
-                        if ((w5Var.G == null ? c11 : c12) != 0) {
+                        if ((x5Var.G == null ? c11 : c12) != 0) {
                             for (int i16 = 0; i16 < 6; i16++) {
-                                Matrix.multiplyMV(w5Var.n, 0, w5Var.c, 0, w5Var.h[i16], 0);
-                                w5Var.r[i16] = w5Var.n[c10];
+                                Matrix.multiplyMV(x5Var.n, 0, x5Var.c, 0, x5Var.h[i16], 0);
+                                x5Var.r[i16] = x5Var.n[c10];
                             }
-                            Arrays.sort(w5Var.s, new t5(w5Var, i12));
-                            w5Var.invalidate();
+                            Arrays.sort(x5Var.s, new u5(x5Var, i12));
+                            x5Var.invalidate();
                         }
-                        if (w5Var.isAttachedToWindow()) {
+                        if (x5Var.isAttachedToWindow()) {
                             return;
                         }
-                        AndroidUtilities.runOnUIThread(w5Var.I, 16L);
+                        AndroidUtilities.runOnUIThread(x5Var.I, 16L);
                         return;
                     }
-                    w5Var.a();
+                    x5Var.a();
                 }
                 c12 = c11;
-                if ((w5Var.G == null ? c11 : c12) != 0) {
+                if ((x5Var.G == null ? c11 : c12) != 0) {
                 }
-                if (w5Var.isAttachedToWindow()) {
+                if (x5Var.isAttachedToWindow()) {
                 }
                 break;
             case 17:
-                ((y5) this.b).invalidate();
+                ((z5) this.b).invalidate();
                 return;
             case 18:
-                ((c6) this.b).invalidateSelf();
+                ((d6) this.b).invalidateSelf();
                 return;
             case 19:
-                e7 e7Var = (e7) this.b;
-                d dVar = e7Var.j0;
-                w9[] w9VarArr = e7Var.d;
-                if (!w9VarArr[2 - e7Var.s0].getImageReceiver().hasImageLoaded()) {
+                f7 f7Var = (f7) this.b;
+                d dVar = f7Var.l0;
+                w9[] w9VarArr = f7Var.d;
+                if (!w9VarArr[2 - f7Var.u0].getImageReceiver().hasImageLoaded()) {
                     AndroidUtilities.cancelRunOnUIThread(dVar);
                     AndroidUtilities.runOnUIThread(dVar, 150L);
                     return;
                 }
-                g6 g6Var = e7Var.V;
-                if (g6Var != null && g6Var.c == 1 && e7Var.isAttachedToWindow()) {
+                h6 h6Var = f7Var.a0;
+                if (h6Var != null && h6Var.c == 1 && f7Var.isAttachedToWindow()) {
                     AndroidUtilities.cancelRunOnUIThread(dVar);
-                    ValueAnimator valueAnimator = e7Var.i0;
+                    ValueAnimator valueAnimator = f7Var.k0;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
-                        e7Var.i0 = null;
+                        f7Var.k0 = null;
                     }
-                    int i17 = 1 - e7Var.s0;
-                    e7Var.s0 = i17;
+                    int i17 = 1 - f7Var.u0;
+                    f7Var.u0 = i17;
                     uj0 lottieAnimation = w9VarArr[2 - i17].getImageReceiver().getLottieAnimation();
-                    uj0 lottieAnimation2 = w9VarArr[e7Var.s0 + 1].getImageReceiver().getLottieAnimation();
+                    uj0 lottieAnimation2 = w9VarArr[f7Var.u0 + 1].getImageReceiver().getLottieAnimation();
                     if (lottieAnimation2 != null && lottieAnimation != null) {
                         lottieAnimation2.T(lottieAnimation.t(), false);
                     }
-                    e7Var.a0.c();
-                    int i18 = e7Var.s0 + 1;
-                    TL_stars.starGiftAttributeBackdrop[] stargiftattributebackdropArr = e7Var.W;
-                    TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) e7Var.c0.c();
+                    f7Var.c0.c();
+                    int i18 = f7Var.u0 + 1;
+                    TL_stars.starGiftAttributeBackdrop[] stargiftattributebackdropArr = f7Var.b0;
+                    TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) f7Var.e0.c();
                     stargiftattributebackdropArr[i18] = stargiftattributebackdrop;
-                    e7Var.e(i18, stargiftattributebackdrop);
-                    e7Var.g(1, (TL_stars.starGiftAttributePattern) e7Var.b0.c(), true);
-                    e7Var.a();
-                    float f19 = e7Var.s0;
+                    f7Var.e(i18, stargiftattributebackdrop);
+                    f7Var.g(1, (TL_stars.starGiftAttributePattern) f7Var.d0.c(), true);
+                    f7Var.a();
+                    float f19 = f7Var.u0;
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f - f19, f19);
-                    e7Var.i0 = ofFloat;
-                    ofFloat.addUpdateListener(new a7(e7Var, i11));
-                    e7Var.i0.addListener(new d7(e7Var));
-                    e7Var.i0.setDuration(320L);
-                    e7Var.i0.setInterpolator(bs.h);
-                    e7Var.i0.start();
+                    f7Var.k0 = ofFloat;
+                    ofFloat.addUpdateListener(new b7(f7Var, i11));
+                    f7Var.k0.addListener(new e7(f7Var));
+                    f7Var.k0.setDuration(320L);
+                    f7Var.k0.setInterpolator(bs.h);
+                    f7Var.k0.start();
                     return;
                 }
                 return;
@@ -404,7 +404,7 @@ public final /* synthetic */ class d implements Runnable {
                                 aVar.getClass();
                                 o0.h[] hVarArr = {d};
                                 y7 y7Var = i0.e.a;
-                                e8.a("TypefaceCompat.createFromFontInfo");
+                                d8.a("TypefaceCompat.createFromFontInfo");
                                 try {
                                     Typeface b10 = i0.e.a.b(context, hVarArr, 0);
                                     Trace.endSection();

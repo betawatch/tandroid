@@ -1,6 +1,6 @@
 package yh;
 
-import ai.m6;
+import ai.n6;
 import android.graphics.Bitmap;
 import android.graphics.BlendMode;
 import android.graphics.BlendModeColorFilter;
@@ -30,7 +30,7 @@ import org.telegram.ui.Components.f6;
 import org.telegram.ui.Components.r5;
 import v7.v7;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class d1 extends Drawable {
     public static k1 C = new k1();
@@ -85,7 +85,7 @@ public final class d1 extends Drawable {
         this.b = d6Var;
         c1 c1Var = new c1(this, viewGroup, AndroidUtilities.dp(28.0f));
         this.l = c1Var;
-        viewGroup.addOnAttachStateChangeListener(new m6(this, 13));
+        viewGroup.addOnAttachStateChangeListener(new n6(this, 13));
         if (viewGroup.isAttachedToWindow()) {
             c1Var.a();
         }
@@ -317,13 +317,13 @@ public final class d1 extends Drawable {
                 f10 = 1.0f;
                 if (drawable != null && c1Var.d.c == 1.0f && (drawable instanceof r5)) {
                     r5 r5Var = (r5) drawable;
-                    ci.f3 f3Var = r5Var.k;
+                    ci.g3 g3Var = r5Var.k;
                     long i16 = r5Var.i();
-                    if (f3Var != null) {
+                    if (g3Var != null) {
                         z11 = z15;
                         f11 = -31.0f;
                         if (i16 == this.y) {
-                            bitmap = f3Var.getBitmap();
+                            bitmap = g3Var.getBitmap();
                         }
                         bitmap = null;
                         if (bitmap != null) {

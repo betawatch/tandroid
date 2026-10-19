@@ -1,7 +1,7 @@
 package com.google.firebase.messaging;
 
 import ah.h0;
-import ai.r2;
+import ai.u2;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -25,7 +25,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class FirebaseMessaging {
     public static final long k = TimeUnit.HOURS.toSeconds(8);
@@ -59,10 +59,10 @@ public class FirebaseMessaging {
         lVar.d = bVar;
         lVar.e = bVar2;
         lVar.f = dVar;
-        ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new c5.w("Firebase-Messaging-Task"));
+        ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new c5.x("Firebase-Messaging-Task"));
         final int i11 = 1;
-        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(1, new c5.w("Firebase-Messaging-Init"));
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new c5.w("Firebase-Messaging-File-Io"));
+        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(1, new c5.x("Firebase-Messaging-Init"));
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new c5.x("Firebase-Messaging-File-Io"));
         this.j = false;
         m = fVar;
         this.a = hVar;
@@ -149,7 +149,7 @@ public class FirebaseMessaging {
                 }
             }
         });
-        final ScheduledThreadPoolExecutor scheduledThreadPoolExecutor2 = new ScheduledThreadPoolExecutor(1, new c5.w("Firebase-Messaging-Topics-Io"));
+        final ScheduledThreadPoolExecutor scheduledThreadPoolExecutor2 = new ScheduledThreadPoolExecutor(1, new c5.x("Firebase-Messaging-Topics-Io"));
         int i12 = y.j;
         Tasks.call(scheduledThreadPoolExecutor2, new Callable() { // from class: com.google.firebase.messaging.x
             @Override // java.util.concurrent.Callable
@@ -246,7 +246,7 @@ public class FirebaseMessaging {
         synchronized (FirebaseMessaging.class) {
             try {
                 if (n == null) {
-                    n = new ScheduledThreadPoolExecutor(1, new c5.w("TAG"));
+                    n = new ScheduledThreadPoolExecutor(1, new c5.x("TAG"));
                 }
                 n.schedule(runnable, j10, TimeUnit.SECONDS);
             } catch (Throwable th2) {
@@ -294,7 +294,7 @@ public class FirebaseMessaging {
                     Log.d("FirebaseMessaging", "Making new request for: " + c10);
                 }
                 l lVar = this.c;
-                task = lVar.q(lVar.J(n.c((l9.h) lVar.a), "*", new Bundle())).onSuccessTask(this.h, new r2(this, c10, d, 5)).continueWithTask((Executor) iVar.a, new h0(9, iVar, c10));
+                task = lVar.q(lVar.J(n.c((l9.h) lVar.a), "*", new Bundle())).onSuccessTask(this.h, new u2(this, c10, d, 5)).continueWithTask((Executor) iVar.a, new h0(9, iVar, c10));
                 ((a0.f) iVar.b).put(c10, task);
             } else if (Log.isLoggable("FirebaseMessaging", 3)) {
                 Log.d("FirebaseMessaging", "Joining ongoing request for: " + c10);

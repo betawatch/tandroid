@@ -58,15 +58,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.o10;
-import org.telegram.ui.Components.u91;
+import org.telegram.ui.Components.v91;
+import org.telegram.ui.web.j1;
 import org.telegram.ui.web.k1;
-import org.telegram.ui.web.l1;
 import v7.u6;
 import z3.m;
 import z9.w0;
 import z9.x0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class e implements m, n5.b {
     public static volatile e e;
@@ -86,11 +86,11 @@ public final class e implements m, n5.b {
         this.a = file;
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
         hashMap.putAll(C(bufferedReader));
-        l1 l1Var = (l1) hashMap.get("content-type");
-        String str = l1Var == null ? null : (String) l1Var.b.get("boundary");
+        k1 k1Var = (k1) hashMap.get("content-type");
+        String str = k1Var == null ? null : (String) k1Var.b.get("boundary");
         if (str != null) {
             int length = str.length() + 2;
-            k1 k1Var = null;
+            j1 j1Var = null;
             while (true) {
                 String readLine = bufferedReader.readLine();
                 if (readLine == null) {
@@ -98,22 +98,22 @@ public final class e implements m, n5.b {
                 }
                 jArr[0] = jArr[0] + readLine.getBytes().length + 2;
                 if (readLine.length() == length && readLine.substring(2).equals(str)) {
-                    if (k1Var != null) {
-                        k1Var.d = (jArr[0] - length) - 2;
-                        arrayList.add(k1Var);
-                        l1 l1Var2 = (l1) k1Var.a.get("content-location");
-                        hashMap2.put(l1Var2 == null ? null : l1Var2.a, k1Var);
+                    if (j1Var != null) {
+                        j1Var.d = (jArr[0] - length) - 2;
+                        arrayList.add(j1Var);
+                        k1 k1Var2 = (k1) j1Var.a.get("content-location");
+                        hashMap2.put(k1Var2 == null ? null : k1Var2.a, j1Var);
                     }
-                    k1Var = new k1();
-                    k1Var.b = (File) this.a;
-                    k1Var.a.putAll(C(bufferedReader));
-                    k1Var.c = jArr[0];
+                    j1Var = new j1();
+                    j1Var.b = (File) this.a;
+                    j1Var.a.putAll(C(bufferedReader));
+                    j1Var.c = jArr[0];
                 }
             }
-            if (k1Var != null && k1Var.c != 0 && k1Var.d != 0) {
-                arrayList.add(k1Var);
-                l1 l1Var3 = (l1) k1Var.a.get("content-location");
-                hashMap2.put(l1Var3 != null ? l1Var3.a : null, k1Var);
+            if (j1Var != null && j1Var.c != 0 && j1Var.d != 0) {
+                arrayList.add(j1Var);
+                k1 k1Var3 = (k1) j1Var.a.get("content-location");
+                hashMap2.put(k1Var3 != null ? k1Var3.a : null, j1Var);
             }
         }
         bufferedReader.close();
@@ -132,25 +132,25 @@ public final class e implements m, n5.b {
     }
 
     public static void e(String str, String str2, HashMap hashMap) {
-        l1 l1Var = new l1();
+        k1 k1Var = new k1();
         String[] split = str2.split(";(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
         for (int i10 = 0; i10 < split.length; i10++) {
             String trim = split[i10].trim();
             if (!trim.isEmpty()) {
                 int indexOf = trim.indexOf(61);
                 if (i10 == 0 || indexOf < 0) {
-                    l1Var.a = trim;
+                    k1Var.a = trim;
                 } else {
                     String trim2 = trim.substring(0, indexOf).trim();
                     String trim3 = trim.substring(indexOf + 1).trim();
                     if (trim3.length() >= 2 && trim3.charAt(0) == '\"' && trim3.charAt(trim3.length() - 1) == '\"') {
                         trim3 = k3.j(1, 1, trim3);
                     }
-                    l1Var.b.put(trim2, trim3);
+                    k1Var.b.put(trim2, trim3);
                 }
             }
         }
-        hashMap.put(str.trim().toLowerCase(), l1Var);
+        hashMap.put(str.trim().toLowerCase(), k1Var);
     }
 
     public boolean A(k.a aVar, MenuItem menuItem) {
@@ -299,32 +299,32 @@ public final class e implements m, n5.b {
     public m2.b G(List list) {
         m2.b bVar;
         HashMap hashMap = (HashMap) this.c;
-        ArrayList f7 = f(list);
-        if (f7.size() < 2) {
-            return (m2.b) s.l(f7, null);
+        ArrayList g10 = g(list);
+        if (g10.size() < 2) {
+            return (m2.b) s.l(g10, null);
         }
-        Collections.sort(f7, new a4.d(26));
+        Collections.sort(g10, new a4.d(26));
         ArrayList arrayList = new ArrayList();
         int i10 = 0;
-        int i11 = ((m2.b) f7.get(0)).c;
+        int i11 = ((m2.b) g10.get(0)).c;
         int i12 = 0;
         while (true) {
-            if (i12 >= f7.size()) {
+            if (i12 >= g10.size()) {
                 break;
             }
-            m2.b bVar2 = (m2.b) f7.get(i12);
+            m2.b bVar2 = (m2.b) g10.get(i12);
             if (i11 == bVar2.c) {
                 arrayList.add(new Pair(bVar2.b, Integer.valueOf(bVar2.d)));
                 i12++;
             } else if (arrayList.size() == 1) {
-                return (m2.b) f7.get(0);
+                return (m2.b) g10.get(0);
             }
         }
         m2.b bVar3 = (m2.b) hashMap.get(arrayList);
         if (bVar3 != null) {
             return bVar3;
         }
-        List subList = f7.subList(0, arrayList.size());
+        List subList = g10.subList(0, arrayList.size());
         int i13 = 0;
         for (int i14 = 0; i14 < subList.size(); i14++) {
             i13 += ((m2.b) subList.get(i14)).d;
@@ -399,24 +399,8 @@ public final class e implements m, n5.b {
         }
     }
 
-    public ArrayList f(List list) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        HashMap hashMap = (HashMap) this.a;
-        F(elapsedRealtime, hashMap);
-        HashMap hashMap2 = (HashMap) this.b;
-        F(elapsedRealtime, hashMap2);
-        ArrayList arrayList = new ArrayList();
-        for (int i10 = 0; i10 < list.size(); i10++) {
-            m2.b bVar = (m2.b) list.get(i10);
-            if (!hashMap.containsKey(bVar.b) && !hashMap2.containsKey(Integer.valueOf(bVar.c))) {
-                arrayList.add(bVar);
-            }
-        }
-        return arrayList;
-    }
-
     @Override // z3.m
-    public void g(byte[] bArr, int i10, int i11, z3.l lVar, j jVar) {
+    public void f(byte[] bArr, int i10, int i11, z3.l lVar, j jVar) {
         d2.b bVar;
         int i12;
         int i13;
@@ -562,6 +546,22 @@ public final class e implements m, n5.b {
             i15 = i12;
         }
         jVar.accept(new z3.a(-9223372036854775807L, -9223372036854775807L, arrayList));
+    }
+
+    public ArrayList g(List list) {
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        HashMap hashMap = (HashMap) this.a;
+        F(elapsedRealtime, hashMap);
+        HashMap hashMap2 = (HashMap) this.b;
+        F(elapsedRealtime, hashMap2);
+        ArrayList arrayList = new ArrayList();
+        for (int i10 = 0; i10 < list.size(); i10++) {
+            m2.b bVar = (m2.b) list.get(i10);
+            if (!hashMap.containsKey(bVar.b) && !hashMap2.containsKey(Integer.valueOf(bVar.c))) {
+                arrayList.add(bVar);
+            }
+        }
+        return arrayList;
     }
 
     @Override // hd.a
@@ -795,7 +795,7 @@ public final class e implements m, n5.b {
             return;
         }
         if (trim.charAt(0) == '(') {
-            Matcher matcher = u91.z0.matcher(trim);
+            Matcher matcher = v91.z0.matcher(trim);
             int i11 = 0;
             while (true) {
                 if (!matcher.find()) {
@@ -952,11 +952,11 @@ public final class e implements m, n5.b {
         }
         zArr[0] = false;
         String trim = str.trim();
-        Matcher matcher = u91.x0.matcher(trim);
+        Matcher matcher = v91.x0.matcher(trim);
         if (matcher.find()) {
             trim = trim.substring(matcher.group(0).length());
         } else {
-            Matcher matcher2 = u91.y0.matcher(trim);
+            Matcher matcher2 = v91.y0.matcher(trim);
             if (matcher2.find()) {
                 trim = trim.substring(matcher2.group(0).length());
                 zArr[0] = true;

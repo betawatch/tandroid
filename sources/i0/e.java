@@ -10,8 +10,8 @@ import android.os.Looper;
 import android.os.Trace;
 import android.util.Log;
 import androidx.biometric.o;
-import c5.v;
-import c5.z;
+import c5.a0;
+import c5.w;
 import e2.j0;
 import ei.p6;
 import j$.util.DesugarCollections;
@@ -25,16 +25,16 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import v7.y7;
-import w7.e8;
+import w7.d8;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class e {
     public static final y7 a;
     public static final a0.j b;
 
     static {
-        e8.a("TypefaceCompat static init");
+        d8.a("TypefaceCompat static init");
         int i10 = Build.VERSION.SDK_INT;
         if (i10 >= 29) {
             a = new j();
@@ -120,26 +120,26 @@ public abstract class e {
                     oVar.execute(new u(i18, iVar, typeface2));
                     a2 = typeface2;
                 } else {
-                    z zVar = new z(eVar, i14);
+                    a0 a0Var = new a0(eVar, i14);
                     synchronized (o0.g.c) {
                         try {
                             l lVar = o0.g.d;
                             ArrayList arrayList3 = (ArrayList) lVar.get(a10);
                             if (arrayList3 != null) {
-                                arrayList3.add(zVar);
+                                arrayList3.add(a0Var);
                             } else {
                                 ArrayList arrayList4 = new ArrayList();
-                                arrayList4.add(zVar);
+                                arrayList4.add(a0Var);
                                 lVar.put(a10, arrayList4);
                                 o0.e eVar2 = new o0.e(a10, context, unmodifiableList, i12, 1);
                                 ThreadPoolExecutor threadPoolExecutor = o0.g.b;
-                                z zVar2 = new z(a10, i16);
+                                a0 a0Var2 = new a0(a10, i16);
                                 Handler handler2 = Looper.myLooper() == null ? new Handler(Looper.getMainLooper()) : new Handler();
-                                v vVar = new v();
-                                vVar.b = eVar2;
-                                vVar.c = zVar2;
-                                vVar.d = handler2;
-                                threadPoolExecutor.execute(vVar);
+                                w wVar = new w();
+                                wVar.b = eVar2;
+                                wVar.c = a0Var2;
+                                wVar.d = handler2;
+                                threadPoolExecutor.execute(wVar);
                             }
                         } finally {
                         }

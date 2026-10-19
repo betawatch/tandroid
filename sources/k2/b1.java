@@ -1,77 +1,133 @@
 package k2;
 
+import android.os.Handler;
 import java.nio.ByteBuffer;
+import org.telegram.messenger.FourierTransform;
+import org.telegram.ui.Components.a81;
+import org.telegram.ui.Components.b81;
+import org.telegram.ui.Components.go0;
+import org.telegram.ui.Components.t71;
+import org.telegram.ui.Components.u71;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class b1 extends c2.o {
-    public static final int i = Float.floatToIntBits(Float.NaN);
+    public final a81 i;
 
-    public static void m(int i10, ByteBuffer byteBuffer) {
-        int floatToIntBits = Float.floatToIntBits((float) (i10 * 4.656612875245797E-10d));
-        if (floatToIntBits == i) {
-            floatToIntBits = Float.floatToIntBits(0.0f);
-        }
-        byteBuffer.putInt(floatToIntBits);
+    public b1(a81 a81Var) {
+        this.i = a81Var;
     }
 
     @Override // c2.n
     public final void c(ByteBuffer byteBuffer) {
-        ByteBuffer l4;
-        int position = byteBuffer.position();
-        int limit = byteBuffer.limit();
-        int i10 = limit - position;
-        int i11 = this.b.c;
-        if (i11 == 2) {
-            l4 = l(i10 * 2);
-            while (position < limit) {
-                m(((byteBuffer.get(position) & 255) << 16) | ((byteBuffer.get(position + 1) & 255) << 24), l4);
-                position += 2;
-            }
-        } else if (i11 == 1342177280) {
-            l4 = l((i10 / 3) * 4);
-            while (position < limit) {
-                m(((byteBuffer.get(position + 2) & 255) << 8) | ((byteBuffer.get(position + 1) & 255) << 16) | ((byteBuffer.get(position) & 255) << 24), l4);
-                position += 3;
-            }
-        } else if (i11 == 1610612736) {
-            l4 = l(i10);
-            while (position < limit) {
-                m((byteBuffer.get(position + 3) & 255) | ((byteBuffer.get(position + 2) & 255) << 8) | ((byteBuffer.get(position + 1) & 255) << 16) | ((byteBuffer.get(position) & 255) << 24), l4);
-                position += 4;
-            }
-        } else if (i11 == 1879048192) {
-            l4 = l(i10 / 2);
-            while (position < limit) {
-                l4.putFloat((float) byteBuffer.getDouble(position));
-                position += 8;
-            }
-        } else if (i11 == 21) {
-            l4 = l((i10 / 3) * 4);
-            while (position < limit) {
-                m(((byteBuffer.get(position) & 255) << 8) | ((byteBuffer.get(position + 1) & 255) << 16) | ((byteBuffer.get(position + 2) & 255) << 24), l4);
-                position += 3;
-            }
-        } else {
-            if (i11 != 22) {
-                throw new IllegalStateException();
-            }
-            l4 = l(i10);
-            while (position < limit) {
-                m((byteBuffer.get(position) & 255) | ((byteBuffer.get(position + 1) & 255) << 8) | ((byteBuffer.get(position + 2) & 255) << 16) | ((byteBuffer.get(position + 3) & 255) << 24), l4);
-                position += 4;
+        int remaining = byteBuffer.remaining();
+        if (remaining == 0) {
+            return;
+        }
+        String str = e2.m0.a;
+        ByteBuffer order = byteBuffer.asReadOnlyBuffer().order(byteBuffer.order());
+        a81 a81Var = this.i;
+        float[] fArr = a81Var.b;
+        ByteBuffer byteBuffer2 = a81Var.c;
+        FourierTransform.FFT fft = a81Var.a;
+        b81 b81Var = a81Var.f;
+        u71 u71Var = b81Var.K;
+        Handler handler = b81Var.a0;
+        if (u71Var != null) {
+            if (order == c2.n.a || !b81Var.I) {
+                handler.postDelayed(new t71(a81Var, 1), 80L);
+            } else if (u71Var.needUpdate()) {
+                int limit = order.limit();
+                int i10 = 0;
+                if (limit > 8192) {
+                    handler.removeCallbacksAndMessages(null);
+                    b81Var.K.onVisualizerUpdate(false, true, null);
+                } else {
+                    byteBuffer2.put(order);
+                    int i11 = a81Var.d + limit;
+                    a81Var.d = i11;
+                    if (i11 >= 1024) {
+                        byteBuffer2.position(0);
+                        for (int i12 = 0; i12 < 1024; i12++) {
+                            fArr[i12] = byteBuffer2.getShort() / 32768.0f;
+                        }
+                        byteBuffer2.rewind();
+                        a81Var.d = 0;
+                        fft.forward(fArr);
+                        float f7 = 0.0f;
+                        int i13 = 0;
+                        while (true) {
+                            float f10 = 1.0f;
+                            if (i13 >= 1024) {
+                                break;
+                            }
+                            float f11 = fft.getSpectrumReal()[i13];
+                            float f12 = fft.getSpectrumImaginary()[i13];
+                            float sqrt = ((float) Math.sqrt((f12 * f12) + (f11 * f11))) / 30.0f;
+                            if (sqrt <= 1.0f) {
+                                f10 = sqrt < 0.0f ? 0.0f : sqrt;
+                            }
+                            f7 += f10 * f10;
+                            i13++;
+                        }
+                        float sqrt2 = (float) Math.sqrt(f7 / 1024);
+                        float[] fArr2 = new float[7];
+                        fArr2[6] = sqrt2;
+                        if (sqrt2 < 0.4f) {
+                            while (i10 < 7) {
+                                fArr2[i10] = 0.0f;
+                                i10++;
+                            }
+                        } else {
+                            while (i10 < 6) {
+                                int i14 = 170 * i10;
+                                float f13 = fft.getSpectrumReal()[i14];
+                                float f14 = fft.getSpectrumImaginary()[i14];
+                                float sqrt3 = (float) (Math.sqrt((f14 * f14) + (f13 * f13)) / 30.0d);
+                                fArr2[i10] = sqrt3;
+                                if (sqrt3 > 1.0f) {
+                                    fArr2[i10] = 1.0f;
+                                } else if (sqrt3 < 0.0f) {
+                                    fArr2[i10] = 0.0f;
+                                }
+                                i10++;
+                            }
+                        }
+                        if (System.currentTimeMillis() - a81Var.e >= 64) {
+                            a81Var.e = System.currentTimeMillis();
+                            handler.postDelayed(new go0(22, a81Var, fArr2), 130L);
+                        }
+                    }
+                }
             }
         }
-        byteBuffer.position(byteBuffer.limit());
-        l4.flip();
+        l(remaining).put(byteBuffer).flip();
+    }
+
+    @Override // c2.o
+    public final void i() {
+        m();
+    }
+
+    @Override // c2.o
+    public final void j() {
+        m();
+    }
+
+    @Override // c2.o
+    public final void k() {
+        m();
+    }
+
+    public final void m() {
+        if (isActive()) {
+            int i10 = this.b.a;
+            this.i.getClass();
+        }
     }
 
     @Override // c2.o
     public final c2.k h(c2.k kVar) {
-        int i10 = kVar.c;
-        if (e2.m0.L(i10) || i10 == 2) {
-            return i10 != 4 ? new c2.k(kVar.a, kVar.b, 4) : c2.k.e;
-        }
-        throw new c2.m(kVar);
+        return kVar;
     }
 }

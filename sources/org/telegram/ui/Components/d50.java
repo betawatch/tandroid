@@ -2,12 +2,12 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public interface d50 {
-    void F(float f7);
+    void E(float f7);
 
-    void J(boolean z10, boolean z11);
+    void K(boolean z10, boolean z11);
 
     void P();
 
@@ -15,7 +15,7 @@ public interface d50 {
 
     boolean e();
 
-    org.telegram.ui.lu0 getCloseIntoObject();
+    org.telegram.ui.ju0 getCloseIntoObject();
 
     String getInitialSearchString();
 

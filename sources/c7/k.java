@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import java.util.Arrays;
 import m.g3;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class k extends l {
     public static final Parcelable.Creator<k> CREATOR = new r0(17);
@@ -38,11 +38,11 @@ public final class k extends l {
     public final String toString() {
         g3 g3Var = new g3(getClass().getSimpleName());
         String valueOf = String.valueOf(this.a.a);
-        n7.d dVar = new n7.d(7, false);
-        ((g3) g3Var.d).d = dVar;
-        g3Var.d = dVar;
-        dVar.c = valueOf;
-        dVar.b = "errorCode";
+        n7.c cVar = new n7.c(7, false);
+        ((g3) g3Var.d).d = cVar;
+        g3Var.d = cVar;
+        cVar.c = valueOf;
+        cVar.b = "errorCode";
         String str = this.b;
         if (str != null) {
             g3Var.Y(str, "errorMessage");

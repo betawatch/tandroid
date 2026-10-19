@@ -5,7 +5,7 @@ import com.google.android.gms.tasks.Task;
 import org.telegram.tgnet.TLObject;
 import v7.i8;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class k0 implements g0 {
     public static final double f = Math.random();
@@ -13,14 +13,14 @@ public final class k0 implements g0 {
     public final l9.h a;
     public final ra.d b;
     public final cb.h c;
-    public final a6.m d;
+    public final qb.c d;
     public final kd.h e;
 
-    public k0(l9.h hVar, ra.d dVar, cb.h hVar2, a6.m mVar, kd.h hVar3) {
+    public k0(l9.h hVar, ra.d dVar, cb.h hVar2, qb.c cVar, kd.h hVar3) {
         this.a = hVar;
         this.b = dVar;
         this.c = hVar2;
-        this.d = mVar;
+        this.d = cVar;
         this.e = hVar3;
     }
 
@@ -85,7 +85,7 @@ public final class k0 implements g0 {
         j0 j0Var;
         int i10;
         boolean z10;
-        Boolean h;
+        Boolean k10;
         if (cVar instanceof j0) {
             j0Var = (j0) cVar;
             int i11 = j0Var.d;
@@ -112,9 +112,9 @@ public final class k0 implements g0 {
                     i8.b(obj);
                 }
                 cb.h hVar2 = k0Var.c;
-                h = hVar2.a.h();
-                if (h == null) {
-                    z10 = h.booleanValue();
+                k10 = hVar2.a.k();
+                if (k10 == null) {
+                    z10 = k10.booleanValue();
                 } else {
                     Boolean a2 = hVar2.b.a();
                     if (a2 != null) {
@@ -140,8 +140,8 @@ public final class k0 implements g0 {
         if (i10 != 0) {
         }
         cb.h hVar22 = k0Var.c;
-        h = hVar22.a.h();
-        if (h == null) {
+        k10 = hVar22.a.k();
+        if (k10 == null) {
         }
         if (z10) {
         }

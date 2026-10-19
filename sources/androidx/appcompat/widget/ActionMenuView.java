@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.LinearLayout;
 import androidx.appcompat.view.menu.ActionMenuItemView;
+import k2.w0;
 import l.j;
 import l.k;
 import l.m;
@@ -28,7 +29,7 @@ import m.x1;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class ActionMenuView extends x1 implements j, z {
     public k F;
@@ -36,7 +37,7 @@ public class ActionMenuView extends x1 implements j, z {
     public int H;
     public boolean I;
     public i J;
-    public k0.b K;
+    public w0 K;
     public boolean L;
     public int M;
     public final int N;

@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wo implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class wo implements View.OnClickListener {
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.e;
                 yo yoVar = (yo) this.f;
                 zoVar.a();
-                f5.F(this.b, d6Var, new i2.r(this.c, yoVar, 7));
+                f5.F(this.b, d6Var, new i2.s(this.c, yoVar, 7));
                 break;
             default:
                 org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.d;

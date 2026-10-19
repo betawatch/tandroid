@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class zf extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
@@ -42,7 +42,7 @@ public final class zf extends AnimatorListenerAdapter {
         }
         chatActivityEnterView.Q0.setTranslationX(f7);
         chatActivityEnterView.G = f7;
-        chatActivityEnterView.H1();
+        chatActivityEnterView.G1();
         chatActivityEnterView.requestLayout();
     }
 
@@ -58,7 +58,7 @@ public final class zf extends AnimatorListenerAdapter {
         }
         chatActivityEnterView.Q0.setTranslationX(0.0f);
         chatActivityEnterView.G = 0.0f;
-        chatActivityEnterView.H1();
+        chatActivityEnterView.G1();
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -81,7 +81,7 @@ public final class zf extends AnimatorListenerAdapter {
         }
         chatActivityEnterView.Q0.setTranslationX(f7);
         chatActivityEnterView.G = f7;
-        chatActivityEnterView.H1();
+        chatActivityEnterView.G1();
         gi.b0 b0Var = chatActivityEnterView.l0;
         if (b0Var == null || b0Var.getTag() != null) {
             return;

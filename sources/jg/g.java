@@ -27,10 +27,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.b91;
-import org.telegram.ui.rp0;
+import org.telegram.ui.pp0;
+import org.telegram.ui.z81;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class g extends View implements i {
     public static final boolean A1;
@@ -404,9 +404,9 @@ public abstract class g extends View implements i {
             e eVar = this.Q0;
             if (eVar != null) {
                 getSelectedDate();
-                b91 b91Var = (b91) ((rp0) eVar).b;
-                b91Var.f();
-                b91Var.b.t0.d(false, false);
+                z81 z81Var = (z81) ((pp0) eVar).b;
+                z81Var.f();
+                z81Var.b.t0.d(false, false);
             }
             B();
             invalidate();

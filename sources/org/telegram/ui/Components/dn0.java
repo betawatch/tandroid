@@ -5,9 +5,9 @@ import android.animation.AnimatorListenerAdapter;
 import android.view.KeyEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.sa1;
+import org.telegram.ui.qa1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class dn0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -27,20 +27,20 @@ public final class dn0 extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 gn0 gn0Var = (gn0) this.d;
-                sa1 sa1Var = gn0Var.e;
+                qa1 qa1Var = gn0Var.e;
                 gn0Var.h0 = null;
                 boolean z10 = this.b;
                 gn0Var.i0 = z10 ? 1.0f : 0.0f;
-                for (int i10 = 0; i10 < sa1Var.getChildCount(); i10++) {
-                    sa1Var.getChildAt(i10).invalidate();
+                for (int i10 = 0; i10 < qa1Var.getChildCount(); i10++) {
+                    qa1Var.getChildAt(i10).invalidate();
                 }
-                sa1Var.invalidate();
+                qa1Var.invalidate();
                 gn0Var.p();
                 if (!z10) {
-                    float childCount = gn0Var.k0 * sa1Var.getChildCount();
+                    float childCount = gn0Var.k0 * qa1Var.getChildCount();
                     float scrollX = gn0Var.getScrollX();
                     float f7 = this.c;
-                    float childCount2 = (scrollX + f7) / (gn0Var.j0 * sa1Var.getChildCount());
+                    float childCount2 = (scrollX + f7) / (gn0Var.j0 * qa1Var.getChildCount());
                     float measuredWidth = (childCount - gn0Var.getMeasuredWidth()) / childCount;
                     if (childCount2 > measuredWidth) {
                         f7 = 0.0f;
@@ -56,16 +56,16 @@ public final class dn0 extends AnimatorListenerAdapter {
                     if (i11 < 0) {
                         gn0Var.m0 = 0;
                     }
-                    for (int i12 = 0; i12 < sa1Var.getChildCount(); i12++) {
-                        View childAt = sa1Var.getChildAt(i12);
-                        if (childAt instanceof wx0) {
-                            ((wx0) childAt).setExpanded(false);
+                    for (int i12 = 0; i12 < qa1Var.getChildCount(); i12++) {
+                        View childAt = qa1Var.getChildAt(i12);
+                        if (childAt instanceof xx0) {
+                            ((xx0) childAt).setExpanded(false);
                         }
                         childAt.getLayoutParams().width = AndroidUtilities.dp(33.0f);
                     }
                     gn0Var.g0 = false;
                     gn0Var.getLayoutParams().height = AndroidUtilities.dp(36.0f);
-                    sa1Var.requestLayout();
+                    qa1Var.requestLayout();
                     break;
                 }
                 break;

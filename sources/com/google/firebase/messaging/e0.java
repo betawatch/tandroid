@@ -11,7 +11,7 @@ import java.util.ArrayDeque;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class e0 implements ServiceConnection {
     public final Context a;
@@ -22,7 +22,7 @@ public final class e0 implements ServiceConnection {
     public boolean f;
 
     public e0(Context context) {
-        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(0, new c5.w("Firebase-FirebaseInstanceIdServiceConnection"));
+        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(0, new c5.x("Firebase-FirebaseInstanceIdServiceConnection"));
         this.d = new ArrayDeque();
         this.f = false;
         Context applicationContext = context.getApplicationContext();

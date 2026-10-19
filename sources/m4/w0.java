@@ -1,6 +1,6 @@
 package m4;
 
-import ai.r2;
+import ai.u2;
 import ai.ua;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -30,7 +30,7 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.be;
+import org.telegram.messenger.ae;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLObject;
@@ -53,40 +53,40 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.a5;
-import org.telegram.ui.ai;
+import org.telegram.ui.bq;
+import org.telegram.ui.cn;
+import org.telegram.ui.cy;
 import org.telegram.ui.d6;
-import org.telegram.ui.dq;
 import org.telegram.ui.e4;
 import org.telegram.ui.e6;
-import org.telegram.ui.en;
-import org.telegram.ui.ey;
-import org.telegram.ui.gp;
-import org.telegram.ui.hj;
+import org.telegram.ui.ep;
+import org.telegram.ui.fj;
+import org.telegram.ui.hf1;
 import org.telegram.ui.i5;
+import org.telegram.ui.io;
+import org.telegram.ui.ip;
 import org.telegram.ui.j4;
-import org.telegram.ui.jf1;
-import org.telegram.ui.ko;
-import org.telegram.ui.kp;
+import org.telegram.ui.jo;
 import org.telegram.ui.l4;
-import org.telegram.ui.lo;
+import org.telegram.ui.mb;
+import org.telegram.ui.md;
 import org.telegram.ui.o3;
-import org.telegram.ui.ob;
-import org.telegram.ui.od;
+import org.telegram.ui.on;
 import org.telegram.ui.qn;
 import org.telegram.ui.r3;
-import org.telegram.ui.sn;
-import org.telegram.ui.tb;
-import org.telegram.ui.te1;
+import org.telegram.ui.rb;
+import org.telegram.ui.re1;
 import org.telegram.ui.v4;
-import org.telegram.ui.xb;
-import org.telegram.ui.xx;
+import org.telegram.ui.vb;
+import org.telegram.ui.vx;
+import org.telegram.ui.wo;
 import org.telegram.ui.y3;
-import org.telegram.ui.yo;
+import org.telegram.ui.yh;
 import v7.q8;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui.Cells.v, xl0, a2, xx, a5, e5, MessagesController.ErrorDelegate, LanguageDetector.ExceptionCallback, lk0, MessagesStorage.BooleanCallback, ResultCallback, MessagesStorage.LongCallback, jf1 {
+public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui.Cells.v, xl0, a2, vx, a5, e5, MessagesController.ErrorDelegate, LanguageDetector.ExceptionCallback, lk0, MessagesStorage.BooleanCallback, ResultCallback, MessagesStorage.LongCallback, hf1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -101,37 +101,37 @@ public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui
     public void C(int i10, int i11, boolean z10) {
         switch (this.a) {
             case 11:
-                sn snVar = (sn) this.b;
+                qn qnVar = (qn) this.b;
                 Uri uri = (Uri) this.c;
-                snVar.o8(null, null);
-                SendMessagesHelper.prepareSendingPhoto(snVar.getAccountInstance(), null, uri, snVar.T5, snVar.n5, snVar.X3, snVar.l5, null, null, null, null, 0, snVar.p5, z10, i10, snVar.R3, snVar.H8());
+                qnVar.o8(null, null);
+                SendMessagesHelper.prepareSendingPhoto(qnVar.getAccountInstance(), null, uri, qnVar.T5, qnVar.n5, qnVar.X3, qnVar.l5, null, null, null, null, 0, qnVar.p5, z10, i10, qnVar.R3, qnVar.H8());
                 break;
             case 12:
-                sn snVar2 = (sn) this.b;
-                snVar2.getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of((String) this.c, snVar2.T5, snVar2.n5, snVar2.X3, null, false, null, null, null, z10, i10, 0, null, false));
-                snVar2.Y.setFieldText("");
-                snVar2.j9(false);
+                qn qnVar2 = (qn) this.b;
+                qnVar2.getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of((String) this.c, qnVar2.T5, qnVar2.n5, qnVar2.X3, null, false, null, null, null, z10, i10, 0, null, false));
+                qnVar2.Y.setFieldText("");
+                qnVar2.j9(false);
                 break;
             default:
-                en enVar = (en) this.b;
+                cn cnVar = (cn) this.b;
                 MessageObject messageObject = (MessageObject) this.c;
                 if (!z10) {
-                    enVar.getClass();
+                    cnVar.getClass();
                     break;
                 } else {
-                    enVar.a.getMessagesController().approveSuggestedMessage(DialogObject.getPeerDialogId(messageObject.messageOwner.peer_id), messageObject.messageOwner.id, i10);
+                    cnVar.a.getMessagesController().approveSuggestedMessage(DialogObject.getPeerDialogId(messageObject.messageOwner.peer_id), messageObject.messageOwner.id, i10);
                     break;
                 }
         }
     }
 
-    @Override // org.telegram.ui.xx
+    @Override // org.telegram.ui.vx
     public /* synthetic */ boolean D() {
         return false;
     }
 
-    @Override // org.telegram.ui.xx
-    public /* synthetic */ boolean K(ey eyVar) {
+    @Override // org.telegram.ui.vx
+    public /* synthetic */ boolean J(cy cyVar) {
         return false;
     }
 
@@ -163,32 +163,32 @@ public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui
 
     @Override // org.telegram.ui.a5
     public void b(i5 i5Var) {
-        ob obVar = (ob) this.b;
+        mb mbVar = (mb) this.b;
         TLRPC.User user = (TLRPC.User) this.c;
         int ordinal = i5Var.ordinal();
         if (ordinal == 0) {
-            obVar.a(user);
+            mbVar.a(user);
             return;
         }
         if (ordinal != 3) {
             return;
         }
-        tb tbVar = obVar.a;
+        rb rbVar = mbVar.a;
         if (user != null) {
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", user.id);
-            n2 n2Var = tbVar.n;
+            n2 n2Var = rbVar.n;
             if (n2Var.getMessagesController().checkCanOpenChat(bundle, n2Var)) {
-                n2Var.presentFragment(new sn(bundle));
+                n2Var.presentFragment(new qn(bundle));
             }
         }
     }
 
     @Override // org.telegram.ui.Components.lk0
     public void c(long j10, TLRPC.MessagePeerReaction messagePeerReaction) {
-        ai aiVar = (ai) this.b;
+        yh yhVar = (yh) this.b;
         MessageObject messageObject = (MessageObject) this.c;
-        sn snVar = aiVar.p;
+        qn qnVar = yhVar.p;
         Bundle bundle = new Bundle();
         if (j10 > 0) {
             bundle.putLong("user_id", j10);
@@ -196,9 +196,9 @@ public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui
             bundle.putLong("chat_id", -j10);
         }
         bundle.putInt("report_reaction_message_id", messageObject.getId());
-        bundle.putLong("report_reaction_from_dialog_id", snVar.T5);
-        snVar.presentFragment(new ProfileActivity(bundle, null));
-        snVar.D7(true);
+        bundle.putLong("report_reaction_from_dialog_id", qnVar.T5);
+        qnVar.presentFragment(new ProfileActivity(bundle, null));
+        qnVar.D7(true);
     }
 
     @Override // org.telegram.ui.Components.xl0
@@ -229,7 +229,7 @@ public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui
                         l4Var.b0(true);
                         TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
                         tL_contacts_resolveUsername.username = "previews";
-                        l4Var.G0 = ConnectionsManager.getInstance(i11).sendRequest(tL_contacts_resolveUsername, new be(l4Var, i11, j10));
+                        l4Var.G0 = ConnectionsManager.getInstance(i11).sendRequest(tL_contacts_resolveUsername, new ae(l4Var, i11, j10));
                         return;
                     }
                     return;
@@ -286,9 +286,9 @@ public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui
     public Object e(f0 f0Var, v vVar, int i10) {
         switch (this.a) {
             case 1:
-                return f0Var.j() ? q8.b(new s1(-100)) : e2.m0.g0((j9.y) ((g1) this.b).e(f0Var, vVar, i10), new r2(f0Var, vVar, (v0) this.c, 15));
+                return f0Var.j() ? q8.b(new s1(-100)) : e2.m0.g0((j9.y) ((g1) this.b).e(f0Var, vVar, i10), new u2(f0Var, vVar, (v0) this.c, 15));
             default:
-                return f0Var.j() ? q8.b(new s1(-100)) : e2.m0.g0((j9.y) ((g1) this.b).e(f0Var, vVar, i10), new r2(f0Var, vVar, (f1) this.c, 16));
+                return f0Var.j() ? q8.b(new s1(-100)) : e2.m0.g0((j9.y) ((g1) this.b).e(f0Var, vVar, i10), new u2(f0Var, vVar, (f1) this.c, 16));
         }
     }
 
@@ -304,18 +304,18 @@ public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui
                 v4Var.W(view, true);
                 break;
             case 8:
-                pf.d.n(((xb) this.b).getParentActivity(), (String) this.c, true);
+                pf.d.n(((vb) this.b).getParentActivity(), (String) this.c, true);
                 break;
             case 10:
-                od.V((od) this.b, (TLRPC.Chat) this.c);
+                md.V((md) this.b, (TLRPC.Chat) this.c);
                 break;
             case 20:
-                yo yoVar = (yo) this.b;
+                wo woVar = (wo) this.b;
                 TLRPC.Chat chat = (TLRPC.Chat) this.c;
                 TLRPC.TL_channels_updateUsername tL_channels_updateUsername = new TLRPC.TL_channels_updateUsername();
                 tL_channels_updateUsername.channel = MessagesController.getInputChannel(chat);
                 tL_channels_updateUsername.username = "";
-                yoVar.getConnectionsManager().sendRequest(tL_channels_updateUsername, new lo(yoVar, 0), 64);
+                woVar.getConnectionsManager().sendRequest(tL_channels_updateUsername, new jo(woVar, 0), 64);
                 break;
             case 24:
                 org.telegram.ui.Components.e0.Q((org.telegram.ui.Components.e0) this.b, (TL_aicompose.TL_aiComposeTone) this.c, b2Var);
@@ -379,24 +379,24 @@ public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui
         }
     }
 
-    @Override // org.telegram.ui.jf1
+    @Override // org.telegram.ui.hf1
     public void k(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
-        ((dq) this.b).p0(tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.c);
+        ((bq) this.b).p0(tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.c);
     }
 
     @Override // org.telegram.tgnet.ResultCallback
     public void onComplete(Object obj) {
-        qn qnVar = (qn) this.b;
+        on onVar = (on) this.b;
         wc0 wc0Var = (wc0) this.c;
         Pair pair = (Pair) obj;
-        qnVar.getClass();
+        onVar.getClass();
         if (pair == null) {
             return;
         }
         long longValue = ((Long) pair.first).longValue();
         Bitmap bitmap = (Bitmap) pair.second;
-        c4 c4Var = qnVar.f;
-        if (c4Var == null || longValue != c4Var.h(qnVar.G ? 1 : 0) || bitmap == null) {
+        c4 c4Var = onVar.f;
+        if (c4Var == null || longValue != c4Var.h(onVar.G ? 1 : 0) || bitmap == null) {
             return;
         }
         wc0Var.x = bitmap;
@@ -410,16 +410,16 @@ public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui
 
     @Override // org.telegram.messenger.MessagesController.ErrorDelegate
     public boolean run(TLRPC.TL_error tL_error) {
-        sn.H0((sn) this.b, (Context) this.c, tL_error);
+        qn.H0((qn) this.b, (Context) this.c, tL_error);
         return false;
     }
 
-    @Override // org.telegram.ui.xx
-    public boolean w(ey eyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, te1 te1Var) {
+    @Override // org.telegram.ui.vx
+    public boolean w(cy cyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, re1 re1Var) {
         e6 e6Var = (e6) this.b;
-        ey eyVar2 = (ey) this.c;
+        cy cyVar2 = (cy) this.c;
         ArrayList arrayList2 = e6Var.c;
-        eyVar2.finishFragment();
+        cyVar2.finishFragment();
         CacheByChatsController.KeepMediaException keepMediaException = null;
         int i12 = 0;
         int i13 = 0;
@@ -473,9 +473,9 @@ public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui
         return true;
     }
 
-    public /* synthetic */ w0(ob obVar, org.telegram.ui.Cells.u1 u1Var, TLRPC.User user) {
+    public /* synthetic */ w0(mb mbVar, org.telegram.ui.Cells.u1 u1Var, TLRPC.User user) {
         this.a = 9;
-        this.b = obVar;
+        this.b = mbVar;
         this.c = user;
     }
 
@@ -488,57 +488,57 @@ public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui
     public void run(long j10) {
         switch (this.a) {
             case 19:
-                ko koVar = (ko) this.b;
+                io ioVar = (io) this.b;
                 b2 b2Var = (b2) this.c;
-                koVar.getClass();
+                ioVar.getClass();
                 b2Var.dismiss();
-                koVar.N0 = false;
+                ioVar.N0 = false;
                 if (j10 != 0) {
-                    koVar.w0 = j10;
-                    TLRPC.Chat chat = koVar.getMessagesController().getChat(Long.valueOf(j10));
-                    koVar.x0 = chat;
-                    TLRPC.ChatFull chatFull = koVar.y0;
+                    ioVar.w0 = j10;
+                    TLRPC.Chat chat = ioVar.getMessagesController().getChat(Long.valueOf(j10));
+                    ioVar.x0 = chat;
+                    TLRPC.ChatFull chatFull = ioVar.y0;
                     if (chatFull != null) {
                         chatFull.hidden_prehistory = true;
                     }
-                    boolean z10 = chat.forum_tabs != koVar.H0;
-                    koVar.getMessagesController().toggleChannelForum(koVar.w0, koVar.F0, koVar.H0);
-                    TLRPC.Chat chat2 = koVar.x0;
-                    chat2.forum = koVar.F0;
-                    chat2.forum_tabs = koVar.H0;
+                    boolean z10 = chat.forum_tabs != ioVar.H0;
+                    ioVar.getMessagesController().toggleChannelForum(ioVar.w0, ioVar.F0, ioVar.H0);
+                    TLRPC.Chat chat2 = ioVar.x0;
+                    chat2.forum = ioVar.F0;
+                    chat2.forum_tabs = ioVar.H0;
                     if (z10) {
-                        koVar.q0();
+                        ioVar.q0();
                         break;
                     }
                 }
                 break;
             case 20:
             default:
-                gp gpVar = (gp) this.b;
+                ep epVar = (ep) this.b;
                 Runnable runnable = (Runnable) this.c;
                 if (j10 == 0) {
-                    gpVar.getClass();
+                    epVar.getClass();
                     break;
                 } else {
-                    kp kpVar = gpVar.x.d;
-                    if (kpVar.s) {
-                        kpVar.v.set(0, kpVar.getMessagesController().getChat(Long.valueOf(j10)));
+                    ip ipVar = epVar.x.d;
+                    if (ipVar.s) {
+                        ipVar.v.set(0, ipVar.getMessagesController().getChat(Long.valueOf(j10)));
                     } else {
-                        kpVar.E = j10;
-                        kpVar.f = kpVar.getMessagesController().getChat(Long.valueOf(j10));
+                        ipVar.E = j10;
+                        ipVar.f = ipVar.getMessagesController().getChat(Long.valueOf(j10));
                     }
                     runnable.run();
                     break;
                 }
             case 21:
-                kp kpVar2 = (kp) this.b;
+                ip ipVar2 = (ip) this.b;
                 n2 n2Var = (n2) this.c;
                 if (j10 == 0) {
-                    kpVar2.getClass();
+                    ipVar2.getClass();
                     break;
                 } else {
-                    kpVar2.getMessagesController().toggleChannelInvitesHistory(j10, false);
-                    kpVar2.Y(kpVar2.getMessagesController().getChat(Long.valueOf(j10)), n2Var);
+                    ipVar2.getMessagesController().toggleChannelInvitesHistory(j10, false);
+                    ipVar2.Y(ipVar2.getMessagesController().getChat(Long.valueOf(j10)), n2Var);
                     break;
                 }
         }
@@ -546,14 +546,14 @@ public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui
 
     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
     public void run(boolean z10) {
-        hj hjVar = (hj) this.b;
+        fj fjVar = (fj) this.b;
         long j10 = ((TLRPC.User) this.c).id;
-        sn snVar = hjVar.b;
-        long j11 = snVar.d4;
+        qn qnVar = fjVar.b;
+        long j11 = qnVar.d4;
         if (j10 != j11) {
             return;
         }
-        snVar.va(j11, false);
+        qnVar.va(j11, false);
     }
 
     @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback

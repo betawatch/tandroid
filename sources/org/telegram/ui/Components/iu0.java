@@ -1,48 +1,83 @@
 package org.telegram.ui.Components;
 
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class iu0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ju0 b;
-    public final /* synthetic */ String c;
+public final /* synthetic */ class iu0 implements hg.z1, org.telegram.ui.Cells.z4 {
+    public final /* synthetic */ ku0 a;
 
-    public /* synthetic */ iu0(ju0 ju0Var, String str, int i10) {
-        this.a = i10;
-        this.b = ju0Var;
-        this.c = str;
+    public /* synthetic */ iu0(ku0 ku0Var) {
+        this.a = ku0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ju0 ju0Var = this.b;
-                String str = this.c;
-                ju0Var.getClass();
-                AndroidUtilities.runOnUIThread(new iu0(ju0Var, str, 1));
-                break;
-            default:
-                ju0 ju0Var2 = this.b;
-                String str2 = this.c;
-                ArrayList arrayList = null;
-                ju0Var2.f = null;
-                if (!ChatObject.isChannel(ju0Var2.n) && ju0Var2.s.d1 != null) {
-                    arrayList = new ArrayList(ju0Var2.s.d1.participants.participants);
-                }
-                ju0Var2.r = 2;
-                if (arrayList != null) {
-                    Utilities.searchQueue.postRunnable(new lg((Object) ju0Var2, (Object) str2, arrayList, 24));
-                } else {
-                    ju0Var2.r = 1;
-                }
-                ju0Var2.e.g(str2, false, false, true, false, ChatObject.isChannel(ju0Var2.n) ? ju0Var2.n.id : 0L, false, 2, 1);
-                break;
+    @Override // hg.z1
+    public /* synthetic */ a0.h G() {
+        return null;
+    }
+
+    @Override // hg.z1
+    public /* synthetic */ boolean O(int i10) {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.z4
+    public boolean d(org.telegram.ui.Cells.a5 a5Var, boolean z10) {
+        int intValue = ((Integer) a5Var.getTag()).intValue();
+        ku0 ku0Var = this.a;
+        TLObject E = ku0Var.E(intValue);
+        if (!(E instanceof TLRPC.ChannelParticipant)) {
+            return false;
         }
+        TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) E;
+        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = new TLRPC.TL_chatChannelParticipant();
+        tL_chatChannelParticipant.channelParticipant = channelParticipant;
+        tL_chatChannelParticipant.user_id = MessageObject.getPeerId(channelParticipant.peer);
+        tL_chatChannelParticipant.inviter_id = channelParticipant.inviter_id;
+        tL_chatChannelParticipant.date = channelParticipant.date;
+        return ku0Var.s.D1.h(tL_chatChannelParticipant, true, !z10, a5Var);
+    }
+
+    @Override // hg.z1
+    public void f(int i10) {
+        ku0 ku0Var = this.a;
+        ku0Var.l();
+        if (i10 != 1) {
+            return;
+        }
+        int i11 = ku0Var.r - 1;
+        ku0Var.r = i11;
+        if (i11 != 0) {
+            return;
+        }
+        int i12 = 0;
+        while (true) {
+            tv0 tv0Var = ku0Var.s;
+            mu0[] mu0VarArr = tv0Var.k0;
+            if (i12 >= mu0VarArr.length) {
+                return;
+            }
+            mu0 mu0Var = mu0VarArr[i12];
+            if (mu0Var.F == 7) {
+                if (ku0Var.h == 0) {
+                    mu0Var.w.e(false, true);
+                } else {
+                    tv0Var.z(mu0Var.h, 0, null);
+                }
+            }
+            i12++;
+        }
+    }
+
+    @Override // hg.z1
+    public /* synthetic */ a0.h y() {
+        return null;
+    }
+
+    @Override // hg.z1
+    public /* synthetic */ void S(ArrayList arrayList) {
     }
 }

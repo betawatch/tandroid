@@ -41,7 +41,7 @@ import p4.p0;
 import p4.r0;
 import p4.s0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class c extends Handler {
     public final /* synthetic */ int a;
@@ -171,7 +171,7 @@ public final class c extends Handler {
                                         if (f60Var.c0 == -1) {
                                             f60Var.c0 = j17 / 1000;
                                             if (BuildVars.LOGS_ENABLED) {
-                                                i2.d.x(new StringBuilder("InstantCamera first video frame was at "), f60Var.c0);
+                                                i2.e.x(new StringBuilder("InstantCamera first video frame was at "), f60Var.c0);
                                             }
                                         }
                                         f60Var.e0 = j17 - f60Var.d0;
@@ -465,11 +465,11 @@ public final class c extends Handler {
                                                         u50Var.e = i37;
                                                         f60Var.h0 = j21;
                                                         if (BuildVars.LOGS_ENABLED) {
-                                                            i2.d.x(i2.d.l(i37, "InstantCamera found first audio frame at ", " timestamp = "), u50Var.b[i37]);
+                                                            i2.e.x(i2.e.l(i37, "InstantCamera found first audio frame at ", " timestamp = "), u50Var.b[i37]);
                                                         }
                                                     } else {
                                                         if (BuildVars.LOGS_ENABLED) {
-                                                            i2.d.x(i2.d.l(i37, "InstantCamera ignore first audio frame at ", " timestamp = "), u50Var.b[i37]);
+                                                            i2.e.x(i2.e.l(i37, "InstantCamera ignore first audio frame at ", " timestamp = "), u50Var.b[i37]);
                                                         }
                                                         i37++;
                                                         j16 = j12;
@@ -480,7 +480,7 @@ public final class c extends Handler {
                                                     f60Var.b0 = j22 - j23;
                                                     f60Var.h0 = j23;
                                                     if (BuildVars.LOGS_ENABLED) {
-                                                        i2.d.x(new StringBuilder("InstantCamera detected desync between audio and video "), f60Var.b0);
+                                                        i2.e.x(new StringBuilder("InstantCamera detected desync between audio and video "), f60Var.b0);
                                                     }
                                                 }
                                             }

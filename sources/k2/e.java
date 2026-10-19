@@ -11,7 +11,7 @@ import android.provider.Settings;
 import e9.x1;
 import java.util.List;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class e {
     public final Context a;
@@ -20,7 +20,7 @@ public final class e {
     public final c d;
     public final androidx.mediarouter.app.f e;
     public final d f;
-    public z2.d g;
+    public z2.e g;
     public b h;
     public AudioDeviceInfo i;
     public b2.f j;
@@ -45,9 +45,9 @@ public final class e {
     }
 
     public final List a() {
-        z2.d dVar;
-        if (Build.VERSION.SDK_INT >= 32 && (dVar = this.g) != null) {
-            return dVar.b();
+        z2.e eVar;
+        if (Build.VERSION.SDK_INT >= 32 && (eVar = this.g) != null) {
+            return eVar.b();
         }
         e9.l0 l0Var = e9.n0.b;
         return x1.e;

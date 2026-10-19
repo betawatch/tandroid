@@ -20,9 +20,9 @@ import org.telegram.ui.Components.ac0;
 import org.telegram.ui.Components.ic0;
 import org.telegram.ui.Components.nc0;
 import org.telegram.ui.Components.oc0;
-import org.telegram.ui.in;
+import org.telegram.ui.gn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class MessagePreviewParams {
     public CharacterStyle currentLink;
@@ -41,7 +41,7 @@ public class MessagePreviewParams {
     public boolean multipleUsers;
     public boolean noforwards;
     private oc0 previewView;
-    public in quote;
+    public gn quote;
     public int quoteEnd;
     public int quoteStart;
     public Messages replyMessage;
@@ -52,7 +52,7 @@ public class MessagePreviewParams {
     public boolean webpageTop;
     public boolean willSeeSenders;
 
-    /* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
     public class Messages {
         private long dialogId;
         public LongSparseArray<MessageObject.GroupedMessages> groupedMessagesMap;
@@ -206,7 +206,7 @@ public class MessagePreviewParams {
         }
     }
 
-    /* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
     public static class PreviewMediaPoll extends TLRPC.TL_messageMediaPoll {
         public int totalVotersCached;
     }
@@ -436,9 +436,9 @@ public class MessagePreviewParams {
                         MessageObject c10 = ic0Var.c(v9Var != null ? ((org.telegram.ui.Cells.u1) v9Var).getMessageObject() : null);
                         if (c10 != null) {
                             messagePreviewParams.quoteStart = 0;
-                            int min = Math.min(MessagesController.getInstance(oc0Var.w).quoteLengthMax, in.d(c10));
+                            int min = Math.min(MessagesController.getInstance(oc0Var.w).quoteLengthMax, gn.d(c10));
                             messagePreviewParams.quoteEnd = min;
-                            messagePreviewParams.quote = in.c(c10, messagePreviewParams.quoteStart, min);
+                            messagePreviewParams.quote = gn.c(c10, messagePreviewParams.quoteStart, min);
                             View d = ic0Var.d();
                             if (d instanceof org.telegram.ui.Cells.u1) {
                                 ac0Var.Z((org.telegram.ui.Cells.u1) d, messagePreviewParams.quoteStart, messagePreviewParams.quoteEnd);
@@ -547,7 +547,7 @@ public class MessagePreviewParams {
         }
     }
 
-    public void updateLink(int i10, TLRPC.WebPage webPage, CharSequence charSequence, MessageObject messageObject, in inVar, MessageObject messageObject2) {
+    public void updateLink(int i10, TLRPC.WebPage webPage, CharSequence charSequence, MessageObject messageObject, gn gnVar, MessageObject messageObject2) {
         TLRPC.MessageMedia messageMedia;
         TLRPC.Message message;
         TLRPC.MessageMedia messageMedia2;
@@ -602,11 +602,11 @@ public class MessagePreviewParams {
                 tL_message.replyMessage = messageObject.messageOwner;
                 TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
                 tL_message.reply_to = tL_messageReplyHeader;
-                if (inVar != null) {
-                    tL_messageReplyHeader.quote_text = inVar.i;
+                if (gnVar != null) {
+                    tL_messageReplyHeader.quote_text = gnVar.i;
                     int i11 = tL_messageReplyHeader.flags;
                     tL_messageReplyHeader.flags = i11 | 64;
-                    ArrayList<TLRPC.MessageEntity> arrayList = inVar.j;
+                    ArrayList<TLRPC.MessageEntity> arrayList = gnVar.j;
                     tL_messageReplyHeader.quote_entities = arrayList;
                     if (arrayList != null) {
                         tL_messageReplyHeader.flags = i11 | 192;
@@ -681,19 +681,19 @@ public class MessagePreviewParams {
         this.webpageTop = z10;
     }
 
-    public void updateReply(MessageObject messageObject, MessageObject.GroupedMessages groupedMessages, long j10, in inVar) {
+    public void updateReply(MessageObject messageObject, MessageObject.GroupedMessages groupedMessages, long j10, gn gnVar) {
         MessageObject messageObject2;
-        in inVar2;
+        gn gnVar2;
         int i10;
         if (this.isSecret || messageObject == null || (i10 = messageObject.type) == 10 || i10 == 11 || i10 == 22 || i10 == 21 || i10 == 18 || i10 == 25 || i10 == 16) {
             messageObject2 = null;
-            inVar2 = null;
+            gnVar2 = null;
         } else {
             messageObject2 = messageObject;
-            inVar2 = inVar;
+            gnVar2 = gnVar;
         }
         this.hasSecretMessages = messageObject2 != null && (messageObject2.isVoiceOnce() || messageObject2.isRoundOnce() || messageObject2.type == 30);
-        if (messageObject2 == null && inVar2 == null) {
+        if (messageObject2 == null && gnVar2 == null) {
             this.replyMessage = null;
             this.quote = null;
             return;
@@ -703,7 +703,7 @@ public class MessagePreviewParams {
         } else {
             MessageObject messageObject3 = messageObject2;
             if (messageObject3 == null) {
-                messageObject3 = inVar2.a;
+                messageObject3 = gnVar2.a;
             }
             this.replyMessage = new Messages(this, null, 1, messageObject3, j10);
         }
@@ -711,10 +711,10 @@ public class MessagePreviewParams {
             this.replyMessage = null;
             return;
         }
-        this.quote = inVar2;
-        if (inVar2 != null) {
-            this.quoteStart = inVar2.b;
-            this.quoteEnd = inVar2.c;
+        this.quote = gnVar2;
+        if (gnVar2 != null) {
+            this.quoteStart = gnVar2.b;
+            this.quoteEnd = gnVar2.c;
         }
     }
 }

@@ -1,126 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
-import android.util.SparseArray;
-import java.util.ArrayList;
-import java.util.Collections;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.te1;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nr0 implements e20, org.telegram.ui.xx {
-    public final /* synthetic */ sv0 a;
+public final /* synthetic */ class nr0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ tv0 b;
 
-    public /* synthetic */ nr0(sv0 sv0Var) {
-        this.a = sv0Var;
+    public /* synthetic */ nr0(tv0 tv0Var, int i10) {
+        this.a = i10;
+        this.b = tv0Var;
     }
 
-    @Override // org.telegram.ui.xx
-    public /* synthetic */ boolean D() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.xx
-    public /* synthetic */ boolean K(org.telegram.ui.ey eyVar) {
-        return false;
-    }
-
-    public void a(boolean z10) {
-        sv0 sv0Var = this.a;
-        if (!z10) {
-            sv0Var.requestLayout();
-        }
-        sv0Var.setVisibleHeight(sv0Var.M1);
-    }
-
-    @Override // org.telegram.ui.xx
-    public boolean w(org.telegram.ui.ey eyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, te1 te1Var) {
-        int i12;
-        sv0 sv0Var = this.a;
-        SparseArray[] sparseArrayArr = sv0Var.Z0;
-        org.telegram.ui.ActionBar.n2 n2Var = sv0Var.v1;
-        ArrayList<MessageObject> arrayList2 = new ArrayList<>();
-        boolean z12 = true;
-        int i13 = 1;
-        while (true) {
-            i12 = 0;
-            if (i13 < 0) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                tv0 tv0Var = this.b;
+                us usVar = tv0Var.P0;
+                tv0Var.b2 = (int) usVar.c(AndroidUtilities.dp(14.0f));
+                js0 js0Var = tv0Var.V;
+                if (js0Var != null) {
+                    js0Var.setPaddingTop(AndroidUtilities.dp(48.0f) + ((int) usVar.c(AndroidUtilities.dp(7.0f))));
+                }
+                mu0[] mu0VarArr = tv0Var.k0;
+                if (mu0VarArr != null) {
+                    for (mu0 mu0Var : mu0VarArr) {
+                        if (mu0Var != null) {
+                            int paddingTop = mu0Var.h.getPaddingTop();
+                            ss0 ss0Var = mu0Var.h;
+                            int paddingLeft = ss0Var.getPaddingLeft();
+                            int Z = tv0Var.Z(mu0Var.F);
+                            int paddingRight = mu0Var.h.getPaddingRight();
+                            ss0 ss0Var2 = mu0Var.h;
+                            int Y = tv0Var.Y(tv0Var.x0());
+                            ss0Var2.c3 = Y;
+                            ss0Var.setPadding(paddingLeft, Z, paddingRight, Y);
+                            AndroidUtilities.doOnLayout(mu0Var.h, new vr0(mu0Var, paddingTop - mu0Var.h.getPaddingTop(), 0));
+                        }
+                    }
+                    break;
+                }
                 break;
-            }
-            ArrayList arrayList3 = new ArrayList();
-            for (int i14 = 0; i14 < sparseArrayArr[i13].size(); i14++) {
-                arrayList3.add(Integer.valueOf(sparseArrayArr[i13].keyAt(i14)));
-            }
-            Collections.sort(arrayList3);
-            int size = arrayList3.size();
-            while (i12 < size) {
-                Object obj = arrayList3.get(i12);
-                i12++;
-                Integer num = (Integer) obj;
-                if (num.intValue() > 0) {
-                    arrayList2.add((MessageObject) sparseArrayArr[i13].get(num.intValue()));
-                }
-            }
-            sparseArrayArr[i13].clear();
-            i13--;
+            case 1:
+                tv0 tv0Var2 = this.b;
+                tv0Var2.d1(false);
+                tv0Var2.G.h(true);
+                tv0Var2.a1 = 0;
+                break;
+            default:
+                this.b.l0();
+                break;
         }
-        sv0Var.a1 = 0;
-        sv0Var.d1(false);
-        cv0 cv0Var = sv0Var.R;
-        if (cv0Var != null) {
-            cv0Var.w.clear();
-        }
-        if (arrayList.size() <= 1 && ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId != n2Var.getUserConfig().getClientUserId() && charSequence == null) {
-            long j10 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-            Bundle h = a1.g.h("scrollToTopOnResume", true);
-            if (DialogObject.isEncryptedDialog(j10)) {
-                h.putInt("enc_id", DialogObject.getEncryptedChatId(j10));
-            } else {
-                if (DialogObject.isUserDialog(j10)) {
-                    h.putLong("user_id", j10);
-                } else {
-                    h.putLong("chat_id", -j10);
-                }
-                if (!n2Var.getMessagesController().checkCanOpenChat(h, eyVar)) {
-                    return true;
-                }
-            }
-            n2Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-            org.telegram.ui.sn snVar = new org.telegram.ui.sn(h);
-            og.d.a(snVar, (MessagesStorage.TopicKey) arrayList.get(0));
-            eyVar.presentFragment(snVar, true);
-            snVar.Eb(arrayList2);
-            return true;
-        }
-        sv0Var.u1(true);
-        int i15 = 0;
-        while (i15 < arrayList.size()) {
-            long j11 = ((MessagesStorage.TopicKey) arrayList.get(i15)).dialogId;
-            if (charSequence != null) {
-                n2Var.getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of(charSequence.toString(), j11, null, null, null, true, null, null, null, true, 0, 0, null, false));
-            }
-            n2Var.getSendMessagesHelper().sendMessage(arrayList2, j11, false, false, true, 0, 0L);
-            i15++;
-            z12 = z12;
-            i12 = 0;
-        }
-        boolean z13 = z12;
-        eyVar.finishFragment();
-        UndoView undoView = n2Var instanceof ProfileActivity ? ((ProfileActivity) n2Var).M : null;
-        if (undoView == null) {
-            return z13;
-        }
-        if (arrayList.size() == z13) {
-            undoView.m(((MessagesStorage.TopicKey) arrayList.get(0)).dialogId, Integer.valueOf(arrayList2.size()), 53);
-            return z13;
-        }
-        undoView.k(0L, 53, Integer.valueOf(arrayList2.size()), Integer.valueOf(arrayList.size()), null, null);
-        return z13;
     }
 }

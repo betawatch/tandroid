@@ -27,7 +27,7 @@ import org.webrtc.MediaStreamTrack;
 import org.webrtc.VideoSink;
 import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class h1 implements NotificationCenter.NotificationCenterDelegate, AudioManager.OnAudioFocusChangeListener {
     public static h1 W;
@@ -144,7 +144,7 @@ public final class h1 implements NotificationCenter.NotificationCenterDelegate, 
             long longValue = ((Long) objArr[0]).longValue();
             TLRPC.GroupCall groupCall = (TLRPC.GroupCall) objArr[1];
             if (this.b == longValue) {
-                ag.e.a(this.v, groupCall);
+                ag.d.a(this.v, groupCall);
                 this.v = groupCall;
                 NotificationCenter.getInstance(this.e).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(groupCall.id));
             }
@@ -368,8 +368,8 @@ public final class h1 implements NotificationCenter.NotificationCenterDelegate, 
 
     public final void v(float f7) {
         float clamp01 = Utilities.clamp01(f7);
-        o1 o1Var = o1.Z;
-        if (o1Var.S && o1Var.v == this) {
+        p1 p1Var = p1.Z;
+        if (p1Var.S && p1Var.v == this) {
             clamp01 = 1.0f;
         }
         FileLog.d("setVolume(" + clamp01 + ")");

@@ -1,13 +1,32 @@
 package i2;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+import j$.util.Objects;
+
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public interface v0 {
-    long a();
+public final class v0 {
+    public final long a;
+    public final float b;
+    public final long c;
 
-    boolean b();
+    public v0(u0 u0Var) {
+        this.a = u0Var.a;
+        this.b = u0Var.b;
+        this.c = u0Var.c;
+    }
 
-    void f(b2.z0 z0Var);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof v0)) {
+            return false;
+        }
+        v0 v0Var = (v0) obj;
+        return this.a == v0Var.a && this.b == v0Var.b && this.c == v0Var.c;
+    }
 
-    b2.z0 h();
+    public final int hashCode() {
+        return Objects.hash(Long.valueOf(this.a), Float.valueOf(this.b), Long.valueOf(this.c));
+    }
 }

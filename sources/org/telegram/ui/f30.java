@@ -1,48 +1,23 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.View;
+import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class f30 extends org.telegram.ui.Components.im0 {
-    public final /* synthetic */ s50 V2;
+public final class f30 extends s4.r0 {
+    public final /* synthetic */ q50 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f30(s50 s50Var, LaunchActivity launchActivity) {
-        super(launchActivity, null);
-        this.V2 = s50Var;
+    public f30(q50 q50Var) {
+        this.a = q50Var;
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        org.telegram.ui.Components.z20 z20Var = (org.telegram.ui.Components.z20) view;
-        s50 s50Var = this.V2;
-        y40 y40Var = s50Var.Q;
-        j30 j30Var = s50Var.a2;
-        if (j30Var.r == null && !s50Var.N2.k()) {
-            z20Var.setAlpha(1.0f);
-            z20Var.setTranslationX(0.0f);
-            z20Var.setTranslationY(0.0f);
-        }
-        f30 f30Var = s50Var.m2;
-        z20Var.getClass();
-        f30Var.getClass();
-        if (RecyclerView.R(z20Var) == -1 && z20Var.getRenderer() != null) {
-            return true;
-        }
-        if (z20Var.getTranslationY() == 0.0f || z20Var.getRenderer() == null || z20Var.getRenderer().c == null) {
-            return super.drawChild(canvas, view, j10);
-        }
-        float top = y40Var.getTop() - getTop();
-        float measuredHeight = y40Var.getMeasuredHeight() + top;
-        float f7 = j30Var.c;
-        canvas.save();
-        float f10 = 1.0f - f7;
-        canvas.clipRect(0.0f, top * f10, getMeasuredWidth(), (getMeasuredHeight() * f7) + (measuredHeight * f10));
-        boolean drawChild = super.drawChild(canvas, view, j10);
-        canvas.restore();
-        return drawChild;
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ViewGroup viewGroup;
+        q50 q50Var = this.a;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) q50Var).containerView;
+        viewGroup.invalidate();
+        q50Var.a2.invalidate();
     }
 }

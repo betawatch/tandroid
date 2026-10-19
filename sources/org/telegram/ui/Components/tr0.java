@@ -1,82 +1,66 @@
 package org.telegram.ui.Components;
 
-import java.util.Collections;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tr0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sv0 b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ tv0 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
+    public final /* synthetic */ MessageObject d;
     public final /* synthetic */ int e;
-    public final /* synthetic */ TLObject f;
 
-    public /* synthetic */ tr0(sv0 sv0Var, TLRPC.TL_error tL_error, int i10, int i11, TLObject tLObject, int i12) {
-        this.a = i12;
-        this.b = sv0Var;
-        this.c = tL_error;
-        this.d = i10;
-        this.e = i11;
-        this.f = tLObject;
+    public /* synthetic */ tr0(tv0 tv0Var, org.telegram.ui.ActionBar.d6 d6Var, int i10, MessageObject messageObject) {
+        this.b = tv0Var;
+        this.c = d6Var;
+        this.e = i10;
+        this.d = messageObject;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                sv0 sv0Var = this.b;
-                NotificationCenter.getInstance(sv0Var.v1.getCurrentAccount()).doOnIdle(new tr0(sv0Var, this.c, this.d, this.e, this.f, 1));
-                break;
-            default:
-                sv0 sv0Var2 = this.b;
-                hv0[] hv0VarArr = sv0Var2.t1;
-                if (this.c == null) {
-                    int i10 = this.e;
-                    hv0 hv0Var = hv0VarArr[i10];
-                    if (this.d == hv0Var.p) {
-                        TLRPC.TL_messages_searchResultsPositions tL_messages_searchResultsPositions = (TLRPC.TL_messages_searchResultsPositions) this.f;
-                        hv0Var.e.clear();
-                        int size = tL_messages_searchResultsPositions.positions.size();
-                        int i11 = 0;
-                        for (int i12 = 0; i12 < size; i12++) {
-                            TLRPC.TL_searchResultPosition tL_searchResultPosition = tL_messages_searchResultsPositions.positions.get(i12);
-                            int i13 = tL_searchResultPosition.date;
-                            if (i13 != 0) {
-                                qu0 qu0Var = new qu0();
-                                qu0Var.c = i13;
-                                qu0Var.d = tL_searchResultPosition.msg_id;
-                                qu0Var.b = tL_searchResultPosition.offset;
-                                qu0Var.a = LocaleController.formatYearMont(i13, true);
-                                hv0VarArr[i10].e.add(qu0Var);
-                            }
-                        }
-                        Collections.sort(hv0VarArr[i10].e, new org.telegram.ui.ActionBar.i4(24));
-                        hv0 hv0Var2 = hv0VarArr[i10];
-                        hv0Var2.f[0] = tL_messages_searchResultsPositions.count;
-                        hv0Var2.h = true;
-                        if (!hv0Var2.e.isEmpty()) {
-                            while (true) {
-                                lu0[] lu0VarArr = sv0Var2.k0;
-                                if (i11 < lu0VarArr.length) {
-                                    lu0 lu0Var = lu0VarArr[i11];
-                                    if (lu0Var.F == i10) {
-                                        lu0Var.b = true;
-                                        sv0Var2.q1(lu0Var, true);
-                                    }
-                                    i11++;
-                                }
-                            }
-                        }
-                        sv0Var2.H.l();
-                        break;
-                    }
+                org.telegram.ui.ActionBar.b2[] b2VarArr = {new org.telegram.ui.ActionBar.b2(this.b.getContext(), 3, this.c)};
+                int i10 = this.e;
+                int sendVote = SendMessagesHelper.getInstance(i10).sendVote(this.d, null, new vs(b2VarArr, 1));
+                if (sendVote != 0) {
+                    AndroidUtilities.runOnUIThread(new yr0(b2VarArr, i10, sendVote, 0), 500L);
+                    break;
                 }
                 break;
+            default:
+                tv0 tv0Var = this.b;
+                Context context = tv0Var.getContext();
+                org.telegram.ui.ActionBar.d6 d6Var = this.c;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
+                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                b2Var.P0 = false;
+                MessageObject messageObject = this.d;
+                if (messageObject.isQuiz()) {
+                    b2Var.R = LocaleController.getString(R.string.StopQuizAlertTitle);
+                    b2Var.T = LocaleController.getString(R.string.StopQuizAlertText);
+                } else {
+                    b2Var.R = LocaleController.getString(R.string.StopPollAlertTitle);
+                    b2Var.T = LocaleController.getString(R.string.StopPollAlertText);
+                }
+                alertDialog$Builder.k(LocaleController.getString(R.string.Stop), new org.telegram.ui.fa(tv0Var, d6Var, messageObject, this.e, 4));
+                i2.e.r(R.string.Cancel, alertDialog$Builder, null);
+                break;
         }
+    }
+
+    public /* synthetic */ tr0(tv0 tv0Var, org.telegram.ui.ActionBar.d6 d6Var, MessageObject messageObject, int i10) {
+        this.b = tv0Var;
+        this.c = d6Var;
+        this.d = messageObject;
+        this.e = i10;
     }
 }

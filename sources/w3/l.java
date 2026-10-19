@@ -26,7 +26,7 @@ import org.telegram.messenger.MediaController;
 import sg.y;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class l implements c3.o {
     public long A;
@@ -194,7 +194,7 @@ public final class l implements c3.o {
                                 t0 t0Var = bVar == null ? null : new t0(bVar);
                                 v vVar = new v();
                                 vVar.k = t0Var;
-                                i2.d.u(vVar, j02);
+                                i2.e.u(vVar, j02);
                                 this.B.H();
                                 this.B.g0(new c3.t(-9223372036854775807L));
                             }
@@ -1021,7 +1021,7 @@ public final class l implements c3.o {
                                 a2.q = v0.n(str);
                                 if (Objects.equals(str3, "audio/mpeg")) {
                                     kVar2 = kVar;
-                                    i2.d.u(a2, kVar2.c);
+                                    i2.e.u(a2, kVar2.c);
                                 } else {
                                     kVar2 = kVar;
                                     kVar2.f = new w(a2);

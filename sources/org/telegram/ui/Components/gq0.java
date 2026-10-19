@@ -1,32 +1,68 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
-/* loaded from: classes3.dex */
-public final class gq0 extends g.o {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ dr0 d;
+import android.content.Context;
+import android.graphics.Canvas;
+import org.telegram.messenger.AndroidUtilities;
 
-    public /* synthetic */ gq0(dr0 dr0Var, int i10) {
-        this.c = i10;
-        this.d = dr0Var;
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* loaded from: classes3.dex */
+public final class gq0 extends im0 {
+    public final /* synthetic */ int V2;
+    public final /* synthetic */ er0 W2;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ gq0(er0 er0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
+        super(context, d6Var);
+        this.V2 = i10;
+        this.W2 = er0Var;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        switch (this.c) {
+    @Override // org.telegram.ui.Components.im0
+    public final boolean E0(float f7) {
+        switch (this.V2) {
             case 0:
-                if (i10 == 0) {
-                    return this.d.H.J;
+                er0 er0Var = this.W2;
+                if (f7 >= AndroidUtilities.dp((!er0Var.i0 || er0Var.p0[1] == null) ? 58.0f : 111.0f) + er0Var.H0.b) {
                 }
-                return 1;
-            case 1:
-                zq0 zq0Var = this.d.M;
-                return (i10 == zq0Var.w || i10 == zq0Var.x || i10 == zq0Var.y || i10 == zq0Var.F || zq0Var.j(i10) == 0) ? 4 : 1;
+                break;
             default:
-                if (i10 == 0) {
-                    return this.d.I.J;
+                er0 er0Var2 = this.W2;
+                if (f7 >= AndroidUtilities.dp((!er0Var2.i0 || er0Var2.p0[1] == null) ? 58.0f : 111.0f) + er0Var2.H0.b) {
                 }
-                return 1;
+                break;
+        }
+        return true;
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void draw(Canvas canvas) {
+        switch (this.V2) {
+            case 0:
+                er0 er0Var = this.W2;
+                im0 im0Var = er0Var.F;
+                if (im0Var.getVisibility() != 8) {
+                    canvas.save();
+                    canvas.clipRect(0, AndroidUtilities.dp((!er0Var.i0 || er0Var.p0[1] == null) ? 58.0f : 111.0f) + er0Var.q0, getWidth(), getHeight());
+                }
+                super.draw(canvas);
+                if (im0Var.getVisibility() != 8) {
+                    canvas.restore();
+                    break;
+                }
+                break;
+            default:
+                er0 er0Var2 = this.W2;
+                im0 im0Var2 = er0Var2.F;
+                if (im0Var2.getVisibility() != 8) {
+                    canvas.save();
+                    canvas.clipRect(0, AndroidUtilities.dp((!er0Var2.i0 || er0Var2.p0[1] == null) ? 58.0f : 111.0f) + er0Var2.q0, getWidth(), getHeight());
+                }
+                super.draw(canvas);
+                if (im0Var2.getVisibility() != 8) {
+                    canvas.restore();
+                    break;
+                }
+                break;
         }
     }
 }

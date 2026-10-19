@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import android.widget.PopupWindow;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class k2 extends e2 implements f2 {
     public static final Method T;
@@ -24,10 +24,10 @@ public final class k2 extends e2 implements f2 {
     }
 
     @Override // m.f2
-    public final void e(l.k kVar, MenuItem menuItem) {
+    public final void d(l.k kVar, MenuItem menuItem) {
         ki.t1 t1Var = this.S;
         if (t1Var != null) {
-            t1Var.e(kVar, menuItem);
+            t1Var.d(kVar, menuItem);
         }
     }
 

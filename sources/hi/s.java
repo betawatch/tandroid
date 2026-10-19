@@ -7,9 +7,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g61;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -44,16 +44,16 @@ public final /* synthetic */ class s implements Utilities.Callback2 {
             default:
                 ArrayList arrayList = (ArrayList) obj;
                 s0 s0Var = k0Var.M;
-                arrayList.add(f61.D(99, (int) (AndroidUtilities.displaySize.y * 0.35f)));
-                arrayList.add(f61.D(0, AndroidUtilities.dp(48.0f)));
+                arrayList.add(g61.D(99, (int) (AndroidUtilities.displaySize.y * 0.35f)));
+                arrayList.add(g61.D(0, AndroidUtilities.dp(48.0f)));
                 int i12 = 2;
                 if (ChatObject.canBlockUsers(k0Var.f)) {
-                    arrayList.add(f61.A(1, AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.CommunityPendingRequestsInfo), new v(k0Var, i12)), true)));
+                    arrayList.add(g61.A(1, AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.CommunityPendingRequestsInfo), new v(k0Var, i12)), true)));
                 } else {
-                    arrayList.add(f61.A(1, LocaleController.getString(R.string.CommunityPendingRequestsInfoNoChange)));
+                    arrayList.add(g61.A(1, LocaleController.getString(R.string.CommunityPendingRequestsInfoNoChange)));
                 }
-                arrayList.add(f61.j(2, k0Var.L));
-                arrayList.add(f61.s(3, LocaleController.formatPluralString("CommunityPendingRequestsSuggestedHeader", s0Var.l, new Object[0])));
+                arrayList.add(g61.j(2, k0Var.L));
+                arrayList.add(g61.s(3, LocaleController.formatPluralString("CommunityPendingRequestsSuggestedHeader", s0Var.l, new Object[0])));
                 s0Var.c(arrayList);
                 break;
         }

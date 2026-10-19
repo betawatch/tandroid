@@ -1,12 +1,12 @@
 package mi;
 
-import c5.b0;
+import c5.c0;
 import com.google.android.gms.internal.play_billing.s0;
 import java.util.Arrays;
 import java.util.HashMap;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class s {
     public static final HashMap b;
@@ -71,8 +71,8 @@ public final class s {
         int[] iArr3 = new int[length];
         int[] iArr4 = new int[length];
         boolean z10 = false;
-        b0 b0Var = new b0(7, z10, z10);
-        b0Var.c = new int[48];
+        c0 c0Var = new c0(7, z10, z10);
+        c0Var.c = new int[48];
         int i10 = -1;
         int i11 = 0;
         int i12 = 0;
@@ -85,12 +85,12 @@ public final class s {
                 if (i16 > i14) {
                     break;
                 }
-                b0Var.c(i12, i16, iArr4[i10]);
+                c0Var.c(i12, i16, iArr4[i10]);
                 i12 = iArr3[i10];
                 i10--;
             }
             if (i10 >= 0) {
-                b0Var.c(i12, i14, iArr4[i10]);
+                c0Var.c(i12, i14, iArr4[i10]);
             }
             int i17 = iArr[i13 + 4];
             int i18 = i17 < 0 ? 0 : iArr2[i17];
@@ -114,10 +114,10 @@ public final class s {
             i12 = i14;
         }
         while (i10 >= 0) {
-            b0Var.c(i12, iArr3[i10], iArr4[i10]);
+            c0Var.c(i12, iArr3[i10], iArr4[i10]);
             i12 = iArr3[i10];
             i10--;
         }
-        return Arrays.copyOf((int[]) b0Var.c, b0Var.b);
+        return Arrays.copyOf((int[]) c0Var.c, c0Var.b);
     }
 }

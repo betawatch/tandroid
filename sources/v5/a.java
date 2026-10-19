@@ -1,10 +1,11 @@
 package v5;
 
 import android.util.SparseArray;
+import i2.e;
 import i5.d;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final SparseArray a = new SparseArray();
@@ -34,6 +35,6 @@ public abstract class a {
         if (dVar != null) {
             return dVar;
         }
-        throw new IllegalArgumentException(i2.d.j(i10, "Unknown Priority for value "));
+        throw new IllegalArgumentException(e.j(i10, "Unknown Priority for value "));
     }
 }

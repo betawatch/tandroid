@@ -5,27 +5,27 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class f5 extends e61 {
+public final class f5 extends f61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        e61.setup(new f5());
+        f61.setup(new f5());
     }
 
-    @Override // org.telegram.ui.Components.e61
-    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
+    @Override // org.telegram.ui.Components.f61
+    public final void bindView(View view, g61 g61Var, boolean z10, t61 t61Var, b71 b71Var) {
         TL_iv.RichText richText;
         g5 g5Var = (g5) view;
-        a aVar = (a) f61Var.G;
-        e5 e5Var = (e5) f61Var.H;
+        a aVar = (a) g61Var.G;
+        e5 e5Var = (e5) g61Var.H;
         h1 h1Var = g5Var.r;
         g5Var.a = aVar;
         g5Var.s = e5Var;
@@ -43,12 +43,12 @@ public final class f5 extends e61 {
         h1Var.invalidateEffects();
     }
 
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     public final View createView(Context context, im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
         return new g5(context, d6Var);
     }
 
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     public final boolean isClickable() {
         return false;
     }

@@ -2,104 +2,76 @@ package k2;
 
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class c1 extends c2.o {
-    public int i;
-    public int j;
-    public boolean k;
-    public int l;
-    public byte[] m;
-    public int n;
-    public long o;
+    public static final int i = Float.floatToIntBits(Float.NaN);
 
-    @Override // c2.o, c2.n
-    public final ByteBuffer a() {
-        int i10;
-        if (super.b() && (i10 = this.n) > 0) {
-            l(i10).put(this.m, 0, this.n).flip();
-            this.n = 0;
+    public static void m(int i10, ByteBuffer byteBuffer) {
+        int floatToIntBits = Float.floatToIntBits((float) (i10 * 4.656612875245797E-10d));
+        if (floatToIntBits == i) {
+            floatToIntBits = Float.floatToIntBits(0.0f);
         }
-        return super.a();
-    }
-
-    @Override // c2.o, c2.n
-    public final boolean b() {
-        return super.b() && this.n == 0;
+        byteBuffer.putInt(floatToIntBits);
     }
 
     @Override // c2.n
     public final void c(ByteBuffer byteBuffer) {
+        ByteBuffer l4;
         int position = byteBuffer.position();
         int limit = byteBuffer.limit();
         int i10 = limit - position;
-        if (i10 == 0) {
-            return;
+        int i11 = this.b.c;
+        if (i11 == 2) {
+            l4 = l(i10 * 2);
+            while (position < limit) {
+                m(((byteBuffer.get(position) & 255) << 16) | ((byteBuffer.get(position + 1) & 255) << 24), l4);
+                position += 2;
+            }
+        } else if (i11 == 1342177280) {
+            l4 = l((i10 / 3) * 4);
+            while (position < limit) {
+                m(((byteBuffer.get(position + 2) & 255) << 8) | ((byteBuffer.get(position + 1) & 255) << 16) | ((byteBuffer.get(position) & 255) << 24), l4);
+                position += 3;
+            }
+        } else if (i11 == 1610612736) {
+            l4 = l(i10);
+            while (position < limit) {
+                m((byteBuffer.get(position + 3) & 255) | ((byteBuffer.get(position + 2) & 255) << 8) | ((byteBuffer.get(position + 1) & 255) << 16) | ((byteBuffer.get(position) & 255) << 24), l4);
+                position += 4;
+            }
+        } else if (i11 == 1879048192) {
+            l4 = l(i10 / 2);
+            while (position < limit) {
+                l4.putFloat((float) byteBuffer.getDouble(position));
+                position += 8;
+            }
+        } else if (i11 == 21) {
+            l4 = l((i10 / 3) * 4);
+            while (position < limit) {
+                m(((byteBuffer.get(position) & 255) << 8) | ((byteBuffer.get(position + 1) & 255) << 16) | ((byteBuffer.get(position + 2) & 255) << 24), l4);
+                position += 3;
+            }
+        } else {
+            if (i11 != 22) {
+                throw new IllegalStateException();
+            }
+            l4 = l(i10);
+            while (position < limit) {
+                m((byteBuffer.get(position) & 255) | ((byteBuffer.get(position + 1) & 255) << 8) | ((byteBuffer.get(position + 2) & 255) << 16) | ((byteBuffer.get(position + 3) & 255) << 24), l4);
+                position += 4;
+            }
         }
-        int min = Math.min(i10, this.l);
-        this.o += min / this.b.d;
-        this.l -= min;
-        byteBuffer.position(position + min);
-        if (this.l > 0) {
-            return;
-        }
-        int i11 = i10 - min;
-        int length = (this.n + i11) - this.m.length;
-        ByteBuffer l4 = l(length);
-        int i12 = e2.m0.i(length, 0, this.n);
-        l4.put(this.m, 0, i12);
-        int i13 = e2.m0.i(length - i12, 0, i11);
-        byteBuffer.limit(byteBuffer.position() + i13);
-        l4.put(byteBuffer);
-        byteBuffer.limit(limit);
-        int i14 = i11 - i13;
-        int i15 = this.n - i12;
-        this.n = i15;
-        byte[] bArr = this.m;
-        System.arraycopy(bArr, i12, bArr, 0, i15);
-        byteBuffer.get(this.m, this.n, i14);
-        this.n += i14;
+        byteBuffer.position(byteBuffer.limit());
         l4.flip();
-    }
-
-    @Override // c2.o, c2.n
-    public final long g(long j10) {
-        return Math.max(0L, j10 - e2.m0.Y(this.b.a, this.j + this.i));
     }
 
     @Override // c2.o
     public final c2.k h(c2.k kVar) {
-        if (!e2.m0.M(kVar.c)) {
-            throw new c2.m(kVar);
+        int i10 = kVar.c;
+        if (e2.m0.L(i10) || i10 == 2) {
+            return i10 != 4 ? new c2.k(kVar.a, kVar.b, 4) : c2.k.e;
         }
-        this.k = true;
-        return (this.i == 0 && this.j == 0) ? c2.k.e : kVar;
-    }
-
-    @Override // c2.o
-    public final void i() {
-        if (this.k) {
-            this.k = false;
-            int i10 = this.j;
-            int i11 = this.b.d;
-            this.m = new byte[i10 * i11];
-            this.l = this.i * i11;
-        }
-        this.n = 0;
-    }
-
-    @Override // c2.o
-    public final void j() {
-        if (this.k) {
-            if (this.n > 0) {
-                this.o += r0 / this.b.d;
-            }
-            this.n = 0;
-        }
-    }
-
-    @Override // c2.o
-    public final void k() {
-        this.m = e2.m0.b;
+        throw new c2.m(kVar);
     }
 }

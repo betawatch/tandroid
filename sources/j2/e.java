@@ -13,7 +13,7 @@ import k2.t0;
 import k2.u0;
 import k2.x;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements o {
     public final /* synthetic */ int a;
@@ -108,7 +108,7 @@ public final /* synthetic */ class e implements o {
                 p0 p0Var = (p0) obj;
                 t0 t0Var = p0Var.b;
                 if (p0Var.equals(t0Var.j) && (xVar = t0Var.n) != null && t0Var.O) {
-                    xVar.T();
+                    xVar.U();
                     break;
                 }
                 break;
@@ -126,7 +126,7 @@ public final /* synthetic */ class e implements o {
                     } else {
                         j10 = -9223372036854775807L;
                     }
-                    t0Var2.n.s(((k2.o) t0Var2.p.e).f, m0.h0(j10), SystemClock.elapsedRealtime() - t0Var2.W);
+                    t0Var2.n.t(((k2.o) t0Var2.p.e).f, m0.h0(j10), SystemClock.elapsedRealtime() - t0Var2.W);
                     break;
                 }
                 break;
@@ -137,7 +137,7 @@ public final /* synthetic */ class e implements o {
                 x xVar2 = p0Var3.b.n;
                 if (xVar2 != null) {
                     int i11 = p0Var3.a.a;
-                    xVar2.S(new u0());
+                    xVar2.T(new u0());
                     break;
                 }
                 break;
@@ -160,7 +160,7 @@ public final /* synthetic */ class e implements o {
         this.a = 13;
     }
 
-    public /* synthetic */ e(a aVar, w wVar, i2.f fVar, int i10) {
+    public /* synthetic */ e(a aVar, w wVar, i2.g gVar, int i10) {
         this.a = i10;
     }
 

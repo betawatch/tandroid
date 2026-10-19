@@ -1,14 +1,14 @@
 package ah;
 
-import ai.u6;
+import ai.v6;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.ui.Components.ed;
 import org.telegram.ui.Components.gp0;
 import org.telegram.ui.Components.oq;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class f1 implements Drawable.Callback {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final class f1 implements Drawable.Callback {
                 }
                 break;
             case 1:
-                ((u6) this.b).h.invalidate();
+                ((v6) this.b).h.invalidate();
                 break;
             case 2:
                 break;
@@ -46,7 +46,7 @@ public final class f1 implements Drawable.Callback {
                 ((ed) this.b).invalidateSelf();
                 break;
             case 7:
-                ((x31) this.b).invalidateSelf();
+                ((y31) this.b).invalidateSelf();
                 break;
             case 8:
                 ((x4.d) this.b).invalidateSelf();

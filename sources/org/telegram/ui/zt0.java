@@ -1,85 +1,269 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import androidx.core.widget.NestedScrollView;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class zt0 extends org.telegram.ui.Components.n11 {
-    public boolean a;
-    public float b;
-    public NestedScrollView c;
-    public FrameLayout d;
-
-    public zt0(Context context) {
-        super(context);
-        this.a = false;
-        this.b = 1.0f;
+public class zt0 implements hu0 {
+    @Override // org.telegram.ui.hu0
+    public /* synthetic */ boolean A() {
+        return false;
     }
 
-    public final void b(int i10, boolean z10) {
-        super.setVisibility(i10);
-        if (this.a && z10) {
-            this.c.setVisibility(i10);
-        }
+    @Override // org.telegram.ui.hu0
+    public CharSequence C(int i10) {
+        return null;
     }
 
-    @Override // android.view.View
-    public float getAlpha() {
-        return this.a ? this.b : super.getAlpha();
+    @Override // org.telegram.ui.hu0
+    public ju0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        return null;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        if (this.d == null || getParent() != this.d) {
-            return;
-        }
-        this.a = true;
-        this.c.setVisibility(getVisibility());
-        this.c.setAlpha(this.b);
-        super.setAlpha(1.0f);
+    @Override // org.telegram.ui.hu0
+    public int H() {
+        return 0;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        if (this.a) {
-            this.a = false;
-            this.c.setVisibility(8);
-            super.setAlpha(this.b);
-        }
+    @Override // org.telegram.ui.hu0
+    public /* synthetic */ boolean I() {
+        return true;
     }
 
-    @Override // android.view.View
-    public void setAlpha(float f7) {
-        this.b = f7;
-        if (this.a) {
-            this.c.setAlpha(f7);
-        } else {
-            super.setAlpha(f7);
-        }
+    @Override // org.telegram.ui.hu0
+    public boolean K() {
+        return false;
     }
 
-    public void setContainer(FrameLayout frameLayout) {
-        this.d = frameLayout;
+    @Override // org.telegram.ui.hu0
+    public /* synthetic */ boolean L() {
+        return false;
     }
 
-    public void setScrollView(NestedScrollView nestedScrollView) {
-        this.c = nestedScrollView;
+    @Override // org.telegram.ui.hu0
+    public /* synthetic */ boolean N() {
+        return true;
     }
 
-    @Override // android.view.View
-    public void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        if (this.a) {
-            this.c.invalidate();
-        }
+    @Override // org.telegram.ui.hu0
+    public /* synthetic */ boolean O() {
+        return false;
     }
 
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        b(i10, true);
+    @Override // org.telegram.ui.hu0
+    public boolean P() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public /* synthetic */ boolean Q() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public int R(Object obj) {
+        return -1;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public int S(int i10) {
+        return -1;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public boolean T() {
+        return !(this instanceof ll);
+    }
+
+    @Override // org.telegram.ui.hu0
+    public boolean U() {
+        return !(this instanceof nl);
+    }
+
+    @Override // org.telegram.ui.hu0
+    public MessageObject V() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public boolean Z() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public /* synthetic */ long a() {
+        return 0L;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public /* synthetic */ boolean b() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public String b0() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public ArrayList c() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public CharSequence c0(int i10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public boolean g() {
+        return !(this instanceof ll);
+    }
+
+    @Override // org.telegram.ui.hu0
+    public /* synthetic */ boolean h() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public ImageReceiver.BitmapHolder j(int i10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public int k(int i10, VideoEditedInfo videoEditedInfo) {
+        return -1;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public /* synthetic */ boolean l() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public boolean p() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public /* synthetic */ boolean q() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public boolean r() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public /* synthetic */ boolean t() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public boolean u() {
+        return !(this instanceof org.telegram.ui.Components.im);
+    }
+
+    @Override // org.telegram.ui.hu0
+    public HashMap v() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public /* synthetic */ boolean w() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public boolean x(int i10) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public int y() {
+        return -1;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public boolean z() {
+        return !(this instanceof org.telegram.ui.Components.vh);
+    }
+
+    @Override // org.telegram.ui.hu0
+    public void B(int i10) {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public void D() {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public /* synthetic */ void F(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public void G() {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public /* synthetic */ void J() {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public void M(VideoEditedInfo videoEditedInfo) {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public /* synthetic */ void W() {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public void X(int i10) {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public /* synthetic */ void Y(int i10) {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public void a0(int i10) {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public void d() {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public void e(CharSequence charSequence) {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public /* synthetic */ void i() {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public /* synthetic */ void m() {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public void n() {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public /* synthetic */ void s() {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public void f(String str, String str2, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
     }
 }

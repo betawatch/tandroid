@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class x1 extends ViewGroup {
     public int E;
@@ -126,7 +126,7 @@ public abstract class x1 extends ViewGroup {
         int i12 = this.c;
         if (this.d == 1 && (i10 = this.e & 112) != 48) {
             if (i10 == 16) {
-                i12 = i2.d.C(((getBottom() - getTop()) - getPaddingTop()) - getPaddingBottom(), this.f, 2, i12);
+                i12 = i2.e.C(((getBottom() - getTop()) - getPaddingTop()) - getPaddingBottom(), this.f, 2, i12);
             } else if (i10 == 80) {
                 i12 = ((getBottom() - getTop()) - getPaddingBottom()) - this.f;
             }
@@ -287,7 +287,7 @@ public abstract class x1 extends ViewGroup {
             int i25 = this.e;
             int i26 = i25 & 112;
             int i27 = 8388615 & i25;
-            int paddingTop = i26 != 16 ? i26 != 80 ? getPaddingTop() : ((getPaddingTop() + i13) - i11) - this.f : i2.d.C(i13 - i11, this.f, 2, getPaddingTop());
+            int paddingTop = i26 != 16 ? i26 != 80 ? getPaddingTop() : ((getPaddingTop() + i13) - i11) - this.f : i2.e.C(i13 - i11, this.f, 2, getPaddingTop());
             int i28 = 0;
             while (i28 < virtualChildCount) {
                 View childAt = getChildAt(i28);
@@ -301,7 +301,7 @@ public abstract class x1 extends ViewGroup {
                     }
                     WeakHashMap weakHashMap = r0.i0.a;
                     int absoluteGravity = Gravity.getAbsoluteGravity(i29, getLayoutDirection()) & 7;
-                    int C3 = absoluteGravity != 1 ? absoluteGravity != 5 ? ((LinearLayout.LayoutParams) w1Var).leftMargin + paddingLeft : (paddingRight - measuredWidth) - ((LinearLayout.LayoutParams) w1Var).rightMargin : (i2.d.C(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) w1Var).leftMargin) - ((LinearLayout.LayoutParams) w1Var).rightMargin;
+                    int C3 = absoluteGravity != 1 ? absoluteGravity != 5 ? ((LinearLayout.LayoutParams) w1Var).leftMargin + paddingLeft : (paddingRight - measuredWidth) - ((LinearLayout.LayoutParams) w1Var).rightMargin : (i2.e.C(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) w1Var).leftMargin) - ((LinearLayout.LayoutParams) w1Var).rightMargin;
                     if (h(i28)) {
                         paddingTop += this.x;
                     }
@@ -333,7 +333,7 @@ public abstract class x1 extends ViewGroup {
             i14 = 1;
         } else {
             i14 = 1;
-            C = i2.d.C(i12 - i10, this.f, 2, getPaddingLeft());
+            C = i2.e.C(i12 - i10, this.f, 2, getPaddingLeft());
         }
         if (a2) {
             i16 = virtualChildCount2 - 1;
@@ -366,7 +366,7 @@ public abstract class x1 extends ViewGroup {
                             i21 = i20 & 112;
                             i22 = i35;
                             if (i21 != 16) {
-                                C2 = (i2.d.C(paddingBottom2, measuredHeight2, 2, paddingTop2) + ((LinearLayout.LayoutParams) w1Var2).topMargin) - ((LinearLayout.LayoutParams) w1Var2).bottomMargin;
+                                C2 = (i2.e.C(paddingBottom2, measuredHeight2, 2, paddingTop2) + ((LinearLayout.LayoutParams) w1Var2).topMargin) - ((LinearLayout.LayoutParams) w1Var2).bottomMargin;
                             } else if (i21 == 48) {
                                 C2 = ((LinearLayout.LayoutParams) w1Var2).topMargin + paddingTop2;
                                 if (i19 != -1) {

@@ -3,9 +3,9 @@ package gi;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.y10;
+import org.telegram.ui.w10;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class f extends sg.x1 {
     public final /* synthetic */ int n;
@@ -38,19 +38,19 @@ public final class f extends sg.x1 {
                 w1Var2.c();
                 break;
             case 2:
-                y10 y10Var = new y10(50);
-                this.a = y10Var;
-                y10Var.O = 100;
-                y10Var.M = false;
-                y10Var.G = false;
-                y10Var.K = true;
-                y10Var.H = true;
-                y10Var.J = false;
-                y10Var.r = 4;
-                y10Var.w = 0.98f;
-                y10Var.v = 0.98f;
-                y10Var.u = 0.98f;
-                y10Var.c();
+                w10 w10Var = new w10(50);
+                this.a = w10Var;
+                w10Var.O = 100;
+                w10Var.M = false;
+                w10Var.G = false;
+                w10Var.K = true;
+                w10Var.H = true;
+                w10Var.J = false;
+                w10Var.r = 4;
+                w10Var.w = 0.98f;
+                w10Var.v = 0.98f;
+                w10Var.u = 0.98f;
+                w10Var.c();
                 break;
             case 3:
                 sg.w1 w1Var3 = this.a;

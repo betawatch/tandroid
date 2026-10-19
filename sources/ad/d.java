@@ -22,13 +22,13 @@ import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.yo;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.b11;
-import org.telegram.ui.ze1;
+import org.telegram.ui.xe1;
+import org.telegram.ui.z01;
 import v7.u6;
 import v7.z8;
 import z7.qa;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class d implements p, q, OnFailureListener, l2.i, yo {
     public final /* synthetic */ int a;
@@ -224,12 +224,12 @@ public final class d implements p, q, OnFailureListener, l2.i, yo {
     public void m() {
         Bundle bundle = new Bundle();
         bundle.putLong("dialog_id", this.b);
-        ze1 ze1Var = new ze1(bundle);
-        ze1Var.d = new ArrayList();
-        ze1Var.e = new HashSet();
+        xe1 xe1Var = new xe1(bundle);
+        xe1Var.d = new ArrayList();
+        xe1Var.e = new HashSet();
         ProfileActivity profileActivity = (ProfileActivity) this.c;
-        ze1Var.e = profileActivity.j5;
-        profileActivity.presentFragment(ze1Var);
+        xe1Var.e = profileActivity.j5;
+        profileActivity.presentFragment(xe1Var);
     }
 
     @Override // org.telegram.ui.Components.yo
@@ -244,10 +244,16 @@ public final class d implements p, q, OnFailureListener, l2.i, yo {
         profileActivity.g5(true);
     }
 
-    @Override // l2.i
-    public long o(long j10, long j11) {
-        c3.j jVar = (c3.j) this.c;
-        return m0.f(jVar.e, j10 + this.b, true);
+    @Override // org.telegram.ui.Components.yo
+    public void o() {
+        ProfileActivity profileActivity = (ProfileActivity) this.c;
+        long j10 = this.b;
+        if (j10 != 0) {
+            Bundle bundle = new Bundle();
+            bundle.putLong("dialog_id", j10);
+            bundle.putLong("topic_id", profileActivity.h1);
+            profileActivity.presentFragment(new z01(bundle, profileActivity.A0));
+        }
     }
 
     @Override // com.google.android.gms.tasks.OnFailureListener
@@ -273,16 +279,10 @@ public final class d implements p, q, OnFailureListener, l2.i, yo {
         }
     }
 
-    @Override // org.telegram.ui.Components.yo
-    public void p() {
-        ProfileActivity profileActivity = (ProfileActivity) this.c;
-        long j10 = this.b;
-        if (j10 != 0) {
-            Bundle bundle = new Bundle();
-            bundle.putLong("dialog_id", j10);
-            bundle.putLong("topic_id", profileActivity.h1);
-            profileActivity.presentFragment(new b11(bundle, profileActivity.A0));
-        }
+    @Override // l2.i
+    public long p(long j10, long j11) {
+        c3.j jVar = (c3.j) this.c;
+        return m0.f(jVar.e, j10 + this.b, true);
     }
 
     @Override // c3.p
@@ -358,13 +358,8 @@ public final class d implements p, q, OnFailureListener, l2.i, yo {
         return ((c3.j) this.c).a;
     }
 
-    @Override // l2.i
-    public long x(long j10, long j11) {
-        return ((c3.j) this.c).a;
-    }
-
     @Override // org.telegram.ui.Components.yo
-    public void y(int i10) {
+    public void x(int i10) {
         ProfileActivity profileActivity = (ProfileActivity) this.c;
         if (i10 == 0) {
             if (profileActivity.getMessagesController().isDialogMuted(this.b, profileActivity.h1)) {
@@ -382,6 +377,11 @@ public final class d implements p, q, OnFailureListener, l2.i, yo {
         }
         profileActivity.a5();
         profileActivity.g5(true);
+    }
+
+    @Override // l2.i
+    public long y(long j10, long j11) {
+        return ((c3.j) this.c).a;
     }
 
     public void z(int i10) {

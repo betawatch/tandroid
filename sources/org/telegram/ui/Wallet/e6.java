@@ -11,16 +11,16 @@ import android.view.animation.PathInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.ti;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class e6 {
     public final ViewGroup a;
     public final View b;
     public final ti c;
     public final m6 d;
-    public final sn e;
+    public final qn e;
     public final TL_wallet.walletTransaction f;
     public final Runnable g;
     public final b6 h;
@@ -44,7 +44,7 @@ public final class e6 {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r1v3, types: [java.lang.Runnable, org.telegram.ui.Wallet.a6] */
     /* JADX WARN: Type inference failed for: r7v0, types: [org.telegram.ui.Wallet.a6] */
-    public e6(ViewGroup viewGroup, View view, m6 m6Var, sn snVar, TL_wallet.walletTransaction wallettransaction, Runnable runnable, ti tiVar) {
+    public e6(ViewGroup viewGroup, View view, m6 m6Var, qn qnVar, TL_wallet.walletTransaction wallettransaction, Runnable runnable, ti tiVar) {
         AnimatorSet animatorSet = new AnimatorSet();
         this.m = animatorSet;
         this.o = new RectF();
@@ -78,16 +78,16 @@ public final class e6 {
                                 org.telegram.ui.Cells.w0 w0Var = e6Var.p;
                                 if (w0Var != u82) {
                                     if (w0Var != null) {
-                                        w0Var.I0.k(false);
+                                        w0Var.I0.i(false);
                                     }
                                     e6Var.p = u82;
                                 }
-                                l3 l3Var = e6Var.p.I0.m;
-                                if (e6Var.t && c6Var.n && l3Var != null && l3Var.n && l3Var.getWidth() > 0 && !e6Var.p.isLayoutRequested()) {
-                                    rectF.set(e6Var.c(l3Var));
+                                m3 m3Var = e6Var.p.I0.m;
+                                if (e6Var.t && c6Var.n && m3Var != null && m3Var.n && m3Var.getWidth() > 0 && !e6Var.p.isLayoutRequested()) {
+                                    rectF.set(e6Var.c(m3Var));
                                     if (rectF.centerY() > 0.0f && rectF.centerY() < viewGroup2.getHeight() && f7 > 0.01f) {
                                         e6Var.u = true;
-                                        e6Var.p.I0.k(true);
+                                        e6Var.p.I0.i(true);
                                         m6Var3.f(m6Var2);
                                         m6Var3.setAlpha(f7);
                                         m6Var2.setAlpha(0.0f);
@@ -127,7 +127,7 @@ public final class e6 {
         this.b = view;
         this.d = m6Var;
         this.l = m6Var.getAlpha();
-        this.e = snVar;
+        this.e = qnVar;
         this.f = wallettransaction;
         this.g = runnable;
         RectF a2 = v9.a(viewGroup, m6Var);
@@ -173,16 +173,16 @@ public final class e6 {
                                 org.telegram.ui.Cells.w0 w0Var = e6Var.p;
                                 if (w0Var != u82) {
                                     if (w0Var != null) {
-                                        w0Var.I0.k(false);
+                                        w0Var.I0.i(false);
                                     }
                                     e6Var.p = u82;
                                 }
-                                l3 l3Var = e6Var.p.I0.m;
-                                if (e6Var.t && c6Var2.n && l3Var != null && l3Var.n && l3Var.getWidth() > 0 && !e6Var.p.isLayoutRequested()) {
-                                    rectF.set(e6Var.c(l3Var));
+                                m3 m3Var = e6Var.p.I0.m;
+                                if (e6Var.t && c6Var2.n && m3Var != null && m3Var.n && m3Var.getWidth() > 0 && !e6Var.p.isLayoutRequested()) {
+                                    rectF.set(e6Var.c(m3Var));
                                     if (rectF.centerY() > 0.0f && rectF.centerY() < viewGroup2.getHeight() && f7 > 0.01f) {
                                         e6Var.u = true;
-                                        e6Var.p.I0.k(true);
+                                        e6Var.p.I0.i(true);
                                         m6Var3.f(m6Var22);
                                         m6Var3.setAlpha(f7);
                                         m6Var22.setAlpha(0.0f);
@@ -251,16 +251,16 @@ public final class e6 {
                                 org.telegram.ui.Cells.w0 w0Var = e6Var.p;
                                 if (w0Var != u82) {
                                     if (w0Var != null) {
-                                        w0Var.I0.k(false);
+                                        w0Var.I0.i(false);
                                     }
                                     e6Var.p = u82;
                                 }
-                                l3 l3Var = e6Var.p.I0.m;
-                                if (e6Var.t && c6Var2.n && l3Var != null && l3Var.n && l3Var.getWidth() > 0 && !e6Var.p.isLayoutRequested()) {
-                                    rectF.set(e6Var.c(l3Var));
+                                m3 m3Var = e6Var.p.I0.m;
+                                if (e6Var.t && c6Var2.n && m3Var != null && m3Var.n && m3Var.getWidth() > 0 && !e6Var.p.isLayoutRequested()) {
+                                    rectF.set(e6Var.c(m3Var));
                                     if (rectF.centerY() > 0.0f && rectF.centerY() < viewGroup2.getHeight() && f7 > 0.01f) {
                                         e6Var.u = true;
-                                        e6Var.p.I0.k(true);
+                                        e6Var.p.I0.i(true);
                                         m6Var3.f(m6Var22);
                                         m6Var3.setAlpha(f7);
                                         m6Var22.setAlpha(0.0f);
@@ -297,7 +297,7 @@ public final class e6 {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.setDuration(600L);
         ofFloat.setInterpolator(new LinearInterpolator());
-        ofFloat.addUpdateListener(new v2(this, 4));
+        ofFloat.addUpdateListener(new b3(this, 3));
         animatorSet.playTogether(ofFloat);
         animatorSet.addListener(new d6(this, tiVar, m6Var));
         b6Var.post(r12);
@@ -315,23 +315,23 @@ public final class e6 {
         m6Var.l(null);
         org.telegram.ui.Cells.w0 w0Var = this.p;
         if (w0Var != null) {
-            w0Var.I0.k(false);
+            w0Var.I0.i(false);
             if (z10 && this.r >= 1.0f) {
                 RectF rectF = this.o;
                 if (!rectF.isEmpty() && this.p.isAttachedToWindow() && m0.G(this.p.getMessageObject(), this.f)) {
                     float centerY = (((rectF.centerY() - (Math.min(this.n.centerY(), rectF.centerY()) - AndroidUtilities.dp(150.0f))) * 2.0f) / 0.6f) / AndroidUtilities.density;
-                    m3 m3Var = this.p.I0;
-                    m3Var.n();
+                    n3 n3Var = this.p.I0;
+                    n3Var.l();
                     o1.k kVar = new o1.k(new o1.j(0.0f));
-                    m3Var.b0 = kVar;
+                    n3Var.b0 = kVar;
                     o1.l lVar = new o1.l(0.0f);
                     lVar.a(0.65f);
                     lVar.b(200.0f);
                     kVar.u = lVar;
-                    m3Var.b0.e(0.001f);
-                    m3Var.b0.a = Math.max(20.0f, Math.min(36.0f, centerY * 0.04f));
-                    m3Var.b0.b(new g3(m3Var, 1));
-                    m3Var.b0.h();
+                    n3Var.b0.e(0.001f);
+                    n3Var.b0.a = Math.max(20.0f, Math.min(36.0f, centerY * 0.04f));
+                    n3Var.b0.b(new h3(n3Var, 1));
+                    n3Var.b0.h();
                 }
             }
         }
@@ -350,9 +350,9 @@ public final class e6 {
         }
         ViewGroup viewGroup = this.a;
         if (tiVar != null && z10 && this.j.d()) {
-            sn snVar = this.e;
-            if (snVar.getParentLayout() != null) {
-                ViewGroup view = snVar.getParentLayout().getView();
+            qn qnVar = this.e;
+            if (qnVar.getParentLayout() != null) {
+                ViewGroup view = qnVar.getParentLayout().getView();
                 if (view.isAttachedToWindow()) {
                     viewGroup.getLocationOnScreen(new int[2]);
                     view.getLocationOnScreen(new int[2]);
@@ -365,7 +365,7 @@ public final class e6 {
             }
         }
         this.g.run();
-        AndroidUtilities.runOnUIThread(new v3(10, this, viewGroup), 650L);
+        AndroidUtilities.runOnUIThread(new z3(9, this, viewGroup), 650L);
     }
 
     public final void b(float f7, float f10, float f11) {
@@ -386,14 +386,14 @@ public final class e6 {
         c6Var.setScaleY(f13);
     }
 
-    public final RectF c(l3 l3Var) {
+    public final RectF c(m3 m3Var) {
         ti tiVar = this.c;
         ViewGroup viewGroup = this.a;
         if (tiVar == null) {
-            return v9.a(viewGroup, l3Var);
+            return v9.a(viewGroup, m3Var);
         }
-        ViewGroup viewGroup2 = (ViewGroup) l3Var.getRootView();
-        RectF a2 = v9.a(viewGroup2, l3Var);
+        ViewGroup viewGroup2 = (ViewGroup) m3Var.getRootView();
+        RectF a2 = v9.a(viewGroup2, m3Var);
         int[] iArr = new int[2];
         viewGroup2.getLocationOnScreen(iArr);
         a2.offset(iArr[0], iArr[1]);
@@ -413,7 +413,7 @@ public final class e6 {
         if (this.p != null) {
             float max = Math.max(0.0f, Math.min(1.0f, (this.r - 0.55f) / 0.45f));
             float B = com.google.android.gms.internal.play_billing.k3.B(max, 2.0f, 3.0f, max * max);
-            flightYaw += ((float) Math.IEEEremainder(this.p.I0.i() - flightYaw, 6.283185307179586d)) * B;
+            flightYaw += ((float) Math.IEEEremainder(this.p.I0.g() - flightYaw, 6.283185307179586d)) * B;
             flightPitch += ((this.p.I0.k.E * 0.14f) - flightPitch) * B;
         }
         c6Var.r = flightYaw;

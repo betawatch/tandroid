@@ -6,7 +6,7 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q0 implements BillingController.ProductDetailsResponseListenerLegacy, e2.j {
     public final /* synthetic */ int a;
@@ -49,15 +49,15 @@ public final /* synthetic */ class q0 implements BillingController.ProductDetail
             if (!it.hasNext()) {
                 break;
             }
-            c5.o oVar = (c5.o) it.next();
+            c5.p pVar = (c5.p) it.next();
             int size = arrayList.size();
             while (true) {
                 if (i10 < size) {
                     Object obj = arrayList.get(i10);
                     i10++;
                     sg.k kVar = (sg.k) obj;
-                    if (kVar.h() != null && kVar.h().equals(oVar.c)) {
-                        kVar.h = oVar;
+                    if (kVar.h() != null && kVar.h().equals(pVar.c)) {
+                        kVar.h = pVar;
                         if (kVar.f() > j10) {
                             j10 = kVar.f();
                         }

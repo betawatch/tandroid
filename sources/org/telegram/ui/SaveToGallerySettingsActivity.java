@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SaveToGallerySettingsHelper;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.n2 {
     public int a;
@@ -27,7 +27,7 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.n2 
     public int f;
     public int h;
     public int maxVideoSizeRow;
-    public f31 n;
+    public e31 n;
     public org.telegram.ui.Components.im0 r;
     public final ArrayList s;
     public LongSparseArray v;
@@ -73,14 +73,14 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.n2 
         }
         arrayList2.clear();
         if (this.c != null) {
-            arrayList2.add(new g31(9));
-            arrayList2.add(new g31(3));
+            arrayList2.add(new f31(9));
+            arrayList2.add(new f31(3));
         }
-        arrayList2.add(new g31(5, LocaleController.getString(R.string.SaveToGallery)));
+        arrayList2.add(new f31(5, LocaleController.getString(R.string.SaveToGallery)));
         this.e = arrayList2.size();
-        arrayList2.add(new g31(6));
+        arrayList2.add(new f31(6));
         this.f = arrayList2.size();
-        arrayList2.add(new g31(6));
+        arrayList2.add(new f31(6));
         if (this.c != null) {
             str = LocaleController.getString(R.string.SaveToGalleryHintCurrent);
         } else {
@@ -93,40 +93,40 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.n2 
                 str = LocaleController.getString(R.string.SaveToGalleryHintGroup);
             }
         }
-        arrayList2.add(new g31(7, str));
+        arrayList2.add(new f31(7, str));
         if (X().saveVideo) {
-            arrayList2.add(new g31(5, LocaleController.getString(R.string.MaxVideoSize)));
+            arrayList2.add(new f31(5, LocaleController.getString(R.string.MaxVideoSize)));
             this.maxVideoSizeRow = arrayList2.size();
-            arrayList2.add(new g31(8));
+            arrayList2.add(new f31(8));
             this.h = arrayList2.size();
-            arrayList2.add(new g31(7));
+            arrayList2.add(new f31(7));
         } else {
             this.h = -1;
         }
         if (this.c == null) {
             this.v = getUserConfig().getSaveGalleryExceptions(this.a);
             this.addExceptionRow = arrayList2.size();
-            arrayList2.add(new g31(1));
+            arrayList2.add(new f31(1));
             int i11 = 0;
             boolean z11 = false;
             while (i11 < this.v.size()) {
-                arrayList2.add(new g31((SaveToGallerySettingsHelper.DialogException) this.v.valueAt(i11)));
+                arrayList2.add(new f31((SaveToGallerySettingsHelper.DialogException) this.v.valueAt(i11)));
                 i11++;
                 z11 = true;
             }
             if (z11) {
-                arrayList2.add(new g31(3));
+                arrayList2.add(new f31(3));
                 this.deleteAllExceptionsRow = arrayList2.size();
-                arrayList2.add(new g31(4));
+                arrayList2.add(new f31(4));
             }
-            arrayList2.add(new g31(10));
+            arrayList2.add(new f31(10));
         }
-        f31 f31Var = this.n;
-        if (f31Var != null) {
+        e31 e31Var = this.n;
+        if (e31Var != null) {
             if (arrayList != null) {
-                f31Var.E(arrayList, arrayList2);
+                e31Var.E(arrayList, arrayList2);
             } else {
-                f31Var.l();
+                e31Var.l();
             }
         }
     }
@@ -135,13 +135,14 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.n2 
     public final View createView(Context context) {
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        i2.d.y(false, this.actionBar);
-        this.actionBar.setActionBarMenuOnItemClick(new a31(this, 1));
+        int i10 = 0;
+        i2.e.y(false, this.actionBar);
+        this.actionBar.setActionBarMenuOnItemClick(new y21(this, 1));
         if (this.c == null) {
-            int i10 = this.a;
-            if (i10 == 1) {
+            int i11 = this.a;
+            if (i11 == 1) {
                 this.actionBar.setTitle(LocaleController.getString(R.string.SaveToGalleryPrivate));
-            } else if (i10 == 2) {
+            } else if (i11 == 2) {
                 this.actionBar.setTitle(LocaleController.getString(R.string.SaveToGalleryGroups));
             } else {
                 this.actionBar.setTitle(LocaleController.getString(R.string.SaveToGalleryChannels));
@@ -163,11 +164,11 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.n2 
         this.r.setItemAnimator(kVar);
         this.r.setLayoutManager(new s4.b0());
         org.telegram.ui.Components.im0 im0Var2 = this.r;
-        f31 f31Var = new f31(this);
-        this.n = f31Var;
-        im0Var2.setAdapter(f31Var);
-        this.r.setOnItemClickListener(new d31(this));
-        this.r.setOnItemLongClickListener(new d31(this));
+        e31 e31Var = new e31(this);
+        this.n = e31Var;
+        im0Var2.setAdapter(e31Var);
+        this.r.setOnItemClickListener(new b31(this));
+        this.r.setOnItemLongClickListener(new b31(this));
         frameLayout.addView(this.r);
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
         if (this.c != null) {
@@ -180,7 +181,7 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.n2 
             textView.setTypeface(AndroidUtilities.bold());
             textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Sh, false));
             frameLayout2.addView(textView, w7.z5.e(-2, -2, 17));
-            frameLayout2.setOnClickListener(new y50(this, 29));
+            frameLayout2.setOnClickListener(new c31(this, i10));
             frameLayout.addView(frameLayout2, w7.z5.d(-1, 48.0f, 80, 16.0f, 16.0f, 16.0f, 16.0f));
         }
         Z();

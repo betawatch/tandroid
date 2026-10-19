@@ -16,7 +16,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class v4 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public u4 a;
@@ -151,9 +151,9 @@ public final class v4 extends org.telegram.ui.ActionBar.n2 implements Notificati
         frameLayout.addView(wo0Var);
         this.actionBar.setAdaptiveBackground(wo0Var);
         FrameLayout frameLayout2 = new FrameLayout(context);
-        org.telegram.ui.Components.sx0 sx0Var = new org.telegram.ui.Components.sx0(context, this.currentAccount);
-        sx0Var.setStickerNum(10);
-        frameLayout2.addView(sx0Var, w7.z5.e(130, 130, 17));
+        org.telegram.ui.Components.tx0 tx0Var = new org.telegram.ui.Components.tx0(context, this.currentAccount);
+        tx0Var.setStickerNum(10);
+        frameLayout2.addView(tx0Var, w7.z5.e(130, 130, 17));
         frameLayout2.setTag(-33024);
         rVar.addView(frameLayout2, w7.z5.n(-1, 170));
         LinearLayout linearLayout = new LinearLayout(getParentActivity());

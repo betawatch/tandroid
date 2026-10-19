@@ -1,44 +1,38 @@
 package ai;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class p8 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class p8 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback2 b;
-    public final /* synthetic */ boolean[] c;
+    public final /* synthetic */ ga b;
+    public final /* synthetic */ TLRPC.TL_payments_paymentResult c;
 
-    public /* synthetic */ p8(Utilities.Callback2 callback2, boolean[] zArr, int i10) {
+    public /* synthetic */ p8(ga gaVar, TLRPC.TL_payments_paymentResult tL_payments_paymentResult, int i10) {
         this.a = i10;
-        this.b = callback2;
-        this.c = zArr;
+        this.b = gaVar;
+        this.c = tL_payments_paymentResult;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                Utilities.Callback2 callback2 = this.b;
-                if (callback2 != null && !this.c[0]) {
-                    callback2.run(0L, Boolean.FALSE);
-                    break;
-                }
+                MessagesController.getInstance(this.b.a).lambda$processUpdates$377(this.c.updates, false);
                 break;
             case 1:
-                Utilities.Callback2 callback22 = this.b;
-                if (callback22 != null && !this.c[0]) {
-                    callback22.run(Boolean.FALSE, null);
-                    break;
-                }
+                MessagesController.getInstance(this.b.a).lambda$processUpdates$377(this.c.updates, false);
+                break;
+            case 2:
+                MessagesController.getInstance(this.b.a).lambda$processUpdates$377(this.c.updates, false);
+                break;
+            case 3:
+                MessagesController.getInstance(this.b.a).lambda$processUpdates$377(this.c.updates, false);
                 break;
             default:
-                Utilities.Callback2 callback23 = this.b;
-                if (callback23 != null && !this.c[0]) {
-                    callback23.run(Boolean.FALSE, null);
-                    break;
-                }
+                MessagesController.getInstance(this.b.a).lambda$processUpdates$377(this.c.updates, false);
                 break;
         }
     }

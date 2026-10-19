@@ -1,76 +1,123 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.view.MotionEvent;
+import android.graphics.Bitmap;
+import android.text.TextUtils;
+import android.view.KeyEvent;
+import android.view.View;
+import java.util.HashMap;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.TranslateController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class n41 extends q6 {
-    public final Paint s;
-    public final u90 v;
-    public final /* synthetic */ p41 w;
+public final /* synthetic */ class n41 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ KeyEvent.Callback b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n41(p41 p41Var, Context context) {
-        super(context, false, false, false);
-        this.w = p41Var;
-        this.s = new Paint(1);
-        this.v = new u90();
+    public /* synthetic */ n41(KeyEvent.Callback callback, Object obj, Object obj2, int i10) {
+        this.a = i10;
+        this.b = callback;
+        this.c = obj;
+        this.d = obj2;
     }
 
-    @Override // org.telegram.ui.Components.q6, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (LocaleController.isRTL) {
-            AndroidUtilities.rectTmp.set(getWidth() - d(), (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, getWidth(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
-        } else {
-            AndroidUtilities.rectTmp.set(0.0f, (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, d(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
-        }
-        r41 r41Var = this.w.n;
-        int i10 = org.telegram.ui.ActionBar.h6.Pi;
-        String[] strArr = r41.R;
-        int m12 = org.telegram.ui.ActionBar.h6.m1(0.1175f, r41Var.getThemedColor(i10));
-        Paint paint = this.s;
-        paint.setColor(m12);
-        canvas.drawRoundRect(AndroidUtilities.rectTmp, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint);
-        if (this.v.f(canvas)) {
-            invalidate();
-        }
-        super.onDraw(canvas);
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.d6 d6Var;
-        r41 r41Var = this.w.n;
-        int action = motionEvent.getAction();
-        u90 u90Var = this.v;
-        if (action != 0) {
-            if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                if (motionEvent.getAction() == 1) {
-                    performClick();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10 = this.a;
+        int i11 = 0;
+        Object obj = this.d;
+        Object obj2 = this.c;
+        KeyEvent.Callback callback = this.b;
+        switch (i10) {
+            case 0:
+                q41 q41Var = (q41) callback;
+                LocaleController.LocaleInfo localeInfo = (LocaleController.LocaleInfo) obj;
+                s41 s41Var = q41Var.n;
+                Runnable runnable = ((Runnable[]) obj2)[0];
+                if (runnable != null) {
+                    runnable.run();
                 }
-                u90Var.d(true);
-                invalidate();
-            }
-            return super.onTouchEvent(motionEvent);
+                String str = s41Var.v;
+                r41 r41Var = s41Var.I;
+                if (!TextUtils.equals(str, localeInfo.pluralLangCode)) {
+                    View view2 = r41Var.d;
+                    if (view2 == s41Var.E || view2 == s41Var.r) {
+                        s41Var.w = s41Var.v;
+                    }
+                    o41 o41Var = q41Var.e;
+                    String str2 = localeInfo.pluralLangCode;
+                    s41Var.v = str2;
+                    o41Var.setText(s41.A(s41.E(str2, null, null)));
+                    r41Var.D(s41Var.h != null ? s41Var.n : s41Var.y);
+                    s41.J(s41Var.v);
+                    s41Var.N();
+                    break;
+                }
+                break;
+            case 1:
+                org.telegram.ui.rk rkVar = (org.telegram.ui.rk) callback;
+                TranslateController translateController = (TranslateController) obj2;
+                org.telegram.ui.ActionBar.m1 m1Var = (org.telegram.ui.ActionBar.m1) obj;
+                long j10 = rkVar.b;
+                translateController.setHideTranslateDialog(j10, true);
+                TLRPC.Chat chat = MessagesController.getInstance(rkVar.a).getChat(Long.valueOf(-j10));
+                xc.a0(rkVar.c).J(R.raw.msg_translate, AndroidUtilities.replaceTags((chat == null || !ChatObject.isChannelAndNotMegaGroup(chat)) ? chat != null ? LocaleController.getString(R.string.TranslationBarHiddenForGroup) : LocaleController.getString(R.string.TranslationBarHiddenForChat) : LocaleController.getString(R.string.TranslationBarHiddenForChannel)), LocaleController.getString(R.string.UndoNoCaps), new go0(18, rkVar, translateController)).j();
+                m1Var.d(true);
+                break;
+            case 2:
+                org.telegram.ui.gt0 gt0Var = (org.telegram.ui.gt0) callback;
+                Context context = (Context) obj2;
+                Bitmap bitmap = (Bitmap) obj;
+                if (!gt0Var.L1) {
+                    Runnable runnable2 = gt0Var.U1;
+                    if (runnable2 != null) {
+                        runnable2.run();
+                        break;
+                    }
+                } else {
+                    qg.y yVar = new qg.y(context, gt0Var.Q1);
+                    yVar.n(gt0Var.K1.a, 2);
+                    yVar.n = new rg.u(gt0Var, bitmap);
+                    yVar.h = new rg.m(gt0Var, 1);
+                    yVar.show();
+                    break;
+                }
+                break;
+            case 3:
+                ((yg.h) callback).a(view, (HashSet) obj2, (Runnable) obj);
+                break;
+            case 4:
+                new yh.m((Context) obj2, null, null, (GiftAuctionController.Auction) obj).show();
+                ((yh.e) callback).dismiss();
+                break;
+            case 5:
+                yh.m.S((yh.m) callback, (boolean[]) obj2, (org.telegram.ui.ActionBar.d6) obj);
+                break;
+            case 6:
+                yh.v.S((yh.v) callback, (Context) obj2, (org.telegram.ui.ActionBar.d6) obj);
+                break;
+            case 7:
+                yh.v.Q((yh.v) callback, (boolean[]) obj2, (org.telegram.ui.ActionBar.d6) obj);
+                break;
+            default:
+                yh.l2 l2Var = (yh.l2) callback;
+                ((i80) obj2).u();
+                js0 js0Var = l2Var.a;
+                yh.d2 d2Var = new yh.d2(l2Var, (TL_stars.SavedStarGift) obj, i11);
+                HashMap hashMap = yh.p2.T;
+                js0Var.h(null, d2Var);
+                break;
         }
-        d6Var = ((org.telegram.ui.ActionBar.f3) r41Var).resourcesProvider;
-        y90 y90Var = new y90(null, d6Var, motionEvent.getX(), motionEvent.getY(), 0);
-        y90Var.d(org.telegram.ui.ActionBar.h6.m1(0.1175f, r41Var.getThemedColor(org.telegram.ui.ActionBar.h6.Pi)));
-        r90 b10 = y90Var.b();
-        if (LocaleController.isRTL) {
-            AndroidUtilities.rectTmp.set(getWidth() - d(), (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, getWidth(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
-        } else {
-            AndroidUtilities.rectTmp.set(0.0f, (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, d(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
-        }
-        b10.addRect(AndroidUtilities.rectTmp, Path.Direction.CW);
-        u90Var.a(y90Var, null);
-        invalidate();
-        return true;
     }
 }

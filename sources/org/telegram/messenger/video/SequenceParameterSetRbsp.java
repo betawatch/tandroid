@@ -1,10 +1,10 @@
 package org.telegram.messenger.video;
 
-import c5.b0;
+import c5.c0;
 import java.io.InputStream;
 import java.lang.reflect.Array;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class SequenceParameterSetRbsp {
     public int bit_depth_chroma_minus8;
@@ -24,9 +24,9 @@ public class SequenceParameterSetRbsp {
     public SequenceParameterSetRbsp(InputStream inputStream) {
         qc.a aVar = new qc.a();
         boolean z10 = false;
-        b0 b0Var = new b0(8, z10, z10);
-        b0Var.c = new char[50];
-        aVar.e = b0Var;
+        c0 c0Var = new c0(8, z10, z10);
+        c0Var.c = new char[50];
+        aVar.e = c0Var;
         aVar.a = inputStream;
         aVar.b = inputStream.read();
         aVar.c = inputStream.read();

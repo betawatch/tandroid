@@ -1,40 +1,13 @@
 package n7;
 
-import com.google.android.gms.internal.play_billing.k3;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public abstract class d1 implements Comparable {
-    public static int c(byte b10) {
-        return (b10 >> 5) & 7;
-    }
+public final class d1 {
+    public final byte a;
+    public final byte b;
 
-    public static d1 d(byte... bArr) {
-        bArr.getClass();
-        f1 f1Var = new f1(new ByteArrayInputStream(Arrays.copyOf(bArr, bArr.length)));
-        try {
-            return a.k(f1Var);
-        } finally {
-            try {
-                f1Var.close();
-            } catch (IOException unused) {
-            }
-        }
+    public d1(int i10) {
+        this.a = (byte) (i10 & 224);
+        this.b = (byte) (i10 & 31);
     }
-
-    public int a() {
-        return 0;
-    }
-
-    public final d1 b(Class cls) {
-        if (cls.isInstance(this)) {
-            return (d1) cls.cast(this);
-        }
-        throw new c1(k3.k("Expected a ", cls.getName(), " value, but got ", getClass().getName()));
-    }
-
-    public abstract int zza();
 }

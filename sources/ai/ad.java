@@ -13,13 +13,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ca0;
 import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class ad extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public long a;
@@ -43,7 +43,7 @@ public final class ad extends LinearLayout implements NotificationCenter.Notific
         setGravity(21);
         TextView textView = new TextView(context);
         int i11 = org.telegram.ui.ActionBar.h6.G6;
-        lk.o(i11, d6Var, textView, 1, 13.0f);
+        kk.o(i11, d6Var, textView, 1, 13.0f);
         textView.setText(LocaleController.getString(R.string.StarsBalance));
         textView.setGravity(5);
         textView.setTypeface(AndroidUtilities.bold());
@@ -69,7 +69,7 @@ public final class ad extends LinearLayout implements NotificationCenter.Notific
         ga y3 = ga.y(i10, false);
         ga y10 = this.d ? ga.y(i10, true) : null;
         long j10 = 0;
-        ag.a i11 = ag.a.i(0L, ag.c.b);
+        ag.a i11 = ag.a.i(0L, ag.b.b);
         zc zcVar = this.c;
         zcVar.a();
         if (this.a == UserConfig.getInstance(i10).getClientUserId()) {

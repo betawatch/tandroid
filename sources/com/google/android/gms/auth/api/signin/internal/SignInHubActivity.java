@@ -1,9 +1,9 @@
 package com.google.android.gms.auth.api.signin.internal;
 
+import a0.m;
 import a6.b;
 import a6.d;
 import a6.i;
-import a6.m;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,9 +19,10 @@ import com.google.android.gms.auth.api.signin.SignInAccount;
 import com.google.android.gms.common.api.Status;
 import java.lang.reflect.Modifier;
 import java.util.Set;
+import qb.c;
 import w1.a;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class SignInHubActivity extends v {
     public static boolean T = false;
@@ -176,17 +177,17 @@ public class SignInHubActivity extends v {
     }
 
     public final void u() {
-        w1.b bVar = (w1.b) new e(f(), w1.b.f).m(w1.b.class);
-        m mVar = new m(this, 0);
+        w1.b bVar = (w1.b) new e(f(), w1.b.f).j(w1.b.class);
+        c cVar = new c(this, 1);
         boolean z10 = bVar.e;
-        a0.m mVar2 = bVar.d;
+        m mVar = bVar.d;
         if (z10) {
             throw new IllegalStateException("Called while creating a loader");
         }
         if (Looper.getMainLooper() != Looper.myLooper()) {
             throw new IllegalStateException("initLoader must be called on the main thread");
         }
-        a aVar = (a) mVar2.c(0);
+        a aVar = (a) mVar.c(0);
         if (aVar == null) {
             try {
                 bVar.e = true;
@@ -198,9 +199,9 @@ public class SignInHubActivity extends v {
                     throw new IllegalArgumentException("Object returned from onCreateLoader must not be a non-static inner member class: " + dVar);
                 }
                 a aVar2 = new a(dVar);
-                mVar2.d(0, aVar2);
+                mVar.d(0, aVar2);
                 bVar.e = false;
-                t tVar = new t(aVar2.l, mVar);
+                t tVar = new t(aVar2.l, cVar);
                 aVar2.d(this, tVar);
                 t tVar2 = aVar2.n;
                 if (tVar2 != null) {
@@ -213,7 +214,7 @@ public class SignInHubActivity extends v {
                 throw th2;
             }
         } else {
-            t tVar3 = new t(aVar.l, mVar);
+            t tVar3 = new t(aVar.l, cVar);
             aVar.d(this, tVar3);
             t tVar4 = aVar.n;
             if (tVar4 != null) {

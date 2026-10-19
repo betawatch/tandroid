@@ -1,6 +1,7 @@
 package ei;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -16,12 +17,13 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.cl0;
-import org.telegram.ui.Components.jw0;
+import org.telegram.ui.Components.kw0;
 import org.telegram.ui.Components.tz;
+import org.telegram.ui.Components.u20;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class ub extends jw0 {
+public final class ub extends kw0 {
     public boolean A0;
     public float B0;
     public float C0;
@@ -37,7 +39,7 @@ public final class ub extends jw0 {
         super(activity, null);
         this.E0 = vbVar;
         this.A0 = false;
-        this.w0 = new le.b(activity, new sb(this));
+        this.w0 = new le.b((Context) activity, (u20) new sb(this));
         this.x0 = new ScaleGestureDetector(activity, new tb(this));
     }
 
@@ -98,7 +100,7 @@ public final class ub extends jw0 {
     /* JADX WARN: Type inference failed for: r11v3, types: [boolean] */
     /* JADX WARN: Type inference failed for: r11v5 */
     /* JADX WARN: Type inference failed for: r11v7 */
-    @Override // org.telegram.ui.Components.jw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.kw0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -109,7 +111,7 @@ public final class ub extends jw0 {
         xa xaVar;
         float f7;
         float f10;
-        rg.a2 a2Var;
+        rg.b2 b2Var;
         vb vbVar = this.E0;
         RectF rectF = vbVar.H;
         Path path = vbVar.e0;
@@ -143,8 +145,8 @@ public final class ub extends jw0 {
                     float[] fArr = xaVar.j2;
                     if (xaVar.d2) {
                         xaVar.d2 = r11;
-                        if (xaVar.Z1 != null && (a2Var = xaVar.a2) != null) {
-                            fArr[r11] = a2Var.getMeasuredWidth() / 2.0f;
+                        if (xaVar.Z1 != null && (b2Var = xaVar.a2) != null) {
+                            fArr[r11] = b2Var.getMeasuredWidth() / 2.0f;
                             fArr[1] = xaVar.a2.getMeasuredHeight() / 2.0f;
                             xaVar.a2.getMatrix().mapPoints(fArr);
                             f7 = 1.0f;
@@ -274,7 +276,7 @@ public final class ub extends jw0 {
             this.z0 = false;
         }
         this.x0.onTouchEvent(motionEvent);
-        this.w0.j0(motionEvent);
+        this.w0.k(motionEvent);
         if (motionEvent.getAction() == 1 && !this.y0) {
             if (vbVar.r.getTranslationY() <= 0.0f) {
                 ua uaVar = vbVar.M0;
@@ -293,7 +295,7 @@ public final class ub extends jw0 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.jw0
+    @Override // org.telegram.ui.Components.kw0
     public int getBottomPadding() {
         int height = getHeight();
         vb vbVar = this.E0;
@@ -304,7 +306,7 @@ public final class ub extends jw0 {
         return getHeight() - this.E0.r.getBottom();
     }
 
-    @Override // org.telegram.ui.Components.jw0
+    @Override // org.telegram.ui.Components.kw0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
@@ -315,7 +317,7 @@ public final class ub extends jw0 {
         return (height - vbVar.b0) - vbVar.r.getBottom();
     }
 
-    @Override // org.telegram.ui.Components.jw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.kw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int i14;
         tz emojiView;

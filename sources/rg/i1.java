@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.im0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class i1 extends im0 {
     public static final Paint a3;
@@ -21,7 +21,7 @@ public abstract class i1 extends im0 {
     public final Paint V2;
     public final Paint W2;
     public int X2;
-    public qg.u0 Y2;
+    public qg.v0 Y2;
     public q0.a Z2;
 
     static {
@@ -91,9 +91,9 @@ public abstract class i1 extends im0 {
         Path path = c3;
         path.rewind();
         path.moveTo(rectF.centerX(), rectF.centerY());
-        path.lineTo((float) i2.d.f(-1.5707963267948966d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(-1.5707963267948966d) * (rectF.height() / 2.0f)) + rectF.centerY()));
+        path.lineTo((float) i2.e.f(-1.5707963267948966d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(-1.5707963267948966d) * (rectF.height() / 2.0f)) + rectF.centerY()));
         path.moveTo(rectF.centerX(), rectF.centerY());
-        path.lineTo((float) i2.d.f(4.71238898038469d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(4.71238898038469d) * (rectF.height() / 2.0f)) + rectF.centerY()));
+        path.lineTo((float) i2.e.f(4.71238898038469d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(4.71238898038469d) * (rectF.height() / 2.0f)) + rectF.centerY()));
         path.addArc(rectF, -45.0f, 180.0f);
         canvas.save();
         canvas.clipPath(path);
@@ -111,8 +111,8 @@ public abstract class i1 extends im0 {
         this.Z2 = aVar;
     }
 
-    public void setColorPalette(qg.u0 u0Var) {
-        this.Y2 = u0Var;
+    public void setColorPalette(qg.v0 v0Var) {
+        this.Y2 = v0Var;
         getAdapter().l();
     }
 

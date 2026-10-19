@@ -6,15 +6,14 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
-import s4.b1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class k extends s4.g0 {
-    public final /* synthetic */ d0 c;
+    public final /* synthetic */ j0 c;
 
-    public k(d0 d0Var) {
-        this.c = d0Var;
+    public k(j0 j0Var) {
+        this.c = j0Var;
     }
 
     @Override // s4.g0
@@ -24,15 +23,15 @@ public final class k extends s4.g0 {
 
     @Override // s4.g0
     public final int j(int i10) {
-        d0 d0Var = this.c;
-        o oVar = (o) d0Var.n.get(d0Var.f(i10));
+        j0 j0Var = this.c;
+        o oVar = (o) j0Var.n.get(j0Var.f(i10));
         return (oVar.b == null || i10 != oVar.d) ? 1 : 0;
     }
 
     @Override // s4.g0
-    public final void v(b1 b1Var, int i10) {
-        d0 d0Var = this.c;
-        o oVar = (o) d0Var.n.get(d0Var.f(i10));
+    public final void v(s4.b1 b1Var, int i10) {
+        j0 j0Var = this.c;
+        o oVar = (o) j0Var.n.get(j0Var.f(i10));
         int i11 = b1Var.f;
         View view = b1Var.a;
         if (i11 != 0) {
@@ -41,7 +40,7 @@ public final class k extends s4.g0 {
         }
         n nVar = (n) view;
         String str = oVar.b;
-        int i12 = (d0Var.w || oVar.a != 2) ? 0 : 1;
+        int i12 = (j0Var.w || oVar.a != 2) ? 0 : 1;
         TextView textView = nVar.b;
         TextView textView2 = nVar.a;
         textView2.setText(str != null ? str.replace('\n', ' ') : null);
@@ -56,14 +55,14 @@ public final class k extends s4.g0 {
     }
 
     @Override // s4.g0
-    public final b1 x(ViewGroup viewGroup, int i10) {
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
         View lVar;
-        d0 d0Var = this.c;
+        j0 j0Var = this.c;
         if (i10 == 0) {
-            lVar = new n(d0Var, viewGroup.getContext());
+            lVar = new n(j0Var, viewGroup.getContext());
             lVar.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(44.0f)));
         } else {
-            lVar = new l(viewGroup.getContext(), d0Var.a);
+            lVar = new l(viewGroup.getContext(), j0Var.a);
             lVar.setLayoutParams(new s4.o0(-1, -2));
         }
         return new j(lVar);

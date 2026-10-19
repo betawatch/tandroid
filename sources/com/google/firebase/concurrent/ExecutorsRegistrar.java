@@ -15,14 +15,14 @@ import java.util.concurrent.ScheduledExecutorService;
 import n9.b;
 import n9.c;
 import n9.d;
-import qg.e0;
+import qg.f0;
 import r9.f;
 import r9.n;
 import r9.r;
 import s9.a;
-import w7.b7;
+import w7.a7;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class ExecutorsRegistrar implements ComponentRegistrar {
     public static final n a = new n(new f(2));
@@ -49,10 +49,10 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
         HashSet hashSet3 = new HashSet();
         hashSet.add(rVar);
         for (r rVar2 : rVarArr) {
-            b7.a(rVar2, "Null interface");
+            a7.a(rVar2, "Null interface");
         }
         Collections.addAll(hashSet, rVarArr);
-        r9.a aVar = new r9.a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new e0(25), hashSet3);
+        r9.a aVar = new r9.a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new f0(25), hashSet3);
         r rVar3 = new r(b.class, ScheduledExecutorService.class);
         r[] rVarArr2 = {new r(b.class, ExecutorService.class), new r(b.class, Executor.class)};
         HashSet hashSet4 = new HashSet();
@@ -60,10 +60,10 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
         HashSet hashSet6 = new HashSet();
         hashSet4.add(rVar3);
         for (r rVar4 : rVarArr2) {
-            b7.a(rVar4, "Null interface");
+            a7.a(rVar4, "Null interface");
         }
         Collections.addAll(hashSet4, rVarArr2);
-        r9.a aVar2 = new r9.a(null, new HashSet(hashSet4), new HashSet(hashSet5), 0, 0, new e0(26), hashSet6);
+        r9.a aVar2 = new r9.a(null, new HashSet(hashSet4), new HashSet(hashSet5), 0, 0, new f0(26), hashSet6);
         r rVar5 = new r(c.class, ScheduledExecutorService.class);
         r[] rVarArr3 = {new r(c.class, ExecutorService.class), new r(c.class, Executor.class)};
         HashSet hashSet7 = new HashSet();
@@ -71,12 +71,12 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
         HashSet hashSet9 = new HashSet();
         hashSet7.add(rVar5);
         for (r rVar6 : rVarArr3) {
-            b7.a(rVar6, "Null interface");
+            a7.a(rVar6, "Null interface");
         }
         Collections.addAll(hashSet7, rVarArr3);
-        r9.a aVar3 = new r9.a(null, new HashSet(hashSet7), new HashSet(hashSet8), 0, 0, new e0(27), hashSet9);
+        r9.a aVar3 = new r9.a(null, new HashSet(hashSet7), new HashSet(hashSet8), 0, 0, new f0(27), hashSet9);
         m0 b10 = r9.a.b(new r(d.class, Executor.class));
-        b10.f = new e0(28);
+        b10.f = new f0(28);
         return Arrays.asList(aVar, aVar2, aVar3, b10.b());
     }
 }

@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class zo {
     public final org.telegram.ui.ActionBar.e1 a;
@@ -75,16 +75,16 @@ public final class zo {
                     case 1:
                         zo zoVar = this.b;
                         zoVar.a();
-                        yoVar.y(zoVar.l);
+                        yoVar.x(zoVar.l);
                         break;
                     case 2:
                         zo zoVar2 = this.b;
                         zoVar2.a();
-                        yoVar.y(zoVar2.k);
+                        yoVar.x(zoVar2.k);
                         break;
                     case 3:
                         this.b.a();
-                        yoVar.p();
+                        yoVar.o();
                         break;
                     case 4:
                         this.b.a();
@@ -117,16 +117,16 @@ public final class zo {
                     case 1:
                         zo zoVar = this.b;
                         zoVar.a();
-                        yoVar.y(zoVar.l);
+                        yoVar.x(zoVar.l);
                         break;
                     case 2:
                         zo zoVar2 = this.b;
                         zoVar2.a();
-                        yoVar.y(zoVar2.k);
+                        yoVar.x(zoVar2.k);
                         break;
                     case 3:
                         this.b.a();
-                        yoVar.p();
+                        yoVar.o();
                         break;
                     case 4:
                         this.b.a();
@@ -159,16 +159,16 @@ public final class zo {
                     case 1:
                         zo zoVar = this.b;
                         zoVar.a();
-                        yoVar.y(zoVar.l);
+                        yoVar.x(zoVar.l);
                         break;
                     case 2:
                         zo zoVar2 = this.b;
                         zoVar2.a();
-                        yoVar.y(zoVar2.k);
+                        yoVar.x(zoVar2.k);
                         break;
                     case 3:
                         this.b.a();
-                        yoVar.p();
+                        yoVar.o();
                         break;
                     case 4:
                         this.b.a();
@@ -201,16 +201,16 @@ public final class zo {
                     case 1:
                         zo zoVar = this.b;
                         zoVar.a();
-                        yoVar.y(zoVar.l);
+                        yoVar.x(zoVar.l);
                         break;
                     case 2:
                         zo zoVar2 = this.b;
                         zoVar2.a();
-                        yoVar.y(zoVar2.k);
+                        yoVar.x(zoVar2.k);
                         break;
                     case 3:
                         this.b.a();
-                        yoVar.p();
+                        yoVar.o();
                         break;
                     case 4:
                         this.b.a();
@@ -243,16 +243,16 @@ public final class zo {
                     case 1:
                         zo zoVar = this.b;
                         zoVar.a();
-                        yoVar.y(zoVar.l);
+                        yoVar.x(zoVar.l);
                         break;
                     case 2:
                         zo zoVar2 = this.b;
                         zoVar2.a();
-                        yoVar.y(zoVar2.k);
+                        yoVar.x(zoVar2.k);
                         break;
                     case 3:
                         this.b.a();
-                        yoVar.p();
+                        yoVar.o();
                         break;
                     case 4:
                         this.b.a();
@@ -296,16 +296,16 @@ public final class zo {
                     case 1:
                         zo zoVar = this.b;
                         zoVar.a();
-                        yoVar.y(zoVar.l);
+                        yoVar.x(zoVar.l);
                         break;
                     case 2:
                         zo zoVar2 = this.b;
                         zoVar2.a();
-                        yoVar.y(zoVar2.k);
+                        yoVar.x(zoVar2.k);
                         break;
                     case 3:
                         this.b.a();
-                        yoVar.p();
+                        yoVar.o();
                         break;
                     case 4:
                         this.b.a();
@@ -436,7 +436,7 @@ public final class zo {
         if (i12 != 0) {
             this.l = i12;
             e1Var3.setVisibility(0);
-            e1Var3.getImageView().setImageDrawable(q21.a(i12));
+            e1Var3.getImageView().setImageDrawable(r21.a(i12));
             e1Var3.setText(b(i12));
         } else {
             e1Var3.setVisibility(8);
@@ -445,7 +445,7 @@ public final class zo {
         if (i11 != 0) {
             this.k = i11;
             e1Var4.setVisibility(0);
-            e1Var4.getImageView().setImageDrawable(q21.a(i11));
+            e1Var4.getImageView().setImageDrawable(r21.a(i11));
             e1Var4.setText(b(i11));
         } else {
             e1Var4.setVisibility(8);

@@ -11,7 +11,7 @@ import java.util.Locale;
 import java.util.UUID;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class w {
     public static final String A0;
@@ -236,7 +236,6 @@ public final class w {
     }
 
     public static String c(w wVar) {
-        char c10;
         int i10;
         String str;
         String str2;
@@ -262,7 +261,7 @@ public final class w {
         String str5 = wVar.m;
         String str6 = wVar.r;
         int i20 = wVar.f;
-        d9.l lVar = new d9.l(String.valueOf(','));
+        d9.l lVar = new d9.l(String.valueOf(','), 0);
         StringBuilder u10 = a1.g.u("id=");
         u10.append(wVar.a);
         u10.append(", mimeType=");
@@ -301,12 +300,9 @@ public final class w {
                     linkedHashSet.add("unknown (" + uuid + ")");
                 }
             }
-            c10 = 0;
             u10.append(", drm=[");
             lVar.a(u10, linkedHashSet.iterator());
             u10.append(']');
-        } else {
-            c10 = 0;
         }
         if (i18 != -1 && i17 != -1) {
             u10.append(", res=");
@@ -324,8 +320,7 @@ public final class w {
         int i22 = g9.c.a;
         if (Math.copySign(d - 1.0d, 1.0d) > 0.001d && d != 1.0d && (!Double.isNaN(d) || !Double.isNaN(1.0d))) {
             u10.append(", par=");
-            Object[] objArr = new Object[1];
-            objArr[c10] = Float.valueOf(f10);
+            Object[] objArr = {Float.valueOf(f10)};
             String str7 = e2.m0.a;
             u10.append(String.format(Locale.US, "%.3f", objArr));
         }
@@ -337,10 +332,10 @@ public final class w {
                 if (nVar.d()) {
                     String b10 = n.b(nVar.a);
                     String a2 = n.a(nVar.b);
-                    String c11 = n.c(nVar.c);
+                    String c10 = n.c(nVar.c);
                     String str8 = e2.m0.a;
                     Locale locale = Locale.US;
-                    str2 = b10 + "/" + a2 + "/" + c11;
+                    str2 = b10 + "/" + a2 + "/" + c10;
                 } else {
                     str2 = "NA/NA/NA";
                 }

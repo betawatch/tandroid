@@ -1,25 +1,49 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
+import android.content.Context;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class fq0 extends g.o {
-    public final /* synthetic */ lq0 c;
+public final class fq0 extends org.telegram.ui.Components.b10 {
+    public final /* synthetic */ int U;
 
-    public fq0(lq0 lq0Var) {
-        this.c = lq0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ fq0(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, d6Var);
+        this.U = i10;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        lq0 lq0Var = this.c;
-        if (lq0Var.L.j(i10) == 1 || lq0Var.Y || (lq0Var.J == null && TextUtils.isEmpty(lq0Var.v))) {
-            return lq0Var.M.J;
+    @Override // org.telegram.ui.Components.b10
+    public int getColumnsCount() {
+        switch (this.U) {
+            case 0:
+                return 3;
+            default:
+                return super.getColumnsCount();
         }
-        int i11 = lq0Var.R;
-        int i12 = lq0Var.g0;
-        return i11 + (i10 % i12 != i12 - 1 ? AndroidUtilities.dp(2.0f) : 0);
+    }
+
+    @Override // org.telegram.ui.Components.b10
+    public int getViewType() {
+        switch (this.U) {
+            case 0:
+                return 2;
+            default:
+                return super.getViewType();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.b10, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.U) {
+            case 1:
+                setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(104.0f));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
     }
 }

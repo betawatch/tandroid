@@ -1,33 +1,41 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AnimationNotificationsLocker;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class uq implements aq {
-    public final /* synthetic */ TLObject a;
-    public final /* synthetic */ jr b;
+public final class uq extends s4.k {
+    public final AnimationNotificationsLocker F = new AnimationNotificationsLocker();
+    public final /* synthetic */ hr G;
 
-    public uq(jr jrVar, TLObject tLObject) {
-        this.b = jrVar;
-        this.a = tLObject;
+    public uq(hr hrVar) {
+        this.G = hrVar;
     }
 
-    @Override // org.telegram.ui.aq
-    public final void a(TLRPC.User user) {
-        jr.c0(this.b, user);
+    @Override // s4.k
+    public final void N() {
+        this.F.unlock();
     }
 
-    @Override // org.telegram.ui.aq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        TLObject tLObject = this.a;
-        if (tLObject instanceof TLRPC.ChannelParticipant) {
-            TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) tLObject;
-            channelParticipant.admin_rights = tL_chatAdminRights;
-            channelParticipant.banned_rights = tL_chatBannedRights;
-            channelParticipant.rank = str;
-            jr.W(this.b, channelParticipant, tL_chatAdminRights, tL_chatBannedRights);
+    @Override // s4.k
+    public final void O() {
+        this.G.c.invalidate();
+    }
+
+    @Override // s4.k
+    public final void P(s4.b1 b1Var) {
+        this.G.c.invalidate();
+    }
+
+    @Override // s4.k, s4.l0
+    public final void m() {
+        boolean isEmpty = this.p.isEmpty();
+        boolean isEmpty2 = this.r.isEmpty();
+        boolean isEmpty3 = this.s.isEmpty();
+        boolean isEmpty4 = this.q.isEmpty();
+        if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
+            this.F.lock();
         }
+        super.m();
     }
 }

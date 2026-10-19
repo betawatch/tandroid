@@ -7,22 +7,22 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class a30 extends hm0 {
     public ChatObject.Call c;
     public final int d;
     public ArrayList h;
-    public org.telegram.ui.j30 n;
-    public final org.telegram.ui.s50 r;
+    public org.telegram.ui.h30 n;
+    public final org.telegram.ui.q50 r;
     public final ArrayList e = new ArrayList();
     public final ArrayList f = new ArrayList();
     public boolean s = false;
 
-    public a30(ChatObject.Call call, int i10, org.telegram.ui.s50 s50Var) {
+    public a30(ChatObject.Call call, int i10, org.telegram.ui.q50 q50Var) {
         this.c = call;
         this.d = i10;
-        this.r = s50Var;
+        this.r = q50Var;
     }
 
     @Override // org.telegram.ui.Components.hm0
@@ -30,15 +30,15 @@ public final class a30 extends hm0 {
         return false;
     }
 
-    public final void E(ArrayList arrayList, org.telegram.ui.j30 j30Var) {
+    public final void E(ArrayList arrayList, org.telegram.ui.h30 h30Var) {
         this.h = arrayList;
-        this.n = j30Var;
+        this.n = h30Var;
     }
 
-    public final void F(org.telegram.ui.f30 f30Var, boolean z10) {
+    public final void F(org.telegram.ui.d30 d30Var, boolean z10) {
         this.s = z10;
-        for (int i10 = 0; i10 < f30Var.getChildCount(); i10++) {
-            View childAt = f30Var.getChildAt(i10);
+        for (int i10 = 0; i10 < d30Var.getChildCount(); i10++) {
+            View childAt = d30Var.getChildAt(i10);
             if (childAt instanceof z20) {
                 z20 z20Var = (z20) childAt;
                 if (z20Var.getVideoParticipant() != null) {

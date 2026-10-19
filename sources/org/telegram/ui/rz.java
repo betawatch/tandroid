@@ -1,24 +1,29 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class rz implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p00 b;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ rz(p00 p00Var, int i10) {
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class rz implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n00 b;
+
+    public /* synthetic */ rz(n00 n00Var, int i10) {
         this.a = i10;
-        this.b = p00Var;
+        this.b = n00Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                p00.V(this.b);
+                AndroidUtilities.runOnUIThread(new lt(15, this.b, tLObject));
                 break;
             default:
-                p00.W(this.b);
+                AndroidUtilities.runOnUIThread(new jq(this.b, tL_error, tLObject, 6));
                 break;
         }
     }

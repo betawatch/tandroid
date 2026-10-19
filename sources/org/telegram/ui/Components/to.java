@@ -29,7 +29,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class to extends LinearLayout {
     public static final /* synthetic */ int L = 0;
@@ -114,7 +114,7 @@ public abstract class to extends LinearLayout {
         toVar.F = animatorSet2;
         animatorSet2.setDuration(420L);
         toVar.F.setInterpolator(bs.h);
-        toVar.F.addListener(new org.telegram.ui.ho(toVar));
+        toVar.F.addListener(new org.telegram.ui.fo(toVar));
         AnimatorSet animatorSet3 = toVar.F;
         Property property = View.ALPHA;
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(toVar.n, (Property<w9, Float>) property, 0.0f, 1.0f);

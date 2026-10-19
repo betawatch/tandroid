@@ -1,56 +1,24 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_account;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class db0 implements Utilities.Callback2 {
+public final /* synthetic */ class db0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ kb0 b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ ib0 b;
 
-    public /* synthetic */ db0(kb0 kb0Var, String str, int i10) {
+    public /* synthetic */ db0(ib0 ib0Var, int i10) {
         this.a = i10;
-        this.b = kb0Var;
-        this.c = str;
+        this.b = ib0Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                TL_account.Passkeys passkeys = (TL_account.Passkeys) obj;
-                kb0 kb0Var = this.b;
-                kb0Var.c();
-                if (passkeys != null) {
-                    kb0Var.u(new PasskeysActivity(passkeys.passkeys), false);
-                    if ("create".equalsIgnoreCase(this.c)) {
-                        kb0Var.x("addPasskeyRow");
-                        break;
-                    }
-                }
+                this.b.b();
                 break;
             default:
-                org.telegram.ui.Wallet.a2 a2Var = (org.telegram.ui.Wallet.a2) obj;
-                String str = (String) obj2;
-                kb0 kb0Var2 = this.b;
-                kb0Var2.c();
-                if (a2Var != null) {
-                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-                    if (U != null && U.getContext() != null) {
-                        org.telegram.ui.Wallet.f2.B(U.getContext(), kb0Var2.b, a2Var, null, U.getResourceProvider(), null, new gb0(kb0Var2, this.c, 1));
-                        break;
-                    }
-                } else {
-                    if (str == null) {
-                        str = LocaleController.getString(R.string.WalletTonConnectSessionResponseEmpty);
-                    }
-                    org.telegram.ui.Components.xc.b0(str);
-                    break;
-                }
+                this.b.c();
                 break;
         }
     }

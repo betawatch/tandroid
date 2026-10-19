@@ -1,106 +1,53 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ue implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sn b;
-    public final /* synthetic */ MessageObject c;
+    public final /* synthetic */ qn b;
+    public final /* synthetic */ org.telegram.ui.Components.ym0 c;
+    public final /* synthetic */ String d;
 
-    public /* synthetic */ ue(sn snVar, MessageObject messageObject, int i10) {
+    public /* synthetic */ ue(qn qnVar, org.telegram.ui.Components.ym0 ym0Var, String str, int i10) {
         this.a = i10;
-        this.b = snVar;
-        this.c = messageObject;
+        this.b = qnVar;
+        this.c = ym0Var;
+        this.d = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        TLRPC.WebPage webPage;
+        org.telegram.ui.Components.xc a02;
+        int i10;
         switch (this.a) {
             case 0:
-                MessageObject messageObject = this.c;
-                TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
-                if (messageMedia != null && (webPage = messageMedia.webpage) != null && webPage.cached_page != null) {
-                    LaunchActivity launchActivity = LaunchActivity.H1;
-                    if (launchActivity == null || launchActivity.P() == null || LaunchActivity.H1.P().l(messageObject) == null) {
-                        this.b.createArticleViewer(false).N(messageObject, null, null, null);
-                        break;
-                    }
-                }
+                this.c.dismiss();
+                AndroidUtilities.addToClipboard(this.d);
+                a02 = org.telegram.ui.Components.xc.a0(this.b);
+                i10 = R.string.RelativeDateCopied;
                 break;
             case 1:
-                sn snVar = this.b;
-                snVar.getClass();
-                MessageObject messageObject2 = this.c;
-                TLRPC.Message message = messageObject2.messageOwner;
-                int i10 = message.ttl;
-                boolean z10 = i10 != Integer.MAX_VALUE;
-                int i11 = i10 == Integer.MAX_VALUE ? 0 : i10;
-                message.destroyTime = snVar.getConnectionsManager().getCurrentTime() + i11;
-                messageObject2.messageOwner.destroyTimeMillis = snVar.getConnectionsManager().getCurrentTimeMillis() + (i11 * 1000);
-                if (snVar.h == null) {
-                    snVar.getMessagesController().markMessageAsRead2(snVar.T5, messageObject2.getId(), null, i11, 0L, z10);
-                    break;
-                } else {
-                    snVar.getMessagesController().markMessageAsRead(snVar.T5, messageObject2.messageOwner.random_id, i11);
-                    break;
-                }
+                this.c.dismiss();
+                AndroidUtilities.addToClipboard(this.d);
+                a02 = org.telegram.ui.Components.xc.a0(this.b);
+                i10 = R.string.WalletAddressCopiedBulletin;
+                break;
             case 2:
-                sn snVar2 = this.b;
-                snVar2.getClass();
-                MessageObject messageObject3 = this.c;
-                snVar2.bb(messageObject3.getReplyMsgId(), messageObject3.messageOwner.id, true, messageObject3.getDialogId() == snVar2.L6 ? 1 : 0, false, 0, null, ((TLRPC.TL_messageActionPollAppendAnswer) messageObject3.messageOwner.action).answer.option, null);
-                break;
-            case 3:
-                sn snVar3 = this.b;
-                snVar3.getClass();
-                MessageObject messageObject4 = this.c;
-                snVar3.bb(messageObject4.getReplyMsgId(), messageObject4.messageOwner.id, true, messageObject4.getDialogId() == snVar3.L6 ? 1 : 0, false, 0, null, null, null);
-                break;
-            case 4:
-                sn snVar4 = this.b;
-                snVar4.getClass();
-                MessageObject messageObject5 = this.c;
-                snVar4.j(messageObject5.getReplyMsgId(), messageObject5.messageOwner.id, true, messageObject5.getDialogId() == snVar4.L6 ? 1 : 0, false, 0);
-                break;
-            case 5:
-                int id2 = this.c.getId();
-                sn snVar5 = this.b;
-                snVar5.bb(id2, 0, true, 0, true, 0, null, null, new mf(snVar5, 23));
-                if (snVar5.h6.isEmpty()) {
-                    snVar5.Pb(false);
-                    break;
-                }
-                break;
-            case 6:
-                sn snVar6 = this.b;
-                snVar6.getClass();
-                MessageObject messageObject6 = this.c;
-                if (!messageObject6.isVideo()) {
-                    MediaController.getInstance().playMessage(messageObject6);
-                    break;
-                } else {
-                    snVar6.ma(null, messageObject6);
-                    break;
-                }
-            case 7:
-                sn snVar7 = this.b;
-                snVar7.getMessagesController().pinMessage(snVar7.e, snVar7.f, this.c.getId(), true, false, false);
-                snVar7.A3 = null;
+                this.c.dismiss();
+                AndroidUtilities.addToClipboard("@" + this.d);
+                a02 = org.telegram.ui.Components.xc.a0(this.b);
+                i10 = R.string.UsernameCopied;
                 break;
             default:
-                sn snVar8 = this.b;
-                org.telegram.ui.Components.xc.a0(snVar8).c(LocaleController.getString(R.string.AdHidden)).j();
-                MessageObject messageObject7 = this.c;
-                snVar8.Ja(messageObject7);
-                snVar8.La(messageObject7);
+                this.c.dismiss();
+                AndroidUtilities.addToClipboard(this.d);
+                a02 = org.telegram.ui.Components.xc.a0(this.b);
+                i10 = R.string.CardNumberCopied;
                 break;
         }
+        org.telegram.messenger.kk.p(i10, a02);
     }
 }

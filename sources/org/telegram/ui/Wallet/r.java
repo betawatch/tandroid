@@ -10,9 +10,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.m71;
+import org.telegram.ui.k71;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r implements Runnable {
     public final /* synthetic */ int a;
@@ -24,12 +24,12 @@ public final /* synthetic */ class r implements Runnable {
     public final /* synthetic */ String h;
     public final /* synthetic */ byte[] n;
     public final /* synthetic */ long r;
-    public final /* synthetic */ TLRPC.User s;
-    public final /* synthetic */ String v;
-    public final /* synthetic */ Utilities.Callback w;
-    public final /* synthetic */ e2 x;
+    public final /* synthetic */ e2 s;
+    public final /* synthetic */ TLRPC.User v;
+    public final /* synthetic */ String w;
+    public final /* synthetic */ Utilities.Callback x;
 
-    public /* synthetic */ r(m0 m0Var, String str, Utilities.Callback callback, TL_wallet.nftItem nftitem, String str2, String str3, byte[] bArr, long j10, TLRPC.User user, String str4, Utilities.Callback callback2, e2 e2Var, int i10) {
+    public /* synthetic */ r(m0 m0Var, String str, Utilities.Callback callback, TL_wallet.nftItem nftitem, String str2, String str3, byte[] bArr, long j10, e2 e2Var, TLRPC.User user, String str4, Utilities.Callback callback2, int i10) {
         this.a = i10;
         this.b = m0Var;
         this.c = str;
@@ -39,10 +39,10 @@ public final /* synthetic */ class r implements Runnable {
         this.h = str3;
         this.n = bArr;
         this.r = j10;
-        this.s = user;
-        this.v = str4;
-        this.w = callback2;
-        this.x = e2Var;
+        this.s = e2Var;
+        this.v = user;
+        this.w = str4;
+        this.x = callback2;
     }
 
     @Override // java.lang.Runnable
@@ -61,7 +61,7 @@ public final /* synthetic */ class r implements Runnable {
                         l2Var.a = true;
                         boolean[] zArr = {false};
                         z zVar = new z(zArr, callback);
-                        zVar.V = new m71(25, zArr, rVar);
+                        zVar.V = new k71(25, zArr, rVar);
                         U.showAsSheet(zVar, l2Var);
                         break;
                     }
@@ -83,134 +83,163 @@ public final /* synthetic */ class r implements Runnable {
                 final String str4 = this.h;
                 final byte[] bArr = this.n;
                 final long j10 = this.r;
-                final TLRPC.User user = this.s;
-                final String str5 = this.v;
-                final Utilities.Callback callback3 = this.w;
-                final e2 e2Var = this.x;
+                final e2 e2Var = this.s;
+                final TLRPC.User user = this.v;
+                final String str5 = this.w;
+                final Utilities.Callback callback3 = this.x;
                 m0Var2.y(new Utilities.Callback2() { // from class: org.telegram.ui.Wallet.s
-                    /* JADX WARN: Removed duplicated region for block: B:50:0x0130  */
-                    /* JADX WARN: Removed duplicated region for block: B:52:0x0144  */
+                    /* JADX WARN: Removed duplicated region for block: B:47:0x012d  */
+                    /* JADX WARN: Removed duplicated region for block: B:50:0x0139  */
+                    /* JADX WARN: Removed duplicated region for block: B:57:0x0154  */
+                    /* JADX WARN: Removed duplicated region for block: B:60:0x0175  */
+                    /* JADX WARN: Removed duplicated region for block: B:62:0x0187  */
+                    /* JADX WARN: Removed duplicated region for block: B:67:0x012f  */
                     @Override // org.telegram.messenger.Utilities.Callback2
                     /*
                         Code decompiled incorrectly, please refer to instructions dump.
                     */
                     public final void run(Object obj, Object obj2) {
+                        TL_wallet.nftItem nftitem2;
+                        l0 l0Var;
+                        TLRPC.User user2;
+                        m0 m0Var3;
                         long j11;
+                        long j12;
                         MessageObject messageObject;
-                        String str6;
-                        e2 e2Var2;
+                        Utilities.Callback callback4;
+                        m0 m0Var4;
+                        TL_update.TL_updateWalletGaslessInfo tL_updateWalletGaslessInfo;
+                        TL_update.TL_updateWalletGaslessInfo tL_updateWalletGaslessInfo2;
                         j0 j0Var = (j0) obj;
-                        String str7 = (String) obj2;
-                        m0 m0Var3 = m0.this;
-                        int i10 = m0Var3.a;
-                        Utilities.Callback callback4 = callback2;
-                        if (str7 != null) {
-                            callback4.run(str7);
+                        String str6 = (String) obj2;
+                        m0 m0Var5 = m0.this;
+                        int i10 = m0Var5.a;
+                        Utilities.Callback callback5 = callback2;
+                        if (str6 != null) {
+                            callback5.run(str6);
                             return;
                         }
                         if (j0Var == null) {
-                            callback4.run("NULL_ERROR");
+                            callback5.run("NULL_ERROR");
                             return;
                         }
-                        if (m0Var3.b == null) {
-                            callback4.run("NULL_ENGINE");
+                        if (m0Var5.b == null) {
+                            callback5.run("NULL_ENGINE");
                             return;
                         }
-                        TL_wallet.nftItem nftitem2 = nftitem;
-                        if (nftitem2 != null) {
-                            if (!m0.a(str3, m0Var3.s())) {
-                                callback4.run("WALLET_CHANGED");
+                        TL_wallet.nftItem nftitem3 = nftitem;
+                        if (nftitem3 != null) {
+                            if (!m0.a(str3, m0Var5.s())) {
+                                callback5.run("WALLET_CHANGED");
                                 return;
                             }
                         }
-                        l0 A = m0Var3.A();
+                        l0 A = m0Var5.A();
                         TL_wallet.walletTransaction wallettransaction = new TL_wallet.walletTransaction();
                         wallettransaction.incoming = false;
                         wallettransaction.pending = true;
-                        String str8 = str4;
-                        wallettransaction.comment = str8;
+                        String str7 = str4;
+                        wallettransaction.comment = str7;
                         wallettransaction.comment_encrypted = false;
                         byte[] bArr2 = bArr;
-                        wallettransaction.comment_encrypted_preparing = (nftitem2 != null || bArr2 == null || TextUtils.isEmpty(str8)) ? false : true;
+                        wallettransaction.comment_encrypted_preparing = (nftitem3 != null || bArr2 == null || TextUtils.isEmpty(str7)) ? false : true;
                         wallettransaction.date = ConnectionsManager.getInstance(i10).getCurrentTime();
-                        long j12 = j10;
-                        wallettransaction.amount = j12;
-                        wallettransaction.nft = nftitem2;
-                        TLRPC.User user2 = user;
-                        String str9 = str2;
-                        wallettransaction.peer = m0.f(user2, str9, str5);
-                        w6 w6Var = new w6(m0Var3, wallettransaction, nftitem2, A, 3);
+                        long j13 = j10;
+                        wallettransaction.amount = j13;
+                        wallettransaction.nft = nftitem3;
+                        e2 e2Var2 = e2Var;
+                        TLRPC.User user3 = user;
+                        String str8 = str2;
+                        if (e2Var2 == null || nftitem3 == null) {
+                            nftitem2 = nftitem3;
+                            l0Var = A;
+                            wallettransaction.peer = m0.f(user3, str8, str5);
+                        } else {
+                            TL_wallet.walletTransactionPeerTelegramGift wallettransactionpeertelegramgift = new TL_wallet.walletTransactionPeerTelegramGift();
+                            nftitem2 = nftitem3;
+                            l0Var = A;
+                            wallettransactionpeertelegramgift.own_profile = user3 != null && user3.id == UserConfig.getInstance(i10).getClientUserId();
+                            wallettransaction.peer = wallettransactionpeertelegramgift;
+                        }
+                        TL_wallet.nftItem nftitem4 = nftitem2;
+                        l0 l0Var2 = l0Var;
+                        w6 w6Var = new w6(m0Var5, wallettransaction, nftitem4, l0Var2, 3);
                         long nextLong = Utilities.random.nextLong();
                         wallettransaction.random_id = nextLong;
-                        m0Var3.p.add(0, wallettransaction);
-                        if (nftitem2 != null) {
-                            if (m0Var3.o == null) {
-                                m0Var3.o = new e0(m0Var3);
+                        m0Var5.p.add(0, wallettransaction);
+                        if (nftitem4 != null) {
+                            if (m0Var5.o == null) {
+                                m0Var5.o = new e0(m0Var5);
                             }
-                            e0 e0Var = m0Var3.o;
+                            e0 e0Var = m0Var5.o;
                             e0Var.c.add(wallettransaction);
                             e0Var.h();
                             e0Var.g();
                         }
-                        A.j();
-                        A.h();
-                        m0Var3.Q();
+                        l0Var2.k();
+                        l0Var2.i();
+                        m0Var5.Q();
                         SendMessagesHelper sendMessagesHelper = SendMessagesHelper.getInstance(i10);
-                        if (user2 == null || user2.id == UserConfig.getInstance(i10).getClientUserId() || nftitem2 != null) {
-                            j11 = j12;
-                            messageObject = null;
-                        } else {
-                            j11 = j12;
-                            messageObject = sendMessagesHelper.createSendingGramTransfer(user2, str9, j11, wallettransaction.comment, wallettransaction.comment_encrypted, wallettransaction.comment_encrypted_preparing, nextLong);
-                        }
-                        wallettransaction.localMessageId = messageObject == null ? 0 : messageObject.getId();
-                        Utilities.Callback callback5 = callback3;
-                        if (callback5 != null) {
-                            callback5.run(wallettransaction);
-                        }
-                        callback4.run(null);
-                        TL_update.TL_updateWalletGaslessInfo tL_updateWalletGaslessInfo = m0Var3.f;
-                        if (tL_updateWalletGaslessInfo != null && !TextUtils.isEmpty(tL_updateWalletGaslessInfo.relayer_address)) {
-                            TL_update.TL_updateWalletGaslessInfo tL_updateWalletGaslessInfo2 = m0Var3.f;
-                            if (tL_updateWalletGaslessInfo2.available) {
-                                str6 = tL_updateWalletGaslessInfo2.relayer_address;
+                        if (user3 != null) {
+                            m0Var3 = m0Var5;
+                            if (user3.id != UserConfig.getInstance(i10).getClientUserId() && nftitem4 == null) {
+                                user2 = user3;
+                                j11 = nextLong;
+                                j12 = j13;
+                                messageObject = sendMessagesHelper.createSendingGramTransfer(user2, str8, j12, wallettransaction.comment, wallettransaction.comment_encrypted, wallettransaction.comment_encrypted_preparing, j11);
+                                wallettransaction.localMessageId = messageObject != null ? 0 : messageObject.getId();
+                                callback4 = callback3;
+                                if (callback4 != null) {
+                                    callback4.run(wallettransaction);
+                                }
+                                String str9 = null;
+                                callback5.run(null);
+                                m0Var4 = m0Var3;
+                                tL_updateWalletGaslessInfo = m0Var4.f;
+                                if (tL_updateWalletGaslessInfo != null && !TextUtils.isEmpty(tL_updateWalletGaslessInfo.relayer_address)) {
+                                    tL_updateWalletGaslessInfo2 = m0Var4.f;
+                                    if (tL_updateWalletGaslessInfo2.available) {
+                                        str9 = tL_updateWalletGaslessInfo2.relayer_address;
+                                    }
+                                }
                                 m0.F("prepare sending");
-                                final t tVar = new t(m0Var3, w6Var, sendMessagesHelper, messageObject, wallettransaction, str9, A, nextLong, user2);
-                                e2Var2 = e2Var;
+                                String str10 = str9;
+                                long j14 = j11;
+                                final u uVar = new u(m0Var4, w6Var, sendMessagesHelper, messageObject, wallettransaction, str8, l0Var2, j14, user2);
                                 if (e2Var2 == null) {
                                     final int i11 = 0;
-                                    m0Var3.b.prepareTonConnectTransfer(j0Var, e2Var2, a1.g.o(nextLong, "deposit:"), new Utilities.Callback2() { // from class: org.telegram.ui.Wallet.u
+                                    m0Var4.b.prepareTonConnectTransfer(j0Var, e2Var2, a1.g.o(j14, "deposit:"), new Utilities.Callback2() { // from class: org.telegram.ui.Wallet.v
                                         @Override // org.telegram.messenger.Utilities.Callback2
                                         public final void run(Object obj3, Object obj4) {
                                             TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj3;
-                                            String str10 = (String) obj4;
+                                            String str11 = (String) obj4;
                                             switch (i11) {
                                                 case 0:
-                                                    tVar.run(sendtransfer, null, str10);
+                                                    uVar.run(sendtransfer, null, str11);
                                                     break;
                                                 default:
-                                                    tVar.run(sendtransfer, null, str10);
+                                                    uVar.run(sendtransfer, null, str11);
                                                     break;
                                             }
                                         }
                                     });
                                     return;
-                                } else if (nftitem2 == null) {
-                                    m0Var3.b.prepareSend(j0Var, str9, j11, str8, bArr2, str6, tVar);
+                                } else if (nftitem4 == null) {
+                                    m0Var4.b.prepareSend(j0Var, str8, j12, str7, bArr2, str10, uVar);
                                     return;
                                 } else {
                                     final int i12 = 1;
-                                    m0Var3.b.prepareSendNFT(j0Var, str9, nftitem2.address, str8, new Utilities.Callback2() { // from class: org.telegram.ui.Wallet.u
+                                    m0Var4.b.prepareSendNFT(j0Var, str8, nftitem4.address, str7, new Utilities.Callback2() { // from class: org.telegram.ui.Wallet.v
                                         @Override // org.telegram.messenger.Utilities.Callback2
                                         public final void run(Object obj3, Object obj4) {
                                             TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj3;
-                                            String str10 = (String) obj4;
+                                            String str11 = (String) obj4;
                                             switch (i12) {
                                                 case 0:
-                                                    tVar.run(sendtransfer, null, str10);
+                                                    uVar.run(sendtransfer, null, str11);
                                                     break;
                                                 default:
-                                                    tVar.run(sendtransfer, null, str10);
+                                                    uVar.run(sendtransfer, null, str11);
                                                     break;
                                             }
                                         }
@@ -218,11 +247,31 @@ public final /* synthetic */ class r implements Runnable {
                                     return;
                                 }
                             }
+                            user2 = user3;
+                        } else {
+                            user2 = user3;
+                            m0Var3 = m0Var5;
                         }
-                        str6 = null;
+                        j11 = nextLong;
+                        j12 = j13;
+                        messageObject = null;
+                        wallettransaction.localMessageId = messageObject != null ? 0 : messageObject.getId();
+                        callback4 = callback3;
+                        if (callback4 != null) {
+                        }
+                        String str92 = null;
+                        callback5.run(null);
+                        m0Var4 = m0Var3;
+                        tL_updateWalletGaslessInfo = m0Var4.f;
+                        if (tL_updateWalletGaslessInfo != null) {
+                            tL_updateWalletGaslessInfo2 = m0Var4.f;
+                            if (tL_updateWalletGaslessInfo2.available) {
+                            }
+                        }
                         m0.F("prepare sending");
-                        final t tVar2 = new t(m0Var3, w6Var, sendMessagesHelper, messageObject, wallettransaction, str9, A, nextLong, user2);
-                        e2Var2 = e2Var;
+                        String str102 = str92;
+                        long j142 = j11;
+                        final u uVar2 = new u(m0Var4, w6Var, sendMessagesHelper, messageObject, wallettransaction, str8, l0Var2, j142, user2);
                         if (e2Var2 == null) {
                         }
                     }

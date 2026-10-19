@@ -1,62 +1,24 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.content.Context;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class cl0 implements TextWatcher {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PasscodeActivity b;
+public final class cl0 extends FrameLayout {
+    public final org.telegram.ui.Components.xj0 a;
 
-    public /* synthetic */ cl0(PasscodeActivity passcodeActivity, int i10) {
-        this.a = i10;
-        this.b = passcodeActivity;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int i10 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 0:
-                PasscodeActivity passcodeActivity = this.b;
-                yk0 yk0Var = passcodeActivity.S;
-                if (passcodeActivity.R) {
-                    passcodeActivity.n.removeCallbacks(yk0Var);
-                    yk0Var.run();
-                    break;
-                }
-                break;
-            default:
-                PasscodeActivity passcodeActivity2 = this.b;
-                yk0 yk0Var2 = passcodeActivity2.S;
-                if (passcodeActivity2.R) {
-                    passcodeActivity2.n.removeCallbacks(yk0Var2);
-                    yk0Var2.run();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    private final void a(Editable editable) {
-    }
-
-    private final void b(Editable editable) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
+    public cl0(Context context) {
+        super(context);
+        org.telegram.ui.Components.xj0 xj0Var = new org.telegram.ui.Components.xj0(context);
+        this.a = xj0Var;
+        xj0Var.setOnClickListener(new s50(this, 14));
+        int dp = AndroidUtilities.dp(120.0f);
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(dp, dp);
+        layoutParams.gravity = 1;
+        addView(xj0Var, layoutParams);
+        setPadding(0, AndroidUtilities.dp(32.0f), 0, 0);
+        setLayoutParams(new s4.o0(-1, -2));
     }
 }

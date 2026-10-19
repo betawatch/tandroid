@@ -20,7 +20,7 @@ import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class q extends androidx.fragment.app.s {
     public final Handler k0 = new Handler(Looper.getMainLooper());
@@ -235,7 +235,6 @@ public class q extends androidx.fragment.app.s {
         this.l0.e(charSequence);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
     public final void X() {
         int i10;
         if (this.l0.m) {
@@ -249,9 +248,7 @@ public class q extends androidx.fragment.app.s {
         yVar.m = true;
         yVar.n = true;
         int i11 = 5;
-        int i12 = 0;
-        Object[] objArr = 0;
-        Object[] objArr2 = 0;
+        boolean z10 = false;
         CharSequence charSequence = null;
         r5 = null;
         r5 = null;
@@ -292,15 +289,15 @@ public class q extends androidx.fragment.app.s {
                 }
                 l.f(d, charSequence, executor, yVar4.j);
             }
-            int i13 = Build.VERSION.SDK_INT;
-            if (i13 >= 29) {
+            int i12 = Build.VERSION.SDK_INT;
+            if (i12 >= 29) {
                 j6.l lVar4 = this.l0.f;
                 m.a(d, true);
             }
             int c10 = this.l0.c();
-            if (i13 >= 30) {
+            if (i12 >= 30) {
                 n.a(d, c10);
-            } else if (i13 >= 29) {
+            } else if (i12 >= 29) {
                 m.b(d, v7.k.a(c10));
             }
             BiometricPrompt c11 = l.c(d);
@@ -308,7 +305,7 @@ public class q extends androidx.fragment.app.s {
             BiometricPrompt.CryptoObject b10 = v7.m.b(this.l0.g);
             y yVar5 = this.l0;
             if (yVar5.i == null) {
-                yVar5.i = new n4.s(i11, (boolean) (objArr == true ? 1 : 0));
+                yVar5.i = new n4.s(i11, z10);
             }
             n4.s sVar = yVar5.i;
             if (((CancellationSignal) sVar.b) == null) {
@@ -339,13 +336,13 @@ public class q extends androidx.fragment.app.s {
             }
         }
         Context applicationContext = K().getApplicationContext();
-        k0.b bVar = new k0.b(applicationContext, i12);
-        FingerprintManager w9 = k0.b.w(applicationContext);
-        if (w9 == null || !w9.isHardwareDetected()) {
+        k0.b bVar = new k0.b(applicationContext);
+        FingerprintManager b11 = k0.b.b(applicationContext);
+        if (b11 == null || !b11.isHardwareDetected()) {
             i10 = 12;
         } else {
-            FingerprintManager w10 = k0.b.w(applicationContext);
-            i10 = (w10 == null || !w10.hasEnrolledFingerprints()) ? 11 : 0;
+            FingerprintManager b12 = k0.b.b(applicationContext);
+            i10 = (b12 == null || !b12.hasEnrolledFingerprints()) ? 11 : 0;
         }
         if (i10 != 0) {
             T(i10, v7.n.a(applicationContext, i10));
@@ -393,10 +390,9 @@ public class q extends androidx.fragment.app.s {
             }
             y yVar8 = this.l0;
             if (yVar8.i == null) {
-                yVar8.i = new n4.s(i11, (boolean) (objArr2 == true ? 1 : 0));
+                yVar8.i = new n4.s(i11, z10);
             }
             n4.s sVar2 = yVar8.i;
-            int i14 = 3;
             if (((b2.t) sVar2.c) == null) {
                 sVar2.c = new b2.t(3);
             }
@@ -406,11 +402,11 @@ public class q extends androidx.fragment.app.s {
                 yVar9.h = new e(new w(yVar9));
             }
             e eVar3 = yVar9.h;
-            if (((a6.m) eVar3.c) == null) {
-                eVar3.c = new a6.m(eVar3, i14);
+            if (((qb.c) eVar3.c) == null) {
+                eVar3.c = new qb.c(eVar3, 4);
             }
             try {
-                bVar.i(eVar, tVar, (a6.m) eVar3.c);
+                bVar.a(eVar, tVar, (qb.c) eVar3.c);
             } catch (NullPointerException e7) {
                 Log.e("BiometricFragment", "Got NPE while authenticating with fingerprint.", e7);
                 T(1, v7.n.a(applicationContext, 1));
@@ -437,7 +433,7 @@ public class q extends androidx.fragment.app.s {
         if (k() == null) {
             return;
         }
-        y yVar = (y) new e(k()).m(y.class);
+        y yVar = (y) new e(k()).j(y.class);
         this.l0 = yVar;
         if (yVar.r == null) {
             yVar.r = new androidx.lifecycle.z();
@@ -452,12 +448,12 @@ public class q extends androidx.fragment.app.s {
         if (yVar3.t == null) {
             yVar3.t = new androidx.lifecycle.z();
         }
-        yVar3.t.d(this, new ag.b(this, 2));
+        yVar3.t.d(this, new a4.l(this, 3));
         y yVar4 = this.l0;
         if (yVar4.u == null) {
             yVar4.u = new androidx.lifecycle.z();
         }
-        yVar4.u.d(this, new a6.m(this, 4));
+        yVar4.u.d(this, new qb.c(this, 5));
         y yVar5 = this.l0;
         if (yVar5.v == null) {
             yVar5.v = new androidx.lifecycle.z();

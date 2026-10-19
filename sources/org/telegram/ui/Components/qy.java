@@ -41,7 +41,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qy implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -147,7 +147,7 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                 return;
             case 4:
                 MessagesController messagesController = (MessagesController) obj4;
-                bs0 bs0Var = (bs0) obj3;
+                cs0 cs0Var = (cs0) obj3;
                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (!((Boolean) obj).booleanValue()) {
                     if (U != null) {
@@ -160,17 +160,17 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                     if (U != null) {
                         xc.a0(U).P(R.raw.chats_infotip, AndroidUtilities.replaceArrows(AndroidUtilities.premiumText(LocaleController.getString(R.string.SensitiveContentSettingsToast), new sd(i12, U)), true)).k(true);
                     }
-                    bs0Var.run(Boolean.TRUE);
+                    cs0Var.run(Boolean.TRUE);
                     return;
                 }
             case 5:
-                sv0.j((sv0) obj4, (TL_stories.StoryItem) obj3, (ci.a7) obj);
+                tv0.j((tv0) obj4, (TL_stories.StoryItem) obj3, (ci.b7) obj);
                 return;
             case 6:
-                org.telegram.ui.gt gtVar = (org.telegram.ui.gt) obj4;
+                org.telegram.ui.et etVar = (org.telegram.ui.et) obj4;
                 org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) obj3;
                 Long l4 = (Long) obj;
-                gtVar.getClass();
+                etVar.getClass();
                 Bundle bundle = new Bundle();
                 if (l4.longValue() >= 0) {
                     bundle.putLong("user_id", l4.longValue());
@@ -178,98 +178,98 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                     bundle.putLong("chat_id", -l4.longValue());
                 }
                 n2Var2.presentFragment(new ProfileActivity(bundle, null));
-                gtVar.p();
+                etVar.p();
                 return;
             case 7:
-                org.telegram.ui.ct ctVar = (org.telegram.ui.ct) obj4;
+                org.telegram.ui.at atVar = (org.telegram.ui.at) obj4;
                 Boolean bool = (Boolean) obj;
-                ctVar.getClass();
+                atVar.getClass();
                 ((Utilities.Callback) obj3).run(bool);
                 if (bool.booleanValue()) {
-                    ctVar.a.p();
+                    atVar.a.p();
                     return;
                 }
                 return;
             case 8:
-                org.telegram.ui.ey eyVar = (org.telegram.ui.ey) obj4;
+                org.telegram.ui.cy cyVar = (org.telegram.ui.cy) obj4;
                 Activity activity = (Activity) obj3;
                 if (((Boolean) obj).booleanValue()) {
                     return;
                 }
-                eyVar.showDialog(new org.telegram.ui.rj0(activity, !we0.a(), new org.telegram.ui.sv(activity, 0)));
+                cyVar.showDialog(new org.telegram.ui.pj0(activity, !we0.a(), new org.telegram.ui.qv(activity, 0)));
                 return;
             case 9:
-                org.telegram.ui.hp0 hp0Var = (org.telegram.ui.hp0) obj3;
+                org.telegram.ui.fp0 fp0Var = (org.telegram.ui.fp0) obj3;
                 Integer num = (Integer) obj;
-                org.telegram.ui.p00 p00Var = ((org.telegram.ui.m00) obj4).e;
-                if (!p00Var.getUserConfig().isPremium()) {
-                    p00Var.showDialog(new sg.y0((org.telegram.ui.ActionBar.n2) p00Var, 35, true));
+                org.telegram.ui.n00 n00Var = ((org.telegram.ui.k00) obj4).e;
+                if (!n00Var.getUserConfig().isPremium()) {
+                    n00Var.showDialog(new sg.y0((org.telegram.ui.ActionBar.n2) n00Var, 35, true));
                     return;
                 }
                 int intValue = num.intValue();
-                p00Var.E = intValue;
-                hp0Var.a(intValue, true);
-                org.telegram.ui.d00 d00Var = p00Var.I;
-                if (d00Var != null) {
-                    d00Var.d(!p00Var.getUserConfig().isPremium() ? -1 : p00Var.E, true);
+                n00Var.E = intValue;
+                fp0Var.a(intValue, true);
+                org.telegram.ui.b00 b00Var = n00Var.I;
+                if (b00Var != null) {
+                    b00Var.d(!n00Var.getUserConfig().isPremium() ? -1 : n00Var.E, true);
                 }
-                p00Var.i0(true);
+                n00Var.i0(true);
                 return;
             case 10:
-                org.telegram.ui.c50 c50Var = (org.telegram.ui.c50) obj4;
-                org.telegram.ui.x10 x10Var = (org.telegram.ui.x10) obj3;
+                org.telegram.ui.a50 a50Var = (org.telegram.ui.a50) obj4;
+                org.telegram.ui.v10 v10Var = (org.telegram.ui.v10) obj3;
                 Bitmap bitmap2 = (Bitmap) obj;
-                if (x10Var != null) {
-                    c50Var.getClass();
-                    x10Var.setVisibility(0);
+                if (v10Var != null) {
+                    a50Var.getClass();
+                    v10Var.setVisibility(0);
                 }
-                c50Var.c = bitmap2;
+                a50Var.c = bitmap2;
                 Paint paint = new Paint(1);
-                c50Var.d = paint;
-                Bitmap bitmap3 = c50Var.c;
+                a50Var.d = paint;
+                Bitmap bitmap3 = a50Var.c;
                 Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                 BitmapShader bitmapShader = new BitmapShader(bitmap3, tileMode, tileMode);
-                c50Var.e = bitmapShader;
+                a50Var.e = bitmapShader;
                 paint.setShader(bitmapShader);
                 ColorMatrix colorMatrix3 = new ColorMatrix();
                 AndroidUtilities.adjustSaturationColorMatrix(colorMatrix3, org.telegram.ui.ActionBar.h6.I.q() ? 0.05f : 0.25f);
                 AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix3, org.telegram.ui.ActionBar.h6.I.q() ? -0.02f : -0.04f);
-                c50Var.d.setColorFilter(new ColorMatrixColorFilter(colorMatrix3));
+                a50Var.d.setColorFilter(new ColorMatrixColorFilter(colorMatrix3));
                 return;
             case 11:
-                org.telegram.ui.kb0 kb0Var = (org.telegram.ui.kb0) obj4;
+                org.telegram.ui.ib0 ib0Var = (org.telegram.ui.ib0) obj4;
                 TLRPC.User[] userArr = (TLRPC.User[]) obj3;
                 TLRPC.User user = (TLRPC.User) obj;
-                kb0Var.c();
+                ib0Var.c();
                 if (user == null) {
                     return;
                 }
                 long j10 = userArr[0].id;
                 Bundle bundle2 = new Bundle();
                 bundle2.putLong("user_id", user.id);
-                kb0Var.u(new org.telegram.ui.jb0(bundle2, user, userArr, j10), false);
+                ib0Var.u(new org.telegram.ui.hb0(bundle2, user, userArr, j10), false);
                 return;
             case 12:
-                org.telegram.ui.cj0 cj0Var = (org.telegram.ui.cj0) obj4;
+                org.telegram.ui.bj0 bj0Var = (org.telegram.ui.bj0) obj4;
                 String str = (String) obj3;
                 List<TLRPC.User> list = (List) obj;
                 HashSet hashSet = new HashSet();
-                ArrayList arrayList5 = cj0Var.f0;
+                ArrayList arrayList5 = bj0Var.f0;
                 arrayList5.clear();
                 if (list != null) {
                     for (TLRPC.User user2 : list) {
-                        if (user2 != null && !hashSet.contains(Long.valueOf(user2.id)) && cj0Var.S(user2)) {
+                        if (user2 != null && !hashSet.contains(Long.valueOf(user2.id)) && bj0Var.S(user2)) {
                             arrayList5.add(user2);
                             hashSet.add(Long.valueOf(user2.id));
                         }
                     }
                 }
-                Boolean bool2 = cj0Var.r0;
+                Boolean bool2 = bj0Var.r0;
                 if (bool2 == null || !bool2.booleanValue()) {
-                    cj0Var.V(true, true);
+                    bj0Var.V(true, true);
                     return;
                 }
-                qy qyVar = new qy(13, cj0Var, hashSet);
+                qy qyVar = new qy(13, bj0Var, hashSet);
                 MessagesController messagesController2 = MessagesController.getInstance(UserConfig.selectedAccount);
                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
                 if (str == null || str.isEmpty()) {
@@ -278,42 +278,42 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                     TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
                     tL_contacts_search.q = str;
                     tL_contacts_search.limit = 50;
-                    i14 = connectionsManager.sendRequest(tL_contacts_search, new org.telegram.ui.o71(10, messagesController2, qyVar));
+                    i14 = connectionsManager.sendRequest(tL_contacts_search, new org.telegram.ui.m71(10, messagesController2, qyVar));
                 }
-                cj0Var.m0 = i14;
+                bj0Var.m0 = i14;
                 return;
             case 13:
-                org.telegram.ui.cj0 cj0Var2 = (org.telegram.ui.cj0) obj4;
+                org.telegram.ui.bj0 bj0Var2 = (org.telegram.ui.bj0) obj4;
                 HashSet hashSet2 = (HashSet) obj3;
                 List<TLRPC.User> list2 = (List) obj;
                 if (list2 != null) {
                     for (TLRPC.User user3 : list2) {
-                        if (user3 != null && !hashSet2.contains(Long.valueOf(user3.id)) && cj0Var2.S(user3)) {
-                            cj0Var2.f0.add(user3);
+                        if (user3 != null && !hashSet2.contains(Long.valueOf(user3.id)) && bj0Var2.S(user3)) {
+                            bj0Var2.f0.add(user3);
                             hashSet2.add(Long.valueOf(user3.id));
                         }
                     }
                 }
-                cj0Var2.V(true, true);
+                bj0Var2.V(true, true);
                 return;
             case 14:
-                org.telegram.ui.oj0 oj0Var = (org.telegram.ui.oj0) obj4;
+                org.telegram.ui.mj0 mj0Var = (org.telegram.ui.mj0) obj4;
                 String str2 = (String) obj3;
                 TLRPC.User user4 = (TLRPC.User) obj;
                 if (user4 == null) {
-                    oj0Var.R.setImageDrawable(null);
-                    oj0Var.v.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag("This phone number is not on Telegram. **Invite >**", new org.telegram.ui.yg0(i12, oj0Var, str2)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
+                    mj0Var.R.setImageDrawable(null);
+                    mj0Var.v.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag("This phone number is not on Telegram. **Invite >**", new org.telegram.ui.xg0(i12, mj0Var, str2)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
                 } else {
-                    Drawable mutate = oj0Var.getContext().getResources().getDrawable(R.drawable.msg_text_check).mutate();
-                    mutate.setColorFilter(new PorterDuffColorFilter(oj0Var.getThemedColor(org.telegram.ui.ActionBar.h6.v6), PorterDuff.Mode.SRC_IN));
-                    oj0Var.R.setImageDrawable(mutate);
+                    Drawable mutate = mj0Var.getContext().getResources().getDrawable(R.drawable.msg_text_check).mutate();
+                    mutate.setColorFilter(new PorterDuffColorFilter(mj0Var.getThemedColor(org.telegram.ui.ActionBar.h6.v6), PorterDuff.Mode.SRC_IN));
+                    mj0Var.R.setImageDrawable(mutate);
                     if (user4.contact) {
-                        oj0Var.v.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag("This phone number is already in your contacts. **View >**", new org.telegram.ui.yg0(i13, oj0Var, user4)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
+                        mj0Var.v.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag("This phone number is already in your contacts. **View >**", new org.telegram.ui.xg0(i13, mj0Var, user4)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
                     } else {
-                        oj0Var.v.setText("This phone number is on Telegram.");
+                        mj0Var.v.setText("This phone number is on Telegram.");
                     }
                 }
-                oj0Var.y(false);
+                mj0Var.y(false);
                 return;
             case 15:
                 ArrayList arrayList6 = (ArrayList) obj3;
@@ -347,13 +347,13 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                 return;
             case 16:
                 ((String[]) obj4)[0] = (String) obj;
-                ((org.telegram.ui.tk0) obj3).run();
+                ((org.telegram.ui.rk0) obj3).run();
                 return;
             case 17:
-                org.telegram.ui.sv0 sv0Var = (org.telegram.ui.sv0) obj4;
+                org.telegram.ui.qv0 qv0Var = (org.telegram.ui.qv0) obj4;
                 org.telegram.ui.ActionBar.n2 n2Var3 = (org.telegram.ui.ActionBar.n2) obj3;
                 Long l10 = (Long) obj;
-                sv0Var.getClass();
+                qv0Var.getClass();
                 Bundle bundle3 = new Bundle();
                 if (l10.longValue() >= 0) {
                     bundle3.putLong("user_id", l10.longValue());
@@ -361,7 +361,7 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                     bundle3.putLong("chat_id", -l10.longValue());
                 }
                 n2Var3.presentFragment(new ProfileActivity(bundle3, null));
-                sv0Var.c(false);
+                qv0Var.c(false);
                 return;
             case 18:
                 ProfileActivity profileActivity = (ProfileActivity) obj4;
@@ -374,7 +374,7 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                 userFull.flags2 |= 32;
                 userFull.birthday = tL_birthday;
                 profileActivity.getMessagesController().invalidateContentSettings();
-                profileActivity.getConnectionsManager().sendRequest(updatebirthday, new org.telegram.ui.vr0(profileActivity, userFull, tL_birthday2, i13), 1024);
+                profileActivity.getConnectionsManager().sendRequest(updatebirthday, new org.telegram.ui.tr0(profileActivity, userFull, tL_birthday2, i13), 1024);
                 return;
             case 19:
                 ProfileActivity profileActivity2 = (ProfileActivity) obj4;
@@ -392,58 +392,58 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                 }
                 return;
             case 20:
-                org.telegram.ui.s01 s01Var = (org.telegram.ui.s01) obj4;
+                org.telegram.ui.q01 q01Var = (org.telegram.ui.q01) obj4;
                 String str4 = (String) obj3;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) obj;
-                TLRPC.Document k10 = org.telegram.ui.z51.k(str4, tL_messages_stickerSet2);
+                TLRPC.Document k10 = org.telegram.ui.x51.k(str4, tL_messages_stickerSet2);
                 if (k10 == null) {
                     StringBuilder v = a1.g.v("couldn't find ", str4, " sticker in EmojiAnimations");
-                    String[] strArr = org.telegram.ui.v01.s;
+                    String[] strArr = org.telegram.ui.t01.s;
                     FileLog.e(v.toString());
                     return;
                 }
-                org.telegram.ui.u01 u01Var = new org.telegram.ui.u01();
-                s01Var.c = u01Var;
-                s01Var.e.add(u01Var);
-                int f7 = org.telegram.ui.qy.f();
-                s01Var.c.setAutoRepeat(0);
-                org.telegram.ui.u01 u01Var2 = s01Var.c;
+                org.telegram.ui.s01 s01Var = new org.telegram.ui.s01();
+                q01Var.c = s01Var;
+                q01Var.e.add(s01Var);
+                int f7 = org.telegram.ui.oy.f();
+                q01Var.c.setAutoRepeat(0);
+                org.telegram.ui.s01 s01Var2 = q01Var.c;
                 String str5 = f7 + "_" + f7 + "_precache";
-                org.telegram.ui.sy0 sy0Var = new org.telegram.ui.sy0(s01Var, i11);
-                u01Var2.getClass();
-                u01Var2.setDelegate(new org.telegram.ui.t01(new Runnable[]{sy0Var}));
-                u01Var2.setImage(ImageLocation.getForDocument(k10), str5, null, null, tL_messages_stickerSet2, 0);
-                s01Var.c.onAttachedToWindow();
-                s01Var.g[1] = true;
-                s01Var.a();
+                org.telegram.ui.qy0 qy0Var = new org.telegram.ui.qy0(q01Var, i11);
+                s01Var2.getClass();
+                s01Var2.setDelegate(new org.telegram.ui.r01(new Runnable[]{qy0Var}));
+                s01Var2.setImage(ImageLocation.getForDocument(k10), str5, null, null, tL_messages_stickerSet2, 0);
+                q01Var.c.onAttachedToWindow();
+                q01Var.g[1] = true;
+                q01Var.a();
                 return;
             case 21:
                 ((ci.e) obj4).run((HashSet) obj3);
                 return;
             case 22:
-                org.telegram.ui.z31 z31Var = (org.telegram.ui.z31) obj4;
+                org.telegram.ui.x31 x31Var = (org.telegram.ui.x31) obj4;
                 View view2 = (View) obj3;
                 Bitmap bitmap4 = (Bitmap) obj;
                 if (view2 != null) {
-                    z31Var.getClass();
+                    x31Var.getClass();
                     view2.setVisibility(0);
                 }
-                z31Var.f = bitmap4;
+                x31Var.f = bitmap4;
                 Paint paint2 = new Paint(1);
-                z31Var.n = paint2;
-                Bitmap bitmap5 = z31Var.f;
+                x31Var.n = paint2;
+                Bitmap bitmap5 = x31Var.f;
                 Shader.TileMode tileMode2 = Shader.TileMode.CLAMP;
                 BitmapShader bitmapShader2 = new BitmapShader(bitmap5, tileMode2, tileMode2);
-                z31Var.h = bitmapShader2;
+                x31Var.h = bitmapShader2;
                 paint2.setShader(bitmapShader2);
                 ColorMatrix colorMatrix4 = new ColorMatrix();
                 AndroidUtilities.adjustSaturationColorMatrix(colorMatrix4, org.telegram.ui.ActionBar.h6.I.q() ? 0.05f : 0.25f);
                 AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix4, org.telegram.ui.ActionBar.h6.I.q() ? -0.02f : -0.04f);
-                z31Var.n.setColorFilter(new ColorMatrixColorFilter(colorMatrix4));
-                z31Var.r = new Matrix();
+                x31Var.n.setColorFilter(new ColorMatrixColorFilter(colorMatrix4));
+                x31Var.r = new Matrix();
                 return;
             case 23:
-                org.telegram.ui.z71.X((org.telegram.ui.z71) obj4, (TLRPC.TL_attachMenuBot) obj3);
+                org.telegram.ui.x71.X((org.telegram.ui.x71) obj4, (TLRPC.TL_attachMenuBot) obj3);
                 return;
             case 24:
                 ThemeActivity themeActivity = (ThemeActivity) obj4;
@@ -463,9 +463,9 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                 return;
             case 25:
                 ThemeActivity themeActivity2 = (ThemeActivity) obj4;
-                org.telegram.ui.m71 m71Var = (org.telegram.ui.m71) obj3;
+                org.telegram.ui.k71 k71Var = (org.telegram.ui.k71) obj3;
                 if (((Boolean) obj).booleanValue()) {
-                    m71Var.run();
+                    k71Var.run();
                     return;
                 } else {
                     xc.a0(themeActivity2).M(LocaleController.getString(R.string.AgeVerificationFailedTitle), LocaleController.getString(R.string.AgeVerificationFailedText), R.raw.error).j();
@@ -481,7 +481,7 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                     return;
                 } else {
                     org.telegram.ui.Wallet.m0.F("sending disableBackup to server");
-                    org.telegram.ui.Wallet.s2.a(m0Var.a, new gi.c(7), null, null, null, new ci.c0(i13, m0Var, d8Var), true, true, new org.telegram.ui.pa0(obj2, i15));
+                    org.telegram.ui.Wallet.s2.a(m0Var.a, new gi.c(7), null, null, null, new ci.c0(i13, m0Var, d8Var), true, true, new org.telegram.ui.na0(obj2, i15));
                     return;
                 }
             case 27:
@@ -503,7 +503,7 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                 ((org.telegram.ui.Wallet.x7) obj3).run((String) obj);
                 return;
             default:
-                ((org.telegram.ui.Wallet.m0) obj4).q.put((TL_wallet.walletTransaction) obj, (ai.c4) obj3);
+                ((org.telegram.ui.Wallet.m0) obj4).q.put((TL_wallet.walletTransaction) obj, (ai.k4) obj3);
                 return;
         }
     }

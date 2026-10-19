@@ -17,20 +17,20 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.aa0;
 import org.telegram.ui.Components.ba0;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.dq;
-import org.telegram.ui.be;
+import org.telegram.ui.zd;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public class d extends FrameLayout implements aa0 {
     public boolean E;
     public int F;
-    public ci.u7 G;
+    public ci.v7 G;
     public float H;
     public ValueAnimator I;
     public boolean J;
@@ -98,7 +98,7 @@ public class d extends FrameLayout implements aa0 {
             this.Q = ofFloat;
             ofFloat.addUpdateListener(new b(this, 0));
             this.Q.addListener(new c(this, i12));
-            lk.l(2.0f, this.Q);
+            kk.l(2.0f, this.Q);
             this.Q.setDuration(200L);
             this.Q.start();
         }
@@ -190,7 +190,7 @@ public class d extends FrameLayout implements aa0 {
     }
 
     public boolean i() {
-        return !(this instanceof be);
+        return !(this instanceof zd);
     }
 
     @Override // android.view.View

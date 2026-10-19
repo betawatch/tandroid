@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class h implements i {
     public final /* synthetic */ int a;
@@ -128,7 +128,7 @@ public final class h implements i {
                     vVar.r = v0.n("application/dvbsubs");
                     vVar.u = Collections.singletonList(e0Var.b);
                     vVar.d = e0Var.a;
-                    i2.d.u(vVar, j02);
+                    i2.e.u(vVar, j02);
                     j0VarArr[i10] = j02;
                 }
                 break;
@@ -142,7 +142,7 @@ public final class h implements i {
                 vVar2.a = (String) f0Var.e;
                 vVar2.q = v0.n("video/mp2t");
                 vVar2.r = v0.n("application/id3");
-                i2.d.u(vVar2, j03);
+                i2.e.u(vVar2, j03);
                 break;
         }
     }

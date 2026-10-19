@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class ph0 extends FrameLayout {
     public float E;
@@ -35,7 +35,7 @@ public final class ph0 extends FrameLayout {
     public SparseIntArray a;
     public float b;
     public float c;
-    public k0.b d;
+    public le.b d;
     public boolean e;
     public boolean f;
     public boolean h;
@@ -213,7 +213,7 @@ public final class ph0 extends FrameLayout {
         nh0 nh0Var = this.K;
         int height = (int) rectF.height();
         this.J = height;
-        org.telegram.ui.ActionBar.n2[] n2VarArr = (org.telegram.ui.ActionBar.n2[]) ((org.telegram.ui.wt) nh0Var).b;
+        org.telegram.ui.ActionBar.n2[] n2VarArr = (org.telegram.ui.ActionBar.n2[]) ((org.telegram.ui.ut) nh0Var).b;
         org.telegram.ui.ActionBar.n2 n2Var = n2VarArr[0];
         if (n2Var == null || n2Var.getFragmentView() == null || !n2VarArr[0].isInPreviewMode()) {
             return;

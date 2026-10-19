@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class v00 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int w = 0;
@@ -31,15 +31,15 @@ public final class v00 extends org.telegram.ui.ActionBar.f3 implements Notificat
     public final View f;
     public int h;
     public boolean n;
-    public org.telegram.ui.wt r;
+    public org.telegram.ui.ut r;
     public final ArrayList s;
     public final ArrayList v;
 
-    public v00(org.telegram.ui.ey eyVar, ArrayList arrayList) {
-        super(eyVar.getParentActivity(), false);
+    public v00(org.telegram.ui.cy cyVar, ArrayList arrayList) {
+        super(cyVar.getParentActivity(), false);
         fixNavigationBar();
         this.v = arrayList;
-        this.s = new ArrayList(eyVar.getMessagesController().dialogFilters);
+        this.s = new ArrayList(cyVar.getMessagesController().dialogFilters);
         int i10 = 0;
         while (i10 < this.s.size()) {
             if (((MessagesController.DialogFilter) this.s.get(i10)).isDefault()) {
@@ -48,7 +48,7 @@ public final class v00 extends org.telegram.ui.ActionBar.f3 implements Notificat
             }
             i10++;
         }
-        Activity parentActivity = eyVar.getParentActivity();
+        Activity parentActivity = cyVar.getParentActivity();
         t00 t00Var = new t00(this, parentActivity);
         this.containerView = t00Var;
         t00Var.setWillNotDraw(false);
@@ -96,7 +96,7 @@ public final class v00 extends org.telegram.ui.ActionBar.f3 implements Notificat
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
     }
 
-    public static void H(v00 v00Var) {
+    public static void G(v00 v00Var) {
         View view = v00Var.f;
         TextView textView = v00Var.d;
         ai.u1 u1Var = v00Var.b;
@@ -171,7 +171,7 @@ public final class v00 extends org.telegram.ui.ActionBar.f3 implements Notificat
         this.e = animatorSet2;
         animatorSet2.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, z10 ? 1.0f : 0.0f));
         this.e.setDuration(150L);
-        this.e.addListener(new org.telegram.ui.ho(9, this, z10));
+        this.e.addListener(new org.telegram.ui.fo(9, this, z10));
         this.e.start();
     }
 

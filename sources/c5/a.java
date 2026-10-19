@@ -1,6 +1,6 @@
 package c5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class a {
     public String a;
@@ -11,7 +11,7 @@ public final class a {
         this.b = str2;
     }
 
-    public r a() {
+    public s a() {
         if ("first_party".equals(this.b)) {
             throw new IllegalArgumentException("Serialized doc id must be provided for first party products.");
         }
@@ -19,7 +19,7 @@ public final class a {
             throw new IllegalArgumentException("Product id must be provided.");
         }
         if (this.b != null) {
-            return new r(this);
+            return new s(this);
         }
         throw new IllegalArgumentException("Product type must be provided.");
     }

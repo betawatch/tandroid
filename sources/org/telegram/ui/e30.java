@@ -1,23 +1,24 @@
 package org.telegram.ui;
 
-import org.telegram.ui.Components.UndoView;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class e30 extends UndoView {
-    public final /* synthetic */ s50 f0;
+public final class e30 extends s4.k {
+    public final /* synthetic */ q50 F;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e30(s50 s50Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.f0 = s50Var;
+    public e30(q50 q50Var) {
+        this.F = q50Var;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void k(long j10, int i10, Object obj, Object obj2, Runnable runnable, Runnable runnable2) {
-        if (this.f0.z0 != null) {
-            return;
-        }
-        super.k(j10, i10, obj, obj2, runnable, runnable2);
+    @Override // s4.k
+    public final void P(s4.b1 b1Var) {
+        ViewGroup viewGroup;
+        q50 q50Var = this.F;
+        q50Var.Q.invalidate();
+        q50Var.a2.invalidate();
+        viewGroup = ((org.telegram.ui.ActionBar.f3) q50Var).containerView;
+        viewGroup.invalidate();
+        q50.K0(q50Var);
     }
 }

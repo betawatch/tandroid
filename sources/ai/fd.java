@@ -7,10 +7,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class fd extends LinearLayout {
     public final int a;
@@ -46,12 +46,12 @@ public final class fd extends LinearLayout {
         linearLayout.addView(j5Var, w7.z5.k(0.0f, 0.0f, 0.0f, 2.0f, -1, -2));
         TextView textView = new TextView(context);
         this.e = textView;
-        lk.o(i11, d6Var, textView, 1, 13.0f);
+        kk.o(i11, d6Var, textView, 1, 13.0f);
         textView.setVisibility(8);
         TextView i12 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.z5.k(0.0f, 0.0f, 0.0f, 1.0f, -1, -2), context);
         this.f = i12;
         int i13 = org.telegram.ui.ActionBar.h6.z6;
-        lk.o(i13, d6Var, i12, 1, 14.0f);
+        kk.o(i13, d6Var, i12, 1, 14.0f);
         linearLayout.addView(i12, w7.z5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(1);
@@ -62,7 +62,7 @@ public final class fd extends LinearLayout {
         textView2.setGravity(5);
         TextView i14 = com.google.android.gms.internal.play_billing.k3.i(linearLayout2, textView2, w7.z5.t(-1, -2, 5, 0, 0, 0, 1), context);
         this.n = i14;
-        lk.o(i13, d6Var, i14, 1, 13.0f);
+        kk.o(i13, d6Var, i14, 1, 13.0f);
         i14.setGravity(5);
         linearLayout2.addView(i14, w7.z5.t(-1, -2, 5, 0, 0, 0, 0));
     }

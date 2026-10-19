@@ -9,9 +9,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class z80 extends org.telegram.ui.sn {
+public final class z80 extends org.telegram.ui.qn {
     public boolean Rc;
     public final /* synthetic */ boolean Sc;
     public final /* synthetic */ long Tc;
@@ -36,11 +36,11 @@ public final class z80 extends org.telegram.ui.sn {
             boolean z10 = chat.admin_rights != null;
             boolean z11 = chat.creator;
             d6Var = ((org.telegram.ui.ActionBar.f3) z80Var.Uc).resourcesProvider;
-            v01.c(parentActivity, i10, j11, currentUser, null, z10, z11, d6Var);
+            w01.c(parentActivity, i10, j11, currentUser, null, z10, z11, d6Var);
         }
     }
 
-    @Override // org.telegram.ui.sn, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.qn, org.telegram.ui.ActionBar.n2
     public final void onBecomeFullyVisible() {
         super.onBecomeFullyVisible();
         if (this.Rc || !this.Sc) {

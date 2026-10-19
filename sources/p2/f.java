@@ -1,34 +1,47 @@
 package p2;
 
-import android.net.Uri;
-import java.util.ArrayList;
-import java.util.HashMap;
+import j$.util.Objects;
+import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class f {
     public final String a;
-    public Uri c;
-    public Uri d;
-    public boolean j;
-    public Boolean o;
-    public String p;
-    public String q;
-    public String t;
-    public final HashMap b = new HashMap();
-    public long e = -9223372036854775807L;
-    public long f = -9223372036854775807L;
-    public long g = -9223372036854775807L;
-    public long h = -9223372036854775807L;
-    public ArrayList i = new ArrayList();
-    public long k = -9223372036854775807L;
-    public long l = -9223372036854775807L;
-    public ArrayList m = new ArrayList();
-    public ArrayList n = new ArrayList();
-    public long r = -9223372036854775807L;
-    public long s = -9223372036854775807L;
+    public final int b;
+    public final double c;
+    public final String d;
 
-    public f(String str) {
+    public f(String str, double d) {
         this.a = str;
+        this.b = 2;
+        this.c = d;
+        this.d = null;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof f)) {
+            return false;
+        }
+        f fVar = (f) obj;
+        return this.b == fVar.b && Double.compare(this.c, fVar.c) == 0 && Objects.equals(this.a, fVar.a) && Objects.equals(this.d, fVar.d);
+    }
+
+    public final int hashCode() {
+        return Objects.hash(this.a, Integer.valueOf(this.b), Double.valueOf(this.c), this.d);
+    }
+
+    public f(int i10, String str, String str2) {
+        boolean z10 = true;
+        if (i10 == 1 && !str2.startsWith("0x") && !str2.startsWith("0X")) {
+            z10 = false;
+        }
+        u6.p(z10);
+        this.a = str;
+        this.b = i10;
+        this.d = str2;
+        this.c = 0.0d;
     }
 }

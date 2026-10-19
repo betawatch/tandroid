@@ -10,9 +10,9 @@ import android.os.Looper;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.Log;
-import c5.d0;
-import c5.g0;
-import c5.w;
+import c5.e0;
+import c5.h0;
+import c5.x;
 import com.google.android.gms.internal.cast.a1;
 import com.google.android.gms.internal.cast.o4;
 import com.google.android.gms.internal.cast.p0;
@@ -34,11 +34,11 @@ import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Cells.p2;
 import org.telegram.ui.Components.p6;
-import org.telegram.ui.mg;
+import org.telegram.ui.kg;
 import v7.u6;
-import w7.k6;
+import w7.j6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class l implements OnSuccessListener, ne.k {
     public static l e;
@@ -59,7 +59,7 @@ public final class l implements OnSuccessListener, ne.k {
         synchronized (l.class) {
             try {
                 if (e == null) {
-                    ScheduledExecutorService unconfigurableScheduledExecutorService = Executors.unconfigurableScheduledExecutorService(Executors.newScheduledThreadPool(1, new w("MessengerIpcClient")));
+                    ScheduledExecutorService unconfigurableScheduledExecutorService = Executors.unconfigurableScheduledExecutorService(Executors.newScheduledThreadPool(1, new x("MessengerIpcClient")));
                     l lVar2 = new l();
                     lVar2.d = new j(lVar2);
                     lVar2.a = 1;
@@ -144,7 +144,7 @@ public final class l implements OnSuccessListener, ne.k {
             ne.g gVar = (ne.g) it.next();
             fArr[((Integer) gVar.a).intValue()] = gVar.c();
         }
-        ((mg) this.c).run();
+        ((kg) this.c).run();
     }
 
     public void g() {
@@ -167,7 +167,7 @@ public final class l implements OnSuccessListener, ne.k {
 
     public void h(int i10, boolean z10, boolean z11) {
         int numberOfLeadingZeros = 31 - Integer.numberOfLeadingZeros(this.a);
-        int b10 = k6.b(this.a, 1 << i10, z10);
+        int b10 = j6.b(this.a, 1 << i10, z10);
         this.a = b10;
         int numberOfLeadingZeros2 = 31 - Integer.numberOfLeadingZeros(b10);
         if (numberOfLeadingZeros != numberOfLeadingZeros2) {
@@ -176,12 +176,12 @@ public final class l implements OnSuccessListener, ne.k {
     }
 
     public void i(Throwable th2) {
-        d0 d0Var = (d0) this.d;
+        e0 e0Var = (e0) this.d;
         if (th2 instanceof TimeoutException) {
-            d0Var.F(102, 28, g0.p);
+            e0Var.F(102, 28, h0.p);
             u.i("BillingClientTesting", "Asynchronous call to Billing Override Service timed out.", th2);
         } else {
-            d0Var.F(95, 28, g0.p);
+            e0Var.F(95, 28, h0.p);
             u.i("BillingClientTesting", "An error occurred while retrieving billing override.", th2);
         }
         ((Runnable) this.c).run();

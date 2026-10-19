@@ -10,10 +10,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.q31;
+import org.telegram.ui.Components.r31;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -42,7 +42,7 @@ public final /* synthetic */ class j implements Runnable {
                 x.Z((x) this.d, (TLRPC.TL_error) this.e, (TwoStepVerificationActivity) this.f, (Activity) this.h, this.b, this.c, this.n);
                 break;
             default:
-                final q31 q31Var = (q31) this.d;
+                final r31 r31Var = (r31) this.d;
                 org.telegram.ui.ActionBar.e1 e1Var = (org.telegram.ui.ActionBar.e1) this.e;
                 final i80 i80Var = (i80) this.f;
                 final TLRPC.User user = (TLRPC.User) this.h;
@@ -52,11 +52,11 @@ public final /* synthetic */ class j implements Runnable {
                 e1Var.setVisibility(0);
                 e1Var.setText(LocaleController.getString(!z10 ? R.string.UnbanUserMonoforum : R.string.BanUserMonoforum));
                 final long j10 = this.c;
-                e1Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.b31
+                e1Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.c31
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        q31 q31Var2 = q31.this;
-                        int i10 = q31Var2.b;
+                        r31 r31Var2 = r31.this;
+                        int i10 = r31Var2.b;
                         i80Var.u();
                         boolean z12 = z11;
                         TLRPC.User user2 = user;
@@ -68,15 +68,15 @@ public final /* synthetic */ class j implements Runnable {
                         tL_channels_editBanned.participant = MessagesController.getInputPeer(user2);
                         tL_channels_editBanned.channel = MessagesController.getInputChannel(chat);
                         tL_channels_editBanned.banned_rights = new TLRPC.TL_chatBannedRights();
-                        ConnectionsManager.getInstance(i10).sendRequest(tL_channels_editBanned, new y1(q31Var2, 15));
+                        ConnectionsManager.getInstance(i10).sendRequest(tL_channels_editBanned, new y1(r31Var2, 15));
                     }
                 });
                 break;
         }
     }
 
-    public /* synthetic */ j(q31 q31Var, boolean z10, org.telegram.ui.ActionBar.e1 e1Var, i80 i80Var, long j10, TLRPC.User user, TLRPC.Chat chat) {
-        this.d = q31Var;
+    public /* synthetic */ j(r31 r31Var, boolean z10, org.telegram.ui.ActionBar.e1 e1Var, i80 i80Var, long j10, TLRPC.User user, TLRPC.Chat chat) {
+        this.d = r31Var;
         this.b = z10;
         this.e = e1Var;
         this.f = i80Var;

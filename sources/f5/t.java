@@ -1,13 +1,13 @@
 package f5;
 
 import java.nio.ByteBuffer;
-import w7.c7;
+import w7.b7;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class t extends c {
-    public static final /* synthetic */ le.b h;
-    public static final /* synthetic */ le.b n;
+    public static final /* synthetic */ te.b h;
+    public static final /* synthetic */ te.b n;
     public long[] f;
 
     static {
@@ -19,7 +19,7 @@ public final class t extends c {
     @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
-        int a2 = c7.a(e5.b.i(byteBuffer));
+        int a2 = b7.a(e5.b.i(byteBuffer));
         this.f = new long[a2];
         for (int i10 = 0; i10 < a2; i10++) {
             this.f[i10] = e5.b.i(byteBuffer);

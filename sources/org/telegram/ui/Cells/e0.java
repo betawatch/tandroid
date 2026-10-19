@@ -8,12 +8,12 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.ba0;
-import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.e11;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class e0 {
     public final Runnable a;
@@ -23,7 +23,7 @@ public final class e0 {
     public float e;
     public int f;
     public int g;
-    public d11 h;
+    public e11 h;
     public TL_keyboard.KeyboardInlineButton i;
     public BotInlineKeyboard.ButtonCustom j;
     public BotInlineKeyboard.Button k;
@@ -76,7 +76,7 @@ public final class e0 {
                 this.x = ofFloat;
                 ofFloat.addUpdateListener(new r(this, 1));
                 this.x.addListener(new m.a(this, 11));
-                lk.l(2.0f, this.x);
+                kk.l(2.0f, this.x);
                 this.x.setDuration(350L);
                 this.x.start();
             }

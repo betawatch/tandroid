@@ -16,10 +16,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.aw;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.gt;
-import org.telegram.ui.u10;
+import org.telegram.ui.et;
+import org.telegram.ui.s10;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class v extends im0 {
     public final /* synthetic */ int V2 = 0;
@@ -30,7 +30,7 @@ public final class v extends im0 {
     public v(y yVar, Context context) {
         super(context, null);
         this.X2 = yVar;
-        this.W2 = new u10();
+        this.W2 = new s10();
     }
 
     @Override // org.telegram.ui.Components.im0, android.view.ViewGroup, android.view.View
@@ -52,10 +52,10 @@ public final class v extends im0 {
                 canvas.save();
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(paddingLeft, 0.0f, AndroidUtilities.dp(12.0f) + paddingLeft, getHeight());
-                u10 u10Var = (u10) obj;
-                u10Var.b(canvas, rectF, 0, yVar.d);
+                s10 s10Var = (s10) obj;
+                s10Var.b(canvas, rectF, 0, yVar.d);
                 rectF.set(width - AndroidUtilities.dp(12.0f), 0.0f, width, getHeight());
-                u10Var.b(canvas, rectF, 2, yVar.d);
+                s10Var.b(canvas, rectF, 2, yVar.d);
                 canvas.restore();
                 canvas.restore();
                 break;
@@ -177,7 +177,7 @@ public final class v extends im0 {
                 motionEvent2 = motionEvent;
                 return super.onInterceptTouchEvent(motionEvent2);
             default:
-                gt q6 = gt.q();
+                et q6 = et.q();
                 aw awVar = (aw) this.X2;
                 return super.onInterceptTouchEvent(motionEvent) || q6.r(motionEvent, awVar.h, awVar.N, this.n2);
         }

@@ -25,7 +25,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class ng extends iu {
     public fd c;
@@ -108,9 +108,9 @@ public abstract class ng extends iu {
     @Override // org.telegram.ui.Components.EditTextBoldCursor
     public final void extendActionMode(ActionMode actionMode, Menu menu) {
         ChatActivityEnterView chatActivityEnterView = this.d;
-        org.telegram.ui.sn snVar = chatActivityEnterView.P2;
-        if (snVar != null) {
-            snVar.extendActionMode(menu);
+        org.telegram.ui.qn qnVar = chatActivityEnterView.P2;
+        if (qnVar != null) {
+            qnVar.extendActionMode(menu);
         } else {
             chatActivityEnterView.f0(menu);
         }
@@ -122,23 +122,23 @@ public abstract class ng extends iu {
     }
 
     public final void m(Uri uri, String str) {
-        org.telegram.ui.sn snVar = this.d.P2;
-        Utilities.globalQueue.postRunnable(new ig.e2(this, uri, AndroidUtilities.generatePicturePath(snVar != null && snVar.x(), MimeTypeMap.getSingleton().getExtensionFromMimeType(str)), 29));
+        org.telegram.ui.qn qnVar = this.d.P2;
+        Utilities.globalQueue.postRunnable(new ig.e2(this, uri, AndroidUtilities.generatePicturePath(qnVar != null && qnVar.x(), MimeTypeMap.getSingleton().getExtensionFromMimeType(str)), 29));
     }
 
     public final void n(File file, ArrayList arrayList) {
         ChatActivityEnterView chatActivityEnterView = this.d;
-        org.telegram.ui.sn snVar = chatActivityEnterView.P2;
-        if (snVar == null || snVar.getParentActivity() == null) {
+        org.telegram.ui.qn qnVar = chatActivityEnterView.P2;
+        if (qnVar == null || qnVar.getParentActivity() == null) {
             return;
         }
         MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) arrayList.get(0);
         if (!chatActivityEnterView.z2) {
-            PhotoViewer.t1().K2(null, snVar, chatActivityEnterView.W3);
+            PhotoViewer.t1().K2(null, qnVar, chatActivityEnterView.W3);
             PhotoViewer.t1().g2(arrayList, 0, 2, false, new mg(this, photoEntry, file), chatActivityEnterView.P2);
         } else {
             AndroidUtilities.hideKeyboard(this);
-            AndroidUtilities.runOnUIThread(new c5.v(this, arrayList, file, false, 8), 100L);
+            AndroidUtilities.runOnUIThread(new c5.w(this, arrayList, file, false, 8), 100L);
         }
     }
 
@@ -146,15 +146,15 @@ public abstract class ng extends iu {
         MessageObject threadMessage;
         MessageObject threadMessage2;
         ChatActivityEnterView chatActivityEnterView = this.d;
-        org.telegram.ui.sn snVar = chatActivityEnterView.P2;
+        org.telegram.ui.qn qnVar = chatActivityEnterView.P2;
         mf mfVar = chatActivityEnterView.L0;
         if (mfVar != null) {
             mfVar.h(true);
             chatActivityEnterView.L0 = null;
         }
-        org.telegram.ui.in inVar = chatActivityEnterView.V2;
-        if (inVar != null && snVar != null && inVar.f) {
-            snVar.Vb();
+        org.telegram.ui.gn gnVar = chatActivityEnterView.V2;
+        if (gnVar != null && qnVar != null && gnVar.f) {
+            qnVar.Vb();
             return;
         }
         t0.h hVar = iVar.a;
@@ -164,14 +164,14 @@ public abstract class ng extends iu {
             long j10 = chatActivityEnterView.Q2;
             MessageObject messageObject = chatActivityEnterView.T2;
             threadMessage2 = chatActivityEnterView.getThreadMessage();
-            SendMessagesHelper.prepareSendingDocument(accountInstance, null, null, c10, null, "image/gif", j10, messageObject, threadMessage2, null, chatActivityEnterView.V2, null, z10, 0, iVar, snVar != null ? snVar.H8() : null, false);
+            SendMessagesHelper.prepareSendingDocument(accountInstance, null, null, c10, null, "image/gif", j10, messageObject, threadMessage2, null, chatActivityEnterView.V2, null, z10, 0, iVar, qnVar != null ? qnVar.H8() : null, false);
         } else {
             AccountInstance accountInstance2 = chatActivityEnterView.R;
             Uri c11 = hVar.c();
             long j11 = chatActivityEnterView.Q2;
             MessageObject messageObject2 = chatActivityEnterView.T2;
             threadMessage = chatActivityEnterView.getThreadMessage();
-            SendMessagesHelper.prepareSendingPhoto(accountInstance2, null, c11, j11, messageObject2, threadMessage, chatActivityEnterView.V2, null, null, null, iVar, 0, null, z10, 0, snVar == null ? 0 : snVar.R3, snVar != null ? snVar.H8() : null);
+            SendMessagesHelper.prepareSendingPhoto(accountInstance2, null, c11, j11, messageObject2, threadMessage, chatActivityEnterView.V2, null, null, null, iVar, 0, null, z10, 0, qnVar == null ? 0 : qnVar.R3, qnVar != null ? qnVar.H8() : null);
         }
         og ogVar = chatActivityEnterView.Z2;
         if (ogVar != null) {
@@ -224,8 +224,8 @@ public abstract class ng extends iu {
         super.onMeasure(i10, i11);
         if (chatActivityEnterView.S) {
             chatActivityEnterView.T = getLineCount();
-            chatActivityEnterView.n1(chatActivityEnterView.T > 2 && !TextUtils.isEmpty(getText().toString().trim()));
-            chatActivityEnterView.t1(chatActivityEnterView.T > 2 && !TextUtils.isEmpty(getText().toString().trim()));
+            chatActivityEnterView.m1(chatActivityEnterView.T > 2 && !TextUtils.isEmpty(getText().toString().trim()));
+            chatActivityEnterView.s1(chatActivityEnterView.T > 2 && !TextUtils.isEmpty(getText().toString().trim()));
         }
         chatActivityEnterView.S = false;
     }
@@ -285,7 +285,7 @@ public abstract class ng extends iu {
                                 case 0:
                                     ChatActivityEnterView chatActivityEnterView2 = ngVar.d;
                                     int i12 = ChatActivityEnterView.n5;
-                                    chatActivityEnterView2.s1();
+                                    chatActivityEnterView2.r1();
                                     break;
                                 default:
                                     ChatActivityEnterView chatActivityEnterView3 = ngVar.d;
@@ -311,15 +311,15 @@ public abstract class ng extends iu {
             if (chatActivityEnterView.r0() && motionEvent.getAction() == 0) {
                 if (chatActivityEnterView.R1 != 0) {
                     chatActivityEnterView.j1(0, false);
-                    chatActivityEnterView.U0.t(false);
+                    chatActivityEnterView.U0.u(false);
                     requestFocus();
                 }
-                chatActivityEnterView.r1(AndroidUtilities.usingHardwareInput ? 0 : 2, 0, true, true);
+                chatActivityEnterView.q1(AndroidUtilities.usingHardwareInput ? 0 : 2, 0, true, true);
                 if (!chatActivityEnterView.z3) {
                     chatActivityEnterView.G0();
                     return true;
                 }
-                chatActivityEnterView.l1(false, true, false, true);
+                chatActivityEnterView.k1(false, true, false, true);
                 chatActivityEnterView.l3 = true;
                 final int i11 = 1;
                 AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.ui.Components.kg
@@ -337,7 +337,7 @@ public abstract class ng extends iu {
                             case 0:
                                 ChatActivityEnterView chatActivityEnterView2 = ngVar.d;
                                 int i12 = ChatActivityEnterView.n5;
-                                chatActivityEnterView2.s1();
+                                chatActivityEnterView2.r1();
                                 break;
                             default:
                                 ChatActivityEnterView chatActivityEnterView3 = ngVar.d;
@@ -379,8 +379,8 @@ public abstract class ng extends iu {
         super.setOffsetY(f7);
         ChatActivityEnterView chatActivityEnterView = this.d;
         if (chatActivityEnterView.m1.getForeground() != null) {
-            jw0 jw0Var = chatActivityEnterView.m1;
-            jw0Var.invalidateDrawable(jw0Var.getForeground());
+            kw0 kw0Var = chatActivityEnterView.m1;
+            kw0Var.invalidateDrawable(kw0Var.getForeground());
         }
     }
 }

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import java.util.List;
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class y7 implements MessagesStorage.BooleanCallback {
     public final /* synthetic */ k8 a;
@@ -28,16 +28,16 @@ public final class y7 implements MessagesStorage.BooleanCallback {
                 List fragmentStack = d5Var3.getFragmentStack();
                 d5Var4 = ((org.telegram.ui.ActionBar.n2) k8Var).parentLayout;
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) fragmentStack.get(d5Var4.getFragmentStack().size() - 2);
-                if (n2Var instanceof sn) {
-                    ((sn) n2Var).V7(k8Var.P, k8Var.Q + 86400, z10);
+                if (n2Var instanceof qn) {
+                    ((qn) n2Var).V7(k8Var.P, k8Var.Q + 86400, z10);
                     return;
                 }
                 return;
             }
         }
-        sn snVar = k8Var.N;
-        if (snVar != null) {
-            snVar.V7(k8Var.P, k8Var.Q + 86400, z10);
+        qn qnVar = k8Var.N;
+        if (qnVar != null) {
+            qnVar.V7(k8Var.P, k8Var.Q + 86400, z10);
         }
     }
 }

@@ -2,7 +2,7 @@ package c2;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements d9.u {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class d implements d9.u {
             case 0:
                 return i.e(this.b);
             case 1:
-                return new i2.k(this.b);
+                return new i2.l(this.b);
             case 2:
                 return new u2.q(this.b, new c3.m());
             case 3:

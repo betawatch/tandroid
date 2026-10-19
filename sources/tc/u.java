@@ -12,14 +12,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TreeMap;
-import ki.t1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Wallet.z0;
-import org.telegram.ui.web.m1;
+import org.telegram.ui.web.l1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class u {
     public final s a;
@@ -28,7 +27,7 @@ public final class u {
     public final c2.b d;
     public final p e;
     public final p f;
-    public m1 h;
+    public l1 h;
     public y i;
     public q j;
     public a0 k;
@@ -302,7 +301,7 @@ public final class u {
         w wVar2;
         String str;
         try {
-            m1 m1Var = new m1(new BufferedInputStream(socket.getInputStream()), 1);
+            l1 l1Var = new l1(new BufferedInputStream(socket.getInputStream()), 1);
             try {
                 y yVar = new y(new BufferedOutputStream(socket.getOutputStream()));
                 byte[] bArr = new byte[16];
@@ -359,9 +358,9 @@ public final class u {
                 try {
                     yVar.write(k.a(sb2));
                     yVar.flush();
-                    t1 t1Var = new t1(this, 29);
+                    l2.f fVar = new l2.f(this, 23);
                     try {
-                        String b10 = k.b(m1Var);
+                        String b10 = k.b(l1Var);
                         if (b10 == null || b10.length() == 0) {
                             throw new v(6, "The status line of the opening handshake response is empty.");
                         }
@@ -371,14 +370,14 @@ public final class u {
                             StringBuilder sb3 = null;
                             while (true) {
                                 try {
-                                    String b11 = k.b(m1Var);
+                                    String b11 = k.b(l1Var);
                                     if (b11 == null || b11.length() == 0) {
                                         break;
                                     }
                                     char charAt = b11.charAt(0);
                                     if (charAt != ' ' && charAt != '\t') {
                                         if (sb3 != null) {
-                                            t1.M(sb3.toString(), treeMap);
+                                            l2.f.N(sb3.toString(), treeMap);
                                         }
                                         sb3 = new StringBuilder(b11);
                                     } else if (sb3 != null) {
@@ -389,7 +388,7 @@ public final class u {
                                 }
                             }
                             if (sb3 != null) {
-                                t1.M(sb3.toString(), treeMap);
+                                l2.f.N(sb3.toString(), treeMap);
                             }
                             if (aVar.c != 101) {
                                 try {
@@ -399,7 +398,7 @@ public final class u {
                                 }
                                 if (i11 > 0) {
                                     try {
-                                        m1Var.b(i11, new byte[i11]);
+                                        l1Var.b(i11, new byte[i11]);
                                     } catch (Throwable unused4) {
                                     }
                                 }
@@ -515,7 +514,7 @@ public final class u {
                                                                                 throw new n(16, r4.c.h("The value in 'Sec-WebSocket-Extensions' failed to be parsed: ", str3), aVar);
                                                                             }
                                                                             String str6 = wVar2.a;
-                                                                            h hVar2 = ((u) t1Var.b).c;
+                                                                            h hVar2 = ((u) fVar.b).c;
                                                                             if (str6 == null) {
                                                                                 hVar2.getClass();
                                                                             }
@@ -541,10 +540,10 @@ public final class u {
                                                                 wVar3 = wVar4;
                                                             }
                                                         }
-                                                        ((u) t1Var.b).l = arrayList3;
+                                                        ((u) fVar.b).l = arrayList3;
                                                     }
-                                                    t1Var.Z(aVar, treeMap);
-                                                    this.h = m1Var;
+                                                    fVar.T(aVar, treeMap);
+                                                    this.h = l1Var;
                                                     this.i = yVar;
                                                     return treeMap;
                                                 }

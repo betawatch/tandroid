@@ -15,7 +15,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class da extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public TextView a;
@@ -54,7 +54,7 @@ public final class da extends FrameLayout implements NotificationCenter.Notifica
             xVar.setEnabled(true);
             this.h.playTogether(ObjectAnimator.ofFloat(xVar2, (Property<ah.x, Float>) property3, 0.1f), ObjectAnimator.ofFloat(xVar2, (Property<ah.x, Float>) property2, 0.1f), ObjectAnimator.ofFloat(xVar2, (Property<ah.x, Float>) property, 0.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 1.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 1.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 1.0f));
         }
-        this.h.addListener(new org.telegram.ui.ho(i10, this, z10));
+        this.h.addListener(new org.telegram.ui.fo(i10, this, z10));
         this.h.setDuration(150L);
         this.h.start();
     }

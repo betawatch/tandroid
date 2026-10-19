@@ -26,10 +26,10 @@ import org.telegram.ui.Components.al0;
 import org.telegram.ui.Components.cl0;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.r5;
-import org.telegram.ui.i51;
-import org.telegram.ui.sn;
+import org.telegram.ui.g51;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class d1 {
     public static d1 B;
@@ -112,7 +112,7 @@ public final class d1 {
         int i12;
         View view4;
         n2 n2Var2;
-        sn snVar;
+        qn qnVar;
         int i13;
         float f11;
         float f12;
@@ -137,7 +137,7 @@ public final class d1 {
         int i18;
         int i19;
         boolean z11;
-        sn snVar2;
+        qn qnVar2;
         TLRPC.TL_messageReactions tL_messageReactions;
         this.t = null;
         this.z = z10;
@@ -183,7 +183,7 @@ public final class d1 {
             view4 = view;
             n2Var2 = n2Var;
         }
-        sn snVar3 = n2Var2 instanceof sn ? (sn) n2Var2 : null;
+        qn qnVar3 = n2Var2 instanceof qn ? (qn) n2Var2 : null;
         if (cl0Var2 != null) {
             ai.u1 u1Var = cl0Var2.b;
             int i20 = 0;
@@ -202,7 +202,7 @@ public final class d1 {
         if (i11 == 1) {
             Random random = new Random();
             ArrayList<TLRPC.MessagePeerReaction> arrayList = (messageObject2 == null || (tL_messageReactions = messageObject2.messageOwner.reactions) == null) ? null : tL_messageReactions.recent_reactions;
-            if (arrayList != null && snVar3 != null && snVar3.a() < j10) {
+            if (arrayList != null && qnVar3 != null && qnVar3.a() < j10) {
                 f11 = 0.0f;
                 int i22 = 0;
                 while (i22 < arrayList.size()) {
@@ -212,7 +212,7 @@ public final class d1 {
                         ImageReceiver imageReceiver = new ImageReceiver();
                         long peerId = MessageObject.getPeerId(arrayList.get(i22).peer_id);
                         if (peerId < j10) {
-                            snVar2 = snVar3;
+                            qnVar2 = qnVar3;
                             TLRPC.Chat chat = MessagesController.getInstance(i12).getChat(Long.valueOf(-peerId));
                             if (chat != null) {
                                 h9Var.k(i12, chat);
@@ -263,7 +263,7 @@ public final class d1 {
                                 this.x.add(c1Var);
                             }
                         } else {
-                            snVar2 = snVar3;
+                            qnVar2 = qnVar3;
                             TLRPC.User user = MessagesController.getInstance(i12).getUser(Long.valueOf(peerId));
                             if (user != null) {
                                 h9Var.m(i12, user);
@@ -283,14 +283,14 @@ public final class d1 {
                             }
                         }
                     } else {
-                        snVar2 = snVar3;
+                        qnVar2 = qnVar3;
                     }
                     i22++;
                     i12 = i10;
-                    snVar3 = snVar2;
+                    qnVar3 = qnVar2;
                     i21 = i23;
                 }
-                snVar = snVar3;
+                qnVar = qnVar3;
                 i13 = i21;
                 al0 al0Var = this.t;
                 ?? r10 = (al0Var == null || !(f7 == f11 || f10 == f11)) ? i13 : 0;
@@ -357,7 +357,7 @@ public final class d1 {
                     int i29 = i15;
                     MessageObject messageObject4 = messageObject2;
                     r15 = i14;
-                    a1Var = new a1(this, context2, n2Var, view5, z10, messageObject4, snVar, i16, i11, r10, f27, f13, f14, i1Var);
+                    a1Var = new a1(this, context2, n2Var, view5, z10, messageObject4, qnVar, i16, i11, r10, f27, f13, f14, i1Var);
                     this.i = a1Var;
                     b1Var = new b1(this, context2);
                     this.b = b1Var;
@@ -521,8 +521,8 @@ public final class d1 {
                 f15 = iArr2[0];
                 f16 = iArr2[i13];
                 f12 = view3.getScaleX() * view3.getWidth();
-                if (view3 instanceof i51) {
-                    float f29 = ((i51) view3).G;
+                if (view3 instanceof g51) {
+                    float f29 = ((g51) view3).G;
                     if (f29 > f11) {
                         f12 = view3.getWidth() * ((f29 * 2.0f) + 1.0f);
                         f15 = org.telegram.messenger.g0.x(f12, view3.getWidth(), 2.0f, f15);
@@ -546,7 +546,7 @@ public final class d1 {
                 int i292 = i15;
                 MessageObject messageObject42 = messageObject2;
                 r15 = i14;
-                a1Var = new a1(this, context2, n2Var, view52, z10, messageObject42, snVar, i16, i11, r10, f272, f13, f14, i1Var);
+                a1Var = new a1(this, context2, n2Var, view52, z10, messageObject42, qnVar, i16, i11, r10, f272, f13, f14, i1Var);
                 this.i = a1Var;
                 b1Var = new b1(this, context2);
                 this.b = b1Var;
@@ -600,7 +600,7 @@ public final class d1 {
                 frameLayout.setPivotY(i19);
             }
         }
-        snVar = snVar3;
+        qnVar = qnVar3;
         i13 = 1;
         f11 = 0.0f;
         al0 al0Var2 = this.t;
@@ -625,7 +625,7 @@ public final class d1 {
         int i2922 = i15;
         MessageObject messageObject422 = messageObject2;
         r15 = i14;
-        a1Var = new a1(this, context2, n2Var, view522, z10, messageObject422, snVar, i16, i11, r10, f2722, f13, f14, i1Var);
+        a1Var = new a1(this, context2, n2Var, view522, z10, messageObject422, qnVar, i16, i11, r10, f2722, f13, f14, i1Var);
         this.i = a1Var;
         b1Var = new b1(this, context2);
         this.b = b1Var;
@@ -719,11 +719,11 @@ public final class d1 {
             } else {
                 B = d1Var;
             }
-            if (n2Var instanceof sn) {
-                sn snVar = (sn) n2Var;
+            if (n2Var instanceof qn) {
+                qn qnVar = (qn) n2Var;
                 if (i11 != 0) {
                 }
-                org.telegram.ui.ActionBar.m1 m1Var = snVar.Q8;
+                org.telegram.ui.ActionBar.m1 m1Var = qnVar.Q8;
                 if (m1Var != null) {
                 }
             }

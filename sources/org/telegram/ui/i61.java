@@ -1,84 +1,24 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import java.util.ArrayList;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class i61 implements NotificationCenter.NotificationCenterDelegate {
-    public final int a;
-    public final TLRPC.Chat b;
-    public TLRPC.ChannelParticipantsFilter c;
-    public boolean f;
-    public boolean h;
-    public boolean r;
-    public boolean s;
-    public final ArrayList d = new ArrayList();
-    public final ArrayList e = new ArrayList();
-    public int n = -1;
+public final class i61 extends g.o {
+    public final /* synthetic */ k61 c;
 
-    public i61(int i10, long j10, TLRPC.ChannelParticipantsFilter channelParticipantsFilter) {
-        this.a = i10;
-        this.b = MessagesController.getInstance(i10).getChat(Long.valueOf(j10));
-        TLRPC.ChatFull chatFull = MessagesController.getInstance(i10).getChatFull(j10);
-        this.c = channelParticipantsFilter;
-        if (chatFull == null) {
-            if (!this.s) {
-                this.s = true;
-                NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.chatInfoDidLoad);
-            }
-            MessagesController.getInstance(i10).loadFullChat(j10, 0, false);
-        }
+    public i61(k61 k61Var) {
+        this.c = k61Var;
     }
 
-    public final void a() {
-        if (this.s) {
-            return;
+    @Override // g.o
+    public final int i(int i10) {
+        int i11;
+        k61 k61Var = this.c;
+        org.telegram.ui.Components.wz wzVar = k61Var.X;
+        org.telegram.ui.Components.t61 t61Var = k61Var.d0;
+        if (t61Var == null) {
+            return wzVar.J;
         }
-        this.s = false;
-        int i10 = this.a;
-        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.chatInfoDidLoad);
-        if (this.n >= 0) {
-            ConnectionsManager.getInstance(i10).cancelRequest(this.n, true);
-            this.n = -1;
-        }
-        this.f = false;
-    }
-
-    public final void b() {
-        if (this.f || this.h) {
-            return;
-        }
-        TLRPC.ChannelParticipantsFilter channelParticipantsFilter = this.c;
-        if ((channelParticipantsFilter instanceof TLRPC.TL_channelParticipantsSearch) && TextUtils.isEmpty(channelParticipantsFilter.q)) {
-            return;
-        }
-        this.f = true;
-        TLRPC.Chat chat = this.b;
-        if (ChatObject.isChannel(chat)) {
-            TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
-            tL_channels_getParticipants.channel = MessagesController.getInputChannel(chat);
-            tL_channels_getParticipants.filter = this.c;
-            tL_channels_getParticipants.limit = 30;
-            tL_channels_getParticipants.offset = this.r ? 0 : this.d.size();
-            ConnectionsManager.getInstance(this.a).sendRequestTyped(tL_channels_getParticipants, new org.telegram.messenger.a(), new g5(this, 24));
-        }
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.chatInfoDidLoad) {
-            long j10 = ((TLRPC.ChatFull) objArr[0]).id;
-            TLRPC.Chat chat = this.b;
-            if (j10 == chat.id && !ChatObject.isChannel(chat) && this.f) {
-                this.f = false;
-                b();
-            }
-        }
+        org.telegram.ui.Components.g61 G = t61Var.G(i10 - 1);
+        return (G == null || (i11 = G.u) == -1) ? wzVar.J : i11;
     }
 }

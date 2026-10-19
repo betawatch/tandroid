@@ -9,28 +9,28 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class hq0 extends FrameLayout {
     public final /* synthetic */ int a;
-    public final /* synthetic */ dr0 b;
+    public final /* synthetic */ er0 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ hq0(dr0 dr0Var, Context context, int i10) {
+    public /* synthetic */ hq0(er0 er0Var, Context context, int i10) {
         super(context);
         this.a = i10;
-        this.b = dr0Var;
+        this.b = er0Var;
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                dr0 dr0Var = this.b;
-                dr0Var.X0.setBounds(0, (int) dr0Var.u0, getMeasuredWidth(), getMeasuredHeight());
-                dr0Var.X0.draw(canvas);
+                er0 er0Var = this.b;
+                er0Var.Y0.setBounds(0, (int) er0Var.v0, getMeasuredWidth(), getMeasuredHeight());
+                er0Var.Y0.draw(canvas);
                 canvas.save();
-                canvas.clipRect(0.0f, dr0Var.u0, getMeasuredWidth(), getMeasuredHeight());
+                canvas.clipRect(0.0f, er0Var.v0, getMeasuredWidth(), getMeasuredHeight());
                 super.dispatchDraw(canvas);
                 canvas.restore();
                 break;
@@ -44,25 +44,25 @@ public final class hq0 extends FrameLayout {
     public void onDraw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                dr0 dr0Var = this.b;
-                hq0 hq0Var = dr0Var.c;
-                float f7 = dr0Var.v0;
-                if (f7 != 0.0f && f7 != hq0Var.getTop() + dr0Var.v0) {
-                    ValueAnimator valueAnimator = dr0Var.w0;
+                er0 er0Var = this.b;
+                hq0 hq0Var = er0Var.c;
+                float f7 = er0Var.w0;
+                if (f7 != 0.0f && f7 != hq0Var.getTop() + er0Var.w0) {
+                    ValueAnimator valueAnimator = er0Var.x0;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                     }
-                    float top = dr0Var.v0 - (hq0Var.getTop() + dr0Var.u0);
-                    dr0Var.u0 = top;
+                    float top = er0Var.w0 - (hq0Var.getTop() + er0Var.v0);
+                    er0Var.v0 = top;
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(top, 0.0f);
-                    dr0Var.w0 = ofFloat;
+                    er0Var.x0 = ofFloat;
                     ofFloat.addUpdateListener(new b80(this, 18));
-                    dr0Var.w0.setInterpolator(bs.f);
-                    dr0Var.w0.setDuration(200L);
-                    dr0Var.w0.start();
-                    dr0Var.v0 = 0.0f;
+                    er0Var.x0.setInterpolator(bs.f);
+                    er0Var.x0.setDuration(200L);
+                    er0Var.x0.start();
+                    er0Var.w0 = 0.0f;
                 }
-                dr0Var.S[1].setTranslationY((-(hq0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))) + dr0Var.u0 + dr0Var.t0 + ((1.0f - getAlpha()) * (hq0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))));
+                er0Var.T[1].setTranslationY((-(hq0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))) + er0Var.v0 + er0Var.u0 + ((1.0f - getAlpha()) * (hq0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))));
                 break;
             default:
                 super.onDraw(canvas);
@@ -75,7 +75,7 @@ public final class hq0 extends FrameLayout {
         switch (this.a) {
             case 1:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", this.b.U.m(), new Object[0]));
+                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", this.b.V.m(), new Object[0]));
                 accessibilityNodeInfo.setClassName(Button.class.getName());
                 accessibilityNodeInfo.setLongClickable(true);
                 accessibilityNodeInfo.setClickable(true);
@@ -105,7 +105,7 @@ public final class hq0 extends FrameLayout {
             case 0:
                 super.setVisibility(i10);
                 if (i10 != 0) {
-                    this.b.S[1].setTranslationY(0.0f);
+                    this.b.T[1].setTranslationY(0.0f);
                     break;
                 }
                 break;

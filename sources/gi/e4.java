@@ -14,13 +14,13 @@ import ei.bc;
 import ei.ea;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GenericProvider;
-import org.telegram.ui.Components.cw0;
+import org.telegram.ui.Components.dw0;
 import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public abstract class e4 extends FrameLayout {
-    public static final cw0 b0 = new cw0(new fh.b(11), new fh.b(12));
+    public static final dw0 b0 = new dw0(new fh.b(11), new fh.b(12));
     public Runnable E;
     public d4 F;
     public o1.k G;
@@ -42,7 +42,7 @@ public abstract class e4 extends FrameLayout {
     public float W;
     public Object a;
     public float a0;
-    public final k0.b b;
+    public final le.b b;
     public boolean c;
     public boolean d;
     public float e;
@@ -53,7 +53,7 @@ public abstract class e4 extends FrameLayout {
     public boolean s;
     public o1.k v;
     public boolean w;
-    public org.telegram.ui.web.y0 x;
+    public org.telegram.ui.web.x0 x;
     public Runnable y;
 
     public e4(Context context) {
@@ -68,7 +68,7 @@ public abstract class e4 extends FrameLayout {
         this.S = false;
         this.T = AndroidUtilities.dp(60.0f);
         this.U = true;
-        this.b = new k0.b(context, new c4(this, ViewConfiguration.get(context).getScaledTouchSlop(), 0));
+        this.b = new le.b(context, new c4(this, ViewConfiguration.get(context).getScaledTouchSlop(), 0));
         Point point = AndroidUtilities.displaySize;
         this.H = AndroidUtilities.dp(point.x > point.y ? 8.0f : 64.0f);
     }
@@ -79,8 +79,8 @@ public abstract class e4 extends FrameLayout {
     }
 
     public final boolean b(boolean z10) {
-        org.telegram.ui.web.y0 y0Var = this.x;
-        if (y0Var == null || !y0Var.N) {
+        org.telegram.ui.web.x0 x0Var = this.x;
+        if (x0Var == null || !x0Var.N) {
             return true;
         }
         return z10 ? this.O : this.P;
@@ -378,7 +378,7 @@ public abstract class e4 extends FrameLayout {
         super.setTranslationY(f7);
     }
 
-    public void setWebView(org.telegram.ui.web.y0 y0Var) {
-        this.x = y0Var;
+    public void setWebView(org.telegram.ui.web.x0 x0Var) {
+        this.x = x0Var;
     }
 }

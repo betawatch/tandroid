@@ -1,19 +1,31 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
-/* loaded from: classes4.dex */
-public final class j3 extends yh.j1 {
-    public final /* synthetic */ org.telegram.ui.Cells.w0 y;
+import android.view.View;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j3(org.telegram.ui.Cells.w0 w0Var, org.telegram.ui.Cells.w0 w0Var2) {
-        super(w0Var);
-        this.y = w0Var2;
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class j3 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n3 b;
+
+    public /* synthetic */ j3(n3 n3Var, int i10) {
+        this.a = i10;
+        this.b = n3Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void invalidateSelf() {
-        super.invalidateSelf();
-        this.y.invalidate();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.Cells.w0 w0Var = this.b.a;
+                if (w0Var.getParent() instanceof View) {
+                    ((View) w0Var.getParent()).invalidate();
+                    break;
+                }
+                break;
+            default:
+                this.b.p();
+                break;
+        }
     }
 }

@@ -1,15 +1,15 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class jf implements o1.g {
     public boolean a = false;
     public final /* synthetic */ float b;
-    public final /* synthetic */ zv0 c;
+    public final /* synthetic */ aw0 c;
 
-    public jf(float f7, zv0 zv0Var) {
+    public jf(float f7, aw0 aw0Var) {
         this.b = f7;
-        this.c = zv0Var;
+        this.c = aw0Var;
     }
 
     @Override // o1.g

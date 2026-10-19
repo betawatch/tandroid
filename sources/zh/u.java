@@ -1,5 +1,6 @@
 package zh;
 
+import android.content.res.Resources;
 import android.graphics.BlendMode;
 import android.graphics.BlendModeColorFilter;
 import android.graphics.Canvas;
@@ -15,9 +16,11 @@ import android.os.Build;
 import android.view.View;
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public abstract class u {
+    public static float a = -1.0f;
+
     public static Canvas a(int i10, int i11, Object obj) {
         RenderNode c10 = org.telegram.messenger.b.c(obj);
         c10.setPosition(0, 0, i10, i11);
@@ -48,9 +51,34 @@ public abstract class u {
         return Build.VERSION.SDK_INT >= 31;
     }
 
-    public static float g(View view, float f7) {
-        WindowInsets rootWindowInsets = view != null ? view.getRootWindowInsets() : null;
-        return (rootWindowInsets != null ? rootWindowInsets.getRoundedCorner(0) : null) != null ? r0.getRadius() : f7;
+    public static float g(View view) {
+        float f7;
+        int identifier;
+        float f10;
+        if (Build.VERSION.SDK_INT >= 31) {
+            WindowInsets rootWindowInsets = view != null ? view.getRootWindowInsets() : null;
+            if (rootWindowInsets == null) {
+                f10 = -1.0f;
+            } else {
+                f10 = rootWindowInsets.getRoundedCorner(0) != null ? r5.getRadius() : 0.0f;
+            }
+            if (f10 >= 0.0f) {
+                return f10;
+            }
+        }
+        if (a < 0.0f) {
+            try {
+                Resources system = Resources.getSystem();
+                f7 = system.getIdentifier("rounded_corner_radius_top", "dimen", "android") != 0 ? system.getDimensionPixelSize(r3) : 0.0f;
+                if (f7 <= 0.0f && (identifier = system.getIdentifier("rounded_corner_radius", "dimen", "android")) != 0) {
+                    f7 = system.getDimensionPixelSize(identifier);
+                }
+            } catch (Exception unused) {
+                f7 = 0.0f;
+            }
+            a = Math.max(0.0f, f7);
+        }
+        return a;
     }
 
     public static void h(Object obj, float f7) {

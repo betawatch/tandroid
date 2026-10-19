@@ -2,16 +2,16 @@ package i2;
 
 import android.util.Pair;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class a extends b2.o1 {
     public static final /* synthetic */ int g = 0;
     public final int e;
-    public final u2.j1 f;
+    public final u2.i1 f;
 
-    public a(u2.j1 j1Var) {
-        this.f = j1Var;
-        this.e = j1Var.getLength();
+    public a(u2.i1 i1Var) {
+        this.f = i1Var;
+        this.e = i1Var.getLength();
     }
 
     @Override // b2.o1
@@ -48,10 +48,10 @@ public abstract class a extends b2.o1 {
     public final int c(boolean z10) {
         int i10 = this.e;
         if (i10 != 0) {
-            u2.j1 j1Var = this.f;
-            int h = z10 ? j1Var.h() : i10 - 1;
+            u2.i1 i1Var = this.f;
+            int h = z10 ? i1Var.h() : i10 - 1;
             while (x(h).p()) {
-                h = z10 ? j1Var.d(h) : h > 0 ? h - 1 : -1;
+                h = z10 ? i1Var.d(h) : h > 0 ? h - 1 : -1;
                 if (h == -1) {
                 }
             }
@@ -133,12 +133,12 @@ public abstract class a extends b2.o1 {
         if (k10 != -1) {
             return v + k10;
         }
-        u2.j1 j1Var = this.f;
+        u2.i1 i1Var = this.f;
         if (z10) {
-            i12 = j1Var.d(s10);
+            i12 = i1Var.d(s10);
         }
         while (i12 != -1 && x(i12).p()) {
-            i12 = z10 ? j1Var.d(i12) : i12 > 0 ? i12 - 1 : -1;
+            i12 = z10 ? i1Var.d(i12) : i12 > 0 ? i12 - 1 : -1;
         }
         if (i12 != -1) {
             return x(i12).c(z10) + v(i12);

@@ -21,7 +21,7 @@ import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.xj0;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class o1 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final List w = Arrays.asList(new l1(0, 1, 20, 0), new l1(0, 2, 20, 40), new l1(1, 0, 0, 20), new l1(1, 2, 60, 40), new l1(2, 0, 40, 20), new l1(2, 1, 40, 60));
@@ -393,12 +393,12 @@ public final class o1 extends FrameLayout implements NotificationCenter.Notifica
         if (n1Var == null) {
             return;
         }
-        for (qg.l0 l0Var : qg.l0.c()) {
-            if (l0Var.a.equals(str)) {
-                n1Var.setTypeface(l0Var.d());
-                String str2 = l0Var.c;
+        for (qg.m0 m0Var : qg.m0.c()) {
+            if (m0Var.a.equals(str)) {
+                n1Var.setTypeface(m0Var.d());
+                String str2 = m0Var.c;
                 if (str2 == null) {
-                    str2 = LocaleController.getString(l0Var.b);
+                    str2 = LocaleController.getString(m0Var.b);
                 }
                 n1Var.setText(str2);
                 return;

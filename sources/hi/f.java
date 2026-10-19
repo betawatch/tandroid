@@ -1,5 +1,6 @@
 package hi;
 
+import ai.o2;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -15,37 +16,37 @@ import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.h9;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class f extends n2 implements NotificationCenter.NotificationCenterDelegate {
     public long a;
     public TLRPC.Chat b;
     public TLRPC.User c;
     public FrameLayout d;
-    public a71 e;
+    public b71 e;
     public e f;
     public ArrayList h;
     public NotificationCenter.ObserversGroup n;
 
-    public static void U(f fVar, f61 f61Var) {
+    public static void U(f fVar, g61 g61Var) {
         f fVar2;
-        if (f61Var.d == 1) {
+        if (g61Var.d == 1) {
             fVar2 = fVar;
             f5.Q(fVar.getParentActivity(), fVar2, LocaleController.getString(R.string.CommunityNewCommunityTitle), null, LocaleController.getString(R.string.CommunityNewCommunityNameHint), null, ConnectionsManager.DEFAULT_DATACENTER_ID, LocaleController.getString(R.string.Create), fVar.resourceProvider, new c(fVar));
         } else {
             fVar2 = fVar;
         }
-        Object obj = f61Var.G;
+        Object obj = g61Var.G;
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
             fVar2.getMessagesController().getChat(Long.valueOf(-fVar2.a));
-            fVar2.showDialog(new ji.a(fVar2.getParentActivity(), chat, fVar2.a, new ai.n2(19, fVar2, chat)));
+            fVar2.showDialog(new ji.a(fVar2.getParentActivity(), chat, fVar2.a, new o2(19, fVar2, chat)));
         }
     }
 
@@ -55,7 +56,7 @@ public final class f extends n2 implements NotificationCenter.NotificationCenter
             return;
         }
         b2 b2Var = new b2(getParentActivity(), 3, null);
-        b2Var.q(250L);
+        b2Var.r(250L);
         getMessagesController().convertToMegaGroup(getParentActivity(), -this.a, this, new da.b(this, b2Var, str, z10, 1));
     }
 
@@ -66,7 +67,7 @@ public final class f extends n2 implements NotificationCenter.NotificationCenter
             MessagesController.getInstance(i10).linkCommunity(-j11, j10, z10, new n0(this, j11, 0));
         } else {
             b2 b2Var = new b2(getParentActivity(), 3, null);
-            b2Var.q(250L);
+            b2Var.r(250L);
             getMessagesController().convertToMegaGroup(getParentActivity(), -this.a, this, new d(this, b2Var, j10, z10, 0));
         }
     }
@@ -76,7 +77,7 @@ public final class f extends n2 implements NotificationCenter.NotificationCenter
         setHasOwnBackground(true);
         this.actionBar.setAddToContainer(false);
         this.actionBar.setAllowOverlayTitle(false);
-        i2.d.y(false, this.actionBar);
+        i2.e.y(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 5));
         gh.c cVar = new gh.c();
@@ -102,12 +103,12 @@ public final class f extends n2 implements NotificationCenter.NotificationCenter
                 this.f.a.e(chat, new h9(this.b));
             }
         }
-        a71 a71Var = new a71(this, new b(this, 0), new c(this), new c(this));
-        this.e = a71Var;
-        a71Var.setClipToPadding(false);
-        a71 a71Var2 = this.e;
-        a71Var2.W2.r = false;
-        a71Var2.p1();
+        b71 b71Var = new b71(this, new b(this, 0), new c(this), new c(this));
+        this.e = b71Var;
+        b71Var.setClipToPadding(false);
+        b71 b71Var2 = this.e;
+        b71Var2.W2.r = false;
+        b71Var2.p1();
         this.d.addView(this.e, z5.c(-1.0f, -1));
         this.d.addView(this.actionBar, z5.e(-1, -2, 48));
         FrameLayout frameLayout2 = this.d;

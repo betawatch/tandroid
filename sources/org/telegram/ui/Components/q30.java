@@ -1,20 +1,20 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class q30 implements z4.e {
-    public final /* synthetic */ org.telegram.ui.r40 a;
+    public final /* synthetic */ org.telegram.ui.p40 a;
 
-    public q30(org.telegram.ui.r40 r40Var) {
-        this.a = r40Var;
+    public q30(org.telegram.ui.p40 p40Var) {
+        this.a = p40Var;
     }
 
     @Override // z4.e
     public final void a(float f7, int i10, int i11) {
-        org.telegram.ui.r40 r40Var = this.a;
-        r40Var.h = i10;
-        r40Var.f = f7;
-        u30.n(r40Var);
+        org.telegram.ui.p40 p40Var = this.a;
+        p40Var.h = i10;
+        p40Var.f = f7;
+        u30.n(p40Var);
     }
 
     @Override // z4.e

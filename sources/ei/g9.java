@@ -13,11 +13,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.rx0;
 import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.sx0;
 import org.telegram.ui.Components.un;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class g9 extends pg.b {
     public final Context d;
@@ -26,7 +26,7 @@ public final class g9 extends pg.b {
     public im0 h;
     public final /* synthetic */ k9 n;
 
-    public g9(k9 k9Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, d9 d9Var, ci.d4 d4Var) {
+    public g9(k9 k9Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, d9 d9Var, ci.e4 e4Var) {
         this.n = k9Var;
         this.d = context;
         this.e = d6Var;
@@ -153,7 +153,7 @@ public final class g9 extends pg.b {
         }
         if (i14 == 5) {
             try {
-                ((rx0) view).b.getImageReceiver().startAnimation();
+                ((sx0) view).b.getImageReceiver().startAnimation();
                 return;
             } catch (Exception unused) {
                 return;
@@ -242,11 +242,11 @@ public final class g9 extends pg.b {
                     y7Var = new org.telegram.ui.Cells.l4(context, d6Var);
                     y7Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, d6Var));
                 } else if (i10 == 5) {
-                    rx0 rx0Var = new rx0(context, null, 1, d6Var);
-                    rx0Var.d.setText(LocaleController.getString(R.string.NoResult));
-                    rx0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                    rx0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
-                    view = rx0Var;
+                    sx0 sx0Var = new sx0(context, null, 1, d6Var);
+                    sx0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                    sx0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                    sx0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
+                    view = sx0Var;
                 } else if (i10 == 6) {
                     y7Var = new org.telegram.ui.Cells.d9(context, d6Var);
                     y7Var.setBackgroundColor(-15921907);

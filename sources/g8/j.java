@@ -23,7 +23,7 @@ import java.util.List;
 import m.o0;
 import w7.e0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class j implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -556,7 +556,7 @@ public final class j implements Parcelable.Creator {
                 if (iBinder == null) {
                     gVar.d = null;
                 } else {
-                    gVar.d = new a6.m(x6.b.K0(iBinder));
+                    gVar.d = new z2.b(x6.b.K0(iBinder));
                 }
                 gVar.e = f17;
                 gVar.f = f18;

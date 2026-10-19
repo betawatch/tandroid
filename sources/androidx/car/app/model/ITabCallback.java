@@ -6,18 +6,18 @@ import android.os.IInterface;
 import android.os.Parcel;
 import androidx.car.app.IOnDoneCallback;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public interface ITabCallback extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$model$ITabCallback".replace('$', '.');
 
     void onTabSelected(String str, IOnDoneCallback iOnDoneCallback);
 
-    /* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
     public static abstract class Stub extends Binder implements ITabCallback {
         static final int TRANSACTION_onTabSelected = 2;
 
-        /* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+        /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
         public static class Proxy implements ITabCallback {
             private IBinder mRemote;
 
@@ -83,7 +83,7 @@ public interface ITabCallback extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
     public static class Default implements ITabCallback {
         @Override // android.os.IInterface
         public IBinder asBinder() {

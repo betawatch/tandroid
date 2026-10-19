@@ -3,7 +3,7 @@ package org.telegram.ui.Wallet;
 import android.view.ViewTreeObserver;
 import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o1 implements ViewTreeObserver.OnScrollChangedListener {
     public final /* synthetic */ int a;
@@ -28,10 +28,10 @@ public final /* synthetic */ class o1 implements ViewTreeObserver.OnScrollChange
                 }
                 break;
             default:
-                ga gaVar = (ga) this.b;
-                PopupWindow popupWindow = gaVar.s;
+                ha haVar = (ha) this.b;
+                PopupWindow popupWindow = haVar.s;
                 if (popupWindow != null && popupWindow.isShowing()) {
-                    gaVar.c();
+                    haVar.c();
                     break;
                 }
                 break;

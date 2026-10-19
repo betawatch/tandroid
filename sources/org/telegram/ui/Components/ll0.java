@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class ll0 {
     public final /* synthetic */ int a;
@@ -261,6 +261,6 @@ public class ll0 {
         this.f = eVar.d;
         this.h = vVar2;
         this.i = collection != null ? new ArrayList(collection) : null;
-        eVar.a.postDelayed(new org.telegram.ui.web.a2(this, 3), 15000L);
+        eVar.a.postDelayed(new org.telegram.ui.web.z1(this, 3), 15000L);
     }
 }

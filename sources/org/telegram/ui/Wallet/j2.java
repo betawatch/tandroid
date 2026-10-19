@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.oo0;
+import org.telegram.ui.mo0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class j2 extends org.telegram.ui.ActionBar.f3 {
     public final ei.h1 b;
@@ -63,20 +63,11 @@ public final class j2 extends org.telegram.ui.ActionBar.f3 {
         h1Var.D(h1Var.getCurrentPosition() - 1);
     }
 
-    public final void s(i2 i2Var) {
-        this.c.add(i2Var);
-        if (this.d) {
-            ei.h1 h1Var = this.b;
-            h1Var.C(false);
-            h1Var.o(false);
-        }
-    }
-
     @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
     public final void show() {
         if (!this.d) {
             this.d = true;
-            this.b.setAdapter(new oo0(this, 1));
+            this.b.setAdapter(new mo0(this, 1));
         }
         super.show();
         Integer num = this.f;
@@ -85,7 +76,16 @@ public final class j2 extends org.telegram.ui.ActionBar.f3 {
         }
     }
 
-    public final void t(int i10) {
+    public final void t(i2 i2Var) {
+        this.c.add(i2Var);
+        if (this.d) {
+            ei.h1 h1Var = this.b;
+            h1Var.C(false);
+            h1Var.o(false);
+        }
+    }
+
+    public final void u(int i10) {
         this.f = Integer.valueOf(i10);
         setBackgroundColor(i10);
         fixNavigationBar(i10);

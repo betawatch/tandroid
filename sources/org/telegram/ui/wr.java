@@ -1,93 +1,55 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class wr extends Drawable {
-    public final Drawable a;
-    public final Drawable b;
-    public int d;
-    public int e;
-    public final ArrayList c = new ArrayList();
-    public boolean f = false;
-    public final org.telegram.ui.Components.f6 g = new org.telegram.ui.Components.f6(new vi(this, 14), 420, org.telegram.ui.Components.bs.h);
-    public int h = 255;
+public final /* synthetic */ class wr implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fs b;
+    public final /* synthetic */ TLRPC.User c;
 
-    public wr(Drawable drawable, Drawable drawable2) {
-        this.a = drawable;
-        this.b = drawable2;
+    public /* synthetic */ wr(fs fsVar, TLRPC.User user, int i10) {
+        this.a = i10;
+        this.b = fsVar;
+        this.c = user;
     }
 
-    public final void a(int i10, int i11) {
-        this.d = i10;
-        this.e = i11;
-    }
-
-    public final void b(boolean z10) {
-        if (this.f == z10) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        String str;
+        switch (this.a) {
+            case 0:
+                fs fsVar = this.b;
+                TLRPC.User user = this.c;
+                if (user != null && fsVar.M == null && fsVar.N == null) {
+                    if (user.phone == null && (str = fsVar.L) != null) {
+                        user.phone = jf.b.d(str, false);
+                    }
+                    fsVar.b.setText(user.first_name);
+                    org.telegram.ui.Cells.g3 g3Var = fsVar.b.b;
+                    g3Var.setSelection(g3Var.length());
+                    fsVar.c.setText(user.last_name);
+                }
+                TLRPC.UserFull userFull = fsVar.getMessagesController().getUserFull(fsVar.H);
+                if (userFull != null) {
+                    TLRPC.TL_textWithEntities tL_textWithEntities = userFull.note;
+                    if (tL_textWithEntities != null) {
+                        fsVar.d.setText(tL_textWithEntities);
+                    } else {
+                        fsVar.d.setText("");
+                    }
+                }
+                if (fsVar.J) {
+                    fsVar.d.b.requestFocus();
+                    AndroidUtilities.showKeyboard(fsVar.d.b);
+                    break;
+                }
+                break;
+            default:
+                fs.V(this.b, this.c);
+                break;
         }
-        this.f = z10;
-        ArrayList arrayList = this.c;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((View) obj).invalidate();
-        }
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        float e = this.g.e(this.f);
-        int i10 = this.h;
-        Drawable drawable = this.a;
-        drawable.setAlpha(i10);
-        drawable.setBounds(getBounds());
-        drawable.draw(canvas);
-        if (e > 0.0f) {
-            Drawable drawable2 = this.b;
-            drawable2.setAlpha((int) (this.h * e));
-            drawable2.setBounds(getBounds().left + this.d, getBounds().top + this.e, drawable2.getIntrinsicWidth() + getBounds().left + this.d, drawable2.getIntrinsicHeight() + getBounds().top + this.e);
-            float lerp = AndroidUtilities.lerp(0.5f, 1.0f, e);
-            canvas.save();
-            canvas.scale(lerp, lerp, drawable2.getBounds().centerX(), drawable2.getBounds().centerY());
-            drawable2.draw(canvas);
-            canvas.restore();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.a.getIntrinsicHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.a.getIntrinsicWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.h = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
-        this.b.setColorFilter(colorFilter);
     }
 }

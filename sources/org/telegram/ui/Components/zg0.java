@@ -26,15 +26,15 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class zg0 implements tf.a {
-    public static final cw0 n0 = new cw0(new k2(28), new k2(29));
-    public static final cw0 o0 = new cw0(new tg0(0), new tg0(1));
+    public static final dw0 n0 = new dw0(new k2(28), new k2(29));
+    public static final dw0 o0 = new dw0(new tg0(0), new tg0(1));
     public static final zg0 p0 = new zg0();
     public boolean E;
     public ValueAnimator F;
-    public k0.b G;
+    public k2.w0 G;
     public int H;
     public int I;
     public float K;
@@ -54,7 +54,7 @@ public final class zg0 implements tf.a {
     public float Z;
     public float a0;
     public WindowManager b;
-    public ci.h3 b0;
+    public ci.i3 b0;
     public WindowManager.LayoutParams c;
     public boolean c0;
     public org.telegram.ui.f d;
@@ -76,7 +76,7 @@ public final class zg0 implements tf.a {
     public View y;
     public float a = 1.4f;
     public float J = 1.0f;
-    public final r71 Q = new r71(false);
+    public final s71 Q = new s71(false);
     public final ug0 e0 = new ug0(this, 1);
     public float[] g0 = new float[2];
     public final ug0 h0 = new ug0(this, 2);
@@ -143,13 +143,13 @@ public final class zg0 implements tf.a {
 
     public static void v(boolean z10) {
         zg0 zg0Var = p0;
-        r71 r71Var = zg0Var.Q;
-        r71Var.e(false);
-        r71Var.d(!z10);
-        r71Var.f(true);
-        ci.h3 h3Var = zg0Var.b0;
-        if (h3Var != null) {
-            h3Var.invalidate();
+        s71 s71Var = zg0Var.Q;
+        s71Var.e(false);
+        s71Var.d(!z10);
+        s71Var.f(true);
+        ci.i3 i3Var = zg0Var.b0;
+        if (i3Var != null) {
+            i3Var.invalidate();
         }
         yg0 yg0Var = zg0Var.h;
         if (yg0Var != null) {
@@ -160,15 +160,15 @@ public final class zg0 implements tf.a {
     public static void w(PhotoViewer photoViewer) {
         zg0 zg0Var = p0;
         zg0Var.V = photoViewer;
-        a81 a81Var = photoViewer.F2;
+        b81 b81Var = photoViewer.F2;
         rf.d dVar = zg0Var.W;
         if (dVar != null) {
             dVar.c();
             zg0Var.W = null;
         }
-        if (a81Var != null && uf.b.a(photoViewer.y) == 1) {
+        if (b81Var != null && uf.b.a(photoViewer.y) == 1) {
             rf.c cVar = new rf.c(photoViewer.y, zg0Var);
-            cVar.c = "photo-viewer-pip-" + a81Var.a;
+            cVar.c = "photo-viewer-pip-" + b81Var.a;
             cVar.e = 1;
             cVar.d = AndroidUtilities.dp(10.0f);
             cVar.j = zg0Var.d;
@@ -177,7 +177,7 @@ public final class zg0 implements tf.a {
             int i11 = zg0Var.T;
             cVar.h = i10;
             cVar.i = i11;
-            cVar.g = a81Var.d;
+            cVar.g = b81Var.d;
             cVar.f = true;
             zg0Var.W = cVar.a();
         }
@@ -273,14 +273,14 @@ public final class zg0 implements tf.a {
                 zg0Var.s = scaleGestureDetector;
                 scaleGestureDetector.setQuickScaleEnabled(false);
                 zg0Var.s.setStylusScaleEnabled(false);
-                zg0Var.v = new le.b(context, new xg0(zg0Var, scaledTouchSlop));
+                zg0Var.v = new le.b(context, (u20) new xg0(zg0Var, scaledTouchSlop));
                 zg0Var.e = new yg0(zg0Var, context, i13);
                 org.telegram.ui.f fVar = new org.telegram.ui.f(zg0Var, context, i12);
                 zg0Var.d = fVar;
                 fVar.addView(zg0Var.e, w7.z5.c(-1.0f, -1));
                 yg0 yg0Var = zg0Var.e;
                 float dp = AndroidUtilities.dp(10.0f);
-                ci.n1 n1Var = zf.j0.a;
+                ci.o1 o1Var = zf.j0.a;
                 yg0Var.setOutlineProvider(new zf.i0(0, dp));
                 zg0Var.e.setClipToOutline(true);
                 zg0Var.e.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.gg, false));
@@ -321,7 +321,7 @@ public final class zg0 implements tf.a {
                 imageView2.setColorFilter(org.telegram.ui.ActionBar.h6.x0(null, i14, false), mode);
                 imageView2.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.x0(null, i15, false), 1, -1));
                 imageView2.setPadding(dp2, dp2, dp2, dp2);
-                imageView2.setOnClickListener(new ci.g2(6, zg0Var, z12));
+                imageView2.setOnClickListener(new ci.h2(6, zg0Var, z12));
                 zg0Var.h.addView(imageView2, w7.z5.d(38, f11, 5, 0.0f, f12, 48, 0.0f));
                 ImageView imageView3 = new ImageView(context);
                 zg0Var.X = imageView3;
@@ -333,9 +333,9 @@ public final class zg0 implements tf.a {
                 zg0Var.n = z13;
                 zg0Var.X.setVisibility((!z13 || ((kg0Var2 = zg0Var.r) != null && kg0Var2.x)) ? 0 : 8);
                 zg0Var.h.addView(zg0Var.X, w7.z5.e(38, 38, 17));
-                ci.h3 h3Var = new ci.h3(zg0Var, context);
-                zg0Var.b0 = h3Var;
-                zg0Var.h.addView(h3Var, w7.z5.c(-1.0f, -1));
+                ci.i3 i3Var = new ci.i3(zg0Var, context);
+                zg0Var.b0 = i3Var;
+                zg0Var.h.addView(i3Var, w7.z5.c(-1.0f, -1));
                 zg0Var.e.addView(zg0Var.h, w7.z5.c(-1.0f, -1));
                 zg0Var.b = (WindowManager) (z12 ? activity : ApplicationLoader.applicationContext).getSystemService("window");
                 WindowManager.LayoutParams b10 = uf.b.b(context, z12);
@@ -460,12 +460,12 @@ public final class zg0 implements tf.a {
     }
 
     public final void i() {
-        org.telegram.ui.ss0 ss0Var;
+        org.telegram.ui.qs0 qs0Var;
         PhotoViewer photoViewer = this.V;
-        if (photoViewer == null || (ss0Var = photoViewer.c4) == null) {
+        if (photoViewer == null || (qs0Var = photoViewer.c4) == null) {
             return;
         }
-        ss0Var.cancelRewind();
+        qs0Var.cancelRewind();
     }
 
     public final void k(boolean z10, boolean z11) {
@@ -508,28 +508,28 @@ public final class zg0 implements tf.a {
         if (this.r != null) {
             return r0.getCurrentPosition();
         }
-        a81 a81Var = this.V.F2;
-        if (a81Var == null) {
+        b81 b81Var = this.V.F2;
+        if (b81Var == null) {
             return 0L;
         }
-        return a81Var.n();
+        return b81Var.n();
     }
 
     public final long m() {
         if (this.r != null) {
             return r0.getVideoDuration();
         }
-        a81 a81Var = this.V.F2;
-        if (a81Var == null) {
+        b81 b81Var = this.V.F2;
+        if (b81Var == null) {
             return 0L;
         }
-        return a81Var.p();
+        return b81Var.p();
     }
 
-    public final k0.b n() {
+    public final k2.w0 n() {
         if (this.G == null) {
             Point point = AndroidUtilities.displaySize;
-            this.G = new k0.b(point.x, point.y);
+            this.G = new k2.w0(point.x, point.y);
         }
         return this.G;
     }
@@ -540,9 +540,9 @@ public final class zg0 implements tf.a {
             Point point = AndroidUtilities.displaySize;
             this.a = (Math.min(point.x, point.y) - AndroidUtilities.dp(32.0f)) / t();
             float f7 = this.O.floatValue() < 1.0f ? 0.6f : 0.45f;
-            r71 r71Var = this.Q;
-            r71Var.q = f7;
-            r71Var.a();
+            s71 s71Var = this.Q;
+            s71Var.q = f7;
+            s71Var.a();
         }
         return this.O.floatValue();
     }
@@ -601,11 +601,11 @@ public final class zg0 implements tf.a {
         if (kg0Var != null) {
             y3 = kg0Var.G;
         } else {
-            a81 a81Var = photoViewer.F2;
-            if (a81Var == null) {
+            b81 b81Var = photoViewer.F2;
+            if (b81Var == null) {
                 return;
             } else {
-                y3 = a81Var.y();
+                y3 = b81Var.y();
             }
         }
         ug0 ug0Var = this.e0;

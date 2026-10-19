@@ -1,26 +1,39 @@
 package org.telegram.messenger;
 
-import java.util.function.ToIntFunction;
-import org.telegram.messenger.GiftAuctionController;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g4 implements ToIntFunction {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class g4 implements Utilities.Callback {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ BaseController c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ g4(int i10) {
-        this.a = i10;
+    public /* synthetic */ g4(GiftAuctionController giftAuctionController, long j10, TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState) {
+        this.c = giftAuctionController;
+        this.b = j10;
+        this.d = tL_StarGiftAuctionState;
     }
 
-    @Override // java.util.function.ToIntFunction
-    public final int applyAsInt(Object obj) {
-        int lambda$updateActiveAuctions$13;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                lambda$updateActiveAuctions$13 = GiftAuctionController.lambda$updateActiveAuctions$13((GiftAuctionController.Auction) obj);
-                return lambda$updateActiveAuctions$13;
+                ((GiftAuctionController) this.c).lambda$subscribeToGiftAuctionStateInternal$0(this.b, (TL_payments.TL_StarGiftAuctionState) this.d, (ArrayList) obj);
+                break;
             default:
-                return Integer.parseInt((String) obj);
+                ((TranslateController) this.c).lambda$checkTranslation$4((MessageObject) this.d, this.b, (TLRPC.TL_textWithEntities) obj);
+                break;
         }
+    }
+
+    public /* synthetic */ g4(TranslateController translateController, MessageObject messageObject, long j10) {
+        this.c = translateController;
+        this.d = messageObject;
+        this.b = j10;
     }
 }

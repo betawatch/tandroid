@@ -1,31 +1,49 @@
 package zh;
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.b2;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class x implements a2 {
-    public final /* synthetic */ f0 a;
+public final /* synthetic */ class x implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ Utilities.Callback c;
+    public final /* synthetic */ n2 d;
 
-    public /* synthetic */ x(f0 f0Var) {
-        this.a = f0Var;
+    public /* synthetic */ x(String str, Utilities.Callback callback, n2 n2Var) {
+        this.b = str;
+        this.c = callback;
+        this.d = n2Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(b2 b2Var, int i10) {
-        f0 f0Var = this.a;
-        f0Var.getClass();
-        try {
-            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-            intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-            f0Var.getParentActivity().startActivity(intent);
-        } catch (Exception e) {
-            FileLog.e(e);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                String str = this.b;
+                Utilities.Callback callback = this.c;
+                n2 n2Var = this.d;
+                b0.p(n2Var, 0, new x(str, callback, n2Var));
+                break;
+            default:
+                String str2 = this.b;
+                if (str2 == null) {
+                    xc.a0(this.d).N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                    break;
+                } else {
+                    this.c.run(str2);
+                    break;
+                }
         }
+    }
+
+    public /* synthetic */ x(n2 n2Var, String str, Utilities.Callback callback) {
+        this.d = n2Var;
+        this.b = str;
+        this.c = callback;
     }
 }

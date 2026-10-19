@@ -3,11 +3,11 @@ package u9;
 import ai.f;
 import android.util.Log;
 import java.util.concurrent.atomic.AtomicReference;
-import qg.g0;
+import qg.h0;
 import r9.p;
 import z9.b1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class a {
     public static final b c = new b();
@@ -16,7 +16,7 @@ public final class a {
 
     public a(p pVar) {
         this.a = pVar;
-        pVar.a(new g0(this, 18));
+        pVar.a(new h0(this, 18));
     }
 
     public final b a(String str) {
@@ -39,6 +39,6 @@ public final class a {
         if (Log.isLoggable("FirebaseCrashlytics", 2)) {
             Log.v("FirebaseCrashlytics", h, null);
         }
-        this.a.a(new f(str, j10, b1Var, 10));
+        this.a.a(new f(str, j10, b1Var, 11));
     }
 }

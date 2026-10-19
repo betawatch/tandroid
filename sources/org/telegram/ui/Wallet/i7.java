@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i7 implements View.OnLayoutChangeListener {
     public final /* synthetic */ int a;
@@ -43,9 +43,9 @@ public final /* synthetic */ class i7 implements View.OnLayoutChangeListener {
                     while (i18 < size) {
                         Object obj = arrayList.get(i18);
                         i18++;
-                        ga gaVar = (ga) obj;
-                        if (gaVar.hasFocus()) {
-                            gaVar.requestRectangleOnScreen(new Rect(0, 0, gaVar.getWidth(), gaVar.getHeight()), true);
+                        ha haVar = (ha) obj;
+                        if (haVar.hasFocus()) {
+                            haVar.requestRectangleOnScreen(new Rect(0, 0, haVar.getWidth(), haVar.getHeight()), true);
                             break;
                         }
                     }

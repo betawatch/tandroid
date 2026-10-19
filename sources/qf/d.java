@@ -31,16 +31,16 @@ import java.util.logging.Level;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
-import org.telegram.ui.hk0;
+import org.telegram.ui.fk0;
 import t7.u;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class d extends m {
     public static final f l;
     public static final HashMap m;
     public final ExtendedDefaultDataSourceFactory e;
-    public final hk0 f;
+    public final fk0 f;
     public final u g;
     public final HashMap h;
     public Pair i;
@@ -63,7 +63,7 @@ public final class d extends m {
         this.i = null;
         this.j = false;
         this.k = new AtomicInteger();
-        this.f = new hk0(24);
+        this.f = new fk0(24);
         this.g = new u(8);
         this.e = new ExtendedDefaultDataSourceFactory(ApplicationLoader.applicationContext, "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20150101 Firefox/47.0 (Chrome)");
     }
@@ -101,7 +101,7 @@ public final class d extends m {
     public final j e(ad.f fVar) {
         String str;
         int incrementAndGet = this.k.incrementAndGet();
-        StringBuilder l4 = i2.d.l(incrementAndGet, "Request ", " ");
+        StringBuilder l4 = i2.e.l(incrementAndGet, "Request ", " ");
         switch (fVar.g) {
             case 1:
                 str = "GET";

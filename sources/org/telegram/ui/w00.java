@@ -1,36 +1,30 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class w00 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ qq b;
+public final class w00 {
+    public long a;
+    public int b;
 
-    public w00(qq qqVar) {
-        this.b = qqVar;
+    public w00(int i10, long j10) {
+        this.a = j10;
+        this.b = i10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ((g10) this.b.d).l0.unlock();
-                break;
-            default:
-                qq qqVar = this.b;
-                View view = qqVar.b;
-                view.setAlpha(1.0f);
-                s4.n0.x0(view);
-                ((g10) qqVar.d).b.removeView(view);
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj != null && w00.class == obj.getClass()) {
+            w00 w00Var = (w00) obj;
+            if (this.a == w00Var.a && this.b == w00Var.b) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public w00(qq qqVar, s4.n0 n0Var) {
-        this.b = qqVar;
+    public final int hashCode() {
+        return this.b;
     }
 }

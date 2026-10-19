@@ -20,10 +20,10 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ei1;
-import org.telegram.ui.vf1;
+import org.telegram.ui.ci1;
+import org.telegram.ui.tf1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class gg0 extends WebViewClient {
     public final /* synthetic */ int a;
@@ -42,8 +42,8 @@ public final class gg0 extends WebViewClient {
         if (!"tg".equals(parse.getScheme())) {
             return false;
         }
-        ((ei1) this.b).getClass();
-        ((ei1) this.b).finishFragment(false);
+        ((ci1) this.b).getClass();
+        ((ci1) this.b).finishFragment(false);
         try {
             Intent intent = new Intent("android.intent.action.VIEW", parse);
             intent.setComponent(new ComponentName(ApplicationLoader.applicationContext.getPackageName(), LaunchActivity.class.getName()));
@@ -78,11 +78,11 @@ public final class gg0 extends WebViewClient {
         switch (i10) {
             case 0:
                 super.onPageFinished(webView, str);
-                org.telegram.ui.qt0 qt0Var = (org.telegram.ui.qt0) obj;
-                View view = qt0Var.r;
-                if (!qt0Var.x) {
-                    qt0Var.n.setVisibility(4);
-                    qt0Var.h.setVisibility(4);
+                org.telegram.ui.ot0 ot0Var = (org.telegram.ui.ot0) obj;
+                View view = ot0Var.r;
+                if (!ot0Var.x) {
+                    ot0Var.n.setVisibility(4);
+                    ot0Var.h.setVisibility(4);
                     view.setEnabled(true);
                     view.setAlpha(1.0f);
                     break;
@@ -90,14 +90,14 @@ public final class gg0 extends WebViewClient {
                 break;
             case 1:
                 super.onPageFinished(webView, str);
-                ei1 ei1Var = (ei1) obj;
-                dr drVar = ei1Var.c;
+                ci1 ci1Var = (ci1) obj;
+                dr drVar = ci1Var.c;
                 if (drVar != null && drVar.getVisibility() == 0) {
                     AnimatorSet animatorSet = new AnimatorSet();
-                    ei1Var.b.getContentView().setVisibility(0);
-                    ei1Var.b.setEnabled(true);
-                    animatorSet.playTogether(ObjectAnimator.ofFloat(ei1Var.c, "scaleX", 1.0f, 0.1f), ObjectAnimator.ofFloat(ei1Var.c, "scaleY", 1.0f, 0.1f), ObjectAnimator.ofFloat(ei1Var.c, "alpha", 1.0f, 0.0f), ObjectAnimator.ofFloat(ei1Var.b.getContentView(), "scaleX", 0.0f, 1.0f), ObjectAnimator.ofFloat(ei1Var.b.getContentView(), "scaleY", 0.0f, 1.0f), ObjectAnimator.ofFloat(ei1Var.b.getContentView(), "alpha", 0.0f, 1.0f));
-                    animatorSet.addListener(new vf1(this, 10));
+                    ci1Var.b.getContentView().setVisibility(0);
+                    ci1Var.b.setEnabled(true);
+                    animatorSet.playTogether(ObjectAnimator.ofFloat(ci1Var.c, "scaleX", 1.0f, 0.1f), ObjectAnimator.ofFloat(ci1Var.c, "scaleY", 1.0f, 0.1f), ObjectAnimator.ofFloat(ci1Var.c, "alpha", 1.0f, 0.0f), ObjectAnimator.ofFloat(ci1Var.b.getContentView(), "scaleX", 0.0f, 1.0f), ObjectAnimator.ofFloat(ci1Var.b.getContentView(), "scaleY", 0.0f, 1.0f), ObjectAnimator.ofFloat(ci1Var.b.getContentView(), "alpha", 0.0f, 1.0f));
+                    animatorSet.addListener(new tf1(this, 10));
                     animatorSet.setDuration(150L);
                     animatorSet.start();
                     break;
@@ -182,7 +182,7 @@ public final class gg0 extends WebViewClient {
         switch (this.a) {
             case 0:
                 String uri = webResourceRequest.getUrl().toString();
-                if (!((org.telegram.ui.qt0) this.b).x || !uri.startsWith("https://www.youtube.com/youtubei/v1/player?key=")) {
+                if (!((org.telegram.ui.ot0) this.b).x || !uri.startsWith("https://www.youtube.com/youtubei/v1/player?key=")) {
                     return null;
                 }
                 Utilities.externalNetworkQueue.postRunnable(new lg(this, uri, webResourceRequest, 16));
@@ -208,7 +208,7 @@ public final class gg0 extends WebViewClient {
     public boolean shouldOverrideUrlLoading(WebView webView, String str) {
         switch (this.a) {
             case 0:
-                if (!((org.telegram.ui.qt0) this.b).x) {
+                if (!((org.telegram.ui.ot0) this.b).x) {
                     break;
                 } else {
                     pf.d.r(webView.getContext(), str);

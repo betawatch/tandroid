@@ -22,7 +22,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -31,9 +31,9 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p6 implements Runnable {
     public final /* synthetic */ int a;
@@ -82,23 +82,23 @@ public final /* synthetic */ class p6 implements Runnable {
                 break;
             case 3:
                 p pVar = (p) this.b;
-                rg.b2 b2Var = (rg.b2) this.c;
+                rg.c2 c2Var = (rg.c2) this.c;
                 d7 d7Var = pVar.a;
-                if (b2Var.getWidth() <= 0) {
+                if (c2Var.getWidth() <= 0) {
                     d7Var.animate().scaleX(0.0f).scaleY(1.0f).withEndAction(new com.google.firebase.messaging.s(pVar, 20)).start();
                     break;
                 } else {
-                    float width = b2Var.getWidth() / d7Var.getWidth();
+                    float width = c2Var.getWidth() / d7Var.getWidth();
                     ValueAnimator valueAnimator = pVar.w;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                     }
                     pVar.w = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    pVar.w.addUpdateListener(new c7(pVar, d7Var.getScaleX(), width, ((b2Var.getWidth() / 2.0f) + b2Var.getX()) - ((d7Var.getWidth() / 2.0f) + d7Var.getX()), ((b2Var.getHeight() / 2.0f) + b2Var.getY()) - ((d7Var.getHeight() / 2.0f) + d7Var.getY()), 0));
-                    pVar.w.addListener(new me(5, pVar, b2Var));
+                    pVar.w.addUpdateListener(new c7(pVar, d7Var.getScaleX(), width, ((c2Var.getWidth() / 2.0f) + c2Var.getX()) - ((d7Var.getWidth() / 2.0f) + d7Var.getX()), ((c2Var.getHeight() / 2.0f) + c2Var.getY()) - ((d7Var.getHeight() / 2.0f) + d7Var.getY()), 0));
+                    pVar.w.addListener(new me(5, pVar, c2Var));
                     pVar.w.setDuration(320L);
                     pVar.w.setInterpolator(bs.h);
-                    pVar.v = b2Var;
+                    pVar.v = c2Var;
                     pVar.w.start();
                     break;
                 }
@@ -151,7 +151,7 @@ public final /* synthetic */ class p6 implements Runnable {
                 ClipboardManager clipboardManager = (ClipboardManager) j8Var.getContext().getSystemService("clipboard");
                 org.telegram.ui.Cells.g3 g3Var = j8Var.Y.b;
                 boolean z10 = (TextUtils.isEmpty(g3Var.getText()) || TextUtils.equals(g3Var.getText(), "https://") || TextUtils.isEmpty(g3Var.getText().toString())) && clipboardManager != null && clipboardManager.hasPrimaryClip();
-                lk.t(textView.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f), bs.h, 300L);
+                kk.t(textView.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f), bs.h, 300L);
                 break;
             case 9:
                 r9 r9Var = (r9) this.b;
@@ -257,7 +257,7 @@ public final /* synthetic */ class p6 implements Runnable {
                 gi.u3 u3Var2 = (gi.u3) this.b;
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) this.c;
                 u3Var2.getClass();
-                u3Var2.presentFragment(sn.W9(connectedbotstarref.bot_id));
+                u3Var2.presentFragment(qn.W9(connectedbotstarref.bot_id));
                 break;
             case 20:
                 gi.f4 f4Var = (gi.f4) this.b;
@@ -388,7 +388,7 @@ public final /* synthetic */ class p6 implements Runnable {
                 hi.r rVar = (hi.r) this.b;
                 ii.e eVar2 = (ii.e) this.c;
                 rVar.getClass();
-                rVar.presentFragment(sn.W9(eVar2.b.id));
+                rVar.presentFragment(qn.W9(eVar2.b.id));
                 break;
         }
     }

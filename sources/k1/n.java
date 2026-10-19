@@ -2,7 +2,7 @@ package k1;
 
 import v7.i8;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class n extends md.i implements td.p {
     public final /* synthetic */ int a;
@@ -72,11 +72,11 @@ public final class n extends md.i implements td.p {
                         if (!(a0Var instanceof b)) {
                             if (a0Var instanceof h) {
                                 if (a0Var == iVar2.a) {
-                                    obj2 = zVar.f(this);
+                                    obj2 = zVar.e(this);
                                     break;
                                 }
                             } else if (kotlin.jvm.internal.i.a(a0Var, b0.a)) {
-                                obj2 = zVar.f(this);
+                                obj2 = zVar.e(this);
                                 break;
                             } else if (a0Var instanceof g) {
                                 throw new IllegalStateException("Can't read in final state.");
@@ -88,7 +88,7 @@ public final class n extends md.i implements td.p {
                         }
                     } else if (kVar instanceof j) {
                         this.b = 2;
-                        if (z.b(zVar, (j) kVar, this) == aVar) {
+                        if (z.a(zVar, (j) kVar, this) == aVar) {
                             return aVar;
                         }
                     }
@@ -119,7 +119,7 @@ public final class n extends md.i implements td.p {
                 }
                 ab.b0 b0Var = new ab.b0(a0Var2, null, 1);
                 this.b = 1;
-                mVar.r(new ee.i(new kotlin.jvm.internal.n(), new ab.a0(cVar), b0Var), this);
+                mVar.l(new ee.i(new kotlin.jvm.internal.n(), new ab.a0(cVar), b0Var), this);
                 return aVar2;
         }
     }

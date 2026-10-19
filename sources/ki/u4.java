@@ -37,7 +37,7 @@ import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class u4 extends a0 implements org.telegram.ui.ActionBar.y5, m9, l0 {
     public static Paint k0;
@@ -97,7 +97,7 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.y5, m9, l0
         this.n = d6Var;
         setWillNotDraw(false);
         g(0, AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(4.0f));
-        k0 k0Var = new k0(context, d6Var, new ag.b(this, 27));
+        k0 k0Var = new k0(context, d6Var, new a4.l(this, 27));
         this.v = k0Var;
         addView(k0Var.a, w7.z5.e(-2, -2, 51));
         setClipChildren(false);
@@ -394,7 +394,7 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.y5, m9, l0
             a aVar = this.a;
             w3 w3Var = p3Var.a;
             w3Var.Z3 = aVar;
-            w3Var.f3.l(0);
+            w3Var.f3.m(0);
             return;
         }
         if (i10 < 0 || i10 >= m10.size() || !((t) m10.get(i10)).a()) {
@@ -442,7 +442,7 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.y5, m9, l0
             arrayList.add(x4Var);
         }
         while (arrayList.size() > m10.size()) {
-            x4 x4Var2 = (x4) i2.d.A(1, arrayList);
+            x4 x4Var2 = (x4) i2.e.A(1, arrayList);
             x4Var2.a.onDetachedFromWindow();
             x4Var2.b.onDetachedFromWindow();
             x4Var2.c = null;
@@ -466,7 +466,7 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.y5, m9, l0
         this.w.bringToFront();
         this.x.bringToFront();
         while (arrayList2.size() > m10.size()) {
-            ImageView imageView = (ImageView) i2.d.A(1, arrayList2);
+            ImageView imageView = (ImageView) i2.e.A(1, arrayList2);
             removeView(imageView);
             this.K.remove(imageView);
             this.L.remove(imageView);

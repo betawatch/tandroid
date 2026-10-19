@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class wb implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -117,11 +117,11 @@ public final /* synthetic */ class wb implements Runnable {
                                     s0Var = s0Var;
                                     s0Var.i.post(new si.e0(s0Var, e, 0));
                                     if (file != null) {
-                                        w7.n7.c(file);
+                                        w7.m7.c(file);
                                     }
                                     if (z13) {
                                         file2 = wVar.a;
-                                        w7.n7.c(file2);
+                                        w7.m7.c(file2);
                                         return;
                                     }
                                     return;
@@ -132,17 +132,17 @@ public final /* synthetic */ class wb implements Runnable {
                         } catch (Throwable th2) {
                             th = th2;
                             if (file != null) {
-                                w7.n7.c(file);
+                                w7.m7.c(file);
                             }
                             if (z13) {
-                                w7.n7.c(wVar.a);
+                                w7.m7.c(wVar.a);
                             }
                             throw th;
                         }
                     }
                     s0Var.R = null;
                     if (file != null) {
-                        w7.n7.c(file);
+                        w7.m7.c(file);
                     }
                 } catch (Exception e10) {
                     e = e10;
@@ -158,7 +158,7 @@ public final /* synthetic */ class wb implements Runnable {
                 }
                 if (z13) {
                     file2 = wVar.a;
-                    w7.n7.c(file2);
+                    w7.m7.c(file2);
                     return;
                 }
                 return;

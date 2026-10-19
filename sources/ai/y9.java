@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class y9 implements z9 {
     public final int a;
@@ -88,7 +88,7 @@ public final class y9 implements z9 {
 
     @Override // ai.z9
     public final int b(int i10) {
-        if (!k7.c2(this.a, this.b)) {
+        if (!l7.j2(this.a, this.b)) {
             return -1;
         }
         int i11 = i10 + 1;
@@ -246,7 +246,24 @@ public final class y9 implements z9 {
         }
     }
 
-    public final void l(int i10, int i11) {
+    public final boolean l(TL_stars.SavedStarGift savedStarGift) {
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.l;
+            if (i10 >= arrayList.size()) {
+                return false;
+            }
+            if (ga.k((TL_stars.SavedStarGift) arrayList.get(i10), savedStarGift)) {
+                arrayList.remove(i10);
+                this.n = Math.max(0, this.n - 1);
+                NotificationCenter.getInstance(this.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(this.b), this);
+                return true;
+            }
+            i10++;
+        }
+    }
+
+    public final void m(int i10, int i11) {
         ArrayList arrayList = this.l;
         int clamp = Utilities.clamp(i10, arrayList.size() - 1, 0);
         if (clamp < 0 || clamp >= arrayList.size()) {
@@ -260,7 +277,7 @@ public final class y9 implements z9 {
         arrayList.add(clamp2, savedStarGift);
     }
 
-    public final void m() {
+    public final void n() {
         boolean z10 = this.c;
         int i10 = 0;
         long j10 = this.b;
@@ -275,7 +292,7 @@ public final class y9 implements z9 {
                 i10++;
                 togglestargiftspinnedtotop.stargift.add(h((TL_stars.SavedStarGift) obj));
             }
-            ConnectionsManager.getInstance(i11).sendRequest(togglestargiftspinnedtotop, new ci.d6(8), 64);
+            ConnectionsManager.getInstance(i11).sendRequest(togglestargiftspinnedtotop, new ci.e6(8), 64);
             return;
         }
         TL_stars.updateStarGiftCollection updatestargiftcollection = new TL_stars.updateStarGiftCollection();
@@ -292,7 +309,7 @@ public final class y9 implements z9 {
         ConnectionsManager.getInstance(i11).sendRequest(updatestargiftcollection, null, 64);
     }
 
-    public final boolean n(TL_stars.SavedStarGift savedStarGift, boolean z10, boolean z11) {
+    public final boolean o(TL_stars.SavedStarGift savedStarGift, boolean z10, boolean z11) {
         boolean z12;
         ArrayList arrayList;
         if (savedStarGift != null) {
@@ -311,7 +328,7 @@ public final class y9 implements z9 {
                     }
                     arrayList.addAll(0, i10);
                     NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(this.b), this);
-                    m();
+                    n();
                     return z12;
                 }
             } else if (z10) {
@@ -322,7 +339,7 @@ public final class y9 implements z9 {
                         return true;
                     }
                     while (i10.size() > 0 && i10.size() + 1 > MessagesController.getInstance(i11).stargiftsPinnedToTopLimit) {
-                        ((TL_stars.SavedStarGift) i2.d.A(1, i10)).pinned_to_top = false;
+                        ((TL_stars.SavedStarGift) i2.e.A(1, i10)).pinned_to_top = false;
                     }
                     z12 = true;
                 }
@@ -335,14 +352,14 @@ public final class y9 implements z9 {
                 }
                 arrayList.addAll(0, i10);
                 NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(this.b), this);
-                m();
+                n();
                 return z12;
             }
         }
         return false;
     }
 
-    public final void o(TL_stars.SavedStarGift savedStarGift, int i10, boolean z10) {
+    public final void p(TL_stars.SavedStarGift savedStarGift, int i10, boolean z10) {
         ArrayList arrayList = this.l;
         int size = arrayList.size();
         int i11 = 0;
@@ -360,7 +377,7 @@ public final class y9 implements z9 {
         }
     }
 
-    public final void p(TL_stars.SavedStarGift savedStarGift, boolean z10) {
+    public final void q(TL_stars.SavedStarGift savedStarGift, boolean z10) {
         ArrayList arrayList = this.l;
         int size = arrayList.size();
         boolean z11 = false;

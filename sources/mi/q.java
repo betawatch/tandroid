@@ -31,6 +31,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.Executor;
+import k2.w0;
 import n4.v;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
@@ -38,35 +39,35 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.a2;
 import org.telegram.ui.Cells.f3;
-import org.telegram.ui.Components.a81;
+import org.telegram.ui.Components.b81;
 import org.telegram.ui.Components.bp0;
 import org.telegram.ui.Components.dg0;
 import org.telegram.ui.Components.gu;
 import org.telegram.ui.Components.iu;
 import org.telegram.ui.Components.na;
 import org.telegram.ui.Components.rc0;
-import org.telegram.ui.Components.uy0;
-import org.telegram.ui.Components.x71;
+import org.telegram.ui.Components.vy0;
+import org.telegram.ui.Components.y71;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.SecretMediaViewer;
-import org.telegram.ui.ek0;
-import org.telegram.ui.gm0;
-import org.telegram.ui.l31;
+import org.telegram.ui.ck0;
+import org.telegram.ui.em0;
+import org.telegram.ui.j31;
+import org.telegram.ui.jv0;
+import org.telegram.ui.km0;
 import org.telegram.ui.l7;
-import org.telegram.ui.lv0;
-import org.telegram.ui.mm0;
 import org.telegram.ui.n5;
 import org.telegram.ui.o4;
+import org.telegram.ui.uu;
 import org.telegram.ui.v6;
-import org.telegram.ui.wu;
-import org.telegram.ui.xm0;
-import org.telegram.ui.xu;
+import org.telegram.ui.vm0;
+import org.telegram.ui.vu;
 import s4.g1;
 import s4.h1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n, SuccessContinuation {
+public class q implements ne.f, d6, bp0, gu, zb, l7, km0, gh.a, y71, n5.b, y2.n, SuccessContinuation {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -79,12 +80,12 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
     public void A(float f7, boolean z10) {
         rc0 rc0Var = (rc0) this.b;
         dg0 dg0Var = (dg0) this.c;
-        a81 a81Var = dg0Var.d;
-        if (a81Var == null) {
+        b81 b81Var = dg0Var.d;
+        if (b81Var == null) {
             return;
         }
         float max = 2.8f / Math.max(60L, r2);
-        long p5 = (long) ((((f7 / (1.0f - max)) * max) + f7) * a81Var.p());
+        long p5 = (long) ((((f7 / (1.0f - max)) * max) + f7) * b81Var.p());
         dg0Var.e = p5;
         dg0Var.d.L(p5, !z10);
         if (z10) {
@@ -109,31 +110,31 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
         }
     }
 
-    @Override // ne.f
-    public void D() {
-        ((ne.k) this.b).e((ne.l) this.c);
-    }
-
     @Override // org.telegram.ui.Components.gu
-    public void F() {
+    public void E() {
         f3 f3Var = (f3) this.c;
         ((iu) this.b).getText();
         f3Var.b();
     }
 
-    public void H(Object obj, String str) {
-        ((ArrayList) this.b).add(a1.g.C(str, "=", String.valueOf(obj)));
+    @Override // ne.f
+    public void F() {
+        ((ne.k) this.b).e((ne.l) this.c);
     }
 
     @Override // org.telegram.ui.ActionBar.d6
-    public int I(int i10) {
+    public int G(int i10) {
         switch (this.a) {
             case 7:
                 return ((SparseIntArray) this.b).get(i10);
             default:
                 d6 d6Var = (d6) this.c;
-                return d6Var == null ? h6.x0(null, i10, false) : d6Var.I(i10);
+                return d6Var == null ? h6.x0(null, i10, false) : d6Var.G(i10);
         }
+    }
+
+    public void H(Object obj, String str) {
+        ((ArrayList) this.b).add(a1.g.C(str, "=", String.valueOf(obj)));
     }
 
     @Override // org.telegram.ui.Components.bp0
@@ -143,7 +144,7 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
         ((n5) this.c).b.M();
     }
 
-    public void O() {
+    public void R() {
         String str = (String) this.b;
         try {
             ca.c cVar = (ca.c) this.c;
@@ -158,12 +159,12 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
     /* JADX WARN: Type inference failed for: r1v5, types: [java.util.ArrayList] */
     /* JADX WARN: Type inference failed for: r1v6, types: [java.util.List] */
     /* JADX WARN: Type inference failed for: r1v9, types: [java.util.List] */
-    public ArrayList R() {
+    public ArrayList S() {
         ?? arrayList;
         ArrayList arrayList2 = new ArrayList();
-        l2.f fVar = (l2.f) this.c;
+        w0 w0Var = (w0) this.c;
         Context context = (Context) this.b;
-        Class cls = (Class) fVar.b;
+        Class cls = (Class) w0Var.b;
         Bundle bundle = null;
         try {
             PackageManager packageManager = context.getPackageManager();
@@ -201,28 +202,28 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
     public View U(int i10, int i11, int i12, int i13) {
         g1 g1Var = (g1) this.c;
         h1 h1Var = (h1) this.b;
-        int k10 = h1Var.k();
-        int z10 = h1Var.z();
+        int l4 = h1Var.l();
+        int r10 = h1Var.r();
         int i14 = i11 > i10 ? 1 : -1;
         View view = null;
         while (i10 != i11) {
-            View L = h1Var.L(i10);
-            int d = h1Var.d(L);
-            int X = h1Var.X(L);
-            g1Var.b = k10;
-            g1Var.c = z10;
-            g1Var.d = d;
-            g1Var.e = X;
+            View x10 = h1Var.x(i10);
+            int j10 = h1Var.j(x10);
+            int B = h1Var.B(x10);
+            g1Var.b = l4;
+            g1Var.c = r10;
+            g1Var.d = j10;
+            g1Var.e = B;
             if (i12 != 0) {
                 g1Var.a = i12;
                 if (g1Var.a()) {
-                    return L;
+                    return x10;
                 }
             }
             if (i13 != 0) {
                 g1Var.a = i13;
                 if (g1Var.a()) {
-                    view = L;
+                    view = x10;
                 }
             }
             i10 += i14;
@@ -230,7 +231,7 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
         return view;
     }
 
-    public boolean V(v vVar, String str) {
+    public boolean W(v vVar, String str) {
         Context context = (Context) this.b;
         int i10 = vVar.b;
         return i10 < 0 ? context.getPackageManager().checkPermission(str, vVar.a) == 0 : context.checkPermission(str, i10, vVar.c) == 0;
@@ -239,14 +240,14 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
     public boolean X(View view) {
         g1 g1Var = (g1) this.c;
         h1 h1Var = (h1) this.b;
-        int k10 = h1Var.k();
-        int z10 = h1Var.z();
-        int d = h1Var.d(view);
-        int X = h1Var.X(view);
-        g1Var.b = k10;
-        g1Var.c = z10;
-        g1Var.d = d;
-        g1Var.e = X;
+        int l4 = h1Var.l();
+        int r10 = h1Var.r();
+        int j10 = h1Var.j(view);
+        int B = h1Var.B(view);
+        g1Var.b = l4;
+        g1Var.c = r10;
+        g1Var.d = j10;
+        g1Var.e = B;
         g1Var.a = 24579;
         return g1Var.a();
     }
@@ -328,7 +329,7 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
 
     @Override // org.telegram.ui.l7
     public void dismiss() {
-        ((xu) this.c).dismiss();
+        ((vu) this.c).dismiss();
     }
 
     @Override // gh.a
@@ -399,8 +400,8 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
         }
     }
 
-    @Override // org.telegram.ui.Components.x71
-    public void onError(a81 a81Var, Exception exc) {
+    @Override // org.telegram.ui.Components.y71
+    public void onError(b81 b81Var, Exception exc) {
         SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.c;
         int i10 = secretMediaViewer.b0;
         if (i10 <= 0) {
@@ -408,22 +409,22 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
             return;
         }
         secretMediaViewer.b0 = i10 - 1;
-        AndroidUtilities.runOnUIThread(new lv0(28, this, (File) this.b), 100L);
+        AndroidUtilities.runOnUIThread(new jv0(28, this, (File) this.b), 100L);
     }
 
-    @Override // org.telegram.ui.Components.x71
+    @Override // org.telegram.ui.Components.y71
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.x71
+    @Override // org.telegram.ui.Components.y71
     public void onStateChanged(boolean z10, int i10) {
         SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.c;
-        l31 l31Var = secretMediaViewer.i1;
+        j31 j31Var = secretMediaViewer.i1;
         if (secretMediaViewer.y == null || secretMediaViewer.h0 == null) {
             return;
         }
-        AndroidUtilities.cancelRunOnUIThread(l31Var);
-        AndroidUtilities.runOnUIThread(l31Var);
+        AndroidUtilities.cancelRunOnUIThread(j31Var);
+        AndroidUtilities.runOnUIThread(j31Var);
         if (i10 == 4 || i10 == 1) {
             try {
                 secretMediaViewer.b.getWindow().clearFlags(128);
@@ -459,12 +460,12 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
         }
     }
 
-    @Override // org.telegram.ui.Components.x71
+    @Override // org.telegram.ui.Components.y71
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.x71
+    @Override // org.telegram.ui.Components.y71
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
         o4 o4Var = ((SecretMediaViewer) this.c).w;
         if (o4Var != null) {
@@ -472,13 +473,13 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
         }
     }
 
-    @Override // org.telegram.ui.mm0
+    @Override // org.telegram.ui.km0
     public void p(String str, String str2) {
-        xm0 xm0Var = ((gm0) this.c).a;
+        vm0 vm0Var = ((em0) this.c).a;
         if ("PHONE_VERIFICATION_NEEDED".equals(str)) {
-            xm0Var.N1(true, str2, (ek0) this.b, this, xm0Var.B1);
+            vm0Var.N1(true, str2, (ck0) this.b, this, vm0Var.B1);
         } else {
-            xm0Var.M1(true, false);
+            vm0Var.M1(true, false);
         }
     }
 
@@ -486,7 +487,7 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
     public int r(int i10) {
         switch (this.a) {
             case 7:
-                return u(i10);
+                return w(i10);
             default:
                 d6 d6Var = (d6) this.c;
                 return d6Var == null ? h6.x0(null, i10, false) : d6Var.r(i10);
@@ -506,51 +507,51 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
 
     @Override // org.telegram.ui.l7
     public void s0(v6 v6Var, bi.b bVar, boolean z10) {
-        xu xuVar = (xu) this.c;
-        wu wuVar = xuVar.X;
+        vu vuVar = (vu) this.c;
+        uu uuVar = vuVar.X;
         if (bVar != null) {
             ((bi.c) this.b).i(bVar);
-            xuVar.e0.d();
-            bi.c cVar = xuVar.g0;
-            uy0[] uy0VarArr = xuVar.b0;
-            a2[] a2VarArr = xuVar.c0;
+            vuVar.e0.d();
+            bi.c cVar = vuVar.g0;
+            vy0[] vy0VarArr = vuVar.b0;
+            a2[] a2VarArr = vuVar.c0;
             a2 a2Var = a2VarArr[0];
             if (a2Var != null) {
-                uy0 uy0Var = uy0VarArr[0];
+                vy0 vy0Var = vy0VarArr[0];
                 boolean z11 = cVar.m;
-                uy0Var.c = z11;
+                vy0Var.c = z11;
                 a2Var.c(z11, true);
             }
             a2 a2Var2 = a2VarArr[1];
             if (a2Var2 != null) {
-                uy0 uy0Var2 = uy0VarArr[1];
+                vy0 vy0Var2 = vy0VarArr[1];
                 boolean z12 = cVar.n;
-                uy0Var2.c = z12;
+                vy0Var2.c = z12;
                 a2Var2.c(z12, true);
             }
             a2 a2Var3 = a2VarArr[2];
             if (a2Var3 != null) {
-                uy0 uy0Var3 = uy0VarArr[2];
+                vy0 vy0Var3 = vy0VarArr[2];
                 boolean z13 = cVar.o;
-                uy0Var3.c = z13;
+                vy0Var3.c = z13;
                 a2Var3.c(z13, true);
             }
             a2 a2Var4 = a2VarArr[3];
             if (a2Var4 != null) {
-                uy0 uy0Var4 = uy0VarArr[3];
+                vy0 vy0Var4 = vy0VarArr[3];
                 boolean z14 = cVar.p;
-                uy0Var4.c = z14;
+                vy0Var4.c = z14;
                 a2Var4.c(z14, true);
             }
             a2 a2Var5 = a2VarArr[4];
             if (a2Var5 != null) {
-                uy0 uy0Var5 = uy0VarArr[4];
+                vy0 vy0Var5 = vy0VarArr[4];
                 boolean z15 = cVar.q;
-                uy0Var5.c = z15;
+                vy0Var5.c = z15;
                 a2Var5.c(z15, true);
             }
-            xuVar.a0.a(wuVar.d(), true);
-            wuVar.c(true);
+            vuVar.a0.a(uuVar.d(), true);
+            uuVar.c(true);
         }
     }
 
@@ -594,7 +595,7 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
     }
 
     @Override // org.telegram.ui.ActionBar.d6
-    public int u(int i10) {
+    public int w(int i10) {
         switch (this.a) {
             case 7:
                 SparseIntArray sparseIntArray = (SparseIntArray) this.b;
@@ -607,7 +608,7 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
                     return sparseIntArray2.valueAt(indexOfKey2);
                 }
                 d6 d6Var = (d6) this.c;
-                return d6Var == null ? h6.x0(null, i10, false) : d6Var.u(i10);
+                return d6Var == null ? h6.x0(null, i10, false) : d6Var.w(i10);
         }
     }
 
@@ -626,7 +627,7 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
         this.c = obj2;
     }
 
-    @Override // org.telegram.ui.Components.x71
+    @Override // org.telegram.ui.Components.y71
     public void onRenderedFirstFrame() {
         SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.c;
         if (secretMediaViewer.c0) {
@@ -659,7 +660,7 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
         this.a = 15;
         this.b = new SparseIntArray();
         this.c = d6Var;
-        J();
+        O();
     }
 
     public q(Context context) {
@@ -739,10 +740,11 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
     }
 
     @Override // ei.zb
-    public /* synthetic */ void E(boolean z10) {
+    public /* synthetic */ void D(boolean z10) {
     }
 
-    public void J() {
+    @Override // ei.zb
+    public /* synthetic */ void J(float f7) {
     }
 
     @Override // ei.zb
@@ -750,23 +752,22 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
     }
 
     @Override // ei.zb
-    public /* synthetic */ void M(float f7) {
+    public /* synthetic */ void N(float f7) {
+    }
+
+    public void O() {
     }
 
     @Override // ei.zb
-    public /* synthetic */ void P(float f7) {
+    public /* synthetic */ void P() {
     }
 
     @Override // ei.zb
-    public /* synthetic */ void Q() {
+    public /* synthetic */ void Q(float f7) {
     }
 
     @Override // ei.zb
-    public /* synthetic */ void S(float f7) {
-    }
-
-    @Override // ei.zb
-    public /* synthetic */ void W(long j10) {
+    public /* synthetic */ void V(long j10) {
     }
 
     @Override // org.telegram.ui.l7
@@ -801,15 +802,15 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
     public void m() {
     }
 
-    @Override // org.telegram.ui.Components.x71
+    @Override // org.telegram.ui.Components.y71
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.x71
+    @Override // org.telegram.ui.Components.y71
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.x71
+    @Override // org.telegram.ui.Components.y71
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
@@ -821,12 +822,12 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
     public /* synthetic */ void t(float f7) {
     }
 
-    @Override // org.telegram.ui.Components.bp0
-    public void v() {
+    @Override // ei.zb
+    public /* synthetic */ void u(boolean z10) {
     }
 
-    @Override // ei.zb
-    public /* synthetic */ void w(boolean z10) {
+    @Override // org.telegram.ui.Components.bp0
+    public void v() {
     }
 
     @Override // ei.zb
@@ -837,11 +838,11 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
     }
 
     @Override // ei.zb
-    public /* synthetic */ void G(float f7, int i10) {
+    public /* synthetic */ void I(float f7, int i10) {
     }
 
     @Override // ei.zb
-    public /* synthetic */ void N(float f7, int i10) {
+    public /* synthetic */ void M(float f7, int i10) {
     }
 
     @Override // ei.zb

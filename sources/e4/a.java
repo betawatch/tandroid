@@ -18,7 +18,7 @@ import z3.d;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class a implements m {
     public static final Pattern d = Pattern.compile("\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d{3}))?)\\s*-->\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d{3}))?)\\s*");
@@ -218,7 +218,7 @@ public final class a implements m {
     }
 
     @Override // z3.m
-    public final void g(byte[] bArr, int i10, int i11, l lVar, j jVar) {
+    public final void f(byte[] bArr, int i10, int i11, l lVar, j jVar) {
         String n10;
         String str;
         a aVar = this;

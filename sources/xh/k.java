@@ -25,10 +25,9 @@ import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.b60;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.kv;
-import org.telegram.ui.Components.rx0;
-import u2.q0;
+import org.telegram.ui.Components.sx0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public abstract class k implements e5 {
     public final boolean a;
@@ -40,8 +39,8 @@ public abstract class k implements e5 {
     public final int k;
     public final boolean l;
     public FrameLayout m;
-    public rx0 n;
-    public rx0 o;
+    public sx0 n;
+    public sx0 o;
     public im0 p;
     public b10 q;
     public TLRPC.TL_chatInviteImporter r;
@@ -93,13 +92,13 @@ public abstract class k implements e5 {
         view.animate().alpha(f7).setDuration(150L).start();
     }
 
-    public final rx0 a() {
+    public final sx0 a() {
         if (this.n == null) {
             n2 n2Var = this.g;
-            rx0 rx0Var = new rx0(n2Var.getParentActivity(), null, 16, n2Var.getResourceProvider());
-            this.n = rx0Var;
+            sx0 sx0Var = new sx0(n2Var.getParentActivity(), null, 16, n2Var.getResourceProvider());
+            this.n = sx0Var;
             boolean z10 = this.a;
-            rx0Var.d.setText(LocaleController.getString(z10 ? R.string.NoSubscribeRequests : R.string.NoMemberRequests));
+            sx0Var.d.setText(LocaleController.getString(z10 ? R.string.NoSubscribeRequests : R.string.NoMemberRequests));
             this.n.e.setText(LocaleController.getString(z10 ? R.string.NoSubscribeRequestsDescription : R.string.NoMemberRequestsDescription));
             this.n.setAnimateLayoutChange(true);
             this.n.setVisibility(8);
@@ -123,13 +122,13 @@ public abstract class k implements e5 {
         return this.q;
     }
 
-    public final rx0 c() {
+    public final sx0 c() {
         if (this.o == null) {
             n2 n2Var = this.g;
-            rx0 rx0Var = new rx0(n2Var.getParentActivity(), null, 1, n2Var.getResourceProvider());
-            this.o = rx0Var;
+            sx0 sx0Var = new sx0(n2Var.getParentActivity(), null, 1, n2Var.getResourceProvider());
+            this.o = sx0Var;
             if (this.B) {
-                rx0Var.setBackgroundColor(h6.w0(h6.d6, n2Var.getResourceProvider()));
+                sx0Var.setBackgroundColor(h6.w0(h6.d6, n2Var.getResourceProvider()));
             }
             this.o.d.setText(LocaleController.getString(R.string.NoResult));
             this.o.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
@@ -169,34 +168,34 @@ public abstract class k implements e5 {
         ArrayList arrayList = this.e;
         if (isEmpty) {
             z12 = !arrayList.isEmpty() || z10;
-            rx0 rx0Var = this.n;
-            if (rx0Var != null) {
-                rx0Var.setVisibility(z12 ? 4 : 0);
+            sx0 sx0Var = this.n;
+            if (sx0Var != null) {
+                sx0Var.setVisibility(z12 ? 4 : 0);
             }
-            rx0 rx0Var2 = this.o;
-            if (rx0Var2 != null) {
-                rx0Var2.setVisibility(4);
+            sx0 sx0Var2 = this.o;
+            if (sx0Var2 != null) {
+                sx0Var2.setVisibility(4);
             }
         } else {
             z12 = !this.c.isEmpty() || z10;
-            rx0 rx0Var3 = this.n;
-            if (rx0Var3 != null) {
-                rx0Var3.setVisibility(4);
+            sx0 sx0Var3 = this.n;
+            if (sx0Var3 != null) {
+                sx0Var3.setVisibility(4);
             }
-            rx0 rx0Var4 = this.o;
-            if (rx0Var4 != null) {
-                rx0Var4.setVisibility(z12 ? 4 : 0);
+            sx0 sx0Var4 = this.o;
+            if (sx0Var4 != null) {
+                sx0Var4.setVisibility(z12 ? 4 : 0);
             }
         }
         k(this.p, z12, true);
         if (arrayList.isEmpty()) {
-            rx0 rx0Var5 = this.n;
-            if (rx0Var5 != null) {
-                rx0Var5.setVisibility(0);
+            sx0 sx0Var5 = this.n;
+            if (sx0Var5 != null) {
+                sx0Var5.setVisibility(0);
             }
-            rx0 rx0Var6 = this.o;
-            if (rx0Var6 != null) {
-                rx0Var6.setVisibility(4);
+            sx0 sx0Var6 = this.o;
+            if (sx0Var6 != null) {
+                sx0Var6.setVisibility(4);
             }
             k(this.q, false, false);
             if (this.y && this.l) {
@@ -323,7 +322,7 @@ public abstract class k implements e5 {
             if (this.y) {
                 AndroidUtilities.hideKeyboard(this.g.getParentActivity().getCurrentFocus());
             }
-            AndroidUtilities.runOnUIThread(new q0(15, this, (f5) view), this.y ? 100L : 0L);
+            AndroidUtilities.runOnUIThread(new uf.c(14, this, (f5) view), this.y ? 100L : 0L);
         }
     }
 
@@ -354,9 +353,9 @@ public abstract class k implements e5 {
             this.f.E(this.e);
             k(this.p, true, true);
             k(this.q, false, false);
-            rx0 rx0Var = this.o;
-            if (rx0Var != null) {
-                rx0Var.setVisibility(4);
+            sx0 sx0Var = this.o;
+            if (sx0Var != null) {
+                sx0Var.setVisibility(4);
             }
             if (str == null && this.l) {
                 this.g.getActionBar().n().k(0).setVisibility(this.e.isEmpty() ? 8 : 0);
@@ -371,13 +370,13 @@ public abstract class k implements e5 {
             dispatchQueue.postRunnable(eVar, 300L);
         }
         if (str != null) {
-            rx0 rx0Var2 = this.n;
-            if (rx0Var2 != null) {
-                rx0Var2.setVisibility(4);
+            sx0 sx0Var2 = this.n;
+            if (sx0Var2 != null) {
+                sx0Var2.setVisibility(4);
             }
-            rx0 rx0Var3 = this.o;
-            if (rx0Var3 != null) {
-                rx0Var3.setVisibility(4);
+            sx0 sx0Var3 = this.o;
+            if (sx0Var3 != null) {
+                sx0Var3.setVisibility(4);
             }
         }
     }

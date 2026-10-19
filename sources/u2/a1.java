@@ -1,48 +1,13 @@
 package u2;
 
-import v7.u6;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final class a1 implements x3.g {
-    public long a;
-    public long b;
-    public Object c;
-    public Object d;
+public final class a1 {
+    public final b2.w a;
+    public final n2.m b;
 
-    public a1(long j10, int i10) {
-        u6.p(((y2.a) this.c) == null);
-        this.a = j10;
-        this.b = j10 + i10;
-    }
-
-    @Override // x3.g
-    public void X(long j10) {
-        long[] jArr = (long[]) ((n4.s) this.d).b;
-        this.b = jArr[e2.m0.f(jArr, j10, true)];
-    }
-
-    @Override // x3.g
-    public long k(c3.p pVar) {
-        long j10 = this.b;
-        if (j10 < 0) {
-            return -1L;
-        }
-        long j11 = -(j10 + 2);
-        this.b = -1L;
-        return j11;
-    }
-
-    @Override // x3.g
-    public c3.c0 x() {
-        u6.p(this.a != -1);
-        return new c3.t((c3.u) this.c, this.a, 0);
-    }
-
-    public a1(String str, byte[] bArr, long j10, long j11) {
-        this.c = str;
-        this.d = bArr;
-        this.a = j10;
-        this.b = j11;
+    public a1(b2.w wVar, n2.m mVar) {
+        this.a = wVar;
+        this.b = mVar;
     }
 }

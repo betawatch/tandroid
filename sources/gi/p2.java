@@ -12,11 +12,11 @@ import org.telegram.ui.Components.ei0;
 import org.telegram.ui.Components.jy;
 import org.telegram.ui.Components.l60;
 import org.telegram.ui.Components.nl0;
-import org.telegram.ui.Components.nt0;
+import org.telegram.ui.Components.ot0;
 import org.telegram.ui.Components.p6;
-import org.telegram.ui.qq;
+import org.telegram.ui.oq;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class p2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -107,16 +107,16 @@ public final class p2 extends AnimatorListenerAdapter {
                 ei0Var.P.d1.delete(this.b);
                 break;
             case 10:
-                qq qqVar = (qq) this.c;
-                ((nl0) qqVar.d).b.remove(this.b);
-                nl0 nl0Var = (nl0) qqVar.d;
+                oq oqVar = (oq) this.c;
+                ((nl0) oqVar.d).b.remove(this.b);
+                nl0 nl0Var = (nl0) oqVar.d;
                 nl0Var.d = true;
                 nl0Var.a.invalidate();
                 break;
             case 11:
-                nt0 nt0Var = (nt0) this.c;
-                nt0Var.e.O1.remove(this.b);
-                nt0Var.a.invalidate();
+                ot0 ot0Var = (ot0) this.c;
+                ot0Var.e.O1.remove(this.b);
+                ot0Var.a.invalidate();
                 break;
             default:
                 org.telegram.ui.Components.voip.b1 b1Var = (org.telegram.ui.Components.voip.b1) this.c;

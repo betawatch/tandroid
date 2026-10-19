@@ -1,35 +1,88 @@
 package org.telegram.ui;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Rect;
-import android.view.MotionEvent;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class qo extends org.telegram.ui.Components.wo0 {
-    public final /* synthetic */ yo r;
+public final class qo extends org.telegram.ui.Cells.d9 {
+    public ValueAnimator v;
+    public int w;
+    public final /* synthetic */ wo x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qo(yo yoVar, Context context, ai.r rVar, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, rVar, d6Var, false);
-        this.r = yoVar;
+    public qo(wo woVar, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, 12, d6Var);
+        this.x = woVar;
+        this.w = -1;
     }
 
-    @Override // android.widget.ScrollView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return !this.r.L && super.onInterceptTouchEvent(motionEvent);
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int i14;
+        super.onLayout(z10, i10, i11, i12, i13);
+        if (this.w != -1) {
+            wo woVar = this.x;
+            if (woVar.h != null) {
+                ArrayList arrayList = new ArrayList();
+                int i15 = 0;
+                boolean z11 = false;
+                while (true) {
+                    i14 = 1;
+                    if (i15 >= woVar.h.getChildCount()) {
+                        break;
+                    }
+                    View childAt = woVar.h.getChildAt(i15);
+                    if (z11) {
+                        arrayList.add(childAt);
+                    } else if (childAt == this) {
+                        z11 = true;
+                    }
+                    i15++;
+                }
+                float height = this.w - getHeight();
+                ValueAnimator valueAnimator = this.v;
+                if (valueAnimator != null) {
+                    valueAnimator.cancel();
+                }
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                this.v = ofFloat;
+                ofFloat.addUpdateListener(new dg(arrayList, height, i14));
+                this.v.setInterpolator(org.telegram.ui.Components.bs.h);
+                this.v.setDuration(350L);
+                this.v.start();
+            }
+        }
+        this.w = getHeight();
     }
 
-    @Override // android.widget.ScrollView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return motionEvent.getAction() != 0 ? super.onTouchEvent(motionEvent) : !this.r.L && super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public final boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
-        rect.bottom = AndroidUtilities.dp(60.0f) + rect.bottom;
-        return super.requestChildRectangleOnScreen(view, rect, z10);
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r7v0, types: [java.lang.Object, org.telegram.ui.Cells.d9, org.telegram.ui.qo] */
+    /* JADX WARN: Type inference failed for: r8v0, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r8v1, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r8v3, types: [android.text.SpannableStringBuilder] */
+    @Override // org.telegram.ui.Cells.d9
+    public final void setText(CharSequence charSequence) {
+        if (charSequence != 0) {
+            charSequence = AndroidUtilities.replaceTags(charSequence.toString());
+            int indexOf = charSequence.toString().indexOf(10);
+            wo woVar = this.x;
+            if (indexOf >= 0) {
+                charSequence.replace(indexOf, indexOf + 1, " ");
+                charSequence.setSpan(new ForegroundColorSpan(woVar.getThemedColor(org.telegram.ui.ActionBar.h6.p7)), 0, indexOf, 33);
+            }
+            org.telegram.ui.Components.d61[] d61VarArr = (org.telegram.ui.Components.d61[]) charSequence.getSpans(0, charSequence.length(), org.telegram.ui.Components.d61.class);
+            ei.e2 e2Var = woVar.a;
+            String obj = (e2Var == null || e2Var.getText() == null) ? "" : woVar.a.getText().toString();
+            for (int i10 = 0; i10 < d61VarArr.length; i10++) {
+                charSequence.setSpan(new org.telegram.ui.Cells.i(5, (Object) this, obj), charSequence.getSpanStart(d61VarArr[i10]), charSequence.getSpanEnd(d61VarArr[i10]), 33);
+                charSequence.removeSpan(d61VarArr[i10]);
+            }
+        }
+        super.setText(charSequence);
     }
 }

@@ -4,9 +4,9 @@ import e9.x1;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final class o implements g1 {
+public final class o implements f1 {
     public final x1 a;
     public long b;
 
@@ -14,13 +14,13 @@ public final class o implements g1 {
         e9.k0 t10 = e9.n0.t();
         u6.g(list.size() == list2.size());
         for (int i10 = 0; i10 < list.size(); i10++) {
-            t10.c(new n((g1) list.get(i10), (List) list2.get(i10)));
+            t10.c(new n((f1) list.get(i10), (List) list2.get(i10)));
         }
         this.a = t10.f();
         this.b = -9223372036854775807L;
     }
 
-    @Override // u2.g1
+    @Override // u2.f1
     public final boolean c() {
         int i10 = 0;
         while (true) {
@@ -35,7 +35,7 @@ public final class o implements g1 {
         }
     }
 
-    @Override // u2.g1
+    @Override // u2.f1
     public final long d() {
         int i10 = 0;
         long j10 = Long.MAX_VALUE;
@@ -56,8 +56,8 @@ public final class o implements g1 {
         return j10;
     }
 
-    @Override // u2.g1
-    public final boolean p(i2.u0 u0Var) {
+    @Override // u2.f1
+    public final boolean p(i2.v0 v0Var) {
         boolean z10;
         boolean z11 = false;
         do {
@@ -73,9 +73,9 @@ public final class o implements g1 {
                     break;
                 }
                 long d10 = ((n) x1Var.get(i10)).a.d();
-                boolean z12 = d10 != Long.MIN_VALUE && d10 <= u0Var.a;
+                boolean z12 = d10 != Long.MIN_VALUE && d10 <= v0Var.a;
                 if (d10 == d || z12) {
-                    z10 |= ((n) x1Var.get(i10)).a.p(u0Var);
+                    z10 |= ((n) x1Var.get(i10)).a.p(v0Var);
                 }
                 i10++;
             }
@@ -84,7 +84,7 @@ public final class o implements g1 {
         return z11;
     }
 
-    @Override // u2.g1
+    @Override // u2.f1
     public final long s() {
         int i10 = 0;
         long j10 = Long.MAX_VALUE;
@@ -116,7 +116,7 @@ public final class o implements g1 {
         return j12 != -9223372036854775807L ? j12 : j11;
     }
 
-    @Override // u2.g1
+    @Override // u2.f1
     public final void u(long j10) {
         int i10 = 0;
         while (true) {

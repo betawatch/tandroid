@@ -15,9 +15,9 @@ import android.view.animation.LinearInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
-import org.telegram.ui.qe1;
+import org.telegram.ui.oe1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class ej0 {
     public ValueAnimator A;
@@ -193,7 +193,7 @@ public abstract class ej0 {
         if (!this.X || this.Y || (r2Var = this.H) == null || this.I == null) {
             return;
         }
-        boolean z12 = r2Var instanceof qe1;
+        boolean z12 = r2Var instanceof oe1;
         int dp = AndroidUtilities.dp(z12 ? 15.0f : 28.0f);
         int dp2 = AndroidUtilities.dp(8.0f);
         int dp3 = AndroidUtilities.dp(9.0f);

@@ -1,73 +1,64 @@
 package rg;
 
-import com.google.android.gms.internal.play_billing.k3;
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.f6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class k2 {
-    public String a;
-    public String b;
-    public String c;
-    public CharSequence d;
-    public TLRPC.TL_inputStickerSetItem e;
-    public TLRPC.TL_messageMediaDocument f;
-    public TLRPC.InputFile g;
-    public boolean h;
-    public long i;
-    public TLRPC.StickerSet j;
-    public TLRPC.Document k;
-    public String l;
-    public Utilities.Callback2 m;
-    public Utilities.Callback n;
-    public boolean o;
-    public ArrayList p;
-    public ArrayList q;
-    public MessageObject r;
-    public VideoEditedInfo s;
-    public float t;
-    public float u;
+    public boolean b;
+    public int c;
+    public Bitmap d;
+    public Bitmap e;
+    public Bitmap f;
+    public Bitmap g;
+    public float j;
+    public float k;
+    public int n;
+    public float[] o;
+    public final Paint r;
+    public final Paint s;
+    public final /* synthetic */ n2 t;
+    public final f6 a = new f6(0.0f, (View) null, 0, 320, bs.h);
+    public final RectF h = new RectF();
+    public final RectF i = new RectF();
+    public final Path l = new Path();
+    public final Path m = new Path();
+    public final Paint p = new Paint(1);
+    public final Paint q = new Paint(1);
 
-    public final void a() {
-        ArrayList arrayList = this.q;
-        ArrayList arrayList2 = this.p;
-        int size = arrayList2.size();
-        int i10 = 0;
-        int i11 = 0;
-        while (i11 < size) {
-            Object obj = arrayList2.get(i11);
-            i11++;
-            try {
-                ((File) obj).delete();
-            } catch (Exception e) {
-                FileLog.e(e);
-            }
-        }
-        arrayList2.clear();
-        int size2 = arrayList.size();
-        while (i10 < size2) {
-            Object obj2 = arrayList.get(i10);
-            i10++;
-            try {
-                ((File) obj2).delete();
-            } catch (Exception e7) {
-                FileLog.e(e7);
-            }
-        }
-        arrayList.clear();
+    public k2(n2 n2Var) {
+        this.t = n2Var;
+        new Paint(1);
+        this.r = new Paint(1);
+        this.s = new Paint(1);
     }
 
-    public final float b() {
-        float f7 = this.m == null ? 0.9f : 1.0f;
-        if (this.s == null) {
-            return f7 * this.u;
-        }
-        return k3.A(this.u, 0.5f, this.t * 0.5f, f7);
+    public final Bitmap a() {
+        Bitmap bitmap = this.g;
+        return bitmap != null ? bitmap : this.f;
+    }
+
+    public final Bitmap b() {
+        Bitmap bitmap = this.e;
+        return bitmap != null ? bitmap : this.d;
+    }
+
+    public final Bitmap c() {
+        Bitmap createBitmap = Bitmap.createBitmap(b().getWidth(), b().getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(createBitmap);
+        canvas.drawColor(-16777216);
+        Paint paint = new Paint(3);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        canvas.drawBitmap(b(), 0.0f, 0.0f, paint);
+        return createBitmap;
     }
 }

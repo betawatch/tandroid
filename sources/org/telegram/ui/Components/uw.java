@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class uw extends im0 {
     public boolean V2;
@@ -18,7 +18,7 @@ public final class uw extends im0 {
 
     @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.gt q6 = org.telegram.ui.gt.q();
+        org.telegram.ui.et q6 = org.telegram.ui.et.q();
         tz tzVar = this.X2;
         return super.onInterceptTouchEvent(motionEvent) || q6.r(motionEvent, tzVar.h0, tzVar.g2, this.n2);
     }

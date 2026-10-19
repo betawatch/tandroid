@@ -8,28 +8,28 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class y0 extends e61 {
+public final class y0 extends f61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        e61.setup(new y0());
+        f61.setup(new y0());
     }
 
-    @Override // org.telegram.ui.Components.e61
-    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
+    @Override // org.telegram.ui.Components.f61
+    public final void bindView(View view, g61 g61Var, boolean z10, t61 t61Var, b71 b71Var) {
         MessageObject messageObject;
         t tVar;
         z0 z0Var = (z0) view;
-        a aVar = (a) f61Var.G;
-        r3 r3Var = (r3) f61Var.H;
+        a aVar = (a) g61Var.G;
+        r3 r3Var = (r3) g61Var.H;
         z0Var.a = aVar;
         z0Var.S = r3Var;
         z0Var.M = LocaleController.isRTL;
@@ -76,14 +76,14 @@ public final class y0 extends e61 {
         z0Var.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     public final View createView(Context context, im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
         z0 z0Var = new z0(context, i10, d6Var);
         z0Var.setBackground(new a2(h6.w0(h6.d6, d6Var)));
         return z0Var;
     }
 
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     public final boolean isClickable() {
         return false;
     }

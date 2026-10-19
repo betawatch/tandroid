@@ -8,12 +8,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.i30;
 import org.telegram.ui.Components.m30;
 import org.telegram.ui.Components.o30;
-import org.telegram.ui.Components.s71;
 import org.telegram.ui.Components.t50;
-import org.telegram.ui.Components.u91;
+import org.telegram.ui.Components.t71;
+import org.telegram.ui.Components.v91;
 import org.telegram.ui.Components.vu;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class ca implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -90,20 +90,20 @@ public final class ca implements ViewTreeObserver.OnPreDrawListener {
                 ((ei.g6) obj).invalidate();
                 break;
             default:
-                u91 u91Var = (u91) ((t50) obj).b;
-                u91Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
-                ImageView imageView = u91Var.e;
+                v91 v91Var = (v91) ((t50) obj).b;
+                v91Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
+                ImageView imageView = v91Var.e;
                 if (imageView != null) {
                     imageView.setVisibility(4);
-                    u91Var.e.setImageDrawable(null);
-                    Bitmap bitmap = u91Var.h;
+                    v91Var.e.setImageDrawable(null);
+                    Bitmap bitmap = v91Var.h;
                     if (bitmap != null) {
                         bitmap.recycle();
-                        u91Var.h = null;
+                        v91Var.h = null;
                     }
                 }
-                AndroidUtilities.runOnUIThread(new s71(this, i11));
-                u91Var.r = 0;
+                AndroidUtilities.runOnUIThread(new t71(this, i11));
+                v91Var.r = 0;
                 break;
         }
         return true;

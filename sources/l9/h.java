@@ -16,12 +16,13 @@ import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
+import k2.w0;
 import mi.q;
 import n6.l;
 import r9.n;
 import s9.k;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class h {
     public static final Object k = new Object();
@@ -51,16 +52,17 @@ public final class h {
         a aVar = FirebaseInitProvider.a;
         Trace.beginSection("Firebase");
         Trace.beginSection("ComponentDiscovery");
-        ArrayList R = new q(19, context, new l2.f(ComponentDiscoveryService.class, 16)).R();
+        int i10 = 19;
+        ArrayList S = new q(i10, context, new w0(ComponentDiscoveryService.class, i10)).S();
         Trace.endSection();
         Trace.beginSection("Runtime");
         k kVar = k.a;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
-        arrayList.addAll(R);
-        int i10 = 1;
-        arrayList.add(new r9.c(new FirebaseCommonRegistrar(), i10));
-        arrayList.add(new r9.c(new ExecutorsRegistrar(), i10));
+        arrayList.addAll(S);
+        int i11 = 1;
+        arrayList.add(new r9.c(new FirebaseCommonRegistrar(), i11));
+        arrayList.add(new r9.c(new ExecutorsRegistrar(), i11));
         arrayList2.add(r9.a.c(context, Context.class, new Class[0]));
         arrayList2.add(r9.a.c(this, h.class, new Class[0]));
         arrayList2.add(r9.a.c(jVar, j.class, new Class[0]));
@@ -180,7 +182,7 @@ public final class h {
             sb2.append(str);
             Log.i("FirebaseApp", sb2.toString());
             a();
-            this.d.d("[DEFAULT]".equals(str));
+            this.d.h("[DEFAULT]".equals(str));
             ((oa.c) this.h.get()).c();
             return;
         }

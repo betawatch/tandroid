@@ -1,13 +1,13 @@
 package da;
 
+import ai.a4;
 import ai.x9;
-import ai.y3;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.text.TextUtils;
 import b2.p1;
-import ci.u7;
+import ci.v7;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import e9.k0;
 import e9.n0;
@@ -33,9 +33,9 @@ import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.ry0;
+import org.telegram.ui.Components.sy0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 import x2.d;
 import x2.e;
 import x2.i;
@@ -43,7 +43,7 @@ import x2.k;
 import x2.n;
 import x9.w;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements g, MessagesStorage.LongCallback, a2, MessagesController.ErrorDelegate, k {
     public final /* synthetic */ int a;
@@ -87,7 +87,7 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
         if (this.b) {
             boolean z10 = true;
             CountDownLatch countDownLatch = new CountDownLatch(1);
-            new Thread(new u7(11, cVar, countDownLatch)).start();
+            new Thread(new v7(11, cVar, countDownLatch)).start();
             TimeUnit timeUnit = TimeUnit.SECONDS;
             ExecutorService executorService = w.a;
             boolean z11 = false;
@@ -153,14 +153,14 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
                 }
                 break;
             case 3:
-                sn snVar = (sn) this.c;
+                qn qnVar = (qn) this.c;
                 MessagesController messagesController = (MessagesController) this.d;
                 CharSequence charSequence = (CharSequence) this.e;
                 boolean z11 = this.b;
                 messagesController.secretWebpagePreview = 1;
-                MessagesController.getGlobalMainSettings().edit().putInt("secretWebpage2", snVar.getMessagesController().secretWebpagePreview).commit();
-                snVar.H5 = null;
-                snVar.cb(charSequence, z11);
+                MessagesController.getGlobalMainSettings().edit().putInt("secretWebpage2", qnVar.getMessagesController().secretWebpagePreview).commit();
+                qnVar.H5 = null;
+                qnVar.cb(charSequence, z11);
                 break;
             case 4:
                 boolean z12 = this.b;
@@ -183,22 +183,22 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
                     }
                 }
             default:
-                ry0 ry0Var = (ry0) this.c;
+                sy0 sy0Var = (sy0) this.c;
                 Utilities.Callback2 callback2 = (Utilities.Callback2) this.d;
                 Context context2 = (Context) this.e;
                 boolean z13 = this.b;
-                String trim2 = ry0Var.getText().toString().trim();
+                String trim2 = sy0Var.getText().toString().trim();
                 if (!TextUtils.isEmpty(trim2) && !TextUtils.isEmpty(AndroidUtilities.translitSafe(trim2.toString()))) {
-                    AndroidUtilities.hideKeyboard(ry0Var);
+                    AndroidUtilities.hideKeyboard(sy0Var);
                     b2 b2Var2 = new b2(context2, 3, z13 ? null : new ci.b());
-                    b2Var2.q(250L);
-                    callback2.run(trim2, new y3(b2Var2, b2Var, ry0Var, 9));
+                    b2Var2.r(250L);
+                    callback2.run(trim2, new a4(b2Var2, b2Var, sy0Var, 9));
                     break;
                 } else {
-                    ry0Var.setErrorText(".");
-                    AndroidUtilities.shakeViewSpring(ry0Var, -6.0f);
+                    sy0Var.setErrorText(".");
+                    AndroidUtilities.shakeViewSpring(sy0Var, -6.0f);
                     BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                    AndroidUtilities.showKeyboard(ry0Var);
+                    AndroidUtilities.showKeyboard(sy0Var);
                     break;
                 }
                 break;

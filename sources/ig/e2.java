@@ -47,6 +47,7 @@ import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.ActionBar.n3;
 import org.telegram.ui.Cells.ka;
 import org.telegram.ui.Cells.ma;
+import org.telegram.ui.Components.aw0;
 import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.ff;
 import org.telegram.ui.Components.i80;
@@ -55,11 +56,9 @@ import org.telegram.ui.Components.lg;
 import org.telegram.ui.Components.ng;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.qp0;
-import org.telegram.ui.Components.zv0;
-import org.telegram.ui.Wallet.n5;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e2 implements Runnable {
     public final /* synthetic */ int a;
@@ -100,12 +99,12 @@ public final /* synthetic */ class e2 implements Runnable {
             case 1:
                 qf.b bVar = (qf.b) this.b;
                 b2.w wVar = (b2.w) this.c;
-                i2.f fVar = (i2.f) this.d;
+                i2.g gVar = (i2.g) this.d;
                 k2.u uVar = (k2.u) bVar.c;
                 String str = e2.m0.a;
-                j2.f fVar2 = ((i2.b0) uVar).a.s;
-                j2.a p5 = fVar2.p();
-                fVar2.q(p5, 1009, new j2.e(p5, wVar, fVar, 4));
+                j2.f fVar = ((i2.c0) uVar).a.s;
+                j2.a p5 = fVar.p();
+                fVar.q(p5, 1009, new j2.e(p5, wVar, gVar, 4));
                 return;
             case 2:
                 AudioTrack audioTrack = (AudioTrack) this.b;
@@ -314,7 +313,7 @@ public final /* synthetic */ class e2 implements Runnable {
                 return;
             case 20:
                 n3 n3Var = (n3) this.b;
-                ((n2) this.c).presentFragment((sn) this.d);
+                ((n2) this.c).presentFragment((qn) this.d);
                 n3Var.c = false;
                 return;
             case 21:
@@ -347,7 +346,7 @@ public final /* synthetic */ class e2 implements Runnable {
                 return;
             case 23:
                 org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) this.b;
-                n5.A0(w0Var.getContext(), w0Var.H, (TL_wallet.walletTransaction) this.c, null, null, null, (org.telegram.ui.Cells.p0) this.d, w0Var.g1);
+                org.telegram.ui.Wallet.o5.B0(w0Var.getContext(), w0Var.H, (TL_wallet.walletTransaction) this.c, null, null, null, (org.telegram.ui.Cells.p0) this.d, w0Var.g1);
                 return;
             case 24:
                 org.telegram.ui.Cells.w0 w0Var2 = (org.telegram.ui.Cells.w0) this.b;
@@ -361,17 +360,17 @@ public final /* synthetic */ class e2 implements Runnable {
                 return;
             case 26:
                 org.telegram.ui.Components.e0 e0Var = (org.telegram.ui.Components.e0) this.b;
-                f5.L((Context) this.c, e0Var.l0, new k0.b(e0Var, 12), (d6) this.d);
+                f5.L((Context) this.c, e0Var.l0, new k2.w0(e0Var, 10), (d6) this.d);
                 return;
             case 27:
                 k8.p((k8) this.b, (org.telegram.ui.ActionBar.b2) this.d, (TLObject) this.c);
                 return;
             case 28:
                 ff ffVar = (ff) this.b;
-                zv0 zv0Var = (zv0) this.c;
+                aw0 aw0Var = (aw0) this.c;
                 qp0 qp0Var = (qp0) this.d;
                 ffVar.getClass();
-                zv0Var.getViewTreeObserver().removeOnDrawListener(ffVar);
+                aw0Var.getViewTreeObserver().removeOnDrawListener(ffVar);
                 qp0Var.a.setHideAvatar(true);
                 return;
             default:

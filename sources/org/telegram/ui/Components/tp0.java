@@ -5,9 +5,9 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class tp0 extends fx0 {
+public final class tp0 extends gx0 {
     public boolean a = false;
     public long b = 0;
     public boolean c = false;
@@ -24,7 +24,7 @@ public final class tp0 extends fx0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.fx0
+    @Override // org.telegram.ui.Components.gx0
     public final void b(int i10) {
         Paint paint = this.e;
         if (paint != null) {
@@ -32,12 +32,12 @@ public final class tp0 extends fx0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.fx0
+    @Override // org.telegram.ui.Components.gx0
     public final void c(boolean z10) {
         this.a = z10;
     }
 
-    @Override // org.telegram.ui.Components.fx0
+    @Override // org.telegram.ui.Components.gx0
     public final void d() {
         this.b = System.currentTimeMillis();
         this.c = true;
@@ -93,7 +93,7 @@ public final class tp0 extends fx0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.fx0
+    @Override // org.telegram.ui.Components.gx0
     public final void e() {
         this.c = false;
     }

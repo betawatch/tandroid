@@ -17,10 +17,10 @@ import org.telegram.messenger.UnconfirmedAuthController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.yq;
-import org.telegram.ui.ey;
-import org.telegram.ui.sn;
+import org.telegram.ui.cy;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qa implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -29,8 +29,8 @@ public final /* synthetic */ class qa implements View.OnClickListener {
     public final /* synthetic */ org.telegram.ui.ActionBar.n2 d;
     public final /* synthetic */ Serializable e;
 
-    public /* synthetic */ qa(sn snVar, TLRPC.User user, String str, boolean z10, int i10) {
-        this.d = snVar;
+    public /* synthetic */ qa(qn qnVar, TLRPC.User user, String str, boolean z10, int i10) {
+        this.d = qnVar;
         this.e = str;
         this.b = z10;
         this.c = i10;
@@ -46,11 +46,11 @@ public final /* synthetic */ class qa implements View.OnClickListener {
         int i12 = 0;
         switch (i10) {
             case 0:
-                ey eyVar = (ey) n2Var;
+                cy cyVar = (cy) n2Var;
                 ArrayList<UnconfirmedAuthController.UnconfirmedAuth> arrayList = (ArrayList) serializable;
                 String string = LocaleController.getString(R.string.UnconfirmedAuthConfirmedMessage);
                 int i13 = org.telegram.ui.ActionBar.h6.Gi;
-                SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(string, i13, 0, new g(eyVar, 10));
+                SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(string, i13, 0, new g(cyVar, 10));
                 SpannableString spannableString = new SpannableString(">");
                 yq yqVar = new yq(R.drawable.attach_arrow_right, 0);
                 yqVar.setOverrideColor(org.telegram.ui.ActionBar.h6.x0(null, i13, false));
@@ -58,27 +58,27 @@ public final /* synthetic */ class qa implements View.OnClickListener {
                 yqVar.setWidth(AndroidUtilities.dp(12.0f));
                 spannableString.setSpan(yqVar, 0, spannableString.length(), 33);
                 AndroidUtilities.replaceCharSequence(">", replaceSingleTag, spannableString);
-                xc.a0(eyVar).M(LocaleController.getString(z10 ? R.string.UnconfirmedAuthConfirmedBot : R.string.UnconfirmedAuthConfirmed), replaceSingleTag, R.raw.contact_check).j();
+                xc.a0(cyVar).M(LocaleController.getString(z10 ? R.string.UnconfirmedAuthConfirmedBot : R.string.UnconfirmedAuthConfirmed), replaceSingleTag, R.raw.contact_check).j();
                 MessagesController.getInstance(i11).getUnconfirmedAuthController().confirm(arrayList, new ci.e(8));
                 MessagesController.getInstance(i11).getUnconfirmedAuthController().cleanup();
                 break;
             default:
-                sn snVar = (sn) n2Var;
+                qn qnVar = (qn) n2Var;
                 String str = (String) serializable;
                 Pattern pattern = org.telegram.ui.Components.f5.a;
-                if (snVar.getParentActivity() != null) {
-                    org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, (Context) snVar.getParentActivity(), (org.telegram.ui.ActionBar.d6) null, false);
+                if (qnVar.getParentActivity() != null) {
+                    org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, (Context) qnVar.getParentActivity(), (org.telegram.ui.ActionBar.d6) null, false);
                     f3Var.fixNavigationBar();
                     f3Var.title = LocaleController.getString(z10 ? R.string.ChatWithAdminChannelTitle : R.string.ChatWithAdminGroupTitle);
                     f3Var.bigTitle = true;
-                    LinearLayout linearLayout = new LinearLayout(snVar.getParentActivity());
+                    LinearLayout linearLayout = new LinearLayout(qnVar.getParentActivity());
                     linearLayout.setOrientation(1);
-                    TextView textView = new TextView(snVar.getParentActivity());
+                    TextView textView = new TextView(qnVar.getParentActivity());
                     linearLayout.addView(textView, w7.z5.t(-1, -1, 0, 21, 0, 21, 8));
                     textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false));
                     textView.setTextSize(1, 16.0f);
                     textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("ChatWithAdminMessage", R.string.ChatWithAdminMessage, str, LocaleController.formatDateAudio(i11, false))));
-                    TextView textView2 = new TextView(snVar.getParentActivity());
+                    TextView textView2 = new TextView(qnVar.getParentActivity());
                     textView2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
                     textView2.setGravity(17);
                     textView2.setTextSize(1, 14.0f);
@@ -99,8 +99,8 @@ public final /* synthetic */ class qa implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ qa(ey eyVar, boolean z10, int i10, ArrayList arrayList) {
-        this.d = eyVar;
+    public /* synthetic */ qa(cy cyVar, boolean z10, int i10, ArrayList arrayList) {
+        this.d = cyVar;
         this.b = z10;
         this.c = i10;
         this.e = arrayList;

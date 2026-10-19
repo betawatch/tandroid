@@ -19,41 +19,41 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.pa0;
-import org.telegram.ui.z70;
+import org.telegram.ui.na0;
+import org.telegram.ui.x70;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public abstract class s2 {
-    public static void a(final int i10, final Utilities.CallbackReturn callbackReturn, final Utilities.Callback2 callback2, final TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP, final TwoStepVerificationActivity twoStepVerificationActivity, final Utilities.Callback3 callback3, final boolean z10, final boolean z11, final pa0 pa0Var) {
-        if (pa0Var.b) {
+    public static void a(final int i10, final Utilities.CallbackReturn callbackReturn, final Utilities.Callback2 callback2, final TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP, final TwoStepVerificationActivity twoStepVerificationActivity, final Utilities.Callback3 callback3, final boolean z10, final boolean z11, final na0 na0Var) {
+        if (na0Var.b) {
             return;
         }
         final org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
         if (U == null || U.getContext() == null) {
-            pa0Var.b();
+            na0Var.b();
             return;
         }
         final Activity parentActivity = U.getParentActivity();
         TLRPC.User currentUser = UserConfig.getInstance(i10).getCurrentUser();
         if (parentActivity == null || currentUser == null) {
-            pa0Var.b();
+            na0Var.b();
             return;
         }
         final org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(U.getContext(), 3, null);
         if (z11) {
-            b2Var.q(250L);
+            b2Var.r(250L);
         }
         Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.Wallet.p2
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 TLMethod tLMethod = (TLMethod) obj;
-                final pa0 pa0Var2 = pa0Var;
-                boolean z12 = pa0Var2.b;
+                final na0 na0Var2 = na0Var;
+                boolean z12 = na0Var2.b;
                 final org.telegram.ui.ActionBar.b2 b2Var2 = b2Var;
                 if (z12 || tLMethod == null) {
                     b2Var2.dismiss();
-                    pa0Var2.b();
+                    na0Var2.b();
                     return;
                 }
                 final int i11 = i10;
@@ -74,15 +74,15 @@ public abstract class s2 {
                         TLObject tLObject = (TLObject) obj2;
                         final TLRPC.TL_error tL_error = (TLRPC.TL_error) obj3;
                         b2Var2.dismiss();
-                        final pa0 pa0Var3 = pa0Var2;
-                        if (pa0Var3.b) {
+                        final na0 na0Var3 = na0Var2;
+                        if (na0Var3.b) {
                             return;
                         }
                         final TwoStepVerificationActivity twoStepVerificationActivity3 = twoStepVerificationActivity2;
                         final Utilities.Callback3 callback33 = callback32;
                         TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP3 = inputCheckPasswordSRP2;
                         if (tL_error == null) {
-                            pa0Var3.c = true;
+                            na0Var3.c = true;
                             if (twoStepVerificationActivity3 != null) {
                                 try {
                                     twoStepVerificationActivity3.o0();
@@ -91,7 +91,7 @@ public abstract class s2 {
                                 }
                             }
                             callback33.run(tLObject, tL_error, inputCheckPasswordSRP3);
-                            pa0Var3.b();
+                            na0Var3.b();
                             return;
                         }
                         boolean equals = "PASSWORD_MISSING".equals(tL_error.text);
@@ -115,26 +115,26 @@ public abstract class s2 {
                                     int i13;
                                     TL_account.Password password = (TL_account.Password) obj4;
                                     TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj5;
-                                    pa0 pa0Var4 = pa0.this;
-                                    if (pa0Var4.b) {
+                                    na0 na0Var4 = na0.this;
+                                    if (na0Var4.b) {
                                         return;
                                     }
                                     if (tL_error2 == null) {
-                                        r2 r2Var = new r2(pa0Var4);
+                                        r2 r2Var = new r2(na0Var4);
                                         int i14 = i12;
                                         r2Var.setCurrentAccount(i14);
                                         Utilities.CallbackReturn callbackReturn4 = callbackReturn3;
                                         Utilities.Callback2 callback24 = callback23;
                                         Utilities.Callback3 callback34 = callback33;
                                         boolean z17 = z15;
-                                        n2 n2Var3 = new n2(i14, callbackReturn4, callback24, r2Var, callback34, z17, z16, pa0Var4, 0);
+                                        n2 n2Var3 = new n2(i14, callbackReturn4, callback24, r2Var, callback34, z17, z16, na0Var4, 0);
                                         r2Var.Z = 1;
                                         r2Var.b0 = n2Var3;
                                         r2Var.I = password;
                                         r2Var.J = false;
                                         org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
                                         if (U2 == null || U2.getContext() == null) {
-                                            pa0Var4.b();
+                                            na0Var4.b();
                                             return;
                                         } else {
                                             if (!z17) {
@@ -147,7 +147,7 @@ public abstract class s2 {
                                             return;
                                         }
                                     }
-                                    pa0Var4.b();
+                                    na0Var4.b();
                                     Activity activity3 = activity2;
                                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity3);
                                     alertDialog$Builder.a.R = LocaleController.getString(R.string.EditAdminTransferAlertTitle);
@@ -237,12 +237,12 @@ public abstract class s2 {
                                     TwoStepVerificationActivity twoStepVerificationActivity4;
                                     TL_account.Password password = (TL_account.Password) obj4;
                                     TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj5;
-                                    pa0 pa0Var4 = pa0.this;
-                                    if (pa0Var4.b) {
+                                    na0 na0Var4 = na0.this;
+                                    if (na0Var4.b) {
                                         return;
                                     }
                                     if (tL_error2 != null) {
-                                        pa0Var4.b();
+                                        na0Var4.b();
                                         return;
                                     }
                                     TwoStepVerificationActivity twoStepVerificationActivity5 = twoStepVerificationActivity3;
@@ -253,15 +253,15 @@ public abstract class s2 {
                                     boolean z17 = z15;
                                     boolean z18 = z16;
                                     if (twoStepVerificationActivity5 == null) {
-                                        r2 r2Var = new r2(pa0Var4);
+                                        r2 r2Var = new r2(na0Var4);
                                         r2Var.setCurrentAccount(i14);
                                         callback24 = callback25;
                                         callbackReturn4 = callbackReturn5;
                                         i13 = i14;
-                                        n2 n2Var3 = new n2(i13, callbackReturn4, callback24, r2Var, callback34, z17, z18, pa0Var4, 1);
+                                        n2 n2Var3 = new n2(i13, callbackReturn4, callback24, r2Var, callback34, z17, z18, na0Var4, 1);
                                         r2Var.Z = 1;
                                         r2Var.b0 = n2Var3;
-                                        r2Var.s0(new z70(pa0Var4, z17, r2Var, 13));
+                                        r2Var.s0(new x70(na0Var4, z17, r2Var, 13));
                                         twoStepVerificationActivity4 = r2Var;
                                     } else {
                                         callback24 = callback25;
@@ -271,12 +271,12 @@ public abstract class s2 {
                                     }
                                     twoStepVerificationActivity4.I = password;
                                     TwoStepVerificationActivity.m0(password);
-                                    s2.a(i13, callbackReturn4, callback24, twoStepVerificationActivity4.l0(), twoStepVerificationActivity4, callback34, z17, z18, pa0Var4);
+                                    s2.a(i13, callbackReturn4, callback24, twoStepVerificationActivity4.l0(), twoStepVerificationActivity4, callback34, z17, z18, na0Var4);
                                 }
                             }, 8);
                             return;
                         }
-                        pa0Var3.c = true;
+                        na0Var3.c = true;
                         if (twoStepVerificationActivity3 != null) {
                             try {
                                 twoStepVerificationActivity3.o0();
@@ -285,7 +285,7 @@ public abstract class s2 {
                             }
                         }
                         callback33.run(tLObject, tL_error, inputCheckPasswordSRP3);
-                        pa0Var3.b();
+                        na0Var3.b();
                     }
                 });
             }

@@ -11,7 +11,7 @@ import android.graphics.RectF;
 import android.os.Build;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class bd0 {
     public static final float[] k = new float[4];
@@ -114,7 +114,7 @@ public final class bd0 {
 
     public final Paint e(Bitmap bitmap, Bitmap bitmap2, int i10, int i11, int i12, boolean z10) {
         Bitmap bitmap3;
-        Bitmap bitmap4 = (Bitmap) this.a.o(bitmap2);
+        Bitmap bitmap4 = (Bitmap) this.a.m(bitmap2);
         if (i12 >= 0) {
             int o10 = i0.a.o(i10, ((Color.alpha(i10) * i11) * i12) / 25500);
             a5.a aVar = this.b;

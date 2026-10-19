@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.n9;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class q0 implements g1 {
     public final /* synthetic */ t0 a;
@@ -15,16 +15,7 @@ public final class q0 implements g1 {
     }
 
     @Override // ki.g1
-    public final void D(CharSequence charSequence) {
-        d3 d3Var = this.a.h;
-        if (d3Var == null || charSequence == null || charSequence.length() <= 0) {
-            return;
-        }
-        d3Var.a.u4(charSequence.toString());
-    }
-
-    @Override // ki.g1
-    public final void M(Editable editable) {
+    public final void G(Editable editable) {
         t0 t0Var = this.a;
         a aVar = t0Var.f;
         if (aVar != null) {
@@ -50,17 +41,17 @@ public final class q0 implements g1 {
     }
 
     @Override // ki.g1
-    public final /* synthetic */ boolean Q(boolean z10) {
+    public final /* synthetic */ boolean M(boolean z10) {
         return false;
     }
 
     @Override // ki.g1
-    public final /* synthetic */ boolean R(h1 h1Var) {
+    public final /* synthetic */ boolean P(h1 h1Var) {
         return false;
     }
 
     @Override // ki.g1
-    public final void V(h1 h1Var, int i10, int i11) {
+    public final void R(h1 h1Var, int i10, int i11) {
         d3 d3Var;
         n9 textSelectionHelper;
         t0 t0Var = this.a;
@@ -79,12 +70,12 @@ public final class q0 implements g1 {
         if (d3Var != null) {
             w3 w3Var = d3Var.a;
             w3.N1(w3Var, h1Var);
-            w3Var.f3.n(h1Var, true);
+            w3Var.f3.o(h1Var, true);
         }
     }
 
     @Override // ki.g1
-    public final boolean f() {
+    public final boolean e() {
         t0 t0Var = this.a;
         d3 d3Var = t0Var.h;
         if (d3Var == null || t0Var.f == null) {
@@ -94,7 +85,7 @@ public final class q0 implements g1 {
     }
 
     @Override // ki.g1
-    public final void l(h1 h1Var) {
+    public final void k(h1 h1Var) {
         a aVar;
         w3 w3Var;
         ArrayList arrayList;
@@ -117,7 +108,7 @@ public final class q0 implements g1 {
     }
 
     @Override // ki.g1
-    public final void m() {
+    public final void o() {
         a aVar;
         t0 t0Var = this.a;
         d3 d3Var = t0Var.h;
@@ -128,7 +119,7 @@ public final class q0 implements g1 {
     }
 
     @Override // ki.g1
-    public final boolean q(h1 h1Var) {
+    public final boolean s(h1 h1Var) {
         t0 t0Var = this.a;
         if (t0Var.h == null || t0Var.f == null || h1Var.length() != 0) {
             return false;
@@ -138,6 +129,15 @@ public final class q0 implements g1 {
     }
 
     @Override // ki.g1
-    public final /* synthetic */ void h(int i10, int i11) {
+    public final void x(CharSequence charSequence) {
+        d3 d3Var = this.a.h;
+        if (d3Var == null || charSequence == null || charSequence.length() <= 0) {
+            return;
+        }
+        d3Var.a.u4(charSequence.toString());
+    }
+
+    @Override // ki.g1
+    public final /* synthetic */ void f(int i10, int i11) {
     }
 }

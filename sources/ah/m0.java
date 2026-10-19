@@ -1,12 +1,12 @@
 package ah;
 
 import android.widget.FrameLayout;
-import ci.e6;
-import ci.i4;
-import ci.q3;
-import ci.q9;
-import ci.t5;
-import ci.z9;
+import ci.aa;
+import ci.f6;
+import ci.j4;
+import ci.r3;
+import ci.r9;
+import ci.u5;
 import ei.vb;
 import gi.e4;
 import org.telegram.messenger.AndroidUtilities;
@@ -15,12 +15,12 @@ import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ob;
 import org.telegram.ui.Components.om;
-import org.telegram.ui.Components.oy0;
+import org.telegram.ui.Components.py0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.ub;
 import org.telegram.ui.Components.y7;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class m0 implements ob {
     public final /* synthetic */ int a;
@@ -40,16 +40,16 @@ public final class m0 implements ob {
 
     @Override // org.telegram.ui.Components.ob
     public final void b(qc qcVar) {
-        i4 i4Var;
+        j4 j4Var;
         d6 d6Var;
         switch (this.a) {
             case 0:
                 break;
             case 1:
-                if (qcVar.a == 2 && (i4Var = ((q3) this.b).x.Q1) != null) {
-                    z9 z9Var = ((q9) i4Var).d;
-                    z9Var.Y0 = true;
-                    z9Var.P();
+                if (qcVar.a == 2 && (j4Var = ((r3) this.b).x.Q1) != null) {
+                    aa aaVar = ((r9) j4Var).d;
+                    aaVar.Y0 = true;
+                    aaVar.P();
                     break;
                 }
                 break;
@@ -88,13 +88,13 @@ public final class m0 implements ob {
 
     @Override // org.telegram.ui.Components.ob
     public final void d(qc qcVar) {
-        i4 i4Var;
+        j4 j4Var;
         switch (this.a) {
             case 1:
-                if (qcVar.a == 2 && (i4Var = ((q3) this.b).x.Q1) != null) {
-                    z9 z9Var = ((q9) i4Var).d;
-                    z9Var.Y0 = false;
-                    z9Var.P();
+                if (qcVar.a == 2 && (j4Var = ((r3) this.b).x.Q1) != null) {
+                    aa aaVar = ((r9) j4Var).d;
+                    aaVar.Y0 = false;
+                    aaVar.P();
                     break;
                 }
                 break;
@@ -116,12 +116,12 @@ public final class m0 implements ob {
             case 0:
                 return (int) ((t0) ((v) this.b).c).u;
             case 1:
-                if (((q3) this.b).x.x2) {
+                if (((r3) this.b).x.x2) {
                     return 0;
                 }
                 return AndroidUtilities.dp(64.0f);
             case 2:
-                return ((t5) this.b).r.getPaddingBottom();
+                return ((u5) this.b).r.getPaddingBottom();
             case 3:
                 return 0;
             case 4:
@@ -143,17 +143,17 @@ public final class m0 implements ob {
                 dp = ((om) this.b).c.b.getBottomInset();
                 break;
             case 9:
-                FrameLayout frameLayout = ((oy0) this.b).w;
+                FrameLayout frameLayout = ((py0) this.b).w;
                 if (frameLayout != null) {
                     return frameLayout.getHeight();
                 }
                 return 0;
             case 10:
-                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) this.b;
-                if (!(b1Var.getParent() instanceof e4)) {
+                org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) this.b;
+                if (!(a1Var.getParent() instanceof e4)) {
                     return 0;
                 }
-                e4 e4Var = (e4) b1Var.getParent();
+                e4 e4Var = (e4) a1Var.getParent();
                 return (int) ((e4Var.getSwipeOffsetY() + e4Var.getOffsetY()) - e4Var.getTopActionBarOffsetY());
             default:
                 return 0;
@@ -187,7 +187,7 @@ public final class m0 implements ob {
             case 2:
                 return 0;
             case 3:
-                return (int) (((e6) this.b).a + AndroidUtilities.dp(58.0f));
+                return (int) (((f6) this.b).a + AndroidUtilities.dp(58.0f));
             case 4:
                 return 0;
             case 5:

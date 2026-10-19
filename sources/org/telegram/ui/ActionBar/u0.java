@@ -37,19 +37,19 @@ import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.q21;
+import org.telegram.ui.Components.r21;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.xj0;
+import org.telegram.ui.mh;
 import org.telegram.ui.oh;
-import org.telegram.ui.qh;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class u0 extends FrameLayout {
     public final TextView E;
@@ -246,7 +246,7 @@ public class u0 extends FrameLayout {
             return;
         }
         findViewWithTag.setAlpha(0.0f);
-        lk.t(findViewWithTag.animate().alpha(1.0f), bs.f, 150L);
+        kk.t(findViewWithTag.animate().alpha(1.0f), bs.f, 150L);
         findViewWithTag.setVisibility(0);
     }
 
@@ -409,9 +409,9 @@ public class u0 extends FrameLayout {
                         layoutParams2.width = -1;
                         layoutParams2.height = AndroidUtilities.dp(48.0f);
                         e1Var2.setLayoutParams(layoutParams2);
-                        qh qhVar = s0Var.h;
-                        if (qhVar != null) {
-                            s0Var.g = (View) qhVar.run();
+                        oh ohVar = s0Var.h;
+                        if (ohVar != null) {
+                            s0Var.g = (View) ohVar.run();
                             s0Var.h = null;
                         }
                         e1Var2.G = new f0(this, this.b.b(s0Var.g), 1);
@@ -439,9 +439,9 @@ public class u0 extends FrameLayout {
                 View view4 = s0Var.j;
                 if (view4 != null) {
                     view4.setVisibility(s0Var.l);
-                    oh ohVar = s0Var.k;
-                    if (ohVar != null) {
-                        s0Var.j.setOnClickListener(ohVar);
+                    mh mhVar = s0Var.k;
+                    if (mhVar != null) {
+                        s0Var.j.setOnClickListener(mhVar);
                     }
                 }
             }
@@ -452,7 +452,7 @@ public class u0 extends FrameLayout {
         }
         if (this.b != null) {
             y yVar = this.c;
-            if (yVar == null || !yVar.c || (kVar = yVar.b) == null || kVar.s()) {
+            if (yVar == null || !yVar.c || (kVar = yVar.b) == null || kVar.t()) {
                 p pVar = this.L;
                 if (pVar != null) {
                     AndroidUtilities.cancelRunOnUIThread(pVar);
@@ -550,7 +550,7 @@ public class u0 extends FrameLayout {
                         }
                     }
                 });
-                actionBarPopupWindow$ActionBarPopupWindowLayout.measure(lk.c(40.0f, AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
+                actionBarPopupWindow$ActionBarPopupWindowLayout.measure(kk.c(40.0f, AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
                 if (frameLayout != null && frameLayout.getLayoutParams() != null && this.b.getSwipeBack() != null && (childAt = this.b.getSwipeBack().getChildAt(0)) != null && childAt.getMeasuredWidth() > 0) {
                     frameLayout.getLayoutParams().width = AndroidUtilities.dp(16.0f) + childAt.getMeasuredWidth();
                 }
@@ -740,7 +740,7 @@ public class u0 extends FrameLayout {
         layoutParams.width = -1;
         layoutParams.height = AndroidUtilities.dp(48.0f);
         e1Var.setLayoutParams(layoutParams);
-        e1Var.setOnClickListener(new ci.g2(2, this, z10));
+        e1Var.setOnClickListener(new ci.h2(2, this, z10));
         return e1Var;
     }
 
@@ -845,10 +845,10 @@ public class u0 extends FrameLayout {
         kVar.setBackgroundDrawable(h6.L0(false));
     }
 
-    public final e1 i(int i10, q21 q21Var, String str, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+    public final e1 i(int i10, r21 r21Var, String str, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
         o();
         e1 e1Var = new e1(0, getContext(), this.m0, false, false);
-        e1Var.g(str, i10, q21Var);
+        e1Var.g(str, i10, r21Var);
         e1Var.setMinimumWidth(AndroidUtilities.dp(196.0f));
         e1Var.setRightIcon(R.drawable.msg_arrowright);
         this.b.addView(e1Var);
@@ -1557,13 +1557,13 @@ public class u0 extends FrameLayout {
         A(s0Var);
     }
 
-    public final s0 w(int i10, qh qhVar) {
+    public final s0 w(int i10, oh ohVar) {
         s0 s0Var = new s0(2);
         s0Var.c = i10;
         s0Var.d = null;
         s0Var.e = null;
         s0Var.g = null;
-        s0Var.h = qhVar;
+        s0Var.h = ohVar;
         A(s0Var);
         return s0Var;
     }

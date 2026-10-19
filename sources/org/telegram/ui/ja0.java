@@ -1,48 +1,16 @@
 package org.telegram.ui;
 
-import java.util.regex.Pattern;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class ja0 implements sf.c {
-    public final pa0 a;
-    public final /* synthetic */ LaunchActivity b;
-
-    public ja0(LaunchActivity launchActivity) {
-        this.b = launchActivity;
-        Pattern pattern = LaunchActivity.C1;
-        this.a = new pa0(launchActivity, false);
-    }
-
-    @Override // sf.c
+public final class ja0 extends org.telegram.ui.Components.z00 {
+    @Override // org.telegram.ui.Components.z00
     public final void b() {
-        Pattern pattern = LaunchActivity.C1;
-        this.b.getWindow();
+        setVisibility(8);
     }
 
-    @Override // sf.c
-    public final void d() {
-        this.a.a(false);
-    }
-
-    @Override // sf.c
-    public final void f() {
-        Pattern pattern = LaunchActivity.C1;
-        LaunchActivity launchActivity = this.b;
-        launchActivity.getClass();
-        this.a.a(true);
-        launchActivity.getWindow();
-    }
-
-    @Override // sf.c
-    public final /* synthetic */ void a() {
-    }
-
-    @Override // sf.c
-    public final /* synthetic */ void c() {
-    }
-
-    @Override // sf.c
-    public final /* synthetic */ void e() {
+    @Override // org.telegram.ui.Components.z00
+    public final void c(boolean z10) {
+        setVisibility(0);
+        super.c(z10);
     }
 }

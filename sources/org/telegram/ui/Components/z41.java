@@ -1,16 +1,35 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.RectF;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class z41 extends wh.n {
+    public final org.telegram.ui.s10 U;
+    public final /* synthetic */ c51 V;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z41(c51 c51Var, Context context) {
+        super(context);
+        this.V = c51Var;
+        this.U = new org.telegram.ui.s10();
+    }
+
     @Override // wh.n, android.widget.TextView, android.view.View
     public final void onDraw(Canvas canvas) {
+        int dp = AndroidUtilities.dp(8.0f) + this.V.d.getWidth();
+        canvas.saveLayerAlpha(getScrollX(), 0.0f, (getWidth() + getScrollX()) - dp, getHeight(), 255, 31);
         super.onDraw(canvas);
         canvas.save();
         canvas.translate(getPaddingLeft(), getPaddingTop());
-        vw0.a(canvas, getLayout());
+        ww0.a(canvas, getLayout());
+        canvas.restore();
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set((getWidth() - dp) - AndroidUtilities.dp(24.0f), 0.0f, getWidth() - dp, getHeight());
+        this.U.b(canvas, rectF, 2, 1.0f);
         canvas.restore();
     }
 }

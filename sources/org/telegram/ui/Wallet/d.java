@@ -8,13 +8,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.s61;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.v61;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
 
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
-        s61 s61Var;
+        t61 t61Var;
         String str;
         switch (this.a) {
             case 0:
@@ -38,7 +38,7 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                     Utilities.stageQueue.postRunnable(new e(fVar, currencyrates, 0));
                     break;
                 } else {
-                    i2.d.v(tL_error.text, new StringBuilder("[gram-wallet] failed to load currency rates: "));
+                    i2.e.v(tL_error.text, new StringBuilder("[gram-wallet] failed to load currency rates: "));
                     break;
                 }
             case 1:
@@ -84,32 +84,34 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                     break;
                 }
             case 5:
-                ((ArrayList) obj).add(f61.k(((k2) this.b).Y));
+                ((ArrayList) obj).add(g61.k(((k2) this.b).Y));
                 break;
             case 6:
                 z2 z2Var = (z2) this.b;
                 Bitmap bitmap = (Bitmap) obj;
                 Bitmap bitmap2 = (Bitmap) obj2;
-                if (!z2Var.Q && !z2Var.P) {
+                if (!z2Var.S && !z2Var.R) {
                     z2Var.G = bitmap;
                     z2Var.n.invalidate();
+                    z2Var.d();
                     z2Var.E.a(bitmap2);
-                    z2Var.h.post(new u2(z2Var, 1));
+                    z2Var.h.post(new v2(z2Var, 1));
                     break;
                 } else {
                     bitmap.recycle();
                     bitmap2.recycle();
                     break;
                 }
+                break;
             case 7:
-                n5 n5Var = (n5) this.b;
+                o5 o5Var = (o5) this.b;
                 TL_account.Password password = (TL_account.Password) obj;
                 if (password != null) {
-                    n5Var.O0 = true;
-                    n5Var.P0 = password.has_password;
-                    u61 u61Var = n5Var.a;
-                    if (u61Var != null && (s61Var = u61Var.W2) != null) {
-                        s61Var.N(true);
+                    o5Var.Q0 = true;
+                    o5Var.R0 = password.has_password;
+                    v61 v61Var = o5Var.a;
+                    if (v61Var != null && (t61Var = v61Var.W2) != null) {
+                        t61Var.N(true);
                         break;
                     }
                 }

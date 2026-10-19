@@ -6,7 +6,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class r0 implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -262,7 +262,7 @@ public final class r0 implements Parcelable.Creator {
                     }
                 }
                 w7.e0.m(parcel, z21);
-                return new u0(bArr2 == null ? null : n7.t0.s(bArr2.length, bArr2), bArr3 != null ? n7.t0.s(bArr3.length, bArr3) : null);
+                return new u0(bArr2 == null ? null : n7.s0.s(bArr2.length, bArr2), bArr3 != null ? n7.s0.s(bArr3.length, bArr3) : null);
             case 14:
                 int z22 = w7.e0.z(parcel);
                 boolean z23 = false;
@@ -279,7 +279,7 @@ public final class r0 implements Parcelable.Creator {
                     }
                 }
                 w7.e0.m(parcel, z22);
-                return new v0(z23, bArr4 != null ? n7.t0.s(bArr4.length, bArr4) : null);
+                return new v0(z23, bArr4 != null ? n7.s0.s(bArr4.length, bArr4) : null);
             case 15:
                 int z24 = w7.e0.z(parcel);
                 byte[] bArr5 = null;

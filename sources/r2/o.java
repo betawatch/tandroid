@@ -15,9 +15,9 @@ import j$.util.Objects;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.MediaController;
-import w7.v6;
+import w7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class o {
     public final String a;
@@ -105,7 +105,7 @@ public final class o {
         return new o(str6, str4, str5, codecCapabilities2, z15, z16, z17, z18, z19, z14);
     }
 
-    public final i2.f b(b2.w wVar, b2.w wVar2) {
+    public final i2.g b(b2.w wVar, b2.w wVar2) {
         b2.w wVar3;
         b2.w wVar4;
         int i10;
@@ -140,7 +140,7 @@ public final class o {
                 }
             }
             if (i11 == 0) {
-                return new i2.f(this.a, wVar, wVar2, wVar.b(wVar2) ? 3 : 2, 0);
+                return new i2.g(this.a, wVar, wVar2, wVar.b(wVar2) ? 3 : 2, 0);
             }
             wVar3 = wVar;
             wVar4 = wVar2;
@@ -164,15 +164,15 @@ public final class o {
                     int intValue = ((Integer) b12.first).intValue();
                     int intValue2 = ((Integer) b13.first).intValue();
                     if (intValue == 42 && intValue2 == 42) {
-                        return new i2.f(this.a, wVar3, wVar4, 3, 0);
+                        return new i2.g(this.a, wVar3, wVar4, 3, 0);
                     }
                     if (str3.equals("audio/ac4") && b12.equals(b13)) {
-                        return new i2.f(this.a, wVar3, wVar4, 3, 0);
+                        return new i2.g(this.a, wVar3, wVar4, 3, 0);
                     }
                 }
             }
             if (i11 == 0 && (str3.equals("audio/eac3-joc") || str3.equals("audio/eac3"))) {
-                return new i2.f(this.a, wVar3, wVar4, 3, 0);
+                return new i2.g(this.a, wVar3, wVar4, 3, 0);
             }
             if (!wVar3.b(wVar4)) {
                 i11 |= 32;
@@ -181,10 +181,10 @@ public final class o {
                 i11 |= 2;
             }
             if (i11 == 0) {
-                return new i2.f(this.a, wVar3, wVar4, 1, 0);
+                return new i2.g(this.a, wVar3, wVar4, 1, 0);
             }
         }
-        return new i2.f(this.a, wVar3, wVar4, 0, i11);
+        return new i2.g(this.a, wVar3, wVar4, 0, i11);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:156:? A[RETURN, SYNTHETIC] */
@@ -405,10 +405,10 @@ public final class o {
         }
         int i12 = Build.VERSION.SDK_INT;
         if (i12 >= 29) {
-            int c10 = (i12 < 29 || ((bool = v6.a) != null && bool.booleanValue())) ? 0 : b2.d.c(videoCapabilities, i10, i11, d);
+            int c10 = (i12 < 29 || ((bool = u6.a) != null && bool.booleanValue())) ? 0 : b2.d.c(videoCapabilities, i10, i11, d);
             if (c10 != 2) {
                 if (c10 == 1) {
-                    StringBuilder m10 = i2.d.m("sizeAndRate.cover, ", i10, "x", i11, "@");
+                    StringBuilder m10 = i2.e.m("sizeAndRate.cover, ", i10, "x", i11, "@");
                     m10.append(d);
                     h(m10.toString());
                     return false;
@@ -420,7 +420,7 @@ public final class o {
             if (i10 < i11) {
                 String str = this.a;
                 if ((!"OMX.MTK.VIDEO.DECODER.HEVC".equals(str) || !"mcv5a".equals(Build.DEVICE)) && a(videoCapabilities, i11, i10, d)) {
-                    StringBuilder m11 = i2.d.m("sizeAndRate.rotated, ", i10, "x", i11, "@");
+                    StringBuilder m11 = i2.e.m("sizeAndRate.rotated, ", i10, "x", i11, "@");
                     m11.append(d);
                     StringBuilder w9 = a1.g.w("AssumedSupport [", m11.toString(), "] [", str, ", ");
                     w9.append(this.b);
@@ -431,7 +431,7 @@ public final class o {
                     return true;
                 }
             }
-            StringBuilder m12 = i2.d.m("sizeAndRate.support, ", i10, "x", i11, "@");
+            StringBuilder m12 = i2.e.m("sizeAndRate.support, ", i10, "x", i11, "@");
             m12.append(d);
             h(m12.toString());
             return false;

@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r2 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -31,7 +31,7 @@ public final /* synthetic */ class r2 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         org.telegram.ui.Wallet.j0 j0Var;
-        uy0 r10;
+        vy0 r10;
         switch (this.a) {
             case 0:
                 pf.d.p((Context) this.d, Uri.parse((String) this.e), this.b == 0, this.c, (pf.c) this.f);
@@ -66,7 +66,7 @@ public final /* synthetic */ class r2 implements Runnable {
                                             if (!q0Var.q().edit().putInt("lastUsageDate", r10.b).commit()) {
                                                 throw new IOException("usage write");
                                             }
-                                            AndroidUtilities.runOnUIThread(new org.telegram.ui.mj0(8));
+                                            AndroidUtilities.runOnUIThread(new org.telegram.ui.df0(9));
                                         }
                                     }
                                 } catch (Exception e) {
@@ -81,7 +81,7 @@ public final /* synthetic */ class r2 implements Runnable {
                             if (j0Var != null) {
                                 j0Var.close();
                             }
-                            AndroidUtilities.runOnUIThread(new ai.b3(q0Var, j0Var2, callback, j10, 26));
+                            AndroidUtilities.runOnUIThread(new ai.c3(q0Var, j0Var2, callback, j10, 26));
                             return;
                         }
                     }
@@ -89,7 +89,7 @@ public final /* synthetic */ class r2 implements Runnable {
                     e = e10;
                     j0Var = null;
                 }
-                AndroidUtilities.runOnUIThread(new ai.b3(q0Var, j0Var2, callback, j10, 26));
+                AndroidUtilities.runOnUIThread(new ai.c3(q0Var, j0Var2, callback, j10, 26));
                 return;
         }
     }

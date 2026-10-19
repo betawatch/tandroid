@@ -1,7 +1,7 @@
 package hi;
 
-import ai.t3;
 import ai.td;
+import ai.v3;
 import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.view.ViewGroup;
@@ -22,15 +22,15 @@ import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.oc;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class s0 implements ii.d {
     public final Context a;
@@ -80,8 +80,8 @@ public final class s0 implements ii.d {
         }
     }
 
-    public final void b(a71 a71Var) {
-        if (this.m || this.n || a71Var.V2.N0() + 10 <= a71Var.W2.x.size()) {
+    public final void b(b71 b71Var) {
+        if (this.m || this.n || b71Var.V2.N0() + 10 <= b71Var.W2.x.size()) {
             return;
         }
         d();
@@ -105,7 +105,7 @@ public final class s0 implements ii.d {
                     boolean z10 = !communityPeerRequest.visible;
                     boolean z11 = i10 < size + (-1);
                     int i11 = ii.f.a;
-                    f61 J = f61.J(ii.f.class);
+                    g61 J = g61.J(ii.f.class);
                     J.G = new ii.e(peerDialogId, user, z10);
                     J.H = this;
                     J.j = !z11;
@@ -117,7 +117,7 @@ public final class s0 implements ii.d {
         if (this.n) {
             return;
         }
-        arrayList.add(f61.n(29));
+        arrayList.add(g61.n(29));
     }
 
     public final void d() {
@@ -156,7 +156,7 @@ public final class s0 implements ii.d {
             b2 b2Var = new b2(this.a, 3, this.b);
             this.q = b2Var;
             b2Var.setOnCancelListener(new pc(this, 3));
-            this.q.q(500L);
+            this.q.r(500L);
             this.r = MessagesController.getInstance(this.d).resolveCommunityAllJoinPendingRequests(this.e, !z10, new q0(this, 0));
         }
     }
@@ -168,7 +168,7 @@ public final class s0 implements ii.d {
         a();
         r0 r0Var = this.h;
         if (r0Var != null) {
-            r0Var.p();
+            r0Var.l();
         }
         int i11 = z10 ? R.string.CommunityRequestApprovedToast : R.string.CommunityRequestDeclinedToast;
         int i12 = this.d;
@@ -213,7 +213,7 @@ public final class s0 implements ii.d {
         }
         oc ocVar = new oc(context, d6Var, true, true);
         ocVar.e(LocaleController.getString(R.string.UndoNoCaps));
-        ocVar.a = new t3(this, j10, i13);
+        ocVar.a = new v3(this, j10, i13);
         ocVar.b = this.i;
         pcVar.setButton(ocVar);
         this.c.b(pcVar, 5000).j();

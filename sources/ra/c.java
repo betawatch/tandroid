@@ -21,7 +21,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import r9.n;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
@@ -83,7 +83,7 @@ public final class c implements d {
         r2.c = r3;
         r2.b = 3;
         r2 = r2.a();
-        r4.H(r2);
+        r4.E(r2);
      */
     /* JADX WARN: Finally extract failed */
     /*
@@ -160,7 +160,7 @@ public final class c implements d {
                 if (responseCode == 401 || responseCode == 404) {
                     a5.a a10 = ta.b.a();
                     a10.b = 3;
-                    f7 = a10.e();
+                    f7 = a10.f();
                 } else {
                     if (responseCode == 429) {
                         throw new e("Firebase servers have received too many requests from this client in a short period of time. Please try again later.");
@@ -169,7 +169,7 @@ public final class c implements d {
                         Log.e("Firebase-Installations", "Firebase Installations can not communicate with Firebase server APIs due to invalid configuration. Please update your Firebase initialization process and set valid Firebase options (API key, Project ID, Application ID) when initializing Firebase.");
                         a5.a a11 = ta.b.a();
                         a11.b = 2;
-                        f7 = a11.e();
+                        f7 = a11.f();
                     }
                 }
             }
@@ -238,7 +238,7 @@ public final class c implements d {
                 hVar.a();
                 n2.e a2 = n2.e.a(hVar.a);
                 try {
-                    this.c.H(aVar);
+                    this.c.E(aVar);
                     if (a2 != null) {
                         a2.k0();
                     }

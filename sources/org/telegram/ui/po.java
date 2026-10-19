@@ -1,73 +1,38 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
 import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class po implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yo b;
+public final class po implements org.telegram.ui.Components.p90 {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ wo b;
 
-    public /* synthetic */ po(yo yoVar, int i10) {
-        this.a = i10;
-        this.b = yoVar;
+    public po(wo woVar, Context context) {
+        this.b = woVar;
+        this.a = context;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i10 = this.a;
-        yo yoVar = this.b;
-        switch (i10) {
-            case 0:
-                TLRPC.Chat currentChannel = ((org.telegram.ui.Cells.n) view.getParent()).getCurrentChannel();
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(yoVar.getParentActivity());
-                String string = LocaleController.getString(R.string.AppName);
-                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                b2Var.R = string;
-                if (yoVar.a0) {
-                    b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlertChannel", R.string.RevokeLinkAlertChannel, yoVar.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
-                } else {
-                    b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlert", R.string.RevokeLinkAlert, yoVar.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
-                }
-                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new m4.w0(20, yoVar, currentChannel));
-                yoVar.showDialog(b2Var);
-                break;
-            case 1:
-                if (!yoVar.V) {
-                    yoVar.V = true;
-                    yoVar.b0();
-                    break;
-                }
-                break;
-            case 2:
-                if (yoVar.V) {
-                    if (!yoVar.c0) {
-                        yoVar.Z();
-                        break;
-                    } else {
-                        yoVar.V = false;
-                        yoVar.b0();
-                        break;
-                    }
-                }
-                break;
-            case 3:
-                jh0 jh0Var = new jh0(yoVar.Z, 0L, 0);
-                jh0Var.g0(yoVar.Y, yoVar.l0);
-                yoVar.presentFragment(jh0Var);
-                break;
-            default:
-                boolean z10 = !yoVar.b0;
-                yoVar.b0 = z10;
-                ((org.telegram.ui.Cells.v8) view).setChecked(z10);
-                break;
-        }
+    @Override // org.telegram.ui.Components.p90
+    public final void d() {
+        this.b.X(true);
+    }
+
+    @Override // org.telegram.ui.Components.p90
+    public final void i() {
+        wo woVar = this.b;
+        org.telegram.ui.Components.l70 l70Var = new org.telegram.ui.Components.l70(this.a, woVar.l0, woVar.Y, woVar.o0, woVar, woVar.Z, true, ChatObject.isChannel(woVar.X));
+        wo woVar2 = this.b;
+        woVar2.p0 = l70Var;
+        woVar2.p0.show();
+    }
+
+    @Override // org.telegram.ui.Components.p90
+    public final /* synthetic */ void c() {
+    }
+
+    @Override // org.telegram.ui.Components.p90
+    public final /* synthetic */ void k() {
     }
 }

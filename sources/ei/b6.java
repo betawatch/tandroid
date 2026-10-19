@@ -11,19 +11,19 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class b6 extends FrameLayout {
     public float a;
     public float b;
-    public final /* synthetic */ qg.u0 c;
+    public final /* synthetic */ qg.v0 c;
     public final /* synthetic */ xa d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b6(xa xaVar, Context context, qg.u0 u0Var) {
+    public b6(xa xaVar, Context context, qg.v0 v0Var) {
         super(context);
         this.d = xaVar;
-        this.c = u0Var;
+        this.c = v0Var;
         new Path();
         setWillNotDraw(false);
         Paint paint = xaVar.x1;
@@ -37,7 +37,7 @@ public final class b6 extends FrameLayout {
         Canvas canvas2 = canvas;
         super.onDraw(canvas);
         xa xaVar = this.d;
-        qg.s1 s1Var = xaVar.A1;
+        qg.t1 t1Var = xaVar.A1;
         Paint paint = xaVar.y1;
         Paint paint2 = xaVar.x1;
         Paint paint3 = xaVar.z1;
@@ -64,7 +64,7 @@ public final class b6 extends FrameLayout {
             int height = (childAt.getHeight() - childAt.getPaddingTop()) - childAt.getPaddingBottom();
             float x10 = (width / 2.0f) + childAt.getX() + childAt.getPaddingLeft();
             float y3 = (height / 2.0f) + childAt.getY() + childAt.getPaddingTop();
-            int i10 = s1Var.a;
+            int i10 = t1Var.a;
             int i11 = xaVar.Z0;
             View view = childAt;
             if (i11 != -1) {
@@ -80,7 +80,7 @@ public final class b6 extends FrameLayout {
                 View childAt3 = g5Var.getChildAt(0);
                 x10 = AndroidUtilities.lerp(x10, (childAt3.getWidth() / 2.0f) + childAt3.getX() + (g5Var.getX() - barView.getLeft()), xaVar.D1);
                 y3 = AndroidUtilities.lerp(y3, (childAt3.getHeight() / 2.0f) + childAt3.getY() + (g5Var.getY() - barView.getTop()), xaVar.D1);
-                i10 = i0.a.f(xaVar.D1, s1Var.a, this.c.b(0));
+                i10 = i0.a.f(xaVar.D1, t1Var.a, this.c.b(0));
             }
             float f7 = x10;
             float f10 = y3;

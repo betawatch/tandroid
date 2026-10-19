@@ -4,7 +4,7 @@ import android.text.Editable;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.n9;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class x5 implements g1 {
     public final /* synthetic */ c6 a;
@@ -14,19 +14,7 @@ public final class x5 implements g1 {
     }
 
     @Override // ki.g1
-    public final void D(CharSequence charSequence) {
-        z5 z5Var = this.a.y;
-        if (z5Var != null) {
-            e3 e3Var = (e3) z5Var;
-            if (charSequence == null || charSequence.length() <= 0) {
-                return;
-            }
-            e3Var.a.u4(charSequence.toString());
-        }
-    }
-
-    @Override // ki.g1
-    public final void M(Editable editable) {
+    public final void G(Editable editable) {
         c6 c6Var = this.a;
         if (c6Var.x == null) {
             return;
@@ -59,17 +47,17 @@ public final class x5 implements g1 {
     }
 
     @Override // ki.g1
-    public final /* synthetic */ boolean Q(boolean z10) {
+    public final /* synthetic */ boolean M(boolean z10) {
         return false;
     }
 
     @Override // ki.g1
-    public final /* synthetic */ boolean R(h1 h1Var) {
+    public final /* synthetic */ boolean P(h1 h1Var) {
         return false;
     }
 
     @Override // ki.g1
-    public final void V(h1 h1Var, int i10, int i11) {
+    public final void R(h1 h1Var, int i10, int i11) {
         z5 z5Var;
         n9 textSelectionHelper;
         c6 c6Var = this.a;
@@ -85,12 +73,12 @@ public final class x5 implements g1 {
         if (z5Var != null) {
             w3 w3Var = ((e3) z5Var).a;
             w3.N1(w3Var, h1Var);
-            w3Var.f3.n(h1Var, true);
+            w3Var.f3.o(h1Var, true);
         }
     }
 
     @Override // ki.g1
-    public final boolean f() {
+    public final boolean e() {
         c6 c6Var = this.a;
         z5 z5Var = c6Var.y;
         if (z5Var == null || c6Var.x == null) {
@@ -100,7 +88,7 @@ public final class x5 implements g1 {
     }
 
     @Override // ki.g1
-    public final void h(int i10, int i11) {
+    public final void f(int i10, int i11) {
         h2 h2Var;
         c6 c6Var = this.a;
         z5 z5Var = c6Var.y;
@@ -111,7 +99,7 @@ public final class x5 implements g1 {
     }
 
     @Override // ki.g1
-    public final void l(h1 h1Var) {
+    public final void k(h1 h1Var) {
         a aVar;
         c6 c6Var = this.a;
         z5 z5Var = c6Var.y;
@@ -122,7 +110,7 @@ public final class x5 implements g1 {
     }
 
     @Override // ki.g1
-    public final boolean q(h1 h1Var) {
+    public final boolean s(h1 h1Var) {
         c6 c6Var = this.a;
         c6Var.f.r();
         h1 h1Var2 = c6Var.f;
@@ -131,6 +119,18 @@ public final class x5 implements g1 {
     }
 
     @Override // ki.g1
-    public final void m() {
+    public final void x(CharSequence charSequence) {
+        z5 z5Var = this.a.y;
+        if (z5Var != null) {
+            e3 e3Var = (e3) z5Var;
+            if (charSequence == null || charSequence.length() <= 0) {
+                return;
+            }
+            e3Var.a.u4(charSequence.toString());
+        }
+    }
+
+    @Override // ki.g1
+    public final void o() {
     }
 }

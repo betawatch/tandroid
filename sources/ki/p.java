@@ -1,18 +1,18 @@
 package ki;
 
-import ai.l8;
+import ai.m8;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class p implements TextWatcher {
     public final /* synthetic */ String[] a;
-    public final /* synthetic */ l8 b;
+    public final /* synthetic */ m8 b;
 
-    public p(String[] strArr, l8 l8Var) {
+    public p(String[] strArr, m8 m8Var) {
         this.a = strArr;
-        this.b = l8Var;
+        this.b = m8Var;
     }
 
     @Override // android.text.TextWatcher

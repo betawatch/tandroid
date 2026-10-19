@@ -1,31 +1,46 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k9 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ BaseController f;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ k9(MediaDataController mediaDataController, String str, TLObject tLObject, int i10) {
-        this.a = i10;
-        this.b = mediaDataController;
-        this.c = str;
-        this.d = tLObject;
+    public /* synthetic */ k9(MediaDataController mediaDataController, boolean z10, int i10, ArrayList arrayList, boolean z11, int i11) {
+        this.f = mediaDataController;
+        this.c = z10;
+        this.b = i10;
+        this.h = arrayList;
+        this.d = z11;
+        this.e = i11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$fetchStickerSetInternal$41(this.c, this.d);
+                ((MediaDataController) this.f).lambda$processLoadedRecentDocuments$52(this.c, this.b, (ArrayList) this.h, this.d, this.e);
                 break;
             default:
-                this.b.lambda$verifyAnimatedStickerMessageInternal$69(this.c, this.d);
+                ((MessagesController) this.f).lambda$processLoadedMessages$188(this.b, (TLRPC.messages_Messages) this.h, this.c, this.d, this.e);
                 break;
         }
+    }
+
+    public /* synthetic */ k9(MessagesController messagesController, int i10, TLRPC.messages_Messages messages_messages, boolean z10, boolean z11, int i11) {
+        this.f = messagesController;
+        this.b = i10;
+        this.h = messages_messages;
+        this.c = z10;
+        this.d = z11;
+        this.e = i11;
     }
 }

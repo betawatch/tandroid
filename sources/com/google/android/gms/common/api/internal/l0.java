@@ -12,7 +12,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import m.s3;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class l0 implements w0, com.google.android.gms.common.api.k {
     public final Lock a;
@@ -51,7 +51,7 @@ public final class l0 implements w0, com.google.android.gms.common.api.k {
 
     @Override // com.google.android.gms.common.api.internal.w0
     public final void a() {
-        this.m.e();
+        this.m.b();
     }
 
     @Override // com.google.android.gms.common.api.internal.w0
@@ -62,7 +62,7 @@ public final class l0 implements w0, com.google.android.gms.common.api.k {
     @Override // com.google.android.gms.common.api.internal.w0
     public final e c(e eVar) {
         eVar.l();
-        return this.m.B(eVar);
+        return this.m.D(eVar);
     }
 
     @Override // com.google.android.gms.common.api.internal.w0
@@ -72,7 +72,7 @@ public final class l0 implements w0, com.google.android.gms.common.api.k {
 
     @Override // com.google.android.gms.common.api.internal.w0
     public final void f() {
-        if (this.m.y()) {
+        if (this.m.B()) {
             this.i.clear();
         }
     }
@@ -93,7 +93,7 @@ public final class l0 implements w0, com.google.android.gms.common.api.k {
         this.a.lock();
         try {
             this.m = new ya.d(this, 10);
-            this.m.x();
+            this.m.y();
             this.b.signalAll();
         } finally {
             this.a.unlock();
@@ -114,7 +114,7 @@ public final class l0 implements w0, com.google.android.gms.common.api.k {
     public final void onConnectionSuspended(int i10) {
         this.a.lock();
         try {
-            this.m.t(i10);
+            this.m.w(i10);
         } finally {
             this.a.unlock();
         }

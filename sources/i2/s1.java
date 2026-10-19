@@ -1,72 +1,77 @@
 package i2;
 
-import android.os.Handler;
-import android.os.Looper;
-import android.os.SystemClock;
-import org.telegram.ui.web.a2;
+import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final class s1 implements v0 {
-    public long a;
-    public long b;
-    public boolean c;
-    public final Object d;
-    public Object e;
+public final class s1 {
+    public static final s1 c;
+    public static final s1 d;
+    public static final s1 e;
+    public static final s1 f;
+    public final long a;
+    public final long b;
 
-    public s1(a2 a2Var) {
-        this.d = new Handler(Looper.getMainLooper());
-        this.e = a2Var;
+    static {
+        s1 s1Var = new s1(0L, 0L);
+        c = s1Var;
+        d = new s1(Long.MAX_VALUE, Long.MAX_VALUE);
+        e = new s1(Long.MAX_VALUE, 0L);
+        new s1(0L, Long.MAX_VALUE);
+        f = s1Var;
     }
 
-    @Override // i2.v0
-    public long a() {
-        long j10 = this.a;
-        if (!this.c) {
+    public s1(long j10, long j11) {
+        u6.g(j10 >= 0);
+        u6.g(j11 >= 0);
+        this.a = j10;
+        this.b = j11;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0082 A[RETURN] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final long a(long j10, long j11, long j12) {
+        long j13 = this.a;
+        long j14 = this.b;
+        if (j13 == 0 && j14 == 0) {
             return j10;
         }
-        ((e2.g0) this.d).getClass();
-        long elapsedRealtime = SystemClock.elapsedRealtime() - this.b;
-        return (((b2.z0) this.e).a == 1.0f ? e2.m0.S(elapsedRealtime) : elapsedRealtime * r4.c) + j10;
+        String str = e2.m0.a;
+        long j15 = j10 - j13;
+        long j16 = (((j13 ^ j10) > 0L ? 1 : ((j13 ^ j10) == 0L ? 0 : -1)) >= 0) | (((j10 ^ j15) > 0L ? 1 : ((j10 ^ j15) == 0L ? 0 : -1)) >= 0) ? j15 : ((j15 >>> 63) ^ 1) + Long.MAX_VALUE;
+        if ((j16 == Long.MIN_VALUE && j15 != Long.MIN_VALUE) || (j16 == Long.MAX_VALUE && j15 != Long.MAX_VALUE)) {
+            j16 = Long.MIN_VALUE;
+        }
+        long a2 = e2.m0.a(j10, j14);
+        boolean z10 = j16 <= j11 && j11 <= a2;
+        boolean z11 = j16 <= j12 && j12 <= a2;
+        if (!z10 || !z11) {
+            if (!z10) {
+                return z11 ? j12 : j16;
+            }
+            return j11;
+        }
+        if (Math.abs(j11 - j10) <= Math.abs(j12 - j10)) {
+            return j11;
+        }
     }
 
-    @Override // i2.v0
-    public /* synthetic */ boolean b() {
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && s1.class == obj.getClass()) {
+            s1 s1Var = (s1) obj;
+            if (this.a == s1Var.a && this.b == s1Var.b) {
+                return true;
+            }
+        }
         return false;
     }
 
-    public void c(long j10) {
-        this.a = j10;
-        if (this.c) {
-            ((e2.g0) this.d).getClass();
-            this.b = SystemClock.elapsedRealtime();
-        }
-    }
-
-    public void d() {
-        if (this.c) {
-            return;
-        }
-        ((e2.g0) this.d).getClass();
-        this.b = SystemClock.elapsedRealtime();
-        this.c = true;
-    }
-
-    @Override // i2.v0
-    public void f(b2.z0 z0Var) {
-        if (this.c) {
-            c(a());
-        }
-        this.e = z0Var;
-    }
-
-    @Override // i2.v0
-    public b2.z0 h() {
-        return (b2.z0) this.e;
-    }
-
-    public s1(e2.g0 g0Var) {
-        this.d = g0Var;
-        this.e = b2.z0.d;
+    public final int hashCode() {
+        return (((int) this.a) * 31) + ((int) this.b);
     }
 }

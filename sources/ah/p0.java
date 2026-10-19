@@ -8,10 +8,10 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import ci.m2;
-import ci.o1;
-import ci.p4;
-import ci.z9;
+import ci.aa;
+import ci.n2;
+import ci.p1;
+import ci.q4;
 import ei.f6;
 import ei.i9;
 import ei.l4;
@@ -30,13 +30,13 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.cl0;
 import org.telegram.ui.e5;
 import org.telegram.ui.h5;
-import org.telegram.ui.ld;
-import org.telegram.ui.od;
-import org.telegram.ui.ra;
-import org.telegram.ui.sn;
+import org.telegram.ui.jd;
+import org.telegram.ui.md;
+import org.telegram.ui.pa;
+import org.telegram.ui.qn;
 import org.telegram.ui.x4;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class p0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -80,13 +80,13 @@ public final class p0 extends AnimatorListenerAdapter {
                 }
                 break;
             case 28:
-                ((od) this.c).n = null;
+                ((md) this.c).n = null;
                 break;
             case 29:
-                sn snVar = (sn) this.c;
-                AnimatorSet animatorSet4 = snVar.H0;
+                qn qnVar = (qn) this.c;
+                AnimatorSet animatorSet4 = qnVar.H0;
                 if (animatorSet4 != null && animatorSet4.equals(animator)) {
-                    snVar.H0 = null;
+                    qnVar.H0 = null;
                     break;
                 }
                 break;
@@ -101,7 +101,7 @@ public final class p0 extends AnimatorListenerAdapter {
         ci.h1 h1Var;
         View m10;
         RadialProgressView radialProgressView;
-        ld ldVar;
+        jd jdVar;
         switch (this.a) {
             case 0:
                 t0 t0Var = (t0) this.c;
@@ -133,35 +133,35 @@ public final class p0 extends AnimatorListenerAdapter {
                 rVar.b();
                 break;
             case 2:
-                m2 m2Var = (m2) this.c;
-                u1 u1Var = m2Var.c;
+                n2 n2Var = (n2) this.c;
+                u1 u1Var = n2Var.c;
                 boolean z11 = this.b;
                 u1Var.setAlpha(z11 ? 0.0f : 1.0f);
-                m2Var.a.setAlpha(z11 ? 0.0f : 0.5f);
-                m2Var.invalidate();
+                n2Var.a.setAlpha(z11 ? 0.0f : 0.5f);
+                n2Var.invalidate();
                 break;
             case 3:
-                o1 o1Var = (o1) this.c;
-                o1Var.b.removeViewImmediate(o1Var.d);
-                o1Var.f.b();
-                if (this.b && (h1Var = o1Var.v) != null && h1Var != ci.h1.W) {
+                p1 p1Var = (p1) this.c;
+                p1Var.b.removeViewImmediate(p1Var.d);
+                p1Var.f.b();
+                if (this.b && (h1Var = p1Var.v) != null && h1Var != ci.h1.W) {
                     h1Var.e();
                 }
-                o1Var.v = null;
-                o1Var.s = true;
-                o1Var.G = null;
-                o1Var.E = false;
+                p1Var.v = null;
+                p1Var.s = true;
+                p1Var.G = null;
+                p1Var.E = false;
                 break;
             case 4:
-                z9 z9Var = (z9) this.c;
-                z9Var.J0.unlock();
-                z9Var.e0 = this.b ? z9Var.w.c : 0.0f;
-                p4 currentPeerView = z9Var.n0.getCurrentPeerView();
+                aa aaVar = (aa) this.c;
+                aaVar.J0.unlock();
+                aaVar.e0 = this.b ? aaVar.w.c : 0.0f;
+                q4 currentPeerView = aaVar.n0.getCurrentPeerView();
                 if (currentPeerView != null) {
                     currentPeerView.invalidate();
                 }
-                z9Var.v.invalidate();
-                z9Var.v1 = null;
+                aaVar.v.invalidate();
+                aaVar.v1 = null;
                 break;
             case 5:
                 di.v vVar = (di.v) this.c;
@@ -404,29 +404,29 @@ public final class p0 extends AnimatorListenerAdapter {
                 }
                 break;
             case 27:
-                ((ra) this.c).d.setVisibility(this.b ? 0 : 8);
+                ((pa) this.c).d.setVisibility(this.b ? 0 : 8);
                 break;
             case 28:
-                od odVar = (od) this.c;
-                if (odVar.n != null && (ldVar = odVar.h) != null) {
+                md mdVar = (md) this.c;
+                if (mdVar.n != null && (jdVar = mdVar.h) != null) {
                     if (this.b) {
-                        ldVar.setVisibility(4);
+                        jdVar.setVisibility(4);
                     } else {
-                        odVar.r.setVisibility(4);
+                        mdVar.r.setVisibility(4);
                     }
-                    odVar.n = null;
+                    mdVar.n = null;
                     break;
                 }
                 break;
             default:
-                sn snVar = (sn) this.c;
-                AnimatorSet animatorSet4 = snVar.H0;
+                qn qnVar = (qn) this.c;
+                AnimatorSet animatorSet4 = qnVar.H0;
                 if (animatorSet4 != null && animatorSet4.equals(animator)) {
                     if (!this.b) {
-                        snVar.G0.setVisibility(4);
+                        qnVar.G0.setVisibility(4);
                         break;
                     } else {
-                        (snVar.C0 ? snVar.D0 : snVar.B0).setVisibility(4);
+                        (qnVar.C0 ? qnVar.D0 : qnVar.B0).setVisibility(4);
                         break;
                     }
                 }

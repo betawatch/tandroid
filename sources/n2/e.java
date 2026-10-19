@@ -60,26 +60,27 @@ import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.bp0;
-import org.telegram.ui.Components.jw0;
-import org.telegram.ui.Components.v01;
+import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.w01;
 import org.telegram.ui.Components.zl0;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.cw;
-import org.telegram.ui.dy;
-import org.telegram.ui.ey;
+import org.telegram.ui.Wallet.o5;
+import org.telegram.ui.aw;
+import org.telegram.ui.ay;
+import org.telegram.ui.cy;
 import org.telegram.ui.n5;
-import org.telegram.ui.xu0;
+import org.telegram.ui.vu0;
+import qg.k0;
 import r7.z;
 import s4.b1;
 import s4.i1;
 import sg.a1;
-import u2.d1;
 import v7.d8;
 import w7.pa;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final class e implements bp0, l1, zl0, gh.a, p2.t, ne.d, com.google.android.gms.common.api.internal.r, SuccessContinuation {
+public final class e implements bp0, l1, zl0, gh.a, p2.u, ne.d, com.google.android.gms.common.api.internal.r, SuccessContinuation {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -163,12 +164,41 @@ public final class e implements bp0, l1, zl0, gh.a, p2.t, ne.d, com.google.andro
         return resources.getString(identifier);
     }
 
+    public void E(sa.a aVar) {
+        try {
+            JSONObject jSONObject = new JSONObject();
+            jSONObject.put("Fid", aVar.a);
+            jSONObject.put("Status", m1.j.c(aVar.b));
+            jSONObject.put("AuthToken", aVar.c);
+            jSONObject.put("RefreshToken", aVar.d);
+            jSONObject.put("TokenCreationEpochInSecs", aVar.f);
+            jSONObject.put("ExpiresInSecs", aVar.e);
+            jSONObject.put("FisError", aVar.g);
+            l9.h hVar = (l9.h) this.c;
+            hVar.a();
+            File createTempFile = File.createTempFile("PersistedInstallation", "tmp", hVar.a.getFilesDir());
+            FileOutputStream fileOutputStream = new FileOutputStream(createTempFile);
+            fileOutputStream.write(jSONObject.toString().getBytes("UTF-8"));
+            fileOutputStream.close();
+            if (createTempFile.renameTo(z())) {
+            } else {
+                throw new IOException("unable to rename the tmpfile to PersistedInstallation");
+            }
+        } catch (IOException | JSONException unused) {
+        }
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public void G1(u1 u1Var, TLRPC.WebPage webPage, String str, boolean z10) {
+        pf.d.r(u1Var.getContext(), str);
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:12:0x002f  */
     @Override // ne.d
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void E(float f7, int i10) {
+    public void H(float f7, int i10) {
         boolean z10;
         qh.i iVar = (qh.i) this.c;
         boolean z11 = true;
@@ -196,47 +226,18 @@ public final class e implements bp0, l1, zl0, gh.a, p2.t, ne.d, com.google.andro
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public void G1(u1 u1Var, TLRPC.WebPage webPage, String str, boolean z10) {
-        pf.d.r(u1Var.getContext(), str);
-    }
-
-    public void H(sa.a aVar) {
-        try {
-            JSONObject jSONObject = new JSONObject();
-            jSONObject.put("Fid", aVar.a);
-            jSONObject.put("Status", m1.j.c(aVar.b));
-            jSONObject.put("AuthToken", aVar.c);
-            jSONObject.put("RefreshToken", aVar.d);
-            jSONObject.put("TokenCreationEpochInSecs", aVar.f);
-            jSONObject.put("ExpiresInSecs", aVar.e);
-            jSONObject.put("FisError", aVar.g);
-            l9.h hVar = (l9.h) this.c;
-            hVar.a();
-            File createTempFile = File.createTempFile("PersistedInstallation", "tmp", hVar.a.getFilesDir());
-            FileOutputStream fileOutputStream = new FileOutputStream(createTempFile);
-            fileOutputStream.write(jSONObject.toString().getBytes("UTF-8"));
-            fileOutputStream.close();
-            if (createTempFile.renameTo(z())) {
-            } else {
-                throw new IOException("unable to rename the tmpfile to PersistedInstallation");
-            }
-        } catch (IOException | JSONException unused) {
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ CharacterStyle H1(u1 u1Var) {
         return null;
     }
 
-    @Override // p2.t
+    @Override // p2.u
     public y2.n J() {
-        return new mi.q(22, ((p2.t) this.b).J(), (List) this.c);
+        return new mi.q(22, ((p2.u) this.b).J(), (List) this.c);
     }
 
     @Override // org.telegram.ui.Cells.l1
     public boolean J0(long j10) {
-        return ((v01) this.c).v;
+        return ((w01) this.c).v;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -248,9 +249,9 @@ public final class e implements bp0, l1, zl0, gh.a, p2.t, ne.d, com.google.andro
     public void L(float f7, boolean z10) {
         n5.c = f7;
         ((TextView) this.b).setText("Saturation " + (f7 * 5.0f));
-        jw0 jw0Var = ((n5) this.c).b;
-        jw0Var.N();
-        jw0Var.M();
+        kw0 kw0Var = ((n5) this.c).b;
+        kw0Var.N();
+        kw0Var.M();
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -259,8 +260,8 @@ public final class e implements bp0, l1, zl0, gh.a, p2.t, ne.d, com.google.andro
     }
 
     public boolean O() {
-        org.telegram.ui.Wallet.n5 n5Var = (org.telegram.ui.Wallet.n5) this.c;
-        return n5Var.H0 > 0.0f || n5Var.w0();
+        o5 o5Var = (o5) this.c;
+        return o5Var.H0 > 0.0f || o5Var.v0();
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -274,7 +275,7 @@ public final class e implements bp0, l1, zl0, gh.a, p2.t, ne.d, com.google.andro
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ xu0 P1() {
+    public /* synthetic */ vu0 P1() {
         return null;
     }
 
@@ -285,7 +286,7 @@ public final class e implements bp0, l1, zl0, gh.a, p2.t, ne.d, com.google.andro
 
     @Override // org.telegram.ui.Cells.l1
     public boolean Q1(long j10) {
-        return ((v01) this.c).s;
+        return ((w01) this.c).s;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -303,9 +304,9 @@ public final class e implements bp0, l1, zl0, gh.a, p2.t, ne.d, com.google.andro
         return false;
     }
 
-    @Override // p2.t
-    public y2.n U(p2.p pVar, p2.m mVar) {
-        return new mi.q(22, ((p2.t) this.b).U(pVar, mVar), (List) this.c);
+    @Override // p2.u
+    public y2.n U(p2.q qVar, p2.n nVar) {
+        return new mi.q(22, ((p2.u) this.b).U(qVar, nVar), (List) this.c);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -508,19 +509,19 @@ public final class e implements bp0, l1, zl0, gh.a, p2.t, ne.d, com.google.andro
 
     @Override // org.telegram.ui.Components.zl0
     public boolean d(float f7, float f10, int i10, View view) {
-        ey eyVar = (ey) this.c;
+        cy cyVar = (cy) this.c;
         if (view instanceof r2) {
             r2 r2Var = (r2) view;
             if (r2Var.n2) {
-                eyVar.L4(r2Var.getDialogId(), view);
+                cyVar.L4(r2Var.getDialogId(), view);
                 return true;
             }
         }
-        cw cwVar = eyVar.z0;
-        if (cwVar != null && cwVar.getVisibility() == 0 && eyVar.z0.n) {
+        aw awVar = cyVar.z0;
+        if (awVar != null && awVar.getVisibility() == 0 && cyVar.z0.n) {
             return false;
         }
-        return eyVar.m4(view, i10, f7, ((dy) this.b).d);
+        return cyVar.m4(view, i10, f7, ((ay) this.b).d);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -572,7 +573,7 @@ public final class e implements bp0, l1, zl0, gh.a, p2.t, ne.d, com.google.andro
     public void h() {
         Point point = AndroidUtilities.displaySize;
         if (point.x > point.y) {
-            ((ey) this.c).finishPreviewFragment();
+            ((cy) this.c).finishPreviewFragment();
         }
     }
 
@@ -662,7 +663,7 @@ public final class e implements bp0, l1, zl0, gh.a, p2.t, ne.d, com.google.andro
     public void o(float f7) {
         Point point = AndroidUtilities.displaySize;
         if (point.x > point.y) {
-            ((ey) this.c).movePreviewFragment(f7);
+            ((cy) this.c).movePreviewFragment(f7);
         }
     }
 
@@ -706,7 +707,66 @@ public final class e implements bp0, l1, zl0, gh.a, p2.t, ne.d, com.google.andro
         return null;
     }
 
-    public void r(String str, PrintWriter printWriter) {
+    @Override // ne.d
+    public void r(int i10, float f7, float f10, ne.e eVar) {
+        qh.i iVar = (qh.i) this.c;
+        iVar.c.a(f7);
+        iVar.d.a(f7);
+        iVar.b.a(f7);
+        ((Runnable) this.b).run();
+    }
+
+    public j0 r0(int i10) {
+        int i11 = 0;
+        while (true) {
+            int[] iArr = (int[]) this.b;
+            if (i11 >= iArr.length) {
+                e2.a.c("BaseMediaChunkOutput", "Unmatched track of type: " + i10);
+                return new c3.n();
+            }
+            if (i10 == iArr[i11]) {
+                return ((u2.c1[]) this.c)[i11];
+            }
+            i11++;
+        }
+    }
+
+    @Override // com.google.android.gms.tasks.SuccessContinuation
+    public Task then(Object obj) {
+        int i10 = 1;
+        switch (this.a) {
+            case 26:
+                ea.a aVar = (ea.a) obj;
+                x9.m mVar = ((x9.k) this.c).e;
+                if (aVar != null) {
+                    return Tasks.whenAll((Task<?>[]) new Task[]{x9.m.b(mVar), mVar.m.D((Executor) this.b, null)});
+                }
+                Log.w("FirebaseCrashlytics", "Received null app settings, cannot send reports at crash time.", null);
+                return Tasks.forResult(null);
+            default:
+                return ((x9.m) this.c).e.w(new u4.f(i10, this, (Boolean) obj));
+        }
+    }
+
+    public String toString() {
+        switch (this.a) {
+            case 22:
+                StringBuilder sb2 = new StringBuilder(128);
+                sb2.append("LoaderManager{");
+                sb2.append(Integer.toHexString(System.identityHashCode(this)));
+                sb2.append(" in ");
+                Class<?> cls = ((androidx.lifecycle.t) this.b).getClass();
+                sb2.append(cls.getSimpleName());
+                sb2.append("{");
+                sb2.append(Integer.toHexString(System.identityHashCode(cls)));
+                sb2.append("}}");
+                return sb2.toString();
+            default:
+                return super.toString();
+        }
+    }
+
+    public void u(String str, PrintWriter printWriter) {
         w1.b bVar = (w1.b) this.c;
         if (bVar.d.c <= 0) {
             return;
@@ -808,65 +868,6 @@ public final class e implements bp0, l1, zl0, gh.a, p2.t, ne.d, com.google.andro
         }
     }
 
-    public j0 r0(int i10) {
-        int i11 = 0;
-        while (true) {
-            int[] iArr = (int[]) this.b;
-            if (i11 >= iArr.length) {
-                e2.a.c("BaseMediaChunkOutput", "Unmatched track of type: " + i10);
-                return new c3.n();
-            }
-            if (i10 == iArr[i11]) {
-                return ((d1[]) this.c)[i11];
-            }
-            i11++;
-        }
-    }
-
-    @Override // com.google.android.gms.tasks.SuccessContinuation
-    public Task then(Object obj) {
-        int i10 = 1;
-        switch (this.a) {
-            case 26:
-                ea.a aVar = (ea.a) obj;
-                x9.m mVar = ((x9.k) this.c).e;
-                if (aVar != null) {
-                    return Tasks.whenAll((Task<?>[]) new Task[]{x9.m.b(mVar), mVar.m.D((Executor) this.b, null)});
-                }
-                Log.w("FirebaseCrashlytics", "Received null app settings, cannot send reports at crash time.", null);
-                return Tasks.forResult(null);
-            default:
-                return ((x9.m) this.c).e.w(new u4.f(i10, this, (Boolean) obj));
-        }
-    }
-
-    public String toString() {
-        switch (this.a) {
-            case 22:
-                StringBuilder sb2 = new StringBuilder(128);
-                sb2.append("LoaderManager{");
-                sb2.append(Integer.toHexString(System.identityHashCode(this)));
-                sb2.append(" in ");
-                Class<?> cls = ((androidx.lifecycle.t) this.b).getClass();
-                sb2.append(cls.getSimpleName());
-                sb2.append("{");
-                sb2.append(Integer.toHexString(System.identityHashCode(cls)));
-                sb2.append("}}");
-                return sb2.toString();
-            default:
-                return super.toString();
-        }
-    }
-
-    @Override // ne.d
-    public void u(int i10, float f7, float f10, ne.e eVar) {
-        qh.i iVar = (qh.i) this.c;
-        iVar.c.a(f7);
-        iVar.d.a(f7);
-        iVar.b.a(f7);
-        ((Runnable) this.b).run();
-    }
-
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean v1() {
         return false;
@@ -878,7 +879,7 @@ public final class e implements bp0, l1, zl0, gh.a, p2.t, ne.d, com.google.andro
         if (trim.length() > 16) {
             trim = trim.substring(0, 16);
         }
-        if (((v01) this.c).s || !TextUtils.isEmpty(trim)) {
+        if (((w01) this.c).s || !TextUtils.isEmpty(trim)) {
             return trim;
         }
         return null;
@@ -971,12 +972,12 @@ public final class e implements bp0, l1, zl0, gh.a, p2.t, ne.d, com.google.andro
     public e(androidx.lifecycle.t tVar, t0 t0Var) {
         this.a = 22;
         this.b = tVar;
-        this.c = (w1.b) new androidx.biometric.e(t0Var, w1.b.f).m(w1.b.class);
+        this.c = (w1.b) new androidx.biometric.e(t0Var, w1.b.f).j(w1.b.class);
     }
 
-    public e(qg.j0 j0Var) {
+    public e(k0 k0Var) {
         this.a = 14;
-        this.b = j0Var;
+        this.b = k0Var;
     }
 
     public e(l9.h hVar) {

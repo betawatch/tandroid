@@ -1,25 +1,63 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class tj extends g.o {
-    public final /* synthetic */ sn c;
+public final /* synthetic */ class tj implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qn b;
 
-    public tj(sn snVar) {
-        this.c = snVar;
+    public /* synthetic */ tj(qn qnVar, int i10) {
+        this.a = i10;
+        this.b = qnVar;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        int i11;
-        MessageObject messageObject;
-        MessageObject.GroupedMessages c92;
-        sn snVar = this.c;
-        fm fmVar = snVar.A0;
-        int i12 = fmVar.J;
-        return (i10 < i12 || i10 >= fmVar.K || (i11 = i10 - i12) < 0 || i11 >= fmVar.L().size() || (c92 = snVar.c9((messageObject = (MessageObject) snVar.A0.L().get(i11)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : c92.getPosition(messageObject).spanSize;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        qn qnVar = this.b;
+        switch (i10) {
+            case 0:
+                int i11 = qn.Ic;
+                qnVar.c7();
+                break;
+            case 1:
+                qn.j2(qnVar);
+                break;
+            case 2:
+                qn.j2(qnVar);
+                break;
+            case 3:
+                int i12 = qn.Ic;
+                qnVar.Qa();
+                break;
+            case 4:
+                int i13 = qn.Ic;
+                qnVar.Qa();
+                break;
+            case 5:
+                int i14 = qn.Ic;
+                qnVar.Qa();
+                break;
+            case 6:
+                int i15 = qn.Ic;
+                qnVar.Qa();
+                break;
+            case 7:
+                int i16 = qn.Ic;
+                qnVar.Qa();
+                break;
+            case 8:
+                int i17 = qn.Ic;
+                qnVar.Qa();
+                break;
+            case 9:
+                int i18 = qn.Ic;
+                qnVar.Qa();
+                break;
+            default:
+                int i19 = qn.Ic;
+                qnVar.Qa();
+                break;
+        }
     }
 }

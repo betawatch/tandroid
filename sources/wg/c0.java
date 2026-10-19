@@ -8,18 +8,18 @@ import android.text.TextUtils;
 import android.widget.FrameLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import ci.n1;
+import ci.o1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.x90;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class c0 extends FrameLayout {
     public final TextView a;
@@ -140,7 +140,7 @@ public final class c0 extends FrameLayout {
             b0Var.setColumnShrinkable(1, true);
         }
         addView(b0Var, z5.c(-2.0f, -1));
-        b0Var.setOutlineProvider(new n1(22));
+        b0Var.setOutlineProvider(new o1(22));
         b0Var.setClipToOutline(z10);
         setPaddingRelative(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(14.0f), 0);
     }
@@ -154,7 +154,7 @@ public final class c0 extends FrameLayout {
         } else {
             textView = new TextView(getContext());
         }
-        lk.o(z10 ? h6.m5 : h6.j5, d6Var, textView, 1, 14.0f);
+        kk.o(z10 ? h6.m5 : h6.j5, d6Var, textView, 1, 14.0f);
         if (!z10) {
             textView.setGravity(LocaleController.isRTL ? 5 : 3);
         }

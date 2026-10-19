@@ -8,18 +8,18 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.d11;
-import org.telegram.ui.Components.w21;
+import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.x21;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class b0 extends View {
     public final org.telegram.ui.ActionBar.d6 a;
     public final c0 b;
-    public final w21 c;
+    public final x21 c;
     public int d;
     public float e;
 
@@ -27,9 +27,9 @@ public abstract class b0 extends View {
         super(context);
         this.a = d6Var;
         this.b = new c0(context, i10, d6Var);
-        w21 w21Var = new w21(i10, this, d6Var, true);
-        this.c = w21Var;
-        w21Var.e = new d11("", 14.0f, AndroidUtilities.bold());
+        x21 x21Var = new x21(i10, this, d6Var, true);
+        this.c = x21Var;
+        x21Var.e = new e11("", 14.0f, AndroidUtilities.bold());
     }
 
     public final void a(float f7, int i10) {
@@ -65,26 +65,26 @@ public abstract class b0 extends View {
 
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), lk.C(40.0f, this.b.i, TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), kk.C(40.0f, this.b.i, TLObject.FLAG_30));
     }
 
     public void setDialogId(long j10) {
         c0 c0Var = this.b;
-        d11 d11Var = c0Var.d;
+        e11 e11Var = c0Var.d;
         TLRPC.User user = MessagesController.getInstance(c0Var.b).getUser(Long.valueOf(j10));
-        d11 d11Var2 = c0Var.e;
-        d11Var2.n(1);
-        d11Var2.q(9999.0f);
-        d11Var2.r(LocaleController.formatString(R.string.BotForumAskForStartNewChat, UserObject.getUserName(user)));
-        float b10 = (d11Var2.b() / 2.0f) * 1.2f;
-        d11Var2.n(4);
+        e11 e11Var2 = c0Var.e;
+        e11Var2.n(1);
+        e11Var2.q(9999.0f);
+        e11Var2.r(LocaleController.formatString(R.string.BotForumAskForStartNewChat, UserObject.getUserName(user)));
+        float b10 = (e11Var2.b() / 2.0f) * 1.2f;
+        e11Var2.n(4);
         float f7 = (int) (AndroidUtilities.displaySize.x * 0.95f);
-        d11Var2.q(Math.min(f7, b10));
-        if (d11Var2.b.getLineCount() > 2) {
-            d11Var2.q(Math.min(f7, b10 * 1.2f));
+        e11Var2.q(Math.min(f7, b10));
+        if (e11Var2.b.getLineCount() > 2) {
+            e11Var2.q(Math.min(f7, b10 * 1.2f));
         }
-        float min = Math.min(Math.max(Math.max(0.0f, d11Var2.b()), d11Var.b()) + AndroidUtilities.dp(32.0f), f7);
-        float j11 = d11Var2.j() + d11Var.j() + AndroidUtilities.dp(17.0f) + 0.0f + AndroidUtilities.dp(70.0f) + AndroidUtilities.dp(14.0f) + AndroidUtilities.dp(4.0f) + AndroidUtilities.dp(2.0f) + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(5.0f);
+        float min = Math.min(Math.max(Math.max(0.0f, e11Var2.b()), e11Var.b()) + AndroidUtilities.dp(32.0f), f7);
+        float j11 = e11Var2.j() + e11Var.j() + AndroidUtilities.dp(17.0f) + 0.0f + AndroidUtilities.dp(70.0f) + AndroidUtilities.dp(14.0f) + AndroidUtilities.dp(4.0f) + AndroidUtilities.dp(2.0f) + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(5.0f);
         c0Var.h = (int) min;
         c0Var.i = (int) j11;
     }

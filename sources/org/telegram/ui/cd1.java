@@ -1,71 +1,33 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import android.widget.EditText;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.Utilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class cd1 extends org.telegram.ui.ActionBar.g5 {
-    public boolean r = false;
-    public final /* synthetic */ id1 s;
+public final class cd1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ gd1 b;
 
-    public cd1(id1 id1Var) {
-        this.s = id1Var;
+    public /* synthetic */ cd1(gd1 gd1Var, int i10) {
+        this.a = i10;
+        this.b = gd1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.g5
-    public final void m() {
-        id1 id1Var = this.s;
-        if (id1Var.a.getVisibility() != 0) {
-            id1Var.a.setVisibility(0);
-            id1Var.a.setAlpha(0.0f);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                gd1 gd1Var = this.b;
+                gd1Var.v = 0;
+                gd1Var.n.setVisibility(8);
+                break;
+            case 1:
+                this.b.v = 0;
+                break;
+            default:
+                this.b.F.setVisibility(8);
+                break;
         }
-        id1Var.r.setVisibility(8);
-        id1Var.d.l();
-        id1Var.a.animate().alpha(1.0f).setDuration(150L).setListener(null).start();
-        id1Var.s.animate().alpha(0.0f).setDuration(150L).setListener(new bd1(this, 0)).start();
-        this.r = false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.g5
-    public final void q(EditText editText) {
-        String obj = editText.getText().toString();
-        hd1 hd1Var = this.s.e;
-        if (hd1Var.e != null) {
-            Utilities.searchQueue.cancelRunnable(hd1Var.e);
-            hd1Var.e = null;
-        }
-        if (TextUtils.isEmpty(obj)) {
-            hd1Var.c.clear();
-            hd1Var.d.clear();
-            hd1Var.l();
-            hd1Var.h.r.setVisibility(8);
-        } else {
-            int i10 = hd1Var.f + 1;
-            hd1Var.f = i10;
-            DispatchQueue dispatchQueue = Utilities.searchQueue;
-            gd1 gd1Var = new gd1(hd1Var, obj, i10, 0);
-            hd1Var.e = gd1Var;
-            dispatchQueue.postRunnable(gd1Var, 300L);
-        }
-        if (this.r || TextUtils.isEmpty(obj)) {
-            if (this.r && TextUtils.isEmpty(obj)) {
-                m();
-                return;
-            }
-            return;
-        }
-        if (this.s.s.getVisibility() != 0) {
-            this.s.s.setVisibility(0);
-            this.s.s.setAlpha(0.0f);
-        }
-        this.s.a.animate().alpha(0.0f).setDuration(150L).setListener(new bd1(this, 1)).start();
-        this.s.e.d.clear();
-        this.s.e.c.clear();
-        this.s.e.l();
-        this.s.s.animate().setListener(null).alpha(1.0f).setDuration(150L).start();
-        this.r = true;
     }
 }

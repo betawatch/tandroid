@@ -20,7 +20,7 @@ import r0.i0;
 import r0.l0;
 import v7.i7;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class a0 extends i7 implements m.c {
     public static final AccelerateInterpolator x = new AccelerateInterpolator();
@@ -47,7 +47,7 @@ public final class a0 extends i7 implements m.c {
     public boolean t;
     public final y u;
     public final y v;
-    public final ag.b w;
+    public final a4.l w;
 
     public a0(Activity activity, boolean z10) {
         new ArrayList();
@@ -57,7 +57,7 @@ public final class a0 extends i7 implements m.c {
         this.r = true;
         this.u = new y(this, 0);
         this.v = new y(this, 1);
-        this.w = new ag.b(this, 18);
+        this.w = new a4.l(this, 19);
         View decorView = activity.getWindow().getDecorView();
         b(decorView);
         if (z10) {
@@ -202,7 +202,7 @@ public final class a0 extends i7 implements m.c {
         boolean z11 = this.p;
         boolean z12 = this.q;
         int i10 = 27;
-        ag.b bVar = this.w;
+        a4.l lVar = this.w;
         View view = this.g;
         if (!z12 && z11) {
             if (this.r) {
@@ -230,7 +230,7 @@ public final class a0 extends i7 implements m.c {
                 a2.e(f7);
                 View view2 = (View) a2.a.get();
                 if (view2 != null) {
-                    view2.animate().setUpdateListener(bVar != null ? new ah.l0(i10, bVar, view2) : null);
+                    view2.animate().setUpdateListener(lVar != null ? new ah.l0(i10, lVar, view2) : null);
                 }
                 if (!dVar2.b) {
                     arrayList.add(a2);
@@ -283,7 +283,7 @@ public final class a0 extends i7 implements m.c {
             a11.e(0.0f);
             View view3 = (View) a11.a.get();
             if (view3 != null) {
-                view3.animate().setUpdateListener(bVar != null ? new ah.l0(i10, bVar, view3) : null);
+                view3.animate().setUpdateListener(lVar != null ? new ah.l0(i10, lVar, view3) : null);
             }
             if (!dVar4.b) {
                 arrayList2.add(a11);
@@ -331,7 +331,7 @@ public final class a0 extends i7 implements m.c {
         this.r = true;
         this.u = new y(this, 0);
         this.v = new y(this, 1);
-        this.w = new ag.b(this, 18);
+        this.w = new a4.l(this, 19);
         b(tVar.getWindow().getDecorView());
     }
 }

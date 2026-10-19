@@ -1,6 +1,6 @@
 package com.android.billingclient.api;
 
-import ag.b;
+import a4.l;
 import android.app.PendingIntent;
 import android.content.IntentSender;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import com.google.android.gms.internal.play_billing.u;
 import kotlin.jvm.internal.i;
 import ya.d;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class ProxyBillingActivityV2 extends m {
     public c J;
@@ -26,8 +26,8 @@ public class ProxyBillingActivityV2 extends m {
     @Override // androidx.activity.m, e0.e, android.app.Activity
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.J = r(new b(this, 6), new e0(3));
-        this.K = r(new a6.m(this, 11), new e0(3));
+        this.J = r(new l(this, 7), new e0(3));
+        this.K = r(new qb.c(this, 11), new e0(3));
         this.L = r(new d(this, 8), new e0(3));
         if (bundle != null) {
             if (bundle.containsKey("alternative_billing_only_dialog_result_receiver")) {

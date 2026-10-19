@@ -3,11 +3,11 @@ package zh;
 import android.graphics.Canvas;
 import org.telegram.ui.Components.im0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class m extends im0 {
-    public z V2;
-    public y W2;
+    public e0 V2;
+    public d0 W2;
 
     @Override // org.telegram.ui.Components.im0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
@@ -20,14 +20,14 @@ public final class m extends im0 {
             canvas2 = canvas;
             i10 = -1;
         }
-        z zVar = this.V2;
-        if (zVar != null) {
-            zVar.x(canvas2);
+        e0 e0Var = this.V2;
+        if (e0Var != null) {
+            e0Var.x(canvas2);
         }
         super.dispatchDraw(canvas2);
-        y yVar = this.W2;
-        if (yVar != null) {
-            yVar.x(canvas2);
+        d0 d0Var = this.W2;
+        if (d0Var != null) {
+            d0Var.x(canvas2);
             canvas2.restoreToCount(i10);
         }
     }

@@ -1,25 +1,62 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class al0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vr b;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-    public /* synthetic */ al0(vr vrVar, int i10) {
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* loaded from: classes3.dex */
+public final class al0 implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PasscodeActivity b;
+
+    public /* synthetic */ al0(PasscodeActivity passcodeActivity, int i10) {
         this.a = i10;
-        this.b = vrVar;
+        this.b = passcodeActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int i10 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
         switch (this.a) {
             case 0:
-                this.b.l(1.0f);
+                PasscodeActivity passcodeActivity = this.b;
+                wk0 wk0Var = passcodeActivity.S;
+                if (passcodeActivity.R) {
+                    passcodeActivity.n.removeCallbacks(wk0Var);
+                    wk0Var.run();
+                    break;
+                }
                 break;
             default:
-                this.b.l(1.0f);
+                PasscodeActivity passcodeActivity2 = this.b;
+                wk0 wk0Var2 = passcodeActivity2.S;
+                if (passcodeActivity2.R) {
+                    passcodeActivity2.n.removeCallbacks(wk0Var2);
+                    wk0Var2.run();
+                    break;
+                }
                 break;
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    private final void a(Editable editable) {
+    }
+
+    private final void b(Editable editable) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

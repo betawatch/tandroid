@@ -9,11 +9,10 @@ import android.support.v4.media.session.MediaSessionCompat$Token;
 import android.util.Log;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import ki.t1;
 import m.g3;
 import org.telegram.ui.Cells.k7;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class x {
     public static e c;
@@ -110,7 +109,7 @@ public final class x {
         c10.u = zVar;
         if (c10.f()) {
             if (c10.r == null) {
-                k kVar = new k(c10.h, new t1(c10, 20));
+                k kVar = new k(c10.h, new l2.f(c10, 14));
                 c10.r = kVar;
                 c10.a(kVar, true);
                 c10.k();

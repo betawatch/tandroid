@@ -12,10 +12,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.b11;
+import org.telegram.ui.z01;
 import ug.r;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w2 implements Runnable {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final /* synthetic */ class w2 implements Runnable {
                 Bundle bundle = new Bundle();
                 bundle.putLong("dialog_id", this.b);
                 bundle.putLong("topic_id", this.c);
-                ((org.telegram.ui.ActionBar.n2) obj2).presentFragment(new b11(bundle, (org.telegram.ui.ActionBar.d6) obj));
+                ((org.telegram.ui.ActionBar.n2) obj2).presentFragment(new z01(bundle, (org.telegram.ui.ActionBar.d6) obj));
                 break;
             default:
                 ug.z zVar = (ug.z) obj3;
@@ -175,7 +175,7 @@ public final /* synthetic */ class w2 implements Runnable {
                 tL_payments_launchPrepaidGiveaway.giveaway_id = prepaidGiveaway.id;
                 tL_payments_launchPrepaidGiveaway.peer = messagesController.getInputPeer(-chat.id);
                 tL_payments_launchPrepaidGiveaway.purpose = tL_inputStorePaymentStarsGiveaway;
-                connectionsManager.sendRequest(tL_payments_launchPrepaidGiveaway, new ai.k2(uVar, messagesController, xVar, 23));
+                connectionsManager.sendRequest(tL_payments_launchPrepaidGiveaway, new ai.j2(uVar, messagesController, xVar, 23));
                 break;
         }
     }

@@ -5,9 +5,10 @@ import android.graphics.BitmapFactory;
 import java.io.EOFException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import k2.w0;
 import m2.t;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class g extends lf.a {
     public static final Logger s = Logger.getLogger(g.class.getName());
@@ -73,25 +74,25 @@ public final class g extends lf.a {
             case "APIC":
                 if (this.o == null || this.r != 3) {
                     b b10 = eVar.b();
-                    k0.b bVar = eVar.d;
+                    w0 w0Var = eVar.d;
                     if (eVar.b.a == 2) {
                         eVar.c(3, b.c).toUpperCase().getClass();
                     } else {
                         eVar.d(20, b.c);
                     }
-                    byte Z = bVar.Z();
+                    byte m10 = w0Var.m();
                     eVar.d(200, b10);
                     int e = (int) eVar.a.e();
                     byte[] bArr = new byte[e];
                     int i13 = 0;
                     while (i13 < e) {
-                        int read = ((com.google.firebase.messaging.d) bVar.b).read(bArr, i13, e - i13);
+                        int read = ((com.google.firebase.messaging.d) w0Var.b).read(bArr, i13, e - i13);
                         if (read <= 0) {
                             throw new EOFException();
                         }
                         i13 += read;
                     }
-                    if (this.o == null || Z == 3 || Z == 0) {
+                    if (this.o == null || m10 == 3 || m10 == 0) {
                         try {
                             options = new BitmapFactory.Options();
                             options.inJustDecodeBounds = true;
@@ -118,7 +119,7 @@ public final class g extends lf.a {
                                     this.p = this.o;
                                 }
                             }
-                            this.r = Z;
+                            this.r = m10;
                             return;
                         }
                         for (int max2 = Math.max(i11, options.outHeight); max2 > 800; max2 /= 2) {
@@ -129,7 +130,7 @@ public final class g extends lf.a {
                         this.o = decodeByteArray;
                         if (decodeByteArray != null) {
                         }
-                        this.r = Z;
+                        this.r = m10;
                         return;
                     }
                     return;
@@ -151,14 +152,14 @@ public final class g extends lf.a {
                     try {
                         if (e7.charAt(0) == '(') {
                             int indexOf = e7.indexOf(41);
-                            if (indexOf > 1 && (i10 = i2.d.b(Integer.parseInt(e7.substring(1, indexOf)))) == 0 && e7.length() > (i12 = indexOf + 1)) {
+                            if (indexOf > 1 && (i10 = i2.e.b(Integer.parseInt(e7.substring(1, indexOf)))) == 0 && e7.length() > (i12 = indexOf + 1)) {
                                 this.h = e7.substring(i12);
                             }
                         } else {
-                            i10 = i2.d.b(Integer.parseInt(e7));
+                            i10 = i2.e.b(Integer.parseInt(e7));
                         }
                         if (i10 != 0) {
-                            this.h = i2.d.d(i10);
+                            this.h = i2.e.d(i10);
                             return;
                         }
                         return;

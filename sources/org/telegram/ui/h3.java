@@ -15,9 +15,9 @@ import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class h3 extends bu0 {
+public final class h3 extends zt0 {
     public final int[] a = new int[2];
     public final List b;
     public final /* synthetic */ l4 c;
@@ -27,13 +27,13 @@ public final class h3 extends bu0 {
         this.b = list;
     }
 
-    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
     public final void D() {
         this.c.n();
     }
 
-    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
-    public final lu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
+    public final ju0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
         if (i10 < 0) {
             return null;
         }
@@ -49,28 +49,28 @@ public final class h3 extends bu0 {
         if (d02 == null) {
             return null;
         }
-        lu0 lu0Var = new lu0();
-        lu0Var.b = iArr[0];
-        lu0Var.c = iArr[1];
-        lu0Var.d = l4Var.u0[0].b;
-        lu0Var.a = d02;
-        lu0Var.e = d02.getBitmapSafe();
-        lu0Var.h = d02.getRoundRadius(true);
-        lu0Var.j = l4Var.I0;
-        return lu0Var;
+        ju0 ju0Var = new ju0();
+        ju0Var.b = iArr[0];
+        ju0Var.c = iArr[1];
+        ju0Var.d = l4Var.u0[0].b;
+        ju0Var.a = d02;
+        ju0Var.e = d02.getBitmapSafe();
+        ju0Var.h = d02.getRoundRadius(true);
+        ju0Var.j = l4Var.I0;
+        return ju0Var;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:20:0x0067  */
     /* JADX WARN: Removed duplicated region for block: B:34:0x00c4  */
     /* JADX WARN: Removed duplicated region for block: B:46:0x0049 A[EDGE_INSN: B:46:0x0049->B:14:0x0049 BREAK  A[LOOP:0: B:7:0x0034->B:44:0x0046], SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0036  */
-    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void Y(int i10) {
         TL_iv.PageBlock pageBlock;
-        org.telegram.ui.Components.a81 a81Var;
+        org.telegram.ui.Components.b81 b81Var;
         TextureView textureView;
         a0.h hVar;
         int i11;
@@ -84,7 +84,7 @@ public final class h3 extends bu0 {
             List list = this.b;
             if (i10 < list.size()) {
                 pageBlock = (TL_iv.PageBlock) list.get(i10);
-                a81Var = PhotoViewer.t1().F2;
+                b81Var = PhotoViewer.t1().F2;
                 textureView = PhotoViewer.t1().B2;
                 SurfaceView surfaceView = PhotoViewer.t1().C2;
                 l4 l4Var = this.c;
@@ -107,10 +107,10 @@ public final class h3 extends bu0 {
                     }
                     i11++;
                 }
-                if (z2Var != null && a81Var != null && textureView != null) {
+                if (z2Var != null && b81Var != null && textureView != null) {
                     long j10 = z2Var.L.video_id;
                     a3 a3Var3 = new a3();
-                    a3Var3.a = a81Var.n();
+                    a3Var3.a = b81Var.n();
                     if (textureView.getSurfaceTexture() != null) {
                         if (Build.VERSION.SDK_INT >= 24) {
                             Surface surface = new Surface(textureView.getSurfaceTexture());
@@ -131,10 +131,10 @@ public final class h3 extends bu0 {
                         z2Var.e.setImageBitmap(bitmap2);
                     }
                 }
-                if (z2Var != null && a81Var != null && surfaceView != null) {
+                if (z2Var != null && b81Var != null && surfaceView != null) {
                     long j11 = z2Var.L.video_id;
                     a3 a3Var4 = new a3();
-                    a3Var4.a = a81Var.n();
+                    a3Var4.a = b81Var.n();
                     if (Build.VERSION.SDK_INT >= 24) {
                         Bitmap createBitmap2 = Bitmap.createBitmap(surfaceView.getMeasuredWidth(), surfaceView.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
                         AndroidUtilities.getBitmapFromSurface(surfaceView, createBitmap2);
@@ -153,7 +153,7 @@ public final class h3 extends bu0 {
             }
         }
         pageBlock = null;
-        a81Var = PhotoViewer.t1().F2;
+        b81Var = PhotoViewer.t1().F2;
         textureView = PhotoViewer.t1().B2;
         SurfaceView surfaceView2 = PhotoViewer.t1().C2;
         l4 l4Var2 = this.c;
@@ -170,7 +170,7 @@ public final class h3 extends bu0 {
         if (z2Var != null) {
             long j102 = z2Var.L.video_id;
             a3 a3Var32 = new a3();
-            a3Var32.a = a81Var.n();
+            a3Var32.a = b81Var.n();
             if (textureView.getSurfaceTexture() != null) {
             }
             z2Var.c(a3Var32);
@@ -185,7 +185,7 @@ public final class h3 extends bu0 {
         if (z2Var != null) {
             long j112 = z2Var.L.video_id;
             a3 a3Var42 = new a3();
-            a3Var42.a = a81Var.n();
+            a3Var42.a = b81Var.n();
             if (Build.VERSION.SDK_INT >= 24) {
             }
             z2Var.c(a3Var42);

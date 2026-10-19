@@ -2,7 +2,7 @@ package ei;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w4 implements Runnable {
     public final /* synthetic */ int a;
@@ -24,14 +24,14 @@ public final /* synthetic */ class w4 implements Runnable {
                 }
                 break;
             case 1:
-                new sg.y0((org.telegram.ui.ActionBar.n2) new ai.z4(this.b, 4), 14, true).show();
+                new sg.y0((org.telegram.ui.ActionBar.n2) new ai.a5(this.b, 4), 14, true).show();
                 break;
             case 2:
                 this.b.y0(false);
                 break;
             default:
                 f6 f6Var = this.b;
-                boolean z10 = qg.u0.e(f6Var.F1).k;
+                boolean z10 = qg.v0.e(f6Var.F1).k;
                 int i10 = 0;
                 while (true) {
                     List list = qg.l.b;

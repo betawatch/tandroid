@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class oc extends mb {
     public Runnable a;
@@ -21,15 +21,15 @@ public final class oc extends mb {
     public oc(Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, boolean z11) {
         super(context);
         int i10 = org.telegram.ui.ActionBar.h6.Gi;
-        int u10 = d6Var != null ? d6Var.u(i10) : org.telegram.ui.ActionBar.h6.x0(null, i10, false);
+        int w9 = d6Var != null ? d6Var.w(i10) : org.telegram.ui.ActionBar.h6.x0(null, i10, false);
         if (z10) {
             TextView textView = new TextView(context);
             this.d = textView;
-            textView.setBackground(org.telegram.ui.ActionBar.h6.g0((u10 & 16777215) | 419430400, 7, -1));
+            textView.setBackground(org.telegram.ui.ActionBar.h6.g0((w9 & 16777215) | 419430400, 7, -1));
             textView.setTextSize(1, 14.0f);
             textView.setTypeface(AndroidUtilities.bold());
-            textView.setTextColor(u10);
-            org.telegram.messenger.lk.m(R.string.UndoNoCaps, textView, 16);
+            textView.setTextColor(w9);
+            org.telegram.messenger.kk.m(R.string.UndoNoCaps, textView, 16);
             float f7 = z11 ? 34.0f : 12.0f;
             boolean z12 = LocaleController.isRTL;
             w7.f6.a(textView, z12 ? 12.0f : f7, 8.0f, z12 ? f7 : 12.0f, 8.0f);
@@ -38,9 +38,9 @@ public final class oc extends mb {
         if (z11) {
             ImageView imageView = new ImageView(getContext());
             imageView.setImageResource(R.drawable.chats_undo);
-            imageView.setColorFilter(new PorterDuffColorFilter(u10, PorterDuff.Mode.MULTIPLY));
+            imageView.setColorFilter(new PorterDuffColorFilter(w9, PorterDuff.Mode.MULTIPLY));
             if (!z10) {
-                imageView.setBackground(org.telegram.ui.ActionBar.h6.g0((u10 & 16777215) | 419430400, 1, -1));
+                imageView.setBackground(org.telegram.ui.ActionBar.h6.g0((w9 & 16777215) | 419430400, 1, -1));
             }
             w7.f6.a(imageView, 0.0f, 12.0f, 0.0f, 12.0f);
             addView(imageView, w7.z5.h(56.0f, 48.0f, 16));

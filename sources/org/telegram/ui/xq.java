@@ -1,59 +1,47 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class xq implements cr {
-    public final /* synthetic */ jr a;
+public final /* synthetic */ class xq implements q0.a {
+    public final /* synthetic */ int a;
 
-    public xq(jr jrVar) {
-        this.a = jrVar;
+    public /* synthetic */ xq(int i10) {
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.cr
-    public final void c(long j10, TLObject tLObject) {
-        jr jrVar = this.a;
-        if (jrVar.K.f(j10) == null) {
-            dr w02 = jrVar.w0();
-            jrVar.F.add(tLObject);
-            jrVar.K.k(tLObject, j10);
-            jrVar.z0(jrVar.F);
-            jrVar.A0(w02);
+    @Override // q0.a
+    public final void accept(Object obj) {
+        switch (this.a) {
+            case 0:
+                break;
+            case 1:
+                View view = (View) obj;
+                boolean z10 = ChatAttachAlertPhotoLayout.q1;
+                if (view instanceof org.telegram.ui.Cells.s5) {
+                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
+                    s5Var.c(s5Var.getPhotoEntry() != null && s5Var.getPhotoEntry().hasSpoiler, Float.valueOf(250.0f));
+                    s5Var.setHighQuality(s5Var.getPhotoEntry() != null && s5Var.getPhotoEntry().isHighQuality());
+                    s5Var.f(s5Var.getPhotoEntry() != null ? s5Var.getPhotoEntry().starsAmount : 0L, ChatAttachAlertPhotoLayout.s1.size() > 1);
+                    break;
+                }
+                break;
+            case 2:
+                View view2 = (View) obj;
+                if (view2 instanceof org.telegram.ui.Components.eo0) {
+                    ((org.telegram.ui.Components.eo0) view2).a(false, true);
+                    break;
+                }
+                break;
+            default:
+                View view3 = (View) obj;
+                if (view3 instanceof org.telegram.ui.Components.eo0) {
+                    ((org.telegram.ui.Components.eo0) view3).a(false, true);
+                    break;
+                }
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.cr
-    public final void d(long j10) {
-        jr jrVar = this.a;
-        if (jrVar.K.f(j10) == null) {
-            dr w02 = jrVar.w0();
-            TLRPC.TL_channelParticipantBanned tL_channelParticipantBanned = new TLRPC.TL_channelParticipantBanned();
-            if (j10 > 0) {
-                TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
-                tL_channelParticipantBanned.peer = tL_peerUser;
-                tL_peerUser.user_id = j10;
-            } else {
-                TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
-                tL_channelParticipantBanned.peer = tL_peerChannel;
-                tL_peerChannel.channel_id = -j10;
-            }
-            tL_channelParticipantBanned.date = jrVar.getConnectionsManager().getCurrentTime();
-            tL_channelParticipantBanned.kicked_by = jrVar.getAccountInstance().getUserConfig().clientUserId;
-            jrVar.s.kicked_count++;
-            jrVar.F.add(tL_channelParticipantBanned);
-            jrVar.K.k(tL_channelParticipantBanned, j10);
-            jrVar.z0(jrVar.F);
-            jrVar.A0(w02);
-        }
-    }
-
-    @Override // org.telegram.ui.cr
-    public final /* synthetic */ void a(TLRPC.User user) {
-    }
-
-    @Override // org.telegram.ui.cr
-    public final /* synthetic */ void b(long j10) {
     }
 }

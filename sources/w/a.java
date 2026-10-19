@@ -40,10 +40,10 @@ import com.google.android.gms.fido.common.Transport;
 import j$.util.Objects;
 import java.util.ArrayList;
 import kotlin.jvm.internal.i;
-import n7.t0;
+import n7.s0;
 import w7.e0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class a implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -280,7 +280,7 @@ public final class a implements Parcelable.Creator {
                     }
                 }
                 e0.m(inParcel, z20);
-                return new p0(bArr2 == null ? null : t0.s(bArr2.length, bArr2), bArr3 == null ? null : t0.s(bArr3.length, bArr3), bArr4 != null ? t0.s(bArr4.length, bArr4) : null, i11);
+                return new p0(bArr2 == null ? null : s0.s(bArr2.length, bArr2), bArr3 == null ? null : s0.s(bArr3.length, bArr3), bArr4 != null ? s0.s(bArr4.length, bArr4) : null, i11);
             case 23:
                 int z21 = e0.z(inParcel);
                 while (inParcel.dataPosition() < z21) {

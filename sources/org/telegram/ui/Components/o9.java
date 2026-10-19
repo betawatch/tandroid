@@ -24,15 +24,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.te1;
+import org.telegram.ui.re1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class o9 {
-    public static void a(org.telegram.ui.sn snVar, int i10, TLRPC.Chat chat, TLRPC.User user, TLRPC.TL_forumTopic tL_forumTopic, long j10, int i11, int i12) {
+    public static void a(org.telegram.ui.qn qnVar, int i10, TLRPC.Chat chat, TLRPC.User user, TLRPC.TL_forumTopic tL_forumTopic, long j10, int i11, int i12) {
         org.telegram.ui.ActionBar.d5 parentLayout;
         TLRPC.TL_forumTopic tL_forumTopic2;
-        if ((chat == null && user == null) || (parentLayout = snVar.getParentLayout()) == null) {
+        if ((chat == null && user == null) || (parentLayout = qnVar.getParentLayout()) == null) {
             return;
         }
         if (parentLayout.getPulledDialogs() == null) {
@@ -47,7 +47,7 @@ public abstract class o9 {
             }
         }
         n9 n9Var2 = new n9();
-        n9Var2.a = org.telegram.ui.sn.class;
+        n9Var2.a = org.telegram.ui.qn.class;
         n9Var2.b = i10;
         n9Var2.f = j10;
         n9Var2.h = i12;
@@ -122,16 +122,16 @@ public abstract class o9 {
                     int i16 = 0;
                     while (i16 < size) {
                         org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) fragmentStack.get(i16);
-                        if (n2Var2 instanceof org.telegram.ui.sn) {
-                            org.telegram.ui.sn snVar = (org.telegram.ui.sn) n2Var2;
-                            if (snVar.R3 == 0 && !snVar.F9()) {
-                                chat = snVar.e;
-                                user = snVar.i();
-                                j13 = snVar.a();
+                        if (n2Var2 instanceof org.telegram.ui.qn) {
+                            org.telegram.ui.qn qnVar = (org.telegram.ui.qn) n2Var2;
+                            if (qnVar.R3 == 0 && !qnVar.F9()) {
+                                chat = qnVar.e;
+                                user = qnVar.i();
+                                j13 = qnVar.a();
                                 z11 = z15;
-                                i12 = snVar.ua;
-                                i11 = snVar.va;
-                                cls = org.telegram.ui.sn.class;
+                                i12 = qnVar.ua;
+                                i11 = qnVar.va;
+                                cls = org.telegram.ui.qn.class;
                                 if (j13 != j10 || (j10 == 0 && UserObject.isUserSelf(user))) {
                                     list = fragmentStack;
                                     i13 = size;
@@ -286,7 +286,7 @@ public abstract class o9 {
                                 if (userProfilePhoto == null || (drawable = userProfilePhoto.strippedBitmap) == null) {
                                     drawable = h9Var;
                                 }
-                                if (n9Var4.a == org.telegram.ui.sn.class && UserObject.isUserSelf(user2)) {
+                                if (n9Var4.a == org.telegram.ui.qn.class && UserObject.isUserSelf(user2)) {
                                     str = LocaleController.getString(R.string.SavedMessages);
                                     h9Var.g(1);
                                     w9Var.setImageDrawable(h9Var);
@@ -427,21 +427,21 @@ public abstract class o9 {
                     i15 = -1;
                 }
                 d5Var = parentLayout;
-                if (parentLayout3.getFragmentStack().size() <= 1 || !(parentLayout3.getFragmentStack().get(parentLayout3.getFragmentStack().size() - 2) instanceof te1)) {
+                if (parentLayout3.getFragmentStack().size() <= 1 || !(parentLayout3.getFragmentStack().get(parentLayout3.getFragmentStack().size() - 2) instanceof re1)) {
                     n9 n9Var6 = new n9();
                     arrayList.add(n9Var6);
                     n9Var6.b = -1;
-                    n9Var6.a = te1.class;
+                    n9Var6.a = re1.class;
                     n9Var6.c = MessagesController.getInstance(n2Var.getCurrentAccount()).getChat(Long.valueOf(-j10));
                 } else {
                     n9 n9Var7 = new n9();
                     arrayList.add(n9Var7);
                     n9Var7.b = i15 + 1;
-                    n9Var7.a = org.telegram.ui.ey.class;
+                    n9Var7.a = org.telegram.ui.cy.class;
                     n9 n9Var8 = new n9();
                     arrayList.add(n9Var8);
                     n9Var8.b = -1;
-                    n9Var8.a = te1.class;
+                    n9Var8.a = re1.class;
                     n9Var8.c = MessagesController.getInstance(n2Var.getCurrentAccount()).getChat(Long.valueOf(-j10));
                 }
                 Collections.sort(arrayList, new org.telegram.ui.ActionBar.i4(14));

@@ -38,7 +38,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class kh0 extends org.telegram.ui.ActionBar.f3 {
     public static final org.telegram.ui.Cells.s8 O = new org.telegram.ui.Cells.s8("placeholderAlpha", 9);
@@ -165,7 +165,7 @@ public final class kh0 extends org.telegram.ui.ActionBar.f3 {
         this.c = gh0Var;
         eh0Var.setAdapter(gh0Var);
         eh0Var.setGlowColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.A5, false));
-        eh0Var.setOnItemClickListener(new ci.x4(13, this, context));
+        eh0Var.setOnItemClickListener(new ci.y4(13, this, context));
         eh0Var.setOnScrollListener(new kv(this, 5));
         z5 z5Var = new z5(context);
         this.y = z5Var;
@@ -206,7 +206,7 @@ public final class kh0 extends org.telegram.ui.ActionBar.f3 {
             z7Var.setSubtitle(LocaleController.formatPluralString("Vote", tL_messageMediaPoll.results.total_voters, new Object[0]));
         }
         this.containerView.addView(z7Var, w7.z5.c(-2.0f, -1));
-        z7Var.setActionBarMenuOnItemClick(new org.telegram.ui.ga(this, 14));
+        z7Var.setActionBarMenuOnItemClick(new org.telegram.ui.ea(this, 14));
         View view = new View(context);
         this.e = view;
         view.setAlpha(0.0f);
@@ -338,7 +338,7 @@ public final class kh0 extends org.telegram.ui.ActionBar.f3 {
                     tL_messages_getPollVotes.option = jh0Var.d;
                     tL_messages_getPollVotes.flags = i12 | 3;
                     tL_messages_getPollVotes.offset = jh0Var.c;
-                    ConnectionsManager.getInstance(kh0Var.currentAccount).sendRequest(tL_messages_getPollVotes, new org.telegram.ui.xc(19, kh0Var, jh0Var));
+                    ConnectionsManager.getInstance(kh0Var.currentAccount).sendRequest(tL_messages_getPollVotes, new org.telegram.ui.vc(19, kh0Var, jh0Var));
                     return;
                 }
                 if (view instanceof PollVotesAlert$UserCell) {
@@ -359,15 +359,15 @@ public final class kh0 extends org.telegram.ui.ActionBar.f3 {
                         return;
                     }
                     ProfileActivity profileActivity = new ProfileActivity(bundle, null);
-                    if (U instanceof org.telegram.ui.sn) {
+                    if (U instanceof org.telegram.ui.qn) {
                         if (pollVotesAlert$UserCell.h != null) {
-                            TLRPC.User i13 = ((org.telegram.ui.sn) U).i();
+                            TLRPC.User i13 = ((org.telegram.ui.qn) U).i();
                             if (i13 != null && i13.id == pollVotesAlert$UserCell.h.id) {
                                 i11 = 1;
                             }
                             profileActivity.N4(i11);
                         } else {
-                            TLRPC.Chat chat = ((org.telegram.ui.sn) U).e;
+                            TLRPC.Chat chat = ((org.telegram.ui.qn) U).e;
                             if (chat != null && chat.id == pollVotesAlert$UserCell.n.id) {
                                 i11 = 1;
                             }
@@ -415,7 +415,7 @@ public final class kh0 extends org.telegram.ui.ActionBar.f3 {
             kh0Var.h.start();
         }
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) eh0Var.getLayoutParams();
-        int D = org.telegram.messenger.lk.D(11.0f, layoutParams.topMargin, top);
+        int D = org.telegram.messenger.kk.D(11.0f, layoutParams.topMargin, top);
         if (kh0Var.E != D) {
             kh0Var.E = D;
             eh0Var.setTopGlowOffset(D - layoutParams.topMargin);

@@ -1,86 +1,129 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.Timer;
 import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n70 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ o70 b;
-    public final /* synthetic */ String c;
+public final class n70 extends org.telegram.ui.Components.hm0 {
+    public final Context c;
+    public ArrayList d = new ArrayList();
+    public ArrayList e = new ArrayList();
+    public Timer f;
+    public boolean h;
+    public final /* synthetic */ r70 n;
 
-    public /* synthetic */ n70(o70 o70Var, String str, int i10) {
-        this.a = i10;
-        this.b = o70Var;
-        this.c = str;
+    public n70(r70 r70Var, Context context) {
+        this.n = r70Var;
+        this.c = context;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                Utilities.searchQueue.postRunnable(new n70(this.b, this.c, 1));
-                break;
-            default:
-                o70 o70Var = this.b;
-                String str = this.c;
-                p70 p70Var = o70Var.b;
-                String lowerCase = str.trim().toLowerCase();
-                if (!lowerCase.isEmpty()) {
-                    String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
-                    if (lowerCase.equals(translitString) || translitString.isEmpty()) {
-                        translitString = null;
-                    }
-                    int i10 = 0;
-                    int i11 = (translitString != null ? 1 : 0) + 1;
-                    String[] strArr = new String[i11];
-                    strArr[0] = lowerCase;
-                    if (translitString != null) {
-                        strArr[1] = translitString;
-                    }
-                    ArrayList arrayList = new ArrayList();
-                    ArrayList arrayList2 = new ArrayList();
-                    int i12 = 0;
-                    while (i12 < p70Var.n.w.size()) {
-                        ContactsController.Contact contact = (ContactsController.Contact) p70Var.n.w.get(i12);
-                        String lowerCase2 = ContactsController.formatName(contact.first_name, contact.last_name).toLowerCase();
-                        String translitString2 = LocaleController.getInstance().getTranslitString(lowerCase2);
-                        if (lowerCase2.equals(translitString2)) {
-                            translitString2 = null;
-                        }
-                        int i13 = i10;
-                        int i14 = i13;
-                        while (true) {
-                            if (i13 < i11) {
-                                String str2 = strArr[i13];
-                                if (lowerCase2.startsWith(str2) || org.telegram.messenger.g0.w(" ", str2, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str2) || org.telegram.messenger.g0.w(" ", str2, translitString2)))) {
-                                    i14 = 1;
-                                }
-                                if (i14 != 0) {
-                                    arrayList2.add(AndroidUtilities.generateSearchName(contact.first_name, contact.last_name, str2));
-                                    arrayList.add(contact);
-                                } else {
-                                    i13++;
-                                }
-                            }
-                        }
-                        i12++;
-                        i10 = 0;
-                    }
-                    AndroidUtilities.runOnUIThread(new lq(p70Var, arrayList, arrayList2, 12));
-                    break;
-                } else {
-                    ArrayList arrayList3 = new ArrayList();
-                    ArrayList arrayList4 = new ArrayList();
-                    p70Var.getClass();
-                    AndroidUtilities.runOnUIThread(new lq(p70Var, arrayList3, arrayList4, 12));
-                    break;
-                }
-                break;
+    @Override // s4.g0
+    public final void A(s4.b1 b1Var) {
+        View view = b1Var.a;
+        if (view instanceof org.telegram.ui.Cells.o4) {
+            ((org.telegram.ui.Cells.o4) view).a.getImageReceiver().cancelLoadImage();
         }
+    }
+
+    @Override // org.telegram.ui.Components.hm0
+    public final boolean D(s4.b1 b1Var) {
+        return b1Var.f != 2;
+    }
+
+    public final void E(String str) {
+        try {
+            Timer timer = this.f;
+            if (timer != null) {
+                timer.cancel();
+            }
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+        if (str == null) {
+            this.d.clear();
+            this.e.clear();
+            l();
+        } else {
+            Timer timer2 = new Timer();
+            this.f = timer2;
+            timer2.schedule(new m70(this, str), 200L, 300L);
+        }
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        return this.h ? this.d.size() : this.n.w.size() + 2;
+    }
+
+    @Override // s4.g0
+    public final int j(int i10) {
+        if (this.h) {
+            return 0;
+        }
+        if (i10 == 0) {
+            return 1;
+        }
+        return i10 == 1 ? 2 : 0;
+    }
+
+    @Override // s4.g0
+    public final void l() {
+        super.l();
+        r70 r70Var = this.n;
+        n70 n70Var = r70Var.s;
+        if (n70Var == null || r70Var.E) {
+            return;
+        }
+        r70Var.r.setVisibility(n70Var.h() == 2 ? 0 : 4);
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        ContactsController.Contact contact;
+        CharSequence charSequence;
+        if (b1Var.f == 0) {
+            org.telegram.ui.Cells.o4 o4Var = (org.telegram.ui.Cells.o4) b1Var.a;
+            boolean z10 = this.h;
+            r70 r70Var = this.n;
+            if (z10) {
+                contact = (ContactsController.Contact) this.d.get(i10);
+                charSequence = (CharSequence) this.e.get(i10);
+            } else {
+                contact = (ContactsController.Contact) r70Var.w.get(i10 - 2);
+                charSequence = null;
+            }
+            o4Var.f = contact;
+            o4Var.h = charSequence;
+            o4Var.a();
+            boolean containsKey = r70Var.F.containsKey(contact.key);
+            org.telegram.ui.Components.xp xpVar = o4Var.e;
+            if (xpVar != null) {
+                xpVar.a(containsKey, false);
+            }
+        }
+    }
+
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        View view;
+        Context context = this.c;
+        if (i10 == 1) {
+            org.telegram.ui.Cells.q8 q8Var = new org.telegram.ui.Cells.q8(context);
+            int i11 = org.telegram.ui.ActionBar.h6.G6;
+            q8Var.e(i11, i11);
+            q8Var.s(LocaleController.getString(R.string.ShareTelegram2), "", false, R.drawable.msg_shareout, false);
+            view = q8Var;
+        } else {
+            view = i10 == 2 ? new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c1) null) : new org.telegram.ui.Cells.o4(context, true);
+        }
+        return new org.telegram.ui.Components.sl0(view);
     }
 }

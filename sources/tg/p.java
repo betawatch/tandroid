@@ -18,9 +18,9 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.qy;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.mj0;
+import org.telegram.ui.df0;
 import sg.m1;
 import ug.a0;
 import ug.b0;
@@ -33,7 +33,7 @@ import yh.l1;
 import yh.o1;
 import yh.p2;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -369,7 +369,7 @@ public final /* synthetic */ class p implements Runnable {
             case 8:
                 ((f3) this.b).dismiss();
                 NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didStartedMultiGiftsSelector, new Object[0]);
-                AndroidUtilities.runOnUIThread(new mj0(21), 220L);
+                AndroidUtilities.runOnUIThread(new df0(22), 220L);
                 return;
             case 9:
                 ((uh.f) this.b).d0.N(true);
@@ -393,9 +393,9 @@ public final /* synthetic */ class p implements Runnable {
                 ((c0) this.b).onBackPressed();
                 return;
             case 15:
-                s61 s61Var = ((o1) this.b).Y;
-                if (s61Var != null) {
-                    s61Var.N(false);
+                t61 t61Var = ((o1) this.b).Y;
+                if (t61Var != null) {
+                    t61Var.N(false);
                     return;
                 }
                 return;

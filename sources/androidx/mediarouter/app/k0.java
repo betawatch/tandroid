@@ -12,11 +12,10 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import ki.t1;
 import org.telegram.messenger.beta.R;
 import v7.q7;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class k0 extends f0 {
     public final ImageView A;
@@ -66,7 +65,7 @@ public final class k0 extends f0 {
         if (vVar.g()) {
             return true;
         }
-        t1 b10 = this.I.w.r.b(vVar);
+        l2.f b10 = this.I.w.r.b(vVar);
         if (b10 == null) {
             return false;
         }

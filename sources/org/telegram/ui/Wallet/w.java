@@ -6,7 +6,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class w implements Utilities.Callback2 {
                 if (proofchallenge != null) {
                     int currentTime = ConnectionsManager.getInstance(m0Var.a).getCurrentTime();
                     StringBuilder sb2 = new StringBuilder("received proof challenge, expires at ");
-                    i2.d.w(sb2, proofchallenge.expires, ", now = ", currentTime, ", expires in ");
+                    i2.e.w(sb2, proofchallenge.expires, ", now = ", currentTime, ", expires in ");
                     sb2.append(proofchallenge.expires - currentTime);
                     sb2.append("s");
                     m0.F(sb2.toString());
@@ -65,15 +65,15 @@ public final /* synthetic */ class w implements Utilities.Callback2 {
                             break;
                         }
                     }
-                    ai.o3 o3Var = new ai.o3(f2Var, b2Var, xVar, z11, b10);
+                    ai.r3 r3Var = new ai.r3(f2Var, b2Var, xVar, z11, b10);
                     if (!tonconnectsession.closed) {
                         TL_wallet.tonConnectRegisterKey tonconnectregisterkey = new TL_wallet.tonConnectRegisterKey();
                         tonconnectregisterkey.session_id = tonconnectsession.id;
                         tonconnectregisterkey.client_id = tonconnectsession.client_id;
-                        f2Var.f.sendRequestTyped(tonconnectregisterkey, new org.telegram.messenger.a(), new q(xVar, b10, b2Var, o3Var, 6));
+                        f2Var.f.sendRequestTyped(tonconnectregisterkey, new org.telegram.messenger.a(), new q(xVar, b10, b2Var, r3Var, 6));
                         break;
                     } else {
-                        o3Var.run(null);
+                        r3Var.run(null);
                         break;
                     }
                 } else {

@@ -1,280 +1,209 @@
 package ai;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.TextUtils;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.CornerPathEffect;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.co0;
-import org.telegram.ui.Components.do0;
-import org.telegram.ui.Components.eo0;
-import org.telegram.ui.Components.fo0;
-import org.telegram.ui.Components.hm0;
-import org.telegram.ui.Components.sl0;
-import org.telegram.ui.WallpapersListActivity;
-import org.telegram.ui.qh0;
-import org.telegram.ui.rh0;
-import org.telegram.ui.th1;
-import org.telegram.ui.xh1;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.r90;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class l5 extends hm0 {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+public final class l5 extends View {
+    public final TextPaint a;
+    public final r90 b;
+    public final Paint c;
+    public final Paint d;
+    public StaticLayout e;
+    public boolean f;
+    public int h;
+    public int n;
+    public BitmapShader r;
+    public Matrix s;
+    public Matrix v;
+    public CharSequence w;
 
-    public /* synthetic */ l5(Object obj, int i10) {
-        this.c = i10;
-        this.d = obj;
+    public l5(Context context) {
+        super(context);
+        this.h = AndroidUtilities.dp(6.0f);
+        this.n = AndroidUtilities.dp(2.0f);
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        textPaint.setColor(-1);
+        textPaint.setTextSize(AndroidUtilities.dp(13.0f));
+        Paint paint = new Paint(1);
+        this.c = paint;
+        paint.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(9.66f)));
+        Paint paint2 = new Paint(1);
+        this.d = paint2;
+        paint2.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(9.66f)));
+        this.b = new r90(0);
     }
 
-    @Override // org.telegram.ui.Components.hm0
-    public final boolean D(s4.b1 b1Var) {
-        switch (this.c) {
-            case 0:
-                return false;
-            case 1:
-                return true;
-            case 2:
-                return false;
-            case 3:
-                return true;
-            case 4:
-                return true;
-            case 5:
-                return true;
-            default:
-                return false;
-        }
-    }
-
-    public void F(int i10, int i11) {
-        int[] iArr = ((k7) this.d).S0;
-        if (iArr[0] == i10 && iArr[1] == i11) {
+    public final void a(int i10, CharSequence charSequence) {
+        if (i10 <= 0) {
+            this.w = charSequence;
             return;
         }
-        iArr[0] = i10;
-        iArr[1] = i11;
-        l();
+        this.e = new StaticLayout(charSequence, this.a, i10 - AndroidUtilities.dp(18.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+        r90 r90Var = this.b;
+        r90Var.rewind();
+        int i11 = this.h;
+        int i12 = this.n;
+        r90Var.e = i11;
+        r90Var.f = i12;
+        if (this.f) {
+            r90Var.e(null, 0, 0.0f, 0.0f);
+            float f7 = Float.MAX_VALUE;
+            float width = this.e.getWidth();
+            float f10 = Float.MIN_VALUE;
+            float f11 = 0.0f;
+            for (int i13 = 0; i13 < this.e.getLineCount(); i13++) {
+                width = Math.min(width, this.e.getLineLeft(i13));
+                f10 = Math.min(f10, this.e.getLineTop(i13));
+                f11 = Math.max(f11, this.e.getLineRight(i13));
+                f7 = Math.max(f7, this.e.getLineBottom(i13));
+            }
+            this.b.addRect(width, f10, f11, this.e.getHeight(), Path.Direction.CW);
+        } else {
+            r90Var.e(this.e, 0, 0.0f, 0.0f);
+            StaticLayout staticLayout = this.e;
+            staticLayout.getSelectionPath(0, staticLayout.getText().length(), r90Var);
+            r90Var.a();
+        }
+        invalidate();
     }
 
-    @Override // s4.g0
-    public final int h() {
-        int i10 = this.c;
-        Object obj = this.d;
-        switch (i10) {
-            case 0:
-                return ((k7) obj).S0.length;
-            case 1:
-                return ((hg.q0) obj).V2.size();
-            case 2:
-                return 1;
-            case 3:
-                return ((fo0) obj).r.size();
-            case 4:
-                return ((rh0) obj).c.size();
-            case 5:
-                int[][] iArr = WallpapersListActivity.k0;
-                return 12;
-            default:
-                return ((sg.j) obj).d.size();
+    public final void b(int i10, TL_stars.SavedStarGift savedStarGift) {
+        if (savedStarGift == null || savedStarGift.from_id == null || !(savedStarGift.gift instanceof TL_stars.TL_starGiftUnique)) {
+            setVisibility(8);
+            return;
+        }
+        setVisibility(0);
+        long clientUserId = UserConfig.getInstance(i10).getClientUserId();
+        long peerDialogId = DialogObject.getPeerDialogId(savedStarGift.from_id);
+        long peerDialogId2 = DialogObject.getPeerDialogId(savedStarGift.gift.owner_id);
+        if (clientUserId == peerDialogId) {
+            set(AndroidUtilities.replaceTags(LocaleController.formatString(savedStarGift.gift.crafted ? R.string.GiftSelfTopActionCrafted : R.string.GiftSelfTopAction, LocaleController.formatDate(savedStarGift.date))));
+        } else if (clientUserId == peerDialogId2) {
+            set(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftTopAction, DialogObject.getShortName(i10, peerDialogId), LocaleController.formatDate(savedStarGift.date))));
+        } else {
+            set(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftTopActionFromTo, DialogObject.getShortName(i10, peerDialogId), DialogObject.getShortName(i10, peerDialogId2), LocaleController.formatDate(savedStarGift.date))));
         }
     }
 
-    @Override // s4.g0
-    public int j(int i10) {
-        switch (this.c) {
-            case 2:
-                return i10;
-            case 6:
-                return ((sg.h) ((sg.j) this.d).d.get(i10)).a;
-            default:
-                return super.j(i10);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.e != null) {
+            canvas.save();
+            canvas.translate((getWidth() - this.e.getWidth()) / 2.0f, AndroidUtilities.dp(16.0f));
+            Matrix matrix = this.s;
+            if (matrix != null) {
+                matrix.reset();
+                this.v.reset();
+                View view = this;
+                while (view != null) {
+                    this.v.postConcat(view.getMatrix());
+                    view = view.getParent() instanceof View ? (View) view.getParent() : null;
+                }
+                this.v.invert(this.s);
+                this.s.preTranslate((-this.h) / 2, -AndroidUtilities.dp(16.0f));
+                this.s.preScale(12.0f, 12.0f);
+                this.r.setLocalMatrix(this.s);
+            }
+            Paint paint = this.c;
+            r90 r90Var = this.b;
+            canvas.drawPath(r90Var, paint);
+            int m12 = org.telegram.ui.ActionBar.h6.m1(0.35f, -16777216);
+            Paint paint2 = this.d;
+            paint2.setColor(m12);
+            canvas.drawPath(r90Var, paint2);
+            this.e.draw(canvas);
+            canvas.restore();
         }
     }
 
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        switch (this.c) {
-            case 0:
-                org.telegram.ui.Components.ta taVar = (org.telegram.ui.Components.ta) b1Var.a;
-                int i11 = ((k7) this.d).S0[(r0.length - 1) - i10];
-                if (taVar.a != i11) {
-                    taVar.a = i11;
-                    taVar.requestLayout();
-                    break;
-                }
-                break;
-            case 1:
-                ((hg.p0) b1Var).v.setData((hg.o0) ((hg.q0) this.d).V2.get(i10));
-                break;
-            case 2:
-                break;
-            case 3:
-                View view = b1Var.a;
-                fo0 fo0Var = (fo0) this.d;
-                ArrayList arrayList = fo0Var.r;
-                if (i10 >= 0 && i10 < arrayList.size()) {
-                    co0 co0Var = (co0) arrayList.get(i10);
-                    eo0 eo0Var = (eo0) view;
-                    ah.i1 i1Var = eo0Var.d;
-                    boolean z10 = i1Var == null || !i1Var.equals(co0Var.a);
-                    if (z10) {
-                        TLRPC.TL_reactionCount tL_reactionCount = new TLRPC.TL_reactionCount();
-                        tL_reactionCount.reaction = co0Var.a.g();
-                        tL_reactionCount.count = co0Var.b;
-                        fo0 fo0Var2 = eo0Var.s;
-                        do0 do0Var = new do0(eo0Var, fo0Var2.a, eo0Var, tL_reactionCount, fo0Var2.c);
-                        eo0Var.a = do0Var;
-                        do0Var.F.d(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(100.0f));
-                        do0 do0Var2 = eo0Var.a;
-                        do0Var2.q = true;
-                        do0Var2.S = true;
-                    } else {
-                        eo0Var.a.w = co0Var.b;
-                    }
-                    eo0Var.d = co0Var.a;
-                    if (!z10) {
-                        do0 do0Var3 = eo0Var.a;
-                        do0Var3.f = do0Var3.A;
-                    }
-                    eo0Var.a.A = AndroidUtilities.dp(44.33f);
-                    eo0Var.a.u = !TextUtils.isEmpty(co0Var.c);
-                    do0 do0Var4 = eo0Var.a;
-                    boolean z11 = do0Var4.u;
-                    org.telegram.ui.Components.p6 p6Var = do0Var4.G;
-                    if (z11) {
-                        p6Var.t(Emoji.replaceEmoji(co0Var.c, p6Var.a.getFontMetricsInt(), false), !z10, true);
-                    } else if (p6Var != null) {
-                        p6Var.t("", !z10, true);
-                    }
-                    do0 do0Var5 = eo0Var.a;
-                    Integer.toString(co0Var.b);
-                    do0Var5.getClass();
-                    eo0Var.a.F.c(co0Var.b, !z10);
-                    do0 do0Var6 = eo0Var.a;
-                    if (do0Var6.F != null && (do0Var6.w > 0 || do0Var6.u)) {
-                        do0Var6.A = (int) (AndroidUtilities.dp(eo0Var.a.u ? 4.0f : 0.0f) + ((int) Math.ceil(r3.m)) + eo0Var.a.G.d + do0Var6.A);
-                    }
-                    if (z10) {
-                        do0 do0Var7 = eo0Var.a;
-                        do0Var7.f = do0Var7.A;
-                    }
-                    eo0Var.a.B = AndroidUtilities.dp(28.0f);
-                    do0 do0Var8 = eo0Var.a;
-                    do0Var8.p = eo0Var.e;
-                    if (eo0Var.r) {
-                        do0Var8.a();
-                    }
-                    if (!z10) {
-                        eo0Var.requestLayout();
-                    }
-                    ((eo0) view).a(co0Var.a.h == fo0Var.h, false);
-                    break;
-                }
-                break;
-            case 4:
-                qh0 qh0Var = (qh0) b1Var.a;
-                rh0 rh0Var = (rh0) this.d;
-                qh0Var.a((TLObject) rh0Var.c.get(i10), false, ((Integer) rh0Var.b.get(i10)).intValue());
-                break;
-            case 5:
-                ((th1) b1Var.a).a = WallpapersListActivity.m0[i10];
-                break;
-            default:
-                sg.j jVar = (sg.j) this.d;
-                ArrayList arrayList2 = jVar.d;
-                if (((sg.h) arrayList2.get(i10)).a == 1) {
-                    sg.i iVar = (sg.i) b1Var.a;
-                    iVar.c.setColorFilter(new PorterDuffColorFilter(jVar.e.getPixel(i10, 0), PorterDuff.Mode.MULTIPLY));
-                    iVar.c.setImageDrawable(jVar.getContext().getDrawable(((sg.h) arrayList2.get(i10)).b));
-                    iVar.a.setText(((sg.h) arrayList2.get(i10)).c);
-                    iVar.b.setText(((sg.h) arrayList2.get(i10)).d);
-                    break;
-                }
-                break;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        CharSequence charSequence = this.w;
+        if (charSequence != null) {
+            a(size, charSequence);
         }
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
+        StaticLayout staticLayout = this.e;
+        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(staticLayout == null ? 0 : staticLayout.getHeight() + AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
+        setPivotX(getMeasuredWidth() / 2.0f);
+        setPivotY(getMeasuredHeight());
     }
 
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        switch (this.c) {
-            case 0:
-                org.telegram.ui.Components.ta taVar = new org.telegram.ui.Components.ta(((k7) this.d).getContext());
-                taVar.a = 0;
-                return new sl0(taVar);
-            case 1:
-                hg.n0 n0Var = new hg.n0(viewGroup.getContext(), ((hg.q0) this.d).n2);
-                hg.p0 p0Var = new hg.p0(n0Var);
-                p0Var.v = n0Var;
-                n0Var.setLayoutParams(new s4.o0(-2, AndroidUtilities.dp(30.0f)));
-                return p0Var;
-            case 2:
-                return new sl0(((org.telegram.ui.Components.ua) this.d).X);
-            case 3:
-                fo0 fo0Var = (fo0) this.d;
-                return new sl0(new eo0(fo0Var, fo0Var.getContext()));
-            case 4:
-                qh0 qh0Var = new qh0(viewGroup.getContext());
-                qh0Var.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(50.0f)));
-                return new sl0(qh0Var);
-            case 5:
-                xh1 xh1Var = (xh1) this.d;
-                return new sl0(new th1(xh1Var.E, xh1Var.c));
-            default:
-                sg.j jVar = (sg.j) this.d;
-                org.telegram.ui.ActionBar.d6 d6Var = jVar.a;
-                if (i10 == 0) {
-                    view = new sg.g(jVar, jVar.getContext());
-                } else if (i10 == 2) {
-                    view = new org.telegram.ui.Cells.s3(jVar.getContext(), 16);
-                } else {
-                    Context context = jVar.getContext();
-                    sg.i iVar = new sg.i(context);
-                    ImageView imageView = new ImageView(context);
-                    iVar.c = imageView;
-                    imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-                    iVar.addView(imageView, w7.z5.d(28, 28.0f, 0, 25.0f, 12.0f, 16.0f, 0.0f));
-                    TextView textView = new TextView(context);
-                    iVar.a = textView;
-                    textView.setTypeface(AndroidUtilities.bold());
-                    lk.o(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 14.0f);
-                    iVar.addView(textView, w7.z5.d(-1, -2.0f, 0, 68.0f, 8.0f, 16.0f, 0.0f));
-                    TextView textView2 = new TextView(context);
-                    iVar.b = textView2;
-                    lk.o(org.telegram.ui.ActionBar.h6.y6, d6Var, textView2, 1, 14.0f);
-                    iVar.addView(textView2, w7.z5.d(-1, -2.0f, 0, 68.0f, 28.0f, 16.0f, 8.0f));
-                    view = iVar;
-                }
-                return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
+    public void set(MessageObject messageObject) {
+        TLRPC.Message message;
+        if (messageObject == null || (message = messageObject.messageOwner) == null || message.action == null) {
+            setVisibility(8);
+            return;
         }
+        int i10 = messageObject.currentAccount;
+        long clientUserId = UserConfig.getInstance(i10).getClientUserId();
+        TLRPC.MessageAction messageAction = messageObject.messageOwner.action;
+        if (messageAction instanceof TLRPC.TL_messageActionStarGift) {
+            setVisibility(8);
+            return;
+        }
+        if (!(messageAction instanceof TLRPC.TL_messageActionStarGiftUnique)) {
+            setVisibility(8);
+            return;
+        }
+        TLRPC.TL_messageActionStarGiftUnique tL_messageActionStarGiftUnique = (TLRPC.TL_messageActionStarGiftUnique) messageAction;
+        TLRPC.Peer peer = tL_messageActionStarGiftUnique.from_id;
+        if (peer == null) {
+            setVisibility(8);
+            return;
+        }
+        long peerDialogId = DialogObject.getPeerDialogId(peer);
+        long peerDialogId2 = DialogObject.getPeerDialogId(tL_messageActionStarGiftUnique.peer);
+        if (clientUserId == peerDialogId) {
+            set(AndroidUtilities.replaceTags(LocaleController.formatString((tL_messageActionStarGiftUnique.craft || tL_messageActionStarGiftUnique.gift.crafted) ? R.string.GiftSelfTopActionCrafted : R.string.GiftSelfTopAction, LocaleController.formatDate(messageObject.messageOwner.date))));
+        } else if (clientUserId == peerDialogId2) {
+            set(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftTopAction, DialogObject.getShortName(i10, peerDialogId), LocaleController.formatDate(messageObject.messageOwner.date))));
+        } else {
+            set(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftTopActionFromTo, DialogObject.getShortName(i10, peerDialogId), DialogObject.getShortName(i10, peerDialogId2), LocaleController.formatDate(messageObject.messageOwner.date))));
+        }
+        setVisibility(0);
     }
 
-    @Override // s4.g0
-    public void y(s4.b1 b1Var) {
-        switch (this.c) {
-            case 3:
-                fo0 fo0Var = (fo0) this.d;
-                ArrayList arrayList = fo0Var.r;
-                int b10 = b1Var.b();
-                if (b10 >= 0 && b10 < arrayList.size()) {
-                    ((eo0) b1Var.a).a(((co0) arrayList.get(b10)).a.h == fo0Var.h, false);
-                    break;
-                }
-                break;
-        }
+    public void setFullRect(boolean z10) {
+        this.f = z10;
     }
 
-    private final void E(s4.b1 b1Var, int i10) {
+    public void setRoundRadius(float f7) {
+        this.c.setPathEffect(new CornerPathEffect(f7));
+        this.d.setPathEffect(new CornerPathEffect(f7));
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        invalidate();
+    }
+
+    public void set(CharSequence charSequence) {
+        a(getMeasuredWidth(), charSequence);
     }
 }

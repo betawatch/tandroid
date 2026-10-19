@@ -5,9 +5,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class cm implements xv0 {
+public final class cm implements yv0 {
     public File a;
     public boolean b;
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
@@ -28,19 +28,19 @@ public final class cm implements xv0 {
         if (chatAttachAlertPhotoLayout.s0 || (omVar = chatAttachAlertPhotoLayout.P) == null || omVar.getCameraSession() == null) {
             return;
         }
-        if (shutterButton.getState() == yv0.b) {
+        if (shutterButton.getState() == zv0.b) {
             chatAttachAlertPhotoLayout.l0();
             CameraController.getInstance().stopVideoRecording(chatAttachAlertPhotoLayout.P.getCameraSession(), false);
-            shutterButton.a(yv0.a);
+            shutterButton.a(zv0.a);
         } else {
             if (!chatAttachAlertPhotoLayout.x0) {
-                org.telegram.messenger.lk.q(R.string.GlobalAttachPhotoRestricted, new xc(chatAttachAlertPhotoLayout.P, this.c), null);
+                org.telegram.messenger.kk.q(R.string.GlobalAttachPhotoRestricted, new xc(chatAttachAlertPhotoLayout.P, this.c), null);
                 return;
             }
             org.telegram.ui.ActionBar.n2 n2Var = tiVar.f0;
-            File generatePicturePath = AndroidUtilities.generatePicturePath((n2Var instanceof org.telegram.ui.sn) && ((org.telegram.ui.sn) n2Var).x(), null);
+            File generatePicturePath = AndroidUtilities.generatePicturePath((n2Var instanceof org.telegram.ui.qn) && ((org.telegram.ui.qn) n2Var).x(), null);
             boolean isSameTakePictureOrientation = chatAttachAlertPhotoLayout.P.getCameraSession().isSameTakePictureOrientation();
-            chatAttachAlertPhotoLayout.P.getCameraSession().setFlipFront((tiVar.f0 instanceof org.telegram.ui.sn) || tiVar.T0 == 2);
+            chatAttachAlertPhotoLayout.P.getCameraSession().setFlipFront((tiVar.f0 instanceof org.telegram.ui.qn) || tiVar.T0 == 2);
             chatAttachAlertPhotoLayout.s0 = CameraController.getInstance().takePicture(generatePicturePath, false, chatAttachAlertPhotoLayout.P.getCameraSessionObject(), new ei.oc(this, generatePicturePath, isSameTakePictureOrientation));
             chatAttachAlertPhotoLayout.P.startTakePictureAnimation(true);
         }

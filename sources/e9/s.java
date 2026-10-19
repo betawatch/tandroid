@@ -17,7 +17,7 @@ import v7.b8;
 import v7.t6;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class s {
     public final /* synthetic */ int a = 2;
@@ -33,7 +33,7 @@ public abstract class s {
     public static void d(int i10, Object[] objArr) {
         for (int i11 = 0; i11 < i10; i11++) {
             if (objArr[i11] == null) {
-                throw new NullPointerException(i2.d.j(i11, "at index "));
+                throw new NullPointerException(i2.e.j(i11, "at index "));
             }
         }
     }
@@ -57,7 +57,7 @@ public abstract class s {
 
     public static Object g(int i10) {
         if (i10 < 2 || i10 > 1073741824 || Integer.highestOneBit(i10) != i10) {
-            throw new IllegalArgumentException(i2.d.j(i10, "must be power of 2 between 2^1 and 2^30: "));
+            throw new IllegalArgumentException(i2.e.j(i10, "must be power of 2 between 2^1 and 2^30: "));
         }
         return i10 <= 256 ? new byte[i10] : i10 <= 65536 ? new short[i10] : new int[i10];
     }

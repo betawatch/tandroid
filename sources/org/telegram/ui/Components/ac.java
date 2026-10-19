@@ -9,7 +9,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class ac implements bl0 {
     public final /* synthetic */ bc a;
@@ -19,23 +19,23 @@ public final class ac implements bl0 {
     }
 
     @Override // org.telegram.ui.Components.bl0
-    public final /* synthetic */ boolean j() {
+    public final /* synthetic */ boolean i() {
         return true;
     }
 
     @Override // org.telegram.ui.Components.bl0
-    public final /* synthetic */ boolean k() {
+    public final /* synthetic */ boolean m() {
         return false;
     }
 
     @Override // org.telegram.ui.Components.bl0
-    public final void l(View view, ah.i1 i1Var, boolean z10, boolean z11) {
+    public final void o(View view, ah.i1 i1Var, boolean z10, boolean z11) {
         bc bcVar = this.a;
         org.telegram.ui.ActionBar.n2 n2Var = bcVar.f;
         if (bcVar.e == null) {
             return;
         }
-        boolean z12 = (n2Var instanceof org.telegram.ui.sn) && ((org.telegram.ui.sn) n2Var).a() == UserConfig.getInstance(n2Var.getCurrentAccount()).getClientUserId();
+        boolean z12 = (n2Var instanceof org.telegram.ui.qn) && ((org.telegram.ui.qn) n2Var).a() == UserConfig.getInstance(n2Var.getCurrentAccount()).getClientUserId();
         int i10 = 0;
         for (int i11 = 0; i11 < bcVar.e.size(); i11++) {
             int keyAt = bcVar.e.keyAt(i11);
@@ -50,19 +50,19 @@ public final class ac implements bl0 {
         }
         bcVar.f();
         qc.e();
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.xi(this, i1Var, !z12, n2Var.getCurrentAccount(), i10), 300L);
+        AndroidUtilities.runOnUIThread(new org.telegram.messenger.wi(this, i1Var, !z12, n2Var.getCurrentAccount(), i10), 300L);
     }
 
     @Override // org.telegram.ui.Components.bl0
-    public final /* synthetic */ boolean s() {
+    public final /* synthetic */ boolean w() {
         return false;
     }
 
     @Override // org.telegram.ui.Components.bl0
-    public final /* synthetic */ void q() {
+    public final /* synthetic */ void v() {
     }
 
     @Override // org.telegram.ui.Components.bl0
-    public final /* synthetic */ void m(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+    public final /* synthetic */ void q(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

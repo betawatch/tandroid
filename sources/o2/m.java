@@ -5,13 +5,13 @@ import com.google.android.gms.internal.cast.z4;
 import e2.m0;
 import java.util.ArrayList;
 import java.util.Iterator;
-import u2.e1;
+import u2.d1;
 import v7.b8;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final class m implements e1 {
+public final class m implements d1 {
     public final int a;
     public final q b;
     public int c = -1;
@@ -21,12 +21,12 @@ public final class m implements e1 {
         this.a = i10;
     }
 
-    @Override // u2.e1
+    @Override // u2.d1
     public final void a() {
         int i10 = this.c;
         q qVar = this.b;
         if (i10 == -2) {
-            qVar.e();
+            qVar.f();
             throw new z4(a1.g.p("Unable to bind a sample queue to TrackGroup with MIME type ", qVar.Y.a(this.a).d[0].s, "."));
         }
         if (i10 == -1) {
@@ -40,7 +40,7 @@ public final class m implements e1 {
     public final void b() {
         u6.g(this.c == -1);
         q qVar = this.b;
-        qVar.e();
+        qVar.f();
         qVar.a0.getClass();
         int[] iArr = qVar.a0;
         int i10 = this.a;
@@ -65,8 +65,8 @@ public final class m implements e1 {
         return (i10 == -1 || i10 == -3 || i10 == -2) ? false : true;
     }
 
-    @Override // u2.e1
-    public final boolean e() {
+    @Override // u2.d1
+    public final boolean f() {
         if (this.c == -3) {
             return true;
         }
@@ -78,8 +78,8 @@ public final class m implements e1 {
         return !qVar.A() && qVar.L[i10].A(qVar.j0);
     }
 
-    @Override // u2.e1
-    public final int f(qf.b bVar, h2.h hVar, int i10) {
+    @Override // u2.d1
+    public final int g(qf.b bVar, h2.h hVar, int i10) {
         w wVar;
         if (this.c == -3) {
             hVar.addFlag(4);
@@ -138,8 +138,8 @@ public final class m implements e1 {
         return -3;
     }
 
-    @Override // u2.e1
-    public final int h(long j10) {
+    @Override // u2.d1
+    public final int m(long j10) {
         Object next;
         Object obj;
         if (!c()) {
@@ -155,7 +155,7 @@ public final class m implements e1 {
         ArrayList arrayList = qVar.y;
         if (arrayList != null) {
             if (!arrayList.isEmpty()) {
-                obj = i2.d.h(1, arrayList);
+                obj = i2.e.h(1, arrayList);
             }
             obj = null;
         } else {

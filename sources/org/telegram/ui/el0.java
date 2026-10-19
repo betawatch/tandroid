@@ -1,24 +1,72 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class el0 extends FrameLayout {
-    public final org.telegram.ui.Components.xj0 a;
+public final class el0 extends org.telegram.ui.Components.f61 {
+    public static final /* synthetic */ int a = 0;
 
-    public el0(Context context) {
-        super(context);
-        org.telegram.ui.Components.xj0 xj0Var = new org.telegram.ui.Components.xj0(context);
-        this.a = xj0Var;
-        xj0Var.setOnClickListener(new y50(this, 13));
-        int dp = AndroidUtilities.dp(120.0f);
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(dp, dp);
-        layoutParams.gravity = 1;
-        addView(xj0Var, layoutParams);
-        setPadding(0, AndroidUtilities.dp(32.0f), 0, 0);
-        setLayoutParams(new s4.o0(-1, -2));
+    static {
+        org.telegram.ui.Components.f61.setup(new el0());
+    }
+
+    @Override // org.telegram.ui.Components.f61
+    public final void bindView(View view, org.telegram.ui.Components.g61 g61Var, boolean z10, org.telegram.ui.Components.t61 t61Var, org.telegram.ui.Components.b71 b71Var) {
+        fl0 fl0Var = (fl0) view;
+        TL_account.Passkey passkey = (TL_account.Passkey) g61Var.G;
+        View.OnClickListener onClickListener = g61Var.D;
+        TextView textView = fl0Var.f;
+        TextView textView2 = fl0Var.e;
+        org.telegram.ui.ActionBar.d6 d6Var = fl0Var.b;
+        FrameLayout frameLayout = fl0Var.c;
+        org.telegram.ui.Components.w9 w9Var = fl0Var.d;
+        fl0Var.r = passkey.id;
+        long j10 = passkey.software_emoji_id;
+        if (j10 != 0) {
+            w9Var.setAnimatedEmojiDrawable(org.telegram.ui.Components.r5.n(fl0Var.a, j10, null, 3));
+            frameLayout.setBackground(null);
+            w9Var.setColorFilter(null);
+            w9Var.setScaleX(1.0f);
+            w9Var.setScaleY(1.0f);
+        } else {
+            int dp = AndroidUtilities.dp(4.0f);
+            int i10 = org.telegram.ui.ActionBar.h6.G6;
+            frameLayout.setBackground(org.telegram.ui.ActionBar.h6.c0(dp, org.telegram.ui.ActionBar.h6.m1(0.04f, org.telegram.ui.ActionBar.h6.w0(i10, d6Var))));
+            w9Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.m1(0.3f, org.telegram.ui.ActionBar.h6.w0(i10, d6Var)), PorterDuff.Mode.SRC_IN));
+            w9Var.setImageResource(R.drawable.msg2_permissions);
+            w9Var.setScaleX(0.666f);
+            w9Var.setScaleY(0.666f);
+            w9Var.setAnimatedEmojiDrawable(null);
+        }
+        if (TextUtils.isEmpty(passkey.name)) {
+            textView2.setText(LocaleController.getString(R.string.PasskeyUnknown));
+        } else {
+            textView2.setText(passkey.name);
+        }
+        int i11 = passkey.last_usage_date;
+        if (i11 != 0) {
+            textView.setText(LocaleController.formatString(R.string.PasskeyLastUsedOn, LocaleController.formatDateTime(i11, false)));
+        } else {
+            textView.setText(LocaleController.formatString(R.string.PasskeyCreatedOn, LocaleController.formatDateTime(passkey.date, false)));
+        }
+        fl0Var.h.setOnClickListener(onClickListener);
+        fl0Var.n = z10;
+        fl0Var.setWillNotDraw(!z10);
+    }
+
+    @Override // org.telegram.ui.Components.f61
+    public final View createView(Context context, org.telegram.ui.Components.im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        return new fl0(context, i10, d6Var);
     }
 }

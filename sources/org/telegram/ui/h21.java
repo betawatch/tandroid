@@ -1,37 +1,37 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class h21 implements m21 {
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ org.telegram.ui.Components.xc c;
+public final class h21 implements k21 {
+    public final /* synthetic */ org.telegram.messenger.video.a a;
+    public final /* synthetic */ org.telegram.ui.Components.xc b;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ ci.k0 d;
+    public final /* synthetic */ org.telegram.messenger.video.d e;
 
-    public h21(boolean[] zArr, Utilities.Callback callback, org.telegram.ui.Components.xc xcVar) {
-        this.a = zArr;
-        this.b = callback;
-        this.c = xcVar;
+    public h21(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.xc xcVar, Context context, ci.k0 k0Var, org.telegram.messenger.video.d dVar) {
+        this.a = aVar;
+        this.b = xcVar;
+        this.c = context;
+        this.d = k0Var;
+        this.e = dVar;
     }
 
-    @Override // org.telegram.ui.m21
+    @Override // org.telegram.ui.k21
     public final void a() {
-        Utilities.Callback callback;
-        boolean[] zArr = this.a;
-        if (!zArr[0] && (callback = this.b) != null) {
-            zArr[0] = true;
-            callback.run(Boolean.TRUE);
-        }
-        AndroidUtilities.runOnUIThread(new sy0(this.c, 8), 200L);
+        AndroidUtilities.runOnUIThread(new d21(this.a, this.b, this.c, this.d, 2), 200L);
     }
 
-    @Override // org.telegram.ui.m21
-    public final /* synthetic */ void b() {
+    @Override // org.telegram.ui.k21
+    public final void b() {
+        AndroidUtilities.runOnUIThread(new jv0(25, this.a, this.b), 200L);
     }
 
-    @Override // org.telegram.ui.m21
-    public final /* synthetic */ void c() {
+    @Override // org.telegram.ui.k21
+    public final void c() {
+        this.e.run();
     }
 }

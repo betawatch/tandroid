@@ -11,7 +11,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class f3 extends FrameLayout {
     public final LinearLayout a;
@@ -63,7 +63,7 @@ public final class f3 extends FrameLayout {
 
     public final void a(String str, String str2) {
         this.d.setText(LocaleController.getString(R.string.WebErrorTitle));
-        org.telegram.messenger.lk.r(R.string.WebErrorInfoBot, new Object[]{str}, this.e);
+        org.telegram.messenger.kk.r(R.string.WebErrorInfoBot, new Object[]{str}, this.e);
         this.f.setText(str2);
     }
 

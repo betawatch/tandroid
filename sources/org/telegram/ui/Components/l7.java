@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l7 implements o1.g {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class l7 implements o1.g {
                 }
                 break;
             case 3:
-                ti tiVar = (ti) ((ai.b5) this.b).d;
+                ti tiVar = (ti) ((ai.c5) this.b).d;
                 li liVar = tiVar.C0;
                 if (liVar == tiVar.m0 || liVar == tiVar.n0 || (tiVar.F && tiVar.w1 != null)) {
                     tiVar.e2(1);

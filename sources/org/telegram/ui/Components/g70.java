@@ -20,7 +20,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class g70 extends hm0 {
     public final /* synthetic */ l70 c;
@@ -264,7 +264,7 @@ public final class g70 extends hm0 {
             if (i25 == 2592000) {
                 StringBuilder sb4 = new StringBuilder();
                 sb4.append(LocaleController.formatString(R.string.LinkRevenuePrice, Long.valueOf(tL_starsSubscriptionPricing2.amount)));
-                sb4.append(i24 > 0 ? i2.d.j(i24, " x ") : "");
+                sb4.append(i24 > 0 ? i2.e.j(i24, " x ") : "");
                 textView2.setText(ai.md.Y0(false, sb4.toString(), 0.8f, null));
                 if (i24 == 0) {
                     formatString = LocaleController.getString(R.string.NoOneSubscribed);
@@ -282,7 +282,7 @@ public final class g70 extends hm0 {
             StringBuilder sb5 = new StringBuilder();
             Locale locale2 = Locale.US;
             sb5.append(String.format(locale2, "⭐%1$d/%2$s", Long.valueOf(tL_starsSubscriptionPricing2.amount), str5));
-            sb5.append(i24 > 0 ? i2.d.j(i24, " x ") : "");
+            sb5.append(i24 > 0 ? i2.e.j(i24, " x ") : "");
             textView2.setText(ai.md.Y0(false, sb5.toString(), 0.8f, null));
             if (i24 == 0) {
                 format = LocaleController.getString(R.string.NoOneSubscribed);

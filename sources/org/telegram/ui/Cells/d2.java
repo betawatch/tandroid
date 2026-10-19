@@ -6,16 +6,16 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.d91;
+import org.telegram.ui.Components.e91;
 import org.telegram.ui.Components.nf0;
 import org.telegram.ui.Components.s00;
-import org.telegram.ui.Components.v91;
 import org.telegram.ui.Components.w91;
+import org.telegram.ui.Components.x91;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class d2 extends org.telegram.ui.Components.s6 {
     public final /* synthetic */ int b;
@@ -38,10 +38,10 @@ public final class d2 extends org.telegram.ui.Components.s6 {
                 f2Var.invalidate();
                 break;
             case 1:
-                sn.Jc = f7;
-                sn snVar = (sn) this.c;
-                snVar.R6.setSaturation(f7);
-                snVar.Q6.setColorFilter(new ColorMatrixColorFilter(snVar.R6));
+                qn.Jc = f7;
+                qn qnVar = (qn) this.c;
+                qnVar.R6.setSaturation(f7);
+                qnVar.Q6.setColorFilter(new ColorMatrixColorFilter(qnVar.R6));
                 break;
             case 2:
                 org.telegram.ui.ActionBar.k kVar = (org.telegram.ui.ActionBar.k) obj;
@@ -80,18 +80,18 @@ public final class d2 extends org.telegram.ui.Components.s6 {
                 ((s00) obj).invalidate();
                 break;
             case 4:
-                d91 d91Var = (d91) this.c;
-                d91Var.x = f7;
-                d91Var.invalidate();
+                e91 e91Var = (e91) this.c;
+                e91Var.x = f7;
+                e91Var.invalidate();
                 break;
             case 5:
-                w91 w91Var = (w91) this.c;
-                w91Var.E = f7;
-                v91 v91Var = w91Var.L;
-                if (v91Var != null) {
-                    v91Var.b(f7);
+                x91 x91Var = (x91) this.c;
+                x91Var.E = f7;
+                w91 w91Var = x91Var.L;
+                if (w91Var != null) {
+                    w91Var.b(f7);
                 }
-                w91Var.invalidate();
+                x91Var.invalidate();
                 break;
             case 6:
                 ((View) obj).setAlpha(f7);
@@ -113,15 +113,15 @@ public final class d2 extends org.telegram.ui.Components.s6 {
             case 0:
                 return Float.valueOf(((f2) this.c).g0);
             case 1:
-                return Float.valueOf(sn.Jc);
+                return Float.valueOf(qn.Jc);
             case 2:
                 return Float.valueOf(((org.telegram.ui.Components.k8) this.c).Q0);
             case 3:
                 return Float.valueOf(((s00) this.c).w0);
             case 4:
-                return Float.valueOf(((d91) this.c).x);
+                return Float.valueOf(((e91) this.c).x);
             case 5:
-                return Float.valueOf(((w91) this.c).E);
+                return Float.valueOf(((x91) this.c).E);
             case 6:
                 return Float.valueOf(((View) obj).getAlpha());
             default:
@@ -130,17 +130,17 @@ public final class d2 extends org.telegram.ui.Components.s6 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d2(d91 d91Var) {
+    public d2(e91 e91Var) {
         super("progress", 0);
         this.b = 4;
-        this.c = d91Var;
+        this.c = e91Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d2(w91 w91Var) {
+    public d2(x91 x91Var) {
         super("clipProgress", 0);
         this.b = 5;
-        this.c = w91Var;
+        this.c = x91Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -158,10 +158,10 @@ public final class d2 extends org.telegram.ui.Components.s6 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d2(sn snVar) {
+    public d2(qn qnVar) {
         super("", 0);
         this.b = 1;
-        this.c = snVar;
+        this.c = qnVar;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

@@ -12,13 +12,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.w31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.b80;
-import org.telegram.ui.it0;
+import org.telegram.ui.gt0;
+import org.telegram.ui.z70;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j implements Runnable {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class j implements Runnable {
             case 1:
                 m0 w9 = m0.w(i11);
                 NotificationCenter notificationCenter = NotificationCenter.getInstance(i11);
-                b0 b0Var = new b0(notificationCenter, (b80) obj, w9);
+                b0 b0Var = new b0(notificationCenter, (z70) obj, w9);
                 notificationCenter.addObserver(b0Var, NotificationCenter.walletUpdate);
                 AndroidUtilities.runOnUIThread(b0Var, 10000L);
                 if (w9.e == null && w9.A < 0) {
@@ -60,8 +60,8 @@ public final /* synthetic */ class j implements Runnable {
                 b0Var.a();
                 break;
             case 2:
-                o5 o5Var = (o5) obj;
-                AndroidUtilities.runOnUIThread(new w31(o5Var, i11, o5.h(o5Var.R, i11), 19));
+                p5 p5Var = (p5) obj;
+                AndroidUtilities.runOnUIThread(new x31(p5Var, i11, p5.h(p5Var.R, i11), 19));
                 break;
             case 3:
                 m6 m6Var = (m6) obj;
@@ -78,7 +78,7 @@ public final /* synthetic */ class j implements Runnable {
                     if (clipboardManager != null && clipboardManager.getPrimaryClip() != null && clipboardManager.getPrimaryClip().getItemCount() != 0 && (text = clipboardManager.getPrimaryClip().getItemAt(0).getText()) != null) {
                         String[] split = text.toString().trim().toLowerCase().split("\\s+");
                         for (int i12 = 0; i11 < arrayList.size() && i12 < split.length; i12++) {
-                            ((ga) arrayList.get(i11)).setText(split[i12]);
+                            ((ha) arrayList.get(i11)).setText(split[i12]);
                             i11++;
                         }
                         w7Var.Y();
@@ -139,16 +139,16 @@ public final /* synthetic */ class j implements Runnable {
                 jVar.P.start();
                 break;
             case 8:
-                it0 it0Var = (it0) obj;
-                qg.s1 s1Var = it0Var.K1;
-                it0Var.t0(s1Var, null);
-                qg.u0.e(i11).j(s1Var.c);
+                gt0 gt0Var = (gt0) obj;
+                qg.t1 t1Var = gt0Var.K1;
+                gt0Var.t0(t1Var, null);
+                qg.v0.e(i11).j(t1Var.c);
                 break;
             case 9:
-                rg.m2 m2Var = (rg.m2) obj;
-                m2Var.getClass();
+                rg.n2 n2Var = (rg.n2) obj;
+                n2Var.getClass();
                 NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.customStickerCreated, Boolean.FALSE);
-                m2Var.h();
+                n2Var.h();
                 break;
             case 10:
                 x90 x90Var = ((ug.q0) obj).e;

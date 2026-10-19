@@ -23,7 +23,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class kd extends ei.m {
     public boolean S0;
@@ -54,8 +54,8 @@ public abstract class kd extends ei.m {
     public Utilities.Callback r1;
     public boolean s1;
 
-    public kd(Context context, FrameLayout frameLayout, jw0 jw0Var, FrameLayout frameLayout2, org.telegram.ui.ActionBar.d6 d6Var, ja jaVar, Runnable runnable) {
-        super(context, frameLayout, jw0Var, frameLayout2, d6Var, jaVar);
+    public kd(Context context, FrameLayout frameLayout, kw0 kw0Var, FrameLayout frameLayout2, org.telegram.ui.ActionBar.d6 d6Var, ja jaVar, Runnable runnable) {
+        super(context, frameLayout, kw0Var, frameLayout2, d6Var, jaVar);
         float f7;
         float f10;
         this.b1 = 0;
@@ -73,7 +73,7 @@ public abstract class kd extends ei.m {
         p6Var.w(AndroidUtilities.dp(14.0f));
         p6Var.M = AndroidUtilities.displaySize.x;
         p6Var.u(-1);
-        boolean z10 = this instanceof org.telegram.ui.ks0;
+        boolean z10 = this instanceof org.telegram.ui.is0;
         if (z10) {
             p6Var.t(LocaleController.getString(R.string.MoveCaptionDown), true, true);
             this.g1 = context.getResources().getDrawable(R.drawable.menu_link_below);
@@ -227,7 +227,7 @@ public abstract class kd extends ei.m {
             this.a1.m(1.0f, ((-imageView.getWidth()) / 2.0f) + AndroidUtilities.dp(4.0f));
             addView(this.a1, w7.z5.d(-1, 200.0f, 48, 0.0f, -196.0f, 0.0f, 0.0f));
             ei.x3 x3Var4 = this.a1;
-            x3Var4.l0 = new org.telegram.ui.gh(28, this, x3Var3);
+            x3Var4.l0 = new org.telegram.ui.eh(28, this, x3Var3);
             x3Var4.d = 4000L;
             x3Var4.u();
             MessagesController.getGlobalMainSettings().edit().putInt("aihintshown", MessagesController.getGlobalMainSettings().getInt("aihintshown", 0) + 1).apply();
@@ -287,7 +287,7 @@ public abstract class kd extends ei.m {
         ImageView imageView = this.Z0;
         if (imageView != null) {
             imageView.setTranslationX(-AndroidUtilities.dp((1.0f - this.o0) * 4.0f));
-            boolean z10 = this instanceof org.telegram.ui.ks0;
+            boolean z10 = this instanceof org.telegram.ui.is0;
             imageView.setTranslationY((Utilities.clamp01((-this.k1.d(this.f.getEditText().getLineCount(), false)) + 4.0f) * AndroidUtilities.dp(3.0f) * (z10 ? 1 : -1)) + (z10 ? rectF.bottom - AndroidUtilities.dp(44.0f) : rectF.top));
         }
         float f10 = this.l1.f(this.n1, true ^ G());
@@ -295,15 +295,15 @@ public abstract class kd extends ei.m {
         if (f10 > 0.0f) {
             float a2 = this.i1.a(0.03f);
             int dp = AndroidUtilities.dp((1.0f - this.o0) * 4.0f);
-            boolean z11 = this instanceof org.telegram.ui.ks0;
+            boolean z11 = this instanceof org.telegram.ui.is0;
             p6 p6Var = this.h1;
             RectF rectF2 = this.f1;
             if (z11) {
                 f7 = 1.0f;
-                rectF2.set(AndroidUtilities.dp(7.0f) + dp, rectF.bottom + AndroidUtilities.dp(10.0f), org.telegram.messenger.lk.b(p6Var.c(), AndroidUtilities.dp(11.0f), e, AndroidUtilities.dp(44.0f) + dp), rectF.bottom + AndroidUtilities.dp(42.0f));
+                rectF2.set(AndroidUtilities.dp(7.0f) + dp, rectF.bottom + AndroidUtilities.dp(10.0f), org.telegram.messenger.kk.b(p6Var.c(), AndroidUtilities.dp(11.0f), e, AndroidUtilities.dp(44.0f) + dp), rectF.bottom + AndroidUtilities.dp(42.0f));
             } else {
                 f7 = 1.0f;
-                rectF2.set(AndroidUtilities.dp(7.0f) + dp, rectF.top - AndroidUtilities.dp(42.0f), org.telegram.messenger.lk.b(p6Var.c(), AndroidUtilities.dp(11.0f), e, AndroidUtilities.dp(44.0f) + dp), rectF.top - AndroidUtilities.dp(10.0f));
+                rectF2.set(AndroidUtilities.dp(7.0f) + dp, rectF.top - AndroidUtilities.dp(42.0f), org.telegram.messenger.kk.b(p6Var.c(), AndroidUtilities.dp(11.0f), e, AndroidUtilities.dp(44.0f) + dp), rectF.top - AndroidUtilities.dp(10.0f));
             }
             if (f10 < f7) {
                 canvas.saveLayerAlpha(rectF2, (int) (f10 * 255.0f), 31);
@@ -357,7 +357,7 @@ public abstract class kd extends ei.m {
         } else if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && ycVar.i) {
             if (motionEvent.getAction() == 1) {
                 A();
-                this.h1.t(LocaleController.getString(this instanceof org.telegram.ui.ks0 ? R.string.MoveCaptionDown : R.string.MoveCaptionUp), true, true);
+                this.h1.t(LocaleController.getString(this instanceof org.telegram.ui.is0 ? R.string.MoveCaptionDown : R.string.MoveCaptionUp), true, true);
             }
             ycVar.c(false);
             return true;
@@ -405,7 +405,7 @@ public abstract class kd extends ei.m {
 
     @Override // ei.m
     public final void r(int i10) {
-        this.d1.setTranslationY(((-Math.min(AndroidUtilities.dp(34.0f), i10)) - AndroidUtilities.dp(10.0f)) * (this instanceof org.telegram.ui.ks0 ? -1.0f : 1.0f));
+        this.d1.setTranslationY(((-Math.min(AndroidUtilities.dp(34.0f), i10)) - AndroidUtilities.dp(10.0f)) * (this instanceof org.telegram.ui.is0 ? -1.0f : 1.0f));
     }
 
     @Override // ei.m

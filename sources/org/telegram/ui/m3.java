@@ -8,9 +8,9 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class m3 extends org.telegram.ui.web.b1 {
+public final class m3 extends org.telegram.ui.web.a1 {
     public final /* synthetic */ o3 S0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -19,7 +19,7 @@ public final class m3 extends org.telegram.ui.web.b1 {
         this.S0 = o3Var;
     }
 
-    @Override // org.telegram.ui.web.b1
+    @Override // org.telegram.ui.web.a1
     public final void D(boolean z10, String str) {
         o3 o3Var = this.S0;
         if (z10) {
@@ -35,7 +35,7 @@ public final class m3 extends org.telegram.ui.web.b1 {
             String url = getWebView() != null ? getWebView().getUrl() : null;
             TextView textView = f3Var2.e;
             f3Var2.d.setText(LocaleController.getString(R.string.WebErrorTitle));
-            String u10 = org.telegram.ui.web.b1.u(url);
+            String u10 = org.telegram.ui.web.a1.u(url);
             textView.setText(Emoji.replaceEmoji(AndroidUtilities.replaceTags((u10 == null || Uri.parse(u10) == null || Uri.parse(u10).getAuthority() == null) ? LocaleController.getString(R.string.WebErrorInfo) : LocaleController.formatString(R.string.WebErrorInfoDomain, Uri.parse(u10).getAuthority())), textView.getPaint().getFontMetricsInt(), false));
             f3Var2.f.setText(str);
             f3 f3Var3 = o3Var.r;
@@ -49,12 +49,12 @@ public final class m3 extends org.telegram.ui.web.b1 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.web.b1
+    @Override // org.telegram.ui.web.a1
     public final void H() {
         this.S0.K.i0(true);
     }
 
-    @Override // org.telegram.ui.web.b1
+    @Override // org.telegram.ui.web.a1
     public final void I(boolean z10, boolean z11) {
         o3 o3Var = this.S0;
         o3Var.s = !z10;
@@ -88,17 +88,17 @@ public final class m3 extends org.telegram.ui.web.b1 {
         }
     }
 
-    @Override // org.telegram.ui.web.b1
-    public final void J(org.telegram.ui.web.y0 y0Var) {
-        this.S0.e.setWebView(y0Var);
+    @Override // org.telegram.ui.web.a1
+    public final void J(org.telegram.ui.web.x0 x0Var) {
+        this.S0.e.setWebView(x0Var);
     }
 
-    @Override // org.telegram.ui.web.b1
+    @Override // org.telegram.ui.web.a1
     public final void T(String str, boolean z10) {
-        org.telegram.ui.web.h2 h2Var;
+        org.telegram.ui.web.f2 f2Var;
         o3 o3Var = this.S0;
         l4 l4Var = o3Var.K;
-        if (l4Var.h0 != null && o3Var == l4Var.u0[0] && (h2Var = o3Var.y) != null && h2Var.b() == null) {
+        if (l4Var.h0 != null && o3Var == l4Var.u0[0] && (f2Var = o3Var.y) != null && f2Var.b() == null) {
             o3Var.y.d(getWebView());
         }
         super.T(str, z10);

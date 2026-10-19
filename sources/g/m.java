@@ -27,7 +27,7 @@ import org.telegram.messenger.beta.R;
 import r0.i0;
 import r0.l0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class m implements Window.Callback {
     public final Window.Callback a;
@@ -74,7 +74,7 @@ public final class m implements Window.Callback {
     public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
         boolean z10 = this.c;
         Window.Callback callback = this.a;
-        return z10 ? callback.dispatchKeyEvent(keyEvent) : this.e.j(keyEvent) || callback.dispatchKeyEvent(keyEvent);
+        return z10 ? callback.dispatchKeyEvent(keyEvent) : this.e.i(keyEvent) || callback.dispatchKeyEvent(keyEvent);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:30:0x0066, code lost:
@@ -110,10 +110,10 @@ public final class m implements Window.Callback {
             q qVar = rVar.V;
             if (qVar == null || !rVar.v(qVar, keyEvent.getKeyCode(), keyEvent)) {
                 if (rVar.V == null) {
-                    q q6 = rVar.q(0);
-                    rVar.w(q6, keyEvent);
-                    boolean v = rVar.v(q6, keyEvent.getKeyCode(), keyEvent);
-                    q6.k = false;
+                    q p5 = rVar.p(0);
+                    rVar.w(p5, keyEvent);
+                    boolean v = rVar.v(p5, keyEvent.getKeyCode(), keyEvent);
+                    p5.k = false;
                 }
                 z10 = false;
                 if (z10) {
@@ -219,9 +219,9 @@ public final class m implements Window.Callback {
         r rVar = this.e;
         if (i10 != 108) {
             if (i10 == 0) {
-                q q6 = rVar.q(i10);
-                if (q6.m) {
-                    rVar.i(q6, false);
+                q p5 = rVar.p(i10);
+                if (p5.m) {
+                    rVar.h(p5, false);
                     return;
                 }
                 return;
@@ -265,7 +265,7 @@ public final class m implements Window.Callback {
 
     @Override // android.view.Window.Callback
     public final void onProvideKeyboardShortcuts(List list, Menu menu, int i10) {
-        l.k kVar = this.e.q(0).h;
+        l.k kVar = this.e.p(0).h;
         if (kVar != null) {
             d(list, kVar, i10);
         } else {
@@ -326,7 +326,7 @@ public final class m implements Window.Callback {
             try {
                 if (((qi.e) zVar2.e.b).B(zVar2, kVar)) {
                     r10.i = zVar2;
-                    zVar2.h();
+                    zVar2.g();
                     r10.f.c(zVar2);
                     r10.a(true);
                 } else {
@@ -372,7 +372,7 @@ public final class m implements Window.Callback {
                 } else {
                     ViewStubCompat viewStubCompat = (ViewStubCompat) rVar.J.findViewById(R.id.action_mode_bar_stub);
                     if (viewStubCompat != null) {
-                        viewStubCompat.setLayoutInflater(LayoutInflater.from(rVar.n()));
+                        viewStubCompat.setLayoutInflater(LayoutInflater.from(rVar.m()));
                         rVar.y = (ActionBarContextView) viewStubCompat.a();
                     }
                 }
@@ -394,7 +394,7 @@ public final class m implements Window.Callback {
                 dVar.n = kVar2;
                 kVar2.e = dVar;
                 if (eVar.B(dVar, kVar2)) {
-                    dVar.h();
+                    dVar.g();
                     rVar.y.c(dVar);
                     rVar.x = dVar;
                     if (rVar.I && (viewGroup = rVar.J) != null) {

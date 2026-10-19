@@ -6,15 +6,15 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.a20;
-import org.telegram.ui.z10;
+import org.telegram.ui.x10;
+import org.telegram.ui.y10;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class wc extends z10 {
+public final class wc extends x10 {
     public final /* synthetic */ int K0 = 0;
     public final b2.u0 L0;
-    public final /* synthetic */ a20 M0;
+    public final /* synthetic */ y10 M0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public wc(fi.g gVar, Activity activity) {

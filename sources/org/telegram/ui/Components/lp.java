@@ -14,9 +14,9 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.vh1;
+import org.telegram.ui.th1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class lp implements ri {
     public final /* synthetic */ ti a;
@@ -24,17 +24,17 @@ public final class lp implements ri {
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
     public final /* synthetic */ org.telegram.ui.g d;
     public final /* synthetic */ long e;
-    public final /* synthetic */ org.telegram.ui.hc f;
-    public final /* synthetic */ org.telegram.ui.dd h;
+    public final /* synthetic */ org.telegram.ui.fc f;
+    public final /* synthetic */ org.telegram.ui.bd h;
 
-    public lp(ti tiVar, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.g gVar, long j10, org.telegram.ui.hc hcVar, org.telegram.ui.dd ddVar) {
+    public lp(ti tiVar, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.g gVar, long j10, org.telegram.ui.fc fcVar, org.telegram.ui.bd bdVar) {
         this.a = tiVar;
         this.b = tL_premium_boostsStatus;
         this.c = d6Var;
         this.d = gVar;
         this.e = j10;
-        this.f = hcVar;
-        this.h = ddVar;
+        this.f = fcVar;
+        this.h = bdVar;
     }
 
     @Override // org.telegram.ui.Components.ri
@@ -69,7 +69,7 @@ public final class lp implements ri {
                 Point realScreenSize = AndroidUtilities.getRealScreenSize();
                 Bitmap loadBitmap = ImageLoader.loadBitmap(str, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
                 loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-                kp kpVar = new kp(new vh1(file, file, ""), loadBitmap, false, 0);
+                kp kpVar = new kp(new th1(file, file, ""), loadBitmap, false, 0);
                 kpVar.V1 = this.b;
                 kpVar.a.a = this.c;
                 kpVar.p1 = this.d;
@@ -96,7 +96,7 @@ public final class lp implements ri {
     }
 
     @Override // org.telegram.ui.Components.ri
-    public final void r(gh ghVar) {
+    public final void u(gh ghVar) {
         ghVar.run();
     }
 

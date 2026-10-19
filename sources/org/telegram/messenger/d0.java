@@ -24,9 +24,9 @@ import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.WriteToSocketDelegate;
 import org.telegram.ui.Components.xo0;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d0 implements ResultCallback, WriteToSocketDelegate, OnSuccessListener, OnFailureListener, ei.y7, TelegramMediaSession.BrowseChildrenCallback, ImageReceiver.ImageReceiverDelegate, RequestTimeDelegate, OnCompleteListener, xo0, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
@@ -37,8 +37,8 @@ public final /* synthetic */ class d0 implements ResultCallback, WriteToSocketDe
         this.b = obj;
     }
 
-    public void a(c5.i iVar, c5.s sVar) {
-        BillingController.lambda$queryProductDetails$0((BillingController.ProductDetailsResponseListenerLegacy) this.b, iVar, sVar);
+    public void a(c5.i iVar, c5.t tVar) {
+        BillingController.lambda$queryProductDetails$0((BillingController.ProductDetailsResponseListenerLegacy) this.b, iVar, tVar);
     }
 
     @Override // org.telegram.ui.Components.xo0
@@ -53,12 +53,12 @@ public final /* synthetic */ class d0 implements ResultCallback, WriteToSocketDe
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        l5.a(this, i10, str, drawable);
+        k5.a(this, i10, str, drawable);
     }
 
     @Override // org.telegram.ui.ActionBar.a2
     public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        SendMessagesHelper.lambda$sendCallback$45((sn) this.b, b2Var, i10);
+        SendMessagesHelper.lambda$sendCallback$45((qn) this.b, b2Var, i10);
     }
 
     @Override // ei.y7
@@ -70,7 +70,7 @@ public final /* synthetic */ class d0 implements ResultCallback, WriteToSocketDe
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        l5.b(this, imageReceiver);
+        k5.b(this, imageReceiver);
     }
 
     @Override // com.google.android.gms.tasks.OnCompleteListener

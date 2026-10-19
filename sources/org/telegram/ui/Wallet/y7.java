@@ -3,7 +3,7 @@ package org.telegram.ui.Wallet;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y7 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -26,13 +26,13 @@ public final /* synthetic */ class y7 implements View.OnClickListener {
             case 0:
                 ei.d dVar = this.b;
                 dVar.setLoading(true);
-                this.c.run(new t3(dVar, this.d, this.e, 1));
+                this.c.run(new u3(dVar, this.d, this.e, 1));
                 break;
             default:
                 ei.d dVar2 = this.b;
                 if (!dVar2.N) {
                     dVar2.setLoading(true);
-                    this.c.run(new t3(this.d, this.e, dVar2));
+                    this.c.run(new u3(this.d, this.e, dVar2));
                     break;
                 }
                 break;

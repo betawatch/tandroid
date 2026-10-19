@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class h8 extends FrameLayout {
     public final org.telegram.ui.ActionBar.j5 a;
@@ -29,7 +29,7 @@ public final class h8 extends FrameLayout {
     public int h;
     public SparseArray n;
     public SparseArray r;
-    public final k0.b s;
+    public final le.b s;
     public final SparseArray v;
     public final SparseArray w;
     public final /* synthetic */ k8 x;
@@ -55,7 +55,7 @@ public final class h8 extends FrameLayout {
         j5Var.setGravity(17);
         j5Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false));
         addView(j5Var, w7.z5.d(-1, 28.0f, 0, 0.0f, 12.0f, 0.0f, 4.0f));
-        k0.b bVar = new k0.b(context, new f8(this, context));
+        le.b bVar = new le.b(context, new f8(this, context));
         this.s = bVar;
         ((GestureDetector) bVar.b).setIsLongpressEnabled(k8Var.e0 == 0);
     }

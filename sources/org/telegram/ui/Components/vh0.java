@@ -7,7 +7,7 @@ import android.text.Layout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class vh0 {
     public int a;
@@ -16,7 +16,7 @@ public final class vh0 {
     public Drawable i;
     public Drawable j;
     public uj0 k;
-    public d11 l;
+    public e11 l;
     public ba0 r;
     public boolean s;
     public boolean t;
@@ -74,11 +74,11 @@ public final class vh0 {
     }
 
     public final void c(String str) {
-        d11 d11Var = new d11(str, 11.0f, AndroidUtilities.bold());
-        d11Var.n(3);
+        e11 e11Var = new e11(str, 11.0f, AndroidUtilities.bold());
+        e11Var.n(3);
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        d11Var.a();
-        this.l = d11Var;
+        e11Var.a();
+        this.l = e11Var;
     }
 
     public final void d(int i10, int i11, int i12) {

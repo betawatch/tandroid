@@ -1,58 +1,19 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class mu0 extends org.telegram.ui.Components.s60 {
-    public final /* synthetic */ nu0 d;
+public final class mu0 {
+    public final int a;
+    public final ArrayList b;
+    public final hu0 c;
+    public final /* synthetic */ PhotoViewer d;
 
-    public mu0(nu0 nu0Var) {
-        this.d = nu0Var;
-    }
-
-    @Override // org.telegram.ui.Components.zo0
-    public final CharSequence d() {
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(LocaleController.getString("AccDescrVideoQuality", R.string.AccDescrVideoQuality));
-        if (this.d.s.Z7 > 0) {
-            sb2.append(", ");
-            sb2.append(this.d.s.Y7 + 1);
-            sb2.append(" / ");
-            sb2.append(this.d.s.Z7);
-        }
-        sb2.append(", ");
-        sb2.append(this.d.h);
-        sb2.append(" – ");
-        sb2.append(this.d.n);
-        return sb2.toString();
-    }
-
-    @Override // org.telegram.ui.Components.s60
-    public final int i() {
-        return Math.max(0, this.d.s.Z7 - 1);
-    }
-
-    @Override // org.telegram.ui.Components.s60
-    public final int j() {
-        return this.d.s.Y7;
-    }
-
-    @Override // org.telegram.ui.Components.s60
-    public final void k(int i10) {
-        int max;
-        if (this.d.s.Z7 > 0 && (max = Math.max(0, Math.min(this.d.s.Z7 - 1, i10))) != this.d.s.Y7) {
-            nu0 nu0Var = this.d;
-            nu0Var.r = nu0Var.s.Y7;
-            this.d.s.Y7 = max;
-            this.d.s.S0();
-            this.d.invalidate();
-            int i11 = this.d.s.Y7;
-            nu0 nu0Var2 = this.d;
-            if (i11 != nu0Var2.r) {
-                nu0Var2.s.p2(1);
-            }
-        }
+    public mu0(PhotoViewer photoViewer, int i10, ArrayList arrayList, hu0 hu0Var) {
+        this.d = photoViewer;
+        this.b = arrayList;
+        this.a = i10;
+        this.c = hu0Var;
     }
 }

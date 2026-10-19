@@ -13,7 +13,7 @@ import com.google.android.gms.internal.cast.z5;
 import com.google.android.gms.tasks.Task;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class c extends f {
     public static final g6.b m = new g6.b("CastSession", null);
@@ -98,7 +98,7 @@ public final class c extends f {
             b10.a = 8403;
             e0Var.e(1, b10.a());
             e0Var.h();
-            com.google.android.gms.common.api.internal.n nVar = a6.m.d(e0Var.f, e0Var.k, "castDeviceControllerListenerKey").c;
+            com.google.android.gms.common.api.internal.n nVar = qb.c.d(e0Var.f, e0Var.k, "castDeviceControllerListenerKey").c;
             n6.l.i(nVar, "Key must not be null");
             e0Var.c(nVar, 8415);
             cVar.i = null;
@@ -193,7 +193,7 @@ public final class c extends f {
                 b11.a = 8403;
                 e0Var.e(1, b11.a());
                 e0Var.h();
-                com.google.android.gms.common.api.internal.n nVar = a6.m.d(e0Var.f, e0Var.k, "castDeviceControllerListenerKey").c;
+                com.google.android.gms.common.api.internal.n nVar = qb.c.d(e0Var.f, e0Var.k, "castDeviceControllerListenerKey").c;
                 n6.l.i(nVar, "Key must not be null");
                 e0Var.c(nVar, 8415);
                 this.i = null;
@@ -217,13 +217,13 @@ public final class c extends f {
             e0 e0Var2 = new e0(context, eVar2);
             e0Var2.E.add(new i(this));
             this.i = e0Var2;
-            com.google.android.gms.common.api.internal.p d = a6.m.d(e0Var2.f, e0Var2.k, "castDeviceControllerListenerKey");
+            com.google.android.gms.common.api.internal.p d = qb.c.d(e0Var2.f, e0Var2.k, "castDeviceControllerListenerKey");
             ai.a aVar2 = new ai.a();
             aVar2.a = true;
-            ag.b bVar3 = new ag.b(e0Var2, 7);
+            a4.l lVar = new a4.l(e0Var2, 8);
             c6.z zVar = c6.z.c;
             aVar2.e = d;
-            aVar2.c = bVar3;
+            aVar2.c = lVar;
             aVar2.d = zVar;
             aVar2.f = new k6.c[]{c6.y.a};
             aVar2.b = 8428;

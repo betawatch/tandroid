@@ -6,7 +6,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import ci.s4;
+import ci.t4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class i extends FrameLayout {
     public static final /* synthetic */ int e = 0;
@@ -32,7 +32,7 @@ public final class i extends FrameLayout {
         hVar.setHapticFeedbackEnabled(true);
         hVar.setImageResource(R.drawable.smiles_tab_clear);
         int i10 = h6.Re;
-        hVar.setColorFilter(new PorterDuffColorFilter(d6Var != null ? d6Var.u(i10) : h6.x0(null, i10, false), PorterDuff.Mode.MULTIPLY));
+        hVar.setColorFilter(new PorterDuffColorFilter(d6Var != null ? d6Var.w(i10) : h6.x0(null, i10, false), PorterDuff.Mode.MULTIPLY));
         hVar.setScaleType(ImageView.ScaleType.CENTER);
         hVar.setContentDescription(LocaleController.getString(R.string.AccDescrBackspace));
         hVar.setFocusable(true);
@@ -41,8 +41,8 @@ public final class i extends FrameLayout {
         int x02 = h6.x0(null, h6.i6, false);
         int dp = AndroidUtilities.dp(36.0f);
         int i11 = h6.d6;
-        hVar.setBackground(h6.i0(dp, d6Var != null ? d6Var.u(i11) : h6.x0(null, i11, false), x02));
-        hVar.setOutlineProvider(new s4(18));
+        hVar.setBackground(h6.i0(dp, d6Var != null ? d6Var.w(i11) : h6.x0(null, i11, false), x02));
+        hVar.setOutlineProvider(new t4(18));
         hVar.setElevation(AndroidUtilities.dp(1.0f));
         hVar.setClipToOutline(true);
         setClickable(true);

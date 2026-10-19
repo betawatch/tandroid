@@ -4,9 +4,9 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
-import ci.g7;
-import ci.s6;
-import ci.z6;
+import ci.a7;
+import ci.h7;
+import ci.t6;
 import ei.a8;
 import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
@@ -17,17 +17,17 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.r7;
 import org.telegram.ui.Cells.s7;
-import org.telegram.ui.Components.hs0;
 import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.is0;
 import org.telegram.ui.Components.ql0;
 import org.telegram.ui.Components.sl0;
 import s4.b1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public class q extends ql0 {
     public final Context c;
-    public z6 e;
+    public a7 e;
     public q f;
     public r7 h;
     public boolean r;
@@ -50,8 +50,8 @@ public class q extends ql0 {
     public final String F(int i10) {
         MessageObject messageObject;
         TL_stories.StoryItem storyItem;
-        z6 z6Var = this.e;
-        if (z6Var == null || i10 < 0 || i10 >= z6Var.i.size() || (messageObject = (MessageObject) this.e.i.get(i10)) == null || (storyItem = messageObject.storyItem) == null) {
+        a7 a7Var = this.e;
+        if (a7Var == null || i10 < 0 || i10 >= a7Var.i.size() || (messageObject = (MessageObject) this.e.i.get(i10)) == null || (storyItem = messageObject.storyItem) == null) {
             return null;
         }
         return LocaleController.formatYearMont(storyItem.date, true);
@@ -76,16 +76,16 @@ public class q extends ql0 {
     }
 
     public final boolean L(int i10) {
-        hs0 hs0Var = this.s.W;
-        z6 z6Var = this.e;
-        if (z6Var == null) {
+        is0 is0Var = this.s.W;
+        a7 a7Var = this.e;
+        if (a7Var == null) {
             return false;
         }
-        if (z6Var instanceof s6) {
-            TLRPC.User user = MessagesController.getInstance(hs0Var.b).getUser(Long.valueOf(hs0Var.d));
+        if (a7Var instanceof t6) {
+            TLRPC.User user = MessagesController.getInstance(is0Var.b).getUser(Long.valueOf(is0Var.d));
             return user != null && user.bot && user.bot_has_main_app && user.bot_can_edit;
         }
-        if (i10 < 0 || i10 >= z6Var.i.size()) {
+        if (i10 < 0 || i10 >= a7Var.i.size()) {
             return false;
         }
         return this.e.m(((MessageObject) this.e.i.get(i10)).getId());
@@ -130,20 +130,20 @@ public class q extends ql0 {
 
     @Override // s4.g0
     public void l() {
-        z6 z6Var = this.e;
-        boolean z10 = z6Var instanceof s6;
+        a7 a7Var = this.e;
+        boolean z10 = a7Var instanceof t6;
         r rVar = this.s;
         if (z10) {
-            s6 s6Var = (s6) z6Var;
+            t6 t6Var = (t6) a7Var;
             ArrayList arrayList = this.d;
             arrayList.clear();
             ArrayList E = MessagesController.getInstance(this.e.c).getStoriesController().E(rVar.W.d);
             if (E != null) {
                 for (int i10 = 0; i10 < E.size(); i10++) {
-                    g7 g7Var = (g7) E.get(i10);
-                    a8 a8Var = g7Var.c;
-                    if (a8Var != null && !a8Var.g && TextUtils.equals(a8Var.K0, s6Var.E)) {
-                        arrayList.add(g7Var);
+                    h7 h7Var = (h7) E.get(i10);
+                    a8 a8Var = h7Var.c;
+                    if (a8Var != null && !a8Var.g && TextUtils.equals(a8Var.K0, t6Var.E)) {
+                        arrayList.add(h7Var);
                     }
                 }
             }
@@ -171,20 +171,20 @@ public class q extends ql0 {
             r rVar = this.s;
             ArrayList arrayList = this.d;
             if (i10 >= 0 && i10 < arrayList.size()) {
-                g7 g7Var = (g7) arrayList.get(i10);
+                h7 h7Var = (h7) arrayList.get(i10);
                 s7Var.f0 = false;
-                if (g7Var.K == null) {
+                if (h7Var.K == null) {
                     TL_stories.TL_storyItem tL_storyItem = new TL_stories.TL_storyItem();
-                    long j10 = g7Var.a;
+                    long j10 = h7Var.a;
                     int i11 = (int) (j10 ^ (j10 >>> 32));
                     tL_storyItem.messageId = i11;
                     tL_storyItem.id = i11;
-                    tL_storyItem.attachPath = g7Var.f;
+                    tL_storyItem.attachPath = h7Var.f;
                     p pVar = new p(this.e.c, tL_storyItem);
-                    g7Var.K = pVar;
-                    pVar.uploadingStory = g7Var;
+                    h7Var.K = pVar;
+                    pVar.uploadingStory = h7Var;
                 }
-                s7Var.k(g7Var.K, this == this.f ? rVar.e : rVar.d, false);
+                s7Var.k(h7Var.K, this == this.f ? rVar.e : rVar.d, false);
                 s7Var.d0 = true;
                 s7Var.setReorder(false);
                 s7Var.i(false, false);
@@ -201,22 +201,22 @@ public class q extends ql0 {
             s7Var.f0 = messageObject != null && this.e.m(messageObject.getId());
             s7Var.setReorder(true);
             s7Var.k(messageObject, this == this.f ? rVar.e : rVar.d, false);
-            hs0 hs0Var = rVar.W;
-            if (!hs0Var.G.C1 || messageObject == null) {
+            is0 is0Var = rVar.W;
+            if (!is0Var.G.C1 || messageObject == null) {
                 s7Var.i(false, false);
             } else {
-                s7Var.i(hs0Var.c(messageObject), true);
+                s7Var.i(is0Var.c(messageObject), true);
             }
         }
     }
 
     @Override // s4.g0
     public final b1 x(ViewGroup viewGroup, int i10) {
-        hs0 hs0Var = this.s.W;
+        is0 is0Var = this.s.W;
         if (this.h == null) {
-            this.h = new r7(viewGroup.getContext(), hs0Var.c);
+            this.h = new r7(viewGroup.getContext(), is0Var.c);
         }
-        s7 s7Var = new s7(this.c, this.h, hs0Var.b);
+        s7 s7Var = new s7(this.c, this.h, is0Var.b);
         s7Var.w0 = true;
         s7Var.setGradientView(null);
         s7Var.d0 = true;

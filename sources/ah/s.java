@@ -7,17 +7,17 @@ import gi.s4;
 import ig.d2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ba;
 import org.telegram.ui.c7;
-import org.telegram.ui.da;
 import org.telegram.ui.e6;
 import org.telegram.ui.k8;
 import org.telegram.ui.m9;
 import org.telegram.ui.r4;
 import org.telegram.ui.v4;
-import org.telegram.ui.y9;
+import org.telegram.ui.w9;
 import org.telegram.ui.z6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class s extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -273,7 +273,7 @@ public final class s extends org.telegram.ui.ActionBar.j {
                     }
                 } else {
                     kVar = ((n2) c7Var).actionBar;
-                    if (!kVar.s()) {
+                    if (!kVar.t()) {
                         c7Var.finishFragment();
                         break;
                     } else {
@@ -315,7 +315,7 @@ public final class s extends org.telegram.ui.ActionBar.j {
                     }
                 } else {
                     kVar2 = ((n2) m9Var).actionBar;
-                    if (!kVar2.s()) {
+                    if (!kVar2.t()) {
                         m9Var.finishFragment();
                         break;
                     } else {
@@ -326,20 +326,20 @@ public final class s extends org.telegram.ui.ActionBar.j {
                 break;
             case 28:
                 if (i10 == -1) {
-                    ((y9) this.b).finishFragment();
+                    ((w9) this.b).finishFragment();
                     break;
                 }
                 break;
             default:
-                da daVar = (da) this.b;
+                ba baVar = (ba) this.b;
                 if (i10 != -1) {
-                    if (i10 == 1 && daVar.a.getText().length() != 0) {
-                        da.U(daVar);
-                        daVar.finishFragment();
+                    if (i10 == 1 && baVar.a.getText().length() != 0) {
+                        ba.U(baVar);
+                        baVar.finishFragment();
                         break;
                     }
                 } else {
-                    daVar.finishFragment();
+                    baVar.finishFragment();
                     break;
                 }
                 break;

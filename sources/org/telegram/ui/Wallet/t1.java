@@ -2,11 +2,11 @@ package org.telegram.ui.Wallet;
 
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fh;
+import org.telegram.messenger.eh;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t1 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class t1 implements Utilities.Callback2 {
         TL_wallet.tonConnectSession tonconnectsession;
         switch (this.a) {
             case 0:
-                final fh fhVar = (fh) this.e;
+                final eh ehVar = (eh) this.e;
                 final TL_wallet.tonConnectPending tonconnectpending = (TL_wallet.tonConnectPending) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 final f2 f2Var = this.b;
@@ -61,7 +61,7 @@ public final /* synthetic */ class t1 implements Utilities.Callback2 {
                             @Override // org.telegram.messenger.Utilities.Callback2
                             public final void run(Object obj3, Object obj4) {
                                 f2 f2Var2 = f2.this;
-                                fh fhVar2 = fhVar;
+                                eh ehVar2 = ehVar;
                                 TL_wallet.tonConnectPending tonconnectpending2 = tonconnectpending;
                                 TL_wallet.tonConnectRequest tonconnectrequest4 = tonconnectrequest;
                                 String str = s10;
@@ -73,25 +73,25 @@ public final /* synthetic */ class t1 implements Utilities.Callback2 {
                                 f2Var2.getClass();
                                 if (j0Var != null && str2 == null) {
                                     j0 b10 = j0Var.b();
-                                    Utilities.globalQueue.postRunnable(new gi.d1(f2Var2, tonconnectpending2, tonconnectrequest4, b10, str, bArr2, new s1(2, b10, fhVar2), j11, i12));
+                                    Utilities.globalQueue.postRunnable(new gi.d1(f2Var2, tonconnectpending2, tonconnectrequest4, b10, str, bArr2, new s1(2, b10, ehVar2), j11, i12));
                                 } else {
                                     f2Var2.h = false;
                                     if (str2 == null) {
                                         str2 = "Recovery phrase is unavailable";
                                     }
-                                    fhVar2.run(null, str2);
+                                    ehVar2.run(null, str2);
                                 }
                             }
                         }, true, false);
                         break;
                     } else {
                         f2Var.h = false;
-                        fhVar.run(null, "This request has expired or has already been answered");
+                        ehVar.run(null, "This request has expired or has already been answered");
                         break;
                     }
                 } else {
                     f2Var.h = false;
-                    fhVar.run(null, f2.x(tL_error, "getPending"));
+                    ehVar.run(null, f2.x(tL_error, "getPending"));
                     break;
                 }
                 break;

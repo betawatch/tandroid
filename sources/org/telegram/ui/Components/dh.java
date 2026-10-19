@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dh implements ml, org.telegram.ui.ActionBar.a2, ne.k, yl0, eh.d, org.telegram.ui.ActionBar.q0, eo, AndroidUtilities.IntColorCallback, e5, cj {
     public final /* synthetic */ int a;
@@ -85,13 +85,13 @@ public final /* synthetic */ class dh implements ml, org.telegram.ui.ActionBar.a
     public void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10) {
         switch (this.a) {
             case 0:
-                ((org.telegram.ui.sn) this.b.f0).b(messageMedia, i10, z10, i11, 0L);
+                ((org.telegram.ui.qn) this.b.f0).b(messageMedia, i10, z10, i11, 0L);
                 break;
             case 9:
-                ((org.telegram.ui.sn) this.b.f0).b(messageMedia, i10, z10, i11, j10);
+                ((org.telegram.ui.qn) this.b.f0).b(messageMedia, i10, z10, i11, j10);
                 break;
             default:
-                ((org.telegram.ui.sn) this.b.f0).b(messageMedia, i10, z10, i11, j10);
+                ((org.telegram.ui.qn) this.b.f0).b(messageMedia, i10, z10, i11, j10);
                 break;
         }
     }
@@ -104,35 +104,35 @@ public final /* synthetic */ class dh implements ml, org.telegram.ui.ActionBar.a
         ti tiVar = this.b;
         switch (i11) {
             case 10:
-                org.telegram.ui.sn snVar = (org.telegram.ui.sn) tiVar.f0;
+                org.telegram.ui.qn qnVar = (org.telegram.ui.qn) tiVar.f0;
                 TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) messageMedia;
-                if (snVar.i7()) {
-                    SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of((TLRPC.TL_messageMediaPoll) null, snVar.T5, snVar.n5, snVar.X3, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, z10, i10, 0);
+                if (qnVar.i7()) {
+                    SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of((TLRPC.TL_messageMediaPoll) null, qnVar.T5, qnVar.n5, qnVar.X3, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, z10, i10, 0);
                     of2.todo = tL_messageMediaToDo;
-                    of2.sendMessageChatArguments = snVar.H8();
+                    of2.sendMessageChatArguments = qnVar.H8();
                     of2.payStars = j10;
-                    of2.monoForumPeer = snVar.S8();
-                    of2.suggestionParams = snVar.g5;
-                    snVar.getSendMessagesHelper().sendMessage(of2);
-                    snVar.B6();
+                    of2.monoForumPeer = qnVar.S8();
+                    of2.suggestionParams = qnVar.g5;
+                    qnVar.getSendMessagesHelper().sendMessage(of2);
+                    qnVar.B6();
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.sn snVar2 = (org.telegram.ui.sn) tiVar.f0;
+                org.telegram.ui.qn qnVar2 = (org.telegram.ui.qn) tiVar.f0;
                 TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) messageMedia;
-                if (snVar2.i7()) {
+                if (qnVar2.i7()) {
                     long nextLong = Utilities.random.nextLong();
                     if (editable != null) {
                         CharSequence[] charSequenceArr = {editable};
-                        arrayList2 = snVar2.getMediaDataController().getEntities(charSequenceArr, true);
+                        arrayList2 = qnVar2.getMediaDataController().getEntities(charSequenceArr, true);
                         str = charSequenceArr[0].toString();
                     } else {
                         str = null;
                         arrayList2 = null;
                     }
-                    SendMessagesHelper.prepareSendingPoll(snVar2.getAccountInstance(), new rh.h(fVar, tL_messageMediaPoll, nextLong, str, arrayList2, arrayList), snVar2.T5, snVar2.n5, snVar2.X3, null, snVar2.l5, z10, i10, snVar2.H8(), j10, snVar2.S8(), snVar2.g5);
-                    snVar2.B6();
+                    SendMessagesHelper.prepareSendingPoll(qnVar2.getAccountInstance(), new rh.h(fVar, tL_messageMediaPoll, nextLong, str, arrayList2, arrayList), qnVar2.T5, qnVar2.n5, qnVar2.X3, null, qnVar2.l5, z10, i10, qnVar2.H8(), j10, qnVar2.S8(), qnVar2.g5);
+                    qnVar2.B6();
                     break;
                 }
                 break;
@@ -192,7 +192,7 @@ public final /* synthetic */ class dh implements ml, org.telegram.ui.ActionBar.a
             return;
         }
         org.telegram.ui.ActionBar.n2 n2Var = tiVar.f0;
-        if (n2Var == null || !(n2Var instanceof org.telegram.ui.sn)) {
+        if (n2Var == null || !(n2Var instanceof org.telegram.ui.qn)) {
             ri riVar = tiVar.c2;
             if (riVar != null) {
                 riVar.r0(arrayList, charSequence, z10, i10, i11, j10, z11, j11);
@@ -200,11 +200,11 @@ public final /* synthetic */ class dh implements ml, org.telegram.ui.ActionBar.a
             }
             return;
         }
-        org.telegram.ui.sn snVar = (org.telegram.ui.sn) n2Var;
-        if (snVar.i7()) {
-            snVar.o8(charSequence, null);
-            SendMessagesHelper.prepareSendingAudioDocuments(snVar.getAccountInstance(), arrayList, charSequence != null ? charSequence : null, snVar.T5, snVar.n5, snVar.X3, null, z10, i10, i11, snVar.p5, snVar.H8(), j10, z11, j11);
-            snVar.B6();
+        org.telegram.ui.qn qnVar = (org.telegram.ui.qn) n2Var;
+        if (qnVar.i7()) {
+            qnVar.o8(charSequence, null);
+            SendMessagesHelper.prepareSendingAudioDocuments(qnVar.getAccountInstance(), arrayList, charSequence != null ? charSequence : null, qnVar.T5, qnVar.n5, qnVar.X3, null, z10, i10, i11, qnVar.p5, qnVar.H8(), j10, z11, j11);
+            qnVar.B6();
         }
     }
 
@@ -215,7 +215,7 @@ public final /* synthetic */ class dh implements ml, org.telegram.ui.ActionBar.a
 
     @Override // org.telegram.messenger.AndroidUtilities.IntColorCallback
     public void run(int i10) {
-        ti.t(this.b, i10);
+        ti.u(this.b, i10);
     }
 
     @Override // ne.k

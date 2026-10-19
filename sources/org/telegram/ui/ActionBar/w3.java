@@ -34,12 +34,12 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.e11;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.u10;
+import org.telegram.ui.s10;
 import v7.f7;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class w3 extends View {
     public float E;
@@ -73,11 +73,11 @@ public final class w3 extends View {
     public final RectF e0;
     public final org.telegram.ui.Components.f6 f;
     public final Path f0;
-    public d11 g0;
+    public e11 g0;
     public final OverScroller h;
     public boolean h0;
     public org.telegram.ui.Cells.z i0;
-    public u10 j0;
+    public s10 j0;
     public final int n;
     public final int r;
     public int s;
@@ -114,9 +114,9 @@ public final class w3 extends View {
             j3Var.run(null);
             return;
         }
-        final SurfaceTexture b10 = org.telegram.messenger.y3.b();
-        b10.setDefaultBufferSize(viewGroup.getWidth(), viewGroup.getHeight());
-        final Surface surface = new Surface(b10);
+        final SurfaceTexture c10 = c9.b.c();
+        c10.setDefaultBufferSize(viewGroup.getWidth(), viewGroup.getHeight());
+        final Surface surface = new Surface(c10);
         final Bitmap createBitmap = Bitmap.createBitmap(viewGroup.getWidth(), viewGroup.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas lockHardwareCanvas = surface.lockHardwareCanvas();
         lockHardwareCanvas.translate(0.0f, f7);
@@ -128,7 +128,7 @@ public final class w3 extends View {
                 j3 j3Var2 = j3.this;
                 Bitmap bitmap = createBitmap;
                 Surface surface2 = surface;
-                SurfaceTexture surfaceTexture = b10;
+                SurfaceTexture surfaceTexture = c10;
                 if (i10 == 0) {
                     j3Var2.run(bitmap);
                 } else {
@@ -550,7 +550,7 @@ public final class w3 extends View {
         float f33 = f17;
         canvas.save();
         if (this.j0 == null) {
-            this.j0 = new u10();
+            this.j0 = new s10();
         }
         RectF rectF8 = AndroidUtilities.rectTmp;
         rectF8.set(0.0f, 0.0f, f33, f32);
@@ -558,7 +558,7 @@ public final class w3 extends View {
         canvas.restore();
         canvas.restore();
         if (this.g0 == null) {
-            this.g0 = new d11(LocaleController.getString(R.string.BotCloseAllTabs), 14.0f, AndroidUtilities.bold());
+            this.g0 = new e11(LocaleController.getString(R.string.BotCloseAllTabs), 14.0f, AndroidUtilities.bold());
         }
         if (this.i0 == null || this.h0 != h6.I.q()) {
             boolean q6 = h6.I.q();

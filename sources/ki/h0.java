@@ -15,9 +15,9 @@ import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.tj;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -66,7 +66,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 n9 n9Var = (n9) obj2;
                 j0 j0Var = (j0) obj;
                 k0 k0Var = (k0) ((qf.b) obj4).c;
-                if (h1Var.length() >= i14 && h1Var.getSelectionStart() != h1Var.getSelectionEnd() && n9Var.j0(j0Var.B(), 0, i13, i14)) {
+                if (h1Var.length() >= i14 && h1Var.getSelectionStart() != h1Var.getSelectionEnd() && n9Var.j0(j0Var.D(), 0, i13, i14)) {
                     k0Var.d = true;
                     h1Var.setSelection(i14);
                     k0Var.d = false;
@@ -239,7 +239,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) obj4;
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj3;
                 ArrayList arrayList6 = (ArrayList) obj2;
-                sn snVar = (sn) obj;
+                qn qnVar = (qn) obj;
                 boolean z12 = ChatAttachAlertPhotoLayout.q1;
                 ti tiVar = chatAttachAlertPhotoLayout.b;
                 if (!tiVar.F || tiVar.G) {
@@ -254,7 +254,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 if (tiVar.H) {
                     i11 = 13;
                 }
-                PhotoViewer.t1().g2(arrayList6, this.c, i11, false, chatAttachAlertPhotoLayout.h1, tiVar.H ? null : snVar);
+                PhotoViewer.t1().g2(arrayList6, this.c, i11, false, chatAttachAlertPhotoLayout.h1, tiVar.H ? null : qnVar);
                 PhotoViewer.t1().x2(tiVar.Q);
                 if (tiVar.F && !tiVar.G) {
                     PhotoViewer.t1().O = false;
@@ -287,13 +287,13 @@ public final /* synthetic */ class h0 implements Runnable {
         this.c = i11;
     }
 
-    public /* synthetic */ h0(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i10, org.telegram.ui.ActionBar.n2 n2Var, ArrayList arrayList, int i11, sn snVar) {
+    public /* synthetic */ h0(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i10, org.telegram.ui.ActionBar.n2 n2Var, ArrayList arrayList, int i11, qn qnVar) {
         this.d = chatAttachAlertPhotoLayout;
         this.b = i10;
         this.e = n2Var;
         this.f = arrayList;
         this.c = i11;
-        this.h = snVar;
+        this.h = qnVar;
     }
 
     public /* synthetic */ h0(qf.b bVar, h1 h1Var, int i10, n9 n9Var, j0 j0Var, int i11) {

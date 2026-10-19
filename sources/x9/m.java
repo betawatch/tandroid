@@ -10,7 +10,7 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.util.JsonReader;
 import android.util.Log;
-import c5.b0;
+import c5.c0;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
@@ -40,8 +40,8 @@ import m.s3;
 import v7.d8;
 import z9.a0;
 import z9.a1;
+import z9.b0;
 import z9.b1;
-import z9.c0;
 import z9.c1;
 import z9.d1;
 import z9.d2;
@@ -56,7 +56,7 @@ import z9.n0;
 import z9.q0;
 import z9.t0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class m {
     public static final ca.a r = new ca.a(3);
@@ -146,7 +146,7 @@ public final class m {
                 try {
                     s3Var.c = str;
                     Map a2 = ((y9.d) ((AtomicMarkableReference) ((c2.b) s3Var.d).b).getReference()).a();
-                    List p5 = ((b0) s3Var.f).p();
+                    List p5 = ((c0) s3Var.f).p();
                     if (((String) ((AtomicMarkableReference) s3Var.h).getReference()) != null) {
                         j10 = currentTimeMillis;
                         ((y9.f) s3Var.a).i(str, (String) ((AtomicMarkableReference) s3Var.h).getReference());
@@ -284,7 +284,7 @@ public final class m {
         String str16 = ((h0) d2Var).b;
         try {
             ca.b.g.getClass();
-            ca.b.f(cVar.b(str16, "report"), aa.b.a.m(a10));
+            ca.b.f(cVar.b(str16, "report"), aa.b.a.M(a10));
             File b12 = cVar.b(str16, "start-time");
             long j11 = ((h0) d2Var).d;
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(b12), ca.b.e);
@@ -420,7 +420,7 @@ public final class m {
                     ((y9.d) ((AtomicMarkableReference) ((c2.b) s3Var.d).b).getReference()).d(fVar.c(str4, false));
                     ((y9.d) ((AtomicMarkableReference) ((c2.b) s3Var.e).b).getReference()).d(fVar.c(str4, true));
                     ((AtomicMarkableReference) s3Var.h).set(fVar.d(str4), false);
-                    b0 b0Var = (b0) s3Var.f;
+                    c0 c0Var = (c0) s3Var.f;
                     File b10 = cVar2.b(str4, "rollouts-state");
                     if (!b10.exists() || b10.length() == 0) {
                         y9.f.f(b10);
@@ -442,7 +442,7 @@ public final class m {
                                     y9.f.f(b10);
                                     h.c(fileInputStream, "Failed to close rollouts state file.");
                                     list = Collections.EMPTY_LIST;
-                                    synchronized (b0Var) {
+                                    synchronized (c0Var) {
                                     }
                                 }
                             } catch (Throwable th2) {
@@ -460,13 +460,13 @@ public final class m {
                             throw th;
                         }
                     }
-                    synchronized (b0Var) {
-                        ((ArrayList) b0Var.c).clear();
-                        if (list.size() > b0Var.b) {
-                            Log.w("FirebaseCrashlytics", "Ignored 0 entries when adding rollout assignments. Maximum allowable: " + b0Var.b, null);
-                            ((ArrayList) b0Var.c).addAll(list.subList(0, b0Var.b));
+                    synchronized (c0Var) {
+                        ((ArrayList) c0Var.c).clear();
+                        if (list.size() > c0Var.b) {
+                            Log.w("FirebaseCrashlytics", "Ignored 0 entries when adding rollout assignments. Maximum allowable: " + c0Var.b, null);
+                            ((ArrayList) c0Var.c).addAll(list.subList(0, c0Var.b));
                         } else {
-                            ((ArrayList) b0Var.c).addAll(list);
+                            ((ArrayList) c0Var.c).addAll(list);
                         }
                     }
                     com.google.firebase.messaging.l lVar = this.m;
@@ -520,7 +520,7 @@ public final class m {
                             bVar3.e = Long.valueOf(applicationExitInfo.getPss());
                             bVar3.f = Long.valueOf(applicationExitInfo.getRss());
                             bVar3.h = str3;
-                            z9.b0 a2 = bVar3.a();
+                            b0 a2 = bVar3.a();
                             int i13 = pVar.a.getResources().getConfiguration().orientation;
                             com.google.firebase.messaging.l lVar2 = new com.google.firebase.messaging.l();
                             lVar2.b = "anr";
@@ -555,7 +555,7 @@ public final class m {
                                     if (str8 == null) {
                                         throw new NullPointerException("Null buildId");
                                     }
-                                    arrayList2.add(new c0(str7, str6, str8));
+                                    arrayList2.add(new z9.c0(str7, str6, str8));
                                     i14 = i15;
                                     size = i16;
                                     arrayList3 = arrayList4;
@@ -578,7 +578,7 @@ public final class m {
                             bVar4.f = Long.valueOf(a2.f);
                             bVar4.h = a2.h;
                             bVar4.i = list2;
-                            z9.b0 a10 = bVar4.a();
+                            b0 a10 = bVar4.a();
                             Boolean valueOf = Boolean.valueOf(a10.d != 100);
                             String processName2 = a10.b;
                             int i17 = a10.a;
@@ -623,7 +623,7 @@ public final class m {
                 }
             } else {
                 i10 = 4;
-                String j12 = i2.d.j(i12, "ANR feature enabled, but device is API ");
+                String j12 = i2.e.j(i12, "ANR feature enabled, but device is API ");
                 if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                     Log.v("FirebaseCrashlytics", j12, null);
                 }
@@ -782,7 +782,7 @@ public final class m {
                                         e = e17;
                                     }
                                 }
-                                ca.b.f(z13 ? new File(cVar3.e, ((h0) d2Var4).b) : new File(cVar3.d, ((h0) d2Var4).b), aa.b.a.m(a21));
+                                ca.b.f(z13 ? new File(cVar3.e, ((h0) d2Var4).b) : new File(cVar3.d, ((h0) d2Var4).b), aa.b.a.M(a21));
                             } catch (IOException e18) {
                                 e = e18;
                                 Log.w("FirebaseCrashlytics", "Could not synthesize final report file for " + b11, e);

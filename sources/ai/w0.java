@@ -2,7 +2,7 @@ package ai;
 
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w0 implements MessagesStorage.IntCallback {
     public final /* synthetic */ int a;
@@ -19,20 +19,20 @@ public final /* synthetic */ class w0 implements MessagesStorage.IntCallback {
             case 0:
                 b1 b1Var = (b1) this.b;
                 b1Var.getClass();
-                b1Var.V(ag.a.i(0L, i10 == 0 ? ag.c.a : ag.c.b), true, false, true);
+                b1Var.V(ag.a.i(0L, i10 == 0 ? ag.b.a : ag.b.b), true, false, true);
                 b1Var.d0.setText("");
                 break;
             case 1:
                 h1 h1Var = (h1) this.b;
                 h1Var.getClass();
-                h1Var.r(ag.a.i(0L, i10 == 0 ? ag.c.a : ag.c.b), true, false, true);
+                h1Var.s(ag.a.i(0L, i10 == 0 ? ag.b.a : ag.b.b), true, false, true);
                 h1Var.h.setText("");
                 break;
             default:
-                k6 k6Var = (k6) this.b;
-                k6Var.getClass();
-                k6Var.q = i10 == 0 ? ag.c.a : ag.c.b;
-                k6Var.a(true);
+                l6 l6Var = (l6) this.b;
+                l6Var.getClass();
+                l6Var.q = i10 == 0 ? ag.b.a : ag.b.b;
+                l6Var.a(true);
                 break;
         }
     }

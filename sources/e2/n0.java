@@ -6,7 +6,7 @@ import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.messenger.voip.VoipAudioManager;
 import org.telegram.ui.Components.tz;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n0 implements Runnable {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class n0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                qf.b.o((qf.b) ((ac.a) this.d).c, this.b, this.c);
+                qf.b.y((qf.b) ((ac.a) this.d).c, this.b, this.c);
                 break;
             case 1:
                 ((VideoPlayerHolderBase) this.d).lambda$setAudioEnabled$8(this.b, this.c);

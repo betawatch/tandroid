@@ -16,7 +16,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class yy extends hm0 {
     public yt E;
@@ -132,7 +132,7 @@ public final class yy extends hm0 {
         }
         if (z11 && !TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) {
             tzVar.i0.h1(0, 0);
-            tzVar.F(2);
+            tzVar.E(2);
         }
     }
 
@@ -206,7 +206,7 @@ public final class yy extends hm0 {
             }
             l();
             tzVar.i0.h1(0, 0);
-            tzVar.F(2);
+            tzVar.E(2);
         }
         if (z12 && hashMap.containsKey(k10)) {
             E(str, str2, z10, z11, true, k10, (TLObject) hashMap.get(k10));
@@ -351,7 +351,7 @@ public final class yy extends hm0 {
                     int i14 = 0;
                     for (int i15 = 0; i15 < size; i15++) {
                         TLRPC.Document document = (TLRPC.Document) tzVar.i1.get(i15);
-                        dw0 C1 = wz.C1(zyVar.F1(document, document.attributes));
+                        ew0 C1 = wz.C1(zyVar.F1(document, document.attributes));
                         int min = Math.min(i11, (int) Math.floor((((C1.a / C1.b) * dp) / measuredWidth) * i11));
                         if (i12 < min) {
                             this.H += i13;

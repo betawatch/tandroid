@@ -1,52 +1,71 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
 import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k51 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+public final class k51 extends s4.r0 {
+    public final /* synthetic */ int a = 0;
+    public int b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ k51(int i10, View view) {
-        this.a = i10;
-        this.b = view;
+    public k51(o51 o51Var) {
+        this.c = o51Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // s4.r0
+    public final void a(RecyclerView recyclerView, int i10) {
+        org.telegram.ui.Wallet.n8 n8Var;
         switch (this.a) {
             case 0:
-                m51 m51Var = (m51) this.b;
-                m51Var.getClass();
-                m51Var.B0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m51Var.invalidate();
-                break;
-            case 1:
-                b71 b71Var = (b71) this.b;
-                b71Var.getClass();
-                b71Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b71Var.invalidate();
-                break;
-            case 2:
-                h71 h71Var = (h71) this.b;
-                h71Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                h71Var.b = floatValue;
-                h71Var.setTranslationY(floatValue);
+                if (i10 == 0) {
+                    this.b = 0;
+                    break;
+                }
                 break;
             default:
-                b91 b91Var = (b91) this.b;
-                b91Var.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b91Var.setAnimationIdicatorProgress(floatValue2);
-                a91 a91Var = b91Var.y;
-                if (a91Var != null) {
-                    ((l2.f) a91Var).z(floatValue2);
+                if (i10 == 1 && (n8Var = ((org.telegram.ui.Wallet.k4) this.c).b.h0) != null) {
+                    n8Var.a();
                     break;
                 }
                 break;
         }
+    }
+
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                o51 o51Var = (o51) this.c;
+                this.b += i11;
+                if (recyclerView.getScrollState() == 1 && Math.abs(this.b) > AndroidUtilities.dp(96.0f)) {
+                    View findFocus = o51Var.e.findFocus();
+                    if (findFocus == null) {
+                        findFocus = o51Var.e;
+                    }
+                    AndroidUtilities.hideKeyboard(findFocus);
+                }
+                if (i11 != 0) {
+                    o51.n(o51Var);
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.Wallet.o5 o5Var = ((org.telegram.ui.Wallet.k4) this.c).b;
+                if (this.b != 0) {
+                    recyclerView.post(new org.telegram.ui.Wallet.p3(o5Var, 14));
+                    break;
+                } else {
+                    o5Var.z0();
+                    break;
+                }
+        }
+    }
+
+    public k51(org.telegram.ui.Wallet.k4 k4Var, int i10) {
+        this.c = k4Var;
+        this.b = i10;
     }
 }

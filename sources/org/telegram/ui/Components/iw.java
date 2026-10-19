@@ -6,9 +6,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.sa1;
+import org.telegram.ui.qa1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class iw extends kn0 {
     public long h;
@@ -28,9 +28,9 @@ public final class iw extends kn0 {
         setHorizontalScrollBarEnabled(false);
         setVerticalScrollBarEnabled(false);
         setNestedScrollingEnabled(true);
-        sa1 sa1Var = new sa1(this, context, 8);
-        this.b = sa1Var;
-        sa1Var.setOrientation(0);
+        qa1 qa1Var = new qa1(this, context, 8);
+        this.b = qa1Var;
+        qa1Var.setOrientation(0);
         addView(this.b, new FrameLayout.LayoutParams(-2, -1));
         while (true) {
             int[] iArr = kw.e0;

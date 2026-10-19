@@ -14,9 +14,9 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.gh;
+import org.telegram.ui.eh;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e5 implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class e5 implements Utilities.CallbackReturn {
                 }
                 if (num.intValue() == 5) {
                     zArr[0] = false;
-                    uc.a(true, new ai.n2(9, f6Var, o5Var));
+                    uc.a(true, new ai.o2(9, f6Var, o5Var));
                     return Boolean.FALSE;
                 }
                 if (num.intValue() == 2) {
@@ -145,7 +145,7 @@ public final /* synthetic */ class e5 implements Utilities.CallbackReturn {
                     }
                 }, tL_aiComposeTone.creator);
                 F.c(R.drawable.msg_share, LocaleController.getString(R.string.AIEditorShareStyle), new org.telegram.messenger.camera.i(e0Var, tL_aiComposeTone, context, d6Var, 19), false);
-                F.m(!tL_aiComposeTone.creator, R.drawable.msg_delete, LocaleController.getString(R.string.AIEditorRemoveStyle), true, new gh(22, e0Var, tL_aiComposeTone));
+                F.m(!tL_aiComposeTone.creator, R.drawable.msg_delete, LocaleController.getString(R.string.AIEditorRemoveStyle), true, new eh(22, e0Var, tL_aiComposeTone));
                 final int i13 = 1;
                 F.m(tL_aiComposeTone.creator, R.drawable.msg_delete, LocaleController.getString(R.string.AIEditorDeleteStyle), true, new Runnable() { // from class: org.telegram.ui.Components.f
                     @Override // java.lang.Runnable

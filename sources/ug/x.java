@@ -5,10 +5,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.le;
-import org.telegram.ui.sn;
+import org.telegram.ui.je;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x implements Utilities.Callback {
     public final /* synthetic */ z a;
@@ -30,13 +30,13 @@ public final /* synthetic */ class x implements Utilities.Callback {
         z zVar = this.a;
         zVar.dismiss();
         if (this.b == null) {
-            AndroidUtilities.runOnUIThread(new u2.q0(7, zVar, this.e), 220L);
+            AndroidUtilities.runOnUIThread(new uf.c(6, zVar, this.e), 220L);
             return;
         }
         n2 U = LaunchActivity.U();
         if (U != null) {
-            sn W9 = sn.W9(this.c);
-            W9.whenFullyVisible(new le(W9, this.d, 6));
+            qn W9 = qn.W9(this.c);
+            W9.whenFullyVisible(new je(W9, this.d, 6));
             U.presentFragment(W9);
         }
     }

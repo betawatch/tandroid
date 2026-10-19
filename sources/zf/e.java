@@ -1,6 +1,6 @@
 package zf;
 
-import ai.u8;
+import ai.v8;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -26,11 +26,11 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.of;
+import org.telegram.messenger.nf;
 import org.telegram.ui.Components.uj0;
-import org.telegram.ui.mj0;
+import org.telegram.ui.df0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class e {
     public static int A;
@@ -91,7 +91,7 @@ public final class e {
         sb2.append("_");
         sb2.append(i11);
         sb2.append(z10 ? "_nolimit" : " ");
-        File file3 = new File(file2, a1.g.s(sb2, i12 != 0 ? i2.d.j(i12, "_fitz") : "", ".pcache2"));
+        File file3 = new File(file2, a1.g.s(sb2, i12 != 0 ? i2.e.j(i12, "_fitz") : "", ".pcache2"));
         this.m = file3;
         this.f = i10 < AndroidUtilities.dp(60.0f) && i11 < AndroidUtilities.dp(60.0f);
         if (SharedConfig.getDevicePerformanceClass() < 2) {
@@ -153,7 +153,7 @@ public final class e {
         A = i10;
         if (i10 <= 0) {
             A = 0;
-            uj0.T0.postRunnable(new mj0(23));
+            uj0.T0.postRunnable(new df0(24));
         }
     }
 
@@ -326,7 +326,7 @@ public final class e {
                     }
                 }
                 int length = (int) randomAccessFile22.length();
-                Collections.sort(arrayList2, Comparator$-CC.comparingInt(new u8(20)));
+                Collections.sort(arrayList2, Comparator$-CC.comparingInt(new v8(20)));
                 zVarArr2[0].b();
                 int size = arrayList2.size();
                 zVarArr2[0].c(size);
@@ -349,7 +349,7 @@ public final class e {
                 this.k = true;
             } else {
                 countDownLatchArr[i11] = new CountDownLatch(1);
-                z.execute(new of(this, atomicBoolean2, bitmapArr, i11, zVarArr2, i12, randomAccessFile22, arrayList2, countDownLatchArr));
+                z.execute(new nf(this, atomicBoolean2, bitmapArr, i11, zVarArr2, i12, randomAccessFile22, arrayList2, countDownLatchArr));
                 i11++;
                 i12++;
                 if (i11 >= y) {

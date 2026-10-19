@@ -18,7 +18,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class n2 {
     public static n2 i;
@@ -111,11 +111,11 @@ public final class n2 {
             if (i10 == R.drawable.abc_cab_background_top_material) {
                 layerDrawable = new LayerDrawable(new Drawable[]{g(context, R.drawable.abc_cab_background_internal_bg), g(context, R.drawable.abc_cab_background_top_mtrl_alpha)});
             } else if (i10 == R.drawable.abc_ratingbar_material) {
-                layerDrawable = com.google.firebase.messaging.l.w(this, context, R.dimen.abc_star_big);
+                layerDrawable = com.google.firebase.messaging.l.v(this, context, R.dimen.abc_star_big);
             } else if (i10 == R.drawable.abc_ratingbar_indicator_material) {
-                layerDrawable = com.google.firebase.messaging.l.w(this, context, R.dimen.abc_star_medium);
+                layerDrawable = com.google.firebase.messaging.l.v(this, context, R.dimen.abc_star_medium);
             } else if (i10 == R.drawable.abc_ratingbar_small_material) {
-                layerDrawable = com.google.firebase.messaging.l.w(this, context, R.dimen.abc_star_small);
+                layerDrawable = com.google.firebase.messaging.l.v(this, context, R.dimen.abc_star_small);
             }
         }
         if (layerDrawable != null) {
@@ -299,9 +299,9 @@ public final class n2 {
                 Drawable findDrawableByLayerId = layerDrawable.findDrawableByLayerId(android.R.id.background);
                 int c10 = c3.c(context, R.attr.colorControlNormal);
                 PorterDuff.Mode mode2 = r.b;
-                com.google.firebase.messaging.l.H(findDrawableByLayerId, c10, mode2);
-                com.google.firebase.messaging.l.H(layerDrawable.findDrawableByLayerId(android.R.id.secondaryProgress), c3.c(context, R.attr.colorControlNormal), mode2);
-                com.google.firebase.messaging.l.H(layerDrawable.findDrawableByLayerId(android.R.id.progress), c3.c(context, R.attr.colorControlActivated), mode2);
+                com.google.firebase.messaging.l.I(findDrawableByLayerId, c10, mode2);
+                com.google.firebase.messaging.l.I(layerDrawable.findDrawableByLayerId(android.R.id.secondaryProgress), c3.c(context, R.attr.colorControlNormal), mode2);
+                com.google.firebase.messaging.l.I(layerDrawable.findDrawableByLayerId(android.R.id.progress), c3.c(context, R.attr.colorControlActivated), mode2);
                 return drawable;
             }
             if (i10 == R.drawable.abc_ratingbar_material || i10 == R.drawable.abc_ratingbar_indicator_material || i10 == R.drawable.abc_ratingbar_small_material) {
@@ -309,9 +309,9 @@ public final class n2 {
                 Drawable findDrawableByLayerId2 = layerDrawable2.findDrawableByLayerId(android.R.id.background);
                 int b10 = c3.b(context, R.attr.colorControlNormal);
                 PorterDuff.Mode mode3 = r.b;
-                com.google.firebase.messaging.l.H(findDrawableByLayerId2, b10, mode3);
-                com.google.firebase.messaging.l.H(layerDrawable2.findDrawableByLayerId(android.R.id.secondaryProgress), c3.c(context, R.attr.colorControlActivated), mode3);
-                com.google.firebase.messaging.l.H(layerDrawable2.findDrawableByLayerId(android.R.id.progress), c3.c(context, R.attr.colorControlActivated), mode3);
+                com.google.firebase.messaging.l.I(findDrawableByLayerId2, b10, mode3);
+                com.google.firebase.messaging.l.I(layerDrawable2.findDrawableByLayerId(android.R.id.secondaryProgress), c3.c(context, R.attr.colorControlActivated), mode3);
+                com.google.firebase.messaging.l.I(layerDrawable2.findDrawableByLayerId(android.R.id.progress), c3.c(context, R.attr.colorControlActivated), mode3);
                 return drawable;
             }
         }

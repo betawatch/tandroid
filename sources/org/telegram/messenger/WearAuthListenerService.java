@@ -15,11 +15,11 @@ import java.util.Collections;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ai1;
-import org.telegram.ui.ef0;
-import org.telegram.ui.kg0;
+import org.telegram.ui.cf0;
+import org.telegram.ui.jg0;
+import org.telegram.ui.yh1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class WearAuthListenerService extends x8.k {
     public static final String PATH_CANCEL = "/tg-wear-auth/cancel";
@@ -34,13 +34,13 @@ public class WearAuthListenerService extends x8.k {
                 return;
             }
             FileLog.d("wear-auth: cancel from " + str2);
-            BigInteger bigInteger = ai1.a;
+            BigInteger bigInteger = yh1.a;
             FileLog.d("wear-auth: cancel received; dropping session and dismissing sheet");
-            ai1.d = null;
-            org.telegram.ui.ActionBar.f3 f3Var = ai1.c;
+            yh1.d = null;
+            org.telegram.ui.ActionBar.f3 f3Var = yh1.c;
             if (f3Var != null) {
                 f3Var.dismiss();
-                ai1.c = null;
+                yh1.c = null;
                 return;
             }
             return;
@@ -49,24 +49,24 @@ public class WearAuthListenerService extends x8.k {
         v.append(bArr.length);
         v.append(" bytes)");
         FileLog.d(v.toString());
-        BigInteger bigInteger2 = ai1.a;
+        BigInteger bigInteger2 = yh1.a;
         if (bArr.length != 272) {
             FileLog.d("wear-auth: malformed offer (" + bArr.length + ")");
             return;
         }
         byte[] copyOfRange = Arrays.copyOfRange(bArr, 0, 16);
         byte[] copyOfRange2 = Arrays.copyOfRange(bArr, 16, bArr.length);
-        com.google.android.gms.internal.cast.z5 z5Var = ai1.d;
+        com.google.android.gms.internal.cast.z5 z5Var = yh1.d;
         if (z5Var != null && Arrays.equals((byte[]) z5Var.b, copyOfRange)) {
             FileLog.d("wear-auth: duplicate offer (same sessionId) — ignoring");
             return;
         }
-        FileLog.d("wear-auth: new session " + ai1.d(copyOfRange) + " from " + str2);
+        FileLog.d("wear-auth: new session " + yh1.d(copyOfRange) + " from " + str2);
         com.google.android.gms.internal.cast.z5 z5Var2 = new com.google.android.gms.internal.cast.z5();
         z5Var2.b = copyOfRange;
         z5Var2.c = copyOfRange2;
         z5Var2.a = str2;
-        ai1.d = z5Var2;
+        yh1.d = z5Var2;
         Context context = LaunchActivity.H1;
         if (context == null) {
             context = ApplicationLoader.applicationContext;
@@ -76,12 +76,12 @@ public class WearAuthListenerService extends x8.k {
         }
         org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
         org.telegram.ui.ActionBar.d6 resourceProvider = U != null ? U.getResourceProvider() : null;
-        org.telegram.ui.ActionBar.f3 f3Var2 = ai1.c;
+        org.telegram.ui.ActionBar.f3 f3Var2 = yh1.c;
         if (f3Var2 != null) {
             f3Var2.dismiss();
-            ai1.c = null;
+            yh1.c = null;
         }
-        org.telegram.ui.ActionBar.f3 i10 = lk.i(1, context, resourceProvider, false);
+        org.telegram.ui.ActionBar.f3 i10 = kk.i(1, context, resourceProvider, false);
         FrameLayout frameLayout = new FrameLayout(context);
         i10.customView = frameLayout;
         int i11 = UserConfig.selectedAccount;
@@ -95,7 +95,7 @@ public class WearAuthListenerService extends x8.k {
                 arrayList.add(Integer.valueOf(i12));
             }
         }
-        Collections.sort(arrayList, new kg0(11));
+        Collections.sort(arrayList, new jg0(11));
         if (arrayList.isEmpty()) {
             return;
         }
@@ -124,7 +124,7 @@ public class WearAuthListenerService extends x8.k {
         if (arrayList.size() <= 1) {
             frameLayout2.setVisibility(8);
         }
-        LinearLayout e = lk.e(context, 1);
+        LinearLayout e = kk.e(context, 1);
         frameLayout.addView(e, w7.z5.e(-1, -1, 119));
         org.telegram.ui.Components.w9 w9Var2 = new org.telegram.ui.Components.w9(context);
         e.addView(w9Var2, w7.z5.r(130, 130, 49, 32.0f, 32.0f, 32.0f, 9.66f));
@@ -138,15 +138,15 @@ public class WearAuthListenerService extends x8.k {
         b11.setGravity(17);
         b11.setText(LocaleController.getString(R.string.WearAuthText));
         e.addView(b11, w7.z5.t(-1, -2, 49, 32, 0, 32, 24));
-        ei.d f7 = lk.f(24, context, resourceProvider, true);
+        ei.d f7 = kk.f(24, context, resourceProvider, true);
         f7.setText(LocaleController.getString(R.string.Next));
         e.addView(f7, w7.z5.t(-1, 48, 7, 12, 12, 12, 8));
         int i15 = org.telegram.ui.ActionBar.h6.a7;
         i10.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(i15, resourceProvider));
         i10.fixNavigationBar(org.telegram.ui.ActionBar.h6.w0(i15, resourceProvider));
         frameLayout2.setOnClickListener(new org.telegram.ui.Components.m0(i10, frameLayout3, arrayList, iArr, h9Var, w9Var, 4));
-        f7.setOnClickListener(new ef0(29, f7, iArr));
-        ai1.c = i10;
+        f7.setOnClickListener(new cf0(28, f7, iArr));
+        yh1.c = i10;
         i10.show();
     }
 
@@ -165,6 +165,6 @@ public class WearAuthListenerService extends x8.k {
                 FileLog.e("wear-auth: failed to pop LaunchActivity", e);
             }
         }
-        AndroidUtilities.runOnUIThread(new sl(str, str2, bArr));
+        AndroidUtilities.runOnUIThread(new rl(str, str2, bArr));
     }
 }

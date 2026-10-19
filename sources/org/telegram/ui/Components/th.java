@@ -7,9 +7,9 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class th implements org.telegram.ui.kq0 {
+public final class th implements org.telegram.ui.iq0 {
     public boolean a;
     public final /* synthetic */ HashMap b;
     public final /* synthetic */ ArrayList c;
@@ -21,12 +21,12 @@ public final class th implements org.telegram.ui.kq0 {
         this.c = arrayList;
     }
 
-    @Override // org.telegram.ui.kq0
+    @Override // org.telegram.ui.iq0
     public final /* synthetic */ boolean e() {
         return true;
     }
 
-    @Override // org.telegram.ui.kq0
+    @Override // org.telegram.ui.iq0
     public final void h(int i10, boolean z10, boolean z11) {
         if (z10) {
             return;
@@ -41,7 +41,7 @@ public final class th implements org.telegram.ui.kq0 {
         while (true) {
             ArrayList arrayList2 = this.c;
             if (i11 >= arrayList2.size()) {
-                ((org.telegram.ui.sn) this.d.f0).g8(i10, arrayList, z11);
+                ((org.telegram.ui.qn) this.d.f0).g8(i10, arrayList, z11);
                 return;
             }
             Object obj = hashMap.get(arrayList2.get(i11));
@@ -71,15 +71,15 @@ public final class th implements org.telegram.ui.kq0 {
         }
     }
 
-    @Override // org.telegram.ui.kq0
+    @Override // org.telegram.ui.iq0
     public final void a() {
     }
 
-    @Override // org.telegram.ui.kq0
+    @Override // org.telegram.ui.iq0
     public final void b(Editable editable) {
     }
 
-    @Override // org.telegram.ui.kq0
+    @Override // org.telegram.ui.iq0
     public final /* synthetic */ void g() {
     }
 }

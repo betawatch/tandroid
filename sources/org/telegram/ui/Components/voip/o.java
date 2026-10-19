@@ -15,11 +15,11 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.n31;
+import org.telegram.ui.Components.o31;
 import org.telegram.ui.Components.yr;
-import org.telegram.ui.s50;
+import org.telegram.ui.q50;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class o extends q2 {
     public float g0;
@@ -31,13 +31,13 @@ public final class o extends q2 {
     public final /* synthetic */ String m0;
     public final /* synthetic */ float n0;
     public final /* synthetic */ StaticLayout o0;
-    public final /* synthetic */ s50 p0;
+    public final /* synthetic */ q50 p0;
     public final /* synthetic */ String q0;
     public final /* synthetic */ float r0;
     public final /* synthetic */ t s0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o(t tVar, Context context, ChatObject.Call call, l0 l0Var, TextPaint textPaint, StaticLayout staticLayout, TextPaint textPaint2, String str, float f7, StaticLayout staticLayout2, s50 s50Var, String str2, float f10) {
+    public o(t tVar, Context context, ChatObject.Call call, l0 l0Var, TextPaint textPaint, StaticLayout staticLayout, TextPaint textPaint2, String str, float f7, StaticLayout staticLayout2, q50 q50Var, String str2, float f10) {
         super(context, false, false, true, true);
         this.s0 = tVar;
         this.h0 = call;
@@ -48,7 +48,7 @@ public final class o extends q2 {
         this.m0 = str;
         this.n0 = f7;
         this.o0 = staticLayout2;
-        this.p0 = s50Var;
+        this.p0 = q50Var;
         this.q0 = str2;
         this.r0 = f10;
     }
@@ -88,7 +88,7 @@ public final class o extends q2 {
         ImageView imageView = tVar.x0;
         if (imageView != null && imageView.getParent() != null) {
             if (tVar.x0.getAlpha() == 1.0f) {
-                tVar.x0.animate().alpha(0.0f).setDuration(300L).setListener(new n31(this, 9)).start();
+                tVar.x0.animate().alpha(0.0f).setDuration(300L).setListener(new o31(this, 9)).start();
             } else if (tVar.x0.getParent() != null) {
                 oVar.removeView(tVar.x0);
             }
@@ -246,9 +246,9 @@ public final class o extends q2 {
                         hVar.g = f23;
                         if (f23 > 4.0f) {
                             hVar.g = 0.0f;
-                            org.telegram.ui.web.a2 a2Var = hVar.p;
-                            if (a2Var != null) {
-                                a2Var.run();
+                            org.telegram.ui.web.z1 z1Var = hVar.p;
+                            if (z1Var != null) {
+                                z1Var.run();
                             }
                         }
                         hVar.h = currentTimeMillis;
@@ -289,7 +289,7 @@ public final class o extends q2 {
         float measuredHeight = (getMeasuredHeight() - this.N) - AndroidUtilities.dp(80.0f);
         if (tVar.w != call.videoNotAvailableParticipant) {
             canvas.save();
-            if ((tVar.b || tVar.r) && !s50.F3 && !s50.G3) {
+            if ((tVar.b || tVar.r) && !q50.F3 && !q50.G3) {
                 measuredHeight = com.google.android.gms.internal.play_billing.k3.D(1.0f, l0Var.W, AndroidUtilities.dp(90.0f) * l0Var.c, measuredHeight);
             }
             f12 = 0.0f;

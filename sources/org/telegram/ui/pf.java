@@ -1,49 +1,70 @@
 package org.telegram.ui;
 
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import java.io.Serializable;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pf implements View.OnLongClickListener {
+public final /* synthetic */ class pf implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sn b;
+    public final /* synthetic */ qn b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ String f;
+    public final /* synthetic */ Serializable h;
+    public final /* synthetic */ TLRPC.InputPeer n;
+    public final /* synthetic */ int[] r;
+    public final /* synthetic */ boolean s;
+    public final /* synthetic */ of v;
+    public final /* synthetic */ Object w;
 
-    public /* synthetic */ pf(sn snVar, int i10) {
-        this.a = i10;
-        this.b = snVar;
+    public /* synthetic */ pf(qn qnVar, int i10, ArrayList arrayList, String str, String str2, String str3, TLRPC.InputPeer inputPeer, int[] iArr, Object obj, boolean z10, of ofVar, int i11) {
+        this.a = i11;
+        this.b = qnVar;
+        this.c = i10;
+        this.d = arrayList;
+        this.e = str;
+        this.f = str2;
+        this.h = str3;
+        this.n = inputPeer;
+        this.r = iArr;
+        this.w = obj;
+        this.s = z10;
+        this.v = ofVar;
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
-        MessageObject messageObject;
-        MessageObject messageObject2;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                sn snVar = this.b;
-                MessageObject messageObject3 = snVar.d5;
-                if (messageObject3 == null) {
-                    return false;
-                }
-                if (AndroidUtilities.addToClipboard(messageObject3.sponsoredUrl)) {
-                    new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(snVar.getParentActivity()), snVar.ea).k(false).j();
-                }
-                return true;
+                qn.b0(this.b, this.c, this.d, this.e, this.f, (String) this.h, this.n, this.r, (TL_iv.RichMessage) this.w, this.s, this.v);
+                break;
             case 1:
-                return sn.W(this.b);
+                qn.d0(this.b, this.c, this.d, this.e, this.f, (String) this.h, this.n, this.r, (CharSequence) this.w, this.s, this.v);
+                break;
             default:
-                sn snVar2 = this.b;
-                int i10 = snVar2.ob;
-                if (i10 == 1 && (messageObject2 = snVar2.p5) != null) {
-                    snVar2.j(messageObject2.getId(), 0, true, 0, true, 0);
-                    return true;
-                }
-                if (snVar2.f5 == null || i10 != 2 || (messageObject = snVar2.n5) == null) {
-                    return false;
-                }
-                snVar2.j(messageObject.getId(), 0, true, 0, true, 0);
-                return true;
+                qn.t0(this.b, this.c, this.d, (String[]) this.h, this.e, this.f, this.n, this.r, (CharSequence) this.w, this.s, this.v);
+                break;
         }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ pf(qn qnVar, int i10, ArrayList arrayList, String[] strArr, String str, String str2, TLRPC.InputPeer inputPeer, int[] iArr, CharSequence charSequence, boolean z10, of ofVar) {
+        this.a = 2;
+        this.b = qnVar;
+        this.c = i10;
+        this.d = arrayList;
+        this.h = strArr;
+        this.e = str;
+        this.f = str2;
+        this.n = inputPeer;
+        this.r = iArr;
+        this.w = charSequence;
+        this.s = z10;
+        this.v = ofVar;
     }
 }

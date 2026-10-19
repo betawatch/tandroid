@@ -1,41 +1,106 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import java.util.ArrayList;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.os.Build;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class s40 extends org.telegram.ui.ActionBar.m1 {
-    public final /* synthetic */ s50 o;
+public final class s40 implements org.telegram.ui.Components.bl0 {
+    public final Path a = new Path();
+    public final Paint b;
+    public final /* synthetic */ q50 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s40(s50 s50Var, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = s50Var;
+    public s40(q50 q50Var) {
+        this.c = q50Var;
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setColor(-14603467);
     }
 
-    @Override // org.telegram.ui.ActionBar.m1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        s50 s50Var = this.o;
-        if (s50Var.f3 != this) {
+    @Override // org.telegram.ui.Components.bl0
+    public final boolean i() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public final /* synthetic */ boolean m() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public final void o(View view, ah.i1 i1Var, boolean z10, boolean z11) {
+        TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
+        String str = i1Var.f;
+        if (str == null) {
+            str = "👍";
+        }
+        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
+        tL_textWithEntities.text = str;
+        long j10 = i1Var.g;
+        if (j10 != 0) {
+            tL_messageEntityCustomEmoji.document_id = j10;
+            tL_messageEntityCustomEmoji.offset = 0;
+            tL_messageEntityCustomEmoji.length = str.length();
+            tL_textWithEntities.entities.add(tL_messageEntityCustomEmoji);
+        }
+        q50 q50Var = this.c;
+        q50Var.B1(tL_textWithEntities);
+        p30 p30Var = q50Var.H;
+        if (p30Var.m()) {
+            p30Var.j();
+        } else {
+            p30Var.d();
+        }
+        ah.t0 reactionsWindow = q50Var.K.getReactionsWindow();
+        if (reactionsWindow == null || reactionsWindow.q) {
             return;
         }
-        s50Var.f3 = null;
-        AnimatorSet animatorSet = s50Var.e3;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-            s50Var.e3 = null;
+        q50Var.K.getReactionsWindow().e();
+        q50Var.K.n();
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public final void q(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+        Paint paint = this.b;
+        if (f7 > 0.0f) {
+            canvas.drawRoundRect(rectF, f7, f7, paint);
+        } else {
+            canvas.drawRect(rectF, paint);
         }
-        s50Var.Y.X = true;
-        s50Var.e3 = new AnimatorSet();
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(ObjectAnimator.ofInt(s50Var.W2, org.telegram.ui.Components.t6.b, 0));
-        s50Var.e3.playTogether(arrayList);
-        s50Var.e3.setDuration(220L);
-        s50Var.e3.addListener(new org.telegram.ui.Components.n31(this, 27));
-        s50Var.e3.start();
+        if (Build.VERSION.SDK_INT < 29 || !canvas.isHardwareAccelerated()) {
+            return;
+        }
+        q50 q50Var = this.c;
+        if (q50Var.Q2 != null) {
+            canvas.save();
+            if (f7 > 0.0f) {
+                Path path = this.a;
+                path.rewind();
+                path.addRoundRect(rectF, f7, f7, Path.Direction.CW);
+                path.close();
+                canvas.clipPath(path);
+            } else {
+                canvas.clipRect(rectF);
+            }
+            canvas.translate(-q50Var.K.getX(), -q50Var.K.getY());
+            float f12 = q50Var.R2;
+            canvas.scale(f12, f12);
+            canvas.drawRenderNode(q50Var.Q2);
+            canvas.restore();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public final boolean w() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public final /* synthetic */ void v() {
     }
 }

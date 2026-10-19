@@ -1,72 +1,121 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class gl0 extends org.telegram.ui.Components.e61 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class gl0 implements TextView.OnEditorActionListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vm0 b;
 
-    static {
-        org.telegram.ui.Components.e61.setup(new gl0());
+    public /* synthetic */ gl0(vm0 vm0Var, int i10) {
+        this.a = i10;
+        this.b = vm0Var;
     }
 
-    @Override // org.telegram.ui.Components.e61
-    public final void bindView(View view, org.telegram.ui.Components.f61 f61Var, boolean z10, org.telegram.ui.Components.s61 s61Var, org.telegram.ui.Components.a71 a71Var) {
-        hl0 hl0Var = (hl0) view;
-        TL_account.Passkey passkey = (TL_account.Passkey) f61Var.G;
-        View.OnClickListener onClickListener = f61Var.D;
-        TextView textView = hl0Var.f;
-        TextView textView2 = hl0Var.e;
-        org.telegram.ui.ActionBar.d6 d6Var = hl0Var.b;
-        FrameLayout frameLayout = hl0Var.c;
-        org.telegram.ui.Components.w9 w9Var = hl0Var.d;
-        hl0Var.r = passkey.id;
-        long j10 = passkey.software_emoji_id;
-        if (j10 != 0) {
-            w9Var.setAnimatedEmojiDrawable(org.telegram.ui.Components.r5.n(hl0Var.a, j10, null, 3));
-            frameLayout.setBackground(null);
-            w9Var.setColorFilter(null);
-            w9Var.setScaleX(1.0f);
-            w9Var.setScaleY(1.0f);
-        } else {
-            int dp = AndroidUtilities.dp(4.0f);
-            int i10 = org.telegram.ui.ActionBar.h6.G6;
-            frameLayout.setBackground(org.telegram.ui.ActionBar.h6.c0(dp, org.telegram.ui.ActionBar.h6.m1(0.04f, org.telegram.ui.ActionBar.h6.w0(i10, d6Var))));
-            w9Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.m1(0.3f, org.telegram.ui.ActionBar.h6.w0(i10, d6Var)), PorterDuff.Mode.SRC_IN));
-            w9Var.setImageResource(R.drawable.msg2_permissions);
-            w9Var.setScaleX(0.666f);
-            w9Var.setScaleY(0.666f);
-            w9Var.setAnimatedEmojiDrawable(null);
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+        switch (this.a) {
+            case 0:
+                vm0 vm0Var = this.b;
+                if (i10 != 5) {
+                    if (i10 != 6) {
+                        vm0Var.getClass();
+                        break;
+                    } else {
+                        vm0Var.L.callOnClick();
+                        break;
+                    }
+                } else {
+                    vm0Var.Y[2].requestFocus();
+                    break;
+                }
+            case 1:
+                vm0 vm0Var2 = this.b;
+                vm0Var2.getClass();
+                if (i10 == 5) {
+                    int intValue = ((Integer) textView.getTag()).intValue() + 1;
+                    EditTextBoldCursor[] editTextBoldCursorArr = vm0Var2.Y;
+                    if (intValue < editTextBoldCursorArr.length) {
+                        if (!editTextBoldCursorArr[intValue].isFocusable()) {
+                            vm0Var2.Y[intValue].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
+                            textView.clearFocus();
+                            AndroidUtilities.hideKeyboard(textView);
+                            break;
+                        } else {
+                            vm0Var2.Y[intValue].requestFocus();
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 2:
+                vm0 vm0Var3 = this.b;
+                vm0Var3.getClass();
+                if (i10 == 5) {
+                    int intValue2 = ((Integer) textView.getTag()).intValue() + 1;
+                    EditTextBoldCursor[] editTextBoldCursorArr2 = vm0Var3.a0;
+                    if (intValue2 < editTextBoldCursorArr2.length) {
+                        if (!editTextBoldCursorArr2[intValue2].isFocusable()) {
+                            vm0Var3.a0[intValue2].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
+                            textView.clearFocus();
+                            AndroidUtilities.hideKeyboard(textView);
+                            break;
+                        } else {
+                            vm0Var3.a0[intValue2].requestFocus();
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 3:
+                vm0 vm0Var4 = this.b;
+                vm0Var4.getClass();
+                if (i10 == 6 || i10 == 5) {
+                    vm0Var4.L.callOnClick();
+                    break;
+                }
+                break;
+            case 4:
+                vm0 vm0Var5 = this.b;
+                vm0Var5.getClass();
+                if (i10 == 5) {
+                    int intValue3 = ((Integer) textView.getTag()).intValue() + 1;
+                    EditTextBoldCursor[] editTextBoldCursorArr3 = vm0Var5.Y;
+                    if (intValue3 < editTextBoldCursorArr3.length) {
+                        if (!editTextBoldCursorArr3[intValue3].isFocusable()) {
+                            vm0Var5.Y[intValue3].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
+                            textView.clearFocus();
+                            AndroidUtilities.hideKeyboard(textView);
+                            break;
+                        } else {
+                            vm0Var5.Y[intValue3].requestFocus();
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 5:
+                vm0 vm0Var6 = this.b;
+                vm0Var6.getClass();
+                if (i10 == 5 || i10 == 6) {
+                    vm0Var6.L.callOnClick();
+                    break;
+                }
+                break;
+            default:
+                vm0 vm0Var7 = this.b;
+                vm0Var7.getClass();
+                if (i10 == 6 || i10 == 5) {
+                    vm0Var7.L.callOnClick();
+                    break;
+                }
+                break;
         }
-        if (TextUtils.isEmpty(passkey.name)) {
-            textView2.setText(LocaleController.getString(R.string.PasskeyUnknown));
-        } else {
-            textView2.setText(passkey.name);
-        }
-        int i11 = passkey.last_usage_date;
-        if (i11 != 0) {
-            textView.setText(LocaleController.formatString(R.string.PasskeyLastUsedOn, LocaleController.formatDateTime(i11, false)));
-        } else {
-            textView.setText(LocaleController.formatString(R.string.PasskeyCreatedOn, LocaleController.formatDateTime(passkey.date, false)));
-        }
-        hl0Var.h.setOnClickListener(onClickListener);
-        hl0Var.n = z10;
-        hl0Var.setWillNotDraw(!z10);
-    }
-
-    @Override // org.telegram.ui.Components.e61
-    public final View createView(Context context, org.telegram.ui.Components.im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
-        return new hl0(context, i10, d6Var);
+        return true;
     }
 }

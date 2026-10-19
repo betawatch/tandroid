@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class ou implements uy {
     public final /* synthetic */ qu a;
@@ -57,9 +57,9 @@ public final class ou implements uy {
         if (quVar.b()) {
             quVar.x = i10 != 0;
             quVar.y();
-            jw0 jw0Var = quVar.f;
-            if (jw0Var != null) {
-                jw0Var.S();
+            kw0 kw0Var = quVar.f;
+            if (kw0Var != null) {
+                kw0Var.S();
             }
         }
     }
@@ -121,7 +121,7 @@ public final class ou implements uy {
     public final void q() {
         org.telegram.ui.ActionBar.n2 n2Var = this.a.h;
         if (n2Var == null) {
-            new sg.y0((org.telegram.ui.ActionBar.n2) new ai.z4(this, 5), 11, false).show();
+            new sg.y0((org.telegram.ui.ActionBar.n2) new ai.a5(this, 5), 11, false).show();
         } else {
             n2Var.showDialog(new sg.y0(n2Var, 11, false));
         }
@@ -160,7 +160,7 @@ public final class ou implements uy {
     }
 
     @Override // org.telegram.ui.Components.uy
-    public final /* synthetic */ void o(b61 b61Var) {
+    public final /* synthetic */ void o(c61 c61Var) {
     }
 
     @Override // org.telegram.ui.Components.uy

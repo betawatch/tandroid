@@ -1,28 +1,19 @@
 package org.telegram.messenger;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import java.util.List;
+import org.telegram.messenger.TelegramMediaSession;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final /* synthetic */ class k4 implements OnCompleteListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q0.a b;
+public final /* synthetic */ class k4 implements TelegramMediaSession.BrowseChildrenCallback {
+    public final /* synthetic */ Runnable a;
 
-    public /* synthetic */ k4(q0.a aVar, int i10) {
-        this.a = i10;
-        this.b = aVar;
+    public /* synthetic */ k4(Runnable runnable) {
+        this.a = runnable;
     }
 
-    @Override // com.google.android.gms.tasks.OnCompleteListener
-    public void onComplete(Task task) {
-        switch (this.a) {
-            case 0:
-                GoogleLocationProvider.lambda$getLastLocation$0(this.b, task);
-                break;
-            default:
-                GoogleLocationProvider.lambda$checkLocationSettings$1(this.b, task);
-                break;
-        }
+    @Override // org.telegram.messenger.TelegramMediaSession.BrowseChildrenCallback
+    public void onResult(List list) {
+        TelegramMediaSession.lambda$ensureLoaded$2(this.a, list);
     }
 }

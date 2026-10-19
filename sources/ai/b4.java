@@ -1,30 +1,54 @@
 package ai;
 
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.go0;
+import org.telegram.ui.ip0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b4 implements Utilities.Callback {
+public final /* synthetic */ class b4 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k7 b;
-    public final /* synthetic */ pf.c c;
-    public final /* synthetic */ ug.m1 d;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ b4(k7 k7Var, pf.c cVar, ug.m1 m1Var, int i10) {
+    public /* synthetic */ b4(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Object obj, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, Object obj2, int i10) {
         this.a = i10;
-        this.b = k7Var;
-        this.c = cVar;
-        this.d = m1Var;
+        this.d = notificationCenterDelegate;
+        this.e = obj;
+        this.b = tL_starGiftUnique;
+        this.c = j10;
+        this.f = obj2;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                k7.o0(this.b, this.c, this.d, (String) obj);
+                l7 l7Var = (l7) this.d;
+                pf.c cVar = (pf.c) this.e;
+                yh.i0 i0Var = (yh.i0) this.f;
+                cVar.b();
+                if (((Boolean) obj).booleanValue()) {
+                    n5 n5Var = l7Var.R0;
+                    if (n5Var != null) {
+                        n5Var.a(this.b, this.c, i0Var != null);
+                    }
+                    if (i0Var != null) {
+                        AndroidUtilities.runOnUIThread(new f4(i0Var, 0));
+                        l7Var.skipDismissAnimation();
+                    }
+                    l7Var.dismiss();
+                    break;
+                }
                 break;
             default:
-                k7.a0(this.b, this.c, this.d, (String) obj);
+                ip0.U((ip0) this.d, (boolean[]) this.e, this.b, this.c, (go0) this.f, (i6) obj, (pf.c) obj2);
                 break;
         }
     }

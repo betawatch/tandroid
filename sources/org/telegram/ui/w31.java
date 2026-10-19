@@ -1,48 +1,69 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.graphics.SurfaceTexture;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w31 implements r0.n, org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ z31 b;
+public final class w31 implements org.telegram.ui.Components.y71, org.telegram.ui.Components.u71 {
+    public final /* synthetic */ x31 a;
 
-    public /* synthetic */ w31(z31 z31Var, int i10) {
-        this.a = i10;
-        this.b = z31Var;
+    public /* synthetic */ w31(x31 x31Var) {
+        this.a = x31Var;
     }
 
-    @Override // r0.n
-    public r0.k1 B0(View view, r0.k1 k1Var) {
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
-        z31 z31Var = this.b;
-        z31Var.e = defaultWindowInsets;
-        z31Var.c.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
-        z31Var.b.requestLayout();
-        return r0.k1.b;
+    @Override // org.telegram.ui.Components.u71
+    public boolean needUpdate() {
+        return this.a.V.i != null;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
-            case 1:
-                org.telegram.ui.ActionBar.b2 b2Var2 = this.b.c0;
-                if (b2Var2 != null) {
-                    b2Var2.dismiss();
-                    break;
-                }
-                break;
-            default:
-                z31 z31Var = this.b;
-                org.telegram.ui.ActionBar.b2 b2Var3 = z31Var.c0;
-                if (b2Var3 != null) {
-                    b2Var3.dismiss();
-                    z31Var.c0 = null;
-                }
-                z31Var.dismiss();
-                break;
+    @Override // org.telegram.ui.Components.y71
+    public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
+    }
+
+    @Override // org.telegram.ui.Components.y71
+    public void onStateChanged(boolean z10, int i10) {
+        x31 x31Var = this.a;
+        if (i10 == 4) {
+            x31Var.dismiss();
+        } else {
+            AndroidUtilities.cancelRunOnUIThread(x31Var.Z);
+            AndroidUtilities.runOnUIThread(x31Var.Z, 16L);
         }
+    }
+
+    @Override // org.telegram.ui.Components.y71
+    public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.u71
+    public void onVisualizerUpdate(boolean z10, boolean z11, float[] fArr) {
+        this.a.V.e(z10, true, fArr);
+    }
+
+    @Override // org.telegram.ui.Components.y71
+    public void onRenderedFirstFrame() {
+        AndroidUtilities.runOnUIThread(new qy0(this, 13));
+    }
+
+    @Override // org.telegram.ui.Components.y71
+    public /* synthetic */ void onSeekFinished(j2.a aVar) {
+    }
+
+    @Override // org.telegram.ui.Components.y71
+    public /* synthetic */ void onSeekStarted(j2.a aVar) {
+    }
+
+    @Override // org.telegram.ui.Components.y71
+    public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+    }
+
+    @Override // org.telegram.ui.Components.y71
+    public void onError(org.telegram.ui.Components.b81 b81Var, Exception exc) {
+    }
+
+    @Override // org.telegram.ui.Components.y71
+    public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
     }
 }

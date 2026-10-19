@@ -28,7 +28,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class yh0 extends View {
     public float E;
@@ -62,7 +62,7 @@ public final class yh0 extends View {
     public float f;
     public final Path h;
     public final Path n;
-    public org.telegram.ui.qz0 r;
+    public org.telegram.ui.oz0 r;
     public float s;
     public float v;
     public RenderNode w;
@@ -642,9 +642,9 @@ public final class yh0 extends View {
         RenderNode renderNode2 = this.w;
         if (renderNode2 != null && Build.VERSION.SDK_INT >= 29 && renderNode2.hasDisplayList() && canvas.isHardwareAccelerated()) {
             canvas.save();
-            org.telegram.ui.qz0 qz0Var = this.r;
-            if (qz0Var != null) {
-                View view = (View) qz0Var.getParent();
+            org.telegram.ui.oz0 oz0Var = this.r;
+            if (oz0Var != null) {
+                View view = (View) oz0Var.getParent();
                 float x10 = view.getX();
                 float y10 = view.getY() - getTranslationY();
                 float scaleX = view.getScaleX() * view.getWidth();
@@ -712,8 +712,8 @@ public final class yh0 extends View {
                         f7 = f26;
                         float f34 = f21;
                         canvas.scale(f33, f33, centerX2, a1.g.B(vh0Var11.l.j(), vh0Var11.m, f34, j10));
-                        d11 d11Var = vh0Var11.l;
-                        d11Var.c(centerX2 - (d11Var.l() / f34), j10, b11, f30, canvas);
+                        e11 e11Var = vh0Var11.l;
+                        e11Var.c(centerX2 - (e11Var.l() / f34), j10, b11, f30, canvas);
                         canvas.restore();
                         float f35 = vh0Var11.q;
                         if (f35 != 1.0f) {
@@ -849,7 +849,7 @@ public final class yh0 extends View {
                         if (i12 == 0) {
                             int i13 = vh0Var5.a;
                             RectF rectF = vh0Var5.d;
-                            ProfileActivity.e0(((org.telegram.ui.ox0) xh0Var).b, i13, rectF.left, rectF.top);
+                            ProfileActivity.e0(((org.telegram.ui.mx0) xh0Var).b, i13, rectF.left, rectF.top);
                         } else {
                             postDelayed(new yt(27, this, vh0Var5), i12);
                         }

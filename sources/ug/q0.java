@@ -11,7 +11,7 @@ import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.h6;
@@ -20,7 +20,7 @@ import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.x90;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class q0 extends LinearLayout {
     public final ArrayList a;
@@ -54,7 +54,7 @@ public final class q0 extends LinearLayout {
         addView(frameLayout, z5.k(0.0f, 15.0f, 0.0f, 0.0f, -1, 70));
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.bold());
-        lk.j(20.0f, R.string.BoostingReassignBoost, 1, textView);
+        kk.j(20.0f, R.string.BoostingReassignBoost, 1, textView);
         textView.setTextColor(h6.x0(null, h6.G6, false));
         addView(textView, z5.t(-2, -2, 1, 0, 15, 0, 7));
         x90 x90Var = new x90(getContext(), null);
@@ -199,11 +199,11 @@ public final class q0 extends LinearLayout {
                     size6 = i11;
                 }
                 i10 = size6;
-                if (i2.d.h(1, arrayList6) != n0Var || arrayList6.size() <= 1) {
+                if (i2.e.h(1, arrayList6) != n0Var || arrayList6.size() <= 1) {
                     c11 = 2;
                 } else {
                     c11 = 2;
-                    ((n0) i2.d.h(2, arrayList6)).b.setScaleY(0.1f);
+                    ((n0) i2.e.h(2, arrayList6)).b.setScaleY(0.1f);
                     ((n0) arrayList6.get(arrayList6.size() - 2)).b.setScaleX(0.1f);
                     ((n0) arrayList6.get(arrayList6.size() - 2)).b.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(j10).setInterpolator(bsVar).start();
                     c10 = c11;

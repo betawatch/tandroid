@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import w7.l6;
+import w7.k6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class q implements k {
     public final Context a;
@@ -24,7 +24,7 @@ public final class q implements k {
     public v7.t h;
 
     public q(Context context, o0.d dVar) {
-        l6.a(context, "Context cannot be null");
+        k6.a(context, "Context cannot be null");
         this.a = context.getApplicationContext();
         this.b = dVar;
         this.c = r.d;
@@ -92,7 +92,7 @@ public final class q implements k {
             j4.f a2 = o0.c.a(context, DesugarCollections.unmodifiableList(arrayList));
             int i10 = a2.a;
             if (i10 != 0) {
-                throw new RuntimeException(i2.d.k(i10, "fetchFonts failed (", ")"));
+                throw new RuntimeException(i2.e.k(i10, "fetchFonts failed (", ")"));
             }
             o0.h[] hVarArr = (o0.h[]) a2.b.get(0);
             if (hVarArr == null || hVarArr.length == 0) {

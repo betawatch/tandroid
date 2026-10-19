@@ -1,89 +1,31 @@
 package ai;
 
-import java.util.ArrayList;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class g9 implements Runnable {
+public final /* synthetic */ class g9 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ long e;
+    public final /* synthetic */ Utilities.Callback b;
 
-    public /* synthetic */ g9(int i10, int i11, long j10, ArrayList arrayList, MessagesStorage messagesStorage) {
-        this.a = i11;
-        this.b = messagesStorage;
-        this.c = i10;
-        this.d = arrayList;
-        this.e = j10;
+    public /* synthetic */ g9(int i10, Utilities.Callback callback) {
+        this.a = i10;
+        this.b = callback;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                int i10 = this.c;
-                long j10 = this.e;
-                SQLiteDatabase database = this.b.getDatabase();
-                SQLitePreparedStatement sQLitePreparedStatement = null;
-                try {
-                    try {
-                        database.executeFast("DELETE FROM star_gifts2").stepThis().dispose();
-                        ArrayList arrayList = this.d;
-                        if (arrayList != null) {
-                            sQLitePreparedStatement = database.executeFast("REPLACE INTO star_gifts2 VALUES(?, ?, ?, ?, ?)");
-                            for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                                TL_stars.StarGift starGift = (TL_stars.StarGift) arrayList.get(i11);
-                                sQLitePreparedStatement.requery();
-                                sQLitePreparedStatement.bindLong(1, starGift.id);
-                                NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(starGift.getObjectSize());
-                                starGift.serializeToStream(nativeByteBuffer);
-                                sQLitePreparedStatement.bindByteBuffer(2, nativeByteBuffer);
-                                sQLitePreparedStatement.bindLong(3, i10);
-                                sQLitePreparedStatement.bindLong(4, j10);
-                                sQLitePreparedStatement.bindInteger(5, i11);
-                                sQLitePreparedStatement.step();
-                                nativeByteBuffer.reuse();
-                            }
-                        }
-                        if (sQLitePreparedStatement == null) {
-                            return;
-                        }
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                        if (sQLitePreparedStatement == null) {
-                            return;
-                        }
-                    }
-                    sQLitePreparedStatement.dispose();
-                    return;
-                } catch (Throwable th2) {
-                    if (sQLitePreparedStatement != null) {
-                        sQLitePreparedStatement.dispose();
-                    }
-                    throw th2;
-                }
-            case 1:
-                this.b.lambda$loadPendingTasks$27(this.c, this.d, this.e);
-                return;
+                AndroidUtilities.runOnUIThread(new n9(tLObject, this.b, 0));
+                break;
             default:
-                this.b.lambda$loadPendingTasks$28(this.c, this.d, this.e);
-                return;
+                AndroidUtilities.runOnUIThread(new pa(18, this.b, tL_error));
+                break;
         }
-    }
-
-    public /* synthetic */ g9(MessagesStorage messagesStorage, long j10, ArrayList arrayList, int i10) {
-        this.a = 0;
-        this.b = messagesStorage;
-        this.d = arrayList;
-        this.c = i10;
-        this.e = j10;
     }
 }

@@ -9,13 +9,13 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.fg;
+import org.telegram.ui.dg;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class i8 extends FrameLayout {
     public final ImageView a;
-    public final l3 b;
+    public final m3 b;
     public float c;
     public float d;
     public float e;
@@ -38,9 +38,9 @@ public final class i8 extends FrameLayout {
         imageView.setScaleX(0.7407407f);
         imageView.setScaleY(0.7407407f);
         addView(imageView, w7.z5.c(-1.0f, -1));
-        l3 l3Var = new l3(this, context, new n(this, 10));
-        this.b = l3Var;
-        addView(l3Var, w7.z5.c(-1.0f, -1));
+        m3 m3Var = new m3(this, context, new n(this, 11));
+        this.b = m3Var;
+        addView(m3Var, w7.z5.c(-1.0f, -1));
     }
 
     public final void a(float f7) {
@@ -69,7 +69,7 @@ public final class i8 extends FrameLayout {
         this.v = ofFloat;
         ofFloat.setDuration(350L);
         this.v.setInterpolator(bs.h);
-        this.v.addUpdateListener(new fg(this, IEEEremainder, 6));
+        this.v.addUpdateListener(new dg(this, IEEEremainder, 6));
         this.v.start();
         a(1.0f);
     }
@@ -100,8 +100,8 @@ public final class i8 extends FrameLayout {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        l3 l3Var = this.b;
-        if (l3Var.n && l3Var.getVisibility() == 0) {
+        m3 m3Var = this.b;
+        if (m3Var.n && m3Var.getVisibility() == 0) {
             int actionMasked = motionEvent.getActionMasked();
             if (actionMasked == 0) {
                 if (!this.s && this.e <= 1.001f) {

@@ -11,9 +11,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.px;
+import org.telegram.ui.nx;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -96,9 +96,9 @@ public final /* synthetic */ class t implements Runnable {
                             }
                         }
                         yVar.f(h0Var.s, h0Var.v0);
-                        px pxVar = h0Var.U;
-                        if (pxVar != null) {
-                            pxVar.d(h0Var.D0 > 0, true);
+                        nx nxVar = h0Var.U;
+                        if (nxVar != null) {
+                            nxVar.d(h0Var.D0 > 0, true);
                             h0Var.U.c();
                         }
                         h0Var.l();
@@ -162,10 +162,10 @@ public final /* synthetic */ class t implements Runnable {
                             }
                         }
                         yVar2.f(h0Var2.s, h0Var2.v0);
-                        px pxVar2 = h0Var2.U;
-                        if (pxVar2 != null) {
+                        nx nxVar2 = h0Var2.U;
+                        if (nxVar2 != null) {
                             i11 = 1;
-                            pxVar2.d(h0Var2.D0 > 0, true);
+                            nxVar2.d(h0Var2.D0 > 0, true);
                             h0Var2.U.c();
                         } else {
                             i11 = 1;

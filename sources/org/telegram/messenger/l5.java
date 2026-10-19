@@ -1,14 +1,42 @@
 package org.telegram.messenger;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class l5 {
-    public static void b(ImageReceiver.ImageReceiverDelegate imageReceiverDelegate, ImageReceiver imageReceiver) {
+public final /* synthetic */ class l5 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LocaleController b;
+    public final /* synthetic */ LocaleController.LocaleInfo c;
+    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ Runnable f;
+
+    public /* synthetic */ l5(LocaleController localeController, LocaleController.LocaleInfo localeInfo, TLObject tLObject, int i10, Runnable runnable, int i11) {
+        this.a = i11;
+        this.b = localeController;
+        this.c = localeInfo;
+        this.d = tLObject;
+        this.e = i10;
+        this.f = runnable;
     }
 
-    public static void a(ImageReceiver.ImageReceiverDelegate imageReceiverDelegate, int i10, String str, Drawable drawable) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.lambda$applyRemoteLanguage$16(this.c, this.d, this.e, this.f);
+                break;
+            case 1:
+                this.b.lambda$applyRemoteLanguage$20(this.c, this.d, this.e, this.f);
+                break;
+            case 2:
+                this.b.lambda$applyRemoteLanguage$18(this.c, this.d, this.e, this.f);
+                break;
+            default:
+                this.b.lambda$applyRemoteLanguage$14(this.c, this.d, this.e, this.f);
+                break;
+        }
     }
 }

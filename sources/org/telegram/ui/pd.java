@@ -1,83 +1,104 @@
 package org.telegram.ui;
 
-import android.text.SpannableStringBuilder;
+import android.view.View;
+import android.widget.EditText;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pd implements Runnable {
+public final /* synthetic */ class pd implements View.OnFocusChangeListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ke b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ pd(ke keVar, int i10, int i11) {
-        this.a = i11;
-        this.b = keVar;
-        this.c = i10;
+    public /* synthetic */ pd(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        int i11 = this.c;
-        ke keVar = this.b;
-        switch (i10) {
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z10) {
+        switch (this.a) {
             case 0:
-                pf.d.r(keVar.getContext(), LocaleController.getString(i11));
+                ai.s sVar = ((ie) this.b).U0;
+                float f7 = z10 ? 1.0f : 0.0f;
+                sVar.b(f7, f7, true);
                 break;
             case 1:
-                pd pdVar = keVar.i1;
-                ai.t tVar = keVar.Y0;
-                org.telegram.ui.Components.qc.e();
-                if (keVar.N0.amount < MessagesController.getInstance(i11).starsRevenueWithdrawalMin) {
-                    keVar.W0 = true;
-                    keVar.X0 = keVar.N0.amount;
-                } else {
-                    keVar.W0 = false;
-                    keVar.X0 = MessagesController.getInstance(i11).starsRevenueWithdrawalMin;
+                cy cyVar = (cy) this.b;
+                if (z10) {
+                    cyVar.Y.b(true);
+                    break;
                 }
-                keVar.V0 = true;
-                tVar.setText(Long.toString(keVar.X0));
-                tVar.setSelection(tVar.getText().length());
-                keVar.V0 = false;
-                AndroidUtilities.cancelRunOnUIThread(pdVar);
-                pdVar.run();
                 break;
-            default:
-                pd pdVar2 = keVar.i1;
-                int currentTime = ConnectionsManager.getInstance(i11).getCurrentTime();
-                be beVar = keVar.Q0;
-                beVar.setEnabled(keVar.X0 > 0 || keVar.L0 > currentTime);
-                if (currentTime >= keVar.L0) {
-                    beVar.f(null, true);
-                    beVar.g(ai.md.W0(false, keVar.W0 ? LocaleController.getString(R.string.MonetizationStarsWithdrawAll) : LocaleController.formatPluralStringSpaced("MonetizationStarsWithdraw", (int) keVar.X0), keVar.R0), true, true);
-                    break;
-                } else {
-                    beVar.g(LocaleController.getString(R.string.MonetizationStarsWithdrawUntil), true, true);
-                    if (keVar.h1 == null) {
-                        keVar.h1 = new SpannableStringBuilder("l");
-                        org.telegram.ui.Components.yq yqVar = new org.telegram.ui.Components.yq(R.drawable.mini_switch_lock, 0);
-                        yqVar.setTopOffset(1);
-                        keVar.h1.setSpan(yqVar, 0, 1, 33);
-                    }
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    spannableStringBuilder.append((CharSequence) keVar.h1).append((CharSequence) ai.x.j0(keVar.L0 - currentTime));
-                    beVar.f(spannableStringBuilder, true);
-                    org.telegram.ui.Components.qc qcVar = keVar.Z0;
-                    if (qcVar != null) {
-                        org.telegram.ui.Components.ub ubVar = qcVar.e;
-                        if ((ubVar instanceof org.telegram.ui.Components.yb) && ubVar.isAttachedToWindow()) {
-                            org.telegram.messenger.lk.r(R.string.BotStarsWithdrawalToast, new Object[]{ai.x.j0(keVar.L0 - currentTime)}, ((org.telegram.ui.Components.yb) keVar.Z0.e).b);
-                        }
-                    }
-                    AndroidUtilities.cancelRunOnUIThread(pdVar2);
-                    AndroidUtilities.runOnUIThread(pdVar2, 1000L);
+            case 2:
+                dg0 dg0Var = ((md0) this.b).W;
+                if (z10) {
+                    dg0Var.c.setEditText((EditText) view);
+                    dg0Var.c.setDispatchBackWhenEmpty(true);
                     break;
                 }
+                break;
+            case 3:
+                org.telegram.ui.Components.sd0 sd0Var = (org.telegram.ui.Components.sd0) this.b;
+                float f10 = z10 ? 1.0f : 0.0f;
+                sd0Var.b(f10, f10, true);
+                break;
+            case 4:
+                org.telegram.ui.Components.sd0 sd0Var2 = ((vd0) this.b).x;
+                float f11 = z10 ? 1.0f : 0.0f;
+                sd0Var2.b(f11, f11, true);
+                break;
+            case 5:
+                org.telegram.ui.Components.sd0 sd0Var3 = ((de0) this.b).b;
+                float f12 = z10 ? 1.0f : 0.0f;
+                sd0Var3.b(f12, f12, true);
+                break;
+            case 6:
+                dg0 dg0Var2 = ((ge0) this.b).y;
+                if (z10) {
+                    dg0Var2.c.setEditText((EditText) view);
+                    dg0Var2.c.setDispatchBackWhenEmpty(true);
+                    break;
+                }
+                break;
+            case 7:
+                org.telegram.ui.Components.sd0 sd0Var4 = ((re0) this.b).a;
+                float f13 = z10 ? 1.0f : 0.0f;
+                sd0Var4.b(f13, f13, true);
+                break;
+            case 8:
+                dg0 dg0Var3 = ((hf0) this.b).s0;
+                if (z10) {
+                    dg0Var3.c.setEditText((EditText) view);
+                    dg0Var3.c.setDispatchBackWhenEmpty(true);
+                    break;
+                }
+                break;
+            case 9:
+                org.telegram.ui.Components.sd0 sd0Var5 = ((cg0) this.b).e;
+                float f14 = z10 ? 1.0f : 0.0f;
+                sd0Var5.b(f14, f14, true);
+                break;
+            case 10:
+                org.telegram.ui.Components.sd0 sd0Var6 = ((PasscodeActivity) this.b).f;
+                float f15 = z10 ? 1.0f : 0.0f;
+                sd0Var6.b(f15, f15, true);
+                break;
+            case 11:
+                oc1 oc1Var = (oc1) this.b;
+                if (!z10) {
+                    oc1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp)));
+                    break;
+                } else {
+                    oc1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp2)));
+                    break;
+                }
+            default:
+                org.telegram.ui.Components.sd0 sd0Var7 = ((TwoStepVerificationActivity) this.b).v;
+                float f16 = z10 ? 1.0f : 0.0f;
+                sd0Var7.b(f16, f16, true);
                 break;
         }
     }

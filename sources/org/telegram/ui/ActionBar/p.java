@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
@@ -13,10 +14,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.ui.Components.l8;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -69,24 +70,34 @@ public final /* synthetic */ class p implements Runnable {
                 }
                 break;
             case 6:
-                b2 b2Var = ((z1) obj).d;
+                z1 z1Var = (z1) obj;
+                b2 b2Var = z1Var.d;
                 int i12 = AndroidUtilities.displaySize.x;
                 b2Var.L = i12;
-                int dp = i12 - AndroidUtilities.dp(56.0f);
-                int dp2 = AndroidUtilities.isTablet() ? AndroidUtilities.isSmallTablet() ? AndroidUtilities.dp(446.0f) : AndroidUtilities.dp(496.0f) : AndroidUtilities.dp(356.0f);
-                Window window = b2Var.getWindow();
-                WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
-                layoutParams.copyFrom(window.getAttributes());
-                int min = Math.min(dp2, dp);
+                int min = Math.min(AndroidUtilities.isTablet() ? AndroidUtilities.isSmallTablet() ? AndroidUtilities.dp(446.0f) : AndroidUtilities.dp(496.0f) : AndroidUtilities.dp(356.0f), i12 - AndroidUtilities.dp(56.0f));
                 Rect rect = b2Var.A0;
-                layoutParams.width = min + rect.left + rect.right;
-                try {
-                    window.setAttributes(layoutParams);
-                    break;
-                } catch (Throwable th2) {
-                    FileLog.e(th2);
-                    return;
+                int i13 = min + rect.left + rect.right;
+                if (b2Var.X0) {
+                    ViewGroup.LayoutParams layoutParams = z1Var.getLayoutParams();
+                    if (layoutParams != null && layoutParams.width != i13) {
+                        layoutParams.width = i13;
+                        z1Var.requestLayout();
+                        break;
+                    }
+                } else {
+                    Window window = b2Var.getWindow();
+                    WindowManager.LayoutParams layoutParams2 = new WindowManager.LayoutParams();
+                    layoutParams2.copyFrom(window.getAttributes());
+                    layoutParams2.width = i13;
+                    try {
+                        window.setAttributes(layoutParams2);
+                        break;
+                    } catch (Throwable th2) {
+                        FileLog.e(th2);
+                        return;
+                    }
                 }
+                break;
             case 7:
                 f2 f2Var = (f2) obj;
                 f2Var.f1.setVisibility(0);
@@ -155,7 +166,7 @@ public final /* synthetic */ class p implements Runnable {
                 ((CountDownLatch) obj).countDown();
                 break;
             case 17:
-                lk.n(1, (n2) obj);
+                kk.n(1, (n2) obj);
                 break;
             case 18:
                 l8 l8Var = (l8) h6.e5.remove((MessageObject) obj);

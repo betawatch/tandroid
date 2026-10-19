@@ -20,14 +20,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.sa1;
+import org.telegram.ui.qa1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class k20 extends FrameLayout implements ne.d, org.telegram.ui.ActionBar.y5 {
     public final AnimationNotificationsLocker E;
     public final ArrayList F;
-    public final sa1 G;
+    public final qa1 G;
     public j20 H;
     public int I;
     public final ne.b a;
@@ -89,11 +89,11 @@ public class k20 extends FrameLayout implements ne.d, org.telegram.ui.ActionBar.
         imageView2.setVisibility(8);
         imageView2.setOnClickListener(new f0(this, 16));
         addView(imageView2, w7.z5.d(24, 24.0f, (LocaleController.isRTL ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
-        sa1 sa1Var = new sa1(this, getContext(), 9);
-        this.G = sa1Var;
-        sa1Var.setOrientation(0);
-        sa1Var.setVisibility(0);
-        addView(sa1Var, w7.z5.d(-2, 32.0f, (LocaleController.isRTL ? 5 : 3) | 16, 4.0f, 0.0f, 4.0f, 0.0f));
+        qa1 qa1Var = new qa1(this, getContext(), 9);
+        this.G = qa1Var;
+        qa1Var.setOrientation(0);
+        qa1Var.setVisibility(0);
+        addView(qa1Var, w7.z5.d(-2, 32.0f, (LocaleController.isRTL ? 5 : 3) | 16, 4.0f, 0.0f, 4.0f, 0.0f));
         setWillNotDraw(false);
         b();
         d();
@@ -181,11 +181,11 @@ public class k20 extends FrameLayout implements ne.d, org.telegram.ui.ActionBar.
                 childAt.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.i6, d6Var), 1, AndroidUtilities.dp(17.0f)));
             }
         }
-        sa1 sa1Var = this.G;
-        int childCount2 = sa1Var.getChildCount();
+        qa1 qa1Var = this.G;
+        int childCount2 = qa1Var.getChildCount();
         for (int i12 = 0; i12 < childCount2; i12++) {
-            if (sa1Var.getChildAt(i12) instanceof org.telegram.ui.ActionBar.t0) {
-                ((org.telegram.ui.ActionBar.t0) sa1Var.getChildAt(i12)).a();
+            if (qa1Var.getChildAt(i12) instanceof org.telegram.ui.ActionBar.t0) {
+                ((org.telegram.ui.ActionBar.t0) qa1Var.getChildAt(i12)).a();
             }
         }
         invalidate();
@@ -232,12 +232,12 @@ public class k20 extends FrameLayout implements ne.d, org.telegram.ui.ActionBar.
         transitionSet.setOrdering(0);
         transitionSet.setInterpolator((TimeInterpolator) bs.g);
         transitionSet.addListener((Transition.TransitionListener) new i20(this));
-        sa1 sa1Var = this.G;
-        TransitionManager.beginDelayedTransition(sa1Var, transitionSet);
+        qa1 qa1Var = this.G;
+        TransitionManager.beginDelayedTransition(qa1Var, transitionSet);
         int i10 = 0;
-        while (i10 < sa1Var.getChildCount()) {
-            if (!arrayList2.remove(((org.telegram.ui.ActionBar.t0) sa1Var.getChildAt(i10)).getFilter())) {
-                sa1Var.removeViewAt(i10);
+        while (i10 < qa1Var.getChildCount()) {
+            if (!arrayList2.remove(((org.telegram.ui.ActionBar.t0) qa1Var.getChildAt(i10)).getFilter())) {
+                qa1Var.removeViewAt(i10);
                 i10--;
             }
             i10++;
@@ -251,18 +251,18 @@ public class k20 extends FrameLayout implements ne.d, org.telegram.ui.ActionBar.
             t0Var.setData(o0Var);
             t0Var.setOnClickListener(new ca(14, this, t0Var));
             boolean z10 = LocaleController.isRTL;
-            sa1Var.addView(t0Var, w7.z5.t(-2, -1, 0, z10 ? 6 : 0, 0, z10 ? 0 : 6, 0));
+            qa1Var.addView(t0Var, w7.z5.t(-2, -1, 0, z10 ? 6 : 0, 0, z10 ? 0 : 6, 0));
         }
         int i12 = 0;
-        while (i12 < sa1Var.getChildCount()) {
-            ((org.telegram.ui.ActionBar.t0) sa1Var.getChildAt(i12)).setExpanded(i12 == this.I);
+        while (i12 < qa1Var.getChildCount()) {
+            ((org.telegram.ui.ActionBar.t0) qa1Var.getChildAt(i12)).setExpanded(i12 == this.I);
             i12++;
         }
-        sa1Var.setTag(!isEmpty ? 1 : null);
+        qa1Var.setTag(!isEmpty ? 1 : null);
     }
 
     public final void g(hg.o0 o0Var) {
-        org.telegram.ui.nx nxVar;
+        org.telegram.ui.lx lxVar;
         if (o0Var.h) {
             this.F.remove(o0Var);
             int i10 = this.I;
@@ -271,10 +271,10 @@ public class k20 extends FrameLayout implements ne.d, org.telegram.ui.ActionBar.
             }
             f();
             j20 j20Var = this.H;
-            if (j20Var == null || (nxVar = ((org.telegram.ui.jx) j20Var).b.C0) == null) {
+            if (j20Var == null || (lxVar = ((org.telegram.ui.hx) j20Var).b.C0) == null) {
                 return;
             }
-            nxVar.Q(false);
+            lxVar.Q(false);
         }
     }
 
@@ -286,6 +286,19 @@ public class k20 extends FrameLayout implements ne.d, org.telegram.ui.ActionBar.
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
         b();
+    }
+
+    @Override // ne.d
+    public final void r(int i10, float f7, float f10, ne.e eVar) {
+        if (i10 == 0) {
+            ImageView imageView = this.f;
+            h20.d(imageView, f7);
+            imageView.setRotation((1.0f - f7) * 90.0f);
+        } else if (i10 == 1) {
+            h20.d(this.e, f7);
+        } else if (i10 == 2) {
+            b();
+        }
     }
 
     public void setBlurredBackgroundVisibility(float f7) {
@@ -331,19 +344,6 @@ public class k20 extends FrameLayout implements ne.d, org.telegram.ui.ActionBar.
     }
 
     @Override // ne.d
-    public final void u(int i10, float f7, float f10, ne.e eVar) {
-        if (i10 == 0) {
-            ImageView imageView = this.f;
-            h20.d(imageView, f7);
-            imageView.setRotation((1.0f - f7) * 90.0f);
-        } else if (i10 == 1) {
-            h20.d(this.e, f7);
-        } else if (i10 == 2) {
-            b();
-        }
-    }
-
-    @Override // ne.d
-    public final /* synthetic */ void E(float f7, int i10) {
+    public final /* synthetic */ void H(float f7, int i10) {
     }
 }

@@ -14,7 +14,7 @@ import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import c7.k;
 import c7.r;
 import c7.u;
-import ci.u7;
+import ci.v7;
 import com.google.android.gms.common.api.f;
 import java.lang.ref.WeakReference;
 import java.util.LinkedHashMap;
@@ -29,12 +29,12 @@ import w0.h;
 import w0.i;
 import w0.j;
 import w7.a8;
-import w7.a9;
-import w7.b8;
 import w7.g0;
-import w7.i8;
+import w7.h8;
+import w7.z7;
+import w7.z8;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class d extends ResultReceiver {
     public final /* synthetic */ int a;
@@ -83,7 +83,7 @@ public final class d extends ResultReceiver {
                     return;
                 }
                 try {
-                    final o d = eVar.d(i8.a(eVar.e).f(intent));
+                    final o d = eVar.d(h8.a(eVar.e).f(intent));
                     c0.a(eVar.h, new td.a() { // from class: b1.g
                         @Override // td.a
                         public final Object invoke() {
@@ -227,7 +227,7 @@ public final class d extends ResultReceiver {
                     }
                     Executor executor4 = eVar2.g;
                     if (executor4 != null) {
-                        executor4.execute(new u7(10, eVar2, e10));
+                        executor4.execute(new v7(10, eVar2, e10));
                         return;
                     } else {
                         kotlin.jvm.internal.i.h("executor");
@@ -319,7 +319,7 @@ public final class d extends ResultReceiver {
                     a2 = g1.a.b("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", intent3);
                 } else {
                     Bundle bundleExtra = intent3.getBundleExtra("android.service.credentials.extra.CREATE_CREDENTIAL_RESPONSE");
-                    a2 = (bundleExtra == null || (string = bundleExtra.getString("androidx.credentials.provider.extra.CREATE_CREDENTIAL_RESPONSE_TYPE")) == null || (bundle = bundleExtra.getBundle("androidx.credentials.provider.extra.CREATE_CREDENTIAL_REQUEST_DATA")) == null) ? null : a8.a(string, bundle);
+                    a2 = (bundleExtra == null || (string = bundleExtra.getString("androidx.credentials.provider.extra.CREATE_CREDENTIAL_RESPONSE_TYPE")) == null || (bundle = bundleExtra.getBundle("androidx.credentials.provider.extra.CREATE_CREDENTIAL_REQUEST_DATA")) == null) ? null : z7.a(string, bundle);
                 }
                 if (a2 != null) {
                     CancellationSignal cancellationSignal10 = eVar3.h;
@@ -329,7 +329,7 @@ public final class d extends ResultReceiver {
                     }
                     Executor executor9 = eVar3.g;
                     if (executor9 != null) {
-                        executor9.execute(new u7(15, eVar3, a2));
+                        executor9.execute(new v7(15, eVar3, a2));
                         return;
                     } else {
                         kotlin.jvm.internal.i.h("executor");
@@ -348,7 +348,7 @@ public final class d extends ResultReceiver {
                         if (string3 == null) {
                             throw new IllegalArgumentException("Bundle was missing exception type.");
                         }
-                        a10 = a9.a(bundleExtra2.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string3);
+                        a10 = z8.a(bundleExtra2.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string3);
                     }
                 }
                 CancellationSignal cancellationSignal11 = eVar3.h;
@@ -435,7 +435,7 @@ public final class d extends ResultReceiver {
                     oVar = g1.a.d(intent4);
                 } else {
                     Bundle bundleExtra3 = intent4.getBundleExtra("android.service.credentials.extra.GET_CREDENTIAL_RESPONSE");
-                    oVar = (bundleExtra3 == null || (string2 = bundleExtra3.getString("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_TYPE")) == null || (bundle2 = bundleExtra3.getBundle("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_DATA")) == null) ? null : new o(b8.a(string2, bundle2));
+                    oVar = (bundleExtra3 == null || (string2 = bundleExtra3.getString("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_TYPE")) == null || (bundle2 = bundleExtra3.getBundle("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_DATA")) == null) ? null : new o(a8.a(string2, bundle2));
                 }
                 if (oVar != null) {
                     c0.a(cancellationSignal12, new b1.b(executor12, iVar6, oVar, i13));
@@ -451,7 +451,7 @@ public final class d extends ResultReceiver {
                         if (string4 == null) {
                             throw new IllegalArgumentException("Bundle was missing exception type.");
                         }
-                        iVar = a9.b(bundleExtra4.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string4);
+                        iVar = z8.b(bundleExtra4.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string4);
                     }
                 }
                 c0.a(cancellationSignal12, new b1.b(executor12, iVar6, iVar, i11));

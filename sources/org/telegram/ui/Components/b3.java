@@ -5,7 +5,7 @@ import android.content.DialogInterface;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b3 implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -39,36 +39,36 @@ public final /* synthetic */ class b3 implements DialogInterface.OnClickListener
                     break;
                 }
             default:
-                org.telegram.ui.go0 go0Var = (org.telegram.ui.go0) this.b;
+                org.telegram.ui.eo0 eo0Var = (org.telegram.ui.eo0) this.b;
                 Runnable runnable = (Runnable) this.c;
                 ArrayList arrayList = (ArrayList) this.d;
                 ArrayList arrayList2 = (ArrayList) this.e;
-                org.telegram.ui.sn0 sn0Var = new org.telegram.ui.sn0(go0Var, runnable);
-                TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard = go0Var.y0;
-                int i12 = (tL_paymentSavedCredentialsCard == null && go0Var.x0 == null) ? 0 : 1;
-                if ((tL_paymentSavedCredentialsCard == null && go0Var.x0 == null) || i10 != 0) {
+                org.telegram.ui.qn0 qn0Var = new org.telegram.ui.qn0(eo0Var, runnable);
+                TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard = eo0Var.y0;
+                int i12 = (tL_paymentSavedCredentialsCard == null && eo0Var.x0 == null) ? 0 : 1;
+                if ((tL_paymentSavedCredentialsCard == null && eo0Var.x0 == null) || i10 != 0) {
                     if (i10 >= i12 && i10 < arrayList.size() + i12) {
                         TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard2 = (TLRPC.TL_paymentSavedCredentialsCard) arrayList.get(i10 - i12);
-                        go0Var.y0 = tL_paymentSavedCredentialsCard2;
-                        sn0Var.c(null, tL_paymentSavedCredentialsCard2.title, true, null, tL_paymentSavedCredentialsCard2);
+                        eo0Var.y0 = tL_paymentSavedCredentialsCard2;
+                        qn0Var.c(null, tL_paymentSavedCredentialsCard2.title, true, null, tL_paymentSavedCredentialsCard2);
                         break;
                     } else if (i10 >= arrayList2.size() - 1) {
                         if (i10 == arrayList2.size() - 1) {
-                            org.telegram.ui.go0 go0Var2 = new org.telegram.ui.go0(go0Var.b1, go0Var.C0, go0Var.N0, go0Var.O0, 2, go0Var.E0, go0Var.G0, go0Var.H0, null, go0Var.x0, go0Var.I0, go0Var.U0, null, go0Var.r0, go0Var.W0);
-                            go0Var2.c1 = go0Var.c1;
-                            go0Var2.d1 = go0Var.d1;
-                            go0Var2.T = sn0Var;
-                            go0Var.presentFragment(go0Var2);
+                            org.telegram.ui.eo0 eo0Var2 = new org.telegram.ui.eo0(eo0Var.b1, eo0Var.C0, eo0Var.N0, eo0Var.O0, 2, eo0Var.E0, eo0Var.G0, eo0Var.H0, null, eo0Var.x0, eo0Var.I0, eo0Var.U0, null, eo0Var.r0, eo0Var.W0);
+                            eo0Var2.c1 = eo0Var.c1;
+                            eo0Var2.d1 = eo0Var.d1;
+                            eo0Var2.T = qn0Var;
+                            eo0Var.presentFragment(eo0Var2);
                             break;
                         }
                     } else {
-                        TLRPC.TL_paymentFormMethod tL_paymentFormMethod = go0Var.C0.additional_methods.get((i10 - arrayList.size()) - i12);
-                        org.telegram.ui.go0 go0Var3 = new org.telegram.ui.go0(go0Var.b1, go0Var.C0, go0Var.N0, go0Var.O0, 2, go0Var.E0, go0Var.G0, go0Var.H0, null, go0Var.x0, go0Var.I0, go0Var.U0, null, go0Var.r0, go0Var.W0);
-                        go0Var3.c1 = go0Var.c1;
-                        go0Var3.d1 = go0Var.d1;
-                        go0Var3.F0 = tL_paymentFormMethod;
-                        go0Var3.T = sn0Var;
-                        go0Var.presentFragment(go0Var3);
+                        TLRPC.TL_paymentFormMethod tL_paymentFormMethod = eo0Var.C0.additional_methods.get((i10 - arrayList.size()) - i12);
+                        org.telegram.ui.eo0 eo0Var3 = new org.telegram.ui.eo0(eo0Var.b1, eo0Var.C0, eo0Var.N0, eo0Var.O0, 2, eo0Var.E0, eo0Var.G0, eo0Var.H0, null, eo0Var.x0, eo0Var.I0, eo0Var.U0, null, eo0Var.r0, eo0Var.W0);
+                        eo0Var3.c1 = eo0Var.c1;
+                        eo0Var3.d1 = eo0Var.d1;
+                        eo0Var3.F0 = tL_paymentFormMethod;
+                        eo0Var3.T = qn0Var;
+                        eo0Var.presentFragment(eo0Var3);
                         break;
                     }
                 }

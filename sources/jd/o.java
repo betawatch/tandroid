@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class o implements List, Serializable, RandomAccess {
     public static final o a = new o();
@@ -135,7 +135,7 @@ public final class o implements List, Serializable, RandomAccess {
         if (i10 == 0) {
             return n.a;
         }
-        throw new IndexOutOfBoundsException(i2.d.j(i10, "Index: "));
+        throw new IndexOutOfBoundsException(i2.e.j(i10, "Index: "));
     }
 
     @Override // java.util.List, java.util.Collection

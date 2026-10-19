@@ -1,60 +1,82 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class y11 extends z51 {
-    public final /* synthetic */ a21 d2;
-    public final /* synthetic */ q51[] e2;
-    public final /* synthetic */ b21 f2;
+public final class y11 extends FrameLayout {
+    public final org.telegram.ui.Components.p5 a;
+    public final /* synthetic */ z11 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y11(b21 b21Var, b21 b21Var2, Activity activity, Integer num, a21 a21Var, q51[] q51VarArr) {
-        super(b21Var2, activity, false, num, 2, null);
-        this.f2 = b21Var;
-        this.d2 = a21Var;
-        this.e2 = q51VarArr;
+    public y11(z11 z11Var, Context context) {
+        super(context);
+        this.b = z11Var;
+        TextView f7 = org.telegram.messenger.g0.f(context, 1, 16.0f);
+        f7.setTextColor(z11Var.getThemedColor(org.telegram.ui.ActionBar.h6.G6));
+        f7.setText(LocaleController.getString(R.string.DoubleTapSetting));
+        addView(f7, w7.z5.d(-1, -2.0f, 23, 20.0f, 0.0f, 48.0f, 0.0f));
+        this.a = new org.telegram.ui.Components.p5(AndroidUtilities.dp(24.0f), this);
     }
 
-    @Override // org.telegram.ui.z51
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+    public final void a(boolean z10) {
         int i10;
-        if (l4 == null) {
-            return;
+        int i11;
+        z11 z11Var = this.b;
+        i10 = ((org.telegram.ui.ActionBar.n2) z11Var).currentAccount;
+        String doubleTapReaction = MediaDataController.getInstance(i10).getDoubleTapReaction();
+        org.telegram.ui.Components.p5 p5Var = this.a;
+        if (doubleTapReaction != null && doubleTapReaction.startsWith("animated_")) {
+            try {
+                p5Var.j(Long.parseLong(doubleTapReaction.substring(9)), z10);
+                return;
+            } catch (Exception unused) {
+            }
         }
-        b21 b21Var = this.f2;
-        i10 = ((org.telegram.ui.ActionBar.n2) b21Var).currentAccount;
-        MediaDataController.getInstance(i10).setDoubleTapReaction("animated_" + l4);
-        a21 a21Var = this.d2;
-        if (a21Var != null) {
-            a21Var.a(true);
-        }
-        q51 q51Var = this.e2[0];
-        if (q51Var != null) {
-            b21Var.n = null;
-            q51Var.dismiss();
+        i11 = ((org.telegram.ui.ActionBar.n2) z11Var).currentAccount;
+        TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(i11).getReactionsMap().get(doubleTapReaction);
+        if (tL_availableReaction != null) {
+            p5Var.i(tL_availableReaction.static_icon, z10);
         }
     }
 
-    @Override // org.telegram.ui.z51
-    public final void r(i51 i51Var, ah.i1 i1Var) {
-        int i10;
-        b21 b21Var = this.f2;
-        i10 = ((org.telegram.ui.ActionBar.n2) b21Var).currentAccount;
-        MediaDataController.getInstance(i10).setDoubleTapReaction(i1Var.f);
-        a21 a21Var = this.d2;
-        if (a21Var != null) {
-            a21Var.a(true);
-        }
-        q51 q51Var = this.e2[0];
-        if (q51Var != null) {
-            b21Var.n = null;
-            q51Var.dismiss();
-        }
+    public final void b() {
+        int width = getWidth();
+        org.telegram.ui.Components.p5 p5Var = this.a;
+        p5Var.setBounds((width - p5Var.s) - AndroidUtilities.dp(21.0f), (getHeight() - p5Var.s) / 2, getWidth() - AndroidUtilities.dp(21.0f), (getHeight() + p5Var.s) / 2);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        b();
+        this.a.draw(canvas);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.a();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.b();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
     }
 }

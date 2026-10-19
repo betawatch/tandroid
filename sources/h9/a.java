@@ -1,6 +1,5 @@
 package h9;
 
-import a6.m;
 import d9.b;
 import d9.e;
 import d9.h;
@@ -27,16 +26,17 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import org.webrtc.MediaStreamTrack;
+import qb.c;
 import v7.s6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class a {
     public static final o0 f;
     public static final d9.a g;
     public static final HashMap h;
     public static final a i;
-    public static final m j;
+    public static final c j;
     public final String a;
     public final String b;
     public final o0 c;
@@ -71,7 +71,7 @@ public final class a {
                 aVar.x(key, f7);
                 i10 += f7.d;
             }
-            o0Var = new o0(aVar.d(true), i10);
+            o0Var = new o0(aVar.e(true), i10);
         }
         f = o0Var;
         b bVar = b.d;
@@ -199,7 +199,7 @@ public final class a {
         a("font", "ttf");
         a("font", "woff");
         a("font", "woff2");
-        j = new m(new l("; "), 17);
+        j = new c(new l("; ", 0), 17);
     }
 
     public a(String str, String str2, o0 o0Var) {
@@ -221,7 +221,7 @@ public final class a {
     }
 
     public final m1 c() {
-        return new m1(this.c.b(), new ag.b(new fh.b(15), 13));
+        return new m1(this.c.b(), new a4.l(new fh.b(15), 14));
     }
 
     public final boolean equals(Object obj) {
@@ -257,11 +257,11 @@ public final class a {
         o0 o0Var = this.c;
         if (o0Var.f != 0) {
             sb2.append("; ");
-            Collection a2 = new q1(o0Var, new ag.b(new fh.b(14), 13)).a();
-            m mVar = j;
-            mVar.getClass();
+            Collection a2 = new q1(o0Var, new a4.l(new fh.b(14), 14)).a();
+            c cVar = j;
+            cVar.getClass();
             try {
-                mVar.b(sb2, a2.iterator());
+                cVar.b(sb2, a2.iterator());
             } catch (IOException e) {
                 throw new AssertionError(e);
             }

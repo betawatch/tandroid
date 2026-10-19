@@ -15,7 +15,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -25,14 +25,14 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.x6;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.bi1;
-import org.telegram.ui.ey;
-import org.telegram.ui.nq;
-import org.telegram.ui.q80;
-import org.telegram.ui.sn;
+import org.telegram.ui.cy;
+import org.telegram.ui.lq;
+import org.telegram.ui.o80;
+import org.telegram.ui.qn;
 import org.telegram.ui.web.HttpGetFileTask;
+import org.telegram.ui.zh1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -45,14 +45,14 @@ public final /* synthetic */ class b1 implements Runnable {
     public final /* synthetic */ Object n;
     public final /* synthetic */ Object r;
 
-    public /* synthetic */ b1(TLObject tLObject, int i10, org.telegram.ui.ActionBar.b2 b2Var, Context context, long j10, d6 d6Var, org.telegram.ui.web.u uVar, ai.s0 s0Var) {
+    public /* synthetic */ b1(TLObject tLObject, int i10, org.telegram.ui.ActionBar.b2 b2Var, Context context, long j10, d6 d6Var, org.telegram.ui.web.t tVar, ai.s0 s0Var) {
         this.b = tLObject;
         this.c = i10;
         this.e = b2Var;
         this.f = context;
         this.d = j10;
         this.h = d6Var;
-        this.n = uVar;
+        this.n = tVar;
         this.r = s0Var;
     }
 
@@ -60,13 +60,13 @@ public final /* synthetic */ class b1 implements Runnable {
     public final void run() {
         xc a02;
         int i10;
-        ey eyVar;
+        cy cyVar;
         switch (this.a) {
             case 0:
                 org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) this.e;
                 Context context = (Context) this.f;
                 d6 d6Var = (d6) this.h;
-                org.telegram.ui.web.u uVar = (org.telegram.ui.web.u) this.n;
+                org.telegram.ui.web.t tVar = (org.telegram.ui.web.t) this.n;
                 ai.s0 s0Var = (ai.s0) this.r;
                 TLObject tLObject = this.b;
                 if (tLObject instanceof TLRPC.TL_messages_preparedInlineMessage) {
@@ -79,7 +79,7 @@ public final /* synthetic */ class b1 implements Runnable {
                         TLRPC.TL_botInlineMessageMediaWebPage tL_botInlineMessageMediaWebPage = (TLRPC.TL_botInlineMessageMediaWebPage) botInlineMessage;
                         if (!TextUtils.isEmpty(tL_botInlineMessageMediaWebPage.url)) {
                             String str = tL_botInlineMessageMediaWebPage.url;
-                            c1 c1Var = new c1(b2Var, context, i11, j10, tL_messages_preparedInlineMessage, d6Var, uVar, s0Var);
+                            c1 c1Var = new c1(b2Var, context, i11, j10, tL_messages_preparedInlineMessage, d6Var, tVar, s0Var);
                             int[] iArr = new int[1];
                             NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr = new NotificationCenter.NotificationCenterDelegate[1];
                             TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
@@ -90,7 +90,7 @@ public final /* synthetic */ class b1 implements Runnable {
                         }
                     }
                     File[] fileArr = new File[1];
-                    d1 d1Var = new d1(b2Var, context, i11, j10, tL_messages_preparedInlineMessage, fileArr, d6Var, uVar, s0Var);
+                    d1 d1Var = new d1(b2Var, context, i11, j10, tL_messages_preparedInlineMessage, fileArr, d6Var, tVar, s0Var);
                     TLRPC.WebDocument webDocument = tL_messages_preparedInlineMessage.result.content;
                     if (webDocument != null && !TextUtils.isEmpty(webDocument.url)) {
                         TLRPC.BotInlineResult botInlineResult = tL_messages_preparedInlineMessage.result;
@@ -103,7 +103,7 @@ public final /* synthetic */ class b1 implements Runnable {
                                 d1Var.run();
                                 break;
                             } else {
-                                HttpGetFileTask httpGetFileTask = new HttpGetFileTask(new ai.n2(17, fileArr, d1Var), null);
+                                HttpGetFileTask httpGetFileTask = new HttpGetFileTask(new ai.o2(17, fileArr, d1Var), null);
                                 httpGetFileTask.setDestFile(file);
                                 httpGetFileTask.setMaxSize(8388608L);
                                 httpGetFileTask.execute(str2);
@@ -138,9 +138,9 @@ public final /* synthetic */ class b1 implements Runnable {
                         LaunchActivity.G0(launchActivity, launchActivity.O, tL_attachMenuBot, str3, false);
                         break;
                     } else {
-                        org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList2);
-                        if (AndroidUtilities.isTablet() && !(n2Var instanceof sn) && !arrayList.isEmpty()) {
-                            n2Var = (org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList);
+                        org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) i2.e.h(1, arrayList2);
+                        if (AndroidUtilities.isTablet() && !(n2Var instanceof qn) && !arrayList.isEmpty()) {
+                            n2Var = (org.telegram.ui.ActionBar.n2) i2.e.h(1, arrayList);
                         }
                         ArrayList arrayList4 = new ArrayList();
                         if (!TextUtils.isEmpty(str4)) {
@@ -151,7 +151,7 @@ public final /* synthetic */ class b1 implements Runnable {
                             }
                         }
                         if (arrayList4.isEmpty()) {
-                            eyVar = null;
+                            cyVar = null;
                         } else {
                             Bundle bundle = new Bundle();
                             bundle.putInt("dialogsType", 14);
@@ -162,17 +162,17 @@ public final /* synthetic */ class b1 implements Runnable {
                             bundle.putBoolean("allowUsers", arrayList4.contains("users"));
                             bundle.putBoolean("allowChannels", arrayList4.contains("channels"));
                             bundle.putBoolean("allowBots", arrayList4.contains("bots"));
-                            eyVar = new ey(bundle);
-                            eyVar.C2 = new q80(launchActivity, user, str5, i12);
+                            cyVar = new cy(bundle);
+                            cyVar.C2 = new o80(launchActivity, user, str5, i12);
                         }
                         if (tL_attachMenuBot.inactive) {
                             x6 x6Var = new x6(launchActivity);
                             x6Var.setColor(h6.x0(null, h6.ia, false));
                             x6Var.setBackgroundColor(h6.x0(null, h6.L5, false));
                             x6Var.setAttachBot(tL_attachMenuBot);
-                            bi1.a(launchActivity, new nq(launchActivity, i12, this.d, eyVar, n2Var, user, str5), null);
+                            zh1.a(launchActivity, new lq(launchActivity, i12, this.d, cyVar, n2Var, user, str5), null);
                             break;
-                        } else if (eyVar != null) {
+                        } else if (cyVar != null) {
                             if (n2Var != null) {
                                 n2Var.dismissCurrentDialog();
                             }
@@ -182,12 +182,12 @@ public final /* synthetic */ class b1 implements Runnable {
                                 }
                             }
                             arrayList3.clear();
-                            launchActivity.t0(eyVar);
+                            launchActivity.t0(cyVar);
                             break;
-                        } else if (n2Var instanceof sn) {
-                            sn snVar = (sn) n2Var;
-                            if (MediaDataController.canShowAttachMenuBot(tL_attachMenuBot, snVar.i() != null ? snVar.i() : snVar.e)) {
-                                snVar.ba(user.id, str5, false);
+                        } else if (n2Var instanceof qn) {
+                            qn qnVar = (qn) n2Var;
+                            if (MediaDataController.canShowAttachMenuBot(tL_attachMenuBot, qnVar.i() != null ? qnVar.i() : qnVar.e)) {
+                                qnVar.ba(user.id, str5, false);
                                 break;
                             } else {
                                 a02 = xc.a0(n2Var);
@@ -199,10 +199,10 @@ public final /* synthetic */ class b1 implements Runnable {
                         }
                     }
                 } else {
-                    a02 = xc.a0((org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList2));
+                    a02 = xc.a0((org.telegram.ui.ActionBar.n2) i2.e.h(1, arrayList2));
                     i10 = R.string.BotCantAddToAttachMenu;
                 }
-                lk.q(i10, a02, null);
+                kk.q(i10, a02, null);
                 break;
         }
     }

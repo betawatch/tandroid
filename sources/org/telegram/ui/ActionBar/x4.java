@@ -35,11 +35,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.ui.Components.zt;
-import org.telegram.ui.sa1;
+import org.telegram.ui.qa1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class x4 {
     public static final j4 p = new j4();
@@ -207,16 +207,16 @@ public final class x4 {
         v4Var.J = null;
         v4Var.N = false;
         v4Var.n();
-        sa1 sa1Var = v4Var.g;
-        sa1Var.removeAllViews();
-        sa1Var.setPaddingRelative(0, 0, 0, 0);
+        qa1 qa1Var = v4Var.g;
+        qa1Var.removeAllViews();
+        qa1Var.setPaddingRelative(0, 0, 0, 0);
         u4 u4Var = v4Var.h;
         ArrayAdapter arrayAdapter = (ArrayAdapter) u4Var.getAdapter();
         arrayAdapter.clear();
         u4Var.setAdapter((ListAdapter) arrayAdapter);
         v4Var.f.removeAllViews();
         v4Var.b.getWindowVisibleDisplayFrame(rect);
-        int min = Math.min(AndroidUtilities.dp(400.0f), lk.B(16.0f, 2, rect.width()));
+        int min = Math.min(AndroidUtilities.dp(400.0f), kk.B(16.0f, 2, rect.width()));
         LinkedList linkedList = new LinkedList(d);
         Iterator it = linkedList.iterator();
         int i12 = min;
@@ -250,7 +250,7 @@ public final class x4 {
                 }
                 b10.setTag(menuItem3);
                 b10.setOnClickListener(v4Var.L);
-                sa1Var.addView(b10);
+                qa1Var.addView(b10);
                 ViewGroup.LayoutParams layoutParams = b10.getLayoutParams();
                 layoutParams.width = min2;
                 b10.setLayoutParams(layoutParams);
@@ -266,10 +266,10 @@ public final class x4 {
             i10 = 0;
         } else {
             i10 = 0;
-            sa1Var.setPaddingRelative(0, 0, size2.getWidth(), 0);
+            qa1Var.setPaddingRelative(0, 0, size2.getWidth(), 0);
         }
-        sa1Var.measure(i10, i10);
-        v4Var.J = new Size(sa1Var.getMeasuredWidth(), sa1Var.getMeasuredHeight());
+        qa1Var.measure(i10, i10);
+        v4Var.J = new Size(qa1Var.getMeasuredWidth(), qa1Var.getMeasuredHeight());
         if (!linkedList.isEmpty()) {
             ArrayAdapter arrayAdapter2 = (ArrayAdapter) u4Var.getAdapter();
             arrayAdapter2.clear();

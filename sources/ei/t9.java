@@ -17,7 +17,7 @@ import org.telegram.messenger.camera.CameraController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t9 implements Runnable {
     public final /* synthetic */ int a;
@@ -170,12 +170,12 @@ public final /* synthetic */ class t9 implements Runnable {
                     vbVar.w = j15;
                     vbVar.B2 = true;
                     vbVar.n();
-                    ai.t3 t3Var = new ai.t3(vbVar, j15, 8);
+                    ai.v3 v3Var = new ai.v3(vbVar, j15, 8);
                     mb mbVar = vbVar.x;
                     if (mbVar != null) {
-                        mbVar.b(j15, t3Var);
+                        mbVar.c(j15, v3Var);
                     } else {
-                        t3Var.run();
+                        v3Var.run();
                     }
                     MessagesController.getGlobalMainSettings().edit().putInt("storyhint2", 2).apply();
                     break;
@@ -325,7 +325,7 @@ public final /* synthetic */ class t9 implements Runnable {
                                 gcVar.G = true;
                                 zb zbVar = gcVar.a;
                                 if (zbVar != null) {
-                                    zbVar.E(true);
+                                    zbVar.D(true);
                                     break;
                                 }
                             }

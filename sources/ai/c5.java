@@ -1,78 +1,71 @@
 package ai;
 
-import android.content.Context;
-import java.util.ArrayList;
-import java.util.regex.Pattern;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.lk;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.gh;
+import org.telegram.ui.Components.hi;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.li;
+import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c5 implements Utilities.Callback {
+public final class c5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
 
-    public /* synthetic */ c5(Object obj, Object obj2, Object obj3, int i10, String str, int i11) {
+    public /* synthetic */ c5(Object obj, int i10, Object obj2, int i11) {
         this.a = i11;
         this.d = obj;
-        this.e = obj2;
-        this.f = obj3;
         this.b = i10;
-        this.c = str;
+        this.c = obj2;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10 = this.a;
-        Object obj2 = this.f;
-        Object obj3 = this.e;
-        Object obj4 = this.d;
-        switch (i10) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
             case 0:
-                Context context = (Context) obj3;
-                org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj2;
-                ArrayList arrayList = (ArrayList) obj;
-                ((boolean[]) obj4)[0] = false;
-                if (arrayList != null) {
-                    new a2(context, d6Var, this.b, this.c, arrayList, false).show();
+                l7 l7Var = (l7) this.d;
+                l7Var.o2();
+                k5 k5Var = l7Var.g0;
+                int i10 = this.b;
+                k5Var.setVisibility(i10 == 0 ? 0 : 8);
+                l7Var.s0.setVisibility(i10 == 1 ? 0 : 8);
+                l7Var.B0.setVisibility(i10 == 2 ? 0 : 8);
+                l7Var.D0.setVisibility(i10 == 3 ? 0 : 8);
+                l7Var.X2();
+                l7Var.c1 = null;
+                Runnable runnable = (Runnable) this.c;
+                if (runnable != null) {
+                    runnable.run();
                     break;
                 }
                 break;
+            case 1:
+                ti tiVar = (ti) this.d;
+                tiVar.B0.setAlpha(0.0f);
+                tiVar.B0.setTranslationY(AndroidUtilities.dp(78.0f) + this.b);
+                hi hiVar = tiVar.e0;
+                li liVar = tiVar.B0;
+                Float valueOf = Float.valueOf(1.0f);
+                hiVar.getClass();
+                hiVar.a(liVar, valueOf);
+                tiVar.a1.setAlpha(0.0f);
+                o1.k kVar = new o1.k(tiVar.C0, o1.h.n, 0.0f);
+                kVar.u.a(0.75f);
+                kVar.u.b(500.0f);
+                kVar.b(new org.telegram.ui.Components.l7(this, 3));
+                kVar.a(new gi.b4(3, this, (gh) this.c));
+                tiVar.w1 = kVar;
+                kVar.h();
+                break;
             default:
-                LaunchActivity launchActivity = (LaunchActivity) obj4;
-                MessagesController messagesController = (MessagesController) obj3;
-                pf.c cVar = (pf.c) obj2;
-                Long l4 = (Long) obj;
-                Pattern pattern = LaunchActivity.C1;
-                TLRPC.User user = (l4 == null || l4.longValue() <= 0 || l4.longValue() == Long.MAX_VALUE) ? null : messagesController.getUser(l4);
-                int i11 = this.b;
-                if (user != null && !UserObject.isUserSelf(user)) {
-                    launchActivity.Z(i11, user, this.c, cVar);
-                    break;
-                } else {
-                    if (cVar != null) {
-                        cVar.b();
-                    }
-                    if (user == null) {
-                        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
-                        if (R != null) {
-                            lk.q(R.string.NoUsernameFound, org.telegram.ui.Components.xc.a0(R), null);
-                            break;
-                        }
-                    } else {
-                        launchActivity.m0(i11, user.id, null);
-                        break;
-                    }
-                }
+                a5.a aVar = (a5.a) this.d;
+                ((im0) aVar.d).scrollBy(0, this.b - ((int[]) this.c)[0]);
+                aVar.c = null;
                 break;
         }
     }

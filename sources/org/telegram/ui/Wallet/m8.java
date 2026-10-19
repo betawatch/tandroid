@@ -3,13 +3,13 @@ package org.telegram.ui.Wallet;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class m8 implements TextWatcher {
-    public final /* synthetic */ a4 a;
+    public final /* synthetic */ w3 a;
 
-    public m8(a4 a4Var) {
-        this.a = a4Var;
+    public m8(w3 w3Var) {
+        this.a = w3Var;
     }
 
     @Override // android.text.TextWatcher

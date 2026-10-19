@@ -16,11 +16,11 @@ import org.telegram.ui.Cells.f5;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.sl0;
-import org.telegram.ui.hq0;
+import org.telegram.ui.fq0;
 import s4.b1;
 import sg.k1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class f extends hm0 {
     public final /* synthetic */ k c;
@@ -141,17 +141,17 @@ public final class f extends hm0 {
             view = new f5(viewGroup.getContext(), kVar, z10);
         } else {
             n2 n2Var = kVar.g;
-            hq0 hq0Var = new hq0(n2Var.getParentActivity(), 1, n2Var.getResourceProvider());
+            fq0 fq0Var = new fq0(n2Var.getParentActivity(), 1, n2Var.getResourceProvider());
             if (kVar.B) {
-                hq0Var.setBackgroundColor(h6.w0(h6.d6, n2Var.getResourceProvider()));
+                fq0Var.setBackgroundColor(h6.w0(h6.d6, n2Var.getResourceProvider()));
             }
-            hq0Var.f(h6.d6, h6.a7, -1);
-            hq0Var.setViewType(15);
-            hq0Var.setMemberRequestButton(z10);
-            hq0Var.setIsSingleCell(true);
-            hq0Var.setItemsCount(1);
-            hq0Var.setTag(-33024);
-            view = hq0Var;
+            fq0Var.f(h6.d6, h6.a7, -1);
+            fq0Var.setViewType(15);
+            fq0Var.setMemberRequestButton(z10);
+            fq0Var.setIsSingleCell(true);
+            fq0Var.setItemsCount(1);
+            fq0Var.setTag(-33024);
+            view = fq0Var;
         }
         return new sl0(view);
     }

@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hq implements Runnable {
     public final /* synthetic */ int a;
@@ -112,7 +112,7 @@ public final /* synthetic */ class hq implements Runnable {
                             if (i12 > 0) {
                                 emojiView.P.B0();
                                 emojiView.U(i12);
-                                emojiView.G(i12, AndroidUtilities.dp(-9.0f));
+                                emojiView.F(i12, AndroidUtilities.dp(-9.0f));
                                 emojiView.n(0, null);
                                 break;
                             }
@@ -203,17 +203,17 @@ public final /* synthetic */ class hq implements Runnable {
                                 o00Var.p(i14, 0);
                                 n00 n00Var = s00Var2.J;
                                 int i22 = ((p00) arrayList4.get(i14)).a;
-                                org.telegram.ui.dw dwVar = (org.telegram.ui.dw) n00Var;
+                                org.telegram.ui.bw bwVar = (org.telegram.ui.bw) n00Var;
                                 int i23 = 0;
                                 while (true) {
-                                    org.telegram.ui.dy[] dyVarArr = dwVar.b.e0;
-                                    if (i23 < dyVarArr.length) {
-                                        org.telegram.ui.dy dyVar = dyVarArr[i23];
-                                        int i24 = dyVar.h;
+                                    org.telegram.ui.ay[] ayVarArr = bwVar.b.e0;
+                                    if (i23 < ayVarArr.length) {
+                                        org.telegram.ui.ay ayVar = ayVarArr[i23];
+                                        int i24 = ayVar.h;
                                         if (i24 == i22) {
-                                            dyVar.h = i16;
+                                            ayVar.h = i16;
                                         } else if (i24 == i16) {
-                                            dyVar.h = i22;
+                                            ayVar.h = i22;
                                         }
                                         i23++;
                                     } else {
@@ -224,16 +224,16 @@ public final /* synthetic */ class hq implements Runnable {
                                 }
                             }
                             s00Var.F.u0(0);
-                            org.telegram.ui.cw cwVar = (org.telegram.ui.cw) s00Var;
-                            org.telegram.ui.ey eyVar = cwVar.B0;
-                            if (!eyVar.getMessagesController().premiumFeaturesBlocked()) {
+                            org.telegram.ui.aw awVar = (org.telegram.ui.aw) s00Var;
+                            org.telegram.ui.cy cyVar = awVar.B0;
+                            if (!cyVar.getMessagesController().premiumFeaturesBlocked()) {
                                 try {
-                                    cwVar.performHapticFeedback(3, 1);
+                                    awVar.performHapticFeedback(3, 1);
                                 } catch (Exception unused2) {
                                 }
-                                qc I = xc.a0(eyVar).I(R.raw.filter_reorder, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.LimitReachedReorderFolder, LocaleController.getString(R.string.FilterAllChats))), LocaleController.getString(R.string.PremiumMore), 5000, false, new org.telegram.ui.vi(cwVar, 23));
+                                qc I = xc.a0(cyVar).I(R.raw.filter_reorder, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.LimitReachedReorderFolder, LocaleController.getString(R.string.FilterAllChats))), LocaleController.getString(R.string.PremiumMore), 5000, false, new org.telegram.ui.ti(awVar, 23));
                                 I.k(true);
-                                eyVar.o3 = I;
+                                cyVar.o3 = I;
                                 break;
                             }
                         } else {
@@ -254,9 +254,9 @@ public final /* synthetic */ class hq implements Runnable {
                 ((i30) obj).g(true);
                 break;
             case 20:
-                org.telegram.ui.nx nxVar = ((mo0) ((n40) obj)).c0;
-                if (!nxVar.u0.canScrollVertically(-1)) {
-                    nxVar.t0.h1(0, 0);
+                org.telegram.ui.lx lxVar = ((mo0) ((n40) obj)).c0;
+                if (!lxVar.u0.canScrollVertically(-1)) {
+                    lxVar.t0.h1(0, 0);
                     break;
                 }
                 break;
@@ -279,14 +279,14 @@ public final /* synthetic */ class hq implements Runnable {
             case 24:
                 m60 m60Var = (m60) ((e6.r) obj).b;
                 try {
-                    a81 a81Var = m60Var.T;
-                    if (a81Var != null && (videoEditedInfo = m60Var.S) != null && videoEditedInfo.endTime > 0) {
-                        long n10 = a81Var.n();
+                    b81 b81Var = m60Var.T;
+                    if (b81Var != null && (videoEditedInfo = m60Var.S) != null && videoEditedInfo.endTime > 0) {
+                        long n10 = b81Var.n();
                         VideoEditedInfo videoEditedInfo2 = m60Var.S;
                         if (n10 >= videoEditedInfo2.endTime) {
-                            a81 a81Var2 = m60Var.T;
+                            b81 b81Var2 = m60Var.T;
                             long j10 = videoEditedInfo2.startTime;
-                            a81Var2.K(j10 > 0 ? j10 : 0L);
+                            b81Var2.K(j10 > 0 ? j10 : 0L);
                             break;
                         }
                     }
@@ -322,7 +322,7 @@ public final /* synthetic */ class hq implements Runnable {
                 wa0 wa0Var = (wa0) obj;
                 Activity parentActivity = wa0Var.getParentActivity();
                 Activity parentActivity2 = wa0Var.getParentActivity();
-                DispatchQueue dispatchQueue = qg.m1.m;
+                DispatchQueue dispatchQueue = qg.n1.m;
                 boolean z10 = parentActivity2.getSharedPreferences("shapedetector_conf", 0).getBoolean("learning", false);
                 SharedPreferences.Editor edit = parentActivity.getSharedPreferences("shapedetector_conf", 0).edit();
                 if (z10) {

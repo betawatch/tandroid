@@ -7,9 +7,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class td implements Runnable {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class td implements Runnable {
                     v0Var.c = j10;
                     leVar.H.set(v0Var);
                 }
-                leVar.s();
+                leVar.t();
                 leVar.J.a(true, true);
                 ke keVar = leVar.y;
                 if (keVar != null) {
@@ -78,7 +78,7 @@ public final /* synthetic */ class td implements Runnable {
                 s0Var.a();
                 hi.r0 r0Var = s0Var.h;
                 if (r0Var != null) {
-                    r0Var.p();
+                    r0Var.l();
                 }
                 MessagesController.getInstance(s0Var.d).resolveCommunityJoinPendingRequest(s0Var.e, j12, !this.b, new hi.q0(s0Var, 2));
                 break;
@@ -92,7 +92,7 @@ public final /* synthetic */ class td implements Runnable {
                 ((TopicsController) this.d).lambda$reloadTopics$24(this.c, this.b);
                 break;
             default:
-                sn.z0((sn) this.d, this.c, this.b);
+                qn.z0((qn) this.d, this.c, this.b);
                 break;
         }
     }

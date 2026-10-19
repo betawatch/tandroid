@@ -1,11 +1,13 @@
 package si;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+import k2.w0;
+
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c {
-    public final /* synthetic */ l2.f a;
+    public final /* synthetic */ w0 a;
 
-    public /* synthetic */ c(l2.f fVar) {
-        this.a = fVar;
+    public /* synthetic */ c(w0 w0Var) {
+        this.a = w0Var;
     }
 }

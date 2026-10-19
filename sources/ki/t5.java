@@ -14,7 +14,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.i80;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -61,24 +61,24 @@ public final /* synthetic */ class t5 implements View.OnClickListener {
                         ArrayList arrayList = new ArrayList(set);
                         Collections.sort(arrayList);
                         TL_iv.pageBlockPreformatted pageblockpreformatted = (TL_iv.pageBlockPreformatted) aVar3.b;
-                        i80 C = w3Var2.f3.C(view);
-                        C.W(h6.c0(AndroidUtilities.dp(3.0f), h6.w0(h6.d6, w3Var2.e3)));
-                        C.Z = true;
-                        C.X = AndroidUtilities.dp(350.0f);
-                        C.i(new o2(w3Var2, aVar3, 25), LocaleController.getString(R.string.ArticleNone), TextUtils.isEmpty(pageblockpreformatted.language));
+                        i80 M = w3Var2.f3.M(view);
+                        M.W(h6.c0(AndroidUtilities.dp(3.0f), h6.w0(h6.d6, w3Var2.e3)));
+                        M.Z = true;
+                        M.X = AndroidUtilities.dp(350.0f);
+                        M.i(new o2(w3Var2, aVar3, 25), LocaleController.getString(R.string.ArticleNone), TextUtils.isEmpty(pageblockpreformatted.language));
                         if (!TextUtils.isEmpty(pageblockpreformatted.language)) {
-                            C.i(null, MessageObject.TextLayoutBlock.capitalizeLanguage(pageblockpreformatted.language), true);
+                            M.i(null, MessageObject.TextLayoutBlock.capitalizeLanguage(pageblockpreformatted.language), true);
                         }
-                        C.k();
+                        M.k();
                         int size = arrayList.size();
                         int i10 = 0;
                         while (i10 < size) {
                             Object obj = arrayList.get(i10);
                             i10++;
                             String str = (String) obj;
-                            C.i(new ig.e2(w3Var2, aVar3, str, 5), MessageObject.TextLayoutBlock.capitalizeLanguage(str), TextUtils.equals(str, pageblockpreformatted.language));
+                            M.i(new ig.e2(w3Var2, aVar3, str, 5), MessageObject.TextLayoutBlock.capitalizeLanguage(str), TextUtils.equals(str, pageblockpreformatted.language));
                         }
-                        C.Z();
+                        M.Z();
                         break;
                     }
                 }

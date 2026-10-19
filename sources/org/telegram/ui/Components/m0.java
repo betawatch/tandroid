@@ -11,9 +11,9 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.yh1;
+import org.telegram.ui.wh1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final /* synthetic */ class m0 implements View.OnClickListener {
                 h4 h4Var = (h4) this.e;
                 i4 i4Var = (i4) this.f;
                 Calendar calendar2 = (Calendar) this.c;
-                org.telegram.ui.gn0 gn0Var = (org.telegram.ui.gn0) this.h;
+                org.telegram.ui.en0 en0Var = (org.telegram.ui.en0) this.h;
                 org.telegram.ui.ActionBar.a3 a3Var2 = (org.telegram.ui.ActionBar.a3) this.d;
                 boolean f7 = f5.f(null, null, 0L, 0L, 0, od0Var4, h4Var, i4Var);
                 calendar2.setTimeInMillis(System.currentTimeMillis());
@@ -76,9 +76,9 @@ public final /* synthetic */ class m0 implements View.OnClickListener {
                     calendar2.set(14, 0);
                 }
                 int timeInMillis = (int) (calendar2.getTimeInMillis() / 1000);
-                org.telegram.ui.o41 o41Var = (org.telegram.ui.o41) gn0Var.b;
-                ((boolean[]) gn0Var.c)[0] = true;
-                o41Var.e(Integer.valueOf(timeInMillis));
+                org.telegram.ui.m41 m41Var = (org.telegram.ui.m41) en0Var.b;
+                ((boolean[]) en0Var.c)[0] = true;
+                m41Var.e(Integer.valueOf(timeInMillis));
                 runnable2 = a3Var2.a.dismissRunnable;
                 runnable2.run();
                 break;
@@ -103,7 +103,7 @@ public final /* synthetic */ class m0 implements View.OnClickListener {
                 runnable3.run();
                 break;
             case 3:
-                oy0.z((oy0) this.b, (int[]) this.e, (EditTextBoldCursor) this.f, (TextView) this.c, (TextView) this.h, (AlertDialog$Builder) this.d);
+                py0.z((py0) this.b, (int[]) this.e, (EditTextBoldCursor) this.f, (TextView) this.c, (TextView) this.h, (AlertDialog$Builder) this.d);
                 break;
             case 4:
                 org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.b;
@@ -120,7 +120,7 @@ public final /* synthetic */ class m0 implements View.OnClickListener {
                     int intValue = ((Integer) arrayList.get(i10)).intValue();
                     TLRPC.User currentUser = UserConfig.getInstance(intValue).getCurrentUser();
                     if (currentUser != null) {
-                        F.e(intValue, iArr[0] == intValue, new yh1(iArr, intValue, h9Var, currentUser, w9Var, 0));
+                        F.e(intValue, iArr[0] == intValue, new wh1(iArr, intValue, h9Var, currentUser, w9Var, 0));
                     }
                     i10 = i11;
                 }

@@ -2,7 +2,7 @@ package org.telegram.ui.Wallet;
 
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class a0 implements Runnable {
     public volatile boolean a;
@@ -28,6 +28,6 @@ public final class a0 implements Runnable {
         if (this.a) {
             return;
         }
-        this.b = this.n.b.emulateSend(this.c, this.d, this.e, this.f, new ai.q5(28, this, this.h));
+        this.b = this.n.b.emulateSend(this.c, this.d, this.e, this.f, new ai.r5(28, this, this.h));
     }
 }

@@ -16,29 +16,29 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class g9 extends org.telegram.ui.Components.e61 {
+public final class g9 extends org.telegram.ui.Components.f61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        org.telegram.ui.Components.e61.setup(new g9());
+        org.telegram.ui.Components.f61.setup(new g9());
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r12v10, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r12v12 */
     /* JADX WARN: Type inference failed for: r12v9 */
-    @Override // org.telegram.ui.Components.e61
-    public final void bindView(View view, org.telegram.ui.Components.f61 f61Var, boolean z10, org.telegram.ui.Components.s61 s61Var, org.telegram.ui.Components.a71 a71Var) {
+    @Override // org.telegram.ui.Components.f61
+    public final void bindView(View view, org.telegram.ui.Components.g61 g61Var, boolean z10, org.telegram.ui.Components.t61 t61Var, org.telegram.ui.Components.b71 b71Var) {
         int i10;
         boolean z11;
         SpannableString spannableString;
         boolean z12;
         ?? r12;
-        i9 i9Var = (i9) f61Var.G;
+        i9 i9Var = (i9) g61Var.G;
         h9 h9Var = (h9) view;
-        View.OnClickListener onClickListener = f61Var.D;
+        View.OnClickListener onClickListener = g61Var.D;
         int i11 = h9Var.a;
         org.telegram.ui.Components.k9 k9Var = h9Var.b;
         org.telegram.ui.Cells.h6 h6Var = h9Var.d;
@@ -101,7 +101,7 @@ public final class g9 extends org.telegram.ui.Components.e61 {
             ArrayList arrayList3 = new ArrayList(arrayList2);
             arrayList3.add(UserConfig.getInstance(i11).getCurrentUser());
             h6Var.setAllowEmojiStatus(r12);
-            h9Var.d.t(!arrayList2.isEmpty() ? arrayList2.get(r12) : null, null, sb2.toString(), spannableString, false, false);
+            h9Var.d.u(!arrayList2.isEmpty() ? arrayList2.get(r12) : null, null, sb2.toString(), spannableString, false, false);
             k9Var.setVisibility(r12);
             h6Var.r.clearImage();
             h6Var.f = true;
@@ -115,13 +115,13 @@ public final class g9 extends org.telegram.ui.Components.e61 {
             SpannableString spannableString2 = spannableString;
             z12 = false;
             h6Var.setAllowEmojiStatus(true);
-            h9Var.d.t(!arrayList2.isEmpty() ? arrayList2.get(0) : null, null, null, spannableString2, false, false);
+            h9Var.d.u(!arrayList2.isEmpty() ? arrayList2.get(0) : null, null, null, spannableString2, false, false);
             k9Var.setVisibility(8);
             h6Var.f = false;
         }
         imageView.setTag(i9Var);
         imageView.setOnClickListener(onClickListener);
-        boolean z15 = f61Var.e;
+        boolean z15 = g61Var.e;
         org.telegram.ui.Components.xp xpVar = h9Var.e;
         if (xpVar == null) {
             return;
@@ -129,7 +129,7 @@ public final class g9 extends org.telegram.ui.Components.e61 {
         xpVar.a(z15, z12);
     }
 
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     public final View createView(Context context, org.telegram.ui.Components.im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
         return new h9(context, i10);
     }

@@ -7,22 +7,22 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import nc.c;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class a extends com.googlecode.mp4parser.a {
-    public static final /* synthetic */ le.b b;
-    public static final /* synthetic */ le.b c;
-    public static final /* synthetic */ le.b d;
-    public static final /* synthetic */ le.b e;
-    public static final /* synthetic */ le.b f;
-    public static final /* synthetic */ le.b h;
-    public static final /* synthetic */ le.b n;
-    public static final /* synthetic */ le.b r;
-    public static final /* synthetic */ le.b s;
-    public static final /* synthetic */ le.b v;
-    public static final /* synthetic */ le.b w;
-    public static final /* synthetic */ le.b x;
-    public static final /* synthetic */ le.b y;
+    public static final /* synthetic */ te.b b;
+    public static final /* synthetic */ te.b c;
+    public static final /* synthetic */ te.b d;
+    public static final /* synthetic */ te.b e;
+    public static final /* synthetic */ te.b f;
+    public static final /* synthetic */ te.b h;
+    public static final /* synthetic */ te.b n;
+    public static final /* synthetic */ te.b r;
+    public static final /* synthetic */ te.b s;
+    public static final /* synthetic */ te.b v;
+    public static final /* synthetic */ te.b w;
+    public static final /* synthetic */ te.b x;
+    public static final /* synthetic */ te.b y;
     public b a;
 
     static {

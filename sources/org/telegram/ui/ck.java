@@ -1,37 +1,34 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.os.Bundle;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class ck extends un {
-    public final /* synthetic */ int f;
-    public boolean h;
+public final class ck extends org.telegram.ui.Components.dp {
+    public final /* synthetic */ qn f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ck(Context context, org.telegram.ui.ActionBar.d5 d5Var, Bundle bundle, int i10) {
-        super(context, d5Var, bundle);
-        this.f = i10;
+    public ck(qn qnVar, Context context) {
+        super(context);
+        this.f = qnVar;
     }
 
-    @Override // org.telegram.ui.un
-    public final void a() {
-        switch (this.f) {
-            case 0:
-                if (!this.h) {
-                    this.h = true;
-                    super.a();
-                    break;
-                }
-                break;
-            default:
-                if (!this.h) {
-                    this.h = true;
-                    super.a();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.dp
+    public final void a(boolean z10) {
+        qn qnVar = this.f;
+        qnVar.w7();
+        qnVar.u7();
+        qnVar.x7();
+        qnVar.y7();
+        vk vkVar = qnVar.bb;
+        if (vkVar != null) {
+            vkVar.setTranslationY(qnVar.w9 + getCurrentHeight());
+        }
+        if (!z10) {
+            qnVar.t9();
+        } else {
+            qnVar.D9 = true;
+            qnVar.nc();
         }
     }
 }

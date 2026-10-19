@@ -8,12 +8,11 @@ import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
 import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class c2 extends Drawable implements Drawable.Callback {
     public final Drawable a;
@@ -138,18 +137,5 @@ public final class c2 extends Drawable implements Drawable.Callback {
     @Override // android.graphics.drawable.Drawable.Callback
     public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
         unscheduleSelf(runnable);
-    }
-
-    public c2(ShapeDrawable shapeDrawable, float f7, float f10) {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.c = new Path();
-        this.d = new RectF();
-        this.e = new Outline();
-        this.f = true;
-        this.a = shapeDrawable;
-        shapeDrawable.setCallback(this);
-        paint.setColor(0);
-        paint.setShadowLayer(f7, 0.0f, f10, 553648128);
     }
 }

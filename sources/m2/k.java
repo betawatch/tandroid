@@ -5,7 +5,7 @@ import e9.n0;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class k extends m implements l2.i {
     public final n n;
@@ -56,7 +56,7 @@ public final class k extends m implements l2.i {
     }
 
     @Override // l2.i
-    public final long o(long j10, long j11) {
+    public final long p(long j10, long j11) {
         return this.n.f(j10, j11);
     }
 
@@ -76,7 +76,7 @@ public final class k extends m implements l2.i {
     }
 
     @Override // l2.i
-    public final long x(long j10, long j11) {
+    public final long y(long j10, long j11) {
         return this.n.b(j10, j11);
     }
 

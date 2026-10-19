@@ -1,8 +1,9 @@
 package yh;
 
 import ai.ga;
-import ai.k5;
-import ai.k6;
+import ai.i6;
+import ai.l5;
+import ai.l6;
 import ai.tc;
 import ai.y9;
 import android.content.Context;
@@ -33,16 +34,16 @@ import org.telegram.ui.Components.ao;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.iu;
 import org.telegram.ui.Components.kv;
-import org.telegram.ui.lo0;
+import org.telegram.ui.jo0;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class f4 extends bb {
     public static final /* synthetic */ int k0 = 0;
@@ -53,8 +54,8 @@ public final class f4 extends bb {
     public final j3 b0;
     public final j3 c0;
     public final j3 d0;
-    public final k5 e0;
-    public ai.p2 f0;
+    public final l5 e0;
+    public ai.s2 f0;
     public final HashSet g0;
     public boolean h0;
     public d4 i0;
@@ -83,7 +84,7 @@ public final class f4 extends bb {
         this.a0 = j3Var;
         j3Var.setSorting(e4Var.c.p);
         linearLayout.addView(j3Var, z5.t(-2, -2, 16, 0, 0, 6, 0));
-        j3Var.setOnClickListener(new org.telegram.ui.web.c(14, this, e4Var));
+        j3Var.setOnClickListener(new qg.n(13, this, e4Var));
         j3 j3Var2 = new j3(context, this.resourcesProvider);
         this.b0 = j3Var2;
         j3Var2.setValue(LocaleController.getString(R.string.Gift2AttributeModel));
@@ -169,7 +170,7 @@ public final class f4 extends bb {
         s4.s sVar = new s4.s(3);
         sVar.O = new ai.q1(this, 8);
         this.d.setLayoutManager(sVar);
-        this.d.setOnItemClickListener(new org.telegram.ui.web.n(25, this, e4Var));
+        this.d.setOnItemClickListener(new org.telegram.ui.web.m(25, this, e4Var));
         this.d.setPadding(AndroidUtilities.dp(8.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(8.0f) + this.backgroundPaddingLeft, 0);
         this.d.setOnScrollListener(new kv(this, 24));
         s4.k kVar = new s4.k();
@@ -179,17 +180,17 @@ public final class f4 extends bb {
         kVar.n(350L);
         this.d.setItemAnimator(kVar);
         this.d.setItemSelectorColorProvider(new ya.b(3));
-        k5 k5Var = new k5(context);
-        this.e0 = k5Var;
+        l5 l5Var = new l5(context);
+        this.e0 = l5Var;
         int dp = AndroidUtilities.dp(20.0f);
         int dp2 = AndroidUtilities.dp(9.0f);
-        k5Var.h = dp;
-        k5Var.n = dp2;
-        k5Var.setRoundRadius(AndroidUtilities.dp(22.0f));
-        k5Var.setFullRect(true);
-        AndroidUtilities.makeGlobalBlurBitmap(new ai.r0(k5Var, 2), 12.0f, 12, null, new ArrayList());
-        k5Var.setPivotY(0.0f);
-        this.container.addView(k5Var, z5.e(-1, -2, 55));
+        l5Var.h = dp;
+        l5Var.n = dp2;
+        l5Var.setRoundRadius(AndroidUtilities.dp(22.0f));
+        l5Var.setFullRect(true);
+        AndroidUtilities.makeGlobalBlurBitmap(new ai.r0(l5Var, 2), 12.0f, 12, null, new ArrayList());
+        l5Var.setPivotY(0.0f);
+        this.container.addView(l5Var, z5.e(-1, -2, 55));
         this.i0.N(false);
         e4Var.d = new x3(this, 1);
     }
@@ -207,7 +208,7 @@ public final class f4 extends bb {
 
     public static void R(f4 f4Var, e4 e4Var, int i10) {
         TL_stars.SavedStarGift savedStarGift;
-        f61 G = f4Var.i0.G(i10 - 1);
+        g61 G = f4Var.i0.G(i10 - 1);
         if (G == null) {
             return;
         }
@@ -227,10 +228,10 @@ public final class f4 extends bb {
             if (z10 && (starGift instanceof TL_stars.TL_starGiftUnique)) {
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) G.G;
                 org.telegram.ui.ActionBar.b2 b2Var2 = new org.telegram.ui.ActionBar.b2(f4Var.getContext(), 3, null);
-                b2Var2.q(400L);
+                b2Var2.r(400L);
                 long clientUserId = UserConfig.getInstance(f4Var.currentAccount).getClientUserId();
-                ag.c cVar = tL_starGiftUnique.resale_ton_only ? ag.c.b : ag.c.a;
-                ga.x(f4Var.currentAccount, cVar).H(tL_starGiftUnique, clientUserId, null, true, new lo0(f4Var, b2Var2, cVar, tL_starGiftUnique, clientUserId));
+                ag.b bVar = tL_starGiftUnique.resale_ton_only ? ag.b.b : ag.b.a;
+                ga.x(f4Var.currentAccount, bVar).H(tL_starGiftUnique, clientUserId, null, true, new jo0(f4Var, b2Var2, bVar, tL_starGiftUnique, clientUserId));
                 return;
             }
             if (!z10) {
@@ -367,7 +368,7 @@ public final class f4 extends bb {
                 return;
             }
             int currentTime = ConnectionsManager.getInstance(f4Var.currentAccount).getCurrentTime();
-            arrayList.add(f61.s(-1, LocaleController.getString(R.string.GiftCraftSelectYour)));
+            arrayList.add(g61.s(-1, LocaleController.getString(R.string.GiftCraftSelectYour)));
             ArrayList arrayList2 = y9Var.l;
             int size = arrayList2.size();
             int i10 = 0;
@@ -380,7 +381,7 @@ public final class f4 extends bb {
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 if (!f4Var.g0.contains(Long.valueOf(savedStarGift.gift.id))) {
                     boolean z11 = savedStarGift.can_craft_at <= currentTime;
-                    f61 a2 = f1.a(0, savedStarGift.gift, false, true, false, false, true);
+                    g61 a2 = f1.a(0, savedStarGift.gift, false, true, false, false, true);
                     a2.g = z11;
                     arrayList.add(a2);
                     i11++;
@@ -391,23 +392,23 @@ public final class f4 extends bb {
                 int i13 = i11 % 3;
                 int i14 = 6 - i13;
                 for (int i15 = 0; i15 < i14; i15++) {
-                    f61 o10 = f61.o((i15 - i13) + 1, 35);
+                    g61 o10 = g61.o((i15 - i13) + 1, 35);
                     o10.u = 1;
                     arrayList.add(o10);
                 }
             } else if (z10) {
-                arrayList.add(f61.g(LocaleController.getString(R.string.GiftCraftSelectYourEmpty)));
+                arrayList.add(g61.g(LocaleController.getString(R.string.GiftCraftSelectYourEmpty)));
             }
             if (s3Var.e > 0 || f4Var.j0) {
                 f4Var.j0 = true;
                 String string = LocaleController.getString(R.string.GiftCraftSelectResale);
-                f61 f61Var = new f61(42);
-                f61Var.d = -2;
-                f61Var.o = string;
-                arrayList.add(f61Var);
+                g61 g61Var = new g61(42);
+                g61Var.d = -2;
+                g61Var.o = string;
+                arrayList.add(g61Var);
                 HorizontalScrollView horizontalScrollView = f4Var.Z;
                 if (horizontalScrollView != null) {
-                    arrayList.add(f61.j(-3, horizontalScrollView));
+                    arrayList.add(g61.j(-3, horizontalScrollView));
                 }
                 ArrayList arrayList3 = s3Var.d;
                 int size2 = arrayList3.size();
@@ -417,22 +418,22 @@ public final class f4 extends bb {
                     arrayList.add(f1.a(0, (TL_stars.TL_starGiftUnique) obj2, false, true, false, true, true));
                 }
                 if (s3Var.t || !s3Var.u) {
-                    f61 o11 = f61.o(10, 35);
+                    g61 o11 = g61.o(10, 35);
                     o11.u = 1;
                     arrayList.add(o11);
-                    f61 o12 = f61.o(11, 35);
+                    g61 o12 = g61.o(11, 35);
                     o12.u = 1;
                     arrayList.add(o12);
-                    f61 o13 = f61.o(12, 35);
+                    g61 o13 = g61.o(12, 35);
                     o13.u = 1;
                     arrayList.add(o13);
-                    f61 o14 = f61.o(13, 35);
+                    g61 o14 = g61.o(13, 35);
                     o14.u = 1;
                     arrayList.add(o14);
-                    f61 o15 = f61.o(14, 35);
+                    g61 o15 = g61.o(14, 35);
                     o15.u = 1;
                     arrayList.add(o15);
-                    f61 o16 = f61.o(15, 35);
+                    g61 o16 = g61.o(15, 35);
                     o16.u = 1;
                     arrayList.add(o16);
                 }
@@ -440,24 +441,24 @@ public final class f4 extends bb {
         }
     }
 
-    public static /* synthetic */ void V(f4 f4Var, org.telegram.ui.ActionBar.b2 b2Var, ag.c cVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift) {
+    public static /* synthetic */ void V(f4 f4Var, org.telegram.ui.ActionBar.b2 b2Var, ag.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift) {
         b2Var.dismiss();
         if (tL_payments_paymentFormStarGift == null) {
             return;
         }
-        ai.h6 h6Var = new ai.h6(cVar, tL_payments_paymentFormStarGift);
+        i6 i6Var = new i6(bVar, tL_payments_paymentFormStarGift);
         Context context = f4Var.getContext();
         d6 d6Var = f4Var.resourcesProvider;
         int i10 = f4Var.currentAccount;
         StringBuilder sb2 = new StringBuilder();
         sb2.append(tL_starGiftUnique.title);
         sb2.append(" #");
-        new k6(context, d6Var, tL_starGiftUnique, h6Var, i10, j10, org.telegram.messenger.g0.h(tL_starGiftUnique.num, ',', sb2), true, new tc(f4Var, tL_starGiftUnique, j10, 2)).b();
+        new l6(context, d6Var, tL_starGiftUnique, i6Var, i10, j10, org.telegram.messenger.g0.h(tL_starGiftUnique.num, ',', sb2), true, new tc(f4Var, tL_starGiftUnique, j10, 2)).b();
     }
 
-    public static void W(f4 f4Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, ai.h6 h6Var, pf.c cVar) {
+    public static void W(f4 f4Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, i6 i6Var, pf.c cVar) {
         cVar.d();
-        ga.x(f4Var.currentAccount, h6Var.a).h(h6Var.b, tL_starGiftUnique, j10, null, true, new ai.s0(f4Var, cVar, tL_starGiftUnique, 8));
+        ga.x(f4Var.currentAccount, i6Var.a).h(i6Var.b, tL_starGiftUnique, j10, null, true, new ai.s0(f4Var, cVar, tL_starGiftUnique, 8));
     }
 
     public static void X(f4 f4Var, e4 e4Var, Context context) {
@@ -514,24 +515,24 @@ public final class f4 extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final void G(float f7) {
+    public final void F(float f7) {
         float y3 = this.containerView.getY() + f7;
-        k5 k5Var = this.e0;
-        float measuredHeight = y3 - k5Var.getMeasuredHeight();
-        float clamp01 = 1.0f - Utilities.clamp01(Math.max(0.0f, (-measuredHeight) + AndroidUtilities.dp(8.0f)) / k5Var.getMeasuredHeight());
+        l5 l5Var = this.e0;
+        float measuredHeight = y3 - l5Var.getMeasuredHeight();
+        float clamp01 = 1.0f - Utilities.clamp01(Math.max(0.0f, (-measuredHeight) + AndroidUtilities.dp(8.0f)) / l5Var.getMeasuredHeight());
         float height = this.container.getHeight() / 2.0f;
         if (measuredHeight > height) {
             clamp01 = Math.min(clamp01, Utilities.clamp01(1.0f - ((measuredHeight - height) / AndroidUtilities.dpf2(128.0f))));
         }
-        k5Var.setScaleX(clamp01);
-        k5Var.setScaleY(clamp01);
-        k5Var.setAlpha(AndroidUtilities.ilerp(clamp01, 0.5f, 1.0f));
-        k5Var.setTranslationY(measuredHeight);
+        l5Var.setScaleX(clamp01);
+        l5Var.setScaleY(clamp01);
+        l5Var.setAlpha(AndroidUtilities.ilerp(clamp01, 0.5f, 1.0f));
+        l5Var.setTranslationY(measuredHeight);
     }
 
     public final void a0() {
         int R;
-        f61 G;
+        g61 G;
         int i10 = 0;
         boolean z10 = false;
         boolean z11 = false;

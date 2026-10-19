@@ -1,14 +1,12 @@
 package w7;
 
-import java.util.Locale;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class m9 {
-    public static int a(int i10) {
-        if (i10 >= 100 || i10 < 0) {
-            return i10;
+    public static String a(String str) {
+        if ("null".equals(str) || "".equals(str)) {
+            return null;
         }
-        return Integer.parseInt(String.format(Locale.US, "%s%02d", com.google.android.gms.internal.play_billing.k3.j(2, 0, String.valueOf(oa.d.w3().get(1))), Integer.valueOf(i10)));
+        return str;
     }
 }

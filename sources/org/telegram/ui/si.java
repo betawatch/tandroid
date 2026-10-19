@@ -1,62 +1,85 @@
 package org.telegram.ui;
 
-import android.text.style.CharacterStyle;
-import org.telegram.messenger.AndroidUtilities;
+import android.util.SparseArray;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class si extends pf.c {
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Cells.u1 f;
-    public final /* synthetic */ sn g;
-    public final /* synthetic */ Object h;
+public final class si {
+    public boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ SparseArray c;
+    public final /* synthetic */ qn d;
 
-    public /* synthetic */ si(sn snVar, int i10, Object obj, org.telegram.ui.Cells.u1 u1Var, int i11) {
-        this.d = i11;
-        this.g = snVar;
-        this.e = i10;
-        this.h = obj;
-        this.f = u1Var;
+    public si(qn qnVar, boolean z10, SparseArray sparseArray) {
+        this.d = qnVar;
+        this.b = z10;
+        this.c = sparseArray;
     }
 
-    @Override // pf.c
-    public final void c(boolean z10) {
-        switch (this.d) {
-            case 0:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ah.g(this, this.e, 22), 240L);
-                    break;
-                }
-                break;
-            default:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ah.g(this, this.e, 25), 240L);
-                    break;
-                }
-                break;
+    public final boolean a(int i10) {
+        qn qnVar = this.d;
+        int i11 = i10 - qnVar.A0.J;
+        if (i11 < 0 || i11 >= qnVar.u6.size()) {
+            return false;
         }
+        MessageObject messageObject = (MessageObject) qnVar.u6.get(i11);
+        if (messageObject.contentType != 0) {
+            return false;
+        }
+        SparseArray sparseArray = this.c;
+        boolean z10 = this.b;
+        if (z10 || sparseArray.get(messageObject.getId(), null) != null) {
+            return z10 && sparseArray.get(messageObject.getId(), null) != null;
+        }
+        return true;
     }
 
-    @Override // pf.c
-    public final void d() {
-        switch (this.d) {
-            case 0:
-                int i10 = this.e;
-                sn snVar = this.g;
-                snVar.wb = i10;
-                snVar.xb = 1;
-                snVar.yb = (CharacterStyle) this.h;
-                this.f.invalidate();
-                break;
-            default:
-                int i11 = this.e;
-                sn snVar2 = this.g;
-                snVar2.wb = i11;
-                snVar2.xb = 3;
-                snVar2.zb = (String) this.h;
-                this.f.invalidate();
-                break;
+    /* JADX WARN: Removed duplicated region for block: B:30:0x007c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(int i10, boolean z10, float f7, float f10) {
+        s4.b1 K;
+        qn qnVar = this.d;
+        ArrayList arrayList = qnVar.u6;
+        SparseArray[] sparseArrayArr = qnVar.W5;
+        int i11 = i10 - qnVar.A0.J;
+        if (this.b) {
+            z10 = !z10;
+        }
+        if (i11 < 0 || i11 >= arrayList.size()) {
+            return;
+        }
+        MessageObject messageObject = (MessageObject) arrayList.get(i11);
+        if (!z10 || (sparseArrayArr[0].indexOfKey(messageObject.getId()) < 0 && sparseArrayArr[1].indexOfKey(messageObject.getId()) < 0)) {
+            if ((z10 || sparseArrayArr[0].indexOfKey(messageObject.getId()) >= 0 || sparseArrayArr[1].indexOfKey(messageObject.getId()) >= 0) && messageObject.contentType == 0) {
+                if (z10) {
+                    if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
+                        this.a = true;
+                        K = qnVar.x0.K(i10);
+                        if (K != null) {
+                            View view = K.a;
+                            if (view instanceof org.telegram.ui.Cells.u1) {
+                                qn.c2(qnVar, view, false, f7, f10);
+                                return;
+                            }
+                        }
+                        qnVar.A6(messageObject, false, true);
+                        qnVar.hc();
+                        qnVar.ad(false);
+                    }
+                }
+                this.a = false;
+                K = qnVar.x0.K(i10);
+                if (K != null) {
+                }
+                qnVar.A6(messageObject, false, true);
+                qnVar.hc();
+                qnVar.ad(false);
+            }
         }
     }
 }

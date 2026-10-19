@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.i80;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t2 implements Utilities.Callback5 {
     public final /* synthetic */ int a;
@@ -23,12 +23,12 @@ public final /* synthetic */ class t2 implements Utilities.Callback5 {
     @Override // org.telegram.messenger.Utilities.Callback5
     public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
         int i10 = this.a;
-        f61 f61Var = (f61) obj;
+        g61 g61Var = (g61) obj;
         g4 g4Var = this.b;
         g4Var.getClass();
         switch (i10) {
             case 0:
-                long j10 = ((TL_stars.starGiftAttributePattern) f61Var.G).document.id;
+                long j10 = ((TL_stars.starGiftAttributePattern) g61Var.G).document.id;
                 s3 s3Var = g4Var.d;
                 HashSet hashSet = s3Var.l;
                 if (hashSet.contains(Long.valueOf(j10))) {
@@ -52,7 +52,7 @@ public final /* synthetic */ class t2 implements Utilities.Callback5 {
                 this.c.u();
                 break;
             case 1:
-                int i12 = ((TL_stars.starGiftAttributeBackdrop) f61Var.G).backdrop_id;
+                int i12 = ((TL_stars.starGiftAttributeBackdrop) g61Var.G).backdrop_id;
                 s3 s3Var2 = g4Var.d;
                 HashSet hashSet2 = s3Var2.k;
                 if (hashSet2.contains(Integer.valueOf(i12))) {
@@ -76,7 +76,7 @@ public final /* synthetic */ class t2 implements Utilities.Callback5 {
                 this.c.u();
                 break;
             default:
-                long j12 = ((TL_stars.starGiftAttributeModel) f61Var.G).document.id;
+                long j12 = ((TL_stars.starGiftAttributeModel) g61Var.G).document.id;
                 s3 s3Var3 = g4Var.d;
                 HashSet hashSet3 = s3Var3.j;
                 if (hashSet3.contains(Long.valueOf(j12))) {

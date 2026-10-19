@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class j0 extends org.telegram.ui.ActionBar.g5 {
     public final /* synthetic */ int r;
@@ -34,7 +34,7 @@ public final class j0 extends org.telegram.ui.ActionBar.g5 {
     public void onOpenAnimationEnd() {
         switch (this.r) {
             case 1:
-                ((org.telegram.ui.Components.dr0) this.s).Y = true;
+                ((org.telegram.ui.Components.er0) this.s).Z = true;
                 break;
         }
     }

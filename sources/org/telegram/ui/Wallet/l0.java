@@ -10,15 +10,15 @@ import org.json.JSONObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.kg0;
+import org.telegram.ui.jg0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class l0 {
     public boolean h;
     public boolean i;
     public final /* synthetic */ m0 l;
-    public final e3 a = new e3();
+    public final f3 a = new f3();
     public final ArrayList b = new ArrayList();
     public final ArrayList c = new ArrayList();
     public final HashSet d = new HashSet();
@@ -32,7 +32,7 @@ public final class l0 {
         this.l = m0Var;
     }
 
-    public static TL_wallet.walletTransaction c(String str, ArrayList arrayList) {
+    public static TL_wallet.walletTransaction d(String str, ArrayList arrayList) {
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             if (TextUtils.equals(((TL_wallet.walletTransaction) arrayList.get(i10)).id, str)) {
                 return (TL_wallet.walletTransaction) arrayList.get(i10);
@@ -41,7 +41,7 @@ public final class l0 {
         return null;
     }
 
-    public static String i(JSONObject jSONObject) {
+    public static String j(JSONObject jSONObject) {
         String optString = jSONObject.optString("lt", "");
         String optString2 = jSONObject.optString("hash", "");
         if (TextUtils.isEmpty(optString) || TextUtils.isEmpty(optString2)) {
@@ -63,44 +63,48 @@ public final class l0 {
         this.i = false;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0011, code lost:
-    
-        continue;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final TL_wallet.walletTransaction b(TL_wallet.walletTransaction wallettransaction) {
+    public final boolean b(TL_wallet.walletTransaction wallettransaction) {
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.b;
+            if (i10 >= arrayList.size()) {
+                return false;
+            }
+            if (arrayList.get(i10) == wallettransaction) {
+                return true;
+            }
+            i10++;
+        }
+    }
+
+    public final TL_wallet.walletTransaction c(TL_wallet.walletTransaction wallettransaction) {
+        TL_wallet.walletTransaction d = d(wallettransaction.id, this.b);
+        if (d != null) {
+            return d;
+        }
         String str = wallettransaction.id;
-        ArrayList arrayList = this.b;
-        TL_wallet.walletTransaction c10 = c(str, arrayList);
-        if (c10 != null) {
-            return c10;
+        HashMap hashMap = this.f;
+        TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) hashMap.get(str);
+        if (wallettransaction2 != null && b(wallettransaction2)) {
+            return wallettransaction2;
         }
         Iterator it = this.d.iterator();
         while (it.hasNext()) {
-            TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) this.f.get((String) it.next());
-            if (wallettransaction2 != null) {
-                int i10 = 0;
-                while (true) {
-                    if (i10 >= arrayList.size()) {
-                        break;
-                    }
-                    if (arrayList.get(i10) != wallettransaction2) {
-                        i10++;
-                    } else if (m0.f0(wallettransaction2, wallettransaction)) {
-                        return wallettransaction2;
-                    }
-                }
+            TL_wallet.walletTransaction wallettransaction3 = (TL_wallet.walletTransaction) hashMap.get((String) it.next());
+            if (wallettransaction3 != null && b(wallettransaction3) && m0.f0(wallettransaction3, wallettransaction)) {
+                return wallettransaction3;
             }
         }
         return null;
     }
 
-    public final void d(TL_wallet.walletTransaction wallettransaction) {
+    public final void e(TL_wallet.walletTransaction wallettransaction) {
         String str = wallettransaction.id;
         HashMap hashMap = this.e;
         hashMap.remove(str);
+        String str2 = wallettransaction.id;
+        HashMap hashMap2 = this.f;
+        TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) hashMap2.get(str2);
         HashSet hashSet = this.d;
         ArrayList arrayList = new ArrayList(hashSet);
         int size = arrayList.size();
@@ -108,16 +112,16 @@ public final class l0 {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            String str2 = (String) obj;
-            TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) this.f.get(str2);
-            if (TextUtils.equals(str2, wallettransaction.id) || (wallettransaction2 != null && m0.f0(wallettransaction2, wallettransaction))) {
-                hashSet.remove(str2);
-                hashMap.remove(str2);
+            String str3 = (String) obj;
+            TL_wallet.walletTransaction wallettransaction3 = (TL_wallet.walletTransaction) hashMap2.get(str3);
+            if (TextUtils.equals(str3, wallettransaction.id) || (wallettransaction3 != null && (wallettransaction3 == wallettransaction2 || m0.f0(wallettransaction3, wallettransaction)))) {
+                hashSet.remove(str3);
+                hashMap.remove(str3);
             }
         }
     }
 
-    public final void e(TL_wallet.walletTransaction wallettransaction) {
+    public final void f(TL_wallet.walletTransaction wallettransaction) {
         ArrayList arrayList;
         int i10 = 0;
         while (true) {
@@ -131,7 +135,7 @@ public final class l0 {
         arrayList.add(i10, wallettransaction);
     }
 
-    public final void f() {
+    public final void g() {
         if (this.i) {
             return;
         }
@@ -144,7 +148,7 @@ public final class l0 {
         this.j = ConnectionsManager.getInstance(this.l.a).sendRequestTyped(gettransactions, new org.telegram.messenger.a(), new k0(this, gettransactions, 0));
     }
 
-    public final void g() {
+    public final void h() {
         if (this.h) {
             return;
         }
@@ -156,12 +160,12 @@ public final class l0 {
         this.k = ConnectionsManager.getInstance(this.l.a).sendRequestTyped(gettransactions, new org.telegram.messenger.a(), new k0(this, gettransactions, 1));
     }
 
-    public final void h() {
+    public final void i() {
         m0 m0Var = this.l;
         NotificationCenter.getInstance(m0Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.walletTransactionsUpdate, this, m0Var);
     }
 
-    public final void j() {
+    public final void k() {
         int i10;
         ArrayList arrayList;
         TL_wallet.WalletTransactionPeer walletTransactionPeer;
@@ -213,11 +217,11 @@ public final class l0 {
         arrayList3.clear();
         arrayList3.addAll(arrayList2);
         arrayList3.addAll(arrayList);
-        List.-EL.sort(arrayList3, new kg0(10));
-        e3 e3Var = this.a;
-        HashSet hashSet2 = e3Var.a;
-        HashSet hashSet3 = e3Var.a;
-        HashMap hashMap = e3Var.b;
+        List.-EL.sort(arrayList3, new jg0(10));
+        f3 f3Var = this.a;
+        HashSet hashSet2 = f3Var.a;
+        HashSet hashSet3 = f3Var.a;
+        HashMap hashMap = f3Var.b;
         hashSet2.clear();
         hashMap.clear();
         int size3 = arrayList3.size();
@@ -230,6 +234,6 @@ public final class l0 {
             }
         }
         hashMap.clear();
-        e3Var.b(4, new ArrayList(hashSet3));
+        f3Var.b(4, new ArrayList(hashSet3));
     }
 }

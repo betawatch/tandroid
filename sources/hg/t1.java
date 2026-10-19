@@ -14,7 +14,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.h6;
@@ -26,7 +26,7 @@ import org.telegram.ui.Components.m10;
 import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.un;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class t1 extends hm0 {
     public int E;
@@ -170,7 +170,7 @@ public abstract class t1 extends hm0 {
                     return;
                 }
                 ContactsController.Contact contact = (ContactsController.Contact) E(i10);
-                ((h6) view).t(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), lk.g(new StringBuilder("+"), contact.shortPhones.get(0), jf.b.c()), false, false);
+                ((h6) view).u(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), kk.g(new StringBuilder("+"), contact.shortPhones.get(0), jf.b.c()), false, false);
                 return;
             }
             String str2 = (String) E(i10);
@@ -221,8 +221,8 @@ public abstract class t1 extends hm0 {
                             if (z10) {
                                 charSequence3 = LocaleController.getString(R.string.SavedMessages);
                             }
-                            h6Var.t(tLObject, null, charSequence3, charSequence2, false, z10);
-                            h6Var.s(this.h.h(j11) >= 0, false);
+                            h6Var.u(tLObject, null, charSequence3, charSequence2, false, z10);
+                            h6Var.t(this.h.h(j11) >= 0, false);
                         }
                     }
                 }
@@ -258,8 +258,8 @@ public abstract class t1 extends hm0 {
             h6 h6Var2 = (h6) view;
             if (z10) {
             }
-            h6Var2.t(tLObject, null, charSequence3, charSequence2, false, z10);
-            h6Var2.s(this.h.h(j11) >= 0, false);
+            h6Var2.u(tLObject, null, charSequence3, charSequence2, false, z10);
+            h6Var2.t(this.h.h(j11) >= 0, false);
         }
     }
 

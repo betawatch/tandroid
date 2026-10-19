@@ -1,14 +1,17 @@
 package qg;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class k1 {
     public double a;
     public double b;
-    public double c;
-    public double d;
 
-    public final String toString() {
-        return "RectD{left=" + this.a + ", top=" + this.b + ", right=" + this.c + ", bottom=" + this.d + '}';
+    public k1(double d, double d10) {
+        this.a = d;
+        this.b = d10;
+    }
+
+    public final double a(double d, double d10) {
+        return Math.sqrt(Math.pow(d10 - this.b, 2.0d) + Math.pow(d - this.a, 2.0d));
     }
 }

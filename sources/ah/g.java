@@ -1,13 +1,13 @@
 package ah;
 
 import ai.ga;
-import ai.t5;
+import ai.u5;
 import android.os.Looper;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.util.StateSet;
-import ci.h7;
-import ci.u7;
+import ci.i7;
+import ci.v7;
 import ei.a8;
 import ei.n2;
 import ei.vb;
@@ -29,17 +29,17 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.bj;
-import org.telegram.ui.en;
-import org.telegram.ui.fe;
-import org.telegram.ui.lm;
-import org.telegram.ui.si;
-import org.telegram.ui.sn;
-import org.telegram.ui.ti;
+import org.telegram.ui.cn;
+import org.telegram.ui.de;
+import org.telegram.ui.jm;
+import org.telegram.ui.qi;
+import org.telegram.ui.qn;
+import org.telegram.ui.ri;
 import org.telegram.ui.v4;
+import org.telegram.ui.zi;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
@@ -89,14 +89,14 @@ public final /* synthetic */ class g implements Runnable {
                 ((c2.g) obj).b.onAudioFocusChange(i12);
                 break;
             case 4:
-                h7 h7Var = (h7) obj;
-                ArrayList arrayList = h7Var.g;
-                h7Var.v(arrayList);
-                t5 t5Var = h7Var.J;
-                Collections.sort(arrayList, t5Var);
-                ArrayList arrayList2 = h7Var.h;
-                h7Var.v(arrayList2);
-                Collections.sort(arrayList2, t5Var);
+                i7 i7Var = (i7) obj;
+                ArrayList arrayList = i7Var.g;
+                i7Var.v(arrayList);
+                u5 u5Var = i7Var.J;
+                Collections.sort(arrayList, u5Var);
+                ArrayList arrayList2 = i7Var.h;
+                i7Var.v(arrayList2);
+                Collections.sort(arrayList2, u5Var);
                 NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
                 break;
             case 5:
@@ -142,7 +142,7 @@ public final /* synthetic */ class g implements Runnable {
                 ((hg.h0) obj).m(i12);
                 break;
             case 11:
-                j2.f fVar = ((i2.q0) obj).M;
+                j2.f fVar = ((i2.r0) obj).M;
                 j2.a l4 = fVar.l();
                 fVar.q(l4, 1034, new j2.c(l4, i12, 12, (char) (objArr2 == true ? 1 : 0)));
                 break;
@@ -169,12 +169,12 @@ public final /* synthetic */ class g implements Runnable {
             case 14:
                 k2.u uVar = (k2.u) ((qf.b) obj).c;
                 String str = e2.m0.a;
-                e2.c cVar = ((i2.b0) uVar).a.C;
-                i2.v vVar = new i2.v(i12, 2);
+                e2.c cVar = ((i2.c0) uVar).a.C;
+                i2.w wVar = new i2.w(i12, 2);
                 cVar.getClass();
                 u6.p(Looper.myLooper() == ((e2.i0) cVar.c).a.getLooper());
                 cVar.a++;
-                cVar.i(new u7(16, cVar, vVar));
+                cVar.i(new v7(16, cVar, wVar));
                 cVar.n(Integer.valueOf(i12));
                 break;
             case 15:
@@ -191,7 +191,7 @@ public final /* synthetic */ class g implements Runnable {
                     ki.a aVar = g0Var.a;
                     w3 w3Var = ((o3) e0Var).a;
                     w3Var.p3(false);
-                    w3Var.f3.m(new t3(w3Var, aVar, i12), d0Var);
+                    w3Var.f3.n(new t3(w3Var, aVar, i12), d0Var);
                     break;
                 }
                 break;
@@ -236,52 +236,52 @@ public final /* synthetic */ class g implements Runnable {
                 }
                 break;
             case 21:
-                ((fe) obj).f.c(i12);
+                ((de) obj).f.c(i12);
                 break;
             case 22:
-                sn snVar = ((si) obj).g;
-                if (snVar.wb == i12) {
-                    snVar.Qa();
+                qn qnVar = ((qi) obj).g;
+                if (qnVar.wb == i12) {
+                    qnVar.Qa();
                     break;
                 }
                 break;
             case 23:
-                sn snVar2 = ((ti) obj).g;
-                if (snVar2.wb == i12) {
-                    snVar2.Qa();
+                qn qnVar2 = ((ri) obj).g;
+                if (qnVar2.wb == i12) {
+                    qnVar2.Qa();
                     break;
                 }
                 break;
             case 24:
-                ((bj) obj).a.j(this.b, 0, true, 0, true, 0);
+                ((zi) obj).a.j(this.b, 0, true, 0, true, 0);
                 break;
             case 25:
-                sn snVar3 = ((si) obj).g;
-                if (snVar3.wb == i12) {
-                    snVar3.Qa();
+                qn qnVar3 = ((qi) obj).g;
+                if (qnVar3.wb == i12) {
+                    qnVar3.Qa();
                     break;
                 }
                 break;
             case 26:
-                sn snVar4 = ((ti) obj).g;
-                if (snVar4.wb == i12) {
-                    snVar4.Qa();
+                qn qnVar4 = ((ri) obj).g;
+                if (qnVar4.wb == i12) {
+                    qnVar4.Qa();
                     break;
                 }
                 break;
             case 27:
-                sn snVar5 = ((ti) obj).g;
-                if (snVar5.wb == i12) {
-                    snVar5.Qa();
+                qn qnVar5 = ((ri) obj).g;
+                if (qnVar5.wb == i12) {
+                    qnVar5.Qa();
                     break;
                 }
                 break;
             case 28:
-                sn snVar6 = ((lm) obj).J0;
-                snVar6.z0.h1(i12, snVar6.y4);
+                qn qnVar6 = ((jm) obj).J0;
+                qnVar6.z0.h1(i12, qnVar6.y4);
                 break;
             default:
-                i10 = ((org.telegram.ui.ActionBar.n2) ((en) obj).a).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.n2) ((cn) obj).a).currentAccount;
                 ConnectionsManager.getInstance(i10).cancelRequest(i12, true);
                 break;
         }

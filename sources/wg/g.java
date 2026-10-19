@@ -5,7 +5,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.view.View;
 import android.widget.ImageView;
-import ci.k4;
+import ci.l4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.Emoji;
@@ -19,7 +19,7 @@ import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.w9;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class g extends c {
     public final ImageView s;
@@ -59,8 +59,8 @@ public final class g extends c {
         w9Var.setRoundRadius(dp);
         w9Var.e(chat, h9Var);
         String str = chat.title;
-        k4 k4Var = this.d;
-        k4Var.k(Emoji.replaceEmoji(str, k4Var.getPaint().getFontMetricsInt(), false));
+        l4 l4Var = this.d;
+        l4Var.k(Emoji.replaceEmoji(str, l4Var.getPaint().getFontMetricsInt(), false));
         boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
         if (z10) {
             if (i11 >= 1) {
@@ -80,7 +80,7 @@ public final class g extends c {
         } else {
             imageView.setVisibility(4);
         }
-        imageView.setOnClickListener(new org.telegram.ui.web.c(9, this, chat));
+        imageView.setOnClickListener(new qg.n(8, this, chat));
     }
 
     public TLRPC.Chat getChat() {

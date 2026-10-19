@@ -12,9 +12,9 @@ import org.telegram.ui.ActionBar.l2;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.x10;
+import org.telegram.ui.v10;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w implements Runnable {
     public final /* synthetic */ int a;
@@ -65,8 +65,8 @@ public final /* synthetic */ class w implements Runnable {
                     if (k0Var.E0.getParent() != null) {
                         ((ViewGroup) k0Var.E0.getParent()).removeView(k0Var.E0);
                     }
-                    x10 x10Var = k0Var.L0;
-                    if (x10Var != null && x10Var.getParent() != null) {
+                    v10 v10Var = k0Var.L0;
+                    if (v10Var != null && v10Var.getParent() != null) {
                         ((ViewGroup) k0Var.L0.getParent()).removeView(k0Var.L0);
                     }
                     k0Var.d.setPadding(0, 0, 0, 0);

@@ -7,7 +7,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class bz {
     public final ArrayList a = new ArrayList();
@@ -25,11 +25,11 @@ public final class bz {
             return;
         }
         String str2 = str;
-        ai.f4 f4Var = new ai.f4(this, str2, z10, p5, 5);
+        ai.i4 i4Var = new ai.i4(this, str2, z10, p5, 5);
         ArrayList arrayList = this.a;
         if (z10) {
             arrayList.add(p5);
-            MessagesStorage.getInstance(i10).getBotCache(p5, f4Var);
+            MessagesStorage.getInstance(i10).getBotCache(p5, i4Var);
             return;
         }
         MessagesController messagesController = MessagesController.getInstance(i10);
@@ -44,7 +44,7 @@ public final class bz {
             tL_messages_getInlineBotResults.bot = messagesController.getInputUser((TLRPC.User) userOrChat);
             tL_messages_getInlineBotResults.offset = "";
             tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
-            ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getInlineBotResults, f4Var, 2);
+            ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getInlineBotResults, i4Var, 2);
         }
     }
 }

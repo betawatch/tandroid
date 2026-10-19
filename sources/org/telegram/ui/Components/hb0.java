@@ -6,7 +6,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class hb0 extends im0 {
     public boolean V2;
@@ -36,7 +36,7 @@ public final class hb0 extends im0 {
         hg.j1 j1Var = ib0Var.f;
         hg.p1 p1Var = ib0Var.e;
         if (!ib0Var.c.t ? this.W2 || p1Var == null || p1Var.e == null || !p1Var.f || motionEvent.getY() >= p1Var.e.getBottom() : this.W2 || p1Var == null || p1Var.e == null || !p1Var.f || motionEvent.getY() <= p1Var.e.getTop()) {
-            boolean z10 = !this.V2 && org.telegram.ui.gt.q().r(motionEvent, ib0Var.b, null, this.n2);
+            boolean z10 = !this.V2 && org.telegram.ui.et.q().r(motionEvent, ib0Var.b, null, this.n2);
             if (((j1Var.N() && motionEvent.getAction() == 0) || motionEvent.getAction() == 2) && j1Var.N()) {
                 if (j1Var.n0 == null) {
                     hg.f1 f1Var = new hg.f1(j1Var, j1Var.f, j1Var.n, j1Var.r, 0);

@@ -18,7 +18,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class up extends hm0 {
     public final org.telegram.ui.ActionBar.d6 c;
@@ -31,10 +31,10 @@ public final class up extends hm0 {
     public final HashMap s = new HashMap();
     public final HashMap v = new HashMap();
 
-    public up(int i10, long j10, org.telegram.ui.qn qnVar, int i11) {
+    public up(int i10, long j10, org.telegram.ui.on onVar, int i11) {
         this.n = i11;
         this.r = j10;
-        this.c = qnVar;
+        this.c = onVar;
         this.h = i10;
     }
 
@@ -51,9 +51,9 @@ public final class up extends hm0 {
         if (i11 >= 0) {
             m(i11);
             WeakReference weakReference = this.e;
-            p21 p21Var = weakReference == null ? null : (p21) weakReference.get();
-            if (p21Var != null) {
-                p21Var.setSelected(false);
+            q21 q21Var = weakReference == null ? null : (q21) weakReference.get();
+            if (q21Var != null) {
+                q21Var.setSelected(false);
             }
         }
         this.f = i10;
@@ -76,7 +76,7 @@ public final class up extends hm0 {
         int v;
         int intValue;
         String[] split;
-        p21 p21Var = (p21) b1Var.a;
+        q21 q21Var = (q21) b1Var.a;
         org.telegram.ui.ActionBar.g6 i11 = ((vp) this.d.get(i10)).a.i(((vp) this.d.get(i10)).c);
         if (i11 != null && i11.b != null && !i11.T && new File(i11.b).exists() && i11.b != null) {
             try {
@@ -243,20 +243,20 @@ public final class up extends hm0 {
                     TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
                     tL_inputWallPaperSlug.slug = i11.e;
                     getwallpaper.wallpaper = tL_inputWallPaperSlug;
-                    ConnectionsManager.getInstance(i11.E).sendRequest(getwallpaper, new org.telegram.ui.xc(14, this, i11));
+                    ConnectionsManager.getInstance(i11.E).sendRequest(getwallpaper, new org.telegram.ui.vc(14, this, i11));
                 }
             }
         }
         vp vpVar = (vp) this.d.get(i10);
-        vp vpVar2 = p21Var.G;
-        boolean z11 = vpVar2 != null && gg.b.a(vpVar2.a.c, vpVar.a.c) && !org.telegram.ui.ey.x4 && p21Var.V == vpVar.c;
-        p21Var.setFocusable(true);
-        p21Var.setEnabled(true);
-        p21Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i5, false));
-        p21Var.f(vpVar, this.r, z11);
-        p21Var.g(i10 == this.f, z11);
+        vp vpVar2 = q21Var.G;
+        boolean z11 = vpVar2 != null && gg.b.a(vpVar2.a.c, vpVar.a.c) && !org.telegram.ui.cy.x4 && q21Var.V == vpVar.c;
+        q21Var.setFocusable(true);
+        q21Var.setEnabled(true);
+        q21Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i5, false));
+        q21Var.f(vpVar, this.r, z11);
+        q21Var.g(i10 == this.f, z11);
         if (i10 == this.f) {
-            this.e = new WeakReference(p21Var);
+            this.e = new WeakReference(q21Var);
         }
     }
 
@@ -264,6 +264,6 @@ public final class up extends hm0 {
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         Context context = viewGroup.getContext();
         org.telegram.ui.ActionBar.d6 d6Var = this.c;
-        return new sl0(new p21(this.h, this.n, context, d6Var));
+        return new sl0(new q21(this.h, this.n, context, d6Var));
     }
 }

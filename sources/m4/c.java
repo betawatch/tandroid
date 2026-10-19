@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -103,7 +103,7 @@ public final class c {
                                 }
                             } else {
                                 if (i20 != 16) {
-                                    StringBuilder l4 = i2.d.l(i18, "unknown flag for pos ", " ");
+                                    StringBuilder l4 = i2.e.l(i18, "unknown flag for pos ", " ");
                                     l4.append(Long.toBinaryString(i20));
                                     throw new IllegalStateException(l4.toString());
                                 }
@@ -145,7 +145,7 @@ public final class c {
                         if (i28 != 0) {
                             if (i28 != 4 && i28 != 8) {
                                 if (i28 != 16) {
-                                    StringBuilder l10 = i2.d.l(i26, "unknown flag for pos ", " ");
+                                    StringBuilder l10 = i2.e.l(i26, "unknown flag for pos ", " ");
                                     l10.append(Long.toBinaryString(i28));
                                     throw new IllegalStateException(l10.toString());
                                 }
@@ -191,7 +191,7 @@ public final class c {
     }
 
     public void c(s4.g0 g0Var) {
-        b(new k0.b(g0Var, 25));
+        b(new le.b(g0Var, 20));
     }
 
     public void d(int i10, int i11, int i12, boolean z10) {

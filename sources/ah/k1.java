@@ -3,9 +3,9 @@ package ah;
 import android.os.Bundle;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.r91;
+import org.telegram.ui.p91;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k1 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -22,7 +22,7 @@ public final /* synthetic */ class k1 implements Runnable {
         switch (this.a) {
             case 0:
                 n2 n2Var = this.c;
-                n2Var.presentFragment(r91.d0(n2Var.getMessagesController().getChat(Long.valueOf(-this.b)), true));
+                n2Var.presentFragment(p91.d0(n2Var.getMessagesController().getChat(Long.valueOf(-this.b)), true));
                 break;
             default:
                 Bundle bundle = new Bundle();

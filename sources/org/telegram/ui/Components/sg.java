@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class sg extends FrameLayout {
     public final Drawable E;
@@ -931,7 +931,7 @@ public final class sg extends FrameLayout {
                             alertDialog$Builder.a.R = LocaleController.getString(R.string.RecordingTrimTitle);
                             alertDialog$Builder.a.T = LocaleController.getString(R.string.RecordingTrimText);
                             alertDialog$Builder.k(LocaleController.getString(R.string.OK), new s(eeVar, 19));
-                            i2.d.r(R.string.Cancel, alertDialog$Builder, null);
+                            i2.e.r(R.string.Cancel, alertDialog$Builder, null);
                         } else {
                             eeVar.run();
                         }
@@ -947,8 +947,8 @@ public final class sg extends FrameLayout {
                 this.y.d(1, z10, true);
                 MediaDataController mediaDataController = MediaDataController.getInstance(chatActivityEnterView.Q);
                 long j10 = chatActivityEnterView.Q2;
-                org.telegram.ui.sn snVar = chatActivityEnterView.P2;
-                mediaDataController.toggleDraftVoiceOnce(j10, (snVar == null || !snVar.h4) ? 0L : snVar.d(), chatActivityEnterView.O);
+                org.telegram.ui.qn qnVar = chatActivityEnterView.P2;
+                mediaDataController.toggleDraftVoiceOnce(j10, (qnVar == null || !qnVar.h4) ? 0L : qnVar.d(), chatActivityEnterView.O);
                 if (chatActivityEnterView.O) {
                     b();
                 } else {

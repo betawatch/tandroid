@@ -17,7 +17,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pg implements Runnable {
     public final /* synthetic */ int a;
@@ -161,7 +161,7 @@ public final /* synthetic */ class pg implements Runnable {
             case 19:
                 ChatActivityEnterView chatActivityEnterView2 = ((rf) obj).f;
                 int i12 = ChatActivityEnterView.n5;
-                chatActivityEnterView2.o1();
+                chatActivityEnterView2.n1();
                 break;
             case 20:
                 ((ah) obj).s = null;

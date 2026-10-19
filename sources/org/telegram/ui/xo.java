@@ -1,153 +1,36 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class xo extends org.telegram.ui.Components.im0 {
-    public static final /* synthetic */ int Z2 = 0;
-    public final wo V2;
-    public boolean W2;
-    public final Paint X2;
-    public final /* synthetic */ yo Y2;
+public final /* synthetic */ class xo implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ip b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xo(yo yoVar, Context context) {
-        super(context, null);
-        this.Y2 = yoVar;
-        this.W2 = false;
-        this.X2 = new Paint(1);
-        wo woVar = new wo(this);
-        this.V2 = woVar;
-        setAdapter(woVar);
-        setLayoutManager(new s4.b0());
-        setOnItemClickListener(new vo(this));
-        new s4.y(new di.f(this, 1)).d(this);
+    public /* synthetic */ xo(ip ipVar, int i10) {
+        this.a = i10;
+        this.b = ipVar;
     }
 
-    @Override // org.telegram.ui.Components.im0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        int R;
-        int size = this.Y2.N.size();
-        int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        int i11 = TLObject.FLAG_31;
-        for (int i12 = 0; i12 < getChildCount(); i12++) {
-            View childAt = getChildAt(i12);
-            if (childAt != null && (R = RecyclerView.R(childAt)) >= 1 && R <= size) {
-                i10 = Math.min(childAt.getTop(), i10);
-                i11 = Math.max(childAt.getBottom(), i11);
-            }
-        }
-        if (i10 < i11) {
-            int w02 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, this.n2);
-            Paint paint = this.X2;
-            paint.setColor(w02);
-            canvas2 = canvas;
-            canvas2.drawRect(0.0f, i10, getWidth(), i11, paint);
-        } else {
-            canvas2 = canvas;
-        }
-        super.dispatchDraw(canvas2);
-    }
-
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(9999999, TLObject.FLAG_31));
-    }
-
-    public final void x1(TLRPC.TL_username tL_username, boolean z10, boolean z11) {
-        TLRPC.TL_username tL_username2;
-        int min;
-        yo yoVar = this.Y2;
-        ArrayList arrayList = yoVar.N;
-        int i10 = 0;
-        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            if (arrayList.get(i11) == tL_username) {
-                int i12 = i11 + 1;
-                if (i11 < 0 || i11 >= arrayList.size() || (tL_username2 = (TLRPC.TL_username) arrayList.get(i11)) == null) {
-                    return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ip ipVar = this.b;
+                org.telegram.ui.ActionBar.b2 b2Var = ipVar.r;
+                if (b2Var != null) {
+                    b2Var.setOnCancelListener(new hg(ipVar, 2));
+                    ipVar.showDialog(ipVar.r);
+                    break;
                 }
-                int i13 = -1;
-                if (tL_username2.active != z10) {
-                    tL_username2.active = z10;
-                    if (z10) {
-                        int i14 = 0;
-                        while (true) {
-                            if (i14 >= arrayList.size()) {
-                                i14 = -1;
-                                break;
-                            } else if (!((TLRPC.TL_username) arrayList.get(i14)).active) {
-                                break;
-                            } else {
-                                i14++;
-                            }
-                        }
-                        if (i14 >= 0) {
-                            min = Math.max(0, i14 - 1);
-                            i13 = min + 1;
-                        }
-                    } else {
-                        int i15 = -1;
-                        for (int i16 = 0; i16 < arrayList.size(); i16++) {
-                            if (((TLRPC.TL_username) arrayList.get(i16)).active) {
-                                i15 = i16;
-                            }
-                        }
-                        if (i15 >= 0) {
-                            min = Math.min(arrayList.size() - 1, i15 + 1);
-                            i13 = min + 1;
-                        }
-                    }
-                }
-                int i17 = 0;
-                while (true) {
-                    if (i17 >= getChildCount()) {
-                        break;
-                    }
-                    View childAt = getChildAt(i17);
-                    if (RecyclerView.R(childAt) == i12) {
-                        if (z11) {
-                            AndroidUtilities.shakeView(childAt);
-                        }
-                        if (childAt instanceof ra) {
-                            ra raVar = (ra) childAt;
-                            raVar.setLoading(yoVar.P.contains(tL_username2.username));
-                            TLRPC.TL_username tL_username3 = raVar.v;
-                            if (tL_username3 != null) {
-                                raVar.a(tL_username3, raVar.w, true, raVar.x);
-                            }
-                        }
-                    } else {
-                        i17++;
-                    }
-                }
-                if (i13 < 0 || i12 == i13) {
-                    return;
-                }
-                int i18 = i13 - 1;
-                wo woVar = this.V2;
-                ArrayList arrayList2 = woVar.c.Y2.N;
-                if (i11 >= arrayList2.size() || i18 >= arrayList2.size()) {
-                    return;
-                }
-                arrayList2.add(i18, (TLRPC.TL_username) arrayList2.remove(i11));
-                woVar.p(i12, i13);
-                while (i10 < arrayList2.size()) {
-                    i10++;
-                    woVar.m(i10);
-                }
-                return;
-            }
+                break;
+            case 1:
+                ip ipVar2 = this.b;
+                ipVar2.getMessagesController().loadFullChat(ipVar2.E, 0, true);
+                break;
+            default:
+                ip ipVar3 = this.b;
+                ipVar3.getMessagesController().loadFullChat(ipVar3.E, 0, true);
+                break;
         }
     }
 }

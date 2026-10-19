@@ -13,7 +13,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.RichQuote;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class hc0 extends s4.g0 {
     public final /* synthetic */ ic0 c;
@@ -169,16 +169,16 @@ public final class hc0 extends s4.g0 {
                 MessageObject messageObject = u1Var.getMessageObject();
                 MessagePreviewParams messagePreviewParams2 = oc0Var.d;
                 MessagePreviewParams messagePreviewParams3 = oc0Var.d;
-                org.telegram.ui.in inVar = messagePreviewParams3.quote;
-                if (inVar.m && messageObject != null && messageObject.richLayout != null && ((i11 = messagePreviewParams3.quoteStart) < 0 || messagePreviewParams3.quoteEnd <= i11)) {
-                    String str = inVar.i;
-                    int[] findQuote = str == null ? null : RichQuote.findQuote(messageObject, str, inVar.o);
+                org.telegram.ui.gn gnVar = messagePreviewParams3.quote;
+                if (gnVar.m && messageObject != null && messageObject.richLayout != null && ((i11 = messagePreviewParams3.quoteStart) < 0 || messagePreviewParams3.quoteEnd <= i11)) {
+                    String str = gnVar.i;
+                    int[] findQuote = str == null ? null : RichQuote.findQuote(messageObject, str, gnVar.o);
                     if (findQuote != null) {
                         messagePreviewParams2.quoteStart = findQuote[0];
                         messagePreviewParams2.quoteEnd = findQuote[1];
                     } else {
                         messagePreviewParams2.quoteStart = 0;
-                        messagePreviewParams2.quoteEnd = Math.min(MessagesController.getInstance(oc0Var.w).quoteLengthMax, org.telegram.ui.in.d(messageObject));
+                        messagePreviewParams2.quoteEnd = Math.min(MessagesController.getInstance(oc0Var.w).quoteLengthMax, org.telegram.ui.gn.d(messageObject));
                     }
                 }
             }

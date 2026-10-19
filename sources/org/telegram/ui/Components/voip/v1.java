@@ -6,9 +6,9 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.p80;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.s50;
+import org.telegram.ui.q50;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v1 implements p80, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ TLRPC.User a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class v1 implements p80, org.telegram.ui.ActionBar.
         TLRPC.Chat chat = this.b;
         String str = this.c;
         if (z13 && z11) {
-            s50.d1((LaunchActivity) activity, accountInstance, chat, inputPeer, z10, str);
+            q50.d1((LaunchActivity) activity, accountInstance, chat, inputPeer, z10, str);
             return;
         }
         TLRPC.User user = this.a;

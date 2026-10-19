@@ -2,11 +2,11 @@ package l2;
 
 import b2.w;
 import e2.m0;
-import u2.e1;
+import u2.d1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final class m implements e1 {
+public final class m implements d1 {
     public final w a;
     public long[] c;
     public boolean d;
@@ -46,13 +46,13 @@ public final class m implements e1 {
         }
     }
 
-    @Override // u2.e1
-    public final boolean e() {
+    @Override // u2.d1
+    public final boolean f() {
         return true;
     }
 
-    @Override // u2.e1
-    public final int f(qf.b bVar, h2.h hVar, int i10) {
+    @Override // u2.d1
+    public final int g(qf.b bVar, h2.h hVar, int i10) {
         int i11 = this.h;
         boolean z10 = i11 == this.c.length;
         if (z10 && !this.d) {
@@ -80,15 +80,15 @@ public final class m implements e1 {
         return -4;
     }
 
-    @Override // u2.e1
-    public final int h(long j10) {
+    @Override // u2.d1
+    public final int m(long j10) {
         int max = Math.max(this.h, m0.b(this.c, j10, true));
         int i10 = max - this.h;
         this.h = max;
         return i10;
     }
 
-    @Override // u2.e1
+    @Override // u2.d1
     public final void a() {
     }
 }

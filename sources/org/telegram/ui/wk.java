@@ -1,49 +1,25 @@
 package org.telegram.ui;
 
-import android.animation.LayoutTransition;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class wk implements LayoutTransition.TransitionListener {
-    public vk a;
-    public int b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.y c;
-    public final /* synthetic */ sn d;
+public final class wk implements NotificationCenter.PostponeNotificationCallback {
+    public final /* synthetic */ qn a;
 
-    public wk(sn snVar, org.telegram.ui.ActionBar.y yVar) {
-        this.d = snVar;
-        this.c = yVar;
+    public wk(qn qnVar) {
+        this.a = qnVar;
     }
 
-    @Override // android.animation.LayoutTransition.TransitionListener
-    public final void endTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
-        int i11 = this.b - 1;
-        this.b = i11;
-        if (i11 != 0 || this.a == null) {
-            return;
+    @Override // org.telegram.messenger.NotificationCenter.PostponeNotificationCallback
+    public final boolean needPostpone(int i10, int i11, Object[] objArr) {
+        if (i10 == NotificationCenter.didReceiveNewMessages) {
+            long longValue = ((Long) objArr[0]).longValue();
+            qn qnVar = this.a;
+            if (qnVar.H6 && longValue == qnVar.T5) {
+                return true;
+            }
         }
-        this.c.getViewTreeObserver().removeOnPreDrawListener(this.a);
-        this.a = null;
-    }
-
-    /* JADX WARN: Type inference failed for: r1v5, types: [org.telegram.ui.vk] */
-    @Override // android.animation.LayoutTransition.TransitionListener
-    public final void startTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
-        if (this.b == 0 && this.a == null) {
-            this.a = new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.vk
-                @Override // android.view.ViewTreeObserver.OnPreDrawListener
-                public final boolean onPreDraw() {
-                    org.telegram.ui.ActionBar.k kVar;
-                    kVar = ((org.telegram.ui.ActionBar.n2) wk.this.d).actionBar;
-                    kVar.invalidate();
-                    return true;
-                }
-            };
-            this.c.getViewTreeObserver().addOnPreDrawListener(this.a);
-        }
-        this.b++;
+        return false;
     }
 }

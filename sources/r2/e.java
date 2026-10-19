@@ -10,7 +10,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class e implements m {
     public static final ArrayDeque h = new ArrayDeque();
@@ -52,16 +52,8 @@ public final class e implements m {
     }
 
     @Override // r2.m
-    public final void C() {
-        RuntimeException runtimeException = (RuntimeException) this.d.getAndSet(null);
-        if (runtimeException != null) {
-            throw runtimeException;
-        }
-    }
-
-    @Override // r2.m
     public final void a(long j10, int i10, int i11, int i12) {
-        C();
+        n();
         d c10 = c();
         c10.a = i10;
         c10.b = i11;
@@ -74,7 +66,7 @@ public final class e implements m {
 
     @Override // r2.m
     public final void b(int i10, h2.d dVar, long j10, int i11) {
-        C();
+        n();
         d c10 = c();
         c10.a = i10;
         c10.b = 0;
@@ -156,8 +148,16 @@ public final class e implements m {
     }
 
     @Override // r2.m
+    public final void n() {
+        RuntimeException runtimeException = (RuntimeException) this.d.getAndSet(null);
+        if (runtimeException != null) {
+            throw runtimeException;
+        }
+    }
+
+    @Override // r2.m
     public final void setParameters(Bundle bundle) {
-        C();
+        n();
         o0 o0Var = this.c;
         String str = m0.a;
         o0Var.obtainMessage(4, bundle).sendToTarget();

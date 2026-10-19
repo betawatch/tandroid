@@ -17,7 +17,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class o7 implements Runnable {
     public final /* synthetic */ t7 a;
@@ -142,7 +142,7 @@ public final class o7 implements Runnable {
                 String str = s7Var2.a;
                 boolean z16 = z13;
                 r7 r7Var18 = s7Var2.j;
-                ci.f3 f3Var = s7Var2.c;
+                ci.g3 g3Var = s7Var2.c;
                 x5 x5Var2 = x5Var;
                 r7 r7Var19 = s7Var2.g;
                 r7 r7Var20 = r7Var12;
@@ -397,18 +397,18 @@ public final class o7 implements Runnable {
                         } else if (s7Var2.H == 0) {
                             s7Var2.R = false;
                         }
-                        if (f3Var.isLottieRunning()) {
+                        if (g3Var.isLottieRunning()) {
                             z13 = z16;
                         } else {
-                            uj0 lottieAnimation = f3Var.getLottieAnimation();
+                            uj0 lottieAnimation = g3Var.getLottieAnimation();
                             int i14 = lottieAnimation == null ? 0 : lottieAnimation.a0;
                             if (i14 >= 2) {
                                 s7Var2.T = true;
                             }
                             boolean z18 = s7Var2.S && !s7Var2.T && s7Var2.H == 2;
                             if (s7Var2.l.b == 0.0f && !z18 && lottieAnimation != null && i14 < 2) {
-                                f3Var.stopAnimation();
-                                f3Var.setAllowStartLottieAnimation(false);
+                                g3Var.stopAnimation();
+                                g3Var.setAllowStartLottieAnimation(false);
                                 s7Var2.S = false;
                             }
                             z13 = true;
@@ -429,7 +429,7 @@ public final class o7 implements Runnable {
                 z16 = true;
                 if (!s7Var2.b()) {
                 }
-                if (f3Var.isLottieRunning()) {
+                if (g3Var.isLottieRunning()) {
                 }
                 z12 = z15;
                 it2 = it3;
@@ -680,24 +680,24 @@ public final class o7 implements Runnable {
                                     x5Var3.setStickerImpact(r7Var34.a);
                                     float max = Math.max(-1.0f, Math.min(1.0f, r7Var33.a));
                                     float max2 = Math.max(-1.0f, Math.min(1.0f, r7Var32.a));
-                                    if (x5Var3.f0 != 0) {
+                                    if (x5Var3.b0 != 0) {
                                         m.s3 s3Var = new m.s3();
                                         float[] fArr2 = new float[8];
                                         s3Var.c(MediaDataController.MAX_STYLE_RUNS_COUNT, 600, 0.0f, 5.0f, false, fArr2);
-                                        x5Var3.g0 = Math.hypot((double) (fArr2[2] - fArr2[4]), (double) (fArr2[3] - fArr2[5])) < Math.hypot((double) (fArr2[0] - fArr2[6]), (double) (fArr2[1] - fArr2[7])) ? 1 : -1;
+                                        x5Var3.c0 = Math.hypot((double) (fArr2[2] - fArr2[4]), (double) (fArr2[3] - fArr2[5])) < Math.hypot((double) (fArr2[0] - fArr2[6]), (double) (fArr2[1] - fArr2[7])) ? 1 : -1;
                                         s3Var.c(MediaDataController.MAX_STYLE_RUNS_COUNT, 600, 5.0f, 0.0f, false, fArr2);
                                         i10 = 0;
-                                        x5Var3.f0 = Math.hypot((double) (fArr2[4] - fArr2[6]), (double) (fArr2[5] - fArr2[7])) < Math.hypot((double) (fArr2[0] - fArr2[2]), (double) (fArr2[1] - fArr2[3])) ? 1 : -1;
+                                        x5Var3.b0 = Math.hypot((double) (fArr2[4] - fArr2[6]), (double) (fArr2[5] - fArr2[7])) < Math.hypot((double) (fArr2[0] - fArr2[2]), (double) (fArr2[1] - fArr2[3])) ? 1 : -1;
                                     } else {
                                         i10 = 0;
                                     }
-                                    f11 = x5Var3.f0 * max2 * 10.0f;
-                                    f12 = x5Var3.g0 * max * 10.0f;
+                                    f11 = x5Var3.b0 * max2 * 10.0f;
+                                    f12 = x5Var3.c0 * max * 10.0f;
                                     s5Var = x5Var3.y;
-                                    if (s5Var.i0 == f11 || s5Var.j0 != f12) {
-                                        s5Var.i0 = f11;
-                                        s5Var.j0 = f12;
-                                        s5Var.b(s5Var.W, s5Var.c0);
+                                    if (s5Var.l0 == f11 || s5Var.m0 != f12) {
+                                        s5Var.l0 = f11;
+                                        s5Var.m0 = f12;
+                                        s5Var.b(s5Var.c0, s5Var.f0);
                                     }
                                     t7Var.a0 = x5Var3.getCardRotationX();
                                     t7Var.b0 = x5Var3.getCardRotationY();
@@ -772,16 +772,16 @@ public final class o7 implements Runnable {
                         x5Var3.setStickerImpact(r7Var34.a);
                         float max3 = Math.max(-1.0f, Math.min(1.0f, r7Var33.a));
                         float max22 = Math.max(-1.0f, Math.min(1.0f, r7Var32.a));
-                        if (x5Var3.f0 != 0) {
+                        if (x5Var3.b0 != 0) {
                         }
-                        f11 = x5Var3.f0 * max22 * 10.0f;
-                        f12 = x5Var3.g0 * max3 * 10.0f;
+                        f11 = x5Var3.b0 * max22 * 10.0f;
+                        f12 = x5Var3.c0 * max3 * 10.0f;
                         s5Var = x5Var3.y;
-                        if (s5Var.i0 == f11) {
+                        if (s5Var.l0 == f11) {
                         }
-                        s5Var.i0 = f11;
-                        s5Var.j0 = f12;
-                        s5Var.b(s5Var.W, s5Var.c0);
+                        s5Var.l0 = f11;
+                        s5Var.m0 = f12;
+                        s5Var.b(s5Var.c0, s5Var.f0);
                         t7Var.a0 = x5Var3.getCardRotationX();
                         t7Var.b0 = x5Var3.getCardRotationY();
                         ArrayList arrayList152 = t7Var.h;
@@ -847,16 +847,16 @@ public final class o7 implements Runnable {
                 x5Var3.setStickerImpact(r7Var34.a);
                 float max32 = Math.max(-1.0f, Math.min(1.0f, r7Var33.a));
                 float max222 = Math.max(-1.0f, Math.min(1.0f, r7Var32.a));
-                if (x5Var3.f0 != 0) {
+                if (x5Var3.b0 != 0) {
                 }
-                f11 = x5Var3.f0 * max222 * 10.0f;
-                f12 = x5Var3.g0 * max32 * 10.0f;
+                f11 = x5Var3.b0 * max222 * 10.0f;
+                f12 = x5Var3.c0 * max32 * 10.0f;
                 s5Var = x5Var3.y;
-                if (s5Var.i0 == f11) {
+                if (s5Var.l0 == f11) {
                 }
-                s5Var.i0 = f11;
-                s5Var.j0 = f12;
-                s5Var.b(s5Var.W, s5Var.c0);
+                s5Var.l0 = f11;
+                s5Var.m0 = f12;
+                s5Var.b(s5Var.c0, s5Var.f0);
                 t7Var.a0 = x5Var3.getCardRotationX();
                 t7Var.b0 = x5Var3.getCardRotationY();
                 ArrayList arrayList1522 = t7Var.h;
@@ -902,16 +902,16 @@ public final class o7 implements Runnable {
             x5Var3.setStickerImpact(r7Var34.a);
             float max322 = Math.max(-1.0f, Math.min(1.0f, r7Var33.a));
             float max2222 = Math.max(-1.0f, Math.min(1.0f, r7Var32.a));
-            if (x5Var3.f0 != 0) {
+            if (x5Var3.b0 != 0) {
             }
-            f11 = x5Var3.f0 * max2222 * 10.0f;
-            f12 = x5Var3.g0 * max322 * 10.0f;
+            f11 = x5Var3.b0 * max2222 * 10.0f;
+            f12 = x5Var3.c0 * max322 * 10.0f;
             s5Var = x5Var3.y;
-            if (s5Var.i0 == f11) {
+            if (s5Var.l0 == f11) {
             }
-            s5Var.i0 = f11;
-            s5Var.j0 = f12;
-            s5Var.b(s5Var.W, s5Var.c0);
+            s5Var.l0 = f11;
+            s5Var.m0 = f12;
+            s5Var.b(s5Var.c0, s5Var.f0);
             t7Var.a0 = x5Var3.getCardRotationX();
             t7Var.b0 = x5Var3.getCardRotationY();
             ArrayList arrayList15222 = t7Var.h;

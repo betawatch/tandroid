@@ -1,8 +1,10 @@
 package n4;
 
+import a3.i0;
+import ab.a0;
 import ab.c0;
 import ah.h0;
-import ai.r2;
+import ai.u2;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.app.PendingIntent;
@@ -32,14 +34,13 @@ import android.widget.FrameLayout;
 import b2.a2;
 import b2.r0;
 import b2.w0;
-import c5.f0;
+import c5.g0;
 import c6.e0;
-import ci.g4;
-import ci.p4;
-import ci.y9;
+import ci.aa;
+import ci.h4;
+import ci.q4;
 import ci.z9;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.internal.play_billing.b4;
 import com.google.android.gms.internal.play_billing.c4;
 import com.google.android.gms.internal.play_billing.f3;
 import com.google.android.gms.internal.play_billing.g3;
@@ -70,6 +71,7 @@ import java.util.Map;
 import java.util.WeakHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import ki.b4;
 import ki.c6;
 import ki.h1;
 import ki.j3;
@@ -78,7 +80,6 @@ import ki.t1;
 import ki.t3;
 import ki.u3;
 import ki.v3;
-import l.a0;
 import m.s3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_iv;
@@ -88,16 +89,15 @@ import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.ti;
 import p4.t0;
-import r0.i0;
 import r0.l0;
 import v7.q8;
 import v7.s6;
 import v7.u6;
-import w7.b9;
+import w7.a9;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final class s implements ee.b, f0, com.google.android.gms.common.api.internal.r, d9.k, g6.n, ef.b, z3.m, c3.i, u3, e2.d, n5.b {
+public final class s implements ee.b, g0, com.google.android.gms.common.api.internal.r, d9.k, g6.n, ef.b, z3.m, c3.i, u3, e2.d, n5.b {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -108,23 +108,23 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
         this.c = obj2;
     }
 
-    public static void i(s sVar, i2.c cVar) {
+    public static void h(s sVar, i2.d dVar) {
         sVar.getClass();
         for (Map.Entry entry : new HashMap((HashMap) sVar.b).entrySet()) {
             if (entry.getKey() != null) {
                 throw new ClassCastException();
             }
             List list = (List) entry.getValue();
-            if (!k(cVar, list).equals(k((i2.c) sVar.c, list))) {
+            if (!q(dVar, list).equals(q((i2.d) sVar.c, list))) {
                 throw null;
             }
         }
-        sVar.c = cVar;
+        sVar.c = dVar;
     }
 
-    public static i2.c k(i2.c cVar, List list) {
-        cVar.getClass();
-        Map map = cVar.a;
+    public static i2.d q(i2.d dVar, List list) {
+        dVar.getClass();
+        Map map = dVar.a;
         HashMap hashMap = new HashMap(map);
         HashSet hashSet = new HashSet(list);
         for (String str : map.keySet()) {
@@ -132,109 +132,51 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
                 hashMap.remove(str);
             }
         }
-        return new i2.c(hashMap);
-    }
-
-    public synchronized Map A() {
-        try {
-            if (((Map) this.c) == null) {
-                this.c = DesugarCollections.unmodifiableMap(new HashMap((HashMap) this.b));
-            }
-        } catch (Throwable th2) {
-            throw th2;
-        }
-        return (Map) this.c;
-    }
-
-    public void B(k.a aVar) {
-        qi.e eVar = (qi.e) this.b;
-        ((ActionMode.Callback) eVar.a).onDestroyActionMode(eVar.n(aVar));
-        g.r rVar = (g.r) this.c;
-        if (rVar.E != null) {
-            rVar.f.getDecorView().removeCallbacks(rVar.F);
-        }
-        if (rVar.y != null) {
-            l0 l0Var = rVar.G;
-            if (l0Var != null) {
-                l0Var.b();
-            }
-            l0 a2 = i0.a(rVar.y);
-            a2.a(0.0f);
-            rVar.G = a2;
-            a2.d(new g.i(this, 2));
-        }
-        rVar.x = null;
-        ViewGroup viewGroup = rVar.J;
-        WeakHashMap weakHashMap = i0.a;
-        r0.y.c(viewGroup);
-        rVar.y();
+        return new i2.d(hashMap);
     }
 
     @Override // ki.u3
-    public i80 C(View view) {
+    public void A(int i10) {
         ki.q qVar = (ki.q) this.c;
-        i80 i80Var = new i80(qVar, (d6) this.b, view, false, false, true);
-        qVar.H = i80Var;
-        return i80Var;
+        qVar.b.b2(qVar, i10);
+        qVar.d0();
+        ki.q.N(qVar);
     }
 
-    public boolean D(k.a aVar, Menu menu) {
-        ViewGroup viewGroup = ((g.r) this.c).J;
-        WeakHashMap weakHashMap = i0.a;
-        r0.y.c(viewGroup);
-        qi.e eVar = (qi.e) this.b;
-        ActionMode.Callback callback = (ActionMode.Callback) eVar.a;
-        k.e n10 = eVar.n(aVar);
-        a0.l lVar = (a0.l) eVar.d;
-        Menu menu2 = (Menu) lVar.get(menu);
-        if (menu2 == null) {
-            menu2 = new a0((Context) eVar.b, (l.k) menu);
-            lVar.put(menu, menu2);
-        }
-        return callback.onPrepareActionMode(n10, menu2);
-    }
-
-    @Override // ki.u3
-    public void E() {
-        ki.q qVar = (ki.q) this.c;
-        qVar.a0();
-        qVar.b0();
-    }
-
-    public void F(boolean z10, boolean z11, float f7) {
+    public void B(boolean z10, boolean z11, float f7) {
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b;
-        g4 g4Var = (g4) this.c;
-        z9 z9Var = g4Var.e;
-        z9.B1 = f7;
-        y9 y9Var = z9Var.z0;
-        if (y9Var != null) {
-            y9Var.setSpeed(f7);
+        h4 h4Var = (h4) this.c;
+        aa aaVar = h4Var.e;
+        aa.B1 = f7;
+        z9 z9Var = aaVar.z0;
+        if (z9Var != null) {
+            z9Var.setSpeed(f7);
         }
-        p4.a0(g4Var.l, z10);
+        q4.a0(h4Var.l, z10);
         if (!z11 || actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() == null) {
             return;
         }
         actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
     }
 
-    public void G(Object obj) {
+    @Override // ki.u3
+    public void C(c6 c6Var, String str) {
+        ki.q qVar = (ki.q) this.c;
+        if (qVar.v == null) {
+            d6 d6Var = (d6) this.b;
+            qVar.v = new s3(new h0(22, this, d6Var), d6Var);
+        }
+        qVar.v.f(c6Var, str);
+    }
+
+    public void D(Object obj) {
         Handler handler = (Handler) this.b;
         if (handler != null) {
-            handler.post(new a3.i0(this, obj, SystemClock.elapsedRealtime(), 0));
+            handler.post(new i0(this, obj, SystemClock.elapsedRealtime(), 0));
         }
     }
 
-    @Override // ki.u3
-    public void H(v3 v3Var, View view) {
-        ki.q qVar = (ki.q) this.c;
-        i80 i80Var = new i80(qVar, (d6) this.b, view, false, false, true);
-        i80Var.Q = true;
-        n2 n2Var = qVar.b.f0;
-        qVar.getContext();
-        qVar.H = j4.b(i80Var, n2Var, v3Var, true);
-    }
-
-    public void I(l lVar, Handler handler) {
+    public void E(l lVar, Handler handler) {
         n nVar = (n) this.b;
         synchronized (nVar.d) {
             nVar.l = lVar;
@@ -244,7 +186,7 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
     }
 
     /* JADX WARN: Type inference failed for: r1v4, types: [java.util.AbstractCollection, java.util.List] */
-    public void J(y yVar) {
+    public void F(y yVar) {
         n nVar = (n) this.b;
         nVar.g = yVar;
         synchronized (nVar.d) {
@@ -280,18 +222,18 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
         mediaSession.setPlaybackState(yVar.w);
     }
 
-    public void K(c5.o oVar) {
-        this.b = oVar;
-        if (oVar.a() != null) {
-            oVar.a().getClass();
-            String str = oVar.a().d;
+    public void G(c5.p pVar) {
+        this.b = pVar;
+        if (pVar.a() != null) {
+            pVar.a().getClass();
+            String str = pVar.a().d;
             if (str != null) {
                 this.c = str;
             }
         }
     }
 
-    public void L(ArrayList arrayList) {
+    public void H(ArrayList arrayList) {
         f2.t tVar;
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             if (((f2.s) arrayList.get(i10)).a == 1) {
@@ -305,22 +247,32 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
         }
     }
 
-    public void M(a2 a2Var) {
+    public void I(a2 a2Var) {
         Handler handler = (Handler) this.b;
         if (handler != null) {
             handler.post(new a1.f(4, this, a2Var));
         }
     }
 
-    public void N(g3 g3Var) {
+    @Override // ki.u3
+    public void J() {
+        b4 b4Var = ((ki.q) this.c).s;
+        if (b4Var != null) {
+            b4Var.e(false, true);
+            int i10 = b4Var.b0;
+            b4Var.f(i10 != 2 ? i10 : 0, true);
+        }
+    }
+
+    public void K(g3 g3Var) {
         try {
-            U(g3Var, (q3) this.b);
+            T(g3Var, (q3) this.b);
         } catch (Throwable th2) {
             com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
         }
     }
 
-    public void O(g3 g3Var, int i10, long j10) {
+    public void L(g3 g3Var, int i10, long j10) {
         try {
             p3 p3Var = (p3) ((q3) this.b).g();
             p3Var.c();
@@ -333,13 +285,21 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
                 q3.r((q3) p3Var2.b, j10);
                 q3Var = (q3) p3Var2.a();
             }
-            U(g3Var, q3Var);
+            T(g3Var, q3Var);
         } catch (Throwable th2) {
             com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
         }
     }
 
-    public void P(g3 g3Var, long j10, boolean z10) {
+    @Override // ki.u3
+    public i80 M(View view) {
+        ki.q qVar = (ki.q) this.c;
+        i80 i80Var = new i80(qVar, (d6) this.b, view, false, false, true);
+        qVar.H = i80Var;
+        return i80Var;
+    }
+
+    public void N(g3 g3Var, long j10, boolean z10) {
         q3 q3Var;
         try {
             f3 f3Var = (f3) g3Var.g();
@@ -357,13 +317,13 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
                 q3.r((q3) p3Var.b, j10);
                 q3Var = (q3) p3Var.a();
             }
-            U(g3Var2, q3Var);
+            T(g3Var2, q3Var);
         } catch (Throwable th2) {
             com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
         }
     }
 
-    public void Q(g3 g3Var, int i10, long j10, boolean z10) {
+    public void O(g3 g3Var, int i10, long j10, boolean z10) {
         q3 q3Var;
         try {
             p3 p3Var = (p3) ((q3) this.b).g();
@@ -385,13 +345,20 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
                 q3.r((q3) p3Var2.b, j10);
                 q3Var = (q3) p3Var2.a();
             }
-            U(g3Var2, q3Var);
+            T(g3Var2, q3Var);
         } catch (Throwable th2) {
             com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
         }
     }
 
-    public void R(m3 m3Var) {
+    @Override // ki.u3
+    public void P() {
+        ki.q qVar = (ki.q) this.c;
+        qVar.a0();
+        qVar.b0();
+    }
+
+    public void Q(m3 m3Var) {
         try {
             x3 t10 = y3.t();
             t10.d((q3) this.b);
@@ -403,7 +370,7 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
         }
     }
 
-    public void S(b4 b4Var) {
+    public void R(com.google.android.gms.internal.play_billing.b4 b4Var) {
         try {
             b2.t tVar = (b2.t) this.c;
             x3 t10 = y3.t();
@@ -416,7 +383,7 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
         }
     }
 
-    public void T(c4 c4Var) {
+    public void S(c4 c4Var) {
         if (c4Var == null) {
             return;
         }
@@ -431,7 +398,7 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
         }
     }
 
-    public void U(g3 g3Var, q3 q3Var) {
+    public void T(g3 g3Var, q3 q3Var) {
         if (g3Var == null) {
             return;
         }
@@ -446,7 +413,7 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
         }
     }
 
-    public void V(i3 i3Var, q3 q3Var) {
+    public void U(i3 i3Var, q3 q3Var) {
         try {
             x3 t10 = y3.t();
             t10.d(q3Var);
@@ -456,6 +423,16 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
         } catch (Throwable th2) {
             com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
         }
+    }
+
+    @Override // ki.u3
+    public void V(v3 v3Var, View view) {
+        ki.q qVar = (ki.q) this.c;
+        i80 i80Var = new i80(qVar, (d6) this.b, view, false, false, true);
+        i80Var.Q = true;
+        n2 n2Var = qVar.b.f0;
+        qVar.getContext();
+        qVar.H = j4.b(i80Var, n2Var, v3Var, true);
     }
 
     @Override // z3.m
@@ -489,7 +466,7 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
 
     @Override // d9.k
     public Object apply(Object obj) {
-        return ((d9.k) ((ag.b) this.b).b).apply(obj);
+        return ((d9.k) ((a4.l) this.b).b).apply(obj);
     }
 
     @Override // c3.i
@@ -570,14 +547,22 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
         return 1;
     }
 
+    @Override // c3.i
+    public void d() {
+        e2.x xVar = (e2.x) this.c;
+        byte[] bArr = m0.b;
+        xVar.getClass();
+        xVar.L(bArr.length, bArr);
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:8:0x0023 A[RETURN] */
     @Override // ki.u3
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public boolean d(float f7) {
+    public boolean e(float f7) {
         boolean z10;
-        ki.b4 b4Var = ((ki.q) this.c).s;
+        b4 b4Var = ((ki.q) this.c).s;
         if (b4Var != null) {
             FrameLayout frameLayout = b4Var.H;
             if (frameLayout != null) {
@@ -596,23 +581,6 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
             }
         }
         return false;
-    }
-
-    @Override // e2.d
-    public j9.y e(r0 r0Var) {
-        j9.y e = ((e2.d) this.b).e(r0Var);
-        if (e == null) {
-            return null;
-        }
-        return q8.c(e, new j5.b(this, 17));
-    }
-
-    @Override // c3.i
-    public void f() {
-        e2.x xVar = (e2.x) this.c;
-        byte[] bArr = m0.b;
-        xVar.getClass();
-        xVar.L(bArr.length, bArr);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:195:0x03ae, code lost:
@@ -644,7 +612,7 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void g(byte[] bArr, int i10, int i11, z3.l lVar, e2.j jVar) {
+    public void f(byte[] bArr, int i10, int i11, z3.l lVar, e2.j jVar) {
         i4.c cVar;
         String str;
         ?? r12;
@@ -675,7 +643,7 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
                     } else {
                         xVar.N(i14);
                         if (c11 == 0) {
-                            b9.b(new androidx.biometric.e(arrayList2), lVar, jVar);
+                            a9.b(new androidx.biometric.e(arrayList2), lVar, jVar);
                             return;
                         }
                         if (c11 == 1) {
@@ -965,13 +933,22 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
         }
     }
 
+    @Override // e2.d
+    public j9.y g(r0 r0Var) {
+        j9.y g10 = ((e2.d) this.b).g(r0Var);
+        if (g10 == null) {
+            return null;
+        }
+        return q8.c(g10, new j5.b(this, 17));
+    }
+
     @Override // hd.a
     public Object get() {
-        return new m5.d((Context) ((k0.b) this.b).b, (m.g3) ((t1) this.c).get());
+        return new m5.d((Context) ((n5.c) this.b).a, (m.g3) ((t1) this.c).get());
     }
 
     @Override // ki.u3
-    public void h(ki.a aVar) {
+    public void i(ki.a aVar) {
         ki.q qVar = (ki.q) this.c;
         ti tiVar = qVar.b;
         n2 n2Var = tiVar.f0;
@@ -980,26 +957,40 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
             tiVar2.c2 = new t7.u(11);
             tiVar2.P = true;
             tiVar2.A1.setVisibility(8);
-            tiVar2.w2 = new r2(qVar, aVar, tiVar2, 11);
+            tiVar2.w2 = new u2(qVar, aVar, tiVar2, 11);
             tiVar2.t1();
             tiVar2.show();
         }
     }
 
-    public c5.e j() {
-        if (((c5.o) this.b) != null) {
+    @Override // g6.n
+    public void j(String str, long j10, long j11, long j12) {
+        g6.n nVar = (g6.n) this.b;
+        if (nVar != null) {
+            nVar.j(str, j10, j11, j12);
+        }
+    }
+
+    public c5.e k() {
+        if (((c5.p) this.b) != null) {
             return new c5.e(this);
         }
         throw new NullPointerException("ProductDetails is required for constructing ProductDetailsParams.");
     }
 
+    @Override // ee.b
+    public Object l(ee.c cVar, md.c cVar2) {
+        Object l4 = ((qf.b) this.b).l(new a0(cVar, (c0) this.c), cVar2);
+        return l4 == ld.a.a ? l4 : id.i.a;
+    }
+
     @Override // ki.u3
-    public void l(int i10) {
+    public void m(int i10) {
         ki.q.R((ki.q) this.c, 74, i10);
     }
 
     @Override // ki.u3
-    public void m(t3 t3Var, View view) {
+    public void n(t3 t3Var, View view) {
         ki.q qVar = (ki.q) this.c;
         i80 i80Var = new i80(qVar, (d6) this.b, view, false, false, true);
         i80Var.Q = true;
@@ -1007,15 +998,29 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
     }
 
     @Override // ki.u3
-    public void n(h1 h1Var, boolean z10) {
+    public void o(h1 h1Var, boolean z10) {
         ((ki.q) this.c).b.w1(h1Var, z10);
     }
 
     @Override // ki.u3
-    public void o() {
+    public void onContentChanged() {
+        ki.q qVar = (ki.q) this.c;
+        b4 b4Var = qVar.s;
+        if (b4Var != null) {
+            b4Var.setSendLoading(qVar.r.n3());
+        }
+        qVar.Y(true);
+        qVar.b0();
+        ki.d dVar = qVar.P;
+        AndroidUtilities.cancelRunOnUIThread(dVar);
+        AndroidUtilities.runOnUIThread(dVar, 1000L);
+    }
+
+    @Override // ki.u3
+    public void p() {
         ki.q qVar = (ki.q) this.c;
         ki.w3 w3Var = qVar.r;
-        ki.b4 b4Var = qVar.s;
+        b4 b4Var = qVar.s;
         if (b4Var != null) {
             j3 j3Var = w3Var.l3;
             int i10 = (j3Var != null && j3Var.x() && w3Var.D4()) ? 1 : 0;
@@ -1032,30 +1037,8 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
     }
 
     @Override // ki.u3
-    public void onContentChanged() {
-        ki.q qVar = (ki.q) this.c;
-        ki.b4 b4Var = qVar.s;
-        if (b4Var != null) {
-            b4Var.setSendLoading(qVar.r.n3());
-        }
-        qVar.Y(true);
-        qVar.b0();
-        ki.d dVar = qVar.P;
-        AndroidUtilities.cancelRunOnUIThread(dVar);
-        AndroidUtilities.runOnUIThread(dVar, 1000L);
-    }
-
-    @Override // g6.n
-    public void p(String str, long j10, long j11, long j12) {
-        g6.n nVar = (g6.n) this.b;
-        if (nVar != null) {
-            nVar.p(str, j10, j11, j12);
-        }
-    }
-
-    @Override // ki.u3
-    public void q() {
-        ki.b4 b4Var = ((ki.q) this.c).s;
+    public void r() {
+        b4 b4Var = ((ki.q) this.c).s;
         if (b4Var != null) {
             int i10 = b4Var.a0;
             if (i10 == 2) {
@@ -1067,18 +1050,12 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
         }
     }
 
-    @Override // ee.b
-    public Object r(ee.c cVar, md.c cVar2) {
-        Object r10 = ((qf.b) this.b).r(new ab.a0(cVar, (c0) this.c), cVar2);
-        return r10 == ld.a.a ? r10 : id.i.a;
-    }
-
-    public void s(i2.e eVar) {
-        synchronized (eVar) {
+    public void s(i2.f fVar) {
+        synchronized (fVar) {
         }
         Handler handler = (Handler) this.b;
         if (handler != null) {
-            handler.post(new a3.k0(this, eVar, 1));
+            handler.post(new a3.k0(this, fVar, 1));
         }
     }
 
@@ -1119,37 +1096,54 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
         }
     }
 
+    @Override // e2.d
+    public j9.y u(byte[] bArr) {
+        return q8.c(((e2.d) this.b).u(bArr), new j5.b(this, 17));
+    }
+
+    public synchronized Map v() {
+        try {
+            if (((Map) this.c) == null) {
+                this.c = DesugarCollections.unmodifiableMap(new HashMap((HashMap) this.b));
+            }
+        } catch (Throwable th2) {
+            throw th2;
+        }
+        return (Map) this.c;
+    }
+
+    public void w(k.a aVar) {
+        qi.e eVar = (qi.e) this.b;
+        ((ActionMode.Callback) eVar.a).onDestroyActionMode(eVar.n(aVar));
+        g.r rVar = (g.r) this.c;
+        if (rVar.E != null) {
+            rVar.f.getDecorView().removeCallbacks(rVar.F);
+        }
+        if (rVar.y != null) {
+            l0 l0Var = rVar.G;
+            if (l0Var != null) {
+                l0Var.b();
+            }
+            l0 a2 = r0.i0.a(rVar.y);
+            a2.a(0.0f);
+            rVar.G = a2;
+            a2.d(new g.i(this, 2));
+        }
+        rVar.x = null;
+        ViewGroup viewGroup = rVar.J;
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.y.c(viewGroup);
+        rVar.y();
+    }
+
     @Override // ki.u3
-    public void u() {
+    public void x() {
         ki.q qVar = (ki.q) this.c;
         if (qVar.getCurrentItemTop() != qVar.I) {
             qVar.b.b2(qVar, 0);
         }
         qVar.d0();
         ki.q.N(qVar);
-    }
-
-    @Override // e2.d
-    public j9.y v(byte[] bArr) {
-        return q8.c(((e2.d) this.b).v(bArr), new j5.b(this, 17));
-    }
-
-    @Override // ki.u3
-    public void w(int i10) {
-        ki.q qVar = (ki.q) this.c;
-        qVar.b.b2(qVar, i10);
-        qVar.d0();
-        ki.q.N(qVar);
-    }
-
-    @Override // ki.u3
-    public void x(c6 c6Var, String str) {
-        ki.q qVar = (ki.q) this.c;
-        if (qVar.v == null) {
-            d6 d6Var = (d6) this.b;
-            qVar.v = new s3(new h0(22, this, d6Var), d6Var);
-        }
-        qVar.v.f(c6Var, str);
     }
 
     @Override // ef.b
@@ -1166,14 +1160,20 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
         return new gd.i(bVar, (List) this.b, list);
     }
 
-    @Override // ki.u3
-    public void z() {
-        ki.b4 b4Var = ((ki.q) this.c).s;
-        if (b4Var != null) {
-            b4Var.e(false, true);
-            int i10 = b4Var.b0;
-            b4Var.f(i10 != 2 ? i10 : 0, true);
+    public boolean z(k.a aVar, Menu menu) {
+        ViewGroup viewGroup = ((g.r) this.c).J;
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.y.c(viewGroup);
+        qi.e eVar = (qi.e) this.b;
+        ActionMode.Callback callback = (ActionMode.Callback) eVar.a;
+        k.e n10 = eVar.n(aVar);
+        a0.l lVar = (a0.l) eVar.d;
+        Menu menu2 = (Menu) lVar.get(menu);
+        if (menu2 == null) {
+            menu2 = new l.a0((Context) eVar.b, (l.k) menu);
+            lVar.put(menu, menu2);
         }
+        return callback.onPrepareActionMode(n10, menu2);
     }
 
     public /* synthetic */ s(int i10, Object obj, boolean z10) {
@@ -1253,7 +1253,7 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
                 break;
             case 22:
                 this.b = new HashMap();
-                this.c = i2.c.b;
+                this.c = i2.d.b;
                 break;
             case 23:
                 this.b = new e2.x();
@@ -1319,7 +1319,7 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
                 this.b = new n(context, str, bundle);
             }
             Looper myLooper = Looper.myLooper();
-            I(new j(), new Handler(myLooper == null ? Looper.getMainLooper() : myLooper));
+            E(new j(), new Handler(myLooper == null ? Looper.getMainLooper() : myLooper));
             ((n) this.b).a.setMediaButtonReceiver(pendingIntent);
             r rVar = ((n) this.b).c;
             w wVar = new w();

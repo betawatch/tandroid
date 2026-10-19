@@ -1,77 +1,72 @@
 package ai;
 
-import android.content.Context;
+import java.util.Map;
+import java.util.function.ToIntFunction;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class v8 implements Utilities.Callback {
-    public final /* synthetic */ ga a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ boolean[] c;
-    public final /* synthetic */ Utilities.Callback d;
-    public final /* synthetic */ Context e;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 f;
-    public final /* synthetic */ boolean g;
-    public final /* synthetic */ String h;
-    public final /* synthetic */ MessageObject i;
-    public final /* synthetic */ TLRPC.InputInvoice j;
-    public final /* synthetic */ TLRPC.TL_payments_paymentFormStars k;
-    public final /* synthetic */ int l;
-    public final /* synthetic */ long m;
+public final /* synthetic */ class v8 implements ToIntFunction {
+    public final /* synthetic */ int a;
 
-    public /* synthetic */ v8(ga gaVar, long j10, boolean[] zArr, Utilities.Callback callback, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, String str, MessageObject messageObject, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, int i10, long j11) {
-        this.a = gaVar;
-        this.b = j10;
-        this.c = zArr;
-        this.d = callback;
-        this.e = context;
-        this.f = d6Var;
-        this.g = z10;
-        this.h = str;
-        this.i = messageObject;
-        this.j = inputInvoice;
-        this.k = tL_payments_paymentFormStars;
-        this.l = i10;
-        this.m = j11;
+    public /* synthetic */ v8(int i10) {
+        this.a = i10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        Utilities.Callback callback = (Utilities.Callback) obj;
-        ga gaVar = this.a;
-        long j10 = gaVar.f.amount;
-        long j11 = this.b;
-        boolean[] zArr = this.c;
-        Utilities.Callback callback2 = this.d;
-        MessageObject messageObject = this.i;
-        TLRPC.InputInvoice inputInvoice = this.j;
-        TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars = this.k;
-        int i10 = this.l;
-        if (j10 >= j11) {
-            gaVar.a0(messageObject, inputInvoice, tL_payments_paymentFormStars, new d9(gaVar, i10, callback, zArr, callback2));
-            return;
+    @Override // java.util.function.ToIntFunction
+    public final int applyAsInt(Object obj) {
+        switch (this.a) {
+            case 0:
+                return ((TL_stars.StarGift) obj).sold_out ? 1 : 0;
+            case 1:
+                return ((TL_stars.StarGift) obj).birthday ? -1 : 0;
+            case 2:
+                return ((TL_stars.StarGift) obj).sold_out ? 1 : 0;
+            case 3:
+                return ((TL_stars.StarGift) obj).sold_out ? 1 : 0;
+            case 4:
+                return ((TL_stars.StarGift) obj).birthday ? -1 : 0;
+            case 5:
+                return ((TL_stars.StarGift) obj).sold_out ? 1 : 0;
+            case 6:
+                return -((TL_stories.StoryView) obj).date;
+            case 7:
+                return ((TL_stories.StoryItem) obj).date;
+            case 8:
+                return -((TL_stories.StoryItem) i2.e.h(1, ((TL_stories.PeerStories) obj).stories)).date;
+            case 9:
+                return ((Integer) ((Object[]) obj)[1]).intValue();
+            case 10:
+                return ((MessageObject) obj).getId();
+            case 11:
+                return -((TLRPC.TL_forumTopic) obj).top_message;
+            case 12:
+                return ((TLRPC.Message) obj).id;
+            case 13:
+                return ((TLRPC.Message) obj).id;
+            case 14:
+                return ((org.telegram.ui.Components.g6) obj).d;
+            case 15:
+                return ((org.telegram.ui.Components.g6) obj).e;
+            case 16:
+                cd.c cVar = (cd.c) obj;
+                return cVar.d - cVar.b;
+            case 17:
+                TLRPC.MessagePeerReaction messagePeerReaction = (TLRPC.MessagePeerReaction) obj;
+                int i10 = messagePeerReaction.date;
+                return (i10 <= 0 || messagePeerReaction.reaction != null) ? TLObject.FLAG_31 : -i10;
+            case 18:
+                TLRPC.MessagePeerReaction messagePeerReaction2 = (TLRPC.MessagePeerReaction) obj;
+                int i11 = messagePeerReaction2.date;
+                return (i11 <= 0 || messagePeerReaction2.reaction != null) ? TLObject.FLAG_31 : -i11;
+            case 19:
+                return ((String) ((Map.Entry) obj).getKey()).hashCode();
+            default:
+                return ((zf.d) obj).a;
         }
-        boolean starsPurchaseAvailable = MessagesController.getInstance(gaVar.a).starsPurchaseAvailable();
-        Context context = this.e;
-        org.telegram.ui.ActionBar.d6 d6Var = this.f;
-        if (starsPurchaseAvailable) {
-            boolean[] zArr2 = {false};
-            cd cdVar = new cd(context, d6Var, j11, this.g ? 9 : 0, this.h, new c9(gaVar, zArr2, messageObject, inputInvoice, tL_payments_paymentFormStars, zArr, i10, callback2, callback), this.m);
-            cdVar.setOnDismissListener(new v7(gaVar, callback, zArr2, zArr, callback2, 1));
-            cdVar.show();
-            return;
-        }
-        if (callback != null) {
-            callback.run(Boolean.FALSE);
-        }
-        if (!zArr[0] && callback2 != null) {
-            callback2.run("cancelled");
-            zArr[0] = true;
-        }
-        ga.e0(context, d6Var);
     }
 }

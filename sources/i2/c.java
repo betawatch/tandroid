@@ -1,66 +1,47 @@
 package i2;
 
-import android.media.MediaFormat;
-import j$.util.DesugarCollections;
-import java.nio.ByteBuffer;
+import android.os.IBinder;
+import android.os.RemoteException;
+import android.util.Log;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class c {
-    public static final c b = new c(new HashMap());
-    public final Map a;
+    public final HashMap a;
 
-    public c(HashMap hashMap) {
-        this.a = DesugarCollections.unmodifiableMap(hashMap);
+    public c(int i10) {
+        switch (i10) {
+            case 1:
+                this.a = new HashMap();
+                break;
+            default:
+                this.a = new HashMap();
+                break;
+        }
     }
 
-    public static ag.b a(MediaFormat mediaFormat, Set set) {
-        ag.b bVar = new ag.b(22);
-        HashMap hashMap = (HashMap) bVar.b;
-        Iterator it = set.iterator();
-        while (it.hasNext()) {
-            String str = (String) it.next();
-            if (mediaFormat.containsKey(str)) {
-                int valueTypeForKey = mediaFormat.getValueTypeForKey(str);
-                if (valueTypeForKey == 1) {
-                    hashMap.put(str, Integer.valueOf(mediaFormat.getInteger(str)));
-                } else if (valueTypeForKey == 2) {
-                    hashMap.put(str, Long.valueOf(mediaFormat.getLong(str)));
-                } else if (valueTypeForKey == 3) {
-                    hashMap.put(str, Float.valueOf(mediaFormat.getFloat(str)));
-                } else if (valueTypeForKey == 4) {
-                    hashMap.put(str, mediaFormat.getString(str));
-                } else if (valueTypeForKey == 5) {
-                    ByteBuffer byteBuffer = mediaFormat.getByteBuffer(str);
-                    if (byteBuffer == null) {
-                        hashMap.put(str, null);
-                    } else {
-                        ByteBuffer allocate = ByteBuffer.allocate(byteBuffer.remaining());
-                        allocate.put(byteBuffer.duplicate());
-                        allocate.flip();
-                        hashMap.put(str, allocate);
-                    }
+    public void a(IBinder iBinder) {
+        synchronized (this.a) {
+            if (iBinder != null) {
+                try {
+                    iBinder.queryLocalInterface("com.google.android.gms.wearable.internal.IWearableService");
+                } catch (Throwable th2) {
+                    throw th2;
+                }
+            }
+            new y8.w0();
+            for (Map.Entry entry : this.a.entrySet()) {
+                if (entry.getValue() != null) {
+                    throw new ClassCastException();
+                }
+                try {
+                    throw null;
+                } catch (RemoteException unused) {
+                    Log.w("WearableClient", "onPostInitHandler: Didn't add: " + String.valueOf(entry.getKey()) + "/null");
                 }
             }
         }
-        return bVar;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof c) {
-            return this.a.equals(((c) obj).a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
     }
 }

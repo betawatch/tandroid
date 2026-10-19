@@ -17,18 +17,18 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.iu;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class w0 extends iu {
     public final d6 c;
-    public final k0.b d;
+    public final le.b d;
     public Runnable e;
     public int f;
 
     public w0(Context context, int i10, d6 d6Var) {
         super(context, d6Var);
         this.c = d6Var;
-        this.d = new k0.b(getContext(), new v0());
+        this.d = new le.b(getContext(), new v0());
         setBackground(null);
         setIncludeFontPadding(true);
         int i11 = Build.VERSION.SDK_INT;

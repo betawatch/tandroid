@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class s7 {
     public int[] A;
@@ -47,7 +47,7 @@ public final class s7 {
     public float a0;
     public TL_wallet.nftItem b;
     public float b0;
-    public final ci.f3 c;
+    public final ci.g3 c;
     public float c0;
     public final ImageReceiver d;
     public final /* synthetic */ t7 d0;
@@ -77,7 +77,7 @@ public final class s7 {
     public s7(t7 t7Var, TL_wallet.nftItem nftitem) {
         org.telegram.ui.ActionBar.n2 n2Var = t7Var.a;
         this.d0 = t7Var;
-        this.c = new ci.f3(this, t7Var, 6);
+        this.c = new ci.g3(this, t7Var, 6);
         this.d = new ImageReceiver(t7Var.M);
         r7 r7Var = new r7(0.0f, 900.0f, 0.86f);
         this.e = r7Var;
@@ -145,12 +145,12 @@ public final class s7 {
     public final Bitmap a() {
         t7 t7Var = this.d0;
         RectF rectF = t7Var.E;
-        ci.f3 f3Var = this.c;
-        Bitmap bitmap = f3Var.getBitmap();
+        ci.g3 g3Var = this.c;
+        Bitmap bitmap = g3Var.getBitmap();
         if (bitmap == null || bitmap.isRecycled()) {
             return this.u;
         }
-        uj0 lottieAnimation = f3Var.getLottieAnimation();
+        uj0 lottieAnimation = g3Var.getLottieAnimation();
         int i10 = lottieAnimation == null ? 0 : lottieAnimation.a0;
         Bitmap bitmap2 = this.v;
         if (bitmap2 != null && this.G == bitmap && this.E == i10) {
@@ -184,7 +184,8 @@ public final class s7 {
             this.y = new int[82944];
             this.z = new int[82944];
             this.A = new int[82944];
-            this.B = new int[945];
+            DispatchQueue dispatchQueue = w9.a;
+            this.B = new int[288];
         }
         this.v.getPixels(this.y, 0, 288, 0, 0, 288, 288);
         this.C = true;
@@ -194,9 +195,9 @@ public final class s7 {
         int[] iArr2 = this.z;
         int[] iArr3 = this.A;
         ?? r82 = this.B;
-        if (w7.i6.a == null) {
-            w7.i6.a = new DispatchQueue("walletStickerOutline");
+        if (w9.a == null) {
+            w9.a = new DispatchQueue("walletStickerOutline");
         }
-        w7.i6.a.postRunnable(new ai.m4(this, iArr, iArr2, iArr3, (Serializable) r82, z10, 13));
+        w9.a.postRunnable(new ai.p4(this, iArr, iArr2, iArr3, (Serializable) r82, z10, 13));
     }
 }

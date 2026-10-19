@@ -1,6 +1,6 @@
 package ig;
 
-import ai.d4;
+import ai.e4;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
@@ -19,13 +19,13 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.l2;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.t61;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.UsersSelectActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class a0 {
     public final Context a;
@@ -54,10 +54,10 @@ public final class a0 {
         this.c = n2Var.getResourceProvider();
     }
 
-    public final void a(ArrayList arrayList, s61 s61Var, boolean z10) {
+    public final void a(ArrayList arrayList, t61 t61Var, boolean z10) {
         String str;
         String str2;
-        s61Var.U();
+        t61Var.U();
         int d = d();
         str = "";
         if (!this.h) {
@@ -99,7 +99,7 @@ public final class a0 {
             if (TextUtils.isEmpty(str2)) {
                 str2 = LocaleController.getString(R.string.BusinessChatsIncludedAdd2);
             }
-            f61 f7 = f61.f(LocaleController.getString(R.string.BusinessChatsIncluded), str2, 101);
+            g61 f7 = g61.f(LocaleController.getString(R.string.BusinessChatsIncluded), str2, 101);
             f7.g = z10;
             arrayList.add(f7);
         }
@@ -143,11 +143,11 @@ public final class a0 {
             if (TextUtils.isEmpty(str)) {
                 str = LocaleController.getString(R.string.BusinessChatsExcludedAdd2);
             }
-            f61 f10 = f61.f(LocaleController.getString(R.string.BusinessChatsExcluded), str, 103);
+            g61 f10 = g61.f(LocaleController.getString(R.string.BusinessChatsExcluded), str, 103);
             f10.g = z10;
             arrayList.add(f10);
         }
-        s61Var.T();
+        t61Var.T();
     }
 
     public final TL_account.TL_inputBusinessBotRecipients b() {
@@ -310,8 +310,8 @@ public final class a0 {
         return false;
     }
 
-    public final boolean h(f61 f61Var) {
-        int i10 = f61Var.d;
+    public final boolean h(g61 g61Var) {
+        int i10 = g61Var.d;
         int i11 = 2;
         n2 n2Var = this.d;
         boolean z10 = false;
@@ -350,17 +350,17 @@ public final class a0 {
             runnable.run();
             return true;
         }
-        if (f61Var.a != 11) {
+        if (g61Var.a != 11) {
             return false;
         }
-        boolean z12 = f61Var.w;
-        String peerName = MessagesController.getInstance(this.b).getPeerName(f61Var.x);
+        boolean z12 = g61Var.w;
+        String peerName = MessagesController.getInstance(this.b).getPeerName(g61Var.x);
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.a, 0, this.c);
         String string = LocaleController.getString(!z12 ? R.string.BusinessRecipientsRemoveExcludeTitle : R.string.BusinessRecipientsRemoveIncludeTitle);
         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
         b2Var.R = string;
         b2Var.T = LocaleController.formatString(!z12 ? R.string.BusinessRecipientsRemoveExcludeMessage : R.string.BusinessRecipientsRemoveIncludeMessage, peerName);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Remove), new d4(this, z12, f61Var, i11));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Remove), new e4(this, z12, g61Var, i11));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         if (n2Var != null) {
             n2Var.showDialog(b2Var);
@@ -445,16 +445,16 @@ public final class a0 {
         arrayList2.addAll(this.l.exclude_users);
     }
 
-    public final boolean k(a71 a71Var) {
+    public final boolean k(b71 b71Var) {
         if (this.h || !this.j.isEmpty() || this.f != 0) {
             return true;
         }
         BotWebViewVibrationEffect.APP_ERROR.vibrate();
-        View z12 = a71Var.z1(101);
+        View z12 = b71Var.z1(101);
         int i10 = -this.m;
         this.m = i10;
         AndroidUtilities.shakeViewSpring(z12, i10);
-        a71Var.x0(a71Var.y1(101));
+        b71Var.x0(b71Var.y1(101));
         return false;
     }
 

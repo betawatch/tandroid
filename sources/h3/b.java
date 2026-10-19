@@ -22,12 +22,12 @@ import e2.x;
 import e9.l0;
 import e9.n0;
 import e9.x1;
-import i2.d;
+import i2.e;
 import java.util.Arrays;
 import java.util.List;
 import q3.h;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class b implements o {
     public q e;
@@ -198,7 +198,7 @@ public final class b implements o {
             j0 j0Var = this.f;
             v a2 = c10.a();
             a2.q = v0.n("audio/flac");
-            d.u(a2, j0Var);
+            e.u(a2, j0Var);
             this.f.e(this.i.b());
             this.g = 4;
             return 0;

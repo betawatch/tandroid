@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.b71;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class h1 extends n2 {
     public final CharSequence a;
@@ -21,7 +21,7 @@ public final class h1 extends n2 {
     public final int e;
     public bc f;
     public hi.t h;
-    public a71 n;
+    public b71 n;
     public boolean r;
 
     public h1(CharSequence charSequence, ArrayList arrayList, int i10, int i11, int i12) {
@@ -44,7 +44,7 @@ public final class h1 extends n2 {
         if (arrayList.size() >= this.e) {
             return false;
         }
-        return arrayList.isEmpty() || U() || ((e1) i2.d.h(1, arrayList)).b < Math.min(1438, this.d + (-2));
+        return arrayList.isEmpty() || U() || ((e1) i2.e.h(1, arrayList)).b < Math.min(1438, this.d + (-2));
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -55,9 +55,9 @@ public final class h1 extends n2 {
         this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 17));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setBackgroundColor(h6.x0(null, h6.a7, false));
-        a71 a71Var = new a71(this, new hg.o(this, 9), new e1.c(this, 21), null);
-        this.n = a71Var;
-        a71Var.p1();
+        b71 b71Var = new b71(this, new hg.o(this, 9), new e1.c(this, 21), null);
+        this.n = b71Var;
+        b71Var.p1();
         this.actionBar.setAdaptiveBackground(this.n);
         frameLayout.addView(this.n, z5.c(-1.0f, -1));
         this.fragmentView = frameLayout;

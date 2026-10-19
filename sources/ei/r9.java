@@ -29,9 +29,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.c61;
+import org.telegram.ui.Components.d61;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class r9 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int d0 = 0;
@@ -509,14 +509,14 @@ public final class r9 extends org.telegram.ui.ActionBar.f3 implements Notificati
                 spannableStringBuilder.append((CharSequence) ", ");
             }
             SpannableString spannableString = new SpannableString("@" + ((String) arrayList.get(i11)));
-            spannableString.setSpan(new c61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
+            spannableString.setSpan(new d61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
             spannableStringBuilder.append((CharSequence) spannableString);
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext(), 0, this.resourcesProvider);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.StoryRestrictions);
         alertDialog$Builder.a.T = AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(R.string.StoryRestrictionsInfo), spannableStringBuilder);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Proceed), new ai.r2(this, p9Var, runnable, 7));
-        i2.d.r(R.string.Cancel, alertDialog$Builder, null);
+        alertDialog$Builder.k(LocaleController.getString(R.string.Proceed), new ai.u2(this, p9Var, runnable, 7));
+        i2.e.r(R.string.Cancel, alertDialog$Builder, null);
     }
 
     public final ArrayList i1() {
@@ -538,7 +538,7 @@ public final class r9 extends org.telegram.ui.ActionBar.f3 implements Notificati
         return arrayList;
     }
 
-    public final ci.h7 j1() {
+    public final ci.i7 j1() {
         return MessagesController.getInstance(this.currentAccount).getStoriesController();
     }
 

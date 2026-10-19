@@ -10,7 +10,7 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.util.SparseArray;
 import android.widget.ImageView;
-import ci.f3;
+import ci.g3;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
@@ -19,7 +19,7 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.r5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class c1 extends ImageView {
     public static final /* synthetic */ int L = 0;
@@ -151,7 +151,7 @@ public class c1 extends ImageView {
     */
     public final void onDraw(Canvas canvas) {
         int intValue;
-        f3 f3Var;
+        g3 g3Var;
         if (this.H) {
             ImageReceiver imageReceiver = this.E;
             if (imageReceiver == null || imageReceiver.getBitmap() == null) {
@@ -164,7 +164,7 @@ public class c1 extends ImageView {
                             r5.w = new HashMap();
                         }
                         Integer num = (Integer) r5.w.get(Long.valueOf(i10));
-                        if (num == null && (f3Var = r5Var.k) != null && f3Var.getBitmap() != null) {
+                        if (num == null && (g3Var = r5Var.k) != null && g3Var.getBitmap() != null) {
                             HashMap hashMap = r5.w;
                             Long valueOf = Long.valueOf(i10);
                             Integer valueOf2 = Integer.valueOf(AndroidUtilities.getDominantColor(r5Var.k.getBitmap()));

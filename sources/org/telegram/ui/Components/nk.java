@@ -43,7 +43,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class nk extends li {
     public static final /* synthetic */ int g0 = 0;
@@ -54,7 +54,7 @@ public final class nk extends li {
     public AnimatorSet I;
     public final b10 J;
     public boolean K;
-    public final ci.n5 L;
+    public final ci.o5 L;
     public float M;
     public boolean N;
     public File O;
@@ -192,11 +192,11 @@ public final class nk extends li {
         b10 b10Var = new b10(context, d6Var);
         this.J = b10Var;
         addView(b10Var);
-        ci.n5 n5Var = new ci.n5(this, context, b10Var, d6Var);
-        this.L = n5Var;
-        addView(n5Var, w7.z5.c(-1.0f, -1));
-        n5Var.setVisibility(8);
-        n5Var.setOnTouchListener(new di.d(14));
+        ci.o5 o5Var = new ci.o5(this, context, b10Var, d6Var);
+        this.L = o5Var;
+        addView(o5Var, w7.z5.c(-1.0f, -1));
+        o5Var.setVisibility(8);
+        o5Var.setOnTouchListener(new di.d(14));
         ck ckVar = new ck(this, context, d6Var, 0);
         this.s = ckVar;
         ckVar.setSectionsType(2);
@@ -370,18 +370,18 @@ public final class nk extends li {
             HashMap hashMap = new HashMap();
             ArrayList arrayList = new ArrayList();
             org.telegram.ui.ActionBar.n2 n2Var = tiVar.f0;
-            org.telegram.ui.sn snVar = n2Var instanceof org.telegram.ui.sn ? (org.telegram.ui.sn) n2Var : null;
-            org.telegram.ui.lq0 lq0Var = new org.telegram.ui.lq0(0, MediaController.allMediaAlbumEntry, hashMap, arrayList, 0, snVar != null, snVar, false);
-            lq0Var.l0 = true;
-            lq0Var.s0 = new m.g3(nkVar, hashMap, arrayList, false, 13);
-            lq0Var.f0(nkVar.V, false);
+            org.telegram.ui.qn qnVar = n2Var instanceof org.telegram.ui.qn ? (org.telegram.ui.qn) n2Var : null;
+            org.telegram.ui.jq0 jq0Var = new org.telegram.ui.jq0(0, MediaController.allMediaAlbumEntry, hashMap, arrayList, 0, qnVar != null, qnVar, false);
+            jq0Var.l0 = true;
+            jq0Var.s0 = new m.g3(nkVar, hashMap, arrayList, false, 13);
+            jq0Var.f0(nkVar.V, false);
             org.telegram.ui.ActionBar.n2 n2Var2 = tiVar.f0;
             if (n2Var2 != null) {
-                n2Var2.presentFragment(lq0Var);
+                n2Var2.presentFragment(jq0Var);
             } else {
                 org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                 if (R != null) {
-                    R.presentFragment(lq0Var);
+                    R.presentFragment(jq0Var);
                 }
             }
             tiVar.dismiss(true);
@@ -397,7 +397,7 @@ public final class nk extends li {
         }
         int topForScroll = nkVar.getTopForScroll();
         nkVar.T();
-        fk fkVar2 = (fk) i2.d.A(1, gkVar.d);
+        fk fkVar2 = (fk) i2.e.A(1, gkVar.d);
         tiVar.a1.setTitle(fkVar2.b);
         File file2 = fkVar2.a;
         if (file2 != null) {
@@ -465,7 +465,7 @@ public final class nk extends li {
     }
 
     @Override // org.telegram.ui.Components.li
-    public final void G(li liVar) {
+    public final void F(li liVar) {
         this.R.clear();
         this.T.clear();
         this.y.R.clear();
@@ -494,7 +494,7 @@ public final class nk extends li {
         final ArrayList arrayList = new ArrayList();
         Iterator it = hashMap.keySet().iterator();
         while (it.hasNext()) {
-            arrayList.add((MessageObject) hashMap.get((org.telegram.ui.y00) it.next()));
+            arrayList.add((MessageObject) hashMap.get((org.telegram.ui.w00) it.next()));
         }
         final ArrayList arrayList2 = new ArrayList(this.S);
         ti tiVar = this.b;
@@ -618,7 +618,7 @@ public final class nk extends li {
             hk hkVar2 = new hk();
             hkVar2.b = "..";
             if (arrayList2.size() > 0) {
-                File file3 = ((fk) i2.d.h(1, arrayList2)).a;
+                File file3 = ((fk) i2.e.h(1, arrayList2)).a;
                 if (file3 == null) {
                     hkVar2.c = LocaleController.getString(R.string.Folder);
                 } else {
@@ -803,11 +803,11 @@ public final class nk extends li {
         if (!z11) {
             if (obj instanceof MessageObject) {
                 MessageObject messageObject = (MessageObject) obj;
-                org.telegram.ui.y00 y00Var = new org.telegram.ui.y00(messageObject.getId(), messageObject.getDialogId());
-                if (hashMap2.containsKey(y00Var)) {
-                    hashMap2.remove(y00Var);
+                org.telegram.ui.w00 w00Var = new org.telegram.ui.w00(messageObject.getId(), messageObject.getDialogId());
+                if (hashMap2.containsKey(w00Var)) {
+                    hashMap2.remove(w00Var);
                 } else if (hashMap2.size() < 100) {
-                    hashMap2.put(y00Var, messageObject);
+                    hashMap2.put(w00Var, messageObject);
                     z12 = true;
                 }
                 z10 = z12;
@@ -867,7 +867,7 @@ public final class nk extends li {
                 ArrayList arrayList2 = new ArrayList();
                 Iterator it = hashMap2.keySet().iterator();
                 while (it.hasNext()) {
-                    arrayList2.add((MessageObject) hashMap2.get((org.telegram.ui.y00) it.next()));
+                    arrayList2.add((MessageObject) hashMap2.get((org.telegram.ui.w00) it.next()));
                 }
                 this.Q.l(new ArrayList(arrayList), null, null, arrayList2, false, 0, 0L, false, 0L);
             }
@@ -952,7 +952,7 @@ public final class nk extends li {
             this.f0 = ValueAnimator.ofFloat(0.0f, 1.0f);
         }
         this.f0.addUpdateListener(new zj(this, i10, dp, i11));
-        this.f0.addListener(new org.telegram.ui.pq(this, 12));
+        this.f0.addListener(new org.telegram.ui.nq(this, 12));
         if (i10 == 1) {
             this.f0.setDuration(220L);
         } else {
@@ -984,11 +984,11 @@ public final class nk extends li {
 
     public final void X() {
         View childAt;
-        ci.n5 n5Var = this.L;
-        if (n5Var.getVisibility() == 0 && (childAt = this.r.getChildAt(0)) != null) {
-            float translationY = n5Var.getTranslationY();
-            this.M = (childAt.getTop() + (n5Var.getMeasuredHeight() - getMeasuredHeight())) / 2;
-            n5Var.setTranslationY(translationY);
+        ci.o5 o5Var = this.L;
+        if (o5Var.getVisibility() == 0 && (childAt = this.r.getChildAt(0)) != null) {
+            float translationY = o5Var.getTranslationY();
+            this.M = (childAt.getTop() + (o5Var.getMeasuredHeight() - getMeasuredHeight())) / 2;
+            o5Var.setTranslationY(translationY);
         }
     }
 
@@ -1072,7 +1072,7 @@ public final class nk extends li {
             return false;
         }
         T();
-        fk fkVar = (fk) i2.d.A(1, gkVar.d);
+        fk fkVar = (fk) i2.e.A(1, gkVar.d);
         this.b.a1.setTitle(fkVar.b);
         int topForScroll = getTopForScroll();
         File file = fkVar.a;
@@ -1128,7 +1128,7 @@ public final class nk extends li {
     }
 
     @Override // org.telegram.ui.Components.li
-    public final void t() {
+    public final void u() {
         this.G.setVisibility(8);
         this.F.setVisibility(8);
     }

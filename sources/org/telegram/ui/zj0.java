@@ -1,63 +1,39 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class zj0 extends pg.a {
-    public int c;
-    public int d;
-    public CharSequence e;
-    public CharSequence f;
-    public gk0 g;
-    public int h;
-    public boolean i;
+public final /* synthetic */ class zj0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ak0 b;
+    public final /* synthetic */ String c;
 
-    public static zj0 b(int i10, String str, boolean z10) {
-        zj0 zj0Var = new zj0(1, true);
-        zj0Var.c = i10;
-        zj0Var.e = str;
-        zj0Var.i = z10;
-        return zj0Var;
+    public /* synthetic */ zj0(ak0 ak0Var, String str, int i10) {
+        this.a = i10;
+        this.b = ak0Var;
+        this.c = str;
     }
 
-    public static zj0 c(int i10, String str, String str2) {
-        zj0 zj0Var = new zj0(5, true);
-        zj0Var.c = i10;
-        zj0Var.e = str;
-        zj0Var.f = str2;
-        return zj0Var;
-    }
-
-    public static zj0 d(int i10, String str) {
-        zj0 zj0Var = new zj0(4, true);
-        zj0Var.c = i10;
-        zj0Var.e = str;
-        return zj0Var;
-    }
-
-    @Override // pg.a
-    public final boolean a(pg.a aVar) {
-        if (this == aVar) {
-            return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ak0 ak0Var = this.b;
+                String str = this.c;
+                ak0Var.getClass();
+                AndroidUtilities.runOnUIThread(new zj0(ak0Var, str, 1));
+                break;
+            default:
+                ak0 ak0Var2 = this.b;
+                String str2 = this.c;
+                hg.a2 a2Var = ak0Var2.h;
+                int i10 = ak0Var2.n.s;
+                a2Var.g(str2, true, (i10 == 1 || i10 == 3) ? false : true, true, false, 0L, false, 0, 0);
+                Utilities.searchQueue.postRunnable(new ve0(ak0Var2, str2, new ArrayList(ak0Var2.n.w), 9));
+                break;
         }
-        if (zj0.class != aVar.getClass()) {
-            return false;
-        }
-        zj0 zj0Var = (zj0) aVar;
-        return this.c == zj0Var.c && this.d == zj0Var.d && this.h == zj0Var.h && this.i == zj0Var.i && Objects.equals(this.e, zj0Var.e) && Objects.equals(this.f, zj0Var.f) && this.g == zj0Var.g;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && zj0.class == obj.getClass()) {
-            zj0 zj0Var = (zj0) obj;
-            if (this.c == zj0Var.c && this.h == zj0Var.h && ((this.a == 8 || (this.d == zj0Var.d && Objects.equals(this.e, zj0Var.e) && (this.a == 6 || Objects.equals(this.f, zj0Var.f)))) && this.g == zj0Var.g)) {
-                return true;
-            }
-        }
-        return false;
     }
 }

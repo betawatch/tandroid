@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.f6;
 import org.telegram.ui.Components.i5;
 import org.telegram.ui.Components.p6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public abstract class w extends FrameLayout {
     public final Paint a;
@@ -194,10 +194,10 @@ public abstract class w extends FrameLayout {
                 float f17 = f16 * e;
                 int m12 = h6.m1(f17, i5Var.a(vVar.h, false));
                 p6 p6Var3 = p6Var;
-                if (p6Var3.a0 != m12) {
-                    p6Var3.a0 = m12;
+                if (p6Var3.Z != m12) {
+                    p6Var3.Z = m12;
                     str = str2;
-                    p6Var3.b0 = new PorterDuffColorFilter(m12, PorterDuff.Mode.SRC_IN);
+                    p6Var3.a0 = new PorterDuffColorFilter(m12, PorterDuff.Mode.SRC_IN);
                 } else {
                     str = str2;
                 }
@@ -273,7 +273,7 @@ public abstract class w extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     public void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), lk.C(109.0f, 1, TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), kk.C(109.0f, 1, TLObject.FLAG_30));
     }
 
     @Override // android.view.View

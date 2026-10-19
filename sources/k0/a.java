@@ -1,6 +1,5 @@
 package k0;
 
-import a6.m;
 import android.hardware.fingerprint.FingerprintManager;
 import androidx.biometric.e;
 import androidx.biometric.t;
@@ -12,14 +11,15 @@ import java.lang.ref.WeakReference;
 import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
+import qb.c;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class a extends FingerprintManager.AuthenticationCallback {
-    public final /* synthetic */ m a;
+    public final /* synthetic */ c a;
 
-    public a(m mVar) {
-        this.a = mVar;
+    public a(c cVar) {
+        this.a = cVar;
     }
 
     @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
@@ -69,8 +69,8 @@ public final class a extends FingerprintManager.AuthenticationCallback {
             } else if (cryptoObject.getMac() != null) {
                 eVar = new e(cryptoObject.getMac());
             }
-            m mVar = this.a;
-            mVar.getClass();
+            c cVar = this.a;
+            cVar.getClass();
             if (eVar != null) {
                 Cipher cipher = (Cipher) eVar.c;
                 if (cipher != null) {
@@ -87,13 +87,13 @@ public final class a extends FingerprintManager.AuthenticationCallback {
                     }
                 }
             }
-            ((w) ((e) mVar.b).d).b(new t(uVar, 2));
+            ((w) ((e) cVar.b).d).b(new t(uVar, 2));
         }
         eVar = null;
-        m mVar2 = this.a;
-        mVar2.getClass();
+        c cVar2 = this.a;
+        cVar2.getClass();
         if (eVar != null) {
         }
-        ((w) ((e) mVar2.b).d).b(new t(uVar, 2));
+        ((w) ((e) cVar2.b).d).b(new t(uVar, 2));
     }
 }

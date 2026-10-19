@@ -1,81 +1,34 @@
 package ci;
 
-import android.app.Activity;
-import android.view.View;
-import org.telegram.messenger.AccountInstance;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.y50;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.e11;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class j3 implements y50 {
-    public final /* synthetic */ p4 a;
+public final class j3 extends ReplacementSpan {
+    public final RectF a = new RectF();
+    public final Paint b = new Paint(1);
+    public final e11 c = new e11(LocaleController.getString(R.string.LiveStoryBadge), 9.0f, AndroidUtilities.bold());
 
-    public j3(p4 p4Var) {
-        this.a = p4Var;
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        float dp = ((i12 + i14) / 2.0f) + AndroidUtilities.dp(1.33f);
+        RectF rectF = this.a;
+        rectF.set(f7, dp - AndroidUtilities.dp(7.0f), this.c.l() + f7 + AndroidUtilities.dp(12.0f), AndroidUtilities.dp(7.0f) + dp);
+        Paint paint2 = this.b;
+        paint2.setColor(-572850);
+        canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, paint2);
+        this.c.c(AndroidUtilities.dp(6.0f) + f7, dp, 1.0f, -1, canvas);
     }
 
-    @Override // org.telegram.ui.Components.y50
-    public final long a() {
-        return this.a.B1;
-    }
-
-    @Override // org.telegram.ui.Components.y50
-    public final /* synthetic */ boolean c() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.y50
-    public final int getClassGuid() {
-        return this.a.z2;
-    }
-
-    @Override // org.telegram.ui.Components.y50
-    public final View getFragmentView() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.Components.y50
-    public final Activity getParentActivity() {
-        return AndroidUtilities.findActivity(this.a.getContext());
-    }
-
-    @Override // org.telegram.ui.Components.y50
-    public final void r(MediaController.PhotoEntry photoEntry, VideoEditedInfo videoEditedInfo, boolean z10, int i10, int i11, boolean z11, long j10) {
-        AccountInstance accountInstance;
-        AccountInstance accountInstance2;
-        AccountInstance accountInstance3;
-        AccountInstance accountInstance4;
-        p4 p4Var = this.a;
-        TL_stories.StoryItem storyItem = p4Var.O1.a;
-        if (storyItem == null || (storyItem instanceof TL_stories.TL_storyItemSkipped)) {
-            return;
-        }
-        storyItem.dialogId = p4Var.B1;
-        if (photoEntry.isVideo) {
-            if (videoEditedInfo != null) {
-                accountInstance4 = p4Var.getAccountInstance();
-                SendMessagesHelper.prepareSendingVideo(accountInstance4, photoEntry.path, videoEditedInfo, null, null, p4Var.B1, null, null, storyItem, null, photoEntry.entities, photoEntry.ttl, null, z10, i10, i11, false, photoEntry.hasSpoiler, photoEntry.caption, null, 0L, j10);
-            } else {
-                accountInstance3 = p4Var.getAccountInstance();
-                SendMessagesHelper.prepareSendingVideo(accountInstance3, photoEntry.path, null, null, null, p4Var.B1, null, null, storyItem, null, photoEntry.entities, photoEntry.ttl, null, z10, i10, i11, false, photoEntry.hasSpoiler, photoEntry.caption, null, 0L, j10);
-            }
-        } else if (photoEntry.imagePath != null) {
-            accountInstance2 = p4Var.getAccountInstance();
-            SendMessagesHelper.prepareSendingPhoto(accountInstance2, photoEntry.imagePath, photoEntry.thumbPath, null, p4Var.B1, null, null, storyItem, null, photoEntry.entities, photoEntry.stickers, null, photoEntry.ttl, null, videoEditedInfo, z10, i10, i11, false, photoEntry.caption, null, 0L, j10);
-        } else if (photoEntry.path != null) {
-            accountInstance = p4Var.getAccountInstance();
-            SendMessagesHelper.prepareSendingPhoto(accountInstance, photoEntry.path, photoEntry.thumbPath, null, p4Var.B1, null, null, storyItem, null, photoEntry.entities, photoEntry.stickers, null, photoEntry.ttl, null, videoEditedInfo, z10, i10, i11, false, photoEntry.caption, null, 0L, j10);
-        }
-        p4Var.k0(j10 <= 0);
-    }
-
-    @Override // org.telegram.ui.Components.y50
-    public final /* synthetic */ boolean x() {
-        return false;
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        return (int) (this.c.l() + AndroidUtilities.dp(12.0f));
     }
 }

@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import org.telegram.ui.Components.ry;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class g implements d, t5.c, c {
     public static final i5.c f = new i5.c("proto");
@@ -113,7 +113,7 @@ public final class g implements d, t5.c, c {
     }
 
     public final void e(long j10, o5.c cVar, String str) {
-        c(new ai.f(str, cVar, j10, 9));
+        c(new ai.f(str, cVar, j10, 10));
     }
 
     public final Object f(t5.b bVar) {

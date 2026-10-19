@@ -12,7 +12,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qd implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -57,13 +57,13 @@ public final /* synthetic */ class qd implements Runnable {
                 MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) this.s;
                 ChatActivityEnterView chatActivityEnterView = ggVar.a;
                 boolean z11 = chatActivityEnterView.z3;
-                org.telegram.ui.sn snVar = chatActivityEnterView.P2;
+                org.telegram.ui.qn qnVar = chatActivityEnterView.P2;
                 boolean z12 = false;
                 if (z11) {
                     if (chatActivityEnterView.R1 != 0) {
                         chatActivityEnterView.U0.B();
                     }
-                    chatActivityEnterView.l1(false, true, false, true);
+                    chatActivityEnterView.k1(false, true, false, true);
                 }
                 og ogVar = chatActivityEnterView.Z2;
                 TL_stories.StoryItem a12 = ogVar != null ? ogVar.a1() : null;
@@ -126,7 +126,7 @@ public final /* synthetic */ class qd implements Runnable {
                         long j10 = chatActivityEnterView.Q2;
                         MessageObject messageObject = chatActivityEnterView.T2;
                         threadMessage4 = chatActivityEnterView.getThreadMessage();
-                        SendMessagesHelper.prepareSendingMedia(accountInstance, arrayList, j10, messageObject, threadMessage4, null, chatActivityEnterView.V2, false, false, chatActivityEnterView.Z1, z14, i12, i11, 0, false, null, snVar != null ? snVar.H8() : null, chatActivityEnterView.S4, z15, l4.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
+                        SendMessagesHelper.prepareSendingMedia(accountInstance, arrayList, j10, messageObject, threadMessage4, null, chatActivityEnterView.V2, false, false, chatActivityEnterView.Z1, z14, i12, i11, 0, false, null, qnVar != null ? qnVar.H8() : null, chatActivityEnterView.S4, z15, l4.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
                         z10 = z14;
                         i12 = i12;
                     } else {
@@ -136,7 +136,7 @@ public final /* synthetic */ class qd implements Runnable {
                         TL_stories.StoryItem storyItem = a12;
                         MessageObject messageObject2 = chatActivityEnterView.T2;
                         threadMessage3 = chatActivityEnterView.getThreadMessage();
-                        sendMessagesHelper.sendSticker(document, str2, j11, charSequence2, videoEditedInfo, messageObject2, threadMessage3, storyItem, chatActivityEnterView.V2, null, z14, i12, i11, false, obj2, snVar != null ? snVar.H8() : null, l4.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams(), z15);
+                        sendMessagesHelper.sendSticker(document, str2, j11, charSequence2, videoEditedInfo, messageObject2, threadMessage3, storyItem, chatActivityEnterView.V2, null, z14, i12, i11, false, obj2, qnVar != null ? qnVar.H8() : null, l4.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams(), z15);
                         z10 = z14;
                         i12 = i12;
                         MediaDataController.getInstance(chatActivityEnterView.Q).addRecentGif(document, (int) (System.currentTimeMillis() / 1000), true);
@@ -160,12 +160,12 @@ public final /* synthetic */ class qd implements Runnable {
                         hashMap.put("query_id", "" + botInlineResult.query_id);
                         hashMap.put("force_gif", "1");
                         if (storyItem2 == null) {
-                            org.telegram.ui.sn snVar2 = chatActivityEnterView.P2;
+                            org.telegram.ui.qn qnVar2 = chatActivityEnterView.P2;
                             AccountInstance accountInstance2 = chatActivityEnterView.R;
                             long j12 = chatActivityEnterView.Q2;
                             MessageObject messageObject3 = chatActivityEnterView.T2;
                             threadMessage2 = chatActivityEnterView.getThreadMessage();
-                            SendMessagesHelper.prepareSendingBotContextResult(snVar2, accountInstance2, botInlineResult, hashMap, j12, messageObject3, threadMessage2, null, chatActivityEnterView.V2, z10, i12, 0, snVar != null ? snVar.H8() : null, l4.longValue(), chatActivityEnterView.getSendMonoForumPeerId());
+                            SendMessagesHelper.prepareSendingBotContextResult(qnVar2, accountInstance2, botInlineResult, hashMap, j12, messageObject3, threadMessage2, null, chatActivityEnterView.V2, z10, i12, 0, qnVar != null ? qnVar.H8() : null, l4.longValue(), chatActivityEnterView.getSendMonoForumPeerId());
                             z10 = z10;
                             i12 = i12;
                         } else {
@@ -174,11 +174,11 @@ public final /* synthetic */ class qd implements Runnable {
                             long j13 = chatActivityEnterView.Q2;
                             MessageObject messageObject4 = chatActivityEnterView.T2;
                             threadMessage = chatActivityEnterView.getThreadMessage();
-                            sendMessagesHelper2.sendSticker(document2, str2, j13, messageObject4, threadMessage, storyItem2, chatActivityEnterView.V2, null, z10, i12, i11, false, obj2, snVar != null ? snVar.H8() : null, l4.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
+                            sendMessagesHelper2.sendSticker(document2, str2, j13, messageObject4, threadMessage, storyItem2, chatActivityEnterView.V2, null, z10, i12, i11, false, obj2, qnVar != null ? qnVar.H8() : null, l4.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
                         }
                         if (chatActivityEnterView.R1 != 0) {
                             chatActivityEnterView.j1(0, true);
-                            chatActivityEnterView.U0.t(true);
+                            chatActivityEnterView.U0.u(true);
                             chatActivityEnterView.U0.B();
                         }
                     }

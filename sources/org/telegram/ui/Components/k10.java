@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class k10 extends bb {
     public boolean A0;
@@ -156,7 +156,7 @@ public final class k10 extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final void H(jw0 jw0Var) {
+    public final void G(kw0 kw0Var) {
         im0 im0Var = this.d;
         im0Var.setOverScrollMode(2);
         im0Var.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.l0 != null ? 68.0f : 0.0f));
@@ -191,7 +191,7 @@ public final class k10 extends bb {
             }
         }
         V(true);
-        h10Var.a(LocaleController.getString(z10 ? R.string.SelectAll : R.string.DeselectAll), new ai.x7(this, h10Var, z10, 21));
+        h10Var.a(LocaleController.getString(z10 ? R.string.SelectAll : R.string.DeselectAll), new ai.y7(this, h10Var, z10, 21));
         R(true);
         while (true) {
             im0 im0Var = this.d;
@@ -372,8 +372,8 @@ public final class k10 extends bb {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 g10Var2.v = ofFloat;
                 ofFloat.addUpdateListener(new f10(g10Var2, 1));
-                g10Var2.v.addListener(new org.telegram.ui.pq(g10Var2, 28));
-                org.telegram.messenger.lk.l(2.0f, g10Var2.v);
+                g10Var2.v.addListener(new org.telegram.ui.nq(g10Var2, 28));
+                org.telegram.messenger.kk.l(2.0f, g10Var2.v);
                 g10Var2.v.setDuration(200L);
                 g10Var2.v.start();
             }

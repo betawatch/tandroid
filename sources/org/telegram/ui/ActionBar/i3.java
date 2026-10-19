@@ -15,7 +15,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class i3 extends Dialog {
     public final t3 a;
@@ -82,8 +82,7 @@ public final class i3 extends Dialog {
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         Window window = getWindow();
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 30) {
+        if (Build.VERSION.SDK_INT >= 30) {
             window.addFlags(-2147483392);
         } else {
             window.addFlags(-2147417856);
@@ -96,9 +95,7 @@ public final class i3 extends Dialog {
         attributes.flags &= -3;
         attributes.softInputMode = 16;
         attributes.height = -1;
-        if (i10 >= 28) {
-            attributes.layoutInDisplayCutoutMode = 1;
-        }
+        AndroidUtilities.applyEdgeToEdgeLayoutParams(attributes);
         window.setAttributes(attributes);
         window.setStatusBarColor(0);
         h3 h3Var = this.b;

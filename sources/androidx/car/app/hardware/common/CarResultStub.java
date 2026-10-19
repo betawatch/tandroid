@@ -1,6 +1,6 @@
 package androidx.car.app.hardware.common;
 
-import ai.d4;
+import ai.e4;
 import android.os.IBinder;
 import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.hardware.ICarHardwareResult;
@@ -9,13 +9,12 @@ import j$.util.Objects;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executor;
-import org.telegram.ui.web.g2;
-import qg.e0;
+import qg.f0;
 import r.a;
 import r.c;
 import w.b;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private final b mBundle;
@@ -54,7 +53,7 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private void notifyResults(boolean z10, b bVar) {
         T convertAndRecast = z10 ? convertAndRecast(bVar) : this.mUnsupportedValue;
         for (Map.Entry<c, Executor> entry : this.mListeners.entrySet()) {
-            entry.getValue().execute(new g2(7, entry, convertAndRecast));
+            entry.getValue().execute(new p2.b(6, entry, convertAndRecast));
         }
         if (this.mIsSingleShot) {
             this.mListeners.clear();
@@ -69,7 +68,7 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
 
     @Override // androidx.car.app.hardware.ICarHardwareResult
     public void onCarHardwareResult(int i10, boolean z10, b bVar, IBinder iBinder) {
-        g.b(IOnDoneCallback.Stub.asInterface(iBinder), "onCarHardwareResult", new d4(this, z10, bVar, 12));
+        g.b(IOnDoneCallback.Stub.asInterface(iBinder), "onCarHardwareResult", new e4(this, z10, bVar, 12));
     }
 
     public boolean removeListener(c cVar) {
@@ -86,7 +85,7 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
         int i10 = this.mResultType;
         b bVar = this.mBundle;
         aVar.getClass();
-        g.d("unsubscribeCarHardwareResult", new e0(aVar, i10, bVar));
+        g.d("unsubscribeCarHardwareResult", new f0(aVar, i10, bVar));
         return true;
     }
 }

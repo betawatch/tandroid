@@ -22,13 +22,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.aw;
-import org.telegram.ui.Components.tx0;
+import org.telegram.ui.Components.ux0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.b80;
+import org.telegram.ui.z70;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ua implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -79,7 +79,7 @@ public final /* synthetic */ class ua implements Utilities.Callback {
                     break;
                 } else {
                     org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(n2Var.getContext(), 3, null);
-                    b2Var.q(250L);
+                    b2Var.r(250L);
                     MessagesController.getInstance(i13).convertToMegaGroup(n2Var.getParentActivity(), chat.id, n2Var, new hi.m0(b2Var, n2Var, i13, j10, booleanValue));
                     break;
                 }
@@ -120,18 +120,18 @@ public final /* synthetic */ class ua implements Utilities.Callback {
                 }
                 if (iArr[0] == i12 && iArr[1] > 0) {
                     awVar.dismiss();
-                    org.telegram.ui.Components.qc.g(n2Var2, new tx0(n2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, n2Var2.getResourceProvider()), 1500).j();
+                    org.telegram.ui.Components.qc.g(n2Var2, new ux0(n2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, n2Var2.getResourceProvider()), 1500).j();
                     break;
                 }
                 break;
             case 4:
                 LaunchActivity launchActivity = (LaunchActivity) obj4;
-                b80 b80Var = (b80) obj3;
+                z70 z70Var = (z70) obj3;
                 Long l4 = (Long) obj2;
                 TL_stories.TL_storyAlbum tL_storyAlbum = (TL_stories.TL_storyAlbum) obj;
                 Pattern pattern = LaunchActivity.C1;
                 try {
-                    b80Var.run();
+                    z70Var.run();
                 } catch (Exception e) {
                     FileLog.e(e);
                 }
@@ -188,10 +188,10 @@ public final /* synthetic */ class ua implements Utilities.Callback {
         this.e = arrayList;
     }
 
-    public /* synthetic */ ua(LaunchActivity launchActivity, b80 b80Var, Long l4, int i10) {
+    public /* synthetic */ ua(LaunchActivity launchActivity, z70 z70Var, Long l4, int i10) {
         this.a = 4;
         this.c = launchActivity;
-        this.d = b80Var;
+        this.d = z70Var;
         this.e = l4;
         this.b = i10;
     }

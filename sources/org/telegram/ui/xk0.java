@@ -1,42 +1,44 @@
 package org.telegram.ui;
 
-import android.os.Build;
-import java.util.ArrayList;
-import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class xk0 {
-    public final LaunchActivity a;
-    public final ArrayList b = new ArrayList();
-    public int c = TLObject.FLAG_31;
+public final /* synthetic */ class xk0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PasscodeActivity b;
+    public final /* synthetic */ boolean c;
 
-    public xk0(LaunchActivity launchActivity) {
-        this.a = launchActivity;
+    public /* synthetic */ xk0(PasscodeActivity passcodeActivity, boolean z10, int i10) {
+        this.a = i10;
+        this.b = passcodeActivity;
+        this.c = z10;
     }
 
-    public final void a() {
-        boolean isEmpty = this.b.isEmpty();
-        LaunchActivity launchActivity = this.a;
-        try {
-            if (isEmpty || launchActivity.getResources().getConfiguration().smallestScreenWidthDp >= 600 || (Build.VERSION.SDK_INT >= 24 && launchActivity.isInMultiWindowMode())) {
-                int i10 = this.c;
-                if (i10 != Integer.MIN_VALUE) {
-                    launchActivity.setRequestedOrientation(i10);
-                    this.c = TLObject.FLAG_31;
-                    return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                PasscodeActivity passcodeActivity = this.b;
+                passcodeActivity.getMediaDataController().buildShortcuts();
+                if (this.c) {
+                    passcodeActivity.presentFragment(new PasscodeActivity(0), true);
+                    eb0 eb0Var = passcodeActivity.U;
+                    if (eb0Var != null) {
+                        AndroidUtilities.runOnUIThread(eb0Var);
+                        passcodeActivity.U = null;
+                    }
+                } else {
+                    passcodeActivity.finishFragment();
                 }
-                return;
-            }
-            if (this.c == Integer.MIN_VALUE) {
-                this.c = launchActivity.getRequestedOrientation();
-            }
-            if (launchActivity.getRequestedOrientation() != 1) {
-                launchActivity.setRequestedOrientation(1);
-            }
-        } catch (Exception e) {
-            FileLog.e(e);
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetPasscode, new Object[0]);
+                break;
+            default:
+                PasscodeActivity passcodeActivity2 = this.b;
+                passcodeActivity2.w.e(true, this.c);
+                AndroidUtilities.cancelRunOnUIThread(passcodeActivity2.T);
+                break;
         }
     }
 }

@@ -1,6 +1,6 @@
 package ri;
 
-import ai.b3;
+import ai.c3;
 import android.content.Context;
 import android.media.AudioRecord;
 import android.os.Build;
@@ -9,25 +9,25 @@ import android.os.Looper;
 import android.os.SystemClock;
 import e2.l0;
 import e2.z;
-import i2.h0;
+import i2.i0;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicLong;
-import org.telegram.ui.Components.ay0;
-import org.telegram.ui.go;
-import org.telegram.ui.lh0;
+import org.telegram.ui.Components.by0;
+import org.telegram.ui.eo;
+import org.telegram.ui.kh0;
 import ri.i;
 import ri.j;
 import ri.p;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class p {
     public static final pb.a G = new pb.a(22);
     public static final AtomicLong H = new AtomicLong(1);
-    public h0 A;
+    public i0 A;
     public byte[] B;
     public m C;
     public final e D;
@@ -87,7 +87,7 @@ public final class p {
 
             @Override // java.lang.Runnable
             public final void run() {
-                h0 h0Var;
+                i0 i0Var;
                 switch (i10) {
                     case 0:
                         p pVar = this.b;
@@ -101,8 +101,8 @@ public final class p {
                         break;
                     default:
                         p pVar2 = this.b;
-                        if (pVar2.m == n.e && (h0Var = pVar2.A) != null && pVar2.u) {
-                            long M0 = h0Var.M0();
+                        if (pVar2.m == n.e && (i0Var = pVar2.A) != null && pVar2.u) {
+                            long M0 = i0Var.M0();
                             long j10 = pVar2.r;
                             if (M0 < j10 || M0 >= pVar2.s) {
                                 pVar2.A.Z0(5, j10);
@@ -126,7 +126,7 @@ public final class p {
 
             @Override // java.lang.Runnable
             public final void run() {
-                h0 h0Var;
+                i0 i0Var;
                 switch (i11) {
                     case 0:
                         p pVar = this.b;
@@ -140,8 +140,8 @@ public final class p {
                         break;
                     default:
                         p pVar2 = this.b;
-                        if (pVar2.m == n.e && (h0Var = pVar2.A) != null && pVar2.u) {
-                            long M0 = h0Var.M0();
+                        if (pVar2.m == n.e && (i0Var = pVar2.A) != null && pVar2.u) {
+                            long M0 = i0Var.M0();
                             long j10 = pVar2.r;
                             if (M0 < j10 || M0 >= pVar2.s) {
                                 pVar2.A.Z0(5, j10);
@@ -238,7 +238,7 @@ public final class p {
         j jVar = new j(j10, f7);
         synchronized (this.k) {
             this.z = jVar;
-            this.j.execute(new ay0(this, jVar, f7, 17));
+            this.j.execute(new by0(this, jVar, f7, 17));
         }
         b bVar = this.g;
         StringBuilder t10 = a1.g.t(j10, "output generation started: id=", ", file=");
@@ -278,7 +278,7 @@ public final class p {
         r(nVar2);
         j jVar = this.z;
         if (jVar != null) {
-            this.j.execute(new ay0(this, jVar, exc, 18));
+            this.j.execute(new by0(this, jVar, exc, 18));
         }
         this.e.onError(exc);
         org.telegram.utils.recorder.audio.b bVar = this.n;
@@ -343,7 +343,7 @@ public final class p {
                             }
                             pVar2.g.b("final trim completed: source=" + jVar2.b.getName() + ", output=" + file.getName() + ", trim=" + j12 + ".." + j13 + ", bytes=" + file.length() + ", elapsedMs=" + (SystemClock.elapsedRealtime() - elapsedRealtime));
                             pVar2.a(jVar3, file.length());
-                            handler.post(new go(pVar2, j13, j12, 2));
+                            handler.post(new eo(pVar2, j13, j12, 2));
                         } catch (Throwable th2) {
                             th = th2;
                             pVar = absolutePath2;
@@ -382,7 +382,7 @@ public final class p {
                         bArr = null;
                     }
                     byte[] bArr2 = bArr;
-                    pVar.h.post(new b3(pVar, jVar2, j10, bArr2, 27));
+                    pVar.h.post(new c3(pVar, jVar2, j10, bArr2, 27));
                 }
             });
             return;
@@ -406,7 +406,7 @@ public final class p {
             j jVar = this.z;
             if (jVar != null && jVar.d && !jVar.e) {
                 jVar.d = false;
-                this.j.execute(new ay0(this, jVar, kVar, 19));
+                this.j.execute(new by0(this, jVar, kVar, 19));
                 this.g.b("output generation invalidated: id=" + jVar.a + ", reason=" + kVar);
             }
         }
@@ -456,9 +456,9 @@ public final class p {
     public final void o() {
         this.h.removeCallbacks(this.E);
         this.u = false;
-        h0 h0Var = this.A;
-        if (h0Var != null) {
-            h0Var.C(this.F);
+        i0 i0Var = this.A;
+        if (i0Var != null) {
+            i0Var.C(this.F);
             this.A.X0();
             this.A = null;
         }
@@ -550,7 +550,7 @@ public final class p {
                     long max2 = Math.max(0L, d);
                     p pVar = (p) eVar.c;
                     pVar.a((j) eVar.b, max2);
-                    pVar.h.post(new lh0(eVar, eVar.a, 3));
+                    pVar.h.post(new kh0(eVar, eVar.a, 3));
                     bVar2.g.post(new ri.a(bVar2, 1));
                 } catch (Throwable th2) {
                     bVar2.d.a("capture failed", th2);

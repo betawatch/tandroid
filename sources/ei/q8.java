@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class q8 extends FrameLayout {
     public final Paint a;
@@ -36,7 +36,7 @@ public final class q8 extends FrameLayout {
         Paint paint = this.a;
         paint.setColor(w02);
         t8 t8Var = this.d;
-        float max = Math.max(0.0f, t8Var.t());
+        float max = Math.max(0.0f, t8Var.u());
         boolean z10 = max < ((float) AndroidUtilities.statusBarHeight);
         org.telegram.ui.Components.f6 f6Var = this.b;
         float lerp = AndroidUtilities.lerp(max, 0.0f, f6Var.e(z10));
@@ -62,7 +62,7 @@ public final class q8 extends FrameLayout {
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         float y3 = motionEvent.getY();
         t8 t8Var = this.d;
-        if (y3 >= t8Var.t()) {
+        if (y3 >= t8Var.u()) {
             return super.dispatchTouchEvent(motionEvent);
         }
         t8Var.dismiss();

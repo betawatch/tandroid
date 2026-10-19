@@ -1,75 +1,111 @@
 package org.telegram.ui;
 
 import android.app.Activity;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewParent;
+import android.content.Context;
 import android.widget.FrameLayout;
-import androidx.recyclerview.widget.RecyclerView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class tc extends FrameLayout {
-    public final org.telegram.ui.ActionBar.d6 a;
-    public final ua1 b;
-    public final s4.b0 c;
-    public final int d;
-    public int e;
+public final class tc extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
+    public final oo0 a;
+    public final sc b;
+    public final org.telegram.ui.ActionBar.j5 c;
+    public final TextView d;
+    public final TextView e;
+    public final LinearLayout f;
+    public final /* synthetic */ bd h;
 
-    public tc(int i10, Activity activity, org.telegram.ui.ActionBar.d6 d6Var) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tc(bd bdVar, Activity activity) {
         super(activity);
-        this.d = i10;
-        this.a = d6Var;
-        ua1 ua1Var = new ua1(activity, 3, d6Var);
-        this.b = ua1Var;
-        ua1Var.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(6.0f), 0);
-        ua1Var.setClipToPadding(false);
-        ua1Var.setAdapter(new rc(this, activity, d6Var, i10));
-        s4.b0 b0Var = new s4.b0();
-        this.c = b0Var;
-        b0Var.j1(0);
-        ua1Var.setLayoutManager(b0Var);
-        addView(ua1Var, w7.z5.c(-1.0f, -1));
+        org.telegram.ui.ActionBar.d6 d6Var;
+        int i10;
+        org.telegram.ui.ActionBar.d6 d6Var2;
+        this.h = bdVar;
+        Context context = getContext();
+        d6Var = ((org.telegram.ui.ActionBar.n2) bdVar).resourceProvider;
+        oo0 oo0Var = new oo0(context, d6Var);
+        this.a = oo0Var;
+        oo0Var.setProgressToGradient(1.0f);
+        oo0Var.F = true;
+        addView(oo0Var, w7.z5.e(-1, -1, 119));
+        Context context2 = getContext();
+        i10 = ((org.telegram.ui.ActionBar.n2) bdVar).currentAccount;
+        long j10 = bdVar.a;
+        d6Var2 = ((org.telegram.ui.ActionBar.n2) bdVar).resourceProvider;
+        sc scVar = new sc(this, context2, i10, j10, d6Var2);
+        this.b = scVar;
+        boolean z10 = bdVar.d;
+        addView(scVar, w7.z5.d(-1, z10 ? 230.0f : 190.0f, 80, 0.0f, 0.0f, 0.0f, z10 ? 24.0f : 0.0f));
+        if (bdVar instanceof z50) {
+            org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(getContext());
+            this.c = j5Var;
+            j5Var.setGravity(19);
+            int i11 = org.telegram.ui.ActionBar.h6.A8;
+            j5Var.setTextColor(bdVar.getThemedColor(i11));
+            j5Var.setTypeface(AndroidUtilities.bold());
+            j5Var.l(LocaleController.getString(R.string.ChangeChannelNameColor2), false);
+            j5Var.setAlpha(0.0f);
+            a();
+            addView(j5Var, w7.z5.d(-1, -2.0f, 80, 72.0f, 0.0f, 0.0f, 16.0f));
+            LinearLayout linearLayout = new LinearLayout(activity);
+            this.f = linearLayout;
+            linearLayout.setOrientation(0);
+            linearLayout.setBackground(org.telegram.ui.ActionBar.h6.h0(org.telegram.ui.ActionBar.h6.m1(0.065f, -16777216), -16777216));
+            linearLayout.setGravity(17);
+            linearLayout.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+            TextView textView = new TextView(activity);
+            this.d = textView;
+            textView.setTextSize(1, 12.0f);
+            textView.setTextColor(scVar.h.getTextColor());
+            TextView textView2 = new TextView(activity);
+            this.e = textView2;
+            textView2.setTextSize(1, 12.0f);
+            textView2.setTextColor((bdVar.d && bdVar.s == -1) ? bdVar.getThemedColor(i11) : -1);
+            TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = bdVar.c;
+            textView.setText(AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingGroupBoostCount", tL_premium_boostsStatus != null ? tL_premium_boostsStatus.boosts : 0, new Object[0])));
+            textView2.setText(LocaleController.getString(R.string.BoostingGroupBoostWhatAreBoosts));
+            linearLayout.addView(textView);
+            linearLayout.addView(textView2, w7.z5.k(3.0f, 0.0f, 0.0f, 0.0f, -2, -2));
+            addView(linearLayout, w7.z5.e(-1, -2, 80));
+        }
     }
 
-    public final void a(int i10, boolean z10) {
-        MessagesController.PeerColors peerColors = MessagesController.getInstance(this.d).peerColors;
-        int i11 = 0;
-        if (peerColors != null) {
-            int i12 = 0;
-            while (true) {
-                if (i12 >= peerColors.colors.size()) {
-                    break;
-                }
-                if (peerColors.colors.get(i12).id == i10) {
-                    i11 = i12;
-                    break;
-                }
-                i12++;
-            }
+    public final void a() {
+        float f7;
+        boolean z10 = getResources().getConfiguration().orientation == 2;
+        int i10 = (AndroidUtilities.isTablet() || !z10) ? 20 : 18;
+        org.telegram.ui.ActionBar.j5 j5Var = this.c;
+        j5Var.setTextSize(i10);
+        if (AndroidUtilities.isTablet()) {
+            f7 = -2.0f;
+        } else {
+            f7 = z10 ? 4 : 0;
         }
-        if (i11 != this.e) {
-            this.e = i11;
-            if (!z10) {
-                this.c.h1(i11, (AndroidUtilities.displaySize.x - AndroidUtilities.dp(56.0f)) / 2);
+        j5Var.setTranslationY(AndroidUtilities.dp(f7));
+    }
+
+    @Override // org.telegram.ui.ActionBar.y5
+    public final void d() {
+        org.telegram.ui.ActionBar.j5 j5Var = this.c;
+        if (j5Var != null) {
+            bd bdVar = this.h;
+            int i10 = -1;
+            j5Var.setTextColor((!bdVar.d || bdVar.s == -1) ? bdVar.getThemedColor(org.telegram.ui.ActionBar.h6.A8) : -1);
+            if (bdVar.d && bdVar.s == -1) {
+                i10 = bdVar.getThemedColor(org.telegram.ui.ActionBar.h6.A8);
             }
-            AndroidUtilities.forEachViews((RecyclerView) this.b, (Utilities.Callback<View>) new ai.x8(4, this, z10));
+            this.e.setTextColor(i10);
         }
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (getParent() != null) {
-            ViewParent parent = getParent();
-            boolean z10 = true;
-            if (!canScrollHorizontally(-1) && !canScrollHorizontally(1)) {
-                z10 = false;
-            }
-            parent.requestDisallowInterceptTouchEvent(z10);
-        }
-        return super.onInterceptTouchEvent(motionEvent);
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
     }
 }

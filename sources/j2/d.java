@@ -2,7 +2,7 @@ package j2;
 
 import android.content.SharedPreferences;
 import android.widget.EditText;
-import ci.d6;
+import ci.e6;
 import e2.o;
 import e2.x;
 import java.util.List;
@@ -25,11 +25,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.Components.sv0;
+import org.telegram.ui.Components.tv0;
 import v7.u6;
 import z3.n;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements o, e1, g1, RequestDelegateTimestamp, a2, MessagesStorage.StringCallback, e2.j {
     public final /* synthetic */ int a;
@@ -105,7 +105,7 @@ public final /* synthetic */ class d implements o, e1, g1, RequestDelegateTimest
                     updateprofile.about = trim;
                     updateprofile.flags |= 4;
                     NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 2, Long.valueOf(j10));
-                    ConnectionsManager.getInstance(i12).sendRequest(updateprofile, new d6(12), 2);
+                    ConnectionsManager.getInstance(i12).sendRequest(updateprofile, new e6(12), 2);
                 } else {
                     long j11 = -j10;
                     TLRPC.ChatFull chatFull = MessagesController.getInstance(i12).getChatFull(j11);
@@ -161,7 +161,7 @@ public final /* synthetic */ class d implements o, e1, g1, RequestDelegateTimest
 
     @Override // org.telegram.messenger.MessagesStorage.StringCallback
     public void run(String str) {
-        sv0.i((sv0) this.d, this.c, this.b, str);
+        tv0.i((tv0) this.d, this.c, this.b, str);
     }
 
     public /* synthetic */ d(a aVar, int i10, long j10, long j11) {

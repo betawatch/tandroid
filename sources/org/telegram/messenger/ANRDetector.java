@@ -6,7 +6,7 @@ import android.os.Message;
 import org.telegram.ui.Components.n10;
 import org.telegram.ui.Components.o10;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class ANRDetector implements n10 {
     private static final int MSG_UI_PING = 1;

@@ -2,7 +2,7 @@ package com.google.android.gms.internal.cast;
 
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class o4 implements d6.h {
     public final /* synthetic */ z5 a;
@@ -33,13 +33,13 @@ public final class o4 implements d6.h {
     }
 
     @Override // d6.h
-    public void g(d6.f fVar, int i10) {
+    public void h(d6.f fVar, int i10) {
         a5.a aVar = new a5.a(5, 2);
         aVar.c = Integer.valueOf(i10);
         x6 x6Var = new x6(aVar);
         z5 z5Var = this.a;
         z5.D(z5Var, x6Var);
-        z5Var.G();
+        z5Var.F();
     }
 
     @Override // d6.h
@@ -53,17 +53,17 @@ public final class o4 implements d6.h {
     }
 
     @Override // d6.h
-    public void j(d6.f fVar, int i10) {
+    public void n(d6.f fVar, int i10) {
         a5.a aVar = new a5.a(9, 2);
         aVar.c = Integer.valueOf(i10);
         z5 z5Var = this.a;
         aVar.d = Boolean.valueOf(((d) z5Var.c).d == 2);
         z5.D(z5Var, new x6(aVar));
-        z5Var.G();
+        z5Var.F();
     }
 
     @Override // d6.h
-    public void n(d6.f fVar) {
+    public void p(d6.f fVar) {
         d6.c cVar = (d6.c) fVar;
         a5.a aVar = new a5.a(2, 2);
         z5 z5Var = this.a;
@@ -76,21 +76,21 @@ public final class o4 implements d6.h {
     }
 
     @Override // d6.h
-    public void s(d6.f fVar, int i10) {
+    public void q(d6.f fVar, int i10) {
         a5.a aVar = new a5.a(8, 2);
         aVar.c = Integer.valueOf(i10);
         x6 x6Var = new x6(aVar);
         z5 z5Var = this.a;
         z5.D(z5Var, x6Var);
-        z5Var.G();
+        z5Var.F();
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void u(d6.f fVar) {
+    public /* bridge */ /* synthetic */ void r(d6.f fVar) {
     }
 
     @Override // d6.h
-    public void w(d6.f fVar, String str) {
+    public void v(d6.f fVar, String str) {
         x6 x6Var = new x6(new a5.a(4, 2));
         z5 z5Var = this.a;
         z5.D(z5Var, x6Var);
@@ -111,7 +111,7 @@ public final class o4 implements d6.h {
     }
 
     @Override // d6.h
-    public void x(d6.f fVar, int i10) {
+    public void w(d6.f fVar, int i10) {
         a5.a aVar = new a5.a(6, 2);
         aVar.c = Integer.valueOf(i10);
         x6 x6Var = new x6(aVar);

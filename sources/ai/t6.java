@@ -1,45 +1,83 @@
 package ai;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class t6 extends Drawable {
-    public final float a;
-    public final Paint b;
+public final class t6 {
+    public final f7 a;
+    public y6 b;
+    public y6 c;
+    public y6 d;
+    public p6 h;
+    public p6 i;
+    public p6 j;
+    public p6 k;
+    public TL_stars.TL_starGiftUnique l;
+    public long m;
+    public d2 r;
+    public d2 s;
+    public float t;
+    public boolean u;
+    public boolean v;
+    public final ArrayList e = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public final ArrayList g = new ArrayList();
+    public float n = 0.0f;
+    public boolean o = false;
+    public boolean p = false;
+    public boolean q = false;
 
-    public t6(float f7, int i10) {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.a = f7;
-        paint.setColor(i10);
+    public t6(f7 f7Var) {
+        this.a = f7Var;
+        f7Var.c.addOnAttachStateChangeListener(new n6(this, 0));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(getBounds());
-        Paint paint = this.b;
-        float f7 = this.a;
-        canvas.drawRoundRect(rectF, f7, f7, paint);
-        AndroidUtilities.drawStroke(canvas, rectF, f7);
+    public final void a() {
+        this.o = false;
+        this.a.c.c();
+        p6 p6Var = this.h;
+        if (p6Var != null) {
+            p6Var.a();
+        }
+        p6 p6Var2 = this.i;
+        if (p6Var2 != null) {
+            p6Var2.a();
+        }
+        p6 p6Var3 = this.j;
+        if (p6Var3 != null) {
+            p6Var3.a();
+        }
+        p6 p6Var4 = this.k;
+        if (p6Var4 != null) {
+            p6Var4.a();
+        }
+        c();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    public final void b() {
+        if (this.o && !this.v) {
+            this.v = true;
+            AndroidUtilities.runOnUIThread(new m6(this, 1));
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public final void c() {
+        if (this.o) {
+            return;
+        }
+        ArrayList arrayList = this.e;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((r6) obj).a();
+        }
+        arrayList.clear();
+        this.f.clear();
+        this.g.clear();
     }
 }

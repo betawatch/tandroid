@@ -6,7 +6,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.RichQuote;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class ac0 extends org.telegram.ui.Cells.o9 {
     public final /* synthetic */ ic0 w0;
@@ -18,7 +18,7 @@ public final class ac0 extends org.telegram.ui.Cells.o9 {
 
     @Override // org.telegram.ui.Cells.aa
     public final void I(MessageObject messageObject, int i10, int i11) {
-        org.telegram.ui.in inVar;
+        org.telegram.ui.gn gnVar;
         MessageObject messageObject2;
         ic0 ic0Var = this.w0;
         ac0 ac0Var = ic0Var.e;
@@ -32,8 +32,8 @@ public final class ac0 extends org.telegram.ui.Cells.o9 {
         messagePreviewParams.quoteStart = ac0Var.u;
         messagePreviewParams.quoteEnd = ac0Var.v;
         MessageObject c10 = ic0Var.c(messageObject);
-        if (c10 != null && ((inVar = oc0Var.d.quote) == null || inVar.m || (messageObject2 = inVar.a) == null || messageObject2.getId() != c10.getId())) {
-            oc0Var.d.quote = org.telegram.ui.in.c(c10, i10, i11);
+        if (c10 != null && ((gnVar = oc0Var.d.quote) == null || gnVar.m || (messageObject2 = gnVar.a) == null || messageObject2.getId() != c10.getId())) {
+            oc0Var.d.quote = org.telegram.ui.gn.c(c10, i10, i11);
         }
         oc0Var.b();
         oc0Var.a(true);

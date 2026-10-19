@@ -19,7 +19,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class gw extends ViewGroup {
     public Boolean E;
@@ -100,16 +100,16 @@ public class gw extends ViewGroup {
     }
 
     public final void b() {
-        ci.f3 f3Var;
+        ci.g3 g3Var;
         r5 r5Var = this.w;
-        if (r5Var == null || (f3Var = r5Var.k) == null) {
+        if (r5Var == null || (g3Var = r5Var.k) == null) {
             return;
         }
-        if (f3Var.getLottieAnimation() != null) {
-            f3Var.getLottieAnimation().M(0);
-            f3Var.getLottieAnimation().stop();
-        } else if (f3Var.getAnimation() != null) {
-            f3Var.getAnimation().stop();
+        if (g3Var.getLottieAnimation() != null) {
+            g3Var.getLottieAnimation().M(0);
+            g3Var.getLottieAnimation().stop();
+        } else if (g3Var.getAnimation() != null) {
+            g3Var.getAnimation().stop();
         }
     }
 
@@ -216,9 +216,9 @@ public class gw extends ViewGroup {
             c1Var.setColor(this.J.Q);
             return;
         }
-        ci.f3 f3Var = ((r5) getDrawable()).k;
-        if (f3Var != null) {
-            c1Var.setImageReceiver(f3Var);
+        ci.g3 g3Var = ((r5) getDrawable()).k;
+        if (g3Var != null) {
+            c1Var.setImageReceiver(g3Var);
             c1Var.invalidate();
         }
     }
@@ -243,7 +243,7 @@ public class gw extends ViewGroup {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.G, z10 ? 1.0f : 0.0f);
             this.I = ofFloat;
             ofFloat.addUpdateListener(new l6(this, 20));
-            this.I.addListener(new org.telegram.ui.ho(8, this, z10));
+            this.I.addListener(new org.telegram.ui.fo(8, this, z10));
             this.I.setDuration(ah.x0.d() ? 0L : 350L);
             this.I.setInterpolator(bs.h);
             this.I.start();
@@ -356,13 +356,13 @@ public class gw extends ViewGroup {
 
     @Override // android.view.View
     public final boolean performClick() {
-        ci.f3 f3Var;
+        ci.g3 g3Var;
         r5 r5Var = this.w;
-        if (r5Var != null && (f3Var = r5Var.k) != null) {
-            if (f3Var.getAnimation() != null) {
-                f3Var.getAnimation().y(0L, true, false);
+        if (r5Var != null && (g3Var = r5Var.k) != null) {
+            if (g3Var.getAnimation() != null) {
+                g3Var.getAnimation().y(0L, true, false);
             }
-            f3Var.startAnimation();
+            g3Var.startAnimation();
         }
         return super.performClick();
     }
@@ -491,13 +491,13 @@ public class gw extends ViewGroup {
         this.b = true;
         this.h = false;
         this.n = false;
-        ci.j4 j4Var = new ci.j4(this, context, 8);
-        this.d = j4Var;
-        j4Var.w = false;
+        ci.k4 k4Var = new ci.k4(this, context, 8);
+        this.d = k4Var;
+        k4Var.w = false;
         this.r = Long.valueOf(j10);
         this.c = true;
-        j4Var.setColorFilter(kwVar.getEmojiColorFilter());
-        addView(j4Var);
+        k4Var.setColorFilter(kwVar.getEmojiColorFilter());
+        addView(k4Var);
         int i10 = sg.c1.L;
         fw fwVar = new fw(context, 1, kwVar.v);
         this.f = fwVar;

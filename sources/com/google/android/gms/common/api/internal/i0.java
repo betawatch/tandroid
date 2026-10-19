@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.ReentrantLock;
 import m.s3;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class i0 extends com.google.android.gms.common.api.m implements u0 {
     public final a0.f E;
@@ -25,7 +25,7 @@ public final class i0 extends com.google.android.gms.common.api.m implements u0 
     public final s3 G;
     public final a0.f H;
     public final a8.d I;
-    public final a6.m J;
+    public final qb.c J;
     public final ArrayList K;
     public Integer L;
     public final f1 M;
@@ -51,7 +51,7 @@ public final class i0 extends com.google.android.gms.common.api.m implements u0 
         this.s = 120000L;
         this.v = 5000L;
         this.F = new HashSet();
-        this.J = new a6.m(13);
+        this.J = new qb.c(13);
         this.L = null;
         a6.i iVar = new a6.i(this, 12);
         this.f = context;
@@ -452,7 +452,7 @@ public final class i0 extends com.google.android.gms.common.api.m implements u0 
     }
 
     @Override // com.google.android.gms.common.api.internal.u0
-    public final void o(Bundle bundle) {
+    public final void p(Bundle bundle) {
         while (!this.n.isEmpty()) {
             e eVar = (e) this.n.remove();
             a0.f fVar = this.E;

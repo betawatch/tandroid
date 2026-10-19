@@ -31,7 +31,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class al0 extends FrameLayout {
     public boolean E;
@@ -294,7 +294,7 @@ public final class al0 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         int i10;
-        ci.f3 f3Var;
+        ci.g3 g3Var;
         if (this.w && this.x) {
             float measuredWidth = getMeasuredWidth() >> 1;
             float measuredHeight = getMeasuredHeight() >> 1;
@@ -304,11 +304,11 @@ public final class al0 extends FrameLayout {
             canvas.drawCircle(measuredWidth, measuredHeight, measuredWidth2, (i1Var == null || !i1Var.a) ? cl0Var.H0 : cl0Var.I0);
         }
         r5 r5Var = this.b.e;
-        if (r5Var != null && (f3Var = r5Var.k) != null) {
+        if (r5Var != null && (g3Var = r5Var.k) != null) {
             if (this.y == 0) {
-                f3Var.setRoundRadius(AndroidUtilities.dp(6.0f), 0, 0, AndroidUtilities.dp(6.0f));
+                g3Var.setRoundRadius(AndroidUtilities.dp(6.0f), 0, 0, AndroidUtilities.dp(6.0f));
             } else {
-                f3Var.setRoundRadius(this.w ? AndroidUtilities.dp(6.0f) : 0);
+                g3Var.setRoundRadius(this.w ? AndroidUtilities.dp(6.0f) : 0);
             }
         }
         ah.i1 i1Var2 = this.e;
@@ -449,7 +449,7 @@ public final class al0 extends FrameLayout {
                     this.N = true;
                     this.L = motionEvent.getX();
                     this.M = motionEvent.getY();
-                    if (this.h == 1.0f && !this.H && (i10 = cl0Var.M0) != 3 && i10 != 4 && i10 != 5 && ((bl0Var = cl0Var.g0) == null || bl0Var.j())) {
+                    if (this.h == 1.0f && !this.H && (i10 = cl0Var.M0) != 3 && i10 != 4 && i10 != 5 && ((bl0Var = cl0Var.g0) == null || bl0Var.i())) {
                         AndroidUtilities.runOnUIThread(xk0Var, ViewConfiguration.getLongPressTimeout());
                     }
                 }
@@ -462,7 +462,7 @@ public final class al0 extends FrameLayout {
                     cl0Var.r0 = true;
                     if (System.currentTimeMillis() - cl0Var.s0 > 300) {
                         cl0Var.s0 = System.currentTimeMillis();
-                        cl0Var.g0.l(this, this.e, cl0Var.n0 > 0.8f, false);
+                        cl0Var.g0.o(this, this.e, cl0Var.n0 > 0.8f, false);
                     }
                 }
                 if (!cl0Var.r0 && cl0Var.l0 != null) {

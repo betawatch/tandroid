@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class sn0 extends hm0 {
     public final /* synthetic */ tn0 c;
@@ -55,7 +55,7 @@ public final class sn0 extends hm0 {
     public final void v(s4.b1 b1Var, int i10) {
         boolean z10;
         tn0 tn0Var = this.c;
-        org.telegram.ui.y00 y00Var = tn0Var.J;
+        org.telegram.ui.w00 w00Var = tn0Var.J;
         int i11 = b1Var.f;
         View view = b1Var.a;
         if (i11 == 0) {
@@ -89,9 +89,9 @@ public final class sn0 extends hm0 {
                 int id2 = i7Var.getMessage() == null ? 0 : i7Var.getMessage().getId();
                 i7Var.c(E, true);
                 int id3 = i7Var.getMessage().getId();
-                y00Var.a = i7Var.getMessage().getDialogId();
-                y00Var.b = id3;
-                i7Var.b(tn0Var.I.b(y00Var), id2 == E.getId());
+                w00Var.a = i7Var.getMessage().getDialogId();
+                w00Var.b = id3;
+                i7Var.b(tn0Var.I.b(w00Var), id2 == E.getId());
                 z10 = id2 == E.getId();
                 if (i7Var.O == z12) {
                     return;
@@ -108,9 +108,9 @@ public final class sn0 extends hm0 {
                 int id4 = h7Var.getMessage() == null ? 0 : h7Var.getMessage().getId();
                 h7Var.f(E, true);
                 int id5 = h7Var.getMessage().getId();
-                y00Var.a = h7Var.getMessage().getDialogId();
-                y00Var.b = id5;
-                h7Var.e(tn0Var.I.b(y00Var), id4 == E.getId());
+                w00Var.a = h7Var.getMessage().getDialogId();
+                w00Var.b = id5;
+                h7Var.e(tn0Var.I.b(w00Var), id4 == E.getId());
                 z10 = id4 == E.getId();
                 if (h7Var.d0 == z12) {
                     return;

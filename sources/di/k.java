@@ -6,10 +6,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.ui.Components.gj;
 import org.telegram.ui.Components.km;
 import org.telegram.ui.Components.li;
-import org.telegram.ui.Components.oy0;
+import org.telegram.ui.Components.py0;
 import s4.y0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class k extends s4.s {
     public final /* synthetic */ int Q;
@@ -26,7 +26,7 @@ public final class k extends s4.s {
     public boolean Y0() {
         switch (this.Q) {
             case 3:
-                return ((oy0) this.R).W != null && LocaleController.isRTL;
+                return ((py0) this.R).W != null && LocaleController.isRTL;
             default:
                 return super.Y0();
         }
@@ -79,10 +79,10 @@ public final class k extends s4.s {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(oy0 oy0Var) {
+    public k(py0 py0Var) {
         super(5);
         this.Q = 3;
-        this.R = oy0Var;
+        this.R = py0Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

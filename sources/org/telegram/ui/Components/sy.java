@@ -5,7 +5,7 @@ import java.util.LinkedHashSet;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class sy implements hz {
     public final /* synthetic */ ty a;
@@ -35,7 +35,7 @@ public final class sy implements hz {
         String str = this.a.v;
         yt ytVar = new yt(5, this, str);
         if (Emoji.fullyConsistsOfEmojis(str)) {
-            px0.w3.fetch(UserConfig.selectedAccount, str, new org.telegram.ui.ActionBar.j3(28, linkedHashSet, ytVar));
+            qx0.w3.fetch(UserConfig.selectedAccount, str, new org.telegram.ui.ActionBar.j3(28, linkedHashSet, ytVar));
         } else {
             ytVar.run();
         }

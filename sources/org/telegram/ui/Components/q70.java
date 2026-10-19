@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q70 implements Runnable {
     public final /* synthetic */ int a;
@@ -43,10 +43,10 @@ public final /* synthetic */ class q70 implements Runnable {
                 r70 r70Var2 = this.b;
                 String str3 = this.c;
                 hg.a2 a2Var = r70Var2.e;
-                org.telegram.ui.wt wtVar = r70Var2.n.m0;
+                org.telegram.ui.ut utVar = r70Var2.n.m0;
                 boolean z11 = false;
-                boolean z12 = wtVar != null;
-                if (wtVar != null) {
+                boolean z12 = utVar != null;
+                if (utVar != null) {
                     z11 = true;
                 }
                 a2Var.g(str3, true, z12, true, z11, 0L, false, 0, 0);

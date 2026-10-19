@@ -20,7 +20,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class j4 extends org.telegram.ui.Components.hm0 {
     public TLRPC.WebPage E;
@@ -42,7 +42,7 @@ public final class j4 extends org.telegram.ui.Components.hm0 {
     public final HashMap w = new HashMap();
     public final ArrayList x = new ArrayList();
     public final HashMap y = new HashMap();
-    public final ut0 K = new ut0(this, 11);
+    public final st0 K = new st0(this, 11);
 
     public j4(l4 l4Var, Context context, boolean z10) {
         this.L = l4Var;
@@ -336,9 +336,9 @@ public final class j4 extends org.telegram.ui.Components.hm0 {
                                 u1Var4.loadDataWithBaseURL("https://telegram.org/embed", str2, "text/html", "UTF-8", null);
                                 v1Var.a.setVisibility(0);
                             }
-                            org.telegram.ui.Components.u91 u91Var = v1Var.b;
-                            if (u91Var != null) {
-                                u91Var.setVisibility(4);
+                            org.telegram.ui.Components.v91 v91Var = v1Var.b;
+                            if (v91Var != null) {
+                                v91Var.setVisibility(4);
                                 v1Var.b.g(null, null, null, null, false);
                             }
                         } else {
@@ -350,9 +350,9 @@ public final class j4 extends org.telegram.ui.Components.hm0 {
                                     v1Var.a.stopLoading();
                                     v1Var.a.loadUrl("about:blank");
                                 }
-                                org.telegram.ui.Components.u91 u91Var2 = v1Var.b;
-                                if (u91Var2 != null) {
-                                    u91Var2.setVisibility(0);
+                                org.telegram.ui.Components.v91 v91Var2 = v1Var.b;
+                                if (v91Var2 != null) {
+                                    v91Var2.setVisibility(0);
                                 }
                             } else {
                                 u1 u1Var6 = v1Var.a;
@@ -362,9 +362,9 @@ public final class j4 extends org.telegram.ui.Components.hm0 {
                                     hashMap.put("Referer", ApplicationLoader.applicationContext.getPackageName());
                                     v1Var.a.loadUrl(v1Var.v.url, hashMap);
                                 }
-                                org.telegram.ui.Components.u91 u91Var3 = v1Var.b;
-                                if (u91Var3 != null) {
-                                    u91Var3.setVisibility(4);
+                                org.telegram.ui.Components.v91 v91Var3 = v1Var.b;
+                                if (v91Var3 != null) {
+                                    v91Var3.setVisibility(4);
                                     v1Var.b.g(null, null, null, null, false);
                                 }
                             }
@@ -823,7 +823,7 @@ public final class j4 extends org.telegram.ui.Components.hm0 {
                 c1 c1Var = (c1) b1Var.a;
                 TL_iv.pageBlockAudio pageblockaudio = (TL_iv.pageBlockAudio) pageBlock2;
                 z11 = i11 == 0;
-                d70 d70Var = c1Var.a;
+                b70 b70Var = c1Var.a;
                 c1Var.K = pageblockaudio;
                 MessageObject messageObject = (MessageObject) c1Var.b.s.get(pageblockaudio);
                 c1Var.M = messageObject;
@@ -833,7 +833,7 @@ public final class j4 extends org.telegram.ui.Components.hm0 {
                 c1Var.h = z11;
                 org.telegram.ui.Components.yo0 yo0Var = c1Var.f;
                 int i51 = org.telegram.ui.ActionBar.h6.ud;
-                ((l4) d70Var).getClass();
+                ((l4) b70Var).getClass();
                 int x02 = org.telegram.ui.ActionBar.h6.x0(null, i51, false);
                 int x03 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.vd, false);
                 int i52 = org.telegram.ui.ActionBar.h6.xd;

@@ -11,7 +11,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class x5 extends FrameLayout {
     public final /* synthetic */ z5 a;
@@ -21,14 +21,14 @@ public final class x5 extends FrameLayout {
         super(activity);
         this.a = z5Var;
         setWillNotDraw(false);
-        ai.n5 n5Var = new ai.n5(z5Var, getContext());
-        ai.n5 n5Var2 = new ai.n5(z5Var, getContext());
-        ai.n5 n5Var3 = new ai.n5(z5Var, getContext());
-        n5Var.c(R.drawable.filled_boost_plus, LocaleController.getString(R.string.BoostBtn));
-        n5Var2.c(R.drawable.filled_gift_premium, LocaleController.getString(R.string.GiveawayBtn));
-        n5Var3.c(R.drawable.filled_info, LocaleController.getString(R.string.FeaturesBtn));
+        ai.o5 o5Var = new ai.o5(z5Var, getContext());
+        ai.o5 o5Var2 = new ai.o5(z5Var, getContext());
+        ai.o5 o5Var3 = new ai.o5(z5Var, getContext());
+        o5Var.c(R.drawable.filled_boost_plus, LocaleController.getString(R.string.BoostBtn));
+        o5Var2.c(R.drawable.filled_gift_premium, LocaleController.getString(R.string.GiveawayBtn));
+        o5Var3.c(R.drawable.filled_info, LocaleController.getString(R.string.FeaturesBtn));
         final int i10 = 0;
-        n5Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.v5
+        o5Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.v5
             public final /* synthetic */ x5 b;
 
             {
@@ -76,7 +76,7 @@ public final class x5 extends FrameLayout {
             }
         });
         final int i11 = 1;
-        n5Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.v5
+        o5Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.v5
             public final /* synthetic */ x5 b;
 
             {
@@ -124,7 +124,7 @@ public final class x5 extends FrameLayout {
             }
         });
         final int i12 = 2;
-        n5Var3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.v5
+        o5Var3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.v5
             public final /* synthetic */ x5 b;
 
             {
@@ -173,11 +173,11 @@ public final class x5 extends FrameLayout {
         });
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(0);
-        linearLayout.addView(n5Var, w7.z5.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
+        linearLayout.addView(o5Var, w7.z5.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
         if (MessagesController.getInstance(z5Var.Q).giveawayGiftsPurchaseAvailable && ChatObject.hasAdminRights(z5Var.g0)) {
-            linearLayout.addView(n5Var2, w7.z5.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
+            linearLayout.addView(o5Var2, w7.z5.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
         }
-        linearLayout.addView(n5Var3, w7.z5.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
+        linearLayout.addView(o5Var3, w7.z5.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
         addView(linearLayout, w7.z5.d(-2, -2.0f, 1, 0.0f, 19.0f, 0.0f, 0.0f));
     }
 }

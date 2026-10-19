@@ -1,6 +1,6 @@
 package rg;
 
-import ai.n5;
+import ai.o5;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Paint;
@@ -30,7 +30,7 @@ import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.ja;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class e1 extends j {
     public boolean A0;
@@ -45,7 +45,7 @@ public abstract class e1 extends j {
     public f5 J0;
     public f5 K0;
     public f5 L0;
-    public final n5 q0;
+    public final o5 q0;
     public final x0 r0;
     public final ArrayList s0;
     public final MessageObject.GroupedMessages t0;
@@ -202,9 +202,9 @@ public abstract class e1 extends j {
             groupedMessages.groupId = ((MessageObject) this.s0.get(0)).getGroupId();
             groupedMessages.calculate();
         }
-        n5 n5Var = new n5(r5Var, context);
-        this.q0 = n5Var;
-        addView(n5Var, z5.c(-1.0f, -1));
+        o5 o5Var = new o5(r5Var, context);
+        this.q0 = o5Var;
+        addView(o5Var, z5.c(-1.0f, -1));
         x0 x0Var = new x0(r5Var, context, this.D0);
         this.r0 = x0Var;
         x0Var.setAdapter(new a1(r5Var, context, jaVar, q6Var, z10));
@@ -212,7 +212,7 @@ public abstract class e1 extends j {
         b1Var.O = new c1(r5Var);
         x0Var.setLayoutManager(b1Var);
         x0Var.i(new d1());
-        n5Var.addView(x0Var, z5.c(-1.0f, -1));
+        o5Var.addView(x0Var, z5.c(-1.0f, -1));
         if (q6Var != null && q6Var.g) {
             ig.l0 l0Var = new ig.l0(r5Var, 14);
             hg.o oVar2 = new hg.o(r5Var, 18);
@@ -283,9 +283,9 @@ public abstract class e1 extends j {
     */
     public final void onMeasure(int i10, int i11) {
         boolean z10;
-        n5 n5Var = this.q0;
-        n5Var.measure(i10, i11);
-        setMeasuredDimension(n5Var.getMeasuredWidth(), n5Var.getMeasuredHeight());
+        o5 o5Var = this.q0;
+        o5Var.measure(i10, i11);
+        setMeasuredDimension(o5Var.getMeasuredWidth(), o5Var.getMeasuredHeight());
         k();
         if (this.A0) {
             ArrayList arrayList = this.s0;
@@ -326,25 +326,25 @@ public abstract class e1 extends j {
             }
             View childAt = x0Var.getChildAt(i10);
             boolean z10 = childAt instanceof org.telegram.ui.Cells.u1;
-            n5 n5Var = this.q0;
+            o5 o5Var = this.q0;
             if (z10) {
                 org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) childAt;
                 if (u1Var.getMessageObject() == null || !u1Var.getMessageObject().isRoundVideo() || u1Var.getPhotoImage() == null) {
-                    float x10 = childAt.getX() + n5Var.getX() + u1Var.getBackgroundDrawableLeft() + AndroidUtilities.dp(1.0f);
+                    float x10 = childAt.getX() + o5Var.getX() + u1Var.getBackgroundDrawableLeft() + AndroidUtilities.dp(1.0f);
                     if (this.t0 == null) {
                         x10 += AndroidUtilities.dp(8.0f);
                     }
-                    float x11 = ((childAt.getX() + n5Var.getX()) + u1Var.getBackgroundDrawableRight()) - AndroidUtilities.dp(1.66f);
-                    float dp = AndroidUtilities.dp(2.0f) + childAt.getY() + n5Var.getY() + u1Var.getBackgroundDrawableTop();
-                    y3 = ((childAt.getY() + n5Var.getY()) + u1Var.getBackgroundDrawableBottom()) - AndroidUtilities.dp(1.0f);
+                    float x11 = ((childAt.getX() + o5Var.getX()) + u1Var.getBackgroundDrawableRight()) - AndroidUtilities.dp(1.66f);
+                    float dp = AndroidUtilities.dp(2.0f) + childAt.getY() + o5Var.getY() + u1Var.getBackgroundDrawableTop();
+                    y3 = ((childAt.getY() + o5Var.getY()) + u1Var.getBackgroundDrawableBottom()) - AndroidUtilities.dp(1.0f);
                     f7 = x10;
                     f10 = x11;
                     f11 = dp;
                 } else {
-                    f7 = u1Var.getPhotoImage().getImageX() + u1Var.getX() + n5Var.getX();
-                    f10 = u1Var.getPhotoImage().getImageX2() + u1Var.getX() + n5Var.getX();
-                    f11 = u1Var.getPhotoImage().getImageY() + u1Var.getY() + n5Var.getY();
-                    y3 = u1Var.getPhotoImage().getImageY2() + u1Var.getY() + n5Var.getY();
+                    f7 = u1Var.getPhotoImage().getImageX() + u1Var.getX() + o5Var.getX();
+                    f10 = u1Var.getPhotoImage().getImageX2() + u1Var.getX() + o5Var.getX();
+                    f11 = u1Var.getPhotoImage().getImageY() + u1Var.getY() + o5Var.getY();
+                    y3 = u1Var.getPhotoImage().getImageY2() + u1Var.getY() + o5Var.getY();
                 }
                 f12 = Math.min(Math.min(f12, f7), f10);
                 f15 = Math.max(Math.max(f15, f7), f10);
@@ -353,10 +353,10 @@ public abstract class e1 extends j {
             } else if (childAt instanceof org.telegram.ui.Cells.w0) {
                 org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) childAt;
                 if (w0Var.L()) {
-                    float x12 = w0Var.getX() + n5Var.getX() + w0Var.getBoundsLeft();
-                    float x13 = w0Var.getX() + n5Var.getX() + w0Var.getBoundsRight();
-                    float y10 = w0Var.getY() + n5Var.getY();
-                    float y11 = w0Var.getY() + n5Var.getY() + w0Var.getMeasuredHeight();
+                    float x12 = w0Var.getX() + o5Var.getX() + w0Var.getBoundsLeft();
+                    float x13 = w0Var.getX() + o5Var.getX() + w0Var.getBoundsRight();
+                    float y10 = w0Var.getY() + o5Var.getY();
+                    float y11 = w0Var.getY() + o5Var.getY() + w0Var.getMeasuredHeight();
                     f12 = Math.min(Math.min(f12, x12), x13);
                     f15 = Math.max(Math.max(f15, x12), x13);
                     f14 = Math.min(Math.min(f14, y10), y11);

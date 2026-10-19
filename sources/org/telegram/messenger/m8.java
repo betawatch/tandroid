@@ -1,37 +1,31 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m8 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ TLRPC.TL_messages_stickerSet c;
-    public final /* synthetic */ String d;
-    public final /* synthetic */ Utilities.Callback e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ TLRPC.InputStickerSet h;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ m8(MediaDataController mediaDataController, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, String str, Utilities.Callback callback, boolean z10, TLRPC.InputStickerSet inputStickerSet, int i10) {
-        this.a = i10;
+    public /* synthetic */ m8(MediaDataController mediaDataController, boolean z10, int i10, int i11) {
+        this.a = i11;
         this.b = mediaDataController;
-        this.c = tL_messages_stickerSet;
-        this.d = str;
-        this.e = callback;
-        this.f = z10;
-        this.h = inputStickerSet;
+        this.c = z10;
+        this.d = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$getStickerSet$33(this.c, this.d, this.e, this.f, this.h);
+                this.b.lambda$loadRecents$49(this.c, this.d);
+                break;
+            case 1:
+                this.b.lambda$processLoadedFeaturedStickers$62(this.c, this.d);
                 break;
             default:
-                this.b.lambda$getStickerSet$36(this.c, this.d, this.e, this.f, this.h);
+                this.b.lambda$loadFeaturedStickers$56(this.c, this.d);
                 break;
         }
     }

@@ -1,6 +1,6 @@
 package m;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class z0 extends ki.t1 {
     public final /* synthetic */ a1 c;
@@ -12,12 +12,12 @@ public final class z0 extends ki.t1 {
     }
 
     @Override // ki.t1, m.y0
-    public final void a(int i10) {
+    public final void m(int i10) {
         super/*android.widget.TextView*/.setLastBaselineToBottomHeight(i10);
     }
 
     @Override // ki.t1, m.y0
-    public final void h(int i10) {
+    public final void q(int i10) {
         super/*android.widget.TextView*/.setFirstBaselineToTopHeight(i10);
     }
 }

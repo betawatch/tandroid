@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class y2 extends VideoPlayerHolderBase {
     public final /* synthetic */ z2 a;
@@ -28,10 +28,10 @@ public final class y2 extends VideoPlayerHolderBase {
         z2Var.n.setAlpha(1.0f);
         TL_iv.pageBlockVideo pageblockvideo = z2Var.L;
         if (pageblockvideo != null) {
-            d70 d70Var = z2Var.a;
-            a0.h hVar = d70Var.y;
+            b70 b70Var = z2Var.a;
+            a0.h hVar = b70Var.y;
             long j10 = pageblockvideo.video_id;
-            a3 a2 = a3.a(d70Var.w, z2Var);
+            a3 a2 = a3.a(b70Var.w, z2Var);
             z2Var.c(a2);
             hVar.k(a2, j10);
         }

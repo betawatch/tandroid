@@ -16,7 +16,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class d0 {
     public static ng.i a;
@@ -33,7 +33,7 @@ public abstract class d0 {
             ng.f fVar = new ng.f(iVar2);
             iVar2.e = launchActivity.getSharedPreferences("floating_debug", 0);
             iVar2.F = ViewConfiguration.get(launchActivity).getScaledTouchSlop();
-            k0.b bVar = new k0.b(launchActivity, fVar);
+            le.b bVar = new le.b(launchActivity, fVar);
             ((GestureDetector) bVar.b).setIsLongpressEnabled(false);
             ah.v vVar = new ah.v(iVar2, launchActivity, bVar, 5);
             iVar2.a = vVar;
@@ -70,7 +70,7 @@ public abstract class d0 {
             iVar3.a.setVisibility(0);
             o1.k kVar = new o1.k(new o1.j(0.0f));
             kVar.u = org.telegram.ui.Cells.c1.l(1000.0f, 750.0f, 0.75f);
-            kVar.b(new ci.k8(2, iVar3));
+            kVar.b(new ci.l8(2, iVar3));
             kVar.h();
         } else {
             iVar.getClass();

@@ -20,22 +20,22 @@ import org.telegram.ui.Components.o5;
 import org.telegram.ui.Components.r5;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public abstract class r4 {
-    public static void a(int i10, long j10, org.telegram.ui.web.s sVar) {
+    public static void a(int i10, long j10, org.telegram.ui.web.r rVar) {
         TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(j10));
         TLRPC.UserFull userFull = MessagesController.getInstance(i10).getUserFull(j10);
         if (userFull == null) {
-            MessagesController.getInstance(i10).loadFullUser(user, 0, true, new g4(sVar, i10, user, 0));
+            MessagesController.getInstance(i10).loadFullUser(user, 0, true, new g4(rVar, i10, user, 0));
         } else {
-            b(i10, user, userFull, sVar);
+            b(i10, user, userFull, rVar);
         }
     }
 
-    public static void b(final int i10, final TLRPC.User user, final TLRPC.UserFull userFull, final org.telegram.ui.web.s sVar) {
+    public static void b(final int i10, final TLRPC.User user, final TLRPC.UserFull userFull, final org.telegram.ui.web.r rVar) {
         if (userFull.bot_can_manage_emoji_status) {
-            sVar.run(Boolean.FALSE, "allowed");
+            rVar.run(Boolean.FALSE, "allowed");
             return;
         }
         Context findActivity = AndroidUtilities.findActivity(LaunchActivity.H1);
@@ -60,14 +60,14 @@ public abstract class r4 {
                 boolean isPremium = UserConfig.getInstance(i12).isPremium();
                 boolean[] zArr3 = zArr2;
                 boolean[] zArr4 = zArr;
-                org.telegram.ui.web.s sVar2 = sVar;
+                org.telegram.ui.web.r rVar2 = rVar;
                 if (!isPremium) {
                     new sg.y0((org.telegram.ui.ActionBar.n2) new o4(null), 12, false).show();
                     if (zArr3[0] || zArr4[0]) {
                         return;
                     }
                     zArr4[0] = true;
-                    sVar2.run(Boolean.TRUE, "cancelled");
+                    rVar2.run(Boolean.TRUE, "cancelled");
                     return;
                 }
                 zArr3[0] = true;
@@ -76,13 +76,13 @@ public abstract class r4 {
                 TL_bots.toggleUserEmojiStatusPermission toggleuseremojistatuspermission = new TL_bots.toggleUserEmojiStatusPermission();
                 toggleuseremojistatuspermission.bot = MessagesController.getInstance(i12).getInputUser(user2);
                 toggleuseremojistatuspermission.enabled = true;
-                ConnectionsManager.getInstance(i12).sendRequest(toggleuseremojistatuspermission, new ai.k2(zArr4, sVar2, userFull, 8));
+                ConnectionsManager.getInstance(i12).sendRequest(toggleuseremojistatuspermission, new ai.j2(zArr4, rVar2, userFull, 8));
             }
         });
         alertDialog$Builder.h(LocaleController.getString(R.string.BotEmojiStatusPermissionDecline), null);
         org.telegram.ui.ActionBar.b2 b2Var2 = alertDialog$Builder.a;
         b2Var2.show();
-        b2Var2.setOnDismissListener(new l4(zArr2, zArr, context, i10, user, sVar));
+        b2Var2.setOnDismissListener(new l4(zArr2, zArr, context, i10, user, rVar));
     }
 
     public static void c() {
@@ -109,15 +109,15 @@ public abstract class r4 {
         context.getSharedPreferences("botemojistatus_" + i10, 0).edit().putBoolean("requested_" + j10, true).apply();
     }
 
-    public static void f(final int i10, final TLRPC.User user, long j10, final int i11, final org.telegram.ui.web.s sVar) {
+    public static void f(final int i10, final TLRPC.User user, long j10, final int i11, final org.telegram.ui.web.r rVar) {
         TLRPC.Document f7 = r5.f(i10, j10);
         if (f7 != null) {
-            g(i10, user, f7, i11, new h4(sVar, f7, 1));
+            g(i10, user, f7, i11, new h4(rVar, f7, 1));
         } else {
             r5.h(i10).b(j10, new o5() { // from class: gi.i4
                 @Override // org.telegram.ui.Components.o5
                 public final void a(TLRPC.Document document) {
-                    AndroidUtilities.runOnUIThread(new m4(i10, user, document, i11, sVar));
+                    AndroidUtilities.runOnUIThread(new m4(i10, user, document, i11, rVar));
                 }
             });
         }

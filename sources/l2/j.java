@@ -1,6 +1,6 @@
 package l2;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class j {
     public final v2.e a;
@@ -20,8 +20,8 @@ public final class j {
     }
 
     public final j a(long j10, m2.m mVar) {
-        long o10;
-        long o11;
+        long p5;
+        long p9;
         i c10 = this.b.c();
         i c11 = mVar.c();
         if (c10 == null) {
@@ -44,19 +44,19 @@ public final class j {
         long a10 = c11.a(u11);
         long j13 = this.f;
         if (d == a10) {
-            o10 = j11 - u11;
+            p5 = j11 - u11;
         } else {
             if (d < a10) {
                 throw new u2.b();
             }
             if (a10 < a2) {
-                o11 = j13 - (c11.o(a2, j10) - u10);
-                return new j(j10, mVar, this.c, this.a, o11, c11);
+                p9 = j13 - (c11.p(a2, j10) - u10);
+                return new j(j10, mVar, this.c, this.a, p9, c11);
             }
-            o10 = c10.o(a10, j10) - u11;
+            p5 = c10.p(a10, j10) - u11;
         }
-        o11 = o10 + j13;
-        return new j(j10, mVar, this.c, this.a, o11, c11);
+        p9 = p5 + j13;
+        return new j(j10, mVar, this.c, this.a, p9, c11);
     }
 
     public final long b(long j10) {
@@ -65,7 +65,7 @@ public final class j {
         long j11 = this.e;
         long e = iVar.e(j11, j10) + this.f;
         iVar.getClass();
-        return (iVar.x(j11, j10) + e) - 1;
+        return (iVar.y(j11, j10) + e) - 1;
     }
 
     public final long c() {

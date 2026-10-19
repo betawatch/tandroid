@@ -1,30 +1,83 @@
 package ai;
 
-import org.telegram.messenger.MessagesController;
+import android.app.Activity;
+import java.io.Serializable;
+import java.util.HashSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.bz;
+import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.ui.qt;
+import org.telegram.ui.to;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i4 implements Runnable {
+public final /* synthetic */ class i4 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k7 b;
-    public final /* synthetic */ TLRPC.TL_payments_paymentResult c;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ i4(k7 k7Var, TLRPC.TL_payments_paymentResult tL_payments_paymentResult, int i10) {
-        this.a = i10;
-        this.b = k7Var;
-        this.c = tL_payments_paymentResult;
+    public /* synthetic */ i4(ei.t1 t1Var, boolean z10, TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults, String str) {
+        this.a = 1;
+        this.c = t1Var;
+        this.b = z10;
+        this.d = tL_messages_getInlineBotResults;
+        this.e = str;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                MessagesController.getInstance(this.b.currentAccount).lambda$processUpdates$377(this.c.updates, false);
+                AndroidUtilities.runOnUIThread(new p4((l7) this.c, tL_error, (Utilities.Callback) this.d, (TwoStepVerificationActivity) this.e, this.b, tLObject, 0));
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new ei.s1((ei.t1) this.c, tLObject, this.b, (TLRPC.TL_messages_getInlineBotResults) this.d, (String) this.e, 0));
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new p4((org.telegram.ui.ie) this.c, tL_error, (TwoStepVerificationActivity) this.e, (Activity) this.d, this.b, tLObject));
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new ei.s1(this.c, this.d, tLObject, this.e, this.b, 14));
+                break;
+            case 4:
+                AndroidUtilities.runOnUIThread(new p4((to) this.c, (TLRPC.TL_channels_toggleUsername) this.d, tLObject, (TLRPC.TL_username) this.e, this.b, tL_error));
+                break;
+            case 5:
+                AndroidUtilities.runOnUIThread(new ei.s1((bz) this.c, (String) this.d, this.b, (String) this.e, tLObject));
                 break;
             default:
-                MessagesController.getInstance(this.b.currentAccount).lambda$processUpdates$377(this.c.updates, false);
+                AndroidUtilities.runOnUIThread(new p4((qt) this.c, tLObject, (ei.d) this.d, this.b, (HashSet) this.e, tL_error));
                 break;
         }
+    }
+
+    public /* synthetic */ i4(Object obj, Object obj2, Object obj3, boolean z10, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.b = z10;
+    }
+
+    public /* synthetic */ i4(Object obj, Object obj2, boolean z10, Serializable serializable, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.b = z10;
+        this.e = serializable;
+    }
+
+    public /* synthetic */ i4(org.telegram.ui.ie ieVar, TwoStepVerificationActivity twoStepVerificationActivity, Activity activity, boolean z10) {
+        this.a = 2;
+        this.c = ieVar;
+        this.e = twoStepVerificationActivity;
+        this.d = activity;
+        this.b = z10;
     }
 }

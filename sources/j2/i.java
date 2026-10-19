@@ -40,6 +40,7 @@ import e9.l0;
 import g2.d0;
 import g2.x;
 import hi.t;
+import i2.n;
 import j$.util.Objects;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -50,12 +51,11 @@ import java.util.Iterator;
 import java.util.UUID;
 import java.util.concurrent.Executor;
 import k2.y;
-import r2.n;
 import r2.p;
 import u2.c0;
 import u2.g0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class i implements b {
     public y0 E;
@@ -104,9 +104,9 @@ public final class i implements b {
     }
 
     @Override // j2.b
-    public final void a(i2.e eVar) {
-        this.O += eVar.g;
-        this.P += eVar.e;
+    public final void a(i2.f fVar) {
+        this.O += fVar.g;
+        this.P += fVar.e;
     }
 
     @Override // j2.b
@@ -224,14 +224,14 @@ public final class i implements b {
             }
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (bVar.A(0)) {
+        if (bVar.B(0)) {
             a aVar2 = (a) ((SparseArray) bVar.c).get(0);
             aVar2.getClass();
             if (this.v != null) {
                 r(aVar2.b, aVar2.d);
             }
         }
-        if (bVar.A(2) && this.v != null) {
+        if (bVar.B(2) && this.v != null) {
             l0 listIterator = f1Var.h0().a.listIterator(0);
             loop2: while (true) {
                 if (!listIterator.hasNext()) {
@@ -272,7 +272,7 @@ public final class i implements b {
                 builder.setDrmType(i24);
             }
         }
-        if (bVar.A(1011)) {
+        if (bVar.B(1011)) {
             this.Q++;
         }
         y0 y0Var = this.E;
@@ -291,10 +291,10 @@ public final class i implements b {
             if (i28 == 1001) {
                 u0Var = new u0(20, 0);
             } else {
-                if (y0Var instanceof i2.m) {
-                    i2.m mVar = (i2.m) y0Var;
-                    z10 = mVar.s == 1;
-                    i10 = mVar.y;
+                if (y0Var instanceof n) {
+                    n nVar = (n) y0Var;
+                    z10 = nVar.s == 1;
+                    i10 = nVar.y;
                 } else {
                     z10 = false;
                     i10 = 0;
@@ -319,8 +319,8 @@ public final class i implements b {
                             u0Var = new u0(13, m0.A(((p) cause).d));
                         } else {
                             i15 = 13;
-                            if (cause instanceof n) {
-                                u0Var = new u0(14, ((n) cause).a);
+                            if (cause instanceof r2.n) {
+                                u0Var = new u0(14, ((r2.n) cause).a);
                             } else if (cause instanceof OutOfMemoryError) {
                                 u0Var = new u0(14, 0);
                             } else if (cause instanceof k2.w) {
@@ -474,7 +474,7 @@ public final class i implements b {
             this.E = null;
             i20 = 2;
         }
-        if (bVar.A(i20)) {
+        if (bVar.B(i20)) {
             v1 h02 = f1Var.h0();
             boolean a10 = h02.a(i20);
             boolean a11 = h02.a(i19);
@@ -582,7 +582,7 @@ public final class i implements b {
                         }
                         if (f1Var.W() == null) {
                             this.N = false;
-                        } else if (bVar.A(i21)) {
+                        } else if (bVar.B(i21)) {
                             this.N = true;
                         }
                         int d = f1Var.d();
@@ -611,7 +611,7 @@ public final class i implements b {
                                         this.R = z11;
                                         this.b.execute(new t(14, this, new PlaybackStateEvent.Builder().setState(this.x).setTimeSinceCreatedMillis(elapsedRealtime - this.e).build()));
                                     }
-                                    if (bVar.A(1028)) {
+                                    if (bVar.B(1028)) {
                                         return;
                                     }
                                     h hVar2 = this.c;
@@ -633,7 +633,7 @@ public final class i implements b {
                         z11 = true;
                         if (this.x != i23) {
                         }
-                        if (bVar.A(1028)) {
+                        if (bVar.B(1028)) {
                         }
                     }
                 }
@@ -671,7 +671,7 @@ public final class i implements b {
                 z11 = true;
                 if (this.x != i23) {
                 }
-                if (bVar.A(1028)) {
+                if (bVar.B(1028)) {
                 }
             }
         }
@@ -697,7 +697,7 @@ public final class i implements b {
         z11 = true;
         if (this.x != i23) {
         }
-        if (bVar.A(1028)) {
+        if (bVar.B(1028)) {
         }
     }
 

@@ -6,7 +6,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qc0 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -14,8 +14,8 @@ public final /* synthetic */ class qc0 implements View.OnClickListener {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ qc0(org.telegram.ui.ct ctVar, ArrayList arrayList, boolean z10) {
-        this.c = ctVar;
+    public /* synthetic */ qc0(org.telegram.ui.at atVar, ArrayList arrayList, boolean z10) {
+        this.c = atVar;
         this.d = arrayList;
         this.b = z10;
     }
@@ -37,25 +37,25 @@ public final /* synthetic */ class qc0 implements View.OnClickListener {
                 }
                 break;
             default:
-                org.telegram.ui.ct ctVar = (org.telegram.ui.ct) this.c;
+                org.telegram.ui.at atVar = (org.telegram.ui.at) this.c;
                 ArrayList arrayList = (ArrayList) this.d;
-                org.telegram.ui.gt gtVar = ctVar.a;
-                if (gtVar.w != null && gtVar.l != null) {
+                org.telegram.ui.et etVar = atVar.a;
+                if (etVar.w != null && etVar.l != null) {
                     int intValue = ((Integer) arrayList.get(((Integer) view.getTag()).intValue())).intValue();
                     if (intValue == 0) {
-                        gtVar.l.C(gtVar.W);
+                        etVar.l.C(etVar.W);
                     } else if (intValue == 1) {
-                        gtVar.l.v(gtVar.W);
+                        etVar.l.v(etVar.W);
                     } else if (intValue == 2) {
-                        gtVar.l.v(null);
+                        etVar.l.v(null);
                     } else if (intValue == 3) {
-                        gtVar.l.H(gtVar.W);
+                        etVar.l.H(etVar.W);
                     } else if (intValue == 4) {
-                        gtVar.l.p(gtVar.W);
+                        etVar.l.p(etVar.W);
                     } else if (intValue == 5) {
-                        MediaDataController.getInstance(gtVar.r).addRecentSticker(2, gtVar.b0, gtVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
+                        MediaDataController.getInstance(etVar.r).addRecentSticker(2, etVar.b0, etVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
                     }
-                    gtVar.p();
+                    etVar.p();
                     break;
                 }
                 break;

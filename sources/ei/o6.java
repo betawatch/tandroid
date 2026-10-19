@@ -1,12 +1,12 @@
 package ei;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.a81;
 import org.telegram.ui.Components.b00;
+import org.telegram.ui.Components.b81;
 import org.telegram.ui.Components.e00;
-import org.telegram.ui.Components.p71;
+import org.telegram.ui.Components.q71;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o6 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,18 +32,18 @@ public final /* synthetic */ class o6 implements Runnable {
             case 3:
                 r6 r6Var = this.b;
                 o6 o6Var = r6Var.K;
-                a81 a81Var = r6Var.e;
-                if (a81Var != null && r6Var.F != null) {
-                    long n10 = a81Var.n();
+                b81 b81Var = r6Var.e;
+                if (b81Var != null && r6Var.F != null) {
+                    long n10 = b81Var.n();
                     if (r6Var.getDuration() > 1) {
                         float duration = n10 / r6Var.getDuration();
                         if (!r6Var.F.m1) {
                             a8 a8Var = r6Var.d;
                             if ((duration < a8Var.Z || duration > a8Var.a0) && System.currentTimeMillis() - r6Var.J > 500) {
                                 r6Var.J = System.currentTimeMillis();
-                                a81 a81Var2 = r6Var.e;
+                                b81 b81Var2 = r6Var.e;
                                 long duration2 = (long) (r6Var.d.Z * r6Var.getDuration());
-                                a81Var2.L(duration2, false);
+                                b81Var2.L(duration2, false);
                                 r6Var.w(true);
                                 r6Var.y(true);
                                 n10 = duration2;
@@ -76,9 +76,9 @@ public final /* synthetic */ class o6 implements Runnable {
                         float f11 = a8Var2.C;
                         if ((f7 < f10 * f11 || f7 > a8Var2.F * f11) && System.currentTimeMillis() - r6Var2.J > 500) {
                             r6Var2.J = System.currentTimeMillis();
-                            a81 a81Var3 = r6Var2.y;
+                            b81 b81Var3 = r6Var2.y;
                             long j10 = (long) (r6Var2.d.E * r3.C);
-                            a81Var3.L(j10, false);
+                            b81Var3.L(j10, false);
                             n11 = j10;
                         }
                     }
@@ -102,9 +102,9 @@ public final /* synthetic */ class o6 implements Runnable {
                         float f14 = a8Var3.q0;
                         if ((f12 < f13 * f14 || f12 > a8Var3.t0 * f14) && System.currentTimeMillis() - r6Var3.J > 500) {
                             r6Var3.J = System.currentTimeMillis();
-                            a81 a81Var4 = r6Var3.x;
+                            b81 b81Var4 = r6Var3.x;
                             long j11 = (long) (r6Var3.d.s0 * r3.q0);
-                            a81Var4.L(j11, false);
+                            b81Var4.L(j11, false);
                             r6Var3.w(true);
                             n12 = j11;
                         }
@@ -119,13 +119,13 @@ public final /* synthetic */ class o6 implements Runnable {
                 break;
             default:
                 r6 r6Var4 = this.b;
-                p71 p71Var = r6Var4.n;
-                if (p71Var != null) {
-                    e00 e00Var = p71Var.b;
+                q71 q71Var = r6Var4.n;
+                if (q71Var != null) {
+                    e00 e00Var = q71Var.b;
                     if (e00Var != null) {
                         e00Var.postRunnable(new b00(e00Var, 0));
                     }
-                    p71Var.a = null;
+                    q71Var.a = null;
                     r6Var4.removeView(r6Var4.n);
                     r6Var4.n = null;
                     break;

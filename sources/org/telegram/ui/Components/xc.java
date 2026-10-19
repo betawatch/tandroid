@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class xc {
     public final org.telegram.ui.ActionBar.n2 a;
@@ -47,7 +47,7 @@ public final class xc {
             this.c = n2Var != null ? n2Var.getResourceProvider() : null;
         } else {
             this.a = null;
-            ci.p4 currentPeerView = n2Var.getLastStoryViewer().n0.getCurrentPeerView();
+            ci.q4 currentPeerView = n2Var.getLastStoryViewer().n0.getCurrentPeerView();
             this.b = currentPeerView != null ? currentPeerView.c1 : null;
             this.c = n2Var.getLastStoryViewer().y;
         }
@@ -57,14 +57,14 @@ public final class xc {
         return z(n2Var, z10 ? 3 : 4, 0, d6Var);
     }
 
-    public static qc B(org.telegram.ui.ActionBar.n2 n2Var, boolean z10, ai.cb cbVar, org.telegram.ui.ue ueVar, org.telegram.ui.ActionBar.d6 d6Var) {
+    public static qc B(org.telegram.ui.ActionBar.n2 n2Var, boolean z10, ai.cb cbVar, org.telegram.ui.se seVar, org.telegram.ui.ActionBar.d6 d6Var) {
         yb ybVar = new yb(n2Var.getParentActivity(), d6Var);
         ybVar.c(z10 ? R.raw.ic_pin : R.raw.ic_unpin, 28, 28, "Pin", "Line");
         ybVar.b.setText(LocaleController.getString(z10 ? "MessagePinnedHint" : "MessageUnpinnedHint", z10 ? R.string.MessagePinnedHint : R.string.MessageUnpinnedHint));
         if (!z10) {
             oc ocVar = new oc(n2Var.getParentActivity(), d6Var, true);
             ocVar.a = cbVar;
-            ocVar.b = ueVar;
+            ocVar.b = seVar;
             ybVar.setButton(ocVar);
         }
         return qc.g(n2Var, ybVar, z10 ? 1500 : 5000);
@@ -192,28 +192,28 @@ public final class xc {
         yb ybVar;
         SpannableStringBuilder replaceTags;
         qc g10;
-        int i15 = 1;
         if (!UserConfig.getInstance(UserConfig.selectedAccount).isPremium() || n2Var == null || i10 > 1 || j10 != UserConfig.getInstance(UserConfig.selectedAccount).clientUserId || z10) {
             ybVar = new yb(i12, i13, context, n2Var != null ? n2Var.getResourceProvider() : null);
         } else {
             ybVar = new bc(i11, n2Var);
         }
         yb ybVar2 = ybVar;
+        int i15 = 0;
         boolean z11 = i0Var != null;
-        org.telegram.ui.gh ghVar = i0Var != null ? new org.telegram.ui.gh(27, new boolean[]{false}, i0Var) : null;
+        org.telegram.ui.eh ehVar = i0Var != null ? new org.telegram.ui.eh(27, new boolean[]{false}, i0Var) : null;
+        int i16 = 2;
         if (i10 > 1) {
             replaceTags = i11 <= 1 ? AndroidUtilities.replaceTags(LocaleController.formatPluralString("FwdMessageToManyChats", i10, new Object[0])) : AndroidUtilities.replaceTags(LocaleController.formatPluralString("FwdMessagesToManyChats", i10, new Object[0]));
             ybVar2.c(R.raw.forward, 30, 30, new String[0]);
         } else if (j10 == UserConfig.getInstance(UserConfig.selectedAccount).clientUserId) {
-            int i16 = 29;
             if (i11 <= 1) {
-                replaceTags = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.FwdMessageToSavedMessages), -1, 2, z10 ? new sc(i15) : new ah.j(i16));
+                replaceTags = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.FwdMessageToSavedMessages), -1, 2, z10 ? new rc(i16) : new rc(i15));
             } else {
-                replaceTags = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.FwdMessagesToSavedMessages), -1, 2, new ah.j(i16));
+                replaceTags = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.FwdMessagesToSavedMessages), -1, 2, new rc(i15));
             }
             ybVar2.c(R.raw.saved_messages, 30, 30, new String[0]);
         } else {
-            a3.i0 i0Var2 = new a3.i0(ghVar, n2Var, j10, 19);
+            a3.i0 i0Var2 = new a3.i0(ehVar, n2Var, j10, 19);
             if (DialogObject.isChatDialog(j10)) {
                 TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-j10));
                 replaceTags = i11 <= 1 ? n2Var != null ? AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.FwdMessageToGroup, chat.title), -1, 2, i0Var2) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.FwdMessageToGroup, chat.title)) : n2Var != null ? AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.FwdMessagesToGroup, chat.title), -1, 2, i0Var2) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.FwdMessagesToGroup, chat.title));
@@ -233,10 +233,10 @@ public final class xc {
         if (z11) {
             oc ocVar = new oc(ybVar2.getContext(), n2Var != null ? n2Var.getResourceProvider() : null, true, true);
             ocVar.a = null;
-            ocVar.b = ghVar;
+            ocVar.b = ehVar;
             ybVar2.setButton(ocVar);
         }
-        ybVar2.postDelayed(new rc(ybVar2, 1), 300);
+        ybVar2.postDelayed(new sc(ybVar2, 1), 300);
         if (frameLayout != null) {
             g10 = qc.f(frameLayout, ybVar2, i14);
         } else {
@@ -273,7 +273,7 @@ public final class xc {
                 i13 = -1;
                 ybVar.b.setText(spannableStringBuilder);
                 if (i13 > 0) {
-                    ybVar.postDelayed(new rc(ybVar, 0), i13);
+                    ybVar.postDelayed(new sc(ybVar, 0), i13);
                 }
                 return qc.f(frameLayout, ybVar, 1500);
             }
@@ -417,8 +417,8 @@ public final class xc {
     public final qc L(Drawable drawable, CharSequence charSequence) {
         yb ybVar = new yb(W(), this.c);
         ybVar.a.setImageDrawable(drawable);
-        if (drawable instanceof org.telegram.ui.fp0) {
-            ((org.telegram.ui.fp0) drawable).e(ybVar.a);
+        if (drawable instanceof org.telegram.ui.dp0) {
+            ((org.telegram.ui.dp0) drawable).e(ybVar.a);
         }
         ybVar.b.setText(charSequence);
         ybVar.b.setSingleLine(false);
@@ -757,7 +757,7 @@ public final class xc {
         if (UserConfig.getInstance(UserConfig.selectedAccount).isPremium() && (n2Var = this.a) != null) {
             bc bcVar = new bc(i10, n2Var);
             if (j10 == UserConfig.getInstance(UserConfig.selectedAccount).clientUserId) {
-                SpannableStringBuilder replaceSingleTag = i10 <= 1 ? AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.FwdMessageToSavedMessages), -1, 2, new ah.j(29)) : AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.FwdMessagesToSavedMessages), -1, 2, new ah.j(29));
+                SpannableStringBuilder replaceSingleTag = i10 <= 1 ? AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.FwdMessageToSavedMessages), -1, 2, new rc(0)) : AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.FwdMessagesToSavedMessages), -1, 2, new rc(0));
                 bcVar.c(R.raw.saved_messages, 36, 36, new String[0]);
                 bcVar.b.setText(replaceSingleTag);
                 bcVar.b.setSingleLine(false);
@@ -869,7 +869,7 @@ public final class xc {
                 ca0Var.b = ((wb) ubVar).d;
             }
         }
-        MediaDataController.getInstance(UserConfig.selectedAccount).getStickerSet(inputStickerSet, null, false, new ai.c4(i10, b10, currentTimeMillis));
+        MediaDataController.getInstance(UserConfig.selectedAccount).getStickerSet(inputStickerSet, null, false, new ai.k4(i10, b10, currentTimeMillis));
         return b10;
     }
 
@@ -907,7 +907,7 @@ public final class xc {
         ybVar.d(vcVar.a, vcVar.b);
         TextView textView = ybVar.b;
         String str = wcVar.a;
-        textView.setText(AndroidUtilities.replaceSingleTag(wcVar.c ? LocaleController.formatPluralString(str, i10, new Object[0]) : LocaleController.getString(str, wcVar.b), new sc(0)));
+        textView.setText(AndroidUtilities.replaceSingleTag(wcVar.c ? LocaleController.formatPluralString(str, i10, new Object[0]) : LocaleController.getString(str, wcVar.b), new rc(1)));
         int i13 = wcVar.d.c;
         if (i13 != 0) {
             ybVar.setIconPaddingBottom(i13);

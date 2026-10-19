@@ -7,15 +7,15 @@ import android.content.Intent;
 import android.os.CancellationSignal;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import androidx.credentials.playservices.controllers.identityauth.HiddenActivity;
-import ci.u7;
+import ci.v7;
 import g7.g;
 import java.util.concurrent.Executor;
 import td.l;
 import v0.f;
 import v0.i;
-import w7.a8;
+import w7.z7;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements l {
     public final /* synthetic */ int a;
@@ -69,11 +69,11 @@ public final /* synthetic */ class b implements l {
                         }
                     }
                     if (gVar != null) {
-                        v0.c a2 = a8.a(gVar.a, gVar.b);
+                        v0.c a2 = z7.a(gVar.a, gVar.b);
                         if (a2 instanceof f) {
                             CredentialProviderPlayServicesImpl.Companion.getClass();
                             if (!h.a(cancellationSignal)) {
-                                executor.execute(new u7(14, iVar, (f) a2));
+                                executor.execute(new v7(14, iVar, (f) a2));
                             }
                         }
                     }

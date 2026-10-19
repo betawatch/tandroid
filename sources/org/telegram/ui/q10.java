@@ -1,87 +1,78 @@
 package org.telegram.ui;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class q10 extends s4.v {
-    public final /* synthetic */ FiltersSetupActivity d;
+public final class q10 implements org.telegram.ui.Components.bp0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ tg.g b;
 
-    public q10(FiltersSetupActivity filtersSetupActivity) {
-        this.d = filtersSetupActivity;
+    public /* synthetic */ q10(tg.g gVar, int i10) {
+        this.a = i10;
+        this.b = gVar;
     }
 
-    @Override // s4.v
-    public final void a(RecyclerView recyclerView, s4.b1 b1Var) {
-        super.a(recyclerView, b1Var);
-        View view = b1Var.a;
-        view.setPressed(false);
-        view.setTag(R.id.dragging, null);
-    }
-
-    @Override // s4.v
-    public final int e(RecyclerView recyclerView, s4.b1 b1Var) {
-        return b1Var.f != 2 ? s4.v.l(0, 0) : s4.v.l(3, 0);
-    }
-
-    @Override // s4.v
-    public final boolean k() {
-        return true;
-    }
-
-    @Override // s4.v
-    public final boolean n(RecyclerView recyclerView, s4.b1 b1Var, s4.b1 b1Var2) {
-        MessagesController.DialogFilter dialogFilter;
-        MessagesController.DialogFilter dialogFilter2;
-        if (b1Var.f != b1Var2.f) {
-            return false;
-        }
-        n10 n10Var = this.d.b;
-        int b10 = b1Var.b();
-        int b11 = b1Var2.b();
-        FiltersSetupActivity filtersSetupActivity = n10Var.e;
-        int i10 = filtersSetupActivity.r;
-        ArrayList arrayList = filtersSetupActivity.n;
-        if (b10 >= i10 && b11 >= i10) {
-            l10 l10Var = (l10) arrayList.get(b10);
-            l10 l10Var2 = (l10) arrayList.get(b11);
-            if (l10Var != null && l10Var2 != null && (dialogFilter = l10Var.d) != null && (dialogFilter2 = l10Var2.d) != null) {
-                int i11 = dialogFilter.order;
-                dialogFilter.order = dialogFilter2.order;
-                dialogFilter2.order = i11;
-                ArrayList<MessagesController.DialogFilter> arrayList2 = filtersSetupActivity.getMessagesController().dialogFilters;
-                try {
-                    arrayList2.set(b10 - filtersSetupActivity.r, l10Var2.d);
-                    arrayList2.set(b11 - filtersSetupActivity.r, l10Var.d);
-                } catch (Exception unused) {
+    @Override // org.telegram.ui.Components.bp0
+    public final void L(float f7, boolean z10) {
+        switch (this.a) {
+            case 0:
+                tg.o oVar = this.b.c;
+                if (oVar != null) {
+                    oVar.B = f7 * 2.0f;
+                    break;
                 }
-                filtersSetupActivity.e = true;
-                filtersSetupActivity.Z(true);
-            }
+                break;
+            case 1:
+                tg.o oVar2 = this.b.c;
+                if (oVar2 != null) {
+                    oVar2.C = f7 * 2.0f;
+                    break;
+                }
+                break;
+            case 2:
+                tg.o oVar3 = this.b.c;
+                if (oVar3 != null) {
+                    oVar3.D = f7;
+                    break;
+                }
+                break;
+            default:
+                tg.o oVar4 = this.b.c;
+                if (oVar4 != null) {
+                    oVar4.G = f7 * 2.0f;
+                    break;
+                }
+                break;
         }
-        return true;
     }
 
-    @Override // s4.v
-    public final void p(s4.b1 b1Var, int i10) {
-        if (i10 != 0) {
-            this.d.a.I0(false);
-            b1Var.a.setPressed(true);
-        } else {
-            AndroidUtilities.cancelRunOnUIThread(new fz(this, 5));
-            AndroidUtilities.runOnUIThread(new fz(this, 5), 320L);
+    @Override // org.telegram.ui.Components.bp0
+    public final /* synthetic */ int Y() {
+        switch (this.a) {
         }
-        if (b1Var != null) {
-            b1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
-        }
+        return 0;
     }
 
-    @Override // s4.v
-    public final void q(s4.b1 b1Var) {
+    @Override // org.telegram.ui.Components.bp0
+    public final /* synthetic */ CharSequence getContentDescription() {
+        switch (this.a) {
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.bp0
+    public final void v() {
+        int i10 = this.a;
+    }
+
+    private final void a() {
+    }
+
+    private final void b() {
+    }
+
+    private final void c() {
+    }
+
+    private final void d() {
     }
 }

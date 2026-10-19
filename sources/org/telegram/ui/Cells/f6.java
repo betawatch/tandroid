@@ -7,13 +7,13 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.qf;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.pf;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class f6 {
     public final int a;
@@ -46,8 +46,8 @@ public final class f6 {
         messagesStorage.putMessages(messages_messages, -j10, 3, 0, false, 0, 0L);
         if (i10 == f6Var.e && !messages_messages.messages.isEmpty()) {
             arrayList2.clear();
-            Collections.sort(arrayList, Comparator$-CC.comparingInt(new ai.u8(13)));
-            TLRPC.Message message = (TLRPC.Message) i2.d.h(1, messages_messages.messages);
+            Collections.sort(arrayList, Comparator$-CC.comparingInt(new ai.v8(13)));
+            TLRPC.Message message = (TLRPC.Message) i2.e.h(1, messages_messages.messages);
             long j11 = message.grouped_id;
             if (j11 != 0) {
                 ArrayList<TLRPC.Message> arrayList3 = messages_messages.messages;
@@ -79,7 +79,7 @@ public final class f6 {
         }
         if (!arrayList.isEmpty()) {
             arrayList2.clear();
-            Collections.sort(arrayList, Comparator$-CC.comparingInt(new ai.u8(12)));
+            Collections.sort(arrayList, Comparator$-CC.comparingInt(new ai.v8(12)));
             TLRPC.Message message = (TLRPC.Message) arrayList.get(arrayList.size() - 1);
             long j11 = message.grouped_id;
             if (j11 != 0) {
@@ -109,7 +109,7 @@ public final class f6 {
                 tL_channels_getMessages.id.add(Integer.valueOf(i15));
             }
         }
-        ConnectionsManager.getInstance(i12).sendRequest(tL_channels_getMessages, new hd(f6Var, messagesStorage, j10, i10, arrayList));
+        ConnectionsManager.getInstance(i12).sendRequest(tL_channels_getMessages, new gd(f6Var, messagesStorage, j10, i10, arrayList));
     }
 
     public final void c() {
@@ -152,6 +152,6 @@ public final class f6 {
         int i12 = this.a;
         long clientUserId = UserConfig.getInstance(i12).getClientUserId();
         MessagesStorage messagesStorage = MessagesStorage.getInstance(i12);
-        messagesStorage.getStorageQueue().postRunnable(new qf(this, i10, messagesStorage, j10, clientUserId, i11));
+        messagesStorage.getStorageQueue().postRunnable(new pf(this, i10, messagesStorage, j10, clientUserId, i11));
     }
 }

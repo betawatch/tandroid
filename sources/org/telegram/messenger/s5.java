@@ -1,31 +1,26 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.LocationController;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s5 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ LocationController b;
-    public final /* synthetic */ LocationController.SharingLocationInfo c;
+    public final /* synthetic */ Integer c;
 
-    public /* synthetic */ s5(int i10, LocationController.SharingLocationInfo sharingLocationInfo, LocationController locationController) {
+    public /* synthetic */ s5(LocationController locationController, Integer num, int i10) {
         this.a = i10;
         this.b = locationController;
-        this.c = sharingLocationInfo;
+        this.c = num;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$broadcastLastKnownLocation$6(this.c);
-                break;
-            case 1:
-                this.b.lambda$removeSharingLocation$20(this.c);
+                this.b.lambda$onConnected$2(this.c);
                 break;
             default:
-                this.b.lambda$update$8(this.c);
+                this.b.lambda$onConnected$1(this.c);
                 break;
         }
     }

@@ -1,94 +1,101 @@
 package le;
 
+import ab.o0;
 import ah.t;
+import android.content.ComponentName;
 import android.content.ContentProviderClient;
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Canvas;
-import android.media.MediaCodec;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.RemoteException;
 import android.text.style.CharacterStyle;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.EditText;
+import androidx.lifecycle.m0;
+import androidx.lifecycle.p0;
+import androidx.lifecycle.s0;
+import androidx.profileinstaller.ProfileInstallReceiver;
 import b2.p1;
+import be.m;
 import bh.h;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.o;
+import com.google.android.gms.common.api.internal.p;
 import com.google.android.gms.common.api.internal.r;
 import com.google.android.gms.internal.cast.i4;
-import com.google.android.gms.location.LocationAvailability;
-import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import hg.z1;
+import e8.i;
+import e9.n0;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.concurrent.Callable;
-import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.TimeoutException;
 import m.l;
 import ne.d;
 import ne.j;
 import o2.k;
 import o2.q;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotInlineKeyboard;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MrzRecognizer;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.fa;
 import org.telegram.ui.Cells.g;
 import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.o9;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.a6;
-import org.telegram.ui.Components.q71;
+import org.telegram.ui.Components.r71;
 import org.telegram.ui.Components.t20;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.u20;
 import org.telegram.ui.Components.ym0;
 import org.telegram.ui.Components.zg0;
-import org.telegram.ui.Wallet.r9;
-import org.telegram.ui.xu0;
-import p6.c;
-import qg.b1;
-import qg.c1;
-import qg.e1;
-import qg.u0;
+import org.telegram.ui.n9;
+import org.telegram.ui.v9;
+import org.telegram.ui.vu0;
+import org.telegram.ui.web.a1;
 import r0.k1;
 import r0.n;
-import r2.m;
+import rg.n2;
 import rg.v1;
-import rg.w0;
-import s4.h1;
-import s4.n0;
-import s4.o0;
-import s6.e;
-import s6.f;
-import t7.u;
+import s4.d0;
+import s4.g0;
+import u2.e1;
 import u2.f1;
-import u2.g1;
-import u2.s1;
+import u2.r1;
+import v1.c;
+import v7.h5;
 import v7.i8;
+import v8.e;
+import x9.w;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, n, z1, r, m, o, v1, h1, w2.d, Continuation {
+public final class b implements OnCompleteListener, l, d, o0.a, e1, l1, h, r71, n, v9, r4.d, o, v1, d0, n5.b, s0, r {
     public final /* synthetic */ int a;
     public Object b;
 
-    public /* synthetic */ b(int i10, boolean z10) {
+    public /* synthetic */ b(int i10) {
         this.a = i10;
     }
 
@@ -106,9 +113,15 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
         return false;
     }
 
-    @Override // ne.d
-    public void E(float f7, int i10) {
-        ((j) this.b).h(f7);
+    @Override // org.telegram.ui.v9
+    public void E(String str) {
+        a1 a1Var = (a1) this.b;
+        try {
+            a1Var.P = System.currentTimeMillis();
+            a1Var.y("qr_text_received", new JSONObject().put("data", str));
+        } catch (JSONException e) {
+            FileLog.e(e);
+        }
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -116,10 +129,9 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
         pf.d.r(u1Var.getContext(), str);
     }
 
-    @Override // bh.h
-    public void H(bh.a aVar) {
-        aVar.a(((ti) this.b).getThemedColor(h6.d6));
-        aVar.b(SharedConfig.chatBlurEnabled());
+    @Override // ne.d
+    public void H(float f7, int i10) {
+        ((j) this.b).h(f7);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -138,9 +150,10 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
         }
     }
 
-    @Override // hg.z1
-    public /* synthetic */ a0.h J() {
-        return null;
+    @Override // bh.h
+    public void J(bh.a aVar) {
+        aVar.a(((ti) this.b).getThemedColor(h6.d6));
+        aVar.b(SharedConfig.chatBlurEnabled());
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -151,11 +164,6 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean J1(u1 u1Var, MessageObject messageObject) {
         return false;
-    }
-
-    @Override // s4.h1
-    public View L(int i10) {
-        return ((n0) this.b).q(i10);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -175,11 +183,6 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
         return false;
     }
 
-    @Override // hg.z1
-    public /* synthetic */ boolean O(int i10) {
-        return true;
-    }
-
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean O1(u1 u1Var, TLRPC.PollAnswer pollAnswer) {
         return false;
@@ -191,7 +194,7 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ xu0 P1() {
+    public /* synthetic */ vu0 P1() {
         return null;
     }
 
@@ -234,9 +237,12 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
 
     @Override // rg.v1
     public void U(float f7) {
-        w0 w0Var = (w0) this.b;
-        u0.e(w0Var.a).k("-1", f7);
-        w0Var.e.setBrushSize(f7);
+        ((n2) this.b).setOutlineWidth(f7);
+    }
+
+    @Override // org.telegram.ui.v9
+    public /* synthetic */ boolean U0(String str, n9 n9Var) {
+        return false;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -249,9 +255,23 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
         return null;
     }
 
-    @Override // s4.h1
-    public int X(View view) {
-        return n0.v(view) + ((ViewGroup.MarginLayoutParams) ((o0) view.getLayoutParams())).bottomMargin;
+    @Override // androidx.lifecycle.s0
+    public p0 W0(Class cls, v1.b bVar) {
+        m0 m0Var = null;
+        for (c cVar : (c[]) this.b) {
+            if (cVar.a.equals(cls)) {
+                m0Var = new m0();
+            }
+        }
+        if (m0Var != null) {
+            return m0Var;
+        }
+        throw new IllegalArgumentException("No initializer set for given class ".concat(cls.getName()));
+    }
+
+    @Override // s4.d0
+    public void X(int i10, int i11) {
+        ((g0) this.b).s(i10, i11);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -264,70 +284,47 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
         return i10 == ((fa) this.b).s;
     }
 
-    @Override // r2.m
-    public void a(long j10, int i10, int i11, int i12) {
-        ((MediaCodec) this.b).queueInputBuffer(i10, 0, i11, j10, i12);
-    }
-
-    public void a0() {
-        c1 c1Var = ((e1) this.b).d;
-        if (c1Var != null) {
-            b1 b1Var = c1Var.s;
-            if (b1Var != null) {
-                c1Var.cancelRunnable(b1Var);
-                c1Var.s = null;
-            }
-            b1 b1Var2 = new b1(c1Var, 1);
-            c1Var.s = b1Var2;
-            c1Var.postRunnable(b1Var2, 1L);
-        }
+    @Override // s4.d0
+    public void a1(int i10, int i11) {
+        ((g0) this.b).r(i10, i11, null);
     }
 
     @Override // com.google.android.gms.common.api.internal.r
     public void accept(Object obj, Object obj2) {
-        switch (this.a) {
-            case 15:
-                TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
-                p6.a aVar = (p6.a) ((c) obj).u();
-                n6.o oVar = (n6.o) this.b;
-                Parcel H0 = aVar.H0();
-                k7.a.c(H0, oVar);
-                try {
-                    aVar.b.transact(1, H0, null, 1);
-                    H0.recycle();
-                    taskCompletionSource.setResult(null);
-                    return;
-                } catch (Throwable th2) {
-                    H0.recycle();
-                    throw th2;
-                }
-            default:
-                f fVar = new f(1, (TaskCompletionSource) obj2);
-                e eVar = (e) ((s6.h) obj).u();
-                s6.a aVar2 = (s6.a) this.b;
-                Parcel H02 = eVar.H0();
-                k7.a.d(H02, fVar);
-                k7.a.c(H02, aVar2);
-                H02.writeStrongBinder(null);
-                eVar.I0(H02, 2);
-                return;
+        e eVar = (e) this.b;
+        e8.b bVar = (e8.b) obj;
+        bVar.getClass();
+        e8.a aVar = new e8.a(1, (TaskCompletionSource) obj2);
+        try {
+            i iVar = (i) bVar.u();
+            Bundle G = bVar.G();
+            Parcel obtain = Parcel.obtain();
+            obtain.writeInterfaceToken("com.google.android.gms.wallet.internal.IOwService");
+            int i10 = e8.c.a;
+            obtain.writeInt(1);
+            eVar.writeToParcel(obtain, 0);
+            obtain.writeInt(1);
+            G.writeToParcel(obtain, 0);
+            obtain.writeStrongBinder(aVar);
+            try {
+                iVar.a.transact(14, obtain, null, 1);
+            } finally {
+                obtain.recycle();
+            }
+        } catch (RemoteException e) {
+            Log.e("WalletClientImpl", "RemoteException during isReadyToPay", e);
+            Bundle bundle = Bundle.EMPTY;
+            h5.a(Status.h, Boolean.FALSE, aVar.b);
         }
     }
 
-    @Override // r2.m
-    public void b(int i10, h2.d dVar, long j10, int i11) {
-        ((MediaCodec) this.b).queueSecureInputBuffer(i10, 0, dVar.i, j10, i11);
-    }
-
-    public void b0(androidx.biometric.e eVar) {
-        h8.j jVar = (h8.j) this.b;
-        jVar.a = eVar;
-        Iterator it = jVar.c.iterator();
-        while (it.hasNext()) {
-            ((x6.e) it.next()).b();
+    @Override // bh.h
+    public void b(Canvas canvas) {
+        ti tiVar = (ti) this.b;
+        canvas.drawColor(tiVar.getThemedColor(h6.d6));
+        if (SharedConfig.chatBlurEnabled()) {
+            tiVar.F2.b(canvas, -2);
         }
-        jVar.c.clear();
-        jVar.b = null;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -360,14 +357,38 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
         }
     }
 
-    @Override // s4.h1
-    public int d(View view) {
-        return n0.z(view) - ((ViewGroup.MarginLayoutParams) ((o0) view.getLayoutParams())).topMargin;
+    public void d() {
+        k kVar = (k) this.b;
+        int i10 = kVar.H - 1;
+        kVar.H = i10;
+        if (i10 > 0) {
+            return;
+        }
+        int i11 = 0;
+        for (q qVar : kVar.J) {
+            qVar.f();
+            i11 += qVar.Y.a;
+        }
+        p1[] p1VarArr = new p1[i11];
+        int i12 = 0;
+        for (q qVar2 : kVar.J) {
+            qVar2.f();
+            int i13 = qVar2.Y.a;
+            int i14 = 0;
+            while (i14 < i13) {
+                qVar2.f();
+                p1VarArr[i12] = qVar2.Y.a(i14);
+                i14++;
+                i12++;
+            }
+        }
+        kVar.I = new r1(p1VarArr);
+        kVar.G.a(kVar);
     }
 
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean d1(MessageObject messageObject) {
-        return org.telegram.ui.Cells.c1.a(messageObject);
+        return c1.a(messageObject);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -380,13 +401,9 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
         return false;
     }
 
-    @Override // hg.z1
-    public void f(int i10) {
-        r9 r9Var = (r9) this.b;
-        if (r9Var.n || i10 != r9Var.I) {
-            return;
-        }
-        r9Var.d0(r9Var.M.getText().toString().trim());
+    @Override // androidx.lifecycle.s0
+    public p0 f(Class cls) {
+        throw new UnsupportedOperationException("Factory.create(String) is unsupported.  This Factory requires `CreationExtras` to be passed into `create` method.");
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -394,41 +411,19 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
         return null;
     }
 
-    public void g0() {
-        k kVar = (k) this.b;
-        int i10 = kVar.H - 1;
-        kVar.H = i10;
-        if (i10 > 0) {
-            return;
+    @Override // hd.a
+    public Object get() {
+        String packageName = ((Context) ((hd.a) this.b).get()).getPackageName();
+        if (packageName != null) {
+            return packageName;
         }
-        int i11 = 0;
-        for (q qVar : kVar.J) {
-            qVar.e();
-            i11 += qVar.Y.a;
-        }
-        p1[] p1VarArr = new p1[i11];
-        int i12 = 0;
-        for (q qVar2 : kVar.J) {
-            qVar2.e();
-            int i13 = qVar2.Y.a;
-            int i14 = 0;
-            while (i14 < i13) {
-                qVar2.e();
-                p1VarArr[i12] = qVar2.Y.a(i14);
-                i14++;
-                i12++;
-            }
-        }
-        kVar.I = new s1(p1VarArr);
-        kVar.G.h(kVar);
+        throw new NullPointerException("Cannot return null from a non-@Nullable @Provides method");
     }
 
-    @Override // rg.v1
-    public float get() {
-        w0 w0Var = (w0) this.b;
-        int i10 = w0Var.a;
-        qg.m currentBrush = w0Var.e.getCurrentBrush();
-        return currentBrush == null ? u0.e(i10).i : u0.e(i10).f("-1", currentBrush.d());
+    @Override // u2.e1
+    public void h(f1 f1Var) {
+        k kVar = (k) this.b;
+        kVar.G.h(kVar);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -436,7 +431,7 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.q71
+    @Override // org.telegram.ui.Components.r71
     public void invalidate() {
         ((zg0) this.b).h.invalidate();
     }
@@ -446,7 +441,7 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public boolean j0(MotionEvent motionEvent) {
+    public boolean k(MotionEvent motionEvent) {
         boolean z10;
         MotionEvent motionEvent2;
         MotionEvent motionEvent3;
@@ -456,7 +451,7 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
         t20 t20Var = (t20) this.b;
         int i10 = t20.w;
         u20 u20Var2 = t20Var.f;
-        ab.o0 o0Var = t20Var.e;
+        o0 o0Var = t20Var.e;
         int action = motionEvent.getAction();
         if (t20Var.v == null) {
             t20Var.v = VelocityTracker.obtain();
@@ -664,11 +659,6 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
         return false;
     }
 
-    @Override // s4.h1
-    public int k() {
-        return ((n0) this.b).G();
-    }
-
     @Override // org.telegram.ui.Cells.l1
     public boolean l0() {
         return c();
@@ -680,8 +670,16 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
     }
 
     @Override // com.google.android.gms.common.api.internal.o
-    public /* synthetic */ void o(Object obj) {
-        ((g8.c) obj).onLocationAvailability((LocationAvailability) this.b);
+    public void o(Object obj) {
+        com.google.android.gms.common.api.internal.n nVar;
+        androidx.activity.o oVar = ((r7.i) this.b).b;
+        synchronized (oVar) {
+            oVar.a = false;
+            nVar = ((p) oVar.b).c;
+        }
+        if (nVar != null) {
+            ((r7.c) oVar.c).c(nVar, 2441);
+        }
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -691,7 +689,7 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
 
     @Override // com.google.android.gms.tasks.OnCompleteListener
     public void onComplete(Task task) {
-        be.m mVar = (be.m) this.b;
+        m mVar = (m) this.b;
         Exception exception = task.getException();
         if (exception != null) {
             mVar.resumeWith(i8.a(exception));
@@ -702,54 +700,73 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
         }
     }
 
+    @Override // org.telegram.ui.v9
+    public void onDismiss() {
+        a1 a1Var = (a1) this.b;
+        a1Var.y("scan_qr_popup_closed", null);
+        a1Var.h0 = false;
+    }
+
+    @Override // org.telegram.ui.v9
+    public String p0() {
+        return ((a1) this.b).i0;
+    }
+
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ o9 p2() {
         return null;
     }
 
-    @Override // bh.h
-    public void r(Canvas canvas) {
-        ti tiVar = (ti) this.b;
-        canvas.drawColor(tiVar.getThemedColor(h6.d6));
-        if (SharedConfig.chatBlurEnabled()) {
-            tiVar.F2.b(canvas, -2);
-        }
+    @Override // ne.d
+    public void r(int i10, float f7, float f10, ne.e eVar) {
+        ((j) this.b).h(f7);
     }
 
-    @Override // r2.m
-    public void setParameters(Bundle bundle) {
-        ((MediaCodec) this.b).setParameters(bundle);
-    }
-
-    @Override // com.google.android.gms.tasks.Continuation
-    public Object then(Task task) {
-        return ((Callable) this.b).call();
+    @Override // s4.d0
+    public void t0(int i10, int i11) {
+        ((g0) this.b).t(i10, i11);
     }
 
     public String toString() {
         switch (this.a) {
-            case 22:
-                te.b bVar = te.b.e;
-                StringBuffer stringBuffer = new StringBuffer();
-                stringBuffer.append("method-execution".substring(7));
-                stringBuffer.append("(");
-                stringBuffer.append(((s4.b) this.b).n());
-                stringBuffer.append(")");
-                return stringBuffer.toString();
+            case 14:
+                return "ProviderMetadata{ componentName=" + ((ComponentName) this.b).flattenToShortString() + " }";
             default:
                 return super.toString();
         }
     }
 
-    @Override // ne.d
-    public void u(int i10, float f7, float f10, ne.e eVar) {
-        ((j) this.b).h(f7);
+    @Override // o0.a
+    public Cursor u(Uri uri, String[] strArr, String[] strArr2) {
+        ContentProviderClient contentProviderClient = (ContentProviderClient) this.b;
+        if (contentProviderClient == null) {
+            return null;
+        }
+        try {
+            return contentProviderClient.query(uri, strArr, "query = ?", strArr2, null, null);
+        } catch (RemoteException e) {
+            Log.w("FontsProvider", "Unable to query the content provider", e);
+            return null;
+        }
     }
 
-    @Override // u2.f1
-    public void v(g1 g1Var) {
-        k kVar = (k) this.b;
-        kVar.G.v(kVar);
+    public void v(ea.b bVar, Thread thread, Throwable th2) {
+        x9.m mVar = (x9.m) this.b;
+        synchronized (mVar) {
+            String str = "Handling uncaught exception \"" + th2 + "\" from thread " + thread.getName();
+            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                Log.d("FirebaseCrashlytics", str, null);
+            }
+            try {
+                try {
+                    w.a(mVar.e.w(new x9.k(mVar, System.currentTimeMillis(), th2, thread, bVar)));
+                } catch (TimeoutException unused) {
+                    Log.e("FirebaseCrashlytics", "Cannot send reports. Timed out while fetching settings.", null);
+                }
+            } catch (Exception e) {
+                Log.e("FirebaseCrashlytics", "Error handling uncaught exception", e);
+            }
+        }
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -767,29 +784,61 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
         return true;
     }
 
-    @Override // o0.a
-    public Cursor x(Uri uri, String[] strArr, String[] strArr2) {
-        ContentProviderClient contentProviderClient = (ContentProviderClient) this.b;
-        if (contentProviderClient == null) {
-            return null;
-        }
-        try {
-            return contentProviderClient.query(uri, strArr, "query = ?", strArr2, null, null);
-        } catch (RemoteException e) {
-            Log.w("FontsProvider", "Unable to query the content provider", e);
-            return null;
-        }
+    @Override // r4.d
+    public void x() {
+        Log.d("ProfileInstaller", "DIAGNOSTIC_PROFILE_IS_COMPRESSED");
     }
 
-    @Override // hg.z1
-    public /* synthetic */ a0.h y() {
-        return null;
+    @Override // s4.d0
+    public void y(int i10, int i11) {
+        ((g0) this.b).p(i10, i11);
     }
 
-    @Override // s4.h1
-    public int z() {
-        n0 n0Var = (n0) this.b;
-        return n0Var.n - n0Var.C();
+    @Override // r4.d
+    public void z(int i10, Object obj) {
+        String str;
+        switch (i10) {
+            case 1:
+                str = "RESULT_INSTALL_SUCCESS";
+                break;
+            case 2:
+                str = "RESULT_ALREADY_INSTALLED";
+                break;
+            case 3:
+                str = "RESULT_UNSUPPORTED_ART_VERSION";
+                break;
+            case 4:
+                str = "RESULT_NOT_WRITABLE";
+                break;
+            case 5:
+                str = "RESULT_DESIRED_FORMAT_UNSUPPORTED";
+                break;
+            case 6:
+                str = "RESULT_BASELINE_PROFILE_NOT_FOUND";
+                break;
+            case 7:
+                str = "RESULT_IO_EXCEPTION";
+                break;
+            case 8:
+                str = "RESULT_PARSE_EXCEPTION";
+                break;
+            case 9:
+            default:
+                str = "";
+                break;
+            case 10:
+                str = "RESULT_INSTALL_SKIP_FILE_SUCCESS";
+                break;
+            case 11:
+                str = "RESULT_DELETE_SKIP_FILE_SUCCESS";
+                break;
+        }
+        if (i10 == 6 || i10 == 7 || i10 == 8) {
+            Log.e("ProfileInstaller", str, (Throwable) obj);
+        } else {
+            Log.d("ProfileInstaller", str);
+        }
+        ((ProfileInstallReceiver) this.b).setResultCode(i10);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -802,24 +851,30 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
         this.b = obj;
     }
 
-    public /* synthetic */ b(s6.g gVar, s6.a aVar) {
-        this.a = 21;
-        this.b = aVar;
+    public b() {
+        this.a = 3;
+        this.b = n0.t();
     }
 
-    public b(int i10) {
-        this.a = i10;
-        switch (i10) {
-            case 25:
-                this.b = new u(28);
-                break;
-            case 28:
-                this.b = new CopyOnWriteArrayList();
-                break;
-            default:
-                this.b = e9.n0.t();
-                break;
-        }
+    @Override // rg.v1
+    public float get() {
+        return ((n2) this.b).F;
+    }
+
+    public b(Context context, GestureDetector.OnGestureListener onGestureListener) {
+        this.a = 16;
+        this.b = new GestureDetector(context, onGestureListener, null);
+    }
+
+    public b(c[] initializers) {
+        this.a = 25;
+        kotlin.jvm.internal.i.e(initializers, "initializers");
+        this.b = initializers;
+    }
+
+    public b(EditText editText) {
+        this.a = 15;
+        this.b = new mi.q(editText);
     }
 
     public b(Context context, Uri uri) {
@@ -832,20 +887,12 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
         this.b = new t20(context, u20Var);
     }
 
-    @Override // r2.m
-    public void C() {
-    }
-
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void L1() {
     }
 
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void f1() {
-    }
-
-    @Override // r2.m
-    public void flush() {
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -866,14 +913,6 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
 
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void q() {
-    }
-
-    @Override // r2.m
-    public void shutdown() {
-    }
-
-    @Override // r2.m
-    public void start() {
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -902,6 +941,10 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
 
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void F(u1 u1Var) {
+    }
+
+    @Override // org.telegram.ui.v9
+    public /* synthetic */ void F0(MrzRecognizer.Result result) {
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -942,10 +985,6 @@ public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, 
 
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void V0(u1 u1Var) {
-    }
-
-    @Override // hg.z1
-    public /* synthetic */ void Y(ArrayList arrayList) {
     }
 
     @Override // org.telegram.ui.Cells.l1

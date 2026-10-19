@@ -1,285 +1,169 @@
 package ci;
 
-import android.app.Dialog;
-import android.content.DialogInterface;
-import android.text.TextUtils;
+import android.content.Context;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.ImageLoader;
+import java.util.Collections;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.cl0;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.DataSettingsActivity;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.go0;
-import org.telegram.ui.mc1;
-import org.telegram.ui.qw0;
-import org.telegram.ui.sn;
-import org.telegram.ui.xm0;
-import org.telegram.ui.yt;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.o21;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y3 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ h4 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
+    public final /* synthetic */ aa d;
 
-    public /* synthetic */ y3(Object obj, Object obj2, boolean z10, Object obj3, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.b = z10;
-        this.e = obj3;
+    public /* synthetic */ y3(h4 h4Var, aa aaVar, org.telegram.ui.ActionBar.d6 d6Var) {
+        this.a = 0;
+        this.b = h4Var;
+        this.d = aaVar;
+        this.c = d6Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:101:0x01b5  */
-    /* JADX WARN: Removed duplicated region for block: B:142:0x019b  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0190  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00cc  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00e7  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00f4  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00ce  */
     @Override // android.view.View.OnClickListener
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onClick(View view) {
-        TLRPC.TL_secureRequiredType tL_secureRequiredType;
         boolean z10;
-        final boolean z11;
-        TLRPC.SecureValueType secureValueType;
-        int size;
-        int i10;
-        int i11;
-        switch (this.a) {
+        View view2;
+        View view3;
+        int i10 = this.a;
+        int i11 = 7;
+        org.telegram.ui.ActionBar.d6 d6Var = this.c;
+        aa aaVar = this.d;
+        h4 h4Var = this.b;
+        switch (i10) {
             case 0:
-                g4 g4Var = (g4) this.c;
-                TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.d;
-                org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.e;
-                ArrayList arrayList = new ArrayList();
-                arrayList.add(storyItem);
-                p4 p4Var = g4Var.l;
-                h7 storiesController = MessagesController.getInstance(p4Var.C2).getStoriesController();
-                long j10 = p4Var.B1;
-                boolean z12 = this.b;
-                storiesController.o0(j10, arrayList, z12, new k3(g4Var, storyItem, z12, d6Var));
-                g4 g4Var2 = p4Var.t1;
-                if (g4Var2 != null) {
-                    g4Var2.a();
+                q4 q4Var = h4Var.l;
+                aaVar.k1 = true;
+                aaVar.P();
+                int i12 = q4Var.C2;
+                Context context = q4Var.getContext();
+                TL_stories.StoryItem storyItem = q4Var.O1.a;
+                r3 r3Var = q4Var.c1;
+                org.telegram.ui.ActionBar.d6 d6Var2 = this.c;
+                xc xcVar = new xc(r3Var, d6Var2);
+                ai.r0 r0Var = new ai.r0(aaVar, 7);
+                int i13 = o21.v;
+                o21.L(i12, context, storyItem.dialogId, true, false, new ArrayList(Collections.singleton(Integer.valueOf(storyItem.id))), xcVar, d6Var2, new byte[0], null, r0Var);
+                h4 h4Var2 = q4Var.t1;
+                if (h4Var2 != null) {
+                    h4Var2.a();
                     break;
                 }
                 break;
             case 1:
-                DataSettingsActivity dataSettingsActivity = (DataSettingsActivity) this.c;
-                String str = (String) this.d;
-                AlertDialog$Builder alertDialog$Builder = (AlertDialog$Builder) this.e;
-                if (!TextUtils.equals(SharedConfig.storageCacheDir, str)) {
-                    if (this.b) {
-                        SharedConfig.storageCacheDir = str;
-                        SharedConfig.saveConfig();
-                        SharedConfig.readOnlyStorageDirAlertShowed = false;
-                        dataSettingsActivity.n0(dataSettingsActivity.n);
-                        ImageLoader.getInstance().checkMediaPaths(new yt(dataSettingsActivity, 2));
-                        alertDialog$Builder.a.L0.run();
-                        break;
-                    } else {
-                        AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(dataSettingsActivity.getParentActivity());
-                        alertDialog$Builder2.a.R = LocaleController.getString(R.string.DecreaseSpeed);
-                        alertDialog$Builder2.a.T = LocaleController.getString(R.string.SdCardAlert);
-                        alertDialog$Builder2.k(LocaleController.getString(R.string.Proceed), new org.telegram.ui.e7(dataSettingsActivity, str, alertDialog$Builder, 12));
-                        i2.d.r(R.string.Back, alertDialog$Builder2, null);
-                        break;
-                    }
+                q4 q4Var2 = h4Var.l;
+                h4 h4Var3 = q4Var2.t1;
+                o4 o4Var = q4Var2.O1;
+                if (h4Var3 != null) {
+                    h4Var3.a();
                 }
-                break;
-            case 2:
-                final xm0 xm0Var = (xm0) this.c;
-                final ArrayList arrayList2 = (ArrayList) this.d;
-                final TLRPC.TL_secureRequiredType tL_secureRequiredType2 = (TLRPC.TL_secureRequiredType) this.e;
-                if (arrayList2 != null) {
-                    int size2 = arrayList2.size();
-                    for (0; i11 < size2; i11 + 1) {
-                        tL_secureRequiredType = (TLRPC.TL_secureRequiredType) arrayList2.get(i11);
-                        i11 = (xm0Var.q1(tL_secureRequiredType, false) == null && size2 != 1) ? i11 + 1 : 0;
-                        TLRPC.SecureValueType secureValueType2 = tL_secureRequiredType2.type;
-                        z10 = secureValueType2 instanceof TLRPC.TL_secureValueTypePersonalDetails;
-                        z11 = this.b;
-                        if (!z10 || (secureValueType2 instanceof TLRPC.TL_secureValueTypeAddress)) {
-                            if (tL_secureRequiredType == null && arrayList2 != null && !arrayList2.isEmpty()) {
-                                AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(xm0Var.getParentActivity());
-                                alertDialog$Builder3.k(LocaleController.getString(R.string.Cancel), null);
-                                secureValueType = tL_secureRequiredType2.type;
-                                if (!(secureValueType instanceof TLRPC.TL_secureValueTypePersonalDetails)) {
-                                    alertDialog$Builder3.a.R = LocaleController.getString(R.string.PassportIdentityDocument);
-                                } else if (secureValueType instanceof TLRPC.TL_secureValueTypeAddress) {
-                                    alertDialog$Builder3.a.R = LocaleController.getString(R.string.PassportAddress);
-                                }
-                                ArrayList arrayList3 = new ArrayList();
-                                size = arrayList2.size();
-                                for (i10 = 0; i10 < size; i10++) {
-                                    TLRPC.SecureValueType secureValueType3 = ((TLRPC.TL_secureRequiredType) arrayList2.get(i10)).type;
-                                    if (secureValueType3 instanceof TLRPC.TL_secureValueTypeDriverLicense) {
-                                        arrayList3.add(LocaleController.getString(R.string.PassportAddLicence));
-                                    } else if (secureValueType3 instanceof TLRPC.TL_secureValueTypePassport) {
-                                        arrayList3.add(LocaleController.getString(R.string.PassportAddPassport));
-                                    } else if (secureValueType3 instanceof TLRPC.TL_secureValueTypeInternalPassport) {
-                                        arrayList3.add(LocaleController.getString(R.string.PassportAddInternalPassport));
-                                    } else if (secureValueType3 instanceof TLRPC.TL_secureValueTypeIdentityCard) {
-                                        arrayList3.add(LocaleController.getString(R.string.PassportAddCard));
-                                    } else if (secureValueType3 instanceof TLRPC.TL_secureValueTypeUtilityBill) {
-                                        arrayList3.add(LocaleController.getString(R.string.PassportAddBill));
-                                    } else if (secureValueType3 instanceof TLRPC.TL_secureValueTypeBankStatement) {
-                                        arrayList3.add(LocaleController.getString(R.string.PassportAddBank));
-                                    } else if (secureValueType3 instanceof TLRPC.TL_secureValueTypeRentalAgreement) {
-                                        arrayList3.add(LocaleController.getString(R.string.PassportAddAgreement));
-                                    } else if (secureValueType3 instanceof TLRPC.TL_secureValueTypeTemporaryRegistration) {
-                                        arrayList3.add(LocaleController.getString(R.string.PassportAddTemporaryRegistration));
-                                    } else if (secureValueType3 instanceof TLRPC.TL_secureValueTypePassportRegistration) {
-                                        arrayList3.add(LocaleController.getString(R.string.PassportAddPassportRegistration));
-                                    }
-                                }
-                                alertDialog$Builder3.f((CharSequence[]) arrayList3.toArray(new CharSequence[0]), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ql0
-                                    @Override // android.content.DialogInterface.OnClickListener
-                                    public final void onClick(DialogInterface dialogInterface, int i12) {
-                                        xm0 xm0Var2 = xm0Var;
-                                        xm0Var2.getClass();
-                                        ArrayList arrayList4 = arrayList2;
-                                        xm0Var2.D1(tL_secureRequiredType2, (TLRPC.TL_secureRequiredType) arrayList4.get(i12), arrayList4, z11);
-                                    }
-                                });
-                                xm0Var.showDialog(alertDialog$Builder3.a);
-                                break;
-                            }
-                        } else {
-                            boolean z13 = secureValueType2 instanceof TLRPC.TL_secureValueTypePhone;
-                            if ((z13 || (secureValueType2 instanceof TLRPC.TL_secureValueTypeEmail)) && xm0Var.q1(tL_secureRequiredType2, false) != null) {
-                                AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(xm0Var.getParentActivity());
-                                alertDialog$Builder4.k(LocaleController.getString(R.string.OK), new ai.d4(xm0Var, tL_secureRequiredType2, z11, 11));
-                                alertDialog$Builder4.h(LocaleController.getString(R.string.Cancel), null);
-                                alertDialog$Builder4.a.R = LocaleController.getString(R.string.AppName);
-                                String string = LocaleController.getString(z13 ? R.string.PassportDeletePhoneAlert : R.string.PassportDeleteEmailAlert);
-                                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder4.a;
-                                b2Var.T = string;
-                                xm0Var.showDialog(b2Var);
-                                break;
-                            }
+                ei.r9 r9Var = new ei.r9(q4Var2.getContext(), 86400, d6Var);
+                r9Var.p1();
+                r9Var.q1(MessagesController.getInstance(q4Var2.C2).getInputPeer(q4Var2.B1));
+                r9Var.L = true;
+                View[] viewPages = r9Var.b.getViewPages();
+                View view4 = viewPages[0];
+                if (view4 instanceof ei.k9) {
+                    ei.k9 k9Var = (ei.k9) view4;
+                    k9Var.b(k9Var.a);
+                }
+                View view5 = viewPages[1];
+                if (view5 instanceof ei.k9) {
+                    ei.k9 k9Var2 = (ei.k9) view5;
+                    k9Var2.b(k9Var2.a);
+                }
+                r9Var.f1(false);
+                r9Var.n1(1);
+                r9Var.l1(false);
+                h1 h1Var = aaVar.A0;
+                if (h1Var != null) {
+                    TLRPC.GroupCall groupCall = h1Var.v;
+                    if (groupCall == null ? true : groupCall.messages_enabled) {
+                        z10 = true;
+                        boolean d = o4Var.d();
+                        TL_stories.StoryItem storyItem2 = o4Var.a;
+                        boolean z11 = storyItem2 == null && storyItem2.pinned;
+                        h1 h1Var2 = aaVar.A0;
+                        int j10 = h1Var2 != null ? 0 : (int) h1Var2.j();
+                        r9Var.w = z10;
+                        r9Var.x = d;
+                        r9Var.y = z11;
+                        r9Var.H = j10;
+                        View[] viewPages2 = r9Var.b.getViewPages();
+                        view2 = viewPages2[0];
+                        if (view2 instanceof ei.k9) {
+                            ei.k9 k9Var3 = (ei.k9) view2;
+                            k9Var3.b(k9Var3.a);
                         }
-                        xm0Var.D1(tL_secureRequiredType2, tL_secureRequiredType, arrayList2, z11);
+                        view3 = viewPages2[1];
+                        if (view3 instanceof ei.k9) {
+                            ei.k9 k9Var4 = (ei.k9) view3;
+                            k9Var4.b(k9Var4.a);
+                        }
+                        r9Var.T = new ah.h0(6, h4Var, r9Var);
+                        r9Var.show();
                         break;
                     }
                 }
-                tL_secureRequiredType = null;
-                TLRPC.SecureValueType secureValueType22 = tL_secureRequiredType2.type;
-                z10 = secureValueType22 instanceof TLRPC.TL_secureValueTypePersonalDetails;
-                z11 = this.b;
-                if (!z10) {
+                z10 = false;
+                boolean d10 = o4Var.d();
+                TL_stories.StoryItem storyItem22 = o4Var.a;
+                if (storyItem22 == null) {
                 }
-                if (tL_secureRequiredType == null) {
-                    AlertDialog$Builder alertDialog$Builder32 = new AlertDialog$Builder(xm0Var.getParentActivity());
-                    alertDialog$Builder32.k(LocaleController.getString(R.string.Cancel), null);
-                    secureValueType = tL_secureRequiredType2.type;
-                    if (!(secureValueType instanceof TLRPC.TL_secureValueTypePersonalDetails)) {
-                    }
-                    ArrayList arrayList32 = new ArrayList();
-                    size = arrayList2.size();
-                    while (i10 < size) {
-                    }
-                    alertDialog$Builder32.f((CharSequence[]) arrayList32.toArray(new CharSequence[0]), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ql0
-                        @Override // android.content.DialogInterface.OnClickListener
-                        public final void onClick(DialogInterface dialogInterface, int i12) {
-                            xm0 xm0Var2 = xm0Var;
-                            xm0Var2.getClass();
-                            ArrayList arrayList4 = arrayList2;
-                            xm0Var2.D1(tL_secureRequiredType2, (TLRPC.TL_secureRequiredType) arrayList4.get(i12), arrayList4, z11);
-                        }
-                    });
-                    xm0Var.showDialog(alertDialog$Builder32.a);
+                h1 h1Var22 = aaVar.A0;
+                if (h1Var22 != null) {
                 }
-                xm0Var.D1(tL_secureRequiredType2, tL_secureRequiredType, arrayList2, z11);
-                break;
-            case 3:
-                go0.g0((go0) this.c, (qc) this.d, this.b, (TLRPC.Message[]) this.e);
-                break;
-            case 4:
-                go0.Y((go0) this.c, (qc) this.d, this.b, (TLRPC.Message) this.e);
-                break;
+                r9Var.w = z10;
+                r9Var.x = d10;
+                r9Var.y = z11;
+                r9Var.H = j10;
+                View[] viewPages22 = r9Var.b.getViewPages();
+                view2 = viewPages22[0];
+                if (view2 instanceof ei.k9) {
+                }
+                view3 = viewPages22[1];
+                if (view3 instanceof ei.k9) {
+                }
+                r9Var.T = new ah.h0(6, h4Var, r9Var);
+                r9Var.show();
             default:
-                sg.y0 y0Var = (sg.y0) this.c;
-                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.d;
-                qw0 qw0Var = (qw0) this.e;
-                if (n2Var instanceof sn) {
-                    sn snVar = (sn) n2Var;
-                    snVar.D7(true);
-                    a3 a3Var = snVar.J1;
-                    if (a3Var != null) {
-                        a3Var.dismiss(true);
-                    }
+                q4 q4Var3 = h4Var.l;
+                h4 h4Var4 = q4Var3.t1;
+                if (h4Var4 != null) {
+                    h4Var4.a();
                 }
-                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
-                int i12 = 0;
-                while (i12 < 2) {
-                    org.telegram.ui.ActionBar.n2 n2Var2 = i12 == 0 ? n2Var : R;
-                    if (n2Var2 != null && n2Var2.getLastStoryViewer() != null) {
-                        z9 lastStoryViewer = n2Var2.getLastStoryViewer();
-                        Dialog dialog = lastStoryViewer.u0;
-                        if (dialog != null) {
-                            dialog.dismiss();
-                        }
-                        org.telegram.ui.ActionBar.j2 j2Var = lastStoryViewer.v0;
-                        if (j2Var != null) {
-                            j2Var.dismiss();
-                        }
-                        p4 t10 = lastStoryViewer.t();
-                        if (t10 != null) {
-                            cl0 cl0Var = t10.f2;
-                            if (cl0Var != null && cl0Var.getReactionsWindow() != null) {
-                                t10.f2.getReactionsWindow().d();
-                            }
-                            d3 d3Var = t10.Z2;
-                            if (d3Var != null) {
-                                d3Var.dismiss();
-                            }
-                            t10.N0();
-                        }
-                    }
-                    if (n2Var2 != null && n2Var2.getVisibleDialog() != null) {
-                        n2Var2.getVisibleDialog().dismiss();
-                    }
-                    i12++;
-                }
-                if (this.b || y0Var.F) {
-                    PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, PremiumPreviewFragment.l0(qw0Var.a));
-                    if (n2Var instanceof mc1) {
-                        org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
-                        l2Var.a = true;
-                        n2Var.showAsSheet(premiumPreviewFragment, l2Var);
-                    } else if (n2Var != null) {
-                        n2Var.presentFragment(premiumPreviewFragment);
-                    } else {
-                        org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-                        if (U != null) {
-                            U.presentFragment(premiumPreviewFragment);
-                        }
-                    }
-                } else {
-                    PremiumPreviewFragment.k0(n2Var, y0Var.J, PremiumPreviewFragment.l0(qw0Var.a), null);
-                }
-                y0Var.dismiss();
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(q4Var3.getContext(), 0, d6Var);
+                String string = LocaleController.getString(R.string.LiveStoryEndAlertTitle);
+                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                b2Var.R = string;
+                b2Var.T = LocaleController.getString(R.string.LiveStoryEndAlertText);
+                alertDialog$Builder.k(LocaleController.getString(R.string.LiveStoryEndAlertButton), new ah.h0(i11, h4Var, aaVar));
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                alertDialog$Builder.d(-1);
+                alertDialog$Builder.o();
                 break;
         }
     }
 
-    public /* synthetic */ y3(ArrayList arrayList, TLRPC.TL_secureRequiredType tL_secureRequiredType, xm0 xm0Var, boolean z10) {
-        this.a = 2;
-        this.c = xm0Var;
-        this.d = arrayList;
-        this.e = tL_secureRequiredType;
-        this.b = z10;
+    public /* synthetic */ y3(h4 h4Var, org.telegram.ui.ActionBar.d6 d6Var, aa aaVar, int i10) {
+        this.a = i10;
+        this.b = h4Var;
+        this.c = d6Var;
+        this.d = aaVar;
     }
 }

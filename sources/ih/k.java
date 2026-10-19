@@ -7,9 +7,9 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import org.telegram.ui.Components.wc0;
-import org.telegram.ui.vn;
+import org.telegram.ui.tn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class k {
     public static final Rect f = new Rect();
@@ -24,7 +24,7 @@ public final class k {
             return ((gh.c) aVar).a.getColor();
         }
         if (aVar instanceof gh.b) {
-            return ((Integer) this.d.o(((gh.b) aVar).d)).intValue();
+            return ((Integer) this.d.m(((gh.b) aVar).d)).intValue();
         }
         if (aVar instanceof gh.e) {
             return a(((gh.e) aVar).a);
@@ -37,7 +37,7 @@ public final class k {
             return ((gh.c) aVar).a.getColor();
         }
         if (aVar instanceof gh.b) {
-            return ((Integer) this.e.o(((gh.b) aVar).d)).intValue();
+            return ((Integer) this.e.m(((gh.b) aVar).d)).intValue();
         }
         if (aVar instanceof gh.e) {
             return b(((gh.e) aVar).a);
@@ -66,11 +66,11 @@ public final class k {
         boolean z12 = drawable instanceof BitmapDrawable;
         androidx.biometric.e eVar = this.c;
         if (z12) {
-            bVar.a((Bitmap) eVar.o(((BitmapDrawable) drawable).getBitmap()));
+            bVar.a((Bitmap) eVar.m(((BitmapDrawable) drawable).getBitmap()));
             return bVar;
         }
-        if (drawable instanceof vn) {
-            return c(((vn) drawable).c(false));
+        if (drawable instanceof tn) {
+            return c(((tn) drawable).c(false));
         }
         if (drawable != null) {
             bVar.getClass();
@@ -94,7 +94,7 @@ public final class k {
             drawable.setBounds(rect);
             bVar.a(bVar.f);
             bVar.f = null;
-            bVar.a((Bitmap) eVar.o(bVar.d));
+            bVar.a((Bitmap) eVar.m(bVar.d));
         }
         return bVar;
     }

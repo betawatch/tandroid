@@ -9,7 +9,7 @@ import b5.o;
 import java.util.Set;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final boolean a;
@@ -27,7 +27,7 @@ public abstract class c {
             throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
         }
         o c10 = c(webView);
-        c10.a.addWebMessageListener(str, (String[]) set.toArray(new String[0]), new ue.a(new a6.m(bVar, 8)));
+        c10.a.addWebMessageListener(str, (String[]) set.toArray(new String[0]), new ue.a(new qb.c(bVar, 9)));
     }
 
     public static PackageInfo b() {

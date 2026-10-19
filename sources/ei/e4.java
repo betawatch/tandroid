@@ -18,36 +18,39 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UnconfirmedAuthController;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.cg0;
 import org.telegram.ui.Components.e00;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.p71;
+import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.q71;
 import org.telegram.ui.Components.rl;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.xj0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.b60;
+import org.telegram.ui.z50;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e4 implements Utilities.Callback {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ e4(Object obj, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
+    public /* synthetic */ e4(int i10, Utilities.Callback callback) {
+        this.a = 6;
         this.b = i10;
+        this.c = callback;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
         int i10;
         int i11 = this.a;
+        TLRPC.User user = null;
+        user = null;
+        user = null;
         int i12 = this.b;
         Object obj2 = this.c;
         int i13 = 1;
@@ -59,7 +62,7 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 if (view instanceof k4) {
                     g4Var.getClass();
                     int R = RecyclerView.R(view);
-                    f61 G = g4Var.W2.G(R);
+                    g61 G = g4Var.W2.G(R);
                     if (G != null) {
                         k4 k4Var = (k4) view;
                         k4Var.setPosition(l4Var.b(R));
@@ -81,14 +84,14 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 a8Var.B0 = i15;
                 r6Var.T.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, i12, iArr, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
                 r6Var.invalidate();
-                p71 p71Var = r6Var.n;
-                if (p71Var != null) {
+                q71 q71Var = r6Var.n;
+                if (q71Var != null) {
                     int i16 = r6Var.U;
                     int i17 = r6Var.V;
-                    e00 e00Var = p71Var.b;
+                    e00 e00Var = q71Var.b;
                     if (e00Var == null) {
-                        p71Var.n = i16;
-                        p71Var.r = i17;
+                        q71Var.n = i16;
+                        q71Var.r = i17;
                     } else {
                         e00Var.i(i16, i17);
                     }
@@ -120,7 +123,7 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 saVar.getClass();
                 if (LaunchActivity.D1) {
                     if (arrayList == null || arrayList.size() == 0) {
-                        lk.q(R.string.UnknownError, new xc(org.telegram.ui.Components.lb.a(saVar.getContext()), null), null);
+                        kk.q(R.string.UnknownError, new xc(org.telegram.ui.Components.lb.a(saVar.getContext()), null), null);
                     } else {
                         LinearLayout linearLayout = new LinearLayout(saVar.getContext());
                         linearLayout.setOrientation(1);
@@ -185,9 +188,9 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                         dVar.F = 5;
                         dVar.b(5, false);
                         dVar.setShowZero(false);
-                        ci.u7 u7Var = new ci.u7(22, dVar, gVar);
-                        dVar.G = u7Var;
-                        AndroidUtilities.runOnUIThread(u7Var, 1000L);
+                        ci.v7 v7Var = new ci.v7(22, dVar, gVar);
+                        dVar.G = v7Var;
+                        AndroidUtilities.runOnUIThread(v7Var, 1000L);
                         dVar.setOnClickListener(new org.telegram.ui.Cells.y2(dVar, f3Var, i13));
                     }
                 }
@@ -206,7 +209,15 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 rlVar.b.dismiss(true);
                 break;
             case 5:
-                b60.e1((b60) obj2, i12, (ChannelBoostsController.CanApplyBoost) obj);
+                z50.e1((z50) obj2, i12, (ChannelBoostsController.CanApplyBoost) obj);
+                break;
+            case 6:
+                Utilities.Callback callback = (Utilities.Callback) obj2;
+                Long l4 = (Long) obj;
+                if (l4 != null && l4.longValue() > 0 && l4.longValue() != Long.MAX_VALUE) {
+                    user = MessagesController.getInstance(i12).getUser(l4);
+                }
+                callback.run(user);
                 break;
             default:
                 org.telegram.ui.Wallet.r9 r9Var = (org.telegram.ui.Wallet.r9) obj2;
@@ -225,5 +236,11 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 }
                 break;
         }
+    }
+
+    public /* synthetic */ e4(Object obj, int i10, int i11) {
+        this.a = i11;
+        this.c = obj;
+        this.b = i10;
     }
 }

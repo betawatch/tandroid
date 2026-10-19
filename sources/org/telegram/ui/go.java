@@ -1,116 +1,131 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.ui.Components.ay0;
-import ri.j;
-import ri.p;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class go implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
+public final class go extends zt0 {
+    public final /* synthetic */ io a;
 
-    public /* synthetic */ go(Object obj, long j10, long j11, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = j10;
-        this.c = j11;
+    public go(io ioVar) {
+        this.a = ioVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.Components.s61 s61Var;
-        switch (this.a) {
-            case 0:
-                MessagesController.getInstance(r0.currentAccount).unlinkCommunity(this.b, this.c, new g5((ko) this.d, 4));
-                break;
-            case 1:
-                org.telegram.ui.web.y1 y1Var = (org.telegram.ui.web.y1) this.d;
-                long j10 = this.b;
-                long j11 = this.c;
-                y1Var.f = j10;
-                y1Var.h = j11;
-                org.telegram.ui.Components.u61 u61Var = y1Var.a;
-                if (u61Var != null && (s61Var = u61Var.W2) != null && u61Var.G) {
-                    s61Var.N(true);
-                    break;
-                }
-                break;
-            case 2:
-                ri.p pVar = (ri.p) this.d;
-                long j12 = this.b;
-                long j13 = this.c;
-                if (pVar.m == ri.n.h) {
-                    long j14 = ((j12 - j13) * 48000) / 1000;
-                    pVar.p = j14;
-                    pVar.r = 0L;
-                    pVar.s = ri.p.q(j14);
-                    pVar.i();
-                    break;
-                }
-                break;
-            default:
-                cc.e eVar = (cc.e) this.d;
-                long j15 = this.b;
-                long j16 = this.c;
-                final ri.p pVar2 = (ri.p) eVar.c;
-                if (j15 == pVar2.o) {
-                    pVar2.n = null;
-                    pVar2.p += j16;
-                    pVar2.q = 0L;
-                    pVar2.h.removeCallbacks(pVar2.D);
-                    ri.n nVar = pVar2.m;
-                    if (nVar != ri.n.s) {
-                        if (nVar != ri.n.r) {
-                            if (!pVar2.v) {
-                                if (nVar == ri.n.d) {
-                                    final ri.j jVar = pVar2.z;
-                                    if (jVar != null) {
-                                        long j17 = pVar2.j();
-                                        pVar2.r = 0L;
-                                        pVar2.s = j17;
-                                        pVar2.i.execute(new Runnable() { // from class: org.telegram.utils.recorder.audio.d
-                                            @Override // java.lang.Runnable
-                                            public final void run() {
-                                                byte[] bArr;
-                                                p pVar3 = p.this;
-                                                j jVar2 = jVar;
-                                                try {
-                                                    bArr = AudioRecorderNative.e(jVar2.b.getAbsolutePath());
-                                                } catch (Throwable th2) {
-                                                    pVar3.g.a("waveform extraction failed", th2);
-                                                    bArr = null;
-                                                }
-                                                pVar3.h.post(new ay0(pVar3, jVar2, bArr, 16));
-                                            }
-                                        });
-                                        break;
-                                    } else {
-                                        pVar2.g(new IllegalStateException("Output generation is missing"));
-                                        break;
-                                    }
-                                }
-                            } else {
-                                pVar2.v = false;
-                                pVar2.i();
-                                break;
-                            }
-                        } else {
-                            pVar2.c();
-                            pVar2.s();
-                            break;
-                        }
-                    } else {
-                        pVar2.c();
-                        pVar2.s();
-                        pVar2.l("cancelled");
-                        break;
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0029, code lost:
+    
+        if (r0 != null) goto L25;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x0042, code lost:
+    
+        if (r0 != null) goto L25;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0082  */
+    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final ju0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        TLRPC.FileLocation fileLocation2;
+        io ioVar = this.a;
+        long j10 = ioVar.C0;
+        ju0 ju0Var = null;
+        if (fileLocation != null) {
+            if (ioVar.D0 != null) {
+                TLRPC.User user = j10 == 0 ? null : ioVar.getMessagesController().getUser(Long.valueOf(j10));
+                if (user != null) {
+                    TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
+                    if (userProfilePhoto != null) {
+                        fileLocation2 = userProfilePhoto.photo_big;
                     }
                 }
-                break;
+                fileLocation2 = null;
+                if (fileLocation2 != null && fileLocation2.local_id == fileLocation.local_id && fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.dc_id == fileLocation.dc_id) {
+                    int[] iArr = new int[2];
+                    ioVar.e.getLocationInWindow(iArr);
+                    ju0Var = new ju0();
+                    ju0Var.b = iArr[0];
+                    ju0Var.c = iArr[1];
+                    ci.k4 k4Var = ioVar.e;
+                    ju0Var.d = k4Var;
+                    ImageReceiver imageReceiver = k4Var.getImageReceiver();
+                    ju0Var.a = imageReceiver;
+                    if (j10 == 0) {
+                        j10 = -ioVar.w0;
+                    }
+                    ju0Var.f = j10;
+                    ju0Var.e = imageReceiver.getBitmapSafe();
+                    ju0Var.g = -1L;
+                    ju0Var.h = ioVar.e.getImageReceiver().getRoundRadius(true);
+                    ju0Var.k = ioVar.d.getScaleX();
+                    ju0Var.p = true;
+                }
+            } else {
+                TLRPC.Chat chat = ioVar.getMessagesController().getChat(Long.valueOf(ioVar.w0));
+                if (chat != null) {
+                    TLRPC.ChatPhoto chatPhoto = chat.photo;
+                    if (chatPhoto != null) {
+                        fileLocation2 = chatPhoto.photo_big;
+                    }
+                }
+                fileLocation2 = null;
+                if (fileLocation2 != null) {
+                    int[] iArr2 = new int[2];
+                    ioVar.e.getLocationInWindow(iArr2);
+                    ju0Var = new ju0();
+                    ju0Var.b = iArr2[0];
+                    ju0Var.c = iArr2[1];
+                    ci.k4 k4Var2 = ioVar.e;
+                    ju0Var.d = k4Var2;
+                    ImageReceiver imageReceiver2 = k4Var2.getImageReceiver();
+                    ju0Var.a = imageReceiver2;
+                    if (j10 == 0) {
+                    }
+                    ju0Var.f = j10;
+                    ju0Var.e = imageReceiver2.getBitmapSafe();
+                    ju0Var.g = -1L;
+                    ju0Var.h = ioVar.e.getImageReceiver().getRoundRadius(true);
+                    ju0Var.k = ioVar.d.getScaleX();
+                    ju0Var.p = true;
+                }
+            }
         }
+        return ju0Var;
+    }
+
+    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
+    public final void G() {
+        this.a.e.getImageReceiver().setVisible(true, true);
+    }
+
+    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
+    public final boolean N() {
+        io ioVar = this.a;
+        long j10 = ioVar.C0;
+        if (j10 == 0) {
+            return true;
+        }
+        TLRPC.TL_photos_updateProfilePhoto tL_photos_updateProfilePhoto = new TLRPC.TL_photos_updateProfilePhoto();
+        tL_photos_updateProfilePhoto.bot = ioVar.getMessagesController().getInputUser(j10);
+        tL_photos_updateProfilePhoto.flags |= 2;
+        tL_photos_updateProfilePhoto.id = new TLRPC.TL_inputPhotoEmpty();
+        ioVar.getConnectionsManager().sendRequest(tL_photos_updateProfilePhoto, new m(this, 2));
+        return false;
+    }
+
+    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
+    public final void f(String str, String str2, boolean z10) {
+        this.a.s.p(str, str2, z10);
+    }
+
+    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
+    public final boolean t() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
+    public final int y() {
+        return 1;
     }
 }

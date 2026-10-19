@@ -1,6 +1,7 @@
 package a1;
 
 import a3.m0;
+import ah.a0;
 import ah.g1;
 import ah.j1;
 import ah.l1;
@@ -8,23 +9,23 @@ import ah.t0;
 import ah.w;
 import ah.w0;
 import ah.y;
+import ai.d2;
 import ai.fa;
 import ai.ga;
-import ai.i0;
-import ai.k7;
+import ai.h0;
+import ai.l7;
 import ai.le;
-import ai.p7;
+import ai.q7;
 import ai.r0;
 import ai.y9;
 import android.text.SpannableStringBuilder;
 import android.view.MotionEvent;
-import android.view.ViewParent;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import b2.a2;
 import com.google.android.gms.internal.play_billing.k3;
-import i2.a0;
 import i2.b0;
-import i2.h0;
+import i2.c0;
+import i2.i0;
 import java.util.ArrayList;
 import kotlin.jvm.internal.p;
 import n4.s;
@@ -47,13 +48,14 @@ import org.telegram.ui.Cells.n4;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.cl0;
+import org.telegram.ui.Components.hw0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 import v0.i;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -92,32 +94,32 @@ public final /* synthetic */ class f implements Runnable {
             case 3:
                 m0 m0Var = (m0) ((s) obj2).c;
                 String str = e2.m0.a;
-                s.i(((b0) m0Var).a.G, (i2.c) obj);
+                s.h(((c0) m0Var).a.G, (i2.d) obj);
                 break;
             case 4:
                 a2 a2Var = (a2) obj;
                 m0 m0Var2 = (m0) ((s) obj2).c;
                 String str2 = e2.m0.a;
-                h0 h0Var = ((b0) m0Var2).a;
-                h0Var.k0 = a2Var;
-                h0Var.m.e(25, new a0(a2Var));
+                i0 i0Var = ((c0) m0Var2).a;
+                i0Var.k0 = a2Var;
+                i0Var.m.e(25, new b0(a2Var));
                 break;
             case 5:
                 m0 m0Var3 = (m0) ((s) obj2).c;
                 String str3 = e2.m0.a;
-                j2.f fVar = ((b0) m0Var3).a.s;
+                j2.f fVar = ((c0) m0Var3).a.s;
                 j2.a p5 = fVar.p();
                 fVar.q(p5, 1030, new j2.c(p5, (Exception) obj, 0));
                 break;
             case 6:
                 m0 m0Var4 = (m0) ((s) obj2).c;
                 String str4 = e2.m0.a;
-                j2.f fVar2 = ((b0) m0Var4).a.s;
+                j2.f fVar2 = ((c0) m0Var4).a.s;
                 j2.a p9 = fVar2.p();
                 fVar2.q(p9, 1019, new j2.c(p9, (String) obj, 7));
                 break;
             case 7:
-                ah.a0 a0Var = (ah.a0) obj2;
+                a0 a0Var = (a0) obj2;
                 a6 a6Var = (a6) obj;
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(a0Var.n.getText());
                 a6[] a6VarArr = (a6[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), a6.class);
@@ -142,7 +144,7 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 break;
             case 8:
-                ah.a0 a0Var2 = (ah.a0) obj2;
+                a0 a0Var2 = (a0) obj2;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
                 if (a0Var2.Q != null && tL_error.text.equals("BOOSTS_REQUIRED")) {
                     l1.f(-a0Var2.M, a0Var2.R, a0Var2.Q);
@@ -158,7 +160,7 @@ public final /* synthetic */ class f implements Runnable {
                 break;
             case 9:
                 a6 a6Var3 = (a6) obj;
-                ah.a0 a0Var3 = ((y) obj2).e2;
+                a0 a0Var3 = ((y) obj2).e2;
                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(a0Var3.n.getText());
                 a6[] a6VarArr2 = (a6[]) spannableStringBuilder2.getSpans(0, spannableStringBuilder2.length(), a6.class);
                 int length2 = a6VarArr2.length;
@@ -202,9 +204,9 @@ public final /* synthetic */ class f implements Runnable {
                 g1 g1Var = (g1) obj;
                 j1Var.getClass();
                 TLRPC.ReactionCount reactionCount = g1Var.a;
-                ViewParent viewParent = j1Var.z;
-                if (k3.s(viewParent)) {
-                    ((n4) viewParent).f(reactionCount, true, 0.0f, 0.0f);
+                hw0 hw0Var = j1Var.z;
+                if (k3.s(hw0Var)) {
+                    ((n4) hw0Var).f(reactionCount, true, 0.0f, 0.0f);
                 }
                 g1Var.Y.c(false);
                 j1Var.S = null;
@@ -212,51 +214,51 @@ public final /* synthetic */ class f implements Runnable {
                 j1Var.U = null;
                 break;
             case 13:
-                ai.h0 h0Var2 = (ai.h0) obj2;
+                h0 h0Var = (h0) obj2;
                 TLObject tLObject = (TLObject) obj;
-                int i16 = h0Var2.a;
-                ArrayList arrayList2 = h0Var2.e;
-                h0Var2.i = 0;
+                int i16 = h0Var.a;
+                ArrayList arrayList2 = h0Var.e;
+                h0Var.i = 0;
                 if (tLObject instanceof TL_payments.connectedStarRefBots) {
                     TL_payments.connectedStarRefBots connectedstarrefbots = (TL_payments.connectedStarRefBots) tLObject;
                     MessagesController.getInstance(i16).putUsers(connectedstarrefbots.users, false);
-                    if (h0Var2.c <= 0) {
+                    if (h0Var.c <= 0) {
                         arrayList2.clear();
                     }
-                    h0Var2.c = connectedstarrefbots.count;
+                    h0Var.c = connectedstarrefbots.count;
                     arrayList2.addAll(connectedstarrefbots.connected_bots);
-                    h0Var2.d = connectedstarrefbots.connected_bots.isEmpty() || arrayList2.size() >= h0Var2.c;
+                    h0Var.d = connectedstarrefbots.connected_bots.isEmpty() || arrayList2.size() >= h0Var.c;
                 } else {
-                    h0Var2.h = true;
-                    h0Var2.d = true;
+                    h0Var.h = true;
+                    h0Var.d = true;
                 }
-                h0Var2.g = false;
-                NotificationCenter.getInstance(i16).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelConnectedBotsUpdate, Long.valueOf(h0Var2.b));
+                h0Var.g = false;
+                NotificationCenter.getInstance(i16).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelConnectedBotsUpdate, Long.valueOf(h0Var.b));
                 break;
             case 14:
-                i0 i0Var = (i0) obj2;
+                ai.i0 i0Var2 = (ai.i0) obj2;
                 TLObject tLObject2 = (TLObject) obj;
-                int i17 = i0Var.a;
-                ArrayList arrayList3 = i0Var.e;
+                int i17 = i0Var2.a;
+                ArrayList arrayList3 = i0Var2.e;
                 if (tLObject2 instanceof TL_payments.suggestedStarRefBots) {
                     TL_payments.suggestedStarRefBots suggestedstarrefbots = (TL_payments.suggestedStarRefBots) tLObject2;
                     MessagesController.getInstance(i17).putUsers(suggestedstarrefbots.users, false);
-                    if (i0Var.c <= 0) {
+                    if (i0Var2.c <= 0) {
                         arrayList3.clear();
                     }
-                    i0Var.c = suggestedstarrefbots.count;
+                    i0Var2.c = suggestedstarrefbots.count;
                     arrayList3.addAll(suggestedstarrefbots.suggested_bots);
-                    i0Var.j = suggestedstarrefbots.next_offset;
-                    i0Var.d = suggestedstarrefbots.suggested_bots.isEmpty() || arrayList3.size() >= i0Var.c;
+                    i0Var2.j = suggestedstarrefbots.next_offset;
+                    i0Var2.d = suggestedstarrefbots.suggested_bots.isEmpty() || arrayList3.size() >= i0Var2.c;
                 } else {
-                    i0Var.i = true;
-                    i0Var.d = true;
+                    i0Var2.i = true;
+                    i0Var2.d = true;
                 }
-                i0Var.h = false;
-                NotificationCenter.getInstance(i17).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelSuggestedBotsUpdate, Long.valueOf(i0Var.b));
+                i0Var2.h = false;
+                NotificationCenter.getInstance(i17).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelSuggestedBotsUpdate, Long.valueOf(i0Var2.b));
                 break;
             case 15:
-                k7.z0((k7) obj2, (TL_stars.TL_payments_uniqueStarGift) obj);
+                l7.f1((l7) obj2, (TL_stars.TL_payments_uniqueStarGift) obj);
                 break;
             case 16:
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj;
@@ -277,55 +279,55 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 break;
             case 17:
-                k7.L0((k7) obj2, (Long) obj);
+                l7.Q0((l7) obj2, (Long) obj);
                 break;
             case 18:
-                k7 k7Var = (k7) obj2;
+                l7 l7Var = (l7) obj2;
                 if (!((ga) obj).e) {
-                    qc Q = k7Var.getBulletinFactory().Q(R.raw.error, 36, LocaleController.formatString(R.string.UnknownErrorCode, "NO_BALANCE"));
+                    qc Q = l7Var.getBulletinFactory().Q(R.raw.error, 36, LocaleController.formatString(R.string.UnknownErrorCode, "NO_BALANCE"));
                     Q.t = true;
                     Q.j();
                     break;
                 } else {
-                    k7Var.k0.setLoading(false);
-                    k7Var.K1();
+                    l7Var.k0.setLoading(false);
+                    l7Var.R1();
                     break;
                 }
             case 19:
-                MessagesController.getInstance(((k7) obj2).currentAccount).lambda$processUpdates$377((TLRPC.Updates) ((TLObject) obj), false);
+                MessagesController.getInstance(((l7) obj2).currentAccount).lambda$processUpdates$377((TLRPC.Updates) ((TLObject) obj), false);
                 break;
             case 20:
-                ((k7) obj2).getBulletinFactory().f0((TLRPC.TL_error) obj, false);
+                ((l7) obj2).getBulletinFactory().f0((TLRPC.TL_error) obj, false);
                 break;
             case 21:
-                k7 k7Var2 = (k7) obj2;
-                xc.a0((sn) obj).K(R.raw.gift, LocaleController.getString(R.string.StarsGiftUpgradeCompleted), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StarsGiftUpgradeCompletedText, DialogObject.getShortName(k7Var2.X))), LocaleController.getString(R.string.StarsGiftUpgradeCompletedMoreButton), new ai.b2(k7Var2, i13)).k(true);
+                l7 l7Var2 = (l7) obj2;
+                xc.a0((qn) obj).K(R.raw.gift, LocaleController.getString(R.string.StarsGiftUpgradeCompleted), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StarsGiftUpgradeCompletedText, DialogObject.getShortName(l7Var2.X))), LocaleController.getString(R.string.StarsGiftUpgradeCompletedMoreButton), new d2(l7Var2, 8)).k(true);
                 break;
             case 22:
-                k7 k7Var3 = (k7) obj2;
-                k7Var3.getClass();
+                l7 l7Var3 = (l7) obj2;
+                l7Var3.getClass();
                 ((boolean[]) obj)[0] = true;
-                k7Var3.k0.setLoading(false);
-                k7Var3.K1();
+                l7Var3.k0.setLoading(false);
+                l7Var3.R1();
                 break;
             case 23:
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj;
-                ((k7) obj2).getBulletinFactory().Q(R.raw.ic_delete, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftRemovedDescription, tL_starGiftUnique.title + " #" + tL_starGiftUnique.num))).j();
+                ((l7) obj2).getBulletinFactory().Q(R.raw.ic_delete, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftRemovedDescription, tL_starGiftUnique.title + " #" + tL_starGiftUnique.num))).j();
                 break;
             case 24:
-                ((k7) obj2).K2((CharSequence) obj);
+                ((l7) obj2).R2((CharSequence) obj);
                 break;
             case 25:
-                p7 p7Var = (p7) obj2;
-                sn snVar = (sn) obj;
-                org.telegram.ui.Cells.a0 a0Var4 = p7Var.b;
+                q7 q7Var = (q7) obj2;
+                qn qnVar = (qn) obj;
+                org.telegram.ui.Cells.a0 a0Var4 = q7Var.b;
                 if (a0Var4 != null) {
                     try {
                         a0Var4.performHapticFeedback(0);
                     } catch (Exception unused) {
                     }
-                    p7Var.onTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
-                    org.telegram.ui.Cells.a0 a0Var5 = p7Var.b;
+                    q7Var.onTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
+                    org.telegram.ui.Cells.a0 a0Var5 = q7Var.b;
                     if (a0Var5 instanceof u1) {
                         messageObject = ((u1) a0Var5).getPrimaryMessageObject();
                         if (messageObject != null) {
@@ -346,11 +348,11 @@ public final /* synthetic */ class f implements Runnable {
                     if (faVar != null) {
                         faVar.b();
                     }
-                    TLRPC.ChatFull chatFull = snVar.Z7;
-                    le leVar = new le(p7Var.getContext(), snVar.getCurrentAccount(), snVar.a(), snVar, messageObject2, arrayList4, chatFull == null || chatFull.paid_reactions_available, false, 0L, snVar.getResourceProvider());
+                    TLRPC.ChatFull chatFull = qnVar.Z7;
+                    le leVar = new le(q7Var.getContext(), qnVar.getCurrentAccount(), qnVar.a(), qnVar, messageObject2, arrayList4, chatFull == null || chatFull.paid_reactions_available, false, 0L, qnVar.getResourceProvider());
                     messageObject2.getId();
-                    org.telegram.ui.Cells.a0 a0Var6 = p7Var.b;
-                    leVar.U = snVar;
+                    org.telegram.ui.Cells.a0 a0Var6 = q7Var.b;
+                    leVar.U = qnVar;
                     leVar.V = a0Var6;
                     leVar.show();
                     break;

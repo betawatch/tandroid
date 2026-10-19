@@ -4,13 +4,13 @@ import android.webkit.JavascriptInterface;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class jg0 {
-    public final /* synthetic */ org.telegram.ui.qt0 a;
+    public final /* synthetic */ org.telegram.ui.ot0 a;
 
-    public jg0(org.telegram.ui.qt0 qt0Var) {
-        this.a = qt0Var;
+    public jg0(org.telegram.ui.ot0 ot0Var) {
+        this.a = ot0Var;
     }
 
     @JavascriptInterface
@@ -36,24 +36,24 @@ public final class jg0 {
     @JavascriptInterface
     public void onPlayerNotifyDuration(int i10) {
         int i11 = i10 * MediaDataController.MAX_STYLE_RUNS_COUNT;
-        org.telegram.ui.qt0 qt0Var = this.a;
-        qt0Var.H = i11;
-        String str = qt0Var.s;
+        org.telegram.ui.ot0 ot0Var = this.a;
+        ot0Var.H = i11;
+        String str = ot0Var.s;
         if (str != null) {
-            kg0.a(qt0Var, str);
-            qt0Var.s = null;
+            kg0.a(ot0Var, str);
+            ot0Var.s = null;
         }
     }
 
     @JavascriptInterface
     public void onPlayerStateChange(String str) {
         int parseInt = Integer.parseInt(str);
-        org.telegram.ui.qt0 qt0Var = this.a;
-        boolean z10 = qt0Var.G;
+        org.telegram.ui.ot0 ot0Var = this.a;
+        boolean z10 = ot0Var.G;
         boolean z11 = false;
         int i10 = 1;
-        qt0Var.G = parseInt == 1 || parseInt == 3;
-        qt0Var.b(z10);
+        ot0Var.G = parseInt == 1 || parseInt == 3;
+        ot0Var.b(z10);
         if (parseInt != 0) {
             if (parseInt == 1) {
                 z11 = true;
@@ -67,9 +67,9 @@ public final class jg0 {
         } else {
             i10 = 4;
         }
-        if (i10 == 3 && qt0Var.h.getVisibility() != 4) {
+        if (i10 == 3 && ot0Var.h.getVisibility() != 4) {
             AndroidUtilities.runOnUIThread(new hg0(this, 1), 300L);
         }
-        AndroidUtilities.runOnUIThread(new ai.y8(this, z11, i10, 2));
+        AndroidUtilities.runOnUIThread(new ai.z8(this, z11, i10, 2));
     }
 }

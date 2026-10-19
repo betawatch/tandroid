@@ -1,132 +1,288 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.SharedPreferences;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.regex.Pattern;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import org.telegram.ui.Components.CheckBox;
+import org.telegram.ui.Components.CheckBoxBase;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nq implements Utilities.Callback {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Serializable h;
+public final class nq extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ nq(int i10, long j10, Activity activity, ArrayList arrayList, HashMap hashMap, Utilities.Callback callback, org.telegram.ui.ActionBar.d6 d6Var) {
-        this.b = i10;
-        this.d = arrayList;
-        this.c = j10;
-        this.e = activity;
-        this.f = d6Var;
-        this.g = callback;
-        this.h = hashMap;
+    public /* synthetic */ nq(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10 = this.a;
-        Serializable serializable = this.h;
-        Object obj2 = this.g;
-        Object obj3 = this.f;
-        Object obj4 = this.e;
-        Object obj5 = this.d;
-        switch (i10) {
-            case 0:
-                jr jrVar = (jr) obj5;
-                TLObject tLObject = (TLObject) obj4;
-                TLRPC.TL_chatAdminRights tL_chatAdminRights = (TLRPC.TL_chatAdminRights) obj3;
-                TLRPC.TL_chatBannedRights tL_chatBannedRights = (TLRPC.TL_chatBannedRights) obj2;
-                String str = (String) serializable;
-                int intValue = ((Integer) obj).intValue();
-                boolean[] zArr = new boolean[1];
-                boolean z10 = (tLObject instanceof TLRPC.TL_channelParticipantAdmin) || (tLObject instanceof TLRPC.TL_chatParticipantAdmin);
-                long j10 = jrVar.N;
-                TLRPC.TL_chatBannedRights tL_chatBannedRights2 = jrVar.E;
-                long j11 = this.c;
-                rq rqVar = new rq(jrVar, j11, j10, tL_chatAdminRights, tL_chatBannedRights2, tL_chatBannedRights, str, intValue, zArr, j11);
-                rqVar.X0 = new sq(jrVar, intValue, j11, this.b, z10, zArr);
-                jrVar.presentFragment(rqVar);
-                break;
-            case 1:
-                ArrayList arrayList = (ArrayList) obj5;
-                Activity activity = (Activity) obj4;
-                org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj3;
-                Utilities.Callback callback = (Utilities.Callback) obj2;
-                HashMap hashMap = (HashMap) serializable;
-                boolean booleanValue = ((Boolean) obj).booleanValue();
-                int i11 = this.b;
-                if (booleanValue) {
-                    SharedPreferences.Editor edit = MessagesController.getInstance(i11).getMainSettings().edit();
-                    int size = arrayList.size();
-                    int i12 = 0;
-                    while (i12 < size) {
-                        Object obj6 = arrayList.get(i12);
-                        i12++;
-                        Long l4 = (Long) obj6;
-                        long longValue = l4.longValue();
-                        long sendPaidMessagesStars = MessagesController.getInstance(i11).getSendPaidMessagesStars(longValue);
-                        if (sendPaidMessagesStars <= 0 && longValue > 0) {
-                            sendPaidMessagesStars = DialogObject.getMessagesStarsPrice(MessagesController.getInstance(i11).isUserContactBlocked(longValue));
-                        }
-                        edit.putLong(r4.c.g(longValue, "ask_paid_message_", "_price"), sendPaidMessagesStars);
-                        ai.ga.y(i11, false).O.put(l4, Long.valueOf(System.currentTimeMillis()));
-                    }
-                    edit.apply();
-                }
-                org.telegram.ui.Components.m1 m1Var = new org.telegram.ui.Components.m1(i11, this.c, activity, arrayList, hashMap, callback, d6Var);
-                if (!ai.ga.y(i11, false).e) {
-                    ai.ga y3 = ai.ga.y(i11, false);
-                    y3.e = false;
-                    y3.q(false, true, m1Var);
-                    y3.e = true;
-                    break;
-                } else {
-                    m1Var.run();
-                    break;
-                }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 14:
+                ((org.telegram.ui.Components.hm) this.b).a.O = null;
                 break;
             default:
-                Pattern pattern = LaunchActivity.C1;
-                TLRPC.TL_messages_toggleBotInAttachMenu tL_messages_toggleBotInAttachMenu = new TLRPC.TL_messages_toggleBotInAttachMenu();
-                int i13 = this.b;
-                tL_messages_toggleBotInAttachMenu.bot = MessagesController.getInstance(i13).getInputUser(this.c);
-                tL_messages_toggleBotInAttachMenu.enabled = true;
-                tL_messages_toggleBotInAttachMenu.write_allowed = true;
-                ConnectionsManager.getInstance(i13).sendRequest(tL_messages_toggleBotInAttachMenu, new org.telegram.messenger.gi((LaunchActivity) obj5, i13, (ey) obj4, (org.telegram.ui.ActionBar.n2) obj3, (TLRPC.User) obj2, (String) serializable), 66);
+                super.onAnimationCancel(animator);
                 break;
         }
     }
 
-    public /* synthetic */ nq(jr jrVar, long j10, int i10, TLObject tLObject, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z10) {
-        this.d = jrVar;
-        this.c = j10;
-        this.b = i10;
-        this.e = tLObject;
-        this.f = tL_chatAdminRights;
-        this.g = tL_chatBannedRights;
-        this.h = str;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                oq oqVar = (oq) this.b;
+                View view = oqVar.b;
+                view.setAlpha(1.0f);
+                s4.n0.x0(view);
+                ((hr) oqVar.d).c.removeView(view);
+                break;
+            case 1:
+                org.telegram.ui.Components.i6 i6Var = (org.telegram.ui.Components.i6) this.b;
+                i6Var.d = null;
+                i6Var.b.clear();
+                break;
+            case 2:
+                AnimatedPhoneNumberEditText animatedPhoneNumberEditText = (AnimatedPhoneNumberEditText) this.b;
+                animatedPhoneNumberEditText.n = null;
+                animatedPhoneNumberEditText.f.clear();
+                break;
+            case 3:
+                super.onAnimationEnd(animator);
+                org.telegram.ui.Components.p6 p6Var = (org.telegram.ui.Components.p6) this.b;
+                p6Var.b();
+                p6Var.o = null;
+                p6Var.j = 0.0f;
+                p6Var.m = 0.0f;
+                p6Var.l = 0.0f;
+                p6Var.k = 0.0f;
+                p6Var.r = 0.0f;
+                p6Var.q = 0.0f;
+                p6Var.invalidateSelf();
+                Runnable runnable = p6Var.b0;
+                if (runnable != null) {
+                    runnable.run();
+                }
+                p6Var.t = null;
+                CharSequence charSequence = p6Var.u;
+                if (charSequence == null) {
+                    org.telegram.ui.Components.pg pgVar = p6Var.I;
+                    if (pgVar != null) {
+                        pgVar.run();
+                        break;
+                    }
+                } else {
+                    p6Var.t(charSequence, true, p6Var.v);
+                    p6Var.u = null;
+                    p6Var.v = false;
+                    break;
+                }
+                break;
+            case 4:
+                org.telegram.ui.Components.w9 w9Var = (org.telegram.ui.Components.w9) this.b;
+                w9Var.setVisibility(8);
+                w9Var.setImageDrawable(null);
+                w9Var.setAlpha(1.0f);
+                break;
+            case 5:
+                org.telegram.ui.Components.e9 e9Var = ((org.telegram.ui.Components.s8) this.b).b;
+                e9Var.f = false;
+                e9Var.e.setVisibility(8);
+                break;
+            case 6:
+                org.telegram.ui.Components.j9 j9Var = (org.telegram.ui.Components.j9) this.b;
+                if (j9Var.f != null) {
+                    j9Var.e = 1.0f;
+                    j9Var.n();
+                    if (j9Var.g) {
+                        j9Var.g = false;
+                        Runnable runnable2 = j9Var.j;
+                        if (runnable2 != null) {
+                            runnable2.run();
+                        }
+                    }
+                    j9Var.f();
+                }
+                j9Var.f = null;
+                break;
+            case 7:
+                ((org.telegram.ui.Components.rf) this.b).f.b0.setVisibility(8);
+                break;
+            case 8:
+                ((org.telegram.ui.Components.vg) this.b).d0 = 1.0f;
+                break;
+            case 9:
+                ((org.telegram.ui.Components.ti) ((org.telegram.ui.Components.bi) this.b).d).s.setVisibility(8);
+                break;
+            case 10:
+                ((org.telegram.ui.Components.di) this.b).d.v.setVisibility(8);
+                break;
+            case 11:
+                org.telegram.ui.Components.ti tiVar = (org.telegram.ui.Components.ti) this.b;
+                tiVar.c1 = null;
+                if (!tiVar.t1) {
+                    if (tiVar.a1.getTag() == null && tiVar.T0 == 0 && !tiVar.W0) {
+                        tiVar.d1.setVisibility(4);
+                    }
+                    tiVar.l1.setVisibility(4);
+                    break;
+                } else {
+                    org.telegram.ui.ActionBar.u0 u0Var = tiVar.h1;
+                    if (u0Var != null) {
+                        u0Var.setVisibility(4);
+                        break;
+                    }
+                }
+                break;
+            case 12:
+                super.onAnimationEnd(animator);
+                org.telegram.ui.Components.nk nkVar = (org.telegram.ui.Components.nk) this.b;
+                nkVar.s.setVisibility(8);
+                nkVar.n = 0;
+                org.telegram.ui.Components.ck ckVar = nkVar.r;
+                ckVar.setAlpha(1.0f);
+                ckVar.setScaleX(1.0f);
+                ckVar.setScaleY(1.0f);
+                ckVar.setTranslationX(0.0f);
+                ckVar.invalidate();
+                break;
+            case 13:
+                org.telegram.ui.Components.mk mkVar = (org.telegram.ui.Components.mk) this.b;
+                if (mkVar.X.H.getTag() == null) {
+                    mkVar.X.H.setVisibility(4);
+                }
+                mkVar.X.I = null;
+                break;
+            case 14:
+                org.telegram.ui.Components.hm hmVar = (org.telegram.ui.Components.hm) this.b;
+                if (animator.equals(hmVar.a.O)) {
+                    ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = hmVar.a;
+                    chatAttachAlertPhotoLayout.c0 = true;
+                    chatAttachAlertPhotoLayout.O = null;
+                    break;
+                }
+                break;
+            case 15:
+                org.telegram.ui.Components.an anVar = (org.telegram.ui.Components.an) this.b;
+                org.telegram.ui.Components.bn bnVar = anVar.P;
+                bnVar.J = null;
+                bnVar.K = false;
+                anVar.invalidate();
+                break;
+            case 16:
+                org.telegram.ui.Components.wp wpVar = (org.telegram.ui.Components.wp) this.b;
+                ei.db dbVar = wpVar.R;
+                if (dbVar != null) {
+                    if (dbVar.getParent() != null) {
+                        ((ViewGroup) wpVar.R.getParent()).removeView(wpVar.R);
+                    }
+                    wpVar.R = null;
+                }
+                wpVar.T = null;
+                super.onAnimationEnd(animator);
+                break;
+            case 17:
+                CheckBox checkBox = (CheckBox) this.b;
+                if (animator.equals(checkBox.s)) {
+                    checkBox.s = null;
+                }
+                if (!checkBox.x) {
+                    checkBox.G = null;
+                    break;
+                }
+                break;
+            case 18:
+                CheckBoxBase checkBoxBase = (CheckBoxBase) this.b;
+                if (animator.equals(checkBoxBase.p)) {
+                    checkBoxBase.p = null;
+                }
+                if (!checkBoxBase.q) {
+                    checkBoxBase.C = null;
+                    break;
+                }
+                break;
+            case 19:
+                org.telegram.ui.Components.wq wqVar = (org.telegram.ui.Components.wq) this.b;
+                if (wqVar.K == wqVar.L) {
+                    wqVar.G.setVisibility(4);
+                }
+                wqVar.y = null;
+                break;
+            case 20:
+                org.telegram.ui.Components.fr frVar = (org.telegram.ui.Components.fr) this.b;
+                frVar.l = 1.0f;
+                frVar.o = null;
+                frVar.p = null;
+                frVar.q = null;
+                View view2 = frVar.H;
+                if (view2 != null) {
+                    if (frVar.h == 0 && frVar.G) {
+                        view2.setVisibility(8);
+                    }
+                    frVar.H.invalidate();
+                }
+                frVar.c = -1;
+                break;
+            case 21:
+                org.telegram.ui.Components.qu quVar = (org.telegram.ui.Components.qu) this.b;
+                quVar.O = false;
+                quVar.d.setTranslationY(0.0f);
+                quVar.d.setAlpha(0.0f);
+                quVar.c(0.0f);
+                quVar.R = 0.0f;
+                quVar.j();
+                break;
+            case 22:
+                ((org.telegram.ui.Components.yu) this.b).a.O = false;
+                break;
+            case 23:
+                super.onAnimationEnd(animator);
+                ((org.telegram.ui.Components.rv) this.b).d = null;
+                break;
+            case 24:
+                ((org.telegram.ui.Components.tz) this.b).W = null;
+                break;
+            case 25:
+                super.onAnimationEnd(animator);
+                ((org.telegram.ui.Components.cz) this.b).n = null;
+                break;
+            case 26:
+                ((org.telegram.ui.Components.q00) this.b).a();
+                break;
+            case 27:
+                org.telegram.ui.Components.s00 s00Var = (org.telegram.ui.Components.s00) this.b;
+                s00Var.U = s00Var.c0;
+                s00Var.b0 = s00Var.f0;
+                s00Var.V = s00Var.d0;
+                s00Var.W = s00Var.e0;
+                s00Var.c0 = -1;
+                s00Var.d0 = -1;
+                s00Var.e0 = -1;
+                s00Var.f0 = -1;
+                break;
+            case 28:
+                org.telegram.ui.Components.g10 g10Var = (org.telegram.ui.Components.g10) this.b;
+                g10Var.s = 1.0f;
+                g10Var.invalidate();
+                break;
+            default:
+                org.telegram.ui.Components.l60 l60Var = (org.telegram.ui.Components.l60) this.b;
+                if (animator == l60Var.W) {
+                    l60Var.c(true);
+                    l60Var.setVisibility(4);
+                    break;
+                }
+                break;
+        }
     }
 
-    public /* synthetic */ nq(LaunchActivity launchActivity, int i10, long j10, ey eyVar, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.User user, String str) {
-        this.d = launchActivity;
-        this.b = i10;
-        this.c = j10;
-        this.e = eyVar;
-        this.f = n2Var;
-        this.g = user;
-        this.h = str;
+    public nq(oq oqVar, s4.n0 n0Var) {
+        this.a = 0;
+        this.b = oqVar;
     }
 }

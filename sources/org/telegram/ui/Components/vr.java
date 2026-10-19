@@ -9,28 +9,28 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class vr extends e61 {
+public final class vr extends f61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        e61.setup(new vr());
+        f61.setup(new vr());
     }
 
-    @Override // org.telegram.ui.Components.e61
-    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
+    @Override // org.telegram.ui.Components.f61
+    public final void bindView(View view, g61 g61Var, boolean z10, t61 t61Var, b71 b71Var) {
         org.telegram.ui.Cells.b9 b9Var = (org.telegram.ui.Cells.b9) view;
-        b9Var.c(f61Var.l, f61Var.n, !f61Var.j);
+        b9Var.c(g61Var.l, g61Var.n, !g61Var.j);
         wh.n nVar = b9Var.a;
-        if (f61Var.l instanceof SpannableStringBuilder) {
+        if (g61Var.l instanceof SpannableStringBuilder) {
             nVar.setTextSize(1, 13.0f);
             nVar.setTranslationY(AndroidUtilities.dp(2.0f));
             nVar.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO));
         }
     }
 
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     public final View createView(Context context, im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
         org.telegram.ui.Cells.b9 b9Var = new org.telegram.ui.Cells.b9(context, d6Var, true);
         b9Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, d6Var));

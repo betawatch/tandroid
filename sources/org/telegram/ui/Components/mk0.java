@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class mk0 extends FrameLayout {
     public lk0 E;
@@ -128,7 +128,7 @@ public final class mk0 extends FrameLayout {
             arrayList.addAll(hashSet);
             mk0Var.i();
         }
-        Collections.sort(arrayList2, Comparator$-CC.comparingInt(new ai.u8(18)));
+        Collections.sort(arrayList2, Comparator$-CC.comparingInt(new ai.v8(18)));
         mk0Var.f.l();
         if (!mk0Var.w) {
             ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
@@ -174,20 +174,20 @@ public final class mk0 extends FrameLayout {
         ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getMessageReactionsList, new y1(this, 11), 64);
     }
 
-    public final void d(org.telegram.ui.re reVar) {
-        this.G = reVar;
+    public final void d(org.telegram.ui.pe peVar) {
+        this.G = peVar;
     }
 
     public final void e(org.telegram.ui.e7 e7Var) {
         this.y = e7Var;
     }
 
-    public final void f(org.telegram.ui.wf wfVar) {
-        this.F = wfVar;
+    public final void f(org.telegram.ui.uf ufVar) {
+        this.F = ufVar;
     }
 
-    public final void g(org.telegram.ui.vf vfVar) {
-        this.E = vfVar;
+    public final void g(org.telegram.ui.tf tfVar) {
+        this.E = tfVar;
     }
 
     public final void h(List list) {
@@ -244,7 +244,7 @@ public final class mk0 extends FrameLayout {
         }
         arrayList.isEmpty();
         arrayList.addAll(arrayList2);
-        Collections.sort(arrayList, Comparator$-CC.comparingInt(new ai.u8(17)));
+        Collections.sort(arrayList, Comparator$-CC.comparingInt(new ai.v8(17)));
         this.f.l();
         j();
     }

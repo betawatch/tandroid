@@ -1,25 +1,25 @@
 package rg;
 
-import org.telegram.ui.it0;
-import org.telegram.ui.sq0;
+import org.telegram.ui.gt0;
+import org.telegram.ui.qq0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class c0 implements qg.d1 {
-    public final /* synthetic */ sq0 a;
-    public final /* synthetic */ it0 b;
+public final class c0 implements qg.e1 {
+    public final /* synthetic */ qq0 a;
+    public final /* synthetic */ gt0 b;
 
-    public c0(it0 it0Var, sq0 sq0Var) {
-        this.b = it0Var;
-        this.a = sq0Var;
+    public c0(gt0 gt0Var, qq0 qq0Var) {
+        this.b = gt0Var;
+        this.a = qq0Var;
     }
 
-    @Override // qg.d1
+    @Override // qg.e1
     public final void a() {
         this.a.run();
     }
 
-    @Override // qg.d1
+    @Override // qg.e1
     public final void b() {
         d0 d0Var = this.b.X0;
         if (d0Var != null) {
@@ -27,40 +27,40 @@ public final class c0 implements qg.d1 {
         }
     }
 
-    @Override // qg.d1
+    @Override // qg.e1
     public final void c() {
-        it0 it0Var = this.b;
-        if (it0Var.k1) {
-            it0Var.k1 = false;
+        gt0 gt0Var = this.b;
+        if (gt0Var.k1) {
+            gt0Var.k1 = false;
         } else {
-            it0Var.t1.b(1);
-            it0Var.o((qg.m) qg.m.a.get(0));
+            gt0Var.t1.b(1);
+            gt0Var.o((qg.m) qg.m.a.get(0));
         }
     }
 
-    @Override // qg.d1
+    @Override // qg.e1
     public final boolean d() {
-        it0 it0Var = this.b;
-        boolean z10 = it0Var.S0 == null;
+        gt0 gt0Var = this.b;
+        boolean z10 = gt0Var.S0 == null;
         if (!z10) {
-            it0Var.s0(null, true);
+            gt0Var.s0(null, true);
         }
         return z10;
     }
 
-    @Override // qg.d1
+    @Override // qg.e1
     public final void e() {
-        it0 it0Var = this.b;
-        it0Var.F0.a.e();
-        it0Var.l1.setViewHidden(false);
+        gt0 gt0Var = this.b;
+        gt0Var.F0.a.e();
+        gt0Var.l1.setViewHidden(false);
     }
 
-    @Override // qg.d1
+    @Override // qg.e1
     public final void f() {
-        it0 it0Var = this.b;
-        if (it0Var.S0 != null) {
-            it0Var.s0(null, true);
+        gt0 gt0Var = this.b;
+        if (gt0Var.S0 != null) {
+            gt0Var.s0(null, true);
         }
-        it0Var.l1.setViewHidden(true);
+        gt0Var.l1.setViewHidden(true);
     }
 }

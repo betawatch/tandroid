@@ -88,11 +88,11 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.bh0;
 import org.telegram.ui.Components.bq;
-import org.telegram.ui.Components.d61;
 import org.telegram.ui.Components.dd0;
+import org.telegram.ui.Components.e61;
 import org.telegram.ui.Components.f20;
-import org.telegram.ui.Components.fx0;
 import org.telegram.ui.Components.g20;
+import org.telegram.ui.Components.gx0;
 import org.telegram.ui.Components.l8;
 import org.telegram.ui.Components.q9;
 import org.telegram.ui.Components.r90;
@@ -106,10 +106,10 @@ import org.telegram.ui.Components.wc0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.bc1;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
+import org.telegram.ui.zb1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class h6 {
     public static int A;
@@ -1283,7 +1283,7 @@ public abstract class h6 {
     public static final int[] D = new int[4];
     public static final long[] E = new long[4];
     public static final Drawable[] r0 = new Drawable[25];
-    public static final fx0[] u3 = new fx0[6];
+    public static final gx0[] u3 = new gx0[6];
     public static final Drawable[] G4 = new Drawable[2];
     public static final Drawable[] H4 = new Drawable[2];
     public static final Drawable[] I4 = new Drawable[2];
@@ -5157,7 +5157,7 @@ public abstract class h6 {
                             tL_inputTheme.access_hash = tL_theme.access_hash;
                             tL_inputTheme.id = tL_theme.id;
                             gettheme.theme = tL_inputTheme;
-                            ConnectionsManager.getInstance(i10).sendRequest(gettheme, new ai.k2(k10, g6Var, tL_theme, 12));
+                            ConnectionsManager.getInstance(i10).sendRequest(gettheme, new ai.j2(k10, g6Var, tL_theme, 12));
                         }
                     }
                     i11++;
@@ -5354,7 +5354,7 @@ public abstract class h6 {
                             z5Var.b = new ColorDrawable(i19);
                         } else {
                             v9 v9Var = new v9(v9.d(i18), new int[]{i19, i17});
-                            V = v9Var.f(ki.t1.u(0.5f, 3), new q5(), 100L);
+                            V = v9Var.f(ki.t1.Q(0.5f, 3), new q5(), 100L);
                             z5Var.b = v9Var;
                         }
                     } else {
@@ -5455,7 +5455,7 @@ public abstract class h6 {
                             int i21 = a6Var.e;
                             if (i21 != 0) {
                                 v9 v9Var2 = new v9(v9.d(a6Var.h), new int[]{i20, i21});
-                                V = v9Var2.f(ki.t1.u(0.5f, 3), new r5(), 100L);
+                                V = v9Var2.f(ki.t1.Q(0.5f, 3), new r5(), 100L);
                                 z5Var.b = v9Var2;
                             } else {
                                 z5Var.b = new ColorDrawable(i20);
@@ -6560,7 +6560,7 @@ public abstract class h6 {
             } else {
                 if (file == null) {
                     v9 v9Var = new v9(v9.d(i16), new int[]{i11, i13});
-                    v9Var.f(!z10 ? ki.t1.u(0.5f, 3) : ki.t1.u(0.125f, 1), view != null ? new s5(view, z10) : null, 0L);
+                    v9Var.f(!z10 ? ki.t1.Q(0.5f, 3) : ki.t1.Q(0.125f, 1), view != null ? new s5(view, z10) : null, 0L);
                     return v9Var;
                 }
                 wc0Var = null;
@@ -7337,11 +7337,11 @@ public abstract class h6 {
         y1(i31, Y4);
         int i32 = 0;
         while (true) {
-            fx0[] fx0VarArr = u3;
-            if (i32 >= fx0VarArr.length) {
+            gx0[] gx0VarArr = u3;
+            if (i32 >= gx0VarArr.length) {
                 break;
             }
-            y1(p9, fx0VarArr[i32]);
+            y1(p9, gx0VarArr[i32]);
             i32++;
         }
         for (int i33 = 0; i33 < 5; i33++) {
@@ -7983,13 +7983,13 @@ public abstract class h6 {
         g(tl, ul, I.q());
         f(tl, ul, I.q());
         if (!z11) {
-            p1(!(LaunchActivity.R() instanceof sn));
+            p1(!(LaunchActivity.R() instanceof qn));
         }
         k();
         n();
         p();
         j(false, z10);
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.b4(3, !O));
+        AndroidUtilities.runOnUIThread(new org.telegram.messenger.a4(3, !O));
     }
 
     public static void p() {
@@ -8137,15 +8137,15 @@ public abstract class h6 {
         int i10 = iArr[0];
         int i11 = iArr[1];
         view2.getLocationOnScreen(iArr);
-        if (view2 instanceof bc1) {
+        if (view2 instanceof zb1) {
             Bitmap bitmap = Y;
             if (bitmap != null) {
                 float width = bitmap.getWidth();
-                i10 = (int) ((((view2.getMeasuredWidth() - (Math.max(view2.getMeasuredWidth() / width, view2.getMeasuredHeight() / Y.getHeight()) * width)) / 2.0f) - ((bc1) view2).I) + i10);
+                i10 = (int) ((((view2.getMeasuredWidth() - (Math.max(view2.getMeasuredWidth() / width, view2.getMeasuredHeight() / Y.getHeight()) * width)) / 2.0f) - ((zb1) view2).I) + i10);
             } else {
-                i10 = (int) (i10 + (-((bc1) view2).I));
+                i10 = (int) (i10 + (-((zb1) view2).I));
             }
-            i11 = (int) (i11 + (-((bc1) view2).J));
+            i11 = (int) (i11 + (-((zb1) view2).J));
         }
         if (d6Var != null) {
             d6Var.d(i10, i11 - iArr[1], view2.getMeasuredWidth(), view2.getMeasuredHeight());
@@ -8410,7 +8410,7 @@ public abstract class h6 {
         r3.apply();
      */
     /* JADX WARN: Removed duplicated region for block: B:22:0x01cb  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x01d0 A[Catch: Exception -> 0x002e, TryCatch #2 {Exception -> 0x002e, blocks: (B:7:0x000e, B:10:0x0016, B:15:0x001f, B:16:0x0031, B:18:0x01bf, B:20:0x01c3, B:24:0x01d0, B:26:0x01e4, B:41:0x0044, B:42:0x0056, B:44:0x005c, B:45:0x0070, B:47:0x0083, B:55:0x00bf, B:106:0x01a7, B:113:0x01b9, B:115:0x0063, B:57:0x00c1, B:59:0x00d7, B:61:0x00e3, B:64:0x00e7, B:66:0x00ea, B:68:0x00f4, B:70:0x0106, B:71:0x00fa, B:73:0x0104, B:77:0x0109, B:79:0x011a, B:81:0x0126, B:83:0x013e, B:85:0x0148, B:86:0x0154, B:88:0x015a, B:90:0x0164, B:91:0x0171, B:93:0x0179, B:95:0x0183, B:98:0x0190, B:100:0x019c), top: B:6:0x000e, inners: #5 }] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x01d0 A[Catch: Exception -> 0x002e, TryCatch #2 {Exception -> 0x002e, blocks: (B:7:0x000e, B:10:0x0016, B:15:0x001f, B:16:0x0031, B:18:0x01bf, B:20:0x01c3, B:24:0x01d0, B:26:0x01e4, B:41:0x0044, B:42:0x0056, B:44:0x005c, B:45:0x0070, B:47:0x0083, B:55:0x00bf, B:106:0x01a7, B:113:0x01b9, B:115:0x0063, B:57:0x00c1, B:59:0x00d7, B:61:0x00e3, B:64:0x00e7, B:66:0x00ea, B:68:0x00f4, B:70:0x0106, B:71:0x00fa, B:73:0x0104, B:77:0x0109, B:79:0x011a, B:81:0x0126, B:83:0x013e, B:85:0x0148, B:86:0x0154, B:88:0x015c, B:90:0x0166, B:91:0x0173, B:93:0x017b, B:95:0x0185, B:98:0x0190, B:100:0x019c), top: B:6:0x000e, inners: #5 }] */
     /* JADX WARN: Removed duplicated region for block: B:25:0x01cd  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -8426,7 +8426,7 @@ public abstract class h6 {
             themeEditorView.a();
         }
         try {
-            i10 = 20;
+            i10 = 21;
         } catch (Exception e10) {
             FileLog.e(e10);
         }
@@ -8676,32 +8676,32 @@ public abstract class h6 {
         }
     }
 
-    public static fx0 u0(int i10) {
+    public static gx0 u0(int i10) {
         if (i10 < 0 || i10 > 5) {
             return null;
         }
-        fx0[] fx0VarArr = u3;
-        fx0 fx0Var = fx0VarArr[i10];
-        if (fx0Var != null) {
-            return fx0Var;
+        gx0[] gx0VarArr = u3;
+        gx0 gx0Var = gx0VarArr[i10];
+        if (gx0Var != null) {
+            return gx0Var;
         }
         if (i10 == 0) {
-            fx0VarArr[0] = new d61(true);
+            gx0VarArr[0] = new e61(true);
         } else if (i10 == 1) {
-            fx0VarArr[1] = new bq(true);
+            gx0VarArr[1] = new bq(true);
         } else if (i10 == 2) {
-            fx0VarArr[2] = new tp0(true);
+            gx0VarArr[2] = new tp0(true);
         } else if (i10 == 3) {
-            fx0VarArr[3] = new bh0(null, true);
+            gx0VarArr[3] = new bh0(null, true);
         } else if (i10 == 4) {
-            fx0VarArr[4] = new sm0(true);
+            gx0VarArr[4] = new sm0(true);
         } else if (i10 == 5) {
-            fx0VarArr[5] = new bq();
+            gx0VarArr[5] = new bq();
         }
-        fx0 fx0Var2 = fx0VarArr[i10];
-        fx0Var2.d();
-        fx0Var2.b(x0(null, p9, false));
-        return fx0Var2;
+        gx0 gx0Var2 = gx0VarArr[i10];
+        gx0Var2.d();
+        gx0Var2.b(x0(null, p9, false));
+        return gx0Var2;
     }
 
     public static void u1(g6 g6Var, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14) {
@@ -8844,7 +8844,7 @@ public abstract class h6 {
     }
 
     public static int w0(int i10, d6 d6Var) {
-        return d6Var != null ? d6Var.u(i10) : x0(null, i10, false);
+        return d6Var != null ? d6Var.w(i10) : x0(null, i10, false);
     }
 
     public static void w1(Drawable drawable, int i10, boolean z10) {
@@ -8977,8 +8977,8 @@ public abstract class h6 {
         if (drawable == null) {
             return;
         }
-        if (drawable instanceof fx0) {
-            ((fx0) drawable).b(i10);
+        if (drawable instanceof gx0) {
+            ((gx0) drawable).b(i10);
             return;
         }
         if (drawable instanceof dd0) {

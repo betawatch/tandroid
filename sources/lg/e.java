@@ -28,10 +28,10 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.z;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.zq;
-import org.telegram.ui.ke;
+import org.telegram.ui.ie;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout {
     public boolean E;
@@ -204,7 +204,7 @@ public class e extends FrameLayout {
                             i17 = 2;
                         }
                         decimalFormat2.setMaximumFractionDigits(i17);
-                        charSequence = ke.f0("TON " + this.L.format(j12 / 1.0E9d), z5Var.getPaint(), 0.82f, 0.0f, false);
+                        charSequence = ie.f0("TON " + this.L.format(j12 / 1.0E9d), z5Var.getPaint(), 0.82f, 0.0f, false);
                     } else {
                         charSequence = "≈" + BillingController.getInstance().formatCurrency((long) (j12 / f7), "USD");
                     }

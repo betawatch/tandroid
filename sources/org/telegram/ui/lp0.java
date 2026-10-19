@@ -1,41 +1,28 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lp0 implements org.telegram.ui.Components.e5, org.telegram.ui.ActionBar.k1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ up0 b;
+public final class lp0 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ sp0 a;
 
-    public /* synthetic */ lp0(up0 up0Var, int i10) {
-        this.a = i10;
-        this.b = up0Var;
+    public lp0(sp0 sp0Var) {
+        this.a = sp0Var;
     }
 
-    @Override // org.telegram.ui.Components.e5
-    public void C(int i10, int i11, boolean z10) {
-        switch (this.a) {
-            case 0:
-                up0 up0Var = this.b;
-                up0Var.V(up0Var.b, up0Var.c, z10, i10);
-                up0Var.finishFragment();
-                break;
-            default:
-                up0 up0Var2 = this.b;
-                up0Var2.V(up0Var2.b, up0Var2.c, z10, i10);
-                up0Var2.finishFragment();
-                break;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        sp0 sp0Var = this.a;
+        if (i10 == -1) {
+            sp0Var.finishFragment();
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.k1
-    public void n(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.m1 m1Var;
-        up0 up0Var = this.b;
-        up0Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (m1Var = up0Var.I) != null && m1Var.isShowing()) {
-            up0Var.I.d(true);
+        if (i10 != 1) {
+            if (i10 == 2) {
+                sp0.U(sp0Var, null);
+            }
+        } else if (sp0Var.V != null) {
+            sp0Var.finishFragment(false);
+            sp0Var.V.b();
         }
     }
 }

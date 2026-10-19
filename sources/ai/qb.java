@@ -3,9 +3,9 @@ package ai;
 import android.content.DialogInterface;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.it0;
+import org.telegram.ui.gt0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class qb implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a = 0;
@@ -25,7 +25,7 @@ public final /* synthetic */ class qb implements DialogInterface.OnDismissListen
                 break;
             default:
                 rg.m0 m0Var = (rg.m0) this.c;
-                PhotoViewer photoViewer = ((it0) m0Var).o2;
+                PhotoViewer photoViewer = ((gt0) m0Var).o2;
                 if (photoViewer.F2 != null) {
                     photoViewer.H2 = false;
                     photoViewer.u0();

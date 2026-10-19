@@ -1,54 +1,69 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
+import android.content.Context;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class eu extends pg.a {
-    public final int c;
-    public final int d;
-    public final int e;
-    public final CharSequence f;
-    public final CharSequence g;
-    public final int h;
+public final class eu extends org.telegram.ui.Components.dd {
+    public final /* synthetic */ fu e0;
 
-    public eu(int i10, String str) {
-        super(i10, false);
-        this.f = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public eu(fu fuVar, Context context, int i10, int[] iArr, int[] iArr2) {
+        super(context, i10, iArr, 1, iArr2);
+        this.e0 = fuVar;
     }
 
-    public static eu b(CharSequence charSequence, String str) {
-        return new eu(-1, 0, 0, 0, charSequence, str);
+    @Override // org.telegram.ui.Components.dd
+    public final int c() {
+        return 216;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof eu)) {
-            return false;
+    @Override // org.telegram.ui.Components.dd
+    public final void d(int i10, boolean z10) {
+        int i11;
+        hu huVar = (hu) this.e0.e;
+        if (!z10) {
+            huVar.j1();
+            return;
         }
-        eu euVar = (eu) obj;
-        CharSequence charSequence = euVar.f;
-        int i10 = euVar.a;
-        int i11 = this.a;
-        if (i10 != i11) {
-            return false;
+        if (i10 < 0 || i10 >= huVar.e3.length) {
+            return;
         }
-        CharSequence charSequence2 = this.f;
-        if (i11 == 1 || i11 == 4 || i11 == 3 || i11 == 5) {
-            return TextUtils.equals(charSequence2, charSequence);
+        int i12 = 0;
+        while (true) {
+            gu[] guVarArr = huVar.e3;
+            i11 = -1;
+            if (i12 >= guVarArr.length) {
+                i12 = -1;
+                break;
+            } else if (guVarArr[i12].d == i10) {
+                break;
+            } else {
+                i12++;
+            }
         }
-        if (i11 == 2) {
-            return euVar.h == this.h && TextUtils.equals(charSequence2, charSequence) && euVar.d == this.d && euVar.e == this.e && euVar.c == this.c;
+        int i13 = 0;
+        while (true) {
+            if (i13 < huVar.a3.size()) {
+                cu cuVar = (cu) huVar.a3.get(i13);
+                if (cuVar != null && cuVar.a == 2 && cuVar.h == i12) {
+                    i11 = i13;
+                    break;
+                }
+                i13++;
+            } else {
+                break;
+            }
         }
-        return true;
+        if (i11 >= 0) {
+            huVar.e1(new i2.w(i11, 7), 0, true);
+        } else {
+            huVar.j1();
+        }
     }
 
-    public eu(int i10, int i11, int i12, int i13, CharSequence charSequence, CharSequence charSequence2) {
-        super(2, false);
-        this.h = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = i13;
-        this.f = charSequence;
-        this.g = charSequence2;
+    @Override // org.telegram.ui.Components.dd
+    public final int e() {
+        return 10;
     }
 }

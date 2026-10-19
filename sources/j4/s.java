@@ -3,11 +3,11 @@ package j4;
 import b2.v0;
 import c3.j0;
 import e2.m0;
-import i2.n0;
+import i2.o0;
 import java.util.Collections;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class s implements i {
     public final c0 a;
@@ -17,11 +17,11 @@ public final class s implements i {
     public boolean e;
     public long l;
     public final boolean[] f = new boolean[3];
-    public final n0 g = new n0(32);
-    public final n0 h = new n0(33);
-    public final n0 i = new n0(34);
-    public final n0 j = new n0(39);
-    public final n0 k = new n0(40);
+    public final o0 g = new o0(32);
+    public final o0 h = new o0(33);
+    public final o0 i = new o0(34);
+    public final o0 j = new o0(39);
+    public final o0 k = new o0(40);
     public long m = -9223372036854775807L;
     public final e2.x n = new e2.x();
 
@@ -85,21 +85,21 @@ public final class s implements i {
             rVar.i = true;
         }
         if (!this.e) {
-            n0 n0Var = this.g;
-            n0Var.e(i11);
-            n0 n0Var2 = this.h;
-            n0Var2.e(i11);
-            n0 n0Var3 = this.i;
-            n0Var3.e(i11);
-            if (n0Var.d && n0Var2.d && n0Var3.d) {
+            o0 o0Var = this.g;
+            o0Var.e(i11);
+            o0 o0Var2 = this.h;
+            o0Var2.e(i11);
+            o0 o0Var3 = this.i;
+            o0Var3.e(i11);
+            if (o0Var.d && o0Var2.d && o0Var3.d) {
                 String str = this.b;
-                int i12 = n0Var.e;
-                byte[] bArr = new byte[n0Var2.e + i12 + n0Var3.e];
-                System.arraycopy((byte[]) n0Var.f, 0, bArr, 0, i12);
-                System.arraycopy((byte[]) n0Var2.f, 0, bArr, n0Var.e, n0Var2.e);
-                System.arraycopy((byte[]) n0Var3.f, 0, bArr, n0Var.e + n0Var2.e, n0Var3.e);
+                int i12 = o0Var.e;
+                byte[] bArr = new byte[o0Var2.e + i12 + o0Var3.e];
+                System.arraycopy((byte[]) o0Var.f, 0, bArr, 0, i12);
+                System.arraycopy((byte[]) o0Var2.f, 0, bArr, o0Var.e, o0Var2.e);
+                System.arraycopy((byte[]) o0Var3.f, 0, bArr, o0Var.e + o0Var2.e, o0Var3.e);
                 String str2 = null;
-                f2.m k10 = f2.q.k((byte[]) n0Var2.f, 3, n0Var2.e, null);
+                f2.m k10 = f2.q.k((byte[]) o0Var2.f, 3, o0Var2.e, null);
                 f2.j jVar = k10.b;
                 if (jVar != null) {
                     str2 = e2.g.a(jVar.a, jVar.c, jVar.d, jVar.f, jVar.b, jVar.e);
@@ -126,17 +126,17 @@ public final class s implements i {
                 this.e = true;
             }
         }
-        n0 n0Var4 = this.j;
-        boolean e = n0Var4.e(i11);
+        o0 o0Var4 = this.j;
+        boolean e = o0Var4.e(i11);
         e2.x xVar = this.n;
         if (e) {
-            xVar.L(f2.q.p(n0Var4.e, (byte[]) n0Var4.f), (byte[]) n0Var4.f);
+            xVar.L(f2.q.p(o0Var4.e, (byte[]) o0Var4.f), (byte[]) o0Var4.f);
             xVar.O(5);
             cVar.a(j11, xVar);
         }
-        n0 n0Var5 = this.k;
-        if (n0Var5.e(i11)) {
-            xVar.L(f2.q.p(n0Var5.e, (byte[]) n0Var5.f), (byte[]) n0Var5.f);
+        o0 o0Var5 = this.k;
+        if (o0Var5.e(i11)) {
+            xVar.L(f2.q.p(o0Var5.e, (byte[]) o0Var5.f), (byte[]) o0Var5.f);
             xVar.O(5);
             cVar.a(j11, xVar);
         }

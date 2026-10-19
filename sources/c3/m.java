@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class m implements r {
     public static final int[] h = {5, 4, 12, 8, 3, 10, 9, 11, 6, 2, 0, 1, 7, 16, 15, 14, 17, 18, 19, 20, 21};
@@ -47,7 +47,7 @@ public final class m implements r {
                 arrayList.add(new i3.b());
                 break;
             case 6:
-                arrayList.add(new u3.g(this.c, this.b ? 0 : 2));
+                arrayList.add(new u3.f(this.c, this.b ? 0 : 2));
                 break;
             case 7:
                 arrayList.add(new v3.d(1));

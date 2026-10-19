@@ -22,7 +22,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class a90 extends org.telegram.ui.ActionBar.f3 {
     public static final /* synthetic */ int r = 0;
@@ -211,7 +211,7 @@ public final class a90 extends org.telegram.ui.ActionBar.f3 {
                     textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.x80
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            a90.s(a90.this, z13, j10);
+                            a90.t(a90.this, z13, j10);
                         }
                     });
                     frameLayout2.addView(textView2, w7.z5.t(-1, 48, 8388611, 14, 0, 14, 0));
@@ -276,7 +276,7 @@ public final class a90 extends org.telegram.ui.ActionBar.f3 {
                 textView5.setTextSize(1, 14.0f);
                 textView5.setTypeface(AndroidUtilities.bold());
                 linearLayout.addView(textView5, w7.z5.t(-1, 48, 8388611, 14, 0, 14, 14));
-                textView5.setOnClickListener(new ci.a2(this, j10, 1));
+                textView5.setOnClickListener(new ci.b2(this, j10, 1));
                 return;
             }
             TLRPC.Chat chat5 = (TLRPC.Chat) tLObject;
@@ -360,7 +360,7 @@ public final class a90 extends org.telegram.ui.ActionBar.f3 {
         textView22.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.x80
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                a90.s(a90.this, z13, j10);
+                a90.t(a90.this, z13, j10);
             }
         });
         frameLayout22.addView(textView22, w7.z5.t(-1, 48, 8388611, 14, 0, 14, 0));
@@ -417,7 +417,7 @@ public final class a90 extends org.telegram.ui.ActionBar.f3 {
         MessagesController messagesController = MessagesController.getInstance(a90Var.currentAccount);
         org.telegram.ui.ActionBar.n2 n2Var2 = a90Var.c;
         if (messagesController.checkCanOpenChat(b10, n2Var2)) {
-            n2Var2.presentFragment(new z80(a90Var, b10, z10, j10), n2Var2 instanceof org.telegram.ui.sn);
+            n2Var2.presentFragment(new z80(a90Var, b10, z10, j10), n2Var2 instanceof org.telegram.ui.qn);
         }
     }
 
@@ -431,14 +431,14 @@ public final class a90 extends org.telegram.ui.ActionBar.f3 {
         BotGuardHelper.getInstance(a90Var.currentAccount).openGuardBotWebApp(j10, tL_chatInviteJoinResultWebView.bot_id, tL_chatInviteJoinResultWebView.query_id);
     }
 
-    public static /* synthetic */ void r(a90 a90Var, long j10) {
+    public static /* synthetic */ void s(a90 a90Var, long j10) {
         a90Var.dismiss();
         TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite = new TLRPC.TL_messages_importChatInvite();
         tL_messages_importChatInvite.hash = a90Var.b;
         ConnectionsManager.getInstance(a90Var.currentAccount).sendRequestTyped(tL_messages_importChatInvite, null, new ai.tc(a90Var, j10, tL_messages_importChatInvite), 2);
     }
 
-    public static /* synthetic */ void s(final a90 a90Var, boolean z10, long j10) {
+    public static /* synthetic */ void t(final a90 a90Var, boolean z10, long j10) {
         TLRPC.Chat chat = a90Var.e;
         final int i10 = 0;
         AndroidUtilities.runOnUIThread(new Runnable(a90Var) { // from class: org.telegram.ui.Components.y80
@@ -498,7 +498,7 @@ public final class a90 extends org.telegram.ui.ActionBar.f3 {
         }
     }
 
-    public static /* synthetic */ void t(a90 a90Var, long j10, boolean z10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void u(a90 a90Var, long j10, boolean z10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite, TLObject tLObject, TLRPC.TL_error tL_error) {
         a90 a90Var2;
         if (tLObject instanceof TLRPC.TL_chatInviteJoinResultOk) {
             MessagesController.getInstance(a90Var.currentAccount).lambda$processUpdates$377(((TLRPC.TL_chatInviteJoinResultOk) tLObject).updates, false);

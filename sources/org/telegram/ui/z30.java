@@ -1,19 +1,50 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class z30 extends AnimatorListenerAdapter {
-    public final /* synthetic */ s50 a;
+public final class z30 extends vu0 {
+    public final /* synthetic */ q50 T;
 
-    public z30(s50 s50Var) {
-        this.a = s50Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z30(q50 q50Var, ViewGroup viewGroup, ViewGroup viewGroup2) {
+        super(viewGroup, viewGroup2);
+        this.T = q50Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        this.a.X0 = null;
+    @Override // org.telegram.ui.vu0
+    public final void c(Canvas canvas, float f7, float f10, float f11, float f12, float f13) {
+        ViewGroup viewGroup;
+        ViewGroup viewGroup2;
+        q50 q50Var = this.T;
+        j30 j30Var = q50Var.b;
+        k30 k30Var = q50Var.C2;
+        if (f7 > 0.0f) {
+            float x10 = k30Var.getX();
+            viewGroup = ((org.telegram.ui.ActionBar.f3) q50Var).containerView;
+            float x11 = viewGroup.getX() + x10;
+            float y3 = k30Var.getY();
+            viewGroup2 = ((org.telegram.ui.ActionBar.f3) q50Var).containerView;
+            float y10 = viewGroup2.getY() + y3;
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(x11, y10, j30Var.getMeasuredWidth() + x11, j30Var.getMeasuredHeight() + y10);
+            canvas.saveLayerAlpha(rectF, (int) (f7 * 255.0f), 31);
+            canvas.translate(x11, y10);
+            k30Var.draw(canvas);
+            canvas.restore();
+        }
+    }
+
+    @Override // org.telegram.ui.vu0
+    public final void e() {
+        j30 j30Var = this.T.b;
+        super.e();
+        for (int i10 = 0; i10 < j30Var.getChildCount(); i10++) {
+            j30Var.getChildAt(i10).invalidate();
+        }
     }
 }

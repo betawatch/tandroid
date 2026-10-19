@@ -1,6 +1,6 @@
 package org.telegram.ui.ActionBar;
 
-import ai.x7;
+import ai.y7;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -25,7 +25,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.v9;
 import org.telegram.ui.Components.wc0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class c6 implements NotificationCenter.NotificationCenterDelegate {
     public static c6 c;
@@ -169,6 +169,6 @@ public final class c6 implements NotificationCenter.NotificationCenterDelegate {
         if (i10 != NotificationCenter.fileLoadFailed || hashMap.remove((String) objArr[0]) == null) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new x7(this, (Object) null, z10, 13));
+        AndroidUtilities.runOnUIThread(new y7(this, (Object) null, z10, 13));
     }
 }

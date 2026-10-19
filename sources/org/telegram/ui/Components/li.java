@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class li extends FrameLayout {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -25,7 +25,7 @@ public abstract class li extends FrameLayout {
 
     public abstract void B(int i10, int i11);
 
-    public boolean F(int i10) {
+    public boolean E(int i10) {
         return false;
     }
 
@@ -121,7 +121,7 @@ public abstract class li extends FrameLayout {
         return false;
     }
 
-    public boolean r() {
+    public boolean s() {
         return true;
     }
 
@@ -134,7 +134,7 @@ public abstract class li extends FrameLayout {
     public void D(int i10) {
     }
 
-    public void G(li liVar) {
+    public void F(li liVar) {
     }
 
     public void I() {
@@ -161,10 +161,10 @@ public abstract class li extends FrameLayout {
     public void q(int i10) {
     }
 
-    public void s() {
+    public void t() {
     }
 
-    public void t() {
+    public void u() {
     }
 
     public void v(float f7) {

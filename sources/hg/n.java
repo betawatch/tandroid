@@ -24,12 +24,12 @@ import org.telegram.ui.Components.bc0;
 import org.telegram.ui.Components.ic0;
 import org.telegram.ui.Components.uo;
 import org.telegram.ui.Components.yo;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -144,15 +144,15 @@ public final /* synthetic */ class n implements Runnable {
                 }
                 break;
             case 1:
-                i2.h0 h0Var = (i2.h0) this.d;
-                e2.r rVar = h0Var.m;
+                i2.i0 i0Var = (i2.i0) this.d;
+                e2.r rVar = i0Var.m;
                 int i15 = this.b;
                 int i16 = this.c;
                 rVar.e(24, new eh.c(i15, i16, 2));
-                h0Var.t1(2, 14, new e2.y(i15, i16));
+                i0Var.t1(2, 14, new e2.y(i15, i16));
                 break;
             case 2:
-                ((i2.b0) this.d).a.q1(this.b, this.c);
+                ((i2.c0) this.d).a.q1(this.b, this.c);
                 break;
             case 3:
                 VoIPGroupNotification.decline((Context) this.d, this.b, this.c);
@@ -164,9 +164,9 @@ public final /* synthetic */ class n implements Runnable {
                 ((ConnectionsManager) this.d).lambda$discardConnection$0(this.b, this.c);
                 break;
             case 6:
-                org.telegram.ui.web.y0 y0Var = (org.telegram.ui.web.y0) this.d;
+                org.telegram.ui.web.x0 x0Var = (org.telegram.ui.web.x0) this.d;
                 for (int i17 = 0; i17 < this.b - this.c; i17++) {
-                    y0Var.goBack();
+                    x0Var.goBack();
                 }
                 break;
             case 7:
@@ -174,7 +174,7 @@ public final /* synthetic */ class n implements Runnable {
                 Bundle bundle = new Bundle();
                 bundle.putLong("user_id", UserConfig.getInstance(this.b).getClientUserId());
                 bundle.putInt("message_id", this.c);
-                n2Var.presentFragment(new sn(bundle));
+                n2Var.presentFragment(new qn(bundle));
                 break;
             case 8:
                 yo yoVar = (yo) this.d;
@@ -183,7 +183,7 @@ public final /* synthetic */ class n implements Runnable {
                     SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(this.c);
                     notificationsSettings.edit().putInt("last_selected_mute_until_time", i18).putInt("last_selected_mute_until_time2", notificationsSettings.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                yoVar.y(i18);
+                yoVar.x(i18);
                 break;
             case 9:
                 uo uoVar = (uo) this.d;
@@ -235,9 +235,9 @@ public final /* synthetic */ class n implements Runnable {
         }
     }
 
-    public /* synthetic */ n(i2.b0 b0Var, SurfaceTexture surfaceTexture, int i10, int i11) {
+    public /* synthetic */ n(i2.c0 c0Var, SurfaceTexture surfaceTexture, int i10, int i11) {
         this.a = 2;
-        this.d = b0Var;
+        this.d = c0Var;
         this.b = i10;
         this.c = i11;
     }

@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
 import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class w5 extends yq {
     public final /* synthetic */ x5 a;
@@ -20,31 +20,31 @@ public final class w5 extends yq {
     @Override // org.telegram.ui.Components.yq, android.text.style.ReplacementSpan
     public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
         x5 x5Var = this.a;
-        FrameLayout.LayoutParams layoutParams = x5Var.Q;
-        if (x5Var.m0) {
+        FrameLayout.LayoutParams layoutParams = x5Var.P;
+        if (x5Var.i0) {
             return;
         }
         setAlpha(1.0f);
         if (x5Var.a) {
-            float max = Math.max(0.0f, Math.min(1.0f, x5Var.U));
+            float max = Math.max(0.0f, Math.min(1.0f, x5Var.T));
             if (max == 0.0f) {
                 float intrinsicWidth = this.drawable.getIntrinsicWidth() * x5Var.b;
                 float intrinsicHeight = this.drawable.getIntrinsicHeight();
                 float f10 = x5Var.b;
                 float f11 = intrinsicHeight * f10;
                 float f12 = (f10 * f7) + layoutParams.leftMargin;
-                float height = ((x5Var.O.getHeight() / 2.0f) - (f11 / 2.0f)) + layoutParams.topMargin;
+                float height = ((x5Var.N.getHeight() / 2.0f) - (f11 / 2.0f)) + layoutParams.topMargin;
                 x5Var.f.set(f12, height, intrinsicWidth + f12, f11 + height);
             }
             if (max < 1.0f) {
-                if (x5Var.l0 == null) {
-                    x5Var.l0 = new f6(this.drawable.getIntrinsicWidth(), this.drawable.getIntrinsicHeight());
+                if (x5Var.h0 == null) {
+                    x5Var.h0 = new f6(this.drawable.getIntrinsicWidth(), this.drawable.getIntrinsicHeight());
                     x5Var.m();
                 }
                 Drawable drawable = this.drawable;
-                x5Var.l0.setBounds(drawable.getBounds());
-                f6 f6Var = x5Var.l0;
-                f6Var.j = x5Var.j0.c;
+                x5Var.h0.setBounds(drawable.getBounds());
+                f6 f6Var = x5Var.h0;
+                f6Var.i = x5Var.f0.c;
                 this.drawable = f6Var;
                 this.recolorDrawable = false;
                 setAlpha(1.0f - max);

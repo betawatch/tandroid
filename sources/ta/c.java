@@ -28,7 +28,7 @@ import org.json.JSONObject;
 import org.telegram.ui.Cells.c1;
 import ra.e;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class c {
     public static final Pattern d = Pattern.compile("[0-9]+s");
@@ -123,9 +123,9 @@ public final class c {
                         jsonReader.skipValue();
                     }
                 }
-                b e7 = a2.e();
+                b f7 = a2.f();
                 jsonReader.endObject();
-                bVar = e7;
+                bVar = f7;
             } else {
                 jsonReader.skipValue();
             }
@@ -155,7 +155,7 @@ public final class c {
         jsonReader.close();
         inputStream.close();
         a2.b = 1;
-        return a2.e();
+        return a2.f();
     }
 
     public static void g(HttpURLConnection httpURLConnection, String str, String str2) {
@@ -206,7 +206,7 @@ public final class c {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final HttpURLConnection c(URL url, String str) {
-        PackageInfo b10;
+        PackageInfo c10;
         Signature[] signatureArr;
         byte[] bArr;
         MessageDigest messageDigest;
@@ -234,8 +234,8 @@ public final class c {
             }
             String str2 = null;
             try {
-                b10 = w6.b.a(context).b(64, context.getPackageName());
-                signatureArr = b10.signatures;
+                c10 = w6.b.a(context).c(64, context.getPackageName());
+                signatureArr = c10.signatures;
             } catch (PackageManager.NameNotFoundException e11) {
                 Log.e("ContentValues", "No such package: " + context.getPackageName(), e11);
             }
@@ -256,7 +256,7 @@ public final class c {
                     i10++;
                 }
                 if (messageDigest != null) {
-                    bArr = messageDigest.digest(b10.signatures[0].toByteArray());
+                    bArr = messageDigest.digest(c10.signatures[0].toByteArray());
                     if (bArr != null) {
                         Log.e("ContentValues", "Could not get fingerprint hash for package: " + context.getPackageName());
                     } else {

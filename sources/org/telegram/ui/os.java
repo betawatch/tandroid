@@ -1,35 +1,54 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import java.util.ArrayList;
+import android.os.Build;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class os extends hg.t1 {
-    public final /* synthetic */ ContactsActivity K;
+public final class os extends s4.r0 {
+    public boolean a;
+    public boolean b;
+    public final /* synthetic */ ContactsActivity c;
 
-    public os(ContactsActivity contactsActivity, Context context, a0.h hVar, boolean z10, boolean z11, boolean z12) {
-        this.K = contactsActivity;
-        this.d = new ArrayList();
-        this.e = new ArrayList();
-        this.H = new ArrayList();
-        this.c = context;
-        this.h = hVar;
-        this.r = z10;
-        this.s = z11;
-        this.x = 0;
-        this.v = z12;
-        this.w = true;
-        hg.a2 a2Var = new hg.a2(true);
-        this.f = a2Var;
-        a2Var.a = new hg.q1(this);
+    public os(ContactsActivity contactsActivity) {
+        this.c = contactsActivity;
     }
 
-    @Override // hg.t1
-    public final void F() {
-        if (this.y || this.f.e() || h() != 0) {
+    @Override // s4.r0
+    public final void a(RecyclerView recyclerView, int i10) {
+        if (i10 != 1) {
+            this.b = false;
             return;
         }
-        this.K.e.e(false, true);
+        ContactsActivity contactsActivity = this.c;
+        if ((contactsActivity.F && contactsActivity.E) || contactsActivity.Z.r.isFocused()) {
+            AndroidUtilities.hideKeyboard(contactsActivity.getParentActivity().getCurrentFocus());
+        }
+        this.b = true;
+    }
+
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        bh.f fVar;
+        ContactsActivity contactsActivity = this.c;
+        int L0 = contactsActivity.n.L0();
+        View childAt = recyclerView.getChildAt(0);
+        int top = childAt != null ? childAt.getTop() : 0;
+        if (contactsActivity.w != null && !contactsActivity.F) {
+            boolean z10 = i11 > 0;
+            if (i11 != 0 && this.a && (z10 || this.b)) {
+                contactsActivity.x = !z10;
+                ContactsActivity.e0(contactsActivity);
+            }
+            this.a = true;
+        }
+        contactsActivity.Y.b(L0 != 0 || top < contactsActivity.f.getPaddingTop(), true);
+        if (Build.VERSION.SDK_INT >= 31 && (fVar = contactsActivity.t0) != null) {
+            fVar.f(i10, i11);
+            contactsActivity.g0();
+        }
+        ContactsActivity.d0(contactsActivity);
     }
 }

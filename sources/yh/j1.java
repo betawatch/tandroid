@@ -17,14 +17,14 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.e11;
 import org.telegram.ui.Components.f6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public class j1 extends br {
-    public d11 c;
-    public d11 d;
+    public e11 c;
+    public e11 d;
     public final f6 e;
     public final Path f;
     public final Path h;
@@ -83,15 +83,15 @@ public class j1 extends br {
         path.close();
     }
 
-    public final void c(Canvas canvas, d11 d11Var, float f7) {
+    public final void c(Canvas canvas, e11 e11Var, float f7) {
         canvas.save();
         canvas.translate(f7, f7);
         float width = (getBounds().width() / 2.0f) + AndroidUtilities.dp(this.w ? -7.0f : 6.0f);
         float height = (getBounds().height() / 2.0f) - AndroidUtilities.dp(this.w ? 5.0f : 6.0f);
         canvas.rotate(this.w ? -45.0f : 45.0f, width, height);
-        float min = Math.min(1.0f, AndroidUtilities.dp(40.0f) / d11Var.c);
+        float min = Math.min(1.0f, AndroidUtilities.dp(40.0f) / e11Var.c);
         canvas.scale(min, min, width, height);
-        d11Var.c(width - (d11Var.l() / 2.0f), height + AndroidUtilities.dp(1.0f), 1.0f, this.x, canvas);
+        e11Var.c(width - (e11Var.l() / 2.0f), height + AndroidUtilities.dp(1.0f), 1.0f, this.x, canvas);
         canvas.restore();
     }
 
@@ -159,20 +159,20 @@ public class j1 extends br {
     public final void f(int i10, CharSequence charSequence, boolean z10) {
         this.d = null;
         this.e.d(1.0f, true);
-        this.c = new d11(charSequence, i10, z10 ? AndroidUtilities.bold() : null);
+        this.c = new e11(charSequence, i10, z10 ? AndroidUtilities.bold() : null);
         invalidateSelf();
     }
 
     public final void g(int i10, String str) {
-        d11 d11Var = this.c;
-        if (d11Var == null) {
+        e11 e11Var = this.c;
+        if (e11Var == null) {
             f(i10, str, true);
         } else {
-            if (TextUtils.equals(d11Var.k(), str)) {
+            if (TextUtils.equals(e11Var.k(), str)) {
                 return;
             }
             this.d = this.c;
-            this.c = new d11(str, i10, AndroidUtilities.bold());
+            this.c = new e11(str, i10, AndroidUtilities.bold());
             this.e.d(0.0f, true);
             invalidateSelf();
         }

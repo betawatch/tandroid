@@ -5,11 +5,11 @@ import b2.w;
 import c3.j0;
 import e2.x;
 import g2.b0;
-import u2.d1;
+import u2.c1;
 import v7.k7;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class j extends a {
     public final int E;
@@ -37,10 +37,10 @@ public final class j extends a {
         eVar.getClass();
         if (this.H == 0) {
             long j10 = this.F;
-            for (d1 d1Var : (d1[]) eVar.c) {
-                if (d1Var.H != j10) {
-                    d1Var.H = j10;
-                    d1Var.B = true;
+            for (c1 c1Var : (c1[]) eVar.c) {
+                if (c1Var.H != j10) {
+                    c1Var.H = j10;
+                    c1Var.B = true;
                 }
             }
             e eVar2 = this.G;

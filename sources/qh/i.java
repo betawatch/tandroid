@@ -10,7 +10,7 @@ import org.telegram.ui.ActionBar.o1;
 import r0.h1;
 import r0.k1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class i implements g, f, d {
     public View E;
@@ -208,7 +208,7 @@ public class i implements g, f, d {
     }
 
     @Override // qh.d
-    public final void t() {
+    public final void u() {
         this.G++;
     }
 

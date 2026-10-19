@@ -4,22 +4,22 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class lq0 implements View.OnTouchListener {
     public final /* synthetic */ int a;
     public final Rect b;
-    public final /* synthetic */ dr0 c;
+    public final /* synthetic */ er0 c;
 
-    public lq0(dr0 dr0Var, int i10) {
+    public lq0(er0 er0Var, int i10) {
         this.a = i10;
         switch (i10) {
             case 1:
-                this.c = dr0Var;
+                this.c = er0Var;
                 this.b = new Rect();
                 break;
             default:
-                this.c = dr0Var;
+                this.c = er0Var;
                 this.b = new Rect();
                 break;
         }
@@ -27,27 +27,27 @@ public final class lq0 implements View.OnTouchListener {
 
     @Override // android.view.View.OnTouchListener
     public final boolean onTouch(View view, MotionEvent motionEvent) {
-        dr0 dr0Var;
+        er0 er0Var;
         org.telegram.ui.ActionBar.m1 m1Var;
-        dr0 dr0Var2;
+        er0 er0Var2;
         org.telegram.ui.ActionBar.m1 m1Var2;
         switch (this.a) {
             case 0:
-                if (motionEvent.getActionMasked() == 0 && (m1Var = (dr0Var = this.c).J0) != null && m1Var.isShowing()) {
+                if (motionEvent.getActionMasked() == 0 && (m1Var = (er0Var = this.c).K0) != null && m1Var.isShowing()) {
                     Rect rect = this.b;
                     view.getHitRect(rect);
                     if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        dr0Var.J0.d(true);
+                        er0Var.K0.d(true);
                         break;
                     }
                 }
                 break;
             default:
-                if (motionEvent.getActionMasked() == 0 && (m1Var2 = (dr0Var2 = this.c).J0) != null && m1Var2.isShowing()) {
+                if (motionEvent.getActionMasked() == 0 && (m1Var2 = (er0Var2 = this.c).K0) != null && m1Var2.isShowing()) {
                     Rect rect2 = this.b;
                     view.getHitRect(rect2);
                     if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        dr0Var2.J0.d(true);
+                        er0Var2.K0.d(true);
                         break;
                     }
                 }

@@ -11,10 +11,10 @@ import android.widget.TextView;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.vf1;
+import org.telegram.ui.tf1;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class l0 extends LinearLayout {
     public final TextView a;
@@ -85,7 +85,7 @@ public final class l0 extends LinearLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.h = ofFloat;
         ofFloat.addUpdateListener(new ah.k0(12, this, z10));
-        this.h.addListener(new vf1(this, 13));
+        this.h.addListener(new tf1(this, 13));
         this.h.setInterpolator(bs.h);
         this.h.setDuration(420L);
         this.h.start();

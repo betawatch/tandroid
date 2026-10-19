@@ -21,7 +21,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class s2 {
     public final Context a;
@@ -109,7 +109,7 @@ public final class s2 {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.h, f7);
         this.i = ofFloat;
         ofFloat.addUpdateListener(new ah.c0(this, 25));
-        this.i.addListener(new ai.o7(this, f7, runnable, 2));
+        this.i.addListener(new ai.p7(this, f7, runnable, 2));
         this.i.setDuration(j10);
         this.i.setInterpolator(bs.i);
         this.i.start();

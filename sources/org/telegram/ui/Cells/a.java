@@ -6,13 +6,13 @@ import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.xj0;
+import org.telegram.ui.c10;
 import org.telegram.ui.e10;
-import org.telegram.ui.g10;
-import org.telegram.ui.rp0;
+import org.telegram.ui.pp0;
+import org.telegram.ui.qp0;
 import org.telegram.ui.sp0;
-import org.telegram.ui.up0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -75,7 +75,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 x5 x5Var = (x5) obj;
                 w5 w5Var = x5Var.d;
                 if (w5Var != null) {
-                    up0.U(((sp0) ((rp0) w5Var).b).d, x5Var.b[((Integer) view.getTag()).intValue()]);
+                    sp0.U(((qp0) ((pp0) w5Var).b).d, x5Var.b[((Integer) view.getTag()).intValue()]);
                     break;
                 }
                 break;
@@ -86,9 +86,9 @@ public final /* synthetic */ class a implements View.OnClickListener {
                     q7 q7Var = t7Var.d;
                     int i11 = t7Var.c[intValue];
                     MessageObject messageObject = t7Var.b[intValue];
-                    g10 g10Var = ((e10) ((org.telegram.ui.g) q7Var).b).d;
-                    SpannableStringBuilder[] spannableStringBuilderArr = g10.s0;
-                    g10Var.f(i11, t7Var, messageObject, intValue);
+                    e10 e10Var = ((c10) ((org.telegram.ui.g) q7Var).b).d;
+                    SpannableStringBuilder[] spannableStringBuilderArr = e10.s0;
+                    e10Var.f(i11, t7Var, messageObject, intValue);
                     break;
                 }
                 break;

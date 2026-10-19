@@ -5,24 +5,39 @@ import android.view.View;
 import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.WeakHashMap;
-import ki.t1;
+import l2.f;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 import s0.c;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final class a extends t1 {
+public final class a extends f {
     public final /* synthetic */ b c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public a(b bVar) {
-        super(25);
+        super(19);
         this.c = bVar;
     }
 
-    @Override // ki.t1
-    public final boolean Q(int i10, int i11, Bundle bundle) {
+    @Override // l2.f
+    public final c D(int i10) {
+        return new c(AccessibilityNodeInfo.obtain(this.c.j(i10).a));
+    }
+
+    @Override // l2.f
+    public final c E(int i10) {
+        b bVar = this.c;
+        int i11 = i10 == 2 ? bVar.k : bVar.l;
+        if (i11 == Integer.MIN_VALUE) {
+            return null;
+        }
+        return D(i11);
+    }
+
+    @Override // l2.f
+    public final boolean O(int i10, int i11, Bundle bundle) {
         int i12;
         int i13;
         b bVar = this.c;
@@ -74,20 +89,5 @@ public final class a extends t1 {
             return true;
         }
         return false;
-    }
-
-    @Override // ki.t1
-    public final c i(int i10) {
-        return new c(AccessibilityNodeInfo.obtain(this.c.j(i10).a));
-    }
-
-    @Override // ki.t1
-    public final c q(int i10) {
-        b bVar = this.c;
-        int i11 = i10 == 2 ? bVar.k : bVar.l;
-        if (i11 == Integer.MIN_VALUE) {
-            return null;
-        }
-        return i(i11);
     }
 }

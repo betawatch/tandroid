@@ -1,60 +1,99 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.MessagesStorage;
+import android.os.SystemClock;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gq implements MessagesStorage.LongCallback, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.xl0, org.telegram.ui.Components.yl0 {
+public final /* synthetic */ class gq implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ jr b;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ gq(jr jrVar, int i10) {
+    public /* synthetic */ gq(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Object obj, boolean z10, int i10) {
         this.a = i10;
-        this.b = jrVar;
+        this.c = notificationCenterDelegate;
+        this.d = obj;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.Components.xl0
-    public /* synthetic */ boolean P0(View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.yl0
-    public boolean a(int i10, View view) {
-        jr jrVar = this.b;
-        if (jrVar.getParentActivity() != null) {
-            s4.g0 adapter = jrVar.c.getAdapter();
-            fr frVar = jrVar.a;
-            if (adapter == frVar) {
-                return jrVar.h0(frVar.E(i10), false, view);
-            }
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.xl0
-    public void d(float f7, float f10, int i10, View view) {
-        jr.V(this.b, view, i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
-            case 1:
-                this.b.u0();
+            case 0:
+                hr hrVar = (hr) this.c;
+                org.telegram.ui.Cells.q8 q8Var = (org.telegram.ui.Cells.q8) this.d;
+                TLRPC.Updates updates = (TLRPC.Updates) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                if (updates == null) {
+                    hrVar.getClass();
+                    if (tL_error != null) {
+                        q8Var.setChecked(this.b);
+                        org.telegram.ui.Components.xc.a0(hrVar).f0(tL_error, false);
+                        break;
+                    }
+                } else {
+                    hrVar.getMessagesController().lambda$processUpdates$377(updates, false);
+                    break;
+                }
                 break;
             default:
-                this.b.finishFragment();
+                zh.q0 q0Var = (zh.q0) this.c;
+                int[] iArr = (int[]) this.d;
+                TLRPC.TL_exportedNoPaidMessagesToken tL_exportedNoPaidMessagesToken = (TLRPC.TL_exportedNoPaidMessagesToken) obj;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                int i10 = q0Var.a;
+                zh.c1 c1Var = q0Var.b;
+                if (q0Var.n == iArr[0] && !q0Var.E) {
+                    q0Var.n = 0;
+                    boolean z10 = this.b;
+                    if (tL_exportedNoPaidMessagesToken != null) {
+                        int i11 = q0Var.d;
+                        if (i11 != 0) {
+                            if (z10 == (i11 == 1)) {
+                                if (tL_exportedNoPaidMessagesToken.expires == 0) {
+                                    MessagesController.getMainSettings(i10).edit().putString("qrNoPaidToken", tL_exportedNoPaidMessagesToken.token).putString("qrNoPaidUrl", tL_exportedNoPaidMessagesToken.url).apply();
+                                }
+                                q0Var.f = tL_exportedNoPaidMessagesToken;
+                                q0Var.h = SystemClock.elapsedRealtime();
+                                c1Var.setFreeLink(q0Var.d(tL_exportedNoPaidMessagesToken));
+                                break;
+                            }
+                        }
+                    } else {
+                        String str = tL_error2 != null ? tL_error2.text : null;
+                        FileLog.e("QrShare: exportNoPaidMessagesToken " + str);
+                        TLRPC.TL_exportedNoPaidMessagesToken tL_exportedNoPaidMessagesToken2 = q0Var.f;
+                        if (tL_exportedNoPaidMessagesToken2 != null) {
+                            if ((tL_exportedNoPaidMessagesToken2.expires != 0) == z10) {
+                                if (str != null) {
+                                    c1Var.getClass();
+                                    c1Var.d1(R.drawable.msg_warning, LocaleController.getString(R.string.ErrorOccurred), null);
+                                    break;
+                                }
+                            }
+                        }
+                        q0Var.d = 0;
+                        MessagesController.getMainSettings(i10).edit().putBoolean("qrNoPaidPermanent", false).apply();
+                        if (!c1Var.v0) {
+                            if (str != null) {
+                                c1Var.d1(R.drawable.msg_warning, LocaleController.getString(R.string.ErrorOccurred), null);
+                                break;
+                            }
+                        } else {
+                            c1Var.U0(str != null ? LocaleController.getString(R.string.ErrorOccurred) : null);
+                            break;
+                        }
+                    }
+                }
                 break;
         }
-    }
-
-    @Override // org.telegram.messenger.MessagesStorage.LongCallback
-    public void run(long j10) {
-        jr.U(this.b, j10);
-    }
-
-    @Override // org.telegram.ui.Components.xl0
-    public /* synthetic */ void a0(View view, float f7, float f10) {
     }
 }

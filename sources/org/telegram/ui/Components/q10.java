@@ -16,7 +16,7 @@ import android.text.StaticLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class q10 {
     public static float i;
@@ -50,7 +50,7 @@ public final class q10 {
         RectF rectF3 = (RectF) this.f;
         if (f10 > 0.004f && !zh.t.a(canvas, rectF, f7, i10, f10)) {
             int i12 = this.a;
-            float[][] fArr = zh.w0.a;
+            float[][] fArr = zh.d1.a;
             int i13 = 4;
             int i14 = 1;
             if (i12 != 1) {

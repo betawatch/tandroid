@@ -20,23 +20,23 @@ import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.xa;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.m6;
-import org.telegram.ui.hk;
-import org.telegram.ui.sn;
+import org.telegram.ui.fk;
+import org.telegram.ui.qn;
 import s4.k;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class f extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final ag.a X;
     public final uc Y;
     public final FrameLayout Z;
     public Runnable a0;
-    public s61 b0;
+    public t61 b0;
 
     public f(Context context, d6 d6Var, ag.a aVar, boolean z10, Runnable runnable) {
         super(context, null, false, false, d6Var);
@@ -59,7 +59,7 @@ public final class f extends bb implements NotificationCenter.NotificationCenter
         uc ucVar = new uc(context, 2, d6Var);
         this.Y = ucVar;
         final int i12 = 1;
-        ((TextView) ucVar.c).setText(LocaleController.formatString(R.string.TonNeededTitle, ag.a.i(aVar.b - ga.y(this.currentAccount, true).s().b, ag.c.b).d()));
+        ((TextView) ucVar.c).setText(LocaleController.formatString(R.string.TonNeededTitle, ag.a.i(aVar.b - ga.y(this.currentAccount, true).s().b, ag.b.b).d()));
         TextView textView = (TextView) ucVar.d;
         textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.FragmentAddFunds)));
         textView.setMaxWidth(x3.a(textView.getText(), textView.getPaint()));
@@ -111,9 +111,9 @@ public final class f extends bb implements NotificationCenter.NotificationCenter
                 }
             });
         }
-        s61 s61Var = this.b0;
-        if (s61Var != null) {
-            s61Var.N(false);
+        t61 t61Var = this.b0;
+        if (t61Var != null) {
+            t61Var.N(false);
         }
     }
 
@@ -130,15 +130,15 @@ public final class f extends bb implements NotificationCenter.NotificationCenter
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         Runnable runnable;
         if (i10 == NotificationCenter.starOptionsLoaded || i10 == NotificationCenter.starBalanceUpdated) {
-            s61 s61Var = this.b0;
-            if (s61Var != null) {
-                s61Var.N(true);
+            t61 t61Var = this.b0;
+            if (t61Var != null) {
+                t61Var.N(true);
             }
             ag.a s10 = ga.y(this.currentAccount, true).s();
             TextView textView = (TextView) this.Y.c;
             int i12 = R.string.TonNeededTitle;
             ag.a aVar = this.X;
-            textView.setText(LocaleController.formatString(i12, ag.a.i(aVar.b - s10.b, ag.c.b).d()));
+            textView.setText(LocaleController.formatString(i12, ag.a.i(aVar.b - s10.b, ag.b.b).d()));
             xa xaVar = this.e;
             if (xaVar != null) {
                 xaVar.setTitle(A());
@@ -170,7 +170,7 @@ public final class f extends bb implements NotificationCenter.NotificationCenter
 
     @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
     public final void show() {
-        hk hkVar;
+        fk fkVar;
         if (ga.y(this.currentAccount, true).s().b >= this.X.b) {
             Runnable runnable = this.a0;
             if (runnable != null) {
@@ -181,10 +181,10 @@ public final class f extends bb implements NotificationCenter.NotificationCenter
             return;
         }
         n2 R = LaunchActivity.R();
-        if (R instanceof sn) {
-            sn snVar = (sn) R;
-            if (snVar.C9() && (hkVar = snVar.Y) != null) {
-                hkVar.N();
+        if (R instanceof qn) {
+            qn qnVar = (qn) R;
+            if (qnVar.C9() && (fkVar = qnVar.Y) != null) {
+                fkVar.N();
             }
         }
         super.show();
@@ -194,8 +194,8 @@ public final class f extends bb implements NotificationCenter.NotificationCenter
 
     @Override // org.telegram.ui.Components.bb
     public final hm0 x(im0 im0Var) {
-        s61 s61Var = new s61(this.d, getContext(), this.currentAccount, 0, true, new q(this, 22), this.resourcesProvider);
-        this.b0 = s61Var;
-        return s61Var;
+        t61 t61Var = new t61(this.d, getContext(), this.currentAccount, 0, true, new q(this, 22), this.resourcesProvider);
+        this.b0 = t61Var;
+        return t61Var;
     }
 }

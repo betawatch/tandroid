@@ -5,9 +5,9 @@ import ai.qb;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.it0;
+import org.telegram.ui.gt0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class k implements View.OnClickListener {
                 vVar.r0(new jc(m0Var2, 4));
                 vVar.setOnDismissListener(new qb(m0Var2, i10));
                 vVar.show();
-                PhotoViewer photoViewer = ((it0) m0Var2).o2;
+                PhotoViewer photoViewer = ((gt0) m0Var2).o2;
                 if (photoViewer.F2 != null) {
                     photoViewer.H2 = false;
                     photoViewer.u0();
@@ -51,11 +51,11 @@ public final /* synthetic */ class k implements View.OnClickListener {
             case 2:
                 m0 m0Var3 = this.b;
                 j jVar = m0Var3.S0;
-                if ((jVar instanceof u2) && !m0Var3.T0) {
-                    u2 u2Var = (u2) jVar;
+                if ((jVar instanceof v2) && !m0Var3.T0) {
+                    v2 v2Var = (v2) jVar;
                     m0Var3.T0 = true;
-                    u2Var.q();
-                    View focusedView = u2Var.getFocusedView();
+                    v2Var.q();
+                    View focusedView = v2Var.getFocusedView();
                     focusedView.requestFocus();
                     AndroidUtilities.showKeyboard(focusedView);
                 }
@@ -71,7 +71,7 @@ public final /* synthetic */ class k implements View.OnClickListener {
             default:
                 m0 m0Var4 = this.b;
                 m0Var4.C0(2);
-                if (!(m0Var4.S0 instanceof u2)) {
+                if (!(m0Var4.S0 instanceof v2)) {
                     m0Var4.j0(true);
                     break;
                 }

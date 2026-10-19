@@ -40,9 +40,9 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class e50 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.wp0 {
+public final class e50 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.up0 {
     public String E;
     public boolean F;
     public boolean H;
@@ -241,7 +241,7 @@ public final class e50 implements NotificationCenter.NotificationCenterDelegate,
             float min = Math.min(1.0f, ((Long) objArr[1]).longValue() / ((Long) objArr[2]).longValue());
             d50 d50Var2 = this.b;
             this.W = min;
-            d50Var2.F(min);
+            d50Var2.E(min);
             return;
         }
         int i14 = NotificationCenter.fileLoaded;
@@ -504,10 +504,10 @@ public final class e50 implements NotificationCenter.NotificationCenterDelegate,
             parentActivity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES", "android.permission.READ_MEDIA_VIDEO"}, 151);
             return;
         }
-        org.telegram.ui.up0 up0Var = new org.telegram.ui.up0(this.Q ? 3 : 1, false, false, null);
-        up0Var.x = this.J;
-        up0Var.V = new a50(this);
-        this.a.presentFragment(up0Var);
+        org.telegram.ui.sp0 sp0Var = new org.telegram.ui.sp0(this.Q ? 3 : 1, false, false, null);
+        sp0Var.x = this.J;
+        sp0Var.V = new a50(this);
+        this.a.presentFragment(sp0Var);
     }
 
     public final void n(boolean z10, final Runnable runnable, DialogInterface.OnDismissListener onDismissListener, int i10) {
@@ -660,14 +660,14 @@ public final class e50 implements NotificationCenter.NotificationCenterDelegate,
         }
         HashMap hashMap = new HashMap();
         ArrayList arrayList = new ArrayList();
-        org.telegram.ui.lq0 lq0Var = new org.telegram.ui.lq0(0, null, hashMap, arrayList, 1, false, null, this.R);
-        lq0Var.s0 = new y40(this, hashMap, arrayList);
-        lq0Var.f0(1, false);
-        lq0Var.p0 = this.b.getInitialSearchString();
+        org.telegram.ui.jq0 jq0Var = new org.telegram.ui.jq0(0, null, hashMap, arrayList, 1, false, null, this.R);
+        jq0Var.s0 = new y40(this, hashMap, arrayList);
+        jq0Var.f0(1, false);
+        jq0Var.p0 = this.b.getInitialSearchString();
         if (this.S) {
-            this.a.showAsSheet(lq0Var);
+            this.a.showAsSheet(jq0Var);
         } else {
-            this.a.presentFragment(lq0Var);
+            this.a.presentFragment(jq0Var);
         }
     }
 
@@ -705,14 +705,14 @@ public final class e50 implements NotificationCenter.NotificationCenterDelegate,
                 if (messageObject == null || messageObject.videoEditedInfo == null) {
                     d50 d50Var = this.b;
                     if (d50Var != null) {
-                        d50Var.J(z10, false);
+                        d50Var.K(z10, false);
                     }
                     this.s = false;
                 } else {
                     if (this.I && !MessagesController.getInstance(i10).uploadMarkupVideo) {
                         d50 d50Var2 = this.b;
                         if (d50Var2 != null) {
-                            d50Var2.J(z10, true);
+                            d50Var2.K(z10, true);
                         }
                         d50 d50Var3 = this.b;
                         if (d50Var3 != null) {
@@ -738,7 +738,7 @@ public final class e50 implements NotificationCenter.NotificationCenterDelegate,
                     this.v = null;
                     d50 d50Var4 = this.b;
                     if (d50Var4 != null) {
-                        d50Var4.J(z10, true);
+                        d50Var4.K(z10, true);
                     }
                     this.s = true;
                 }

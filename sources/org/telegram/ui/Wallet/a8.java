@@ -10,13 +10,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.x90;
-import org.telegram.ui.gn0;
+import org.telegram.ui.en0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a8 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -48,7 +48,7 @@ public final /* synthetic */ class a8 implements View.OnClickListener {
                 b2Var.R = string;
                 b2Var.T = LocaleController.getString(R.string.WalletDeleteWalletInfo);
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new gn0(27, (Runnable) obj2, (org.telegram.ui.ActionBar.f3) obj));
+                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new en0(27, (Runnable) obj2, (org.telegram.ui.ActionBar.f3) obj));
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.o();
                 break;
@@ -77,7 +77,7 @@ public final /* synthetic */ class a8 implements View.OnClickListener {
                         linearLayout2.addView(w9Var, w7.z5.q(30, 30, 16));
                         TextView textView = new TextView(k8Var.getContext());
                         int i11 = org.telegram.ui.ActionBar.h6.G6;
-                        lk.o(i11, d6Var2, textView, 1, 20.0f);
+                        kk.o(i11, d6Var2, textView, 1, 20.0f);
                         textView.setText(LocaleController.formatString(R.string.WalletUserWallet, forcedFirstName));
                         textView.setTypeface(AndroidUtilities.bold());
                         textView.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
@@ -88,7 +88,7 @@ public final /* synthetic */ class a8 implements View.OnClickListener {
                         x90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.gc, d6Var2));
                         x90Var.setTextSize(1, 16.0f);
                         x90Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-                        x90Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.WalletAddressLinkedToUser, UserObject.getUserName(k8Var.n)), new v3(16, b2VarArr, runnable)));
+                        x90Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.WalletAddressLinkedToUser, UserObject.getUserName(k8Var.n)), new z3(15, b2VarArr, runnable)));
                         linearLayout.addView(x90Var, w7.z5.t(-1, -2, 55, 0, 14, 0, 0));
                     } else {
                         f7 = 4.0f;
@@ -107,7 +107,7 @@ public final /* synthetic */ class a8 implements View.OnClickListener {
                     frameLayout.addView(textView2, w7.z5.d(-1, -2.0f, 7, 0.0f, 0.0f, 0.0f, 0.0f));
                     linearLayout.addView(frameLayout, w7.z5.t(-1, -2, 55, 0, 14, 0, 0));
                     w7.b6.b(textView2, 0.02f, 1.2f);
-                    textView2.setOnClickListener(new n1(k8Var, b2VarArr, runnable2, 4));
+                    textView2.setOnClickListener(new n1(k8Var, b2VarArr, runnable2, 3));
                     AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(k8Var.getContext(), 0, d6Var);
                     alertDialog$Builder2.n(linearLayout);
                     alertDialog$Builder2.k(LocaleController.getString(R.string.OK), null);

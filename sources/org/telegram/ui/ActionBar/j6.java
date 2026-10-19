@@ -31,8 +31,8 @@ import org.telegram.ui.Components.NumberTextView;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.c61;
 import org.telegram.ui.Components.cp0;
+import org.telegram.ui.Components.d61;
 import org.telegram.ui.Components.dr;
 import org.telegram.ui.Components.e8;
 import org.telegram.ui.Components.f90;
@@ -52,7 +52,7 @@ import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.xj0;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class j6 {
     public final View a;
@@ -168,12 +168,12 @@ public final class j6 {
             CharSequence text = textView.getText();
             if (text instanceof SpannedString) {
                 SpannedString spannedString = (SpannedString) text;
-                c61[] c61VarArr = (c61[]) spannedString.getSpans(0, spannedString.length(), c61.class);
-                if (c61VarArr == null || c61VarArr.length <= 0) {
+                d61[] d61VarArr = (d61[]) spannedString.getSpans(0, spannedString.length(), d61.class);
+                if (d61VarArr == null || d61VarArr.length <= 0) {
                     return;
                 }
-                for (c61 c61Var : c61VarArr) {
-                    c61Var.b = i10;
+                for (d61 d61Var : d61VarArr) {
+                    d61Var.b = i10;
                 }
                 return;
             }
@@ -319,10 +319,10 @@ public final class j6 {
                         CharSequence text2 = textView2.getText();
                         if (text2 instanceof SpannedString) {
                             SpannedString spannedString2 = (SpannedString) text2;
-                            c61[] c61VarArr2 = (c61[]) spannedString2.getSpans(0, spannedString2.length(), c61.class);
-                            if (c61VarArr2 != null && c61VarArr2.length > 0) {
-                                for (c61 c61Var2 : c61VarArr2) {
-                                    c61Var2.b = i10;
+                            d61[] d61VarArr2 = (d61[]) spannedString2.getSpans(0, spannedString2.length(), d61.class);
+                            if (d61VarArr2 != null && d61VarArr2.length > 0) {
+                                for (d61 d61Var2 : d61VarArr2) {
+                                    d61Var2.b = i10;
                                 }
                             }
                         }
@@ -342,10 +342,10 @@ public final class j6 {
                             CharSequence text3 = textView3.getText();
                             if (text3 instanceof SpannedString) {
                                 SpannedString spannedString3 = (SpannedString) text3;
-                                c61[] c61VarArr3 = (c61[]) spannedString3.getSpans(0, spannedString3.length(), c61.class);
-                                if (c61VarArr3 != null && c61VarArr3.length > 0) {
-                                    for (c61 c61Var3 : c61VarArr3) {
-                                        c61Var3.b = i10;
+                                d61[] d61VarArr3 = (d61[]) spannedString3.getSpans(0, spannedString3.length(), d61.class);
+                                if (d61VarArr3 != null && d61VarArr3.length > 0) {
+                                    for (d61 d61Var3 : d61VarArr3) {
+                                        d61Var3.b = i10;
                                     }
                                 }
                             }
@@ -360,7 +360,7 @@ public final class j6 {
     public final int c() {
         d6 d6Var = this.o;
         int i10 = this.f;
-        Integer valueOf = d6Var != null ? Integer.valueOf(d6Var.u(i10)) : null;
+        Integer valueOf = d6Var != null ? Integer.valueOf(d6Var.w(i10)) : null;
         return valueOf != null ? valueOf.intValue() : h6.x0(null, i10, false);
     }
 
@@ -583,13 +583,13 @@ public final class j6 {
                 ((k) view).setActionModeTopColor(i10);
             }
             if ((67108864 & i13) != 0) {
-                ((k) view).H(i10, true);
+                ((k) view).G(i10, true);
             }
             if ((134217728 & i13) != 0) {
-                ((k) view).H(i10, false);
+                ((k) view).G(i10, false);
             }
             if ((1073741824 & i13) != 0) {
-                ((k) view).F(i10, (i13 & 8) != 0, false);
+                ((k) view).E(i10, (i13 & 8) != 0, false);
             }
             if ((Integer.MIN_VALUE & i13) != 0) {
                 ((k) view).D(i10, false);

@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class h7 {
     public static String a(BufferedInputStream bufferedInputStream, ArrayList arrayList) {
@@ -98,7 +98,7 @@ public abstract class h7 {
         int c11 = c(a(bufferedInputStream, arrayList), "height");
         int c12 = c(a(bufferedInputStream, arrayList), "maxval");
         if (c12 != 255) {
-            throw new IOException(i2.d.j(c12, "Only 8-bit PGM supported (maxval=255), got: "));
+            throw new IOException(i2.e.j(c12, "Only 8-bit PGM supported (maxval=255), got: "));
         }
         Bitmap createBitmap = Bitmap.createBitmap(c10, c11, Bitmap.Config.ALPHA_8);
         int rowBytes = createBitmap.getRowBytes();

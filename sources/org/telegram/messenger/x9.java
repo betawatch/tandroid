@@ -1,50 +1,48 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x9 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ int c;
     public final /* synthetic */ long d;
+    public final /* synthetic */ long e;
 
-    public /* synthetic */ x9(MessagesController messagesController, long j10, ArrayList arrayList, int i10) {
-        this.a = i10;
+    public /* synthetic */ x9(int i10, long j10, long j11, MessagesController messagesController) {
+        this.a = 2;
         this.b = messagesController;
         this.d = j10;
-        this.c = arrayList;
+        this.e = j11;
+        this.c = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$deleteMessagesByPush$368(this.c, this.d);
+                long j10 = this.d;
+                long j11 = this.e;
+                this.b.lambda$sendTyping$170(this.c, j10, j11);
                 break;
             case 1:
-                this.b.lambda$markAllTopicsAsRead$7(this.c, this.d);
-                break;
-            case 2:
-                this.b.lambda$getDifference$353(this.d, this.c);
-                break;
-            case 3:
-                this.b.lambda$generateJoinMessage$367(this.d, this.c);
-                break;
-            case 4:
-                this.b.lambda$processUpdateArray$421(this.d, this.c);
+                long j12 = this.d;
+                long j13 = this.e;
+                this.b.lambda$sendTyping$172(this.c, j12, j13);
                 break;
             default:
-                this.b.lambda$getDifference$354(this.d, this.c);
+                long j14 = this.e;
+                int i10 = this.c;
+                this.b.lambda$checkDeletingTask$83(this.d, j14, i10);
                 break;
         }
     }
 
-    public /* synthetic */ x9(MessagesController messagesController, ArrayList arrayList, long j10, int i10) {
-        this.a = i10;
+    public /* synthetic */ x9(MessagesController messagesController, int i10, long j10, long j11, int i11) {
+        this.a = i11;
         this.b = messagesController;
-        this.c = arrayList;
+        this.c = i10;
         this.d = j10;
+        this.e = j11;
     }
 }

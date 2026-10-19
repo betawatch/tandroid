@@ -6,7 +6,7 @@ import android.hardware.SensorManager;
 import ei.bc;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class y0 {
     public final SensorManager a;
@@ -19,7 +19,7 @@ public final class y0 {
     public long h;
     public Sensor i;
     public long j;
-    public org.telegram.ui.web.y0 k;
+    public org.telegram.ui.web.x0 k;
     public boolean l;
     public bc m;
     public bc o;

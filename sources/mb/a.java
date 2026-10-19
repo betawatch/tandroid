@@ -1,14 +1,14 @@
 package mb;
 
 import a1.g;
-import i2.d;
+import i2.e;
 import j$.util.Objects;
 import java.io.Closeable;
 import java.io.EOFException;
 import java.io.Reader;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class a implements Closeable {
     public final Reader a;
@@ -217,7 +217,7 @@ public class a implements Closeable {
     public final IllegalStateException E(String str) {
         String str2 = x() == 9 ? "adapter-not-null-safe" : "unexpected-json-structure";
         StringBuilder v = g.v("Expected ", str, " but was ");
-        v.append(d.E(x()));
+        v.append(e.E(x()));
         v.append(m());
         v.append("\nSee ");
         v.append("https://github.com/google/gson/blob/main/Troubleshooting.md#".concat(str2));
@@ -679,7 +679,7 @@ public class a implements Closeable {
                 case 8:
                     break;
                 default:
-                    throw new AssertionError(d.j(i12, "Unknown scope value: "));
+                    throw new AssertionError(e.j(i12, "Unknown scope value: "));
             }
             i10++;
         }
@@ -727,7 +727,7 @@ public class a implements Closeable {
     }
 
     final String m() {
-        StringBuilder m10 = d.m(" at line ", this.e + 1, " column ", (this.c - this.f) + 1, " path ");
+        StringBuilder m10 = e.m(" at line ", this.e + 1, " column ", (this.c - this.f) + 1, " path ");
         m10.append(h());
         return m10.toString();
     }

@@ -1,6 +1,6 @@
 package sg;
 
-import ai.z4;
+import ai.a5;
 import ai.zd;
 import android.animation.ValueAnimator;
 import android.app.Dialog;
@@ -27,7 +27,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -41,7 +41,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.ca0;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.jw0;
+import org.telegram.ui.Components.kw0;
 import org.telegram.ui.Components.ml0;
 import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.w90;
@@ -49,12 +49,12 @@ import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.xn0;
 import org.telegram.ui.Components.z00;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.aw0;
-import org.telegram.ui.qw0;
-import org.telegram.ui.sa1;
+import org.telegram.ui.ow0;
+import org.telegram.ui.qa1;
+import org.telegram.ui.yv0;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class m1 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public View A0;
@@ -79,7 +79,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
     public final k a0;
     public final TL_stars.StarGift b0;
     public boolean c0;
-    public final aw0 d0;
+    public final yv0 d0;
     public int e0;
     public int f0;
     public int g0;
@@ -94,7 +94,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
     public final a1 p0;
     public gi.f q0;
     public zd r0;
-    public sa1 s0;
+    public qa1 s0;
     public final n2 t0;
     public Integer u0;
     public float v0;
@@ -110,12 +110,12 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
     public static /* synthetic */ void Q(m1 m1Var) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(m1Var.C0);
-        z4 z4Var = new z4(m1Var, 10);
+        a5 a5Var = new a5(m1Var, 10);
         n2 n2Var = m1Var.t0;
         if (n2Var != null) {
-            z4Var.setParentFragment(n2Var);
+            a5Var.setParentFragment(n2Var);
         }
-        new h1(m1Var, z4Var, m1Var.getContext(), m1Var.resourcesProvider, arrayList).show();
+        new h1(m1Var, a5Var, m1Var.getContext(), m1Var.resourcesProvider, arrayList).show();
     }
 
     @Override // org.telegram.ui.Components.bb
@@ -124,7 +124,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final void F(int i10, int i11) {
+    public final void E(int i10, int i11) {
         int size = View.MeasureSpec.getSize(i10);
         int size2 = View.MeasureSpec.getSize(i11);
         int i12 = 0;
@@ -136,18 +136,18 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
                 this.container.getLocationOnScreen(this.F0);
                 return;
             }
-            qw0 qw0Var = (qw0) arrayList.get(i12);
-            aw0 aw0Var = this.d0;
-            aw0Var.a(qw0Var, false);
-            aw0Var.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
-            ((qw0) arrayList.get(i12)).e = i13;
-            i13 += aw0Var.getMeasuredHeight();
+            ow0 ow0Var = (ow0) arrayList.get(i12);
+            yv0 yv0Var = this.d0;
+            yv0Var.a(ow0Var, false);
+            yv0Var.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
+            ((ow0) arrayList.get(i12)).e = i13;
+            i13 += yv0Var.getMeasuredHeight();
             i12++;
         }
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final void H(jw0 jw0Var) {
+    public final void G(kw0 kw0Var) {
         this.Y = UserConfig.selectedAccount;
         q0 q0Var = new q0(getContext(), this.resourcesProvider, false);
         q0Var.a(PremiumPreviewFragment.o0(this.Y, null), new hg.r0(this, 21), false);
@@ -162,11 +162,11 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
         }
         this.L0.addView(q0Var, z5.d(-1, 48.0f, 16, 16.0f, 0.0f, 16.0f, 0.0f));
         this.L0.setBackgroundColor(getThemedColor(h6.h5));
-        jw0Var.addView(this.L0, z5.e(-1, 68, 80));
+        kw0Var.addView(this.L0, z5.e(-1, 68, 80));
     }
 
-    public void X(sa1 sa1Var) {
-        sa1Var.addView(this.B0, z5.p(140, 140, 1.0f, 17, 10, 10, 10, 10));
+    public void X(qa1 qa1Var) {
+        qa1Var.addView(this.B0, z5.p(140, 140, 1.0f, 17, 10, 10, 10, 10));
     }
 
     public int Y() {
@@ -255,7 +255,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
                                 this.O0[1].setVisibility(0);
                                 ViewPropertyAnimator alpha = this.O0[1].animate().alpha(1.0f);
                                 bs bsVar = bs.f;
-                                lk.t(alpha, bsVar, 200L);
+                                kk.t(alpha, bsVar, 200L);
                                 this.O0[0].animate().alpha(0.0f).setInterpolator(bsVar).setDuration(200L).withEndAction(new e1(this, i10)).start();
                                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                                 ofFloat.addUpdateListener(new g1(this, i11));
@@ -528,7 +528,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
         this.Y = i10;
         this.a0 = kVar;
         this.b0 = starGift;
-        this.d0 = new aw0(getContext(), null);
+        this.d0 = new yv0(getContext(), null);
         PremiumPreviewFragment.n0(i10, arrayList);
         if (kVar != null || UserConfig.getInstance(i10).isPremium()) {
             this.L0.setVisibility(8);

@@ -29,9 +29,10 @@ import e9.c2;
 import e9.l0;
 import e9.n0;
 import e9.x1;
-import i2.a0;
-import i2.m;
-import i2.y;
+import i2.b0;
+import i2.n;
+import i2.s;
+import i2.z;
 import java.io.IOException;
 import java.util.List;
 import n2.l;
@@ -41,7 +42,7 @@ import u2.k0;
 import u2.u;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class f implements d1, k0, l {
     public final g0 a;
@@ -207,7 +208,7 @@ public final class f implements d1, k0, l {
     @Override // b2.d1
     public final void onCues(List list) {
         a l4 = l();
-        q(l4, 27, new y(l4, list));
+        q(l4, 27, new z(l4, list));
     }
 
     @Override // b2.d1
@@ -267,14 +268,14 @@ public final class f implements d1, k0, l {
     @Override // b2.d1
     public final void onPlayerError(y0 y0Var) {
         u2.g0 g0Var;
-        a l4 = (!(y0Var instanceof m) || (g0Var = ((m) y0Var).E) == null) ? l() : n(g0Var);
+        a l4 = (!(y0Var instanceof n) || (g0Var = ((n) y0Var).E) == null) ? l() : n(g0Var);
         q(l4, 10, new e1.c(l4, y0Var, 24));
     }
 
     @Override // b2.d1
     public final void onPlayerErrorChanged(y0 y0Var) {
         u2.g0 g0Var;
-        a l4 = (!(y0Var instanceof m) || (g0Var = ((m) y0Var).E) == null) ? l() : n(g0Var);
+        a l4 = (!(y0Var instanceof n) || (g0Var = ((n) y0Var).E) == null) ? l() : n(g0Var);
         q(l4, 10, new c(l4, y0Var, 8));
     }
 
@@ -344,7 +345,7 @@ public final class f implements d1, k0, l {
     @Override // b2.d1
     public final void onVideoSizeChanged(a2 a2Var) {
         a p5 = p();
-        q(p5, 25, new a0(p5, a2Var));
+        q(p5, 25, new b0(p5, a2Var));
     }
 
     @Override // b2.d1
@@ -362,17 +363,17 @@ public final class f implements d1, k0, l {
         this.f.e(i10, oVar);
     }
 
-    public final void r(i2.h0 h0Var, Looper looper) {
+    public final void r(i2.i0 i0Var, Looper looper) {
         u6.p(this.h == null || ((n0) this.d.b).isEmpty());
-        h0Var.getClass();
-        this.h = h0Var;
+        i0Var.getClass();
+        this.h = i0Var;
         this.n = this.a.a(looper, null);
         r rVar = this.f;
-        h0 h0Var2 = new h0(19, this, h0Var);
+        h0 h0Var = new h0(19, this, i0Var);
         rVar.getClass();
         g0 g0Var = this.a;
         u6.p(g0Var != null);
-        this.f = new r(rVar.d, looper, looper.getThread(), g0Var, h0Var2, rVar.i);
+        this.f = new r(rVar.d, looper, looper.getThread(), g0Var, h0Var, rVar.i);
     }
 
     @Override // b2.d1
@@ -385,7 +386,7 @@ public final class f implements d1, k0, l {
         com.google.firebase.messaging.l lVar = this.d;
         lVar.d = com.google.firebase.messaging.l.t(f1Var, (n0) lVar.b, (u2.g0) lVar.e, (l1) lVar.a);
         a l4 = l();
-        q(l4, 11, new i2.r(l4, i10, e1Var, e1Var2));
+        q(l4, 11, new s(l4, i10, e1Var, e1Var2));
     }
 
     @Override // b2.d1

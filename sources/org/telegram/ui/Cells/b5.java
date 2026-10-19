@@ -7,16 +7,16 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.bp0;
-import org.telegram.ui.Components.n31;
-import org.telegram.ui.vt;
+import org.telegram.ui.Components.o31;
+import org.telegram.ui.tt;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class b5 implements bp0 {
-    public final /* synthetic */ vt a;
+    public final /* synthetic */ tt a;
 
-    public b5(vt vtVar) {
-        this.a = vtVar;
+    public b5(tt ttVar) {
+        this.a = ttVar;
     }
 
     @Override // org.telegram.ui.Components.bp0
@@ -35,16 +35,16 @@ public final class b5 implements bp0 {
             }
         }
         int i11 = (int) d;
-        vt vtVar = this.a;
+        tt ttVar = this.a;
         long j10 = i11;
-        vtVar.b.setText(LocaleController.formatString("AutodownloadSizeLimitUpTo", R.string.AutodownloadSizeLimitUpTo, AndroidUtilities.formatFileSize(j10)));
-        vtVar.d = j10;
-        v8[] v8VarArr = vtVar.h;
-        AnimatorSet[] animatorSetArr = vtVar.n;
-        int i12 = vtVar.e;
-        i10 = vtVar.r.videosRow;
+        ttVar.b.setText(LocaleController.formatString("AutodownloadSizeLimitUpTo", R.string.AutodownloadSizeLimitUpTo, AndroidUtilities.formatFileSize(j10)));
+        ttVar.d = j10;
+        v8[] v8VarArr = ttVar.h;
+        AnimatorSet[] animatorSetArr = ttVar.n;
+        int i12 = ttVar.e;
+        i10 = ttVar.r.videosRow;
         if (i12 == i10) {
-            vtVar.f.setText(LocaleController.formatString("AutoDownloadPreloadVideoInfo", R.string.AutoDownloadPreloadVideoInfo, AndroidUtilities.formatFileSize(j10)));
+            ttVar.f.setText(LocaleController.formatString("AutoDownloadPreloadVideoInfo", R.string.AutoDownloadPreloadVideoInfo, AndroidUtilities.formatFileSize(j10)));
             boolean z11 = i11 > 2097152;
             if (z11 != v8VarArr[0].isEnabled()) {
                 ArrayList arrayList = new ArrayList();
@@ -57,7 +57,7 @@ public final class b5 implements bp0 {
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 animatorSetArr[0] = animatorSet2;
                 animatorSet2.playTogether(arrayList);
-                animatorSetArr[0].addListener(new n31(vtVar, 20));
+                animatorSetArr[0].addListener(new o31(ttVar, 20));
                 animatorSetArr[0].setDuration(150L);
                 animatorSetArr[0].start();
             }
@@ -72,10 +72,10 @@ public final class b5 implements bp0 {
     @Override // org.telegram.ui.Components.bp0
     public final CharSequence getContentDescription() {
         StringBuilder sb2 = new StringBuilder();
-        vt vtVar = this.a;
-        sb2.append((Object) vtVar.a.getText());
+        tt ttVar = this.a;
+        sb2.append((Object) ttVar.a.getText());
         sb2.append(" ");
-        sb2.append((Object) vtVar.b.getText());
+        sb2.append((Object) ttVar.b.getText());
         return sb2.toString();
     }
 

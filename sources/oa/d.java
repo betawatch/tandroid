@@ -7,10 +7,9 @@ import android.text.style.CharacterStyle;
 import android.util.Log;
 import b2.a2;
 import b2.w0;
-import c3.c0;
 import c3.j0;
 import c3.q;
-import c5.b0;
+import c5.c0;
 import com.google.android.gms.internal.cast.z5;
 import g2.j;
 import g2.u;
@@ -45,12 +44,12 @@ import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.gh;
 import org.telegram.ui.Components.ri;
-import org.telegram.ui.xu0;
+import org.telegram.ui.vu0;
 import si.z;
 import z3.k;
 import z3.m;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a, dg.a, ea.c, n, ri, w, r9.d, l1, n5.b, r4.d, k {
     public static d b;
@@ -93,8 +92,8 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
         return Calendar.getInstance();
     }
 
-    public static k4.d x3(z zVar, b0 b0Var) {
-        IOException iOException = (IOException) b0Var.c;
+    public static k4.d x3(z zVar, c0 c0Var) {
+        IOException iOException = (IOException) c0Var.c;
         if (!(iOException instanceof x)) {
             return null;
         }
@@ -111,8 +110,8 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
         return null;
     }
 
-    public static long z3(b0 b0Var) {
-        for (Throwable th2 = (IOException) b0Var.c; th2 != null; th2 = th2.getCause()) {
+    public static long z3(c0 c0Var) {
+        for (Throwable th2 = (IOException) c0Var.c; th2 != null; th2 = th2.getCause()) {
             if ((th2 instanceof w0) || (th2 instanceof FileNotFoundException) || (th2 instanceof u) || (th2 instanceof y2.k)) {
                 return -9223372036854775807L;
             }
@@ -120,7 +119,7 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
                 return -9223372036854775807L;
             }
         }
-        return Math.min((b0Var.b - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
+        return Math.min((c0Var.b - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -156,7 +155,7 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
             throw new IllegalArgumentException("Illegal use of DownsampleAudioResampler");
         }
         if (i12 != 1 && i12 != 2) {
-            throw new IllegalArgumentException(i2.d.j(i12, "Illegal use of DownsampleAudioResampler. Channels:"));
+            throw new IllegalArgumentException(i2.e.j(i12, "Illegal use of DownsampleAudioResampler. Channels:"));
         }
         int remaining = shortBuffer.remaining() / i12;
         int ceil = (int) Math.ceil((i11 / i10) * remaining);
@@ -342,7 +341,7 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ xu0 P1() {
+    public /* synthetic */ vu0 P1() {
         switch (this.a) {
         }
         return null;
@@ -535,7 +534,7 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // c3.q
-    public void g0(c0 c0Var) {
+    public void g0(c3.c0 c0Var) {
         throw new UnsupportedOperationException();
     }
 
@@ -709,9 +708,9 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.ri
-    public void r(gh ghVar) {
-        ghVar.run();
+    @Override // l.w
+    public boolean r(l.k kVar) {
+        return false;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -736,9 +735,9 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
         int i10 = this.a;
     }
 
-    @Override // l.w
-    public boolean u(l.k kVar) {
-        return false;
+    @Override // org.telegram.ui.Components.ri
+    public void u(gh ghVar) {
+        ghVar.run();
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -930,7 +929,7 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // a3.n0
-    public /* synthetic */ void h() {
+    public /* synthetic */ void k() {
     }
 
     @Override // a3.n0
@@ -1138,7 +1137,7 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     private final /* synthetic */ void f(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
     }
 
-    private final /* synthetic */ void k(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+    private final /* synthetic */ void h(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
     }
 
     private final /* synthetic */ void k2(int i10, u1 u1Var) {

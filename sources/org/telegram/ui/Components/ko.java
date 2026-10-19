@@ -6,9 +6,9 @@ import android.view.MotionEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.te1;
+import org.telegram.ui.re1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class ko extends w9 {
     public final org.telegram.ui.Cells.l6 G;
@@ -44,14 +44,14 @@ public final class ko extends w9 {
         if (num != null) {
             l6Var.z = num.intValue();
         }
-        org.telegram.ui.sn snVar = ooVar.G;
-        if (snVar != null) {
-            j10 = snVar.a();
+        org.telegram.ui.qn qnVar = ooVar.G;
+        if (qnVar != null) {
+            j10 = qnVar.a();
         } else {
             org.telegram.ui.ActionBar.n2 n2Var = this.H;
-            j10 = n2Var instanceof te1 ? -((te1) n2Var).a : 0L;
+            j10 = n2Var instanceof re1 ? -((re1) n2Var).a : 0L;
         }
-        ci.c8.h(j10, canvas, this.a, l6Var);
+        ci.d8.h(j10, canvas, this.a, l6Var);
     }
 
     @Override // android.view.View

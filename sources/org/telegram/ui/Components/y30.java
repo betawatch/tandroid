@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class y30 implements hg.z1 {
     public final /* synthetic */ z30 a;
@@ -12,7 +12,7 @@ public final class y30 implements hg.z1 {
     }
 
     @Override // hg.z1
-    public final /* synthetic */ a0.h J() {
+    public final /* synthetic */ a0.h G() {
         return null;
     }
 
@@ -46,6 +46,6 @@ public final class y30 implements hg.z1 {
     }
 
     @Override // hg.z1
-    public final /* synthetic */ void Y(ArrayList arrayList) {
+    public final /* synthetic */ void S(ArrayList arrayList) {
     }
 }

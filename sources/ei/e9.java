@@ -6,14 +6,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.em;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class e9 extends s4.r0 {
     public final /* synthetic */ int a;
@@ -73,7 +73,7 @@ public final class e9 extends s4.r0 {
             case 3:
                 if (i10 == 0 && this.b) {
                     this.b = false;
-                    ((org.telegram.ui.Wallet.j5) this.c).f();
+                    ((org.telegram.ui.Wallet.k5) this.c).f();
                     break;
                 }
                 break;
@@ -118,7 +118,7 @@ public final class e9 extends s4.r0 {
                 org.telegram.ui.c7 c7Var = (org.telegram.ui.c7) this.c;
                 if (c7Var.c.L0() <= 0) {
                     kVar = ((org.telegram.ui.ActionBar.n2) c7Var).actionBar;
-                    if (!kVar.s()) {
+                    if (!kVar.t()) {
                         z10 = false;
                         org.telegram.ui.c7.b0(c7Var, z10);
                         if (this.b == c7Var.V.Z()) {
@@ -144,7 +144,7 @@ public final class e9 extends s4.r0 {
                         boolean z12 = tiVar.R;
                         if (z11 != z12) {
                             this.b = z12;
-                            lk.s(emVar.getFastScroll().animate(), this.b ? 1.0f : 0.0f, 100L);
+                            kk.s(emVar.getFastScroll().animate(), this.b ? 1.0f : 0.0f, 100L);
                         }
                     } else {
                         emVar.getFastScroll().setAlpha(0.0f);
@@ -163,9 +163,9 @@ public final class e9 extends s4.r0 {
         }
     }
 
-    public e9(org.telegram.ui.Wallet.j5 j5Var) {
+    public e9(org.telegram.ui.Wallet.k5 k5Var) {
         this.a = 3;
-        this.c = j5Var;
+        this.c = k5Var;
         this.b = false;
     }
 }

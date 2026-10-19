@@ -1,38 +1,37 @@
 package org.telegram.ui;
 
-import java.util.Comparator;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
+import android.app.Activity;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dw0 implements Comparator {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
+public final class dw0 extends x51 {
+    public final /* synthetic */ ai.r5 d2;
+    public final /* synthetic */ o51[] e2;
+    public final /* synthetic */ PremiumPreviewFragment f2;
 
-    public /* synthetic */ dw0(MessagesController messagesController, int i10) {
-        this.a = i10;
-        this.b = messagesController;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dw0(PremiumPreviewFragment premiumPreviewFragment, PremiumPreviewFragment premiumPreviewFragment2, Activity activity, Integer num, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11, ai.r5 r5Var, o51[] o51VarArr) {
+        super(premiumPreviewFragment2, activity, true, num, i10, true, d6Var, i11);
+        this.f2 = premiumPreviewFragment;
+        this.d2 = r5Var;
+        this.e2 = o51VarArr;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int i10;
-        int i11;
-        qw0 qw0Var = (qw0) obj;
-        qw0 qw0Var2 = (qw0) obj2;
-        switch (this.a) {
-            case 0:
-                MessagesController messagesController = this.b;
-                i10 = messagesController.businessFeaturesTypesToPosition.get(qw0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
-                i11 = messagesController.businessFeaturesTypesToPosition.get(qw0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
-                break;
-            default:
-                MessagesController messagesController2 = this.b;
-                i10 = messagesController2.premiumFeaturesTypesToPosition.get(qw0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
-                i11 = messagesController2.premiumFeaturesTypesToPosition.get(qw0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
-                break;
+    @Override // org.telegram.ui.x51
+    public final float getScrimDrawableTranslationY() {
+        return 0.0f;
+    }
+
+    @Override // org.telegram.ui.x51
+    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        this.d2.run(l4, num);
+        o51 o51Var = this.e2[0];
+        if (o51Var != null) {
+            this.f2.s0 = null;
+            o51Var.dismiss();
         }
-        return i10 - i11;
     }
 }

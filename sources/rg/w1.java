@@ -13,20 +13,20 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.f6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class w1 extends View {
-    public qg.e1 E;
+    public qg.f1 E;
     public float F;
     public float G;
-    public qg.s1 H;
+    public qg.t1 H;
     public Runnable I;
     public boolean J;
     public v1 K;
     public final Paint a;
     public final Paint b;
     public final Path c;
-    public final k0.b d;
+    public final le.b d;
     public final RectF e;
     public boolean f;
     public boolean h;
@@ -50,9 +50,9 @@ public final class w1 extends View {
         this.w = new f6(this);
         this.x = new f6(this);
         this.y = new f6(this);
-        this.H = new qg.s1(1.0f, 0.016773745f, -1);
+        this.H = new qg.t1(1.0f, 0.016773745f, -1);
         this.J = true;
-        this.d = new k0.b(context, new u1(this));
+        this.d = new le.b(context, new u1(this));
         paint2.setColor(-1);
         paint2.setShadowLayer(AndroidUtilities.dp(4.0f), 0.0f, AndroidUtilities.dp(2.0f), 1342177280);
         paint.setColor(1090519039);
@@ -143,9 +143,9 @@ public final class w1 extends View {
                         float f13 = dp2 * 1.5f;
                         a(bsVar.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.r.a(k3.y(1.0f, f12, rectF.height(), rectF.top), rectF.top + f11, rectF.bottom - Math.min(f13, f11)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f13, f11), f11, f12), this.r), canvas, false);
                         if (this.J && this.r != 0.0f && this.v && this.E != null) {
-                            qg.e1 e1Var = this.E;
-                            float f14 = e1Var.c.g.a;
-                            a(getWidth() / 2.0f, getHeight() / 2.0f, e1Var.getCurrentBrush().h() * k3.t(f14, 0.043945312f, d, 0.00390625f * f14) * this.E.getCurrentBrush().g(), canvas, true);
+                            qg.f1 f1Var = this.E;
+                            float f14 = f1Var.c.g.a;
+                            a(getWidth() / 2.0f, getHeight() / 2.0f, f1Var.getCurrentBrush().h() * k3.t(f14, 0.043945312f, d, 0.00390625f * f14) * this.E.getCurrentBrush().g(), canvas, true);
                         }
                         if (this.n != 0.0f) {
                             canvas.restore();
@@ -194,9 +194,9 @@ public final class w1 extends View {
                 float f132 = dp22 * 1.5f;
                 a(bsVar2.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.r.a(k3.y(1.0f, f122, rectF3.height(), rectF3.top), rectF3.top + f112, rectF3.bottom - Math.min(f132, f112)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f132, f112), f112, f122), this.r), canvas, false);
                 if (this.J) {
-                    qg.e1 e1Var2 = this.E;
-                    float f142 = e1Var2.c.g.a;
-                    a(getWidth() / 2.0f, getHeight() / 2.0f, e1Var2.getCurrentBrush().h() * k3.t(f142, 0.043945312f, d, 0.00390625f * f142) * this.E.getCurrentBrush().g(), canvas, true);
+                    qg.f1 f1Var2 = this.E;
+                    float f142 = f1Var2.c.g.a;
+                    a(getWidth() / 2.0f, getHeight() / 2.0f, f1Var2.getCurrentBrush().h() * k3.t(f142, 0.043945312f, d, 0.00390625f * f142) * this.E.getCurrentBrush().g(), canvas, true);
                 }
                 if (this.n != 0.0f) {
                 }
@@ -275,8 +275,8 @@ public final class w1 extends View {
         invalidate();
     }
 
-    public void setColorSwatch(qg.s1 s1Var) {
-        this.H = s1Var;
+    public void setColorSwatch(qg.t1 t1Var) {
+        this.H = t1Var;
         invalidate();
     }
 
@@ -289,8 +289,8 @@ public final class w1 extends View {
         this.I = runnable;
     }
 
-    public void setRenderView(qg.e1 e1Var) {
-        this.E = e1Var;
+    public void setRenderView(qg.f1 f1Var) {
+        this.E = f1Var;
     }
 
     public void setShowPreview(boolean z10) {

@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import org.telegram.messenger.EmojiData;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class nd0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -12,8 +12,8 @@ public final class nd0 implements Runnable {
     public int c;
     public final /* synthetic */ Object d;
 
-    public nd0(org.telegram.ui.qy qyVar, int i10, int i11) {
-        this.d = qyVar;
+    public nd0(org.telegram.ui.oy oyVar, int i10, int i11) {
+        this.d = oyVar;
         this.b = i10;
         this.c = i11;
     }
@@ -35,7 +35,7 @@ public final class nd0 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         org.telegram.ui.Cells.u1 u1Var;
-        org.telegram.ui.sn snVar;
+        org.telegram.ui.qn qnVar;
         switch (this.a) {
             case 0:
                 od0 od0Var = (od0) this.d;
@@ -71,11 +71,11 @@ public final class nd0 implements Runnable {
                 }
                 break;
             default:
-                org.telegram.ui.qy qyVar = (org.telegram.ui.qy) this.d;
+                org.telegram.ui.oy oyVar = (org.telegram.ui.oy) this.d;
                 int i13 = this.b;
                 int i14 = this.c;
-                im0 im0Var = qyVar.H;
-                if (qyVar.n) {
+                im0 im0Var = oyVar.H;
+                if (oyVar.n) {
                     int i15 = 0;
                     while (true) {
                         if (i15 < im0Var.getChildCount()) {
@@ -94,15 +94,15 @@ public final class nd0 implements Runnable {
                             u1Var = null;
                         }
                     }
-                    if (u1Var != null && (snVar = qyVar.a) != null) {
-                        snVar.Ra(u1Var);
+                    if (u1Var != null && (qnVar = oyVar.a) != null) {
+                        qnVar.Ra(u1Var);
                         if (!EmojiData.hasEmojiSupportVibration(u1Var.getMessageObject().getStickerEmoji()) && !u1Var.getMessageObject().isPremiumSticker() && !u1Var.getMessageObject().isAnimatedAnimatedEmoji()) {
                             try {
                                 u1Var.performHapticFeedback(3);
                             } catch (Exception unused) {
                             }
                         }
-                        qyVar.n(u1Var, i14, false, true);
+                        oyVar.n(u1Var, i14, false, true);
                         break;
                     }
                 }

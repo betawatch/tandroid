@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class n7 extends View {
     public final /* synthetic */ t7 a;
@@ -394,11 +394,11 @@ public final class n7 extends View {
             }
             canvas.restore();
         }
-        v5 v5Var = x5Var4.O;
+        v5 v5Var = x5Var4.N;
         float round = Math.round(f12 * 20.0f) / 20.0f;
-        if (round != x5Var4.K) {
-            x5Var4.K = round;
-            x5Var4.I.invalidate();
+        if (round != x5Var4.J) {
+            x5Var4.J = round;
+            x5Var4.H.invalidate();
         }
         float f54 = Math.max(f11, f7) > 0.0f ? 1.0f : 0.0f;
         if (f54 != x5Var4.h) {
@@ -407,14 +407,14 @@ public final class n7 extends View {
         }
         float round2 = Math.round(f7 * 20.0f) / 20.0f;
         float round3 = Math.round(f10 * 20.0f) / 20.0f;
-        if (round2 != x5Var4.h0) {
-            x5Var4.h0 = round2;
+        if (round2 != x5Var4.d0) {
+            x5Var4.d0 = round2;
             v5Var.invalidate();
-            x5Var4.P.invalidate();
+            x5Var4.O.invalidate();
         }
-        if (round3 != x5Var4.i0) {
-            x5Var4.i0 = round3;
-            x5Var4.H.invalidate();
+        if (round3 != x5Var4.e0) {
+            x5Var4.e0 = round3;
+            x5Var4.G.invalidate();
         }
     }
 }

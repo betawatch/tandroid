@@ -23,17 +23,17 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.Components.AnimatedFileNative;
-import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.q51;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z1 implements Runnable {
     public final /* synthetic */ int a;
@@ -234,7 +234,7 @@ public final /* synthetic */ class z1 implements Runnable {
                 r9Var.g1();
                 if (r9Var.Z) {
                     i11 = ((org.telegram.ui.ActionBar.f3) r9Var).currentAccount;
-                    r9Var.h1(new p9(1, i11, (ArrayList) null), new ci.d4(r9Var, i14), false);
+                    r9Var.h1(new p9(1, i11, (ArrayList) null), new ci.e4(r9Var, i14), false);
                     break;
                 } else {
                     r9Var.g1();
@@ -304,7 +304,7 @@ public final /* synthetic */ class z1 implements Runnable {
                 if (((TLObject) obj) instanceof TLRPC.TL_boolTrue) {
                     gi.v2 v2Var = d3Var.x;
                     v2Var.getClass();
-                    v2Var.y("emoji_status_access_requested", org.telegram.ui.web.b1.A("cancelled", "status"));
+                    v2Var.y("emoji_status_access_requested", org.telegram.ui.web.a1.A("cancelled", "status"));
                     break;
                 } else {
                     new xc(d3Var.p0, d3Var.E).Y(tL_error).k(true);
@@ -368,7 +368,7 @@ public final /* synthetic */ class z1 implements Runnable {
                 a2Var2.q = arrayList8;
                 a2Var2.r = (HashMap) obj;
                 a2Var2.s = true;
-                a2Var2.a.Y(arrayList8);
+                a2Var2.a.S(arrayList8);
                 break;
             case 19:
                 hg.c2 c2Var = (hg.c2) obj3;
@@ -376,12 +376,12 @@ public final /* synthetic */ class z1 implements Runnable {
                 String str5 = ((TLRPC.TL_messages_searchStickerSets) obj2).q;
                 hg.e2 e2Var = c2Var.a;
                 String str6 = e2Var.R;
-                p51 p51Var = e2Var.e;
+                q51 q51Var = e2Var.e;
                 if (str5.equals(str6)) {
                     c2Var.a();
-                    p51Var.b.h.getProgressDrawable().e = false;
+                    q51Var.b.h.getProgressDrawable().e = false;
                     e2Var.N = 0;
-                    p51Var.b(true);
+                    q51Var.b(true);
                     e2Var.E.addAll(tL_messages_foundStickerSets.sets);
                     e2Var.l();
                     break;
@@ -389,7 +389,7 @@ public final /* synthetic */ class z1 implements Runnable {
                 break;
             case 20:
                 u2.g0 g0Var = (u2.g0) obj;
-                j2.f fVar = ((i2.y0) obj3).c;
+                j2.f fVar = ((i2.z0) obj3).c;
                 e9.x1 f10 = ((e9.k0) obj2).f();
                 com.google.firebase.messaging.l lVar = fVar.d;
                 b2.f1 f1Var = fVar.h;
@@ -408,11 +408,11 @@ public final /* synthetic */ class z1 implements Runnable {
                 break;
             case 21:
                 Pair pair3 = (Pair) obj2;
-                ((i2.e1) obj3).b.h.c(((Integer) pair3.first).intValue(), (u2.g0) pair3.second, (oa.d) obj);
+                ((i2.f1) obj3).b.h.c(((Integer) pair3.first).intValue(), (u2.g0) pair3.second, (oa.d) obj);
                 break;
             case 22:
                 Pair pair4 = (Pair) obj2;
-                ((i2.e1) obj3).b.h.b(((Integer) pair4.first).intValue(), (u2.g0) pair4.second, (Exception) obj);
+                ((i2.f1) obj3).b.h.b(((Integer) pair4.first).intValue(), (u2.g0) pair4.second, (Exception) obj);
                 break;
             case 23:
                 ig.c cVar = (ig.c) obj3;
@@ -424,7 +424,7 @@ public final /* synthetic */ class z1 implements Runnable {
                     break;
                 } else if (tLObject5 instanceof TLRPC.TL_boolFalse) {
                     cVar.a.a(0.0f);
-                    lk.q(R.string.UnknownError, xc.a0(cVar), null);
+                    kk.q(R.string.UnknownError, xc.a0(cVar), null);
                     break;
                 } else {
                     cVar.finishFragment();
@@ -440,7 +440,7 @@ public final /* synthetic */ class z1 implements Runnable {
                     break;
                 } else if (tLObject6 instanceof TLRPC.TL_boolFalse) {
                     mVar.e.a(0.0f);
-                    lk.q(R.string.UnknownError, xc.a0(mVar), null);
+                    kk.q(R.string.UnknownError, xc.a0(mVar), null);
                     break;
                 } else {
                     if (mVar.E != null) {
@@ -483,7 +483,7 @@ public final /* synthetic */ class z1 implements Runnable {
                     break;
                 } else if (tLObject7 instanceof TLRPC.TL_boolFalse) {
                     v0Var.a.a(0.0f);
-                    lk.q(R.string.UnknownError, xc.a0(v0Var), null);
+                    kk.q(R.string.UnknownError, xc.a0(v0Var), null);
                     break;
                 } else {
                     v0Var.finishFragment();

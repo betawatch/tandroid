@@ -1,29 +1,29 @@
 package org.telegram.ui;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class nm0 extends ClickableSpan {
-    public final /* synthetic */ xm0 a;
+public final /* synthetic */ class nm0 implements org.telegram.ui.ActionBar.a2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ rm0 b;
 
-    public nm0(xm0 xm0Var) {
-        this.a = xm0Var;
+    public /* synthetic */ nm0(rm0 rm0Var, int i10) {
+        this.a = i10;
+        this.b = rm0Var;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        xm0 xm0Var = this.a;
-        pf.d.r(xm0Var.getParentActivity(), xm0Var.y.privacy_policy_url);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        textPaint.setUnderlineText(true);
-        textPaint.setTypeface(AndroidUtilities.bold());
+    @Override // org.telegram.ui.ActionBar.a2
+    public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                rm0 rm0Var = this.b;
+                rm0Var.c(true);
+                rm0Var.Q.finishFragment();
+                break;
+            default:
+                rm0 rm0Var2 = this.b;
+                rm0Var2.c(true);
+                rm0Var2.Q.J1(null, 0, true);
+                break;
+        }
     }
 }

@@ -19,10 +19,11 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import k2.w0;
 import v7.i8;
 import v7.u8;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class l extends md.i implements td.p {
     public final /* synthetic */ int a;
@@ -138,9 +139,9 @@ public final class l extends md.i implements td.p {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
                         i8.b(obj);
-                        Boolean h = hVar2.a.h();
-                        if (h != null) {
-                            booleanValue = h.booleanValue();
+                        Boolean k10 = hVar2.a.k();
+                        if (k10 != null) {
+                            booleanValue = k10.booleanValue();
                         } else {
                             Boolean a2 = hVar2.b.a();
                             booleanValue = a2 != null ? a2.booleanValue() : true;
@@ -198,10 +199,10 @@ public final class l extends md.i implements td.p {
                     w wVar = c0.e;
                     Context context = ((c0) this.c).a;
                     wVar.getClass();
-                    k0.b a10 = c0.f.a(context, w.a[0]);
+                    w0 a10 = c0.f.a(context, w.a[0]);
                     b0 b0Var = new b0((String) obj3, null, i11);
                     this.b = 1;
-                    if (a10.a(new n1.c(b0Var, null, 1), this) == aVar3) {
+                    if (a10.h(new n1.c(b0Var, null, 1), this) == aVar3) {
                         return aVar3;
                     }
                 } else {

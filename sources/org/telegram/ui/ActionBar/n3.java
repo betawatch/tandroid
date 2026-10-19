@@ -1,7 +1,7 @@
 package org.telegram.ui.ActionBar;
 
 import ai.r9;
-import ai.s7;
+import ai.t7;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -29,12 +29,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.e11;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.hk;
-import org.telegram.ui.sn;
+import org.telegram.ui.fk;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class n3 extends FrameLayout {
     public static final HashMap K = new HashMap();
@@ -109,7 +109,7 @@ public final class n3 extends FrameLayout {
         if (size == 0) {
             return;
         }
-        m3 m3Var = (m3) i2.d.h(1, tabs);
+        m3 m3Var = (m3) i2.e.h(1, tabs);
         LaunchActivity launchActivity = LaunchActivity.H1;
         w3 w3Var = launchActivity == null ? null : launchActivity.y0;
         if (w3Var != null && (valueAnimator = w3Var.d) != null) {
@@ -195,25 +195,25 @@ public final class n3 extends FrameLayout {
     }
 
     public final void e(m3 m3Var) {
-        sn snVar;
-        hk hkVar;
+        qn qnVar;
+        fk fkVar;
         n2 R = LaunchActivity.R();
         if (R == null || R.getParentActivity() == null) {
             return;
         }
-        boolean z10 = R instanceof sn;
-        if (z10 && (hkVar = (snVar = (sn) R).Y) != null) {
-            hkVar.N();
-            snVar.Y.l0(true, false, true);
+        boolean z10 = R instanceof qn;
+        if (z10 && (fkVar = (qnVar = (qn) R).Y) != null) {
+            fkVar.N();
+            qnVar.Y.l0(true, false, true);
         }
         if (m3Var.J == null) {
             new j3(0, this, m3Var).run(R);
             if (m3Var.C) {
-                if (z10 && ((sn) R).a() == m3Var.a.c) {
+                if (z10 && ((qn) R).a() == m3Var.a.c) {
                     return;
                 }
                 this.c = true;
-                AndroidUtilities.runOnUIThread(new ig.e2(this, R, sn.W9(m3Var.a.c), 20), 220L);
+                AndroidUtilities.runOnUIThread(new ig.e2(this, R, qn.W9(m3Var.a.c), 20), 220L);
                 return;
             }
             return;
@@ -285,8 +285,8 @@ public final class n3 extends FrameLayout {
         b2 b2Var = alertDialog$Builder.a;
         b2Var.R = str;
         b2Var.T = LocaleController.getString(R.string.BotWebViewChangesMayNotBeSaved);
-        alertDialog$Builder.k(LocaleController.getString(R.string.BotWebViewCloseAnyway), new s7(this, zArr, m3Var, callback, r8));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new ai.r2(zArr, callback, r8, 17));
+        alertDialog$Builder.k(LocaleController.getString(R.string.BotWebViewCloseAnyway), new t7(this, zArr, m3Var, callback, r8));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new ai.u2(zArr, callback, r8, 17));
         b2[] b2VarArr = {b2Var};
         b2Var.setOnDismissListener(new r9(zArr, callback));
         b2VarArr[0].show();
@@ -474,7 +474,7 @@ public final class n3 extends FrameLayout {
             m3 m3Var = tabs.get(i10);
             org.telegram.ui.l4 l4Var = m3Var.J;
             if (l4Var != null && !l4Var.d0.isEmpty()) {
-                Object h = i2.d.h(1, m3Var.J.d0);
+                Object h = i2.e.h(1, m3Var.J.d0);
                 if ((h instanceof TLRPC.WebPage) && ((TLRPC.WebPage) h).id == webPage.id) {
                     e(m3Var);
                     return m3Var;
@@ -499,7 +499,7 @@ public final class n3 extends FrameLayout {
                 if (replaceEmoji == null) {
                     k3Var.v = null;
                 } else {
-                    k3Var.v = new d11(replaceEmoji, 17.0f, AndroidUtilities.bold());
+                    k3Var.v = new e11(replaceEmoji, 17.0f, AndroidUtilities.bold());
                 }
             }
             charSequence = replaceEmoji;

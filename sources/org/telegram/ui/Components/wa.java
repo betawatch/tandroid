@@ -9,9 +9,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class wa extends jw0 {
+public final class wa extends kw0 {
     public final /* synthetic */ boolean w0;
     public final /* synthetic */ boolean x0;
     public final /* synthetic */ bb y0;
@@ -24,7 +24,7 @@ public final class wa extends jw0 {
         this.x0 = z11;
     }
 
-    @Override // org.telegram.ui.Components.jw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.kw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         bb bbVar = this.y0;
         bbVar.J(canvas, this);
@@ -57,7 +57,7 @@ public final class wa extends jw0 {
     /* JADX WARN: Removed duplicated region for block: B:31:0x0095  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x00c1  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x00b1  */
-    @Override // org.telegram.ui.Components.jw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.kw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -153,7 +153,7 @@ public final class wa extends jw0 {
         int size = View.MeasureSpec.getSize(i11);
         bb bbVar = this.y0;
         bbVar.h = size;
-        bbVar.F(i10, i11);
+        bbVar.E(i10, i11);
         if (this.w0) {
             i11 = View.MeasureSpec.makeMeasureSpec(bbVar.h, TLObject.FLAG_30);
         }

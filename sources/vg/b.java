@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import ci.k4;
+import ci.l4;
 import com.google.android.gms.internal.play_billing.k3;
 import ig.l0;
 import java.util.ArrayList;
@@ -31,7 +31,6 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.j5;
-import org.telegram.ui.Cells.l4;
 import org.telegram.ui.Cells.q8;
 import org.telegram.ui.Cells.z6;
 import org.telegram.ui.Components.bs;
@@ -40,7 +39,6 @@ import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.q6;
 import org.telegram.ui.Components.w9;
 import s4.b1;
-import u2.q0;
 import ug.t;
 import wg.d0;
 import wg.i;
@@ -52,7 +50,7 @@ import wg.w;
 import wg.x;
 import wg.y;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class b extends pg.b {
     public final d6 d;
@@ -69,7 +67,7 @@ public final class b extends pg.b {
         this.d = d6Var;
         l0 l0Var = new l0(this, 22);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(UserConfig.selectedAccount);
-        messagesStorage.getStorageQueue().postRunnable(new q0(5, messagesStorage, l0Var));
+        messagesStorage.getStorageQueue().postRunnable(new uf.c(4, messagesStorage, l0Var));
     }
 
     @Override // org.telegram.ui.Components.hm0
@@ -127,13 +125,13 @@ public final class b extends pg.b {
             boolean z10 = aVar.b;
             w9 w9Var = dVar.c;
             d6 d6Var = dVar.a;
-            k4 k4Var = dVar.d;
+            l4 l4Var = dVar.d;
             j5 j5Var = dVar.e;
             h9 h9Var = dVar.b;
             boolean z11 = dVar.s == i12;
             dVar.s = i12;
             if (i12 == 0) {
-                k4Var.k(LocaleController.getString(R.string.BoostingCreateGiveaway));
+                l4Var.k(LocaleController.getString(R.string.BoostingCreateGiveaway));
                 dVar.setSubtitle(LocaleController.getString(R.string.BoostingWinnersRandomly));
                 j5Var.setTextColor(h6.w0(h6.r5, d6Var));
                 h9Var.g(16);
@@ -141,7 +139,7 @@ public final class b extends pg.b {
                 dVar.setDivider(true);
                 dVar.setBackground(h6.W0(dVar.getContext(), R.drawable.greydivider_bottom, h6.b7));
             } else if (i12 == 1) {
-                k4Var.k(LocaleController.getString(R.string.BoostingAwardSpecificUsers));
+                l4Var.k(LocaleController.getString(R.string.BoostingAwardSpecificUsers));
                 if (i13 == 1 && user != null) {
                     dVar.setSubtitle(dVar.e(Emoji.replaceEmoji(UserObject.getUserName(user), j5Var.getPaint().getFontMetricsInt(), false)));
                 } else if (i13 > 0) {
@@ -155,7 +153,7 @@ public final class b extends pg.b {
                 dVar.setDivider(false);
                 dVar.setBackground(h6.W0(dVar.getContext(), R.drawable.greydivider_top, h6.b7));
             } else if (i12 == 2) {
-                k4Var.k(LocaleController.getString(R.string.BoostingPremium));
+                l4Var.k(LocaleController.getString(R.string.BoostingPremium));
                 if (i13 == 1 && user != null) {
                     dVar.setSubtitle(dVar.e(Emoji.replaceEmoji(UserObject.getUserName(user), j5Var.getPaint().getFontMetricsInt(), false)));
                 } else if (i13 > 0) {
@@ -169,7 +167,7 @@ public final class b extends pg.b {
                 dVar.setDivider(true);
                 dVar.setBackground(h6.W0(dVar.getContext(), R.drawable.greydivider_bottom, h6.b7));
             } else if (i12 == 3) {
-                k4Var.k(q8.a(LocaleController.getString(R.string.BoostingStars)));
+                l4Var.k(q8.a(LocaleController.getString(R.string.BoostingStars)));
                 dVar.setSubtitle(LocaleController.getString(R.string.BoostingWinnersRandomly));
                 j5Var.setTextColor(h6.w0(h6.r5, d6Var));
                 h9Var.g(26);
@@ -196,7 +194,7 @@ public final class b extends pg.b {
             return;
         }
         if (i11 == 6) {
-            ((l4) view).setText(aVar.c);
+            ((org.telegram.ui.Cells.l4) view).setText(aVar.c);
             return;
         }
         if (i11 == 7) {
@@ -231,13 +229,13 @@ public final class b extends pg.b {
                 boolean z13 = aVar.g;
                 List list2 = (List) aVar.f;
                 TLRPC.Chat chat4 = this.v;
-                k4 k4Var2 = uVar.d;
+                l4 l4Var2 = uVar.d;
                 uVar.s = i16;
                 boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat4);
                 if (i16 == 0) {
-                    k4Var2.k(LocaleController.formatString(isChannelAndNotMegaGroup ? R.string.BoostingAllSubscribers : R.string.BoostingAllMembers, new Object[0]));
+                    l4Var2.k(LocaleController.formatString(isChannelAndNotMegaGroup ? R.string.BoostingAllSubscribers : R.string.BoostingAllMembers, new Object[0]));
                 } else if (i16 == 1) {
-                    k4Var2.k(LocaleController.formatString(isChannelAndNotMegaGroup ? R.string.BoostingNewSubscribers : R.string.BoostingNewMembers, new Object[0]));
+                    l4Var2.k(LocaleController.formatString(isChannelAndNotMegaGroup ? R.string.BoostingNewSubscribers : R.string.BoostingNewMembers, new Object[0]));
                 }
                 uVar.f.a(z12, false);
                 uVar.setDivider(z13);
@@ -269,12 +267,12 @@ public final class b extends pg.b {
                 CharSequence charSequence = aVar.c;
                 boolean z14 = aVar.g;
                 boolean z15 = aVar.b;
-                k4 k4Var3 = iVar.d;
+                l4 l4Var3 = iVar.d;
                 iVar.v = tLObject;
                 if (i17 >= 12) {
-                    k4Var3.k(LocaleController.formatPluralString("Years", 1, new Object[0]));
+                    l4Var3.k(LocaleController.formatPluralString("Years", 1, new Object[0]));
                 } else {
-                    k4Var3.k(LocaleController.formatPluralString("Months", i17, new Object[0]));
+                    l4Var3.k(LocaleController.formatPluralString("Months", i17, new Object[0]));
                 }
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(BillingController.getInstance().formatCurrency(i18 > 0 ? j10 / i18 : j10, charSequence.toString()));
@@ -369,7 +367,7 @@ public final class b extends pg.b {
                 view = new v(context, d6Var);
                 break;
             case 6:
-                View l4Var = new l4(context, h6.L6, 21, 15, 3, false, false, this.d);
+                View l4Var = new org.telegram.ui.Cells.l4(context, h6.L6, 21, 15, 3, false, false, this.d);
                 l4Var.setBackgroundColor(h6.w0(h6.h5, d6Var));
                 view = l4Var;
                 break;

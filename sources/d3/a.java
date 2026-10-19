@@ -14,19 +14,18 @@ import c3.q;
 import c3.s;
 import c3.t;
 import c3.z;
-import c5.b0;
 import e2.m0;
 import e9.l0;
 import e9.n0;
 import e9.x1;
-import i2.d;
+import i2.e;
 import java.io.EOFException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class a implements o {
     public static final int[] s = {13, 14, 16, 18, 20, 21, 27, 32, 6, 7, 6, 6, 1, 1, 1, 1};
@@ -97,8 +96,8 @@ public final class a implements o {
             }
         }
         z zVar = (z) c0Var;
-        b0 b0Var = zVar.b;
-        long n10 = b0Var.b == 0 ? -9223372036854775807L : b0Var.n(m0.c(zVar.a, j10));
+        c5.c0 c0Var2 = zVar.b;
+        long n10 = c0Var2.b == 0 ? -9223372036854775807L : c0Var2.n(m0.c(zVar.a, j10));
         this.k = n10;
         if (Math.abs(this.q - n10) < 20000) {
             return;
@@ -141,7 +140,7 @@ public final class a implements o {
             vVar.s = i12;
             vVar.J = 1;
             vVar.K = i11;
-            d.u(vVar, j0Var);
+            e.u(vVar, j0Var);
         }
         int i13 = 0;
         if (this.g == 0) {
@@ -161,17 +160,17 @@ public final class a implements o {
                     z zVar = (z) c0Var;
                     long j10 = this.k + this.e + 20000;
                     long position = pVar.getPosition() + this.f;
-                    b0 b0Var = zVar.b;
-                    int i14 = b0Var.b;
-                    if (i14 == 0 || j10 - b0Var.n(i14 - 1) >= 100000) {
-                        b0 b0Var2 = zVar.a;
-                        b0 b0Var3 = zVar.b;
-                        if (b0Var3.b == 0 && j10 > 0) {
-                            b0Var2.d(0L);
-                            b0Var3.d(0L);
+                    c5.c0 c0Var2 = zVar.b;
+                    int i14 = c0Var2.b;
+                    if (i14 == 0 || j10 - c0Var2.n(i14 - 1) >= 100000) {
+                        c5.c0 c0Var3 = zVar.a;
+                        c5.c0 c0Var4 = zVar.b;
+                        if (c0Var4.b == 0 && j10 > 0) {
+                            c0Var3.d(0L);
+                            c0Var4.d(0L);
                         }
-                        b0Var2.d(position);
-                        b0Var3.d(j10);
+                        c0Var3.d(position);
+                        c0Var4.d(j10);
                     }
                     if (this.p && Math.abs(this.q - j10) < 20000) {
                         this.p = false;
@@ -200,17 +199,17 @@ public final class a implements o {
                     this.o = kVar;
                     this.m.e(kVar.f);
                 }
-                c0 c0Var2 = this.o;
-                if (c0Var2 != null) {
-                    this.l.g0(c0Var2);
+                c0 c0Var5 = this.o;
+                if (c0Var5 != null) {
+                    this.l.g0(c0Var5);
                 }
             }
             if (i13 == -1) {
-                c0 c0Var3 = this.o;
-                if (c0Var3 instanceof z) {
+                c0 c0Var6 = this.o;
+                if (c0Var6 instanceof z) {
                     long j11 = this.k + this.e;
-                    ((z) c0Var3).c = j11;
-                    this.l.g0(c0Var3);
+                    ((z) c0Var6).c = j11;
+                    this.l.g0(c0Var6);
                     this.m.e(j11);
                 }
             }

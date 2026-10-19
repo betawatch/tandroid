@@ -3,25 +3,25 @@ package f5;
 import com.google.android.gms.internal.play_billing.k3;
 import java.nio.ByteBuffer;
 import java.util.Date;
-import w7.f7;
+import w7.c7;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class m extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ le.b I;
-    public static final /* synthetic */ le.b J;
-    public static final /* synthetic */ le.b K;
-    public static final /* synthetic */ le.b L;
-    public static final /* synthetic */ le.b M;
-    public static final /* synthetic */ le.b N;
-    public static final /* synthetic */ le.b O;
-    public static final /* synthetic */ le.b P;
-    public static final /* synthetic */ le.b Q;
-    public static final /* synthetic */ le.b R;
-    public static final /* synthetic */ le.b S;
-    public static final /* synthetic */ le.b T;
-    public static final /* synthetic */ le.b U;
-    public static final /* synthetic */ le.b V;
+    public static final /* synthetic */ te.b I;
+    public static final /* synthetic */ te.b J;
+    public static final /* synthetic */ te.b K;
+    public static final /* synthetic */ te.b L;
+    public static final /* synthetic */ te.b M;
+    public static final /* synthetic */ te.b N;
+    public static final /* synthetic */ te.b O;
+    public static final /* synthetic */ te.b P;
+    public static final /* synthetic */ te.b Q;
+    public static final /* synthetic */ te.b R;
+    public static final /* synthetic */ te.b S;
+    public static final /* synthetic */ te.b T;
+    public static final /* synthetic */ te.b U;
+    public static final /* synthetic */ te.b V;
     public int E;
     public int F;
     public int G;
@@ -74,13 +74,13 @@ public final class m extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         if (e() == 1) {
-            this.e = f7.b(e5.b.j(byteBuffer));
-            this.f = f7.b(e5.b.j(byteBuffer));
+            this.e = c7.b(e5.b.j(byteBuffer));
+            this.f = c7.b(e5.b.j(byteBuffer));
             this.h = e5.b.i(byteBuffer);
             this.n = e5.b.j(byteBuffer);
         } else {
-            this.e = f7.b(e5.b.i(byteBuffer));
-            this.f = f7.b(e5.b.i(byteBuffer));
+            this.e = c7.b(e5.b.i(byteBuffer));
+            this.f = c7.b(e5.b.i(byteBuffer));
             this.h = e5.b.i(byteBuffer);
             this.n = e5.b.i(byteBuffer);
         }
@@ -103,13 +103,13 @@ public final class m extends com.googlecode.mp4parser.c {
     public final void getContent(ByteBuffer byteBuffer) {
         i(byteBuffer);
         if (e() == 1) {
-            byteBuffer.putLong(f7.a(this.e));
-            byteBuffer.putLong(f7.a(this.f));
+            byteBuffer.putLong(c7.a(this.e));
+            byteBuffer.putLong(c7.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putLong(this.n);
         } else {
-            byteBuffer.putInt((int) f7.a(this.e));
-            byteBuffer.putInt((int) f7.a(this.f));
+            byteBuffer.putInt((int) c7.a(this.e));
+            byteBuffer.putInt((int) c7.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) this.n);
         }

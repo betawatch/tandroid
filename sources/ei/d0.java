@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class d0 {
     public int a;
@@ -137,7 +137,7 @@ public final class d0 {
             this.l = 0.0f;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.o = ofFloat;
-            ofFloat.addUpdateListener(new ci.u4(this, 2));
+            ofFloat.addUpdateListener(new ci.v4(this, 2));
             this.o.addListener(new ah.b(this, 17));
             this.o.setInterpolator(bs.h);
             this.o.setDuration(360L);

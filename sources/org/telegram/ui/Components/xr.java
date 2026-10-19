@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class xr extends bb {
     public final boolean X;
@@ -27,14 +27,14 @@ public final class xr extends bb {
     public String b0;
     public String c0;
     public SpannableStringBuilder d0;
-    public s61 e0;
+    public t61 e0;
     public final boolean f0;
     public wr g0;
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Object, org.telegram.ui.ActionBar.f3, org.telegram.ui.Components.bb, org.telegram.ui.Components.xr] */
     /* JADX WARN: Type inference failed for: r0v3, types: [org.telegram.ui.ActionBar.f3] */
-    public xr(Context context, int i10, TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl, TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl, ai.n2 n2Var, ci.b bVar) {
+    public xr(Context context, int i10, TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl, TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl, ai.o2 o2Var, ci.b bVar) {
         int i11;
         xr bbVar = new bb(context, null, false, false, bVar);
         bbVar.X = true;
@@ -42,13 +42,13 @@ public final class xr extends bb {
         bbVar.Y = null;
         bbVar.a0 = false;
         long peerDialogId = DialogObject.getPeerDialogId(getgroupcallstreamrtmpurl.peer);
-        boolean z10 = n2Var != null && (peerDialogId >= 0 || ChatObject.isCreator(MessagesController.getInstance(i10).getChat(Long.valueOf(-peerDialogId))));
-        if (n2Var != null) {
+        boolean z10 = o2Var != null && (peerDialogId >= 0 || ChatObject.isCreator(MessagesController.getInstance(i10).getChat(Long.valueOf(-peerDialogId))));
+        if (o2Var != null) {
             bbVar.f0 = true;
             ei.d dVar = new ei.d(context, bVar, true);
             dVar.g(LocaleController.getString(R.string.LiveStoryRTMPEnable), false, true);
             bbVar.containerView.addView(dVar, w7.z5.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, (z10 ? 52 : 0) + 12));
-            dVar.setOnClickListener(new ai.v0(bbVar, n2Var, dVar, 21));
+            dVar.setOnClickListener(new ai.v0(bbVar, o2Var, dVar, 21));
             if (z10) {
                 ei.d dVar2 = new ei.d(context, bVar, false);
                 dVar2.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.r7, false));
@@ -79,11 +79,11 @@ public final class xr extends bb {
         bbVar.c0 = groupcallstreamrtmpurl.key;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(bbVar.c0);
         bbVar.d0 = spannableStringBuilder;
-        l11 l11Var = new l11();
-        l11Var.a |= 256;
-        l11Var.b = 0;
-        l11Var.c = spannableStringBuilder.length();
-        bbVar.d0.setSpan(new m11(l11Var, 0), 0, bbVar.d0.length(), 0);
+        m11 m11Var = new m11();
+        m11Var.a |= 256;
+        m11Var.b = 0;
+        m11Var.c = spannableStringBuilder.length();
+        bbVar.d0.setSpan(new n11(m11Var, 0), 0, bbVar.d0.length(), 0);
         bbVar.e0.N(false);
     }
 
@@ -130,13 +130,13 @@ public final class xr extends bb {
             wrVar.addView(textView2, w7.z5.t(-2, -2, 1, 28, 0, 28, 17));
             xrVar.g0 = wrVar;
         }
-        arrayList.add(f61.k(xrVar.g0));
-        arrayList.add(f61.B(null));
-        i2.d.p(R.string.VoipChatStreamSettings, arrayList);
+        arrayList.add(g61.k(xrVar.g0));
+        arrayList.add(g61.B(null));
+        i2.e.p(R.string.VoipChatStreamSettings, arrayList);
         String str2 = xrVar.b0;
         String string = LocaleController.getString(R.string.VoipChatStreamServerUrl);
         int i10 = vr.a;
-        f61 J = f61.J(vr.class);
+        g61 J = g61.J(vr.class);
         J.l = str2;
         J.n = string;
         J.j = false;
@@ -144,7 +144,7 @@ public final class xr extends bb {
         arrayList.add(J);
         SpannableStringBuilder spannableStringBuilder = xrVar.d0;
         String string2 = LocaleController.getString(R.string.VoipChatStreamKey);
-        f61 J2 = f61.J(vr.class);
+        g61 J2 = g61.J(vr.class);
         J2.l = spannableStringBuilder;
         J2.n = string2;
         J2.j = true;
@@ -153,14 +153,14 @@ public final class xr extends bb {
         if (xrVar.f0) {
             str = LocaleController.getString(xrVar.X ? R.string.VoipChatStreamWithAnotherAppDescriptionStory : R.string.VoipChatStreamWithAnotherAppDescription);
         }
-        arrayList.add(f61.B(str));
+        arrayList.add(g61.B(str));
     }
 
     public static void T(xr xrVar, Context context, ei.d dVar, long j10) {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, xrVar.resourcesProvider);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.LiveStoryRTMPRevokeTitle);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.LiveStoryRTMPRevokeText);
-        alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new ai.f(xrVar, dVar, j10, 4));
+        alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new ai.f(xrVar, dVar, j10, 5));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         alertDialog$Builder.d(-1);
         alertDialog$Builder.o();
@@ -184,9 +184,9 @@ public final class xr extends bb {
 
     @Override // org.telegram.ui.Components.bb
     public final hm0 x(im0 im0Var) {
-        s61 s61Var = new s61(im0Var, getContext(), this.currentAccount, 0, true, new d(this, 7), this.resourcesProvider);
-        this.e0 = s61Var;
-        return s61Var;
+        t61 t61Var = new t61(im0Var, getContext(), this.currentAccount, 0, true, new d(this, 7), this.resourcesProvider);
+        this.e0 = t61Var;
+        return t61Var;
     }
 
     public xr(org.telegram.ui.ActionBar.n2 n2Var, TLRPC.Peer peer, long j10, boolean z10, p80 p80Var) {

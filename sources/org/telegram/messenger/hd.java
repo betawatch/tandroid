@@ -1,46 +1,29 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final /* synthetic */ class hd implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
+public final /* synthetic */ class hd implements Runnable {
+    public final /* synthetic */ int a;
     public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ BaseController d;
 
-    public /* synthetic */ hd(MessagesController messagesController, long j10, Utilities.Callback callback, TLRPC.User user, int i10) {
-        this.d = messagesController;
+    public /* synthetic */ hd(BaseController baseController, long j10, long j11, int i10) {
+        this.a = i10;
+        this.d = baseController;
         this.b = j10;
-        this.e = callback;
-        this.f = user;
-        this.c = i10;
+        this.c = j11;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.d).lambda$loadFullUser$71(this.b, (Utilities.Callback) this.e, (TLRPC.User) this.f, this.c, tLObject, tL_error);
+                ((MessagesController) this.d).lambda$markDialogAsReadNow$239(this.b, this.c);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new ai.e9((org.telegram.ui.Cells.f6) this.d, tLObject, (MessagesStorage) this.e, this.b, this.c, (ArrayList) this.f));
+                ((NotificationsController) this.d).lambda$setOpenedDialogId$4(this.b, this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ hd(org.telegram.ui.Cells.f6 f6Var, MessagesStorage messagesStorage, long j10, int i10, ArrayList arrayList) {
-        this.d = f6Var;
-        this.e = messagesStorage;
-        this.b = j10;
-        this.c = i10;
-        this.f = arrayList;
     }
 }

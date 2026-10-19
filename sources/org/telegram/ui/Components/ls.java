@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ls implements MessagesStorage.LongCallback, xl0 {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class ls implements MessagesStorage.LongCallback, x
     public void d(float f7, float f10, int i10, View view) {
         boolean z10;
         ps psVar = this.b;
-        f61 G = psVar.X.G(i10 - 1);
+        g61 G = psVar.X.G(i10 - 1);
         if (G == null) {
             return;
         }
@@ -103,7 +103,7 @@ public final /* synthetic */ class ls implements MessagesStorage.LongCallback, x
                 psVar.y0 = !psVar.y0;
                 psVar.K();
                 psVar.X.N(true);
-                psVar.t();
+                psVar.u();
                 return;
             }
             if (i11 == 100) {
@@ -113,7 +113,7 @@ public final /* synthetic */ class ls implements MessagesStorage.LongCallback, x
                 psVar.D0 = z12;
                 psVar.K();
                 psVar.X.N(true);
-                psVar.t();
+                psVar.u();
                 psVar.P();
                 return;
             }
@@ -198,7 +198,7 @@ public final /* synthetic */ class ls implements MessagesStorage.LongCallback, x
                                 if (i15 >= psVar.X.x.size()) {
                                     break;
                                 }
-                                f61 G2 = psVar.X.G(i15);
+                                g61 G2 = psVar.X.G(i15);
                                 if (G2.a == 39 && G2.d == 0) {
                                     s4.b1 K = psVar.d.K(i15 + 1);
                                     if (K != null) {
@@ -245,7 +245,7 @@ public final /* synthetic */ class ls implements MessagesStorage.LongCallback, x
                 psVar.getClass();
                 org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                 if (R != null) {
-                    R.presentFragment(org.telegram.ui.sn.W9(j10));
+                    R.presentFragment(org.telegram.ui.qn.W9(j10));
                 }
                 psVar.dismiss();
                 break;
@@ -254,7 +254,7 @@ public final /* synthetic */ class ls implements MessagesStorage.LongCallback, x
                 psVar2.getClass();
                 org.telegram.ui.ActionBar.n2 R2 = LaunchActivity.R();
                 if (R2 != null) {
-                    R2.presentFragment(org.telegram.ui.sn.W9(j10));
+                    R2.presentFragment(org.telegram.ui.qn.W9(j10));
                 }
                 psVar2.dismiss();
                 break;

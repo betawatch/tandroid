@@ -37,14 +37,14 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class l60 extends r60 {
     public int A0;
     public boolean B0;
     public boolean C0;
     public float D0;
-    public final org.telegram.ui.gl E;
+    public final org.telegram.ui.el E;
     public int E0;
     public final LinearLayout F;
     public long F0;
@@ -65,7 +65,7 @@ public final class l60 extends r60 {
     public si.q0 Q;
     public si.r0 R;
     public si.k0 S;
-    public y01 T;
+    public z01 T;
     public VideoEditedInfo U;
     public k60 V;
     public AnimatorSet W;
@@ -116,7 +116,7 @@ public final class l60 extends r60 {
         this.A0 = -1;
         this.D0 = Float.NaN;
         this.I0 = new hq(this, 25);
-        this.J0 = new l2.f(this, 9);
+        this.J0 = new l2.f(this, 10);
         this.f = y50Var;
         this.n = y50Var.getClassGuid();
         this.r = y50Var.x();
@@ -138,17 +138,17 @@ public final class l60 extends r60 {
         i60Var.setOpaque(true);
         i60Var.setClickable(true);
         i60Var.setCameraDistance(AndroidUtilities.dp(8000.0f));
-        i60Var.setOutlineProvider(new ci.n1(13));
+        i60Var.setOutlineProvider(new ci.o1(13));
         i60Var.setClipToOutline(true);
         this.y = i60Var;
         frameLayout.addView(i60Var, w7.z5.e(-1, -1, 119));
         Paint paint = new Paint(1);
         paint.setColor(Color.argb(40, 0, 0, 0));
-        org.telegram.ui.gl glVar = new org.telegram.ui.gl(this, activity, paint);
-        this.E = glVar;
-        glVar.setOutlineProvider(new ci.n1(12));
-        glVar.setClipToOutline(true);
-        frameLayout.addView(glVar, w7.z5.e(-1, -1, 119));
+        org.telegram.ui.el elVar = new org.telegram.ui.el(this, activity, paint);
+        this.E = elVar;
+        elVar.setOutlineProvider(new ci.o1(12));
+        elVar.setClipToOutline(true);
+        frameLayout.addView(elVar, w7.z5.e(-1, -1, 119));
         um0Var.addView(frameLayout, w7.z5.d(-1, -1.0f, 119, 14.0f, 14.0f, 14.0f, 14.0f));
         j60Var.addView(um0Var, w7.z5.e(-1, -1, 119));
         int i10 = AndroidUtilities.roundPlayingMessageSize;
@@ -206,7 +206,7 @@ public final class l60 extends r60 {
                                         if (!jVar.V || handler == null) {
                                             z10 = false;
                                         } else {
-                                            handler.post(new org.telegram.ui.web.g2(22, jVar, l0Var2));
+                                            handler.post(new p2.b(21, jVar, l0Var2));
                                             z10 = true;
                                         }
                                         s0Var.w = z10;
@@ -290,7 +290,7 @@ public final class l60 extends r60 {
                                         if (!jVar.V || handler == null) {
                                             z10 = false;
                                         } else {
-                                            handler.post(new org.telegram.ui.web.g2(22, jVar, l0Var2));
+                                            handler.post(new p2.b(21, jVar, l0Var2));
                                             z10 = true;
                                         }
                                         s0Var.w = z10;
@@ -377,18 +377,18 @@ public final class l60 extends r60 {
     }
 
     public static void m(l60 l60Var) {
-        org.telegram.ui.gl glVar = l60Var.E;
+        org.telegram.ui.el elVar = l60Var.E;
         if (l60Var.l0) {
             l60Var.l0 = false;
-            glVar.invalidate();
-            glVar.animate().cancel();
-            glVar.animate().alpha(0.0f).setDuration(120L).setInterpolator(new DecelerateInterpolator()).start();
+            elVar.invalidate();
+            elVar.animate().cancel();
+            elVar.animate().alpha(0.0f).setDuration(120L).setInterpolator(new DecelerateInterpolator()).start();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void setRecordingUiFrameClockActive(boolean z10) {
-        org.telegram.ui.hk hkVar;
+        org.telegram.ui.fk fkVar;
         if (z10 == this.G0) {
             return;
         }
@@ -405,10 +405,10 @@ public final class l60 extends r60 {
         }
         this.d = z10;
         p60 p60Var = this.c;
-        if (p60Var == null || (hkVar = ((org.telegram.ui.lj) p60Var).a.Y) == null) {
+        if (p60Var == null || (fkVar = ((org.telegram.ui.jj) p60Var).a.Y) == null) {
             return;
         }
-        hkVar.setRoundVideoUiFrameClockActive(z10);
+        fkVar.setRoundVideoUiFrameClockActive(z10);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -436,7 +436,7 @@ public final class l60 extends r60 {
     }
 
     public final void A() {
-        org.telegram.ui.hk hkVar;
+        org.telegram.ui.fk fkVar;
         si.r0 r0Var = this.R;
         if (r0Var != null) {
             long j10 = r0Var.d;
@@ -447,16 +447,16 @@ public final class l60 extends r60 {
             this.u0 = min;
             this.w.setProgress(min / j10);
             p60 p60Var = this.c;
-            if (p60Var == null || (hkVar = ((org.telegram.ui.lj) p60Var).a.Y) == null || !hkVar.j1) {
+            if (p60Var == null || (fkVar = ((org.telegram.ui.jj) p60Var).a.Y) == null || !fkVar.j1) {
                 return;
             }
-            hkVar.i1 = min;
-            xg xgVar = hkVar.Y0;
+            fkVar.i1 = min;
+            xg xgVar = fkVar.Y0;
             if (xgVar != null && xgVar.r) {
                 xgVar.h = min;
                 xgVar.invalidate();
             }
-            ug ugVar = hkVar.l1;
+            ug ugVar = fkVar.l1;
             if (ugVar != null && ugVar.n) {
                 if (!ugVar.h) {
                     long j11 = ugVar.r;
@@ -472,7 +472,7 @@ public final class l60 extends r60 {
                 ugVar.a = 1.0f;
                 ugVar.invalidate();
             }
-            ChatActivityEnterView.SlideTextView slideTextView = hkVar.k1;
+            ChatActivityEnterView.SlideTextView slideTextView = fkVar.k1;
             if (slideTextView == null || !slideTextView.J || slideTextView.n == 1.0f) {
                 return;
             }
@@ -487,9 +487,9 @@ public final class l60 extends r60 {
         }
         u(z10 ? 0 : 6);
         this.P.a();
-        y01 y01Var = this.T;
-        if (y01Var != null) {
-            y01Var.d(true);
+        z01 z01Var = this.T;
+        if (z01Var != null) {
+            z01Var.d(true);
         }
         this.T = null;
         MediaController.getInstance().requestRecordAudioFocus(false);
@@ -499,7 +499,7 @@ public final class l60 extends r60 {
     @Override // org.telegram.ui.Components.r60
     public final void b(float f7, int i10) {
         si.r0 r0Var;
-        i2.h0 h0Var;
+        i2.i0 i0Var;
         if (this.P == null || (r0Var = this.R) == null || r0Var.a != 5) {
             return;
         }
@@ -512,10 +512,10 @@ public final class l60 extends r60 {
             si.s0 s0Var = this.P;
             s0Var.getClass();
             si.s0.t();
-            if (s0Var.W != 5 || (h0Var = s0Var.S) == null) {
+            if (s0Var.W != 5 || (i0Var = s0Var.S) == null) {
                 return;
             }
-            h0Var.e();
+            i0Var.e();
             s0Var.x(false);
             l2.f fVar = s0Var.d;
             s0Var.S.M0();
@@ -567,9 +567,9 @@ public final class l60 extends r60 {
             }
             this.P = null;
         }
-        y01 y01Var = this.T;
-        if (y01Var != null) {
-            y01Var.d(true ^ this.j0);
+        z01 z01Var = this.T;
+        if (z01Var != null) {
+            z01Var.d(true ^ this.j0);
             this.T = null;
         }
         setScreenFlashEnabled(false);
@@ -659,9 +659,9 @@ public final class l60 extends r60 {
     }
 
     @Override // org.telegram.ui.Components.r60
-    public final void g(bh.b bVar, org.telegram.ui.dj djVar) {
+    public final void g(bh.b bVar, org.telegram.ui.bj bjVar) {
         LinearLayout linearLayout = this.F;
-        dh.d c10 = bVar.c(linearLayout, djVar, false);
+        dh.d c10 = bVar.c(linearLayout, bjVar, false);
         c10.p(AndroidUtilities.dp(6.0f));
         c10.q(AndroidUtilities.dp(21.0f));
         linearLayout.setBackground(c10);
@@ -713,7 +713,7 @@ public final class l60 extends r60 {
         this.h0 = false;
         this.u0 = 0L;
         this.w.setProgress(0.0f);
-        org.telegram.ui.gl glVar = this.E;
+        org.telegram.ui.el elVar = this.E;
         if (!this.l0) {
             if (this.t0 == null) {
                 try {
@@ -723,16 +723,16 @@ public final class l60 extends r60 {
             }
             Bitmap bitmap = this.t0;
             if (bitmap != null) {
-                glVar.setImageBitmap(bitmap);
+                elVar.setImageBitmap(bitmap);
             } else {
-                glVar.setImageResource(R.drawable.icplaceholder);
+                elVar.setImageResource(R.drawable.icplaceholder);
             }
             this.l0 = true;
-            glVar.animate().cancel();
-            glVar.setAlpha(1.0f);
-            glVar.invalidate();
+            elVar.animate().cancel();
+            elVar.setAlpha(1.0f);
+            elVar.invalidate();
         }
-        this.T = new y01(this.h, this.r);
+        this.T = new z01(this.h, this.r);
         this.Q = (si.q0) ti.e.e.a();
         si.j0 j0Var = new si.j0(getContext(), this.y);
         j0Var.c = new File(ApplicationLoader.getFilesDirFixed(), "cache");
@@ -746,8 +746,8 @@ public final class l60 extends r60 {
         j0Var.i = aVar.d;
         l2.f fVar = this.J0;
         j0Var.j = fVar;
-        y01 y01Var = this.T;
-        j0Var.k = y01Var;
+        z01 z01Var = this.T;
+        j0Var.k = z01Var;
         j0Var.l = new tv(this, 6);
         if (j0Var.d == null) {
             throw new IllegalStateException("Initial camera is required");
@@ -767,7 +767,7 @@ public final class l60 extends r60 {
         if (fVar == null) {
             throw new IllegalStateException("Session listener is required");
         }
-        if (y01Var == null) {
+        if (z01Var == null) {
             throw new IllegalStateException("Output listener is required");
         }
         this.P = new si.s0(j0Var);
@@ -845,9 +845,9 @@ public final class l60 extends r60 {
         }
         s0Var.G = max2;
         s0Var.H = max3;
-        i2.h0 h0Var = s0Var.S;
-        if (h0Var != null) {
-            h0Var.Z0(5, max2);
+        i2.i0 i0Var = s0Var.S;
+        if (i0Var != null) {
+            i0Var.Z0(5, max2);
         }
         s0Var.d.getClass();
         s0Var.o();
@@ -931,13 +931,13 @@ public final class l60 extends r60 {
         }
     }
 
-    public final VideoEditedInfo r(File file, long j10, x01 x01Var) {
+    public final VideoEditedInfo r(File file, long j10, y01 y01Var) {
         si.n0 n0Var;
         VideoEditedInfo videoEditedInfo = new VideoEditedInfo();
         videoEditedInfo.startTime = -1L;
         videoEditedInfo.endTime = -1L;
         videoEditedInfo.estimatedDuration = j10;
-        videoEditedInfo.estimatedSize = Math.max(1L, x01Var == null ? file.length() : x01Var.a);
+        videoEditedInfo.estimatedSize = Math.max(1L, y01Var == null ? file.length() : y01Var.a);
         videoEditedInfo.roundVideo = true;
         si.s0 s0Var = this.P;
         videoEditedInfo.framerate = (s0Var == null || (n0Var = s0Var.s) == null) ? 30 : n0Var.a;
@@ -948,11 +948,11 @@ public final class l60 extends r60 {
         videoEditedInfo.originalHeight = i10;
         videoEditedInfo.resultHeight = i10;
         videoEditedInfo.originalPath = file.getAbsolutePath();
-        if (x01Var != null) {
-            videoEditedInfo.file = x01Var.b;
-            videoEditedInfo.encryptedFile = x01Var.c;
-            videoEditedInfo.key = x01Var.d;
-            videoEditedInfo.iv = x01Var.e;
+        if (y01Var != null) {
+            videoEditedInfo.file = y01Var.b;
+            videoEditedInfo.encryptedFile = y01Var.c;
+            videoEditedInfo.key = y01Var.d;
+            videoEditedInfo.iv = y01Var.e;
         }
         return videoEditedInfo;
     }
@@ -1016,12 +1016,12 @@ public final class l60 extends r60 {
     public final void t(boolean z10) {
         if (this.m0) {
             this.m0 = false;
-            org.telegram.ui.gl glVar = this.E;
-            glVar.animate().cancel();
+            org.telegram.ui.el elVar = this.E;
+            elVar.animate().cancel();
             if (z10) {
-                glVar.animate().alpha(0.0f).setDuration(120L).setInterpolator(new DecelerateInterpolator()).start();
+                elVar.animate().alpha(0.0f).setDuration(120L).setInterpolator(new DecelerateInterpolator()).start();
             } else {
-                glVar.setAlpha(0.0f);
+                elVar.setAlpha(0.0f);
             }
         }
     }
@@ -1075,7 +1075,7 @@ public final class l60 extends r60 {
     public final void w(boolean z10, boolean z11) {
         n60 n60Var = this.a;
         if (n60Var != null) {
-            ((org.telegram.ui.re) n60Var).b.wc.a(z10, true);
+            ((org.telegram.ui.pe) n60Var).b.wc.a(z10, true);
         }
         AnimatorSet animatorSet = this.W;
         if (animatorSet != null) {
@@ -1112,7 +1112,7 @@ public final class l60 extends r60 {
         if (z10) {
             setTranslationX(0.0f);
         } else {
-            this.W.addListener(new org.telegram.ui.pq(this, 29));
+            this.W.addListener(new org.telegram.ui.nq(this, 29));
         }
         this.W.start();
     }

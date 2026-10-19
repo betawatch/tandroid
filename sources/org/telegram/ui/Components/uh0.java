@@ -12,14 +12,14 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class uh0 extends AccessibilityNodeProvider {
     public final /* synthetic */ int a = 1;
     public final Object b;
 
-    public uh0(ki.t1 t1Var) {
-        this.b = t1Var;
+    public uh0(l2.f fVar) {
+        this.b = fVar;
     }
 
     @Override // android.view.accessibility.AccessibilityNodeProvider
@@ -74,11 +74,11 @@ public class uh0 extends AccessibilityNodeProvider {
                 }
                 return null;
             default:
-                s0.c i13 = ((ki.t1) this.b).i(i10);
-                if (i13 == null) {
+                s0.c D = ((l2.f) this.b).D(i10);
+                if (D == null) {
                     return null;
                 }
-                return i13.a;
+                return D.a;
         }
     }
 
@@ -86,7 +86,7 @@ public class uh0 extends AccessibilityNodeProvider {
     public List findAccessibilityNodeInfosByText(String str, int i10) {
         switch (this.a) {
             case 1:
-                ((ki.t1) this.b).getClass();
+                ((l2.f) this.b).getClass();
                 return null;
             default:
                 return super.findAccessibilityNodeInfosByText(str, i10);
@@ -97,11 +97,11 @@ public class uh0 extends AccessibilityNodeProvider {
     public AccessibilityNodeInfo findFocus(int i10) {
         switch (this.a) {
             case 1:
-                s0.c q6 = ((ki.t1) this.b).q(i10);
-                if (q6 == null) {
+                s0.c E = ((l2.f) this.b).E(i10);
+                if (E == null) {
                     return null;
                 }
-                return q6.a;
+                return E.a;
             default:
                 return super.findFocus(i10);
         }
@@ -140,14 +140,14 @@ public class uh0 extends AccessibilityNodeProvider {
                     } else if (i11 == 16) {
                         xh0 xh0Var = yh0Var.F;
                         if (xh0Var != null) {
-                            ProfileActivity.e0(((org.telegram.ui.ox0) xh0Var).b, i10, 0.0f, 0.0f);
+                            ProfileActivity.e0(((org.telegram.ui.mx0) xh0Var).b, i10, 0.0f, 0.0f);
                         }
                     }
                     return true;
                 }
                 return false;
             default:
-                return ((ki.t1) this.b).Q(i10, i11, bundle);
+                return ((l2.f) this.b).O(i10, i11, bundle);
         }
     }
 

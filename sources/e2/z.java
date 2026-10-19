@@ -15,11 +15,11 @@ import b2.v1;
 import b2.y0;
 import b2.z0;
 import java.util.List;
-import org.telegram.ui.Components.a81;
+import org.telegram.ui.Components.b81;
 import org.telegram.ui.Components.l60;
 import si.s0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class z implements d1 {
     public final /* synthetic */ int a;
@@ -132,16 +132,16 @@ public final class z implements d1 {
 
     @Override // b2.d1
     public final void onPlaybackStateChanged(int i10) {
-        i2.h0 h0Var;
-        i2.h0 h0Var2;
+        i2.i0 i0Var;
+        i2.i0 i0Var2;
         switch (this.a) {
             case 0:
             case 1:
                 break;
             case 2:
                 ri.p pVar = (ri.p) this.b;
-                if (i10 == 4 && pVar.m == ri.n.e && (h0Var = pVar.A) != null) {
-                    h0Var.Z0(5, pVar.r);
+                if (i10 == 4 && pVar.m == ri.n.e && (i0Var = pVar.A) != null) {
+                    i0Var.Z0(5, pVar.r);
                     pVar.A.e();
                     break;
                 }
@@ -149,8 +149,8 @@ public final class z implements d1 {
             default:
                 s0 s0Var = (s0) this.b;
                 s0Var.m.b("preview playback state=" + i10);
-                if (s0Var.W == 5 && i10 == 4 && (h0Var2 = s0Var.S) != null) {
-                    h0Var2.Z0(5, s0Var.G);
+                if (s0Var.W == 5 && i10 == 4 && (i0Var2 = s0Var.S) != null) {
+                    i0Var2.Z0(5, s0Var.G);
                     s0Var.S.i();
                     break;
                 }
@@ -189,11 +189,11 @@ public final class z implements d1 {
     public final void onPlayerStateChanged(boolean z10, int i10) {
         switch (this.a) {
             case 1:
-                a81 a81Var = (a81) this.b;
-                if (!a81Var.H && i10 == 3) {
-                    a81Var.H = true;
-                    if (a81Var.G && a81Var.I) {
-                        a81Var.C();
+                b81 b81Var = (b81) this.b;
+                if (!b81Var.H && i10 == 3) {
+                    b81Var.H = true;
+                    if (b81Var.G && b81Var.I) {
+                        b81Var.C();
                         break;
                     }
                 }

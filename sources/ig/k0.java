@@ -1,6 +1,6 @@
 package ig;
 
-import ai.k2;
+import ai.j2;
 import ai.wa;
 import android.app.Activity;
 import android.content.Context;
@@ -28,13 +28,13 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class k0 extends bb {
     public static final int g0 = -1;
@@ -45,7 +45,7 @@ public final class k0 extends bb {
     public final LinearLayout a0;
     public final ei.d b0;
     public final ei.d c0;
-    public s61 d0;
+    public t61 d0;
     public boolean e0;
     public Boolean f0;
 
@@ -130,9 +130,9 @@ public final class k0 extends bb {
         kVar.o(bs.h);
         kVar.n(350L);
         this.d.setItemAnimator(kVar);
-        s61 s61Var = this.d0;
-        if (s61Var != null) {
-            s61Var.N(false);
+        t61 t61Var = this.d0;
+        if (t61Var != null) {
+            t61Var.N(false);
         }
     }
 
@@ -142,7 +142,7 @@ public final class k0 extends bb {
         tL_connectedBot.recipients = tL_businessBotRecipients;
         n2 U = LaunchActivity.U();
         if (U != null) {
-            i2.d.s(R.string.BusinessBotUpdated, new Object[]{UserObject.getUserName(k0Var.Y)}, xc.a0(U), R.raw.contact_check, 36);
+            i2.e.s(R.string.BusinessBotUpdated, new Object[]{UserObject.getUserName(k0Var.Y)}, xc.a0(U), R.raw.contact_check, 36);
         }
     }
 
@@ -156,7 +156,7 @@ public final class k0 extends bb {
         TL_account.updateConnectedBot updateconnectedbot = new TL_account.updateConnectedBot();
         updateconnectedbot.bot = MessagesController.getInstance(k0Var.currentAccount).getInputUser(tL_connectedBot.bot_id);
         updateconnectedbot.recipients = a0Var.b();
-        ConnectionsManager.getInstance(k0Var.currentAccount).sendRequest(updateconnectedbot, new k2(k0Var, tL_connectedBot, a0Var.c(), 10));
+        ConnectionsManager.getInstance(k0Var.currentAccount).sendRequest(updateconnectedbot, new j2(k0Var, tL_connectedBot, a0Var.c(), 10));
     }
 
     public static /* synthetic */ void S(k0 k0Var, org.telegram.ui.Components.e2 e2Var) {
@@ -307,9 +307,9 @@ public final class k0 extends bb {
 
     @Override // org.telegram.ui.Components.bb
     public final hm0 x(im0 im0Var) {
-        s61 s61Var = new s61(im0Var, getContext(), this.currentAccount, 0, true, new hg.o(this, 4), this.resourcesProvider);
-        this.d0 = s61Var;
-        s61Var.r = false;
-        return s61Var;
+        t61 t61Var = new t61(im0Var, getContext(), this.currentAccount, 0, true, new hg.o(this, 4), this.resourcesProvider);
+        this.d0 = t61Var;
+        t61Var.r = false;
+        return t61Var;
     }
 }

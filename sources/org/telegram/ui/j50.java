@@ -1,34 +1,30 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class j50 extends org.telegram.ui.Cells.d4 {
-    public final /* synthetic */ m50 f0;
+public final class j50 extends org.telegram.ui.Components.voip.l {
+    public final /* synthetic */ k50 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j50(m50 m50Var, Context context) {
-        super(context);
-        this.f0 = m50Var;
+    public j50(k50 k50Var, Context context) {
+        super(context, false);
+        this.h = k50Var;
     }
 
-    @Override // org.telegram.ui.Cells.d4
-    public final void d(org.telegram.ui.Cells.d4 d4Var) {
-        s50 s50Var = this.f0.M;
-        s50 s50Var2 = s50.D3;
-        s50Var.G1(d4Var);
-    }
-
-    @Override // org.telegram.ui.Cells.d4, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        if (AndroidUtilities.isTablet()) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(420.0f), View.MeasureSpec.getSize(i10)), TLObject.FLAG_30), i11);
-        } else {
-            super.onMeasure(i10, i11);
+    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        q50 q50Var = this.h.M;
+        if (q50Var.Q.getVisibility() == 0 && q50Var.P2) {
+            q50.O(q50Var, this, true);
         }
+    }
+
+    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        q50.O(this.h.M, this, false);
     }
 }

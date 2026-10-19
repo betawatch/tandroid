@@ -11,16 +11,17 @@ import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import k2.w0;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.ay0;
+import org.telegram.ui.Components.by0;
 import org.telegram.ui.Components.l60;
 import org.telegram.ui.Components.tv;
-import org.telegram.ui.Components.y01;
-import w7.n7;
+import org.telegram.ui.Components.z01;
+import w7.m7;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class s0 {
     public boolean A;
@@ -40,7 +41,7 @@ public final class s0 {
     public volatile o0 P;
     public volatile w Q;
     public volatile File R;
-    public i2.h0 S;
+    public i2.i0 S;
     public final e2.z V;
     public final Context a;
     public final TextureView b;
@@ -75,7 +76,7 @@ public final class s0 {
     public final p8.b U = new p8.b(this, 5);
 
     public s0(j0 j0Var) {
-        l2.f fVar = new l2.f(this, 20);
+        w0 w0Var = new w0(this, 23);
         this.V = new e2.z(this, 3);
         t();
         Context context = j0Var.a;
@@ -108,7 +109,7 @@ public final class s0 {
         sb2.append(", output=");
         sb2.append(q0Var.a);
         sb2.append("x");
-        i2.d.w(sb2, q0Var.a, ", bitrate=", i10, ", cameraMode=");
+        i2.e.w(sb2, q0Var.a, ", bitrate=", i10, ", cameraMode=");
         sb2.append(m0Var);
         sb2.append(", fps=");
         sb2.append(n0Var.a);
@@ -118,7 +119,7 @@ public final class s0 {
         sb2.append(this.p);
         sb2.append(", maxDurationMs=60000");
         nVar.b(sb2.toString());
-        this.l = new j(context2, textureView, q0Var, i10, m0Var, n0Var, z10, nVar, fVar);
+        this.l = new j(context2, textureView, q0Var, i10, m0Var, n0Var, z10, nVar, w0Var);
     }
 
     public static long f(long j10) {
@@ -179,9 +180,9 @@ public final class s0 {
             this.I = 1 + j10;
             o0 o0Var = new o0(j10, d);
             this.P = o0Var;
-            this.Q = new w(d, this.n.a, z10, this.m, new org.telegram.ui.web.n(10, this, o0Var));
+            this.Q = new w(d, this.n.a, z10, this.m, new org.telegram.ui.web.m(10, this, o0Var));
             this.m.b("output generation started: id=" + j10 + ", includeAudio=" + z10 + ", file=" + d.getName());
-            this.k.execute(new ay0(this, o0Var, d, 22));
+            this.k.execute(new by0(this, o0Var, d, 22));
         }
     }
 
@@ -230,9 +231,9 @@ public final class s0 {
             l60 l60Var = (l60) this.d.b;
             l60Var.x();
             FileLog.e(exc);
-            y01 y01Var = l60Var.T;
-            if (y01Var != null) {
-                y01Var.d(true);
+            z01 z01Var = l60Var.T;
+            if (z01Var != null) {
+                z01Var.d(true);
             }
             l60Var.T = null;
             MediaController.getInstance().requestRecordAudioFocus(false);
@@ -401,12 +402,12 @@ public final class s0 {
     }
 
     public final void q() {
-        i2.h0 h0Var;
+        i2.i0 i0Var;
         t();
-        if (this.W != 5 || (h0Var = this.S) == null) {
+        if (this.W != 5 || (i0Var = this.S) == null) {
             return;
         }
-        long M0 = h0Var.M0();
+        long M0 = i0Var.M0();
         long j10 = this.G;
         if (M0 < j10 || M0 >= this.H) {
             this.S.Z0(5, j10);
@@ -418,19 +419,19 @@ public final class s0 {
     public final void r() {
         this.i.removeCallbacks(this.U);
         this.x = false;
-        i2.h0 h0Var = this.S;
-        if (h0Var == null) {
+        i2.i0 i0Var = this.S;
+        if (i0Var == null) {
             return;
         }
-        h0Var.C(this.V);
-        i2.h0 h0Var2 = this.S;
-        h0Var2.F1();
+        i0Var.C(this.V);
+        i2.i0 i0Var2 = this.S;
+        i0Var2.F1();
         TextureView textureView = this.b;
-        if (textureView != null && textureView == h0Var2.X) {
-            h0Var2.F1();
-            h0Var2.s1();
-            h0Var2.x1(null);
-            h0Var2.q1(0, 0);
+        if (textureView != null && textureView == i0Var2.X) {
+            i0Var2.F1();
+            i0Var2.s1();
+            i0Var2.x1(null);
+            i0Var2.q1(0, 0);
         }
         this.S.X0();
         this.S = null;
@@ -450,9 +451,9 @@ public final class s0 {
         k(this.P, i10);
         c(z10);
         g();
-        a3.z a2 = n7.a(file, this.Q, j10, j11, z10);
+        a3.z a2 = m7.a(file, this.Q, j10, j11, z10);
         this.Q.g();
-        long e = n7.e(this.Q.a) / 1000;
+        long e = m7.e(this.Q.a) / 1000;
         n nVar2 = this.m;
         StringBuilder t11 = a1.g.t(e, "final range remux completed: durationMs=", ", requestedDurationMs=");
         t11.append(a2.b);

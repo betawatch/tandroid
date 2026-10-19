@@ -1,9 +1,9 @@
 package org.telegram.ui.Components.voip;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.jh1;
+import org.telegram.ui.hh1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -33,12 +33,12 @@ public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateList
                 l0Var.invalidate();
                 break;
             case 1:
-                jh1 jh1Var = (jh1) this.e;
+                hh1 hh1Var = (hh1) this.e;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                jh1Var.f1 = com.google.android.gms.internal.play_billing.k3.y(1.0f, floatValue2, 1.0f, this.b * floatValue2);
-                jh1Var.Y0 = this.c * floatValue2;
-                jh1Var.Z0 = this.d * floatValue2;
-                jh1Var.s.invalidate();
+                hh1Var.f1 = com.google.android.gms.internal.play_billing.k3.y(1.0f, floatValue2, 1.0f, this.b * floatValue2);
+                hh1Var.Y0 = this.c * floatValue2;
+                hh1Var.Z0 = this.d * floatValue2;
+                hh1Var.s.invalidate();
                 break;
             default:
                 tg.n nVar = (tg.n) this.e;

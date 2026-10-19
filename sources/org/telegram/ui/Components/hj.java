@@ -2,11 +2,11 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import org.telegram.ui.WallpapersListActivity;
-import org.telegram.ui.mc1;
-import org.telegram.ui.wh1;
-import org.telegram.ui.xh1;
+import org.telegram.ui.kc1;
+import org.telegram.ui.uh1;
+import org.telegram.ui.vh1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class hj extends org.telegram.ui.Cells.ab {
     public final /* synthetic */ int w;
@@ -30,10 +30,10 @@ public final class hj extends org.telegram.ui.Cells.ab {
                 }
                 break;
             case 1:
-                WallpapersListActivity.r0(((wh1) this.x).d, this, obj, i10);
+                WallpapersListActivity.r0(((uh1) this.x).d, this, obj, i10);
                 break;
             default:
-                ((xh1) this.x).E.presentFragment(new mc1(obj, null, true));
+                ((vh1) this.x).E.presentFragment(new kc1(obj, null, true));
                 break;
         }
     }
@@ -42,7 +42,7 @@ public final class hj extends org.telegram.ui.Cells.ab {
     public boolean b(Object obj, int i10) {
         switch (this.w) {
             case 1:
-                return WallpapersListActivity.s0(((wh1) this.x).d, this, obj, i10);
+                return WallpapersListActivity.s0(((uh1) this.x).d, this, obj, i10);
             default:
                 return super.b(obj, i10);
         }

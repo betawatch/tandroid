@@ -2,7 +2,7 @@ package m4;
 
 import hg.b2;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z0 implements g1 {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class z0 implements g1 {
                 if (f0Var != null) {
                     throw new ClassCastException();
                 }
-                i1.I0(null, vVar, i10, this.b, new i2.r(vVar, i10, 3));
+                i1.I0(null, vVar, i10, this.b, new i2.s(vVar, i10, 3));
                 throw null;
             default:
                 return i1.I0(f0Var, vVar, i10, this.b, new b2(f0Var, vVar, i10, 4));

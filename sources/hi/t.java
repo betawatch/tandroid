@@ -1,6 +1,6 @@
 package hi;
 
-import ai.x7;
+import ai.y7;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.database.Cursor;
@@ -19,8 +19,7 @@ import b2.l1;
 import b2.o1;
 import b2.z1;
 import e9.x1;
-import i2.i1;
-import i2.n1;
+import i2.j1;
 import ig.a2;
 import ig.f1;
 import java.io.File;
@@ -55,14 +54,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.a81;
+import org.telegram.ui.Components.b81;
 import org.telegram.ui.Components.e2;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.s61;
-import org.telegram.ui.sn;
+import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.qn;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -123,48 +122,48 @@ public final /* synthetic */ class t implements Runnable {
         boolean z12 = true;
         switch (this.a) {
             case 0:
-                ((k0) this.b).s.presentFragment(sn.W9(((ii.e) this.c).b.id));
+                ((k0) this.b).s.presentFragment(qn.W9(((ii.e) this.c).b.id));
                 return;
             case 1:
-                i2.h0 h0Var = (i2.h0) this.b;
-                i2.n0 n0Var = (i2.n0) this.c;
-                int i13 = h0Var.J - n0Var.b;
-                h0Var.J = i13;
-                if (n0Var.d) {
-                    h0Var.K = n0Var.e;
-                    h0Var.L = true;
+                i2.i0 i0Var = (i2.i0) this.b;
+                i2.o0 o0Var = (i2.o0) this.c;
+                int i13 = i0Var.J - o0Var.b;
+                i0Var.J = i13;
+                if (o0Var.d) {
+                    i0Var.K = o0Var.e;
+                    i0Var.L = true;
                 }
                 if (i13 == 0) {
-                    o1 o1Var = ((i1) n0Var.f).a;
-                    if (!h0Var.p0.a.p() && o1Var.p()) {
-                        h0Var.q0 = -1;
-                        h0Var.r0 = 0L;
+                    o1 o1Var = ((j1) o0Var.f).a;
+                    if (!i0Var.p0.a.p() && o1Var.p()) {
+                        i0Var.q0 = -1;
+                        i0Var.r0 = 0L;
                     }
                     if (!o1Var.p()) {
-                        List asList = Arrays.asList(((n1) o1Var).l);
-                        u6.p(asList.size() == h0Var.p.size());
+                        List asList = Arrays.asList(((i2.o1) o1Var).l);
+                        u6.p(asList.size() == i0Var.p.size());
                         for (int i14 = 0; i14 < asList.size(); i14++) {
-                            ((i2.d0) h0Var.p.get(i14)).c = (o1) asList.get(i14);
+                            ((i2.e0) i0Var.p.get(i14)).c = (o1) asList.get(i14);
                         }
                     }
                     long j11 = -9223372036854775807L;
-                    if (h0Var.L) {
-                        Object[] objArr = ((i1) n0Var.f).a.p() && h0Var.p0.a.p();
-                        boolean equals = ((i1) n0Var.f).b.equals(h0Var.p0.b);
-                        Object[] objArr2 = ((i1) n0Var.f).d == h0Var.p0.s;
+                    if (i0Var.L) {
+                        Object[] objArr = ((j1) o0Var.f).a.p() && i0Var.p0.a.p();
+                        boolean equals = ((j1) o0Var.f).b.equals(i0Var.p0.b);
+                        Object[] objArr2 = ((j1) o0Var.f).d == i0Var.p0.s;
                         if (objArr != false || (equals && objArr2 != false)) {
                             z12 = false;
                         }
                         if (z12) {
-                            i11 = h0Var.n0();
-                            if (o1Var.p() || ((i1) n0Var.f).b.b()) {
-                                j11 = ((i1) n0Var.f).d;
+                            i11 = i0Var.n0();
+                            if (o1Var.p() || ((j1) o0Var.f).b.b()) {
+                                j11 = ((j1) o0Var.f).d;
                             } else {
-                                i1 i1Var = (i1) n0Var.f;
-                                u2.g0 g0Var = i1Var.b;
-                                long j12 = i1Var.d;
+                                j1 j1Var = (j1) o0Var.f;
+                                u2.g0 g0Var = j1Var.b;
+                                long j12 = j1Var.d;
                                 Object obj = g0Var.a;
-                                l1 l1Var = h0Var.o;
+                                l1 l1Var = i0Var.o;
                                 o1Var.g(obj, l1Var);
                                 j11 = j12 + l1Var.e;
                             }
@@ -177,20 +176,20 @@ public final /* synthetic */ class t implements Runnable {
                         j10 = -9223372036854775807L;
                         z10 = false;
                     }
-                    h0Var.L = false;
-                    h0Var.D1((i1) n0Var.f, 1, z10, h0Var.K, j10, i10, false);
+                    i0Var.L = false;
+                    i0Var.D1((j1) o0Var.f, 1, z10, i0Var.K, j10, i10, false);
                     return;
                 }
                 return;
             case 2:
-                i2.b0 b0Var = (i2.b0) this.b;
+                i2.c0 c0Var = (i2.c0) this.b;
                 SurfaceTexture surfaceTexture = (SurfaceTexture) this.c;
-                ArrayList arrayList2 = b0Var.a.t0;
+                ArrayList arrayList2 = c0Var.a.t0;
                 int size = arrayList2.size();
                 while (i12 < size) {
                     Object obj2 = arrayList2.get(i12);
                     i12++;
-                    ((a81) ((z1) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
+                    ((b81) ((z1) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
                 }
                 return;
             case 3:
@@ -214,9 +213,9 @@ public final /* synthetic */ class t implements Runnable {
                 return;
             case 6:
                 f1 f1Var = (f1) this.b;
-                f61 f61Var = (f61) this.c;
+                g61 g61Var = (g61) this.c;
                 f1Var.getClass();
-                f1Var.X(f61Var.d);
+                f1Var.X(g61Var.d);
                 return;
             case 7:
                 MessagesStorage messagesStorage = (MessagesStorage) this.b;
@@ -348,16 +347,16 @@ public final /* synthetic */ class t implements Runnable {
                 String str4 = (String) this.c;
                 k2.u uVar = (k2.u) bVar.c;
                 String str5 = e2.m0.a;
-                j2.f fVar2 = ((i2.b0) uVar).a.s;
+                j2.f fVar2 = ((i2.c0) uVar).a.s;
                 j2.a p5 = fVar2.p();
                 fVar2.q(p5, 1012, new j2.e(p5, str4, 12));
                 return;
             case 16:
                 qf.b bVar2 = (qf.b) this.b;
-                i2.c cVar = (i2.c) this.c;
+                i2.d dVar = (i2.d) this.c;
                 k2.u uVar2 = (k2.u) bVar2.c;
                 String str6 = e2.m0.a;
-                n4.s.i(((i2.b0) uVar2).a.F, cVar);
+                n4.s.h(((i2.c0) uVar2).a.F, dVar);
                 return;
             case 17:
                 k2.d0.a((k2.d0) this.b, (AudioRouting) this.c);
@@ -383,31 +382,31 @@ public final /* synthetic */ class t implements Runnable {
                     a10 = ki.r.a(LocaleController.getString(R.string.ArticleLatexError), AndroidUtilities.dp(26.0f), false);
                     z11 = true;
                 }
-                AndroidUtilities.runOnUIThread(new x7(callback2, a10 != null ? a10.a : null, z11, 7));
+                AndroidUtilities.runOnUIThread(new y7(callback2, a10 != null ? a10.a : null, z11, 7));
                 return;
             case 20:
                 ki.x xVar = (ki.x) this.b;
                 TLObject tLObject3 = (TLObject) this.c;
                 xVar.g0 = false;
                 xVar.h0 = 0;
-                ei.d dVar = xVar.f0;
-                dVar.setLoading(false);
+                ei.d dVar2 = xVar.f0;
+                dVar2.setLoading(false);
                 if (!(tLObject3 instanceof TLRPC.TL_composedRichMessageWithAI)) {
-                    AndroidUtilities.shakeViewSpring(dVar, 4.0f);
+                    AndroidUtilities.shakeViewSpring(dVar2, 4.0f);
                     return;
                 }
                 TL_iv.RichMessage richMessage = ((TLRPC.TL_composedRichMessageWithAI) tLObject3).result;
                 if (richMessage == null) {
-                    AndroidUtilities.shakeViewSpring(dVar, 4.0f);
+                    AndroidUtilities.shakeViewSpring(dVar2, 4.0f);
                     return;
                 }
                 xVar.i0 = richMessage;
                 xVar.c0.set(richMessage);
-                dVar.g(LocaleController.getString(R.string.ArticleAIAddToPage), true, true);
+                dVar2.g(LocaleController.getString(R.string.ArticleAIAddToPage), true, true);
                 xVar.Q();
-                s61 s61Var = xVar.Z;
-                if (s61Var != null) {
-                    s61Var.N(true);
+                t61 t61Var = xVar.Z;
+                if (t61Var != null) {
+                    t61Var.N(true);
                     return;
                 }
                 return;

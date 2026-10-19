@@ -35,7 +35,7 @@ import n4.s;
 import n6.l;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class h {
     public static final g6.b v = new g6.b("MediaSessionManager", null);
@@ -374,9 +374,9 @@ public final class h {
             createFromParcel.b = metadata;
             mediaMetadataCompat = createFromParcel;
         }
-        ag.b bVar = mediaMetadataCompat == null ? new ag.b(1) : new ag.b(mediaMetadataCompat);
-        bVar.Q(i10 == 0 ? "android.media.metadata.DISPLAY_ICON" : "android.media.metadata.ALBUM_ART", bitmap);
-        b0Var.e(new MediaMetadataCompat((Bundle) bVar.b));
+        a4.l lVar = mediaMetadataCompat == null ? new a4.l(2) : new a4.l(mediaMetadataCompat);
+        lVar.a0(i10 == 0 ? "android.media.metadata.DISPLAY_ICON" : "android.media.metadata.ALBUM_ART", bitmap);
+        b0Var.e(new MediaMetadataCompat((Bundle) lVar.b));
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -707,16 +707,16 @@ public final class h {
             obtain.recycle();
             createFromParcel.b = metadata;
         }
-        ag.b bVar = createFromParcel == null ? new ag.b(1) : new ag.b(createFromParcel);
-        bVar.U(j11);
+        a4.l lVar2 = createFromParcel == null ? new a4.l(2) : new a4.l(createFromParcel);
+        lVar2.b0(j11);
         if (string != null) {
-            bVar.X("android.media.metadata.TITLE", string);
-            bVar.X("android.media.metadata.DISPLAY_TITLE", string);
+            lVar2.c0("android.media.metadata.TITLE", string);
+            lVar2.c0("android.media.metadata.DISPLAY_TITLE", string);
         }
         if (string2 != null) {
-            bVar.X("android.media.metadata.DISPLAY_SUBTITLE", string2);
+            lVar2.c0("android.media.metadata.DISPLAY_SUBTITLE", string2);
         }
-        b0Var.e(new MediaMetadataCompat((Bundle) bVar.b));
+        b0Var.e(new MediaMetadataCompat((Bundle) lVar2.b));
         Uri d = d(lVar);
         if (d != null) {
             this.h.B(d);

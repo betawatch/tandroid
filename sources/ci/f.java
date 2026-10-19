@@ -13,16 +13,16 @@ import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.a90;
 import org.telegram.ui.Components.w80;
-import org.telegram.ui.hk;
-import org.telegram.ui.kg1;
-import org.telegram.ui.p00;
-import org.telegram.ui.s50;
-import org.telegram.ui.sn;
-import org.telegram.ui.v40;
+import org.telegram.ui.fk;
+import org.telegram.ui.ig1;
+import org.telegram.ui.n00;
+import org.telegram.ui.q50;
+import org.telegram.ui.qn;
+import org.telegram.ui.t40;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f implements p7, kg1, m4.g1, e2.j, org.telegram.ui.ActionBar.a2, zf.m, MessagesController.ErrorDelegate, wh.k {
+public final /* synthetic */ class f implements q7, ig1, m4.g1, e2.j, org.telegram.ui.ActionBar.a2, zf.m, MessagesController.ErrorDelegate, wh.k {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -33,7 +33,7 @@ public final /* synthetic */ class f implements p7, kg1, m4.g1, e2.j, org.telegr
         this.b = z10;
     }
 
-    @Override // org.telegram.ui.kg1
+    @Override // org.telegram.ui.ig1
     public void a(int i10, ArrayList arrayList) {
         switch (this.a) {
             case 1:
@@ -61,21 +61,21 @@ public final /* synthetic */ class f implements p7, kg1, m4.g1, e2.j, org.telegr
                 a0Var.e.run();
                 break;
             default:
-                p00 p00Var = (p00) this.c;
-                LongSparseIntArray longSparseIntArray = p00Var.H;
-                p00Var.y = i10;
+                n00 n00Var = (n00) this.c;
+                LongSparseIntArray longSparseIntArray = n00Var.H;
+                n00Var.y = i10;
                 if (this.b) {
-                    p00Var.o0(p00Var.F, arrayList, true);
-                    p00Var.F = arrayList;
-                    for (int i12 = 0; i12 < p00Var.F.size(); i12++) {
-                        p00Var.G.remove(p00Var.F.get(i12));
+                    n00Var.o0(n00Var.F, arrayList, true);
+                    n00Var.F = arrayList;
+                    for (int i12 = 0; i12 < n00Var.F.size(); i12++) {
+                        n00Var.G.remove(n00Var.F.get(i12));
                     }
                     ArrayList arrayList4 = new ArrayList();
                     int size = longSparseIntArray.size();
                     for (int i13 = 0; i13 < size; i13++) {
                         long keyAt = longSparseIntArray.keyAt(i13);
                         Long valueOf = Long.valueOf(keyAt);
-                        if (!DialogObject.isEncryptedDialog(keyAt) && !p00Var.F.contains(valueOf)) {
+                        if (!DialogObject.isEncryptedDialog(keyAt) && !n00Var.F.contains(valueOf)) {
                             arrayList4.add(valueOf);
                         }
                     }
@@ -84,17 +84,17 @@ public final /* synthetic */ class f implements p7, kg1, m4.g1, e2.j, org.telegr
                         longSparseIntArray.delete(((Long) arrayList4.get(i14)).longValue());
                     }
                 } else {
-                    p00Var.o0(p00Var.G, arrayList, false);
-                    p00Var.G = arrayList;
-                    for (int i15 = 0; i15 < p00Var.G.size(); i15++) {
-                        Long l4 = (Long) p00Var.G.get(i15);
-                        p00Var.F.remove(l4);
+                    n00Var.o0(n00Var.G, arrayList, false);
+                    n00Var.G = arrayList;
+                    for (int i15 = 0; i15 < n00Var.G.size(); i15++) {
+                        Long l4 = (Long) n00Var.G.get(i15);
+                        n00Var.F.remove(l4);
                         longSparseIntArray.delete(l4.longValue());
                     }
                 }
-                p00Var.j0();
-                p00Var.i0(false);
-                p00Var.w0();
+                n00Var.j0();
+                n00Var.i0(false);
+                n00Var.w0();
                 break;
         }
     }
@@ -104,20 +104,20 @@ public final /* synthetic */ class f implements p7, kg1, m4.g1, e2.j, org.telegr
         ((m4.m1) obj).N0((b2.f) this.c, this.b);
     }
 
-    @Override // ci.p7
+    @Override // ci.q7
     public void b(boolean z10) {
         r rVar = (r) this.c;
         if (!this.b && z10) {
             boolean z11 = rVar.b == 1;
-            h7 h7Var = rVar.s;
+            i7 i7Var = rVar.s;
             if (z11) {
-                if (!h7Var.z) {
+                if (!i7Var.z) {
                     return;
                 }
-            } else if (!h7Var.p) {
+            } else if (!i7Var.p) {
                 return;
             }
-            h7Var.Q(z11);
+            i7Var.Q(z11);
         }
     }
 
@@ -143,19 +143,19 @@ public final /* synthetic */ class f implements p7, kg1, m4.g1, e2.j, org.telegr
                 break;
             case 6:
             default:
-                s50 s50Var = ((v40) this.c).b;
-                s50Var.a1.toggleRecord(null, 0);
-                s50Var.l1().j(this.b ? 101 : 40, 0L, null);
+                q50 q50Var = ((t40) this.c).b;
+                q50Var.a1.toggleRecord(null, 0);
+                q50Var.l1().j(this.b ? 101 : 40, 0L, null);
                 break;
             case 7:
-                sn snVar = (sn) this.c;
-                hk hkVar = snVar.Y;
-                if (hkVar != null) {
+                qn qnVar = (qn) this.c;
+                fk fkVar = qnVar.Y;
+                if (fkVar != null) {
                     if (!this.b) {
-                        hkVar.z();
+                        fkVar.z();
                         break;
                     } else {
-                        snVar.finishFragment();
+                        qnVar.finishFragment();
                         break;
                     }
                 }

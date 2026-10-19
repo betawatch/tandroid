@@ -4,20 +4,20 @@ import ai.a2;
 import ai.ad;
 import ai.bd;
 import ai.dd;
-import ai.g7;
-import ai.k6;
+import ai.h7;
+import ai.l6;
 import ai.la;
 import ai.md;
-import ai.p3;
+import ai.s3;
 import android.view.View;
-import ci.d9;
-import ci.f6;
-import ci.i9;
-import ci.m2;
-import ci.s9;
-import ci.z9;
+import ci.aa;
+import ci.e9;
+import ci.g6;
+import ci.j9;
+import ci.t9;
 import ei.a9;
 import ei.j6;
+import ei.k6;
 import ei.lb;
 import ei.x8;
 import org.telegram.messenger.AndroidUtilities;
@@ -29,9 +29,9 @@ import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.zd;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.mf;
+import org.telegram.ui.kf;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -62,30 +62,30 @@ public final /* synthetic */ class g0 implements View.OnClickListener {
                 break;
             case 3:
                 ai.l1 l1Var = (ai.l1) this.b;
-                ag.c cVar = l1Var.E.a;
-                ag.c cVar2 = ag.c.b;
-                if (cVar == cVar2) {
-                    cVar2 = ag.c.a;
+                ag.b bVar = l1Var.E.a;
+                ag.b bVar2 = ag.b.b;
+                if (bVar == bVar2) {
+                    bVar2 = ag.b.a;
                 }
-                l1Var.o(ag.a.i(0L, cVar2), true, false, true);
+                l1Var.o(ag.a.i(0L, bVar2), true, false, true);
                 l1Var.c.setText("");
                 break;
             case 4:
                 ((a2) this.b).dismiss();
                 break;
             case 5:
-                ((p3) this.b).run();
+                ((s3) this.b).run();
                 break;
             case 6:
-                ((p3) this.b).run();
+                ((s3) this.b).run();
                 break;
             case 7:
-                k6 k6Var = (k6) this.b;
-                k6Var.getClass();
-                new dd(k6Var.b, k6Var.g).show();
+                l6 l6Var = (l6) this.b;
+                l6Var.getClass();
+                new dd(l6Var.b, l6Var.g).show();
                 break;
             case 8:
-                ((g7) this.b).dismiss();
+                ((h7) this.b).dismiss();
                 break;
             case 9:
                 ((la) this.b).run();
@@ -102,13 +102,13 @@ public final /* synthetic */ class g0 implements View.OnClickListener {
                 ((androidx.mediarouter.app.g) this.b).dismiss();
                 break;
             case 12:
-                ((m2) this.b).q(!r5.f0, true);
+                ((ci.n2) this.b).q(!r5.f0, true);
                 break;
             case 13:
-                ((z9) this.b).N();
+                ((aa) this.b).N();
                 break;
             case 14:
-                ((f6) this.b).dismiss();
+                ((g6) this.b).dismiss();
                 n2 R2 = LaunchActivity.R();
                 if (R2 != null) {
                     R2.showDialog(new sg.y0(R2, 14, false));
@@ -116,12 +116,12 @@ public final /* synthetic */ class g0 implements View.OnClickListener {
                 }
                 break;
             case 15:
-                d9 d9Var = (d9) this.b;
-                d9Var.onClick(d9Var.b);
+                e9 e9Var = (e9) this.b;
+                e9Var.onClick(e9Var.b);
                 break;
             case 16:
-                i9 i9Var = (i9) this.b;
-                i9Var.b.u1.animate().alpha(0.0f).setDuration(150L).setListener(new s9(i9Var, 0)).start();
+                j9 j9Var = (j9) this.b;
+                j9Var.b.u1.animate().alpha(0.0f).setDuration(150L).setListener(new t9(j9Var, 0)).start();
                 break;
             case 17:
                 ((com.google.firebase.messaging.s) this.b).run();
@@ -145,8 +145,8 @@ public final /* synthetic */ class g0 implements View.OnClickListener {
                 ((o) this.b).run();
                 break;
             case 22:
-                ei.k6 k6Var2 = ((j6) this.b).x;
-                if (k6Var2.r && (callback = k6Var2.f) != null) {
+                k6 k6Var = ((j6) this.b).x;
+                if (k6Var.r && (callback = k6Var.f) != null) {
                     callback.run(5);
                     break;
                 }
@@ -159,10 +159,10 @@ public final /* synthetic */ class g0 implements View.OnClickListener {
                 }
                 break;
             case 24:
-                ((mf) this.b).run();
+                ((kf) this.b).run();
                 break;
             case 25:
-                ((mf) this.b).run();
+                ((kf) this.b).run();
                 break;
             case 26:
                 ChatActivityEnterView.g(((zd) ((gi.n0) this.b).d).a, (TL_keyboard.KeyboardButton) view.getTag());

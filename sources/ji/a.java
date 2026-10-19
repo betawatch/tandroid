@@ -2,7 +2,7 @@ package ji;
 
 import ai.v0;
 import ai.wa;
-import ai.x7;
+import ai.y7;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -24,14 +24,14 @@ import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 import s4.o0;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class a extends bb {
-    public s61 X;
+    public t61 X;
     public boolean Y;
     public final FrameLayout Z;
     public final boolean a0;
@@ -56,11 +56,11 @@ public final class a extends bb {
         org.telegram.ui.Cells.h6 h6Var = new org.telegram.ui.Cells.h6(context, null);
         if (chat2 != null) {
             i10 = -1;
-            h6Var.t(chat2, null, chat2.title, LocaleController.formatPluralStringSpaced("Members", chat2.participants_count), false, false);
+            h6Var.u(chat2, null, chat2.title, LocaleController.formatPluralStringSpaced("Members", chat2.participants_count), false, false);
         } else {
             i10 = -1;
             if (user != null) {
-                h6Var.t(user, null, DialogObject.getName(user), LocaleController.getString(R.string.Bot), false, false);
+                h6Var.u(user, null, DialogObject.getName(user), LocaleController.getString(R.string.Bot), false, false);
             }
         }
         frameLayout.addView(h6Var, z5.c(-2.0f, i10));
@@ -89,7 +89,7 @@ public final class a extends bb {
 
     public final void Q(Utilities.Callback callback, boolean z10, boolean z11) {
         if (z11 && !z10 && !this.b0) {
-            f5.O(getContext(), this.resourcesProvider, LocaleController.getString(R.string.CommunityAddToCommunityTitle), LocaleController.getString(this.a0 ? R.string.CommunityAddToCommunityChannelMessage : R.string.CommunityAddToCommunityGroupMessage), LocaleController.getString(R.string.Add), new x7(this, callback, z10, 6)).show();
+            f5.O(getContext(), this.resourcesProvider, LocaleController.getString(R.string.CommunityAddToCommunityTitle), LocaleController.getString(this.a0 ? R.string.CommunityAddToCommunityChannelMessage : R.string.CommunityAddToCommunityGroupMessage), LocaleController.getString(R.string.Add), new y7(this, callback, z10, 6)).show();
         } else {
             callback.run(Boolean.valueOf(z10));
             dismiss();
@@ -124,9 +124,9 @@ public final class a extends bb {
 
     @Override // org.telegram.ui.Components.bb
     public final hm0 x(im0 im0Var) {
-        s61 s61Var = new s61(this.d, getContext(), this.currentAccount, 0, false, new o(this, 11), this.resourcesProvider);
-        this.X = s61Var;
-        s61Var.r = false;
-        return s61Var;
+        t61 t61Var = new t61(this.d, getContext(), this.currentAccount, 0, false, new o(this, 11), this.resourcesProvider);
+        this.X = t61Var;
+        t61Var.r = false;
+        return t61Var;
     }
 }

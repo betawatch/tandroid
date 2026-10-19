@@ -1,10 +1,10 @@
 package di;
 
 import android.view.View;
-import ci.s6;
-import org.telegram.ui.Components.hs0;
+import ci.t6;
+import org.telegram.ui.Components.is0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -20,9 +20,9 @@ public final /* synthetic */ class e implements View.OnClickListener {
         switch (this.a) {
             case 0:
                 r rVar = this.b;
-                hs0 hs0Var = rVar.W;
-                s6 s6Var = rVar.a;
-                hs0Var.a(s6Var == null ? "" : s6Var.E);
+                is0 is0Var = rVar.W;
+                t6 t6Var = rVar.a;
+                is0Var.a(t6Var == null ? "" : t6Var.E);
                 break;
             default:
                 r rVar2 = this.b;

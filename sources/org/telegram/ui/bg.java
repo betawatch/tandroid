@@ -1,50 +1,51 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bg implements View.OnLongClickListener {
+public final /* synthetic */ class bg implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ qn b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ bg(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
+    public /* synthetic */ bg(qn qnVar, String str, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-        this.e = obj4;
+        this.b = qnVar;
+        this.c = str;
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        Boolean bool = (Boolean) obj;
+        Boolean bool2 = (Boolean) obj2;
         switch (this.a) {
             case 0:
-                sn snVar = (sn) this.b;
-                TL_keyboard.KeyboardInlineButton keyboardInlineButton = (TL_keyboard.KeyboardInlineButton) this.c;
-                MessageObject messageObject = (MessageObject) this.d;
-                ai.vd vdVar = (ai.vd) this.e;
-                TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl = (TL_keyboard.TL_inlineButtonTypeUrl) ag.d.a(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrl.class);
-                if (snVar.getParentActivity() == null) {
-                    return false;
+                if (bool.booleanValue()) {
+                    boolean booleanValue = bool2.booleanValue();
+                    qn qnVar = this.b;
+                    String str = this.c;
+                    if (booleanValue) {
+                        qnVar.getMessagesController().addWebBrowserException(str, false);
+                    }
+                    qnVar.getParentActivity();
+                    pf.d.m(str);
+                    break;
                 }
-                if ((snVar.O0.getVisibility() == 0 && tL_inlineButtonTypeUrl == null && !ag.d.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeSwitchInline.class) && !ag.d.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeCallback.class) && !ag.d.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeGame.class) && !ag.d.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeBuy.class) && !ag.d.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrlAuth.class) && !ag.d.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUserProfile.class)) || tL_inlineButtonTypeUrl == null) {
-                    return false;
-                }
-                snVar.ea(null, tL_inlineButtonTypeUrl.url, true, null, messageObject);
-                try {
-                    vdVar.performHapticFeedback(0, 1);
-                } catch (Exception unused) {
-                }
-                return true;
+                break;
             default:
-                return org.telegram.ui.Components.ti.q((org.telegram.ui.Components.ti) this.b, (Context) this.c, (org.telegram.ui.ActionBar.d6) this.d, (org.telegram.ui.ActionBar.n2) this.e, view);
+                qn qnVar2 = this.b;
+                qnVar2.getClass();
+                if (bool.booleanValue()) {
+                    boolean booleanValue2 = bool2.booleanValue();
+                    String str2 = this.c;
+                    if (booleanValue2) {
+                        qnVar2.getMessagesController().addWebBrowserException(str2, true);
+                    }
+                    pf.d.l(qnVar2.getParentActivity(), str2, false, null);
+                    break;
+                }
+                break;
         }
     }
 }

@@ -18,7 +18,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class bn extends li {
     public static final HashMap U = new HashMap();
@@ -113,7 +113,7 @@ public final class bn extends li {
     }
 
     @Override // org.telegram.ui.Components.li
-    public final void G(li liVar) {
+    public final void F(li liVar) {
         an anVar = this.v;
         this.Q = true;
         if (liVar instanceof ChatAttachAlertPhotoLayout) {
@@ -189,9 +189,9 @@ public final class bn extends li {
     public final void dispatchDraw(Canvas canvas) {
         Drawable e;
         int i10;
-        org.telegram.ui.qn qnVar = this.b.r;
+        org.telegram.ui.on onVar = this.b.r;
         boolean z10 = false;
-        if (qnVar != null && (e = qnVar.e()) != null) {
+        if (onVar != null && (e = onVar.e()) != null) {
             int currentItemTop = getCurrentItemTop();
             if (AndroidUtilities.isTablet()) {
                 i10 = 16;
@@ -302,7 +302,7 @@ public final class bn extends li {
     }
 
     @Override // org.telegram.ui.Components.li
-    public final void s() {
+    public final void t() {
         MediaController.PhotoEntry photoEntry;
         this.J = null;
         UndoView undoView = this.w;
@@ -330,7 +330,7 @@ public final class bn extends li {
     }
 
     @Override // org.telegram.ui.Components.li
-    public final void t() {
+    public final void u() {
         ti tiVar;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout;
         this.Q = false;

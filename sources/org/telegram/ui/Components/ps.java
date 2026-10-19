@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class ps extends bb {
     public static final /* synthetic */ int G0 = 0;
@@ -37,7 +37,7 @@ public final class ps extends bb {
     public boolean D0;
     public boolean E0;
     public float F0;
-    public s61 X;
+    public t61 X;
     public final TLRPC.Chat Y;
     public final TLRPC.Chat Z;
     public final boolean a0;
@@ -337,7 +337,7 @@ public final class ps extends bb {
                     i14++;
                 }
             }
-            this.x0 = (ArrayList) DesugarArrays.stream(channelParticipantArr).map(new k2.f(4)).collect(Collectors.toCollection(new org.telegram.ui.yf()));
+            this.x0 = (ArrayList) DesugarArrays.stream(channelParticipantArr).map(new k2.f(4)).collect(Collectors.toCollection(new org.telegram.ui.wf()));
             os osVar = new os(this, 2, arrayList2);
             this.l0 = osVar;
             boolean[] zArr = this.m0;
@@ -379,7 +379,7 @@ public final class ps extends bb {
         boolean z11 = false;
         ls lsVar = new ls(psVar, 0 == true ? 1 : 0);
         Pattern pattern = f5.a;
-        LinearLayout e = org.telegram.messenger.lk.e(context2, 1);
+        LinearLayout e = org.telegram.messenger.kk.e(context2, 1);
         org.telegram.ui.ActionBar.b2[] b2VarArr = new org.telegram.ui.ActionBar.b2[1];
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context2, 0, d6Var);
         String string = LocaleController.getString(R.string.CommunityBanUserTitle);
@@ -415,7 +415,7 @@ public final class ps extends bb {
                 textView.setText(charSequence);
                 ((w9) w1Var.c).e(chat, new h9(chat));
                 w1Var.setBackground(org.telegram.ui.ActionBar.h6.L0(z10));
-                w1Var.setOnClickListener(new ai.q3(b2VarArr, lsVar, longValue, 3));
+                w1Var.setOnClickListener(new ai.t3(b2VarArr, lsVar, longValue, 3));
                 e.addView(w1Var, w7.z5.n(-1, -2));
                 context2 = context;
                 size = i12;
@@ -461,7 +461,7 @@ public final class ps extends bb {
         int i11 = osVar.a;
         if (c10) {
             if (!osVar.b()) {
-                f61 y3 = f61.y(i11, osVar.b);
+                g61 y3 = g61.y(i11, osVar.b);
                 y3.K(osVar.i > 0);
                 arrayList.add(y3);
                 return;
@@ -472,14 +472,14 @@ public final class ps extends bb {
                 i12 = osVar.e != null ? osVar.h : i10;
             }
             String valueOf = String.valueOf(i12);
-            f61 f61Var = new f61(36);
-            f61Var.d = i11;
-            f61Var.l = str;
-            f61Var.o = valueOf;
-            f61Var.K(osVar.i > 0);
-            f61Var.f = osVar.f;
-            f61Var.D = new ca(8, this, osVar);
-            arrayList.add(f61Var);
+            g61 g61Var = new g61(36);
+            g61Var.d = i11;
+            g61Var.l = str;
+            g61Var.o = valueOf;
+            g61Var.K(osVar.i > 0);
+            g61Var.f = osVar.f;
+            g61Var.D = new ca(8, this, osVar);
+            arrayList.add(g61Var);
             if (osVar.f) {
                 return;
             }
@@ -487,12 +487,12 @@ public final class ps extends bb {
                 boolean[] zArr = osVar.e;
                 if (zArr == null || zArr[i13]) {
                     TLObject tLObject = (TLObject) osVar.c.get(i13);
-                    f61 f61Var2 = new f61(37);
-                    f61Var2.d = (i11 << 24) | i13;
-                    f61Var2.G = tLObject;
-                    f61Var2.K(osVar.d[i13]);
-                    f61Var2.i = 1;
-                    arrayList.add(f61Var2);
+                    g61 g61Var2 = new g61(37);
+                    g61Var2.d = (i11 << 24) | i13;
+                    g61Var2.G = tLObject;
+                    g61Var2.K(osVar.d[i13]);
+                    g61Var2.i = 1;
+                    arrayList.add(g61Var2);
                 }
             }
         }
@@ -520,7 +520,7 @@ public final class ps extends bb {
             tL_messages_search.flags |= 1;
             tL_messages_search.filter = new TLRPC.TL_inputMessagesFilterEmpty();
             tL_messages_search.limit = 1;
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_search, new ci.s8(this, inputPeer, i11, iArr, 4));
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_search, new ci.t8(this, inputPeer, i11, iArr, 4));
         }
     }
 
@@ -585,7 +585,7 @@ public final class ps extends bb {
             ls lsVar = new ls(this, i10);
             js jsVar = new js(this, 0);
             Pattern pattern = f5.a;
-            LinearLayout e = org.telegram.messenger.lk.e(context, 1);
+            LinearLayout e = org.telegram.messenger.kk.e(context, 1);
             org.telegram.ui.ActionBar.b2[] b2VarArr = new org.telegram.ui.ActionBar.b2[1];
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
             String string = LocaleController.getString(R.string.CommunityBanWarningTitle);
@@ -628,7 +628,7 @@ public final class ps extends bb {
                     w1Var.setBackground(org.telegram.ui.ActionBar.h6.L0(r15));
                     ?? r12 = e;
                     z12 = r15;
-                    w1Var.setOnClickListener(new ai.q3(b2VarArr, lsVar, j13, 2));
+                    w1Var.setOnClickListener(new ai.t3(b2VarArr, lsVar, j13, 2));
                     r12.addView(w1Var, w7.z5.n(-1, -2));
                     i12 = i13;
                     e = r12;
@@ -739,7 +739,7 @@ public final class ps extends bb {
                 }
                 return false;
             }
-        }).map(new k2.f(i19)).collect(Collectors.toCollection(new org.telegram.ui.yf()));
+        }).map(new k2.f(i19)).collect(Collectors.toCollection(new org.telegram.ui.wf()));
         final int i20 = 1;
         ArrayList<Integer> arrayList4 = (ArrayList) Collection.-EL.stream(arrayList2).filter(new Predicate(this) { // from class: org.telegram.ui.Components.ks
             public final /* synthetic */ ps b;
@@ -795,7 +795,7 @@ public final class ps extends bb {
                 }
                 return false;
             }
-        }).map(new k2.f(i19)).collect(Collectors.toCollection(new org.telegram.ui.yf()));
+        }).map(new k2.f(i19)).collect(Collectors.toCollection(new org.telegram.ui.wf()));
         TLRPC.Chat chat2 = this.Y;
         os osVar3 = this.j0;
         if (z14) {
@@ -952,7 +952,7 @@ public final class ps extends bb {
                         }
                         return false;
                     }
-                }).filter(new ms(1, tLObject2)).map(new k2.f(i19)).collect(Collectors.toCollection(new org.telegram.ui.yf()));
+                }).filter(new ms(1, tLObject2)).map(new k2.f(i19)).collect(Collectors.toCollection(new org.telegram.ui.wf()));
                 if (z14 && (tLObject2 instanceof TLRPC.User)) {
                     if (arrayList5.size() == 1) {
                         TLRPC.TL_messages_reportReaction tL_messages_reportReaction = new TLRPC.TL_messages_reportReaction();
@@ -1061,9 +1061,9 @@ public final class ps extends bb {
 
     @Override // org.telegram.ui.Components.bb
     public final hm0 x(im0 im0Var) {
-        s61 s61Var = new s61(im0Var, getContext(), this.currentAccount, this.n.getClassGuid(), true, new is(this, 0), this.resourcesProvider);
-        this.X = s61Var;
-        s61Var.r = false;
-        return s61Var;
+        t61 t61Var = new t61(im0Var, getContext(), this.currentAccount, this.n.getClassGuid(), true, new is(this, 0), this.resourcesProvider);
+        this.X = t61Var;
+        t61Var.r = false;
+        return t61Var;
     }
 }

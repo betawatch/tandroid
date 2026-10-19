@@ -5,11 +5,11 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.w01;
 import org.telegram.ui.Components.x01;
 import org.telegram.ui.Components.y01;
+import org.telegram.ui.Components.z01;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -36,7 +36,7 @@ public final /* synthetic */ class g0 implements Runnable {
         synchronized (s0Var.g) {
             if (!s0Var.D && !o0Var.d && !o0Var.e) {
                 o0Var.e = true;
-                ((y01) s0Var.e).b(o0Var.a, file.length(), file);
+                ((z01) s0Var.e).b(o0Var.a, file.length(), file);
                 s0Var.i.post(new g0(s0Var, o0Var, j10, file, z10));
             }
         }
@@ -44,8 +44,8 @@ public final /* synthetic */ class g0 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        x01 x01Var;
-        x01 x01Var2;
+        y01 y01Var;
+        y01 y01Var2;
         switch (this.a) {
             case 0:
                 a();
@@ -72,28 +72,28 @@ public final /* synthetic */ class g0 implements Runnable {
                 }
                 l60Var.V = null;
                 l60Var.j0 = true;
-                y01 y01Var = l60Var.T;
-                if (y01Var == null) {
-                    x01Var2 = null;
+                z01 z01Var = l60Var.T;
+                if (z01Var == null) {
+                    y01Var2 = null;
                 } else {
-                    synchronized (y01Var) {
-                        w01 w01Var = (w01) y01Var.c.get(Long.valueOf(j11));
-                        if (w01Var != null && !w01Var.e) {
-                            x01Var = new x01(Math.max(w01Var.c, file.length()), w01Var.f, w01Var.g, w01Var.h, w01Var.i);
+                    synchronized (z01Var) {
+                        x01 x01Var = (x01) z01Var.c.get(Long.valueOf(j11));
+                        if (x01Var != null && !x01Var.e) {
+                            y01Var = new y01(Math.max(x01Var.c, file.length()), x01Var.f, x01Var.g, x01Var.h, x01Var.i);
                         }
-                        x01Var = new x01(file.length(), null, null, null, null);
+                        y01Var = new y01(file.length(), null, null, null, null);
                     }
-                    x01Var2 = x01Var;
+                    y01Var2 = y01Var;
                 }
-                VideoEditedInfo r10 = l60Var.r(file, j10, x01Var2);
+                VideoEditedInfo r10 = l60Var.r(file, j10, y01Var2);
                 r10.muted = !z10;
                 MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, 0, 0L, file.getAbsolutePath(), 0, true, 0, 0, 0L);
                 photoEntry.ttl = k60Var.c;
                 photoEntry.effectId = k60Var.d;
-                l60Var.f.r(photoEntry, r10, k60Var.a, k60Var.b, 0, false, k60Var.e);
-                y01 y01Var2 = l60Var.T;
-                if (y01Var2 != null) {
-                    y01Var2.d(false);
+                l60Var.f.s(photoEntry, r10, k60Var.a, k60Var.b, 0, false, k60Var.e);
+                z01 z01Var2 = l60Var.T;
+                if (z01Var2 != null) {
+                    z01Var2.d(false);
                 }
                 l60Var.T = null;
                 MediaController.getInstance().requestRecordAudioFocus(false);

@@ -1,6 +1,6 @@
 package gi;
 
-import ai.b5;
+import ai.c5;
 import android.view.ViewGroup;
 import java.util.LinkedList;
 import org.telegram.ui.Components.gh;
@@ -11,7 +11,7 @@ import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.ub;
 import org.telegram.ui.Components.wc0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b4 implements o1.f {
     public final /* synthetic */ int a;
@@ -62,12 +62,12 @@ public final /* synthetic */ class b4 implements o1.f {
                 }
                 break;
             case 2:
-                ti.s((ti) this.b, (lg) this.c);
+                ti.t((ti) this.b, (lg) this.c);
                 break;
             case 3:
-                b5 b5Var = (b5) this.b;
+                c5 c5Var = (c5) this.b;
                 gh ghVar = (gh) this.c;
-                ti tiVar = (ti) b5Var.d;
+                ti tiVar = (ti) c5Var.d;
                 tiVar.C0.setTranslationY(0.0f);
                 tiVar.C0.l(tiVar.o2);
                 viewGroup = ((org.telegram.ui.ActionBar.f3) tiVar).containerView;

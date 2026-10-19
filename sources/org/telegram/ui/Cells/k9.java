@@ -11,10 +11,10 @@ import org.telegram.messenger.LanguageDetector;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.r41;
-import org.telegram.ui.t21;
+import org.telegram.ui.Components.s41;
+import org.telegram.ui.r21;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class k9 implements ActionMode.Callback {
     public String a = null;
@@ -30,7 +30,7 @@ public final class k9 implements ActionMode.Callback {
         if (findItem == null) {
             return;
         }
-        findItem.setVisible((this.b.k0 == null || ((this.a == null || t21.Y().contains(this.a)) && LanguageDetector.hasSupport())) ? false : true);
+        findItem.setVisible((this.b.k0 == null || ((this.a == null || r21.Y().contains(this.a)) && LanguageDetector.hasSupport())) ? false : true);
     }
 
     @Override // android.view.ActionMode.Callback
@@ -66,7 +66,7 @@ public final class k9 implements ActionMode.Callback {
                             String str = this.a;
                             g gVar2 = new g(this, 8);
                             org.telegram.ui.l4 l4Var = tVar.a;
-                            r41.L(l4Var.L, l4Var.M, str, language, r11, null, gVar2);
+                            s41.L(l4Var.L, l4Var.M, str, language, r11, null, gVar2);
                         }
                         aaVar.u();
                         return true;

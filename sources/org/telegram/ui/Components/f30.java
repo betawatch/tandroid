@@ -16,7 +16,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class f30 extends FrameLayout {
     public float a;
@@ -24,7 +24,7 @@ public final class f30 extends FrameLayout {
     public boolean c;
     public AnimatorSet d;
     public final e30 e;
-    public final sc f;
+    public final rc f;
     public final /* synthetic */ float h;
     public final /* synthetic */ i30 n;
 
@@ -34,7 +34,7 @@ public final class f30 extends FrameLayout {
         this.n = i30Var;
         this.h = f7;
         this.e = new e30(this);
-        this.f = new sc(10);
+        this.f = new rc(11);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -174,7 +174,7 @@ public final class f30 extends FrameLayout {
                                 ValueAnimator ofFloat = ValueAnimator.ofFloat(i30Var.b0, !z10 ? 1.0f : f7);
                                 i30Var.c0 = ofFloat;
                                 ofFloat.addUpdateListener(new l6(i30Var, 26));
-                                i30Var.c0.addListener(new org.telegram.ui.ho(11, i30Var, z10));
+                                i30Var.c0.addListener(new org.telegram.ui.fo(11, i30Var, z10));
                                 i30Var.c0.setDuration(250L);
                                 i30Var.c0.setInterpolator(bs.f);
                                 i30Var.c0.start();
@@ -214,7 +214,7 @@ public final class f30 extends FrameLayout {
                         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(i30Var.b0, !z10 ? 1.0f : f7);
                         i30Var.c0 = ofFloat2;
                         ofFloat2.addUpdateListener(new l6(i30Var, 26));
-                        i30Var.c0.addListener(new org.telegram.ui.ho(11, i30Var, z10));
+                        i30Var.c0.addListener(new org.telegram.ui.fo(11, i30Var, z10));
                         i30Var.c0.setDuration(250L);
                         i30Var.c0.setInterpolator(bs.f);
                         i30Var.c0.start();
@@ -384,7 +384,7 @@ public final class f30 extends FrameLayout {
         ofFloat9.setStartDelay((long) (f29 * 0.7f));
         ofFloat9.setDuration((long) (f29 * 0.3f));
         animatorSet.playTogether(ofFloat9);
-        AndroidUtilities.runOnUIThread(new sc(9), 370L);
+        AndroidUtilities.runOnUIThread(new rc(10), 370L);
         long j11 = j10 + 530;
         ObjectAnimator ofFloat10 = ObjectAnimator.ofFloat(g6Var, (Property<ei.g6, Float>) property, 1.0f, 1.05f);
         ofFloat10.setDuration(j11);

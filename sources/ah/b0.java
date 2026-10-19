@@ -2,10 +2,10 @@ package ah;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -27,9 +27,9 @@ public final /* synthetic */ class b0 implements Runnable {
                 f0Var.e = f0Var.b();
                 int i10 = f0Var.f;
                 int i11 = f0Var.h;
-                sn snVar = f0Var.a;
+                qn qnVar = f0Var.a;
                 if (f0Var.b == null) {
-                    e0 e0Var = new e0((snVar.getUserConfig().getClientUserId() > snVar.a() ? 1 : (snVar.getUserConfig().getClientUserId() == snVar.a() ? 0 : -1)) == 0 ? 3 : 0, snVar.getCurrentAccount(), f0Var.getContext(), f0Var.a, snVar.getResourceProvider());
+                    e0 e0Var = new e0((qnVar.getUserConfig().getClientUserId() > qnVar.a() ? 1 : (qnVar.getUserConfig().getClientUserId() == qnVar.a() ? 0 : -1)) == 0 ? 3 : 0, qnVar.getCurrentAccount(), f0Var.getContext(), f0Var.a, qnVar.getResourceProvider());
                     e0Var.l1 = 1.0f;
                     e0Var.setWillNotDraw(false);
                     f0Var.b = e0Var;
@@ -40,7 +40,7 @@ public final /* synthetic */ class b0 implements Runnable {
                         i11 = 0;
                     }
                     e0Var.setPadding(dp, dp2, dp3 + i11, AndroidUtilities.dp(i10));
-                    f0Var.b.setDelegate(new a6.m(f0Var, 2));
+                    f0Var.b.setDelegate(new qb.c(f0Var, 3));
                     f0Var.b.setClipChildren(false);
                     f0Var.b.setClipToPadding(false);
                     f0Var.addView(f0Var.b, z5.e(-2, i10 + 70, 5));
@@ -52,7 +52,7 @@ public final /* synthetic */ class b0 implements Runnable {
                     break;
                 } else {
                     f0Var.x = true;
-                    f0Var.b.p(f0Var.e, snVar.Z7, true);
+                    f0Var.b.p(f0Var.e, qnVar.Z7, true);
                     f0Var.b.r(false);
                     break;
                 }

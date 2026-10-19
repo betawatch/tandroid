@@ -1,34 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.text.TextPaint;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n61 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ UndoView b;
+public final class n61 extends k61 {
+    public final int e;
+    public final m11 f;
 
-    public /* synthetic */ n61(UndoView undoView, int i10) {
-        this.a = i10;
-        this.b = undoView;
+    public n61(String str, int i10, m11 m11Var) {
+        super(str, (m11) null);
+        this.e = i10;
+        this.f = m11Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i10 = this.a;
-        UndoView undoView = this.b;
-        switch (i10) {
-            case 0:
-                int i11 = UndoView.e0;
-                if (undoView.a()) {
-                    undoView.e(1, false);
-                    break;
-                }
-                break;
-            default:
-                int i12 = UndoView.e0;
-                undoView.e(1, false);
-                break;
+    @Override // org.telegram.ui.Components.k61, android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        int i10 = this.e;
+        if (i10 == 3) {
+            textPaint.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.J6, false));
+        } else if (i10 == 2) {
+            textPaint.setColor(-1);
+        } else if (i10 == 1) {
+            textPaint.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.hc, false));
+        } else {
+            textPaint.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.gc, false));
+        }
+        m11 m11Var = this.f;
+        if (m11Var != null) {
+            m11Var.a(textPaint);
+        } else {
+            textPaint.setUnderlineText(false);
         }
     }
 }

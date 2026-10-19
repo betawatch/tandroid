@@ -18,17 +18,17 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.FragmentContextView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 import org.telegram.ui.Components.ShutterButton;
-import org.telegram.ui.Components.a91;
 import org.telegram.ui.Components.an;
 import org.telegram.ui.Components.b91;
 import org.telegram.ui.Components.bn;
 import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.c91;
 import org.telegram.ui.Components.cm;
 import org.telegram.ui.Components.ej0;
 import org.telegram.ui.Components.f60;
@@ -47,22 +47,22 @@ import org.telegram.ui.Components.n00;
 import org.telegram.ui.Components.oc0;
 import org.telegram.ui.Components.pl0;
 import org.telegram.ui.Components.qu;
-import org.telegram.ui.Components.rx0;
 import org.telegram.ui.Components.s00;
+import org.telegram.ui.Components.sx0;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.tz;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.xv0;
 import org.telegram.ui.Components.y60;
 import org.telegram.ui.Components.yt;
 import org.telegram.ui.Components.yv0;
+import org.telegram.ui.Components.zv0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.dw;
-import org.telegram.ui.j30;
-import org.telegram.ui.sn;
-import org.telegram.ui.ui;
+import org.telegram.ui.bw;
+import org.telegram.ui.h30;
+import org.telegram.ui.qn;
+import org.telegram.ui.si;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class k7 implements Runnable {
     public final /* synthetic */ int a;
@@ -233,7 +233,7 @@ public final class k7 implements Runnable {
                 }
                 break;
             case 9:
-                c2.b bVar = (c2.b) ((ci.o3) obj).d;
+                c2.b bVar = (c2.b) ((ci.p3) obj).d;
                 if (bVar.a && !((ArrayList) bVar.d).isEmpty() && !((AnimatorSet) bVar.c).isRunning()) {
                     try {
                         ((AnimatorSet) bVar.c).start();
@@ -272,7 +272,7 @@ public final class k7 implements Runnable {
                         s00Var.setEnabled(true);
                         n00 n00Var = s00Var.J;
                         if (n00Var != null) {
-                            ((dw) n00Var).b(1.0f);
+                            ((bw) n00Var).b(1.0f);
                             break;
                         }
                     }
@@ -337,11 +337,11 @@ public final class k7 implements Runnable {
                 break;
             case 18:
                 im0 im0Var = (im0) obj;
-                ui uiVar = im0Var.f2;
+                si siVar = im0Var.f2;
                 int[] iArr = im0Var.k2;
-                sn snVar = uiVar.d;
-                iArr[0] = (int) snVar.s9;
-                iArr[1] = snVar.Ba;
+                qn qnVar = siVar.d;
+                iArr[0] = (int) qnVar.s9;
+                iArr[1] = qnVar.Ba;
                 if (im0Var.h2) {
                     dp = -AndroidUtilities.dp(12.0f);
                     im0Var.M0(0.0f, im0Var.k2[0]);
@@ -411,15 +411,15 @@ public final class k7 implements Runnable {
                 break;
             case 22:
                 ShutterButton shutterButton = (ShutterButton) obj;
-                xv0 xv0Var = shutterButton.e;
-                if (xv0Var != null) {
-                    final cm cmVar = (cm) xv0Var;
+                yv0 yv0Var = shutterButton.e;
+                if (yv0Var != null) {
+                    final cm cmVar = (cm) yv0Var;
                     ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = cmVar.e;
                     ti tiVar = chatAttachAlertPhotoLayout.b;
                     mm mmVar = chatAttachAlertPhotoLayout.R;
                     int i17 = tiVar.T0;
                     org.telegram.ui.ActionBar.n2 n2Var = tiVar.f0;
-                    if ((i17 == 2 || (n2Var instanceof sn)) && !chatAttachAlertPhotoLayout.s0 && !tiVar.V && chatAttachAlertPhotoLayout.P != null && !tiVar.G) {
+                    if ((i17 == 2 || (n2Var instanceof qn)) && !chatAttachAlertPhotoLayout.s0 && !tiVar.V && chatAttachAlertPhotoLayout.P != null && !tiVar.G) {
                         if (n2Var == null) {
                             n2Var = LaunchActivity.R();
                         }
@@ -435,7 +435,7 @@ public final class k7 implements Runnable {
                                     duration2.setInterpolator(bsVar).start();
                                     chatAttachAlertPhotoLayout.q0.animate().alpha(0.0f).setDuration(150L).setInterpolator(bsVar).start();
                                     org.telegram.ui.ActionBar.n2 n2Var2 = tiVar.f0;
-                                    cmVar.a = AndroidUtilities.generateVideoPath((n2Var2 instanceof sn) && ((sn) n2Var2).x());
+                                    cmVar.a = AndroidUtilities.generateVideoPath((n2Var2 instanceof qn) && ((qn) n2Var2).x());
                                     AndroidUtilities.updateViewVisibilityAnimated(mmVar, true);
                                     mmVar.setText(AndroidUtilities.formatLongDuration(0));
                                     chatAttachAlertPhotoLayout.g0 = 0;
@@ -480,7 +480,7 @@ public final class k7 implements Runnable {
                                             }
                                         }
                                     }, chatAttachAlertPhotoLayout.P);
-                                    chatAttachAlertPhotoLayout.k0.a(yv0.b);
+                                    chatAttachAlertPhotoLayout.k0.a(zv0.b);
                                     chatAttachAlertPhotoLayout.P.runHaptic();
                                     break;
                                 } else {
@@ -488,7 +488,7 @@ public final class k7 implements Runnable {
                                     n2Var.getParentActivity().requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 21);
                                 }
                             } else {
-                                lk.q(R.string.GlobalAttachVideoRestricted, new xc(chatAttachAlertPhotoLayout.P, cmVar.c), null);
+                                kk.q(R.string.GlobalAttachVideoRestricted, new xc(chatAttachAlertPhotoLayout.P, cmVar.c), null);
                             }
                         }
                     }
@@ -497,58 +497,57 @@ public final class k7 implements Runnable {
                 }
                 break;
             case 23:
-                rx0 rx0Var = (rx0) obj;
-                View view = rx0Var.s;
+                sx0 sx0Var = (sx0) obj;
+                View view = sx0Var.s;
                 if (view != null) {
                     if (view.getVisibility() != 0) {
-                        rx0Var.s.setVisibility(0);
-                        rx0Var.s.setAlpha(0.0f);
+                        sx0Var.s.setVisibility(0);
+                        sx0Var.s.setAlpha(0.0f);
                     }
-                    rx0Var.s.animate().setListener(null).cancel();
-                    rx0Var.s.animate().alpha(1.0f).setDuration(150L).start();
+                    sx0Var.s.animate().setListener(null).cancel();
+                    sx0Var.s.animate().alpha(1.0f).setDuration(150L).start();
                     break;
                 } else {
-                    rx0Var.c.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(150L).start();
+                    sx0Var.c.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(150L).start();
                     break;
                 }
             case 24:
-                b91 b91Var = (b91) obj;
-                if (b91Var.J) {
+                c91 c91Var = (c91) obj;
+                if (c91Var.J) {
                     long elapsedRealtime3 = SystemClock.elapsedRealtime();
                     if (elapsedRealtime3 > 17) {
                         elapsedRealtime3 = 17;
                     }
-                    float f13 = b91Var.f0 + (elapsedRealtime3 / 200.0f);
-                    b91Var.f0 = f13;
-                    b91Var.setAnimationIdicatorProgress(b91Var.a0.getInterpolation(f13));
-                    if (b91Var.f0 > 1.0f) {
-                        b91Var.f0 = 1.0f;
+                    float f13 = c91Var.f0 + (elapsedRealtime3 / 200.0f);
+                    c91Var.f0 = f13;
+                    c91Var.setAnimationIdicatorProgress(c91Var.a0.getInterpolation(f13));
+                    if (c91Var.f0 > 1.0f) {
+                        c91Var.f0 = 1.0f;
                     }
-                    if (b91Var.f0 < 1.0f) {
-                        AndroidUtilities.runOnUIThread(b91Var.i0);
+                    if (c91Var.f0 < 1.0f) {
+                        AndroidUtilities.runOnUIThread(c91Var.i0);
                         break;
                     } else {
-                        b91Var.J = false;
-                        b91Var.setEnabled(true);
-                        a91 a91Var = b91Var.y;
-                        if (a91Var != null) {
-                            ((l2.f) a91Var).z(1.0f);
+                        c91Var.J = false;
+                        c91Var.setEnabled(true);
+                        b91 b91Var = c91Var.y;
+                        if (b91Var != null) {
+                            ((l2.f) b91Var).I(1.0f);
                             break;
                         }
                     }
                 }
                 break;
             case 25:
-                j30 j30Var = (j30) obj;
-                if (!j30Var.b || j30Var.Q0.z0 != null) {
-                    AndroidUtilities.runOnUIThread(j30Var.h0, 3000L);
+                h30 h30Var = (h30) obj;
+                if (!h30Var.b || h30Var.Q0.z0 != null) {
+                    AndroidUtilities.runOnUIThread(h30Var.h0, 3000L);
                     break;
                 } else {
-                    j30Var.g0 = false;
-                    j30Var.setUiVisible(false);
+                    h30Var.g0 = false;
+                    h30Var.setUiVisible(false);
                     break;
                 }
-                break;
             case 26:
                 org.telegram.ui.Wallet.a1 a1Var = (org.telegram.ui.Wallet.a1) obj;
                 if (a1Var.d && a1Var.e && a1Var.k != null) {
@@ -564,19 +563,19 @@ public final class k7 implements Runnable {
                 }
                 break;
             case 27:
-                org.telegram.ui.Wallet.n5 n5Var = (org.telegram.ui.Wallet.n5) obj;
-                if (n5Var.a != null && n5Var.d != null) {
-                    n5Var.P0();
-                    if (n5Var.r) {
-                        n5Var.a.postOnAnimation(this);
+                org.telegram.ui.Wallet.o5 o5Var = (org.telegram.ui.Wallet.o5) obj;
+                if (o5Var.a != null && o5Var.d != null) {
+                    o5Var.Q0();
+                    if (o5Var.r) {
+                        o5Var.a.postOnAnimation(this);
                         break;
                     }
                 }
                 break;
             case 28:
                 org.telegram.ui.Wallet.s5 s5Var = (org.telegram.ui.Wallet.s5) obj;
-                org.telegram.ui.Wallet.z5 z5Var = s5Var.F;
-                if (s5Var.isAttachedToWindow()) {
+                org.telegram.ui.Wallet.z5 z5Var = s5Var.G;
+                if (s5Var.a0) {
                     long nanoTime = System.nanoTime();
                     if (z5Var.a) {
                         if (z5Var.j == 0) {
@@ -593,17 +592,17 @@ public final class k7 implements Runnable {
                             }
                         }
                     }
-                    s5Var.J = z5Var.a ? Math.max(-15.0f, Math.min(15.0f, z5Var.b - z5Var.d)) : 0.0f;
-                    float max3 = z5Var.a ? Math.max(-15.0f, Math.min(15.0f, z5Var.c - z5Var.e)) : 0.0f;
-                    float f16 = s5Var.J;
-                    float f17 = s5Var.K;
+                    s5Var.K = z5Var.a ? Math.max(-15.0f, Math.min(15.0f, z5Var.b - z5Var.d)) : 0.0f;
+                    float c10 = org.telegram.ui.Wallet.s5.c((z5Var.a ? Math.max(-15.0f, Math.min(15.0f, z5Var.c - z5Var.e)) : 0.0f) * 1.5f, -15.0f, 15.0f);
+                    float f16 = s5Var.K;
+                    float f17 = s5Var.L;
                     float y3 = com.google.android.gms.internal.play_billing.k3.y(f16, f17, 1.0f, f17);
-                    s5Var.K = y3;
-                    float f18 = s5Var.L;
-                    float y10 = com.google.android.gms.internal.play_billing.k3.y(max3, f18, 1.0f, f18);
-                    s5Var.L = y10;
-                    float f19 = s5Var.b0;
-                    s5Var.b((y3 * f19) + s5Var.M + s5Var.a0, (y10 * f19) + s5Var.N);
+                    s5Var.L = y3;
+                    float f18 = s5Var.M;
+                    float y10 = com.google.android.gms.internal.play_billing.k3.y(c10, f18, 1.0f, f18);
+                    s5Var.M = y10;
+                    float f19 = s5Var.e0;
+                    s5Var.b((y3 * f19) + s5Var.N + s5Var.d0, (y10 * f19) + s5Var.O);
                     s5Var.postOnAnimation(this);
                     break;
                 }

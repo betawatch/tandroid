@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class vg extends View implements h80 {
     public boolean E;
@@ -135,7 +135,7 @@ public abstract class vg extends View implements h80 {
         this.j0 = ofFloat;
         int i10 = 8;
         ofFloat.addUpdateListener(new l6(this, i10));
-        this.j0.addListener(new org.telegram.ui.pq(this, i10));
+        this.j0.addListener(new org.telegram.ui.nq(this, i10));
         this.j0.setDuration(180L);
         this.j0.setInterpolator(new OvershootInterpolator());
         this.j0.start();
@@ -237,7 +237,7 @@ public abstract class vg extends View implements h80 {
     public abstract boolean f();
 
     public final void g(int i10, boolean z10) {
-        this.c0.t(i10 > 0 ? i2.d.j(i10, "") : "", z10, true);
+        this.c0.t(i10 > 0 ? i2.e.j(i10, "") : "", z10, true);
         invalidate();
     }
 

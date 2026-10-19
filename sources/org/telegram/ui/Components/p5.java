@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class p5 extends Drawable implements x5 {
     public ai.de E;
@@ -30,7 +30,7 @@ public class p5 extends Drawable implements x5 {
     public final f6 e;
     public final Drawable[] f;
     public View h;
-    public org.telegram.ui.z51 n;
+    public org.telegram.ui.x51 n;
     public final boolean r;
     public final int s;
     public int v;
@@ -134,9 +134,9 @@ public class p5 extends Drawable implements x5 {
             boolean z10 = drawable3 instanceof r5;
             OvershootInterpolator overshootInterpolator = this.c;
             if (z10) {
-                ci.f3 f3Var = ((r5) drawable3).k;
-                if (f3Var != null) {
-                    f3Var.setRoundRadius(AndroidUtilities.dp(4.0f));
+                ci.g3 g3Var = ((r5) drawable3).k;
+                if (g3Var != null) {
+                    g3Var.setRoundRadius(AndroidUtilities.dp(4.0f));
                 }
                 if (d < 1.0f) {
                     float interpolation = overshootInterpolator.getInterpolation(d);
@@ -176,13 +176,13 @@ public class p5 extends Drawable implements x5 {
 
     public final void f() {
         r5 r5Var;
-        ci.f3 f3Var;
+        ci.g3 g3Var;
         Drawable drawable = this.f[0];
-        if (!(drawable instanceof r5) || (f3Var = (r5Var = (r5) drawable).k) == null) {
+        if (!(drawable instanceof r5) || (g3Var = (r5Var = (r5) drawable).k) == null) {
             return;
         }
-        r5Var.w(f3Var);
-        f3Var.startAnimation();
+        r5Var.w(g3Var);
+        g3Var.startAnimation();
     }
 
     public final void g(Drawable drawable, boolean z10) {
@@ -299,9 +299,9 @@ public class p5 extends Drawable implements x5 {
                 this.h.invalidate();
             }
         }
-        org.telegram.ui.z51 z51Var = this.n;
-        if (z51Var != null) {
-            z51Var.invalidate();
+        org.telegram.ui.x51 x51Var = this.n;
+        if (x51Var != null) {
+            x51Var.invalidate();
         }
         invalidateSelf();
     }

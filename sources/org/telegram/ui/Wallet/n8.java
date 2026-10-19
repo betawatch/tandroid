@@ -13,17 +13,17 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.vf1;
+import org.telegram.ui.tf1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class n8 extends FrameLayout {
     public final View a;
     public final EditTextBoldCursor b;
     public final View c;
     public final org.telegram.ui.ActionBar.d6 d;
-    public final a4 e;
-    public final a4 f;
+    public final w3 e;
+    public final w3 f;
     public final Paint h;
     public final TextPaint n;
     public final RectF r;
@@ -33,7 +33,7 @@ public final class n8 extends FrameLayout {
     public boolean x;
     public boolean y;
 
-    public n8(Context context, View view, org.telegram.ui.ActionBar.d6 d6Var, a4 a4Var, a4 a4Var2, a4 a4Var3) {
+    public n8(Context context, View view, org.telegram.ui.ActionBar.d6 d6Var, w3 w3Var, w3 w3Var2, w3 w3Var3) {
         super(context);
         this.h = new Paint(1);
         this.n = new TextPaint(1);
@@ -41,8 +41,8 @@ public final class n8 extends FrameLayout {
         this.w = 1.0f;
         this.a = view;
         this.d = d6Var;
-        this.e = a4Var;
-        this.f = a4Var3;
+        this.e = w3Var;
+        this.f = w3Var3;
         setWillNotDraw(false);
         addView(view, w7.z5.e(-2, 40, 51));
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
@@ -61,7 +61,7 @@ public final class n8 extends FrameLayout {
         editTextBoldCursor.setVisibility(4);
         editTextBoldCursor.setEnabled(false);
         editTextBoldCursor.setOnEditorActionListener(new l8(this, 0));
-        editTextBoldCursor.addTextChangedListener(new m8(a4Var2));
+        editTextBoldCursor.addTextChangedListener(new m8(w3Var2));
         addView(editTextBoldCursor, w7.z5.d(-1, 40.0f, 48, 40.0f, 0.0f, 44.0f, 0.0f));
         View view2 = new View(context);
         this.c = view2;
@@ -111,9 +111,8 @@ public final class n8 extends FrameLayout {
         ofFloat.setDuration(z10 ? 380L : 300L);
         this.s.setInterpolator(bs.h);
         this.a.setVisibility(0);
-        int i10 = 8;
-        this.s.addUpdateListener(new v2(this, i10));
-        this.s.addListener(new vf1(this, i10));
+        this.s.addUpdateListener(new b3(this, 7));
+        this.s.addListener(new tf1(this, 8));
         this.s.start();
     }
 

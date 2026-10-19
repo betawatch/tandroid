@@ -11,9 +11,9 @@ import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class ei0 extends w9 implements gw0 {
+public final class ei0 extends w9 implements hw0 {
     public final int G;
     public RadialProgress2 H;
     public ValueAnimator I;
@@ -36,7 +36,7 @@ public final class ei0 extends w9 implements gw0 {
         setLayerNum(ki0Var.l1);
     }
 
-    @Override // org.telegram.ui.Components.gw0
+    @Override // org.telegram.ui.Components.hw0
     public final void g(Runnable runnable) {
         this.O = runnable;
     }
@@ -58,8 +58,8 @@ public final class ei0 extends w9 implements gw0 {
         Path path = ki0Var.M0;
         ArrayList arrayList = ki0Var.b1;
         RectF rectF = ki0Var.N0;
-        org.telegram.ui.xu0 xu0Var = ki0Var.h1;
-        if (xu0Var == null || !xu0Var.n) {
+        org.telegram.ui.vu0 vu0Var = ki0Var.h1;
+        if (vu0Var == null || !vu0Var.n) {
             if (this.H != null) {
                 int k10 = ki0Var.D0.k(this.M);
                 if (ki0Var.i1) {
@@ -143,7 +143,7 @@ public final class ei0 extends w9 implements gw0 {
             RadialProgress2 radialProgress2 = this.H;
             int i14 = this.G;
             int i15 = (i11 - currentActionBarHeight) - dp2;
-            radialProgress2.q((i10 - i14) / 2, i2.d.C(i15, i14, 2, currentActionBarHeight), (i10 + i14) / 2, ((i15 + i14) / 2) + currentActionBarHeight);
+            radialProgress2.q((i10 - i14) / 2, i2.e.C(i15, i14, 2, currentActionBarHeight), (i10 + i14) / 2, ((i15 + i14) / 2) + currentActionBarHeight);
         }
     }
 

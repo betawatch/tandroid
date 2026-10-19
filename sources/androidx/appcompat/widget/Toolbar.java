@@ -26,6 +26,7 @@ import java.util.Iterator;
 import java.util.WeakHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import k.h;
+import k2.w0;
 import l.k;
 import l.m;
 import m.a1;
@@ -50,7 +51,7 @@ import r0.i0;
 import v7.q7;
 import w7.q;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class Toolbar extends ViewGroup {
     public final int E;
@@ -270,9 +271,9 @@ public class Toolbar extends ViewGroup {
             actionMenuView.setPopupTheme(this.v);
             this.a.setOnMenuItemClickListener(this.b0);
             ActionMenuView actionMenuView2 = this.a;
-            k0.b bVar = new k0.b(this, 6);
+            w0 w0Var = new w0(this, 5);
             actionMenuView2.getClass();
-            actionMenuView2.K = bVar;
+            actionMenuView2.K = w0Var;
             k3 h = h();
             h.a = (this.y & 112) | 8388613;
             this.a.setLayoutParams(h);

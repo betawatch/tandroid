@@ -25,12 +25,12 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.w90;
 import org.telegram.ui.Components.x90;
-import org.telegram.ui.mf;
-import org.telegram.ui.sn;
+import org.telegram.ui.kf;
+import org.telegram.ui.qn;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class n extends FrameLayout {
     public static final /* synthetic */ int n = 0;
@@ -113,7 +113,7 @@ public final class n extends FrameLayout {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(final sn snVar, final MessageObject messageObject, mf mfVar, mf mfVar2) {
+    public final void a(final qn qnVar, final MessageObject messageObject, kf kfVar, kf kfVar2) {
         boolean z10;
         boolean z11;
         float measureText;
@@ -186,26 +186,26 @@ public final class n extends FrameLayout {
                     public final void a(ClickableSpan clickableSpan) {
                         n nVar = n.this;
                         nVar.getClass();
-                        sn snVar2 = snVar;
-                        if (snVar2 != null) {
-                            snVar2.O9(messageObject, false, false);
+                        qn qnVar2 = qnVar;
+                        if (qnVar2 != null) {
+                            qnVar2.O9(messageObject, false, false);
                         }
                         if (clickableSpan instanceof URLSpan) {
                             String url = ((URLSpan) clickableSpan).getURL();
                             if (url != null) {
                                 url = url.trim();
                             }
-                            if (snVar2 != null && url != null && (url.startsWith("$") || url.startsWith("#"))) {
-                                snVar2.ia(url, true);
+                            if (qnVar2 != null && url != null && (url.startsWith("$") || url.startsWith("#"))) {
+                                qnVar2.ia(url, true);
                                 return;
                             }
                         }
                         clickableSpan.onClick(nVar.h);
                     }
                 });
-                textView2.setOnClickListener(new ah.g0(mfVar, 24));
-                setOnClickListener(new ci.b4(this, snVar, messageObject, str2, 1));
-                imageView.setOnClickListener(new ah.g0(mfVar2, 25));
+                textView2.setOnClickListener(new ah.g0(kfVar, 24));
+                setOnClickListener(new ci.c4(this, qnVar, messageObject, str2, 1));
+                imageView.setOnClickListener(new ah.g0(kfVar2, 25));
             }
             TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, 48, true, null, true);
             w9Var.k(ImageLocation.getForPhoto(closestPhotoSizeWithSize4, messageObject.sponsoredPhoto), "48_48", ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(messageObject.sponsoredPhoto.sizes, 48, true, closestPhotoSizeWithSize4, false), messageObject.sponsoredPhoto), "48_48", 0L, null, null, 0);
@@ -233,25 +233,25 @@ public final class n extends FrameLayout {
             public final void a(ClickableSpan clickableSpan) {
                 n nVar = n.this;
                 nVar.getClass();
-                sn snVar2 = snVar;
-                if (snVar2 != null) {
-                    snVar2.O9(messageObject, false, false);
+                qn qnVar2 = qnVar;
+                if (qnVar2 != null) {
+                    qnVar2.O9(messageObject, false, false);
                 }
                 if (clickableSpan instanceof URLSpan) {
                     String url = ((URLSpan) clickableSpan).getURL();
                     if (url != null) {
                         url = url.trim();
                     }
-                    if (snVar2 != null && url != null && (url.startsWith("$") || url.startsWith("#"))) {
-                        snVar2.ia(url, true);
+                    if (qnVar2 != null && url != null && (url.startsWith("$") || url.startsWith("#"))) {
+                        qnVar2.ia(url, true);
                         return;
                     }
                 }
                 clickableSpan.onClick(nVar.h);
             }
         });
-        textView22.setOnClickListener(new ah.g0(mfVar, 24));
-        setOnClickListener(new ci.b4(this, snVar, messageObject, str2, 1));
-        imageView.setOnClickListener(new ah.g0(mfVar2, 25));
+        textView22.setOnClickListener(new ah.g0(kfVar, 24));
+        setOnClickListener(new ci.c4(this, qnVar, messageObject, str2, 1));
+        imageView.setOnClickListener(new ah.g0(kfVar2, 25));
     }
 }

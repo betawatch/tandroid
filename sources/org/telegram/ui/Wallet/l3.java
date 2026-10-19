@@ -1,59 +1,49 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.SurfaceTexture;
-import android.widget.ImageView;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.ba0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class l3 extends tg.t {
-    public final /* synthetic */ Object E;
-    public final /* synthetic */ int y = 1;
+public final class l3 extends ba0 {
+    public final Paint M;
+    public final /* synthetic */ n3 N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l3(i8 i8Var, Context context, n nVar) {
-        super(context, nVar, 0);
-        this.E = i8Var;
+    public l3(n3 n3Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(d6Var);
+        this.N = n3Var;
+        Paint paint = new Paint(1);
+        this.M = paint;
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
     }
 
-    @Override // tg.t
-    public final void a() {
-        switch (this.y) {
-            case 0:
-                m3 m3Var = (m3) this.E;
-                m3Var.o = true;
-                setPaused(true);
-                setVisibility(8);
-                m3Var.a.invalidate();
-                break;
-            default:
-                setPaused(true);
-                setVisibility(8);
-                ((i8) this.E).a.setVisibility(0);
-                break;
+    @Override // org.telegram.ui.Components.ba0
+    public final void b(Canvas canvas, Path path) {
+        super.b(canvas, path);
+        n3 n3Var = this.N;
+        RectF rectF = n3Var.f;
+        if (n3Var.o0 != null) {
+            canvas.saveLayer(rectF, null);
+            n3Var.o0.c((AndroidUtilities.dp(206.0f) - n3Var.o0.l()) / 2.0f, (rectF.bottom - AndroidUtilities.dp(7.0f)) - n3Var.o0.j(), 1.0f, -1, canvas);
+            Shader shader = this.x.getShader();
+            Paint paint = this.M;
+            paint.setShader(shader);
+            canvas.drawRect(rectF, paint);
+            canvas.restore();
         }
     }
 
-    @Override // tg.t, android.view.TextureView.SurfaceTextureListener
-    public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        switch (this.y) {
-            case 1:
-                ImageView imageView = ((i8) this.E).a;
-                super.onSurfaceTextureUpdated(surfaceTexture);
-                if (this.n && imageView.getVisibility() == 0) {
-                    imageView.setVisibility(4);
-                    break;
-                }
-                break;
-            default:
-                super.onSurfaceTextureUpdated(surfaceTexture);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l3(m3 m3Var, Context context, i3 i3Var) {
-        super(context, i3Var, 2);
-        this.E = m3Var;
+    @Override // android.graphics.drawable.Drawable
+    public final void invalidateSelf() {
+        super.invalidateSelf();
+        this.N.a.invalidate();
     }
 }

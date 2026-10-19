@@ -1,20 +1,69 @@
 package org.telegram.ui;
 
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.StatsController;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class du extends MetricAffectingSpan {
-    public double a;
+public final /* synthetic */ class du implements org.telegram.ui.Components.tl0, org.telegram.ui.ActionBar.a2 {
+    public final /* synthetic */ hu a;
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.baselineShift += (int) (textPaint.ascent() * this.a);
+    public /* synthetic */ du(hu huVar) {
+        this.a = huVar;
     }
 
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        textPaint.baselineShift += (int) (textPaint.ascent() * this.a);
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        int i11;
+        int i12;
+        int i13;
+        hu huVar = this.a;
+        lu luVar = huVar.m3;
+        ArrayList arrayList = huVar.d3;
+        arrayList.clear();
+        int i14 = 0;
+        while (true) {
+            gu[] guVarArr = huVar.e3;
+            if (i14 >= guVarArr.length) {
+                i11 = ((org.telegram.ui.ActionBar.n2) luVar).currentAccount;
+                StatsController.getInstance(i11).resetStats(0);
+                i12 = ((org.telegram.ui.ActionBar.n2) luVar).currentAccount;
+                StatsController.getInstance(i12).resetStats(1);
+                i13 = ((org.telegram.ui.ActionBar.n2) luVar).currentAccount;
+                StatsController.getInstance(i13).resetStats(2);
+                huVar.V2 = true;
+                huVar.A1();
+                huVar.B1(true);
+                return;
+            }
+            gu guVar = guVarArr[i14];
+            if (guVar.c > 0) {
+                arrayList.add(Integer.valueOf(guVar.d));
+            }
+            i14++;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.tl0
+    public int run() {
+        hu huVar = this.a;
+        ArrayList arrayList = huVar.a3;
+        int i10 = 0;
+        while (true) {
+            if (i10 >= arrayList.size()) {
+                i10 = -1;
+                break;
+            }
+            if (((cu) arrayList.get(i10)).a == 5) {
+                break;
+            }
+            i10++;
+        }
+        if (i10 < 0) {
+            return -1;
+        }
+        huVar.X2.h1(i10, AndroidUtilities.dp(60.0f));
+        return i10;
     }
 }

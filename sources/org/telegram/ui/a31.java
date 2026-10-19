@@ -1,172 +1,60 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.os.Bundle;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.Locale;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class a31 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class a31 extends org.telegram.ui.ActionBar.n2 {
+    public static final int[] c = {MediaController.VIDEO_BITRATE_360, MediaController.VIDEO_BITRATE_480, 1200000, 2000000};
+    public org.telegram.ui.Components.im0 a;
+    public z21 b;
 
-    public /* synthetic */ a31(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public static String U(int i10) {
+        if (i10 % MediaController.VIDEO_BITRATE_480 == 0) {
+            return (i10 / MediaController.VIDEO_BITRATE_480) + " Mbps";
+        }
+        if (i10 > 1000000) {
+            return String.format(Locale.US, "%.1f Mbps", Float.valueOf(i10 / 1000000.0f));
+        }
+        return (i10 / MediaDataController.MAX_STYLE_RUNS_COUNT) + " kbps";
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        int i11;
-        switch (this.a) {
-            case 0:
-                if (i10 == -1) {
-                    ((c31) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 1:
-                if (i10 == -1) {
-                    ((SaveToGallerySettingsActivity) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 2:
-                if (i10 == -1) {
-                    ((SecretMediaViewer) this.b).e(true, false);
-                    break;
-                }
-                break;
-            case 3:
-                if (i10 == -1) {
-                    ((SessionsActivity) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 4:
-                z71 z71Var = (z71) this.b;
-                if (i10 != -1) {
-                    if (i10 == 2) {
-                        z71Var.l0(new hg0(null));
-                        break;
-                    }
-                } else if (!z71Var.M) {
-                    z71Var.finishFragment();
-                    break;
-                } else {
-                    Bundle bundle = new Bundle();
-                    bundle.putLong("user_id", z71Var.getUserConfig().getClientUserId());
-                    bundle.putBoolean("immediate", true);
-                    z71Var.presentFragment(new zh.f0(bundle));
-                    break;
-                }
-                break;
-            case 5:
-                if (i10 == -1) {
-                    ((r91) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 6:
-                StickersActivity stickersActivity = (StickersActivity) this.b;
-                if (i10 != -1) {
-                    StickersActivity.d0(stickersActivity, i10);
-                    break;
-                } else if (stickersActivity.onBackPressed(true)) {
-                    stickersActivity.finishFragment();
-                    break;
-                }
-                break;
-            case 7:
-                qc1 qc1Var = (qc1) this.b;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        qc1.Y(qc1Var);
-                        break;
-                    }
-                } else {
-                    qc1Var.finishFragment();
-                    break;
-                }
-                break;
-            case 8:
-                if (i10 == -1) {
-                    ((id1) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 9:
-                if (i10 == -1) {
-                    ((ze1) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 10:
-                if (i10 == -1) {
-                    TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;
-                    if (twoStepVerificationActivity.X < 0) {
-                        twoStepVerificationActivity.finishFragment();
-                        break;
-                    } else {
-                        twoStepVerificationActivity.x0();
-                        break;
-                    }
-                }
-                break;
-            case 11:
-                UserInfoActivity userInfoActivity = (UserInfoActivity) this.b;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        userInfoActivity.c0(true);
-                        break;
-                    }
-                } else if (userInfoActivity.onBackPressed(true)) {
-                    userInfoActivity.finishFragment();
-                    break;
-                }
-                break;
-            case 12:
-                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) this.b;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        usersSelectActivity.X();
-                        break;
-                    }
-                } else {
-                    usersSelectActivity.finishFragment();
-                    break;
-                }
-                break;
-            case 13:
-                org.telegram.ui.Wallet.i9 i9Var = (org.telegram.ui.Wallet.i9) this.b;
-                if (i10 != -1) {
-                    if (i10 != 2) {
-                        if (i10 == 3) {
-                            i9Var.o0();
-                            break;
-                        }
-                    } else {
-                        Activity parentActivity = i9Var.getParentActivity();
-                        i11 = ((org.telegram.ui.ActionBar.n2) i9Var).currentAccount;
-                        org.telegram.ui.Wallet.n5.D0(parentActivity, i11, i9Var.getResourceProvider());
-                        break;
-                    }
-                } else {
-                    i9Var.finishFragment();
-                    break;
-                }
-                break;
-            case 14:
-                if (i10 == -1) {
-                    ((sg.y0) this.b).dismiss();
-                    break;
-                }
-                break;
-            default:
-                if (i10 == -1) {
-                    ((yh.g4) this.b).finishFragment();
-                    break;
-                }
-                break;
-        }
+    public final void V(int i10, CharSequence[] charSequenceArr, fk0 fk0Var) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
+        alertDialog$Builder.a.R = LocaleController.getString(i10);
+        alertDialog$Builder.f(charSequenceArr, new mg.j(11, this, fk0Var));
+        showDialog(alertDialog$Builder.a);
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final View createView(Context context) {
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(LocaleController.getString(R.string.RoundVideoSettings));
+        this.actionBar.setActionBarMenuOnItemClick(new y21(this, 0));
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
+        this.fragmentView = frameLayout;
+        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
+        this.a = im0Var;
+        im0Var.p1();
+        this.actionBar.setAdaptiveBackground(this.a);
+        this.a.setLayoutManager(new s4.b0());
+        this.a.setVerticalScrollBarEnabled(false);
+        org.telegram.ui.Components.im0 im0Var2 = this.a;
+        z21 z21Var = new z21(context);
+        this.b = z21Var;
+        im0Var2.setAdapter(z21Var);
+        this.a.setOnItemClickListener(new f11(this, 3));
+        frameLayout.addView(this.a, w7.z5.c(-1.0f, -1));
+        return this.fragmentView;
     }
 }

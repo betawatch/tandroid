@@ -22,7 +22,7 @@ import v7.m7;
 import v7.u6;
 import v7.v6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class k0 implements p {
     public final Context a;
@@ -263,27 +263,27 @@ public final class k0 implements p {
     }
 
     public final void d() {
-        z2.d dVar;
+        z2.e eVar;
         e2.r rVar = this.f;
         if (rVar != null) {
             rVar.d();
         }
-        e eVar = this.i;
-        if (eVar != null) {
-            Context context = eVar.a;
-            if (eVar.k) {
-                eVar.h = null;
-                c2.i.e(context).unregisterAudioDeviceCallback(eVar.d);
-                if (Build.VERSION.SDK_INT >= 32 && (dVar = eVar.g) != null) {
-                    dVar.e();
-                    eVar.g = null;
+        e eVar2 = this.i;
+        if (eVar2 != null) {
+            Context context = eVar2.a;
+            if (eVar2.k) {
+                eVar2.h = null;
+                c2.i.e(context).unregisterAudioDeviceCallback(eVar2.d);
+                if (Build.VERSION.SDK_INT >= 32 && (eVar = eVar2.g) != null) {
+                    eVar.e();
+                    eVar2.g = null;
                 }
-                context.unregisterReceiver(eVar.e);
-                d dVar2 = eVar.f;
-                if (dVar2 != null) {
-                    dVar2.a.unregisterContentObserver(dVar2);
+                context.unregisterReceiver(eVar2.e);
+                d dVar = eVar2.f;
+                if (dVar != null) {
+                    dVar.a.unregisterContentObserver(dVar);
                 }
-                eVar.k = false;
+                eVar2.k = false;
             }
         }
     }
@@ -313,7 +313,7 @@ public final class k0 implements p {
                 Handler handler = eVar2.c;
                 e.registerAudioDeviceCallback(cVar, handler);
                 if (Build.VERSION.SDK_INT >= 32 && eVar2.g == null) {
-                    eVar2.g = new z2.d(context2, new bc(eVar2, 26), Boolean.valueOf(e2.m0.P(context2)));
+                    eVar2.g = new z2.e(context2, new bc(eVar2, 26), Boolean.valueOf(e2.m0.P(context2)));
                 }
                 b10 = b.b(context2, context2.registerReceiver(eVar2.e, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG"), null, handler), eVar2.j, eVar2.i, eVar2.a());
                 eVar2.h = b10;

@@ -9,9 +9,9 @@ import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ua1;
+import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gn implements wl0 {
     public final /* synthetic */ int a = 1;
@@ -41,12 +41,12 @@ public final /* synthetic */ class gn implements wl0 {
                 c5.f fVar = foVar.N0;
                 rn rnVar = foVar.v;
                 co coVar = foVar.r;
-                ua1 ua1Var = foVar.s;
+                sa1 sa1Var = foVar.s;
                 int i11 = foVar.L0;
                 org.telegram.ui.ActionBar.d6 d6Var = this.b;
                 if (i10 == i11) {
                     uh.f fVar2 = new uh.f(foVar.getContext(), d6Var);
-                    fVar2.k0 = new l2.f(foVar, 8);
+                    fVar2.k0 = new l2.f(foVar, 9);
                     ArrayList arrayList = foVar.P0;
                     fVar2.c0 = null;
                     fVar2.o0 = new HashSet(arrayList);
@@ -65,7 +65,7 @@ public final /* synthetic */ class gn implements wl0 {
                             break;
                         } else {
                             int i13 = iArr[i12];
-                            q21 a2 = q21.a(i13);
+                            r21 a2 = r21.a(i13);
                             int i14 = org.telegram.ui.ActionBar.h6.F8;
                             a2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(i14, foVar.a), PorterDuff.Mode.SRC_IN));
                             F.b(0, a2, LocaleController.formatPluralString("Hours", i13 / 3600, new Object[0]), i14, org.telegram.ui.ActionBar.h6.E8, new org.telegram.ui.i4(foVar, i13, view, 6));
@@ -97,7 +97,7 @@ public final /* synthetic */ class gn implements wl0 {
                                     fo foVar2 = (fo) fVar.c;
                                     co coVar2 = foVar2.r;
                                     if (i10 == i16) {
-                                        ua1Var.setItemAnimator(rnVar);
+                                        sa1Var.setItemAnimator(rnVar);
                                         int i17 = fVar.a;
                                         if (i17 >= 0) {
                                             s4.b1 K = foVar2.s.K(i17);
@@ -150,14 +150,14 @@ public final /* synthetic */ class gn implements wl0 {
                                         int i19 = foVar.I0;
                                         foVar.k0();
                                         if (i19 < 0) {
-                                            s4.b1 K2 = ua1Var.K(foVar.H0);
+                                            s4.b1 K2 = sa1Var.K(foVar.H0);
                                             if (K2 != null) {
                                                 View view3 = K2.a;
                                                 if (view3 instanceof org.telegram.ui.Cells.z5) {
                                                     ((org.telegram.ui.Cells.z5) view3).setDivider(true);
                                                 }
                                             }
-                                            ua1Var.setItemAnimator(rnVar);
+                                            sa1Var.setItemAnimator(rnVar);
                                             coVar.s(foVar.I0, 3);
                                         }
                                     } else {
@@ -165,9 +165,9 @@ public final /* synthetic */ class gn implements wl0 {
                                         foVar.V = 0;
                                         int i20 = foVar.I0;
                                         foVar.k0();
-                                        ua1Var.setItemAnimator(rnVar);
+                                        sa1Var.setItemAnimator(rnVar);
                                         coVar.t(i20, 3);
-                                        s4.b1 K3 = ua1Var.K(foVar.H0);
+                                        s4.b1 K3 = sa1Var.K(foVar.H0);
                                         if (K3 != null) {
                                             View view4 = K3.a;
                                             if (view4 instanceof org.telegram.ui.Cells.z5) {
@@ -185,10 +185,10 @@ public final /* synthetic */ class gn implements wl0 {
                                     foVar.k0();
                                     int i21 = foVar.y0;
                                     if (i21 >= 0 && i18 < 0) {
-                                        ua1Var.setItemAnimator(rnVar);
+                                        sa1Var.setItemAnimator(rnVar);
                                         coVar.o(foVar.y0);
                                     } else if (i18 >= 0 && i21 < 0) {
-                                        ua1Var.setItemAnimator(rnVar);
+                                        sa1Var.setItemAnimator(rnVar);
                                         coVar.u(i18);
                                     }
                                 } else if (i10 == foVar.F0) {
@@ -205,9 +205,9 @@ public final /* synthetic */ class gn implements wl0 {
                                             }
                                         }
                                     }
-                                    int childCount = ua1Var.getChildCount();
+                                    int childCount = sa1Var.getChildCount();
                                     for (int i23 = 0; i23 < childCount; i23++) {
-                                        s4.b1 T = ua1Var.T(ua1Var.getChildAt(i23));
+                                        s4.b1 T = sa1Var.T(sa1Var.getChildAt(i23));
                                         if (T.f == 5) {
                                             ((org.telegram.ui.Cells.c6) T.a).a.a(foVar.b0, true);
                                         }
@@ -217,7 +217,7 @@ public final /* synthetic */ class gn implements wl0 {
                                     foVar.W = z11;
                                 } else if (i10 == foVar.G0) {
                                     if (!foVar.e0) {
-                                        ua1Var.setItemAnimator(rnVar);
+                                        sa1Var.setItemAnimator(rnVar);
                                         z11 = !foVar.c0;
                                         foVar.c0 = z11;
                                         int i24 = foVar.o0;
@@ -232,7 +232,7 @@ public final /* synthetic */ class gn implements wl0 {
                                             foVar.R = false;
                                             int i25 = foVar.D0;
                                             if (i25 >= 0) {
-                                                s4.b1 K4 = ua1Var.K(i25);
+                                                s4.b1 K4 = sa1Var.K(i25);
                                                 if (K4 != null) {
                                                     ((org.telegram.ui.Cells.z5) K4.a).setChecked(false);
                                                 } else {
@@ -241,7 +241,7 @@ public final /* synthetic */ class gn implements wl0 {
                                             }
                                         } else {
                                             int i26 = foVar.D0;
-                                            if (i26 >= 0 && ua1Var.K(i26) == null) {
+                                            if (i26 >= 0 && sa1Var.K(i26) == null) {
                                                 coVar.m(foVar.D0);
                                             }
                                         }
@@ -263,9 +263,9 @@ public final /* synthetic */ class gn implements wl0 {
                         if (foVar.d0 && !foVar.c0) {
                             r40Var.b(true);
                         }
-                        ua1Var.getChildCount();
+                        sa1Var.getChildCount();
                         for (int i28 = foVar.t0; i28 < foVar.t0 + foVar.M; i28++) {
-                            s4.b1 K5 = ua1Var.K(i28);
+                            s4.b1 K5 = sa1Var.K(i28);
                             if (K5 != null) {
                                 View view5 = K5.a;
                                 if (view5 instanceof org.telegram.ui.Cells.c6) {

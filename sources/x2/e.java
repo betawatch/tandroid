@@ -12,7 +12,7 @@ import e9.v1;
 import j$.util.Objects;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class e extends l implements Comparable {
     public final boolean E;
@@ -72,7 +72,7 @@ public final class e extends l implements Comparable {
         int i20 = 0;
         this.y = false;
         this.h = n.l(this.d.d);
-        this.r = i2.d.e(i12, false);
+        this.r = i2.e.e(i12, false);
         int i21 = 0;
         while (true) {
             int size = n0Var2.size();
@@ -176,8 +176,8 @@ public final class e extends l implements Comparable {
             iVar2 = this.n;
             z13 = iVar2.B0;
             r1Var = iVar2.w;
-            if (i2.d.e(i12, z13) && ((z12 || iVar2.y0) && (r1Var.a != 2 || n.n(iVar2, i12, wVar)))) {
-                i20 = (i2.d.e(i12, false) || !z12 || wVar.j == -1 || iVar2.G || iVar2.F || (!iVar2.C0 && z10) || r1Var.a == 2 || (i19 & i12) == 0) ? 1 : 2;
+            if (i2.e.e(i12, z13) && ((z12 || iVar2.y0) && (r1Var.a != 2 || n.n(iVar2, i12, wVar)))) {
+                i20 = (i2.e.e(i12, false) || !z12 || wVar.j == -1 || iVar2.G || iVar2.F || (!iVar2.C0 && z10) || r1Var.a == 2 || (i19 & i12) == 0) ? 1 : 2;
             }
             this.e = i20;
         }
@@ -212,8 +212,8 @@ public final class e extends l implements Comparable {
         iVar2 = this.n;
         z13 = iVar2.B0;
         r1Var = iVar2.w;
-        if (i2.d.e(i12, z13)) {
-            if (i2.d.e(i12, false)) {
+        if (i2.e.e(i12, z13)) {
+            if (i2.e.e(i12, false)) {
             }
         }
         this.e = i20;

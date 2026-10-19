@@ -4,7 +4,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class uo implements Utilities.Callback {
     public final /* synthetic */ i80 a;
@@ -14,12 +14,12 @@ public final /* synthetic */ class uo implements Utilities.Callback {
     public final /* synthetic */ org.telegram.ui.ActionBar.n2 e;
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 f;
 
-    public /* synthetic */ uo(i80 i80Var, int i10, long j10, long j11, org.telegram.ui.sn snVar, org.telegram.ui.ActionBar.d6 d6Var) {
+    public /* synthetic */ uo(i80 i80Var, int i10, long j10, long j11, org.telegram.ui.qn qnVar, org.telegram.ui.ActionBar.d6 d6Var) {
         this.a = i80Var;
         this.b = i10;
         this.c = j10;
         this.d = j11;
-        this.e = snVar;
+        this.e = qnVar;
         this.f = d6Var;
     }
 

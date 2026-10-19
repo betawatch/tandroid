@@ -15,7 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class v extends o6.a {
     public static final Parcelable.Creator<v> CREATOR = new w.a(24);
@@ -117,7 +117,7 @@ public final class v extends o6.a {
         ArrayList arrayList2;
         JSONArray jSONArray2;
         String str2;
-        n7.e eVar2;
+        n7.d dVar;
         JSONObject jSONObject2 = jSONObject.getJSONObject("rp");
         String str3 = "id";
         y yVar = new y(jSONObject2.getString("id"), jSONObject2.getString("name"), jSONObject2.has("icon") ? jSONObject2.optString("icon") : null);
@@ -130,12 +130,12 @@ public final class v extends o6.a {
         for (int i11 = 0; i11 < jSONArray3.length(); i11++) {
             JSONObject jSONObject4 = jSONArray3.getJSONObject(i11);
             try {
-                eVar2 = new n7.f(new x(jSONObject4.getString(TeXSymbolParser.TYPE_ATTR), jSONObject4.getInt("alg")));
+                dVar = new n7.e(new x(jSONObject4.getString(TeXSymbolParser.TYPE_ATTR), jSONObject4.getInt("alg")));
             } catch (IllegalArgumentException unused) {
-                eVar2 = n7.c.a;
+                dVar = n7.b.a;
             }
-            if (eVar2.b()) {
-                arrayList3.add(eVar2.a());
+            if (dVar.b()) {
+                arrayList3.add(dVar.a());
             }
         }
         Double valueOf = jSONObject.has("timeout") ? Double.valueOf(jSONObject.getDouble("timeout") / 1000.0d) : null;

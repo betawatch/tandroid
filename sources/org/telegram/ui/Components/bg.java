@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class bg implements Runnable {
     public final /* synthetic */ MessageObject a;
@@ -30,14 +30,14 @@ public final class bg implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         ChatActivityEnterView chatActivityEnterView = this.f;
-        org.telegram.ui.sn snVar = chatActivityEnterView.P2;
+        org.telegram.ui.qn qnVar = chatActivityEnterView.P2;
         if (chatActivityEnterView.m1.R() > AndroidUtilities.dp(20.0f) || chatActivityEnterView.r0()) {
             chatActivityEnterView.k0(false);
             AndroidUtilities.hideKeyboard(chatActivityEnterView);
             AndroidUtilities.runOnUIThread(this, 150L);
             return;
         }
-        if (snVar == null) {
+        if (qnVar == null) {
             return;
         }
         int i10 = chatActivityEnterView.Q;
@@ -45,9 +45,9 @@ public final class bg implements Runnable {
         TL_keyboard.KeyboardButtonProto keyboardButtonProto = this.c;
         String text = keyboardButtonProto.getText();
         String url = keyboardButtonProto.getUrl();
-        boolean c10 = ag.d.c(keyboardButtonProto, TL_keyboard.TL_buttonTypeSimpleWebView.class);
+        boolean c10 = ag.c.c(keyboardButtonProto, TL_keyboard.TL_buttonTypeSimpleWebView.class);
         MessageObject messageObject = this.d;
-        gi.t4 b10 = gi.t4.b(i10, j10, this.b, text, url, c10 ? 1 : 0, messageObject != null ? messageObject.messageOwner.id : 0, snVar == null ? 0L : snVar.S8(), null, false, null, null, 0, false, false);
+        gi.t4 b10 = gi.t4.b(i10, j10, this.b, text, url, c10 ? 1 : 0, messageObject != null ? messageObject.messageOwner.id : 0, qnVar == null ? 0L : qnVar.S8(), null, false, null, null, 0, false, false);
         LaunchActivity launchActivity = LaunchActivity.H1;
         if (launchActivity != null && launchActivity.P() != null && LaunchActivity.H1.P().k(b10) != null) {
             gi.b0 b0Var = chatActivityEnterView.l0;
@@ -61,11 +61,11 @@ public final class bg implements Runnable {
         String restrictionReason = user == null ? null : MessagesController.getInstance(chatActivityEnterView.Q).getRestrictionReason(user.restriction_reason);
         if (!TextUtils.isEmpty(restrictionReason)) {
             MessagesController.getInstance(chatActivityEnterView.Q);
-            MessagesController.showCantOpenAlert(snVar, restrictionReason);
+            MessagesController.showCantOpenAlert(qnVar, restrictionReason);
         } else {
             gi.d3 d3Var = new gi.d3(chatActivityEnterView.getContext(), chatActivityEnterView.W3);
             d3Var.k0 = chatActivityEnterView.O2;
-            d3Var.t(snVar, b10);
+            d3Var.t(qnVar, b10);
             d3Var.show();
         }
     }

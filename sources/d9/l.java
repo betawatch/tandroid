@@ -9,39 +9,46 @@ import java.util.Iterator;
 import java.util.List;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class l {
     public String a;
 
-    public l(String str) {
-        str.getClass();
-        this.a = str;
+    public l(String str, int i10) {
+        switch (i10) {
+            case 3:
+                this.a = str;
+                break;
+            default:
+                str.getClass();
+                this.a = str;
+                break;
+        }
     }
 
     public static void b(androidx.biometric.e eVar, ea.d dVar) {
         String str = dVar.a;
         if (str != null) {
-            eVar.s("X-CRASHLYTICS-GOOGLE-APP-ID", str);
+            eVar.q("X-CRASHLYTICS-GOOGLE-APP-ID", str);
         }
-        eVar.s("X-CRASHLYTICS-API-CLIENT-TYPE", "android");
-        eVar.s("X-CRASHLYTICS-API-CLIENT-VERSION", "18.6.0");
-        eVar.s("Accept", "application/json");
+        eVar.q("X-CRASHLYTICS-API-CLIENT-TYPE", "android");
+        eVar.q("X-CRASHLYTICS-API-CLIENT-VERSION", "18.6.0");
+        eVar.q("Accept", "application/json");
         String str2 = dVar.b;
         if (str2 != null) {
-            eVar.s("X-CRASHLYTICS-DEVICE-MODEL", str2);
+            eVar.q("X-CRASHLYTICS-DEVICE-MODEL", str2);
         }
         String str3 = dVar.c;
         if (str3 != null) {
-            eVar.s("X-CRASHLYTICS-OS-BUILD-VERSION", str3);
+            eVar.q("X-CRASHLYTICS-OS-BUILD-VERSION", str3);
         }
         String str4 = dVar.d;
         if (str4 != null) {
-            eVar.s("X-CRASHLYTICS-OS-DISPLAY-VERSION", str4);
+            eVar.q("X-CRASHLYTICS-OS-DISPLAY-VERSION", str4);
         }
         String str5 = dVar.e.b().a;
         if (str5 != null) {
-            eVar.s("X-CRASHLYTICS-INSTALLATION-ID", str5);
+            eVar.q("X-CRASHLYTICS-INSTALLATION-ID", str5);
         }
     }
 

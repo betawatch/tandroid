@@ -1,6 +1,6 @@
 package l;
 
-import ai.m6;
+import ai.n6;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Rect;
@@ -29,7 +29,7 @@ import m.s1;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class e extends s implements View.OnKeyListener, PopupWindow.OnDismissListener {
     public View E;
@@ -52,7 +52,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
     public final ArrayList h = new ArrayList();
     public final ArrayList n = new ArrayList();
     public final androidx.mediarouter.app.i r = new androidx.mediarouter.app.i(this, 1);
-    public final m6 s = new m6(this, 3);
+    public final n6 s = new n6(this, 3);
     public final t1 v = new t1(this, 2);
     public int w = 0;
     public int x = 0;
@@ -181,7 +181,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         if (arrayList.isEmpty()) {
             return null;
         }
-        return ((d) i2.d.h(1, arrayList)).a.c;
+        return ((d) i2.e.h(1, arrayList)).a.c;
     }
 
     @Override // l.b0
@@ -236,7 +236,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         l(d0Var);
         w wVar = this.M;
         if (wVar != null) {
-            wVar.u(d0Var);
+            wVar.r(d0Var);
         }
         return true;
     }
@@ -397,7 +397,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         k2Var.w = this.x;
         ArrayList arrayList = this.n;
         if (arrayList.size() > 0) {
-            dVar = (d) i2.d.h(1, arrayList);
+            dVar = (d) i2.e.h(1, arrayList);
             k kVar2 = dVar.b;
             int size2 = kVar2.f.size();
             int i15 = 0;

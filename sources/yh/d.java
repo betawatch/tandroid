@@ -20,7 +20,7 @@ import org.telegram.ui.Components.xj0;
 import org.telegram.ui.Components.yq;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class d extends FrameLayout {
     public final ei.d a;
@@ -36,7 +36,7 @@ public final class d extends FrameLayout {
         super(context);
         Paint paint = new Paint(1);
         this.e = paint;
-        this.f = new zf.n(new qg.g0(this, 27));
+        this.f = new zf.n(new qg.h0(this, 27));
         this.h = new yq(R.drawable.filled_gift_sell_24, 0);
         this.n = new yq[1];
         this.d = auction;

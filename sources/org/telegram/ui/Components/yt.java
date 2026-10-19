@@ -28,7 +28,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yt implements Runnable {
     public final /* synthetic */ int a;
@@ -45,9 +45,9 @@ public final /* synthetic */ class yt implements Runnable {
     public final void run() {
         int i10;
         l70 l70Var;
-        org.telegram.ui.kb kbVar;
+        org.telegram.ui.ib ibVar;
         int i11;
-        ai.x7 x7Var;
+        ai.y7 y7Var;
         boolean z10;
         int i12 = this.a;
         int i13 = 4;
@@ -112,7 +112,7 @@ public final /* synthetic */ class yt implements Runnable {
                         switch (i15) {
                             case 0:
                                 sy syVar2 = syVar;
-                                MediaDataController.getInstance(syVar2.a.F.c1).searchStickerSets(true, str, new ai.y3(syVar2, arrayList3, runnable, 8));
+                                MediaDataController.getInstance(syVar2.a.F.c1).searchStickerSets(true, str, new ai.a4(syVar2, arrayList3, runnable, 8));
                                 break;
                             default:
                                 tz tzVar4 = syVar.a.F;
@@ -173,7 +173,7 @@ public final /* synthetic */ class yt implements Runnable {
                         switch (i16) {
                             case 0:
                                 sy syVar2 = syVar;
-                                MediaDataController.getInstance(syVar2.a.F.c1).searchStickerSets(true, str, new ai.y3(syVar2, arrayList2, runnable, 8));
+                                MediaDataController.getInstance(syVar2.a.F.c1).searchStickerSets(true, str, new ai.a4(syVar2, arrayList2, runnable, 8));
                                 break;
                             default:
                                 tz tzVar4 = syVar.a.F;
@@ -223,7 +223,7 @@ public final /* synthetic */ class yt implements Runnable {
                                 break;
                         }
                     }
-                }, new qy(i15, syVar, arrayList), new ai.d3(syVar, str, arrayList, arrayList2, arrayList3, 4));
+                }, new qy(i15, syVar, arrayList), new ai.f3(syVar, str, arrayList, arrayList2, arrayList3, 4));
                 break;
             case 6:
                 ArrayList arrayList4 = (ArrayList) obj;
@@ -280,11 +280,11 @@ public final /* synthetic */ class yt implements Runnable {
                         if (uri != null) {
                             bundle.putParcelable("photoUri", uri);
                         }
-                        org.telegram.ui.xp0 xp0Var = new org.telegram.ui.xp0(bundle);
-                        xp0Var.e = false;
-                        xp0Var.f = false;
-                        xp0Var.c = e50Var;
-                        launchActivity.t0(xp0Var);
+                        org.telegram.ui.vp0 vp0Var = new org.telegram.ui.vp0(bundle);
+                        vp0Var.e = false;
+                        vp0Var.f = false;
+                        vp0Var.c = e50Var;
+                        launchActivity.t0(vp0Var);
                         break;
                     } else {
                         break;
@@ -325,7 +325,7 @@ public final /* synthetic */ class yt implements Runnable {
                     photoEntry.ttl = a60Var.c;
                     photoEntry.effectId = a60Var.d;
                 }
-                m60Var.n.r(photoEntry, m60Var.S, a60Var == null || a60Var.a, a60Var != null ? a60Var.b : 0, 0, false, a60Var != null ? a60Var.e : 0L);
+                m60Var.n.s(photoEntry, m60Var.S, a60Var == null || a60Var.a, a60Var != null ? a60Var.b : 0, 0, false, a60Var != null ? a60Var.e : 0L);
                 break;
             case 15:
                 Bitmap bitmap = (Bitmap) obj;
@@ -335,7 +335,7 @@ public final /* synthetic */ class yt implements Runnable {
                     break;
                 } else {
                     ArrayList arrayList6 = f60Var2.A0;
-                    arrayList6.add((Bitmap) i2.d.h(1, arrayList6));
+                    arrayList6.add((Bitmap) i2.e.h(1, arrayList6));
                     break;
                 }
                 break;
@@ -354,29 +354,29 @@ public final /* synthetic */ class yt implements Runnable {
                 break;
             case 17:
                 f70 f70Var = (f70) obj2;
-                if (((TLRPC.TL_error) obj) == null && (kbVar = (l70Var = f70Var.a.c).j0) != null) {
+                if (((TLRPC.TL_error) obj) == null && (ibVar = (l70Var = f70Var.a.c).j0) != null) {
                     TLRPC.TL_chatInviteExported tL_chatInviteExported = l70Var.b;
-                    org.telegram.ui.xb xbVar = kbVar.a;
-                    ArrayList arrayList7 = xbVar.o0;
+                    org.telegram.ui.vb vbVar = ibVar.a;
+                    ArrayList arrayList7 = vbVar.o0;
                     int size = arrayList7.size();
-                    int i18 = xbVar.E.h;
+                    int i18 = vbVar.E.h;
                     TLRPC.TL_channelAdminLogEvent tL_channelAdminLogEvent = new TLRPC.TL_channelAdminLogEvent();
                     TLRPC.TL_channelAdminLogEventActionExportedInviteDelete tL_channelAdminLogEventActionExportedInviteDelete = new TLRPC.TL_channelAdminLogEventActionExportedInviteDelete();
                     tL_channelAdminLogEventActionExportedInviteDelete.invite = tL_chatInviteExported;
                     tL_channelAdminLogEvent.action = tL_channelAdminLogEventActionExportedInviteDelete;
                     tL_channelAdminLogEvent.date = (int) (System.currentTimeMillis() / 1000);
-                    tL_channelAdminLogEvent.user_id = xbVar.getAccountInstance().getUserConfig().clientUserId;
-                    i11 = ((org.telegram.ui.ActionBar.n2) xbVar).currentAccount;
-                    if (new MessageObject(i11, tL_channelAdminLogEvent, (ArrayList<MessageObject>) xbVar.n0, (HashMap<String, ArrayList<MessageObject>>) xbVar.m0, xbVar.f, xbVar.T, true).contentType >= 0) {
-                        xbVar.R0();
+                    tL_channelAdminLogEvent.user_id = vbVar.getAccountInstance().getUserConfig().clientUserId;
+                    i11 = ((org.telegram.ui.ActionBar.n2) vbVar).currentAccount;
+                    if (new MessageObject(i11, tL_channelAdminLogEvent, (ArrayList<MessageObject>) vbVar.n0, (HashMap<String, ArrayList<MessageObject>>) vbVar.m0, vbVar.f, vbVar.T, true).contentType >= 0) {
+                        vbVar.R0();
                         int size2 = arrayList7.size() - size;
                         if (size2 > 0) {
-                            xbVar.C0.N = true;
-                            org.telegram.ui.tb tbVar = xbVar.E;
-                            tbVar.s(tbVar.h, size2);
-                            org.telegram.ui.xb.K0(xbVar);
+                            vbVar.C0.N = true;
+                            org.telegram.ui.rb rbVar = vbVar.E;
+                            rbVar.s(rbVar.h, size2);
+                            org.telegram.ui.vb.K0(vbVar);
                         }
-                        xbVar.y0.remove(tL_chatInviteExported.link);
+                        vbVar.y0.remove(tL_chatInviteExported.link);
                         break;
                     }
                 }
@@ -390,7 +390,7 @@ public final /* synthetic */ class yt implements Runnable {
             case 19:
                 Bundle bundle2 = new Bundle();
                 bundle2.putLong("user_id", ((TLRPC.ChatFull) obj2).guard_bot_id);
-                ((org.telegram.ui.yo) obj).presentFragment(new ProfileActivity(bundle2, null));
+                ((org.telegram.ui.wo) obj).presentFragment(new ProfileActivity(bundle2, null));
                 break;
             case 20:
                 s90 s90Var = (s90) obj2;
@@ -406,8 +406,8 @@ public final /* synthetic */ class yt implements Runnable {
                 break;
             case 22:
                 wa0 wa0Var = (wa0) obj2;
-                if (!((boolean[]) obj)[0] && (x7Var = wa0Var.U) != null) {
-                    x7Var.run();
+                if (!((boolean[]) obj)[0] && (y7Var = wa0Var.U) != null) {
+                    y7Var.run();
                 }
                 wa0Var.U = null;
                 break;
@@ -516,7 +516,7 @@ public final /* synthetic */ class yt implements Runnable {
                 xh0 xh0Var = ((yh0) obj2).F;
                 int i22 = vh0Var2.a;
                 RectF rectF3 = vh0Var2.d;
-                ProfileActivity.e0(((org.telegram.ui.ox0) xh0Var).b, i22, rectF3.left, rectF3.top);
+                ProfileActivity.e0(((org.telegram.ui.mx0) xh0Var).b, i22, rectF3.left, rectF3.top);
                 break;
             case 28:
                 RLottieNative rLottieNative = (RLottieNative) obj2;
@@ -560,9 +560,9 @@ public final /* synthetic */ class yt implements Runnable {
         }
     }
 
-    public /* synthetic */ yt(j71 j71Var, EditTextBoldCursor editTextBoldCursor, int i10) {
+    public /* synthetic */ yt(k71 k71Var, EditTextBoldCursor editTextBoldCursor, int i10) {
         this.a = i10;
-        this.c = j71Var;
+        this.c = k71Var;
         this.b = editTextBoldCursor;
     }
 }

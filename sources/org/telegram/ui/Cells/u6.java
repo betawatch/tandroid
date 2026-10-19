@@ -3,34 +3,34 @@ package org.telegram.ui.Cells;
 import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.MessagesController;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
-import org.telegram.ui.n01;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.l01;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class u6 extends e61 {
+public final class u6 extends f61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        e61.setup(new u6());
+        f61.setup(new u6());
     }
 
-    @Override // org.telegram.ui.Components.e61
-    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
-        Object obj = f61Var.G;
-        if (obj instanceof n01) {
-            n01 n01Var = (n01) obj;
-            ((w6) view).b(f61Var.l, n01Var.d, n01Var.e, z10);
+    @Override // org.telegram.ui.Components.f61
+    public final void bindView(View view, g61 g61Var, boolean z10, t61 t61Var, b71 b71Var) {
+        Object obj = g61Var.G;
+        if (obj instanceof l01) {
+            l01 l01Var = (l01) obj;
+            ((w6) view).b(g61Var.l, l01Var.d, l01Var.e, z10);
         } else if (obj instanceof MessagesController.FaqSearchResult) {
-            ((w6) view).a(f61Var.l, ((MessagesController.FaqSearchResult) obj).path, true, z10);
+            ((w6) view).a(g61Var.l, ((MessagesController.FaqSearchResult) obj).path, true, z10);
         }
     }
 
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     public final View createView(Context context, im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
         return new w6(context);
     }

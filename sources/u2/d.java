@@ -1,31 +1,31 @@
 package u2;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final class d implements e1 {
-    public final e1 a;
+public final class d implements d1 {
+    public final d1 a;
     public boolean b;
     public final /* synthetic */ e c;
 
-    public d(e eVar, e1 e1Var) {
+    public d(e eVar, d1 d1Var) {
         this.c = eVar;
-        this.a = e1Var;
+        this.a = d1Var;
     }
 
-    @Override // u2.e1
+    @Override // u2.d1
     public final void a() {
         this.a.a();
     }
 
-    @Override // u2.e1
-    public final boolean e() {
-        return !this.c.a() && this.a.e();
+    @Override // u2.d1
+    public final boolean f() {
+        return !this.c.b() && this.a.f();
     }
 
-    @Override // u2.e1
-    public final int f(qf.b bVar, h2.h hVar, int i10) {
+    @Override // u2.d1
+    public final int g(qf.b bVar, h2.h hVar, int i10) {
         e eVar = this.c;
-        if (eVar.a()) {
+        if (eVar.b()) {
             return -3;
         }
         if (this.b) {
@@ -33,14 +33,14 @@ public final class d implements e1 {
             return -4;
         }
         long s10 = eVar.s();
-        int f7 = this.a.f(bVar, hVar, i10);
-        if (eVar.e != -9223372036854775807L && f7 != -3) {
+        int g10 = this.a.g(bVar, hVar, i10);
+        if (eVar.e != -9223372036854775807L && g10 != -3) {
             eVar.e = -9223372036854775807L;
         }
-        if (f7 != -5) {
+        if (g10 != -5) {
             long j10 = eVar.h;
-            if (j10 == Long.MIN_VALUE || ((f7 != -4 || hVar.e < j10) && !(f7 == -3 && s10 == Long.MIN_VALUE && !hVar.d))) {
-                return f7;
+            if (j10 == Long.MIN_VALUE || ((g10 != -4 || hVar.e < j10) && !(g10 == -3 && s10 == Long.MIN_VALUE && !hVar.d))) {
+                return g10;
             }
             hVar.clear();
             hVar.setFlags(4);
@@ -68,11 +68,11 @@ public final class d implements e1 {
         return -5;
     }
 
-    @Override // u2.e1
-    public final int h(long j10) {
-        if (this.c.a()) {
+    @Override // u2.d1
+    public final int m(long j10) {
+        if (this.c.b()) {
             return -3;
         }
-        return this.a.h(j10);
+        return this.a.m(j10);
     }
 }

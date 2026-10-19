@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class qc {
     public static qc w;
@@ -89,9 +89,9 @@ public class qc {
         if (n2Var == null) {
             return new pb();
         }
-        if (n2Var instanceof org.telegram.ui.sn) {
+        if (n2Var instanceof org.telegram.ui.qn) {
             ub.access$000(nbVar, -2, 1);
-        } else if (n2Var instanceof org.telegram.ui.ey) {
+        } else if (n2Var instanceof org.telegram.ui.cy) {
             ub.access$000(nbVar, -1, 0);
         }
         return new qc(n2Var, n2Var.getBulletinLayoutContainer(), nbVar, i10);
@@ -236,7 +236,7 @@ public class qc {
         frameLayout.addOnLayoutChangeListener(r22);
         ubVar.addOnLayoutChangeListener(new jb(this, z10));
         if (!this.t) {
-            ubVar.addOnAttachStateChangeListener(new ai.m6(this, 7));
+            ubVar.addOnAttachStateChangeListener(new ai.n6(this, 7));
         }
         frameLayout.addView(ibVar);
     }

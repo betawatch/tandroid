@@ -1,42 +1,111 @@
 package org.telegram.ui;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class lc extends z51 {
-    public final /* synthetic */ gc d2;
-    public final /* synthetic */ q51[] e2;
-    public final /* synthetic */ dd f2;
+public final class lc extends View {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Canvas b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ Paint f;
+    public final /* synthetic */ Bitmap h;
+    public final /* synthetic */ Paint n;
+    public final /* synthetic */ float r;
+    public final /* synthetic */ float s;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 v;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lc(dd ddVar, dd ddVar2, Activity activity, Integer num, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11, int i12, gc gcVar, q51[] q51VarArr) {
-        super(ddVar2, activity, true, num, i10, true, d6Var, i11, i12);
-        this.f2 = ddVar;
-        this.d2 = gcVar;
-        this.e2 = q51VarArr;
+    public /* synthetic */ lc(org.telegram.ui.ActionBar.n2 n2Var, Activity activity, Canvas canvas, float f7, float f10, float f11, Paint paint, Bitmap bitmap, Paint paint2, float f12, float f13, int i10) {
+        super(activity);
+        this.a = i10;
+        this.v = n2Var;
+        this.b = canvas;
+        this.c = f7;
+        this.d = f10;
+        this.e = f11;
+        this.f = paint;
+        this.h = bitmap;
+        this.n = paint2;
+        this.r = f12;
+        this.s = f13;
     }
 
-    @Override // org.telegram.ui.z51
-    public final long getDialogId() {
-        return this.f2.a;
-    }
-
-    @Override // org.telegram.ui.z51
-    public final float getScrimDrawableTranslationY() {
-        return 0.0f;
-    }
-
-    @Override // org.telegram.ui.z51
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        this.d2.run(Long.valueOf(l4 == null ? 0L : l4.longValue()), num, tL_starGiftUnique);
-        q51 q51Var = this.e2[0];
-        if (q51Var != null) {
-            this.f2.Q = null;
-            q51Var.dismiss();
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                super.onDraw(canvas);
+                bd bdVar = (bd) this.v;
+                boolean z10 = bdVar.J;
+                Paint paint = this.n;
+                float f7 = this.e;
+                float f10 = this.d;
+                float f11 = this.c;
+                if (z10) {
+                    float f12 = bdVar.n0;
+                    if (f12 > 0.0f) {
+                        this.b.drawCircle(f11, f10, f7 * f12, this.f);
+                    }
+                    canvas.drawBitmap(this.h, 0.0f, 0.0f, paint);
+                } else {
+                    canvas.drawCircle(f11, f10, (1.0f - bdVar.n0) * f7, paint);
+                }
+                canvas.save();
+                canvas.translate(this.r, this.s);
+                bdVar.L.draw(canvas);
+                canvas.restore();
+                break;
+            case 1:
+                super.onDraw(canvas);
+                ip0 ip0Var = (ip0) this.v;
+                boolean z11 = ip0Var.S;
+                Paint paint2 = this.n;
+                float f13 = this.e;
+                float f14 = this.d;
+                float f15 = this.c;
+                if (z11) {
+                    float f16 = ip0Var.Y;
+                    if (f16 > 0.0f) {
+                        this.b.drawCircle(f15, f14, f13 * f16, this.f);
+                    }
+                    canvas.drawBitmap(this.h, 0.0f, 0.0f, paint2);
+                } else {
+                    canvas.drawCircle(f15, f14, (1.0f - ip0Var.Y) * f13, paint2);
+                }
+                canvas.save();
+                canvas.translate(this.r, this.s);
+                ip0Var.K.draw(canvas);
+                canvas.restore();
+                break;
+            default:
+                super.onDraw(canvas);
+                kc1 kc1Var = (kc1) this.v;
+                boolean a2 = kc1Var.a.a();
+                Paint paint3 = this.n;
+                float f17 = this.e;
+                float f18 = this.d;
+                float f19 = this.c;
+                if (a2) {
+                    float f20 = kc1Var.i2;
+                    if (f20 > 0.0f) {
+                        this.b.drawCircle(f19, f18, f17 * f20, this.f);
+                    }
+                    canvas.drawBitmap(this.h, 0.0f, 0.0f, paint3);
+                } else {
+                    canvas.drawCircle(f19, f18, (1.0f - kc1Var.i2) * f17, paint3);
+                }
+                canvas.save();
+                canvas.translate(this.r, this.s);
+                kc1Var.O1.draw(canvas);
+                canvas.restore();
+                break;
         }
     }
 }

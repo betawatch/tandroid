@@ -1,84 +1,46 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.voip.VoIPService;
+import java.util.Calendar;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e20 implements Runnable {
+public final /* synthetic */ class e20 implements org.telegram.ui.Components.kd0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ s50 b;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Calendar c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ e20(s50 s50Var, int i10) {
-        this.a = i10;
-        this.b = s50Var;
+    public /* synthetic */ e20(long j10, Calendar calendar, int i10, int i11) {
+        this.a = i11;
+        this.b = j10;
+        this.c = calendar;
+        this.d = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.Components.kd0
+    public final String e(int i10) {
         switch (this.a) {
             case 0:
-                s50 s50Var = this.b;
-                if (s50Var.s1() && AndroidUtilities.checkInlinePermissions(s50Var.i0) && !org.telegram.ui.Components.voip.h1.d0.V) {
-                    s50Var.dismiss();
-                    AndroidUtilities.runOnUIThread(new e20(s50Var, 4), 100L);
-                    break;
+                if (i10 == 0) {
+                    return LocaleController.getString(R.string.MessageScheduleToday);
                 }
-                break;
-            case 1:
-                s50 s50Var2 = this.b;
-                if (s50Var2.a1 != null && s50Var2.R1 && VoIPService.getSharedInstance() != null) {
-                    try {
-                        s50Var2.w.performHapticFeedback(3, 2);
-                    } catch (Exception unused) {
-                    }
-                    s50Var2.K1(1, true);
-                    AndroidUtilities.runOnUIThread(s50Var2.x2, 80L);
-                    s50Var2.R1 = false;
-                    s50Var2.S1 = true;
-                    break;
+                long j10 = (i10 * 86400000) + this.b;
+                Calendar calendar = this.c;
+                calendar.setTimeInMillis(j10);
+                if (calendar.get(1) != this.d) {
+                    return LocaleController.getInstance().getFormatterScheduleYear().format(j10);
                 }
-                break;
-            case 2:
-                s50 s50Var3 = this.b;
-                int i10 = s50Var3.T1;
-                if (i10 == 1 || i10 == 2 || i10 == 6 || i10 == 5) {
-                    s50Var3.O1(true, false);
-                    break;
-                }
-                break;
-            case 3:
-                this.b.w1();
-                break;
-            case 4:
-                org.telegram.ui.Components.voip.h1.n(this.b.i0);
-                break;
-            case 5:
-                this.b.dismiss();
-                break;
-            case 6:
-                s50 s50Var4 = this.b;
-                s50Var4.L1();
-                AndroidUtilities.runOnUIThread(s50Var4.D1, 1000L);
-                break;
-            case 7:
-                m40 m40Var = this.b.r0;
-                if (m40Var != null) {
-                    m40Var.show();
-                    break;
-                }
-                break;
-            case 8:
-                s50.v(this.b);
-                break;
-            case 9:
-                this.b.d.getMessagesController().deleteUserPhoto(null);
-                break;
+                return LocaleController.getInstance().getFormatterWeek().format(j10) + " " + LocaleController.getInstance().getFormatterScheduleDay().format(j10);
             default:
-                s50 s50Var5 = this.b;
-                s50Var5.x3 = null;
-                s50Var5.I1(true);
-                break;
+                if (i10 == 0) {
+                    return LocaleController.getString("MessageScheduleToday", R.string.MessageScheduleToday);
+                }
+                long j11 = (i10 * 86400000) + this.b;
+                Calendar calendar2 = this.c;
+                calendar2.setTimeInMillis(j11);
+                return calendar2.get(1) == this.d ? LocaleController.getInstance().getFormatterScheduleDay().format(j11) : LocaleController.getInstance().getFormatterScheduleYear().format(j11);
         }
     }
 }

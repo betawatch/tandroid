@@ -1,41 +1,75 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ka implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ TLRPC.Chat c;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ ArrayList f;
 
-    public /* synthetic */ ka(MessagesController messagesController, TLRPC.Chat chat, int i10) {
-        this.a = i10;
+    public /* synthetic */ ka(MessagesController messagesController, long j10, int i10, long j11, ArrayList arrayList, int i11) {
+        this.a = i11;
         this.b = messagesController;
-        this.c = chat;
+        this.c = j10;
+        this.e = i10;
+        this.d = j11;
+        this.f = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$processUpdateArray$416(this.c);
+                long j10 = this.d;
+                ArrayList arrayList = this.f;
+                int i10 = this.e;
+                this.b.lambda$checkUnreadReactionsInternal2$425(this.c, i10, j10, arrayList);
                 break;
             case 1:
-                this.b.lambda$processLoadedDialogs$217(this.c);
+                int i11 = this.e;
+                ArrayList arrayList2 = this.f;
+                this.b.lambda$checkUnreadPollVotesInternal2$436(this.c, this.d, i11, arrayList2);
                 break;
             case 2:
-                this.b.lambda$addOrRemoveActiveVoiceChat$60(this.c);
+                int i12 = this.e;
+                ArrayList arrayList3 = this.f;
+                this.b.lambda$checkUnreadReactionsInternal2$427(this.c, this.d, i12, arrayList3);
                 break;
             case 3:
-                this.b.lambda$putChat$57(this.c);
+                int i13 = this.e;
+                ArrayList arrayList4 = this.f;
+                this.b.lambda$checkUnreadPollVotesInternal2$438(this.c, this.d, i13, arrayList4);
                 break;
             case 4:
-                this.b.lambda$putChat$58(this.c);
+                long j11 = this.d;
+                ArrayList arrayList5 = this.f;
+                int i14 = this.e;
+                this.b.lambda$checkUnreadPollVotesInternal2$432(this.c, i14, j11, arrayList5);
+                break;
+            case 5:
+                int i15 = this.e;
+                ArrayList arrayList6 = this.f;
+                this.b.lambda$checkUnreadReactionsInternal2$431(this.c, this.d, i15, arrayList6);
                 break;
             default:
-                this.b.lambda$putChat$59(this.c);
+                int i16 = this.e;
+                ArrayList arrayList7 = this.f;
+                this.b.lambda$checkUnreadReactionsInternal2$429(this.c, this.d, i16, arrayList7);
                 break;
         }
+    }
+
+    public /* synthetic */ ka(MessagesController messagesController, long j10, long j11, int i10, ArrayList arrayList, int i11) {
+        this.a = i11;
+        this.b = messagesController;
+        this.c = j10;
+        this.d = j11;
+        this.e = i10;
+        this.f = arrayList;
     }
 }

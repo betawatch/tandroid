@@ -1,11 +1,11 @@
 package org.telegram.ui.ActionBar;
 
 import ai.x9;
+import org.telegram.ui.jn;
 import org.telegram.ui.ln;
-import org.telegram.ui.nn;
-import org.telegram.ui.qn;
+import org.telegram.ui.on;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class c5 {
     public final g6 a;
@@ -14,10 +14,10 @@ public final class c5 {
     public final boolean d;
     public boolean e;
     public x9 h;
-    public ln i;
-    public ln j;
-    public nn k;
-    public qn m;
+    public jn i;
+    public jn j;
+    public ln k;
+    public on m;
     public boolean f = true;
     public boolean g = true;
     public long l = 200;

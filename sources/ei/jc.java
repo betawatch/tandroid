@@ -15,7 +15,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class jc extends View {
     public final uj0 a;
@@ -54,7 +54,7 @@ public final class jc extends View {
         p6Var.M = AndroidUtilities.displaySize.x;
         p6Var.w(AndroidUtilities.dp(14.0f));
         p6Var.u(-1);
-        p6Var.s(AndroidUtilities.dpf2(1.33f), 0.0f, AndroidUtilities.dp(1.0f), TLObject.FLAG_30);
+        p6Var.s(AndroidUtilities.dpf2(1.33f), AndroidUtilities.dp(1.0f), TLObject.FLAG_30);
         p6Var.t(LocaleController.getString(R.string.TrashHintDrag), true, true);
         p6Var.b = 17;
     }

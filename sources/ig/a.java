@@ -9,10 +9,10 @@ import org.telegram.ui.Cells.q8;
 import org.telegram.ui.Cells.v8;
 import org.telegram.ui.Components.e5;
 import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.sn;
+import org.telegram.ui.Components.g61;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements Utilities.Callback5, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
@@ -37,22 +37,22 @@ public final /* synthetic */ class a implements Utilities.Callback5, org.telegra
 
     @Override // org.telegram.messenger.Utilities.Callback5
     public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        f61 f61Var = (f61) obj;
+        g61 g61Var = (g61) obj;
         final View view = (View) obj2;
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
         final c cVar = this.b;
-        if (cVar.d.h(f61Var)) {
+        if (cVar.d.h(g61Var)) {
             return;
         }
-        int i10 = f61Var.d;
-        if (i10 == 2 || f61Var.a == 17) {
+        int i10 = g61Var.d;
+        if (i10 == 2 || g61Var.a == 17) {
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", cVar.getUserConfig().getClientUserId());
             bundle.putInt("chatMode", 5);
             bundle.putString("quick_reply", "away");
-            cVar.presentFragment(new sn(bundle));
+            cVar.presentFragment(new qn(bundle));
             return;
         }
         if (i10 == 1) {

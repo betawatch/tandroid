@@ -7,37 +7,37 @@ import android.graphics.RectF;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.it0;
+import org.telegram.ui.gt0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class h0 extends FrameLayout {
-    public final /* synthetic */ it0 a;
+    public final /* synthetic */ gt0 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h0(it0 it0Var, Context context) {
+    public h0(gt0 gt0Var, Context context) {
         super(context);
-        this.a = it0Var;
+        this.a = gt0Var;
         setWillNotDraw(false);
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        it0 it0Var = this.a;
-        Paint paint = it0Var.B1;
-        o1 o1Var = it0Var.u1;
-        paint.setAlpha((int) ((1.0f - it0Var.D1) * o1Var.getAlpha() * 102.0f));
+        gt0 gt0Var = this.a;
+        Paint paint = gt0Var.B1;
+        o1 o1Var = gt0Var.u1;
+        paint.setAlpha((int) ((1.0f - gt0Var.D1) * o1Var.getAlpha() * 102.0f));
         RectF rectF = AndroidUtilities.rectTmp;
         o1Var.b(rectF);
-        float translationY = o1Var.getTranslationY() + it0Var.c1.getTranslationY() + o1Var.getTop() + r4.getTop();
+        float translationY = o1Var.getTranslationY() + gt0Var.c1.getTranslationY() + o1Var.getTop() + r4.getTop();
         float f7 = rectF.left;
-        t1 t1Var = it0Var.v1;
-        rectF.set(AndroidUtilities.lerp(f7, t1Var.getLeft(), it0Var.D1), AndroidUtilities.lerp(rectF.top + translationY, t1Var.getTop() - t1Var.getTranslationY(), it0Var.D1), AndroidUtilities.lerp(rectF.right, t1Var.getRight(), it0Var.D1), AndroidUtilities.lerp(translationY + rectF.bottom, t1Var.getBottom() - t1Var.getTranslationY(), it0Var.D1));
-        float dp = AndroidUtilities.dp(AndroidUtilities.lerp(32, 16, it0Var.D1));
-        Paint paint2 = it0Var.C1;
+        t1 t1Var = gt0Var.v1;
+        rectF.set(AndroidUtilities.lerp(f7, t1Var.getLeft(), gt0Var.D1), AndroidUtilities.lerp(rectF.top + translationY, t1Var.getTop() - t1Var.getTranslationY(), gt0Var.D1), AndroidUtilities.lerp(rectF.right, t1Var.getRight(), gt0Var.D1), AndroidUtilities.lerp(translationY + rectF.bottom, t1Var.getBottom() - t1Var.getTranslationY(), gt0Var.D1));
+        float dp = AndroidUtilities.dp(AndroidUtilities.lerp(32, 16, gt0Var.D1));
+        Paint paint2 = gt0Var.C1;
         int alpha = paint2.getAlpha();
-        paint2.setAlpha((int) (alpha * it0Var.D1));
+        paint2.setAlpha((int) (alpha * gt0Var.D1));
         canvas.drawRoundRect(rectF, dp, dp, paint2);
         paint2.setAlpha(alpha);
         canvas.drawRoundRect(rectF, dp, dp, paint);
@@ -46,9 +46,9 @@ public final class h0 extends FrameLayout {
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         if (motionEvent.getActionMasked() == 0) {
-            it0 it0Var = this.a;
-            if (it0Var.E1) {
-                it0Var.A0(false);
+            gt0 gt0Var = this.a;
+            if (gt0Var.E1) {
+                gt0Var.A0(false);
                 return true;
             }
         }

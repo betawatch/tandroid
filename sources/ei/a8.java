@@ -42,7 +42,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.RLottieNative;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class a8 {
     public String A;
@@ -93,7 +93,7 @@ public final class a8 {
     public TLRPC.Document c0;
     public boolean c1;
     public long d;
-    public ai.y3 d0;
+    public ai.a4 d0;
     public z7 d1;
     public long e;
     public int f;
@@ -985,7 +985,7 @@ public final class a8 {
                         tL_inputDocument.file_reference = new byte[0];
                     }
                     tL_messages_getAttachedStickers.media = tL_inputStickeredMediaDocument;
-                    this.e1 = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_getAttachedStickers, new ai.w2(this, storyItem, tL_messages_getAttachedStickers, new ai.h(this, 11), 6));
+                    this.e1 = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_getAttachedStickers, new ai.k2(this, storyItem, tL_messages_getAttachedStickers, new ai.h(this, 11), 6));
                 }
             } else if (photo.has_stickers) {
                 TLRPC.TL_inputStickeredMediaPhoto tL_inputStickeredMediaPhoto = new TLRPC.TL_inputStickeredMediaPhoto();
@@ -999,7 +999,7 @@ public final class a8 {
                     tL_inputPhoto.file_reference = new byte[0];
                 }
                 tL_messages_getAttachedStickers.media = tL_inputStickeredMediaPhoto;
-                this.e1 = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_getAttachedStickers, new ai.w2(this, storyItem, tL_messages_getAttachedStickers, new ai.h(this, 11), 6));
+                this.e1 = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_getAttachedStickers, new ai.k2(this, storyItem, tL_messages_getAttachedStickers, new ai.h(this, 11), 6));
             }
         }
     }

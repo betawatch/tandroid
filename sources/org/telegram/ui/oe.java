@@ -1,55 +1,51 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oe implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class oe implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sn b;
+    public final /* synthetic */ qn b;
 
-    public /* synthetic */ oe(sn snVar, int i10) {
+    public /* synthetic */ oe(qn qnVar, int i10) {
         this.a = i10;
-        this.b = snVar;
+        this.b = qnVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                sn snVar = this.b;
-                snVar.K8 = floatValue;
-                lm lmVar = snVar.X0;
-                if (lmVar != null) {
-                    lmVar.invalidate();
-                    snVar.x0.invalidate();
+                zj zjVar = this.b.X1;
+                if (zjVar != null) {
+                    zjVar.c(false);
                     break;
                 }
                 break;
             case 1:
-                sn snVar2 = this.b;
-                snVar2.getClass();
-                snVar2.i3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                snVar2.pc();
+                qn.a1(this.b);
                 break;
             case 2:
-                sn snVar3 = this.b;
-                snVar3.getClass();
-                snVar3.i3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                snVar3.pc();
+                this.b.j8(false, true, 0.0f);
                 break;
             case 3:
-                sn snVar4 = this.b;
-                snVar4.getClass();
-                snVar4.Ea = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                snVar4.t9();
+                this.b.j8(false, true, 0.0f);
+                break;
+            case 4:
+                this.b.j8(false, true, 0.0f);
+                break;
+            case 5:
+                this.b.j8(false, true, 0.0f);
+                break;
+            case 6:
+                this.b.j8(false, true, 0.0f);
+                break;
+            case 7:
+                this.b.j8(false, true, 0.0f);
                 break;
             default:
-                sn snVar5 = this.b;
-                snVar5.getClass();
-                snVar5.Ea = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                snVar5.t9();
+                this.b.Gb = null;
                 break;
         }
     }

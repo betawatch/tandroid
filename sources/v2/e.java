@@ -9,7 +9,7 @@ import c3.q;
 import c3.s;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class e implements q {
     public static final s v = new s();
@@ -47,8 +47,8 @@ public final class e implements q {
         if (c0Var instanceof c3.j) {
             return (c3.j) c0Var;
         }
-        if (c0Var instanceof u3.e) {
-            return ((u3.e) c0Var).a;
+        if (c0Var instanceof u3.d) {
+            return ((u3.d) c0Var).a;
         }
         return null;
     }

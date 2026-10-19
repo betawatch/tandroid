@@ -1,51 +1,31 @@
 package ai;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ey;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class j4 implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ TLObject f;
-    public final /* synthetic */ Object g;
+public final /* synthetic */ class j4 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l7 b;
+    public final /* synthetic */ pf.c c;
+    public final /* synthetic */ ug.m1 d;
 
-    public /* synthetic */ j4(k7 k7Var, pf.c cVar, org.telegram.ui.ActionBar.b2 b2Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, CharSequence charSequence) {
-        this.d = k7Var;
-        this.e = cVar;
-        this.b = b2Var;
-        this.f = tL_starGiftUnique;
-        this.c = j10;
-        this.g = charSequence;
+    public /* synthetic */ j4(l7 l7Var, pf.c cVar, ug.m1 m1Var, int i10) {
+        this.a = i10;
+        this.b = l7Var;
+        this.c = cVar;
+        this.d = m1Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new o4((k7) this.d, (pf.c) this.e, this.b, tLObject, (TL_stars.TL_starGiftUnique) this.f, tL_error, this.c, (CharSequence) this.g));
+                l7.g0(this.b, this.c, this.d, (String) obj);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new o4((ey) this.d, this.b, tLObject, (TLRPC.User) this.e, (TLRPC.Chat) this.f, this.c, tL_error, (TLRPC.TL_messages_checkHistoryImportPeer) this.g));
+                l7.i0(this.b, this.c, this.d, (String) obj);
                 break;
         }
-    }
-
-    public /* synthetic */ j4(ey eyVar, org.telegram.ui.ActionBar.b2 b2Var, TLRPC.User user, TLRPC.Chat chat, long j10, TLRPC.TL_messages_checkHistoryImportPeer tL_messages_checkHistoryImportPeer) {
-        this.d = eyVar;
-        this.b = b2Var;
-        this.e = user;
-        this.f = chat;
-        this.c = j10;
-        this.g = tL_messages_checkHistoryImportPeer;
     }
 }

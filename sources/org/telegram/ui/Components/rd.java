@@ -18,7 +18,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rd implements Runnable {
     public final /* synthetic */ int a;
@@ -38,9 +38,9 @@ public final /* synthetic */ class rd implements Runnable {
         ChatActivityEnterView chatActivityEnterView = this.b;
         switch (i10) {
             case 0:
-                org.telegram.ui.sn snVar = chatActivityEnterView.P2;
-                if (snVar != null) {
-                    snVar.presentFragment(new PremiumPreviewFragment(0, "caption_limit"));
+                org.telegram.ui.qn qnVar = chatActivityEnterView.P2;
+                if (qnVar != null) {
+                    qnVar.presentFragment(new PremiumPreviewFragment(0, "caption_limit"));
                     break;
                 }
                 break;
@@ -110,15 +110,15 @@ public final /* synthetic */ class rd implements Runnable {
                 }
                 break;
             case 8:
-                org.telegram.ui.sn snVar2 = chatActivityEnterView.P2;
-                if (snVar2 == null || snVar2.isLastFragment()) {
+                org.telegram.ui.qn qnVar2 = chatActivityEnterView.P2;
+                if (qnVar2 == null || qnVar2.isLastFragment()) {
                     chatActivityEnterView.N();
                 }
                 chatActivityEnterView.N4 = null;
                 break;
             case 9:
                 int i14 = ChatActivityEnterView.n5;
-                chatActivityEnterView.R1();
+                chatActivityEnterView.P1();
                 break;
             case 10:
                 og ogVar = chatActivityEnterView.Z2;
@@ -177,9 +177,9 @@ public final /* synthetic */ class rd implements Runnable {
                 }
                 break;
             case 20:
-                org.telegram.ui.sn snVar3 = chatActivityEnterView.P2;
+                org.telegram.ui.qn qnVar3 = chatActivityEnterView.P2;
                 TL_iv.RichMessage richMessage = chatActivityEnterView.E1;
-                if (richMessage != null && chatActivityEnterView.E0 != null && snVar3 != null) {
+                if (richMessage != null && chatActivityEnterView.E0 != null && qnVar3 != null) {
                     if (!MessagesController.getInstance(chatActivityEnterView.Q).richEditorAvailable()) {
                         TL_iv.RichMessage richMessage2 = chatActivityEnterView.E1;
                         if (richMessage2 != null && chatActivityEnterView.E0 != null) {
@@ -203,20 +203,20 @@ public final /* synthetic */ class rd implements Runnable {
                         ki.d2 d2Var = new ki.d2(richMessage);
                         d2Var.e = true;
                         d2Var.setResourceProvider(chatActivityEnterView.W3);
-                        d2Var.J = snVar3;
-                        d2Var.s = snVar3.S;
-                        d2Var.v = snVar3.Y;
+                        d2Var.J = qnVar3;
+                        d2Var.s = qnVar3.S;
+                        d2Var.v = qnVar3.Y;
                         d2Var.L = new rd(chatActivityEnterView, 24);
                         d2Var.K = new rd(chatActivityEnterView, 25);
-                        snVar3.presentFragment(d2Var);
+                        qnVar3.presentFragment(d2Var);
                         break;
                     }
                 }
                 break;
             case 21:
-                org.telegram.ui.sn snVar4 = chatActivityEnterView.P2;
-                if (snVar4 != null) {
-                    snVar4.showDialog(new sg.y0((org.telegram.ui.ActionBar.n2) snVar4, 43, true));
+                org.telegram.ui.qn qnVar4 = chatActivityEnterView.P2;
+                if (qnVar4 != null) {
+                    qnVar4.showDialog(new sg.y0((org.telegram.ui.ActionBar.n2) qnVar4, 43, true));
                     break;
                 }
                 break;
@@ -226,7 +226,7 @@ public final /* synthetic */ class rd implements Runnable {
                 break;
             case 23:
                 int i17 = ChatActivityEnterView.n5;
-                chatActivityEnterView.v1(true, true);
+                chatActivityEnterView.u1(true, true);
                 chatActivityEnterView.V = null;
                 break;
             case 24:
@@ -258,8 +258,8 @@ public final /* synthetic */ class rd implements Runnable {
                 long j10 = chatActivityEnterView.Q2;
                 String str = chatActivityEnterView.i0;
                 String str2 = chatActivityEnterView.j0;
-                org.telegram.ui.sn snVar5 = chatActivityEnterView.P2;
-                gi.t4 b10 = gi.t4.b(i20, j10, j10, str, str2, 2, 0, snVar5 == null ? 0L : snVar5.S8(), null, false, null, null, 0, false, false);
+                org.telegram.ui.qn qnVar5 = chatActivityEnterView.P2;
+                gi.t4 b10 = gi.t4.b(i20, j10, j10, str, str2, 2, 0, qnVar5 == null ? 0L : qnVar5.S8(), null, false, null, null, 0, false, false);
                 LaunchActivity launchActivity = LaunchActivity.H1;
                 if (launchActivity != null && launchActivity.P() != null && LaunchActivity.H1.P().k(b10) != null) {
                     gi.b0 b0Var2 = chatActivityEnterView.l0;
@@ -267,19 +267,19 @@ public final /* synthetic */ class rd implements Runnable {
                         b0Var2.setOpened(false);
                         break;
                     }
-                } else if (!org.telegram.ui.kb0.q(chatActivityEnterView.j0)) {
+                } else if (!org.telegram.ui.ib0.q(chatActivityEnterView.j0)) {
                     TLRPC.User user = MessagesController.getInstance(chatActivityEnterView.Q).getUser(Long.valueOf(chatActivityEnterView.Q2));
                     String restrictionReason = MessagesController.getInstance(chatActivityEnterView.Q).getRestrictionReason(user != null ? user.restriction_reason : null);
                     if (!TextUtils.isEmpty(restrictionReason)) {
                         MessagesController.getInstance(chatActivityEnterView.Q);
-                        MessagesController.showCantOpenAlert(snVar5, restrictionReason);
+                        MessagesController.showCantOpenAlert(qnVar5, restrictionReason);
                         break;
                     } else {
                         gi.d3 d3Var = new gi.d3(chatActivityEnterView.getContext(), chatActivityEnterView.W3);
                         d3Var.x(false);
                         d3Var.A0 = true;
                         d3Var.k0 = chatActivityEnterView.O2;
-                        d3Var.t(snVar5, b10);
+                        d3Var.t(qnVar5, b10);
                         d3Var.show();
                         gi.b0 b0Var3 = chatActivityEnterView.l0;
                         if (b0Var3 != null) {

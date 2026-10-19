@@ -2,7 +2,7 @@ package k2;
 
 import m4.m1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e0 implements e2.o, e2.j {
     public final /* synthetic */ long a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class e0 implements e2.o, e2.j {
         p0 p0Var = (p0) obj;
         t0 t0Var = p0Var.b;
         if (p0Var.equals(t0Var.j) && (xVar = t0Var.n) != null) {
-            xVar.e(this.a);
+            xVar.a(this.a);
         }
     }
 }

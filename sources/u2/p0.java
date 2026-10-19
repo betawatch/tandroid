@@ -1,14 +1,14 @@
 package u2;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x0 b;
+    public final /* synthetic */ w0 b;
 
-    public /* synthetic */ p0(x0 x0Var, int i10) {
+    public /* synthetic */ p0(w0 w0Var, int i10) {
         this.a = i10;
-        this.b = x0Var;
+        this.b = w0Var;
     }
 
     @Override // java.lang.Runnable
@@ -21,11 +21,11 @@ public final /* synthetic */ class p0 implements Runnable {
                 this.b.w();
                 break;
             default:
-                x0 x0Var = this.b;
-                if (!x0Var.h0) {
-                    d0 d0Var = x0Var.I;
+                w0 w0Var = this.b;
+                if (!w0Var.h0) {
+                    d0 d0Var = w0Var.I;
                     d0Var.getClass();
-                    d0Var.v(x0Var);
+                    d0Var.h(w0Var);
                     break;
                 }
                 break;

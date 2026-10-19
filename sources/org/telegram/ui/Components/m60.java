@@ -54,7 +54,7 @@ import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class m60 extends r60 implements NotificationCenter.NotificationCenterDelegate {
     public static final int[] m1 = {285904780, -1394191079};
@@ -92,7 +92,7 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
     public float R0;
     public VideoEditedInfo S;
     public float S0;
-    public a81 T;
+    public b81 T;
     public boolean T0;
     public Bitmap U;
     public boolean U0;
@@ -136,7 +136,7 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
     public final Size p0;
     public TextureView q0;
     public final p50 r;
-    public final org.telegram.ui.gl r0;
+    public final org.telegram.ui.el r0;
     public final RectF s;
     public final boolean s0;
     public CameraSession t0;
@@ -248,7 +248,7 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
                                 m60Var.h.setCameraDistance(r2.getMeasuredHeight() * 8.0f);
                                 m60Var.r0.setCameraDistance(r2.getMeasuredHeight() * 8.0f);
                                 ofFloat.addUpdateListener(new r50(m60Var, zArr, n50Var));
-                                ofFloat.addListener(new ci.o3(m60Var, zArr, n50Var, 6));
+                                ofFloat.addListener(new ci.p3(m60Var, zArr, n50Var, 6));
                                 ofFloat.start();
                                 break;
                             }
@@ -308,7 +308,7 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
                                 m60Var.h.setCameraDistance(r2.getMeasuredHeight() * 8.0f);
                                 m60Var.r0.setCameraDistance(r2.getMeasuredHeight() * 8.0f);
                                 ofFloat.addUpdateListener(new r50(m60Var, zArr, n50Var));
-                                ofFloat.addListener(new ci.o3(m60Var, zArr, n50Var, 6));
+                                ofFloat.addListener(new ci.p3(m60Var, zArr, n50Var, 6));
                                 ofFloat.start();
                                 break;
                             }
@@ -338,10 +338,10 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
         addView(imageView, w7.z5.e(48, 48, 17));
         Paint paint = new Paint(1);
         paint.setColor(i0.a.o(-16777216, 40));
-        org.telegram.ui.gl glVar = new org.telegram.ui.gl(this, getContext(), paint);
-        this.r0 = glVar;
+        org.telegram.ui.el elVar = new org.telegram.ui.el(this, getContext(), paint);
+        this.r0 = elVar;
         int i14 = AndroidUtilities.roundPlayingMessageSize;
-        addView(glVar, new FrameLayout.LayoutParams(i14, i14, 17));
+        addView(elVar, new FrameLayout.LayoutParams(i14, i14, 17));
         this.g1 = false;
         setVisibility(4);
     }
@@ -391,9 +391,9 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
     @Override // org.telegram.ui.Components.r60
     public final void a(boolean z10) {
         t();
-        a81 a81Var = this.T;
-        if (a81Var != null) {
-            a81Var.H();
+        b81 b81Var = this.T;
+        if (b81Var != null) {
+            b81Var.H();
             this.T = null;
         }
         if (this.q0 == null) {
@@ -429,8 +429,8 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
 
     @Override // org.telegram.ui.Components.r60
     public final void b(float f7, int i10) {
-        a81 a81Var = this.T;
-        if (a81Var == null) {
+        b81 b81Var = this.T;
+        if (b81Var == null) {
             return;
         }
         if (i10 == 0) {
@@ -440,7 +440,7 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
             t();
             this.T.B();
         } else if (i10 == 2) {
-            a81Var.L((long) (f7 * a81Var.p()), false);
+            b81Var.L((long) (f7 * b81Var.p()), false);
         }
     }
 
@@ -520,9 +520,9 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
             return;
         }
         t();
-        a81 a81Var = this.T;
-        if (a81Var != null) {
-            a81Var.H();
+        b81 b81Var = this.T;
+        if (b81Var != null) {
+            b81Var.H();
             this.T = null;
         }
         int i14 = this.f;
@@ -620,7 +620,7 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
         MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, 0, 0L, this.f0.getAbsolutePath(), 0, true, 0, 0, 0L);
         photoEntry.ttl = i12;
         photoEntry.effectId = j10;
-        this.n.r(photoEntry, this.S, z10, i11, 0, false, j11);
+        this.n.s(photoEntry, this.S, z10, i11, 0, false, j11);
         if (i11 != 0) {
             r(false, false);
         }
@@ -628,9 +628,9 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
     }
 
     @Override // org.telegram.ui.Components.r60
-    public final void g(bh.b bVar, org.telegram.ui.dj djVar) {
+    public final void g(bh.b bVar, org.telegram.ui.bj bjVar) {
         LinearLayout linearLayout = this.b1;
-        dh.d c10 = bVar.c(linearLayout, djVar, false);
+        dh.d c10 = bVar.c(linearLayout, bjVar, false);
         c10.p(AndroidUtilities.dp(6.0f));
         c10.q(AndroidUtilities.dp(21.0f));
         linearLayout.setBackground(c10);
@@ -797,9 +797,9 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
             if (f60Var != null) {
                 f60Var.T.sendMessage(f60Var.T.obtainMessage(5));
                 c(false);
-                a81 a81Var = this.T;
-                if (a81Var != null) {
-                    a81Var.H();
+                b81 b81Var = this.T;
+                if (b81Var != null) {
+                    b81Var.H();
                     this.T = null;
                 }
                 h(true);
@@ -1027,9 +1027,9 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
             int i12 = ((float) (View.MeasureSpec.getSize(i11) - getPaddingBottom())) > ((float) View.MeasureSpec.getSize(i10)) * 1.3f ? AndroidUtilities.roundPlayingMessageSize : AndroidUtilities.roundMessageSize;
             if (i12 != this.X0) {
                 this.X0 = i12;
-                org.telegram.ui.gl glVar = this.r0;
-                ViewGroup.LayoutParams layoutParams = glVar.getLayoutParams();
-                ViewGroup.LayoutParams layoutParams2 = glVar.getLayoutParams();
+                org.telegram.ui.el elVar = this.r0;
+                ViewGroup.LayoutParams layoutParams = elVar.getLayoutParams();
+                ViewGroup.LayoutParams layoutParams2 = elVar.getLayoutParams();
                 int i13 = this.X0;
                 layoutParams2.height = i13;
                 layoutParams.width = i13;
@@ -1040,7 +1040,7 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
                 layoutParams4.height = i14;
                 layoutParams3.width = i14;
                 ((FrameLayout.LayoutParams) this.G.getLayoutParams()).topMargin = (this.X0 / 2) - AndroidUtilities.dp(24.0f);
-                glVar.setRoundRadius(this.X0 / 2);
+                elVar.setRoundRadius(this.X0 / 2);
                 q50Var.invalidateOutline();
             }
             this.Y0 = false;
@@ -1064,12 +1064,12 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        a81 a81Var;
+        b81 b81Var;
         if (motionEvent.getAction() == 0 && motionEvent.getY() > getMeasuredHeight() - getPaddingBottom()) {
             return false;
         }
-        if (motionEvent.getAction() == 0 && this.n != null && (a81Var = this.T) != null) {
-            boolean x10 = a81Var.x();
+        if (motionEvent.getAction() == 0 && this.n != null && (b81Var = this.T) != null) {
+            boolean x10 = b81Var.x();
             this.T.O(!x10);
             AnimatorSet animatorSet = this.L;
             if (animatorSet != null) {
@@ -1162,7 +1162,7 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
     public final void r(boolean z10, boolean z11) {
         n60 n60Var = this.a;
         if (n60Var != null) {
-            ((org.telegram.ui.re) n60Var).b.wc.a(z10, true);
+            ((org.telegram.ui.pe) n60Var).b.wc.a(z10, true);
         }
         AnimatorSet animatorSet = this.e0;
         if (animatorSet != null) {
@@ -1173,11 +1173,11 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
         if (pipRoundVideoView != null) {
             pipRoundVideoView.e(!z10);
         }
-        org.telegram.ui.gl glVar = this.r0;
+        org.telegram.ui.el elVar = this.r0;
         q50 q50Var = this.h;
         if (z10 && !this.Q0) {
             q50Var.setTranslationX(0.0f);
-            glVar.setTranslationX(0.0f);
+            elVar.setTranslationX(0.0f);
             this.E0 = z11 ? 0.0f : getMeasuredHeight() / 2.0f;
             w();
         }
@@ -1205,7 +1205,7 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
         Property property3 = View.SCALE_Y;
         ObjectAnimator ofFloat6 = ObjectAnimator.ofFloat(q50Var, (Property<q50, Float>) property3, f10);
         Property property4 = View.TRANSLATION_X;
-        animatorSet2.playTogether(ofFloat2, ofFloat3, ofInt, ofFloat4, ofFloat5, ofFloat6, ObjectAnimator.ofFloat(q50Var, (Property<q50, Float>) property4, dp), ObjectAnimator.ofFloat(glVar, (Property<org.telegram.ui.gl, Float>) property, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(glVar, (Property<org.telegram.ui.gl, Float>) property2, z10 ? 1.0f : 0.1f), ObjectAnimator.ofFloat(glVar, (Property<org.telegram.ui.gl, Float>) property3, z10 ? 1.0f : 0.1f), ObjectAnimator.ofFloat(glVar, (Property<org.telegram.ui.gl, Float>) property4, dp), ofFloat);
+        animatorSet2.playTogether(ofFloat2, ofFloat3, ofInt, ofFloat4, ofFloat5, ofFloat6, ObjectAnimator.ofFloat(q50Var, (Property<q50, Float>) property4, dp), ObjectAnimator.ofFloat(elVar, (Property<org.telegram.ui.el, Float>) property, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(elVar, (Property<org.telegram.ui.el, Float>) property2, z10 ? 1.0f : 0.1f), ObjectAnimator.ofFloat(elVar, (Property<org.telegram.ui.el, Float>) property3, z10 ? 1.0f : 0.1f), ObjectAnimator.ofFloat(elVar, (Property<org.telegram.ui.el, Float>) property4, dp), ofFloat);
         if (z10) {
             setTranslationX(0.0f);
         } else {
@@ -1242,21 +1242,21 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
         this.b1.setAlpha(0.0f);
         q50 q50Var = this.h;
         q50Var.setAlpha(0.0f);
-        org.telegram.ui.gl glVar = this.r0;
-        glVar.setAlpha(0.0f);
+        org.telegram.ui.el elVar = this.r0;
+        elVar.setAlpha(0.0f);
         ImageView imageView = this.G;
         imageView.setAlpha(0.0f);
         imageView.setScaleX(1.0f);
         imageView.setScaleY(1.0f);
         q50Var.setScaleX(this.g1 ? 1.0f : 0.1f);
         q50Var.setScaleY(this.g1 ? 1.0f : 0.1f);
-        glVar.setScaleX(this.g1 ? 1.0f : 0.1f);
-        glVar.setScaleY(this.g1 ? 1.0f : 0.1f);
+        elVar.setScaleX(this.g1 ? 1.0f : 0.1f);
+        elVar.setScaleY(this.g1 ? 1.0f : 0.1f);
         if (q50Var.getMeasuredWidth() != 0) {
             q50Var.setPivotX(q50Var.getMeasuredWidth() / 2);
             q50Var.setPivotY(q50Var.getMeasuredHeight() / 2);
-            glVar.setPivotX(glVar.getMeasuredWidth() / 2);
-            glVar.setPivotY(glVar.getMeasuredHeight() / 2);
+            elVar.setPivotX(elVar.getMeasuredWidth() / 2);
+            elVar.setPivotY(elVar.getMeasuredHeight() / 2);
         }
         try {
             if (i10 == 0) {

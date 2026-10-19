@@ -11,8 +11,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.g80;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class g7 extends yh.g1 {
     public TL_wallet.nftItem o0;
@@ -20,6 +21,19 @@ public final class g7 extends yh.g1 {
     public float q0;
     public boolean r0;
     public ValueAnimator s0;
+
+    @Override // yh.g1
+    public final void a(g80 g80Var, Canvas canvas, float f7, float f10, float f11) {
+        if (this.q0 == 1.0f) {
+            super.a(g80Var, canvas, f7, f10, f11);
+            return;
+        }
+        canvas.save();
+        float f12 = this.q0;
+        canvas.scale(f12, f12, f7 / 2.0f, f10 / 2.0f);
+        super.a(g80Var, canvas, f7, f10, f11);
+        canvas.restore();
+    }
 
     @Override // android.view.View
     public final void draw(Canvas canvas) {
@@ -110,7 +124,7 @@ public final class g7 extends yh.g1 {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.q0, f7);
         this.s0 = ofFloat;
-        ofFloat.addUpdateListener(new v2(this, 6));
+        ofFloat.addUpdateListener(new b3(this, 5));
         if (overshootInterpolator != null) {
             this.s0.setInterpolator(overshootInterpolator);
         }

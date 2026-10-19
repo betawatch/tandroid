@@ -5,7 +5,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.view.View;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class m6 {
     public final w5 a;
@@ -42,11 +42,11 @@ public final class m6 {
         }
         textPaint.setAlpha(255);
         if (p6Var.U) {
-            textPaint.setShadowLayer(p6Var.V, p6Var.W, p6Var.X, p6Var.Y);
+            textPaint.setShadowLayer(p6Var.V, 0.0f, p6Var.W, p6Var.X);
         }
         int saveLayerAlpha = max < 255 ? canvas.saveLayerAlpha(null, max, 31) : -1;
         this.b.draw(canvas);
-        a6.drawAnimatedEmojis(canvas, this.b, this.a, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, p6Var.b0);
+        a6.drawAnimatedEmojis(canvas, this.b, this.a, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, p6Var.a0);
         if (saveLayerAlpha != -1) {
             canvas.restoreToCount(saveLayerAlpha);
         }

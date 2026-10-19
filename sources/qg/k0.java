@@ -1,21 +1,9 @@
 package qg;
 
-import java.io.RandomAccessFile;
+import android.graphics.Typeface;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class k0 {
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-
-    public k0(RandomAccessFile randomAccessFile) {
-        randomAccessFile.readUnsignedShort();
-        this.a = randomAccessFile.readUnsignedShort();
-        randomAccessFile.readUnsignedShort();
-        this.b = randomAccessFile.readUnsignedShort();
-        this.c = randomAccessFile.readUnsignedShort();
-        this.d = randomAccessFile.readUnsignedShort();
-    }
+public interface k0 {
+    Typeface a();
 }

@@ -14,7 +14,7 @@ import androidx.appcompat.widget.ActionMenuView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class i implements l.x {
     public int E;
@@ -39,7 +39,7 @@ public final class i implements l.x {
     public final int f = R.layout.abc_action_menu_layout;
     public final int h = R.layout.abc_action_menu_item_layout;
     public final SparseBooleanArray H = new SparseBooleanArray();
-    public final k0.b M = new k0.b(this, 5);
+    public final k2.w0 M = new k2.w0(this, 4);
 
     public i(Context context) {
         this.a = context;
@@ -436,7 +436,7 @@ public final class i implements l.x {
                 }
                 l.w wVar = this.e;
                 if (wVar != null) {
-                    wVar.u(d0Var);
+                    wVar.r(d0Var);
                 }
                 return true;
             }

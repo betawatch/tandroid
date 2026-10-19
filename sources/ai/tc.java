@@ -4,9 +4,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.a90;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g61;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class tc implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -25,13 +25,13 @@ public final /* synthetic */ class tc implements Utilities.Callback2 {
     public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                vc.R((vc) this.c, (f61) this.d, this.b, (Boolean) obj, (String) obj2);
+                vc.R((vc) this.c, (g61) this.d, this.b, (Boolean) obj, (String) obj2);
                 break;
             case 1:
                 a90.n((a90) this.c, this.b, (TLRPC.TL_messages_importChatInvite) this.d, (TLRPC.ChatInviteJoinResult) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                yh.f4.W((yh.f4) this.c, (TL_stars.TL_starGiftUnique) this.d, this.b, (h6) obj, (pf.c) obj2);
+                yh.f4.W((yh.f4) this.c, (TL_stars.TL_starGiftUnique) this.d, this.b, (i6) obj, (pf.c) obj2);
                 break;
         }
     }

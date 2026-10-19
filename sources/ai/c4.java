@@ -1,64 +1,48 @@
 package ai;
 
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.sv0;
-import org.telegram.ui.gh;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.i80;
+import org.telegram.ui.Components.r31;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c4 implements Utilities.Callback {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
+public final /* synthetic */ class c4 implements org.telegram.ui.ActionBar.a2, MessagesController.IsInChatCheckedCallback {
+    public final /* synthetic */ long a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
+    public final /* synthetic */ TLObject e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ c4(int i10, long j10, TLRPC.Document document) {
-        this.b = i10;
-        this.c = j10;
-        this.d = document;
+    public /* synthetic */ c4(l7 l7Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, TLRPC.PaymentForm paymentForm, TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails tL_inputInvoiceStarGiftDropOriginalDetails, long j10, CharSequence charSequence) {
+        this.b = l7Var;
+        this.c = tL_starGiftUnique;
+        this.d = paymentForm;
+        this.e = tL_inputInvoiceStarGiftDropOriginalDetails;
+        this.a = j10;
+        this.f = charSequence;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        TLRPC.StickerSet stickerSet;
-        int i10 = this.a;
-        int i11 = this.b;
-        long j10 = this.c;
-        Object obj2 = this.d;
-        int i12 = 0;
-        switch (i10) {
-            case 0:
-                TLRPC.Document document = (TLRPC.Document) obj2;
-                if (((Boolean) obj).booleanValue()) {
-                    ga.y(i11, false).Q(j10);
-                    AndroidUtilities.runOnUIThread(new a3.l0(new l4(j10, i12), document, LocaleController.getString(R.string.Gift2MovedToProfile), 8));
-                    break;
-                }
-                break;
-            case 1:
-                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj;
-                AndroidUtilities.runOnUIThread(new gh(26, (org.telegram.ui.Components.qc) obj2, (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) ? LocaleController.getString(R.string.AddEmojiNotFound) : i11 == 1 ? AndroidUtilities.replaceTags(LocaleController.formatString("TopicContainsEmojiPackSingle", R.string.TopicContainsEmojiPackSingle, stickerSet.title)) : i11 == 2 ? AndroidUtilities.replaceTags(LocaleController.formatString("StoryContainsEmojiPackSingle", R.string.StoryContainsEmojiPackSingle, stickerSet.title)) : AndroidUtilities.replaceTags(LocaleController.formatString("MessageContainsEmojiPackSingle", R.string.MessageContainsEmojiPackSingle, stickerSet.title))), Math.max(1L, 750 - (System.currentTimeMillis() - j10)));
-                break;
-            default:
-                ((sv0) obj2).getStoriesController().b(i11, j10, (ArrayList) obj);
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        l7.b0((l7) this.b, (TL_stars.TL_starGiftUnique) this.c, (TLRPC.PaymentForm) this.d, (TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails) this.e, this.a, (CharSequence) this.f, b2Var);
     }
 
-    public /* synthetic */ c4(int i10, org.telegram.ui.Components.qc qcVar, long j10) {
-        this.b = i10;
-        this.d = qcVar;
-        this.c = j10;
+    @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
+    public void run(boolean z10, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
+        AndroidUtilities.runOnUIThread(new j((r31) this.b, z10, (org.telegram.ui.ActionBar.e1) this.c, (i80) this.d, this.a, (TLRPC.User) this.e, (TLRPC.Chat) this.f));
     }
 
-    public /* synthetic */ c4(sv0 sv0Var, long j10, int i10) {
-        this.d = sv0Var;
-        this.c = j10;
-        this.b = i10;
+    public /* synthetic */ c4(r31 r31Var, org.telegram.ui.ActionBar.e1 e1Var, i80 i80Var, long j10, TLRPC.User user, TLRPC.Chat chat) {
+        this.b = r31Var;
+        this.c = e1Var;
+        this.d = i80Var;
+        this.a = j10;
+        this.e = user;
+        this.f = chat;
     }
 }

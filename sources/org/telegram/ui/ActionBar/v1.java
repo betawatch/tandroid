@@ -11,11 +11,11 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.v70;
 import org.telegram.ui.UsersSelectActivity;
-import org.telegram.ui.eg0;
-import org.telegram.ui.t70;
-import org.telegram.ui.xm0;
+import org.telegram.ui.dg0;
+import org.telegram.ui.r70;
+import org.telegram.ui.vm0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class v1 extends ScrollView {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final class v1 extends ScrollView {
         switch (this.a) {
             case 3:
                 int action = motionEvent.getAction();
-                float f7 = ((t70) this.b).b.e;
+                float f7 = ((r70) this.b).b.e;
                 float y3 = motionEvent.getY();
                 if (action != 0 || y3 <= f7) {
                     return super.dispatchTouchEvent(motionEvent);
@@ -88,7 +88,7 @@ public final class v1 extends ScrollView {
                 super.onMeasure(i10, i11);
                 break;
             case 5:
-                ((xm0) this.b).s0 = View.MeasureSpec.getSize(i11) - AndroidUtilities.dp(30.0f);
+                ((vm0) this.b).s0 = View.MeasureSpec.getSize(i11) - AndroidUtilities.dp(30.0f);
                 super.onMeasure(i10, i11);
                 break;
         }
@@ -108,24 +108,24 @@ public final class v1 extends ScrollView {
     public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
         switch (this.a) {
             case 3:
-                t70 t70Var = (t70) this.b;
-                if (!t70Var.v) {
+                r70 r70Var = (r70) this.b;
+                if (!r70Var.v) {
                     rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-                    rect.top = org.telegram.messenger.g0.C(20.0f, t70Var.I, rect.top);
-                    rect.bottom = org.telegram.messenger.g0.C(50.0f, t70Var.I, rect.bottom);
+                    rect.top = org.telegram.messenger.g0.C(20.0f, r70Var.I, rect.top);
+                    rect.bottom = org.telegram.messenger.g0.C(50.0f, r70Var.I, rect.bottom);
                     break;
                 } else {
-                    t70Var.v = false;
+                    r70Var.v = false;
                     break;
                 }
             case 4:
-                int i10 = ((eg0) this.b).a;
+                int i10 = ((dg0) this.b).a;
                 if (i10 == 1 || i10 == 2 || i10 == 4) {
                     rect.bottom = AndroidUtilities.dp(40.0f) + rect.bottom;
                 }
                 break;
             case 5:
-                int i11 = ((xm0) this.b).I1;
+                int i11 = ((vm0) this.b).I1;
                 if (i11 == 1 || i11 == 2 || i11 == 4) {
                     rect.bottom = AndroidUtilities.dp(40.0f) + rect.bottom;
                 }

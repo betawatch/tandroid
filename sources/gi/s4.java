@@ -8,44 +8,44 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.jw0;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.t61;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class s4 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public final long a;
     public org.telegram.ui.ActionBar.g2 b;
-    public a71 c;
+    public b71 c;
 
     public s4(long j10) {
         super(null);
         this.a = j10;
     }
 
-    public final void U(ArrayList arrayList, s61 s61Var) {
+    public final void U(ArrayList arrayList, t61 t61Var) {
         ai.i0 e = ai.k0.g(this.currentAccount).e(this.a);
         ArrayList arrayList2 = e.e;
         for (int i10 = 0; i10 < arrayList2.size(); i10++) {
             Object obj = arrayList2.get(i10);
             int i11 = q3.a;
-            f61 J = f61.J(q3.class);
+            g61 J = g61.J(q3.class);
             J.G = obj;
             J.r = false;
             arrayList.add(J);
         }
         if (e.h) {
-            arrayList.add(f61.n(29));
-            arrayList.add(f61.n(29));
-            arrayList.add(f61.n(29));
+            arrayList.add(g61.n(29));
+            arrayList.add(g61.n(29));
+            arrayList.add(g61.n(29));
         }
     }
 
-    public final void V(f61 f61Var) {
-        Object obj = f61Var.G;
+    public final void V(g61 g61Var) {
+        Object obj = g61Var.G;
         if (obj instanceof TL_payments.starRefProgram) {
             u3.H0(getParentActivity(), this.currentAccount, (TL_payments.starRefProgram) obj, this.a, this.resourceProvider, false);
         }
@@ -67,19 +67,19 @@ public final class s4 extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.actionBar.B(h6.x0(null, h6.z8, false), false);
         this.actionBar.setTitleColor(h6.x0(null, i10, false));
         this.actionBar.setTitle(LocaleController.getString(R.string.ChannelAffiliatePrograms));
-        jw0 jw0Var = new jw0(context, null);
-        a71 a71Var = new a71(this, new ai.q(this, 29), new e1.c(this, 12), null);
-        this.c = a71Var;
-        jw0Var.addView(a71Var, z5.e(-1, -1, 119));
-        this.fragmentView = jw0Var;
-        return jw0Var;
+        kw0 kw0Var = new kw0(context, null);
+        b71 b71Var = new b71(this, new ai.q(this, 29), new e1.c(this, 12), null);
+        this.c = b71Var;
+        kw0Var.addView(b71Var, z5.e(-1, -1, 119));
+        this.fragmentView = kw0Var;
+        return kw0Var;
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        a71 a71Var;
-        if (i10 == NotificationCenter.channelSuggestedBotsUpdate && ((Long) objArr[0]).longValue() == this.a && (a71Var = this.c) != null && (a71Var.getAdapter() instanceof s61)) {
-            ((s61) this.c.getAdapter()).N(true);
+        b71 b71Var;
+        if (i10 == NotificationCenter.channelSuggestedBotsUpdate && ((Long) objArr[0]).longValue() == this.a && (b71Var = this.c) != null && (b71Var.getAdapter() instanceof t61)) {
+            ((t61) this.c.getAdapter()).N(true);
         }
     }
 
@@ -87,7 +87,7 @@ public final class s4 extends org.telegram.ui.ActionBar.n2 implements Notificati
     public final boolean isLightStatusBar() {
         if (getLastStoryViewer() == null || getLastStoryViewer().H0) {
             int x02 = h6.x0(null, h6.d6, false);
-            if (this.actionBar.s()) {
+            if (this.actionBar.t()) {
                 x02 = h6.x0(null, h6.w8, false);
             }
             if (i0.a.h(x02) > 0.699999988079071d) {

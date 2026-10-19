@@ -17,30 +17,30 @@ import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
-import org.telegram.ui.f70;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.d70;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class ed extends e61 {
+public final class ed extends f61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        e61.setup(new ed());
+        f61.setup(new ed());
     }
 
-    @Override // org.telegram.ui.Components.e61
-    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
+    @Override // org.telegram.ui.Components.f61
+    public final void bindView(View view, g61 g61Var, boolean z10, t61 t61Var, b71 b71Var) {
         String userName;
         boolean z11;
         boolean z12;
         org.telegram.ui.ActionBar.j5 j5Var;
         fd fdVar = (fd) view;
-        TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) f61Var.G;
+        TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) g61Var.G;
         org.telegram.ui.ActionBar.j5 j5Var2 = fdVar.d;
         org.telegram.ui.Components.w9 w9Var = fdVar.c;
         org.telegram.ui.ActionBar.d6 d6Var = fdVar.b;
@@ -75,14 +75,14 @@ public final class ed extends e61 {
             textView3.setVisibility(0);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
             if (starsSubscription.photo != null) {
-                f70 f70Var = new f70(textView3, 14.0f, i10);
-                f70Var.a(4.0f);
-                f70Var.f = false;
+                d70 d70Var = new d70(textView3, 14.0f, i10);
+                d70Var.a(4.0f);
+                d70Var.f = false;
                 SpannableString spannableString = new SpannableString("x");
                 j5Var = j5Var2;
                 z12 = z11;
-                spannableString.setSpan(f70Var, 0, 1, 33);
-                f70Var.b.setImage(ImageLocation.getForWebFile(WebFile.createWithWebDocument(starsSubscription.photo)), "14_14", null, null, 0, 0);
+                spannableString.setSpan(d70Var, 0, 1, 33);
+                d70Var.b.setImage(ImageLocation.getForWebFile(WebFile.createWithWebDocument(starsSubscription.photo)), "14_14", null, null, 0, 0);
                 spannableStringBuilder.append((CharSequence) spannableString).append((CharSequence) " ");
             } else {
                 j5Var = j5Var2;
@@ -124,22 +124,22 @@ public final class ed extends e61 {
         fdVar.setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     public final View createView(Context context, im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
         fd fdVar = (fd) getCached();
         return fdVar != null ? fdVar : new fd(context, i10, d6Var);
     }
 
-    @Override // org.telegram.ui.Components.e61
-    public final boolean equals(f61 f61Var, f61 f61Var2) {
-        if (f61Var2 == null) {
+    @Override // org.telegram.ui.Components.f61
+    public final boolean equals(g61 g61Var, g61 g61Var2) {
+        if (g61Var2 == null) {
             return false;
         }
-        Object obj = f61Var.G;
+        Object obj = g61Var.G;
         if (!(obj instanceof TL_stars.StarsSubscription)) {
             return false;
         }
-        Object obj2 = f61Var2.G;
+        Object obj2 = g61Var2.G;
         if (obj2 instanceof TL_stars.StarsSubscription) {
             return TextUtils.equals(((TL_stars.StarsSubscription) obj).id, ((TL_stars.StarsSubscription) obj2).id);
         }

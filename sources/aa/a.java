@@ -4,7 +4,7 @@ import ab.g0;
 import ab.m;
 import ab.r0;
 import ab.t;
-import ai.k7;
+import ai.l7;
 import android.net.Uri;
 import android.os.Bundle;
 import b2.a0;
@@ -33,11 +33,11 @@ import java.util.ArrayList;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.xf1;
+import org.telegram.ui.vf1;
 import r9.d;
 import v7.b8;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements d, a2, k, NativeInstance.AudioLevelsCallback {
     public final /* synthetic */ int a;
@@ -272,10 +272,10 @@ public final /* synthetic */ class a implements d, a2, k, NativeInstance.AudioLe
     public void g(b2 b2Var, int i10) {
         switch (this.a) {
             case 13:
-                int i11 = k7.A1;
+                int i11 = l7.A1;
                 break;
             default:
-                k7.x2(new xf1(6, null));
+                l7.E2(new vf1(6, null));
                 break;
         }
     }
@@ -310,7 +310,7 @@ public final /* synthetic */ class a implements d, a2, k, NativeInstance.AudioLe
         }
     }
 
-    public /* synthetic */ a(k7 k7Var) {
+    public /* synthetic */ a(l7 l7Var) {
         this.a = 14;
     }
 

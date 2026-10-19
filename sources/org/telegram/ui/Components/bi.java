@@ -8,7 +8,7 @@ import android.view.KeyEvent;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class bi implements TextWatcher {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final class bi implements TextWatcher {
                 tiVar.e.a(codePointCount > 0, true);
                 int i11 = tiVar.K;
                 if (i11 <= 0 || (i10 = i11 - tiVar.L) > 100) {
-                    q6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new org.telegram.ui.pq(this, 9));
+                    q6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new org.telegram.ui.nq(this, 9));
                     q6Var.setAlpha(0.0f);
                     z10 = true;
                 } else {

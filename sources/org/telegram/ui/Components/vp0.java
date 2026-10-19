@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.view.View;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vp0 implements o1.g {
     public final /* synthetic */ int a;
@@ -22,10 +22,10 @@ public final /* synthetic */ class vp0 implements o1.g {
     public final void a(o1.h hVar, float f7, float f10) {
         switch (this.a) {
             case 0:
-                ((dr0) this.c).R0((org.telegram.ui.Cells.e7) this.d, this.b, f7 / 1000.0f);
+                ((er0) this.c).S0((org.telegram.ui.Cells.e7) this.d, this.b, f7 / 1000.0f);
                 break;
             default:
-                ((kq0) this.c).d.R0(this.d, this.b, f7 / 1000.0f);
+                ((kq0) this.c).d.S0(this.d, this.b, f7 / 1000.0f);
                 break;
         }
     }

@@ -20,11 +20,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.iu;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.m11;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.n11;
 import org.telegram.ui.Components.r90;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class h1 extends iu {
     public boolean E;
@@ -71,7 +71,7 @@ public final class h1 extends iu {
                 }
                 g1 g1Var = h1Var.c;
                 if (g1Var != null && charSequence != null && i11 > i10 && i12 == i13) {
-                    g1Var.D(charSequence.subSequence(i10, i11));
+                    g1Var.x(charSequence.subSequence(i10, i11));
                 }
                 return spanned.subSequence(i12, i13);
             }
@@ -111,7 +111,7 @@ public final class h1 extends iu {
     }
 
     @Override // org.telegram.ui.Components.iu
-    public final l61 createUrlSpan(String str) {
+    public final m61 createUrlSpan(String str) {
         return e6.k(str);
     }
 
@@ -129,10 +129,10 @@ public final class h1 extends iu {
                     p();
                     return true;
                 }
-                this.c.l(this);
+                this.c.k(this);
             }
         } else if (keyEvent.getAction() == 0 && (g1Var = this.c) != null) {
-            g1Var.Q(keyEvent.isShiftPressed());
+            g1Var.M(keyEvent.isShiftPressed());
             return true;
         }
         return true;
@@ -249,15 +249,15 @@ public final class h1 extends iu {
                 this.F = null;
                 if (text instanceof Spanned) {
                     Spanned spanned = (Spanned) text;
-                    m11[] m11VarArr = (m11[]) spanned.getSpans(0, spanned.length(), m11.class);
-                    int length = m11VarArr.length;
+                    n11[] n11VarArr = (n11[]) spanned.getSpans(0, spanned.length(), n11.class);
+                    int length = n11VarArr.length;
                     int i11 = 0;
                     while (i11 < length) {
-                        m11 m11Var = m11VarArr[i11];
-                        int i12 = m11Var.b.a;
+                        n11 n11Var = n11VarArr[i11];
+                        int i12 = n11Var.b.a;
                         if ((65536 & i12) != 0) {
-                            int spanStart = spanned.getSpanStart(m11Var);
-                            int spanEnd = spanned.getSpanEnd(m11Var);
+                            int spanStart = spanned.getSpanStart(n11Var);
+                            int spanEnd = spanned.getSpanEnd(n11Var);
                             r90Var = r90Var;
                             if (spanStart >= 0 && spanEnd > spanStart) {
                                 if (r90Var == null) {
@@ -305,10 +305,10 @@ public final class h1 extends iu {
     public final boolean onKeyDown(int i10, KeyEvent keyEvent) {
         if (i10 == 67 && this.c != null) {
             if (length() == 0) {
-                this.c.m();
+                this.c.o();
                 return true;
             }
-            if (getSelectionStart() == 0 && getSelectionEnd() == 0 && this.c.q(this)) {
+            if (getSelectionStart() == 0 && getSelectionEnd() == 0 && this.c.s(this)) {
                 return true;
             }
         }
@@ -320,7 +320,7 @@ public final class h1 extends iu {
         super.onSelectionChanged(i10, i11);
         g1 g1Var = this.c;
         if (g1Var != null) {
-            g1Var.V(this, i10, i11);
+            g1Var.R(this, i10, i11);
         }
     }
 
@@ -334,10 +334,10 @@ public final class h1 extends iu {
     public final boolean onTextContextMenuItem(int i10) {
         g1 g1Var;
         g1 g1Var2;
-        if (i10 == 16908319 && (g1Var2 = this.c) != null && g1Var2.f()) {
+        if (i10 == 16908319 && (g1Var2 = this.c) != null && g1Var2.e()) {
             return true;
         }
-        if (i10 == 16908322 && (g1Var = this.c) != null && g1Var.R(this)) {
+        if (i10 == 16908322 && (g1Var = this.c) != null && g1Var.P(this)) {
             return true;
         }
         return super.onTextContextMenuItem(i10);
@@ -425,7 +425,7 @@ public final class h1 extends iu {
                             }
                         }
                         if (sVar != null) {
-                            q.X(getContext(), sVar.a, new ai.n2(26, this, sVar), this.e);
+                            q.X(getContext(), sVar.a, new ai.o2(26, this, sVar), this.e);
                             return true;
                         }
                     }

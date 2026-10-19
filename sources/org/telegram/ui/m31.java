@@ -1,26 +1,66 @@
 package org.telegram.ui;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.transition.Fade;
+import android.transition.TransitionValues;
 import android.view.View;
-import android.view.WindowInsets;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m31 implements View.OnApplyWindowInsetsListener {
+public final class m31 extends Fade {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ SecretMediaViewer d;
 
-    public /* synthetic */ m31(Object obj, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m31(SecretMediaViewer secretMediaViewer, boolean z10, boolean z11, int i10) {
+        super(1);
         this.a = i10;
-        this.b = obj;
+        switch (i10) {
+            case 1:
+                this.d = secretMediaViewer;
+                this.b = z10;
+                this.c = z11;
+                super(2);
+                break;
+            default:
+                this.d = secretMediaViewer;
+                this.b = z10;
+                this.c = z11;
+                break;
+        }
     }
 
-    @Override // android.view.View.OnApplyWindowInsetsListener
-    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
         switch (this.a) {
             case 0:
-                return SecretMediaViewer.a((SecretMediaViewer) this.b, windowInsets);
+                Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+                if (this.b && !this.c && view == this.d.Z) {
+                    onAppear.addListener(new zb0(this, 22));
+                    ((ObjectAnimator) onAppear).addUpdateListener(new c11(this, 2));
+                }
+                return onAppear;
             default:
-                return v51.b((o41) this.b, view, windowInsets);
+                return super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+        }
+    }
+
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+        switch (this.a) {
+            case 1:
+                Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
+                if (!this.b && this.c && view == this.d.Z) {
+                    onDisappear.addListener(new zb0(this, 23));
+                    ((ObjectAnimator) onDisappear).addUpdateListener(new c11(this, 3));
+                }
+                return onDisappear;
+            default:
+                return super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
         }
     }
 }

@@ -1,23 +1,45 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.os.Bundle;
+import org.telegram.messenger.voip.GroupCallMessage;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class o30 extends View {
-    public final /* synthetic */ s50 a;
+public final class o30 implements mh.a {
+    public final /* synthetic */ q50 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o30(s50 s50Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.a = s50Var;
+    public o30(q50 q50Var) {
+        this.a = q50Var;
     }
 
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        if (getAlpha() != f7) {
-            super.setAlpha(f7);
-            this.a.T0();
+    public final void a(GroupCallMessage groupCallMessage) {
+        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+        if (R == null) {
+            return;
         }
+        boolean z10 = R instanceof ProfileActivity;
+        q50 q50Var = this.a;
+        if (z10 && ((ProfileActivity) R).a() == groupCallMessage.fromId) {
+            q50Var.dismiss();
+            return;
+        }
+        int Q0 = q50Var.Q0();
+        Bundle bundle = new Bundle();
+        long j10 = groupCallMessage.fromId;
+        if (j10 > 0) {
+            bundle.putLong("user_id", j10);
+        } else {
+            bundle.putLong("chat_id", -j10);
+        }
+        boolean z11 = true;
+        if (groupCallMessage.fromId == q50Var.d.getUserConfig().getClientUserId()) {
+            bundle.putBoolean("my_profile", true);
+        }
+        ProfileActivity profileActivity = new ProfileActivity(bundle, null);
+        if (Q0 > 0 && Q0 != Integer.MAX_VALUE) {
+            z11 = false;
+        }
+        R.presentFragment(profileActivity, false, z11);
+        q50Var.dismiss();
     }
 }

@@ -10,12 +10,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.m9;
-import org.telegram.ui.web.a2;
+import org.telegram.ui.web.z1;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class q extends FrameLayout {
     public final m9 a;
@@ -37,13 +37,13 @@ public final class q extends FrameLayout {
         addView(textView, z5.g());
     }
 
-    public final a71 a(n2 n2Var, long j10, int i10, byte[] bArr, int i11, Utilities.Callback callback) {
+    public final b71 a(n2 n2Var, long j10, int i10, byte[] bArr, int i11, Utilities.Callback callback) {
         k kVar = this.c;
         if (kVar != null) {
             return kVar;
         }
-        p pVar = new p(n2Var.getCurrentAccount(), n2Var.getMessagesController().getInputPeer(j10), i10, bArr, new a2(this, 18), callback);
-        AndroidUtilities.runOnUIThread(new a2(pVar, 19), 1000L);
+        p pVar = new p(n2Var.getCurrentAccount(), n2Var.getMessagesController().getInputPeer(j10), i10, bArr, new z1(this, 18), callback);
+        AndroidUtilities.runOnUIThread(new z1(pVar, 19), 1000L);
         k kVar2 = new k(n2Var, new j(pVar, 0), i11);
         this.c = kVar2;
         kVar2.W2.r = false;

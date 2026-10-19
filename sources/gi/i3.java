@@ -15,10 +15,10 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.de1;
-import org.telegram.ui.te1;
+import org.telegram.ui.be1;
+import org.telegram.ui.re1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i3 implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -73,7 +73,7 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                 int[] iArr = (int[]) obj3;
                 ArrayList arrayList = (ArrayList) obj2;
                 TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers2 = (TLRPC.TL_messages_invitedUsers) obj;
-                te1 te1Var = ((de1) obj5).b;
+                re1 re1Var = ((be1) obj5).b;
                 if (tL_messages_invitedUsers2 != null) {
                     tL_messages_invitedUsers.missing_invitees.addAll(tL_messages_invitedUsers2.missing_invitees);
                 }
@@ -83,13 +83,13 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                     boolean isEmpty = tL_messages_invitedUsers.missing_invitees.isEmpty();
                     long j11 = this.c;
                     if (!isEmpty) {
-                        TLRPC.Chat chat = te1Var.getMessagesController().getChat(Long.valueOf(j11));
-                        i10 = ((org.telegram.ui.ActionBar.n2) te1Var).currentAccount;
+                        TLRPC.Chat chat = re1Var.getMessagesController().getChat(Long.valueOf(j11));
+                        i10 = ((org.telegram.ui.ActionBar.n2) re1Var).currentAccount;
                         f5.e(i10, chat, tL_messages_invitedUsers);
                         break;
                     } else {
-                        xc a02 = xc.a0(te1Var);
-                        TLRPC.Chat chat2 = te1Var.getMessagesController().getChat(Long.valueOf(j11));
+                        xc a02 = xc.a0(re1Var);
+                        TLRPC.Chat chat2 = re1Var.getMessagesController().getChat(Long.valueOf(j11));
                         a02.getClass();
                         if (arrayList.size() == 0) {
                             replaceTags = null;
@@ -108,8 +108,8 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
         }
     }
 
-    public /* synthetic */ i3(de1 de1Var, TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers, int[] iArr, int i10, ArrayList arrayList, long j10) {
-        this.d = de1Var;
+    public /* synthetic */ i3(be1 be1Var, TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers, int[] iArr, int i10, ArrayList arrayList, long j10) {
+        this.d = be1Var;
         this.e = tL_messages_invitedUsers;
         this.f = iArr;
         this.b = i10;

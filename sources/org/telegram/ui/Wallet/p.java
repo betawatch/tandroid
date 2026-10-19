@@ -9,10 +9,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -78,14 +78,14 @@ public final /* synthetic */ class p implements Utilities.Callback {
                 break;
             case 4:
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) this.b;
-                x3 x3Var = (x3) this.c;
+                b4 b4Var = (b4) this.c;
                 TL_wallet.walletTransaction[] wallettransactionArr = (TL_wallet.walletTransaction[]) this.d;
                 TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) obj;
                 if (wallettransaction2 != null) {
                     wallettransaction2.incoming = wallettransaction.incoming;
                     wallettransaction2.peer = wallettransaction.peer;
                     wallettransactionArr[0] = wallettransaction2;
-                    x3Var.run(wallettransaction2);
+                    b4Var.run(wallettransaction2);
                     break;
                 }
                 break;
@@ -127,7 +127,7 @@ public final /* synthetic */ class p implements Utilities.Callback {
                 }
                 break;
             case 8:
-                ((org.telegram.ui.Cells.h6) ((View) obj)).t((TLRPC.User) this.b, null, (CharSequence) this.c, (CharSequence) this.d, false, false);
+                ((org.telegram.ui.Cells.h6) ((View) obj)).u((TLRPC.User) this.b, null, (CharSequence) this.c, (CharSequence) this.d, false, false);
                 break;
             default:
                 ei.d dVar2 = (ei.d) this.b;
@@ -145,9 +145,9 @@ public final /* synthetic */ class p implements Utilities.Callback {
         }
     }
 
-    public /* synthetic */ p(v61 v61Var, m0 m0Var, Object obj, int i10) {
+    public /* synthetic */ p(w61 w61Var, m0 m0Var, Object obj, int i10) {
         this.a = i10;
-        this.c = v61Var;
+        this.c = w61Var;
         this.b = m0Var;
         this.d = obj;
     }

@@ -1,26 +1,26 @@
 package x2;
 
 import b2.v1;
-import i2.o1;
+import i2.p1;
 import j$.util.Objects;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class t {
     public final int a;
-    public final o1[] b;
+    public final p1[] b;
     public final p[] c;
     public final v1 d;
     public final Object e;
 
-    public t(o1[] o1VarArr, p[] pVarArr, v1 v1Var, Object obj) {
-        u6.g(o1VarArr.length == pVarArr.length);
-        this.b = o1VarArr;
+    public t(p1[] p1VarArr, p[] pVarArr, v1 v1Var, Object obj) {
+        u6.g(p1VarArr.length == pVarArr.length);
+        this.b = p1VarArr;
         this.c = (p[]) pVarArr.clone();
         this.d = v1Var;
         this.e = obj;
-        this.a = o1VarArr.length;
+        this.a = p1VarArr.length;
     }
 
     public final boolean a(t tVar, int i10) {

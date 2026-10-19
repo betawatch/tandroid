@@ -1,68 +1,60 @@
 package ci;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.dr0;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.xc;
+import android.content.Intent;
+import android.net.Uri;
+import java.util.ArrayList;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.SendMessageChatArguments;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.ek;
+import org.telegram.ui.gn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class d3 extends dr0 {
-    public final /* synthetic */ p4 b1;
+public final class d3 implements ek {
+    public final /* synthetic */ q4 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d3(p4 p4Var, Context context, String str, String str2, boolean z10, s2 s2Var) {
-        super(context, null, null, str, null, false, str2, null, false, false, z10, null, s2Var);
-        this.b1 = p4Var;
+    public d3(q4 q4Var) {
+        this.a = q4Var;
     }
 
-    @Override // org.telegram.ui.Components.dr0
-    public final void S0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            p4 p4Var = this.b1;
-            xc xcVar = new xc(p4Var.c1, this.resourcesProvider);
-            if (hVar.m() == 1) {
-                long j10 = hVar.j(0);
-                if (j10 == UserConfig.getInstance(this.currentAccount).clientUserId) {
-                    qc G = xcVar.G(R.raw.saved_messages, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StorySharedToSavedMessages, new Object[0])));
-                    G.r = false;
-                    G.j();
-                } else if (j10 < 0) {
-                    qc G2 = xcVar.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StorySharedTo, tL_forumTopic != null ? tL_forumTopic.title : MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j10)).title)));
-                    G2.r = false;
-                    G2.j();
-                } else {
-                    qc G3 = xcVar.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StorySharedTo, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j10)).first_name)));
-                    G3.r = false;
-                    G3.j();
-                }
-            } else {
-                qc Q = xcVar.Q(R.raw.forward, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StorySharedToManyChats", hVar.m(), Integer.valueOf(hVar.m()))));
-                Q.r = false;
-                Q.j();
+    @Override // org.telegram.ui.Components.ek
+    public final void l(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i10, long j10, boolean z11, long j11) {
+        AccountInstance accountInstance;
+        q4 q4Var = this.a;
+        TL_stories.StoryItem storyItem = q4Var.O1.a;
+        if (storyItem == null || (storyItem instanceof TL_stories.TL_storyItemSkipped)) {
+            return;
+        }
+        accountInstance = q4Var.getAccountInstance();
+        SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) arrayList, (ArrayList<String>) arrayList, (ArrayList<Uri>) null, str, (String) null, q4Var.B1, (MessageObject) null, (MessageObject) null, storyItem, (gn) null, (MessageObject) null, z10, i10, (t0.i) null, (SendMessageChatArguments) null, 0L, false, j11);
+        q4Var.k0(j11 <= 0);
+    }
+
+    @Override // org.telegram.ui.Components.ek
+    public final void y() {
+        try {
+            Intent intent = new Intent("android.intent.action.GET_CONTENT");
+            intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
+            intent.setType("*/*");
+            org.telegram.ui.ActionBar.n2 n2Var = this.a.J0.f;
+            if (n2Var.getParentActivity() == null) {
+                return;
             }
-            try {
-                p4Var.performHapticFeedback(3);
-            } catch (Exception unused) {
-            }
+            n2Var.getParentActivity().startActivityForResult(intent, 21);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
-    @Override // org.telegram.ui.Components.dr0
-    public final void T0(View view) {
-        this.b1.e1();
+    @Override // org.telegram.ui.Components.ek
+    public final /* synthetic */ void O() {
     }
 
-    @Override // org.telegram.ui.Components.dr0, org.telegram.ui.ActionBar.f3
-    public final void dismissInternal() {
-        super.dismissInternal();
-        this.b1.Z2 = null;
+    @Override // org.telegram.ui.Components.ek
+    public final /* synthetic */ void m(long j10, ArrayList arrayList, boolean z10, int i10) {
     }
 }

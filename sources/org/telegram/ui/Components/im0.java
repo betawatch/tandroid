@@ -39,7 +39,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class im0 extends RecyclerView implements ch.a {
     public static int[] O2;
@@ -108,7 +108,7 @@ public class im0 extends RecyclerView implements ch.a {
     public em0 e1;
     public int e2;
     public boolean f1;
-    public org.telegram.ui.ui f2;
+    public org.telegram.ui.si f2;
     public boolean g1;
     public boolean g2;
     public boolean h1;
@@ -233,7 +233,7 @@ public class im0 extends RecyclerView implements ch.a {
 
     public final void D0(ClippingImageView clippingImageView, FrameLayout.LayoutParams layoutParams) {
         if (this.b1 == null) {
-            this.b1 = new ah.x(this, getContext(), 20);
+            this.b1 = new ah.x(this, getContext(), 19);
         }
         this.b1.addView(clippingImageView, layoutParams);
     }
@@ -564,11 +564,11 @@ public class im0 extends RecyclerView implements ch.a {
         float min = Math.min(measuredHeight - iArr[1], Math.max(f10, iArr[0]));
         float min2 = Math.min(getMeasuredWidth(), Math.max(f7, 0.0f));
         for (int i10 = 0; i10 < getChildCount(); i10++) {
-            org.telegram.ui.ui uiVar = this.f2;
+            org.telegram.ui.si siVar = this.f2;
             int[] iArr2 = this.k2;
-            org.telegram.ui.sn snVar = uiVar.d;
-            iArr2[0] = (int) snVar.s9;
-            iArr2[1] = snVar.Ba;
+            org.telegram.ui.qn qnVar = siVar.d;
+            iArr2[0] = (int) qnVar.s9;
+            iArr2[1] = qnVar.Ba;
             View childAt = getChildAt(i10);
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(childAt.getLeft(), childAt.getTop(), childAt.getMeasuredWidth() + childAt.getLeft(), childAt.getMeasuredHeight() + childAt.getTop());
@@ -578,15 +578,15 @@ public class im0 extends RecyclerView implements ch.a {
                 if (i11 != S) {
                     int i12 = this.d2;
                     boolean z10 = i11 > i12 || S > i12;
-                    org.telegram.ui.sn snVar2 = this.f2.d;
-                    org.telegram.ui.fm fmVar = snVar2.A0;
-                    ArrayList arrayList = snVar2.u6;
-                    int i13 = S - fmVar.J;
+                    org.telegram.ui.qn qnVar2 = this.f2.d;
+                    org.telegram.ui.dm dmVar = qnVar2.A0;
+                    ArrayList arrayList = qnVar2.u6;
+                    int i13 = S - dmVar.J;
                     if (i13 >= 0 && i13 < arrayList.size()) {
                         MessageObject messageObject = (MessageObject) arrayList.get(i13);
-                        if (messageObject.contentType == 0 && messageObject.hasValidGroupId() && (groupedMessages = (MessageObject.GroupedMessages) snVar2.x6.f(messageObject.getGroupId())) != null) {
+                        if (messageObject.contentType == 0 && messageObject.hasValidGroupId() && (groupedMessages = (MessageObject.GroupedMessages) qnVar2.x6.f(messageObject.getGroupId())) != null) {
                             ArrayList<MessageObject> arrayList2 = groupedMessages.messages;
-                            S = arrayList.indexOf(arrayList2.get(z10 ? 0 : arrayList2.size() - 1)) + snVar2.A0.J;
+                            S = arrayList.indexOf(arrayList2.get(z10 ? 0 : arrayList2.size() - 1)) + qnVar2.A0.J;
                         }
                     }
                     if (z10) {
@@ -1707,7 +1707,7 @@ public class im0 extends RecyclerView implements ch.a {
         if (this.Z0 == null) {
             return super.onInterceptTouchEvent(motionEvent);
         }
-        int i10 = org.telegram.ui.sn.Ic;
+        int i10 = org.telegram.ui.qn.Ic;
         return true;
     }
 
@@ -1800,11 +1800,11 @@ public class im0 extends RecyclerView implements ch.a {
         }
         if (this.c2) {
             M0(motionEvent.getX(), motionEvent.getY());
-            org.telegram.ui.ui uiVar = this.f2;
+            org.telegram.ui.si siVar = this.f2;
             int[] iArr = this.k2;
-            org.telegram.ui.sn snVar = uiVar.d;
-            iArr[0] = (int) snVar.s9;
-            iArr[1] = snVar.Ba;
+            org.telegram.ui.qn qnVar = siVar.d;
+            iArr[0] = (int) qnVar.s9;
+            iArr[1] = qnVar.Ba;
             if (motionEvent.getY() > (getMeasuredHeight() - AndroidUtilities.dp(56.0f)) - this.k2[1] && (this.e2 >= this.d2 || !this.f2.a)) {
                 this.h2 = false;
                 if (!this.g2) {

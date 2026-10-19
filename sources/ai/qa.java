@@ -10,11 +10,11 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PrivacyControlActivity;
-import org.telegram.ui.jr;
-import org.telegram.ui.sn;
-import org.telegram.ui.zv0;
+import org.telegram.ui.hr;
+import org.telegram.ui.qn;
+import org.telegram.ui.xv0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class qa implements Runnable {
     public final /* synthetic */ int a;
@@ -41,12 +41,12 @@ public final /* synthetic */ class qa implements Runnable {
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", j11);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 3);
-                            jr jrVar = new jr(bundle);
-                            jrVar.x0(MessagesController.getInstance(i10).getChatFull(j11));
-                            U.presentFragment(jrVar);
+                            hr hrVar = new hr(bundle);
+                            hrVar.x0(MessagesController.getInstance(i10).getChatFull(j11));
+                            U.presentFragment(hrVar);
                             break;
                         } else {
-                            U.presentFragment(new zv0(j11));
+                            U.presentFragment(new xv0(j11));
                             break;
                         }
                     } else {
@@ -76,7 +76,7 @@ public final /* synthetic */ class qa implements Runnable {
             default:
                 org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
                 if (U2 != null) {
-                    U2.presentFragment(sn.V9(this.b, this.c));
+                    U2.presentFragment(qn.V9(this.b, this.c));
                     break;
                 }
                 break;

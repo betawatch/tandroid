@@ -47,7 +47,7 @@ import org.telegram.messenger.video.Mp4Movie;
 import org.webrtc.EglBase;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class f60 implements Runnable {
     public DispatchQueue B0;
@@ -523,7 +523,7 @@ public final class f60 implements Runnable {
             } else {
                 ByteBuffer outputBuffer = this.E.getOutputBuffer(dequeueOutputBuffer);
                 if (outputBuffer == null) {
-                    throw new RuntimeException(i2.d.k(dequeueOutputBuffer, "encoderOutputBuffer ", " was null"));
+                    throw new RuntimeException(i2.e.k(dequeueOutputBuffer, "encoderOutputBuffer ", " was null"));
                 }
                 MediaCodec.BufferInfo bufferInfo = this.I;
                 int i10 = bufferInfo.size;
@@ -618,7 +618,7 @@ public final class f60 implements Runnable {
                 } else {
                     ByteBuffer outputBuffer2 = this.F.getOutputBuffer(dequeueOutputBuffer2);
                     if (outputBuffer2 == null) {
-                        throw new RuntimeException(i2.d.k(dequeueOutputBuffer2, "encoderOutputBuffer ", " was null"));
+                        throw new RuntimeException(i2.e.k(dequeueOutputBuffer2, "encoderOutputBuffer ", " was null"));
                     }
                     MediaCodec.BufferInfo bufferInfo3 = this.J;
                     if ((bufferInfo3.flags & 2) != 0) {
@@ -697,11 +697,11 @@ public final class f60 implements Runnable {
     }
 
     public final void h(File file) {
-        a81 a81Var = new a81();
+        b81 b81Var = new b81();
         m60 m60Var = this.H0;
-        m60Var.T = a81Var;
-        a81Var.J = new k0.b(this, 14);
-        a81Var.V(m60Var.q0);
+        m60Var.T = b81Var;
+        b81Var.J = new k2.w0(this, 12);
+        b81Var.V(m60Var.q0);
         m60Var.T.D(Uri.fromFile(file), "other");
         m60Var.T.C();
         m60Var.T.O(true);
@@ -735,7 +735,7 @@ public final class f60 implements Runnable {
 
     public final void i(int i10, a60 a60Var) {
         this.T.sendMessage(this.T.obtainMessage(1, i10, 0, a60Var));
-        AndroidUtilities.runOnUIThread(new sc(12));
+        AndroidUtilities.runOnUIThread(new rc(13));
     }
 
     @Override // java.lang.Runnable

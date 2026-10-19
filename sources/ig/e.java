@@ -18,10 +18,10 @@ import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.nq;
 import org.telegram.ui.Components.q6;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class e extends FrameLayout {
     public final int a;
@@ -39,13 +39,13 @@ public final class e extends FrameLayout {
     public String x;
     public float y;
 
-    public e(Activity activity, d6 d6Var, sn snVar) {
+    public e(Activity activity, d6 d6Var, qn qnVar) {
         super(activity);
-        this.a = snVar.getCurrentAccount();
+        this.a = qnVar.getCurrentAccount();
         this.r = false;
         w9 w9Var = new w9(activity);
         this.c = w9Var;
-        TLRPC.User user = snVar.getMessagesController().getUser(Long.valueOf(this.v));
+        TLRPC.User user = qnVar.getMessagesController().getUser(Long.valueOf(this.v));
         h9 h9Var = new h9((d6) null);
         this.b = h9Var;
         h9Var.r(user);
@@ -100,7 +100,7 @@ public final class e extends FrameLayout {
         imageView.setImageResource(R.drawable.msg_mini_customize);
         imageView.setBackground(h6.N(h6.w0(h6.i6, d6Var), 0, 0));
         imageView.setColorFilter(new PorterDuffColorFilter(h6.w0(h6.de, d6Var), PorterDuff.Mode.MULTIPLY));
-        imageView.setOnClickListener(new ai.v0(this, snVar, d6Var, 10));
+        imageView.setOnClickListener(new ai.v0(this, qnVar, d6Var, 10));
         addView(imageView, z5.d(32, 32.0f, 21, 8.0f, 0.0f, 6.0f, 0.0f));
     }
 

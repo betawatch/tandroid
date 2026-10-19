@@ -8,7 +8,7 @@ import android.content.IntentSender;
 import android.os.Build;
 import android.util.Log;
 import android.view.KeyEvent;
-import ci.u7;
+import ci.v7;
 import com.google.firebase.messaging.FirebaseMessaging;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ import org.telegram.ui.Components.nk;
 import org.telegram.ui.Components.pg;
 import p4.s0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class f extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final class f extends BroadcastReceiver {
                 }
                 return;
             case 2:
-                ((Executor) ((e2.w) this.b).c).execute(new u7(18, this, context));
+                ((Executor) ((e2.w) this.b).c).execute(new v7(18, this, context));
                 return;
             case 3:
                 ((g.o) this.b).k();

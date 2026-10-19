@@ -6,9 +6,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.mj0;
+import org.telegram.ui.df0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class f0 implements Utilities.Callback2 {
                 if (walletState != null) {
                     m0Var2.i0(walletState);
                     m0Var2.P();
-                    AndroidUtilities.runOnUIThread(new mj0(7), 1000L);
+                    AndroidUtilities.runOnUIThread(new df0(8), 1000L);
                     break;
                 } else {
                     StringBuilder sb2 = new StringBuilder("disable backup: failed to disable backup on server: ");

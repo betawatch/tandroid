@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class c80 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -153,71 +153,71 @@ public final class c80 extends AnimatorListenerAdapter {
                 }
                 break;
             case 18:
-                ((cr0) this.b).f = null;
+                ((dr0) this.b).f = null;
                 break;
             case 19:
-                kr0 kr0Var = (kr0) this.b;
-                if (kr0Var.getParent() != null) {
-                    ((ViewGroup) kr0Var.getParent()).removeView(kr0Var);
+                lr0 lr0Var = (lr0) this.b;
+                if (lr0Var.getParent() != null) {
+                    ((ViewGroup) lr0Var.getParent()).removeView(lr0Var);
                     break;
                 }
                 break;
             case 20:
-                nt0 nt0Var = (nt0) this.b;
-                View view2 = nt0Var.c;
+                ot0 ot0Var = (ot0) this.b;
+                View view2 = ot0Var.c;
                 view2.setAlpha(1.0f);
                 s4.n0.x0(view2);
-                nt0Var.a.removeView(view2);
+                ot0Var.a.removeView(view2);
                 break;
             case 21:
-                zv0 zv0Var = (zv0) this.b;
-                if (zv0Var.f == animator) {
-                    zv0Var.f = null;
+                aw0 aw0Var = (aw0) this.b;
+                if (aw0Var.f == animator) {
+                    aw0Var.f = null;
                     break;
                 }
                 break;
             case 22:
-                px0 px0Var = (px0) this.b;
-                px0Var.setCategoriesShownT(((Float) px0Var.n3.getAnimatedValue()).floatValue());
-                px0Var.n3 = null;
+                qx0 qx0Var = (qx0) this.b;
+                qx0Var.setCategoriesShownT(((Float) qx0Var.n3.getAnimatedValue()).floatValue());
+                qx0Var.n3 = null;
                 break;
             case 23:
-                oy0 oy0Var = (oy0) this.b;
-                oy0Var.x.setVisibility(8);
-                oy0Var.F.setImageDrawable(null);
+                py0 py0Var = (py0) this.b;
+                py0Var.x.setVisibility(8);
+                py0Var.F.setImageDrawable(null);
                 break;
             case 24:
                 int i10 = 0;
                 while (true) {
-                    uy0[] uy0VarArr = (uy0[]) this.b;
-                    if (i10 >= uy0VarArr.length) {
+                    vy0[] vy0VarArr = (vy0[]) this.b;
+                    if (i10 >= vy0VarArr.length) {
                         break;
                     } else {
-                        uy0 uy0Var = uy0VarArr[i10];
-                        if (uy0Var != null) {
-                            uy0Var.d = false;
+                        vy0 vy0Var = vy0VarArr[i10];
+                        if (vy0Var != null) {
+                            vy0Var.d = false;
                         }
                         i10++;
                     }
                 }
             case 25:
                 super.onAnimationEnd(animator);
-                ((vy0) this.b).H = null;
+                ((wy0) this.b).H = null;
                 break;
             case 26:
-                ((yy0) this.b).e = false;
+                ((zy0) this.b).e = false;
                 break;
             case 27:
-                ((k11) this.b).setVisibility(4);
+                ((l11) this.b).setVisibility(4);
                 break;
             case 28:
-                ((t21) this.b).setVisibility(8);
+                ((u21) this.b).setVisibility(8);
                 break;
             default:
-                ci.h3 h3Var = ((k31) this.b).f;
-                h3Var.setScaleX(1.0f);
-                h3Var.setScaleY(1.0f);
-                h3Var.invalidate();
+                ci.i3 i3Var = ((l31) this.b).f;
+                i3Var.setScaleX(1.0f);
+                i3Var.setScaleY(1.0f);
+                i3Var.invalidate();
                 break;
         }
     }
@@ -239,9 +239,9 @@ public final class c80 extends AnimatorListenerAdapter {
         }
     }
 
-    public c80(nt0 nt0Var, s4.n0 n0Var) {
+    public c80(ot0 ot0Var, s4.n0 n0Var) {
         this.a = 20;
-        this.b = nt0Var;
+        this.b = ot0Var;
     }
 
     private final void a(Animator animator) {

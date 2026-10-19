@@ -1,35 +1,42 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
+import android.os.Build;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class vk0 extends Drawable {
-    public final /* synthetic */ org.telegram.ui.Components.d11 a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 b;
+public final class vk0 {
+    public final LaunchActivity a;
+    public final ArrayList b = new ArrayList();
+    public int c = TLObject.FLAG_31;
 
-    public vk0(org.telegram.ui.Components.d11 d11Var, org.telegram.ui.ActionBar.d6 d6Var) {
-        this.a = d11Var;
-        this.b = d6Var;
+    public vk0(LaunchActivity launchActivity) {
+        this.a = launchActivity;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        this.a.c(getBounds().centerX() - (this.a.c / 2.0f), getBounds().centerY(), 1.0f, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, this.b), canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public final void a() {
+        boolean isEmpty = this.b.isEmpty();
+        LaunchActivity launchActivity = this.a;
+        try {
+            if (isEmpty || launchActivity.getResources().getConfiguration().smallestScreenWidthDp >= 600 || (Build.VERSION.SDK_INT >= 24 && launchActivity.isInMultiWindowMode())) {
+                int i10 = this.c;
+                if (i10 != Integer.MIN_VALUE) {
+                    launchActivity.setRequestedOrientation(i10);
+                    this.c = TLObject.FLAG_31;
+                    return;
+                }
+                return;
+            }
+            if (this.c == Integer.MIN_VALUE) {
+                this.c = launchActivity.getRequestedOrientation();
+            }
+            if (launchActivity.getRequestedOrientation() != 1) {
+                launchActivity.setRequestedOrientation(1);
+            }
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
     }
 }

@@ -6,7 +6,7 @@ import android.view.TextureView;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class r60 extends FrameLayout {
     public static final /* synthetic */ int e = 0;
@@ -27,7 +27,7 @@ public abstract class r60 extends FrameLayout {
 
     public abstract void f(int i10, int i11, int i12, long j10, long j11, boolean z10);
 
-    public abstract void g(bh.b bVar, org.telegram.ui.dj djVar);
+    public abstract void g(bh.b bVar, org.telegram.ui.bj bjVar);
 
     public abstract View getButtonsLayout();
 
@@ -57,9 +57,9 @@ public abstract class r60 extends FrameLayout {
         this.c = p60Var;
         if (p60Var != null) {
             boolean z10 = this.d;
-            org.telegram.ui.hk hkVar = ((org.telegram.ui.lj) p60Var).a.Y;
-            if (hkVar != null) {
-                hkVar.setRoundVideoUiFrameClockActive(z10);
+            org.telegram.ui.fk fkVar = ((org.telegram.ui.jj) p60Var).a.Y;
+            if (fkVar != null) {
+                fkVar.setRoundVideoUiFrameClockActive(z10);
             }
         }
     }

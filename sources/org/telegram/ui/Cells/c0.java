@@ -13,16 +13,16 @@ import android.text.Layout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.e11;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class c0 extends Drawable {
     public final RectF a = new RectF();
     public final int b;
     public final org.telegram.ui.ActionBar.d6 c;
-    public final d11 d;
-    public final d11 e;
+    public final e11 d;
+    public final e11 e;
     public final Drawable f;
     public final Drawable g;
     public int h;
@@ -34,14 +34,14 @@ public final class c0 extends Drawable {
         this.j = paint;
         this.b = i10;
         this.c = d6Var;
-        d11 d11Var = new d11(LocaleController.getString(R.string.BotForumAskForStartNewChatTitle), 14.0f, AndroidUtilities.bold());
-        this.d = d11Var;
+        e11 e11Var = new e11(LocaleController.getString(R.string.BotForumAskForStartNewChatTitle), 14.0f, AndroidUtilities.bold());
+        this.d = e11Var;
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        d11Var.a();
-        d11 d11Var2 = new d11("", 13.0f, null);
-        this.e = d11Var2;
-        d11Var2.n(4);
-        d11Var2.a();
+        e11Var.a();
+        e11 e11Var2 = new e11("", 13.0f, null);
+        this.e = e11Var2;
+        e11Var2.n(4);
+        e11Var2.a();
         Drawable mutate = context.getResources().getDrawable(R.drawable.filled_topic_new_24).mutate();
         this.f = mutate;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
@@ -78,14 +78,14 @@ public final class c0 extends Drawable {
         canvas.translate(0.0f, AndroidUtilities.dp(70.0f));
         canvas.translate(0.0f, AndroidUtilities.dp(14.0f));
         float centerX2 = rectF.centerX();
-        d11 d11Var = this.d;
-        this.d.c(centerX2 - (d11Var.l() / 2.0f), d11Var.j() / 2.0f, 1.0f, -1, canvas);
-        canvas.translate(0.0f, d11Var.j());
+        e11 e11Var = this.d;
+        this.d.c(centerX2 - (e11Var.l() / 2.0f), e11Var.j() / 2.0f, 1.0f, -1, canvas);
+        canvas.translate(0.0f, e11Var.j());
         canvas.translate(0.0f, AndroidUtilities.dp(4.0f));
         float centerX3 = rectF.centerX();
-        d11 d11Var2 = this.e;
-        this.e.c(centerX3 - (d11Var2.l() / 2.0f), 0.0f, 1.0f, -1, canvas);
-        canvas.translate(0.0f, d11Var2.j());
+        e11 e11Var2 = this.e;
+        this.e.c(centerX3 - (e11Var2.l() / 2.0f), 0.0f, 1.0f, -1, canvas);
+        canvas.translate(0.0f, e11Var2.j());
         canvas.translate(0.0f, AndroidUtilities.dp(2.0f));
         int centerX4 = (int) (rectF.centerX() - AndroidUtilities.dp(10.0f));
         int centerX5 = (int) (rectF.centerX() + AndroidUtilities.dp(10.0f));

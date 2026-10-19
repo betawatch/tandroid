@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class dm0 implements s4.q0 {
     public final /* synthetic */ int a = 0;
@@ -131,7 +131,7 @@ public final class dm0 implements s4.q0 {
                 }
                 if (im0Var.L1 != null && !im0Var.N1) {
                     try {
-                        im0Var.K1.j0(motionEvent);
+                        im0Var.K1.k(motionEvent);
                     } catch (Exception e) {
                         FileLog.e(e);
                     }
@@ -267,7 +267,7 @@ public final class dm0 implements s4.q0 {
 
     public dm0(im0 im0Var, Context context) {
         this.b = im0Var;
-        le.b bVar = new le.b(context, new cm0(this));
+        le.b bVar = new le.b(context, (u20) new cm0(this));
         im0Var.K1 = bVar;
         ((t20) bVar.b).t = false;
     }

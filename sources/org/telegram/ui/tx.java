@@ -1,20 +1,38 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class tx extends org.telegram.ui.Components.k20 {
-    public tx(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, d6Var);
+public final /* synthetic */ class tx implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ux b;
+
+    public /* synthetic */ tx(ux uxVar, int i10) {
+        this.a = i10;
+        this.b = uxVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() != 0 || getAlpha() >= 0.25f) {
-            return super.dispatchTouchEvent(motionEvent);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10;
+        switch (this.a) {
+            case 0:
+                ux uxVar = this.b;
+                cy cyVar = uxVar.E0;
+                Context context = uxVar.getContext();
+                i10 = ((org.telegram.ui.ActionBar.n2) cyVar).currentAccount;
+                cyVar.showDialog(new sg.k0(3, i10, context, cyVar, null));
+                break;
+            default:
+                cy cyVar2 = this.b.E0;
+                yw ywVar = cyVar2.M0;
+                if (ywVar != null) {
+                    ywVar.dismiss();
+                    cyVar2.M0 = null;
+                    break;
+                }
+                break;
         }
-        return false;
     }
 }

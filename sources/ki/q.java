@@ -1,6 +1,6 @@
 package ki;
 
-import ai.l8;
+import ai.m8;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -30,7 +30,7 @@ import org.telegram.messenger.SendMessageChatArguments;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -46,11 +46,11 @@ import org.telegram.ui.Components.tz;
 import org.telegram.ui.Components.vg;
 import org.telegram.ui.Components.wh;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.hk;
-import org.telegram.ui.ni0;
-import org.telegram.ui.sn;
+import org.telegram.ui.fk;
+import org.telegram.ui.mi0;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class q extends li implements NotificationCenter.NotificationCenterDelegate {
     public static final int[] Q = {1, 2, 16, 8, 256, 4, 16384, 32768};
@@ -64,7 +64,7 @@ public final class q extends li implements NotificationCenter.NotificationCenter
     public boolean L;
     public int M;
     public boolean N;
-    public ni0 O;
+    public mi0 O;
     public final d P;
     public final int n;
     public final w3 r;
@@ -210,8 +210,8 @@ public final class q extends li implements NotificationCenter.NotificationCenter
     }
 
     public static void X(Context context, final String str, final Utilities.Callback callback, org.telegram.ui.ActionBar.d6 d6Var) {
-        org.telegram.ui.ActionBar.f3 i10 = lk.i(1, context, d6Var, true);
-        LinearLayout e = lk.e(context, 1);
+        org.telegram.ui.ActionBar.f3 i10 = kk.i(1, context, d6Var, true);
+        LinearLayout e = kk.e(context, 1);
         final String[] strArr = {str == null ? "" : str};
         ImageView imageView = new ImageView(context);
         imageView.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
@@ -225,21 +225,21 @@ public final class q extends li implements NotificationCenter.NotificationCenter
         horizontalScrollView.setVisibility(8);
         horizontalScrollView.addView(frameLayout, new FrameLayout.LayoutParams(-2, -2));
         e.addView(horizontalScrollView, w7.z5.t(-1, -2, 49, 12, 2, 12, 0));
-        ei.d f7 = lk.f(24, context, d6Var, true);
+        ei.d f7 = kk.f(24, context, d6Var, true);
         final boolean[] zArr = {false};
         final boolean[] zArr2 = {false};
-        l8 l8Var = new l8(strArr, horizontalScrollView, f7, zArr2, new hg.o(strArr, 13), imageView, d6Var, new int[]{6}, 2);
+        m8 m8Var = new m8(strArr, horizontalScrollView, f7, zArr2, new hg.o(strArr, 13), imageView, d6Var, new int[]{6}, 2);
         final org.telegram.ui.Cells.i3 i3Var = new org.telegram.ui.Cells.i3(context, LocaleController.getString(R.string.ArticleLatexEquation), true, false, -1, d6Var);
         org.telegram.ui.Cells.g3 g3Var = i3Var.b;
         g3Var.setImeOptions(6);
         g3Var.setMaxLines(5);
         i3Var.setBackground(h6.c0(AndroidUtilities.dp(24.0f), h6.w0(h6.d6, d6Var)));
         i3Var.setText(strArr[0]);
-        g3Var.addTextChangedListener(new p(strArr, l8Var));
+        g3Var.addTextChangedListener(new p(strArr, m8Var));
         e.addView(i3Var, w7.z5.t(-1, -2, 55, 12, 8, 12, 0));
         f7.setText(LocaleController.getString(R.string.Done));
         e.addView(f7, w7.z5.t(-1, 48, 55, 12, 12, 12, 12));
-        l8Var.run();
+        m8Var.run();
         i10.customView = e;
         i10.setOnHideListener(new DialogInterface.OnDismissListener() { // from class: ki.k
             @Override // android.content.DialogInterface.OnDismissListener
@@ -330,7 +330,7 @@ public final class q extends li implements NotificationCenter.NotificationCenter
     }
 
     @Override // org.telegram.ui.Components.li
-    public final void G(li liVar) {
+    public final void F(li liVar) {
         this.b.a1.setTitle("");
         this.r.W2.N(false);
         Y(false);
@@ -348,7 +348,7 @@ public final class q extends li implements NotificationCenter.NotificationCenter
         MessageObject messageObject;
         MessageObject messageObject2;
         SendMessageChatArguments sendMessageChatArguments;
-        hk hkVar;
+        fk fkVar;
         int i12 = this.n;
         boolean richEditorAllowed = MessagesController.getInstance(i12).richEditorAllowed();
         w3 w3Var = this.r;
@@ -367,12 +367,12 @@ public final class q extends li implements NotificationCenter.NotificationCenter
                         ArrayList z22 = w3Var.z2();
                         ArrayList a2 = b5.a(i12, a32);
                         org.telegram.ui.ActionBar.n2 n2Var = tiVar.f0;
-                        if (n2Var instanceof sn) {
-                            sn snVar = (sn) n2Var;
-                            MessageObject messageObject3 = snVar.n5;
-                            MessageObject messageObject4 = snVar.X3;
-                            j11 = snVar.S8();
-                            sendMessageChatArguments = snVar.H8();
+                        if (n2Var instanceof qn) {
+                            qn qnVar = (qn) n2Var;
+                            MessageObject messageObject3 = qnVar.n5;
+                            MessageObject messageObject4 = qnVar.X3;
+                            j11 = qnVar.S8();
+                            sendMessageChatArguments = qnVar.H8();
                             messageObject = messageObject3;
                             messageObject2 = messageObject4;
                         } else {
@@ -387,8 +387,8 @@ public final class q extends li implements NotificationCenter.NotificationCenter
                     }
                 } else {
                     org.telegram.ui.ActionBar.n2 n2Var2 = tiVar.f0;
-                    if ((n2Var2 instanceof sn) && (hkVar = ((sn) n2Var2).Y) != null) {
-                        hkVar.P0(c5.k(w3Var.j3), z10, i10, i11);
+                    if ((n2Var2 instanceof qn) && (fkVar = ((qn) n2Var2).Y) != null) {
+                        fkVar.P0(c5.k(w3Var.j3), z10, i10, i11);
                         tiVar.dismiss(true);
                         return true;
                     }
@@ -477,7 +477,7 @@ public final class q extends li implements NotificationCenter.NotificationCenter
             this.y = false;
             tz tzVar = this.w;
             if (tzVar != null) {
-                tzVar.t(false);
+                tzVar.u(false);
                 if (!z10) {
                     this.w.B();
                 }
@@ -542,21 +542,21 @@ public final class q extends li implements NotificationCenter.NotificationCenter
 
     public final boolean W() {
         org.telegram.ui.ActionBar.n2 n2Var = this.b.f0;
-        if (!(n2Var instanceof sn)) {
+        if (!(n2Var instanceof qn)) {
             return false;
         }
-        sn snVar = (sn) n2Var;
+        qn qnVar = (qn) n2Var;
         w3 w3Var = this.r;
         if (!w3Var.s2()) {
             return false;
         }
         TL_iv.RichMessage k22 = w3Var.k2();
-        AccountInstance.getInstance(this.n).getMediaDataController().saveDraft(snVar.a(), snVar.E7(snVar.n5), "", null, null, null, null, 0L, false, false, k22);
-        hk hkVar = snVar.Y;
-        if (hkVar == null) {
+        AccountInstance.getInstance(this.n).getMediaDataController().saveDraft(qnVar.a(), qnVar.E7(qnVar.n5), "", null, null, null, null, 0L, false, false, k22);
+        fk fkVar = qnVar.Y;
+        if (fkVar == null) {
             return true;
         }
-        hkVar.setRichDraftPreview(k22);
+        fkVar.setRichDraftPreview(k22);
         return true;
     }
 
@@ -857,7 +857,7 @@ public final class q extends li implements NotificationCenter.NotificationCenter
         int action = keyEvent.getAction();
         w3 w3Var = this.r;
         if (action == 0 && keyEvent.getKeyCode() == 47 && keyEvent.isCtrlPressed()) {
-            if ((this.b.f0 instanceof sn) && w3Var.s2() && W()) {
+            if ((this.b.f0 instanceof qn) && w3Var.s2() && W()) {
                 org.telegram.messenger.g0.q(R.string.RichEditorDraftSaved, new xc(this.s, this.a), R.raw.contact_check, 36);
                 return true;
             }
@@ -955,7 +955,7 @@ public final class q extends li implements NotificationCenter.NotificationCenter
                 this.y = false;
                 tz tzVar = this.w;
                 if (tzVar != null) {
-                    tzVar.t(false);
+                    tzVar.u(false);
                     this.w.B();
                 }
                 V();
@@ -981,9 +981,9 @@ public final class q extends li implements NotificationCenter.NotificationCenter
     @Override // org.telegram.ui.Components.li
     public final void o() {
         NotificationCenter.ObserversGroup observersGroup;
-        ni0 ni0Var = this.O;
-        if (ni0Var != null) {
-            ni0Var.i();
+        mi0 mi0Var = this.O;
+        if (mi0Var != null) {
+            mi0Var.i();
             this.O = null;
         }
         m.s3 s3Var = this.v;
@@ -1025,17 +1025,17 @@ public final class q extends li implements NotificationCenter.NotificationCenter
         return false;
     }
 
-    @Override // org.telegram.ui.Components.li
-    public final boolean r() {
-        return T();
-    }
-
     @Override // android.view.View, android.view.ViewParent
     public final void requestLayout() {
         if (this.N) {
             return;
         }
         super.requestLayout();
+    }
+
+    @Override // org.telegram.ui.Components.li
+    public final boolean s() {
+        return T();
     }
 
     @Override // android.view.View
@@ -1046,7 +1046,7 @@ public final class q extends li implements NotificationCenter.NotificationCenter
     }
 
     @Override // org.telegram.ui.Components.li
-    public final void t() {
+    public final void u() {
         m.s3 s3Var = this.v;
         if (s3Var != null) {
             s3Var.a();
@@ -1074,6 +1074,6 @@ public final class q extends li implements NotificationCenter.NotificationCenter
     }
 
     @Override // org.telegram.ui.Components.li
-    public final void s() {
+    public final void t() {
     }
 }

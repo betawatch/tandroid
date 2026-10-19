@@ -31,7 +31,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class ic0 extends FrameLayout {
     public final nc0 E;
@@ -83,7 +83,7 @@ public final class ic0 extends FrameLayout {
     /* JADX WARN: Type inference failed for: r2v68, types: [android.view.View, org.telegram.ui.ActionBar.e1] */
     /* JADX WARN: Type inference failed for: r2v69, types: [android.view.View, org.telegram.ui.ActionBar.e1] */
     /* JADX WARN: Type inference failed for: r34v0, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout, java.lang.Object, org.telegram.ui.Components.ic0] */
-    /* JADX WARN: Type inference failed for: r3v3, types: [android.view.View, android.view.ViewGroup, org.telegram.ui.Components.jw0, org.telegram.ui.y8] */
+    /* JADX WARN: Type inference failed for: r3v3, types: [android.view.View, android.view.ViewGroup, org.telegram.ui.Components.kw0, org.telegram.ui.y8] */
     /* JADX WARN: Type inference failed for: r3v6, types: [bh.b] */
     /* JADX WARN: Type inference failed for: r9v8, types: [android.view.ViewGroup] */
     /*
@@ -126,8 +126,8 @@ public final class ic0 extends FrameLayout {
         kc0 kc0Var = oc0Var.F;
         boolean z13 = oc0Var.b;
         MessagePreviewParams messagePreviewParams4 = oc0Var.d;
-        Drawable e = ((org.telegram.ui.qn) kc0Var).e();
-        if (((org.telegram.ui.qn) kc0Var).f == null) {
+        Drawable e = ((org.telegram.ui.on) kc0Var).e();
+        if (((org.telegram.ui.on) kc0Var).f == null) {
             int i13 = org.telegram.ui.ActionBar.h6.a;
         }
         y8Var.V(e);
@@ -141,7 +141,7 @@ public final class ic0 extends FrameLayout {
         vVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.s8, kc0Var));
         ac0 ac0Var = new ac0(this);
         this.e = ac0Var;
-        ac0Var.D = new ci.n2(this, i14);
+        ac0Var.D = new ci.o2(this, i14);
         bc0 bc0Var = new bc0(this, context3, kc0Var);
         this.f = bc0Var;
         dc0 dc0Var = new dc0(this, bc0Var, kc0Var);
@@ -245,7 +245,7 @@ public final class ic0 extends FrameLayout {
                                                 messagePreviewParams5.quoteStart = i17;
                                                 int i18 = ac0Var2.v;
                                                 messagePreviewParams5.quoteEnd = i18;
-                                                messagePreviewParams5.quote = org.telegram.ui.in.c(c11, i17, i18);
+                                                messagePreviewParams5.quote = org.telegram.ui.gn.c(c11, i17, i18);
                                                 oc0Var2.b();
                                                 oc0Var2.a(true);
                                                 break;
@@ -273,9 +273,9 @@ public final class ic0 extends FrameLayout {
                                             if (c12 != null) {
                                                 if (!ac0Var3.x()) {
                                                     messagePreviewParams6.quoteStart = 0;
-                                                    int min = Math.min(MessagesController.getInstance(i19).quoteLengthMax, org.telegram.ui.in.d(c12));
+                                                    int min = Math.min(MessagesController.getInstance(i19).quoteLengthMax, org.telegram.ui.gn.d(c12));
                                                     messagePreviewParams6.quoteEnd = min;
-                                                    messagePreviewParams6.quote = org.telegram.ui.in.c(c12, messagePreviewParams6.quoteStart, min);
+                                                    messagePreviewParams6.quote = org.telegram.ui.gn.c(c12, messagePreviewParams6.quoteStart, min);
                                                     View d = ic0Var6.d();
                                                     if (d instanceof org.telegram.ui.Cells.u1) {
                                                         ac0Var3.Z((org.telegram.ui.Cells.u1) d, messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
@@ -289,7 +289,7 @@ public final class ic0 extends FrameLayout {
                                                     messagePreviewParams6.quoteStart = ac0Var3.u;
                                                     messagePreviewParams6.quoteEnd = ac0Var3.v;
                                                     org.telegram.ui.Cells.v9 v9Var2 = ac0Var3.W;
-                                                    messagePreviewParams6.quote = org.telegram.ui.in.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
+                                                    messagePreviewParams6.quote = org.telegram.ui.gn.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
                                                     oc0Var3.b();
                                                     oc0Var3.a(true);
                                                     break;
@@ -312,20 +312,20 @@ public final class ic0 extends FrameLayout {
                                     case 6:
                                         oc0 oc0Var4 = this.b.c0;
                                         if (!oc0Var4.b) {
-                                            org.telegram.ui.cl clVar = (org.telegram.ui.cl) oc0Var4;
-                                            clVar.a(true);
-                                            org.telegram.ui.sn snVar = clVar.H;
-                                            snVar.n5 = null;
-                                            snVar.l5 = null;
-                                            snVar.f5.updateReply(null, null, snVar.T5, null);
-                                            snVar.m8();
+                                            org.telegram.ui.al alVar = (org.telegram.ui.al) oc0Var4;
+                                            alVar.a(true);
+                                            org.telegram.ui.qn qnVar = alVar.H;
+                                            qnVar.n5 = null;
+                                            qnVar.l5 = null;
+                                            qnVar.f5.updateReply(null, null, qnVar.T5, null);
+                                            qnVar.m8();
                                             break;
                                         } else {
-                                            org.telegram.ui.cl clVar2 = (org.telegram.ui.cl) oc0Var4;
-                                            clVar2.a(true);
-                                            org.telegram.ui.sn snVar2 = clVar2.H;
-                                            snVar2.l5 = null;
-                                            snVar2.Fb(snVar2.n5);
+                                            org.telegram.ui.al alVar2 = (org.telegram.ui.al) oc0Var4;
+                                            alVar2.a(true);
+                                            org.telegram.ui.qn qnVar2 = alVar2.H;
+                                            qnVar2.l5 = null;
+                                            qnVar2.Fb(qnVar2.n5);
                                             break;
                                         }
                                     case 7:
@@ -335,32 +335,32 @@ public final class ic0 extends FrameLayout {
                                         this.b.c0.a(true);
                                         break;
                                     case 9:
-                                        org.telegram.ui.cl clVar3 = (org.telegram.ui.cl) this.b.c0;
-                                        clVar3.a(true);
-                                        org.telegram.ui.sn snVar3 = clVar3.H;
-                                        snVar3.f5.updateForward(null, snVar3.T5);
-                                        snVar3.m8();
+                                        org.telegram.ui.al alVar3 = (org.telegram.ui.al) this.b.c0;
+                                        alVar3.a(true);
+                                        org.telegram.ui.qn qnVar3 = alVar3.H;
+                                        qnVar3.f5.updateForward(null, qnVar3.T5);
+                                        qnVar3.m8();
                                         break;
                                     case 10:
                                         this.b.c0.a(true);
                                         break;
                                     case 11:
-                                        org.telegram.ui.cl clVar4 = (org.telegram.ui.cl) this.b.c0;
-                                        clVar4.a(true);
-                                        org.telegram.ui.sn snVar4 = clVar4.H;
-                                        snVar4.G5 = null;
-                                        org.telegram.ui.hk hkVar = snVar4.Y;
-                                        if (hkVar != null) {
-                                            hkVar.X2 = null;
-                                            hkVar.Y2 = false;
+                                        org.telegram.ui.al alVar4 = (org.telegram.ui.al) this.b.c0;
+                                        alVar4.a(true);
+                                        org.telegram.ui.qn qnVar4 = alVar4.H;
+                                        qnVar4.G5 = null;
+                                        org.telegram.ui.fk fkVar = qnVar4.Y;
+                                        if (fkVar != null) {
+                                            fkVar.X2 = null;
+                                            fkVar.Y2 = false;
                                         }
-                                        MessagePreviewParams messagePreviewParams7 = snVar4.f5;
+                                        MessagePreviewParams messagePreviewParams7 = qnVar4.f5;
                                         if (messagePreviewParams7 != null) {
-                                            i16 = ((org.telegram.ui.ActionBar.n2) snVar4).currentAccount;
-                                            MessageObject messageObject = snVar4.n5;
-                                            messagePreviewParams7.updateLink(i16, null, null, messageObject == snVar4.X3 ? null : messageObject, snVar4.l5, snVar4.p5);
+                                            i16 = ((org.telegram.ui.ActionBar.n2) qnVar4).currentAccount;
+                                            MessageObject messageObject = qnVar4.n5;
+                                            messagePreviewParams7.updateLink(i16, null, null, messageObject == qnVar4.X3 ? null : messageObject, qnVar4.l5, qnVar4.p5);
                                         }
-                                        snVar4.m8();
+                                        qnVar4.m8();
                                         break;
                                     case 12:
                                         ic0 ic0Var7 = this.b;
@@ -448,7 +448,7 @@ public final class ic0 extends FrameLayout {
                                                 messagePreviewParams5.quoteStart = i172;
                                                 int i18 = ac0Var2.v;
                                                 messagePreviewParams5.quoteEnd = i18;
-                                                messagePreviewParams5.quote = org.telegram.ui.in.c(c11, i172, i18);
+                                                messagePreviewParams5.quote = org.telegram.ui.gn.c(c11, i172, i18);
                                                 oc0Var2.b();
                                                 oc0Var2.a(true);
                                                 break;
@@ -476,9 +476,9 @@ public final class ic0 extends FrameLayout {
                                             if (c12 != null) {
                                                 if (!ac0Var3.x()) {
                                                     messagePreviewParams6.quoteStart = 0;
-                                                    int min = Math.min(MessagesController.getInstance(i19).quoteLengthMax, org.telegram.ui.in.d(c12));
+                                                    int min = Math.min(MessagesController.getInstance(i19).quoteLengthMax, org.telegram.ui.gn.d(c12));
                                                     messagePreviewParams6.quoteEnd = min;
-                                                    messagePreviewParams6.quote = org.telegram.ui.in.c(c12, messagePreviewParams6.quoteStart, min);
+                                                    messagePreviewParams6.quote = org.telegram.ui.gn.c(c12, messagePreviewParams6.quoteStart, min);
                                                     View d = ic0Var6.d();
                                                     if (d instanceof org.telegram.ui.Cells.u1) {
                                                         ac0Var3.Z((org.telegram.ui.Cells.u1) d, messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
@@ -492,7 +492,7 @@ public final class ic0 extends FrameLayout {
                                                     messagePreviewParams6.quoteStart = ac0Var3.u;
                                                     messagePreviewParams6.quoteEnd = ac0Var3.v;
                                                     org.telegram.ui.Cells.v9 v9Var2 = ac0Var3.W;
-                                                    messagePreviewParams6.quote = org.telegram.ui.in.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
+                                                    messagePreviewParams6.quote = org.telegram.ui.gn.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
                                                     oc0Var3.b();
                                                     oc0Var3.a(true);
                                                     break;
@@ -515,20 +515,20 @@ public final class ic0 extends FrameLayout {
                                     case 6:
                                         oc0 oc0Var4 = this.b.c0;
                                         if (!oc0Var4.b) {
-                                            org.telegram.ui.cl clVar = (org.telegram.ui.cl) oc0Var4;
-                                            clVar.a(true);
-                                            org.telegram.ui.sn snVar = clVar.H;
-                                            snVar.n5 = null;
-                                            snVar.l5 = null;
-                                            snVar.f5.updateReply(null, null, snVar.T5, null);
-                                            snVar.m8();
+                                            org.telegram.ui.al alVar = (org.telegram.ui.al) oc0Var4;
+                                            alVar.a(true);
+                                            org.telegram.ui.qn qnVar = alVar.H;
+                                            qnVar.n5 = null;
+                                            qnVar.l5 = null;
+                                            qnVar.f5.updateReply(null, null, qnVar.T5, null);
+                                            qnVar.m8();
                                             break;
                                         } else {
-                                            org.telegram.ui.cl clVar2 = (org.telegram.ui.cl) oc0Var4;
-                                            clVar2.a(true);
-                                            org.telegram.ui.sn snVar2 = clVar2.H;
-                                            snVar2.l5 = null;
-                                            snVar2.Fb(snVar2.n5);
+                                            org.telegram.ui.al alVar2 = (org.telegram.ui.al) oc0Var4;
+                                            alVar2.a(true);
+                                            org.telegram.ui.qn qnVar2 = alVar2.H;
+                                            qnVar2.l5 = null;
+                                            qnVar2.Fb(qnVar2.n5);
                                             break;
                                         }
                                     case 7:
@@ -538,32 +538,32 @@ public final class ic0 extends FrameLayout {
                                         this.b.c0.a(true);
                                         break;
                                     case 9:
-                                        org.telegram.ui.cl clVar3 = (org.telegram.ui.cl) this.b.c0;
-                                        clVar3.a(true);
-                                        org.telegram.ui.sn snVar3 = clVar3.H;
-                                        snVar3.f5.updateForward(null, snVar3.T5);
-                                        snVar3.m8();
+                                        org.telegram.ui.al alVar3 = (org.telegram.ui.al) this.b.c0;
+                                        alVar3.a(true);
+                                        org.telegram.ui.qn qnVar3 = alVar3.H;
+                                        qnVar3.f5.updateForward(null, qnVar3.T5);
+                                        qnVar3.m8();
                                         break;
                                     case 10:
                                         this.b.c0.a(true);
                                         break;
                                     case 11:
-                                        org.telegram.ui.cl clVar4 = (org.telegram.ui.cl) this.b.c0;
-                                        clVar4.a(true);
-                                        org.telegram.ui.sn snVar4 = clVar4.H;
-                                        snVar4.G5 = null;
-                                        org.telegram.ui.hk hkVar = snVar4.Y;
-                                        if (hkVar != null) {
-                                            hkVar.X2 = null;
-                                            hkVar.Y2 = false;
+                                        org.telegram.ui.al alVar4 = (org.telegram.ui.al) this.b.c0;
+                                        alVar4.a(true);
+                                        org.telegram.ui.qn qnVar4 = alVar4.H;
+                                        qnVar4.G5 = null;
+                                        org.telegram.ui.fk fkVar = qnVar4.Y;
+                                        if (fkVar != null) {
+                                            fkVar.X2 = null;
+                                            fkVar.Y2 = false;
                                         }
-                                        MessagePreviewParams messagePreviewParams7 = snVar4.f5;
+                                        MessagePreviewParams messagePreviewParams7 = qnVar4.f5;
                                         if (messagePreviewParams7 != null) {
-                                            i162 = ((org.telegram.ui.ActionBar.n2) snVar4).currentAccount;
-                                            MessageObject messageObject = snVar4.n5;
-                                            messagePreviewParams7.updateLink(i162, null, null, messageObject == snVar4.X3 ? null : messageObject, snVar4.l5, snVar4.p5);
+                                            i162 = ((org.telegram.ui.ActionBar.n2) qnVar4).currentAccount;
+                                            MessageObject messageObject = qnVar4.n5;
+                                            messagePreviewParams7.updateLink(i162, null, null, messageObject == qnVar4.X3 ? null : messageObject, qnVar4.l5, qnVar4.p5);
                                         }
-                                        snVar4.m8();
+                                        qnVar4.m8();
                                         break;
                                     case 12:
                                         ic0 ic0Var7 = this.b;
@@ -646,7 +646,7 @@ public final class ic0 extends FrameLayout {
                                                 messagePreviewParams5.quoteStart = i172;
                                                 int i182 = ac0Var2.v;
                                                 messagePreviewParams5.quoteEnd = i182;
-                                                messagePreviewParams5.quote = org.telegram.ui.in.c(c11, i172, i182);
+                                                messagePreviewParams5.quote = org.telegram.ui.gn.c(c11, i172, i182);
                                                 oc0Var2.b();
                                                 oc0Var2.a(true);
                                                 break;
@@ -674,9 +674,9 @@ public final class ic0 extends FrameLayout {
                                             if (c12 != null) {
                                                 if (!ac0Var3.x()) {
                                                     messagePreviewParams6.quoteStart = 0;
-                                                    int min = Math.min(MessagesController.getInstance(i19).quoteLengthMax, org.telegram.ui.in.d(c12));
+                                                    int min = Math.min(MessagesController.getInstance(i19).quoteLengthMax, org.telegram.ui.gn.d(c12));
                                                     messagePreviewParams6.quoteEnd = min;
-                                                    messagePreviewParams6.quote = org.telegram.ui.in.c(c12, messagePreviewParams6.quoteStart, min);
+                                                    messagePreviewParams6.quote = org.telegram.ui.gn.c(c12, messagePreviewParams6.quoteStart, min);
                                                     View d = ic0Var6.d();
                                                     if (d instanceof org.telegram.ui.Cells.u1) {
                                                         ac0Var3.Z((org.telegram.ui.Cells.u1) d, messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
@@ -690,7 +690,7 @@ public final class ic0 extends FrameLayout {
                                                     messagePreviewParams6.quoteStart = ac0Var3.u;
                                                     messagePreviewParams6.quoteEnd = ac0Var3.v;
                                                     org.telegram.ui.Cells.v9 v9Var2 = ac0Var3.W;
-                                                    messagePreviewParams6.quote = org.telegram.ui.in.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
+                                                    messagePreviewParams6.quote = org.telegram.ui.gn.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
                                                     oc0Var3.b();
                                                     oc0Var3.a(true);
                                                     break;
@@ -713,20 +713,20 @@ public final class ic0 extends FrameLayout {
                                     case 6:
                                         oc0 oc0Var4 = this.b.c0;
                                         if (!oc0Var4.b) {
-                                            org.telegram.ui.cl clVar = (org.telegram.ui.cl) oc0Var4;
-                                            clVar.a(true);
-                                            org.telegram.ui.sn snVar = clVar.H;
-                                            snVar.n5 = null;
-                                            snVar.l5 = null;
-                                            snVar.f5.updateReply(null, null, snVar.T5, null);
-                                            snVar.m8();
+                                            org.telegram.ui.al alVar = (org.telegram.ui.al) oc0Var4;
+                                            alVar.a(true);
+                                            org.telegram.ui.qn qnVar = alVar.H;
+                                            qnVar.n5 = null;
+                                            qnVar.l5 = null;
+                                            qnVar.f5.updateReply(null, null, qnVar.T5, null);
+                                            qnVar.m8();
                                             break;
                                         } else {
-                                            org.telegram.ui.cl clVar2 = (org.telegram.ui.cl) oc0Var4;
-                                            clVar2.a(true);
-                                            org.telegram.ui.sn snVar2 = clVar2.H;
-                                            snVar2.l5 = null;
-                                            snVar2.Fb(snVar2.n5);
+                                            org.telegram.ui.al alVar2 = (org.telegram.ui.al) oc0Var4;
+                                            alVar2.a(true);
+                                            org.telegram.ui.qn qnVar2 = alVar2.H;
+                                            qnVar2.l5 = null;
+                                            qnVar2.Fb(qnVar2.n5);
                                             break;
                                         }
                                     case 7:
@@ -736,32 +736,32 @@ public final class ic0 extends FrameLayout {
                                         this.b.c0.a(true);
                                         break;
                                     case 9:
-                                        org.telegram.ui.cl clVar3 = (org.telegram.ui.cl) this.b.c0;
-                                        clVar3.a(true);
-                                        org.telegram.ui.sn snVar3 = clVar3.H;
-                                        snVar3.f5.updateForward(null, snVar3.T5);
-                                        snVar3.m8();
+                                        org.telegram.ui.al alVar3 = (org.telegram.ui.al) this.b.c0;
+                                        alVar3.a(true);
+                                        org.telegram.ui.qn qnVar3 = alVar3.H;
+                                        qnVar3.f5.updateForward(null, qnVar3.T5);
+                                        qnVar3.m8();
                                         break;
                                     case 10:
                                         this.b.c0.a(true);
                                         break;
                                     case 11:
-                                        org.telegram.ui.cl clVar4 = (org.telegram.ui.cl) this.b.c0;
-                                        clVar4.a(true);
-                                        org.telegram.ui.sn snVar4 = clVar4.H;
-                                        snVar4.G5 = null;
-                                        org.telegram.ui.hk hkVar = snVar4.Y;
-                                        if (hkVar != null) {
-                                            hkVar.X2 = null;
-                                            hkVar.Y2 = false;
+                                        org.telegram.ui.al alVar4 = (org.telegram.ui.al) this.b.c0;
+                                        alVar4.a(true);
+                                        org.telegram.ui.qn qnVar4 = alVar4.H;
+                                        qnVar4.G5 = null;
+                                        org.telegram.ui.fk fkVar = qnVar4.Y;
+                                        if (fkVar != null) {
+                                            fkVar.X2 = null;
+                                            fkVar.Y2 = false;
                                         }
-                                        MessagePreviewParams messagePreviewParams7 = snVar4.f5;
+                                        MessagePreviewParams messagePreviewParams7 = qnVar4.f5;
                                         if (messagePreviewParams7 != null) {
-                                            i162 = ((org.telegram.ui.ActionBar.n2) snVar4).currentAccount;
-                                            MessageObject messageObject = snVar4.n5;
-                                            messagePreviewParams7.updateLink(i162, null, null, messageObject == snVar4.X3 ? null : messageObject, snVar4.l5, snVar4.p5);
+                                            i162 = ((org.telegram.ui.ActionBar.n2) qnVar4).currentAccount;
+                                            MessageObject messageObject = qnVar4.n5;
+                                            messagePreviewParams7.updateLink(i162, null, null, messageObject == qnVar4.X3 ? null : messageObject, qnVar4.l5, qnVar4.p5);
                                         }
-                                        snVar4.m8();
+                                        qnVar4.m8();
                                         break;
                                     case 12:
                                         ic0 ic0Var7 = this.b;
@@ -842,7 +842,7 @@ public final class ic0 extends FrameLayout {
                                                 messagePreviewParams5.quoteStart = i172;
                                                 int i182 = ac0Var2.v;
                                                 messagePreviewParams5.quoteEnd = i182;
-                                                messagePreviewParams5.quote = org.telegram.ui.in.c(c11, i172, i182);
+                                                messagePreviewParams5.quote = org.telegram.ui.gn.c(c11, i172, i182);
                                                 oc0Var2.b();
                                                 oc0Var2.a(true);
                                                 break;
@@ -870,9 +870,9 @@ public final class ic0 extends FrameLayout {
                                             if (c12 != null) {
                                                 if (!ac0Var3.x()) {
                                                     messagePreviewParams6.quoteStart = 0;
-                                                    int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.in.d(c12));
+                                                    int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.gn.d(c12));
                                                     messagePreviewParams6.quoteEnd = min;
-                                                    messagePreviewParams6.quote = org.telegram.ui.in.c(c12, messagePreviewParams6.quoteStart, min);
+                                                    messagePreviewParams6.quote = org.telegram.ui.gn.c(c12, messagePreviewParams6.quoteStart, min);
                                                     View d = ic0Var6.d();
                                                     if (d instanceof org.telegram.ui.Cells.u1) {
                                                         ac0Var3.Z((org.telegram.ui.Cells.u1) d, messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
@@ -886,7 +886,7 @@ public final class ic0 extends FrameLayout {
                                                     messagePreviewParams6.quoteStart = ac0Var3.u;
                                                     messagePreviewParams6.quoteEnd = ac0Var3.v;
                                                     org.telegram.ui.Cells.v9 v9Var2 = ac0Var3.W;
-                                                    messagePreviewParams6.quote = org.telegram.ui.in.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
+                                                    messagePreviewParams6.quote = org.telegram.ui.gn.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
                                                     oc0Var3.b();
                                                     oc0Var3.a(true);
                                                     break;
@@ -909,20 +909,20 @@ public final class ic0 extends FrameLayout {
                                     case 6:
                                         oc0 oc0Var4 = this.b.c0;
                                         if (!oc0Var4.b) {
-                                            org.telegram.ui.cl clVar = (org.telegram.ui.cl) oc0Var4;
-                                            clVar.a(true);
-                                            org.telegram.ui.sn snVar = clVar.H;
-                                            snVar.n5 = null;
-                                            snVar.l5 = null;
-                                            snVar.f5.updateReply(null, null, snVar.T5, null);
-                                            snVar.m8();
+                                            org.telegram.ui.al alVar = (org.telegram.ui.al) oc0Var4;
+                                            alVar.a(true);
+                                            org.telegram.ui.qn qnVar = alVar.H;
+                                            qnVar.n5 = null;
+                                            qnVar.l5 = null;
+                                            qnVar.f5.updateReply(null, null, qnVar.T5, null);
+                                            qnVar.m8();
                                             break;
                                         } else {
-                                            org.telegram.ui.cl clVar2 = (org.telegram.ui.cl) oc0Var4;
-                                            clVar2.a(true);
-                                            org.telegram.ui.sn snVar2 = clVar2.H;
-                                            snVar2.l5 = null;
-                                            snVar2.Fb(snVar2.n5);
+                                            org.telegram.ui.al alVar2 = (org.telegram.ui.al) oc0Var4;
+                                            alVar2.a(true);
+                                            org.telegram.ui.qn qnVar2 = alVar2.H;
+                                            qnVar2.l5 = null;
+                                            qnVar2.Fb(qnVar2.n5);
                                             break;
                                         }
                                     case 7:
@@ -932,32 +932,32 @@ public final class ic0 extends FrameLayout {
                                         this.b.c0.a(true);
                                         break;
                                     case 9:
-                                        org.telegram.ui.cl clVar3 = (org.telegram.ui.cl) this.b.c0;
-                                        clVar3.a(true);
-                                        org.telegram.ui.sn snVar3 = clVar3.H;
-                                        snVar3.f5.updateForward(null, snVar3.T5);
-                                        snVar3.m8();
+                                        org.telegram.ui.al alVar3 = (org.telegram.ui.al) this.b.c0;
+                                        alVar3.a(true);
+                                        org.telegram.ui.qn qnVar3 = alVar3.H;
+                                        qnVar3.f5.updateForward(null, qnVar3.T5);
+                                        qnVar3.m8();
                                         break;
                                     case 10:
                                         this.b.c0.a(true);
                                         break;
                                     case 11:
-                                        org.telegram.ui.cl clVar4 = (org.telegram.ui.cl) this.b.c0;
-                                        clVar4.a(true);
-                                        org.telegram.ui.sn snVar4 = clVar4.H;
-                                        snVar4.G5 = null;
-                                        org.telegram.ui.hk hkVar = snVar4.Y;
-                                        if (hkVar != null) {
-                                            hkVar.X2 = null;
-                                            hkVar.Y2 = false;
+                                        org.telegram.ui.al alVar4 = (org.telegram.ui.al) this.b.c0;
+                                        alVar4.a(true);
+                                        org.telegram.ui.qn qnVar4 = alVar4.H;
+                                        qnVar4.G5 = null;
+                                        org.telegram.ui.fk fkVar = qnVar4.Y;
+                                        if (fkVar != null) {
+                                            fkVar.X2 = null;
+                                            fkVar.Y2 = false;
                                         }
-                                        MessagePreviewParams messagePreviewParams7 = snVar4.f5;
+                                        MessagePreviewParams messagePreviewParams7 = qnVar4.f5;
                                         if (messagePreviewParams7 != null) {
-                                            i162 = ((org.telegram.ui.ActionBar.n2) snVar4).currentAccount;
-                                            MessageObject messageObject = snVar4.n5;
-                                            messagePreviewParams7.updateLink(i162, null, null, messageObject == snVar4.X3 ? null : messageObject, snVar4.l5, snVar4.p5);
+                                            i162 = ((org.telegram.ui.ActionBar.n2) qnVar4).currentAccount;
+                                            MessageObject messageObject = qnVar4.n5;
+                                            messagePreviewParams7.updateLink(i162, null, null, messageObject == qnVar4.X3 ? null : messageObject, qnVar4.l5, qnVar4.p5);
                                         }
-                                        snVar4.m8();
+                                        qnVar4.m8();
                                         break;
                                     case 12:
                                         ic0 ic0Var7 = this.b;
@@ -1065,7 +1065,7 @@ public final class ic0 extends FrameLayout {
                                         messagePreviewParams5.quoteStart = i172;
                                         int i182 = ac0Var2.v;
                                         messagePreviewParams5.quoteEnd = i182;
-                                        messagePreviewParams5.quote = org.telegram.ui.in.c(c11, i172, i182);
+                                        messagePreviewParams5.quote = org.telegram.ui.gn.c(c11, i172, i182);
                                         oc0Var2.b();
                                         oc0Var2.a(true);
                                         break;
@@ -1093,9 +1093,9 @@ public final class ic0 extends FrameLayout {
                                     if (c12 != null) {
                                         if (!ac0Var3.x()) {
                                             messagePreviewParams6.quoteStart = 0;
-                                            int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.in.d(c12));
+                                            int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.gn.d(c12));
                                             messagePreviewParams6.quoteEnd = min;
-                                            messagePreviewParams6.quote = org.telegram.ui.in.c(c12, messagePreviewParams6.quoteStart, min);
+                                            messagePreviewParams6.quote = org.telegram.ui.gn.c(c12, messagePreviewParams6.quoteStart, min);
                                             View d = ic0Var6.d();
                                             if (d instanceof org.telegram.ui.Cells.u1) {
                                                 ac0Var3.Z((org.telegram.ui.Cells.u1) d, messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
@@ -1109,7 +1109,7 @@ public final class ic0 extends FrameLayout {
                                             messagePreviewParams6.quoteStart = ac0Var3.u;
                                             messagePreviewParams6.quoteEnd = ac0Var3.v;
                                             org.telegram.ui.Cells.v9 v9Var2 = ac0Var3.W;
-                                            messagePreviewParams6.quote = org.telegram.ui.in.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
+                                            messagePreviewParams6.quote = org.telegram.ui.gn.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
                                             oc0Var3.b();
                                             oc0Var3.a(true);
                                             break;
@@ -1132,20 +1132,20 @@ public final class ic0 extends FrameLayout {
                             case 6:
                                 oc0 oc0Var4 = this.b.c0;
                                 if (!oc0Var4.b) {
-                                    org.telegram.ui.cl clVar = (org.telegram.ui.cl) oc0Var4;
-                                    clVar.a(true);
-                                    org.telegram.ui.sn snVar = clVar.H;
-                                    snVar.n5 = null;
-                                    snVar.l5 = null;
-                                    snVar.f5.updateReply(null, null, snVar.T5, null);
-                                    snVar.m8();
+                                    org.telegram.ui.al alVar = (org.telegram.ui.al) oc0Var4;
+                                    alVar.a(true);
+                                    org.telegram.ui.qn qnVar = alVar.H;
+                                    qnVar.n5 = null;
+                                    qnVar.l5 = null;
+                                    qnVar.f5.updateReply(null, null, qnVar.T5, null);
+                                    qnVar.m8();
                                     break;
                                 } else {
-                                    org.telegram.ui.cl clVar2 = (org.telegram.ui.cl) oc0Var4;
-                                    clVar2.a(true);
-                                    org.telegram.ui.sn snVar2 = clVar2.H;
-                                    snVar2.l5 = null;
-                                    snVar2.Fb(snVar2.n5);
+                                    org.telegram.ui.al alVar2 = (org.telegram.ui.al) oc0Var4;
+                                    alVar2.a(true);
+                                    org.telegram.ui.qn qnVar2 = alVar2.H;
+                                    qnVar2.l5 = null;
+                                    qnVar2.Fb(qnVar2.n5);
                                     break;
                                 }
                             case 7:
@@ -1155,32 +1155,32 @@ public final class ic0 extends FrameLayout {
                                 this.b.c0.a(true);
                                 break;
                             case 9:
-                                org.telegram.ui.cl clVar3 = (org.telegram.ui.cl) this.b.c0;
-                                clVar3.a(true);
-                                org.telegram.ui.sn snVar3 = clVar3.H;
-                                snVar3.f5.updateForward(null, snVar3.T5);
-                                snVar3.m8();
+                                org.telegram.ui.al alVar3 = (org.telegram.ui.al) this.b.c0;
+                                alVar3.a(true);
+                                org.telegram.ui.qn qnVar3 = alVar3.H;
+                                qnVar3.f5.updateForward(null, qnVar3.T5);
+                                qnVar3.m8();
                                 break;
                             case 10:
                                 this.b.c0.a(true);
                                 break;
                             case 11:
-                                org.telegram.ui.cl clVar4 = (org.telegram.ui.cl) this.b.c0;
-                                clVar4.a(true);
-                                org.telegram.ui.sn snVar4 = clVar4.H;
-                                snVar4.G5 = null;
-                                org.telegram.ui.hk hkVar = snVar4.Y;
-                                if (hkVar != null) {
-                                    hkVar.X2 = null;
-                                    hkVar.Y2 = false;
+                                org.telegram.ui.al alVar4 = (org.telegram.ui.al) this.b.c0;
+                                alVar4.a(true);
+                                org.telegram.ui.qn qnVar4 = alVar4.H;
+                                qnVar4.G5 = null;
+                                org.telegram.ui.fk fkVar = qnVar4.Y;
+                                if (fkVar != null) {
+                                    fkVar.X2 = null;
+                                    fkVar.Y2 = false;
                                 }
-                                MessagePreviewParams messagePreviewParams7 = snVar4.f5;
+                                MessagePreviewParams messagePreviewParams7 = qnVar4.f5;
                                 if (messagePreviewParams7 != null) {
-                                    i162 = ((org.telegram.ui.ActionBar.n2) snVar4).currentAccount;
-                                    MessageObject messageObject = snVar4.n5;
-                                    messagePreviewParams7.updateLink(i162, null, null, messageObject == snVar4.X3 ? null : messageObject, snVar4.l5, snVar4.p5);
+                                    i162 = ((org.telegram.ui.ActionBar.n2) qnVar4).currentAccount;
+                                    MessageObject messageObject = qnVar4.n5;
+                                    messagePreviewParams7.updateLink(i162, null, null, messageObject == qnVar4.X3 ? null : messageObject, qnVar4.l5, qnVar4.p5);
                                 }
-                                snVar4.m8();
+                                qnVar4.m8();
                                 break;
                             case 12:
                                 ic0 ic0Var7 = this.b;
@@ -1269,7 +1269,7 @@ public final class ic0 extends FrameLayout {
                                         messagePreviewParams5.quoteStart = i172;
                                         int i182 = ac0Var2.v;
                                         messagePreviewParams5.quoteEnd = i182;
-                                        messagePreviewParams5.quote = org.telegram.ui.in.c(c11, i172, i182);
+                                        messagePreviewParams5.quote = org.telegram.ui.gn.c(c11, i172, i182);
                                         oc0Var2.b();
                                         oc0Var2.a(true);
                                         break;
@@ -1297,9 +1297,9 @@ public final class ic0 extends FrameLayout {
                                     if (c12 != null) {
                                         if (!ac0Var3.x()) {
                                             messagePreviewParams6.quoteStart = 0;
-                                            int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.in.d(c12));
+                                            int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.gn.d(c12));
                                             messagePreviewParams6.quoteEnd = min;
-                                            messagePreviewParams6.quote = org.telegram.ui.in.c(c12, messagePreviewParams6.quoteStart, min);
+                                            messagePreviewParams6.quote = org.telegram.ui.gn.c(c12, messagePreviewParams6.quoteStart, min);
                                             View d = ic0Var6.d();
                                             if (d instanceof org.telegram.ui.Cells.u1) {
                                                 ac0Var3.Z((org.telegram.ui.Cells.u1) d, messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
@@ -1313,7 +1313,7 @@ public final class ic0 extends FrameLayout {
                                             messagePreviewParams6.quoteStart = ac0Var3.u;
                                             messagePreviewParams6.quoteEnd = ac0Var3.v;
                                             org.telegram.ui.Cells.v9 v9Var2 = ac0Var3.W;
-                                            messagePreviewParams6.quote = org.telegram.ui.in.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
+                                            messagePreviewParams6.quote = org.telegram.ui.gn.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
                                             oc0Var3.b();
                                             oc0Var3.a(true);
                                             break;
@@ -1336,20 +1336,20 @@ public final class ic0 extends FrameLayout {
                             case 6:
                                 oc0 oc0Var4 = this.b.c0;
                                 if (!oc0Var4.b) {
-                                    org.telegram.ui.cl clVar = (org.telegram.ui.cl) oc0Var4;
-                                    clVar.a(true);
-                                    org.telegram.ui.sn snVar = clVar.H;
-                                    snVar.n5 = null;
-                                    snVar.l5 = null;
-                                    snVar.f5.updateReply(null, null, snVar.T5, null);
-                                    snVar.m8();
+                                    org.telegram.ui.al alVar = (org.telegram.ui.al) oc0Var4;
+                                    alVar.a(true);
+                                    org.telegram.ui.qn qnVar = alVar.H;
+                                    qnVar.n5 = null;
+                                    qnVar.l5 = null;
+                                    qnVar.f5.updateReply(null, null, qnVar.T5, null);
+                                    qnVar.m8();
                                     break;
                                 } else {
-                                    org.telegram.ui.cl clVar2 = (org.telegram.ui.cl) oc0Var4;
-                                    clVar2.a(true);
-                                    org.telegram.ui.sn snVar2 = clVar2.H;
-                                    snVar2.l5 = null;
-                                    snVar2.Fb(snVar2.n5);
+                                    org.telegram.ui.al alVar2 = (org.telegram.ui.al) oc0Var4;
+                                    alVar2.a(true);
+                                    org.telegram.ui.qn qnVar2 = alVar2.H;
+                                    qnVar2.l5 = null;
+                                    qnVar2.Fb(qnVar2.n5);
                                     break;
                                 }
                             case 7:
@@ -1359,32 +1359,32 @@ public final class ic0 extends FrameLayout {
                                 this.b.c0.a(true);
                                 break;
                             case 9:
-                                org.telegram.ui.cl clVar3 = (org.telegram.ui.cl) this.b.c0;
-                                clVar3.a(true);
-                                org.telegram.ui.sn snVar3 = clVar3.H;
-                                snVar3.f5.updateForward(null, snVar3.T5);
-                                snVar3.m8();
+                                org.telegram.ui.al alVar3 = (org.telegram.ui.al) this.b.c0;
+                                alVar3.a(true);
+                                org.telegram.ui.qn qnVar3 = alVar3.H;
+                                qnVar3.f5.updateForward(null, qnVar3.T5);
+                                qnVar3.m8();
                                 break;
                             case 10:
                                 this.b.c0.a(true);
                                 break;
                             case 11:
-                                org.telegram.ui.cl clVar4 = (org.telegram.ui.cl) this.b.c0;
-                                clVar4.a(true);
-                                org.telegram.ui.sn snVar4 = clVar4.H;
-                                snVar4.G5 = null;
-                                org.telegram.ui.hk hkVar = snVar4.Y;
-                                if (hkVar != null) {
-                                    hkVar.X2 = null;
-                                    hkVar.Y2 = false;
+                                org.telegram.ui.al alVar4 = (org.telegram.ui.al) this.b.c0;
+                                alVar4.a(true);
+                                org.telegram.ui.qn qnVar4 = alVar4.H;
+                                qnVar4.G5 = null;
+                                org.telegram.ui.fk fkVar = qnVar4.Y;
+                                if (fkVar != null) {
+                                    fkVar.X2 = null;
+                                    fkVar.Y2 = false;
                                 }
-                                MessagePreviewParams messagePreviewParams7 = snVar4.f5;
+                                MessagePreviewParams messagePreviewParams7 = qnVar4.f5;
                                 if (messagePreviewParams7 != null) {
-                                    i162 = ((org.telegram.ui.ActionBar.n2) snVar4).currentAccount;
-                                    MessageObject messageObject = snVar4.n5;
-                                    messagePreviewParams7.updateLink(i162, null, null, messageObject == snVar4.X3 ? null : messageObject, snVar4.l5, snVar4.p5);
+                                    i162 = ((org.telegram.ui.ActionBar.n2) qnVar4).currentAccount;
+                                    MessageObject messageObject = qnVar4.n5;
+                                    messagePreviewParams7.updateLink(i162, null, null, messageObject == qnVar4.X3 ? null : messageObject, qnVar4.l5, qnVar4.p5);
                                 }
-                                snVar4.m8();
+                                qnVar4.m8();
                                 break;
                             case 12:
                                 ic0 ic0Var7 = this.b;
@@ -1471,7 +1471,7 @@ public final class ic0 extends FrameLayout {
                                         messagePreviewParams5.quoteStart = i172;
                                         int i182 = ac0Var2.v;
                                         messagePreviewParams5.quoteEnd = i182;
-                                        messagePreviewParams5.quote = org.telegram.ui.in.c(c11, i172, i182);
+                                        messagePreviewParams5.quote = org.telegram.ui.gn.c(c11, i172, i182);
                                         oc0Var2.b();
                                         oc0Var2.a(true);
                                         break;
@@ -1499,9 +1499,9 @@ public final class ic0 extends FrameLayout {
                                     if (c12 != null) {
                                         if (!ac0Var3.x()) {
                                             messagePreviewParams6.quoteStart = 0;
-                                            int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.in.d(c12));
+                                            int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.gn.d(c12));
                                             messagePreviewParams6.quoteEnd = min;
-                                            messagePreviewParams6.quote = org.telegram.ui.in.c(c12, messagePreviewParams6.quoteStart, min);
+                                            messagePreviewParams6.quote = org.telegram.ui.gn.c(c12, messagePreviewParams6.quoteStart, min);
                                             View d = ic0Var6.d();
                                             if (d instanceof org.telegram.ui.Cells.u1) {
                                                 ac0Var3.Z((org.telegram.ui.Cells.u1) d, messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
@@ -1515,7 +1515,7 @@ public final class ic0 extends FrameLayout {
                                             messagePreviewParams6.quoteStart = ac0Var3.u;
                                             messagePreviewParams6.quoteEnd = ac0Var3.v;
                                             org.telegram.ui.Cells.v9 v9Var2 = ac0Var3.W;
-                                            messagePreviewParams6.quote = org.telegram.ui.in.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
+                                            messagePreviewParams6.quote = org.telegram.ui.gn.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
                                             oc0Var3.b();
                                             oc0Var3.a(true);
                                             break;
@@ -1538,20 +1538,20 @@ public final class ic0 extends FrameLayout {
                             case 6:
                                 oc0 oc0Var4 = this.b.c0;
                                 if (!oc0Var4.b) {
-                                    org.telegram.ui.cl clVar = (org.telegram.ui.cl) oc0Var4;
-                                    clVar.a(true);
-                                    org.telegram.ui.sn snVar = clVar.H;
-                                    snVar.n5 = null;
-                                    snVar.l5 = null;
-                                    snVar.f5.updateReply(null, null, snVar.T5, null);
-                                    snVar.m8();
+                                    org.telegram.ui.al alVar = (org.telegram.ui.al) oc0Var4;
+                                    alVar.a(true);
+                                    org.telegram.ui.qn qnVar = alVar.H;
+                                    qnVar.n5 = null;
+                                    qnVar.l5 = null;
+                                    qnVar.f5.updateReply(null, null, qnVar.T5, null);
+                                    qnVar.m8();
                                     break;
                                 } else {
-                                    org.telegram.ui.cl clVar2 = (org.telegram.ui.cl) oc0Var4;
-                                    clVar2.a(true);
-                                    org.telegram.ui.sn snVar2 = clVar2.H;
-                                    snVar2.l5 = null;
-                                    snVar2.Fb(snVar2.n5);
+                                    org.telegram.ui.al alVar2 = (org.telegram.ui.al) oc0Var4;
+                                    alVar2.a(true);
+                                    org.telegram.ui.qn qnVar2 = alVar2.H;
+                                    qnVar2.l5 = null;
+                                    qnVar2.Fb(qnVar2.n5);
                                     break;
                                 }
                             case 7:
@@ -1561,32 +1561,32 @@ public final class ic0 extends FrameLayout {
                                 this.b.c0.a(true);
                                 break;
                             case 9:
-                                org.telegram.ui.cl clVar3 = (org.telegram.ui.cl) this.b.c0;
-                                clVar3.a(true);
-                                org.telegram.ui.sn snVar3 = clVar3.H;
-                                snVar3.f5.updateForward(null, snVar3.T5);
-                                snVar3.m8();
+                                org.telegram.ui.al alVar3 = (org.telegram.ui.al) this.b.c0;
+                                alVar3.a(true);
+                                org.telegram.ui.qn qnVar3 = alVar3.H;
+                                qnVar3.f5.updateForward(null, qnVar3.T5);
+                                qnVar3.m8();
                                 break;
                             case 10:
                                 this.b.c0.a(true);
                                 break;
                             case 11:
-                                org.telegram.ui.cl clVar4 = (org.telegram.ui.cl) this.b.c0;
-                                clVar4.a(true);
-                                org.telegram.ui.sn snVar4 = clVar4.H;
-                                snVar4.G5 = null;
-                                org.telegram.ui.hk hkVar = snVar4.Y;
-                                if (hkVar != null) {
-                                    hkVar.X2 = null;
-                                    hkVar.Y2 = false;
+                                org.telegram.ui.al alVar4 = (org.telegram.ui.al) this.b.c0;
+                                alVar4.a(true);
+                                org.telegram.ui.qn qnVar4 = alVar4.H;
+                                qnVar4.G5 = null;
+                                org.telegram.ui.fk fkVar = qnVar4.Y;
+                                if (fkVar != null) {
+                                    fkVar.X2 = null;
+                                    fkVar.Y2 = false;
                                 }
-                                MessagePreviewParams messagePreviewParams7 = snVar4.f5;
+                                MessagePreviewParams messagePreviewParams7 = qnVar4.f5;
                                 if (messagePreviewParams7 != null) {
-                                    i162 = ((org.telegram.ui.ActionBar.n2) snVar4).currentAccount;
-                                    MessageObject messageObject = snVar4.n5;
-                                    messagePreviewParams7.updateLink(i162, null, null, messageObject == snVar4.X3 ? null : messageObject, snVar4.l5, snVar4.p5);
+                                    i162 = ((org.telegram.ui.ActionBar.n2) qnVar4).currentAccount;
+                                    MessageObject messageObject = qnVar4.n5;
+                                    messagePreviewParams7.updateLink(i162, null, null, messageObject == qnVar4.X3 ? null : messageObject, qnVar4.l5, qnVar4.p5);
                                 }
-                                snVar4.m8();
+                                qnVar4.m8();
                                 break;
                             case 12:
                                 ic0 ic0Var7 = this.b;
@@ -1650,7 +1650,7 @@ public final class ic0 extends FrameLayout {
                 r11 = 0;
                 messagePreviewParams2 = messagePreviewParams4;
             } else {
-                LinearLayout e7 = org.telegram.messenger.lk.e(context3, 1);
+                LinearLayout e7 = org.telegram.messenger.kk.e(context3, 1);
                 if (z13) {
                     drawable = null;
                     messagePreviewParams3 = messagePreviewParams4;
@@ -1701,7 +1701,7 @@ public final class ic0 extends FrameLayout {
                                             messagePreviewParams5.quoteStart = i172;
                                             int i182 = ac0Var2.v;
                                             messagePreviewParams5.quoteEnd = i182;
-                                            messagePreviewParams5.quote = org.telegram.ui.in.c(c11, i172, i182);
+                                            messagePreviewParams5.quote = org.telegram.ui.gn.c(c11, i172, i182);
                                             oc0Var2.b();
                                             oc0Var2.a(true);
                                             break;
@@ -1729,9 +1729,9 @@ public final class ic0 extends FrameLayout {
                                         if (c12 != null) {
                                             if (!ac0Var3.x()) {
                                                 messagePreviewParams6.quoteStart = 0;
-                                                int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.in.d(c12));
+                                                int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.gn.d(c12));
                                                 messagePreviewParams6.quoteEnd = min;
-                                                messagePreviewParams6.quote = org.telegram.ui.in.c(c12, messagePreviewParams6.quoteStart, min);
+                                                messagePreviewParams6.quote = org.telegram.ui.gn.c(c12, messagePreviewParams6.quoteStart, min);
                                                 View d = ic0Var6.d();
                                                 if (d instanceof org.telegram.ui.Cells.u1) {
                                                     ac0Var3.Z((org.telegram.ui.Cells.u1) d, messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
@@ -1745,7 +1745,7 @@ public final class ic0 extends FrameLayout {
                                                 messagePreviewParams6.quoteStart = ac0Var3.u;
                                                 messagePreviewParams6.quoteEnd = ac0Var3.v;
                                                 org.telegram.ui.Cells.v9 v9Var2 = ac0Var3.W;
-                                                messagePreviewParams6.quote = org.telegram.ui.in.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
+                                                messagePreviewParams6.quote = org.telegram.ui.gn.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
                                                 oc0Var3.b();
                                                 oc0Var3.a(true);
                                                 break;
@@ -1768,20 +1768,20 @@ public final class ic0 extends FrameLayout {
                                 case 6:
                                     oc0 oc0Var4 = this.b.c0;
                                     if (!oc0Var4.b) {
-                                        org.telegram.ui.cl clVar = (org.telegram.ui.cl) oc0Var4;
-                                        clVar.a(true);
-                                        org.telegram.ui.sn snVar = clVar.H;
-                                        snVar.n5 = null;
-                                        snVar.l5 = null;
-                                        snVar.f5.updateReply(null, null, snVar.T5, null);
-                                        snVar.m8();
+                                        org.telegram.ui.al alVar = (org.telegram.ui.al) oc0Var4;
+                                        alVar.a(true);
+                                        org.telegram.ui.qn qnVar = alVar.H;
+                                        qnVar.n5 = null;
+                                        qnVar.l5 = null;
+                                        qnVar.f5.updateReply(null, null, qnVar.T5, null);
+                                        qnVar.m8();
                                         break;
                                     } else {
-                                        org.telegram.ui.cl clVar2 = (org.telegram.ui.cl) oc0Var4;
-                                        clVar2.a(true);
-                                        org.telegram.ui.sn snVar2 = clVar2.H;
-                                        snVar2.l5 = null;
-                                        snVar2.Fb(snVar2.n5);
+                                        org.telegram.ui.al alVar2 = (org.telegram.ui.al) oc0Var4;
+                                        alVar2.a(true);
+                                        org.telegram.ui.qn qnVar2 = alVar2.H;
+                                        qnVar2.l5 = null;
+                                        qnVar2.Fb(qnVar2.n5);
                                         break;
                                     }
                                 case 7:
@@ -1791,32 +1791,32 @@ public final class ic0 extends FrameLayout {
                                     this.b.c0.a(true);
                                     break;
                                 case 9:
-                                    org.telegram.ui.cl clVar3 = (org.telegram.ui.cl) this.b.c0;
-                                    clVar3.a(true);
-                                    org.telegram.ui.sn snVar3 = clVar3.H;
-                                    snVar3.f5.updateForward(null, snVar3.T5);
-                                    snVar3.m8();
+                                    org.telegram.ui.al alVar3 = (org.telegram.ui.al) this.b.c0;
+                                    alVar3.a(true);
+                                    org.telegram.ui.qn qnVar3 = alVar3.H;
+                                    qnVar3.f5.updateForward(null, qnVar3.T5);
+                                    qnVar3.m8();
                                     break;
                                 case 10:
                                     this.b.c0.a(true);
                                     break;
                                 case 11:
-                                    org.telegram.ui.cl clVar4 = (org.telegram.ui.cl) this.b.c0;
-                                    clVar4.a(true);
-                                    org.telegram.ui.sn snVar4 = clVar4.H;
-                                    snVar4.G5 = null;
-                                    org.telegram.ui.hk hkVar = snVar4.Y;
-                                    if (hkVar != null) {
-                                        hkVar.X2 = null;
-                                        hkVar.Y2 = false;
+                                    org.telegram.ui.al alVar4 = (org.telegram.ui.al) this.b.c0;
+                                    alVar4.a(true);
+                                    org.telegram.ui.qn qnVar4 = alVar4.H;
+                                    qnVar4.G5 = null;
+                                    org.telegram.ui.fk fkVar = qnVar4.Y;
+                                    if (fkVar != null) {
+                                        fkVar.X2 = null;
+                                        fkVar.Y2 = false;
                                     }
-                                    MessagePreviewParams messagePreviewParams7 = snVar4.f5;
+                                    MessagePreviewParams messagePreviewParams7 = qnVar4.f5;
                                     if (messagePreviewParams7 != null) {
-                                        i162 = ((org.telegram.ui.ActionBar.n2) snVar4).currentAccount;
-                                        MessageObject messageObject = snVar4.n5;
-                                        messagePreviewParams7.updateLink(i162, null, null, messageObject == snVar4.X3 ? null : messageObject, snVar4.l5, snVar4.p5);
+                                        i162 = ((org.telegram.ui.ActionBar.n2) qnVar4).currentAccount;
+                                        MessageObject messageObject = qnVar4.n5;
+                                        messagePreviewParams7.updateLink(i162, null, null, messageObject == qnVar4.X3 ? null : messageObject, qnVar4.l5, qnVar4.p5);
                                     }
-                                    snVar4.m8();
+                                    qnVar4.m8();
                                     break;
                                 case 12:
                                     ic0 ic0Var7 = this.b;
@@ -1905,7 +1905,7 @@ public final class ic0 extends FrameLayout {
                                             messagePreviewParams5.quoteStart = i172;
                                             int i182 = ac0Var2.v;
                                             messagePreviewParams5.quoteEnd = i182;
-                                            messagePreviewParams5.quote = org.telegram.ui.in.c(c11, i172, i182);
+                                            messagePreviewParams5.quote = org.telegram.ui.gn.c(c11, i172, i182);
                                             oc0Var2.b();
                                             oc0Var2.a(true);
                                             break;
@@ -1933,9 +1933,9 @@ public final class ic0 extends FrameLayout {
                                         if (c12 != null) {
                                             if (!ac0Var3.x()) {
                                                 messagePreviewParams6.quoteStart = 0;
-                                                int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.in.d(c12));
+                                                int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.gn.d(c12));
                                                 messagePreviewParams6.quoteEnd = min;
-                                                messagePreviewParams6.quote = org.telegram.ui.in.c(c12, messagePreviewParams6.quoteStart, min);
+                                                messagePreviewParams6.quote = org.telegram.ui.gn.c(c12, messagePreviewParams6.quoteStart, min);
                                                 View d = ic0Var6.d();
                                                 if (d instanceof org.telegram.ui.Cells.u1) {
                                                     ac0Var3.Z((org.telegram.ui.Cells.u1) d, messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
@@ -1949,7 +1949,7 @@ public final class ic0 extends FrameLayout {
                                                 messagePreviewParams6.quoteStart = ac0Var3.u;
                                                 messagePreviewParams6.quoteEnd = ac0Var3.v;
                                                 org.telegram.ui.Cells.v9 v9Var2 = ac0Var3.W;
-                                                messagePreviewParams6.quote = org.telegram.ui.in.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
+                                                messagePreviewParams6.quote = org.telegram.ui.gn.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
                                                 oc0Var3.b();
                                                 oc0Var3.a(true);
                                                 break;
@@ -1972,20 +1972,20 @@ public final class ic0 extends FrameLayout {
                                 case 6:
                                     oc0 oc0Var4 = this.b.c0;
                                     if (!oc0Var4.b) {
-                                        org.telegram.ui.cl clVar = (org.telegram.ui.cl) oc0Var4;
-                                        clVar.a(true);
-                                        org.telegram.ui.sn snVar = clVar.H;
-                                        snVar.n5 = null;
-                                        snVar.l5 = null;
-                                        snVar.f5.updateReply(null, null, snVar.T5, null);
-                                        snVar.m8();
+                                        org.telegram.ui.al alVar = (org.telegram.ui.al) oc0Var4;
+                                        alVar.a(true);
+                                        org.telegram.ui.qn qnVar = alVar.H;
+                                        qnVar.n5 = null;
+                                        qnVar.l5 = null;
+                                        qnVar.f5.updateReply(null, null, qnVar.T5, null);
+                                        qnVar.m8();
                                         break;
                                     } else {
-                                        org.telegram.ui.cl clVar2 = (org.telegram.ui.cl) oc0Var4;
-                                        clVar2.a(true);
-                                        org.telegram.ui.sn snVar2 = clVar2.H;
-                                        snVar2.l5 = null;
-                                        snVar2.Fb(snVar2.n5);
+                                        org.telegram.ui.al alVar2 = (org.telegram.ui.al) oc0Var4;
+                                        alVar2.a(true);
+                                        org.telegram.ui.qn qnVar2 = alVar2.H;
+                                        qnVar2.l5 = null;
+                                        qnVar2.Fb(qnVar2.n5);
                                         break;
                                     }
                                 case 7:
@@ -1995,32 +1995,32 @@ public final class ic0 extends FrameLayout {
                                     this.b.c0.a(true);
                                     break;
                                 case 9:
-                                    org.telegram.ui.cl clVar3 = (org.telegram.ui.cl) this.b.c0;
-                                    clVar3.a(true);
-                                    org.telegram.ui.sn snVar3 = clVar3.H;
-                                    snVar3.f5.updateForward(null, snVar3.T5);
-                                    snVar3.m8();
+                                    org.telegram.ui.al alVar3 = (org.telegram.ui.al) this.b.c0;
+                                    alVar3.a(true);
+                                    org.telegram.ui.qn qnVar3 = alVar3.H;
+                                    qnVar3.f5.updateForward(null, qnVar3.T5);
+                                    qnVar3.m8();
                                     break;
                                 case 10:
                                     this.b.c0.a(true);
                                     break;
                                 case 11:
-                                    org.telegram.ui.cl clVar4 = (org.telegram.ui.cl) this.b.c0;
-                                    clVar4.a(true);
-                                    org.telegram.ui.sn snVar4 = clVar4.H;
-                                    snVar4.G5 = null;
-                                    org.telegram.ui.hk hkVar = snVar4.Y;
-                                    if (hkVar != null) {
-                                        hkVar.X2 = null;
-                                        hkVar.Y2 = false;
+                                    org.telegram.ui.al alVar4 = (org.telegram.ui.al) this.b.c0;
+                                    alVar4.a(true);
+                                    org.telegram.ui.qn qnVar4 = alVar4.H;
+                                    qnVar4.G5 = null;
+                                    org.telegram.ui.fk fkVar = qnVar4.Y;
+                                    if (fkVar != null) {
+                                        fkVar.X2 = null;
+                                        fkVar.Y2 = false;
                                     }
-                                    MessagePreviewParams messagePreviewParams7 = snVar4.f5;
+                                    MessagePreviewParams messagePreviewParams7 = qnVar4.f5;
                                     if (messagePreviewParams7 != null) {
-                                        i162 = ((org.telegram.ui.ActionBar.n2) snVar4).currentAccount;
-                                        MessageObject messageObject = snVar4.n5;
-                                        messagePreviewParams7.updateLink(i162, null, null, messageObject == snVar4.X3 ? null : messageObject, snVar4.l5, snVar4.p5);
+                                        i162 = ((org.telegram.ui.ActionBar.n2) qnVar4).currentAccount;
+                                        MessageObject messageObject = qnVar4.n5;
+                                        messagePreviewParams7.updateLink(i162, null, null, messageObject == qnVar4.X3 ? null : messageObject, qnVar4.l5, qnVar4.p5);
                                     }
-                                    snVar4.m8();
+                                    qnVar4.m8();
                                     break;
                                 case 12:
                                     ic0 ic0Var7 = this.b;
@@ -2116,7 +2116,7 @@ public final class ic0 extends FrameLayout {
                                         messagePreviewParams5.quoteStart = i172;
                                         int i182 = ac0Var2.v;
                                         messagePreviewParams5.quoteEnd = i182;
-                                        messagePreviewParams5.quote = org.telegram.ui.in.c(c11, i172, i182);
+                                        messagePreviewParams5.quote = org.telegram.ui.gn.c(c11, i172, i182);
                                         oc0Var2.b();
                                         oc0Var2.a(true);
                                         break;
@@ -2144,9 +2144,9 @@ public final class ic0 extends FrameLayout {
                                     if (c12 != null) {
                                         if (!ac0Var3.x()) {
                                             messagePreviewParams6.quoteStart = 0;
-                                            int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.in.d(c12));
+                                            int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.gn.d(c12));
                                             messagePreviewParams6.quoteEnd = min;
-                                            messagePreviewParams6.quote = org.telegram.ui.in.c(c12, messagePreviewParams6.quoteStart, min);
+                                            messagePreviewParams6.quote = org.telegram.ui.gn.c(c12, messagePreviewParams6.quoteStart, min);
                                             View d = ic0Var6.d();
                                             if (d instanceof org.telegram.ui.Cells.u1) {
                                                 ac0Var3.Z((org.telegram.ui.Cells.u1) d, messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
@@ -2160,7 +2160,7 @@ public final class ic0 extends FrameLayout {
                                             messagePreviewParams6.quoteStart = ac0Var3.u;
                                             messagePreviewParams6.quoteEnd = ac0Var3.v;
                                             org.telegram.ui.Cells.v9 v9Var2 = ac0Var3.W;
-                                            messagePreviewParams6.quote = org.telegram.ui.in.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
+                                            messagePreviewParams6.quote = org.telegram.ui.gn.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
                                             oc0Var3.b();
                                             oc0Var3.a(true);
                                             break;
@@ -2183,20 +2183,20 @@ public final class ic0 extends FrameLayout {
                             case 6:
                                 oc0 oc0Var4 = this.b.c0;
                                 if (!oc0Var4.b) {
-                                    org.telegram.ui.cl clVar = (org.telegram.ui.cl) oc0Var4;
-                                    clVar.a(true);
-                                    org.telegram.ui.sn snVar = clVar.H;
-                                    snVar.n5 = null;
-                                    snVar.l5 = null;
-                                    snVar.f5.updateReply(null, null, snVar.T5, null);
-                                    snVar.m8();
+                                    org.telegram.ui.al alVar = (org.telegram.ui.al) oc0Var4;
+                                    alVar.a(true);
+                                    org.telegram.ui.qn qnVar = alVar.H;
+                                    qnVar.n5 = null;
+                                    qnVar.l5 = null;
+                                    qnVar.f5.updateReply(null, null, qnVar.T5, null);
+                                    qnVar.m8();
                                     break;
                                 } else {
-                                    org.telegram.ui.cl clVar2 = (org.telegram.ui.cl) oc0Var4;
-                                    clVar2.a(true);
-                                    org.telegram.ui.sn snVar2 = clVar2.H;
-                                    snVar2.l5 = null;
-                                    snVar2.Fb(snVar2.n5);
+                                    org.telegram.ui.al alVar2 = (org.telegram.ui.al) oc0Var4;
+                                    alVar2.a(true);
+                                    org.telegram.ui.qn qnVar2 = alVar2.H;
+                                    qnVar2.l5 = null;
+                                    qnVar2.Fb(qnVar2.n5);
                                     break;
                                 }
                             case 7:
@@ -2206,32 +2206,32 @@ public final class ic0 extends FrameLayout {
                                 this.b.c0.a(true);
                                 break;
                             case 9:
-                                org.telegram.ui.cl clVar3 = (org.telegram.ui.cl) this.b.c0;
-                                clVar3.a(true);
-                                org.telegram.ui.sn snVar3 = clVar3.H;
-                                snVar3.f5.updateForward(null, snVar3.T5);
-                                snVar3.m8();
+                                org.telegram.ui.al alVar3 = (org.telegram.ui.al) this.b.c0;
+                                alVar3.a(true);
+                                org.telegram.ui.qn qnVar3 = alVar3.H;
+                                qnVar3.f5.updateForward(null, qnVar3.T5);
+                                qnVar3.m8();
                                 break;
                             case 10:
                                 this.b.c0.a(true);
                                 break;
                             case 11:
-                                org.telegram.ui.cl clVar4 = (org.telegram.ui.cl) this.b.c0;
-                                clVar4.a(true);
-                                org.telegram.ui.sn snVar4 = clVar4.H;
-                                snVar4.G5 = null;
-                                org.telegram.ui.hk hkVar = snVar4.Y;
-                                if (hkVar != null) {
-                                    hkVar.X2 = null;
-                                    hkVar.Y2 = false;
+                                org.telegram.ui.al alVar4 = (org.telegram.ui.al) this.b.c0;
+                                alVar4.a(true);
+                                org.telegram.ui.qn qnVar4 = alVar4.H;
+                                qnVar4.G5 = null;
+                                org.telegram.ui.fk fkVar = qnVar4.Y;
+                                if (fkVar != null) {
+                                    fkVar.X2 = null;
+                                    fkVar.Y2 = false;
                                 }
-                                MessagePreviewParams messagePreviewParams7 = snVar4.f5;
+                                MessagePreviewParams messagePreviewParams7 = qnVar4.f5;
                                 if (messagePreviewParams7 != null) {
-                                    i162 = ((org.telegram.ui.ActionBar.n2) snVar4).currentAccount;
-                                    MessageObject messageObject = snVar4.n5;
-                                    messagePreviewParams7.updateLink(i162, null, null, messageObject == snVar4.X3 ? null : messageObject, snVar4.l5, snVar4.p5);
+                                    i162 = ((org.telegram.ui.ActionBar.n2) qnVar4).currentAccount;
+                                    MessageObject messageObject = qnVar4.n5;
+                                    messagePreviewParams7.updateLink(i162, null, null, messageObject == qnVar4.X3 ? null : messageObject, qnVar4.l5, qnVar4.p5);
                                 }
-                                snVar4.m8();
+                                qnVar4.m8();
                                 break;
                             case 12:
                                 ic0 ic0Var7 = this.b;
@@ -2323,7 +2323,7 @@ public final class ic0 extends FrameLayout {
                                         messagePreviewParams5.quoteStart = i172;
                                         int i182 = ac0Var2.v;
                                         messagePreviewParams5.quoteEnd = i182;
-                                        messagePreviewParams5.quote = org.telegram.ui.in.c(c11, i172, i182);
+                                        messagePreviewParams5.quote = org.telegram.ui.gn.c(c11, i172, i182);
                                         oc0Var2.b();
                                         oc0Var2.a(true);
                                         break;
@@ -2351,9 +2351,9 @@ public final class ic0 extends FrameLayout {
                                     if (c12 != null) {
                                         if (!ac0Var3.x()) {
                                             messagePreviewParams6.quoteStart = 0;
-                                            int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.in.d(c12));
+                                            int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.gn.d(c12));
                                             messagePreviewParams6.quoteEnd = min;
-                                            messagePreviewParams6.quote = org.telegram.ui.in.c(c12, messagePreviewParams6.quoteStart, min);
+                                            messagePreviewParams6.quote = org.telegram.ui.gn.c(c12, messagePreviewParams6.quoteStart, min);
                                             View d = ic0Var6.d();
                                             if (d instanceof org.telegram.ui.Cells.u1) {
                                                 ac0Var3.Z((org.telegram.ui.Cells.u1) d, messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
@@ -2367,7 +2367,7 @@ public final class ic0 extends FrameLayout {
                                             messagePreviewParams6.quoteStart = ac0Var3.u;
                                             messagePreviewParams6.quoteEnd = ac0Var3.v;
                                             org.telegram.ui.Cells.v9 v9Var2 = ac0Var3.W;
-                                            messagePreviewParams6.quote = org.telegram.ui.in.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
+                                            messagePreviewParams6.quote = org.telegram.ui.gn.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
                                             oc0Var3.b();
                                             oc0Var3.a(true);
                                             break;
@@ -2390,20 +2390,20 @@ public final class ic0 extends FrameLayout {
                             case 6:
                                 oc0 oc0Var4 = this.b.c0;
                                 if (!oc0Var4.b) {
-                                    org.telegram.ui.cl clVar = (org.telegram.ui.cl) oc0Var4;
-                                    clVar.a(true);
-                                    org.telegram.ui.sn snVar = clVar.H;
-                                    snVar.n5 = null;
-                                    snVar.l5 = null;
-                                    snVar.f5.updateReply(null, null, snVar.T5, null);
-                                    snVar.m8();
+                                    org.telegram.ui.al alVar = (org.telegram.ui.al) oc0Var4;
+                                    alVar.a(true);
+                                    org.telegram.ui.qn qnVar = alVar.H;
+                                    qnVar.n5 = null;
+                                    qnVar.l5 = null;
+                                    qnVar.f5.updateReply(null, null, qnVar.T5, null);
+                                    qnVar.m8();
                                     break;
                                 } else {
-                                    org.telegram.ui.cl clVar2 = (org.telegram.ui.cl) oc0Var4;
-                                    clVar2.a(true);
-                                    org.telegram.ui.sn snVar2 = clVar2.H;
-                                    snVar2.l5 = null;
-                                    snVar2.Fb(snVar2.n5);
+                                    org.telegram.ui.al alVar2 = (org.telegram.ui.al) oc0Var4;
+                                    alVar2.a(true);
+                                    org.telegram.ui.qn qnVar2 = alVar2.H;
+                                    qnVar2.l5 = null;
+                                    qnVar2.Fb(qnVar2.n5);
                                     break;
                                 }
                             case 7:
@@ -2413,32 +2413,32 @@ public final class ic0 extends FrameLayout {
                                 this.b.c0.a(true);
                                 break;
                             case 9:
-                                org.telegram.ui.cl clVar3 = (org.telegram.ui.cl) this.b.c0;
-                                clVar3.a(true);
-                                org.telegram.ui.sn snVar3 = clVar3.H;
-                                snVar3.f5.updateForward(null, snVar3.T5);
-                                snVar3.m8();
+                                org.telegram.ui.al alVar3 = (org.telegram.ui.al) this.b.c0;
+                                alVar3.a(true);
+                                org.telegram.ui.qn qnVar3 = alVar3.H;
+                                qnVar3.f5.updateForward(null, qnVar3.T5);
+                                qnVar3.m8();
                                 break;
                             case 10:
                                 this.b.c0.a(true);
                                 break;
                             case 11:
-                                org.telegram.ui.cl clVar4 = (org.telegram.ui.cl) this.b.c0;
-                                clVar4.a(true);
-                                org.telegram.ui.sn snVar4 = clVar4.H;
-                                snVar4.G5 = null;
-                                org.telegram.ui.hk hkVar = snVar4.Y;
-                                if (hkVar != null) {
-                                    hkVar.X2 = null;
-                                    hkVar.Y2 = false;
+                                org.telegram.ui.al alVar4 = (org.telegram.ui.al) this.b.c0;
+                                alVar4.a(true);
+                                org.telegram.ui.qn qnVar4 = alVar4.H;
+                                qnVar4.G5 = null;
+                                org.telegram.ui.fk fkVar = qnVar4.Y;
+                                if (fkVar != null) {
+                                    fkVar.X2 = null;
+                                    fkVar.Y2 = false;
                                 }
-                                MessagePreviewParams messagePreviewParams7 = snVar4.f5;
+                                MessagePreviewParams messagePreviewParams7 = qnVar4.f5;
                                 if (messagePreviewParams7 != null) {
-                                    i162 = ((org.telegram.ui.ActionBar.n2) snVar4).currentAccount;
-                                    MessageObject messageObject = snVar4.n5;
-                                    messagePreviewParams7.updateLink(i162, null, null, messageObject == snVar4.X3 ? null : messageObject, snVar4.l5, snVar4.p5);
+                                    i162 = ((org.telegram.ui.ActionBar.n2) qnVar4).currentAccount;
+                                    MessageObject messageObject = qnVar4.n5;
+                                    messagePreviewParams7.updateLink(i162, null, null, messageObject == qnVar4.X3 ? null : messageObject, qnVar4.l5, qnVar4.p5);
                                 }
-                                snVar4.m8();
+                                qnVar4.m8();
                                 break;
                             case 12:
                                 ic0 ic0Var7 = this.b;
@@ -2523,7 +2523,7 @@ public final class ic0 extends FrameLayout {
                                         messagePreviewParams5.quoteStart = i172;
                                         int i182 = ac0Var2.v;
                                         messagePreviewParams5.quoteEnd = i182;
-                                        messagePreviewParams5.quote = org.telegram.ui.in.c(c11, i172, i182);
+                                        messagePreviewParams5.quote = org.telegram.ui.gn.c(c11, i172, i182);
                                         oc0Var2.b();
                                         oc0Var2.a(true);
                                         break;
@@ -2551,9 +2551,9 @@ public final class ic0 extends FrameLayout {
                                     if (c12 != null) {
                                         if (!ac0Var3.x()) {
                                             messagePreviewParams6.quoteStart = 0;
-                                            int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.in.d(c12));
+                                            int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.gn.d(c12));
                                             messagePreviewParams6.quoteEnd = min;
-                                            messagePreviewParams6.quote = org.telegram.ui.in.c(c12, messagePreviewParams6.quoteStart, min);
+                                            messagePreviewParams6.quote = org.telegram.ui.gn.c(c12, messagePreviewParams6.quoteStart, min);
                                             View d = ic0Var6.d();
                                             if (d instanceof org.telegram.ui.Cells.u1) {
                                                 ac0Var3.Z((org.telegram.ui.Cells.u1) d, messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
@@ -2567,7 +2567,7 @@ public final class ic0 extends FrameLayout {
                                             messagePreviewParams6.quoteStart = ac0Var3.u;
                                             messagePreviewParams6.quoteEnd = ac0Var3.v;
                                             org.telegram.ui.Cells.v9 v9Var2 = ac0Var3.W;
-                                            messagePreviewParams6.quote = org.telegram.ui.in.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
+                                            messagePreviewParams6.quote = org.telegram.ui.gn.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
                                             oc0Var3.b();
                                             oc0Var3.a(true);
                                             break;
@@ -2590,20 +2590,20 @@ public final class ic0 extends FrameLayout {
                             case 6:
                                 oc0 oc0Var4 = this.b.c0;
                                 if (!oc0Var4.b) {
-                                    org.telegram.ui.cl clVar = (org.telegram.ui.cl) oc0Var4;
-                                    clVar.a(true);
-                                    org.telegram.ui.sn snVar = clVar.H;
-                                    snVar.n5 = null;
-                                    snVar.l5 = null;
-                                    snVar.f5.updateReply(null, null, snVar.T5, null);
-                                    snVar.m8();
+                                    org.telegram.ui.al alVar = (org.telegram.ui.al) oc0Var4;
+                                    alVar.a(true);
+                                    org.telegram.ui.qn qnVar = alVar.H;
+                                    qnVar.n5 = null;
+                                    qnVar.l5 = null;
+                                    qnVar.f5.updateReply(null, null, qnVar.T5, null);
+                                    qnVar.m8();
                                     break;
                                 } else {
-                                    org.telegram.ui.cl clVar2 = (org.telegram.ui.cl) oc0Var4;
-                                    clVar2.a(true);
-                                    org.telegram.ui.sn snVar2 = clVar2.H;
-                                    snVar2.l5 = null;
-                                    snVar2.Fb(snVar2.n5);
+                                    org.telegram.ui.al alVar2 = (org.telegram.ui.al) oc0Var4;
+                                    alVar2.a(true);
+                                    org.telegram.ui.qn qnVar2 = alVar2.H;
+                                    qnVar2.l5 = null;
+                                    qnVar2.Fb(qnVar2.n5);
                                     break;
                                 }
                             case 7:
@@ -2613,32 +2613,32 @@ public final class ic0 extends FrameLayout {
                                 this.b.c0.a(true);
                                 break;
                             case 9:
-                                org.telegram.ui.cl clVar3 = (org.telegram.ui.cl) this.b.c0;
-                                clVar3.a(true);
-                                org.telegram.ui.sn snVar3 = clVar3.H;
-                                snVar3.f5.updateForward(null, snVar3.T5);
-                                snVar3.m8();
+                                org.telegram.ui.al alVar3 = (org.telegram.ui.al) this.b.c0;
+                                alVar3.a(true);
+                                org.telegram.ui.qn qnVar3 = alVar3.H;
+                                qnVar3.f5.updateForward(null, qnVar3.T5);
+                                qnVar3.m8();
                                 break;
                             case 10:
                                 this.b.c0.a(true);
                                 break;
                             case 11:
-                                org.telegram.ui.cl clVar4 = (org.telegram.ui.cl) this.b.c0;
-                                clVar4.a(true);
-                                org.telegram.ui.sn snVar4 = clVar4.H;
-                                snVar4.G5 = null;
-                                org.telegram.ui.hk hkVar = snVar4.Y;
-                                if (hkVar != null) {
-                                    hkVar.X2 = null;
-                                    hkVar.Y2 = false;
+                                org.telegram.ui.al alVar4 = (org.telegram.ui.al) this.b.c0;
+                                alVar4.a(true);
+                                org.telegram.ui.qn qnVar4 = alVar4.H;
+                                qnVar4.G5 = null;
+                                org.telegram.ui.fk fkVar = qnVar4.Y;
+                                if (fkVar != null) {
+                                    fkVar.X2 = null;
+                                    fkVar.Y2 = false;
                                 }
-                                MessagePreviewParams messagePreviewParams7 = snVar4.f5;
+                                MessagePreviewParams messagePreviewParams7 = qnVar4.f5;
                                 if (messagePreviewParams7 != null) {
-                                    i162 = ((org.telegram.ui.ActionBar.n2) snVar4).currentAccount;
-                                    MessageObject messageObject = snVar4.n5;
-                                    messagePreviewParams7.updateLink(i162, null, null, messageObject == snVar4.X3 ? null : messageObject, snVar4.l5, snVar4.p5);
+                                    i162 = ((org.telegram.ui.ActionBar.n2) qnVar4).currentAccount;
+                                    MessageObject messageObject = qnVar4.n5;
+                                    messagePreviewParams7.updateLink(i162, null, null, messageObject == qnVar4.X3 ? null : messageObject, qnVar4.l5, qnVar4.p5);
                                 }
-                                snVar4.m8();
+                                qnVar4.m8();
                                 break;
                             case 12:
                                 ic0 ic0Var7 = this.b;
@@ -2732,7 +2732,7 @@ public final class ic0 extends FrameLayout {
                                     messagePreviewParams5.quoteStart = i172;
                                     int i182 = ac0Var2.v;
                                     messagePreviewParams5.quoteEnd = i182;
-                                    messagePreviewParams5.quote = org.telegram.ui.in.c(c11, i172, i182);
+                                    messagePreviewParams5.quote = org.telegram.ui.gn.c(c11, i172, i182);
                                     oc0Var2.b();
                                     oc0Var2.a(true);
                                     break;
@@ -2760,9 +2760,9 @@ public final class ic0 extends FrameLayout {
                                 if (c12 != null) {
                                     if (!ac0Var3.x()) {
                                         messagePreviewParams6.quoteStart = 0;
-                                        int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.in.d(c12));
+                                        int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.gn.d(c12));
                                         messagePreviewParams6.quoteEnd = min;
-                                        messagePreviewParams6.quote = org.telegram.ui.in.c(c12, messagePreviewParams6.quoteStart, min);
+                                        messagePreviewParams6.quote = org.telegram.ui.gn.c(c12, messagePreviewParams6.quoteStart, min);
                                         View d = ic0Var6.d();
                                         if (d instanceof org.telegram.ui.Cells.u1) {
                                             ac0Var3.Z((org.telegram.ui.Cells.u1) d, messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
@@ -2776,7 +2776,7 @@ public final class ic0 extends FrameLayout {
                                         messagePreviewParams6.quoteStart = ac0Var3.u;
                                         messagePreviewParams6.quoteEnd = ac0Var3.v;
                                         org.telegram.ui.Cells.v9 v9Var2 = ac0Var3.W;
-                                        messagePreviewParams6.quote = org.telegram.ui.in.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
+                                        messagePreviewParams6.quote = org.telegram.ui.gn.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
                                         oc0Var3.b();
                                         oc0Var3.a(true);
                                         break;
@@ -2799,20 +2799,20 @@ public final class ic0 extends FrameLayout {
                         case 6:
                             oc0 oc0Var4 = this.b.c0;
                             if (!oc0Var4.b) {
-                                org.telegram.ui.cl clVar = (org.telegram.ui.cl) oc0Var4;
-                                clVar.a(true);
-                                org.telegram.ui.sn snVar = clVar.H;
-                                snVar.n5 = null;
-                                snVar.l5 = null;
-                                snVar.f5.updateReply(null, null, snVar.T5, null);
-                                snVar.m8();
+                                org.telegram.ui.al alVar = (org.telegram.ui.al) oc0Var4;
+                                alVar.a(true);
+                                org.telegram.ui.qn qnVar = alVar.H;
+                                qnVar.n5 = null;
+                                qnVar.l5 = null;
+                                qnVar.f5.updateReply(null, null, qnVar.T5, null);
+                                qnVar.m8();
                                 break;
                             } else {
-                                org.telegram.ui.cl clVar2 = (org.telegram.ui.cl) oc0Var4;
-                                clVar2.a(true);
-                                org.telegram.ui.sn snVar2 = clVar2.H;
-                                snVar2.l5 = null;
-                                snVar2.Fb(snVar2.n5);
+                                org.telegram.ui.al alVar2 = (org.telegram.ui.al) oc0Var4;
+                                alVar2.a(true);
+                                org.telegram.ui.qn qnVar2 = alVar2.H;
+                                qnVar2.l5 = null;
+                                qnVar2.Fb(qnVar2.n5);
                                 break;
                             }
                         case 7:
@@ -2822,32 +2822,32 @@ public final class ic0 extends FrameLayout {
                             this.b.c0.a(true);
                             break;
                         case 9:
-                            org.telegram.ui.cl clVar3 = (org.telegram.ui.cl) this.b.c0;
-                            clVar3.a(true);
-                            org.telegram.ui.sn snVar3 = clVar3.H;
-                            snVar3.f5.updateForward(null, snVar3.T5);
-                            snVar3.m8();
+                            org.telegram.ui.al alVar3 = (org.telegram.ui.al) this.b.c0;
+                            alVar3.a(true);
+                            org.telegram.ui.qn qnVar3 = alVar3.H;
+                            qnVar3.f5.updateForward(null, qnVar3.T5);
+                            qnVar3.m8();
                             break;
                         case 10:
                             this.b.c0.a(true);
                             break;
                         case 11:
-                            org.telegram.ui.cl clVar4 = (org.telegram.ui.cl) this.b.c0;
-                            clVar4.a(true);
-                            org.telegram.ui.sn snVar4 = clVar4.H;
-                            snVar4.G5 = null;
-                            org.telegram.ui.hk hkVar = snVar4.Y;
-                            if (hkVar != null) {
-                                hkVar.X2 = null;
-                                hkVar.Y2 = false;
+                            org.telegram.ui.al alVar4 = (org.telegram.ui.al) this.b.c0;
+                            alVar4.a(true);
+                            org.telegram.ui.qn qnVar4 = alVar4.H;
+                            qnVar4.G5 = null;
+                            org.telegram.ui.fk fkVar = qnVar4.Y;
+                            if (fkVar != null) {
+                                fkVar.X2 = null;
+                                fkVar.Y2 = false;
                             }
-                            MessagePreviewParams messagePreviewParams7 = snVar4.f5;
+                            MessagePreviewParams messagePreviewParams7 = qnVar4.f5;
                             if (messagePreviewParams7 != null) {
-                                i162 = ((org.telegram.ui.ActionBar.n2) snVar4).currentAccount;
-                                MessageObject messageObject = snVar4.n5;
-                                messagePreviewParams7.updateLink(i162, null, null, messageObject == snVar4.X3 ? null : messageObject, snVar4.l5, snVar4.p5);
+                                i162 = ((org.telegram.ui.ActionBar.n2) qnVar4).currentAccount;
+                                MessageObject messageObject = qnVar4.n5;
+                                messagePreviewParams7.updateLink(i162, null, null, messageObject == qnVar4.X3 ? null : messageObject, qnVar4.l5, qnVar4.p5);
                             }
-                            snVar4.m8();
+                            qnVar4.m8();
                             break;
                         case 12:
                             ic0 ic0Var7 = this.b;
@@ -2935,7 +2935,7 @@ public final class ic0 extends FrameLayout {
                                     messagePreviewParams5.quoteStart = i172;
                                     int i182 = ac0Var2.v;
                                     messagePreviewParams5.quoteEnd = i182;
-                                    messagePreviewParams5.quote = org.telegram.ui.in.c(c11, i172, i182);
+                                    messagePreviewParams5.quote = org.telegram.ui.gn.c(c11, i172, i182);
                                     oc0Var2.b();
                                     oc0Var2.a(true);
                                     break;
@@ -2963,9 +2963,9 @@ public final class ic0 extends FrameLayout {
                                 if (c12 != null) {
                                     if (!ac0Var3.x()) {
                                         messagePreviewParams6.quoteStart = 0;
-                                        int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.in.d(c12));
+                                        int min = Math.min(MessagesController.getInstance(i192).quoteLengthMax, org.telegram.ui.gn.d(c12));
                                         messagePreviewParams6.quoteEnd = min;
-                                        messagePreviewParams6.quote = org.telegram.ui.in.c(c12, messagePreviewParams6.quoteStart, min);
+                                        messagePreviewParams6.quote = org.telegram.ui.gn.c(c12, messagePreviewParams6.quoteStart, min);
                                         View d = ic0Var6.d();
                                         if (d instanceof org.telegram.ui.Cells.u1) {
                                             ac0Var3.Z((org.telegram.ui.Cells.u1) d, messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
@@ -2979,7 +2979,7 @@ public final class ic0 extends FrameLayout {
                                         messagePreviewParams6.quoteStart = ac0Var3.u;
                                         messagePreviewParams6.quoteEnd = ac0Var3.v;
                                         org.telegram.ui.Cells.v9 v9Var2 = ac0Var3.W;
-                                        messagePreviewParams6.quote = org.telegram.ui.in.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
+                                        messagePreviewParams6.quote = org.telegram.ui.gn.c(ic0Var6.c(v9Var2 != null ? ((org.telegram.ui.Cells.u1) v9Var2).getMessageObject() : null), messagePreviewParams6.quoteStart, messagePreviewParams6.quoteEnd);
                                         oc0Var3.b();
                                         oc0Var3.a(true);
                                         break;
@@ -3002,20 +3002,20 @@ public final class ic0 extends FrameLayout {
                         case 6:
                             oc0 oc0Var4 = this.b.c0;
                             if (!oc0Var4.b) {
-                                org.telegram.ui.cl clVar = (org.telegram.ui.cl) oc0Var4;
-                                clVar.a(true);
-                                org.telegram.ui.sn snVar = clVar.H;
-                                snVar.n5 = null;
-                                snVar.l5 = null;
-                                snVar.f5.updateReply(null, null, snVar.T5, null);
-                                snVar.m8();
+                                org.telegram.ui.al alVar = (org.telegram.ui.al) oc0Var4;
+                                alVar.a(true);
+                                org.telegram.ui.qn qnVar = alVar.H;
+                                qnVar.n5 = null;
+                                qnVar.l5 = null;
+                                qnVar.f5.updateReply(null, null, qnVar.T5, null);
+                                qnVar.m8();
                                 break;
                             } else {
-                                org.telegram.ui.cl clVar2 = (org.telegram.ui.cl) oc0Var4;
-                                clVar2.a(true);
-                                org.telegram.ui.sn snVar2 = clVar2.H;
-                                snVar2.l5 = null;
-                                snVar2.Fb(snVar2.n5);
+                                org.telegram.ui.al alVar2 = (org.telegram.ui.al) oc0Var4;
+                                alVar2.a(true);
+                                org.telegram.ui.qn qnVar2 = alVar2.H;
+                                qnVar2.l5 = null;
+                                qnVar2.Fb(qnVar2.n5);
                                 break;
                             }
                         case 7:
@@ -3025,32 +3025,32 @@ public final class ic0 extends FrameLayout {
                             this.b.c0.a(true);
                             break;
                         case 9:
-                            org.telegram.ui.cl clVar3 = (org.telegram.ui.cl) this.b.c0;
-                            clVar3.a(true);
-                            org.telegram.ui.sn snVar3 = clVar3.H;
-                            snVar3.f5.updateForward(null, snVar3.T5);
-                            snVar3.m8();
+                            org.telegram.ui.al alVar3 = (org.telegram.ui.al) this.b.c0;
+                            alVar3.a(true);
+                            org.telegram.ui.qn qnVar3 = alVar3.H;
+                            qnVar3.f5.updateForward(null, qnVar3.T5);
+                            qnVar3.m8();
                             break;
                         case 10:
                             this.b.c0.a(true);
                             break;
                         case 11:
-                            org.telegram.ui.cl clVar4 = (org.telegram.ui.cl) this.b.c0;
-                            clVar4.a(true);
-                            org.telegram.ui.sn snVar4 = clVar4.H;
-                            snVar4.G5 = null;
-                            org.telegram.ui.hk hkVar = snVar4.Y;
-                            if (hkVar != null) {
-                                hkVar.X2 = null;
-                                hkVar.Y2 = false;
+                            org.telegram.ui.al alVar4 = (org.telegram.ui.al) this.b.c0;
+                            alVar4.a(true);
+                            org.telegram.ui.qn qnVar4 = alVar4.H;
+                            qnVar4.G5 = null;
+                            org.telegram.ui.fk fkVar = qnVar4.Y;
+                            if (fkVar != null) {
+                                fkVar.X2 = null;
+                                fkVar.Y2 = false;
                             }
-                            MessagePreviewParams messagePreviewParams7 = snVar4.f5;
+                            MessagePreviewParams messagePreviewParams7 = qnVar4.f5;
                             if (messagePreviewParams7 != null) {
-                                i162 = ((org.telegram.ui.ActionBar.n2) snVar4).currentAccount;
-                                MessageObject messageObject = snVar4.n5;
-                                messagePreviewParams7.updateLink(i162, null, null, messageObject == snVar4.X3 ? null : messageObject, snVar4.l5, snVar4.p5);
+                                i162 = ((org.telegram.ui.ActionBar.n2) qnVar4).currentAccount;
+                                MessageObject messageObject = qnVar4.n5;
+                                messagePreviewParams7.updateLink(i162, null, null, messageObject == qnVar4.X3 ? null : messageObject, qnVar4.l5, qnVar4.p5);
                             }
-                            snVar4.m8();
+                            qnVar4.m8();
                             break;
                         case 12:
                             ic0 ic0Var7 = this.b;
@@ -3156,9 +3156,9 @@ public final class ic0 extends FrameLayout {
             if (messageObject != null) {
                 return messageObject;
             }
-            org.telegram.ui.in inVar = oc0Var.d.quote;
-            if (inVar != null) {
-                return inVar.a;
+            org.telegram.ui.gn gnVar = oc0Var.d.quote;
+            if (gnVar != null) {
+                return gnVar.a;
             }
         }
         return valueAt.captionMessage;
@@ -3286,7 +3286,7 @@ public final class ic0 extends FrameLayout {
         this.P.playTogether(arrayList);
         this.P.setDuration(360L);
         this.P.setInterpolator(bs.h);
-        this.P.addListener(new org.telegram.ui.ho(16, this, z10));
+        this.P.addListener(new org.telegram.ui.fo(16, this, z10));
         this.P.start();
     }
 
@@ -3432,9 +3432,9 @@ public final class ic0 extends FrameLayout {
                 messagePreviewParams.quoteStart = ac0Var.u;
                 messagePreviewParams.quoteEnd = ac0Var.v;
                 if (c10 != null) {
-                    org.telegram.ui.in inVar = messagePreviewParams.quote;
-                    if (inVar.m || (messageObject = inVar.a) == null || messageObject.getId() != c10.getId()) {
-                        messagePreviewParams.quote = org.telegram.ui.in.c(c10, messagePreviewParams.quoteStart, messagePreviewParams.quoteEnd);
+                    org.telegram.ui.gn gnVar = messagePreviewParams.quote;
+                    if (gnVar.m || (messageObject = gnVar.a) == null || messageObject.getId() != c10.getId()) {
+                        messagePreviewParams.quote = org.telegram.ui.gn.c(c10, messagePreviewParams.quoteStart, messagePreviewParams.quoteEnd);
                         oc0Var.b();
                     }
                 }

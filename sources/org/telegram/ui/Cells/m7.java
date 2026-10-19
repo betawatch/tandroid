@@ -40,15 +40,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.f90;
-import org.telegram.ui.Components.l11;
 import org.telegram.ui.Components.m11;
+import org.telegram.ui.Components.n11;
 import org.telegram.ui.Components.r90;
 import org.telegram.ui.Components.u90;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.y90;
-import org.telegram.ui.g10;
+import org.telegram.ui.e10;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class m7 extends FrameLayout {
     public final ArrayList E;
@@ -669,12 +669,12 @@ public final class m7 extends FrameLayout {
                                                             spannableStringBuilder3 = spannableStringBuilder5;
                                                             arrayList2 = arrayList7;
                                                         } else {
-                                                            l11 l11Var = new l11();
+                                                            m11 m11Var = new m11();
                                                             spannableStringBuilder3 = spannableStringBuilder5;
                                                             try {
-                                                                l11Var.a |= 256;
+                                                                m11Var.a |= 256;
                                                                 arrayList2 = arrayList7;
-                                                                valueOf.setSpan(new m11(l11Var, 0), Math.max(i26, i32), Math.min(i27, i33) + i28, 33);
+                                                                valueOf.setSpan(new n11(m11Var, 0), Math.max(i26, i32), Math.min(i27, i33) + i28, 33);
                                                             } catch (Exception e7) {
                                                                 e = e7;
                                                                 str2 = str7;
@@ -1181,7 +1181,7 @@ public final class m7 extends FrameLayout {
                 }
                 if (i12 == i15) {
                     f10 = f162;
-                    StaticLayout u24 = u1.u2(g10.d(this.b0, i15, 2, textPaint), textPaint, i382, i382, 0, i14);
+                    StaticLayout u24 = u1.u2(e10.d(this.b0, i15, 2, textPaint), textPaint, i382, i382, 0, i14);
                     this.j0 = u24;
                     org.telegram.ui.Components.w5 w5Var = this.k0;
                     Layout[] layoutArr = new Layout[i15];

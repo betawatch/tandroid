@@ -1,180 +1,24 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.view.WindowManager;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
+import android.app.Activity;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class xh implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class xh extends org.telegram.ui.Components.aw {
+    public final /* synthetic */ yh W;
 
-    public /* synthetic */ xh(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xh(yh yhVar, org.telegram.ui.ActionBar.n2 n2Var, Activity activity, org.telegram.ui.ActionBar.d6 d6Var, ArrayList arrayList) {
+        super(n2Var, activity, d6Var, arrayList);
+        this.W = yhVar;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        final int i10 = 0;
-        final int i11 = 1;
-        switch (this.a) {
-            case 0:
-                sn snVar = (sn) this.b;
-                jj jjVar = snVar.a1;
-                if (jjVar != null) {
-                    jjVar.getViewTreeObserver().removeOnPreDrawListener(this);
-                }
-                break;
-            case 1:
-                ((ei.g6) this.b).invalidate();
-                break;
-            case 2:
-                View view = ((e70) this.b).fragmentView;
-                if (view != null) {
-                    view.getViewTreeObserver().removeOnPreDrawListener(this);
-                    int rotation = ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
-                    if (rotation == 3 || rotation == 1) {
-                        ((e70) this.b).f.setOrientation(0);
-                    } else {
-                        ((e70) this.b).f.setOrientation(1);
-                    }
-                    View view2 = ((e70) this.b).fragmentView;
-                    view2.setPadding(view2.getPaddingLeft(), 0, ((e70) this.b).fragmentView.getPaddingRight(), ((e70) this.b).fragmentView.getPaddingBottom());
-                    break;
-                }
-                break;
-            case 3:
-                up0 up0Var = (up0) this.b;
-                if (up0Var.getParentActivity() != null) {
-                    int rotation2 = ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
-                    up0Var.f = 2;
-                    if (!AndroidUtilities.isTablet() && (rotation2 == 3 || rotation2 == 1)) {
-                        up0Var.f = 4;
-                    }
-                    up0Var.n.l();
-                }
-                org.telegram.ui.Components.im0 im0Var = ((up0) this.b).h;
-                if (im0Var != null) {
-                    im0Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                    break;
-                }
-                break;
-            case 4:
-                PhotoViewer photoViewer = (PhotoViewer) this.b;
-                photoViewer.w3.getViewTreeObserver().removeOnPreDrawListener(this);
-                ImageView imageView = photoViewer.x3;
-                if (imageView != null) {
-                    if (photoViewer.J3) {
-                        AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.ui.st0
-                            public final /* synthetic */ xh b;
-
-                            {
-                                this.b = this;
-                            }
-
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                switch (i10) {
-                                    case 0:
-                                        PhotoViewer photoViewer2 = (PhotoViewer) this.b.b;
-                                        photoViewer2.x3.setVisibility(4);
-                                        photoViewer2.x3.setImageDrawable(null);
-                                        Bitmap bitmap = photoViewer2.C3;
-                                        if (bitmap != null) {
-                                            bitmap.recycle();
-                                            photoViewer2.C3 = null;
-                                            break;
-                                        }
-                                        break;
-                                    default:
-                                        PhotoViewer photoViewer3 = (PhotoViewer) this.b.b;
-                                        if (photoViewer3.J3) {
-                                            photoViewer3.T0();
-                                            break;
-                                        }
-                                        break;
-                                }
-                            }
-                        }, 300L);
-                    } else {
-                        imageView.setVisibility(4);
-                        photoViewer.x3.setImageDrawable(null);
-                        Bitmap bitmap = photoViewer.C3;
-                        if (bitmap != null) {
-                            bitmap.recycle();
-                            photoViewer.C3 = null;
-                        }
-                    }
-                }
-                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.ui.st0
-                    public final /* synthetic */ xh b;
-
-                    {
-                        this.b = this;
-                    }
-
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                PhotoViewer photoViewer2 = (PhotoViewer) this.b.b;
-                                photoViewer2.x3.setVisibility(4);
-                                photoViewer2.x3.setImageDrawable(null);
-                                Bitmap bitmap2 = photoViewer2.C3;
-                                if (bitmap2 != null) {
-                                    bitmap2.recycle();
-                                    photoViewer2.C3 = null;
-                                    break;
-                                }
-                                break;
-                            default:
-                                PhotoViewer photoViewer3 = (PhotoViewer) this.b.b;
-                                if (photoViewer3.J3) {
-                                    photoViewer3.T0();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                photoViewer.G3 = 0;
-                break;
-            case 5:
-                ProfileActivity profileActivity = (ProfileActivity) this.b;
-                if (profileActivity.fragmentView != null) {
-                    profileActivity.A3();
-                    profileActivity.k4(true);
-                    profileActivity.fragmentView.getViewTreeObserver().removeOnPreDrawListener(this);
-                    break;
-                }
-                break;
-            default:
-                WallpapersListActivity wallpapersListActivity = (WallpapersListActivity) this.b;
-                int[][] iArr = WallpapersListActivity.k0;
-                if (wallpapersListActivity.getParentActivity() != null) {
-                    int rotation3 = ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
-                    if (AndroidUtilities.isTablet()) {
-                        wallpapersListActivity.R = 3;
-                    } else if (rotation3 == 3 || rotation3 == 1) {
-                        wallpapersListActivity.R = 5;
-                    } else {
-                        wallpapersListActivity.R = 3;
-                    }
-                    wallpapersListActivity.C0();
-                }
-                org.telegram.ui.Components.im0 im0Var2 = ((WallpapersListActivity) this.b).H;
-                if (im0Var2 != null) {
-                    im0Var2.getViewTreeObserver().removeOnPreDrawListener(this);
-                    break;
-                }
-                break;
-        }
-        return true;
+    @Override // org.telegram.ui.Components.aw, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    public final void dismiss() {
+        super.dismiss();
+        qn qnVar = this.W.p;
+        qnVar.getClass();
+        qnVar.j8(false, true, 0.0f);
     }
 }

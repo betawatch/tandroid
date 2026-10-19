@@ -19,9 +19,9 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class ji extends jw0 {
+public final class ji extends kw0 {
     public final ii A0;
     public final /* synthetic */ ti B0;
     public int w0;
@@ -37,7 +37,7 @@ public final class ji extends jw0 {
         this.A0 = new ii(this, this);
     }
 
-    @Override // org.telegram.ui.Components.jw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.kw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         int i10;
         int i11;
@@ -484,7 +484,7 @@ public final class ji extends jw0 {
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.jw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.kw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         ii iiVar = this.A0;
@@ -495,7 +495,7 @@ public final class ji extends jw0 {
         tiVar.S0.setAdjustPanLayoutHelper(iiVar);
     }
 
-    @Override // org.telegram.ui.Components.jw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.kw0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.A0.d();
@@ -543,7 +543,7 @@ public final class ji extends jw0 {
     /* JADX WARN: Removed duplicated region for block: B:77:0x012f  */
     /* JADX WARN: Removed duplicated region for block: B:84:0x015a  */
     /* JADX WARN: Removed duplicated region for block: B:88:0x0163  */
-    @Override // org.telegram.ui.Components.jw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.kw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -968,7 +968,7 @@ public final class ji extends jw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.jw0
+    @Override // org.telegram.ui.Components.kw0
     public final void J(Canvas canvas, float f7, Rect rect, Paint paint, boolean z10) {
     }
 }

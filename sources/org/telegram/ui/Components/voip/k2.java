@@ -23,12 +23,12 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.sc;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.rc;
 import org.webrtc.RendererCommon;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class k2 implements VoIPService.StateListener, tf.a, NotificationCenter.NotificationCenterDelegate {
     public static boolean U = false;
@@ -109,7 +109,7 @@ public final class k2 implements VoIPService.StateListener, tf.a, NotificationCe
             imageView2.setContentDescription(LocaleController.getString(R.string.Open));
             j2Var.addView(imageView2, z5.d(40, 40.0f, 51, 4.0f, 4.0f, 4.0f, 0.0f));
             imageView.setOnClickListener(new ah.f(17));
-            imageView2.setOnClickListener(new g51(6, this, context));
+            imageView2.setOnClickListener(new h51(6, this, context));
         }
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance != null) {
@@ -434,7 +434,7 @@ public final class k2 implements VoIPService.StateListener, tf.a, NotificationCe
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final void onStateChanged(int i10) {
         if (i10 == 11 || i10 == 17 || i10 == 4 || i10 == 10) {
-            AndroidUtilities.runOnUIThread(new sc(20), 200L);
+            AndroidUtilities.runOnUIThread(new rc(21), 200L);
         }
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance == null) {

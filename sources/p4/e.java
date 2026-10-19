@@ -10,7 +10,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
 import android.util.Log;
-import i2.s1;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import java.lang.ref.WeakReference;
@@ -24,14 +23,15 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.Executor;
+import k2.w0;
 import ki.t1;
 import m.g3;
 import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.k7;
 import org.telegram.ui.Components.ll0;
-import org.telegram.ui.web.a2;
+import org.telegram.ui.web.z1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class e {
     public static final /* synthetic */ int F = 0;
@@ -39,7 +39,7 @@ public final class e {
     public int B;
     public g3 C;
     public android.support.v4.media.session.b0 D;
-    public final l2.f E;
+    public final w0 E;
     public final s0 c;
     public v d;
     public q e;
@@ -47,12 +47,12 @@ public final class e {
     public ll0 g;
     public final Context h;
     public final e2.s n;
-    public final le.b o;
+    public final t1 o;
     public final boolean p;
     public final boolean q;
     public k r;
     public final j0 s;
-    public final s1 t;
+    public final i2.t1 t;
     public z u;
     public v v;
     public v w;
@@ -87,8 +87,8 @@ public final class e {
         sVar.c = 0;
         sVar.d = 3;
         this.n = sVar;
-        this.o = new le.b(this, 14);
-        this.E = new l2.f(this, 13);
+        this.o = new t1(this, 20);
+        this.E = new w0(this, 16);
         this.h = context;
         this.p = ((ActivityManager) context.getSystemService("activity")).isLowRamDevice();
         int i10 = Build.VERSION.SDK_INT;
@@ -104,10 +104,10 @@ public final class e {
                 Intent intent2 = new Intent(context, (Class<?>) t0.class);
                 intent2.setPackage(context.getPackageName());
                 context.getPackageManager().queryBroadcastReceivers(intent2, 0).size();
-                this.r = (i10 >= 30 || !z10) ? null : new k(context, new t1(this, 20));
+                this.r = (i10 >= 30 || !z10) ? null : new k(context, new l2.f(this, 14));
                 j0 f0Var = i10 < 24 ? new f0(context, this) : new j0(context, this);
                 this.s = f0Var;
-                this.t = new s1(new a2(this, i11));
+                this.t = new i2.t1(new z1(this, i11));
                 a(f0Var, true);
                 g3Var = this.r;
                 if (g3Var != null) {
@@ -138,11 +138,11 @@ public final class e {
         Intent intent22 = new Intent(context, (Class<?>) t0.class);
         intent22.setPackage(context.getPackageName());
         context.getPackageManager().queryBroadcastReceivers(intent22, 0).size();
-        this.r = (i10 >= 30 || !z10) ? null : new k(context, new t1(this, 20));
+        this.r = (i10 >= 30 || !z10) ? null : new k(context, new l2.f(this, 14));
         if (i10 < 24) {
         }
         this.s = f0Var;
-        this.t = new s1(new a2(this, i11));
+        this.t = new i2.t1(new z1(this, i11));
         a(f0Var, true);
         g3Var = this.r;
         if (g3Var != null) {
@@ -325,10 +325,10 @@ public final class e {
                 throw new IllegalStateException("future is already set");
             }
             ll0Var3.k = a2;
-            a2 a2Var = new a2(ll0Var3, i11);
+            z1 z1Var = new z1(ll0Var3, i11);
             b bVar = eVar2.a;
             Objects.requireNonNull(bVar);
-            a2.b.a(a2Var, new i2.f0(bVar, i11));
+            a2.b.a(z1Var, new i2.g0(bVar, i11));
         }
     }
 
@@ -370,24 +370,24 @@ public final class e {
             p c10 = vVar.c().c(vVar.b);
             if (c10 != null) {
                 Executor d = f0.c.d(this.h);
-                l2.f fVar = this.E;
+                w0 w0Var = this.E;
                 synchronized (c10.a) {
                     try {
                         if (d == null) {
                             throw new NullPointerException("Executor shouldn't be null");
                         }
-                        if (fVar == null) {
+                        if (w0Var == null) {
                             throw new NullPointerException("Listener shouldn't be null");
                         }
                         c10.b = d;
-                        c10.c = fVar;
+                        c10.c = w0Var;
                         ArrayList arrayList = c10.e;
                         if (arrayList != null && !arrayList.isEmpty()) {
                             m mVar = c10.d;
                             ArrayList arrayList2 = c10.e;
                             c10.d = null;
                             c10.e = null;
-                            c10.b.execute(new com.google.android.gms.internal.cast.p(c10, fVar, mVar, arrayList2, false, 2));
+                            c10.b.execute(new com.google.android.gms.internal.cast.p(c10, w0Var, mVar, arrayList2, false, 2));
                         }
                     } catch (Throwable th2) {
                         throw th2;
@@ -424,16 +424,16 @@ public final class e {
     */
     public final void k() {
         long j10;
-        ad.e eVar;
+        c5.n nVar;
         ArrayList arrayList;
-        ad.e eVar2 = new ad.e();
-        s1 s1Var = this.t;
+        c5.n nVar2 = new c5.n();
+        i2.t1 t1Var = this.t;
         long j11 = 0;
-        s1Var.a = 0L;
+        t1Var.a = 0L;
         int i10 = 0;
-        s1Var.c = false;
-        s1Var.b = SystemClock.elapsedRealtime();
-        ((Handler) s1Var.d).removeCallbacks((a2) s1Var.e);
+        t1Var.c = false;
+        t1Var.b = SystemClock.elapsedRealtime();
+        ((Handler) t1Var.d).removeCallbacks((z1) t1Var.e);
         ArrayList arrayList2 = this.i;
         int size = arrayList2.size();
         int i11 = 0;
@@ -442,24 +442,24 @@ public final class e {
             size--;
             boolean z11 = this.p;
             if (size < 0) {
-                ad.e eVar3 = eVar2;
+                c5.n nVar3 = nVar2;
                 long j12 = j11;
-                s1 s1Var2 = this.t;
-                if (s1Var2.c) {
-                    long j13 = s1Var2.a;
+                i2.t1 t1Var2 = this.t;
+                if (t1Var2.c) {
+                    long j13 = t1Var2.a;
                     if (j13 > j12) {
-                        ((Handler) s1Var2.d).postDelayed((a2) s1Var2.e, j13);
+                        ((Handler) t1Var2.d).postDelayed((z1) t1Var2.e, j13);
                     }
                 }
-                boolean z12 = s1Var2.c;
+                boolean z12 = t1Var2.c;
                 this.B = i11;
-                r a2 = z10 ? eVar3.a() : r.c;
-                r a10 = eVar3.a();
+                r a2 = z10 ? nVar3.a() : r.c;
+                r a10 = nVar3.a();
                 if (f()) {
-                    n nVar = this.A;
-                    if (nVar != null) {
-                        nVar.a();
-                        if (nVar.b.equals(a10)) {
+                    n nVar4 = this.A;
+                    if (nVar4 != null) {
+                        nVar4.a();
+                        if (nVar4.b.equals(a10)) {
                         }
                     }
                     if (!a10.d() || z12) {
@@ -469,10 +469,10 @@ public final class e {
                     }
                     this.r.h(this.A);
                 }
-                n nVar2 = this.z;
-                if (nVar2 != null) {
-                    nVar2.a();
-                    if (nVar2.b.equals(a2) && this.z.b() == z12) {
+                n nVar5 = this.z;
+                if (nVar5 != null) {
+                    nVar5.a();
+                    if (nVar5.b.equals(a2) && this.z.b() == z12) {
                         return;
                     }
                 }
@@ -527,28 +527,28 @@ public final class e {
                             if (str == null) {
                                 throw new IllegalArgumentException("category must not be null");
                             }
-                            if (eVar2.a == null) {
-                                eVar2.a = new ArrayList();
+                            if (nVar2.a == null) {
+                                nVar2.a = new ArrayList();
                             }
-                            if (!eVar2.a.contains(str)) {
-                                eVar2.a.add(str);
+                            if (!nVar2.a.contains(str)) {
+                                nVar2.a.add(str);
                             }
                         }
                     }
                     boolean z13 = (tVar.d & 1) != 0;
                     long j14 = tVar.e;
-                    s1 s1Var3 = this.t;
+                    i2.t1 t1Var3 = this.t;
                     if (z13) {
-                        eVar = eVar2;
+                        nVar = nVar2;
                         arrayList = arrayList2;
-                        long j15 = s1Var3.b;
+                        long j15 = t1Var3.b;
                         if (j15 - j14 < 30000) {
-                            s1Var3.a = Math.max(s1Var3.a, (j14 + 30000) - j15);
-                            s1Var3.c = true;
+                            t1Var3.a = Math.max(t1Var3.a, (j14 + 30000) - j15);
+                            t1Var3.c = true;
                         }
                     } else {
-                        s1Var3.getClass();
-                        eVar = eVar2;
+                        t1Var3.getClass();
+                        nVar = nVar2;
                         arrayList = arrayList2;
                     }
                     if (z13) {
@@ -563,12 +563,12 @@ public final class e {
                     }
                     i13++;
                     j11 = j10;
-                    eVar2 = eVar;
+                    nVar2 = nVar;
                     arrayList2 = arrayList;
                 }
             }
             j11 = j11;
-            eVar2 = eVar2;
+            nVar2 = nVar2;
             arrayList2 = arrayList2;
             i10 = 0;
         }
@@ -579,7 +579,7 @@ public final class e {
         if (vVar == null) {
             g3 g3Var = this.C;
             if (g3Var != null) {
-                g3Var.v();
+                g3Var.t();
                 return;
             }
             return;
@@ -608,7 +608,7 @@ public final class e {
                 throw new IllegalStateException("There is no default route.  The media router has not yet been fully initialized.");
             }
             if (vVar2 == vVar3 || vVar2 == this.w) {
-                g3Var2.v();
+                g3Var2.t();
                 return;
             }
             int i11 = sVar.c == 1 ? 2 : 0;

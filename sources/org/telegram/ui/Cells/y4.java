@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class y4 extends org.telegram.ui.Components.w9 {
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 G;
@@ -27,14 +27,14 @@ public final class y4 extends org.telegram.ui.Components.w9 {
         }
         float dp = AndroidUtilities.dp(1.0f);
         a5Var.N.F.set(dp, dp, getMeasuredWidth() - r1, getMeasuredHeight() - r1);
-        ci.x7 x7Var = a5Var.N;
-        x7Var.a = false;
-        x7Var.b = false;
-        x7Var.v = true;
-        x7Var.o = false;
-        x7Var.J = this.G;
+        ci.y7 y7Var = a5Var.N;
+        y7Var.a = false;
+        y7Var.b = false;
+        y7Var.v = true;
+        y7Var.o = false;
+        y7Var.J = this.G;
         TL_stories.StoryItem storyItem = a5Var.r;
-        x7Var.d = storyItem;
-        ci.c8.h(storyItem.dialogId, canvas, this.a, x7Var);
+        y7Var.d = storyItem;
+        ci.d8.h(storyItem.dialogId, canvas, this.a, y7Var);
     }
 }

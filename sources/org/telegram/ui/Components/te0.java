@@ -18,7 +18,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class te0 extends org.telegram.ui.ActionBar.f3 {
     public final TextView b;
@@ -31,7 +31,7 @@ public final class te0 extends org.telegram.ui.ActionBar.f3 {
     public boolean r;
     public TLRPC.TL_chatInviteExported s;
 
-    public te0(Context context, org.telegram.ui.n60 n60Var, TLRPC.ChatFull chatFull, long j10, boolean z10) {
+    public te0(Context context, org.telegram.ui.l60 l60Var, TLRPC.ChatFull chatFull, long j10, boolean z10) {
         super(context, false);
         TLRPC.TL_chatInviteExported tL_chatInviteExported;
         this.n = j10;
@@ -51,7 +51,7 @@ public final class te0 extends org.telegram.ui.ActionBar.f3 {
         int dp = AndroidUtilities.dp(8.0f);
         imageView.setPadding(dp, dp, dp, dp);
         frameLayout.addView(imageView, w7.z5.d(36, 36.0f, 8388661, 6.0f, 8.0f, 8.0f, 0.0f));
-        q90 q90Var = new q90(context, n60Var, this, true, z10);
+        q90 q90Var = new q90(context, l60Var, this, true, z10);
         this.h = q90Var;
         q90Var.setPermanent(true);
         xj0 xj0Var = new xj0(context);
@@ -79,7 +79,7 @@ public final class te0 extends org.telegram.ui.ActionBar.f3 {
         textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
         TextView textView3 = new TextView(context);
         this.d = textView3;
-        org.telegram.messenger.lk.m(R.string.ManageInviteLinks, textView3, 17);
+        org.telegram.messenger.kk.m(R.string.ManageInviteLinks, textView3, 17);
         textView3.setEllipsize(TextUtils.TruncateAt.END);
         textView3.setSingleLine(true);
         textView3.setTypeface(AndroidUtilities.bold());
@@ -90,7 +90,7 @@ public final class te0 extends org.telegram.ui.ActionBar.f3 {
         int o10 = i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, i10, false), 120);
         textView3.setBackground(org.telegram.ui.ActionBar.h6.j0(dp2, dp2, dp2, dp2, 0, o10, o10));
         textView3.setLetterSpacing(0.025f);
-        textView3.setOnClickListener(new ai.v0(this, chatFull, n60Var, 28));
+        textView3.setOnClickListener(new ai.v0(this, chatFull, l60Var, 28));
         linearLayout.addView(xj0Var, w7.z5.t(90, 90, 1, 0, 33, 0, 0));
         linearLayout.addView(textView, w7.z5.t(-1, -2, 1, 60, 10, 60, 0));
         linearLayout.addView(textView2, w7.z5.t(-1, -2, 1, 28, 7, 28, 2));
@@ -109,17 +109,17 @@ public final class te0 extends org.telegram.ui.ActionBar.f3 {
         } else {
             q90Var.setLink(tL_chatInviteExported.link);
         }
-        r();
+        s();
     }
 
     public static void n(te0 te0Var) {
         super.dismiss();
     }
 
-    public static void o(te0 te0Var, TLRPC.ChatFull chatFull, org.telegram.ui.n60 n60Var) {
-        org.telegram.ui.jh0 jh0Var = new org.telegram.ui.jh0(chatFull.id, 0L, 0);
-        jh0Var.g0(chatFull, chatFull.exported_invite);
-        n60Var.presentFragment(jh0Var);
+    public static void o(te0 te0Var, TLRPC.ChatFull chatFull, org.telegram.ui.l60 l60Var) {
+        org.telegram.ui.ih0 ih0Var = new org.telegram.ui.ih0(chatFull.id, 0L, 0);
+        ih0Var.g0(chatFull, chatFull.exported_invite);
+        l60Var.presentFragment(ih0Var);
         super.dismiss();
     }
 
@@ -160,7 +160,7 @@ public final class te0 extends org.telegram.ui.ActionBar.f3 {
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_exportChatInvite, new ei.o3(7, this, z10));
     }
 
-    public final void r() {
+    public final void s() {
         int dp = AndroidUtilities.dp(90.0f);
         int i10 = org.telegram.ui.ActionBar.h6.Oh;
         this.e.setBackground(org.telegram.ui.ActionBar.h6.K(dp, org.telegram.ui.ActionBar.h6.x0(null, i10, false)));

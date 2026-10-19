@@ -6,11 +6,11 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.b71;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public abstract class a extends a71 {
+public abstract class a extends b71 {
     public a(Context context, int i10, Utilities.Callback2 callback2, Utilities.Callback5 callback5, d6 d6Var) {
         super(context, i10, -1, false, callback2, callback5, null, d6Var, -1, 0);
         this.x2 = true;

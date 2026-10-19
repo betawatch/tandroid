@@ -1,31 +1,68 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class va implements Runnable {
-    public final /* synthetic */ xb a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ View e;
-    public final /* synthetic */ float f;
-    public final /* synthetic */ float h;
+public final /* synthetic */ class va implements MessagesStorage.IntCallback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ va(xb xbVar, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, View view, float f7, float f10) {
-        this.a = xbVar;
-        this.b = arrayList;
-        this.c = arrayList2;
-        this.d = arrayList3;
-        this.e = view;
-        this.f = f7;
-        this.h = f10;
+    public /* synthetic */ va(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        xb.V(this.a, this.b, this.c, this.d, this.e, this.f, this.h);
+    @Override // org.telegram.messenger.MessagesStorage.IntCallback
+    public final void run(int i10) {
+        bu0 bu0Var;
+        int i11 = this.a;
+        Object obj = this.b;
+        switch (i11) {
+            case 0:
+                ((vb) obj).U0(true);
+                break;
+            case 1:
+                qn qnVar = ((cn) obj).a;
+                if (i10 > 0 && qnVar.getParentActivity() != null && qnVar.fragmentView != null) {
+                    org.telegram.ui.Components.xc.a0(qnVar).m(org.telegram.ui.Components.wc.I, i10, 0, 0, qnVar.ea).j();
+                    break;
+                }
+                break;
+            case 2:
+                ((NotificationsCustomSettingsActivity) obj).l0(true);
+                break;
+            case 3:
+                PhotoViewer photoViewer = (PhotoViewer) obj;
+                if (photoViewer.y != null && (bu0Var = photoViewer.e0) != null && i10 > 0) {
+                    org.telegram.ui.Components.xc.F(bu0Var, true).j();
+                    break;
+                }
+                break;
+            case 4:
+                ProfileActivity profileActivity = (ProfileActivity) obj;
+                if (i10 != 1) {
+                    profileActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.peerSettingsDidLoad, Long.valueOf(profileActivity.f1));
+                    break;
+                } else {
+                    NotificationCenter notificationCenter = profileActivity.getNotificationCenter();
+                    int i12 = NotificationCenter.closeChats;
+                    notificationCenter.removeObserver(profileActivity, i12);
+                    profileActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i12, new Object[0]);
+                    profileActivity.K1 = 0;
+                    profileActivity.finishFragment();
+                    break;
+                }
+            default:
+                re1 re1Var = ((wd1) obj).a;
+                if (i10 != 0) {
+                    re1Var.finishFragment();
+                    break;
+                } else {
+                    re1Var.O0(false);
+                    break;
+                }
+        }
     }
 }

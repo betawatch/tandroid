@@ -5,18 +5,18 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class jo0 extends at {
-    public final /* synthetic */ org.telegram.ui.nx i0;
+    public final /* synthetic */ org.telegram.ui.lx i0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jo0(org.telegram.ui.nx nxVar, im0 im0Var, Context context, int i10, int i11) {
+    public jo0(org.telegram.ui.lx lxVar, im0 im0Var, Context context, int i10, int i11) {
         super(im0Var, context, i10, i11, false, null);
-        this.i0 = nxVar;
+        this.i0 = lxVar;
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public final void N(boolean z10) {
         ArrayList arrayList;
         super.N(z10);

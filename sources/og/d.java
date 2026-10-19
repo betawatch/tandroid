@@ -36,10 +36,10 @@ import org.telegram.ui.Components.r5;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.Components.zq;
-import org.telegram.ui.sn;
-import org.telegram.ui.te1;
+import org.telegram.ui.qn;
+import org.telegram.ui.re1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class d {
     public static final /* synthetic */ int a = 0;
@@ -48,41 +48,41 @@ public abstract class d {
         new SparseArray();
     }
 
-    public static void a(sn snVar, MessagesStorage.TopicKey topicKey) {
+    public static void a(qn qnVar, MessagesStorage.TopicKey topicKey) {
         TLRPC.TL_forumTopic findTopic;
-        if (topicKey.topicId == 0 || (findTopic = snVar.getMessagesController().getTopicsController().findTopic(-topicKey.dialogId, topicKey.topicId)) == null) {
+        if (topicKey.topicId == 0 || (findTopic = qnVar.getMessagesController().getTopicsController().findTopic(-topicKey.dialogId, topicKey.topicId)) == null) {
             return;
         }
         if (topicKey.dialogId > 0) {
-            if (UserObject.isBotForum(snVar.getMessagesController().getUser(Long.valueOf(topicKey.dialogId)))) {
+            if (UserObject.isBotForum(qnVar.getMessagesController().getUser(Long.valueOf(topicKey.dialogId)))) {
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(new MessageObject(snVar.getCurrentAccount(), findTopic.topicStartMessage, false, false));
-                snVar.tb(arrayList, null, findTopic.id, findTopic.read_inbox_max_id, findTopic.read_outbox_max_id, findTopic);
-                snVar.getMessagesController().setForumLastTopicId(-topicKey.dialogId, topicKey.topicId);
+                arrayList.add(new MessageObject(qnVar.getCurrentAccount(), findTopic.topicStartMessage, false, false));
+                qnVar.tb(arrayList, null, findTopic.id, findTopic.read_inbox_max_id, findTopic.read_outbox_max_id, findTopic);
+                qnVar.getMessagesController().setForumLastTopicId(-topicKey.dialogId, topicKey.topicId);
                 return;
             }
             return;
         }
-        TLRPC.Chat chat = snVar.getMessagesController().getChat(Long.valueOf(-topicKey.dialogId));
+        TLRPC.Chat chat = qnVar.getMessagesController().getChat(Long.valueOf(-topicKey.dialogId));
         if (chat == null) {
             return;
         }
         if (!ChatObject.isMonoForum(chat)) {
             ArrayList arrayList2 = new ArrayList();
-            arrayList2.add(new MessageObject(snVar.getCurrentAccount(), findTopic.topicStartMessage, false, false));
-            snVar.tb(arrayList2, chat, findTopic.id, findTopic.read_inbox_max_id, findTopic.read_outbox_max_id, findTopic);
+            arrayList2.add(new MessageObject(qnVar.getCurrentAccount(), findTopic.topicStartMessage, false, false));
+            qnVar.tb(arrayList2, chat, findTopic.id, findTopic.read_inbox_max_id, findTopic.read_outbox_max_id, findTopic);
         } else if (ChatObject.canManageMonoForum(UserConfig.selectedAccount, chat)) {
             int i10 = findTopic.read_inbox_max_id;
             int i11 = findTopic.read_outbox_max_id;
-            snVar.k4 = i10;
-            snVar.l4 = i11;
-            snVar.m4 = Math.max(1, i10);
-            snVar.d4 = DialogObject.getPeerDialogId(findTopic.from_id);
-            snVar.Dc();
-            snVar.Uc(false);
-            snVar.lc(false);
+            qnVar.k4 = i10;
+            qnVar.l4 = i11;
+            qnVar.m4 = Math.max(1, i10);
+            qnVar.d4 = DialogObject.getPeerDialogId(findTopic.from_id);
+            qnVar.Dc();
+            qnVar.Uc(false);
+            qnVar.lc(false);
         }
-        snVar.getMessagesController().setForumLastTopicId(-topicKey.dialogId, topicKey.topicId);
+        qnVar.getMessagesController().setForumLastTopicId(-topicKey.dialogId, topicKey.topicId);
     }
 
     public static void b(MessageObject messageObject) {
@@ -137,7 +137,7 @@ public abstract class d {
         }
     }
 
-    public static sn g(n2 n2Var, long j10, TLRPC.TL_forumTopic tL_forumTopic, int i10, Bundle bundle) {
+    public static qn g(n2 n2Var, long j10, TLRPC.TL_forumTopic tL_forumTopic, int i10, Bundle bundle) {
         TLRPC.TL_forumTopic tL_forumTopic2;
         TLRPC.TL_forumTopic findTopic;
         if (n2Var == null || tL_forumTopic == null) {
@@ -152,7 +152,7 @@ public abstract class d {
         }
         bundle.putInt("unread_count", tL_forumTopic.unread_count);
         bundle.putBoolean("historyPreloaded", false);
-        sn snVar = new sn(bundle);
+        qn qnVar = new qn(bundle);
         TLRPC.Message message = tL_forumTopic.topicStartMessage;
         if (message != null || (findTopic = n2Var.getMessagesController().getTopicsController().findTopic(j10, tL_forumTopic.id)) == null) {
             tL_forumTopic2 = tL_forumTopic;
@@ -165,11 +165,11 @@ public abstract class d {
         }
         ArrayList arrayList = new ArrayList();
         arrayList.add(new MessageObject(n2Var.getCurrentAccount(), message, false, false));
-        snVar.tb(arrayList, chat, tL_forumTopic2.id, tL_forumTopic2.read_inbox_max_id, tL_forumTopic2.read_outbox_max_id, tL_forumTopic2);
+        qnVar.tb(arrayList, chat, tL_forumTopic2.id, tL_forumTopic2.read_inbox_max_id, tL_forumTopic2.read_outbox_max_id, tL_forumTopic2);
         if (i10 != 0) {
-            snVar.L7 = i10;
+            qnVar.L7 = i10;
         }
-        return snVar;
+        return qnVar;
     }
 
     public static String h(int i10, long j10) {
@@ -274,7 +274,7 @@ public abstract class d {
     }
 
     public static void m(n2 n2Var, long j10, TLRPC.TL_forumTopic tL_forumTopic, int i10) {
-        sn g10 = g(n2Var, j10, tL_forumTopic, i10, new Bundle());
+        qn g10 = g(n2Var, j10, tL_forumTopic, i10, new Bundle());
         if (g10 != null) {
             n2Var.presentFragment(g10);
         }
@@ -323,32 +323,32 @@ public abstract class d {
 
     public static void q(long j10, ActionBarLayout actionBarLayout) {
         n2 lastFragment = actionBarLayout.getLastFragment();
-        if (lastFragment instanceof sn) {
-            sn snVar = (sn) lastFragment;
-            if ((-snVar.a()) == j10 && snVar.getMessagesController().getChat(Long.valueOf(j10)).forum && snVar.getParentLayout() != null) {
-                if (((ActionBarLayout) snVar.getParentLayout()).j()) {
-                    AndroidUtilities.runOnUIThread(new b(snVar, 0), 500L);
+        if (lastFragment instanceof qn) {
+            qn qnVar = (qn) lastFragment;
+            if ((-qnVar.a()) == j10 && qnVar.getMessagesController().getChat(Long.valueOf(j10)).forum && qnVar.getParentLayout() != null) {
+                if (((ActionBarLayout) qnVar.getParentLayout()).j()) {
+                    AndroidUtilities.runOnUIThread(new b(qnVar, 0), 500L);
                 } else {
-                    te1.I0(snVar);
+                    re1.I0(qnVar);
                 }
             }
         }
-        if (lastFragment instanceof te1) {
-            te1 te1Var = (te1) lastFragment;
-            long j11 = te1Var.a;
-            if ((-(-j11)) != j10 || te1Var.getMessagesController().getChat(Long.valueOf(j10)).forum) {
+        if (lastFragment instanceof re1) {
+            re1 re1Var = (re1) lastFragment;
+            long j11 = re1Var.a;
+            if ((-(-j11)) != j10 || re1Var.getMessagesController().getChat(Long.valueOf(j10)).forum) {
                 return;
             }
-            if (te1Var.getParentLayout() != null && ((ActionBarLayout) te1Var.getParentLayout()).j()) {
-                AndroidUtilities.runOnUIThread(new u(te1Var, 11), 500L);
+            if (re1Var.getParentLayout() != null && ((ActionBarLayout) re1Var.getParentLayout()).j()) {
+                AndroidUtilities.runOnUIThread(new u(re1Var, 11), 500L);
                 return;
             }
-            te1Var.H = true;
+            re1Var.H = true;
             Bundle bundle = new Bundle();
             bundle.putLong("chat_id", j11);
-            sn snVar2 = new sn(bundle);
-            snVar2.ja = true;
-            te1Var.presentFragment(snVar2);
+            qn qnVar2 = new qn(bundle);
+            qnVar2.ja = true;
+            re1Var.presentFragment(qnVar2);
         }
     }
 }

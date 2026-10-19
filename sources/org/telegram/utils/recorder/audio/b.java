@@ -7,13 +7,13 @@ import android.os.SystemClock;
 import java.io.File;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import org.telegram.ui.ac0;
-import org.telegram.ui.go;
+import org.telegram.ui.eo;
+import org.telegram.ui.yb0;
 import ri.i;
 import ri.j;
 import ri.p;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class b {
     public final File a;
@@ -292,9 +292,9 @@ public final class b {
             long j11 = this.p;
             p pVar = (p) eVar.c;
             pVar.a((j) eVar.b, length);
-            pVar.h.post(new go(eVar, eVar.a, j11, 3));
+            pVar.h.post(new eo(eVar, eVar.a, j11, 3));
         } else {
-            ((p) eVar.c).h.post(new ac0(eVar, eVar.a, exc2, 4));
+            ((p) eVar.c).h.post(new yb0(eVar, eVar.a, exc2, 4));
         }
         this.f.quitSafely();
     }

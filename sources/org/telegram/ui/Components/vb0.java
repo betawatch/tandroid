@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vb0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -68,21 +68,21 @@ public final /* synthetic */ class vb0 implements View.OnClickListener {
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj3;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj2;
                 i80 i80Var = (i80) obj;
-                is0 is0Var = ((yh.l2) frameLayout).a;
+                js0 js0Var = ((yh.l2) frameLayout).a;
                 if (z10) {
-                    is0Var.e.k(tL_starGiftCollection.collection_id, savedStarGift);
-                    xc.a0(is0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, ai.k7.R1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                    js0Var.e.k(tL_starGiftCollection.collection_id, savedStarGift);
+                    xc.a0(js0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, ai.l7.Y1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 } else {
-                    ai.v9 v9Var = is0Var.e;
+                    ai.v9 v9Var = js0Var.e;
                     int i12 = tL_starGiftCollection.collection_id;
                     v9Var.getClass();
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(savedStarGift);
                     v9Var.a(i12, arrayList);
-                    xc.a0(is0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, ai.k7.R1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                    xc.a0(js0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, ai.l7.Y1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 }
                 i80Var.u();
-                is0Var.n();
+                js0Var.n();
                 break;
         }
     }

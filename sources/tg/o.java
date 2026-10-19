@@ -24,11 +24,11 @@ import java.util.regex.Pattern;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.ui.ActionBar.h6;
-import w7.v7;
+import w7.u7;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class o {
     public static final String[] e0 = {"models/star.binobj"};
@@ -308,9 +308,9 @@ public final class o {
             try {
                 dataInputStream = new DataInputStream(new BufferedInputStream(context.getAssets().open(strArr[i22]), 16384));
                 try {
-                    a2 = v7.a(dataInputStream);
-                    a10 = v7.a(dataInputStream);
-                    a11 = v7.a(dataInputStream);
+                    a2 = u7.a(dataInputStream);
+                    a10 = u7.a(dataInputStream);
+                    a11 = u7.a(dataInputStream);
                     readInt = dataInputStream.readInt();
                     i12 = i20;
                     i13 = readInt * 3;
@@ -326,11 +326,11 @@ public final class o {
                 fArr = null;
                 fArr2 = null;
                 e.printStackTrace();
-                this.i[i22] = lk.h(ByteBuffer.allocateDirect(fArr3.length * 4));
+                this.i[i22] = kk.h(ByteBuffer.allocateDirect(fArr3.length * 4));
                 this.i[i22].put(fArr3).position(0);
-                this.j[i22] = lk.h(ByteBuffer.allocateDirect(fArr2.length * 4));
+                this.j[i22] = kk.h(ByteBuffer.allocateDirect(fArr2.length * 4));
                 this.j[i22].put(fArr2).position(0);
-                this.k[i22] = lk.h(ByteBuffer.allocateDirect(fArr.length * 4));
+                this.k[i22] = kk.h(ByteBuffer.allocateDirect(fArr.length * 4));
                 this.k[i22].put(fArr).position(0);
                 this.y[i22] = fArr3.length;
                 i22++;
@@ -427,11 +427,11 @@ public final class o {
                         } catch (IOException e10) {
                             e = e10;
                             e.printStackTrace();
-                            this.i[i22] = lk.h(ByteBuffer.allocateDirect(fArr3.length * 4));
+                            this.i[i22] = kk.h(ByteBuffer.allocateDirect(fArr3.length * 4));
                             this.i[i22].put(fArr3).position(0);
-                            this.j[i22] = lk.h(ByteBuffer.allocateDirect(fArr2.length * 4));
+                            this.j[i22] = kk.h(ByteBuffer.allocateDirect(fArr2.length * 4));
                             this.j[i22].put(fArr2).position(0);
-                            this.k[i22] = lk.h(ByteBuffer.allocateDirect(fArr.length * 4));
+                            this.k[i22] = kk.h(ByteBuffer.allocateDirect(fArr.length * 4));
                             this.k[i22].put(fArr).position(0);
                             this.y[i22] = fArr3.length;
                             i22++;
@@ -441,11 +441,11 @@ public final class o {
                             i19 = 3;
                             i21 = 0;
                         }
-                        this.i[i22] = lk.h(ByteBuffer.allocateDirect(fArr3.length * 4));
+                        this.i[i22] = kk.h(ByteBuffer.allocateDirect(fArr3.length * 4));
                         this.i[i22].put(fArr3).position(0);
-                        this.j[i22] = lk.h(ByteBuffer.allocateDirect(fArr2.length * 4));
+                        this.j[i22] = kk.h(ByteBuffer.allocateDirect(fArr2.length * 4));
                         this.j[i22].put(fArr2).position(0);
-                        this.k[i22] = lk.h(ByteBuffer.allocateDirect(fArr.length * 4));
+                        this.k[i22] = kk.h(ByteBuffer.allocateDirect(fArr.length * 4));
                         this.k[i22].put(fArr).position(0);
                         this.y[i22] = fArr3.length;
                         i22++;

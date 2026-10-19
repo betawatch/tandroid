@@ -8,10 +8,8 @@ import android.os.Handler;
 import android.view.Surface;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import ki.t1;
-import org.telegram.ui.web.g2;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class x implements l {
     public final MediaCodec a;
@@ -37,18 +35,18 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final /* synthetic */ boolean c(t1 t1Var) {
-        return false;
-    }
-
-    @Override // r2.l
-    public final void d(int i10) {
+    public final void c(int i10) {
         this.a.releaseOutputBuffer(i10, false);
     }
 
     @Override // r2.l
-    public final void e(a3.m mVar, Handler handler) {
+    public final void d(a3.m mVar, Handler handler) {
         this.a.setOnFrameRenderedListener(new a(this, mVar, 1), handler);
+    }
+
+    @Override // r2.l
+    public final void e(p2.b bVar) {
+        bVar.run();
     }
 
     @Override // r2.l
@@ -62,8 +60,8 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final void g(g2 g2Var) {
-        g2Var.run();
+    public final void g(int i10, long j10) {
+        this.a.releaseOutputBuffer(i10, j10);
     }
 
     @Override // r2.l
@@ -82,17 +80,12 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final void h(int i10, long j10) {
-        this.a.releaseOutputBuffer(i10, j10);
-    }
-
-    @Override // r2.l
-    public final int i() {
+    public final int h() {
         return this.a.dequeueInputBuffer(0L);
     }
 
     @Override // r2.l
-    public final int j(MediaCodec.BufferInfo bufferInfo) {
+    public final int i(MediaCodec.BufferInfo bufferInfo) {
         int dequeueOutputBuffer;
         do {
             dequeueOutputBuffer = this.a.dequeueOutputBuffer(bufferInfo, 0L);
@@ -101,23 +94,28 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final void k(int i10) {
+    public final void j(int i10) {
         this.a.setVideoScalingMode(i10);
     }
 
     @Override // r2.l
-    public final void l(Surface surface) {
+    public final void k(Surface surface) {
         this.a.setOutputSurface(surface);
     }
 
     @Override // r2.l
-    public final void m(ArrayList arrayList) {
+    public final void l(ArrayList arrayList) {
         this.a.subscribeToVendorParameters(arrayList);
     }
 
     @Override // r2.l
-    public final void n(ArrayList arrayList) {
+    public final void m(ArrayList arrayList) {
         this.a.unsubscribeFromVendorParameters(arrayList);
+    }
+
+    @Override // r2.l
+    public final /* synthetic */ boolean n(l2.f fVar) {
+        return false;
     }
 
     @Override // r2.l

@@ -30,7 +30,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class fj extends li implements NotificationCenter.NotificationCenterDelegate, ne.d {
     public int E;
@@ -698,7 +698,7 @@ public final class fj extends li implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.li
-    public final void G(li liVar) {
+    public final void F(li liVar) {
         Q();
         this.J.load();
         bj bjVar = this.v;
@@ -756,16 +756,16 @@ public final class fj extends li implements NotificationCenter.NotificationCente
         this.v.setPadding(0, (int) (this.x.c(0.0f) + AndroidUtilities.dp(56.0f) + i10 + AndroidUtilities.statusBarHeight), 0, this.e);
     }
 
-    public final void P(f61 f61Var, View view) {
-        if (f61Var != null && f61Var.d == this.R) {
+    public final void P(g61 g61Var, View view) {
+        if (g61Var != null && g61Var.d == this.R) {
             this.J.load();
             return;
         }
-        if (f61Var != null && f61Var.d == this.P) {
+        if (g61Var != null && g61Var.d == this.P) {
             Q();
             return;
         }
-        if (f61Var != null && f61Var.d == this.Q) {
+        if (g61Var != null && g61Var.d == this.Q) {
             R();
             return;
         }
@@ -784,7 +784,7 @@ public final class fj extends li implements NotificationCenter.NotificationCente
                 HashSet hashSet = this.I;
                 if (hashSet.contains(audioEntry)) {
                     hashSet.remove(audioEntry);
-                    f61Var.e = false;
+                    g61Var.e = false;
                     h7Var.e(false, true);
                     i10 = 2;
                 } else {
@@ -802,7 +802,7 @@ public final class fj extends li implements NotificationCenter.NotificationCente
                             return;
                         }
                     }
-                    f61Var.e = true;
+                    g61Var.e = true;
                     hashSet.add(audioEntry);
                     h7Var.e(true, true);
                 }
@@ -855,7 +855,7 @@ public final class fj extends li implements NotificationCenter.NotificationCente
         tL_messages_searchGlobal.q = str2;
         tL_messages_searchGlobal.limit = arrayList.isEmpty() ? 3 : 15;
         if (arrayList.size() > 0) {
-            MessageObject messageObject = ((MediaController.AudioEntry) i2.d.h(1, arrayList)).messageObject;
+            MessageObject messageObject = ((MediaController.AudioEntry) i2.e.h(1, arrayList)).messageObject;
             tL_messages_searchGlobal.offset_id = messageObject.getId();
             tL_messages_searchGlobal.offset_rate = this.b0;
             tL_messages_searchGlobal.offset_peer = messagesController.getInputPeer(MessageObject.getPeerId(messageObject.messageOwner.peer_id));
@@ -1042,7 +1042,7 @@ public final class fj extends li implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.ui.Components.li
     public final void o() {
-        t();
+        u();
         ti tiVar = this.b;
         NotificationCenter.getInstance(tiVar.M1).removeObserver(this, NotificationCenter.messagePlayingDidReset);
         NotificationCenter.getInstance(tiVar.M1).removeObserver(this, NotificationCenter.messagePlayingDidStart);
@@ -1059,9 +1059,13 @@ public final class fj extends li implements NotificationCenter.NotificationCente
         return false;
     }
 
-    @Override // org.telegram.ui.Components.li
-    public final void s() {
-        this.I.clear();
+    @Override // ne.d
+    public final void r(int i10, float f7, float f10, ne.e eVar) {
+        if (i10 == 0) {
+            si siVar = this.w;
+            siVar.setAlpha(f7);
+            siVar.setVisibility(f7 > 0.0f ? 0 : 4);
+        }
     }
 
     public void setDelegate(cj cjVar) {
@@ -1095,19 +1099,15 @@ public final class fj extends li implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.ui.Components.li
     public final void t() {
+        this.I.clear();
+    }
+
+    @Override // org.telegram.ui.Components.li
+    public final void u() {
         if (this.O != null && MediaController.getInstance().isPlayingMessage(this.O)) {
             MediaController.getInstance().cleanupPlayer(true, true);
         }
         this.O = null;
-    }
-
-    @Override // ne.d
-    public final void u(int i10, float f7, float f10, ne.e eVar) {
-        if (i10 == 0) {
-            si siVar = this.w;
-            siVar.setAlpha(f7);
-            siVar.setVisibility(f7 > 0.0f ? 0 : 4);
-        }
     }
 
     @Override // org.telegram.ui.Components.li
@@ -1115,6 +1115,6 @@ public final class fj extends li implements NotificationCenter.NotificationCente
     }
 
     @Override // ne.d
-    public final /* synthetic */ void E(float f7, int i10) {
+    public final /* synthetic */ void H(float f7, int i10) {
     }
 }

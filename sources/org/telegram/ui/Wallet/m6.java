@@ -16,9 +16,9 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.xj0;
-import org.telegram.ui.vf1;
+import org.telegram.ui.tf1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class m6 extends FrameLayout {
     public float E;
@@ -415,8 +415,8 @@ public final class m6 extends FrameLayout {
                     this.I = ofFloat;
                     ofFloat.setDuration(350L);
                     this.I.setInterpolator(bs.h);
-                    this.I.addUpdateListener(new v2(this, 5));
-                    this.I.addListener(new vf1(this, 7));
+                    this.I.addUpdateListener(new b3(this, 4));
+                    this.I.addListener(new tf1(this, 7));
                     this.I.start();
                 } else {
                     this.i0 = 1.0f;

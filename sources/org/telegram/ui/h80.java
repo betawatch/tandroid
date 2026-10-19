@@ -1,46 +1,119 @@
 package org.telegram.ui;
 
-import java.util.HashMap;
+import android.os.Bundle;
 import java.util.regex.Pattern;
-import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h80 implements org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ HashMap c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean e;
+public final /* synthetic */ class h80 implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ TLObject c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ TLRPC.TL_error f;
+    public final /* synthetic */ z70 h;
 
-    public /* synthetic */ h80(int i10, HashMap hashMap, boolean z10, boolean z11, int i11) {
-        this.a = i11;
-        this.b = i10;
-        this.c = hashMap;
-        this.d = z10;
-        this.e = z11;
+    public /* synthetic */ h80(LaunchActivity launchActivity, TLObject tLObject, int i10, String str, TLRPC.TL_error tL_error, z70 z70Var) {
+        this.b = launchActivity;
+        this.c = tLObject;
+        this.d = i10;
+        this.e = str;
+        this.f = tL_error;
+        this.h = z70Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        int i11 = this.a;
-        boolean z10 = this.e;
-        boolean z11 = this.d;
-        HashMap<String, ContactsController.Contact> hashMap = this.c;
-        int i12 = this.b;
-        switch (i11) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.Components.xc a02;
+        int i10;
+        int i11;
+        int i12 = this.a;
+        z70 z70Var = this.h;
+        TLRPC.TL_error tL_error = this.f;
+        String str = this.e;
+        TLObject tLObject = this.c;
+        switch (i12) {
             case 0:
                 Pattern pattern = LaunchActivity.C1;
-                ContactsController.getInstance(i12).syncPhoneBookByAlert(hashMap, z11, z10, true);
-                break;
-            case 1:
-                Pattern pattern2 = LaunchActivity.C1;
-                ContactsController.getInstance(i12).syncPhoneBookByAlert(hashMap, z11, z10, false);
+                if (tL_error != null) {
+                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                    if (U != null) {
+                        if ("STARGIFT_ALREADY_BURNED".equalsIgnoreCase(tL_error.text)) {
+                            a02 = org.telegram.ui.Components.xc.a0(U);
+                            i10 = R.raw.fire_on;
+                            i11 = R.string.UniqueGiftNotFoundBurned;
+                        } else {
+                            a02 = org.telegram.ui.Components.xc.a0(U);
+                            i10 = R.raw.error;
+                            i11 = R.string.UniqueGiftNotFound;
+                        }
+                        org.telegram.messenger.g0.q(i11, a02, i10, 36);
+                    }
+                } else if (tLObject instanceof TL_stars.TL_payments_uniqueStarGift) {
+                    TL_stars.TL_payments_uniqueStarGift tL_payments_uniqueStarGift = (TL_stars.TL_payments_uniqueStarGift) tLObject;
+                    LaunchActivity launchActivity = this.b;
+                    MessagesController.getInstance(launchActivity.O).putUsers(tL_payments_uniqueStarGift.users, false);
+                    MessagesController.getInstance(launchActivity.O).putChats(tL_payments_uniqueStarGift.chats, false);
+                    org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
+                    TL_stars.StarGift starGift = tL_payments_uniqueStarGift.gift;
+                    if (starGift instanceof TL_stars.TL_starGiftUnique) {
+                        ai.l7 l7Var = new ai.l7(launchActivity, this.d, 0L, null, null);
+                        l7Var.K2(str, (TL_stars.TL_starGiftUnique) starGift, null);
+                        if (U2 == null) {
+                            l7Var.show();
+                        } else if (U2.getLastStoryViewer() == null || !U2.getLastStoryViewer().K0) {
+                            U2.showDialog(l7Var);
+                        } else {
+                            U2.getLastStoryViewer().showDialog(l7Var);
+                        }
+                    }
+                }
+                try {
+                    z70Var.run();
+                    break;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
+                }
                 break;
             default:
-                Pattern pattern3 = LaunchActivity.C1;
-                ContactsController.getInstance(i12).syncPhoneBookByAlert(hashMap, z11, z10, true);
-                break;
+                Pattern pattern2 = LaunchActivity.C1;
+                boolean z10 = tLObject instanceof TLRPC.User;
+                LaunchActivity launchActivity2 = this.b;
+                if (z10) {
+                    TLRPC.User user = (TLRPC.User) tLObject;
+                    MessagesController.getInstance(this.d).putUser(user, false);
+                    Bundle bundle = new Bundle();
+                    bundle.putLong("user_id", user.id);
+                    launchActivity2.t0(new qn(bundle));
+                } else {
+                    StringBuilder v = a1.g.v("cant import contact token. token=", str, " err=");
+                    v.append(tL_error == null ? null : tL_error.text);
+                    FileLog.e(v.toString());
+                    org.telegram.messenger.kk.q(R.string.NoUsernameFound, org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) i2.e.h(1, launchActivity2.d0)), null);
+                }
+                try {
+                    z70Var.run();
+                    break;
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                }
         }
+    }
+
+    public /* synthetic */ h80(LaunchActivity launchActivity, TLRPC.TL_error tL_error, TLObject tLObject, int i10, String str, z70 z70Var) {
+        this.b = launchActivity;
+        this.f = tL_error;
+        this.c = tLObject;
+        this.d = i10;
+        this.e = str;
+        this.h = z70Var;
     }
 }

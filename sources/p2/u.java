@@ -1,12 +1,9 @@
 package p2;
 
-import android.net.Uri;
-import c5.b0;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public interface u {
-    void a();
+    y2.n J();
 
-    boolean b(Uri uri, b0 b0Var, boolean z10);
+    y2.n U(q qVar, n nVar);
 }

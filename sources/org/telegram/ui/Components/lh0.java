@@ -17,7 +17,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class lh0 extends org.telegram.ui.Cells.a0 implements xo0, DownloadController.FileDownloadProgressListener {
     public int E;
@@ -120,7 +120,7 @@ public final class lh0 extends org.telegram.ui.Cells.a0 implements xo0, Download
 
     @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
     public final void onFailedDownload(String str, boolean z10) {
-        r();
+        s();
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -137,7 +137,7 @@ public final class lh0 extends org.telegram.ui.Cells.a0 implements xo0, Download
         ui0Var.e = AndroidUtilities.dp(30.0f);
         this.x = AndroidUtilities.dp(13.0f);
         this.F = AndroidUtilities.dp(10.0f);
-        s();
+        t();
         if (z10 || !this.f) {
             this.f = true;
         }
@@ -152,14 +152,14 @@ public final class lh0 extends org.telegram.ui.Cells.a0 implements xo0, Download
     public final void onProgressDownload(String str, long j10, long j11) {
         this.v.a(Math.min(1.0f, j10 / j11));
         if (this.y != 3) {
-            r();
+            s();
         }
         invalidate();
     }
 
     @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
     public final void onSuccessDownload(String str) {
-        r();
+        s();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:60:0x012c, code lost:
@@ -235,7 +235,7 @@ public final class lh0 extends org.telegram.ui.Cells.a0 implements xo0, Download
         return !f7 ? super.onTouchEvent(motionEvent) : f7;
     }
 
-    public final void r() {
+    public final void s() {
         ui0 ui0Var = this.v;
         String fileName = this.h.getFileName();
         if (FileLoader.getInstance(this.n).getPathToMessage(this.h.messageOwner).exists()) {
@@ -262,10 +262,29 @@ public final class lh0 extends org.telegram.ui.Cells.a0 implements xo0, Download
                 ui0Var.a(0.0f);
             }
         }
+        t();
+    }
+
+    public void setMessageObject(MessageObject messageObject) {
+        if (this.h != messageObject) {
+            this.n = messageObject.currentAccount;
+            yo0 yo0Var = this.s;
+            int i10 = org.telegram.ui.ActionBar.h6.ud;
+            int x02 = org.telegram.ui.ActionBar.h6.x0(null, i10, false);
+            int x03 = org.telegram.ui.ActionBar.h6.x0(null, i10, false);
+            int i11 = org.telegram.ui.ActionBar.h6.xd;
+            yo0Var.h(x02, x03, org.telegram.ui.ActionBar.h6.x0(null, i11, false), org.telegram.ui.ActionBar.h6.x0(null, i11, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.wd, false));
+            ui0 ui0Var = this.v;
+            ui0Var.a.setColor(-2497813);
+            ui0Var.b.setColor(-7944712);
+            this.h = messageObject;
+            this.f = false;
+            requestLayout();
+        }
         s();
     }
 
-    public final void s() {
+    public final void t() {
         int i10;
         TextPaint textPaint = this.r;
         MessageObject messageObject = this.h;
@@ -297,25 +316,6 @@ public final class lh0 extends org.telegram.ui.Cells.a0 implements xo0, Download
         this.J = (int) Math.ceil(textPaint.measureText(formatLongDuration));
         this.H = new StaticLayout(formatLongDuration, textPaint, this.J, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         invalidate();
-    }
-
-    public void setMessageObject(MessageObject messageObject) {
-        if (this.h != messageObject) {
-            this.n = messageObject.currentAccount;
-            yo0 yo0Var = this.s;
-            int i10 = org.telegram.ui.ActionBar.h6.ud;
-            int x02 = org.telegram.ui.ActionBar.h6.x0(null, i10, false);
-            int x03 = org.telegram.ui.ActionBar.h6.x0(null, i10, false);
-            int i11 = org.telegram.ui.ActionBar.h6.xd;
-            yo0Var.h(x02, x03, org.telegram.ui.ActionBar.h6.x0(null, i11, false), org.telegram.ui.ActionBar.h6.x0(null, i11, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.wd, false));
-            ui0 ui0Var = this.v;
-            ui0Var.a.setColor(-2497813);
-            ui0Var.b.setColor(-7944712);
-            this.h = messageObject;
-            this.f = false;
-            requestLayout();
-        }
-        r();
     }
 
     @Override // org.telegram.ui.Components.xo0

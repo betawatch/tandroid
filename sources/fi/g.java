@@ -33,24 +33,24 @@ import org.telegram.ui.ActionBar.d5;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.k;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.q6;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.Components.z00;
 import org.telegram.ui.Wallet.m6;
-import org.telegram.ui.a20;
-import org.telegram.ui.sa1;
+import org.telegram.ui.qa1;
+import org.telegram.ui.v10;
 import org.telegram.ui.x10;
-import org.telegram.ui.z10;
+import org.telegram.ui.y10;
 import s4.g0;
 import sg.x1;
 import ug.m1;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class g extends a20 implements NotificationCenter.NotificationCenterDelegate {
+public final class g extends y10 implements NotificationCenter.NotificationCenterDelegate {
     public FrameLayout P;
     public m6 Q;
     public ld R;
@@ -62,7 +62,7 @@ public final class g extends a20 implements NotificationCenter.NotificationCente
     public q6 X;
     public x Y;
     public ei.d Z;
-    public sa1 a0;
+    public qa1 a0;
     public ei.d b0;
     public ei.d c0;
     public boolean d0;
@@ -78,7 +78,7 @@ public final class g extends a20 implements NotificationCenter.NotificationCente
     }
 
     public static void y0(g gVar, int i10) {
-        f61 G;
+        g61 G;
         d dVar = gVar.f0;
         if (dVar == null || (G = dVar.G(i10)) == null) {
             return;
@@ -103,30 +103,30 @@ public final class g extends a20 implements NotificationCenter.NotificationCente
         }
     }
 
-    public final void D0(ArrayList arrayList, s61 s61Var) {
+    public final void D0(ArrayList arrayList, t61 t61Var) {
         if (getParentActivity() == null) {
             return;
         }
         ga y3 = ga.y(this.currentAccount, true);
-        x10 x10Var = (x10) super.r0(getParentActivity());
-        f61 f61Var = new f61(-2);
-        f61Var.c = x10Var;
-        arrayList.add(f61Var);
-        arrayList.add(f61.k(this.U));
+        v10 v10Var = (v10) super.r0(getParentActivity());
+        g61 g61Var = new g61(-2);
+        g61Var.c = v10Var;
+        arrayList.add(g61Var);
+        arrayList.add(g61.k(this.U));
         boolean z10 = this.T;
         if (z10) {
-            i2.d.B(R.string.GramEarningsHint, arrayList);
+            i2.e.B(R.string.GramEarningsHint, arrayList);
         }
         boolean O = y3.O(0);
         this.d0 = O;
         if (!O) {
-            arrayList.add(f61.l(this.S));
+            arrayList.add(g61.l(this.S));
             return;
         }
         if (!z10) {
-            arrayList.add(f61.B(null));
+            arrayList.add(g61.B(null));
         }
-        arrayList.add(f61.p(this.R, AndroidUtilities.dp(24.0f) + k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.navigationBarHeight, false));
+        arrayList.add(g61.p(this.R, AndroidUtilities.dp(24.0f) + k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.navigationBarHeight, false));
     }
 
     public final void E0() {
@@ -206,7 +206,7 @@ public final class g extends a20 implements NotificationCenter.NotificationCente
         }).start();
     }
 
-    @Override // org.telegram.ui.a20, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.y10, org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
         this.G = false;
         this.E = AndroidUtilities.dp(238.0f);
@@ -260,7 +260,7 @@ public final class g extends a20 implements NotificationCenter.NotificationCente
         this.X.setTextColor(h6.w0(h6.z6, this.resourceProvider));
         this.U.addView(this.X, z5.d(-1, 20.0f, 17, 24.0f, 0.0f, 24.0f, 8.0f));
         FrameLayout frameLayout2 = new FrameLayout(getParentActivity());
-        x xVar = new x(this, getParentActivity(), 6);
+        x xVar = new x(this, getParentActivity(), 5);
         this.Y = xVar;
         frameLayout2.addView(xVar);
         boolean z10 = this.T;
@@ -296,9 +296,9 @@ public final class g extends a20 implements NotificationCenter.NotificationCente
             });
             this.Y.addView(this.Z, z5.e(-1, 48, 119));
         }
-        sa1 sa1Var = new sa1(this, getParentActivity(), 3);
-        this.a0 = sa1Var;
-        frameLayout2.addView(sa1Var);
+        qa1 qa1Var = new qa1(this, getParentActivity(), 3);
+        this.a0 = qa1Var;
+        frameLayout2.addView(qa1Var);
         ei.d dVar2 = new ei.d(getParentActivity(), this.resourceProvider, true);
         dVar2.setRoundRadius(24);
         this.b0 = dVar2;
@@ -431,7 +431,7 @@ public final class g extends a20 implements NotificationCenter.NotificationCente
         return h6.x0(null, h6.i5, false);
     }
 
-    @Override // org.telegram.ui.a20
+    @Override // org.telegram.ui.y10
     public final g0 n0() {
         d dVar = new d(this, this.c, getParentActivity(), this.currentAccount, this.classGuid, new q(this, 21), getResourceProvider());
         this.f0 = dVar;
@@ -439,8 +439,8 @@ public final class g extends a20 implements NotificationCenter.NotificationCente
         return dVar;
     }
 
-    @Override // org.telegram.ui.a20
-    public final z10 o0() {
+    @Override // org.telegram.ui.y10
+    public final x10 o0() {
         return new wc(this, getParentActivity());
     }
 
@@ -467,7 +467,7 @@ public final class g extends a20 implements NotificationCenter.NotificationCente
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.botStarsUpdated);
     }
 
-    @Override // org.telegram.ui.a20, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.y10, org.telegram.ui.ActionBar.n2
     public final void onPause() {
         super.onPause();
         m6 m6Var = this.Q;
@@ -476,7 +476,7 @@ public final class g extends a20 implements NotificationCenter.NotificationCente
         }
     }
 
-    @Override // org.telegram.ui.a20, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.y10, org.telegram.ui.ActionBar.n2
     public final void onResume() {
         super.onResume();
         m6 m6Var = this.Q;
@@ -485,12 +485,12 @@ public final class g extends a20 implements NotificationCenter.NotificationCente
         }
     }
 
-    @Override // org.telegram.ui.a20
+    @Override // org.telegram.ui.y10
     public final x1 p0() {
         return new c(getParentActivity(), 75, 1);
     }
 
-    @Override // org.telegram.ui.a20
+    @Override // org.telegram.ui.y10
     public final boolean q0() {
         ld ldVar = this.R;
         boolean z10 = false;
@@ -502,12 +502,12 @@ public final class g extends a20 implements NotificationCenter.NotificationCente
         return !z10;
     }
 
-    @Override // org.telegram.ui.a20
+    @Override // org.telegram.ui.y10
     public final View r0(Context context) {
         throw null;
     }
 
-    @Override // org.telegram.ui.a20
+    @Override // org.telegram.ui.y10
     public final void s0(float f7) {
         m6 m6Var = this.Q;
         if (m6Var != null) {

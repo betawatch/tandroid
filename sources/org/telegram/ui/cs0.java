@@ -1,24 +1,22 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.MessageObject;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class cs0 implements Runnable {
-    public final /* synthetic */ PhotoViewer a;
+public final class cs0 extends org.telegram.ui.Cells.x9 {
+    public final /* synthetic */ int q0 = 0;
 
-    public cs0(PhotoViewer photoViewer) {
-        this.a = photoViewer;
+    public /* synthetic */ cs0(ci.r8 r8Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(r8Var, d6Var);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        PhotoViewer photoViewer = this.a;
-        MessageObject messageObject = photoViewer.T4;
-        if (messageObject == null) {
-            return;
+    @Override // org.telegram.ui.Cells.aa
+    public final int o() {
+        switch (this.q0) {
         }
-        FileLoader.getInstance(messageObject.currentAccount).setLoadingVideo(photoViewer.T4.getDocument(), true, false);
+        return 0;
+    }
+
+    public cs0(ci.b bVar) {
+        super(null, bVar);
     }
 }

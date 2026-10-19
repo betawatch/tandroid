@@ -1,42 +1,41 @@
 package ai;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class c7 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e7 b;
+public final class c7 extends org.telegram.ui.Components.w9 {
+    public final /* synthetic */ int G;
 
-    public /* synthetic */ c7(e7 e7Var, int i10) {
-        this.a = i10;
-        this.b = e7Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ c7(Context context, int i10) {
+        super(context);
+        this.G = i10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.e0 = false;
-                break;
+    @Override // android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.G) {
             case 1:
-                this.b.e0 = false;
-                break;
-            case 2:
-                this.b.O.setVisibility(4);
-                break;
-            case 3:
-                e7 e7Var = this.b;
-                e7Var.t0 = e7Var.s0;
-                e7Var.d(e7Var.V);
+                int size = View.MeasureSpec.getSize(i10);
+                setMeasuredDimension(size, size);
                 break;
             default:
-                e7 e7Var2 = this.b;
-                e7Var2.u0 = 1.0f;
-                e7Var2.b.setScaleX(1.0f);
-                e7Var2.b.setScaleY(e7Var2.u0);
-                e7Var2.invalidate();
+                super.onMeasure(i10, i11);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void setAlpha(float f7) {
+        switch (this.G) {
+            case 0:
+                super.setAlpha(f7);
+                setVisibility(f7 > 0.0f ? 0 : 4);
+                break;
+            default:
+                super.setAlpha(f7);
                 break;
         }
     }

@@ -1,17 +1,42 @@
 package org.telegram.ui.Wallet;
 
-import android.view.View;
-import org.telegram.ui.Components.a71;
+import android.content.DialogInterface;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class i4 extends a71 {
-    @Override // org.telegram.ui.Components.im0
-    public final boolean t1(View view) {
-        if (!(view instanceof f3)) {
-            return true;
+public final /* synthetic */ class i4 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ i4(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
+
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                TLRPC.User user = (TLRPC.User) this.b;
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                if (U != null) {
+                    U.presentFragment(new i9(user));
+                    break;
+                }
+                break;
+            default:
+                i9 i9Var = (i9) this.b;
+                EditTextBoldCursor editTextBoldCursor = i9Var.E;
+                if (editTextBoldCursor != null) {
+                    editTextBoldCursor.requestFocus();
+                    AndroidUtilities.showKeyboard(i9Var.E);
+                    break;
+                }
+                break;
         }
-        f3 f3Var = (f3) view;
-        return f3Var.F <= 0.0f && !f3Var.I.d();
     }
 }

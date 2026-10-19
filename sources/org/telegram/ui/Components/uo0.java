@@ -5,73 +5,73 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class uo0 extends u81 {
+public final class uo0 extends v81 {
     public final ArrayList a = new ArrayList();
-    public final /* synthetic */ org.telegram.ui.nx b;
+    public final /* synthetic */ org.telegram.ui.lx b;
 
-    public uo0(org.telegram.ui.nx nxVar) {
-        this.b = nxVar;
+    public uo0(org.telegram.ui.lx lxVar) {
+        this.b = lxVar;
         i();
     }
 
-    @Override // org.telegram.ui.Components.u81
+    @Override // org.telegram.ui.Components.v81
     public final void b(View view, int i10, int i11) {
-        org.telegram.ui.nx nxVar = this.b;
-        nxVar.O(view, i10, nxVar.K0, true);
+        org.telegram.ui.lx lxVar = this.b;
+        lxVar.O(view, i10, lxVar.K0, true);
     }
 
-    @Override // org.telegram.ui.Components.u81
+    @Override // org.telegram.ui.Components.v81
     public final View d(int i10) {
-        org.telegram.ui.nx nxVar = this.b;
-        org.telegram.ui.ey eyVar = nxVar.J0;
+        org.telegram.ui.lx lxVar = this.b;
+        org.telegram.ui.cy cyVar = lxVar.J0;
         if (i10 == 1) {
-            return nxVar.U;
+            return lxVar.U;
         }
         if (i10 == 3) {
-            return nxVar.f0;
+            return lxVar.f0;
         }
         if (i10 == 4) {
-            return nxVar.k0;
+            return lxVar.k0;
         }
         if (i10 == 5) {
-            return nxVar.r0;
+            return lxVar.r0;
         }
         if (i10 == 2) {
-            tn0 tn0Var = new tn0(nxVar.H0, eyVar);
-            nxVar.G0 = tn0Var;
-            tn0Var.b(nxVar.U0, nxVar.V0, false);
-            nxVar.G0.b.setClipToPadding(false);
-            nxVar.G0.b.j(new so0(this, 0));
-            nxVar.G0.b.C0(new rc0(nxVar, 23));
-            nxVar.G0.setUiCallback(nxVar);
-            return nxVar.G0;
+            tn0 tn0Var = new tn0(lxVar.H0, cyVar);
+            lxVar.G0 = tn0Var;
+            tn0Var.b(lxVar.U0, lxVar.V0, false);
+            lxVar.G0.b.setClipToPadding(false);
+            lxVar.G0.b.j(new so0(this, 0));
+            lxVar.G0.b.C0(new rc0(lxVar, 23));
+            lxVar.G0.setUiCallback(lxVar);
+            return lxVar.G0;
         }
         if (i10 == 6) {
-            return nxVar.p0;
+            return lxVar.p0;
         }
-        org.telegram.ui.g10 g10Var = new org.telegram.ui.g10(eyVar);
-        g10Var.setChatPreviewDelegate(nxVar.P0);
-        g10Var.setUiCallback(nxVar);
-        g10Var.j(nxVar.U0, nxVar.V0, false);
-        bh.b bVar = nxVar.X0;
+        org.telegram.ui.e10 e10Var = new org.telegram.ui.e10(cyVar);
+        e10Var.setChatPreviewDelegate(lxVar.P0);
+        e10Var.setUiCallback(lxVar);
+        e10Var.j(lxVar.U0, lxVar.V0, false);
+        bh.b bVar = lxVar.X0;
         if (bVar != null) {
-            g10Var.setBlurredBackgroundDrawableFactory(bVar);
+            e10Var.setBlurredBackgroundDrawableFactory(bVar);
         }
-        ai.u1 u1Var = g10Var.b;
+        ai.u1 u1Var = e10Var.b;
         u1Var.setClipToPadding(false);
         u1Var.j(new so0(this, 1));
-        u1Var.C0(new rc0(nxVar, 23));
-        return g10Var;
+        u1Var.C0(new rc0(lxVar, 23));
+        return e10Var;
     }
 
-    @Override // org.telegram.ui.Components.u81
+    @Override // org.telegram.ui.Components.v81
     public final int e() {
         return this.a.size();
     }
 
-    @Override // org.telegram.ui.Components.u81
+    @Override // org.telegram.ui.Components.v81
     public final CharSequence g(int i10) {
         ArrayList arrayList = this.a;
         if (((to0) arrayList.get(i10)).a == 0) {
@@ -97,7 +97,7 @@ public final class uo0 extends u81 {
         return str != null ? str : LocaleController.getString(o0Var.b);
     }
 
-    @Override // org.telegram.ui.Components.u81
+    @Override // org.telegram.ui.Components.v81
     public final int h(int i10) {
         ArrayList arrayList = this.a;
         if (((to0) arrayList.get(i10)).a == 0) {
@@ -125,24 +125,24 @@ public final class uo0 extends u81 {
         ArrayList arrayList = this.a;
         arrayList.clear();
         arrayList.add(new to0(0));
-        org.telegram.ui.nx nxVar = this.b;
-        if (nxVar.T0 != 0) {
+        org.telegram.ui.lx lxVar = this.b;
+        if (lxVar.T0 != 0) {
             return;
         }
-        if (nxVar.q0) {
+        if (lxVar.q0) {
             arrayList.add(new to0(5));
         }
         arrayList.add(new to0(1));
         arrayList.add(new to0(4));
         arrayList.add(new to0(6));
-        if (nxVar.O0) {
+        if (lxVar.O0) {
             return;
         }
         to0 to0Var = new to0(3);
         to0Var.b = 0;
         arrayList.add(to0Var);
-        org.telegram.ui.yw ywVar = nxVar.b1.G3;
-        if (ywVar == null || !ywVar.c()) {
+        org.telegram.ui.ww wwVar = lxVar.b1.G3;
+        if (wwVar == null || !wwVar.c()) {
             arrayList.add(new to0(2));
         }
         to0 to0Var2 = new to0(3);

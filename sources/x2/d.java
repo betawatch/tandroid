@@ -3,7 +3,7 @@ package x2;
 import android.os.Build;
 import b2.w;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements d9.m {
     public final /* synthetic */ n a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class d implements d9.m {
     */
     public final boolean apply(Object obj) {
         Boolean bool;
-        z2.d dVar;
+        z2.e eVar;
         w wVar = (w) obj;
         n nVar = this.a;
         nVar.getClass();
@@ -39,14 +39,14 @@ public final /* synthetic */ class d implements d9.m {
                         case "audio/ac4":
                         case "audio/eac3":
                             if (Build.VERSION.SDK_INT >= 32) {
-                                z2.d dVar2 = nVar.i;
-                                if (dVar2 != null) {
+                                z2.e eVar2 = nVar.i;
+                                if (eVar2 != null) {
                                     break;
                                 }
                             }
                             break;
                         default:
-                            if (Build.VERSION.SDK_INT >= 32 || (dVar = nVar.i) == null || !dVar.b || !dVar.c() || !nVar.i.d() || !nVar.i.a(nVar.j, wVar)) {
+                            if (Build.VERSION.SDK_INT >= 32 || (eVar = nVar.i) == null || !eVar.b || !eVar.c() || !nVar.i.d() || !nVar.i.a(nVar.j, wVar)) {
                                 return false;
                             }
                             break;

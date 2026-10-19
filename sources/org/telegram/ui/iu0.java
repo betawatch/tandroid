@@ -1,235 +1,234 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.app.Activity;
-import android.graphics.Point;
-import android.text.TextUtils;
-import android.util.Property;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.CheckBox;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class iu0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
-    public final FrameLayout a;
-    public final ci.h4 b;
-    public final org.telegram.ui.ActionBar.j5[] c;
-    public final org.telegram.ui.Components.q6 d;
-    public AnimatorSet e;
-    public AnimatorSet f;
-    public boolean h;
-    public ValueAnimator n;
-    public float r;
-    public int s;
+public final class iu0 extends FrameLayout {
+    public final /* synthetic */ PhotoViewer a;
 
-    public iu0(Activity activity) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public iu0(PhotoViewer photoViewer, Activity activity) {
         super(activity);
-        FrameLayout frameLayout = new FrameLayout(activity);
-        this.a = frameLayout;
-        frameLayout.setPadding(AndroidUtilities.dp(56.0f), 0, 0, 0);
-        addView(frameLayout, w7.z5.e(-1, -1, 119));
-        ci.h4 h4Var = new ci.h4(activity, 25);
-        this.b = h4Var;
-        h4Var.setPivotX(AndroidUtilities.dp(16.0f));
-        h4Var.setPadding(AndroidUtilities.dp(16.0f), 0, 0, 0);
-        h4Var.setClipToPadding(false);
-        frameLayout.addView(h4Var, w7.z5.e(-1, -1, 119));
-        this.c = new org.telegram.ui.ActionBar.j5[2];
-        for (int i10 = 0; i10 < 2; i10++) {
-            this.c[i10] = new org.telegram.ui.ActionBar.j5(activity);
-            this.c[i10].setGravity(19);
-            this.c[i10].setTextColor(-1);
-            this.c[i10].setTextSize(20);
-            this.c[i10].setTypeface(AndroidUtilities.bold());
-            this.c[i10].setDrawablePadding(AndroidUtilities.dp(4.0f));
-            this.c[i10].setScrollNonFitText(true);
-            this.b.addView(this.c[i10], w7.z5.e(-1, -2, 19));
-        }
-        org.telegram.ui.Components.q6 q6Var = new org.telegram.ui.Components.q6(activity, true, false, false);
-        this.d = q6Var;
-        q6Var.b(0.4f, 320L, org.telegram.ui.Components.bs.h);
-        q6Var.setTextSize(AndroidUtilities.dp(14.0f));
-        q6Var.setGravity(19);
-        q6Var.setTextColor(-1);
-        q6Var.setEllipsizeByGradient(true);
-        q6Var.setImportantForAccessibility(1);
-        q6Var.setAccessibilityLiveRegion(1);
-        this.a.addView(q6Var, w7.z5.d(-1, 20.0f, 51, 16.0f, 0.0f, 0.0f, 0.0f));
+        this.a = photoViewer;
     }
 
-    public final void a(CharSequence charSequence, boolean z10) {
-        boolean isEmpty = TextUtils.isEmpty(charSequence);
-        boolean z11 = !isEmpty;
-        boolean z12 = this.h;
-        org.telegram.ui.Components.q6 q6Var = this.d;
-        if (z11 != z12) {
-            this.h = z11;
-            AnimatorSet animatorSet = this.f;
-            if (animatorSet != null) {
-                animatorSet.cancel();
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        qn qnVar = this.a.l4;
+        if (qnVar != null) {
+            qnVar.T7();
+            UndoView undoView = qnVar.y3;
+            if (undoView == null || undoView.getVisibility() != 0) {
+                return;
             }
-            Point point = AndroidUtilities.displaySize;
-            int dp = AndroidUtilities.dp((!isEmpty ? 30 : 33) - (point.x > point.y ? 6 : 0));
-            ci.h4 h4Var = this.b;
-            if (z10) {
-                ArrayList arrayList = new ArrayList();
-                arrayList.add(ObjectAnimator.ofFloat(q6Var, (Property<org.telegram.ui.Components.q6, Float>) View.ALPHA, !isEmpty ? 1.0f : 0.0f));
-                float[] fArr = {dp};
-                Property property = View.TRANSLATION_Y;
-                arrayList.add(ObjectAnimator.ofFloat(q6Var, (Property<org.telegram.ui.Components.q6, Float>) property, fArr));
-                arrayList.add(ObjectAnimator.ofFloat(h4Var, (Property<ci.h4, Float>) property, isEmpty ? 0.0f : AndroidUtilities.dp(-12.0f)));
-                arrayList.add(ObjectAnimator.ofFloat(h4Var, (Property<ci.h4, Float>) View.SCALE_X, !isEmpty ? 0.87f : 1.0f));
-                arrayList.add(ObjectAnimator.ofFloat(h4Var, (Property<ci.h4, Float>) View.SCALE_Y, isEmpty ? 1.0f : 0.87f));
-                AnimatorSet animatorSet2 = new AnimatorSet();
-                this.f = animatorSet2;
-                animatorSet2.playTogether(arrayList);
-                this.f.setInterpolator(org.telegram.ui.Components.bs.h);
-                this.f.start();
-            } else {
-                q6Var.setAlpha(!isEmpty ? 1.0f : 0.0f);
-                q6Var.setTranslationY(dp);
-                h4Var.setTranslationY(isEmpty ? 0.0f : AndroidUtilities.dp(-12.0f));
-                h4Var.setScaleX(!isEmpty ? 0.87f : 1.0f);
-                h4Var.setScaleY(isEmpty ? 1.0f : 0.87f);
+            canvas.save();
+            View view = (View) undoView.getParent();
+            canvas.clipRect(view.getX(), view.getY(), view.getX() + view.getWidth(), view.getY() + view.getHeight());
+            canvas.translate(undoView.getX(), undoView.getY());
+            undoView.draw(canvas);
+            canvas.restore();
+            invalidate();
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
+        keyEvent.getKeyCode();
+        PhotoViewer photoViewer = this.a;
+        if (!photoViewer.r && photoViewer.c2 != 1 && photoViewer.r1 && photoViewer.F2 != null && keyEvent.getRepeatCount() == 0 && keyEvent.getAction() == 0 && (keyEvent.getKeyCode() == 24 || keyEvent.getKeyCode() == 25)) {
+            photoViewer.F2.W(1.0f);
+        }
+        return super.dispatchKeyEvent(keyEvent);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchKeyEventPreIme(KeyEvent keyEvent) {
+        if (keyEvent == null || keyEvent.getKeyCode() != 4 || keyEvent.getAction() != 1) {
+            return super.dispatchKeyEventPreIme(keyEvent);
+        }
+        PhotoViewer photoViewer = this.a;
+        if (photoViewer.Q.x()) {
+            photoViewer.Q.f(false);
+        }
+        if (photoViewer.I1()) {
+            photoViewer.E0(true);
+            return false;
+        }
+        if (et.q().E) {
+            et.q().o();
+            return false;
+        }
+        PhotoViewer.t1().G0(true, false);
+        return true;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x001a, code lost:
+    
+        if (r1 != 6) goto L23;
+     */
+    @Override // android.view.ViewGroup, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        PhotoViewer photoViewer = this.a;
+        if (photoViewer.l3 && photoViewer.P3) {
+            int actionMasked = motionEvent.getActionMasked();
+            if (actionMasked != 0) {
+                if (actionMasked != 1 && actionMasked != 3) {
+                    if (actionMasked != 5) {
+                    }
+                }
+                MessageObject messageObject = photoViewer.T4;
+                if (messageObject == null || !messageObject.isSponsored()) {
+                    photoViewer.s2();
+                }
             }
+            AndroidUtilities.cancelRunOnUIThread(photoViewer.x2);
         }
-        q6Var.c(charSequence, z10, true);
-        if (TextUtils.isEmpty(charSequence)) {
-            charSequence = null;
-        }
-        q6Var.setContentDescription(charSequence);
+        return super.dispatchTouchEvent(motionEvent);
     }
 
-    public final void b(boolean z10) {
-        org.telegram.ui.ActionBar.j5[] j5VarArr = this.c;
-        j5VarArr[0].getPaint().setShadowLayer(AndroidUtilities.dpf2(0.66f), 0.0f, 1.0f, z10 ? 1912602624 : 0);
-        j5VarArr[1].getPaint().setShadowLayer(AndroidUtilities.dpf2(0.66f), 0.0f, 1.0f, z10 ? 1912602624 : 0);
-        this.d.getDrawable().s(AndroidUtilities.dpf2(0.66f), 0.0f, 1.0f, z10 ? 1912602624 : 0);
-    }
-
-    public final void c(CharSequence charSequence) {
-        org.telegram.ui.ActionBar.j5[] j5VarArr = this.c;
-        j5VarArr[1].setAlpha(0.0f);
-        j5VarArr[1].setVisibility(8);
-        CharSequence text = j5VarArr[0].getText();
-        if (text != null || charSequence != null) {
-            r1 = (text == null) != (charSequence == null) ? false : TextUtils.equals(text.toString(), charSequence.toString());
-        }
-        if (!r1) {
-            org.telegram.ui.ActionBar.j5 j5Var = j5VarArr[0];
-            j5Var.R = 0.0f;
-            j5Var.b();
-        }
-        j5VarArr[0].k(charSequence);
-        j5VarArr[0].setAlpha(1.0f);
-        j5VarArr[0].setTranslationX(0.0f);
-        j5VarArr[0].setTranslationY(0.0f);
-    }
-
-    public final void d(CharSequence charSequence, boolean z10, boolean z11) {
-        org.telegram.ui.ActionBar.j5[] j5VarArr = this.c;
-        CharSequence text = j5VarArr[0].getText();
-        if (text == null ? false : TextUtils.equals(text.toString(), charSequence.toString())) {
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        if (this.a.S8) {
             return;
         }
-        AnimatorSet animatorSet = this.e;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-            this.e = null;
-        }
-        org.telegram.ui.ActionBar.j5 j5Var = j5VarArr[1];
-        org.telegram.ui.ActionBar.j5 j5Var2 = j5VarArr[0];
-        j5Var.getClass();
-        j5Var.R = j5Var2.R;
-        j5Var.b();
-        j5VarArr[1].k(j5VarArr[0].getText());
-        j5VarArr[1].setRightPadding((int) this.r);
-        org.telegram.ui.ActionBar.j5 j5Var3 = j5VarArr[0];
-        j5Var3.R = 0.0f;
-        j5Var3.b();
-        j5VarArr[0].k(charSequence);
-        float dp = AndroidUtilities.dp(8.0f) * (z11 ? 1 : -1);
-        j5VarArr[1].setTranslationX(0.0f);
-        j5VarArr[1].setTranslationY(0.0f);
-        if (z10) {
-            j5VarArr[0].setTranslationX(0.0f);
-            j5VarArr[0].setTranslationY(-dp);
-        } else {
-            j5VarArr[0].setTranslationX(-dp);
-            j5VarArr[0].setTranslationY(0.0f);
-        }
-        j5VarArr[0].setAlpha(0.0f);
-        j5VarArr[1].setAlpha(1.0f);
-        j5VarArr[0].setVisibility(0);
-        j5VarArr[1].setVisibility(0);
-        ArrayList arrayList = new ArrayList();
-        Property property = View.ALPHA;
-        arrayList.add(ObjectAnimator.ofFloat(j5VarArr[1], (Property<org.telegram.ui.ActionBar.j5, Float>) property, 0.0f));
-        arrayList.add(ObjectAnimator.ofFloat(j5VarArr[0], (Property<org.telegram.ui.ActionBar.j5, Float>) property, 1.0f));
-        org.telegram.ui.ActionBar.j5 j5Var4 = j5VarArr[1];
-        Property property2 = View.TRANSLATION_X;
-        Property property3 = View.TRANSLATION_Y;
-        arrayList.add(ObjectAnimator.ofFloat(j5Var4, (Property<org.telegram.ui.ActionBar.j5, Float>) (z10 ? property3 : property2), dp));
-        org.telegram.ui.ActionBar.j5 j5Var5 = j5VarArr[0];
-        if (z10) {
-            property2 = property3;
-        }
-        arrayList.add(ObjectAnimator.ofFloat(j5Var5, (Property<org.telegram.ui.ActionBar.j5, Float>) property2, 0.0f));
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.e = animatorSet2;
-        animatorSet2.playTogether(arrayList);
-        this.e.addListener(new bc0(this, 15));
-        this.e.setDuration(320L);
-        this.e.setInterpolator(org.telegram.ui.Components.bs.h);
-        this.e.start();
+        super.draw(canvas);
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.emojiLoaded) {
-            org.telegram.ui.ActionBar.j5[] j5VarArr = this.c;
-            j5VarArr[0].invalidate();
-            j5VarArr[1].invalidate();
-            this.d.invalidate();
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        try {
+            return super.drawChild(canvas, view, j10);
+        } catch (Throwable unused) {
+            return false;
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
+        PhotoViewer photoViewer = this.a;
+        photoViewer.C4.onAttachedToWindow();
+        photoViewer.B4.onAttachedToWindow();
+        photoViewer.D4.onAttachedToWindow();
+        photoViewer.S5 = true;
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.emojiLoaded);
+        PhotoViewer photoViewer = this.a;
+        photoViewer.C4.onDetachedFromWindow();
+        photoViewer.B4.onDetachedFromWindow();
+        photoViewer.D4.onDetachedFromWindow();
+        photoViewer.S5 = false;
+        photoViewer.T5 = false;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0053  */
+    /* JADX WARN: Removed duplicated region for block: B:16:? A[RETURN, SYNTHETIC] */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        PhotoViewer photoViewer = this.a;
+        Paint paint = photoViewer.M0;
+        ci.i3 i3Var = photoViewer.s5;
+        if (i3Var != null && i3Var.getVisibility() == 0) {
+            View view = (View) photoViewer.s5.getParent();
+            float min = Math.min(photoViewer.s5.getAlpha(), view != null ? view.getAlpha() : 1.0f);
+            if (min > 0.0f) {
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (min * 255.0f), 31);
+                canvas2 = canvas;
+                photoViewer.s5.draw(canvas2);
+                canvas2.restore();
+                if (photoViewer.e) {
+                    return;
+                }
+                paint.setAlpha(photoViewer.L0.getAlpha());
+                canvas2.drawRect(0.0f, getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight() + photoViewer.s2.bottom, paint);
+                return;
+            }
+        }
+        canvas2 = canvas;
+        if (photoViewer.e) {
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return this.a.e && super.onInterceptTouchEvent(motionEvent);
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        this.a.layout(0, AndroidUtilities.statusBarHeight, i12 - i10, i13 - i11);
+        PhotoViewer photoViewer = this.a;
+        photoViewer.h0.layout(getPaddingLeft(), 0, photoViewer.h0.getMeasuredWidth() + getPaddingLeft(), photoViewer.h0.getMeasuredHeight());
+        photoViewer.e0.layout(getPaddingLeft(), 0, photoViewer.e0.getMeasuredWidth() + getPaddingLeft(), photoViewer.e0.getMeasuredHeight());
+        photoViewer.j0.layout(getPaddingLeft(), photoViewer.e0.getMeasuredHeight(), photoViewer.j0.getMeasuredWidth(), photoViewer.j0.getMeasuredHeight() + photoViewer.e0.getMeasuredHeight());
+        photoViewer.T5 = true;
+        if (z10) {
+            if (!photoViewer.U5) {
+                float r22 = photoViewer.r2(true);
+                photoViewer.a6 = r22;
+                photoViewer.X5 = 0.0f;
+                photoViewer.Y5 = 0.0f;
+                photoViewer.w3(r22);
+            }
+            CheckBox checkBox = photoViewer.N0;
+            if (checkBox != null) {
+                checkBox.post(new st0(this, 1));
+            }
+        }
+        if (photoViewer.U5) {
+            photoViewer.N2();
+            photoViewer.U5 = false;
+        }
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         int size = View.MeasureSpec.getSize(i10);
         int size2 = View.MeasureSpec.getSize(i11);
-        int i12 = AndroidUtilities.statusBarHeight;
-        int i13 = this.s;
-        int i14 = AndroidUtilities.displaySize.y;
-        if (i13 != i14) {
-            this.s = i14;
-            this.h = !this.h;
-            a(this.d.getText(), false);
+        PhotoViewer photoViewer = this.a;
+        if (!photoViewer.s && AndroidUtilities.incorrectDisplaySizeFix) {
+            int i12 = AndroidUtilities.displaySize.y;
+            if (size2 > i12) {
+                size2 = i12;
+            }
+            size2 += AndroidUtilities.statusBarHeight;
         }
-        this.a.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2 - i12, TLObject.FLAG_30));
         setMeasuredDimension(size, size2);
+        int i13 = size2 - photoViewer.s2.bottom;
+        int paddingRight = size - (getPaddingRight() + getPaddingLeft());
+        int paddingBottom = i13 - getPaddingBottom();
+        ViewGroup.LayoutParams layoutParams = photoViewer.h0.getLayoutParams();
+        photoViewer.h0.measure(View.MeasureSpec.makeMeasureSpec(layoutParams.width, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(layoutParams.height, TLObject.FLAG_31));
+        photoViewer.e0.measure(View.MeasureSpec.makeMeasureSpec(paddingRight, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(paddingBottom, TLObject.FLAG_30));
+        photoViewer.j0.measure(View.MeasureSpec.makeMeasureSpec(paddingRight, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(photoViewer.k0, TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        PhotoViewer photoViewer = this.a;
+        return photoViewer.e && PhotoViewer.k(photoViewer, motionEvent);
     }
 }

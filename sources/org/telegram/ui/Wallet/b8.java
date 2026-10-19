@@ -3,20 +3,20 @@ package org.telegram.ui.Wallet;
 import android.text.TextUtils;
 import java.nio.charset.StandardCharsets;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.v61;
-import org.telegram.ui.pa0;
+import org.telegram.ui.Components.w61;
+import org.telegram.ui.na0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b8 implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ v61 b;
+    public final /* synthetic */ w61 b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ b8(v61 v61Var, Object obj, Object obj2, int i10) {
+    public /* synthetic */ b8(w61 w61Var, Object obj, Object obj2, int i10) {
         this.a = i10;
-        this.b = v61Var;
+        this.b = w61Var;
         this.d = obj;
         this.c = obj2;
     }
@@ -31,15 +31,15 @@ public final /* synthetic */ class b8 implements org.telegram.ui.ActionBar.a2 {
                 if (!bool.booleanValue()) {
                     m0Var.c.B();
                 }
-                s2.a(m0Var.a, new gi.c(9), null, null, null, new ci.c0(5, m0Var, new x(9, h8Var, (h8Var.getParentLayout() == null || h8Var.getParentLayout().getFragmentStack().size() <= 1) ? null : (org.telegram.ui.ActionBar.n2) h8Var.getParentLayout().getFragmentStack().get(h8Var.getParentLayout().getFragmentStack().size() - 2))), false, true, new pa0((Object) null, 1));
+                s2.a(m0Var.a, new gi.c(9), null, null, null, new ci.c0(5, m0Var, new x(9, h8Var, (h8Var.getParentLayout() == null || h8Var.getParentLayout().getFragmentStack().size() <= 1) ? null : (org.telegram.ui.ActionBar.n2) h8Var.getParentLayout().getFragmentStack().get(h8Var.getParentLayout().getFragmentStack().size() - 2))), false, true, new na0((Object) null, 1));
                 break;
             case 1:
                 h8 h8Var2 = (h8) this.b;
                 m0 m0Var2 = (m0) this.c;
                 h0 h0Var = (h0) this.d;
-                pf.c g10 = b2Var.g(i10, true, true);
-                g10.d();
-                d8 d8Var = new d8(h8Var2, g10, 2);
+                pf.c h = b2Var.h(i10, true, true);
+                h.d();
+                d8 d8Var = new d8(h8Var2, h, 2);
                 m0.F("disable backup: getting phrase...");
                 m0Var2.y(new k((Object) m0Var2, (Object) d8Var, (Object) h0Var, 5), false, true);
                 break;

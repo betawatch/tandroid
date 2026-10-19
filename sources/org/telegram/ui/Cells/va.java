@@ -26,11 +26,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxSquare;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.xp;
-import org.telegram.ui.gk0;
+import org.telegram.ui.ek0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class va extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.y5 {
     public final org.telegram.ui.Components.h9 E;
@@ -52,7 +52,7 @@ public class va extends FrameLayout implements NotificationCenter.NotificationCe
     public long U;
     public boolean V;
     public boolean W;
-    public final ci.j4 a;
+    public final ci.k4 a;
     public final org.telegram.ui.ActionBar.j5 b;
     public final org.telegram.ui.ActionBar.j5 c;
     public final ImageView d;
@@ -109,11 +109,11 @@ public class va extends FrameLayout implements NotificationCenter.NotificationCe
     public final void b(int i10, int i11) {
         int i12;
         float f7;
-        ci.j4 j4Var = this.a;
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) j4Var.getLayoutParams();
+        ci.k4 k4Var = this.a;
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) k4Var.getLayoutParams();
         layoutParams.leftMargin = AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : i10 + 7);
         layoutParams.rightMargin = AndroidUtilities.dp(LocaleController.isRTL ? i10 + 7 : 0.0f);
-        j4Var.setLayoutParams(layoutParams);
+        k4Var.setLayoutParams(layoutParams);
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.b.getLayoutParams();
         boolean z10 = LocaleController.isRTL;
         CheckBoxSquare checkBoxSquare = this.f;
@@ -209,18 +209,18 @@ public class va extends FrameLayout implements NotificationCenter.NotificationCe
         e(user, null, null, z10);
     }
 
-    public final void g(gk0 gk0Var, CharSequence charSequence, boolean z10) {
+    public final void g(ek0 ek0Var, CharSequence charSequence, boolean z10) {
         String string;
         Object user;
-        boolean z11 = gk0Var.e;
+        boolean z11 = ek0Var.e;
         int i10 = this.P;
         if (z11) {
-            int i11 = gk0Var.c;
-            string = (i11 > 0 || !gk0Var.f) ? i11 <= 0 ? LocaleController.getString(R.string.NotificationEnabled) : LocaleController.getString(R.string.NotificationDisabled) : LocaleController.getString(R.string.NotificationEnabledAutomatically);
+            int i11 = ek0Var.c;
+            string = (i11 > 0 || !ek0Var.f) ? i11 <= 0 ? LocaleController.getString(R.string.NotificationEnabled) : LocaleController.getString(R.string.NotificationDisabled) : LocaleController.getString(R.string.NotificationEnabledAutomatically);
         } else {
-            boolean z12 = gk0Var.b;
-            int i12 = gk0Var.c;
-            int i13 = gk0Var.a;
+            boolean z12 = ek0Var.b;
+            int i12 = ek0Var.c;
+            int i13 = ek0Var.a;
             boolean z13 = true;
             if (i12 != 3 || i13 == Integer.MAX_VALUE) {
                 if (i12 != 0 && i12 != 1) {
@@ -238,27 +238,27 @@ public class va extends FrameLayout implements NotificationCenter.NotificationCe
             if (string == null) {
                 string = LocaleController.getString(R.string.NotificationsOff);
             }
-            if (gk0Var.f) {
+            if (ek0Var.f) {
                 string = r4.c.u(string, ", Auto");
             }
         }
-        if (DialogObject.isEncryptedDialog(gk0Var.d)) {
-            TLRPC.EncryptedChat l4 = org.telegram.messenger.g0.l(MessagesController.getInstance(i10), gk0Var.d);
+        if (DialogObject.isEncryptedDialog(ek0Var.d)) {
+            TLRPC.EncryptedChat l4 = org.telegram.messenger.g0.l(MessagesController.getInstance(i10), ek0Var.d);
             if (l4 == null || (user = MessagesController.getInstance(i10).getUser(Long.valueOf(l4.user_id))) == null) {
                 return;
             }
             e(user, charSequence, string, false);
             return;
         }
-        if (DialogObject.isUserDialog(gk0Var.d)) {
-            Object user2 = MessagesController.getInstance(i10).getUser(Long.valueOf(gk0Var.d));
+        if (DialogObject.isUserDialog(ek0Var.d)) {
+            Object user2 = MessagesController.getInstance(i10).getUser(Long.valueOf(ek0Var.d));
             if (user2 != null) {
                 e(user2, charSequence, string, z10);
                 return;
             }
             return;
         }
-        Object chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-gk0Var.d));
+        Object chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-ek0Var.d));
         if (chat != null) {
             e(chat, charSequence, string, z10);
         }
@@ -280,8 +280,8 @@ public class va extends FrameLayout implements NotificationCenter.NotificationCe
         return this.b.getText();
     }
 
-    public final void h(int i10, f61 f61Var, boolean z10) {
-        long j10 = f61Var.x;
+    public final void h(int i10, g61 g61Var, boolean z10) {
+        long j10 = g61Var.x;
         if (j10 <= 0) {
             TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j10));
             if (chat != null) {
@@ -413,7 +413,7 @@ public class va extends FrameLayout implements NotificationCenter.NotificationCe
             str = null;
         }
         boolean z13 = this.G instanceof String;
-        ci.j4 j4Var = this.a;
+        ci.k4 k4Var = this.a;
         int i12 = this.P;
         org.telegram.ui.ActionBar.j5 j5Var = this.c;
         org.telegram.ui.ActionBar.j5 j5Var2 = this.b;
@@ -529,7 +529,7 @@ public class va extends FrameLayout implements NotificationCenter.NotificationCe
                     h9Var.g(7);
                     break;
             }
-            j4Var.f(null, "50_50", h9Var);
+            k4Var.f(null, "50_50", h9Var);
             this.I = "";
         } else {
             ((FrameLayout.LayoutParams) j5Var2.getLayoutParams()).topMargin = AndroidUtilities.dp(10.0f);
@@ -538,7 +538,7 @@ public class va extends FrameLayout implements NotificationCenter.NotificationCe
                     j5Var2.l(LocaleController.getString(R.string.SavedMessages), true);
                     j5Var.l(null, false);
                     h9Var.g(1);
-                    j4Var.h(null, "50_50", h9Var, user);
+                    k4Var.h(null, "50_50", h9Var, user);
                     ((FrameLayout.LayoutParams) j5Var2.getLayoutParams()).topMargin = AndroidUtilities.dp(19.0f);
                     return;
                 }
@@ -681,13 +681,13 @@ public class va extends FrameLayout implements NotificationCenter.NotificationCe
                     }
                     this.O = fileLocation;
                     if (user == null) {
-                        j4Var.e(user, h9Var);
+                        k4Var.e(user, h9Var);
                     } else if (chat != null) {
-                        j4Var.e(chat, h9Var);
+                        k4Var.e(chat, h9Var);
                     } else {
-                        j4Var.setImageDrawable(h9Var);
+                        k4Var.setImageDrawable(h9Var);
                     }
-                    j4Var.setRoundRadius(!this.V ? AndroidUtilities.dp(12.777778f) : (chat == null || !chat.forum) ? AndroidUtilities.dp(24.0f) : AndroidUtilities.dp(14.0f));
+                    k4Var.setRoundRadius(!this.V ? AndroidUtilities.dp(12.777778f) : (chat == null || !chat.forum) ? AndroidUtilities.dp(24.0f) : AndroidUtilities.dp(14.0f));
                     j5Var2.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var));
                 }
                 h9Var.k(i12, chat);
@@ -717,7 +717,7 @@ public class va extends FrameLayout implements NotificationCenter.NotificationCe
         this.O = fileLocation;
         if (user == null) {
         }
-        j4Var.setRoundRadius(!this.V ? AndroidUtilities.dp(12.777778f) : (chat == null || !chat.forum) ? AndroidUtilities.dp(24.0f) : AndroidUtilities.dp(14.0f));
+        k4Var.setRoundRadius(!this.V ? AndroidUtilities.dp(12.777778f) : (chat == null || !chat.forum) ? AndroidUtilities.dp(24.0f) : AndroidUtilities.dp(14.0f));
         j5Var2.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var2));
     }
 
@@ -822,10 +822,10 @@ public class va extends FrameLayout implements NotificationCenter.NotificationCe
         boolean z11 = LocaleController.isRTL;
         j5Var2.setLayoutParams(w7.z5.d(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? 30.0f : i10 + 66, 32.0f, z11 ? i10 + 66 : 30.0f, 0.0f));
         int dp = AndroidUtilities.dp(22.0f);
-        ci.j4 j4Var = this.a;
-        j4Var.setRoundRadius(dp);
+        ci.k4 k4Var = this.a;
+        k4Var.setRoundRadius(dp);
         boolean z12 = LocaleController.isRTL;
-        j4Var.setLayoutParams(w7.z5.d(44, 44.0f, (z12 ? 5 : 3) | 48, z12 ? 0.0f : i10 + 8, 6.0f, z12 ? i10 + 8 : 0.0f, 0.0f));
+        k4Var.setLayoutParams(w7.z5.d(44, 44.0f, (z12 ? 5 : 3) | 48, z12 ? 0.0f : i10 + 8, 6.0f, z12 ? i10 + 8 : 0.0f, 0.0f));
         xp xpVar = this.e;
         if (xpVar != null) {
             boolean z13 = LocaleController.isRTL;
@@ -910,11 +910,11 @@ public class va extends FrameLayout implements NotificationCenter.NotificationCe
         this.Q = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.y6, d6Var);
         this.R = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.il, d6Var);
         this.E = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
-        ci.j4 j4Var = new ci.j4(this, context, i14);
-        this.a = j4Var;
-        j4Var.setRoundRadius(AndroidUtilities.dp(24.0f));
+        ci.k4 k4Var = new ci.k4(this, context, i14);
+        this.a = k4Var;
+        k4Var.setRoundRadius(AndroidUtilities.dp(24.0f));
         boolean z13 = LocaleController.isRTL;
-        addView(j4Var, w7.z5.d(46, 46.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : i10 + 7, 6.0f, z13 ? i10 + 7 : 0.0f, 0.0f));
+        addView(k4Var, w7.z5.d(46, 46.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : i10 + 7, 6.0f, z13 ? i10 + 7 : 0.0f, 0.0f));
         setClipChildren(false);
         org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
         this.b = j5Var;

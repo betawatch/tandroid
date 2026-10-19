@@ -1,58 +1,48 @@
 package org.telegram.ui.Wallet;
 
-import android.view.View;
-import java.io.Serializable;
+import java.util.ArrayList;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class t4 implements View.OnAttachStateChangeListener {
-    public final /* synthetic */ x3 a;
+public final class t4 implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ int a;
     public final /* synthetic */ TL_wallet.walletTransaction[] b;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Utilities.Callback2 e;
-    public final /* synthetic */ k2[] f;
-    public final /* synthetic */ String[] h;
-    public final /* synthetic */ boolean[] n;
+    public final /* synthetic */ b4 c;
 
-    public t4(x3 x3Var, TL_wallet.walletTransaction[] wallettransactionArr, s4 s4Var, int i10, Utilities.Callback2 callback2, k2[] k2VarArr, String[] strArr, boolean[] zArr) {
-        this.a = x3Var;
+    public t4(int i10, TL_wallet.walletTransaction[] wallettransactionArr, b4 b4Var) {
+        this.a = i10;
         this.b = wallettransactionArr;
-        this.c = s4Var;
-        this.d = i10;
-        this.e = callback2;
-        this.f = k2VarArr;
-        this.h = strArr;
-        this.n = zArr;
+        this.c = b4Var;
     }
 
-    /* JADX WARN: Type inference failed for: r3v0, types: [java.io.Serializable, java.lang.String[]] */
-    /* JADX WARN: Type inference failed for: r4v0, types: [boolean[], java.io.Serializable] */
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        this.a.run(this.b[0]);
-        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.c;
-        if (notificationCenterDelegate != null) {
-            int i10 = this.d;
-            NotificationCenter.getInstance(i10).addObserver(notificationCenterDelegate, NotificationCenter.walletUpdate);
-            NotificationCenter.getInstance(i10).addObserver(notificationCenterDelegate, NotificationCenter.walletTransactionsUpdate);
-        }
-        Utilities.Callback2 callback2 = this.e;
-        if (callback2 != null) {
-            this.f[0].setOnDismissListener(new h(callback2, (Serializable) this.h, (Serializable) this.n, 13));
-        }
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.c;
-        if (notificationCenterDelegate != null) {
-            int i10 = this.d;
-            NotificationCenter.getInstance(i10).removeObserver(notificationCenterDelegate, NotificationCenter.walletUpdate);
-            NotificationCenter.getInstance(i10).removeObserver(notificationCenterDelegate, NotificationCenter.walletTransactionsUpdate);
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        TL_wallet.walletTransaction[] wallettransactionArr;
+        TL_wallet.walletTransaction wallettransaction;
+        if (i10 == NotificationCenter.walletUpdate || i10 == NotificationCenter.walletTransactionsUpdate) {
+            ArrayList arrayList = m0.w(this.a).A().c;
+            int size = arrayList.size();
+            int i12 = 0;
+            while (true) {
+                wallettransactionArr = this.b;
+                if (i12 >= size) {
+                    wallettransaction = null;
+                    break;
+                }
+                Object obj = arrayList.get(i12);
+                i12++;
+                wallettransaction = (TL_wallet.walletTransaction) obj;
+                TL_wallet.walletTransaction wallettransaction2 = wallettransactionArr[0];
+                if (wallettransaction == wallettransaction2 || m0.f0(wallettransaction2, wallettransaction)) {
+                    break;
+                }
+            }
+            if (wallettransaction != null) {
+                wallettransactionArr[0] = wallettransaction;
+                this.c.run(wallettransaction);
+            }
         }
     }
 }

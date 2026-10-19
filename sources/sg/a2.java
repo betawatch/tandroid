@@ -34,10 +34,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.mj0;
-import org.telegram.ui.web.g2;
+import org.telegram.ui.df0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class a2 extends FrameLayout implements m0, NotificationCenter.NotificationCenterDelegate {
     public static final float[] U = {0.02f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.02f};
@@ -65,7 +64,7 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
     public float f;
     public final String h;
     public final ImageReceiver n;
-    public org.telegram.ui.web.a2 r;
+    public org.telegram.ui.web.z1 r;
     public final int s;
     public final int v;
     public boolean w;
@@ -131,7 +130,7 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
                 this.n.setImage(null, null, z1Var, null, premiumPromo, 1);
                 FileLoader.getInstance(this.s).loadFile(document, premiumPromo, 3, 0);
                 this.R = document;
-                Utilities.globalQueue.postRunnable(new g2(20, this, document));
+                Utilities.globalQueue.postRunnable(new p2.b(19, this, document));
                 if (i11 != 1) {
                     s4.b bVar = new s4.b(2);
                     bVar.c = new RectF();
@@ -255,13 +254,13 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
                 this.f = 0.671f;
             } else {
                 if ((NotificationCenter.getGlobalInstance().getCurrentHeavyOperationFlags() & 512) != 0) {
-                    org.telegram.ui.web.a2 a2Var = this.r;
-                    if (a2Var != null) {
-                        AndroidUtilities.cancelRunOnUIThread(a2Var);
+                    org.telegram.ui.web.z1 z1Var = this.r;
+                    if (z1Var != null) {
+                        AndroidUtilities.cancelRunOnUIThread(z1Var);
                     }
-                    org.telegram.ui.web.a2 a2Var2 = new org.telegram.ui.web.a2(this, 26);
-                    this.r = a2Var2;
-                    AndroidUtilities.runOnUIThread(a2Var2, 300L);
+                    org.telegram.ui.web.z1 z1Var2 = new org.telegram.ui.web.z1(this, 26);
+                    this.r = z1Var2;
+                    AndroidUtilities.runOnUIThread(z1Var2, 300L);
                     return;
                 }
                 try {
@@ -789,7 +788,7 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
         ei.c0 c0Var = this.H;
         if (c0Var != null) {
             this.T = c0Var.getCurrentPosition();
-            this.H.release(new mj0(20));
+            this.H.release(new df0(21));
             this.H = null;
         }
     }
@@ -932,7 +931,7 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
             ei.c0 c0Var = this.H;
             if (c0Var != null) {
                 this.T = c0Var.getCurrentPosition();
-                this.H.release(new mj0(20));
+                this.H.release(new df0(21));
                 this.H = null;
             }
             imageReceiver.stopAnimation();

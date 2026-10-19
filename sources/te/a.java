@@ -4,7 +4,7 @@ import com.google.firebase.messaging.r;
 import java.util.Hashtable;
 import java.util.StringTokenizer;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class a {
     public static final Hashtable b;
@@ -55,11 +55,11 @@ public final class a {
         }
     }
 
-    public static r b(le.b bVar, Object obj, Object obj2) {
+    public static r b(b bVar, Object obj, Object obj2) {
         return new r(bVar, obj, obj2, c);
     }
 
-    public static r c(le.b bVar, Object obj, Object obj2, Object obj3) {
+    public static r c(b bVar, Object obj, Object obj2, Object obj3) {
         return new r(bVar, obj, obj2, new Object[]{obj3});
     }
 
@@ -95,8 +95,8 @@ public final class a {
         return bVar;
     }
 
-    public final le.b e(s4.b bVar) {
-        le.b bVar2 = new le.b(22, false);
+    public final b e(s4.b bVar) {
+        b bVar2 = new b(0, false);
         bVar2.b = bVar;
         return bVar2;
     }

@@ -44,14 +44,14 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.e11;
 import org.telegram.ui.Components.fd;
 import org.telegram.ui.Components.up0;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class s7 extends FrameLayout {
     public static long E0;
@@ -70,7 +70,7 @@ public class s7 extends FrameLayout {
     public boolean L;
     public final org.telegram.ui.Components.f6 M;
     public final org.telegram.ui.Components.p6 N;
-    public d11 O;
+    public e11 O;
     public CheckBoxBase P;
     public final r7 Q;
     public boolean R;
@@ -101,9 +101,9 @@ public class s7 extends FrameLayout {
     public wh.f m0;
     public MessageObject n;
     public final Path n0;
-    public d11 o0;
-    public d11 p0;
-    public d11 q0;
+    public e11 o0;
+    public e11 p0;
+    public e11 q0;
     public int r;
     public int r0;
     public b10 s;
@@ -241,11 +241,11 @@ public class s7 extends FrameLayout {
             ImageReceiver imageReceiver = this.c;
             if ((imageReceiver == null || imageReceiver.getVisible()) && this.h && this.O != null) {
                 float dp = AndroidUtilities.dp(5.33f);
-                d11 d11Var = this.O;
-                d11Var.p = (int) (rectF.width() - (2.0f * dp));
-                d11Var.t = AndroidUtilities.dp(14.0f);
-                d11Var.a.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.h6.m1(0.4f * f7, -16777216));
-                d11Var.c(rectF.left + dp, rectF.top + AndroidUtilities.dp(this.r <= 2 ? 15.0f : 11.33f), 1.0f, org.telegram.ui.ActionBar.h6.m1(f7, -1), canvas);
+                e11 e11Var = this.O;
+                e11Var.p = (int) (rectF.width() - (2.0f * dp));
+                e11Var.t = AndroidUtilities.dp(14.0f);
+                e11Var.a.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.h6.m1(0.4f * f7, -16777216));
+                e11Var.c(rectF.left + dp, rectF.top + AndroidUtilities.dp(this.r <= 2 ? 15.0f : 11.33f), 1.0f, org.telegram.ui.ActionBar.h6.m1(f7, -1), canvas);
             }
         }
     }
@@ -503,25 +503,25 @@ public class s7 extends FrameLayout {
                         f17 = 0.075f;
                         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.g0.g(R.string.MessageSensitiveContent, new StringBuilder("x ")));
                         spannableStringBuilder.setSpan(new yq(R.drawable.filled_sensitive, 0), 0, 1, 33);
-                        s7Var.o0 = new d11(spannableStringBuilder, 14.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+                        s7Var.o0 = new e11(spannableStringBuilder, 14.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                     } else {
                         f17 = 0.075f;
                     }
-                    d11 d11Var = s7Var.o0;
+                    e11 e11Var = s7Var.o0;
                     int i11 = 13;
-                    if (f19 < (AndroidUtilities.dp(13) * 2) + d11Var.c) {
+                    if (f19 < (AndroidUtilities.dp(13) * 2) + e11Var.c) {
                         if (s7Var.p0 == null) {
                             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(org.telegram.messenger.g0.g(R.string.MessageSensitiveContentShort, new StringBuilder("x ")));
                             spannableStringBuilder2.setSpan(new yq(R.drawable.filled_sensitive, 0), 0, 1, 33);
-                            s7Var.p0 = new d11(spannableStringBuilder2, 14.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+                            s7Var.p0 = new e11(spannableStringBuilder2, 14.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                         }
-                        d11Var = s7Var.p0;
+                        e11Var = s7Var.p0;
                     }
-                    if (f19 < (AndroidUtilities.dp(26) * 2) + d11Var.c) {
+                    if (f19 < (AndroidUtilities.dp(26) * 2) + e11Var.c) {
                         if (s7Var.q0 == null) {
-                            s7Var.q0 = new d11(new SpannableStringBuilder(LocaleController.getString(R.string.MessageSensitiveContentShort)), 13.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+                            s7Var.q0 = new e11(new SpannableStringBuilder(LocaleController.getString(R.string.MessageSensitiveContentShort)), 13.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                         }
-                        d11Var = s7Var.q0;
+                        e11Var = s7Var.q0;
                         i11 = 10;
                         i10 = 28;
                     } else {
@@ -529,9 +529,9 @@ public class s7 extends FrameLayout {
                     }
                     float imageWidth = (imageReceiver2.getImageWidth() / 2.0f) + imageReceiver2.getImageX();
                     float imageHeight = (imageReceiver2.getImageHeight() / 2.0f) + imageReceiver2.getImageY();
-                    float dp3 = d11Var.c + AndroidUtilities.dp(i11 + i11);
+                    float dp3 = e11Var.c + AndroidUtilities.dp(i11 + i11);
                     float dp4 = AndroidUtilities.dp(i10) / 2.0f;
-                    d11 d11Var2 = d11Var;
+                    e11 e11Var2 = e11Var;
                     float lerp = AndroidUtilities.lerp(0.8f, f12, f12 - s7Var.i0);
                     RectF rectF = AndroidUtilities.rectTmp;
                     float f37 = dp3 / 2.0f;
@@ -559,7 +559,7 @@ public class s7 extends FrameLayout {
                     canvas3.save();
                     canvas3.scale(lerp, lerp, imageWidth, imageHeight);
                     Canvas canvas5 = canvas3;
-                    d11Var2.c(AndroidUtilities.dp(i11) + (imageWidth - f37), imageHeight, 1.0f - s7Var.i0, -1, canvas5);
+                    e11Var2.c(AndroidUtilities.dp(i11) + (imageWidth - f37), imageHeight, 1.0f - s7Var.i0, -1, canvas5);
                     canvas2 = canvas5;
                     canvas2.restore();
                 } else {
@@ -795,7 +795,7 @@ public class s7 extends FrameLayout {
         if (z11) {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.B0, z10 ? 1.0f : 0.0f);
             this.A0 = ofFloat;
-            ofFloat.addUpdateListener(new ci.u4(this, 6));
+            ofFloat.addUpdateListener(new ci.v4(this, 6));
             this.A0.setDuration(200L);
             this.A0.addListener(new ah.p0(25, this, z10));
             this.A0.start();
@@ -930,8 +930,8 @@ public class s7 extends FrameLayout {
         if (TextUtils.isEmpty(restrictionReason)) {
             TL_stories.StoryItem storyItem4 = messageObject.storyItem;
             if (storyItem4 == null || !(storyItem4.media instanceof TLRPC.TL_messageMediaUnsupported)) {
-                ci.g7 g7Var = messageObject.uploadingStory;
-                if (g7Var == null || (str = g7Var.f) == null) {
+                ci.h7 h7Var = messageObject.uploadingStory;
+                if (h7Var == null || (str = h7Var.f) == null) {
                     TLRPC.Document document3 = messageObject.getDocument();
                     TLRPC.Photo photo3 = messageObject.getPhoto();
                     if (MessageObject.isVideoDocument(document3)) {
@@ -1030,7 +1030,7 @@ public class s7 extends FrameLayout {
             }
             storyItem = messageObject.storyItem;
             if (storyItem != null) {
-                imageReceiver4.addDecorator(new ci.ea(storyItem));
+                imageReceiver4.addDecorator(new ci.fa(storyItem));
             }
             setPrivacyType(g(messageObject));
             if (this.h) {
@@ -1040,7 +1040,7 @@ public class s7 extends FrameLayout {
                 org.telegram.ui.l5 l5Var = new org.telegram.ui.l5(this, i11 == 2 ? 16.0f : 13.66f, i14);
                 l5Var.c(dialogId);
                 spannableStringBuilder.setSpan(l5Var, 0, 1, 33);
-                this.O = new d11(spannableStringBuilder, i11 == 2 ? 14.0f : 10.1666f, AndroidUtilities.bold());
+                this.O = new e11(spannableStringBuilder, i11 == 2 ? 14.0f : 10.1666f, AndroidUtilities.bold());
             }
             o();
             invalidate();

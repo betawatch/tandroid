@@ -1,15 +1,34 @@
 package zh;
 
-import android.graphics.Bitmap;
-import android.graphics.Paint;
-import org.telegram.ui.Components.p5;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class t0 {
-    public p5 a;
-    public long b;
-    public Bitmap c;
-    public Paint d;
-    public int e;
+public final /* synthetic */ class t0 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ Object c;
+
+    public /* synthetic */ t0(String str, Utilities.Callback callback) {
+        this.c = str;
+        this.b = callback;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new t0(this.b, f.c((String) this.c, AndroidUtilities.dp(240.0f), ic.c.c, 0.75f, null)));
+                break;
+            default:
+                this.b.run((e) this.c);
+                break;
+        }
+    }
+
+    public /* synthetic */ t0(Utilities.Callback callback, e eVar) {
+        this.b = callback;
+        this.c = eVar;
+    }
 }

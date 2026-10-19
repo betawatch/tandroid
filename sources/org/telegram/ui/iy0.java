@@ -1,76 +1,46 @@
 package org.telegram.ui;
 
-import android.view.TextureView;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.UndoView;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class iy0 implements org.telegram.ui.ActionBar.r0, tu0, org.telegram.ui.Components.o8 {
-    public final /* synthetic */ ProfileActivity a;
+public final class iy0 extends s4.k {
+    public int F = -1;
+    public final /* synthetic */ ProfileActivity G;
 
-    public /* synthetic */ iy0(ProfileActivity profileActivity) {
-        this.a = profileActivity;
+    public iy0(ProfileActivity profileActivity) {
+        this.G = profileActivity;
     }
 
-    @Override // org.telegram.ui.Components.o8
-    public void H0(int i10, int i11) {
-        ProfileActivity profileActivity = this.a;
-        long a2 = profileActivity.a();
-        profileActivity.getMessagesController().setDialogHistoryTTL(a2, i10);
-        if (profileActivity.w2 == null && profileActivity.v2 == null) {
-            return;
+    @Override // s4.k
+    public final long K(long j10, long j11, long j12) {
+        return 0L;
+    }
+
+    @Override // s4.k
+    public final void N() {
+        AndroidUtilities.runOnUIThread(new ck0(this, 29));
+    }
+
+    @Override // s4.k
+    public final void P(s4.b1 b1Var) {
+        this.G.U4();
+    }
+
+    @Override // s4.k, s4.l0
+    public final void m() {
+        boolean isEmpty = this.p.isEmpty();
+        boolean isEmpty2 = this.r.isEmpty();
+        boolean isEmpty3 = this.s.isEmpty();
+        boolean isEmpty4 = this.q.isEmpty();
+        if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            ofFloat.addUpdateListener(new e3(this, 26));
+            ofFloat.setDuration(this.e);
+            ofFloat.start();
+            this.F = this.G.getNotificationCenter().setAnimationInProgress(this.F, null);
         }
-        UndoView undoView = profileActivity.M;
-        TLRPC.User user = profileActivity.getMessagesController().getUser(Long.valueOf(a2));
-        TLRPC.UserFull userFull = profileActivity.w2;
-        undoView.k(a2, i11, user, Integer.valueOf(userFull != null ? userFull.ttl_period : profileActivity.v2.ttl_period), null, null);
-    }
-
-    @Override // org.telegram.ui.tu0
-    public /* synthetic */ TextureView U() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.o8
-    public void Y0() {
-        this.a.presentFragment(new v4());
-        dismiss();
-    }
-
-    @Override // org.telegram.ui.Components.o8
-    public void dismiss() {
-        this.a.U0.M(null, null);
-    }
-
-    @Override // org.telegram.ui.ActionBar.r0
-    public void f() {
-        org.telegram.ui.Components.ym0.d(new g5(this.a, 18));
-    }
-
-    @Override // org.telegram.ui.tu0
-    public void m0(MessageObject messageObject) {
-        ProfileActivity profileActivity = this.a;
-        profileActivity.a.I0(true);
-        pz0 pz0Var = profileActivity.O;
-        if (pz0Var != null && pz0Var.getCurrentListView() != null) {
-            profileActivity.O.getCurrentListView().I0(true);
-        }
-        profileActivity.e1.setBackgroundColor(i0.a.f(0.1f, profileActivity.P3(profileActivity.X4.f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.a7, profileActivity.A0)));
-    }
-
-    @Override // org.telegram.ui.tu0
-    public void z(MessageObject messageObject) {
-        org.telegram.ui.Components.bi0 bi0Var = this.a.n0;
-        if (bi0Var == null || !bi0Var.a) {
-            return;
-        }
-        bi0Var.O.d(0.0f, true);
-        bi0Var.invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.r0
-    public void e() {
+        super.m();
     }
 }

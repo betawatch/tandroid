@@ -1,5 +1,6 @@
 package c1;
 
+import a4.l;
 import ah.h0;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -19,7 +20,7 @@ import d1.f;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.concurrent.Executor;
-import n7.t0;
+import n7.s0;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
@@ -30,10 +31,10 @@ import v0.o;
 import v0.p;
 import v7.p6;
 import w0.h;
-import w7.i8;
+import w7.h8;
 import x5.g;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class e extends b1.d {
     public final Context e;
@@ -142,11 +143,11 @@ public final class e extends b1.d {
                 }
                 if (kVar instanceof c7.i) {
                     try {
-                        t0 t0Var = uVar.c;
+                        s0 s0Var = uVar.c;
                         try {
                             JSONObject jSONObject4 = new JSONObject();
-                            if (t0Var != null && t0Var.t().length > 0) {
-                                jSONObject4.put("rawId", u6.b.c(t0Var.t()));
+                            if (s0Var != null && s0Var.t().length > 0) {
+                                jSONObject4.put("rawId", u6.b.c(s0Var.t()));
                             }
                             String str7 = uVar.n;
                             if (str7 != null) {
@@ -269,12 +270,12 @@ public final class e extends b1.d {
             int i10 = 1;
             if (!it.hasNext()) {
                 boolean z11 = j10 > 241217000 ? request.b : false;
-                i7.b a2 = i8.a(context);
+                i7.b a2 = h8.a(context);
                 new x5.a(false, null, null, true, null, null, false);
                 x5.e eVar = new x5.e(dVar, aVar, a2.k, false, 0, cVar, bVar2, z11);
                 com.google.android.gms.common.api.internal.u b10 = v.b();
                 b10.d = new k6.c[]{new k6.c("auth_api_credentials_begin_sign_in", 8L)};
-                b10.c = new ag.b(a2, eVar, 23);
+                b10.c = new l(a2, eVar, 23);
                 b10.b = false;
                 b10.a = 1553;
                 a2.e(0, b10.a()).addOnSuccessListener(new a1.c(new b1.f(i10, cancellationSignal, this), 12)).addOnFailureListener(new h0(4, this, cancellationSignal));

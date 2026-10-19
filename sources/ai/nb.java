@@ -27,10 +27,10 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.nk0;
 import org.telegram.ui.Components.od0;
-import org.telegram.ui.Components.w31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xr;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class nb implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -164,7 +164,7 @@ public final /* synthetic */ class nb implements View.OnClickListener {
                 org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                 b2Var.R = string;
                 b2Var.T = LocaleController.getString(R.string.LiveStoryRTMPRevokeText);
-                alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new org.telegram.ui.ha((xr) obj4, (ei.d) obj5, (TL_phone.getGroupCallStreamRtmpUrl) obj, this.b, 2));
+                alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new org.telegram.ui.fa((xr) obj4, (ei.d) obj5, (TL_phone.getGroupCallStreamRtmpUrl) obj, this.b, 2));
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.o();
@@ -175,7 +175,7 @@ public final /* synthetic */ class nb implements View.OnClickListener {
                 Context context = (Context) obj;
                 i80 F2 = i80.F(((org.telegram.ui.Wallet.k2[]) obj5)[0].getContainer(), d6Var2, (ImageView) obj3);
                 if (!TextUtils.isEmpty(wallettransactionArr[0].tx_hash)) {
-                    F2.c(R.drawable.msg_search, LocaleController.getString(R.string.WalletViewInExplorer), new w31(context, i12, wallettransactionArr, 18), false);
+                    F2.c(R.drawable.msg_search, LocaleController.getString(R.string.WalletViewInExplorer), new x31(context, i12, wallettransactionArr, 18), false);
                 }
                 F2.c(R.drawable.wallet_help, LocaleController.getString(R.string.WalletWhatIsGram), new b(context, i11, d6Var2), false);
                 F2.a0(0.0f, -AndroidUtilities.dp(48.0f));

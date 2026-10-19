@@ -1,26 +1,26 @@
 package og;
 
-import org.telegram.ui.sn;
-import org.telegram.ui.te1;
+import org.telegram.ui.qn;
+import org.telegram.ui.re1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sn b;
+    public final /* synthetic */ qn b;
 
-    public /* synthetic */ b(sn snVar, int i10) {
+    public /* synthetic */ b(qn qnVar, int i10) {
         this.a = i10;
-        this.b = snVar;
+        this.b = qnVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                sn snVar = this.b;
-                if (snVar.getParentLayout() != null) {
-                    te1.I0(snVar);
+                qn qnVar = this.b;
+                if (qnVar.getParentLayout() != null) {
+                    re1.I0(qnVar);
                     break;
                 }
                 break;

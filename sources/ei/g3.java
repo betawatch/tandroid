@@ -3,9 +3,9 @@ package ei;
 import android.text.TextUtils;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.rx0;
+import org.telegram.ui.Components.sx0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class g3 extends p3 {
     public final /* synthetic */ q3 x;
@@ -28,14 +28,14 @@ public final class g3 extends p3 {
 
     @Override // s4.g0
     public final void l() {
-        rx0 rx0Var = this.x.s;
+        sx0 sx0Var = this.x.s;
         super.l();
         if (TextUtils.isEmpty(this.f)) {
-            rx0Var.setStickerType(11);
-            rx0Var.d.setText(LocaleController.getString(R.string.SearchImagesType));
+            sx0Var.setStickerType(11);
+            sx0Var.d.setText(LocaleController.getString(R.string.SearchImagesType));
         } else {
-            rx0Var.setStickerType(1);
-            rx0Var.d.setText(LocaleController.formatString(R.string.NoResultFoundFor, this.f));
+            sx0Var.setStickerType(1);
+            sx0Var.d.setText(LocaleController.formatString(R.string.NoResultFoundFor, this.f));
         }
     }
 }

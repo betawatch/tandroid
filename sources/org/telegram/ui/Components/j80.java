@@ -7,7 +7,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j80 implements RequestDelegate {
     public final /* synthetic */ int a = 1;
@@ -46,21 +46,21 @@ public final /* synthetic */ class j80 implements RequestDelegate {
                 Context context = this.b;
                 if (tLObject == null) {
                     if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.f21(aVar, xcVar, context, k0Var, 1), 200L);
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.d21(aVar, xcVar, context, k0Var, 1), 200L);
                         break;
                     }
                 } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
                     if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
                         if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
-                            AndroidUtilities.runOnUIThread(new w31(aVar, xcVar, this.d, 14), 200L);
+                            AndroidUtilities.runOnUIThread(new x31(aVar, xcVar, this.d, 14), 200L);
                             break;
                         }
                     } else {
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.f21(aVar, xcVar, context, k0Var, 0), 200L);
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.d21(aVar, xcVar, context, k0Var, 0), 200L);
                         break;
                     }
                 } else {
-                    AndroidUtilities.runOnUIThread(new ai.o4(tLObject, context, k0Var, this.c, bArr, aVar, xcVar, dVar));
+                    AndroidUtilities.runOnUIThread(new ai.q4(tLObject, context, k0Var, this.c, bArr, aVar, xcVar, dVar));
                     break;
                 }
                 break;

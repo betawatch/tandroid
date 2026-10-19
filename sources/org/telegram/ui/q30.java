@@ -1,45 +1,44 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.voip.GroupCallMessage;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import org.telegram.messenger.BotWebViewVibrationEffect;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class q30 implements mh.a {
-    public final /* synthetic */ s50 a;
+public final class q30 implements TextWatcher {
+    public final /* synthetic */ q50 a;
 
-    public q30(s50 s50Var) {
-        this.a = s50Var;
+    public q30(q50 q50Var) {
+        this.a = q50Var;
     }
 
-    public final void a(GroupCallMessage groupCallMessage) {
-        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
-        if (R == null) {
-            return;
-        }
-        boolean z10 = R instanceof ProfileActivity;
-        s50 s50Var = this.a;
-        if (z10 && ((ProfileActivity) R).a() == groupCallMessage.fromId) {
-            s50Var.dismiss();
-            return;
-        }
-        int Q0 = s50Var.Q0();
-        Bundle bundle = new Bundle();
-        long j10 = groupCallMessage.fromId;
-        if (j10 > 0) {
-            bundle.putLong("user_id", j10);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String str;
+        q50 q50Var = this.a;
+        q50Var.A3.a(TextUtils.isEmpty(editable), true);
+        int codePointCount = Character.codePointCount(editable, 0, editable.length());
+        int i10 = q50Var.d0;
+        if (codePointCount + 25 > i10) {
+            str = "" + (i10 - codePointCount);
         } else {
-            bundle.putLong("chat_id", -j10);
+            str = null;
         }
-        boolean z11 = true;
-        if (groupCallMessage.fromId == s50Var.d.getUserConfig().getClientUserId()) {
-            bundle.putBoolean("my_profile", true);
+        q50Var.M.a();
+        q50Var.M.setText(str);
+        q50Var.M.setTextColor(codePointCount >= i10 ? -1280137 : -1);
+        if (codePointCount > i10) {
+            BotWebViewVibrationEffect.APP_ERROR.vibrate();
         }
-        ProfileActivity profileActivity = new ProfileActivity(bundle, null);
-        if (Q0 > 0 && Q0 != Integer.MAX_VALUE) {
-            z11 = false;
-        }
-        R.presentFragment(profileActivity, false, z11);
-        s50Var.dismiss();
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

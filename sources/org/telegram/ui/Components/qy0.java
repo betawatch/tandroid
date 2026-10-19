@@ -1,12 +1,44 @@
 package org.telegram.ui.Components;
 
+import android.app.Activity;
+import android.content.Context;
+import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class qy0 extends AlertDialog$Builder {
-    public ArrayList c;
-    public int d;
-    public org.telegram.ui.ActionBar.n2 e;
+public final class qy0 extends hm0 {
+    public final Context c;
+    public final /* synthetic */ ry0 d;
+
+    public qy0(ry0 ry0Var, Activity activity) {
+        this.d = ry0Var;
+        this.c = activity;
+    }
+
+    @Override // org.telegram.ui.Components.hm0
+    public final boolean D(s4.b1 b1Var) {
+        return false;
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        return this.d.c.size();
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) b1Var.a;
+        ArrayList arrayList = this.d.c;
+        wVar.b((TLRPC.StickerSetCovered) arrayList.get(i10), i10 != arrayList.size() - 1);
+    }
+
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        org.telegram.ui.Cells.w wVar = new org.telegram.ui.Cells.w(this.c, false);
+        wVar.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(82.0f)));
+        return new sl0(wVar);
+    }
 }

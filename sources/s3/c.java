@@ -1,7 +1,6 @@
 package s3;
 
 import a4.g;
-import a4.l;
 import b2.s0;
 import b2.t0;
 import e2.k0;
@@ -10,9 +9,10 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import ki.t1;
 import w7.m;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class c extends m {
     public final x a = new x();
@@ -80,7 +80,7 @@ public final class c extends m {
                         xVar.A();
                         xVar.A();
                     }
-                    arrayList.add(new l(arrayList2));
+                    arrayList.add(new t1(arrayList2));
                 }
                 eVar = new f(arrayList);
             } else if (g12 == 5) {

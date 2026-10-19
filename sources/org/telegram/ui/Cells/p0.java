@@ -14,13 +14,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class p0 implements Runnable {
                     L0 = LaunchActivity.U();
                 }
                 if (L0 != null) {
-                    L0.presentFragment(new org.telegram.ui.Wallet.n5());
+                    L0.presentFragment(new org.telegram.ui.Wallet.o5());
                     break;
                 }
                 break;
@@ -103,13 +103,13 @@ public final /* synthetic */ class p0 implements Runnable {
                                         w0Var2 = w0Var;
                                         p0Var = new p0(w0Var2, 0);
                                         if (!w0Var2.P0.isOutOwner() || !MessagesController.getInstance(i12).pendingSuggestions.contains("WALLET_FIRST_INCOMING_TRANSFER")) {
-                                            org.telegram.ui.Wallet.n5.A0(w0Var2.getContext(), w0Var2.H, wallettransaction2, null, null, null, p0Var, w0Var2.g1);
+                                            org.telegram.ui.Wallet.o5.B0(w0Var2.getContext(), w0Var2.H, wallettransaction2, null, null, null, p0Var, w0Var2.g1);
                                             break;
                                         } else {
                                             MessagesController.getInstance(i12).removeSuggestion(j10, "WALLET_FIRST_INCOMING_TRANSFER");
                                             Context context = w0Var2.getContext();
                                             org.telegram.ui.ActionBar.d6 d6Var = w0Var2.g1;
-                                            org.telegram.ui.ActionBar.f3 i14 = lk.i(1, context, d6Var, false);
+                                            org.telegram.ui.ActionBar.f3 i14 = kk.i(1, context, d6Var, false);
                                             FrameLayout frameLayout = new FrameLayout(context);
                                             frameLayout.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(16.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, d6Var)));
                                             frameLayout.setPadding(AndroidUtilities.dp(36.0f), 0, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(14.0f));
@@ -120,7 +120,7 @@ public final /* synthetic */ class p0 implements Runnable {
                                             linearLayout.addView(new org.telegram.ui.Wallet.m6(120, context, false), w7.z5.t(120, 120, 1, 0, 0, 0, -8));
                                             TextView textView = new TextView(context);
                                             textView.setText(LocaleController.getString(R.string.WalletFirstGrams));
-                                            lk.o(org.telegram.ui.ActionBar.h6.j5, d6Var, textView, 1, 17.0f);
+                                            kk.o(org.telegram.ui.ActionBar.h6.j5, d6Var, textView, 1, 17.0f);
                                             textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                                             textView.setGravity(17);
                                             TextView i15 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.z5.t(-1, -2, 1, 0, 0, 0, 6), context);
@@ -133,11 +133,11 @@ public final /* synthetic */ class p0 implements Runnable {
                                                 string = LocaleController.formatString(R.string.WalletFirstGramsRate, org.telegram.ui.Wallet.m0.r(1000000000L, false), String.format(LocaleController.getInstance().getCurrentLocale(), "%.2f", Double.valueOf(d)));
                                             }
                                             i15.setText(string);
-                                            lk.o(org.telegram.ui.ActionBar.h6.r5, d6Var, i15, i10, 14.0f);
+                                            kk.o(org.telegram.ui.ActionBar.h6.r5, d6Var, i15, i10, 14.0f);
                                             i15.setGravity(17);
                                             i15.setLineSpacing(AndroidUtilities.dp(1.0f), 1.0f);
                                             linearLayout.addView(i15, w7.z5.t(-1, -2, 1, 0, 0, 0, 24));
-                                            org.telegram.ui.Wallet.f5 f5Var = new org.telegram.ui.Wallet.f5(context, d6Var);
+                                            org.telegram.ui.Wallet.g5 g5Var = new org.telegram.ui.Wallet.g5(context, d6Var);
                                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.WalletFirstGramsSendInfo));
                                             yq yqVar = new yq(R.drawable.mini_attach, 2);
                                             yqVar.setSize(AndroidUtilities.dp(14.0f));
@@ -145,19 +145,19 @@ public final /* synthetic */ class p0 implements Runnable {
                                             spannableStringBuilder.setSpan(yqVar, indexOf, indexOf + 2, 33);
                                             int indexOf2 = spannableStringBuilder.toString().indexOf("→");
                                             spannableStringBuilder.setSpan(new yq(R.drawable.wallet_intro_arrow, 2), indexOf2, indexOf2 + 1, 33);
-                                            f5Var.setPadding(AndroidUtilities.dp(0.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(0.0f), AndroidUtilities.dp(8.0f));
-                                            f5Var.a(LocaleController.getString(R.string.WalletSend), spannableStringBuilder, R.drawable.wallet_intro_telegram);
+                                            g5Var.setPadding(AndroidUtilities.dp(0.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(0.0f), AndroidUtilities.dp(8.0f));
+                                            g5Var.a(LocaleController.getString(R.string.WalletSend), spannableStringBuilder, R.drawable.wallet_intro_telegram);
                                             int i16 = org.telegram.ui.ActionBar.h6.n6;
                                             int w02 = org.telegram.ui.ActionBar.h6.w0(i16, d6Var);
                                             PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-                                            f5Var.b.setColorFilter(new PorterDuffColorFilter(w02, mode));
-                                            linearLayout.addView(f5Var, w7.z5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
-                                            org.telegram.ui.Wallet.f5 f5Var2 = new org.telegram.ui.Wallet.f5(context, d6Var);
-                                            f5Var2.setPadding(AndroidUtilities.dp(0.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(0.0f), AndroidUtilities.dp(8.0f));
-                                            f5Var2.a(LocaleController.getString(R.string.WalletTrade), LocaleController.getString(R.string.WalletFirstGramsTradeInfo), R.drawable.wallet_intro_trade);
-                                            f5Var2.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(i16, d6Var), mode));
-                                            linearLayout.addView(f5Var2, w7.z5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
-                                            org.telegram.ui.Wallet.f5 f5Var3 = new org.telegram.ui.Wallet.f5(context, d6Var);
+                                            g5Var.b.setColorFilter(new PorterDuffColorFilter(w02, mode));
+                                            linearLayout.addView(g5Var, w7.z5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
+                                            org.telegram.ui.Wallet.g5 g5Var2 = new org.telegram.ui.Wallet.g5(context, d6Var);
+                                            g5Var2.setPadding(AndroidUtilities.dp(0.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(0.0f), AndroidUtilities.dp(8.0f));
+                                            g5Var2.a(LocaleController.getString(R.string.WalletTrade), LocaleController.getString(R.string.WalletFirstGramsTradeInfo), R.drawable.wallet_intro_trade);
+                                            g5Var2.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(i16, d6Var), mode));
+                                            linearLayout.addView(g5Var2, w7.z5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
+                                            org.telegram.ui.Wallet.g5 g5Var3 = new org.telegram.ui.Wallet.g5(context, d6Var);
                                             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(LocaleController.getString(R.string.WalletFirstGramsStoreInfo));
                                             yq yqVar2 = new yq(R.drawable.wallet_intro_chats, 2);
                                             int indexOf3 = spannableStringBuilder2.toString().indexOf("💬");
@@ -170,11 +170,11 @@ public final /* synthetic */ class p0 implements Runnable {
                                                 spannableStringBuilder2.setSpan(new yq(R.drawable.wallet_intro_arrow, 2), indexOf5, i17, 33);
                                                 indexOf5 = TextUtils.indexOf(spannableStringBuilder2, "→", i17);
                                             }
-                                            f5Var3.setPadding(AndroidUtilities.dp(0.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(0.0f), AndroidUtilities.dp(8.0f));
-                                            f5Var3.a(LocaleController.getString(R.string.WalletStore), spannableStringBuilder2, R.drawable.wallet_intro_store);
-                                            f5Var3.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.n6, d6Var), PorterDuff.Mode.SRC_IN));
-                                            linearLayout.addView(f5Var3, w7.z5.k(0.0f, 0.0f, 0.0f, 14.0f, -1, -2));
-                                            ei.d f7 = lk.f(24, context, d6Var, true);
+                                            g5Var3.setPadding(AndroidUtilities.dp(0.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(0.0f), AndroidUtilities.dp(8.0f));
+                                            g5Var3.a(LocaleController.getString(R.string.WalletStore), spannableStringBuilder2, R.drawable.wallet_intro_store);
+                                            g5Var3.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.n6, d6Var), PorterDuff.Mode.SRC_IN));
+                                            linearLayout.addView(g5Var3, w7.z5.k(0.0f, 0.0f, 0.0f, 14.0f, -1, -2));
+                                            ei.d f7 = kk.f(24, context, d6Var, true);
                                             f7.setText(LocaleController.getString(R.string.WalletGotIt));
                                             linearLayout.addView(f7, w7.z5.t(-1, 48, 1, 0, 0, 0, 0));
                                             w7.b6.b(f7, 0.02f, 1.1f);
@@ -182,7 +182,7 @@ public final /* synthetic */ class p0 implements Runnable {
                                             org.telegram.ui.ActionBar.f3[] f3VarArr = {i14};
                                             f3VarArr[0].setAllowNestedScroll(true);
                                             f3VarArr[0].fixNavigationBar();
-                                            f7.setOnClickListener(new org.telegram.ui.Wallet.b4(f3VarArr, 0));
+                                            f7.setOnClickListener(new org.telegram.ui.Wallet.x3(f3VarArr, 0));
                                             f3VarArr[0].show();
                                             f3VarArr[0].setOnDismissListener(new ig.e2(w0Var2, wallettransaction2, p0Var, 23));
                                             break;
@@ -209,7 +209,7 @@ public final /* synthetic */ class p0 implements Runnable {
                                         p0Var = new p0(w0Var2, 0);
                                         if (!w0Var2.P0.isOutOwner()) {
                                         }
-                                        org.telegram.ui.Wallet.n5.A0(w0Var2.getContext(), w0Var2.H, wallettransaction2, null, null, null, p0Var, w0Var2.g1);
+                                        org.telegram.ui.Wallet.o5.B0(w0Var2.getContext(), w0Var2.H, wallettransaction2, null, null, null, p0Var, w0Var2.g1);
                                     } else {
                                         w0Var3 = w0Var;
                                     }
@@ -224,7 +224,7 @@ public final /* synthetic */ class p0 implements Runnable {
                             p0Var = new p0(w0Var2, 0);
                             if (!w0Var2.P0.isOutOwner()) {
                             }
-                            org.telegram.ui.Wallet.n5.A0(w0Var2.getContext(), w0Var2.H, wallettransaction2, null, null, null, p0Var, w0Var2.g1);
+                            org.telegram.ui.Wallet.o5.B0(w0Var2.getContext(), w0Var2.H, wallettransaction2, null, null, null, p0Var, w0Var2.g1);
                         }
                     }
                     w0Var = w0Var3;
@@ -237,7 +237,7 @@ public final /* synthetic */ class p0 implements Runnable {
                     p0Var = new p0(w0Var2, 0);
                     if (!w0Var2.P0.isOutOwner()) {
                     }
-                    org.telegram.ui.Wallet.n5.A0(w0Var2.getContext(), w0Var2.H, wallettransaction2, null, null, null, p0Var, w0Var2.g1);
+                    org.telegram.ui.Wallet.o5.B0(w0Var2.getContext(), w0Var2.H, wallettransaction2, null, null, null, p0Var, w0Var2.g1);
                 }
                 break;
             case 2:

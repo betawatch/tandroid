@@ -4,26 +4,26 @@ import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.view.View;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class s0 extends e61 {
+public final class s0 extends f61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        e61.setup(new s0());
+        f61.setup(new s0());
     }
 
-    @Override // org.telegram.ui.Components.e61
-    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
+    @Override // org.telegram.ui.Components.f61
+    public final void bindView(View view, g61 g61Var, boolean z10, t61 t61Var, b71 b71Var) {
         t0 t0Var = (t0) view;
-        a aVar = (a) f61Var.G;
-        d3 d3Var = (d3) f61Var.H;
+        a aVar = (a) g61Var.G;
+        d3 d3Var = (d3) g61Var.H;
         h1 h1Var = t0Var.d;
         boolean z11 = t0Var.f != aVar;
         t0Var.f = aVar;
@@ -45,12 +45,12 @@ public final class s0 extends e61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     public final View createView(Context context, im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
         return new t0(context, d6Var);
     }
 
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     public final boolean isClickable() {
         return false;
     }

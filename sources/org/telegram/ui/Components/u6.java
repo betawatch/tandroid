@@ -7,10 +7,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class u6 extends nb {
-    public u6(LaunchActivity launchActivity, org.telegram.ui.qa0 qa0Var) {
+    public u6(LaunchActivity launchActivity, org.telegram.ui.oa0 oa0Var) {
         super(launchActivity, null);
         org.telegram.ui.Cells.q qVar = new org.telegram.ui.Cells.q(getContext());
         TextView textView = new TextView(getContext());
@@ -21,10 +21,10 @@ public final class u6 extends nb {
         textView.setTextSize(1, 15.0f);
         textView.setTypeface(Typeface.SANS_SERIF);
         addView(textView, w7.z5.i(-1.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
-        qVar.setImageDrawable(launchActivity.getDrawable(qa0Var.b));
+        qVar.setImageDrawable(launchActivity.getDrawable(oa0Var.b));
         qVar.setOuterPadding(AndroidUtilities.dp(8.0f));
         qVar.setBackgroundOuterPadding(AndroidUtilities.dp(24.0f));
-        qVar.setForeground(qa0Var.c);
-        org.telegram.messenger.lk.r(R.string.AppIconChangedTo, new Object[]{LocaleController.getString(qa0Var.d)}, textView);
+        qVar.setForeground(oa0Var.c);
+        org.telegram.messenger.kk.r(R.string.AppIconChangedTo, new Object[]{LocaleController.getString(oa0Var.d)}, textView);
     }
 }

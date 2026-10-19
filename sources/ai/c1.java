@@ -6,7 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public abstract class c1 implements b2.f1 {
     public Object a;
@@ -18,43 +18,43 @@ public abstract class c1 implements b2.f1 {
 
     @Override // b2.f1
     public void G() {
-        Y0(((i2.h0) this).n0(), -9223372036854775807L, false);
+        Y0(((i2.i0) this).n0(), -9223372036854775807L, false);
     }
 
     @Override // b2.f1
     public void H0() {
         int e;
-        i2.h0 h0Var = (i2.h0) this;
-        if (h0Var.y0().p() || h0Var.n()) {
+        i2.i0 i0Var = (i2.i0) this;
+        if (i0Var.y0().p() || i0Var.n()) {
             U0();
             return;
         }
         if (!S0()) {
             if (P0() && v0()) {
-                Y0(h0Var.n0(), -9223372036854775807L, false);
+                Y0(i0Var.n0(), -9223372036854775807L, false);
                 return;
             } else {
                 U0();
                 return;
             }
         }
-        b2.o1 y02 = h0Var.y0();
+        b2.o1 y02 = i0Var.y0();
         if (y02.p()) {
             e = -1;
         } else {
-            int n02 = h0Var.n0();
-            h0Var.F1();
-            int i10 = h0Var.H;
+            int n02 = i0Var.n0();
+            i0Var.F1();
+            int i10 = i0Var.H;
             if (i10 == 1) {
                 i10 = 0;
             }
-            h0Var.F1();
-            e = y02.e(n02, i10, h0Var.I);
+            i0Var.F1();
+            e = y02.e(n02, i10, i0Var.I);
         }
         if (e == -1) {
             U0();
-        } else if (e == h0Var.n0()) {
-            Y0(h0Var.n0(), -9223372036854775807L, true);
+        } else if (e == i0Var.n0()) {
+            Y0(i0Var.n0(), -9223372036854775807L, true);
         } else {
             Y0(e, -9223372036854775807L, false);
         }
@@ -62,16 +62,16 @@ public abstract class c1 implements b2.f1 {
 
     @Override // b2.f1
     public void I0() {
-        i2.h0 h0Var = (i2.h0) this;
-        h0Var.F1();
-        a1(12, h0Var.m0);
+        i2.i0 i0Var = (i2.i0) this;
+        i0Var.F1();
+        a1(12, i0Var.m0);
     }
 
     @Override // b2.f1
     public void J0() {
-        i2.h0 h0Var = (i2.h0) this;
-        h0Var.F1();
-        a1(11, -h0Var.l0);
+        i2.i0 i0Var = (i2.i0) this;
+        i0Var.F1();
+        a1(11, -i0Var.l0);
     }
 
     @Override // b2.f1
@@ -81,14 +81,14 @@ public abstract class c1 implements b2.f1 {
 
     @Override // b2.f1
     public boolean P0() {
-        i2.h0 h0Var = (i2.h0) this;
-        b2.o1 y02 = h0Var.y0();
-        return !y02.p() && y02.m(h0Var.n0(), (b2.n1) this.a, 0L).a();
+        i2.i0 i0Var = (i2.i0) this;
+        b2.o1 y02 = i0Var.y0();
+        return !y02.p() && y02.m(i0Var.n0(), (b2.n1) this.a, 0L).a();
     }
 
     @Override // b2.f1
     public void Q(int i10) {
-        ((i2.h0) this).R(i10, i10 + 1);
+        ((i2.i0) this).R(i10, i10 + 1);
     }
 
     public abstract Object Q0(Object obj);
@@ -110,50 +110,50 @@ public abstract class c1 implements b2.f1 {
 
     public boolean S0() {
         int e;
-        i2.h0 h0Var = (i2.h0) this;
-        b2.o1 y02 = h0Var.y0();
+        i2.i0 i0Var = (i2.i0) this;
+        b2.o1 y02 = i0Var.y0();
         if (y02.p()) {
             e = -1;
         } else {
-            int n02 = h0Var.n0();
-            h0Var.F1();
-            int i10 = h0Var.H;
+            int n02 = i0Var.n0();
+            i0Var.F1();
+            int i10 = i0Var.H;
             if (i10 == 1) {
                 i10 = 0;
             }
-            h0Var.F1();
-            e = y02.e(n02, i10, h0Var.I);
+            i0Var.F1();
+            e = y02.e(n02, i10, i0Var.I);
         }
         return e != -1;
     }
 
     public boolean T0() {
         int k10;
-        i2.h0 h0Var = (i2.h0) this;
-        b2.o1 y02 = h0Var.y0();
+        i2.i0 i0Var = (i2.i0) this;
+        b2.o1 y02 = i0Var.y0();
         if (y02.p()) {
             k10 = -1;
         } else {
-            int n02 = h0Var.n0();
-            h0Var.F1();
-            int i10 = h0Var.H;
+            int n02 = i0Var.n0();
+            i0Var.F1();
+            int i10 = i0Var.H;
             if (i10 == 1) {
                 i10 = 0;
             }
-            h0Var.F1();
-            k10 = y02.k(n02, i10, h0Var.I);
+            i0Var.F1();
+            k10 = y02.k(n02, i10, i0Var.I);
         }
         return k10 != -1;
     }
 
     public void U0() {
-        ((i2.h0) this).F1();
+        ((i2.i0) this).F1();
     }
 
     @Override // b2.f1
     public void V() {
-        i2.h0 h0Var = (i2.h0) this;
-        if (h0Var.y0().p() || h0Var.n()) {
+        i2.i0 i0Var = (i2.i0) this;
+        if (i0Var.y0().p() || i0Var.n()) {
             U0();
             return;
         }
@@ -168,9 +168,9 @@ public abstract class c1 implements b2.f1 {
             }
         }
         if (T0) {
-            long M0 = h0Var.M0();
-            h0Var.F1();
-            if (M0 <= h0Var.n0) {
+            long M0 = i0Var.M0();
+            i0Var.F1();
+            if (M0 <= i0Var.n0) {
                 b1(7);
                 return;
             }
@@ -195,19 +195,19 @@ public abstract class c1 implements b2.f1 {
     public abstract void Y0(int i10, long j10, boolean z10);
 
     public void Z0(int i10, long j10) {
-        Y0(((i2.h0) this).n0(), j10, false);
+        Y0(((i2.i0) this).n0(), j10, false);
     }
 
     @Override // b2.f1
     public void a(float f7) {
-        i2.h0 h0Var = (i2.h0) this;
-        h0Var.f(new b2.z0(f7, h0Var.h().b));
+        i2.i0 i0Var = (i2.i0) this;
+        i0Var.f(new b2.z0(f7, i0Var.h().b));
     }
 
     public void a1(int i10, long j10) {
-        i2.h0 h0Var = (i2.h0) this;
-        long M0 = h0Var.M0() + j10;
-        long duration = h0Var.getDuration();
+        i2.i0 i0Var = (i2.i0) this;
+        long M0 = i0Var.M0() + j10;
+        long duration = i0Var.getDuration();
         if (duration != -9223372036854775807L) {
             M0 = Math.min(M0, duration);
         }
@@ -216,24 +216,24 @@ public abstract class c1 implements b2.f1 {
 
     public void b1(int i10) {
         int k10;
-        i2.h0 h0Var = (i2.h0) this;
-        b2.o1 y02 = h0Var.y0();
+        i2.i0 i0Var = (i2.i0) this;
+        b2.o1 y02 = i0Var.y0();
         if (y02.p()) {
             k10 = -1;
         } else {
-            int n02 = h0Var.n0();
-            h0Var.F1();
-            int i11 = h0Var.H;
+            int n02 = i0Var.n0();
+            i0Var.F1();
+            int i11 = i0Var.H;
             if (i11 == 1) {
                 i11 = 0;
             }
-            h0Var.F1();
-            k10 = y02.k(n02, i11, h0Var.I);
+            i0Var.F1();
+            k10 = y02.k(n02, i11, i0Var.I);
         }
         if (k10 == -1) {
             U0();
-        } else if (k10 == h0Var.n0()) {
-            Y0(h0Var.n0(), -9223372036854775807L, true);
+        } else if (k10 == i0Var.n0()) {
+            Y0(i0Var.n0(), -9223372036854775807L, true);
         } else {
             Y0(k10, -9223372036854775807L, false);
         }
@@ -252,37 +252,37 @@ public abstract class c1 implements b2.f1 {
 
     @Override // b2.f1
     public void e() {
-        ((i2.h0) this).X(false);
+        ((i2.i0) this).X(false);
     }
 
     @Override // b2.f1
     public boolean e0() {
-        i2.h0 h0Var = (i2.h0) this;
-        b2.o1 y02 = h0Var.y0();
-        return !y02.p() && y02.m(h0Var.n0(), (b2.n1) this.a, 0L).h;
+        i2.i0 i0Var = (i2.i0) this;
+        b2.o1 y02 = i0Var.y0();
+        return !y02.p() && y02.m(i0Var.n0(), (b2.n1) this.a, 0L).h;
     }
 
     @Override // b2.f1
     public void f0() {
         int e;
-        i2.h0 h0Var = (i2.h0) this;
-        b2.o1 y02 = h0Var.y0();
+        i2.i0 i0Var = (i2.i0) this;
+        b2.o1 y02 = i0Var.y0();
         if (y02.p()) {
             e = -1;
         } else {
-            int n02 = h0Var.n0();
-            h0Var.F1();
-            int i10 = h0Var.H;
+            int n02 = i0Var.n0();
+            i0Var.F1();
+            int i10 = i0Var.H;
             if (i10 == 1) {
                 i10 = 0;
             }
-            h0Var.F1();
-            e = y02.e(n02, i10, h0Var.I);
+            i0Var.F1();
+            e = y02.e(n02, i10, i0Var.I);
         }
         if (e == -1) {
             U0();
-        } else if (e == h0Var.n0()) {
-            Y0(h0Var.n0(), -9223372036854775807L, true);
+        } else if (e == i0Var.n0()) {
+            Y0(i0Var.n0(), -9223372036854775807L, true);
         } else {
             Y0(e, -9223372036854775807L, false);
         }
@@ -295,41 +295,41 @@ public abstract class c1 implements b2.f1 {
 
     @Override // b2.f1
     public void i() {
-        ((i2.h0) this).X(true);
+        ((i2.i0) this).X(true);
     }
 
     @Override // b2.f1
     public boolean j0() {
-        i2.h0 h0Var = (i2.h0) this;
-        return h0Var.d() == 3 && h0Var.t() && h0Var.w0() == 0;
+        i2.i0 i0Var = (i2.i0) this;
+        return i0Var.d() == 3 && i0Var.t() && i0Var.w0() == 0;
     }
 
     @Override // b2.f1
     public void k(b2.o0 o0Var, long j10) {
-        ((i2.h0) this).S(j10, 0, e9.n0.y(o0Var));
+        ((i2.i0) this).S(j10, 0, e9.n0.y(o0Var));
     }
 
     @Override // b2.f1
     public void l0(b2.o0 o0Var) {
-        ((i2.h0) this).L0(e9.n0.y(o0Var));
+        ((i2.i0) this).L0(e9.n0.y(o0Var));
     }
 
     @Override // b2.f1
     public long o() {
         b2.n1 n1Var = (b2.n1) this.a;
-        i2.h0 h0Var = (i2.h0) this;
-        b2.o1 y02 = h0Var.y0();
-        if (y02.p() || y02.m(h0Var.n0(), n1Var, 0L).f == -9223372036854775807L) {
+        i2.i0 i0Var = (i2.i0) this;
+        b2.o1 y02 = i0Var.y0();
+        if (y02.p() || y02.m(i0Var.n0(), n1Var, 0L).f == -9223372036854775807L) {
             return -9223372036854775807L;
         }
-        return (e2.m0.C(n1Var.g) - n1Var.f) - h0Var.a0();
+        return (e2.m0.C(n1Var.g) - n1Var.f) - i0Var.a0();
     }
 
     @Override // b2.f1
     public boolean o0(int i10) {
-        i2.h0 h0Var = (i2.h0) this;
-        h0Var.F1();
-        return h0Var.P.a(i10);
+        i2.i0 i0Var = (i2.i0) this;
+        i0Var.F1();
+        return i0Var.P.a(i10);
     }
 
     @Override // b2.f1
@@ -339,13 +339,13 @@ public abstract class c1 implements b2.f1 {
 
     @Override // b2.f1
     public void r0(b2.o0 o0Var) {
-        ((i2.h0) this).L0(e9.n0.y(o0Var));
+        ((i2.i0) this).L0(e9.n0.y(o0Var));
     }
 
     @Override // b2.f1
     public void s0(int i10, int i11) {
         if (i10 != i11) {
-            ((i2.h0) this).t0(i10, i10 + 1, i11);
+            ((i2.i0) this).t0(i10, i10 + 1, i11);
         }
     }
 
@@ -357,29 +357,29 @@ public abstract class c1 implements b2.f1 {
 
     @Override // b2.f1
     public void u() {
-        ((i2.h0) this).R(0, ConnectionsManager.DEFAULT_DATACENTER_ID);
+        ((i2.i0) this).R(0, ConnectionsManager.DEFAULT_DATACENTER_ID);
     }
 
     @Override // b2.f1
     public void u0(b2.o0 o0Var, int i10) {
-        ((i2.h0) this).O(i10, i10 + 1, e9.n0.y(o0Var));
+        ((i2.i0) this).O(i10, i10 + 1, e9.n0.y(o0Var));
     }
 
     @Override // b2.f1
     public b2.o0 v() {
-        i2.h0 h0Var = (i2.h0) this;
-        b2.o1 y02 = h0Var.y0();
+        i2.i0 i0Var = (i2.i0) this;
+        b2.o1 y02 = i0Var.y0();
         if (y02.p()) {
             return null;
         }
-        return y02.m(h0Var.n0(), (b2.n1) this.a, 0L).c;
+        return y02.m(i0Var.n0(), (b2.n1) this.a, 0L).c;
     }
 
     @Override // b2.f1
     public boolean v0() {
-        i2.h0 h0Var = (i2.h0) this;
-        b2.o1 y02 = h0Var.y0();
-        return !y02.p() && y02.m(h0Var.n0(), (b2.n1) this.a, 0L).i;
+        i2.i0 i0Var = (i2.i0) this;
+        b2.o1 y02 = i0Var.y0();
+        return !y02.p() && y02.m(i0Var.n0(), (b2.n1) this.a, 0L).i;
     }
 
     @Override // b2.f1
@@ -387,9 +387,9 @@ public abstract class c1 implements b2.f1 {
         if (!o0(16)) {
             return 0;
         }
-        i2.h0 h0Var = (i2.h0) this;
-        long d02 = h0Var.d0();
-        long duration = h0Var.getDuration();
+        i2.i0 i0Var = (i2.i0) this;
+        long d02 = i0Var.d0();
+        long duration = i0Var.getDuration();
         if (d02 == -9223372036854775807L || duration == -9223372036854775807L) {
             return 0;
         }
@@ -403,17 +403,17 @@ public abstract class c1 implements b2.f1 {
 
     @Override // b2.f1
     public void x0(List list) {
-        ((i2.h0) this).b0(ConnectionsManager.DEFAULT_DATACENTER_ID, list);
+        ((i2.i0) this).b0(ConnectionsManager.DEFAULT_DATACENTER_ID, list);
     }
 
     @Override // b2.f1
     public long z() {
-        i2.h0 h0Var = (i2.h0) this;
-        b2.o1 y02 = h0Var.y0();
+        i2.i0 i0Var = (i2.i0) this;
+        b2.o1 y02 = i0Var.y0();
         if (y02.p()) {
             return -9223372036854775807L;
         }
-        return e2.m0.h0(y02.m(h0Var.n0(), (b2.n1) this.a, 0L).m);
+        return e2.m0.h0(y02.m(i0Var.n0(), (b2.n1) this.a, 0L).m);
     }
 
     public c1(String str, Bundle data) {

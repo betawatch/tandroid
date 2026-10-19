@@ -1,53 +1,29 @@
 package ai;
 
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h4 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k7 b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ l7 b;
+    public final /* synthetic */ TLRPC.TL_payments_paymentResult c;
 
-    public /* synthetic */ h4(k7 k7Var, String str, int i10) {
+    public /* synthetic */ h4(l7 l7Var, TLRPC.TL_payments_paymentResult tL_payments_paymentResult, int i10) {
         this.a = i10;
-        this.b = k7Var;
-        this.c = str;
+        this.b = l7Var;
+        this.c = tL_payments_paymentResult;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                k7.l0(this.b, this.c);
-                break;
-            case 1:
-                pf.d.t(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
-                break;
-            case 2:
-                pf.d.t(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
-                break;
-            case 3:
-                pf.d.t(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
-                break;
-            case 4:
-                pf.d.t(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
-                break;
-            case 5:
-                pf.d.t(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
-                break;
-            case 6:
-                pf.d.t(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
-                break;
-            case 7:
-                AndroidUtilities.addToClipboard(this.c);
-                org.telegram.ui.Components.qc k10 = this.b.getBulletinFactory().k(false);
-                k10.t = true;
-                k10.j();
+                MessagesController.getInstance(this.b.currentAccount).lambda$processUpdates$377(this.c.updates, false);
                 break;
             default:
-                k7.k0(this.b, this.c);
+                MessagesController.getInstance(this.b.currentAccount).lambda$processUpdates$377(this.c.updates, false);
                 break;
         }
     }

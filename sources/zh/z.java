@@ -1,100 +1,56 @@
 package zh;
 
-import android.content.res.ColorStateList;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.InsetDrawable;
-import android.graphics.drawable.RippleDrawable;
-import android.view.View;
-import j$.util.function.Consumer$-CC;
-import java.util.WeakHashMap;
-import java.util.function.Consumer;
+import android.graphics.Bitmap;
+import android.view.TextureView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class z implements Consumer {
-    public final /* synthetic */ f0 a;
-    public final /* synthetic */ m b;
+public final class z implements Runnable {
+    public final /* synthetic */ b0 a;
 
-    public /* synthetic */ z(f0 f0Var, m mVar) {
-        this.a = f0Var;
-        this.b = mVar;
+    public z(b0 b0Var) {
+        this.a = b0Var;
     }
 
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final void x(Object obj) {
-        c cVar;
-        float f7;
-        float f10;
-        float[] fArr;
-        z zVar = this;
-        Canvas canvas = (Canvas) obj;
-        f0 f0Var = zVar.a;
-        c cVar2 = f0Var.x;
-        RectF rectF = cVar2.M;
-        WeakHashMap weakHashMap = cVar2.N;
-        Paint paint = cVar2.c;
-        long b10 = c.b();
-        int i10 = 0;
-        while (true) {
-            m mVar = zVar.b;
-            if (i10 >= mVar.getChildCount()) {
-                break;
-            }
-            View childAt = mVar.getChildAt(i10);
-            if ((childAt instanceof l) && childAt.getVisibility() == 0) {
-                if (weakHashMap.containsKey(childAt)) {
-                    f7 = 10.0f;
-                    f10 = 2.5f;
-                } else {
-                    weakHashMap.put(childAt, Boolean.TRUE);
-                    GradientDrawable gradientDrawable = new GradientDrawable();
-                    gradientDrawable.setColor(-1);
-                    gradientDrawable.setCornerRadius(AndroidUtilities.dp(10.0f));
-                    f10 = 2.5f;
-                    f7 = 10.0f;
-                    childAt.setBackground(new RippleDrawable(ColorStateList.valueOf(788529151), null, new InsetDrawable((Drawable) gradientDrawable, (int) AndroidUtilities.dpf2(2.5f))));
-                }
-                String key = ((l) childAt).getKey();
-                if (key != null && (fArr = (float[]) cVar2.n.get(key)) != null) {
-                    float c10 = c.c(fArr, b10);
-                    if (c10 > 0.004f) {
-                        float translationX = childAt.getTranslationX() + childAt.getLeft();
-                        float translationY = childAt.getTranslationY() + childAt.getTop();
-                        float width = childAt.getWidth();
-                        float height = childAt.getHeight();
-                        float dpf2 = (int) AndroidUtilities.dpf2(f10);
-                        cVar = cVar2;
-                        rectF.set(translationX + dpf2, translationY + dpf2, (translationX + width) - dpf2, (translationY + height) - dpf2);
-                        if (!childAt.isPressed()) {
-                            paint.setColor(788529151);
-                            paint.setAlpha((int) (Color.alpha(788529151) * c10));
-                            canvas.drawRoundRect(rectF, AndroidUtilities.dp(f7), AndroidUtilities.dp(f7), paint);
-                        }
-                        i10++;
-                        zVar = this;
-                        cVar2 = cVar;
-                    }
-                }
-            }
-            cVar = cVar2;
-            i10++;
-            zVar = this;
-            cVar2 = cVar;
-        }
-        if (f0Var.d.I.isEmpty()) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        b0 b0Var = this.a;
+        CameraView cameraView = b0Var.b;
+        if (!b0Var.h0 || cameraView == null) {
             return;
         }
-        f0Var.x.invalidate();
-    }
-
-    public /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
+        TextureView textureView = cameraView.getTextureView();
+        int width = textureView.getWidth();
+        int height = textureView.getHeight();
+        if (width > 0 && height > 0) {
+            if (width > 720 || height > 720) {
+                float f7 = width;
+                float f10 = height;
+                float min = Math.min(720.0f / f7, 720.0f / f10);
+                width = Math.max(1, (int) (f7 * min));
+                height = Math.max(1, (int) (f10 * min));
+            }
+            Bitmap bitmap = this.a.k0;
+            if (bitmap == null || bitmap.getWidth() != width || this.a.k0.getHeight() != height) {
+                this.a.k0 = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+            }
+            try {
+                textureView.getBitmap(this.a.k0);
+                b0 b0Var2 = this.a;
+                xf.c f11 = b0.f(b0Var2.k0, b0Var2.i0, b0Var2.j0, b0Var2.O);
+                if (f11 != null) {
+                    AndroidUtilities.runOnUIThread(new uf.c(24, this, f11));
+                    return;
+                }
+            } catch (Throwable th2) {
+                FileLog.e(th2);
+            }
+        }
+        if (this.a.h0) {
+            this.a.g0.postDelayed(this, 150L);
+        }
     }
 }

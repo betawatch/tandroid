@@ -23,7 +23,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class u implements r {
     public static final v0 d = new v0(14);
@@ -334,6 +334,16 @@ public final class u implements r {
     }
 
     @Override // n2.r
+    public final h2.b r(byte[] bArr) {
+        int i10 = Build.VERSION.SDK_INT;
+        UUID uuid = this.a;
+        if (i10 < 27 && Objects.equals(uuid, b2.m.d)) {
+            uuid = b2.m.c;
+        }
+        return new s(uuid, bArr);
+    }
+
+    @Override // n2.r
     public final synchronized void release() {
         int i10 = this.c - 1;
         this.c = i10;
@@ -355,15 +365,5 @@ public final class u implements r {
                 o0Var.obtainMessage(i10, bArr).sendToTarget();
             }
         });
-    }
-
-    @Override // n2.r
-    public final h2.b u(byte[] bArr) {
-        int i10 = Build.VERSION.SDK_INT;
-        UUID uuid = this.a;
-        if (i10 < 27 && Objects.equals(uuid, b2.m.d)) {
-            uuid = b2.m.c;
-        }
-        return new s(uuid, bArr);
     }
 }

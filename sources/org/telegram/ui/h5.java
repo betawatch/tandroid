@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class h5 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int F = 0;
@@ -62,7 +62,7 @@ public abstract class h5 extends FrameLayout implements NotificationCenter.Notif
         z4 z4Var = new z4(context, d6Var);
         this.c = z4Var;
         float dp = AndroidUtilities.dp(12.0f);
-        ci.n1 n1Var = zf.j0.a;
+        ci.o1 o1Var = zf.j0.a;
         z4Var.setOutlineProvider(new zf.i0(0, dp));
         z4Var.setElevation(AndroidUtilities.dp(4.0f));
         z4Var.setClipToOutline(true);
@@ -100,10 +100,10 @@ public abstract class h5 extends FrameLayout implements NotificationCenter.Notif
         e5 e5Var2 = c5Var.j;
         if (e5Var2 != null) {
             this.y = e5Var2;
-            ai.b8 b8Var = new ai.b8(3, this, c5Var);
+            ai.c8 c8Var = new ai.c8(3, this, c5Var);
             if (!e5Var2.g) {
                 e5Var2.g = true;
-                e5Var2.f = b8Var;
+                e5Var2.f = c8Var;
                 e5Var2.b.addObserver(e5Var2.a, e5Var2.e);
                 e5Var2.a();
             }
@@ -303,7 +303,7 @@ public abstract class h5 extends FrameLayout implements NotificationCenter.Notif
     public final void onSizeChanged(int i10, int i11, int i12, int i13) {
         if (i10 != 0 && i11 != 0 && this.r) {
             this.v.setBackground(null);
-            AndroidUtilities.runOnUIThread(new ut0(this, 12));
+            AndroidUtilities.runOnUIThread(new st0(this, 12));
         }
         hh.d.c(this.h, this);
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.d;

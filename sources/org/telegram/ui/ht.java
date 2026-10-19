@@ -1,32 +1,29 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.NotificationCenter;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ht implements NotificationCenter.NotificationCenterDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+public final class ht {
+    public String a;
+    public String b;
+    public String c;
+    public String d;
 
-    public /* synthetic */ ht(int i10, View view) {
-        this.a = i10;
-        this.b = view;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && ht.class == obj.getClass()) {
+            ht htVar = (ht) obj;
+            if (Objects.equals(this.a, htVar.a) && Objects.equals(this.c, htVar.c)) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.Cells.ba baVar = (org.telegram.ui.Cells.ba) this.b;
-                if (i10 == NotificationCenter.emojiLoaded) {
-                    baVar.getTextView().invalidate();
-                    break;
-                }
-                break;
-            default:
-                ((kj0) this.b).invalidate();
-                break;
-        }
+    public final int hashCode() {
+        return Objects.hash(this.a, this.c);
     }
 }

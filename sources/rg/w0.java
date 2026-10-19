@@ -21,10 +21,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.BubbleActivity;
-import org.telegram.ui.Components.dw0;
+import org.telegram.ui.Components.ew0;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class w0 extends FrameLayout {
     public float E;
@@ -34,10 +34,10 @@ public abstract class w0 extends FrameLayout {
     public final ArrayList I;
     public final Rect J;
     public final int a;
-    public final qg.v1 b;
+    public final qg.w1 b;
     public final DispatchQueue c;
     public final MediaController.CropState d;
-    public final qg.e1 e;
+    public final qg.f1 e;
     public final Bitmap f;
     public final int h;
     public final boolean n;
@@ -45,46 +45,46 @@ public abstract class w0 extends FrameLayout {
     public final TextView s;
     public final TextView v;
     public final w1 w;
-    public dw0 x;
+    public ew0 x;
     public boolean y;
 
     public w0(Context context, int i10, Bitmap bitmap, Bitmap bitmap2, int i11, MediaController.CropState cropState) {
         super(context);
-        le.b bVar = new le.b(this, 19);
+        ki.t1 t1Var = new ki.t1(this, 25);
         this.I = new ArrayList();
         this.J = new Rect();
         this.a = i10;
         this.n = context instanceof BubbleActivity;
-        qg.v1 v1Var = new qg.v1();
-        this.b = v1Var;
-        v1Var.a = new u0();
+        qg.w1 w1Var = new qg.w1();
+        this.b = w1Var;
+        w1Var.a = new u0();
         DispatchQueue dispatchQueue = new DispatchQueue("MaskPaint");
         this.c = dispatchQueue;
         this.d = cropState;
         this.f = bitmap;
         this.h = i11;
-        qg.s0 s0Var = new qg.s0(getPaintingSize(), bitmap2, i11, null);
-        s0Var.G = true;
-        qg.e1 e1Var = new qg.e1(context, s0Var, bitmap, null, null);
-        this.e = e1Var;
-        e1Var.setAlpha(0.0f);
-        e1Var.setDelegate(new v0(this));
-        e1Var.setUndoStore(v1Var);
-        e1Var.setQueue(dispatchQueue);
-        e1Var.setVisibility(4);
-        e1Var.setBrush(new qg.f());
-        e1Var.setBrushSize(bVar.get());
-        e1Var.setColor(-65536);
-        addView(e1Var, z5.e(-1, -1, 51));
-        w1 w1Var = new w1(context);
-        this.w = w1Var;
-        w1Var.b(0.05f, 1.0f);
-        w1Var.setBrushWeight(bVar.get());
-        w1Var.setRenderView(e1Var);
-        w1Var.setValueOverride(bVar);
-        w1Var.setTranslationX(-AndroidUtilities.dp(18.0f));
-        w1Var.setAlpha(0.0f);
-        addView(w1Var, z5.c(-1.0f, -1));
+        qg.t0 t0Var = new qg.t0(getPaintingSize(), bitmap2, i11, null);
+        t0Var.G = true;
+        qg.f1 f1Var = new qg.f1(context, t0Var, bitmap, null, null);
+        this.e = f1Var;
+        f1Var.setAlpha(0.0f);
+        f1Var.setDelegate(new v0(this));
+        f1Var.setUndoStore(w1Var);
+        f1Var.setQueue(dispatchQueue);
+        f1Var.setVisibility(4);
+        f1Var.setBrush(new qg.f());
+        f1Var.setBrushSize(t1Var.get());
+        f1Var.setColor(-65536);
+        addView(f1Var, z5.e(-1, -1, 51));
+        w1 w1Var2 = new w1(context);
+        this.w = w1Var2;
+        w1Var2.b(0.05f, 1.0f);
+        w1Var2.setBrushWeight(t1Var.get());
+        w1Var2.setRenderView(f1Var);
+        w1Var2.setValueOverride(t1Var);
+        w1Var2.setTranslationX(-AndroidUtilities.dp(18.0f));
+        w1Var2.setAlpha(0.0f);
+        addView(w1Var2, z5.c(-1.0f, -1));
         FrameLayout frameLayout = new FrameLayout(context);
         this.r = frameLayout;
         frameLayout.setAlpha(0.0f);
@@ -111,38 +111,38 @@ public abstract class w0 extends FrameLayout {
         frameLayout.addView(j10, z5.d(-2, 44.0f, 5, 0.0f, 0.0f, -8.0f, 0.0f));
     }
 
-    private dw0 getPaintingSize() {
-        dw0 dw0Var = this.x;
-        if (dw0Var != null) {
-            return dw0Var;
+    private ew0 getPaintingSize() {
+        ew0 ew0Var = this.x;
+        if (ew0Var != null) {
+            return ew0Var;
         }
         Bitmap bitmap = this.f;
-        dw0 dw0Var2 = new dw0(bitmap.getWidth(), bitmap.getHeight());
+        ew0 ew0Var2 = new ew0(bitmap.getWidth(), bitmap.getHeight());
         float f7 = 1280;
-        dw0Var2.a = f7;
+        ew0Var2.a = f7;
         float floor = (float) Math.floor((f7 * r0) / r1);
-        dw0Var2.b = floor;
+        ew0Var2.b = floor;
         if (floor > f7) {
-            dw0Var2.b = f7;
-            dw0Var2.a = (float) Math.floor((f7 * r1) / r0);
+            ew0Var2.b = f7;
+            ew0Var2.a = (float) Math.floor((f7 * r1) / r0);
         }
-        this.x = dw0Var2;
-        return dw0Var2;
+        this.x = ew0Var2;
+        return ew0Var2;
     }
 
     public final void a(MotionEvent motionEvent) {
         float x10 = motionEvent.getX();
-        qg.e1 e1Var = this.e;
-        float translationX = ((x10 - e1Var.getTranslationX()) - (getMeasuredWidth() / 2.0f)) / e1Var.getScaleX();
-        float y3 = ((motionEvent.getY() - e1Var.getTranslationY()) - (getMeasuredHeight() / 2.0f)) / e1Var.getScaleY();
+        qg.f1 f1Var = this.e;
+        float translationX = ((x10 - f1Var.getTranslationX()) - (getMeasuredWidth() / 2.0f)) / f1Var.getScaleX();
+        float y3 = ((motionEvent.getY() - f1Var.getTranslationY()) - (getMeasuredHeight() / 2.0f)) / f1Var.getScaleY();
         double d = translationX;
-        double radians = (float) Math.toRadians(-e1Var.getRotation());
+        double radians = (float) Math.toRadians(-f1Var.getRotation());
         double d10 = y3;
-        float measuredWidth = (e1Var.getMeasuredWidth() / 2.0f) + ((float) ((Math.cos(radians) * d) - (Math.sin(radians) * d10)));
-        float measuredHeight = (e1Var.getMeasuredHeight() / 2.0f) + ((float) i2.d.f(radians, d10, Math.sin(radians) * d));
+        float measuredWidth = (f1Var.getMeasuredWidth() / 2.0f) + ((float) ((Math.cos(radians) * d) - (Math.sin(radians) * d10)));
+        float measuredHeight = (f1Var.getMeasuredHeight() / 2.0f) + ((float) i2.e.f(radians, d10, Math.sin(radians) * d));
         MotionEvent obtain = MotionEvent.obtain(motionEvent);
         obtain.setLocation(measuredWidth, measuredHeight);
-        e1Var.e(obtain);
+        f1Var.e(obtain);
         obtain.recycle();
     }
 
@@ -152,12 +152,12 @@ public abstract class w0 extends FrameLayout {
         this.E = f10;
         float f17 = 0.0f + f11;
         this.F = f17;
-        qg.e1 e1Var = this.e;
+        qg.f1 f1Var = this.e;
         MediaController.CropState cropState = this.d;
         if (cropState != null) {
             float f18 = cropState.cropScale * 1.0f;
-            int measuredWidth = e1Var.getMeasuredWidth();
-            int measuredHeight = e1Var.getMeasuredHeight();
+            int measuredWidth = f1Var.getMeasuredWidth();
+            int measuredHeight = f1Var.getMeasuredHeight();
             if (measuredWidth == 0 || measuredHeight == 0) {
                 return;
             }
@@ -179,12 +179,12 @@ public abstract class w0 extends FrameLayout {
         }
         float f20 = f7 * f15;
         float f21 = Float.isNaN(f20) ? 1.0f : f20;
-        e1Var.setScaleX(f21);
-        e1Var.setScaleY(f21);
-        e1Var.setTranslationX(f10);
-        e1Var.setTranslationY(f17);
-        e1Var.setRotation(f16);
-        e1Var.invalidate();
+        f1Var.setScaleX(f21);
+        f1Var.setScaleY(f21);
+        f1Var.setTranslationX(f10);
+        f1Var.setTranslationY(f17);
+        f1Var.setRotation(f16);
+        f1Var.invalidate();
         invalidate();
     }
 
@@ -247,7 +247,7 @@ public abstract class w0 extends FrameLayout {
         return createBitmap;
     }
 
-    public qg.e1 getRenderView() {
+    public qg.f1 getRenderView() {
         return this.e;
     }
 
@@ -259,10 +259,10 @@ public abstract class w0 extends FrameLayout {
         if (!this.n) {
             int i16 = AndroidUtilities.REPLACING_TAG_TYPE_LINK;
         }
-        qg.e1 e1Var = this.e;
-        int ceil = (int) Math.ceil((i14 - e1Var.getMeasuredWidth()) / 2.0f);
-        int measuredHeight = (i15 - e1Var.getMeasuredHeight()) / 2;
-        e1Var.layout(ceil, measuredHeight, e1Var.getMeasuredWidth() + ceil, e1Var.getMeasuredHeight() + measuredHeight);
+        qg.f1 f1Var = this.e;
+        int ceil = (int) Math.ceil((i14 - f1Var.getMeasuredWidth()) / 2.0f);
+        int measuredHeight = (i15 - f1Var.getMeasuredHeight()) / 2;
+        f1Var.layout(ceil, measuredHeight, f1Var.getMeasuredWidth() + ceil, f1Var.getMeasuredHeight() + measuredHeight);
         FrameLayout frameLayout = this.r;
         frameLayout.layout(0, i15 - frameLayout.getMeasuredHeight(), frameLayout.getMeasuredWidth(), i15);
     }

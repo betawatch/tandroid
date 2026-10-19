@@ -21,9 +21,9 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.PrivacySettingsActivity;
-import org.telegram.ui.ut0;
+import org.telegram.ui.st0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final /* synthetic */ class u0 implements Utilities.Callback2 {
                 String str = (String) obj2;
                 if (l4 != null && l4.longValue() != 0) {
                     int i10 = this.b;
-                    GiftAuctionController.getInstance(i10).requestAuctionUpgrades(l4.longValue(), new c5(zArr, context, d6Var, i10, str, 0));
+                    GiftAuctionController.getInstance(i10).requestAuctionUpgrades(l4.longValue(), new d5(zArr, context, d6Var, i10, str, 0));
                     break;
                 } else {
                     zArr[0] = false;
@@ -162,7 +162,7 @@ public final /* synthetic */ class u0 implements Utilities.Callback2 {
                     if (!z11) {
                         MessagesController.getInstance(i12).generateJoinMessage(chat2.id, true);
                     }
-                    AndroidUtilities.runOnUIThread(new ut0(f1Var, 5));
+                    AndroidUtilities.runOnUIThread(new st0(f1Var, 5));
                     AndroidUtilities.runOnUIThread(new ah.g(i12, chat2, 18), 1000L);
                     MessagesStorage messagesStorage = MessagesStorage.getInstance(i12);
                     long j11 = chat2.id;
@@ -258,7 +258,7 @@ public final /* synthetic */ class u0 implements Utilities.Callback2 {
                 if (textView != null && wallettransaction != null) {
                     long j12 = wallettransaction.fee;
                     if (j12 > 0) {
-                        textView.setText(org.telegram.ui.Wallet.n5.s0(this.b, j12, d6Var2));
+                        textView.setText(org.telegram.ui.Wallet.o5.r0(this.b, j12, d6Var2));
                         break;
                     }
                 }

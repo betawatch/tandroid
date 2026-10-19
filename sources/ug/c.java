@@ -1,6 +1,6 @@
 package ug;
 
-import ai.m3;
+import ai.o3;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
@@ -11,9 +11,9 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
-import w7.n7;
+import w7.m7;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -49,7 +49,7 @@ public final /* synthetic */ class c implements Runnable {
                 } else {
                     string = LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingCheckGiftsStatistic : R.string.BoostingCheckGiftsStatisticGroup);
                 }
-                qc M = xcVar.M(string2, AndroidUtilities.replaceSingleTag(string, h6.Gi, 0, new m3(chat), d6Var), i11);
+                qc M = xcVar.M(string2, AndroidUtilities.replaceSingleTag(string, h6.Gi, 0, new o3(chat), d6Var), i11);
                 M.j = 5000;
                 M.j();
                 return;
@@ -61,7 +61,7 @@ public final /* synthetic */ class c implements Runnable {
                 try {
                     wVar.g();
                     File file2 = wVar.a;
-                    long e = n7.e(file2) / 1000;
+                    long e = m7.e(file2) / 1000;
                     s0Var.m.b("active output finalized: size=" + file2.length() + ", durationMs=" + e + ", elapsedMs=" + si.s0.f(nanoTime));
                     s0Var.g();
                     long j11 = s0Var.o;
@@ -94,11 +94,11 @@ public final /* synthetic */ class c implements Runnable {
                         file = file3;
                         try {
                             s0Var.s(file, 0L, min, z12, i12);
-                            n7.c(file);
+                            m7.c(file);
                             return;
                         } catch (Throwable th2) {
                             th = th2;
-                            n7.c(file);
+                            m7.c(file);
                             throw th;
                         }
                     } catch (Throwable th3) {

@@ -1,108 +1,33 @@
 package ai;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.text.SpannableStringBuilder;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.u10;
+import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class x6 extends FrameLayout {
-    public final h2 a;
-    public final w6 b;
-    public final w6 c;
-    public final w6 d;
-    public boolean e;
-    public final u10 f;
-    public final RectF h;
+public final class x6 extends org.telegram.ui.Components.zc {
+    public final org.telegram.ui.ActionBar.d6 P;
+    public String Q;
+    public int R;
 
-    public x6(Context context, org.telegram.ui.ActionBar.d6 d6Var, h2 h2Var) {
+    public x6(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
-        this.f = new u10();
-        this.h = new RectF();
-        this.a = h2Var;
-        w6 w6Var = new w6(context, d6Var);
-        this.b = w6Var;
-        w6 w6Var2 = new w6(context, d6Var);
-        this.c = w6Var2;
-        w6 w6Var3 = new w6(context, d6Var);
-        this.d = w6Var3;
-        addView(w6Var, w7.z5.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
-        addView(w6Var2, w7.z5.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
-        addView(w6Var3, w7.z5.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
+        this.P = d6Var;
+        setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var));
+        setTextSize(1, 14.0f);
+        setPadding(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
     }
 
-    public final void a(n6 n6Var, float f7, boolean z10, n6 n6Var2, float f10, boolean z11, n6 n6Var3, float f11, boolean z12) {
-        h2 h2Var = this.a;
-        w6 w6Var = this.b;
-        if (n6Var != null) {
-            if (z10) {
-                f7 = Math.max(0.5f, f7);
-            }
-            w6Var.setVisibility(0);
-            w6Var.e(n6Var.a, n6Var.b, h2Var);
-            w6Var.setTranslationY(AndroidUtilities.dp(36.0f) * ((f7 - 0.5f) / 1.5f));
-        } else {
-            w6Var.setVisibility(4);
-        }
-        w6 w6Var2 = this.c;
-        if (n6Var2 != null) {
-            float f12 = f10;
-            if (z11) {
-                f12 = Math.max(0.5f, f12);
-            }
-            float f13 = (f12 - 0.5f) / 1.5f;
-            w6Var2.setVisibility(0);
-            w6Var2.e(n6Var2.a, n6Var2.b, h2Var);
-            w6Var2.setTranslationY(AndroidUtilities.dp(36.0f) * f13);
-            if (z11 && f13 <= 0.0f && !this.e) {
-                this.e = true;
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat.addUpdateListener(new ah.c0(w6Var2, 4));
-                ofFloat.setDuration(180L);
-                ofFloat.start();
-            }
-        } else {
-            w6Var2.setVisibility(4);
-        }
-        w6 w6Var3 = this.d;
-        if (n6Var3 == null) {
-            w6Var3.setVisibility(4);
+    public final void e(String str, int i10, l2 l2Var) {
+        if (str == this.Q && this.R == i10) {
             return;
         }
-        float f14 = f11;
-        if (z12) {
-            f14 = Math.max(0.5f, f14);
-        }
-        w6Var3.setVisibility(0);
-        w6Var3.e(n6Var3.a, n6Var3.b, h2Var);
-        w6Var3.setTranslationY(AndroidUtilities.dp(36.0f) * ((f14 - 0.5f) / 1.5f));
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        super.dispatchDraw(canvas);
-        canvas.save();
-        float width = getWidth();
-        float dp = AndroidUtilities.dp(8.0f);
-        RectF rectF = this.h;
-        rectF.set(0.0f, 0.0f, width, dp);
-        u10 u10Var = this.f;
-        u10Var.b(canvas, rectF, 1, 1.0f);
-        rectF.set(0.0f, getHeight() - AndroidUtilities.dp(8.0f), getWidth(), getHeight());
-        u10Var.b(canvas, rectF, 3, 1.0f);
-        canvas.restore();
-        canvas.restore();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(37.66f), TLObject.FLAG_30));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(Emoji.replaceEmoji(str, getPaint().getFontMetricsInt(), false));
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) org.telegram.ui.Components.ad.b(gi.l.H0(i10), l2Var != null ? new ah.o(this, l2Var, i10, 2) : null, this.P, null));
+        setText(spannableStringBuilder);
+        this.Q = str;
+        this.R = i10;
     }
 }

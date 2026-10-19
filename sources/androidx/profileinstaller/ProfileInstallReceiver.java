@@ -13,7 +13,7 @@ import java.io.File;
 import r4.a;
 import r4.e;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class ProfileInstallReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -24,7 +24,7 @@ public class ProfileInstallReceiver extends BroadcastReceiver {
         }
         String action = intent.getAction();
         if ("androidx.profileinstaller.action.INSTALL_PROFILE".equals(action)) {
-            e.s(context, new b(2), new k0.b(this, 22), true);
+            e.s(context, new b(2), new le.b(this, 17), true);
             return;
         }
         if ("androidx.profileinstaller.action.SKIP_FILE".equals(action)) {
@@ -40,7 +40,7 @@ public class ProfileInstallReceiver extends BroadcastReceiver {
                     }
                     return;
                 }
-                k0.b bVar = new k0.b(this, 22);
+                le.b bVar = new le.b(this, 17);
                 try {
                     e.e(context.getPackageManager().getPackageInfo(context.getApplicationContext().getPackageName(), 0), context.getFilesDir());
                     bVar.z(10, null);
@@ -53,7 +53,7 @@ public class ProfileInstallReceiver extends BroadcastReceiver {
             return;
         }
         if ("androidx.profileinstaller.action.SAVE_PROFILE".equals(action)) {
-            k0.b bVar2 = new k0.b(this, 22);
+            le.b bVar2 = new le.b(this, 17);
             if (Build.VERSION.SDK_INT < 24) {
                 bVar2.z(13, null);
                 return;
@@ -67,7 +67,7 @@ public class ProfileInstallReceiver extends BroadcastReceiver {
             return;
         }
         String string2 = extras.getString("EXTRA_BENCHMARK_OPERATION");
-        k0.b bVar3 = new k0.b(this, 22);
+        le.b bVar3 = new le.b(this, 17);
         if (!"DROP_SHADER_CACHE".equals(string2)) {
             bVar3.z(16, null);
             return;

@@ -19,18 +19,17 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import ki.t1;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.hk0;
+import org.telegram.ui.fk0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class k extends g3 {
-    public final i2.f0 E;
+    public final i2.g0 E;
     public ArrayList F;
     public final ArrayMap G;
     public final MediaRouter2 r;
-    public final t1 s;
+    public final l2.f s;
     public final ArrayMap v;
     public final MediaRouter2$RouteCallback w;
     public final j x;
@@ -40,7 +39,7 @@ public final class k extends g3 {
         Log.isLoggable("MR2Provider", 3);
     }
 
-    public k(Context context, t1 t1Var) {
+    public k(Context context, l2.f fVar) {
         super(context, null);
         this.v = new ArrayMap();
         this.x = new j(this);
@@ -48,8 +47,8 @@ public final class k extends g3 {
         this.F = new ArrayList();
         this.G = new ArrayMap();
         this.r = MediaRouter2.getInstance(context);
-        this.s = t1Var;
-        this.E = new i2.f0(new Handler(Looper.getMainLooper()), 1);
+        this.s = fVar;
+        this.E = new i2.g0(new Handler(Looper.getMainLooper()), 1);
         if (Build.VERSION.SDK_INT >= 34) {
             this.w = new i(this, 1);
         } else {
@@ -195,10 +194,10 @@ public final class k extends g3 {
             }
             build = new RouteDiscoveryPreference.Builder(arrayList2, z11).build();
         }
-        i2.f0 f0Var = this.E;
-        mediaRouter2.registerRouteCallback(f0Var, mediaRouter2$RouteCallback, build);
-        this.r.registerTransferCallback(f0Var, jVar);
-        this.r.registerControllerCallback(f0Var, fVar);
+        i2.g0 g0Var = this.E;
+        mediaRouter2.registerRouteCallback(g0Var, mediaRouter2$RouteCallback, build);
+        this.r.registerTransferCallback(g0Var, jVar);
+        this.r.registerControllerCallback(g0Var, fVar);
     }
 
     public final MediaRoute2Info o(String str) {
@@ -211,7 +210,7 @@ public final class k extends g3 {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            MediaRoute2Info d = hk0.d(obj);
+            MediaRoute2Info d = fk0.d(obj);
             if (TextUtils.equals(d.getId(), str)) {
                 return d;
             }
@@ -224,7 +223,7 @@ public final class k extends g3 {
         ArraySet arraySet = new ArraySet();
         Iterator<MediaRoute2Info> it = this.r.getRoutes().iterator();
         while (it.hasNext()) {
-            MediaRoute2Info d = hk0.d(it.next());
+            MediaRoute2Info d = fk0.d(it.next());
             if (d != null && !arraySet.contains(d) && !d.isSystemRoute()) {
                 arraySet.add(d);
                 arrayList.add(d);
@@ -243,7 +242,7 @@ public final class k extends g3 {
         while (i11 < size) {
             Object obj = arrayList2.get(i11);
             i11++;
-            MediaRoute2Info d10 = hk0.d(obj);
+            MediaRoute2Info d10 = fk0.d(obj);
             Bundle extras = d10.getExtras();
             if (extras == null || extras.getString("androidx.mediarouter.media.KEY_ORIGINAL_ROUTE_ID") == null) {
                 Log.w("MR2Provider", "Cannot find the original route Id. route=" + d10);
@@ -258,7 +257,7 @@ public final class k extends g3 {
         while (i12 < size2) {
             Object obj2 = arrayList4.get(i12);
             i12++;
-            MediaRoute2Info d11 = hk0.d(obj2);
+            MediaRoute2Info d11 = fk0.d(obj2);
             m w9 = g0.f.w(d11);
             if (d11 != null) {
                 arrayList3.add(w9);
@@ -297,7 +296,7 @@ public final class k extends g3 {
         }
         ArrayList h = g0.f.h(selectedRoutes);
         int i10 = 0;
-        m w9 = g0.f.w(hk0.d(selectedRoutes.get(0)));
+        m w9 = g0.f.w(fk0.d(selectedRoutes.get(0)));
         Bundle controlHints = routingController.getControlHints();
         String string = this.a.getString(R.string.mr_dialog_default_group_name);
         m mVar = null;

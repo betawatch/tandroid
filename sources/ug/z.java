@@ -1,7 +1,7 @@
 package ug;
 
 import ai.ga;
-import ai.k2;
+import ai.j2;
 import ai.rc;
 import ai.s9;
 import android.app.Activity;
@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import ci.x4;
+import ci.y4;
 import com.google.android.gms.internal.play_billing.k3;
 import gi.d3;
 import gi.j4;
@@ -58,11 +58,11 @@ import org.telegram.ui.Components.od0;
 import org.telegram.ui.Components.ur;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.s1;
-import org.telegram.ui.g20;
-import org.telegram.ui.md0;
+import org.telegram.ui.e20;
+import org.telegram.ui.kd0;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class z extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final ArrayList X;
@@ -151,7 +151,7 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
         int i15 = this.backgroundPaddingLeft;
         im0Var.setPadding(i15, 0, i15, AndroidUtilities.dp(68.0f));
         this.d.setOnScrollListener(new y());
-        this.d.setOnItemClickListener(new x4(23, this, n2Var));
+        this.d.setOnItemClickListener(new y4(23, this, n2Var));
         TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j10));
         this.b0 = chat;
         vg.b bVar = this.g0;
@@ -200,7 +200,7 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
             b2 b2Var = alertDialog$Builder.a;
             b2Var.R = string;
             b2Var.T = AndroidUtilities.replaceTags(LocaleController.getString(R.string.BoostingStartGiveawayConfirmText));
-            alertDialog$Builder.k(LocaleController.getString(R.string.Start), new qg.g0(w2Var, 21));
+            alertDialog$Builder.k(LocaleController.getString(R.string.Start), new qg.h0(w2Var, 21));
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new sg.y(15));
             alertDialog$Builder.o();
             return;
@@ -299,7 +299,7 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
                 tL_payments_getPaymentForm.flags |= 1;
             }
             tL_payments_getPaymentForm.invoice = tL_inputInvoiceStars;
-            ConnectionsManager.getInstance(i17).sendRequest(tL_payments_getPaymentForm, new k2(y3, s1Var, tL_inputInvoiceStars, i16));
+            ConnectionsManager.getInstance(i17).sendRequest(tL_payments_getPaymentForm, new j2(y3, s1Var, tL_inputInvoiceStars, i16));
             return;
         }
         int i20 = 2;
@@ -385,7 +385,7 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
                         b2 b2Var3 = alertDialog$Builder3.a;
                         b2Var3.R = string3;
                         b2Var3.T = AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingReduceQuantityTextPlural", i30, formatPluralString, Integer.valueOf(i31)));
-                        alertDialog$Builder3.k(LocaleController.getString("Reduce", R.string.Reduce), new org.telegram.ui.web.n(14, uVar, tL_premiumGiftCodeOption5));
+                        alertDialog$Builder3.k(LocaleController.getString("Reduce", R.string.Reduce), new org.telegram.ui.web.m(14, uVar, tL_premiumGiftCodeOption5));
                         alertDialog$Builder3.h(LocaleController.getString("Cancel", R.string.Cancel), new sg.y(i21));
                         alertDialog$Builder3.o();
                         return;
@@ -673,7 +673,7 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(currentTimeMillis);
         int i17 = calendar.get(1);
-        md0 md0Var = new md0(context, 4);
+        kd0 kd0Var = new kd0(context, 4);
         long j11 = MessagesController.getInstance(UserConfig.selectedAccount).giveawayPeriodMax * 1000;
         Calendar calendar2 = Calendar.getInstance();
         calendar2.setTimeInMillis(j11);
@@ -687,7 +687,7 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
         od0Var.setMaxValue(i18 - 1);
         od0Var.setWrapSelectorWheel(false);
         od0Var.setTag("DAY");
-        od0Var.setFormatter(new g20(currentTimeMillis, calendar, i17, 1));
+        od0Var.setFormatter(new e20(currentTimeMillis, calendar, i17, 1));
         j4 j4Var = new j4(d4Var, gVar, hVar, i19, i20, od0Var);
         od0Var.setOnValueChangedListener(j4Var);
         gVar.setMinValue(0);
@@ -717,15 +717,15 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
             gVar.getValue();
             j4Var.q(gVar, gVar.getValue());
         }
-        md0Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-        md0Var.setGravity(17);
-        md0Var.setTextColor(d5Var.g);
-        md0Var.setTextSize(1, 14.0f);
-        md0Var.setTypeface(AndroidUtilities.bold());
-        md0Var.setBackground(x5.e(new float[]{8.0f}, d5Var.h));
-        md0Var.setText(LocaleController.getString("BoostingConfirm", R.string.BoostingConfirm));
-        d4Var.addView(md0Var, z5.t(-1, 48, 83, 16, 15, 16, 16));
-        md0Var.setOnClickListener(new org.telegram.ui.Components.m0(calendar, od0Var, gVar, hVar, tVar, a3Var));
+        kd0Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
+        kd0Var.setGravity(17);
+        kd0Var.setTextColor(d5Var.g);
+        kd0Var.setTextSize(1, 14.0f);
+        kd0Var.setTypeface(AndroidUtilities.bold());
+        kd0Var.setBackground(x5.e(new float[]{8.0f}, d5Var.h));
+        kd0Var.setText(LocaleController.getString("BoostingConfirm", R.string.BoostingConfirm));
+        d4Var.addView(kd0Var, z5.t(-1, 48, 83, 16, 15, 16, 16));
+        kd0Var.setOnClickListener(new org.telegram.ui.Components.m0(calendar, od0Var, gVar, hVar, tVar, a3Var));
         a3Var.b(d4Var);
         f3 f3Var = a3Var.a;
         f3Var.show();

@@ -9,7 +9,7 @@ import android.util.SparseIntArray;
 import j$.util.Objects;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public class b implements org.telegram.ui.ActionBar.d6 {
     public final HashSet a = new HashSet();
@@ -175,12 +175,12 @@ public class b implements org.telegram.ui.ActionBar.d6 {
         sparseIntArray.put(org.telegram.ui.ActionBar.h6.Ui, -11184811);
         sparseIntArray.put(org.telegram.ui.ActionBar.h6.Zk, -15198183);
         b();
-        paint.setColor(u(i13));
+        paint.setColor(w(i13));
     }
 
     @Override // org.telegram.ui.ActionBar.d6
-    public final int I(int i10) {
-        return u(i10);
+    public final int G(int i10) {
+        return w(i10);
     }
 
     @Override // org.telegram.ui.ActionBar.d6
@@ -207,7 +207,7 @@ public class b implements org.telegram.ui.ActionBar.d6 {
     @Override // org.telegram.ui.ActionBar.d6
     public final ColorFilter j() {
         if (this.e == null) {
-            this.e = new PorterDuffColorFilter(u(org.telegram.ui.ActionBar.h6.G6), PorterDuff.Mode.SRC_IN);
+            this.e = new PorterDuffColorFilter(w(org.telegram.ui.ActionBar.h6.G6), PorterDuff.Mode.SRC_IN);
         }
         return this.e;
     }
@@ -230,7 +230,7 @@ public class b implements org.telegram.ui.ActionBar.d6 {
 
     @Override // org.telegram.ui.ActionBar.d6
     public final int r(int i10) {
-        return u(i10);
+        return w(i10);
     }
 
     @Override // org.telegram.ui.ActionBar.d6
@@ -239,7 +239,7 @@ public class b implements org.telegram.ui.ActionBar.d6 {
     }
 
     @Override // org.telegram.ui.ActionBar.d6
-    public final int u(int i10) {
+    public final int w(int i10) {
         SparseIntArray sparseIntArray = this.b;
         int indexOfKey = sparseIntArray.indexOfKey(i10);
         if (indexOfKey >= 0) {

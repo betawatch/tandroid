@@ -22,7 +22,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class jy extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final /* synthetic */ tz E;
@@ -244,7 +244,7 @@ public final class jy extends FrameLayout implements NotificationCenter.Notifica
             if (this.n != null && (stickerSetById2 = MediaDataController.getInstance(i12).getStickerSetById(this.n.id)) != null && stickerSetById2.set != null) {
                 org.telegram.ui.ActionBar.n2 n2Var = tzVar.Y1;
                 if (n2Var == null) {
-                    n2Var = new ai.z4(this, 7);
+                    n2Var = new ai.a5(this, 7);
                 }
                 aw.X(n2Var, stickerSetById2, true, null, new hq(this, 14));
                 this.n = null;
@@ -254,7 +254,7 @@ public final class jy extends FrameLayout implements NotificationCenter.Notifica
             }
             org.telegram.ui.ActionBar.n2 n2Var2 = tzVar.Y1;
             if (n2Var2 == null) {
-                n2Var2 = new ai.z4(this, 7);
+                n2Var2 = new ai.a5(this, 7);
             }
             org.telegram.ui.ActionBar.n2 n2Var3 = n2Var2;
             yt ytVar = new yt(4, this, stickerSetById);

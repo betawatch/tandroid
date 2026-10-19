@@ -19,7 +19,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class o3 extends FrameLayout {
     public boolean E;
@@ -42,7 +42,7 @@ public final class o3 extends FrameLayout {
     public boolean v;
     public int w;
     public int x;
-    public org.telegram.ui.web.h2 y;
+    public org.telegram.ui.web.f2 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public o3(l4 l4Var, Activity activity) {
@@ -350,9 +350,9 @@ public final class o3 extends FrameLayout {
     }
 
     public final boolean e() {
-        org.telegram.ui.web.y0 webView;
+        org.telegram.ui.web.x0 webView;
         String u10;
-        return f() && (webView = getWebView()) != null && (u10 = org.telegram.ui.web.b1.u(webView.getUrl())) != null && org.telegram.ui.web.b1.p(Uri.parse(u10));
+        return f() && (webView = getWebView()) != null && (u10 = org.telegram.ui.web.a1.u(webView.getUrl())) != null && org.telegram.ui.web.a1.p(Uri.parse(u10));
     }
 
     public final boolean f() {
@@ -414,7 +414,7 @@ public final class o3 extends FrameLayout {
     }
 
     public float getProgress() {
-        org.telegram.ui.web.y0 webView;
+        org.telegram.ui.web.x0 webView;
         x3 x3Var = this.K.K;
         if (c()) {
             float f7 = this.I;
@@ -454,7 +454,7 @@ public final class o3 extends FrameLayout {
     }
 
     public String getSubtitle() {
-        org.telegram.ui.web.y0 webView;
+        org.telegram.ui.web.x0 webView;
         n0 n0Var;
         if (!f() || (webView = this.f.getWebView()) == null) {
             return "";
@@ -465,7 +465,7 @@ public final class o3 extends FrameLayout {
         try {
             String url = webView.getUrl();
             this.F = url;
-            Uri parse = Uri.parse(org.telegram.ui.web.b1.u(url));
+            Uri parse = Uri.parse(org.telegram.ui.web.a1.u(url));
             String uri = (parse.getScheme() == null || !(parse.getScheme().equalsIgnoreCase("http") || parse.getScheme().equalsIgnoreCase("https"))) ? parse.toString() : parse.getSchemeSpecificPart();
             try {
                 if (!e()) {
@@ -509,7 +509,7 @@ public final class o3 extends FrameLayout {
     }
 
     public String getTitle() {
-        org.telegram.ui.web.y0 webView;
+        org.telegram.ui.web.x0 webView;
         String str;
         String str2;
         if (c()) {
@@ -524,11 +524,11 @@ public final class o3 extends FrameLayout {
         return (!f() || (webView = this.f.getWebView()) == null) ? "" : webView.getTitle();
     }
 
-    public org.telegram.ui.web.b1 getWebContainer() {
+    public org.telegram.ui.web.a1 getWebContainer() {
         return this.f;
     }
 
-    public org.telegram.ui.web.y0 getWebView() {
+    public org.telegram.ui.web.x0 getWebView() {
         m3 m3Var = this.f;
         if (m3Var != null) {
             return m3Var.getWebView();
@@ -590,10 +590,10 @@ public final class o3 extends FrameLayout {
             }
             this.J = b3Var;
             if (b3Var != null) {
-                org.telegram.ui.web.y0 y0Var = b3Var.b;
+                org.telegram.ui.web.x0 x0Var = b3Var.b;
                 m3 m3Var = this.f;
-                if (y0Var != null) {
-                    y0Var.onResume();
+                if (x0Var != null) {
+                    x0Var.onResume();
                     m3Var.N(UserConfig.selectedAccount, b3Var.b, b3Var.d, b3Var.x, false);
                     a(this, true, b3Var.q);
                     a(this, false, b3Var.r);
@@ -604,14 +604,14 @@ public final class o3 extends FrameLayout {
                     }
                 }
             }
-            org.telegram.ui.web.h2 h2Var = this.y;
-            if (h2Var != null) {
-                h2Var.a();
-                org.telegram.ui.web.h2 h2Var2 = this.y;
-                TLRPC.TL_webPage tL_webPage = h2Var2.j;
+            org.telegram.ui.web.f2 f2Var = this.y;
+            if (f2Var != null) {
+                f2Var.a();
+                org.telegram.ui.web.f2 f2Var2 = this.y;
+                TLRPC.TL_webPage tL_webPage = f2Var2.j;
                 if (tL_webPage != null) {
-                    org.telegram.ui.web.j2.o(tL_webPage);
-                    h2Var2.j = null;
+                    org.telegram.ui.web.h2.o(tL_webPage);
+                    f2Var2.j = null;
                 }
                 this.y = null;
             }

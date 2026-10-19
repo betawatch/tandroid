@@ -1,9 +1,9 @@
 package ig;
 
-import ai.b3;
+import ai.c3;
 import ai.cb;
 import android.text.TextUtils;
-import ci.d6;
+import ci.e6;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class a2 {
     public static volatile a2[] g = new a2[4];
@@ -166,7 +166,7 @@ public final class a2 {
         int i12 = this.a;
         if (z10) {
             MessagesStorage messagesStorage = MessagesStorage.getInstance(i12);
-            messagesStorage.getStorageQueue().postRunnable(new b3(this, messagesStorage, UserConfig.getInstance(i12).getClientUserId(), runnable, 13));
+            messagesStorage.getStorageQueue().postRunnable(new c3(this, messagesStorage, UserConfig.getInstance(i12).getClientUserId(), runnable, 13));
             return;
         }
         TLRPC.TL_messages_getQuickReplies tL_messages_getQuickReplies = new TLRPC.TL_messages_getQuickReplies();
@@ -333,7 +333,7 @@ public final class a2 {
                                     c10.e = null;
                                     long clientUserId = UserConfig.getInstance(i14).getClientUserId();
                                     MessagesStorage messagesStorage = MessagesStorage.getInstance(i14);
-                                    messagesStorage.getStorageQueue().postRunnable(new b3(a2Var2, messagesStorage, c10, clientUserId, 14));
+                                    messagesStorage.getStorageQueue().postRunnable(new c3(a2Var2, messagesStorage, c10, clientUserId, 14));
                                     break;
                                 }
                             } else {
@@ -387,7 +387,7 @@ public final class a2 {
                                     c12.e = null;
                                     long clientUserId2 = UserConfig.getInstance(i18).getClientUserId();
                                     MessagesStorage messagesStorage3 = MessagesStorage.getInstance(i18);
-                                    messagesStorage3.getStorageQueue().postRunnable(new b3(a2Var4, messagesStorage3, c12, clientUserId2, 14));
+                                    messagesStorage3.getStorageQueue().postRunnable(new c3(a2Var4, messagesStorage3, c12, clientUserId2, 14));
                                     break;
                                 }
                             }
@@ -461,7 +461,7 @@ public final class a2 {
                                     c10.e = null;
                                     long clientUserId = UserConfig.getInstance(i14).getClientUserId();
                                     MessagesStorage messagesStorage = MessagesStorage.getInstance(i14);
-                                    messagesStorage.getStorageQueue().postRunnable(new b3(a2Var2, messagesStorage, c10, clientUserId, 14));
+                                    messagesStorage.getStorageQueue().postRunnable(new c3(a2Var2, messagesStorage, c10, clientUserId, 14));
                                     break;
                                 }
                             } else {
@@ -515,7 +515,7 @@ public final class a2 {
                                     c12.e = null;
                                     long clientUserId2 = UserConfig.getInstance(i18).getClientUserId();
                                     MessagesStorage messagesStorage3 = MessagesStorage.getInstance(i18);
-                                    messagesStorage3.getStorageQueue().postRunnable(new b3(a2Var4, messagesStorage3, c12, clientUserId2, 14));
+                                    messagesStorage3.getStorageQueue().postRunnable(new c3(a2Var4, messagesStorage3, c12, clientUserId2, 14));
                                     break;
                                 }
                             }
@@ -589,7 +589,7 @@ public final class a2 {
                                     c10.e = null;
                                     long clientUserId = UserConfig.getInstance(i14).getClientUserId();
                                     MessagesStorage messagesStorage = MessagesStorage.getInstance(i14);
-                                    messagesStorage.getStorageQueue().postRunnable(new b3(a2Var2, messagesStorage, c10, clientUserId, 14));
+                                    messagesStorage.getStorageQueue().postRunnable(new c3(a2Var2, messagesStorage, c10, clientUserId, 14));
                                     break;
                                 }
                             } else {
@@ -643,7 +643,7 @@ public final class a2 {
                                     c12.e = null;
                                     long clientUserId2 = UserConfig.getInstance(i18).getClientUserId();
                                     MessagesStorage messagesStorage3 = MessagesStorage.getInstance(i18);
-                                    messagesStorage3.getStorageQueue().postRunnable(new b3(a2Var4, messagesStorage3, c12, clientUserId2, 14));
+                                    messagesStorage3.getStorageQueue().postRunnable(new c3(a2Var4, messagesStorage3, c12, clientUserId2, 14));
                                     break;
                                 }
                             }
@@ -719,7 +719,7 @@ public final class a2 {
                                 c10.e = null;
                                 long clientUserId = UserConfig.getInstance(i142).getClientUserId();
                                 MessagesStorage messagesStorage = MessagesStorage.getInstance(i142);
-                                messagesStorage.getStorageQueue().postRunnable(new b3(a2Var2, messagesStorage, c10, clientUserId, 14));
+                                messagesStorage.getStorageQueue().postRunnable(new c3(a2Var2, messagesStorage, c10, clientUserId, 14));
                                 break;
                             }
                         } else {
@@ -773,7 +773,7 @@ public final class a2 {
                                 c12.e = null;
                                 long clientUserId2 = UserConfig.getInstance(i18).getClientUserId();
                                 MessagesStorage messagesStorage3 = MessagesStorage.getInstance(i18);
-                                messagesStorage3.getStorageQueue().postRunnable(new b3(a2Var4, messagesStorage3, c12, clientUserId2, 14));
+                                messagesStorage3.getStorageQueue().postRunnable(new c3(a2Var4, messagesStorage3, c12, clientUserId2, 14));
                                 break;
                             }
                         }
@@ -794,7 +794,7 @@ public final class a2 {
         tL_messages_editQuickReplyShortcut.shortcut_id = i10;
         tL_messages_editQuickReplyShortcut.shortcut = str;
         int i11 = this.a;
-        ConnectionsManager.getInstance(i11).sendRequest(tL_messages_editQuickReplyShortcut, new d6(7));
+        ConnectionsManager.getInstance(i11).sendRequest(tL_messages_editQuickReplyShortcut, new e6(7));
         l();
         NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
     }

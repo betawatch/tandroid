@@ -20,16 +20,16 @@ import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yq;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class b extends bb {
     public final uc X;
-    public s61 Y;
+    public t61 Y;
 
     public b(Context context, TLRPC.Chat chat, Runnable runnable) {
         super(context, (d6) null, false);
@@ -75,9 +75,9 @@ public final class b extends bb {
 
     @Override // org.telegram.ui.Components.bb
     public final hm0 x(im0 im0Var) {
-        s61 s61Var = new s61(this.d, getContext(), this.currentAccount, 0, true, new o(this, 12), this.resourcesProvider);
-        this.Y = s61Var;
-        s61Var.r = false;
-        return s61Var;
+        t61 t61Var = new t61(this.d, getContext(), this.currentAccount, 0, true, new o(this, 12), this.resourcesProvider);
+        this.Y = t61Var;
+        t61Var.r = false;
+        return t61Var;
     }
 }

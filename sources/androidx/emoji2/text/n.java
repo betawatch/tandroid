@@ -1,7 +1,7 @@
 package androidx.emoji2.text;
 
 import android.os.Trace;
-import ci.c8;
+import ci.d8;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
@@ -12,7 +12,7 @@ import org.telegram.ui.Components.x20;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.w2;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class n implements Runnable {
     public final /* synthetic */ int a;
@@ -44,9 +44,9 @@ public final class n implements Runnable {
                 }
             case 1:
                 Math.abs(Utilities.random.nextInt() % 3);
-                x20[] x20VarArr = c8.a;
+                x20[] x20VarArr = d8.a;
                 NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, 0);
-                AndroidUtilities.runOnUIThread(c8.o, 1000L);
+                AndroidUtilities.runOnUIThread(d8.o, 1000L);
                 LaunchActivity.R().getFragmentView();
                 return;
             case 2:

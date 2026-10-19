@@ -5,8 +5,8 @@ import b2.t0;
 import b2.v;
 import b2.v0;
 import c3.g0;
-import c5.b0;
-import ci.b7;
+import c5.c0;
+import ci.c7;
 import e2.x;
 import e9.k0;
 import e9.l0;
@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.UUID;
 import org.telegram.messenger.TranslateController;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class p {
     public static final int[] a = {1769172845, 1769172786, 1769172787, 1769172788, 1769172789, 1769172790, 1769172793, 1635148593, 1752589105, 1751479857, 1635135537, 1836069937, 1836069938, 862401121, 862401122, 862417462, 862417718, 862414134, 862414646, 1295275552, 1295270176, 1714714144, 1801741417, 1295275600, 1903435808, 1297305174, 1684175153, 1769172332, 1885955686};
@@ -127,7 +127,7 @@ public abstract class p {
             xVar.O(10);
             int H = xVar.H();
             if (H > 0) {
-                String j10 = i2.d.j(H, "");
+                String j10 = i2.e.j(H, "");
                 int H2 = xVar.H();
                 if (H2 > 0) {
                     j10 = j10 + "/" + H2;
@@ -327,7 +327,7 @@ public abstract class p {
             if (j14 < j15) {
                 g0Var = null;
                 if (m10 != 1718773093 || i12 != 8) {
-                    return new b7(m10, j14, i12);
+                    return new c7(m10, j14, i12);
                 }
                 j14 = j15;
             } else {
@@ -366,7 +366,7 @@ public abstract class p {
                                 }
                             } else {
                                 if (i20 < 8) {
-                                    return new b7(m10, i20, 8);
+                                    return new c7(m10, i20, 8);
                                 }
                                 xVar.K(i20);
                                 i14 = 0;
@@ -396,7 +396,7 @@ public abstract class p {
                                     iArr = g0Var;
                                 }
                                 if (!z12) {
-                                    return new b0(m11, iArr);
+                                    return new c0(m11, iArr);
                                 }
                             }
                         }

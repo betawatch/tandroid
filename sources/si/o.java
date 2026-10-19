@@ -1,8 +1,13 @@
 package si;
 
+import android.graphics.Bitmap;
+import android.graphics.Point;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
@@ -10,13 +15,16 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.is0;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.js0;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.sp0;
 import yh.g1;
 import yh.l2;
 import yh.o2;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -36,6 +44,7 @@ public final /* synthetic */ class o implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         int a2;
+        String str = null;
         switch (this.a) {
             case 0:
                 t tVar = (t) this.b;
@@ -63,7 +72,7 @@ public final /* synthetic */ class o implements Runnable {
                     }
                     tVar.b0 = a2;
                     tVar.Z = ((Math.max(210, Math.min(300, 300 - ((Math.max(0, a2 - 400) * 3) / 20))) * 45) / 100) * 1000000;
-                    tVar.a0 = (r1 - r2) * 1000000;
+                    tVar.a0 = (r1 - r3) * 1000000;
                     tVar.i.b("synthetic camera switch started: from=" + l0Var + ", to=" + l0Var2 + ", expectedWaitMs=" + tVar.b0 + ", targetBlurRadiusPx=" + (((tVar.N.a * 4.0f) / 48.0f) * 1.15f) + ", overdueBlurGrowth=0.35, revealMs=" + ((tVar.Z + tVar.a0) / 1000000));
                     tVar.Q = -1L;
                     handler.removeCallbacks(tVar.x0);
@@ -86,12 +95,12 @@ public final /* synthetic */ class o implements Runnable {
                     }
                     return;
                 }
-            default:
+            case 2:
                 final l2 l2Var = (l2) this.b;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
                 g1 g1Var = (g1) this.d;
                 final View view = (View) this.e;
-                is0 is0Var = l2Var.a;
+                js0 js0Var = l2Var.a;
                 if (savedStarGift.unsaved) {
                     savedStarGift.unsaved = false;
                     g1Var.h(savedStarGift, true, false);
@@ -102,8 +111,8 @@ public final /* synthetic */ class o implements Runnable {
                 }
                 boolean z10 = savedStarGift.pinned_to_top;
                 final boolean z11 = !z10;
-                if (l2Var.e.n(savedStarGift, z11, false)) {
-                    new o2(l2Var.getContext(), is0Var.c, savedStarGift, l2Var.c, new Utilities.Callback0Return() { // from class: yh.e2
+                if (l2Var.e.o(savedStarGift, z11, false)) {
+                    new o2(l2Var.getContext(), js0Var.c, savedStarGift, l2Var.c, new Utilities.Callback0Return() { // from class: yh.e2
                         @Override // org.telegram.messenger.Utilities.Callback0Return
                         public final Object run() {
                             ((g1) view).c(z11, true);
@@ -115,12 +124,45 @@ public final /* synthetic */ class o implements Runnable {
                     return;
                 }
                 if (z10) {
-                    org.telegram.messenger.g0.q(R.string.Gift2Unpinned, xc.a0(is0Var.a), R.raw.ic_unpin, 36);
+                    org.telegram.messenger.g0.q(R.string.Gift2Unpinned, xc.a0(js0Var.a), R.raw.ic_unpin, 36);
                 } else {
-                    xc.a0(is0Var.a).M(LocaleController.getString(R.string.Gift2PinnedTitle), LocaleController.getString(R.string.Gift2PinnedSubtitle), R.raw.ic_pin).j();
+                    xc.a0(js0Var.a).M(LocaleController.getString(R.string.Gift2PinnedTitle), LocaleController.getString(R.string.Gift2PinnedSubtitle), R.raw.ic_pin).j();
                 }
                 ((g1) view).c(z11, true);
                 l2Var.f.u0(0);
+                return;
+            case 3:
+                w61 w61Var = (w61) this.b;
+                zh.b0 b0Var = (zh.b0) this.c;
+                Utilities.CallbackReturn callbackReturn = (Utilities.CallbackReturn) this.d;
+                Utilities.Callback callback3 = (Utilities.Callback) this.e;
+                if (zh.b0.d(w61Var.getParentActivity())) {
+                    b0Var.e();
+                    sp0 sp0Var = new sp0(10, false, false, null);
+                    sp0Var.G = 1;
+                    sp0Var.H = false;
+                    sp0Var.x = false;
+                    sp0Var.V = new zh.y(callbackReturn, w61Var, callback3);
+                    w61Var.presentFragment(sp0Var);
+                    return;
+                }
+                return;
+            default:
+                String str2 = (String) this.b;
+                Utilities.CallbackReturn callbackReturn2 = (Utilities.CallbackReturn) this.c;
+                n2 n2Var = (n2) this.d;
+                Utilities.Callback callback4 = (Utilities.Callback) this.e;
+                try {
+                    Point realScreenSize = AndroidUtilities.getRealScreenSize();
+                    Bitmap loadBitmap = ImageLoader.loadBitmap(str2, null, realScreenSize.x, realScreenSize.y, true);
+                    if (loadBitmap != null) {
+                        str = zh.b0.l(loadBitmap, callbackReturn2);
+                        loadBitmap.recycle();
+                    }
+                } catch (Throwable th2) {
+                    FileLog.e(th2);
+                }
+                AndroidUtilities.runOnUIThread(new zh.x(n2Var, str, callback4));
                 return;
         }
     }

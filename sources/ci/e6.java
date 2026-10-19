@@ -1,31 +1,104 @@
 package ci;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.ui.Components.qc;
+import android.graphics.Paint;
+import java.util.Comparator;
+import java.util.List;
+import java.util.regex.Pattern;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.ex;
+import org.telegram.ui.Components.s00;
+import org.telegram.ui.ck0;
+import org.telegram.ui.eo0;
+import org.telegram.ui.hf0;
+import org.telegram.ui.rm0;
+import org.telegram.ui.sa;
+import org.telegram.ui.u61;
+import org.telegram.ui.vo;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class e6 extends FrameLayout {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ f6 b;
+public final /* synthetic */ class e6 implements RequestDelegate {
+    public final /* synthetic */ int a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e6(f6 f6Var, Context context, float f7) {
-        super(context);
-        this.b = f6Var;
-        this.a = f7;
+    public /* synthetic */ e6(int i10) {
+        this.a = i10;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        qc.a(this.b.container, new ah.m0(this, 3));
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new ah.j(9));
+                break;
+            case 1:
+                Comparator comparator = i7.X;
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new ah.j(23));
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new ah.j(23));
+                break;
+            case 4:
+                int[] iArr = ei.c1.a0;
+                break;
+            case 5:
+                AndroidUtilities.runOnUIThread(new ah.j(17));
+                break;
+            case 6:
+                AndroidUtilities.runOnUIThread(new ah.j(17));
+                break;
+            case 7:
+                AndroidUtilities.runOnUIThread(new ah.j(17));
+                break;
+            case 8:
+                break;
+            case 9:
+                Paint paint = sa.H;
+                break;
+            case 10:
+                int i10 = vo.Z2;
+                break;
+            case 11:
+                AndroidUtilities.runOnUIThread(new ah.j(23));
+                break;
+            case 12:
+                Pattern pattern = org.telegram.ui.Components.f5.a;
+                break;
+            case 13:
+                int i11 = ex.H0;
+                break;
+            case 14:
+                int i12 = s00.A0;
+                break;
+            case 15:
+                AndroidUtilities.runOnUIThread(new ah.j(23));
+                break;
+            case 16:
+                int i13 = d11.e;
+                break;
+            case 17:
+                int i14 = hf0.t0;
+                break;
+            case 18:
+                AndroidUtilities.runOnUIThread(new ck0(tLObject, 3));
+                break;
+            case 19:
+                int i15 = rm0.R;
+                break;
+            case 20:
+                List list = eo0.g1;
+                break;
+            default:
+                int i16 = u61.e;
+                break;
+        }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        qc.h(this.b.container);
+    private final void a(TLObject tLObject, TLRPC.TL_error tL_error) {
     }
 }

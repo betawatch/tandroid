@@ -4,7 +4,7 @@ import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class z0 extends b implements RandomAccess {
     public static final z0 d;
@@ -54,7 +54,7 @@ public final class z0 extends b implements RandomAccess {
 
     public final void m(int i10) {
         if (i10 < 0 || i10 >= this.c) {
-            StringBuilder l4 = i2.d.l(i10, "Index:", ", Size:");
+            StringBuilder l4 = i2.e.l(i10, "Index:", ", Size:");
             l4.append(this.c);
             throw new IndexOutOfBoundsException(l4.toString());
         }
@@ -109,7 +109,7 @@ public final class z0 extends b implements RandomAccess {
             ((AbstractList) this).modCount++;
             return;
         }
-        StringBuilder l4 = i2.d.l(i10, "Index:", ", Size:");
+        StringBuilder l4 = i2.e.l(i10, "Index:", ", Size:");
         l4.append(this.c);
         throw new IndexOutOfBoundsException(l4.toString());
     }

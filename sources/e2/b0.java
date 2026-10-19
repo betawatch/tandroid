@@ -4,7 +4,7 @@ import android.os.SystemClock;
 import b2.o1;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class b0 {
     public final int a;
@@ -24,19 +24,19 @@ public final class b0 {
     public final void a() {
         e0 e0Var = this.h;
         i0 i0Var = e0Var.f;
-        i2.h0 h0Var = e0Var.a;
-        if (!h0Var.j0()) {
+        i2.i0 i0Var2 = e0Var.a;
+        if (!i0Var2.j0()) {
             if (this.f) {
                 i0Var.e(2);
             }
             this.f = false;
             return;
         }
-        o1 y02 = h0Var.y0();
-        Object l4 = y02.p() ? null : y02.l(h0Var.A());
-        int m0 = h0Var.m0();
-        int N = h0Var.N();
-        long M0 = h0Var.M0();
+        o1 y02 = i0Var2.y0();
+        Object l4 = y02.p() ? null : y02.l(i0Var2.A());
+        int m0 = i0Var2.m0();
+        int N = i0Var2.N();
+        long M0 = i0Var2.M0();
         if (l4 != null && m0 == -1) {
             M0 -= m0.h0(y02.g(l4, e0Var.e).e);
         }
@@ -46,7 +46,7 @@ public final class b0 {
         int i10 = this.a;
         if (z10 && Objects.equals(l4, this.b) && m0 == this.c && N == this.d && M0 == this.e) {
             if (elapsedRealtime - this.g >= i10) {
-                e0Var.c.a.A1(new i2.m(2, new f0(2, i10), 1003));
+                e0Var.c.a.A1(new i2.n(2, new f0(2, i10), 1003));
                 return;
             }
             return;

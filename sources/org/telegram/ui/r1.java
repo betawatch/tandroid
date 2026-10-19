@@ -6,7 +6,7 @@ import android.webkit.WebChromeClient;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class r1 extends WebChromeClient {
     public final /* synthetic */ int a;
@@ -77,7 +77,7 @@ public final class r1 extends WebChromeClient {
                 } else {
                     l4Var.O = view;
                     l4Var.S = customViewCallback;
-                    AndroidUtilities.runOnUIThread(new ut0(this, 7), 100L);
+                    AndroidUtilities.runOnUIThread(new st0(this, 7), 100L);
                     break;
                 }
             default:

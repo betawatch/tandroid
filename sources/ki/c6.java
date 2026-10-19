@@ -40,7 +40,7 @@ import org.telegram.ui.Components.gj0;
 import org.telegram.ui.Components.gu;
 import org.telegram.ui.Components.pm0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y5, m9 {
     public static final /* synthetic */ int V = 0;
@@ -118,7 +118,7 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
             }
 
             @Override // org.telegram.ui.Components.gu
-            public final void F() {
+            public final void E() {
                 switch (i10) {
                     case 0:
                         c6 c6Var = this.b;
@@ -164,7 +164,7 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
             }
 
             @Override // org.telegram.ui.Components.gu
-            public final void F() {
+            public final void E() {
                 switch (i11) {
                     case 0:
                         c6 c6Var = this.b;
@@ -210,7 +210,7 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
         if (z10 || (z5Var = c6Var.y) == null) {
             return;
         }
-        ((e3) z5Var).a.f3.x(c6Var, null);
+        ((e3) z5Var).a.f3.C(c6Var, null);
     }
 
     public static String b(String str) {

@@ -19,7 +19,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class nf0 extends FrameLayout {
     public final kf0 E;
@@ -70,20 +70,20 @@ public final class nf0 extends FrameLayout {
         cropAreaView.invalidate();
     }
 
-    public final void b(Bitmap bitmap, int i10, boolean z10, boolean z11, mg.g gVar, p71 p71Var, MediaController.CropState cropState) {
+    public final void b(Bitmap bitmap, int i10, boolean z10, boolean z11, mg.g gVar, q71 q71Var, MediaController.CropState cropState) {
         requestLayout();
         this.f = false;
         this.e.setImageBitmap((Drawable) null);
         mg.p pVar = this.b;
         ImageView imageView = pVar.b;
         pVar.x = z10;
-        pVar.d = p71Var;
+        pVar.d = q71Var;
         pVar.e = gVar;
         pVar.K = i10;
         pVar.w = bitmap;
         CropAreaView cropAreaView = pVar.a;
-        cropAreaView.setIsVideo(p71Var != null);
-        if (bitmap == null && p71Var == null) {
+        cropAreaView.setIsVideo(q71Var != null);
+        if (bitmap == null && q71Var == null) {
             pVar.L = null;
             imageView.setImageDrawable(null);
         } else {
@@ -109,7 +109,7 @@ public final class nf0 extends FrameLayout {
                 matrix.postTranslate(fArr[2], fArr[5]);
                 pVar2.r(false);
             }
-            imageView.setImageBitmap(p71Var == null ? pVar.w : null);
+            imageView.setImageBitmap(q71Var == null ? pVar.w : null);
         }
         mg.f fVar = this.c;
         fVar.setFreeform(z10);
@@ -134,9 +134,9 @@ public final class nf0 extends FrameLayout {
         if (this.f && view == (pVar = this.b)) {
             RectF actualRect = pVar.getActualRect();
             int dp = AndroidUtilities.dp(32.0f);
-            org.telegram.ui.bs0 bs0Var = (org.telegram.ui.bs0) this.a;
-            bs0Var.getClass();
-            int dp2 = AndroidUtilities.dp(2.0f) + (((int) (((r1.S7.getMeasuredWidth() - AndroidUtilities.dp(32.0f)) * bs0Var.a.w8) + AndroidUtilities.dp(16.0f))) - (dp / 2));
+            org.telegram.ui.zr0 zr0Var = (org.telegram.ui.zr0) this.a;
+            zr0Var.getClass();
+            int dp2 = AndroidUtilities.dp(2.0f) + (((int) (((r1.S7.getMeasuredWidth() - AndroidUtilities.dp(32.0f)) * zr0Var.a.w8) + AndroidUtilities.dp(16.0f))) - (dp / 2));
             int measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(156.0f);
             float f7 = actualRect.left;
             float f10 = this.r;
@@ -197,7 +197,7 @@ public final class nf0 extends FrameLayout {
         if (this.h && this.f) {
             if (this.e.isInsideImage(motionEvent.getX(), motionEvent.getY())) {
                 if (motionEvent.getAction() == 1) {
-                    ((org.telegram.ui.bs0) this.a).d();
+                    ((org.telegram.ui.zr0) this.a).d();
                 }
                 return true;
             }
@@ -227,7 +227,7 @@ public final class nf0 extends FrameLayout {
         if (this.h && this.f) {
             if (this.e.isInsideImage(motionEvent.getX(), motionEvent.getY())) {
                 if (motionEvent.getAction() == 1) {
-                    ((org.telegram.ui.bs0) this.a).d();
+                    ((org.telegram.ui.zr0) this.a).d();
                 }
                 return true;
             }

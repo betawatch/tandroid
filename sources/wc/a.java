@@ -1,8 +1,8 @@
 package wc;
 
-import w7.p9;
+import w7.o9;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class a {
     public static final String[] o = {"34", "37"};
@@ -27,37 +27,37 @@ public final class a {
     public final String n;
 
     public a(String str, Integer num, Integer num2, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, String str12, String str13, String str14, String str15) {
-        this.a = p9.e(str == null ? null : str.trim().replaceAll("\\s+|-", ""));
+        this.a = o9.e(str == null ? null : str.trim().replaceAll("\\s+|-", ""));
         this.c = num;
         this.d = num2;
-        this.b = p9.e(str2);
-        this.e = p9.e(str3);
-        this.f = p9.e(str4);
-        this.g = p9.e(str5);
-        this.h = p9.e(str6);
-        this.i = p9.e(str7);
-        this.j = p9.e(str8);
-        this.k = p9.e(str9);
-        this.m = p9.a(str10) == null ? a() : str10;
-        this.l = p9.e(str11) == null ? b() : str11;
-        p9.e(str12);
-        p9.b(str13);
-        p9.e(str14);
-        this.n = p9.e(str15);
+        this.b = o9.e(str2);
+        this.e = o9.e(str3);
+        this.f = o9.e(str4);
+        this.g = o9.e(str5);
+        this.h = o9.e(str6);
+        this.i = o9.e(str7);
+        this.j = o9.e(str8);
+        this.k = o9.e(str9);
+        this.m = o9.a(str10) == null ? a() : str10;
+        this.l = o9.e(str11) == null ? b() : str11;
+        o9.e(str12);
+        o9.b(str13);
+        o9.e(str14);
+        this.n = o9.e(str15);
     }
 
     public final String a() {
-        if (p9.d(this.m)) {
+        if (o9.d(this.m)) {
             String str = this.a;
-            if (!p9.d(str)) {
-                this.m = p9.c(str, o) ? "American Express" : p9.c(str, p) ? "Discover" : p9.c(str, q) ? "JCB" : p9.c(str, r) ? "Diners Club" : p9.c(str, s) ? "Visa" : p9.c(str, t) ? "MasterCard" : "Unknown";
+            if (!o9.d(str)) {
+                this.m = o9.c(str, o) ? "American Express" : o9.c(str, p) ? "Discover" : o9.c(str, q) ? "JCB" : o9.c(str, r) ? "Diners Club" : o9.c(str, s) ? "Visa" : o9.c(str, t) ? "MasterCard" : "Unknown";
             }
         }
         return this.m;
     }
 
     public final String b() {
-        if (!p9.d(this.l)) {
+        if (!o9.d(this.l)) {
             return this.l;
         }
         String str = this.a;

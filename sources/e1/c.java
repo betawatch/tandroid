@@ -1,5 +1,6 @@
 package e1;
 
+import ai.o2;
 import android.app.Activity;
 import android.view.View;
 import android.widget.ImageView;
@@ -11,7 +12,7 @@ import b2.t1;
 import b2.y0;
 import c3.g;
 import c3.u;
-import ci.d6;
+import ci.e6;
 import com.google.android.gms.tasks.OnSuccessListener;
 import e2.m0;
 import e2.o;
@@ -42,7 +43,6 @@ import f2.w;
 import gi.l;
 import gi.s4;
 import hi.t;
-import i2.b0;
 import ig.d2;
 import ig.e1;
 import ig.f1;
@@ -79,14 +79,14 @@ import org.telegram.ui.Cells.i5;
 import org.telegram.ui.Cells.q8;
 import org.telegram.ui.Cells.v8;
 import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.kl0;
 import org.telegram.ui.Components.yl0;
-import qg.u1;
+import qg.v1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, yl0, Utilities.Callback5, u1, CameraController.VideoTakeCallback, g, o, w {
+public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, yl0, Utilities.Callback5, v1, CameraController.VideoTakeCallback, g, o, w {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -156,7 +156,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
         }
     }
 
-    @Override // qg.u1
+    @Override // qg.v1
     public void e() {
         xa xaVar = (xa) this.b;
         TextView textView = xaVar.o1;
@@ -209,7 +209,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                 }
                 break;
             case 7:
-                ((u5) this.b).a.p2.r();
+                ((u5) this.b).a.p2.s();
                 break;
             case 10:
                 ((gi.e) this.b).run();
@@ -220,7 +220,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                 updatestarrefprogram.bot = lVar.getMessagesController().getInputUser(lVar.P);
                 updatestarrefprogram.commission_permille = 0;
                 b2 b2Var2 = new b2(lVar.getParentActivity(), 3, null);
-                b2Var2.q(150L);
+                b2Var2.r(150L);
                 lVar.getConnectionsManager().sendRequest(updatestarrefprogram, new gi.b(lVar, b2Var2, 0));
                 break;
             default:
@@ -244,7 +244,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                         f7.a(c10.b);
                         TLRPC.TL_messages_deleteQuickReplyShortcut tL_messages_deleteQuickReplyShortcut = new TLRPC.TL_messages_deleteQuickReplyShortcut();
                         tL_messages_deleteQuickReplyShortcut.shortcut_id = c10.a;
-                        ConnectionsManager.getInstance(i12).sendRequest(tL_messages_deleteQuickReplyShortcut, new d6(6));
+                        ConnectionsManager.getInstance(i12).sendRequest(tL_messages_deleteQuickReplyShortcut, new e6(6));
                         if ("hello".equals(c10.b)) {
                             ConnectionsManager.getInstance(i12).sendRequest(new TL_account.updateBusinessGreetingMessage(), null);
                             TLRPC.UserFull userFull = MessagesController.getInstance(i12).getUserFull(UserConfig.getInstance(i12).getClientUserId());
@@ -286,7 +286,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                 ((d1) obj).onCues((d2.c) this.b);
                 break;
             case 17:
-                ((d1) obj).onMediaMetadataChanged(((b0) this.b).a.Q);
+                ((d1) obj).onMediaMetadataChanged(((i2.c0) this.b).a.Q);
                 break;
             case 18:
                 ((d1) obj).onMetadata((t0) this.b);
@@ -306,7 +306,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                 ((j2.b) obj).onSeekStarted((j2.a) this.b);
                 break;
             case 26:
-                ((j2.b) obj).a((i2.e) this.b);
+                ((j2.b) obj).a((i2.f) this.b);
                 break;
         }
     }
@@ -421,7 +421,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
     }
 
     @Override // e9.l1
-    public Object p(Object obj, Object obj2) {
+    public Object q(Object obj, Object obj2) {
         return s.x((List) ((Collection) obj2), new n4.s(16, ((q1) this.b).f, obj));
     }
 
@@ -431,12 +431,12 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
         switch (this.a) {
             case 5:
                 ma maVar = (ma) this.b;
-                f61 f61Var = (f61) obj;
+                g61 g61Var = (g61) obj;
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                int i11 = f61Var.d;
-                a8 a8Var = (a8) f61Var.G;
+                int i11 = g61Var.d;
+                a8 a8Var = (a8) g61Var.G;
                 maVar.c(false, true);
                 vb vbVar = maVar.O;
                 if (a8Var != vbVar.K1 && !vbVar.X1) {
@@ -464,16 +464,16 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                ((s4) this.b).V((f61) obj);
+                ((s4) this.b).V((g61) obj);
                 break;
             case 20:
                 f1 f1Var = (f1) this.b;
-                f61 f61Var2 = (f61) obj;
+                g61 g61Var2 = (g61) obj;
                 View view = (View) obj2;
                 ((Integer) obj3).getClass();
                 float floatValue = ((Float) obj4).floatValue();
                 ((Float) obj5).getClass();
-                int i12 = f61Var2.d;
+                int i12 = g61Var2.d;
                 if (i12 == -1) {
                     boolean z10 = !f1Var.e;
                     f1Var.e = z10;
@@ -484,12 +484,12 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                 } else if (i12 == -2) {
                     d2 d2Var = new d2(null);
                     d2Var.n = f1Var.r;
-                    d2Var.c = new ai.n2(24, f1Var, view);
+                    d2Var.c = new o2(24, f1Var, view);
                     f1Var.presentFragment(d2Var);
                     break;
-                } else if (f61Var2.a == 5 && i12 >= 0 && i12 < f1Var.h.length) {
+                } else if (g61Var2.a == 5 && i12 >= 0 && i12 < f1Var.h.length) {
                     if (!LocaleController.isRTL ? floatValue < view.getMeasuredWidth() - AndroidUtilities.dp(76.0f) : floatValue > AndroidUtilities.dp(76.0f)) {
-                        int i13 = (f61Var2.d + 6) % 7;
+                        int i13 = (g61Var2.d + 6) % 7;
                         int i14 = 0;
                         for (int i15 = 0; i15 < f1Var.h[i13].size(); i15++) {
                             if (((e1) f1Var.h[i13].get(i15)).b > i14) {
@@ -497,7 +497,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                             }
                         }
                         int max = Math.max(0, i14 - 1439);
-                        int i16 = (f61Var2.d + 1) % 7;
+                        int i16 = (g61Var2.d + 1) % 7;
                         int i17 = 1440;
                         for (int i18 = 0; i18 < f1Var.h[i16].size(); i18++) {
                             if (((e1) f1Var.h[i16].get(i18)).a < i17) {
@@ -505,8 +505,8 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                             }
                         }
                         int i19 = i17 + 1439;
-                        CharSequence charSequence = f61Var2.l;
-                        ArrayList arrayList = f1Var.h[f61Var2.d];
+                        CharSequence charSequence = g61Var2.l;
+                        ArrayList arrayList = f1Var.h[g61Var2.d];
                         int i20 = 0;
                         for (int i21 = 0; i21 < 7; i21++) {
                             ArrayList arrayList2 = f1Var.h[i21];
@@ -516,19 +516,19 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                         }
                         h1 h1Var = new h1(charSequence, arrayList, max, i19, 28 - i20);
                         h1Var.f = new bc(f1Var, 22);
-                        h1Var.h = new t(6, f1Var, f61Var2);
+                        h1Var.h = new t(6, f1Var, g61Var2);
                         f1Var.presentFragment(h1Var);
                         break;
                     } else {
-                        if (f1Var.h[f61Var2.d].isEmpty()) {
+                        if (f1Var.h[g61Var2.d].isEmpty()) {
                             ((i5) view).setChecked(true);
-                            f1Var.h[f61Var2.d].add(new e1(0, 1439));
-                            f1Var.X(f61Var2.d);
+                            f1Var.h[g61Var2.d].add(new e1(0, 1439));
+                            f1Var.X(g61Var2.d);
                         } else {
-                            f1Var.h[f61Var2.d].clear();
+                            f1Var.h[g61Var2.d].clear();
                             ((i5) view).setChecked(false);
                         }
-                        ((i5) view).setValue(f1.a0(f1Var.h[f61Var2.d]));
+                        ((i5) view).setValue(f1.a0(f1Var.h[g61Var2.d]));
                         f1Var.Y(true);
                         break;
                     }
@@ -536,7 +536,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                 break;
             case 21:
                 final h1 h1Var2 = (h1) this.b;
-                f61 f61Var3 = (f61) obj;
+                g61 g61Var3 = (g61) obj;
                 final View view2 = (View) obj2;
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
@@ -544,7 +544,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                 int i22 = h1Var2.c;
                 int i23 = h1Var2.d;
                 ArrayList arrayList3 = h1Var2.b;
-                int i24 = f61Var3.d;
+                int i24 = g61Var3.d;
                 if (i24 == -1) {
                     h1Var2.r = !h1Var2.r;
                     arrayList3.clear();
@@ -553,7 +553,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                     }
                     v8 v8Var = (v8) view2;
                     boolean z11 = h1Var2.r;
-                    f61Var3.e = z11;
+                    g61Var3.e = z11;
                     v8Var.setChecked(z11);
                     boolean z12 = h1Var2.r;
                     v8Var.b(h6.x0(null, z12 ? h6.f6 : h6.e6, false), z12);
@@ -571,7 +571,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                         int clamp = Utilities.clamp(480, i23 - 1, i22);
                         arrayList3.add(new e1(clamp, Utilities.clamp(1200, i23, clamp + 1)));
                     } else {
-                        int i25 = ((e1) i2.d.h(1, arrayList3)).b;
+                        int i25 = ((e1) i2.e.h(1, arrayList3)).b;
                         int clamp2 = Utilities.clamp(i25 + 30, i23 - 1, i22);
                         arrayList3.add(new e1(clamp2, Utilities.clamp((i25 + 1560) / 2, i23, clamp2 + 1)));
                     }
@@ -581,13 +581,13 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                     }
                     h1Var2.n.W2.N(true);
                     break;
-                } else if (f61Var3.a == 3 && (i10 = i24 / 3) >= 0 && i10 < arrayList3.size()) {
+                } else if (g61Var3.a == 3 && (i10 = i24 / 3) >= 0 && i10 < arrayList3.size()) {
                     int i26 = i10 - 1;
                     e1 e1Var = i26 >= 0 ? (e1) arrayList3.get(i26) : null;
                     final e1 e1Var2 = (e1) arrayList3.get(i10);
                     int i27 = i10 + 1;
                     e1 e1Var3 = i27 < arrayList3.size() ? (e1) arrayList3.get(i27) : null;
-                    int i28 = f61Var3.d % 3;
+                    int i28 = g61Var3.d % 3;
                     if (i28 == 0) {
                         Activity parentActivity = h1Var2.getParentActivity();
                         String string = LocaleController.getString(R.string.BusinessHoursDayOpenHourPicker);
@@ -705,7 +705,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                d2.U((d2) this.b, (f61) obj, (View) obj2);
+                d2.U((d2) this.b, (g61) obj, (View) obj2);
                 break;
         }
     }

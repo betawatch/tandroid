@@ -9,7 +9,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class iy implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -104,7 +104,7 @@ public final /* synthetic */ class iy implements View.OnClickListener {
                         if (stickerSet5 != null && stickerSet5.set != null) {
                             org.telegram.ui.ActionBar.n2 n2Var = tzVar2.Y1;
                             if (n2Var == null) {
-                                n2Var = new ai.z4(jyVar, 7);
+                                n2Var = new ai.a5(jyVar, 7);
                             }
                             aw.X(n2Var, stickerSet5, true, null, new hq(jyVar, 14));
                             break;
@@ -141,7 +141,7 @@ public final /* synthetic */ class iy implements View.OnClickListener {
                         if (stickerSet7 != null && stickerSet7.set != null) {
                             org.telegram.ui.ActionBar.n2 n2Var2 = tzVar3.Y1;
                             if (n2Var2 == null) {
-                                n2Var2 = new ai.z4(jyVar, 7);
+                                n2Var2 = new ai.a5(jyVar, 7);
                             }
                             org.telegram.ui.ActionBar.n2 n2Var3 = n2Var2;
                             yt ytVar = new yt(4, jyVar, stickerSet7);

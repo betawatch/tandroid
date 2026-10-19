@@ -2,7 +2,7 @@ package com.google.mlkit.vision.common.internal;
 
 import b2.m0;
 import com.google.firebase.components.ComponentRegistrar;
-import i2.d;
+import i2.e;
 import java.util.List;
 import r9.a;
 import r9.j;
@@ -12,7 +12,7 @@ import w7.ua;
 import xb.b;
 import xb.c;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class VisionCommonRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
@@ -24,7 +24,7 @@ public class VisionCommonRegistrar implements ComponentRegistrar {
         for (int i10 = 0; i10 < 1; i10++) {
             qa qaVar = sa.b;
             if (objArr[i10] == null) {
-                throw new NullPointerException(d.j(i10, "at index "));
+                throw new NullPointerException(e.j(i10, "at index "));
             }
         }
         qa qaVar2 = sa.b;

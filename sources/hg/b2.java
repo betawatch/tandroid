@@ -39,14 +39,14 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.StickersActivity;
-import org.telegram.ui.fh;
-import org.telegram.ui.pc0;
-import org.telegram.ui.r40;
-import org.telegram.ui.sn;
-import org.telegram.ui.v40;
+import org.telegram.ui.dh;
+import org.telegram.ui.nc0;
+import org.telegram.ui.p40;
+import org.telegram.ui.qn;
+import org.telegram.ui.t40;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b2 implements MediaDataController.KeywordResultCallback, e2.o, org.telegram.ui.ActionBar.a2, m4.o0, e2.j, NativeInstance.PayloadCallback, Utilities.Callback3Return, t5.b {
     public final /* synthetic */ int a;
@@ -224,15 +224,15 @@ public final /* synthetic */ class b2 implements MediaDataController.KeywordResu
                 StickersActivity.a0((StickersActivity) this.c, (ArrayList) this.d, this.b);
                 break;
             case 6:
-                sn snVar = (sn) this.c;
-                snVar.getMessagesController().pinMessage(snVar.e, snVar.f, this.b, false, !r10[1], ((boolean[]) this.d)[0]);
-                qc B = xc.B(snVar, true, null, null, snVar.ea);
+                qn qnVar = (qn) this.c;
+                qnVar.getMessagesController().pinMessage(qnVar.e, qnVar.f, this.b, false, !r10[1], ((boolean[]) this.d)[0]);
+                qc B = xc.B(qnVar, true, null, null, qnVar.ea);
                 B.j();
                 ub ubVar = B.e;
-                ubVar.postDelayed(new fh(0, ubVar), 550L);
+                ubVar.postDelayed(new dh(0, ubVar), 550L);
                 break;
             case 7:
-                sn.s0((sn) this.c, this.b, (MessageObject) this.d);
+                qn.s0((qn) this.c, this.b, (MessageObject) this.d);
                 break;
             case 8:
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
@@ -260,15 +260,15 @@ public final /* synthetic */ class b2 implements MediaDataController.KeywordResu
                     break;
                 }
             case 11:
-                r40 r40Var = (r40) this.c;
+                p40 p40Var = (p40) this.c;
                 EditTextBoldCursor editTextBoldCursor2 = (EditTextBoldCursor) this.d;
-                v40 v40Var = r40Var.n;
-                ChatObject.Call call = v40Var.b.a1;
+                t40 t40Var = p40Var.n;
+                ChatObject.Call call = t40Var.b.a1;
                 String obj3 = editTextBoldCursor2.getText().toString();
                 int i11 = this.b;
                 call.toggleRecord(obj3, i11);
                 AndroidUtilities.hideKeyboard(editTextBoldCursor2);
-                v40Var.b.l1().j(i11 == 0 ? 39 : 100, 0L, null);
+                t40Var.b.l1().j(i11 == 0 ? 39 : 100, 0L, null);
                 if (VoIPService.getSharedInstance() != null) {
                     VoIPService.getSharedInstance().playStartRecordSound();
                     break;
@@ -278,15 +278,15 @@ public final /* synthetic */ class b2 implements MediaDataController.KeywordResu
                 LaunchActivity launchActivity = (LaunchActivity) this.c;
                 HashMap hashMap = (HashMap) this.d;
                 ArrayList arrayList = launchActivity.d0;
-                if (!arrayList.isEmpty() && AndroidUtilities.isMapsInstalled((n2) i2.d.h(1, arrayList))) {
-                    pc0 pc0Var = new pc0(0);
-                    pc0Var.F0 = new i2.r(hashMap, this.b, 12);
-                    launchActivity.t0(pc0Var);
+                if (!arrayList.isEmpty() && AndroidUtilities.isMapsInstalled((n2) i2.e.h(1, arrayList))) {
+                    nc0 nc0Var = new nc0(0);
+                    nc0Var.F0 = new i2.s(hashMap, this.b, 12);
+                    launchActivity.t0(nc0Var);
                     break;
                 }
                 break;
             case 13:
-                ((pc0) this.c).v0(RichMessageLayout.PART_MAX_HEIGHT_DP, (TLRPC.User) this.d, this.b);
+                ((nc0) this.c).v0(RichMessageLayout.PART_MAX_HEIGHT_DP, (TLRPC.User) this.d, this.b);
                 break;
             case 14:
                 PasscodeActivity.U((PasscodeActivity) this.c, (od0) this.d, this.b);
@@ -376,7 +376,7 @@ public final /* synthetic */ class b2 implements MediaDataController.KeywordResu
         tL_stickers_addStickerToSet.sticker = MediaDataController.getInputStickerSetItem(document, str);
         ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_stickers_addStickerToSet, new sb(b2Var, i10, document, obj, tL_stickers_addStickerToSet, 8));
         try {
-            b2Var.q(350L);
+            b2Var.r(350L);
         } catch (Exception unused) {
         }
         return Boolean.TRUE;

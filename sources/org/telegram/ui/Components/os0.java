@@ -1,45 +1,53 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.graphics.Rect;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class os0 extends lu0 {
-    public final /* synthetic */ sv0 M;
+public final class os0 extends org.telegram.ui.e11 {
+    public final /* synthetic */ tv0 H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public os0(sv0 sv0Var, Context context) {
-        super(context);
-        this.M = sv0Var;
+    public os0(tv0 tv0Var, Context context, kw0 kw0Var, ci.w6 w6Var, ns0 ns0Var) {
+        super(context, kw0Var, w6Var, ns0Var);
+        this.H = tv0Var;
     }
 
-    @Override // android.view.View
-    public final void setTranslationX(float f7) {
-        lu0 lu0Var;
-        super.setTranslationX(f7);
-        sv0 sv0Var = this.M;
-        lu0[] lu0VarArr = sv0Var.k0;
-        if (sv0Var.g1 && (lu0Var = lu0VarArr[0]) == this) {
-            float abs = Math.abs(lu0Var.getTranslationX()) / lu0VarArr[0].getMeasuredWidth();
-            sv0Var.b1(abs, lu0VarArr[1].F);
-            if (sv0Var.D()) {
-                int i10 = sv0Var.x0;
-                if (i10 == 2) {
-                    sv0Var.o0 = 1.0f - abs;
-                } else if (i10 == 1) {
-                    sv0Var.o0 = abs;
+    @Override // org.telegram.ui.e11
+    public final void b() {
+        ss0 ss0Var;
+        int measuredWidth = getMeasuredWidth();
+        int visualHeight = (int) getVisualHeight();
+        Rect rect = this.F;
+        rect.set(0, 0, measuredWidth, visualHeight);
+        setClipBounds(rect);
+        invalidate();
+        tv0 tv0Var = this.H;
+        mu0[] mu0VarArr = tv0Var.k0;
+        if (mu0VarArr != null) {
+            for (mu0 mu0Var : mu0VarArr) {
+                if (mu0Var != null && (ss0Var = mu0Var.h) != null) {
+                    int paddingTop = ss0Var.getPaddingTop();
+                    ss0 ss0Var2 = mu0Var.h;
+                    int paddingLeft = ss0Var2.getPaddingLeft();
+                    int Z = tv0Var.Z(mu0Var.F);
+                    int paddingRight = mu0Var.h.getPaddingRight();
+                    ss0 ss0Var3 = mu0Var.h;
+                    int Y = tv0Var.Y(tv0Var.x0());
+                    ss0Var3.c3 = Y;
+                    ss0Var2.setPadding(paddingLeft, Z, paddingRight, Y);
+                    int paddingTop2 = paddingTop - mu0Var.h.getPaddingTop();
+                    if (paddingTop2 != 0) {
+                        AndroidUtilities.doOnLayout(mu0Var.h, new vr0(mu0Var, paddingTop2, 1));
+                    }
                 }
-                sv0Var.v1(abs);
-                float a02 = sv0Var.a0(abs);
-                sv0Var.p0 = a02;
-                sv0Var.r0.setVisibility((a02 == 0.0f || !sv0Var.D() || sv0Var.r0()) ? 4 : 0);
-            } else {
-                sv0Var.o0 = 0.0f;
+                if (mu0Var != null && mu0Var.v != null) {
+                    tv0Var.t1(mu0Var);
+                }
             }
-            sv0Var.s1(false);
         }
-        sv0Var.I();
-        sv0Var.K();
-        sv0Var.p0();
+        tv0Var.K();
     }
 }

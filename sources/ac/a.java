@@ -9,7 +9,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.os.SystemClock;
 import android.util.Log;
-import ci.u7;
+import ci.v7;
 import e2.g0;
 import e2.i0;
 import e2.n0;
@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import n6.l;
 import rb.j;
 import w7.f0;
-import w7.q8;
+import w7.p8;
 import x7.ja;
 import x7.ka;
 import x7.la;
@@ -28,7 +28,7 @@ import x7.na;
 import x7.oa;
 import x7.y;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class a implements b {
     public boolean a;
@@ -61,7 +61,7 @@ public final class a implements b {
         int i10 = aVar.e;
         int i11 = aVar.b;
         int i12 = aVar.c;
-        int a2 = q8.a(aVar.d);
+        int a2 = p8.a(aVar.d);
         long elapsedRealtime = SystemClock.elapsedRealtime();
         int i13 = aVar.e;
         if (i13 != -1) {
@@ -69,7 +69,7 @@ public final class a implements b {
                 if (i13 == 35) {
                     bVar = new x6.b(null);
                 } else if (i13 != 842094169) {
-                    throw new nb.a(i2.d.j(aVar.e, "Unsupported image format: "), 3);
+                    throw new nb.a(i2.e.j(aVar.e, "Unsupported image format: "), 3);
                 }
             }
             l.h(null);
@@ -121,7 +121,7 @@ public final class a implements b {
         }
         AtomicBoolean atomicBoolean = new AtomicBoolean(true);
         i0 i0Var2 = (i0) this.e;
-        i0Var2.a.postDelayed(new u7(20, this, atomicBoolean), 1000L);
+        i0Var2.a.postDelayed(new v7(20, this, atomicBoolean), 1000L);
         i0Var.d(new o0(this, atomicBoolean, z10, z11, 0));
     }
 

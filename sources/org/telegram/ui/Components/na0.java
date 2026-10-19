@@ -17,7 +17,7 @@ import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class na0 extends Drawable {
     public tv A;
@@ -701,9 +701,9 @@ public final class na0 extends Drawable {
                                 if ((i55 != 0 && i55 != 1) || i55 == 4) {
                                     canvas2.scale(f16, f16);
                                 }
-                                org.telegram.ui.ActionBar.h6.x3.b(f70, canvas2, paint2);
+                                org.telegram.ui.ActionBar.h6.x3.b(canvas2, paint2, f70);
                                 canvas2.scale(1.0f, -1.0f);
-                                org.telegram.ui.ActionBar.h6.x3.b(f70, canvas2, paint2);
+                                org.telegram.ui.ActionBar.h6.x3.b(canvas2, paint2, f70);
                                 canvas2.restore();
                             } else {
                                 i22 = 1;

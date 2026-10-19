@@ -3,9 +3,9 @@ package org.telegram.ui.ActionBar;
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ze;
+import org.telegram.ui.xe;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class x {
     public y a;
@@ -77,16 +77,16 @@ public final class x {
         }
     }
 
-    public final void b(ze zeVar) {
+    public final void b(xe xeVar) {
         u0 u0Var = this.m;
         if (u0Var != null) {
-            zeVar.run(u0Var);
+            xeVar.run(u0Var);
             return;
         }
         if (this.n == null) {
             this.n = new ArrayList();
         }
-        this.n.add(zeVar);
+        this.n.add(xeVar);
     }
 
     public final void c() {

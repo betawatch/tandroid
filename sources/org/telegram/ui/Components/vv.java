@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class vv extends FrameLayout {
     public final x90 a;
@@ -27,7 +27,7 @@ public final class vv extends FrameLayout {
     public final sg.q0 e;
     public final org.telegram.ui.ActionBar.u0 f;
     public final boolean h;
-    public final ai.z4 n;
+    public final ai.a5 n;
     public TLRPC.TL_messages_stickerSet r;
     public boolean s;
     public float v;
@@ -47,7 +47,7 @@ public final class vv extends FrameLayout {
         float f11;
         org.telegram.ui.ActionBar.d6 d6Var4;
         this.x = awVar;
-        this.n = new ai.z4(this, 6);
+        this.n = new ai.a5(this, 6);
         final int i12 = 0;
         this.s = false;
         this.v = 0.0f;
@@ -91,12 +91,12 @@ public final class vv extends FrameLayout {
                                 vvVar.a(true, true);
                                 break;
                             case 2:
-                                ai.z4 z4Var = vvVar.n;
+                                ai.a5 a5Var = vvVar.n;
                                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = vvVar.r;
                                 hq hqVar = new hq(vvVar, 12);
                                 Pattern pattern = aw.V;
-                                if (z4Var != null && tL_messages_stickerSet != null && z4Var.getFragmentView() != null) {
-                                    MediaDataController.getInstance(z4Var.getCurrentAccount()).toggleStickerSet(z4Var.getFragmentView().getContext(), tL_messages_stickerSet, 0, z4Var, true, true, hqVar, true);
+                                if (a5Var != null && tL_messages_stickerSet != null && a5Var.getFragmentView() != null) {
+                                    MediaDataController.getInstance(a5Var.getCurrentAccount()).toggleStickerSet(a5Var.getFragmentView().getContext(), tL_messages_stickerSet, 0, a5Var, true, true, hqVar, true);
                                 }
                                 vvVar.a(false, true);
                                 break;
@@ -149,12 +149,12 @@ public final class vv extends FrameLayout {
                             vvVar.a(true, true);
                             break;
                         case 2:
-                            ai.z4 z4Var = vvVar.n;
+                            ai.a5 a5Var = vvVar.n;
                             TLRPC.TL_messages_stickerSet tL_messages_stickerSet = vvVar.r;
                             hq hqVar = new hq(vvVar, 12);
                             Pattern pattern = aw.V;
-                            if (z4Var != null && tL_messages_stickerSet != null && z4Var.getFragmentView() != null) {
-                                MediaDataController.getInstance(z4Var.getCurrentAccount()).toggleStickerSet(z4Var.getFragmentView().getContext(), tL_messages_stickerSet, 0, z4Var, true, true, hqVar, true);
+                            if (a5Var != null && tL_messages_stickerSet != null && a5Var.getFragmentView() != null) {
+                                MediaDataController.getInstance(a5Var.getCurrentAccount()).toggleStickerSet(a5Var.getFragmentView().getContext(), tL_messages_stickerSet, 0, a5Var, true, true, hqVar, true);
                             }
                             vvVar.a(false, true);
                             break;
@@ -196,12 +196,12 @@ public final class vv extends FrameLayout {
                             vvVar.a(true, true);
                             break;
                         case 2:
-                            ai.z4 z4Var = vvVar.n;
+                            ai.a5 a5Var = vvVar.n;
                             TLRPC.TL_messages_stickerSet tL_messages_stickerSet = vvVar.r;
                             hq hqVar = new hq(vvVar, 12);
                             Pattern pattern = aw.V;
-                            if (z4Var != null && tL_messages_stickerSet != null && z4Var.getFragmentView() != null) {
-                                MediaDataController.getInstance(z4Var.getCurrentAccount()).toggleStickerSet(z4Var.getFragmentView().getContext(), tL_messages_stickerSet, 0, z4Var, true, true, hqVar, true);
+                            if (a5Var != null && tL_messages_stickerSet != null && a5Var.getFragmentView() != null) {
+                                MediaDataController.getInstance(a5Var.getCurrentAccount()).toggleStickerSet(a5Var.getFragmentView().getContext(), tL_messages_stickerSet, 0, a5Var, true, true, hqVar, true);
                             }
                             vvVar.a(false, true);
                             break;
@@ -286,12 +286,12 @@ public final class vv extends FrameLayout {
                             vvVar.a(true, true);
                             break;
                         case 2:
-                            ai.z4 z4Var = vvVar.n;
+                            ai.a5 a5Var = vvVar.n;
                             TLRPC.TL_messages_stickerSet tL_messages_stickerSet = vvVar.r;
                             hq hqVar = new hq(vvVar, 12);
                             Pattern pattern = aw.V;
-                            if (z4Var != null && tL_messages_stickerSet != null && z4Var.getFragmentView() != null) {
-                                MediaDataController.getInstance(z4Var.getCurrentAccount()).toggleStickerSet(z4Var.getFragmentView().getContext(), tL_messages_stickerSet, 0, z4Var, true, true, hqVar, true);
+                            if (a5Var != null && tL_messages_stickerSet != null && a5Var.getFragmentView() != null) {
+                                MediaDataController.getInstance(a5Var.getCurrentAccount()).toggleStickerSet(a5Var.getFragmentView().getContext(), tL_messages_stickerSet, 0, a5Var, true, true, hqVar, true);
                             }
                             vvVar.a(false, true);
                             break;

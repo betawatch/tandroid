@@ -6,7 +6,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import java.util.HashSet;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements OnSuccessListener, OnFailureListener, d6.h {
     public final /* synthetic */ u a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void g(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void h(d6.f fVar, int i10) {
     }
 
     @Override // d6.h
@@ -28,7 +28,7 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public void j(d6.f fVar, int i10) {
+    public void n(d6.f fVar, int i10) {
         g6.b bVar = u.i;
         bVar.b("onSessionEnded with error = %d", Integer.valueOf(i10));
         u uVar = this.a;
@@ -68,10 +68,6 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
         uVar.c();
     }
 
-    @Override // d6.h
-    public /* bridge */ /* synthetic */ void n(d6.f fVar) {
-    }
-
     @Override // com.google.android.gms.tasks.OnFailureListener
     public void onFailure(Exception exc) {
         u uVar = this.a;
@@ -92,15 +88,19 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void s(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void p(d6.f fVar) {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void u(d6.f fVar) {
+    public /* bridge */ /* synthetic */ void q(d6.f fVar, int i10) {
     }
 
     @Override // d6.h
-    public void w(d6.f fVar, String str) {
+    public /* bridge */ /* synthetic */ void r(d6.f fVar) {
+    }
+
+    @Override // d6.h
+    public void v(d6.f fVar, String str) {
         c6.k kVar;
         g6.b bVar = u.i;
         u uVar = this.a;
@@ -132,6 +132,6 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void x(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void w(d6.f fVar, int i10) {
     }
 }

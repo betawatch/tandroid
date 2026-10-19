@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class po extends LinearLayout {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -61,9 +61,9 @@ public final class po extends LinearLayout {
         }
         TextView textView3 = new TextView(activity);
         if (i10 == 0) {
-            org.telegram.messenger.lk.j(15.0f, R.string.EncryptedDescriptionTitle, 1, textView3);
+            org.telegram.messenger.kk.j(15.0f, R.string.EncryptedDescriptionTitle, 1, textView3);
         } else if (i10 == 1) {
-            org.telegram.messenger.lk.j(15.0f, R.string.GroupEmptyTitle2, 1, textView3);
+            org.telegram.messenger.kk.j(15.0f, R.string.GroupEmptyTitle2, 1, textView3);
         } else {
             textView3.setText(LocaleController.getString(R.string.ChatYourSelfTitle));
             textView3.setTextSize(1, 16.0f);

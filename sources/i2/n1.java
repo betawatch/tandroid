@@ -1,121 +1,24 @@
 package i2;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final class n1 extends a {
-    public final int h;
-    public final int i;
-    public final int[] j;
-    public final int[] k;
-    public final b2.o1[] l;
-    public final Object[] m;
-    public final HashMap n;
+public final class n1 extends u2.s {
+    public final b2.n1 f;
 
-    public n1(b2.o1[] o1VarArr, Object[] objArr, u2.j1 j1Var) {
-        super(j1Var);
-        int length = o1VarArr.length;
-        this.l = o1VarArr;
-        this.j = new int[length];
-        this.k = new int[length];
-        this.m = objArr;
-        this.n = new HashMap();
-        int length2 = o1VarArr.length;
-        int i10 = 0;
-        int i11 = 0;
-        int i12 = 0;
-        int i13 = 0;
-        while (i10 < length2) {
-            b2.o1 o1Var = o1VarArr[i10];
-            this.l[i13] = o1Var;
-            this.k[i13] = i11;
-            this.j[i13] = i12;
-            i11 += o1Var.o();
-            i12 += this.l[i13].h();
-            this.n.put(objArr[i13], Integer.valueOf(i13));
-            i10++;
-            i13++;
+    public n1(b2.o1 o1Var) {
+        super(o1Var);
+        this.f = new b2.n1();
+    }
+
+    @Override // u2.s, b2.o1
+    public final b2.l1 f(int i10, b2.l1 l1Var, boolean z10) {
+        b2.o1 o1Var = this.e;
+        b2.l1 f7 = o1Var.f(i10, l1Var, z10);
+        if (o1Var.m(f7.c, this.f, 0L).a()) {
+            f7.h(l1Var.a, l1Var.b, l1Var.c, l1Var.d, l1Var.e, b2.c.c, true);
+            return f7;
         }
-        this.h = i11;
-        this.i = i12;
-    }
-
-    @Override // b2.o1
-    public final int h() {
-        return this.i;
-    }
-
-    @Override // b2.o1
-    public final int o() {
-        return this.h;
-    }
-
-    @Override // i2.a
-    public final int q(Object obj) {
-        Integer num = (Integer) this.n.get(obj);
-        if (num == null) {
-            return -1;
-        }
-        return num.intValue();
-    }
-
-    @Override // i2.a
-    public final int r(int i10) {
-        return e2.m0.e(this.j, i10 + 1, false, false);
-    }
-
-    @Override // i2.a
-    public final int s(int i10) {
-        return e2.m0.e(this.k, i10 + 1, false, false);
-    }
-
-    @Override // i2.a
-    public final Object t(int i10) {
-        return this.m[i10];
-    }
-
-    @Override // i2.a
-    public final int u(int i10) {
-        return this.j[i10];
-    }
-
-    @Override // i2.a
-    public final int v(int i10) {
-        return this.k[i10];
-    }
-
-    @Override // i2.a
-    public final b2.o1 x(int i10) {
-        return this.l[i10];
-    }
-
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public n1(ArrayList arrayList, u2.j1 j1Var) {
-        this(r0, r1, j1Var);
-        b2.o1[] o1VarArr = new b2.o1[arrayList.size()];
-        int size = arrayList.size();
-        int i10 = 0;
-        int i11 = 0;
-        int i12 = 0;
-        while (i12 < size) {
-            Object obj = arrayList.get(i12);
-            i12++;
-            o1VarArr[i11] = ((z0) obj).b();
-            i11++;
-        }
-        Object[] objArr = new Object[arrayList.size()];
-        int size2 = arrayList.size();
-        int i13 = 0;
-        while (i13 < size2) {
-            Object obj2 = arrayList.get(i13);
-            i13++;
-            objArr[i10] = ((z0) obj2).a();
-            i10++;
-        }
+        f7.f = true;
+        return f7;
     }
 }

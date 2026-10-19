@@ -1,6 +1,6 @@
 package com.google.firebase.messaging;
 
-import ai.m6;
+import ai.n6;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Message;
@@ -38,7 +38,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import z9.t0;
 import z9.z0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class r {
     public static r f;
@@ -643,17 +643,17 @@ public final class r {
     }
 
     public void t(View view) {
-        m6 m6Var = (m6) this.e;
+        n6 n6Var = (n6) this.e;
         if (((View) this.c) == view) {
             return;
         }
         u(null);
         View view2 = (View) this.c;
         if (view2 != null) {
-            view2.removeOnAttachStateChangeListener(m6Var);
+            view2.removeOnAttachStateChangeListener(n6Var);
         }
         if (view != null) {
-            view.addOnAttachStateChangeListener(m6Var);
+            view.addOnAttachStateChangeListener(n6Var);
             if (view.isAttachedToWindow()) {
                 u(view.getViewTreeObserver());
             }
@@ -664,7 +664,7 @@ public final class r {
     public String toString() {
         switch (this.a) {
             case 10:
-                return ((le.b) this.e).toString();
+                return ((te.b) this.e).toString();
             default:
                 return super.toString();
         }
@@ -688,7 +688,7 @@ public final class r {
     public Task v(Callable callable) {
         Task continueWith;
         synchronized (this.d) {
-            continueWith = ((Task) this.c).continueWith((Executor) this.b, new le.b(callable, 27));
+            continueWith = ((Task) this.c).continueWith((Executor) this.b, new te.b(callable, 6));
             this.c = continueWith.continueWith((Executor) this.b, new rb.b(26));
         }
         return continueWith;
@@ -697,7 +697,7 @@ public final class r {
     public Task w(Callable callable) {
         Task continueWithTask;
         synchronized (this.d) {
-            continueWithTask = ((Task) this.c).continueWithTask((Executor) this.b, new le.b(callable, 27));
+            continueWithTask = ((Task) this.c).continueWithTask((Executor) this.b, new te.b(callable, 6));
             this.c = continueWithTask.continueWith((Executor) this.b, new rb.b(26));
         }
         return continueWithTask;
@@ -713,7 +713,7 @@ public final class r {
 
     public r(z3 z3Var) {
         this.a = 11;
-        this.e = new m6(this, 12);
+        this.e = new n6(this, 12);
         this.b = z3Var;
     }
 
@@ -769,7 +769,7 @@ public final class r {
         executorService.execute(new p8.b(this, 10));
     }
 
-    public r(le.b bVar, Object obj, Object obj2, Object[] objArr) {
+    public r(te.b bVar, Object obj, Object obj2, Object[] objArr) {
         this.a = 10;
         this.e = bVar;
         this.b = obj;

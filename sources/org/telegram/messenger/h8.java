@@ -1,36 +1,51 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.Timer;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ BaseController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ a0.h d;
+    public final /* synthetic */ Runnable e;
+    public final /* synthetic */ BaseController f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ h8(BaseController baseController, long j10, long j11, int i10, int i11, int i12) {
-        this.a = i12;
-        this.b = baseController;
-        this.c = j10;
-        this.d = j11;
-        this.e = i10;
-        this.f = i11;
+    public /* synthetic */ h8(MediaDataController mediaDataController, Timer.Task task, Timer timer, ArrayList arrayList, long j10, a0.h hVar, Runnable runnable) {
+        this.f = mediaDataController;
+        this.h = task;
+        this.n = timer;
+        this.c = arrayList;
+        this.b = j10;
+        this.d = hVar;
+        this.e = runnable;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.b).lambda$getMediaCountDatabase$139(this.c, this.d, this.e, this.f);
-                break;
-            case 1:
-                ((MediaDataController) this.b).lambda$putMediaCountDatabase$138(this.c, this.d, this.e, this.f);
+                ((MediaDataController) this.f).lambda$loadReplyMessagesForMessages$171((Timer.Task) this.h, (Timer) this.n, this.c, this.b, this.d, this.e);
                 break;
             default:
-                ((MessagesStorage) this.b).lambda$updateRepliesMaxReadId$193(this.c, this.d, this.e, this.f);
+                ((TopicsController) this.f).lambda$reloadTopics$13((TLRPC.TL_messages_savedDialogs) this.h, this.b, this.c, this.d, (HashSet) this.n, this.e);
                 break;
         }
+    }
+
+    public /* synthetic */ h8(TopicsController topicsController, TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs, long j10, ArrayList arrayList, a0.h hVar, HashSet hashSet, Runnable runnable) {
+        this.f = topicsController;
+        this.h = tL_messages_savedDialogs;
+        this.b = j10;
+        this.c = arrayList;
+        this.d = hVar;
+        this.n = hashSet;
+        this.e = runnable;
     }
 }

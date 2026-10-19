@@ -6,7 +6,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.widget.ImageView;
-import ci.k4;
+import ci.l4;
 import com.google.android.gms.internal.play_billing.k3;
 import java.util.Date;
 import org.telegram.messenger.AndroidUtilities;
@@ -22,13 +22,13 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.j5;
-import org.telegram.ui.Components.ex0;
+import org.telegram.ui.Components.fx0;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.xp;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class k extends wg.c {
     public boolean E;
@@ -37,7 +37,7 @@ public final class k extends wg.c {
     public TLRPC.User H;
     public TLRPC.Chat I;
     public TL_stories.TL_myBoost J;
-    public final ex0 K;
+    public final fx0 K;
     public final boolean[] s;
     public final xp v;
     public final ImageView w;
@@ -48,7 +48,7 @@ public final class k extends wg.c {
         super(context, d6Var);
         this.s = new boolean[1];
         this.G = true;
-        this.K = new ex0(this);
+        this.K = new fx0(this);
         this.d.setTypeface(AndroidUtilities.bold());
         this.f.setVisibility(8);
         if (z11) {
@@ -238,9 +238,9 @@ public final class k extends wg.c {
         w9Var.setRoundRadius(dp);
         w9Var.e(chat, h9Var);
         String str = chat.title;
-        k4 k4Var = this.d;
-        k4Var.k(str);
-        k4Var.i(null);
+        l4 l4Var = this.d;
+        l4Var.k(str);
+        l4Var.i(null);
         if (i10 <= 0) {
             i10 = chat.participants_count;
         }
@@ -293,20 +293,20 @@ public final class k extends wg.c {
         w9Var.setRoundRadius(dp);
         w9Var.e(this.I, h9Var);
         String str = this.I.title;
-        k4 k4Var = this.d;
-        k4Var.k(str);
+        l4 l4Var = this.d;
+        l4Var.k(str);
         int w02 = h6.w0(h6.r5, this.a);
         j5 j5Var = this.e;
         j5Var.setTextColor(w02);
         setSubtitle(LocaleController.formatString(R.string.BoostExpireOn, LocaleController.getInstance().getFormatterBoostExpired().format(new Date(tL_myBoost.expires * 1000))));
         int i10 = tL_myBoost.cooldown_until_date;
         if (i10 <= 0) {
-            k4Var.setAlpha(1.0f);
+            l4Var.setAlpha(1.0f);
             j5Var.setAlpha(1.0f);
             i(1.0f, false);
         } else {
             setSubtitle(LocaleController.formatString(R.string.BoostingAvailableIn, f((i10 * 1000) - System.currentTimeMillis())));
-            k4Var.setAlpha(0.65f);
+            l4Var.setAlpha(0.65f);
             j5Var.setAlpha(0.65f);
             i(0.3f, false);
         }
@@ -333,8 +333,8 @@ public final class k extends wg.c {
         w9Var.setRoundRadius(dp);
         w9Var.e(user, h9Var);
         String userName = UserObject.getUserName(user);
-        k4 k4Var = this.d;
-        k4Var.k(userName);
+        l4 l4Var = this.d;
+        l4Var.k(userName);
         boolean[] zArr = this.s;
         zArr[0] = false;
         if (UserObject.isBot(user)) {
@@ -354,7 +354,7 @@ public final class k extends wg.c {
         }
         int x02 = h6.x0(null, h6.z9, false);
         boolean s10 = k3.s(user);
-        ex0 ex0Var = this.K;
-        k4Var.i(s10 ? ex0Var.a(user, null, x02, false) : ex0Var.a(null, null, x02, false));
+        fx0 fx0Var = this.K;
+        l4Var.i(s10 ? fx0Var.a(user, null, x02, false) : fx0Var.a(null, null, x02, false));
     }
 }

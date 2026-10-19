@@ -16,7 +16,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class kg0 extends FrameLayout {
     public float E;
@@ -42,9 +42,9 @@ public abstract class kg0 extends FrameLayout {
     public boolean x;
     public TLRPC.WebPage y;
 
-    public static void a(org.telegram.ui.qt0 qt0Var, String str) {
-        int videoDuration = qt0Var.getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
-        ArrayList arrayList = qt0Var.v;
+    public static void a(org.telegram.ui.ot0 ot0Var, String str) {
+        int videoDuration = ot0Var.getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
+        ArrayList arrayList = ot0Var.v;
         arrayList.clear();
         if (videoDuration <= 15) {
             return;
@@ -183,7 +183,7 @@ public abstract class kg0 extends FrameLayout {
             f();
         }
         if (z10) {
-            AndroidUtilities.runOnUIThread(new ai.t3(this, j10, 25), 100L);
+            AndroidUtilities.runOnUIThread(new ai.v3(this, j10, 25), 100L);
             return;
         }
         h("seekTo(" + Math.round(j10 / 1000.0f) + ", true);");

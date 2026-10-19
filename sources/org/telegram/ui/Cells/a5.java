@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class a5 extends FrameLayout {
     public boolean E;
@@ -35,7 +35,7 @@ public final class a5 extends FrameLayout {
     public int K;
     public z4 L;
     public final int M;
-    public final ci.x7 N;
+    public final ci.y7 N;
     public final y4 a;
     public final org.telegram.ui.ActionBar.j5 b;
     public final org.telegram.ui.ActionBar.j5 c;
@@ -55,7 +55,7 @@ public final class a5 extends FrameLayout {
         super(context);
         this.K = -1;
         this.M = UserConfig.selectedAccount;
-        this.N = new ci.x7(null, false);
+        this.N = new ci.y7(null, false);
         this.d = d6Var;
         this.H = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.y6, d6Var);
         this.I = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.n6, d6Var);
@@ -324,7 +324,7 @@ public final class a5 extends FrameLayout {
         return this.n;
     }
 
-    public ci.x7 getStoryAvatarParams() {
+    public ci.y7 getStoryAvatarParams() {
         return this.N;
     }
 

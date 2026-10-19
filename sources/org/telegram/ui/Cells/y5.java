@@ -15,14 +15,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class y5 extends FrameLayout {
     public org.telegram.ui.Components.w9 a;
     public FrameLayout b;
     public xp c;
     public TextView d;
-    public ai.n5 e;
+    public ai.o5 e;
     public int f;
     public int h;
 
@@ -38,7 +38,7 @@ public final class y5 extends FrameLayout {
     }
 
     public void setImage(MediaController.PhotoEntry photoEntry) {
-        ai.n5 n5Var = this.e;
+        ai.o5 o5Var = this.e;
         org.telegram.ui.Components.w9 w9Var = this.a;
         Drawable drawable = getResources().getDrawable(R.drawable.nophotos);
         String str = photoEntry.thumbPath;
@@ -52,18 +52,18 @@ public final class y5 extends FrameLayout {
         }
         w9Var.p(photoEntry.orientation, photoEntry.invert, true);
         if (photoEntry.isLivePhoto()) {
-            n5Var.setVisibility(4);
+            o5Var.setVisibility(4);
             setContentDescription(LocaleController.getString(R.string.AttachLivePhoto));
             w9Var.f("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
             return;
         }
         if (!photoEntry.isVideo) {
-            n5Var.setVisibility(4);
+            o5Var.setVisibility(4);
             setContentDescription(LocaleController.getString(R.string.AttachPhoto));
             w9Var.f("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
             return;
         }
-        n5Var.setVisibility(0);
+        o5Var.setVisibility(0);
         this.d.setText(AndroidUtilities.formatShortDuration(photoEntry.duration));
         StringBuilder sb2 = new StringBuilder();
         c1.n(R.string.AttachVideo, ", ", sb2);

@@ -2,22 +2,32 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class rv0 {
-    public final int a;
-    public final int b;
-    public final qv0 c;
-    public final pv0 d;
-    public final /* synthetic */ sv0 e;
+public final class rv0 extends qv0 {
+    public final /* synthetic */ sv0 G;
 
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public rv0(sv0 sv0Var, Context context, int i10) {
-        this.e = sv0Var;
-        this.b = i10;
-        int i11 = sv0Var.a2;
-        sv0Var.a2 = i11 + 1;
-        this.a = (i11 & 65535) | 65536;
-        this.c = new qv0(this, context, i10);
-        this.d = new pv0(sv0Var, context, i10, false);
+        super(sv0Var.e, context, i10, false);
+        this.G = sv0Var;
+    }
+
+    @Override // org.telegram.ui.Components.qv0, s4.g0
+    public final void l() {
+        super.l();
+        sv0 sv0Var = this.G;
+        tv0 tv0Var = sv0Var.e;
+        int i10 = sv0Var.a;
+        int[] iArr = tv0.d2;
+        mu0 W = tv0Var.W(i10);
+        if (W != null && W.r.getVisibility() == 0) {
+            sv0Var.d.l();
+        }
+        if (W != null) {
+            dt0 dt0Var = W.w;
+            ci.a7 a7Var = this.s;
+            dt0Var.e(a7Var != null && (a7Var.k() || (tv0Var.j0() && this.s.g() > 0)), true);
+        }
     }
 }

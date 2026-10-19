@@ -10,9 +10,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.Components.ed;
-import org.telegram.ui.web.a2;
+import org.telegram.ui.web.z1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class b {
                             case 0:
                                 e eVar2 = eVar;
                                 if (eVar2.a == 4) {
-                                    eVar2.j.a.v().removeView(eVar2.f);
+                                    eVar2.j.a.u().removeView(eVar2.f);
                                     eVar2.i = null;
                                     eVar2.f = null;
                                     eVar2.g = null;
@@ -116,7 +116,7 @@ public final /* synthetic */ class b {
                             case 0:
                                 e eVar22 = eVar2;
                                 if (eVar22.a == 4) {
-                                    eVar22.j.a.v().removeView(eVar22.f);
+                                    eVar22.j.a.u().removeView(eVar22.f);
                                     eVar22.i = null;
                                     eVar22.f = null;
                                     eVar22.g = null;
@@ -200,7 +200,7 @@ public final /* synthetic */ class b {
                 Log.i("PIP_DEBUG", "[HANDLER] on old source render first frame " + z10);
                 z5 z5Var2 = this.b.h;
                 Objects.requireNonNull(z5Var2);
-                AndroidUtilities.runOnUIThread(new a2(z5Var2, 28));
+                AndroidUtilities.runOnUIThread(new z1(z5Var2, 28));
                 break;
             default:
                 final int i12 = 0;
@@ -213,7 +213,7 @@ public final /* synthetic */ class b {
                             case 0:
                                 e eVar22 = eVar3;
                                 if (eVar22.a == 4) {
-                                    eVar22.j.a.v().removeView(eVar22.f);
+                                    eVar22.j.a.u().removeView(eVar22.f);
                                     eVar22.i = null;
                                     eVar22.f = null;
                                     eVar22.g = null;

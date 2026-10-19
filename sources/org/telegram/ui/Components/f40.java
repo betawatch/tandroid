@@ -13,13 +13,13 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class f40 extends bb {
     public final LinearLayout X;
-    public s61 Y;
+    public t61 Y;
 
-    public f40(Activity activity, org.telegram.ui.ActionBar.d6 d6Var, TLRPC.User user, TLObject tLObject, org.telegram.ui.tp tpVar) {
+    public f40(Activity activity, org.telegram.ui.ActionBar.d6 d6Var, TLRPC.User user, TLObject tLObject, org.telegram.ui.rp rpVar) {
         super(activity, null, false, false, 1, d6Var);
         fixNavigationBar();
         LinearLayout linearLayout = new LinearLayout(activity);
@@ -28,8 +28,8 @@ public final class f40 extends bb {
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         FrameLayout frameLayout = new FrameLayout(activity);
-        org.telegram.ui.qz0 Q = Q(activity, AndroidUtilities.dp(60.0f), user);
-        org.telegram.ui.qz0 Q2 = Q(activity, AndroidUtilities.dp(60.0f), tLObject);
+        org.telegram.ui.oz0 Q = Q(activity, AndroidUtilities.dp(60.0f), user);
+        org.telegram.ui.oz0 Q2 = Q(activity, AndroidUtilities.dp(60.0f), tLObject);
         ImageView imageView = new ImageView(activity);
         imageView.setImageResource(R.drawable.msg_arrow_avatar);
         imageView.setColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.z6, d6Var));
@@ -46,7 +46,7 @@ public final class f40 extends bb {
         TextView textView = new TextView(activity);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
-        org.telegram.messenger.lk.j(20.0f, R.string.GuardBotReplaceTitle, 1, textView);
+        org.telegram.messenger.kk.j(20.0f, R.string.GuardBotReplaceTitle, 1, textView);
         int i10 = org.telegram.ui.ActionBar.h6.G6;
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(i10, d6Var));
         linearLayout.addView(textView, w7.z5.t(-1, -2, 17, 20, 0, 20, 6));
@@ -62,7 +62,7 @@ public final class f40 extends bb {
         ei.d dVar = new ei.d(activity, d6Var, true);
         dVar.e();
         dVar.g(LocaleController.formatString(R.string.GuardBotReplaceUseNew, shortName2), false, true);
-        dVar.setOnClickListener(new ca(16, this, tpVar));
+        dVar.setOnClickListener(new ca(16, this, rpVar));
         linearLayout.addView(dVar, w7.z5.k(14.0f, 0.0f, 14.0f, 10.0f, -1, 48));
         ei.d dVar2 = new ei.d(activity, d6Var, true);
         dVar2.e();
@@ -76,14 +76,14 @@ public final class f40 extends bb {
         this.Y.N(false);
     }
 
-    public static org.telegram.ui.qz0 Q(Context context, int i10, TLObject tLObject) {
-        org.telegram.ui.qz0 qz0Var = new org.telegram.ui.qz0(context);
-        qz0Var.setRoundRadius(i10 / 2);
+    public static org.telegram.ui.oz0 Q(Context context, int i10, TLObject tLObject) {
+        org.telegram.ui.oz0 oz0Var = new org.telegram.ui.oz0(context);
+        oz0Var.setRoundRadius(i10 / 2);
         h9 h9Var = new h9((org.telegram.ui.ActionBar.d6) null);
         h9Var.p(tLObject);
-        qz0Var.setImageDrawable(h9Var);
-        qz0Var.setLayoutParams(new FrameLayout.LayoutParams(i10, i10));
-        return qz0Var;
+        oz0Var.setImageDrawable(h9Var);
+        oz0Var.setLayoutParams(new FrameLayout.LayoutParams(i10, i10));
+        return oz0Var;
     }
 
     @Override // org.telegram.ui.Components.bb
@@ -93,9 +93,9 @@ public final class f40 extends bb {
 
     @Override // org.telegram.ui.Components.bb
     public final hm0 x(im0 im0Var) {
-        s61 s61Var = new s61(this.d, getContext(), this.currentAccount, 0, true, new d(this, 14), this.resourcesProvider);
-        this.Y = s61Var;
-        s61Var.r = false;
-        return s61Var;
+        t61 t61Var = new t61(this.d, getContext(), this.currentAccount, 0, true, new d(this, 14), this.resourcesProvider);
+        this.Y = t61Var;
+        t61Var.r = false;
+        return t61Var;
     }
 }

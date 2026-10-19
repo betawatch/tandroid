@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class ah0 extends Drawable {
     public final Paint a;
@@ -91,9 +91,9 @@ public final class ah0 extends Drawable {
                 se0Var = org.telegram.ui.ActionBar.h6.x3;
                 if (se0Var != null) {
                     Paint paint = this.a;
-                    se0Var.b(f11, canvas2, paint);
+                    se0Var.b(canvas2, paint, f11);
                     canvas2.scale(1.0f, -1.0f);
-                    org.telegram.ui.ActionBar.h6.x3.b(f11, canvas2, paint);
+                    org.telegram.ui.ActionBar.h6.x3.b(canvas2, paint, f11);
                 }
                 canvas2.restore();
             }

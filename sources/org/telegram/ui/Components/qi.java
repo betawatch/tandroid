@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class qi extends hm0 {
     public int E;
@@ -53,7 +53,7 @@ public final class qi extends hm0 {
     public final int h() {
         int i10 = this.J;
         ti tiVar = this.K;
-        return (tiVar.K1 == null && (tiVar.f0 instanceof org.telegram.ui.sn) && !tiVar.H) ? MediaDataController.getInstance(tiVar.M1).inlineBots.size() + i10 : i10;
+        return (tiVar.K1 == null && (tiVar.f0 instanceof org.telegram.ui.qn) && !tiVar.H) ? MediaDataController.getInstance(tiVar.M1).inlineBots.size() + i10 : i10;
     }
 
     @Override // s4.g0
@@ -90,42 +90,42 @@ public final class qi extends hm0 {
             this.J = 1;
             this.d = 0;
             int i12 = tiVar.I;
-            if (i12 == 0 || w7.k6.a(i12, 16)) {
+            if (i12 == 0 || w7.j6.a(i12, 16)) {
                 int i13 = this.J;
                 this.J = i13 + 1;
                 this.n = i13;
             }
             int i14 = tiVar.I;
-            if (i14 == 0 || w7.k6.a(i14, 8192)) {
+            if (i14 == 0 || w7.j6.a(i14, 8192)) {
                 int i15 = this.J;
                 this.J = i15 + 1;
                 this.F = i15;
             }
             int i16 = tiVar.I;
-            if (i16 == 0 || w7.k6.a(i16, 16384)) {
+            if (i16 == 0 || w7.j6.a(i16, 16384)) {
                 int i17 = this.J;
                 this.J = i17 + 1;
                 this.G = i17;
             }
             int i18 = tiVar.I;
-            if (i18 == 0 || w7.k6.a(i18, 8)) {
+            if (i18 == 0 || w7.j6.a(i18, 8)) {
                 int i19 = this.J;
                 this.J = i19 + 1;
                 this.s = i19;
             }
             int i20 = tiVar.I;
-            if (i20 == 0 || w7.k6.a(i20, 64)) {
+            if (i20 == 0 || w7.j6.a(i20, 64)) {
                 int i21 = this.J;
                 this.J = i21 + 1;
                 this.E = i21;
             }
             int i22 = tiVar.I;
-            if (i22 == 0 || w7.k6.a(i22, 32768)) {
+            if (i22 == 0 || w7.j6.a(i22, 32768)) {
                 int i23 = this.J;
                 this.J = i23 + 1;
                 this.H = i23;
             }
-        } else if (!(n2Var instanceof org.telegram.ui.sn)) {
+        } else if (!(n2Var instanceof org.telegram.ui.qn)) {
             this.d = 0;
             this.J = 2;
             this.n = 1;
@@ -157,14 +157,14 @@ public final class qi extends hm0 {
                 }
             }
         } else {
-            TLRPC.User i27 = ((org.telegram.ui.sn) n2Var).i();
-            TLRPC.Chat chat = n2Var instanceof org.telegram.ui.sn ? ((org.telegram.ui.sn) n2Var).e : null;
-            boolean z10 = i27 != null && ((org.telegram.ui.sn) n2Var).getMessagesController().getSendPaidMessagesStars(i27.id) > 0;
+            TLRPC.User i27 = ((org.telegram.ui.qn) n2Var).i();
+            TLRPC.Chat chat = n2Var instanceof org.telegram.ui.qn ? ((org.telegram.ui.qn) n2Var).e : null;
+            boolean z10 = i27 != null && ((org.telegram.ui.qn) n2Var).getMessagesController().getSendPaidMessagesStars(i27.id) > 0;
             int i28 = this.J;
             this.d = i28;
             this.J = i28 + 2;
             this.n = i28 + 1;
-            if (MessagesController.getInstance(i11).config.walletAvailable.get() && ((org.telegram.ui.sn) n2Var).R3 == 0 && ti.v1(i27)) {
+            if (MessagesController.getInstance(i11).config.walletAvailable.get() && ((org.telegram.ui.qn) n2Var).R3 == 0 && ti.v1(i27)) {
                 int i29 = this.J;
                 this.J = i29 + 1;
                 this.r = i29;
@@ -198,14 +198,14 @@ public final class qi extends hm0 {
                 this.J = i34 + 2;
                 this.w = i35;
             }
-            if ((n2Var instanceof org.telegram.ui.sn) && ((org.telegram.ui.sn) n2Var).R3 == 0 && i27 != null && !z10 && !i27.bot && !ig.a2.f(i11).b.isEmpty()) {
+            if ((n2Var instanceof org.telegram.ui.qn) && ((org.telegram.ui.qn) n2Var).R3 == 0 && i27 != null && !z10 && !i27.bot && !ig.a2.f(i11).b.isEmpty()) {
                 int i36 = this.J;
                 this.J = i36 + 1;
                 this.y = i36;
             }
-            if ((tiVar.O1 || tiVar.P1) && !z10 && ((chat == null || !ChatObject.isMonoForum(chat)) && (n2Var instanceof org.telegram.ui.sn) && !((org.telegram.ui.sn) n2Var).c() && !((org.telegram.ui.sn) n2Var).x())) {
-                org.telegram.ui.sn snVar = (org.telegram.ui.sn) n2Var;
-                if (snVar.R3 != 5) {
+            if ((tiVar.O1 || tiVar.P1) && !z10 && ((chat == null || !ChatObject.isMonoForum(chat)) && (n2Var instanceof org.telegram.ui.qn) && !((org.telegram.ui.qn) n2Var).c() && !((org.telegram.ui.qn) n2Var).x())) {
+                org.telegram.ui.qn qnVar = (org.telegram.ui.qn) n2Var;
+                if (qnVar.R3 != 5) {
                     this.e = this.J;
                     ArrayList arrayList = this.h;
                     arrayList.clear();
@@ -216,9 +216,9 @@ public final class qi extends hm0 {
                         i10++;
                         TLRPC.TL_attachMenuBot tL_attachMenuBot2 = tL_attachMenuBot;
                         if (tL_attachMenuBot2.show_in_attach_menu) {
-                            TLObject tLObject = snVar.e;
+                            TLObject tLObject = qnVar.e;
                             if (tLObject == null) {
-                                tLObject = snVar.i();
+                                tLObject = qnVar.i();
                             }
                             if (MediaDataController.canShowAttachMenuBot(tL_attachMenuBot2, tLObject)) {
                                 arrayList.add(tL_attachMenuBot2);

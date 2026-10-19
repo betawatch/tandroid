@@ -1,32 +1,52 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class l51 implements iw0 {
-    public int a;
-    public boolean b;
-    public final /* synthetic */ m51 c;
+public final /* synthetic */ class l51 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
 
-    public l51(m51 m51Var) {
-        this.c = m51Var;
+    public /* synthetic */ l51(int i10, View view) {
+        this.a = i10;
+        this.b = view;
     }
 
-    @Override // org.telegram.ui.Components.iw0
-    public final void H(int i10, boolean z10) {
-        if (this.a == i10 && this.b == z10) {
-            return;
-        }
-        this.a = i10;
-        this.b = z10;
-        if (i10 > AndroidUtilities.dp(20.0f)) {
-            m51 m51Var = this.c;
-            if (m51Var.x0) {
-                return;
-            }
-            m51Var.E0.setAllowNestedScroll(false);
-            m51Var.x0 = true;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                n51 n51Var = (n51) this.b;
+                n51Var.getClass();
+                n51Var.B0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                n51Var.invalidate();
+                break;
+            case 1:
+                c71 c71Var = (c71) this.b;
+                c71Var.getClass();
+                c71Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c71Var.invalidate();
+                break;
+            case 2:
+                i71 i71Var = (i71) this.b;
+                i71Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                i71Var.b = floatValue;
+                i71Var.setTranslationY(floatValue);
+                break;
+            default:
+                c91 c91Var = (c91) this.b;
+                c91Var.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c91Var.setAnimationIdicatorProgress(floatValue2);
+                b91 b91Var = c91Var.y;
+                if (b91Var != null) {
+                    ((l2.f) b91Var).I(floatValue2);
+                    break;
+                }
+                break;
         }
     }
 }

@@ -19,16 +19,16 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BringAppForegroundService;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class yu implements r91 {
+public final class yu implements s91 {
     public final /* synthetic */ cv a;
 
     public yu(cv cvVar) {
         this.a = cvVar;
     }
 
-    @Override // org.telegram.ui.Components.r91
+    @Override // org.telegram.ui.Components.s91
     public final TextureView a(View view, boolean z10, float f7, int i10, boolean z11) {
         ViewGroup viewGroup;
         ViewGroup viewGroup2;
@@ -77,7 +77,7 @@ public final class yu implements r91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.r91
+    @Override // org.telegram.ui.Components.s91
     public final void b() {
         cv cvVar = this.a;
         if (cvVar.c.f()) {
@@ -85,7 +85,7 @@ public final class yu implements r91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.r91
+    @Override // org.telegram.ui.Components.s91
     public final void d() {
         cv cvVar = this.a;
         wu wuVar = cvVar.b;
@@ -93,12 +93,12 @@ public final class yu implements r91 {
         cvVar.s.setVisibility(0);
         cvVar.v.setVisibility(4);
         wuVar.setKeepScreenOn(true);
-        u91 u91Var = cvVar.c;
-        u91Var.setVisibility(4);
-        u91Var.getControlsView().setVisibility(4);
-        u91Var.getTextureView().setVisibility(4);
-        if (u91Var.getTextureImageView() != null) {
-            u91Var.getTextureImageView().setVisibility(4);
+        v91 v91Var = cvVar.c;
+        v91Var.setVisibility(4);
+        v91Var.getControlsView().setVisibility(4);
+        v91Var.getTextureView().setVisibility(4);
+        if (v91Var.getTextureImageView() != null) {
+            v91Var.getTextureImageView().setVisibility(4);
         }
         cvVar.c.g(null, null, null, null, false);
         HashMap hashMap = new HashMap();
@@ -110,8 +110,8 @@ public final class yu implements r91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.r91
-    public final void e(u91 u91Var, boolean z10) {
+    @Override // org.telegram.ui.Components.s91
+    public final void e(v91 v91Var, boolean z10) {
         Activity activity = this.a.r;
         if (z10) {
             try {
@@ -129,14 +129,14 @@ public final class yu implements r91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.r91
+    @Override // org.telegram.ui.Components.s91
     public final TextureView f(View view, boolean z10, int i10, int i11, boolean z11) {
         ViewGroup viewGroup;
         ViewGroup viewGroup2;
         ViewGroup viewGroup3;
         org.telegram.ui.ActionBar.e3 e3Var;
         cv cvVar = this.a;
-        u91 u91Var = cvVar.c;
+        v91 v91Var = cvVar.c;
         int[] iArr = cvVar.E;
         if (z10) {
             view.setTranslationY(0.0f);
@@ -153,13 +153,13 @@ public final class yu implements r91 {
             return null;
         }
         cvVar.O = true;
-        u91Var.getAspectRatioView().getLocationInWindow(iArr);
+        v91Var.getAspectRatioView().getLocationInWindow(iArr);
         iArr[0] = iArr[0] - cvVar.getLeftInset();
         float f7 = iArr[1];
         viewGroup2 = ((org.telegram.ui.ActionBar.f3) cvVar).containerView;
         iArr[1] = (int) (f7 - viewGroup2.getTranslationY());
-        TextureView textureView2 = u91Var.getTextureView();
-        ImageView textureImageView = u91Var.getTextureImageView();
+        TextureView textureView2 = v91Var.getTextureView();
+        ImageView textureImageView = v91Var.getTextureImageView();
         AnimatorSet animatorSet = new AnimatorSet();
         Property property = View.SCALE_X;
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(textureImageView, (Property<ImageView, Float>) property, 1.0f);
@@ -179,17 +179,17 @@ public final class yu implements r91 {
         animatorSet.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4, ofFloat5, ofFloat6, ofFloat7, ofFloat8, ofFloat9, ObjectAnimator.ofInt(e3Var, t6.d, 51));
         animatorSet.setInterpolator(new DecelerateInterpolator());
         animatorSet.setDuration(250L);
-        animatorSet.addListener(new org.telegram.ui.pq(this, 22));
+        animatorSet.addListener(new org.telegram.ui.nq(this, 22));
         animatorSet.start();
         return null;
     }
 
-    @Override // org.telegram.ui.Components.r91
+    @Override // org.telegram.ui.Components.s91
     public final ViewGroup g() {
         return this.a.container;
     }
 
-    @Override // org.telegram.ui.Components.r91
+    @Override // org.telegram.ui.Components.s91
     public final boolean h() {
         Activity activity = this.a.r;
         if (activity == null) {
@@ -202,8 +202,8 @@ public final class yu implements r91 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.r91
-    public final void i(boolean z10, m91 m91Var, float f7, boolean z11) {
+    @Override // org.telegram.ui.Components.s91
+    public final void i(boolean z10, n91 n91Var, float f7, boolean z11) {
         org.telegram.ui.ActionBar.e3 e3Var;
         ViewGroup viewGroup;
         ViewGroup viewGroup2;
@@ -281,7 +281,7 @@ public final class yu implements r91 {
                 this.a.e.setAlpha(1.0f);
                 this.a.e.setVisibility(4);
             }
-            m91Var.run();
+            n91Var.run();
             this.a.dismissInternal();
             return;
         }
@@ -313,11 +313,11 @@ public final class yu implements r91 {
         animatorSet.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4, ofFloat5, ofFloat6, ofFloat7, ofFloat8, ofFloat9, ofInt, ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) property5, 0.0f), ObjectAnimator.ofFloat(controlsView, (Property<View, Float>) property5, 0.0f));
         animatorSet.setInterpolator(new DecelerateInterpolator());
         animatorSet.setDuration(250L);
-        animatorSet.addListener(new ai.me(24, this, m91Var));
+        animatorSet.addListener(new ai.me(24, this, n91Var));
         animatorSet.start();
     }
 
-    @Override // org.telegram.ui.Components.r91
+    @Override // org.telegram.ui.Components.s91
     public final void c(float f7) {
     }
 }

@@ -13,7 +13,7 @@ import n6.l;
 import org.telegram.tgnet.ConnectionsManager;
 import r0.l0;
 import r0.m0;
-import w7.f9;
+import w7.e9;
 import z7.fe;
 import z7.g;
 import z7.gb;
@@ -27,7 +27,7 @@ import z7.ue;
 import z7.wa;
 import z7.wf;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements wf {
     public long a;
@@ -134,7 +134,7 @@ public final /* synthetic */ class d implements wf {
             g gVar = z7.i.b;
             Object[] array = list.toArray();
             int length = array.length;
-            f9.a(length, array);
+            e9.a(length, array);
             z5Var.e = z7.i.q(length, array);
             List<ig> list2 = jgVar.a;
             if (!list2.isEmpty()) {

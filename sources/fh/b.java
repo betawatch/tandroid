@@ -23,7 +23,7 @@ import eh.d;
 import gi.d3;
 import gi.e4;
 import gi.z3;
-import i2.m;
+import i2.n;
 import j$.util.Objects;
 import j2.f;
 import java.util.Collection;
@@ -35,14 +35,14 @@ import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.aw0;
 import org.telegram.ui.Components.bw0;
 import org.telegram.ui.Components.cw0;
+import org.telegram.ui.Components.dw0;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b implements d, aw0, bw0, GenericProvider, k, r9.d, o, a2, hh.b {
+public final /* synthetic */ class b implements d, bw0, cw0, GenericProvider, k, r9.d, o, a2, hh.b {
     public final /* synthetic */ int a;
 
     public /* synthetic */ b(int i10) {
@@ -175,7 +175,7 @@ public final /* synthetic */ class b implements d, aw0, bw0, GenericProvider, k,
         }
     }
 
-    @Override // org.telegram.ui.Components.bw0
+    @Override // org.telegram.ui.Components.cw0
     public void b(Object obj, float f7) {
         switch (this.a) {
             case 8:
@@ -219,7 +219,7 @@ public final /* synthetic */ class b implements d, aw0, bw0, GenericProvider, k,
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.bw0
     public float get(Object obj) {
         switch (this.a) {
             case 7:
@@ -236,7 +236,7 @@ public final /* synthetic */ class b implements d, aw0, bw0, GenericProvider, k,
     public void invoke(Object obj) {
         switch (this.a) {
             case 22:
-                ((d1) obj).onPlayerError(new m(2, new j("Player release timed out."), 1003));
+                ((d1) obj).onPlayerError(new n(2, new j("Player release timed out."), 1003));
                 break;
             case 23:
                 ((d1) obj).onRenderedFirstFrame();
@@ -256,7 +256,7 @@ public final /* synthetic */ class b implements d, aw0, bw0, GenericProvider, k,
 
     @Override // org.telegram.messenger.GenericProvider
     public Object provide(Object obj) {
-        cw0 cw0Var = e4.b0;
+        dw0 dw0Var = e4.b0;
         return Boolean.FALSE;
     }
 

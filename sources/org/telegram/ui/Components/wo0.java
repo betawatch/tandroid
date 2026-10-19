@@ -13,7 +13,7 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class wo0 extends ScrollView {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -40,7 +40,7 @@ public class wo0 extends ScrollView {
     }
 
     public static boolean e(View view) {
-        return (Objects.equals(view.getTag(), -33024) || (view instanceof org.telegram.ui.Cells.d9) || (view instanceof org.telegram.ui.Cells.z6) || (view instanceof org.telegram.ui.k10)) ? false : true;
+        return (Objects.equals(view.getTag(), -33024) || (view instanceof org.telegram.ui.Cells.d9) || (view instanceof org.telegram.ui.Cells.z6) || (view instanceof org.telegram.ui.i10)) ? false : true;
     }
 
     public final void a(Canvas canvas, View view, View view2) {

@@ -1,85 +1,45 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qv implements View.OnLongClickListener {
+public final /* synthetic */ class qv implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ey b;
+    public final /* synthetic */ Activity b;
 
-    public /* synthetic */ qv(ey eyVar, int i10) {
+    public /* synthetic */ qv(Activity activity, int i10) {
         this.a = i10;
-        this.b = eyVar;
+        this.b = activity;
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        Boolean bool = (Boolean) obj;
         switch (this.a) {
             case 0:
-                ey eyVar = this.b;
-                ArrayList arrayList = eyVar.I2;
-                if (eyVar.getParentActivity() != null) {
-                    boolean z10 = !arrayList.isEmpty();
-                    boolean z11 = true;
-                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                        long longValue = ((Long) arrayList.get(i10)).longValue();
-                        if (z10 && longValue != eyVar.getUserConfig().getClientUserId()) {
-                            z10 = false;
-                        }
-                        if (DialogObject.isEncryptedDialog(longValue)) {
-                            z11 = false;
-                        }
-                        TLRPC.Chat chat = eyVar.getMessagesController().getChat(Long.valueOf(-longValue));
-                        if (chat != null && !ChatObject.canWriteToChat(chat)) {
-                            z11 = false;
-                        }
+                if (bool.booleanValue()) {
+                    if (!org.telegram.ui.Components.we0.a()) {
+                        org.telegram.ui.Components.we0.f();
+                        break;
+                    } else {
+                        this.b.requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 1);
+                        break;
                     }
-                    boolean z12 = eyVar.Y3() && eyVar.l3();
-                    if (z12) {
-                        ArrayList arrayList2 = eyVar.D2;
-                        int size = arrayList2.size();
-                        int i11 = 0;
-                        while (true) {
-                            if (i11 < size) {
-                                Object obj = arrayList2.get(i11);
-                                i11++;
-                                if (((MediaController.PhotoEntry) obj).hasVideoEditsLostAsDocument()) {
-                                    z12 = false;
-                                }
-                            }
-                        }
-                    }
-                    ArrayList arrayList3 = eyVar.D2;
-                    boolean z13 = arrayList3 != null && arrayList3.size() > 1;
-                    org.telegram.ui.Components.i80 H = org.telegram.ui.Components.i80.H(eyVar, view);
-                    H.l(R.drawable.msg_sendfile, LocaleController.getString(z13 ? R.string.SendAsFiles : R.string.SendAsFile), new ev(eyVar, 20), z12);
-                    H.c(R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new ev(eyVar, 21), false);
-                    H.l(R.drawable.msg_calendar2, LocaleController.getString(z10 ? R.string.SetReminder : R.string.ScheduleMessage), new org.telegram.ui.Components.b60(10, eyVar, z10), z11);
-                    H.Z();
-                    break;
                 }
                 break;
-            case 1:
-                ey eyVar2 = this.b;
-                eyVar2.p4(eyVar2.I2, 104, true, true, null);
-                break;
-            case 2:
-                this.b.n4(view);
-                break;
             default:
-                ey eyVar3 = this.b;
-                eyVar3.getContactsController().loadGlobalPrivacySetting();
-                eyVar3.I4();
+                if (bool.booleanValue()) {
+                    if (!org.telegram.ui.Components.we0.a()) {
+                        org.telegram.ui.Components.we0.f();
+                        break;
+                    } else {
+                        this.b.requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 1);
+                        break;
+                    }
+                }
                 break;
         }
-        return true;
     }
 }

@@ -5,9 +5,10 @@ import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.DialogObject;
 import org.telegram.tgnet.TLRPC;
+import qg.n;
 import ug.b1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class g extends pg.a {
     public TLRPC.User c;
@@ -20,8 +21,8 @@ public final class g extends pg.a {
     public int j;
     public boolean k;
     public int l;
-    public org.telegram.ui.web.c m;
-    public org.telegram.ui.web.c n;
+    public n m;
+    public n n;
     public b1 o;
     public b1 p;
     public View q;

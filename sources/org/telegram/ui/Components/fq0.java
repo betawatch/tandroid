@@ -1,65 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import org.telegram.messenger.AndroidUtilities;
+import android.os.Build;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class fq0 extends im0 {
-    public final /* synthetic */ int V2;
-    public final /* synthetic */ dr0 W2;
+public final class fq0 extends s4.r0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ er0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ fq0(dr0 dr0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
-        super(context, d6Var);
-        this.V2 = i10;
-        this.W2 = dr0Var;
+    public /* synthetic */ fq0(er0 er0Var, int i10) {
+        this.a = i10;
+        this.b = er0Var;
     }
 
-    @Override // org.telegram.ui.Components.im0
-    public final boolean E0(float f7) {
-        switch (this.V2) {
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        bh.f fVar;
+        ub ubVar;
+        switch (this.a) {
             case 0:
-                dr0 dr0Var = this.W2;
-                if (f7 >= AndroidUtilities.dp((!dr0Var.h0 || dr0Var.o0[1] == null) ? 58.0f : 111.0f) + dr0Var.G0.b) {
+                if (i11 != 0) {
+                    er0 er0Var = this.b;
+                    er0.v0(er0Var);
+                    er0Var.r0 = er0Var.q0;
+                    break;
                 }
                 break;
-            default:
-                dr0 dr0Var2 = this.W2;
-                if (f7 >= AndroidUtilities.dp((!dr0Var2.h0 || dr0Var2.o0[1] == null) ? 58.0f : 111.0f) + dr0Var2.G0.b) {
+            case 1:
+                er0 er0Var2 = this.b;
+                if (i11 != 0) {
+                    er0.v0(er0Var2);
+                    er0Var2.r0 = er0Var2.q0;
                 }
-                break;
-        }
-        return true;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void draw(Canvas canvas) {
-        switch (this.V2) {
-            case 0:
-                dr0 dr0Var = this.W2;
-                im0 im0Var = dr0Var.E;
-                if (im0Var.getVisibility() != 8) {
-                    canvas.save();
-                    canvas.clipRect(0, AndroidUtilities.dp((!dr0Var.h0 || dr0Var.o0[1] == null) ? 58.0f : 111.0f) + dr0Var.p0, getWidth(), getHeight());
+                qc qcVar = qc.w;
+                if (qcVar != null && (ubVar = qcVar.e) != null && (ubVar.getParent() instanceof View) && ((View) qc.w.e.getParent()).getParent() == er0Var2.x) {
+                    qc.e();
                 }
-                super.draw(canvas);
-                if (im0Var.getVisibility() != 8) {
-                    canvas.restore();
+                if (Build.VERSION.SDK_INT >= 31 && (fVar = er0Var2.P0) != null) {
+                    fVar.f(i10, i11);
+                    er0.E0(er0Var2);
                     break;
                 }
                 break;
             default:
-                dr0 dr0Var2 = this.W2;
-                im0 im0Var2 = dr0Var2.E;
-                if (im0Var2.getVisibility() != 8) {
-                    canvas.save();
-                    canvas.clipRect(0, AndroidUtilities.dp((!dr0Var2.h0 || dr0Var2.o0[1] == null) ? 58.0f : 111.0f) + dr0Var2.p0, getWidth(), getHeight());
-                }
-                super.draw(canvas);
-                if (im0Var2.getVisibility() != 8) {
-                    canvas.restore();
+                if (i11 != 0) {
+                    er0 er0Var3 = this.b;
+                    er0.v0(er0Var3);
+                    er0Var3.r0 = er0Var3.q0;
                     break;
                 }
                 break;

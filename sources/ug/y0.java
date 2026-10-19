@@ -1,8 +1,8 @@
 package ug;
 
 import ai.bd;
-import ai.p9;
-import ai.x3;
+import ai.m3;
+import ai.z3;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Canvas;
@@ -50,11 +50,11 @@ import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.kv;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.lh0;
-import org.telegram.ui.o71;
+import org.telegram.ui.kh0;
+import org.telegram.ui.m71;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class y0 extends bb {
     public final ei.d X;
@@ -143,7 +143,7 @@ public final class y0 extends bb {
         int i14 = this.backgroundPaddingLeft;
         im0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(60.0f));
         this.d.j(new kv(this, 20));
-        this.d.setOnItemClickListener(new qg.g0(this, 23));
+        this.d.setOnItemClickListener(new qg.h0(this, 23));
         s4.k kVar = new s4.k();
         kVar.n(350L);
         kVar.o(bsVar);
@@ -201,16 +201,16 @@ public final class y0 extends bb {
             if (chat != null && !ChatObject.isPublic(chat) && hashSet.contains(Long.valueOf(j10))) {
                 Context context = y0Var.n.getContext();
                 d6 d6Var = y0Var.resourcesProvider;
-                lh0 lh0Var = new lh0(y0Var, j10, 4);
+                kh0 kh0Var = new kh0(y0Var, j10, 4);
                 s0 s0Var = new s0(y0Var, 2);
                 AtomicBoolean atomicBoolean = new AtomicBoolean(false);
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
                 boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
                 alertDialog$Builder.a.R = LocaleController.getString(isChannelAndNotMegaGroup ? R.string.BoostingGiveawayPrivateChannel : R.string.BoostingGiveawayPrivateGroup);
                 alertDialog$Builder.a.T = LocaleController.getString(isChannelAndNotMegaGroup ? R.string.BoostingGiveawayPrivateChannelWarning : R.string.BoostingGiveawayPrivateGroupWarning);
-                alertDialog$Builder.k(LocaleController.getString("Add", R.string.Add), new org.telegram.ui.web.n(13, atomicBoolean, s0Var));
+                alertDialog$Builder.k(LocaleController.getString("Add", R.string.Add), new org.telegram.ui.web.m(13, atomicBoolean, s0Var));
                 alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), new sg.y(12));
-                alertDialog$Builder.j(new x3(18, atomicBoolean, lh0Var));
+                alertDialog$Builder.j(new z3(18, atomicBoolean, kh0Var));
                 alertDialog$Builder.o();
             } else if (chat != null) {
                 y0Var.S();
@@ -312,8 +312,8 @@ public final class y0 extends bb {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
         alertDialog$Builder.a.R = LocaleController.getString("UnsavedChanges", R.string.UnsavedChanges);
         alertDialog$Builder.a.T = i10 != 1 ? i10 != 2 ? i10 != 3 ? "" : LocaleController.getString("BoostingApplyChangesCountries", R.string.BoostingApplyChangesCountries) : LocaleController.getString("BoostingApplyChangesChannels", R.string.BoostingApplyChangesChannels) : LocaleController.getString("BoostingApplyChangesUsers", R.string.BoostingApplyChangesUsers);
-        alertDialog$Builder.k(LocaleController.getString("ApplyTheme", R.string.ApplyTheme), new qg.g0(s0Var, 22));
-        alertDialog$Builder.h(LocaleController.getString("Discard", R.string.Discard), new qg.g0(s0Var2, 19));
+        alertDialog$Builder.k(LocaleController.getString("ApplyTheme", R.string.ApplyTheme), new qg.h0(s0Var, 22));
+        alertDialog$Builder.h(LocaleController.getString("Discard", R.string.Discard), new qg.h0(s0Var2, 19));
         alertDialog$Builder.o();
         return true;
     }
@@ -335,7 +335,7 @@ public final class y0 extends bb {
             tL_channelParticipantsRecent.q = str;
             tL_channels_getParticipants.offset = 0;
             tL_channels_getParticipants.limit = 50;
-            connectionsManager.sendRequest(tL_channels_getParticipants, new o71(9, messagesController, w0Var));
+            connectionsManager.sendRequest(tL_channels_getParticipants, new m71(9, messagesController, w0Var));
             return;
         }
         if (i10 != 2) {
@@ -356,7 +356,7 @@ public final class y0 extends bb {
         TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
         tL_contacts_search.q = str;
         tL_contacts_search.limit = 50;
-        connectionsManager3.sendRequest(tL_contacts_search, new p9(messagesController2, j11, v0Var, 6));
+        connectionsManager3.sendRequest(tL_contacts_search, new m3(messagesController2, j11, v0Var, 7));
     }
 
     public final void W(int i10, List list) {

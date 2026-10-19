@@ -21,9 +21,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public class qu extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, iw0 {
+public class qu extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, jw0 {
     public boolean E;
     public boolean F;
     public int G;
@@ -46,7 +46,7 @@ public class qu extends FrameLayout implements NotificationCenter.NotificationCe
     public final nm0 c;
     public mu d;
     public boolean e;
-    public jw0 f;
+    public kw0 f;
     public final org.telegram.ui.ActionBar.n2 h;
     public boolean n;
     public int r;
@@ -56,12 +56,12 @@ public class qu extends FrameLayout implements NotificationCenter.NotificationCe
     public boolean x;
     public boolean y;
 
-    public qu(Context context, org.telegram.ui.kd kdVar, org.telegram.ui.ko koVar) {
-        this(context, kdVar, koVar, 0, false, null);
+    public qu(Context context, org.telegram.ui.id idVar, org.telegram.ui.io ioVar) {
+        this(context, idVar, ioVar, 0, false, null);
     }
 
-    @Override // org.telegram.ui.Components.iw0
-    public final void H(int i10, boolean z10) {
+    @Override // org.telegram.ui.Components.jw0
+    public final void G(int i10, boolean z10) {
         boolean z11;
         int i11;
         if (i10 > AndroidUtilities.dp(50.0f) && ((this.v || (i11 = this.L) == 2 || i11 == 3) && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet())) {
@@ -86,10 +86,10 @@ public class qu extends FrameLayout implements NotificationCenter.NotificationCe
                 layoutParams.width = i14;
                 layoutParams.height = i12;
                 this.d.setLayoutParams(layoutParams);
-                jw0 jw0Var = this.f;
-                if (jw0Var != null) {
+                kw0 kw0Var = this.f;
+                if (kw0Var != null) {
                     this.w = layoutParams.height;
-                    jw0Var.requestLayout();
+                    kw0Var.requestLayout();
                     this.f.getHeight();
                     if (this.T != this.x) {
                         p();
@@ -135,7 +135,7 @@ public class qu extends FrameLayout implements NotificationCenter.NotificationCe
     }
 
     public boolean b() {
-        return this instanceof org.telegram.ui.r30;
+        return this instanceof org.telegram.ui.p30;
     }
 
     public final void d() {
@@ -229,7 +229,7 @@ public class qu extends FrameLayout implements NotificationCenter.NotificationCe
         if (z10) {
             mu muVar2 = this.d;
             if (muVar2 != null) {
-                muVar2.t(false);
+                muVar2.u(false);
             }
             y();
         }
@@ -252,7 +252,7 @@ public class qu extends FrameLayout implements NotificationCenter.NotificationCe
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, measuredHeight);
                 ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.q2(this, measuredHeight, 2));
                 this.O = true;
-                ofFloat.addListener(new org.telegram.ui.pq(this, 21));
+                ofFloat.addListener(new org.telegram.ui.nq(this, 21));
                 ofFloat.setDuration(250L);
                 ofFloat.setInterpolator(org.telegram.ui.ActionBar.o1.w);
                 ofFloat.start();
@@ -263,7 +263,7 @@ public class qu extends FrameLayout implements NotificationCenter.NotificationCe
         if (z11) {
             mu muVar2 = this.d;
             if (muVar2 != null) {
-                muVar2.t(false);
+                muVar2.u(false);
             }
             y();
         }
@@ -290,9 +290,9 @@ public class qu extends FrameLayout implements NotificationCenter.NotificationCe
             observersGroup.removeAllObservers();
             muVar.I2 = null;
         }
-        jw0 jw0Var = this.f;
-        if (jw0Var != null) {
-            jw0Var.r.remove(this);
+        kw0 kw0Var = this.f;
+        if (kw0Var != null) {
+            kw0Var.r.remove(this);
         }
     }
 
@@ -377,13 +377,13 @@ public class qu extends FrameLayout implements NotificationCenter.NotificationCe
         this.a.setSelection(i10);
     }
 
-    public void setSizeNotifierLayout(jw0 jw0Var) {
-        jw0 jw0Var2 = this.f;
-        if (jw0Var2 != null) {
-            jw0Var2.r.remove(this);
+    public void setSizeNotifierLayout(kw0 kw0Var) {
+        kw0 kw0Var2 = this.f;
+        if (kw0Var2 != null) {
+            kw0Var2.r.remove(this);
         }
-        this.f = jw0Var;
-        jw0Var.r.add(this);
+        this.f = kw0Var;
+        kw0Var.r.add(this);
     }
 
     public void setSuggestionsEnabled(boolean z10) {
@@ -444,13 +444,13 @@ public class qu extends FrameLayout implements NotificationCenter.NotificationCe
                     this.R = 0.0f;
                 }
             }
-            jw0 jw0Var = this.f;
-            if (jw0Var != null) {
+            kw0 kw0Var = this.f;
+            if (kw0Var != null) {
                 if (i10 == 0) {
                     this.w = 0;
                     this.R = 0.0f;
                 }
-                jw0Var.requestLayout();
+                kw0Var.requestLayout();
                 this.f.getHeight();
                 return;
             }
@@ -490,10 +490,10 @@ public class qu extends FrameLayout implements NotificationCenter.NotificationCe
         if (!AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
             AndroidUtilities.hideKeyboard(this.a);
         }
-        jw0 jw0Var2 = this.f;
-        if (jw0Var2 != null) {
+        kw0 kw0Var2 = this.f;
+        if (kw0Var2 != null) {
             this.w = i11;
-            jw0Var2.requestLayout();
+            kw0Var2.requestLayout();
             nm0Var.a(R.drawable.input_keyboard, true);
             this.f.getHeight();
         }
@@ -503,7 +503,7 @@ public class qu extends FrameLayout implements NotificationCenter.NotificationCe
         c(0.0f);
     }
 
-    public qu(Context context, jw0 jw0Var, org.telegram.ui.ActionBar.n2 n2Var, int i10, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
+    public qu(Context context, kw0 kw0Var, org.telegram.ui.ActionBar.n2 n2Var, int i10, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.E = true;
         this.P = new org.telegram.ui.Cells.k7(this, 8);
@@ -512,8 +512,8 @@ public class qu extends FrameLayout implements NotificationCenter.NotificationCe
         this.M = d6Var;
         this.L = i10;
         this.h = n2Var;
-        this.f = jw0Var;
-        jw0Var.r.add(this);
+        this.f = kw0Var;
+        kw0Var.r.add(this);
         lu luVar = new lu(this, context, d6Var, i10);
         this.a = luVar;
         luVar.setImeOptions(TLObject.FLAG_28);
@@ -601,7 +601,7 @@ public class qu extends FrameLayout implements NotificationCenter.NotificationCe
             addView(kVar, w7.z5.d(48, 48.0f, 83, 0.0f, 0.0f, 0.0f, 0.0f));
         }
         kVar.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.i6, d6Var), 1, -1));
-        kVar.setOnClickListener(new ai.v0(this, jw0Var, d6Var, 24));
+        kVar.setOnClickListener(new ai.v0(this, kw0Var, d6Var, 24));
         kVar.setContentDescription(LocaleController.getString(R.string.Emoji));
     }
 

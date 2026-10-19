@@ -6,9 +6,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class b50 extends org.telegram.ui.bu0 {
+public final class b50 extends org.telegram.ui.zt0 {
     public final /* synthetic */ ArrayList a;
     public final /* synthetic */ e50 b;
 
@@ -17,8 +17,8 @@ public final class b50 extends org.telegram.ui.bu0 {
         this.a = arrayList;
     }
 
-    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
-    public final org.telegram.ui.lu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
+    public final org.telegram.ui.ju0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
         d50 d50Var = this.b.b;
         if (d50Var == null) {
             return null;
@@ -26,17 +26,17 @@ public final class b50 extends org.telegram.ui.bu0 {
         return d50Var.getCloseIntoObject();
     }
 
-    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
     public final boolean T() {
         return false;
     }
 
-    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
     public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
         this.b.s((MediaController.PhotoEntry) this.a.get(0));
     }
 
-    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
     public final boolean z() {
         return false;
     }

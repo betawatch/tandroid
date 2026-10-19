@@ -29,7 +29,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
@@ -42,7 +42,7 @@ import org.telegram.ui.Components.xp;
 import org.telegram.ui.ProfileActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class pa implements Runnable {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final /* synthetic */ class pa implements Runnable {
     public final void run() {
         ci.h1 h1Var;
         ei.ub ubVar;
-        ci.y9 y9Var;
+        ci.z9 z9Var;
         int i10;
         boolean z10;
         int i11 = 12;
@@ -107,37 +107,37 @@ public final /* synthetic */ class pa implements Runnable {
                 iVar.e();
                 return;
             case 9:
-                ((ci.z9) this.b).H(ProfileActivity.m4(((ci.v0) this.c).c));
+                ((ci.aa) this.b).H(ProfileActivity.m4(((ci.v0) this.c).c));
                 return;
             case 10:
-                ci.m2 m2Var = (ci.m2) this.b;
+                ci.n2 n2Var = (ci.n2) this.b;
                 AndroidUtilities.addToClipboard(((ci.q0) this.c).v);
                 if (AndroidUtilities.shouldShowClipboardToast()) {
-                    Toast.makeText(m2Var.getContext(), LocaleController.getString(R.string.TextCopied), 0).show();
+                    Toast.makeText(n2Var.getContext(), LocaleController.getString(R.string.TextCopied), 0).show();
                     return;
                 }
                 return;
             case 11:
-                ci.m2 m2Var2 = (ci.m2) this.b;
+                ci.n2 n2Var2 = (ci.n2) this.b;
                 ci.v0 v0Var = (ci.v0) this.c;
                 long j10 = v0Var.c;
-                ci.p4 p4Var = m2Var2.i0;
-                if (j10 != UserConfig.getInstance(p4Var.C2).getClientUserId() && ((h1Var = m2Var2.h0.A0) == null || j10 != DialogObject.getPeerDialogId(h1Var.i()))) {
-                    if (p4Var.O3 != null) {
-                        for (int i13 = 0; i13 < p4Var.O3.peers.size(); i13++) {
-                            if (j10 != DialogObject.getPeerDialogId(p4Var.O3.peers.get(i13).peer)) {
+                ci.q4 q4Var = n2Var2.i0;
+                if (j10 != UserConfig.getInstance(q4Var.C2).getClientUserId() && ((h1Var = n2Var2.h0.A0) == null || j10 != DialogObject.getPeerDialogId(h1Var.i()))) {
+                    if (q4Var.O3 != null) {
+                        for (int i13 = 0; i13 < q4Var.O3.peers.size(); i13++) {
+                            if (j10 != DialogObject.getPeerDialogId(q4Var.O3.peers.get(i13).peer)) {
                             }
                         }
                     }
-                    Context context2 = m2Var2.getContext();
+                    Context context2 = n2Var2.getContext();
                     long j11 = v0Var.c;
-                    ci.c0 c0Var = new ci.c0(r7, m2Var2, v0Var);
+                    ci.c0 c0Var = new ci.c0(r7, n2Var2, v0Var);
                     ci.l0 l0Var = new ci.l0();
                     org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, context2, (org.telegram.ui.ActionBar.d6) l0Var, false);
                     f3Var.fixNavigationBar();
-                    LinearLayout e = lk.e(context2, 1);
+                    LinearLayout e = kk.e(context2, 1);
                     TextView f7 = org.telegram.messenger.g0.f(context2, 1, 20.0f);
-                    f7.setTextColor(l0Var.u(org.telegram.ui.ActionBar.h6.j5));
+                    f7.setTextColor(l0Var.w(org.telegram.ui.ActionBar.h6.j5));
                     f7.setTypeface(AndroidUtilities.bold());
                     f7.setText(LocaleController.getString(R.string.DeleteSingleMessagesTitle));
                     e.addView(f7, w7.z5.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
@@ -168,7 +168,7 @@ public final /* synthetic */ class pa implements Runnable {
                         }
                     });
                     int i17 = org.telegram.ui.ActionBar.h6.i6;
-                    a2Var.setBackground(org.telegram.ui.ActionBar.h6.g0(l0Var.u(i17), 2, -1));
+                    a2Var.setBackground(org.telegram.ui.ActionBar.h6.g0(l0Var.w(i17), 2, -1));
                     e.addView(a2Var, w7.z5.n(-1, -2));
                     final org.telegram.ui.Cells.a2 a2Var2 = new org.telegram.ui.Cells.a2(4, 21, context2, l0Var, true);
                     a2Var2.getCheckBoxRound().b(i14, i15, i16);
@@ -190,7 +190,7 @@ public final /* synthetic */ class pa implements Runnable {
                             }
                         }
                     });
-                    a2Var2.setBackground(org.telegram.ui.ActionBar.h6.g0(l0Var.u(i17), 2, -1));
+                    a2Var2.setBackground(org.telegram.ui.ActionBar.h6.g0(l0Var.w(i17), 2, -1));
                     e.addView(a2Var2, w7.z5.n(-1, -2));
                     final org.telegram.ui.Cells.a2 a2Var3 = new org.telegram.ui.Cells.a2(4, 21, context2, l0Var, true);
                     a2Var3.getCheckBoxRound().b(i14, i15, i16);
@@ -212,7 +212,7 @@ public final /* synthetic */ class pa implements Runnable {
                             }
                         }
                     });
-                    a2Var3.setBackground(org.telegram.ui.ActionBar.h6.g0(l0Var.u(i17), 2, -1));
+                    a2Var3.setBackground(org.telegram.ui.ActionBar.h6.g0(l0Var.w(i17), 2, -1));
                     e.addView(a2Var3, w7.z5.n(-1, -2));
                     org.telegram.ui.Cells.d9 d9Var = new org.telegram.ui.Cells.d9(context2, l0Var);
                     d9Var.setBackgroundColor(-16777216);
@@ -229,10 +229,10 @@ public final /* synthetic */ class pa implements Runnable {
                     return;
                 }
                 TL_phone.deleteGroupCallMessages deletegroupcallmessages = new TL_phone.deleteGroupCallMessages();
-                deletegroupcallmessages.call = m2Var2.O;
+                deletegroupcallmessages.call = n2Var2.O;
                 deletegroupcallmessages.messages.add(Integer.valueOf(v0Var.a));
-                ConnectionsManager.getInstance(m2Var2.N).sendRequest(deletegroupcallmessages, null);
-                m2Var2.c(v0Var.a);
+                ConnectionsManager.getInstance(n2Var2.N).sendRequest(deletegroupcallmessages, null);
+                n2Var2.c(v0Var.a);
                 return;
             case 12:
                 ci.h1 h1Var2 = (ci.h1) this.b;
@@ -251,21 +251,21 @@ public final /* synthetic */ class pa implements Runnable {
                 ((ci.h1) this.b).F.remove((String) this.c);
                 return;
             case 14:
-                ci.p4 p4Var2 = (ci.p4) this.b;
+                ci.q4 q4Var2 = (ci.q4) this.b;
                 ei.x3 x3Var = (ei.x3) this.c;
-                p4Var2.removeView(x3Var);
-                if (p4Var2.d2 == x3Var) {
-                    p4Var2.d2 = null;
+                q4Var2.removeView(x3Var);
+                if (q4Var2.d2 == x3Var) {
+                    q4Var2.d2 = null;
                     return;
                 }
                 return;
             case 15:
-                ci.p4 p4Var3 = (ci.p4) this.b;
-                ei.vb D = ei.vb.D((Activity) this.c, p4Var3.C2);
-                ci.o4 o4Var = p4Var3.M2;
-                long j12 = (o4Var == null || (y9Var = (ci.y9) o4Var.c) == null) ? 0L : y9Var.currentPosition;
-                File h = p4Var3.O1.h();
-                TL_stories.StoryItem storyItem = p4Var3.O1.a;
+                ci.q4 q4Var3 = (ci.q4) this.b;
+                ei.vb D = ei.vb.D((Activity) this.c, q4Var3.C2);
+                ci.p4 p4Var = q4Var3.M2;
+                long j12 = (p4Var == null || (z9Var = (ci.z9) p4Var.c) == null) ? 0L : z9Var.currentPosition;
+                File h = q4Var3.O1.h();
+                TL_stories.StoryItem storyItem = q4Var3.O1.a;
                 ei.a8 a8Var = new ei.a8();
                 a8Var.n = true;
                 a8Var.t = storyItem.media;
@@ -323,7 +323,7 @@ public final /* synthetic */ class pa implements Runnable {
                 }
                 a8Var.A();
                 a8Var.e(storyItem);
-                ei.ob d = ei.qb.d(p4Var3.J0);
+                ei.ob d = ei.qb.d(q4Var3.J0);
                 RectF rectF = D.H;
                 WindowManager.LayoutParams layoutParams = D.h;
                 WindowManager windowManager = D.f;
@@ -380,23 +380,23 @@ public final /* synthetic */ class pa implements Runnable {
                         D.w0 = "";
                     }
                 }
-                D.Q = new ci.c2(p4Var3, i11);
-                D.R = new ci.h2(r7, p4Var3, D);
+                D.Q = new ci.d2(q4Var3, i11);
+                D.R = new ci.i2(r7, q4Var3, D);
                 return;
             case 16:
-                ci.g4 g4Var = (ci.g4) this.b;
-                ci.z9 z9Var = (ci.z9) this.c;
-                g4Var.getClass();
-                ((ci.q9) g4Var.l.Q1).h(new sg.y0(z9Var.f, 14, false));
+                ci.h4 h4Var = (ci.h4) this.b;
+                ci.aa aaVar = (ci.aa) this.c;
+                h4Var.getClass();
+                ((ci.r9) h4Var.l.Q1).h(new sg.y0(aaVar.f, 14, false));
                 return;
             case 17:
-                ci.d5 d5Var = (ci.d5) this.b;
+                ci.e5 e5Var = (ci.e5) this.b;
                 String str3 = (String) this.c;
-                d5Var.h = null;
-                ci.t5 t5Var = d5Var.n;
-                t5Var.Q = false;
-                t5Var.O.c = str3.toLowerCase();
-                ci.t5.b(t5Var);
+                e5Var.h = null;
+                ci.u5 u5Var = e5Var.n;
+                u5Var.Q = false;
+                u5Var.O.c = str3.toLowerCase();
+                ci.u5.b(u5Var);
                 return;
             case 18:
                 Utilities.Callback callback = (Utilities.Callback) this.b;
@@ -407,12 +407,12 @@ public final /* synthetic */ class pa implements Runnable {
                 }
                 return;
             case 19:
-                ci.t6 t6Var = (ci.t6) this.b;
+                ci.u6 u6Var = (ci.u6) this.b;
                 TLObject tLObject = (TLObject) this.c;
-                ci.w6 w6Var = t6Var.q;
-                int i26 = t6Var.c;
-                ArrayList arrayList2 = t6Var.i;
-                t6Var.I = 0;
+                ci.x6 x6Var = u6Var.q;
+                int i26 = u6Var.c;
+                ArrayList arrayList2 = u6Var.i;
+                u6Var.I = 0;
                 if (tLObject instanceof TL_stories.TL_foundStories) {
                     TL_stories.TL_foundStories tL_foundStories = (TL_stories.TL_foundStories) tLObject;
                     MessagesController.getInstance(i26).putUsers(tL_foundStories.users, false);
@@ -430,46 +430,46 @@ public final /* synthetic */ class pa implements Runnable {
                         messageObject.generateThumbs(false);
                         ArrayList arrayList4 = new ArrayList();
                         arrayList4.add(Integer.valueOf(arrayList2.size()));
-                        t6Var.F.add(arrayList4);
+                        u6Var.F.add(arrayList4);
                         arrayList2.add(messageObject);
                     }
-                    t6Var.J = Math.max(arrayList2.size(), tL_foundStories.count);
+                    u6Var.J = Math.max(arrayList2.size(), tL_foundStories.count);
                     if (tL_foundStories.stories.isEmpty()) {
-                        t6Var.J = arrayList2.size();
+                        u6Var.J = arrayList2.size();
                     }
                     if (arrayList2.size() < tL_foundStories.count && !tL_foundStories.stories.isEmpty()) {
                         str = tL_foundStories.next_offset;
                     }
-                    t6Var.H = str;
-                    t6Var.G = false;
-                    AndroidUtilities.cancelRunOnUIThread(w6Var);
-                    AndroidUtilities.runOnUIThread(w6Var);
+                    u6Var.H = str;
+                    u6Var.G = false;
+                    AndroidUtilities.cancelRunOnUIThread(x6Var);
+                    AndroidUtilities.runOnUIThread(x6Var);
                     return;
                 }
                 return;
             case 20:
-                ci.v6 v6Var = (ci.v6) this.b;
+                ci.w6 w6Var = (ci.w6) this.b;
                 List list = (List) this.c;
-                ArrayList arrayList5 = v6Var.h;
+                ArrayList arrayList5 = w6Var.h;
                 arrayList5.clear();
                 arrayList5.addAll(list);
-                v6Var.d = true;
-                v6Var.e = false;
-                v6Var.d();
-                NotificationCenter.getInstance(v6Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storyAlbumsCollectionsUpdate, Long.valueOf(v6Var.b), v6Var);
+                w6Var.d = true;
+                w6Var.e = false;
+                w6Var.d();
+                NotificationCenter.getInstance(w6Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storyAlbumsCollectionsUpdate, Long.valueOf(w6Var.b), w6Var);
                 return;
             case 21:
-                ci.v6 v6Var2 = (ci.v6) this.b;
+                ci.w6 w6Var2 = (ci.w6) this.b;
                 TLObject tLObject2 = (TLObject) this.c;
-                ArrayList arrayList6 = v6Var2.g;
-                ArrayList arrayList7 = v6Var2.h;
+                ArrayList arrayList6 = w6Var2.g;
+                ArrayList arrayList7 = w6Var2.h;
                 if (!(tLObject2 instanceof TL_stories.TL_albums)) {
                     if (tLObject2 instanceof TL_stories.TL_albumsNotModified) {
                         arrayList7.clear();
                         arrayList7.addAll(arrayList6);
-                        v6Var2.f = true;
-                        v6Var2.e = false;
-                        NotificationCenter.getInstance(v6Var2.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storyAlbumsCollectionsUpdate, Long.valueOf(v6Var2.b), v6Var2);
+                        w6Var2.f = true;
+                        w6Var2.e = false;
+                        NotificationCenter.getInstance(w6Var2.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storyAlbumsCollectionsUpdate, Long.valueOf(w6Var2.b), w6Var2);
                         return;
                     }
                     return;
@@ -482,50 +482,50 @@ public final /* synthetic */ class pa implements Runnable {
                 while (i28 < size3) {
                     TL_stories.TL_storyAlbum tL_storyAlbum = arrayList9.get(i28);
                     i28++;
-                    arrayList8.add(ci.a7.a(tL_storyAlbum));
+                    arrayList8.add(ci.b7.a(tL_storyAlbum));
                 }
                 arrayList7.clear();
                 arrayList7.addAll(arrayList8);
                 arrayList6.clear();
                 arrayList6.addAll(arrayList8);
-                v6Var2.f = true;
-                v6Var2.e = false;
-                v6Var2.f(true);
+                w6Var2.f = true;
+                w6Var2.e = false;
+                w6Var2.f(true);
                 return;
             case 22:
-                ci.z6 z6Var = (ci.z6) this.b;
+                ci.a7 a7Var = (ci.a7) this.b;
                 Utilities.Callback callback2 = (Utilities.Callback) this.c;
-                z6Var.getClass();
-                callback2.run(z6Var);
+                a7Var.getClass();
+                callback2.run(a7Var);
                 return;
             case 23:
-                MessagesController.getInstance(((ci.g7) this.b).M.a).getStoriesController().Z((TL_stories.TL_updateStory) this.c);
+                MessagesController.getInstance(((ci.h7) this.b).M.a).getStoriesController().Z((TL_stories.TL_updateStory) this.c);
                 return;
             case 24:
-                ci.g7 g7Var = (ci.g7) this.b;
+                ci.h7 h7Var = (ci.h7) this.b;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.c;
-                ei.a8 a8Var4 = g7Var.c;
+                ei.a8 a8Var4 = h7Var.c;
                 a8Var4.w = true;
-                ci.h7 h7Var = g7Var.M;
-                if (h7Var.n(tL_error2)) {
+                ci.i7 i7Var = h7Var.M;
+                if (i7Var.n(tL_error2)) {
                     a8Var4.x = null;
                 } else {
                     a8Var4.x = tL_error2;
                 }
-                g7Var.d = true;
-                g7Var.I = true;
-                g7Var.H = true;
-                h7Var.w.d(a8Var4);
+                h7Var.d = true;
+                h7Var.I = true;
+                h7Var.H = true;
+                i7Var.w.d(a8Var4);
                 return;
             case 25:
-                ci.g7 g7Var2 = (ci.g7) this.b;
-                g7Var2.c.c((File) this.c);
-                AndroidUtilities.runOnUIThread(new ci.e7(g7Var2, r7));
+                ci.h7 h7Var2 = (ci.h7) this.b;
+                h7Var2.c.c((File) this.c);
+                AndroidUtilities.runOnUIThread(new ci.f7(h7Var2, r7));
                 return;
             case 26:
-                ci.v7 v7Var = (ci.v7) this.b;
+                ci.w7 w7Var = (ci.w7) this.b;
                 TL_stories.TL_updateStory tL_updateStory = (TL_stories.TL_updateStory) this.c;
-                MessagesStorage messagesStorage = v7Var.b;
+                MessagesStorage messagesStorage = w7Var.b;
                 SQLiteDatabase database = messagesStorage.getDatabase();
                 try {
                     long peerDialogId = DialogObject.getPeerDialogId(tL_updateStory.peer);
@@ -533,7 +533,7 @@ public final /* synthetic */ class pa implements Runnable {
                     int i29 = storyItem2.id;
                     if (!(storyItem2 instanceof TL_stories.TL_storyItemDeleted)) {
                         if (storyItem2 instanceof TL_stories.TL_storyItem) {
-                            v7Var.l(peerDialogId, storyItem2);
+                            w7Var.l(peerDialogId, storyItem2);
                             Locale locale = Locale.US;
                             SQLiteCursor queryFinalized = database.queryFinalized("SELECT story_id FROM stories WHERE dialog_id = " + peerDialogId + " AND story_id = " + i29, new Object[0]);
                             boolean next = queryFinalized.next();
@@ -564,7 +564,7 @@ public final /* synthetic */ class pa implements Runnable {
                         NativeByteBuffer byteBufferValue = queryFinalized3.byteBufferValue(0);
                         NativeByteBuffer byteBufferValue2 = queryFinalized3.byteBufferValue(1);
                         if (byteBufferValue != null) {
-                            ci.w8.a(TL_stories.StoryItem.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(true), true), byteBufferValue2);
+                            ci.x8.a(TL_stories.StoryItem.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(true), true), byteBufferValue2);
                             byteBufferValue.reuse();
                         }
                         if (byteBufferValue2 != null) {
@@ -598,12 +598,12 @@ public final /* synthetic */ class pa implements Runnable {
                     return;
                 }
             case 27:
-                ci.v7.a((ci.v7) this.b, (ci.h6) this.c);
+                ci.w7.a((ci.w7) this.b, (ci.i6) this.c);
                 return;
             case 28:
-                ci.v7 v7Var2 = (ci.v7) this.b;
-                ci.h6 h6Var = (ci.h6) this.c;
-                MessagesStorage messagesStorage2 = v7Var2.b;
+                ci.w7 w7Var2 = (ci.w7) this.b;
+                ci.i6 i6Var = (ci.i6) this.c;
+                MessagesStorage messagesStorage2 = w7Var2.b;
                 SQLiteDatabase database2 = messagesStorage2.getDatabase();
                 LongSparseIntArray longSparseIntArray = new LongSparseIntArray();
                 try {
@@ -614,10 +614,10 @@ public final /* synthetic */ class pa implements Runnable {
                 } catch (Exception e7) {
                     messagesStorage2.checkSQLException(e7);
                 }
-                AndroidUtilities.runOnUIThread(new ci.u7(i12, h6Var, longSparseIntArray));
+                AndroidUtilities.runOnUIThread(new ci.v7(i12, i6Var, longSparseIntArray));
                 return;
             default:
-                ((ci.h6) this.b).run((TL_stories.TL_stories_allStories) this.c);
+                ((ci.i6) this.b).run((TL_stories.TL_stories_allStories) this.c);
                 return;
         }
     }

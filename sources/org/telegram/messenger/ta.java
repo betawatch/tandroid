@@ -1,47 +1,51 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ta implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
 
-    public /* synthetic */ ta(MessagesController messagesController, ArrayList arrayList, int i10) {
-        this.a = i10;
+    public /* synthetic */ ta(int i10, int i11, int i12, long j10, MessagesController messagesController, boolean z10) {
+        this.a = i12;
         this.b = messagesController;
-        this.c = arrayList;
+        this.c = j10;
+        this.d = i10;
+        this.e = i11;
+        this.f = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i10 = this.a;
+        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.b;
+        switch (i10) {
             case 0:
-                this.b.lambda$processUpdates$382(this.c);
+                ((MessagesController) notificationCenterDelegate).lambda$markDialogAsRead$240(this.c, this.d, this.e, this.f);
                 break;
             case 1:
-                this.b.lambda$processUpdateArray$400(this.c);
-                break;
-            case 2:
-                this.b.lambda$checkChatInviter$372(this.c);
-                break;
-            case 3:
-                this.b.lambda$processUpdates$381(this.c);
-                break;
-            case 4:
-                this.b.lambda$processUpdateArray$401(this.c);
-                break;
-            case 5:
-                this.b.lambda$getChannelDifference$340(this.c);
-                break;
-            case 6:
-                this.b.lambda$reloadMentionsCountForChannels$221(this.c);
+                ((MessagesController) notificationCenterDelegate).lambda$markDialogAsRead$241(this.c, this.d, this.e, this.f);
                 break;
             default:
-                this.b.lambda$checkChatInviter$371(this.c);
+                int i11 = ChatActivityEnterView.n5;
+                ((ChatActivityEnterView) notificationCenterDelegate).R0(this.d, this.f, this.e, false, this.c);
                 break;
         }
+    }
+
+    public /* synthetic */ ta(ChatActivityEnterView chatActivityEnterView, boolean z10, int i10, int i11, long j10) {
+        this.a = 2;
+        this.b = chatActivityEnterView;
+        this.f = z10;
+        this.d = i10;
+        this.e = i11;
+        this.c = j10;
     }
 }

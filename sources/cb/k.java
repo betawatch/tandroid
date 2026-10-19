@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import td.p;
 import v7.i8;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class k {
     public static final n1.d c = new n1.d("firebase_sessions_enabled");
@@ -131,7 +131,7 @@ public final class k {
                     k1.f fVar = this.a;
                     j jVar = new j(obj, dVar, this, null);
                     iVar.c = 1;
-                    if (fVar.a(new n1.c(jVar, null, 1), iVar) == aVar) {
+                    if (fVar.h(new n1.c(jVar, null, 1), iVar) == aVar) {
                         return aVar;
                     }
                 } else {

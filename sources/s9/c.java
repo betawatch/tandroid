@@ -3,7 +3,7 @@ package s9;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements g {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class c implements g {
     }
 
     @Override // s9.g
-    public final ScheduledFuture a(k0.b bVar) {
+    public final ScheduledFuture a(le.b bVar) {
         switch (this.a) {
             case 0:
                 f fVar = this.b;

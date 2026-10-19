@@ -7,11 +7,11 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.ch;
-import org.telegram.ui.Components.kw0;
-import org.telegram.ui.sn;
-import org.telegram.ui.vi;
+import org.telegram.ui.Components.lw0;
+import org.telegram.ui.qn;
+import org.telegram.ui.ti;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class n5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -20,9 +20,9 @@ public final class n5 extends AnimatorListenerAdapter {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ n5(kw0 kw0Var, ViewGroup viewGroup, ViewGroup viewGroup2, int i10, int i11) {
+    public /* synthetic */ n5(lw0 lw0Var, ViewGroup viewGroup, ViewGroup viewGroup2, int i10, int i11) {
         this.a = i11;
-        this.e = kw0Var;
+        this.e = lw0Var;
         this.c = viewGroup;
         this.d = viewGroup2;
         this.b = i10;
@@ -46,32 +46,32 @@ public final class n5 extends AnimatorListenerAdapter {
                 }
                 break;
             case 1:
-                sn snVar = (sn) this.e;
-                snVar.O5 = true;
-                ((org.telegram.ui.ActionBar.n2) snVar).fragmentBeginToShow = true;
-                snVar.V9 = null;
-                AndroidUtilities.runOnUIThread(new vi(this, 0), 32L);
+                qn qnVar = (qn) this.e;
+                qnVar.O5 = true;
+                ((org.telegram.ui.ActionBar.n2) qnVar).fragmentBeginToShow = true;
+                qnVar.V9 = null;
+                AndroidUtilities.runOnUIThread(new ti(this, 0), 32L);
                 super.onAnimationEnd(animator);
-                snVar.X0.invalidate();
-                snVar.X0.setSkipBackgroundDrawing(false);
-                snVar.S9 = false;
-                sn snVar2 = (sn) this.c;
-                snVar2.U9 = 0.0f;
-                snVar2.fragmentView.invalidate();
-                snVar2.x0.invalidate();
-                snVar2.T9 = null;
-                snVar.fragmentView.setAlpha(1.0f);
+                qnVar.X0.invalidate();
+                qnVar.X0.setSkipBackgroundDrawing(false);
+                qnVar.S9 = false;
+                qn qnVar2 = (qn) this.c;
+                qnVar2.U9 = 0.0f;
+                qnVar2.fragmentView.invalidate();
+                qnVar2.x0.invalidate();
+                qnVar2.T9 = null;
+                qnVar.fragmentView.setAlpha(1.0f);
                 ((Runnable) this.d).run();
-                snVar.a1.setTranslationY(0.0f);
-                snVar2.a1.setTranslationY(0.0f);
-                snVar2.a1.getAvatarImageView().setTranslationY(0.0f);
-                snVar.a1.getAvatarImageView().setScaleX(1.0f);
-                snVar.a1.getAvatarImageView().setScaleY(1.0f);
-                snVar.a1.getAvatarImageView().setAlpha(1.0f);
-                snVar2.a1.getAvatarImageView().setScaleX(1.0f);
-                snVar2.a1.getAvatarImageView().setScaleY(1.0f);
-                snVar2.a1.getAvatarImageView().setAlpha(1.0f);
-                ch chVar = snVar2.M0;
+                qnVar.a1.setTranslationY(0.0f);
+                qnVar2.a1.setTranslationY(0.0f);
+                qnVar2.a1.getAvatarImageView().setTranslationY(0.0f);
+                qnVar.a1.getAvatarImageView().setScaleX(1.0f);
+                qnVar.a1.getAvatarImageView().setScaleY(1.0f);
+                qnVar.a1.getAvatarImageView().setAlpha(1.0f);
+                qnVar2.a1.getAvatarImageView().setScaleX(1.0f);
+                qnVar2.a1.getAvatarImageView().setScaleY(1.0f);
+                qnVar2.a1.getAvatarImageView().setAlpha(1.0f);
+                ch chVar = qnVar2.M0;
                 if (chVar != null) {
                     chVar.setAlpha(1.0f);
                     break;
@@ -122,7 +122,7 @@ public final class n5 extends AnimatorListenerAdapter {
                 break;
             case 1:
                 super.onAnimationStart(animator);
-                i10 = ((org.telegram.ui.ActionBar.n2) ((sn) this.e)).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.n2) ((qn) this.e)).currentAccount;
                 this.b = NotificationCenter.getInstance(i10).setAnimationInProgress(this.b, null);
                 break;
             default:
@@ -148,10 +148,10 @@ public final class n5 extends AnimatorListenerAdapter {
         }
     }
 
-    public n5(sn snVar, sn snVar2, Runnable runnable) {
+    public n5(qn qnVar, qn qnVar2, Runnable runnable) {
         this.a = 1;
-        this.e = snVar;
-        this.c = snVar2;
+        this.e = qnVar;
+        this.c = qnVar2;
         this.d = runnable;
     }
 }

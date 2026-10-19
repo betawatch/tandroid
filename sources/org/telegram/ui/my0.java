@@ -1,33 +1,24 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class my0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ py0 b;
+public final class my0 extends org.telegram.ui.Components.er0 {
+    public final /* synthetic */ ny0 c1;
 
-    public /* synthetic */ my0(py0 py0Var, int i10) {
-        this.a = i10;
-        this.b = py0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public my0(ny0 ny0Var, Activity activity, String str) {
+        super(activity, null, str, false, null, false, null);
+        this.c1 = ny0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
-                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
-                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
-                py0 py0Var = this.b;
-                py0Var.c.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new my0(py0Var, 1));
-                break;
-            default:
-                this.b.c.getMessagesController().loadAppConfig();
-                break;
+    @Override // org.telegram.ui.Components.er0
+    public final void T0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            AndroidUtilities.runOnUIThread(new jv0(this, hVar, i10, 15), 250L);
         }
     }
 }

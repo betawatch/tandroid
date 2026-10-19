@@ -1,34 +1,29 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.ui.Components.UndoView;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class ql extends org.telegram.ui.Components.w20 {
-    public final /* synthetic */ sn b;
+public final class ql extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ qn d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ql(sn snVar, Activity activity, org.telegram.ui.ActionBar.n2 n2Var) {
-        super(activity, n2Var);
-        this.b = snVar;
+    public ql(qn qnVar, boolean z10, boolean z11, boolean z12) {
+        this.d = qnVar;
+        this.a = z10;
+        this.b = z11;
+        this.c = z12;
     }
 
-    @Override // org.telegram.ui.Components.w20
-    public final void n() {
-        sn snVar = this.b;
-        snVar.T7();
-        UndoView undoView = snVar.y3;
-        if (undoView == null) {
-            return;
-        }
-        undoView.j(75, 0L, null);
-        snVar.getMessagesController().removeSuggestion(snVar.T5, "CONVERT_GIGAGROUP");
-    }
-
-    @Override // org.telegram.ui.Components.w20
-    public final void o() {
-        sn snVar = this.b;
-        snVar.getMessagesController().convertToGigaGroup(snVar.getParentActivity(), snVar.e, snVar, new b1(this, 19));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        qn qnVar = this.d;
+        qnVar.M2 = null;
+        qnVar.J2.setVisibility(this.a ? 0 : 4);
+        qnVar.L2.setVisibility(this.b ? 0 : 4);
+        qnVar.K2.setVisibility(this.c ? 0 : 4);
     }
 }

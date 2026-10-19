@@ -24,7 +24,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -46,13 +46,13 @@ public final /* synthetic */ class g implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new a3.l0((x) this.b, tLObject, (Context) this.c, 1));
                 break;
             case 1:
-                k7.O0((k7) this.b, (org.telegram.ui.ActionBar.b2) this.c, tLObject, tL_error);
+                l7.X((l7) this.b, (org.telegram.ui.ActionBar.b2) this.c, tLObject, tL_error);
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new y0(this.b, tLObject, this.c, tL_error, 2));
+                AndroidUtilities.runOnUIThread(new y0(this.b, tLObject, this.c, tL_error, 3));
                 break;
             case 3:
-                k7.b1((k7) this.b, (TL_stars.InputSavedStarGift) this.c, tLObject, tL_error);
+                l7.T((l7) this.b, (TL_stars.InputSavedStarGift) this.c, tLObject, tL_error);
                 break;
             case 4:
                 AndroidUtilities.runOnUIThread(new a3.l0(tLObject, (u0) this.b, (String) this.c, 11));
@@ -72,21 +72,21 @@ public final /* synthetic */ class g implements RequestDelegate {
                 }
                 break;
             case 8:
-                ci.g4 g4Var = (ci.g4) this.b;
+                ci.h4 h4Var = (ci.h4) this.b;
                 ei.r9 r9Var = (ei.r9) this.c;
                 if (tLObject instanceof TLRPC.Updates) {
-                    MessagesController.getInstance(g4Var.l.C2).lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
+                    MessagesController.getInstance(h4Var.l.C2).lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                 }
-                AndroidUtilities.runOnUIThread(new ci.d4(r9Var, 0));
+                AndroidUtilities.runOnUIThread(new ci.e4(r9Var, 0));
                 break;
             case 9:
-                AndroidUtilities.runOnUIThread(new a3.l0((ci.s6) this.b, tLObject, (Runnable) this.c, 24));
+                AndroidUtilities.runOnUIThread(new a3.l0((ci.t6) this.b, tLObject, (Runnable) this.c, 24));
                 break;
             case 10:
                 AndroidUtilities.runOnUIThread(new y0(this.b, tLObject, this.c, tL_error, 9));
                 break;
             case 11:
-                AndroidUtilities.runOnUIThread(new a3.l0((ci.ia) this.b, tLObject, (TL_stories.TL_stories_getStoriesViews) this.c, 26));
+                AndroidUtilities.runOnUIThread(new a3.l0((ci.ja) this.b, tLObject, (TL_stories.TL_stories_getStoriesViews) this.c, 26));
                 break;
             case 12:
                 AndroidUtilities.runOnUIThread(new ei.z1((ei.a2) this.b, (String) this.c, tLObject, 0));
@@ -149,7 +149,7 @@ public final /* synthetic */ class g implements RequestDelegate {
                     while (true) {
                         boolean z10 = true;
                         if (i10 >= size) {
-                            AndroidUtilities.runOnUIThread(new x7(c6Var, arrayList4, z10, 13));
+                            AndroidUtilities.runOnUIThread(new y7(c6Var, arrayList4, z10, 13));
                             break;
                         } else {
                             TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) vector.objects.get(i10);

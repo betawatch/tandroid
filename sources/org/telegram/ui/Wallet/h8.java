@@ -19,20 +19,20 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.s61;
-import org.telegram.ui.Components.u21;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.v21;
 import org.telegram.ui.Components.v61;
-import org.telegram.ui.Components.w31;
+import org.telegram.ui.Components.w61;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.x90;
-import org.telegram.ui.m71;
+import org.telegram.ui.k71;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class h8 extends v61 implements NotificationCenter.NotificationCenterDelegate {
+public final class h8 extends w61 implements NotificationCenter.NotificationCenterDelegate {
     public final ArrayList d = new ArrayList();
     public boolean e;
 
@@ -47,23 +47,23 @@ public final class h8 extends v61 implements NotificationCenter.NotificationCent
         Activity parentActivity = h8Var.getParentActivity();
         org.telegram.ui.ActionBar.d6 d6Var = h8Var.resourceProvider;
         if (BuildVars.DEBUG_PRIVATE_VERSION && m0Var.d()) {
-            pVar = new p((v61) h8Var, m0Var, (Object) g10, 6);
+            pVar = new p((w61) h8Var, m0Var, (Object) g10, 6);
         }
-        f0(parentActivity, g10, d6Var, pVar, new v3(14, h8Var, q0Var));
+        f0(parentActivity, g10, d6Var, pVar, new z3(13, h8Var, q0Var));
     }
 
     public static void Z(h8 h8Var, org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        pf.c g10 = b2Var.g(i10, true, true);
-        g10.d();
+        pf.c h = b2Var.h(i10, true, true);
+        h.d();
         int i11 = h8Var.currentAccount;
-        d8 d8Var = new d8(h8Var, g10, 0);
+        d8 d8Var = new d8(h8Var, h, 0);
         m0 w9 = m0.w(i11);
-        w9.j0(new w31(i11, d8Var, w9));
+        w9.j0(new x31(i11, d8Var, w9));
     }
 
     public static void a0(h8 h8Var, Boolean bool) {
         m0 w9 = m0.w(h8Var.currentAccount);
-        h hVar = new h(h8Var, bool, w9, 21);
+        h hVar = new h(h8Var, bool, w9, 20);
         if (!bool.booleanValue() || !BuildVars.DEBUG_PRIVATE_VERSION) {
             hVar.run();
             return;
@@ -83,7 +83,7 @@ public final class h8 extends v61 implements NotificationCenter.NotificationCent
     }
 
     public static LinearLayout d0(Context context, org.telegram.ui.ActionBar.d6 d6Var, int i10, String str) {
-        LinearLayout e = lk.e(context, 0);
+        LinearLayout e = kk.e(context, 0);
         e.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
         ImageView imageView = new ImageView(context);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -100,7 +100,7 @@ public final class h8 extends v61 implements NotificationCenter.NotificationCent
     }
 
     public static LinearLayout e0(int i10, int i11, Context context, ArrayList arrayList, org.telegram.ui.ActionBar.d6 d6Var) {
-        LinearLayout e = lk.e(context, 1);
+        LinearLayout e = kk.e(context, 1);
         int i12 = i10;
         while (i12 < i11) {
             LinearLayout linearLayout = new LinearLayout(context);
@@ -131,7 +131,7 @@ public final class h8 extends v61 implements NotificationCenter.NotificationCent
         return e;
     }
 
-    public static void f0(Activity activity, ArrayList arrayList, org.telegram.ui.ActionBar.d6 d6Var, p pVar, v3 v3Var) {
+    public static void f0(Activity activity, ArrayList arrayList, org.telegram.ui.ActionBar.d6 d6Var, p pVar, z3 z3Var) {
         ei.d dVar;
         org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, (Context) activity, d6Var, false);
         f3Var.fixNavigationBar();
@@ -194,13 +194,13 @@ public final class h8 extends v61 implements NotificationCenter.NotificationCent
             ei.d dVar3 = dVar;
             dVar3.setOnClickListener(new y7(dVar3, pVar, f3Var, d6Var, 1));
         }
-        if (v3Var != null) {
+        if (z3Var != null) {
             dVar2.setColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.q7, d6Var));
             dVar2.setText(LocaleController.getString(R.string.WalletDelete));
-            dVar2.setOnClickListener(new a8(activity, d6Var, v3Var, f3Var));
+            dVar2.setOnClickListener(new a8(activity, d6Var, z3Var, f3Var));
         } else {
             dVar2.setText(LocaleController.getString(R.string.WalletDone));
-            dVar2.setOnClickListener(new n3(f3Var, 1));
+            dVar2.setOnClickListener(new o3(f3Var, 1));
         }
         f3Var.show();
     }
@@ -212,19 +212,19 @@ public final class h8 extends v61 implements NotificationCenter.NotificationCent
         e.setPadding(0, 0, 0, AndroidUtilities.dp(8.0f));
         LinearLayout e7 = org.telegram.messenger.g0.e(activity, 1);
         e7.setPadding(AndroidUtilities.dp(36.0f), 0, AndroidUtilities.dp(36.0f), 0);
-        u21 u21Var = new u21(activity, d6Var);
-        u21Var.setPadding(AndroidUtilities.dp(0.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(0.0f), AndroidUtilities.dp(4.0f));
-        u21Var.setEmojiSize(100);
-        org.telegram.ui.Components.w9 w9Var = u21Var.b;
+        v21 v21Var = new v21(activity, d6Var);
+        v21Var.setPadding(AndroidUtilities.dp(0.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(0.0f), AndroidUtilities.dp(4.0f));
+        v21Var.setEmojiSize(100);
+        org.telegram.ui.Components.w9 w9Var = v21Var.b;
         w9Var.getImageReceiver().setCurrentAccount(AndroidUtilities.getAccountInProduction());
         MediaDataController.getInstance(AndroidUtilities.getAccountInProduction()).setPlaceholderImage(w9Var, "RestrictedEmoji", "📝", "100_100");
-        e7.addView(u21Var, w7.z5.q(-1, -2, 7));
+        e7.addView(v21Var, w7.z5.q(-1, -2, 7));
         String string = LocaleController.getString(R.string.WalletRecoveryPhraseLearnTitle);
-        x90 x90Var = u21Var.c;
+        x90 x90Var = v21Var.c;
         CharSequence replaceEmoji = Emoji.replaceEmoji(string, x90Var.getPaint().getFontMetricsInt(), false);
         String string2 = LocaleController.getString(R.string.WalletRecoveryPhraseLearnInfo);
-        x90 x90Var2 = u21Var.d;
-        u21Var.a(replaceEmoji, Emoji.replaceEmoji(string2, x90Var2.getPaint().getFontMetricsInt(), false));
+        x90 x90Var2 = v21Var.d;
+        v21Var.a(replaceEmoji, Emoji.replaceEmoji(string2, x90Var2.getPaint().getFontMetricsInt(), false));
         x90Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var));
         x90Var2.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.z6, d6Var));
         NotificationCenter.listenEmojiLoading(x90Var);
@@ -257,11 +257,11 @@ public final class h8 extends v61 implements NotificationCenter.NotificationCent
      */
     /* JADX WARN: Removed duplicated region for block: B:24:0x00bd  */
     /* JADX WARN: Removed duplicated region for block: B:45:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.v61
+    @Override // org.telegram.ui.Components.w61
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void U(ArrayList arrayList, s61 s61Var) {
+    public final void U(ArrayList arrayList, t61 t61Var) {
         List<i0> list;
         m0 w9 = m0.w(this.currentAccount);
         TL_wallet.WalletState walletState = w9.e;
@@ -273,11 +273,11 @@ public final class h8 extends v61 implements NotificationCenter.NotificationCent
                 if (q0Var != null) {
                 }
             }
-            i2.d.p(R.string.WalletRecoveryPhraseLearnTitle, arrayList);
-            f61 e = f61.e(1, LocaleController.getString(R.string.WalletRecoveryPhraseLearnButton));
+            i2.e.p(R.string.WalletRecoveryPhraseLearnTitle, arrayList);
+            g61 e = g61.e(1, LocaleController.getString(R.string.WalletRecoveryPhraseLearnButton));
             e.q = true;
             arrayList.add(e);
-            i2.d.B(R.string.WalletRecoveryPhraseTransferInfo, arrayList);
+            i2.e.B(R.string.WalletRecoveryPhraseTransferInfo, arrayList);
             TL_wallet.WalletState walletState2 = w9.e;
             if (!(!(walletState2 instanceof TL_wallet.TL_walletState) ? false : ((TL_wallet.TL_walletState) walletState2).backup_enabled)) {
                 if (walletState2 instanceof TL_wallet.TL_walletState) {
@@ -288,7 +288,7 @@ public final class h8 extends v61 implements NotificationCenter.NotificationCent
                         }
                     }
                 }
-                f61 e7 = f61.e(4, LocaleController.getString(R.string.WalletDeleteWallet));
+                g61 e7 = g61.e(4, LocaleController.getString(R.string.WalletDeleteWallet));
                 e7.r = true;
                 arrayList.add(e7);
                 list = w9.H;
@@ -296,8 +296,8 @@ public final class h8 extends v61 implements NotificationCenter.NotificationCent
                     for (i0 i0Var : list) {
                         if (!i0Var.e || BuildVars.DEBUG_PRIVATE_VERSION) {
                             if (z10) {
-                                arrayList.add(f61.B(null));
-                                i2.d.p(R.string.WalletPreviousWallets, arrayList);
+                                arrayList.add(g61.B(null));
+                                i2.e.p(R.string.WalletPreviousWallets, arrayList);
                                 z10 = false;
                             }
                             String str = i0Var.a;
@@ -305,7 +305,7 @@ public final class h8 extends v61 implements NotificationCenter.NotificationCent
                             int i10 = i0Var.b;
                             boolean z11 = i0Var.e;
                             int i11 = f8.a;
-                            f61 J = f61.J(f8.class);
+                            g61 J = g61.J(f8.class);
                             J.l = str;
                             J.B = j10;
                             J.z = i10;
@@ -316,25 +316,25 @@ public final class h8 extends v61 implements NotificationCenter.NotificationCent
                     if (z10) {
                         return;
                     }
-                    i2.d.B(R.string.WalletPreviousWalletsInfo, arrayList);
+                    i2.e.B(R.string.WalletPreviousWalletsInfo, arrayList);
                     return;
                 }
                 return;
             }
-            i2.d.p(R.string.WalletEncryptedBackup, arrayList);
+            i2.e.p(R.string.WalletEncryptedBackup, arrayList);
             TL_wallet.WalletState walletState3 = w9.e;
             if (!(walletState3 instanceof TL_wallet.TL_walletState) ? false : ((TL_wallet.TL_walletState) walletState3).backup_enabled) {
-                f61 e10 = f61.e(3, LocaleController.getString(R.string.WalletDisableBackup));
+                g61 e10 = g61.e(3, LocaleController.getString(R.string.WalletDisableBackup));
                 e10.r = true;
                 arrayList.add(e10);
-                i2.d.B(R.string.WalletBackupEnabledDescription, arrayList);
+                i2.e.B(R.string.WalletBackupEnabledDescription, arrayList);
             } else {
-                f61 e11 = f61.e(2, LocaleController.getString(R.string.WalletEnableBackup));
+                g61 e11 = g61.e(2, LocaleController.getString(R.string.WalletEnableBackup));
                 e11.q = true;
                 arrayList.add(e11);
-                i2.d.B(R.string.WalletBackupDisabledDescription, arrayList);
+                i2.e.B(R.string.WalletBackupDisabledDescription, arrayList);
             }
-            f61 e72 = f61.e(4, LocaleController.getString(R.string.WalletDeleteWallet));
+            g61 e72 = g61.e(4, LocaleController.getString(R.string.WalletDeleteWallet));
             e72.r = true;
             arrayList.add(e72);
             list = w9.H;
@@ -343,14 +343,14 @@ public final class h8 extends v61 implements NotificationCenter.NotificationCent
         }
     }
 
-    @Override // org.telegram.ui.Components.v61
+    @Override // org.telegram.ui.Components.w61
     public final CharSequence V() {
         return LocaleController.getString(R.string.WalletKeysAndBackup);
     }
 
-    @Override // org.telegram.ui.Components.v61
-    public final void W(f61 f61Var, View view) {
-        int i10 = f61Var.d;
+    @Override // org.telegram.ui.Components.w61
+    public final void W(g61 g61Var, View view) {
+        int i10 = g61Var.d;
         if (i10 == 1) {
             m0 w9 = m0.w(this.currentAccount);
             if (!w9.e()) {
@@ -365,15 +365,15 @@ public final class h8 extends v61 implements NotificationCenter.NotificationCent
         if (i10 == 3) {
             m0 w10 = m0.w(this.currentAccount);
             org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(getParentActivity(), 3, null);
-            b2Var.q(500L);
+            b2Var.r(500L);
             k kVar = new k(this, b2Var, w10);
             m0.F("emulate disable backup: when ready");
-            m71 m71Var = new m71(26, w10, kVar);
+            k71 k71Var = new k71(26, w10, kVar);
             if (!w10.E() || w10.f == null) {
-                w10.w.add(new WeakReference(m71Var));
+                w10.w.add(new WeakReference(k71Var));
                 return;
             } else {
-                m71Var.run();
+                k71Var.run();
                 return;
             }
         }
@@ -381,12 +381,12 @@ public final class h8 extends v61 implements NotificationCenter.NotificationCent
             m0 w11 = m0.w(this.currentAccount);
             x7 x7Var = new x7(this, 1);
             m0.F("enable backup: when ready...");
-            w11.j0(new m71(24, w11, x7Var));
+            w11.j0(new k71(24, w11, x7Var));
             return;
         }
         if (i10 != 4) {
-            if (f61Var.G(f8.class)) {
-                String charSequence = f61Var.l.toString();
+            if (g61Var.G(f8.class)) {
+                String charSequence = g61Var.l.toString();
                 g0(getParentActivity(), getResourceProvider(), new o(this, m0.w(this.currentAccount), charSequence, new q0(getParentActivity(), charSequence, this.currentAccount)));
                 return;
             }
@@ -395,16 +395,16 @@ public final class h8 extends v61 implements NotificationCenter.NotificationCent
         org.telegram.ui.ActionBar.b2 h02 = org.telegram.ui.Components.f5.h0(getParentActivity(), LocaleController.getString(R.string.WalletDeleteWalletTitle), LocaleController.getString(R.string.WalletDeleteWalletInfo), BuildVars.DEBUG_PRIVATE_VERSION ? LocaleController.getString(R.string.WalletSaveOnDevice) : null, LocaleController.getString(R.string.WalletDeleteAnyway), new x7(this, 2), getResourceProvider(), false);
         TextView textView = (TextView) h02.d(-1);
         if (textView != null) {
-            textView.setTextColor(h02.e(org.telegram.ui.ActionBar.h6.q7));
+            textView.setTextColor(h02.f(org.telegram.ui.ActionBar.h6.q7));
         }
     }
 
-    @Override // org.telegram.ui.Components.v61
-    public final boolean X(f61 f61Var, View view) {
+    @Override // org.telegram.ui.Components.w61
+    public final boolean X(g61 g61Var, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.v61, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.Components.w61, org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
         this.fragmentView = super.createView(context);
         this.actionBar.setAdaptiveBackground(this.a);
@@ -415,11 +415,11 @@ public final class h8 extends v61 implements NotificationCenter.NotificationCent
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        u61 u61Var;
-        if (i10 != NotificationCenter.walletUpdate || (u61Var = this.a) == null) {
+        v61 v61Var;
+        if (i10 != NotificationCenter.walletUpdate || (v61Var = this.a) == null) {
             return;
         }
-        u61Var.W2.N(true);
+        v61Var.W2.N(true);
     }
 
     @Override // org.telegram.ui.ActionBar.n2

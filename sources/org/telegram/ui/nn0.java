@@ -1,34 +1,19 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.webkit.WebView;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class nn0 implements eo0 {
-    public final /* synthetic */ go0 a;
-
-    public nn0(go0 go0Var) {
-        this.a = go0Var;
+public final class nn0 extends WebView {
+    public nn0(Context context) {
+        super(context);
     }
 
-    @Override // org.telegram.ui.eo0
-    public final /* synthetic */ boolean c(String str, String str2, boolean z10, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.eo0
-    public final void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
-        go0 go0Var = this.a;
-        go0Var.I0 = tL_payments_validateRequestedInfo;
-        go0Var.B0(tL_payments_validateRequestedInfo.info);
-    }
-
-    @Override // org.telegram.ui.eo0
-    public final /* synthetic */ void a(TL_account.Password password) {
-    }
-
-    @Override // org.telegram.ui.eo0
-    public final /* synthetic */ void b() {
+    @Override // android.webkit.WebView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        getParent().requestDisallowInterceptTouchEvent(true);
+        return super.onTouchEvent(motionEvent);
     }
 }

@@ -3,7 +3,7 @@ package ki;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class l3 extends w7.j0 {
     public final /* synthetic */ u3 a;
@@ -16,7 +16,7 @@ public final class l3 extends w7.j0 {
 
     @Override // w7.j0
     public final void a(boolean z10) {
-        this.a.o();
+        this.a.p();
         w3 w3Var = this.b;
         if (z10) {
             j3 j3Var = w3Var.l3;

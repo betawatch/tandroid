@@ -10,7 +10,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class kv extends s4.r0 {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final class kv extends s4.r0 {
                     }
                     MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
                     try {
-                        im0Var.K1.j0(obtain);
+                        im0Var.K1.k(obtain);
                     } catch (Exception e) {
                         FileLog.e(e);
                     }
@@ -109,11 +109,11 @@ public final class kv extends s4.r0 {
                 tn0Var.a();
                 break;
             case 12:
-                j71 j71Var = (j71) obj;
-                ai.u1 u1Var = j71Var.d;
-                if (i10 == 0 && j71Var.G) {
-                    int i17 = j71Var.y;
-                    i13 = ((org.telegram.ui.ActionBar.f3) j71Var).backgroundPaddingTop;
+                k71 k71Var = (k71) obj;
+                ai.u1 u1Var = k71Var.d;
+                if (i10 == 0 && k71Var.G) {
+                    int i17 = k71Var.y;
+                    i13 = ((org.telegram.ui.ActionBar.f3) k71Var).backgroundPaddingTop;
                     if (AndroidUtilities.dp(13.0f) + i13 + i17 < AndroidUtilities.statusBarHeight * 2 && u1Var.canScrollVertically(1) && (sl0Var = (sl0) u1Var.K(0)) != null) {
                         View view3 = sl0Var.a;
                         if (view3.getTop() > 0) {
@@ -124,7 +124,7 @@ public final class kv extends s4.r0 {
                 }
                 break;
             case 14:
-                if (i10 == 1 && (n8Var = ((org.telegram.ui.Wallet.n5) obj).h0) != null) {
+                if (i10 == 1 && (n8Var = ((org.telegram.ui.Wallet.o5) obj).h0) != null) {
                     n8Var.a();
                     break;
                 }
@@ -169,7 +169,7 @@ public final class kv extends s4.r0 {
                 break;
             case 26:
                 if (i10 == 0) {
-                    ((zh.d0) obj).v = false;
+                    ((zh.j0) obj).v = false;
                     break;
                 }
                 break;
@@ -182,7 +182,7 @@ public final class kv extends s4.r0 {
         TLRPC.User user;
         String str2;
         pl0 pl0Var;
-        org.telegram.ui.Wallet.j5 j5Var;
+        org.telegram.ui.Wallet.k5 k5Var;
         switch (this.a) {
             case 0:
                 aw awVar = (aw) this.b;
@@ -199,7 +199,7 @@ public final class kv extends s4.r0 {
                 s00Var.invalidate();
                 break;
             case 2:
-                v00.H((v00) this.b);
+                v00.G((v00) this.b);
                 break;
             case 3:
                 hb0 hb0Var = (hb0) this.b;
@@ -296,26 +296,26 @@ public final class kv extends s4.r0 {
                 }
                 break;
             case 9:
-                wv0.n((wv0) this.b);
+                xv0.n((xv0) this.b);
                 break;
             case 10:
-                ((yw0) this.b).X.V();
+                ((zw0) this.b).X.V();
                 break;
             case 11:
-                oy0.P((oy0) this.b);
+                py0.P((py0) this.b);
                 break;
             case 12:
-                ((j71) this.b).M();
+                ((k71) this.b).M();
                 break;
             case 13:
-                ((b91) this.b).invalidate();
+                ((c91) this.b).invalidate();
                 break;
             case 14:
-                org.telegram.ui.Wallet.n5 n5Var = (org.telegram.ui.Wallet.n5) this.b;
-                if (i11 != 0 && recyclerView.getScrollState() == 1 && (j5Var = n5Var.p0) != null && j5Var.f) {
-                    j5Var.d = true;
+                org.telegram.ui.Wallet.o5 o5Var = (org.telegram.ui.Wallet.o5) this.b;
+                if (i11 != 0 && recyclerView.getScrollState() == 1 && (k5Var = o5Var.p0) != null && k5Var.f) {
+                    k5Var.d = true;
                 }
-                n5Var.M0();
+                o5Var.N0();
                 break;
             case 15:
                 int[] iArr2 = (int[]) this.b;
@@ -329,26 +329,26 @@ public final class kv extends s4.r0 {
                 }
                 break;
             case 17:
-                org.telegram.ui.web.q qVar = (org.telegram.ui.web.q) this.b;
-                if (!qVar.a.canScrollVertically(1)) {
-                    if (TextUtils.isEmpty(qVar.s)) {
-                        qVar.d.d();
+                org.telegram.ui.web.p pVar = (org.telegram.ui.web.p) this.b;
+                if (!pVar.a.canScrollVertically(1)) {
+                    if (TextUtils.isEmpty(pVar.s)) {
+                        pVar.d.d();
                     } else {
-                        org.telegram.ui.web.j jVar = qVar.e;
-                        if (jVar != null) {
-                            jVar.d();
+                        org.telegram.ui.web.i iVar = pVar.e;
+                        if (iVar != null) {
+                            iVar.d();
                         }
                     }
                 }
-                if (qVar.a.I1) {
-                    AndroidUtilities.hideKeyboard(qVar.fragmentView);
+                if (pVar.a.I1) {
+                    AndroidUtilities.hideKeyboard(pVar.fragmentView);
                     break;
                 }
                 break;
             case 18:
-                org.telegram.ui.web.g1 g1Var = (org.telegram.ui.web.g1) this.b;
-                if (g1Var.a.I1) {
-                    AndroidUtilities.hideKeyboard(g1Var.fragmentView);
+                org.telegram.ui.web.f1 f1Var = (org.telegram.ui.web.f1) this.b;
+                if (f1Var.a.I1) {
+                    AndroidUtilities.hideKeyboard(f1Var.fragmentView);
                     break;
                 }
                 break;
@@ -386,7 +386,7 @@ public final class kv extends s4.r0 {
                         }
                     }
                 }
-                org.telegram.messenger.lk.t(g4Var.h.animate().alpha((g4Var.K && g4Var.n.canScrollVertically(-1)) ? 1.0f : 0.0f), bs.h, 320L);
+                org.telegram.messenger.kk.t(g4Var.h.animate().alpha((g4Var.K && g4Var.n.canScrollVertically(-1)) ? 1.0f : 0.0f), bs.h, 320L);
                 break;
             case 24:
                 ((yh.f4) this.b).a0();
@@ -400,9 +400,9 @@ public final class kv extends s4.r0 {
                 }
                 break;
             case 26:
-                zh.d0 d0Var = (zh.d0) this.b;
-                if (!d0Var.v) {
-                    d0Var.h.a(d0Var.f(d0Var.c()), true);
+                zh.j0 j0Var = (zh.j0) this.b;
+                if (!j0Var.v) {
+                    j0Var.h.a(j0Var.f(j0Var.c()), true);
                     break;
                 }
                 break;

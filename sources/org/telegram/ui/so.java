@@ -1,88 +1,93 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.text.style.ForegroundColorSpan;
-import android.view.View;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class so extends org.telegram.ui.Cells.d9 {
-    public ValueAnimator v;
-    public int w;
-    public final /* synthetic */ yo x;
+public final class so extends org.telegram.ui.Components.e90 {
+    public final /* synthetic */ Context w;
+    public final /* synthetic */ wo x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public so(yo yoVar, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, 12, d6Var);
-        this.x = yoVar;
-        this.w = -1;
+    public so(wo woVar, Context context, TLRPC.Chat chat, Context context2) {
+        super(context, chat);
+        this.x = woVar;
+        this.w = context2;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int i14;
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (this.w != -1) {
-            yo yoVar = this.x;
-            if (yoVar.h != null) {
-                ArrayList arrayList = new ArrayList();
-                int i15 = 0;
-                boolean z11 = false;
-                while (true) {
-                    i14 = 1;
-                    if (i15 >= yoVar.h.getChildCount()) {
+    @Override // org.telegram.ui.Components.e90
+    public final boolean a(final boolean z10, org.telegram.ui.Components.c90 c90Var) {
+        TLRPC.ChatFull chatFull;
+        int i10;
+        org.telegram.ui.ActionBar.d6 d6Var;
+        wo woVar = this.x;
+        if (!woVar.V || (chatFull = woVar.Y) == null || (i10 = chatFull.invitesCount) == 0) {
+            return true;
+        }
+        String str = woVar.a0 ? z10 ? "ApproveNewMembersEnableForLinksChannel" : "ApproveNewMembersDisableForLinksChannel" : z10 ? "ApproveNewMembersEnableForLinks" : "ApproveNewMembersDisableForLinks";
+        Context context = this.w;
+        d6Var = ((org.telegram.ui.ActionBar.n2) woVar).resourceProvider;
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
+        alertDialog$Builder.a.R = LocaleController.getString(R.string.ApproveNewMembersApplyToLinksTitle);
+        alertDialog$Builder.a.T = AndroidUtilities.replaceTags(LocaleController.formatPluralString(str, i10, new Object[0]));
+        final int i11 = 0;
+        alertDialog$Builder.k(LocaleController.getString(R.string.ApproveNewMembersApplyToLinksApply), new org.telegram.ui.ActionBar.a2(this) { // from class: org.telegram.ui.ro
+            public final /* synthetic */ so b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // org.telegram.ui.ActionBar.a2
+            public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i12) {
+                switch (i11) {
+                    case 0:
+                        boolean z11 = z10;
+                        so soVar = this.b;
+                        soVar.setJoinRequest(z11);
+                        soVar.x.W = true;
                         break;
-                    }
-                    View childAt = yoVar.h.getChildAt(i15);
-                    if (z11) {
-                        arrayList.add(childAt);
-                    } else if (childAt == this) {
-                        z11 = true;
-                    }
-                    i15++;
+                    default:
+                        boolean z12 = z10;
+                        so soVar2 = this.b;
+                        soVar2.setJoinRequest(z12);
+                        soVar2.x.W = false;
+                        break;
                 }
-                float height = this.w - getHeight();
-                ValueAnimator valueAnimator = this.v;
-                if (valueAnimator != null) {
-                    valueAnimator.cancel();
-                }
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                this.v = ofFloat;
-                ofFloat.addUpdateListener(new fg(arrayList, height, i14));
-                this.v.setInterpolator(org.telegram.ui.Components.bs.h);
-                this.v.setDuration(350L);
-                this.v.start();
             }
-        }
-        this.w = getHeight();
-    }
+        });
+        final int i12 = 1;
+        alertDialog$Builder.h(LocaleController.getString(R.string.ApproveNewMembersApplyToLinksDontApply), new org.telegram.ui.ActionBar.a2(this) { // from class: org.telegram.ui.ro
+            public final /* synthetic */ so b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r7v0, types: [java.lang.Object, org.telegram.ui.Cells.d9, org.telegram.ui.so] */
-    /* JADX WARN: Type inference failed for: r8v0, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r8v1, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r8v3, types: [android.text.SpannableStringBuilder] */
-    @Override // org.telegram.ui.Cells.d9
-    public final void setText(CharSequence charSequence) {
-        if (charSequence != 0) {
-            charSequence = AndroidUtilities.replaceTags(charSequence.toString());
-            int indexOf = charSequence.toString().indexOf(10);
-            yo yoVar = this.x;
-            if (indexOf >= 0) {
-                charSequence.replace(indexOf, indexOf + 1, " ");
-                charSequence.setSpan(new ForegroundColorSpan(yoVar.getThemedColor(org.telegram.ui.ActionBar.h6.p7)), 0, indexOf, 33);
+            {
+                this.b = this;
             }
-            org.telegram.ui.Components.c61[] c61VarArr = (org.telegram.ui.Components.c61[]) charSequence.getSpans(0, charSequence.length(), org.telegram.ui.Components.c61.class);
-            ei.e2 e2Var = yoVar.a;
-            String obj = (e2Var == null || e2Var.getText() == null) ? "" : yoVar.a.getText().toString();
-            for (int i10 = 0; i10 < c61VarArr.length; i10++) {
-                charSequence.setSpan(new org.telegram.ui.Cells.i(5, (Object) this, obj), charSequence.getSpanStart(c61VarArr[i10]), charSequence.getSpanEnd(c61VarArr[i10]), 33);
-                charSequence.removeSpan(c61VarArr[i10]);
+
+            @Override // org.telegram.ui.ActionBar.a2
+            public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i122) {
+                switch (i12) {
+                    case 0:
+                        boolean z11 = z10;
+                        so soVar = this.b;
+                        soVar.setJoinRequest(z11);
+                        soVar.x.W = true;
+                        break;
+                    default:
+                        boolean z12 = z10;
+                        so soVar2 = this.b;
+                        soVar2.setJoinRequest(z12);
+                        soVar2.x.W = false;
+                        break;
+                }
             }
-        }
-        super.setText(charSequence);
+        });
+        woVar.showDialog(alertDialog$Builder.a);
+        return false;
     }
 }

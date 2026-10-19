@@ -1,63 +1,21 @@
 package w7;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class p8 {
-    public static String a(String str, Object... objArr) {
-        int length;
-        int length2;
-        int indexOf;
-        String sb2;
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            length = objArr.length;
-            if (i11 >= length) {
-                break;
-            }
-            Object obj = objArr[i11];
-            if (obj == null) {
-                sb2 = "null";
-            } else {
-                try {
-                    sb2 = obj.toString();
-                } catch (Exception e) {
-                    String str2 = obj.getClass().getName() + '@' + Integer.toHexString(System.identityHashCode(obj));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(str2), (Throwable) e);
-                    StringBuilder v = a1.g.v("<", str2, " threw ");
-                    v.append(e.getClass().getName());
-                    v.append(">");
-                    sb2 = v.toString();
-                }
-            }
-            objArr[i11] = sb2;
-            i11++;
+    public static int a(int i10) {
+        if (i10 == 0) {
+            return 0;
         }
-        StringBuilder sb3 = new StringBuilder((length * 16) + str.length());
-        int i12 = 0;
-        while (true) {
-            length2 = objArr.length;
-            if (i10 >= length2 || (indexOf = str.indexOf("%s", i12)) == -1) {
-                break;
-            }
-            sb3.append((CharSequence) str, i12, indexOf);
-            sb3.append(objArr[i10]);
-            i10++;
-            i12 = indexOf + 2;
+        if (i10 == 90) {
+            return 1;
         }
-        sb3.append((CharSequence) str, i12, str.length());
-        if (i10 < length2) {
-            sb3.append(" [");
-            sb3.append(objArr[i10]);
-            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
-                sb3.append(", ");
-                sb3.append(objArr[i13]);
-            }
-            sb3.append(']');
+        if (i10 == 180) {
+            return 2;
         }
-        return sb3.toString();
+        if (i10 == 270) {
+            return 3;
+        }
+        throw new IllegalArgumentException(i2.e.j(i10, "Invalid rotation: "));
     }
 }

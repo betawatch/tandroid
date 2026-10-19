@@ -1,16 +1,23 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
-/* loaded from: classes3.dex */
-public final class e61 extends s4.k {
-    public final /* synthetic */ j61 F;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-    public e61(j61 j61Var) {
-        this.F = j61Var;
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* loaded from: classes3.dex */
+public final class e61 extends s4.r0 {
+    public final /* synthetic */ h61 a;
+
+    public e61(h61 h61Var) {
+        this.a = h61Var;
     }
 
-    @Override // s4.k
-    public final void P(s4.b1 b1Var) {
-        j61.T(this.F);
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        h61 h61Var = this.a;
+        if (h61Var.d.I1) {
+            AndroidUtilities.hideKeyboard(h61Var.c0);
+        }
+        h61.T(h61Var);
     }
 }

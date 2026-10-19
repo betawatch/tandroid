@@ -34,12 +34,12 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.f6;
-import org.telegram.ui.Components.m41;
 import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.v30;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class h extends ScrollView {
     public final Paint E;
@@ -212,7 +212,7 @@ public abstract class h extends ScrollView {
                     obj = user;
                     if (obj != null) {
                         v30 v30Var2 = new v30(getContext(), obj, null, true, this.a);
-                        v30Var2.setOnClickListener(new m41(this, hashSet, runnable, 3));
+                        v30Var2.setOnClickListener(new n41(this, hashSet, runnable, 3));
                         arrayList5.add(v30Var2);
                     }
                 } else {

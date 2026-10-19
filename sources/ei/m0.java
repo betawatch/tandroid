@@ -12,12 +12,12 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public abstract class m0 extends FrameLayout {
     public boolean E;
     public final r6 a;
-    public rg.x1 b;
+    public rg.y1 b;
     public final org.telegram.ui.Components.f6 c;
     public final org.telegram.ui.Components.f6 d;
     public final l0 e;
@@ -46,7 +46,7 @@ public abstract class m0 extends FrameLayout {
         this.d = new org.telegram.ui.Components.f6(l0Var, 0L, 320L, bsVar);
         g0 g0Var = new g0(this, context, 1);
         this.h = g0Var;
-        g0Var.setListener(new ag.b(this, 15));
+        g0Var.setListener(new a4.l(this, 16));
         addView(g0Var);
         FrameLayout frameLayout = new FrameLayout(context);
         this.f = frameLayout;
@@ -88,12 +88,12 @@ public abstract class m0 extends FrameLayout {
                         break;
                     default:
                         m0 m0Var2 = this.b;
-                        rg.x1 x1Var = m0Var2.b;
-                        if (x1Var != null) {
-                            x1Var.G0 = new MediaController.CropState();
+                        rg.y1 y1Var = m0Var2.b;
+                        if (y1Var != null) {
+                            y1Var.G0 = new MediaController.CropState();
                             m0Var2.h.b(m0Var2.b.G0);
-                            rg.x1 x1Var2 = m0Var2.b;
-                            x1Var2.G0.orientation = x1Var2.getOrientation();
+                            rg.y1 y1Var2 = m0Var2.b;
+                            y1Var2.G0.orientation = y1Var2.getOrientation();
                             m0Var2.b.k();
                             m0Var2.b.requestLayout();
                             m0Var2.b.z0.requestLayout();
@@ -136,12 +136,12 @@ public abstract class m0 extends FrameLayout {
                         break;
                     default:
                         m0 m0Var2 = this.b;
-                        rg.x1 x1Var = m0Var2.b;
-                        if (x1Var != null) {
-                            x1Var.G0 = new MediaController.CropState();
+                        rg.y1 y1Var = m0Var2.b;
+                        if (y1Var != null) {
+                            y1Var.G0 = new MediaController.CropState();
                             m0Var2.h.b(m0Var2.b.G0);
-                            rg.x1 x1Var2 = m0Var2.b;
-                            x1Var2.G0.orientation = x1Var2.getOrientation();
+                            rg.y1 y1Var2 = m0Var2.b;
+                            y1Var2.G0.orientation = y1Var2.getOrientation();
                             m0Var2.b.k();
                             m0Var2.b.requestLayout();
                             m0Var2.b.z0.requestLayout();
@@ -184,12 +184,12 @@ public abstract class m0 extends FrameLayout {
                         break;
                     default:
                         m0 m0Var2 = this.b;
-                        rg.x1 x1Var = m0Var2.b;
-                        if (x1Var != null) {
-                            x1Var.G0 = new MediaController.CropState();
+                        rg.y1 y1Var = m0Var2.b;
+                        if (y1Var != null) {
+                            y1Var.G0 = new MediaController.CropState();
                             m0Var2.h.b(m0Var2.b.G0);
-                            rg.x1 x1Var2 = m0Var2.b;
-                            x1Var2.G0.orientation = x1Var2.getOrientation();
+                            rg.y1 y1Var2 = m0Var2.b;
+                            y1Var2.G0.orientation = y1Var2.getOrientation();
                             m0Var2.b.k();
                             m0Var2.b.requestLayout();
                             m0Var2.b.z0.requestLayout();
@@ -206,20 +206,20 @@ public abstract class m0 extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public int getCurrentHeight() {
-        rg.x1 x1Var = this.b;
-        if (x1Var == null) {
+        rg.y1 y1Var = this.b;
+        if (y1Var == null) {
             return 1;
         }
-        return (x1Var.getOrientation() == 90 || this.b.getOrientation() == 270) ? this.b.getContentWidth() : this.b.getContentHeight();
+        return (y1Var.getOrientation() == 90 || this.b.getOrientation() == 270) ? this.b.getContentWidth() : this.b.getContentHeight();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public int getCurrentWidth() {
-        rg.x1 x1Var = this.b;
-        if (x1Var == null) {
+        rg.y1 y1Var = this.b;
+        if (y1Var == null) {
             return 1;
         }
-        return (x1Var.getOrientation() == 90 || this.b.getOrientation() == 270) ? this.b.getContentHeight() : this.b.getContentWidth();
+        return (y1Var.getOrientation() == 90 || this.b.getOrientation() == 270) ? this.b.getContentHeight() : this.b.getContentWidth();
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -240,23 +240,23 @@ public abstract class m0 extends FrameLayout {
         super.onLayout(z10, i10, i11, i12, i13);
     }
 
-    public void set(rg.x1 x1Var) {
-        if (x1Var == null) {
+    public void set(rg.y1 y1Var) {
+        if (y1Var == null) {
             return;
         }
-        this.b = x1Var;
+        this.b = y1Var;
         setVisibility(0);
         this.E = false;
         g0 g0Var = this.h;
         g0Var.J = true;
         getLocationOnScreen(this.v);
         this.a.getLocationOnScreen(this.w);
-        x1Var.getLocationOnScreen(this.x);
-        MediaController.CropState cropState = x1Var.G0;
+        y1Var.getLocationOnScreen(this.x);
+        MediaController.CropState cropState = y1Var.G0;
         if (cropState == null) {
             cropState = null;
         }
-        g0Var.p(x1Var.getOrientation(), this.y, cropState);
+        g0Var.p(y1Var.getOrientation(), this.y, cropState);
         float rotation = g0Var.getRotation();
         mg.f fVar = this.n;
         fVar.setRotation(rotation);

@@ -9,11 +9,11 @@ import android.graphics.RectF;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import ci.u4;
+import ci.v4;
 import ei.i6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.aa0;
@@ -24,13 +24,12 @@ import org.telegram.ui.Components.fr;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.q6;
 import org.telegram.ui.Components.xj0;
-import org.telegram.ui.Wallet.p9;
-import org.telegram.ui.n40;
-import org.telegram.ui.vf1;
+import org.telegram.ui.l40;
+import org.telegram.ui.tf1;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class q0 extends FrameLayout implements aa0 {
     public boolean E;
@@ -52,7 +51,7 @@ public class q0 extends FrameLayout implements aa0 {
     public final int f;
     public boolean h;
     public float n;
-    public final p9 r;
+    public final rg.x1 r;
     public ValueAnimator s;
     public final Path v;
     public final org.telegram.ui.Components.voip.h w;
@@ -73,12 +72,12 @@ public class q0 extends FrameLayout implements aa0 {
             p0Var.a();
         }
         p0Var.c(str, z10, true);
-        p9 p9Var = this.r;
-        p9Var.setContentDescription(str);
+        rg.x1 x1Var = this.r;
+        x1Var.setContentDescription(str);
         if (this.I) {
             return;
         }
-        p9Var.setOnClickListener(onClickListener);
+        x1Var.setOnClickListener(onClickListener);
     }
 
     public final void b(CharSequence charSequence, boolean z10, boolean z11) {
@@ -108,8 +107,8 @@ public class q0 extends FrameLayout implements aa0 {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.n, this.h ? 1.0f : 0.0f);
         this.s = ofFloat;
-        ofFloat.addUpdateListener(new u4(this, 12));
-        this.s.addListener(new vf1(this, 15));
+        ofFloat.addUpdateListener(new v4(this, 12));
+        this.s.addListener(new tf1(this, 15));
         this.s.setDuration(250L);
         this.s.setInterpolator(bs.f);
         this.s.start();
@@ -199,10 +198,10 @@ public class q0 extends FrameLayout implements aa0 {
         p0Var.setAlpha(f7);
         p0Var.setTranslationY((1.0f - this.n) * AndroidUtilities.dp(12.0f));
         float f10 = 1.0f - this.n;
-        p9 p9Var = this.r;
-        p9Var.setAlpha(f10);
-        p9Var.setTranslationY((-AndroidUtilities.dp(12.0f)) * this.n);
-        p9Var.setVisibility(this.n == 1.0f ? 4 : 0);
+        rg.x1 x1Var = this.r;
+        x1Var.setAlpha(f10);
+        x1Var.setTranslationY((-AndroidUtilities.dp(12.0f)) * this.n);
+        x1Var.setVisibility(this.n == 1.0f ? 4 : 0);
         p0Var.setVisibility(this.n == 0.0f ? 4 : 0);
         invalidate();
     }
@@ -241,7 +240,7 @@ public class q0 extends FrameLayout implements aa0 {
         xj0Var.f(i10, 24, 24, null);
         org.telegram.ui.Components.voip.h hVar = this.w;
         hVar.g = 2.0f;
-        hVar.p = new org.telegram.ui.web.a2(this, 22);
+        hVar.p = new org.telegram.ui.web.z1(this, 22);
         invalidate();
         xj0Var.setVisibility(0);
     }
@@ -259,7 +258,7 @@ public class q0 extends FrameLayout implements aa0 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, z10 ? 1.0f : 0.0f);
             this.O = ofFloat;
             ofFloat.addUpdateListener(new i6(this, 23));
-            this.O.addListener(new n40(17, this, z10));
+            this.O.addListener(new l40(17, this, z10));
             this.O.setDuration(320L);
             this.O.setInterpolator(bs.h);
             this.O.start();
@@ -281,7 +280,7 @@ public class q0 extends FrameLayout implements aa0 {
         hVar.n = 1.2f;
         hVar.k = false;
         hVar.m = 4.0f;
-        LinearLayout e = lk.e(context, 0);
+        LinearLayout e = kk.e(context, 0);
         p0 p0Var = new p0(this, context, 0);
         this.d = p0Var;
         p0Var.b(0.35f, 350L, bs.h);
@@ -293,14 +292,14 @@ public class q0 extends FrameLayout implements aa0 {
         this.y = xj0Var;
         xj0Var.setColorFilter(-1);
         xj0Var.setVisibility(8);
-        p9 p9Var = new p9(this, context, 4);
-        this.r = p9Var;
-        p9Var.addView(e, z5.e(-2, -2, 17));
+        rg.x1 x1Var = new rg.x1(this, context, 3);
+        this.r = x1Var;
+        x1Var.addView(e, z5.e(-2, -2, 17));
         int o10 = i0.a.o(-1, 120);
-        p9Var.setBackground(h6.j0(i10, i10, i10, i10, 0, o10, o10));
+        x1Var.setBackground(h6.j0(i10, i10, i10, i10, 0, o10, o10));
         e.addView(p0Var, z5.q(-2, -2, 16));
         e.addView(xj0Var, z5.p(24, 24, 0.0f, 16, 4, 0, 0, 0));
-        addView(p9Var);
+        addView(x1Var);
         setOutlineProvider(zf.j0.b);
         setClipToOutline(true);
         b6.b(this, 0.02f, 1.2f);

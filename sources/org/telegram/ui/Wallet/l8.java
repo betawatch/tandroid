@@ -5,7 +5,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l8 implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -40,15 +40,15 @@ public final /* synthetic */ class l8 implements TextView.OnEditorActionListener
                 }
                 return false;
             default:
-                ga gaVar = (ga) this.b;
-                EditText editText = gaVar.a;
+                ha haVar = (ha) this.b;
+                EditText editText = haVar.a;
                 boolean z10 = keyEvent != null && (keyEvent.getKeyCode() == 66 || keyEvent.getKeyCode() == 160);
                 if (i10 != 5 && !z10) {
                     return false;
                 }
                 if (keyEvent == null || (keyEvent.getAction() == 1 && !keyEvent.isCanceled())) {
                     String lowerCase = editText.getText().toString().trim().toLowerCase();
-                    if (lowerCase.isEmpty() || !gaVar.b()) {
+                    if (lowerCase.isEmpty() || !haVar.b()) {
                         String str = null;
                         if (!lowerCase.isEmpty()) {
                             String[] mnemonicWordlist = WalletEngine2.getMnemonicWordlist();
@@ -68,19 +68,19 @@ public final /* synthetic */ class l8 implements TextView.OnEditorActionListener
                         if (str != null) {
                             editText.setText(str);
                             editText.setSelection(str.length());
-                            gaVar.setError(false);
-                            gaVar.a();
-                            Runnable runnable = gaVar.r;
+                            haVar.setError(false);
+                            haVar.a();
+                            Runnable runnable = haVar.r;
                             if (runnable != null) {
                                 editText.post(runnable);
                             }
                         } else {
-                            gaVar.setError(true);
+                            haVar.setError(true);
                         }
                     } else {
-                        gaVar.setError(false);
-                        gaVar.a();
-                        Runnable runnable2 = gaVar.r;
+                        haVar.setError(false);
+                        haVar.a();
+                        Runnable runnable2 = haVar.r;
                         if (runnable2 != null) {
                             editText.post(runnable2);
                         }

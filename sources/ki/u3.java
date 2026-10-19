@@ -3,36 +3,36 @@ package ki;
 import android.view.View;
 import org.telegram.ui.Components.i80;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public interface u3 {
-    i80 C(View view);
+    void A(int i10);
 
-    void E();
+    void C(c6 c6Var, String str);
 
-    void H(v3 v3Var, View view);
+    void J();
 
-    boolean d(float f7);
+    i80 M(View view);
 
-    void h(a aVar);
+    void P();
 
-    void l(int i10);
+    void V(v3 v3Var, View view);
 
-    void m(t3 t3Var, View view);
+    boolean e(float f7);
 
-    void n(h1 h1Var, boolean z10);
+    void i(a aVar);
 
-    void o();
+    void m(int i10);
+
+    void n(t3 t3Var, View view);
+
+    void o(h1 h1Var, boolean z10);
 
     void onContentChanged();
 
-    void q();
+    void p();
 
-    void u();
+    void r();
 
-    void w(int i10);
-
-    void x(c6 c6Var, String str);
-
-    void z();
+    void x();
 }

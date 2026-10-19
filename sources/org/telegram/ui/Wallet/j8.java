@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class j8 extends View {
     public final /* synthetic */ k8 E;
@@ -106,7 +106,7 @@ public final class j8 extends View {
             this.y = ofFloat;
             ofFloat.setDuration(b10);
             this.y.setInterpolator(new LinearInterpolator());
-            this.y.addUpdateListener(new v2(this, 7));
+            this.y.addUpdateListener(new b3(this, 6));
             this.y.start();
         }
     }

@@ -3,9 +3,9 @@ package u2;
 import java.util.ArrayList;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final class i extends u1 {
+public final class i extends t1 {
     public final long l;
     public final long m;
     public final boolean n;
@@ -31,7 +31,7 @@ public final class i extends u1 {
         this.s = new b2.n1();
     }
 
-    @Override // u2.u1
+    @Override // u2.t1
     public final void A(b2.o1 o1Var) {
         if (this.u != null) {
             return;
@@ -86,7 +86,7 @@ public final class i extends u1 {
         }
     }
 
-    @Override // u2.u1, u2.a
+    @Override // u2.t1, u2.a
     public final boolean a(b2.o0 o0Var) {
         a aVar = this.k;
         return aVar.i().e.equals(o0Var.e) && aVar.a(o0Var);

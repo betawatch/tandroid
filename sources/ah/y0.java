@@ -5,7 +5,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.view.View;
-import ci.f3;
+import ci.g3;
 import j$.util.Objects;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.ImageLocation;
@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.r5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class y0 {
     public final ImageReceiver a;
@@ -42,9 +42,9 @@ public final class y0 {
         r5 r5Var = this.b;
         Rect rect = this.c;
         if (r5Var != null) {
-            f3 f3Var = r5Var.k;
-            if (f3Var != null) {
-                f3Var.setRoundRadius((int) (rect.width() * 0.1f));
+            g3 g3Var = r5Var.k;
+            if (g3Var != null) {
+                g3Var.setRoundRadius((int) (rect.width() * 0.1f));
             }
             this.b.setColorFilter(this.k);
             this.b.setBounds(rect);

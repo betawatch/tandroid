@@ -13,7 +13,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
 import v7.q8;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class n0 implements j9.t, u {
     public b2.r0 a;
@@ -242,10 +242,10 @@ public final class n0 implements j9.t, u {
         this.c = uri3;
         this.a = U0;
         this.d = j11;
-        j9.y e = f0Var.m.e(U0);
-        if (e != null) {
+        j9.y g10 = f0Var.m.g(U0);
+        if (g10 != null) {
             p0Var.r = null;
-            if (!e.isDone()) {
+            if (!g10.isDone()) {
                 j10 = j11;
                 uri = uri3;
                 r0Var = U0;
@@ -254,13 +254,13 @@ public final class n0 implements j9.t, u {
                 p0Var.r = n0Var;
                 Handler handler = f0Var.l;
                 Objects.requireNonNull(handler);
-                e.a(new j9.u(0, e, n0Var), new i2.f0(handler, 1));
+                g10.a(new j9.u(0, g10, n0Var), new i2.g0(handler, 1));
                 p0.E(p0Var.m, n.b(r0Var, str, uri, j10, bitmap));
             }
             try {
-                bitmap = (Bitmap) q8.a(e);
-            } catch (CancellationException | ExecutionException e7) {
-                e2.a.l("MediaSessionLegacyStub", "Failed to load bitmap: " + e7.getMessage());
+                bitmap = (Bitmap) q8.a(g10);
+            } catch (CancellationException | ExecutionException e) {
+                e2.a.l("MediaSessionLegacyStub", "Failed to load bitmap: " + e.getMessage());
             }
         }
         j10 = j11;
@@ -291,11 +291,11 @@ public final class n0 implements j9.t, u {
                 arrayList2.add(null);
                 y0Var.run();
             } else {
-                j9.y v = f0Var.m.v(bArr);
-                arrayList2.add(v);
+                j9.y u10 = f0Var.m.u(bArr);
+                arrayList2.add(u10);
                 Handler handler = f0Var.l;
                 Objects.requireNonNull(handler);
-                v.a(y0Var, new i2.f0(handler, 1));
+                u10.a(y0Var, new i2.g0(handler, 1));
             }
         }
     }

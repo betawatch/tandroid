@@ -13,7 +13,7 @@ import org.telegram.ui.Components.gr;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout implements ne.d {
     public static final int[] s;
@@ -166,20 +166,8 @@ public final class h extends FrameLayout implements ne.d {
         return false;
     }
 
-    public void setGravity(int i10) {
-        this.r = i10;
-    }
-
-    public void setOnClickListener(a aVar) {
-        this.h = aVar;
-    }
-
-    public void setOnLongClickListener(b bVar) {
-        this.n = bVar;
-    }
-
     @Override // ne.d
-    public final void u(int i10, float f7, float f10, ne.e eVar) {
+    public final void r(int i10, float f7, float f10, ne.e eVar) {
         int i11 = i10 >> 16;
         int i12 = i10 & 65535;
         if (i11 >= 0) {
@@ -193,7 +181,19 @@ public final class h extends FrameLayout implements ne.d {
         }
     }
 
+    public void setGravity(int i10) {
+        this.r = i10;
+    }
+
+    public void setOnClickListener(a aVar) {
+        this.h = aVar;
+    }
+
+    public void setOnLongClickListener(b bVar) {
+        this.n = bVar;
+    }
+
     @Override // ne.d
-    public final /* synthetic */ void E(float f7, int i10) {
+    public final /* synthetic */ void H(float f7, int i10) {
     }
 }

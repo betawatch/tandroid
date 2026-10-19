@@ -23,9 +23,9 @@ import android.view.ViewParent;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.EdgeEffect;
 import android.widget.Scroller;
-import ci.g8;
-import ci.p4;
-import ci.p9;
+import ci.h8;
+import ci.q4;
+import ci.q9;
 import gb.i;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -37,7 +37,7 @@ import r0.a0;
 import r0.i0;
 import s4.c1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class g extends ViewGroup {
     public static final int[] s0 = {R.attr.layout_gravity};
@@ -567,7 +567,7 @@ public class g extends ViewGroup {
         }
         ArrayList arrayList = this.b;
         if (arrayList.size() > 0) {
-            return Math.max(((c) arrayList.get(0)).b, Math.min(i10, ((c) i2.d.h(1, arrayList)).b));
+            return Math.max(((c) arrayList.get(0)).b, Math.min(i10, ((c) i2.e.h(1, arrayList)).b));
         }
         return i10;
     }
@@ -827,26 +827,26 @@ public class g extends ViewGroup {
                 View childAt2 = getChildAt(i17);
                 if (!((d) childAt2.getLayoutParams()).a) {
                     float left2 = (childAt2.getLeft() - scrollX2) / getClientWidth();
-                    p9 p9Var = (p9) this.m0.b;
-                    g8 g8Var = (g8) childAt2;
+                    q9 q9Var = (q9) this.m0.b;
+                    h8 h8Var = (h8) childAt2;
                     if (Math.abs(left2) >= 1.0f) {
-                        g8Var.a(false);
-                        AndroidUtilities.runOnUIThread(new androidx.fragment.app.d(g8Var, 21), 16L);
+                        h8Var.a(false);
+                        AndroidUtilities.runOnUIThread(new androidx.fragment.app.d(h8Var, 21), 16L);
                     } else {
-                        if (!g8Var.d) {
-                            g8Var.a(true);
-                            if (p9Var.x0 != null) {
-                                p4 p4Var = g8Var.a;
-                                long j10 = g8Var.b;
-                                ArrayList arrayList2 = g8Var.c;
-                                p4Var.B1 = j10;
-                                p4Var.z1 = arrayList2;
-                                p4Var.o0(-1);
+                        if (!h8Var.d) {
+                            h8Var.a(true);
+                            if (q9Var.x0 != null) {
+                                q4 q4Var = h8Var.a;
+                                long j10 = h8Var.b;
+                                ArrayList arrayList2 = h8Var.c;
+                                q4Var.B1 = j10;
+                                q4Var.z1 = arrayList2;
+                                q4Var.o0(-1);
                             } else {
-                                g8Var.a.U0(-1, g8Var.b);
+                                h8Var.a.U0(-1, h8Var.b);
                             }
                         }
-                        g8Var.a.setOffset(left2);
+                        h8Var.a.setOffset(left2);
                         childAt2.setCameraDistance(childAt2.getWidth() * 15);
                         childAt2.setPivotX(left2 < 0.0f ? childAt2.getWidth() : 0.0f);
                         childAt2.setPivotY(childAt2.getHeight() * 0.5f);
@@ -1424,7 +1424,7 @@ public class g extends ViewGroup {
         ArrayList arrayList = this.b;
         boolean z12 = false;
         c cVar = (c) arrayList.get(0);
-        c cVar2 = (c) i2.d.h(1, arrayList);
+        c cVar2 = (c) i2.e.h(1, arrayList);
         if (cVar.b != 0) {
             f11 = cVar.e * clientWidth;
             z10 = false;
@@ -1643,7 +1643,7 @@ public class g extends ViewGroup {
                 hexString = Integer.toHexString(getId());
             }
             StringBuilder sb2 = new StringBuilder("The application's PagerAdapter changed the adapter's contents without calling PagerAdapter#notifyDataSetChanged! Expected adapter item count: ");
-            i2.d.w(sb2, this.a, ", found: ", b10, " Pager id: ");
+            i2.e.w(sb2, this.a, ", found: ", b10, " Pager id: ");
             sb2.append(hexString);
             sb2.append(" Pager class: ");
             sb2.append(getClass());

@@ -27,7 +27,7 @@ import m.s3;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.Components.kd0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y implements org.telegram.ui.ActionBar.a2, qa.a, r9.d, d9.k, e2.j, kd0, q3.g, Continuation {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class y implements org.telegram.ui.ActionBar.a2, qa
     public void accept(Object obj) {
         switch (this.a) {
             case 9:
-                ((u2.b1) obj).b.release();
+                ((u2.a1) obj).b.release();
                 break;
             default:
                 ((ExecutorService) obj).shutdown();
@@ -64,11 +64,11 @@ public final /* synthetic */ class y implements org.telegram.ui.ActionBar.a2, qa
             case 25:
                 return (w3.q) obj;
             default:
-                u2.s1 s1Var = (u2.s1) obj;
-                s1Var.getClass();
+                u2.r1 r1Var = (u2.r1) obj;
+                r1Var.getClass();
                 Bundle bundle = new Bundle();
-                String str = u2.s1.e;
-                e9.x1 x1Var = s1Var.b;
+                String str = u2.r1.e;
+                e9.x1 x1Var = r1Var.b;
                 ArrayList<? extends Parcelable> arrayList = new ArrayList<>(x1Var.d);
                 e9.l0 listIterator = x1Var.listIterator(0);
                 while (listIterator.hasNext()) {
@@ -132,36 +132,36 @@ public final /* synthetic */ class y implements org.telegram.ui.ActionBar.a2, qa
         }
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(39:43|(1:45)|(1:47)(1:152)|48|(4:51|(2:53|54)(1:56)|55|49)|57|58|(1:60)|61|62|(1:64)(1:151)|(1:66)(1:150)|67|(5:137|(1:139)|140|3a2|145)(1:71)|72|(21:76|(1:78)(2:133|(1:135))|79|80|(2:82|(1:84))(2:129|(2:131|132))|85|86|87|88|89|90|91|92|93|94|95|96|97|98|99|(4:116|(1:118)|112|113)(6:107|(1:109)|110|111|112|113))|136|80|(0)(0)|85|86|87|88|89|90|91|92|93|94|95|96|97|98|99|(2:101|103)|116|(0)|112|113) */
-    /* JADX WARN: Code restructure failed: missing block: B:122:0x055a, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(40:43|(1:45)|(1:47)(1:153)|48|(4:51|(2:53|54)(1:56)|55|49)|57|58|(1:60)|61|62|(1:64)(1:152)|(1:66)(1:151)|67|(5:138|(1:140)|141|3a1|146)(1:71)|72|(21:76|(1:78)(2:134|(1:136))|79|80|(2:82|(1:84))(2:130|(2:132|133))|85|86|87|88|89|90|91|92|93|94|95|96|97|98|99|(5:116|(1:118)|119|112|113)(6:107|(1:109)|110|111|112|113))|137|80|(0)(0)|85|86|87|88|89|90|91|92|93|94|95|96|97|98|99|(2:101|103)|116|(0)|119|112|113) */
+    /* JADX WARN: Code restructure failed: missing block: B:123:0x055c, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:123:0x055b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:124:0x055d, code lost:
     
         r1 = r1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:124:0x0561, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:125:0x0563, code lost:
     
         android.util.Log.e(r6, "Crashlytics was not started due to an exception during initialization", r0);
         r2.f = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:125:0x054a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:126:0x054b, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:127:0x055e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:128:0x0560, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:128:0x055f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:129:0x0561, code lost:
     
         r27 = false;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x0555  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x0423  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0413  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x0556  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0422  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x0412  */
     /* JADX WARN: Type inference failed for: r1v10 */
     /* JADX WARN: Type inference failed for: r1v11, types: [java.lang.Throwable] */
     /* JADX WARN: Type inference failed for: r1v46 */
@@ -192,10 +192,10 @@ public final /* synthetic */ class y implements org.telegram.ui.ActionBar.a2, qa
         String str2;
         int i13 = CrashlyticsRegistrar.a;
         l9.h hVar = (l9.h) z5Var.a(l9.h.class);
-        r9.p v = z5Var.v(u9.a.class);
-        r9.p v10 = z5Var.v(m9.a.class);
+        r9.p p5 = z5Var.p(u9.a.class);
+        r9.p p9 = z5Var.p(m9.a.class);
         ra.d dVar = (ra.d) z5Var.a(ra.d.class);
-        r9.p v11 = z5Var.v(za.a.class);
+        r9.p p10 = z5Var.p(za.a.class);
         hVar.a();
         Context context = hVar.a;
         String packageName = context.getPackageName();
@@ -203,8 +203,8 @@ public final /* synthetic */ class y implements org.telegram.ui.ActionBar.a2, qa
         ca.c cVar = new ca.c(context);
         x9.r rVar = new x9.r(hVar);
         x9.u uVar = new x9.u(context, packageName, dVar, rVar);
-        u9.a aVar2 = new u9.a(v);
-        androidx.emoji2.text.f fVar = new androidx.emoji2.text.f(v10);
+        u9.a aVar2 = new u9.a(p5);
+        androidx.emoji2.text.f fVar = new androidx.emoji2.text.f(p9);
         ExecutorService a2 = x9.h.a("Crashlytics Exception Handler");
         x9.j jVar = new x9.j(rVar, cVar);
         bb.c cVar2 = bb.c.a;
@@ -220,7 +220,7 @@ public final /* synthetic */ class y implements org.telegram.ui.ActionBar.a2, qa
             r32 = null;
             a10.a.e(null);
         }
-        le.b bVar = new le.b(v11, 23);
+        te.b bVar = new te.b(p10, 1);
         t9.a aVar3 = new t9.a(fVar);
         t9.a aVar4 = new t9.a(fVar);
         String str3 = r32;
@@ -307,15 +307,15 @@ public final /* synthetic */ class y implements org.telegram.ui.ActionBar.a2, qa
             String str10 = a11.g;
             String c11 = uVar.c();
             t7.u uVar2 = new t7.u(26);
-            ag.b bVar2 = new ag.b(uVar2, 14);
-            a6.m mVar = new a6.m(cVar);
+            a4.l lVar = new a4.l(uVar2, 15);
+            qb.c cVar4 = new qb.c(cVar);
             Locale locale = Locale.US;
-            String p5 = a1.g.p("https://firebase-settings.crashlytics.com/spi/v2/platforms/android/gmp/", str4, "/settings");
-            d9.l lVar = new d9.l();
-            if (p5 == null) {
+            String p11 = a1.g.p("https://firebase-settings.crashlytics.com/spi/v2/platforms/android/gmp/", str4, "/settings");
+            d9.l lVar2 = new d9.l();
+            if (p11 == null) {
                 throw new IllegalArgumentException("url must not be null.");
             }
-            lVar.a = p5;
+            lVar2.a = p11;
             String str11 = Build.MANUFACTURER;
             String str12 = x9.u.h;
             String C = a1.g.C(str11.replaceAll(str12, ""), "/", Build.MODEL.replaceAll(str12, ""));
@@ -349,27 +349,27 @@ public final /* synthetic */ class y implements org.telegram.ui.ActionBar.a2, qa
             }
             String sb4 = sb3.toString();
             ea.d dVar3 = new ea.d(str4, C, replaceAll, replaceAll2, uVar, sb4.length() > 0 ? x9.h.i(sb4) : null, str10, str9, r4.c.b(c11 != null ? 4 : i10));
-            ea.b bVar3 = new ea.b();
+            ea.b bVar2 = new ea.b();
             AtomicReference atomicReference = new AtomicReference();
-            bVar3.h = atomicReference;
-            bVar3.i = new AtomicReference(new TaskCompletionSource());
-            bVar3.a = context;
-            bVar3.b = dVar3;
-            bVar3.d = uVar2;
-            bVar3.c = bVar2;
-            bVar3.e = mVar;
-            bVar3.f = lVar;
-            bVar3.g = rVar;
+            bVar2.h = atomicReference;
+            bVar2.i = new AtomicReference(new TaskCompletionSource());
+            bVar2.a = context;
+            bVar2.b = dVar3;
+            bVar2.d = uVar2;
+            bVar2.c = lVar;
+            bVar2.e = cVar4;
+            bVar2.f = lVar2;
+            bVar2.g = rVar;
             atomicReference.set(t7.u.F0(uVar2));
-            AtomicReference atomicReference2 = (AtomicReference) bVar3.i;
-            AtomicReference atomicReference3 = (AtomicReference) bVar3.h;
-            if (!((Context) bVar3.a).getSharedPreferences("com.google.firebase.crashlytics", i11).getString("existing_instance_identifier", "").equals(((ea.d) bVar3.b).f) || (c10 = bVar3.c(i10)) == null) {
-                ea.a c12 = bVar3.c(3);
+            AtomicReference atomicReference2 = (AtomicReference) bVar2.i;
+            AtomicReference atomicReference3 = (AtomicReference) bVar2.h;
+            if (!((Context) bVar2.a).getSharedPreferences("com.google.firebase.crashlytics", i11).getString("existing_instance_identifier", "").equals(((ea.d) bVar2.b).f) || (c10 = bVar2.c(i10)) == null) {
+                ea.a c12 = bVar2.c(3);
                 if (c12 != null) {
                     atomicReference3.set(c12);
                     ((TaskCompletionSource) atomicReference2.get()).trySetResult(c12);
                 }
-                x9.r rVar2 = (x9.r) bVar3.g;
+                x9.r rVar2 = (x9.r) bVar2.g;
                 Task task2 = rVar2.h.getTask();
                 synchronized (rVar2.c) {
                     task = rVar2.d.getTask();
@@ -379,7 +379,7 @@ public final /* synthetic */ class y implements org.telegram.ui.ActionBar.a2, qa
                 x9.v vVar = new x9.v(0, taskCompletionSource);
                 task2.continueWith(a12, vVar);
                 task.continueWith(a12, vVar);
-                onSuccessTask = taskCompletionSource.getTask().onSuccessTask(a12, new a6.i(bVar3, 17));
+                onSuccessTask = taskCompletionSource.getTask().onSuccessTask(a12, new a6.i(bVar2, 17));
             } else {
                 atomicReference3.set(c10);
                 ((TaskCompletionSource) atomicReference2.get()).trySetResult(c10);
@@ -387,7 +387,7 @@ public final /* synthetic */ class y implements org.telegram.ui.ActionBar.a2, qa
             }
             onSuccessTask.continueWith(a12, new pb.a(23));
             com.google.firebase.messaging.r rVar3 = oVar.l;
-            ca.c cVar4 = oVar.h;
+            ca.c cVar5 = oVar.h;
             Context context2 = oVar.a;
             if (context2 != null && (resources = context2.getResources()) != null) {
                 int e13 = x9.h.e(context2, "com.crashlytics.RequireBuildId", "bool");
@@ -434,46 +434,45 @@ public final /* synthetic */ class y implements org.telegram.ui.ActionBar.a2, qa
                 new x9.f(oVar.g);
                 String str15 = x9.f.b;
                 int i21 = 29;
-                oVar.e = new mi.q(i21, "crash_marker", cVar4);
-                oVar.d = new mi.q(i21, "initialization_marker", cVar4);
-                s3 s3Var = new s3(str15, cVar4, rVar3);
-                y9.e eVar2 = new y9.e(cVar4);
+                oVar.e = new mi.q(i21, "crash_marker", cVar5);
+                oVar.d = new mi.q(i21, "initialization_marker", cVar5);
+                s3 s3Var = new s3(str15, cVar5, rVar3);
+                y9.e eVar2 = new y9.e(cVar5);
                 fa.a[] aVarArr = new fa.a[1];
                 boolean z12 = false;
                 aVarArr[0] = new sb.a(8);
-                qf.b bVar4 = new qf.b(aVarArr);
+                qf.b bVar3 = new qf.b(aVarArr);
                 ((r9.p) oVar.o.b).a(new y(11));
                 x9.a aVar5 = aVar;
-                com.google.firebase.messaging.l m10 = com.google.firebase.messaging.l.m(oVar.a, oVar.g, oVar.h, aVar5, eVar2, s3Var, bVar4, bVar3, oVar.c, oVar.m);
-                bVar3 = bVar3;
+                com.google.firebase.messaging.l m10 = com.google.firebase.messaging.l.m(oVar.a, oVar.g, oVar.h, aVar5, eVar2, s3Var, bVar3, bVar2, oVar.c, oVar.m);
+                bVar2 = bVar2;
                 oVar.f = new x9.m(oVar.a, oVar.l, oVar.g, oVar.b, oVar.h, oVar.e, aVar5, s3Var, eVar2, m10, oVar.n, oVar.j, oVar.m);
                 mi.q qVar = oVar.d;
-                ca.c cVar5 = (ca.c) qVar.c;
+                ca.c cVar6 = (ca.c) qVar.c;
                 String str16 = (String) qVar.b;
-                cVar5.getClass();
-                exists = new File(cVar5.b, str16).exists();
-                z11 = true;
-                z11 = true;
-                Boolean.TRUE.equals((Boolean) x9.w.a(rVar3.v(new x9.n(oVar, z11 ? 1 : 0))));
-                x9.m mVar2 = oVar.f;
+                cVar6.getClass();
+                exists = new File(cVar6.b, str16).exists();
+                Boolean.TRUE.equals((Boolean) x9.w.a(rVar3.v(new x9.n(oVar, 1))));
+                x9.m mVar = oVar.f;
                 Thread.UncaughtExceptionHandler defaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
-                mVar2.e.v(new u4.f(2, mVar2, str15));
-                x9.q qVar2 = new x9.q(new uc.b(mVar2), bVar3, defaultUncaughtExceptionHandler, mVar2.j);
-                mVar2.n = qVar2;
+                mVar.e.v(new u4.f(2, mVar, str15));
+                x9.q qVar2 = new x9.q(new le.b(mVar, 29), bVar2, defaultUncaughtExceptionHandler, mVar.j);
+                mVar.n = qVar2;
                 Thread.setDefaultUncaughtExceptionHandler(qVar2);
                 if (exists || (context2.checkCallingOrSelfPermission("android.permission.ACCESS_NETWORK_STATE") == 0 && ((activeNetworkInfo = ((ConnectivityManager) context2.getSystemService("connectivity")).getActiveNetworkInfo()) == null || !activeNetworkInfo.isConnectedOrConnecting()))) {
                     if (Log.isLoggable(str, 3)) {
                         Log.d(str, "Successfully configured exception handler.", null);
                     }
-                    Tasks.call(a12, new t9.b(z11, oVar, bVar3));
+                    z11 = true;
+                    Tasks.call(a12, new t9.b(z11, oVar, bVar2));
                     return new t9.c(oVar);
                 }
                 if (Log.isLoggable(str, 3)) {
                     Log.d(str, "Crashlytics did not finish previous background initialization. Initializing synchronously.", null);
                 }
-                oVar.b(bVar3);
+                oVar.b(bVar2);
                 z11 = z12;
-                Tasks.call(a12, new t9.b(z11, oVar, bVar3));
+                Tasks.call(a12, new t9.b(z11, oVar, bVar2));
                 return new t9.c(oVar);
             }
             aVar = a11;
@@ -484,38 +483,37 @@ public final /* synthetic */ class y implements org.telegram.ui.ActionBar.a2, qa
             new x9.f(oVar.g);
             String str152 = x9.f.b;
             int i212 = 29;
-            oVar.e = new mi.q(i212, "crash_marker", cVar4);
-            oVar.d = new mi.q(i212, "initialization_marker", cVar4);
-            s3 s3Var2 = new s3(str152, cVar4, rVar3);
-            y9.e eVar22 = new y9.e(cVar4);
+            oVar.e = new mi.q(i212, "crash_marker", cVar5);
+            oVar.d = new mi.q(i212, "initialization_marker", cVar5);
+            s3 s3Var2 = new s3(str152, cVar5, rVar3);
+            y9.e eVar22 = new y9.e(cVar5);
             fa.a[] aVarArr2 = new fa.a[1];
             boolean z122 = false;
             aVarArr2[0] = new sb.a(8);
-            qf.b bVar42 = new qf.b(aVarArr2);
+            qf.b bVar32 = new qf.b(aVarArr2);
             ((r9.p) oVar.o.b).a(new y(11));
             x9.a aVar52 = aVar;
-            com.google.firebase.messaging.l m102 = com.google.firebase.messaging.l.m(oVar.a, oVar.g, oVar.h, aVar52, eVar22, s3Var2, bVar42, bVar3, oVar.c, oVar.m);
-            bVar3 = bVar3;
+            com.google.firebase.messaging.l m102 = com.google.firebase.messaging.l.m(oVar.a, oVar.g, oVar.h, aVar52, eVar22, s3Var2, bVar32, bVar2, oVar.c, oVar.m);
+            bVar2 = bVar2;
             oVar.f = new x9.m(oVar.a, oVar.l, oVar.g, oVar.b, oVar.h, oVar.e, aVar52, s3Var2, eVar22, m102, oVar.n, oVar.j, oVar.m);
             mi.q qVar3 = oVar.d;
-            ca.c cVar52 = (ca.c) qVar3.c;
+            ca.c cVar62 = (ca.c) qVar3.c;
             String str162 = (String) qVar3.b;
-            cVar52.getClass();
-            exists = new File(cVar52.b, str162).exists();
-            z11 = true;
-            z11 = true;
-            Boolean.TRUE.equals((Boolean) x9.w.a(rVar3.v(new x9.n(oVar, z11 ? 1 : 0))));
-            x9.m mVar22 = oVar.f;
+            cVar62.getClass();
+            exists = new File(cVar62.b, str162).exists();
+            Boolean.TRUE.equals((Boolean) x9.w.a(rVar3.v(new x9.n(oVar, 1))));
+            x9.m mVar2 = oVar.f;
             Thread.UncaughtExceptionHandler defaultUncaughtExceptionHandler2 = Thread.getDefaultUncaughtExceptionHandler();
-            mVar22.e.v(new u4.f(2, mVar22, str152));
-            x9.q qVar22 = new x9.q(new uc.b(mVar22), bVar3, defaultUncaughtExceptionHandler2, mVar22.j);
-            mVar22.n = qVar22;
+            mVar2.e.v(new u4.f(2, mVar2, str152));
+            x9.q qVar22 = new x9.q(new le.b(mVar2, 29), bVar2, defaultUncaughtExceptionHandler2, mVar2.j);
+            mVar2.n = qVar22;
             Thread.setDefaultUncaughtExceptionHandler(qVar22);
             if (exists) {
             }
             if (Log.isLoggable(str, 3)) {
             }
-            Tasks.call(a12, new t9.b(z11, oVar, bVar3));
+            z11 = true;
+            Tasks.call(a12, new t9.b(z11, oVar, bVar2));
             return new t9.c(oVar);
         } catch (PackageManager.NameNotFoundException e15) {
             Log.e("FirebaseCrashlytics", "Error retrieving app package info.", e15);

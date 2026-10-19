@@ -19,7 +19,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class sm extends ql0 {
     public final Context c;
@@ -69,7 +69,7 @@ public final class sm extends ql0 {
                     M = (MediaController.PhotoEntry) arrayList2.get(0);
                 }
             } else if (!chatAttachAlertPhotoLayout.T0.photos.isEmpty()) {
-                M = (MediaController.PhotoEntry) i2.d.h(1, chatAttachAlertPhotoLayout.T0.photos);
+                M = (MediaController.PhotoEntry) i2.e.h(1, chatAttachAlertPhotoLayout.T0.photos);
             }
         }
         if (M == null) {
@@ -286,7 +286,7 @@ public final class sm extends ql0 {
         }
         HashMap hashMap = ChatAttachAlertPhotoLayout.s1;
         s5Var.d(b02, hashMap.size() > 1, z10 && chatAttachAlertPhotoLayout.T0 == chatAttachAlertPhotoLayout.U0, i10 == h() - 1, tiVar != null && tiVar.i0);
-        if ((tiVar.f0 instanceof org.telegram.ui.sn) && tiVar.W1) {
+        if ((tiVar.f0 instanceof org.telegram.ui.qn) && tiVar.W1) {
             s5Var.b(ChatAttachAlertPhotoLayout.t1.indexOf(Integer.valueOf(b02.imageId)), hashMap.containsKey(Integer.valueOf(b02.imageId)), false);
         } else {
             s5Var.b(-1, hashMap.containsKey(Integer.valueOf(b02.imageId)), false);
@@ -373,7 +373,7 @@ public final class sm extends ql0 {
         m5Var.addView(imageView2, w7.z5.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
         TextView textView = new TextView(context);
         m5Var.c = textView;
-        org.telegram.messenger.lk.o(org.telegram.ui.ActionBar.h6.ca, d6Var, textView, 1, 12.0f);
+        org.telegram.messenger.kk.o(org.telegram.ui.ActionBar.h6.ca, d6Var, textView, 1, 12.0f);
         textView.setGravity(17);
         m5Var.addView(textView, w7.z5.d(-2, -2.0f, 17, 5.0f, 13.0f, 5.0f, 0.0f));
         m5Var.d = AndroidUtilities.dp(80.0f);

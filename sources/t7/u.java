@@ -41,9 +41,9 @@ import org.telegram.ui.Components.sb;
 import org.telegram.ui.Components.tb;
 import org.telegram.ui.Components.ub;
 import org.telegram.ui.Components.xl;
-import org.telegram.ui.xu0;
+import org.telegram.ui.vu0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class u implements c3.g, cg.a, dg.a, ea.c, g2.g, gb.n, ri, n5.b, n2.r, r9.d, tb, l1, r4.d, OnFailureListener, y9.c, z3.k {
     public static u b;
@@ -316,7 +316,7 @@ public class u implements c3.g, cg.a, dg.a, ea.c, g2.g, gb.n, ri, n5.b, n2.r, r9
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ xu0 P1() {
+    public /* synthetic */ vu0 P1() {
         switch (this.a) {
         }
         return null;
@@ -713,9 +713,9 @@ public class u implements c3.g, cg.a, dg.a, ea.c, g2.g, gb.n, ri, n5.b, n2.r, r9
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.ri
-    public void r(gh ghVar) {
-        ghVar.run();
+    @Override // n2.r
+    public h2.b r(byte[] bArr) {
+        throw new IllegalStateException();
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -733,9 +733,9 @@ public class u implements c3.g, cg.a, dg.a, ea.c, g2.g, gb.n, ri, n5.b, n2.r, r9
         int i10 = this.a;
     }
 
-    @Override // n2.r
-    public h2.b u(byte[] bArr) {
-        throw new IllegalStateException();
+    @Override // org.telegram.ui.Components.ri
+    public void u(gh ghVar) {
+        ghVar.run();
     }
 
     @Override // org.telegram.ui.Cells.l1

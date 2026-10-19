@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class o0 extends m {
     public static final b2.o0 s;
@@ -113,7 +113,7 @@ public final class o0 extends m {
             List list = (List) this.l.get(i10);
             e0[] e0VarArr = m0Var.a;
             boolean[] zArr = m0Var.b;
-            e0 e0Var2 = zArr[i10] ? ((q1) e0VarArr[i10]).a : e0VarArr[i10];
+            e0 e0Var2 = zArr[i10] ? ((p1) e0VarArr[i10]).a : e0VarArr[i10];
             int i11 = 0;
             while (true) {
                 if (i11 >= list.size()) {
@@ -127,7 +127,7 @@ public final class o0 extends m {
             }
             a aVar = aVarArr[i10];
             e0[] e0VarArr2 = m0Var.a;
-            aVar.o(zArr[i10] ? ((q1) e0VarArr2[i10]).a : e0VarArr2[i10]);
+            aVar.o(zArr[i10] ? ((p1) e0VarArr2[i10]).a : e0VarArr2[i10]);
             i10++;
         }
     }

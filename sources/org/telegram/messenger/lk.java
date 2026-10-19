@@ -1,164 +1,147 @@
 package org.telegram.messenger;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.opengl.GLUtils;
-import android.os.Bundle;
-import android.view.View;
-import android.view.ViewPropertyAnimator;
-import android.view.animation.OvershootInterpolator;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.FloatBuffer;
-import javax.microedition.khronos.egl.EGL10;
+import android.app.Activity;
+import android.content.SharedPreferences;
+import android.util.LongSparseArray;
+import android.util.SparseIntArray;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.TranslateController;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.bs;
-import org.telegram.ui.ThemeActivity;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class lk {
-    public static int A(float f7, int i10, int i11) {
-        return (i10 - AndroidUtilities.dp(f7)) / i11;
+public final /* synthetic */ class lk implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+
+    public /* synthetic */ lk(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
+        this.a = i10;
+        this.d = obj;
+        this.c = obj2;
+        this.e = obj3;
+        this.b = obj4;
     }
 
-    public static int B(float f7, int i10, int i11) {
-        return i11 - (AndroidUtilities.dp(f7) * i10);
-    }
-
-    public static int C(float f7, int i10, int i11) {
-        return View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f7) + i10, i11);
-    }
-
-    public static int D(float f7, int i10, int i11) {
-        return (i10 - AndroidUtilities.dp(f7)) + i11;
-    }
-
-    public static int a(org.telegram.ui.g3 g3Var) {
-        int boundLeft = g3Var.getBoundLeft();
-        int boundRight = g3Var.getBoundRight();
-        if (boundLeft < 0 || boundRight < 0 || boundRight < boundLeft) {
-            return -1;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ((SendMessagesHelper.ImportingHistory.1) this.d).lambda$run$0((TLObject) this.c, (TLRPC.TL_messages_initHistoryImport) this.e, (TLRPC.TL_error) this.b);
+                break;
+            case 1:
+                ((SendMessagesHelper.ImportingStickers.1) this.d).lambda$run$0((TLRPC.TL_error) this.b, (TLRPC.TL_stickers_createStickerSet) this.e, (TLObject) this.c);
+                break;
+            case 2:
+                ((TranslateController) this.d).lambda$detectPhotoLanguage$41((MessageObject) this.c, (TranslateController.MessageKey) this.e, (Utilities.Callback) this.b);
+                break;
+            case 3:
+                ((TranslateController) this.d).lambda$detectStoryLanguage$31((TL_stories.StoryItem) this.c, (String) this.e, (TranslateController.StoryKey) this.b);
+                break;
+            case 4:
+                AndroidUtilities.lambda$showProxyAlert$21((boolean[]) this.d, (org.telegram.ui.Components.zc[]) this.c, (qi.a) this.e, (Activity) this.b);
+                break;
+            case 5:
+                ((FilePathDatabase) this.d).lambda$lookupFiles$7((ArrayList) this.c, (LongSparseArray) this.e, (CountDownLatch) this.b);
+                break;
+            case 6:
+                ((FilePathDatabase) this.d).lambda$checkMediaExistance$2((ArrayList) this.c, (long[]) this.e, (CountDownLatch) this.b);
+                break;
+            case 7:
+                ((FileRefController) this.d).lambda$requestReferenceFromServer$0((String) this.c, (String) this.e, (ci.s6) this.b);
+                break;
+            case 8:
+                ((ImageLoader) this.d).lambda$replaceImageInCache$5((String) this.c, (String) this.e, (ImageLocation) this.b);
+                break;
+            case 9:
+                ((LocationController) this.d).lambda$loadSharingLocations$16((ArrayList) this.c, (ArrayList) this.e, (ArrayList) this.b);
+                break;
+            case 10:
+                ((MediaController) this.d).lambda$generateWaveform$40((String) this.c, (String) this.e, (MessageObject) this.b);
+                break;
+            case 11:
+                ((MediaController) this.d).lambda$prepareResumedRecording$25((File) this.c, (TLRPC.TL_document) this.e, (MediaDataController.DraftVoice) this.b);
+                break;
+            case 12:
+                ((MediaController) this.d).lambda$generateWaveform$39((String) this.c, (byte[]) this.e, (MessageObject) this.b);
+                break;
+            case 13:
+                ((MediaDataController) this.d).lambda$getEmojiSuggestions$220((String[]) this.c, (MediaDataController.KeywordResultCallback) this.e, (ArrayList) this.b);
+                break;
+            case 14:
+                MediaDataController.lambda$getEmojiSuggestions$223((CountDownLatch) this.d, (MediaDataController.KeywordResultCallback) this.c, (ArrayList) this.e, (String) this.b);
+                break;
+            case 15:
+                MediaDataController.lambda$getAnimatedEmojiByKeywords$217((String) this.d, (ArrayList) this.c, (ArrayList) this.e, (Utilities.Callback) this.b);
+                break;
+            case 16:
+                ((MediaDataController) this.d).lambda$getEmojiNames$219((String[]) this.c, (String) this.e, (Utilities.Callback) this.b);
+                break;
+            case 17:
+                ((MediaDataController) this.d).lambda$fillWithAnimatedEmoji$228((boolean[]) this.c, (ArrayList[]) this.e, (w6) this.b);
+                break;
+            case 18:
+                ((MediaDataController) this.d).lambda$loadSavedReactions$240((TLRPC.TL_error) this.b, (TLObject) this.c, (SharedPreferences) this.e);
+                break;
+            case 19:
+                ((MessagesController) this.d).lambda$addUsersToChannel$271((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_channels_inviteToChannel) this.e);
+                break;
+            case 20:
+                ((MessagesController) this.d).lambda$getDifference$356((TLRPC.updates_Difference) this.c, (a0.h) this.e, (a0.h) this.b);
+                break;
+            case 21:
+                ((MessagesController) this.d).lambda$createChat$255((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_messages_createChat) this.e);
+                break;
+            case 22:
+                ((MessagesController) this.d).lambda$createChat$258((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_channels_createChannel) this.e);
+                break;
+            case 23:
+                ((MessagesController) this.d).lambda$setUserAdminRole$105((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_messages_editChatAdmin) this.e);
+                break;
+            case 24:
+                ((MessagesController) this.d).lambda$completeDialogsReset$210((TLRPC.messages_Dialogs) this.c, (a0.h) this.e, (a0.h) this.b);
+                break;
+            case 25:
+                ((MessagesController) this.d).lambda$getDifference$355((ArrayList) this.c, (TLRPC.updates_Difference) this.e, (a0.h) this.b);
+                break;
+            case 26:
+                ((MessagesStorage) this.d).lambda$putEncryptedChat$178((TLRPC.EncryptedChat) this.c, (TLRPC.User) this.e, (TLRPC.Dialog) this.b);
+                break;
+            case 27:
+                ((MessagesStorage) this.d).lambda$addRecentLocalFile$82((TLRPC.Document) this.c, (String) this.e, (String) this.b);
+                break;
+            case 28:
+                ((MessagesStorage) this.d).lambda$markMessagesAsRead$219((LongSparseIntArray) this.c, (LongSparseIntArray) this.e, (SparseIntArray) this.b);
+                break;
+            default:
+                ((SavedMessagesController) this.d).lambda$loadDialogs$2((TLObject) this.c, (ArrayList) this.e, (TLRPC.TL_error) this.b);
+                break;
         }
-        return boundRight - boundLeft;
     }
 
-    public static float b(float f7, float f10, float f11, float f12) {
-        return ((f7 + f10) * f11) + f12;
+    public /* synthetic */ lk(BaseController baseController, TLRPC.TL_error tL_error, Object obj, Object obj2, int i10) {
+        this.a = i10;
+        this.d = baseController;
+        this.b = tL_error;
+        this.c = obj;
+        this.e = obj2;
     }
 
-    public static int c(float f7, int i10, int i11) {
-        return View.MeasureSpec.makeMeasureSpec(i10 - AndroidUtilities.dp(f7), i11);
-    }
-
-    public static Bundle d(int i10, String str, String str2, boolean z10) {
-        Bundle bundle = new Bundle();
-        bundle.putBoolean(str, z10);
-        bundle.putInt(str2, i10);
-        return bundle;
-    }
-
-    public static LinearLayout e(Context context, int i10) {
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(i10);
-        return linearLayout;
-    }
-
-    public static ei.d f(int i10, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
-        ei.d dVar = new ei.d(context, d6Var, z10);
-        dVar.setRoundRadius(i10);
-        return dVar;
-    }
-
-    public static String g(StringBuilder sb2, String str, jf.b bVar) {
-        sb2.append(str);
-        return bVar.b(sb2.toString());
-    }
-
-    public static FloatBuffer h(ByteBuffer byteBuffer) {
-        return byteBuffer.order(ByteOrder.nativeOrder()).asFloatBuffer();
-    }
-
-    public static org.telegram.ui.ActionBar.f3 i(int i10, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
-        org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(i10, context, d6Var, z10);
-        f3Var.fixNavigationBar();
-        return f3Var;
-    }
-
-    public static void j(float f7, int i10, int i11, TextView textView) {
-        textView.setText(LocaleController.getString(i10));
-        textView.setTextSize(i11, f7);
-    }
-
-    public static void k(float f7, int i10, TextView textView) {
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextSize(i10, f7);
-    }
-
-    public static void l(float f7, ValueAnimator valueAnimator) {
-        valueAnimator.setInterpolator(new OvershootInterpolator(f7));
-    }
-
-    public static void m(int i10, TextView textView, int i11) {
-        textView.setText(LocaleController.getString(i10));
-        textView.setGravity(i11);
-    }
-
-    public static void n(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
-        n2Var.presentFragment(new ThemeActivity(i10));
-    }
-
-    public static void o(int i10, org.telegram.ui.ActionBar.d6 d6Var, TextView textView, int i11, float f7) {
-        textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(i10, d6Var));
-        textView.setTextSize(i11, f7);
-    }
-
-    public static void p(int i10, org.telegram.ui.Components.xc xcVar) {
-        xcVar.i(LocaleController.getString(i10)).j();
-    }
-
-    public static void q(int i10, org.telegram.ui.Components.xc xcVar, org.telegram.ui.ActionBar.d6 d6Var) {
-        xcVar.t(LocaleController.getString(i10), d6Var).j();
-    }
-
-    public static void r(int i10, Object[] objArr, TextView textView) {
-        textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString(i10, objArr)));
-    }
-
-    public static void s(ViewPropertyAnimator viewPropertyAnimator, float f7, long j10) {
-        viewPropertyAnimator.alpha(f7).setDuration(j10).start();
-    }
-
-    public static void t(ViewPropertyAnimator viewPropertyAnimator, bs bsVar, long j10) {
-        viewPropertyAnimator.setInterpolator(bsVar).setDuration(j10).start();
-    }
-
-    public static void u(TextView textView, int i10, int i11, float f7, int i12) {
-        textView.setTextColor(i10);
-        textView.setTextSize(i11, f7);
-        textView.setLines(i12);
-    }
-
-    public static void v(EGL10 egl10, StringBuilder sb2) {
-        sb2.append(GLUtils.getEGLErrorString(egl10.eglGetError()));
-        FileLog.e(sb2.toString());
-    }
-
-    public static /* synthetic */ boolean w(TLRPC.TL_inputMediaUploadedDocument tL_inputMediaUploadedDocument) {
-        return tL_inputMediaUploadedDocument != null;
-    }
-
-    public static float x(float f7, float f10, float f11, float f12) {
-        return f12 - ((f7 / f10) * f11);
-    }
-
-    public static int y(float f7, int i10, int i11) {
-        return i11 - (AndroidUtilities.dp(f7) + i10);
-    }
-
-    public static float z(float f7, float f10, float f11, float f12) {
-        return (f11 - (f7 / f10)) * f12;
+    public /* synthetic */ lk(SendMessagesHelper.ImportingStickers.1 r22, TLRPC.TL_error tL_error, TLRPC.TL_stickers_createStickerSet tL_stickers_createStickerSet, TLObject tLObject) {
+        this.a = 1;
+        this.d = r22;
+        this.b = tL_error;
+        this.e = tL_stickers_createStickerSet;
+        this.c = tLObject;
     }
 }

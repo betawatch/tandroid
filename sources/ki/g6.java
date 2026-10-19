@@ -1,6 +1,6 @@
 package ki;
 
-import ai.u8;
+import ai.v8;
 import j$.util.Comparator$-CC;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.function.ToIntFunction;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class g6 {
     public final TL_iv.pageBlockTable a;
@@ -396,7 +396,7 @@ public final class g6 {
                             arrayList.add(new Object[]{pagetablecell4, Integer.valueOf(i14)});
                         }
                     }
-                    Collections.sort(arrayList, Comparator$-CC.comparingInt(new u8(9)));
+                    Collections.sort(arrayList, Comparator$-CC.comparingInt(new v8(9)));
                     pagetablerow.cells.clear();
                     int size2 = arrayList.size();
                     int i15 = 0;

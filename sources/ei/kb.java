@@ -10,10 +10,10 @@ import org.telegram.ui.Components.al;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.pe0;
-import org.telegram.ui.q30;
+import org.telegram.ui.ne0;
+import org.telegram.ui.o30;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class kb extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -37,16 +37,16 @@ public final class kb extends ClickableSpan {
                 mh.c cVar = (mh.c) this.b;
                 mh.a aVar = cVar.I;
                 if (aVar != null && (groupCallMessage = cVar.H) != null) {
-                    ((q30) aVar).a(groupCallMessage);
+                    ((o30) aVar).a(groupCallMessage);
                     break;
                 }
                 break;
             case 2:
                 org.telegram.ui.Cells.y1 y1Var = (org.telegram.ui.Cells.y1) this.b;
-                pf.d.r(y1Var.getContext(), "https://fragment.com/username/" + ((org.telegram.ui.ta) y1Var.M).e.r);
+                pf.d.r(y1Var.getContext(), "https://fragment.com/username/" + ((org.telegram.ui.ra) y1Var.M).e.r);
                 break;
             case 3:
-                ((org.telegram.ui.xb) this.b).finishFragment();
+                ((org.telegram.ui.vb) this.b).finishFragment();
                 break;
             case 4:
                 ((org.telegram.ui.t1) this.b).run();
@@ -56,19 +56,19 @@ public final class kb extends ClickableSpan {
                 break;
             case 6:
                 al alVar = (al) this.b;
-                org.telegram.ui.Wallet.n5.D0(alVar.getContext(), alVar.n, alVar.a);
+                org.telegram.ui.Wallet.o5.E0(alVar.getContext(), alVar.n, alVar.a);
                 break;
             case 7:
                 ((ActionBarLayout) ((LaunchActivity) this.b).O()).P(new PremiumPreviewFragment(0, "gift"));
                 break;
             case 8:
-                ((pe0) this.b).q(false);
+                ((ne0) this.b).q(false);
                 break;
             case 9:
                 org.telegram.ui.Wallet.i9 i9Var = (org.telegram.ui.Wallet.i9) this.b;
                 Activity parentActivity = i9Var.getParentActivity();
                 i10 = ((org.telegram.ui.ActionBar.n2) i9Var).currentAccount;
-                org.telegram.ui.Wallet.n5.D0(parentActivity, i10, i9Var.getResourceProvider());
+                org.telegram.ui.Wallet.o5.E0(parentActivity, i10, i9Var.getResourceProvider());
                 break;
             case 10:
                 sg.k0 k0Var = ((sg.d0) this.b).c;

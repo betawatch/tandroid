@@ -1,142 +1,29 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class xm extends pf.c {
-    public final /* synthetic */ int d;
-    public final /* synthetic */ org.telegram.ui.Cells.a0 e;
-    public final /* synthetic */ Object f;
+public final class xm implements MessagesController.MessagesLoadedCallback {
+    public final /* synthetic */ ri a;
+    public final /* synthetic */ qn b;
+    public final /* synthetic */ cn c;
 
-    public /* synthetic */ xm(Object obj, org.telegram.ui.Cells.a0 a0Var, int i10) {
-        this.d = i10;
-        this.f = obj;
-        this.e = a0Var;
+    public xm(cn cnVar, ri riVar, qn qnVar) {
+        this.c = cnVar;
+        this.a = riVar;
+        this.b = qnVar;
     }
 
-    @Override // pf.c
-    public final void c(boolean z10) {
-        switch (this.d) {
-            case 0:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new vj(((en) this.f).a, 3), 250L);
-                    break;
-                }
-                break;
-            case 1:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new vj(((en) this.f).a, 4), 250L);
-                    break;
-                }
-                break;
-            case 2:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new vj(((en) this.f).a, 5), 250L);
-                    break;
-                }
-                break;
-            case 3:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new vj(((en) this.f).a, 6), 250L);
-                    break;
-                }
-                break;
-            case 4:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new vj(((en) this.f).a, 7), 250L);
-                    break;
-                }
-                break;
-            case 5:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new vj(((en) this.f).a, 8), 250L);
-                    break;
-                }
-                break;
-            default:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new gh(8, this, (org.telegram.ui.Cells.w0) this.e), 250L);
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
+    public final void onError() {
+        this.a.c(false);
+        this.c.a.presentFragment(this.b);
     }
 
-    @Override // pf.c
-    public final void d() {
-        switch (this.d) {
-            case 0:
-                en enVar = (en) this.f;
-                sn snVar = enVar.a;
-                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.e;
-                snVar.wb = u1Var.getMessageObject().getId();
-                sn snVar2 = enVar.a;
-                snVar2.xb = 2;
-                snVar2.yb = null;
-                u1Var.invalidate();
-                break;
-            case 1:
-                en enVar2 = (en) this.f;
-                sn snVar3 = enVar2.a;
-                org.telegram.ui.Cells.u1 u1Var2 = (org.telegram.ui.Cells.u1) this.e;
-                snVar3.wb = u1Var2.getMessageObject().getId();
-                sn snVar4 = enVar2.a;
-                snVar4.xb = 2;
-                snVar4.yb = null;
-                u1Var2.invalidate();
-                break;
-            case 2:
-                en enVar3 = (en) this.f;
-                sn snVar5 = enVar3.a;
-                org.telegram.ui.Cells.u1 u1Var3 = (org.telegram.ui.Cells.u1) this.e;
-                snVar5.wb = u1Var3.getMessageObject().getId();
-                sn snVar6 = enVar3.a;
-                snVar6.xb = 2;
-                snVar6.yb = null;
-                u1Var3.invalidate();
-                break;
-            case 3:
-                en enVar4 = (en) this.f;
-                sn snVar7 = enVar4.a;
-                org.telegram.ui.Cells.u1 u1Var4 = (org.telegram.ui.Cells.u1) this.e;
-                snVar7.wb = u1Var4.getMessageObject().getId();
-                sn snVar8 = enVar4.a;
-                snVar8.xb = 2;
-                snVar8.yb = null;
-                u1Var4.invalidate();
-                break;
-            case 4:
-                en enVar5 = (en) this.f;
-                sn snVar9 = enVar5.a;
-                org.telegram.ui.Cells.u1 u1Var5 = (org.telegram.ui.Cells.u1) this.e;
-                snVar9.wb = u1Var5.getMessageObject().getId();
-                sn snVar10 = enVar5.a;
-                snVar10.xb = 2;
-                snVar10.yb = null;
-                u1Var5.invalidate();
-                break;
-            case 5:
-                en enVar6 = (en) this.f;
-                sn snVar11 = enVar6.a;
-                org.telegram.ui.Cells.u1 u1Var6 = (org.telegram.ui.Cells.u1) this.e;
-                snVar11.wb = u1Var6.getMessageObject().getId();
-                sn snVar12 = enVar6.a;
-                snVar12.xb = 2;
-                snVar12.yb = null;
-                u1Var6.invalidate();
-                break;
-            default:
-                wl wlVar = (wl) this.f;
-                sn snVar13 = wlVar.a.Q;
-                org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) this.e;
-                snVar13.wb = w0Var.getMessageObject().getId();
-                sn snVar14 = wlVar.a.Q;
-                snVar14.xb = 4;
-                snVar14.yb = null;
-                w0Var.getMessageObject().flickerLoading = true;
-                w0Var.invalidate();
-                break;
-        }
+    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
+    public final void onMessagesLoaded(boolean z10) {
+        this.a.c(false);
+        this.c.a.presentFragment(this.b);
     }
 }

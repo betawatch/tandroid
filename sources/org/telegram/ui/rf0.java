@@ -1,67 +1,170 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.drawable.BitmapDrawable;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.PointF;
+import android.graphics.Typeface;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class rf0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sf0 b;
+public final class rf0 extends FrameLayout {
+    public static final /* synthetic */ int E = 0;
+    public final bg0 a;
+    public final ViewGroup b;
+    public final View c;
+    public final View d;
+    public final View e;
+    public final org.telegram.ui.Components.a41 f;
+    public final org.telegram.ui.Components.h20 h;
+    public final TextView n;
+    public final TextView r;
+    public final TextView s;
+    public final TextView v;
+    public final FrameLayout w;
+    public boolean x;
+    public final PointF y;
 
-    public /* synthetic */ rf0(sf0 sf0Var, int i10) {
-        this.a = i10;
-        this.b = sf0Var;
+    public rf0(Context context, ViewGroup viewGroup, View view, String str, final bg0 bg0Var) {
+        super(context);
+        PointF pointF = new PointF();
+        this.y = pointF;
+        this.b = viewGroup;
+        this.c = view;
+        this.a = bg0Var;
+        View view2 = new View(getContext());
+        this.d = view2;
+        view2.setOnClickListener(new of0(this));
+        addView(view2, w7.z5.c(-1.0f, -1));
+        View view3 = new View(getContext());
+        this.e = view3;
+        view3.setBackgroundColor(TLObject.FLAG_30);
+        view3.setAlpha(0.0f);
+        addView(view3, w7.z5.c(-1.0f, -1));
+        org.telegram.ui.Components.a41 a41Var = new org.telegram.ui.Components.a41(getContext());
+        this.f = a41Var;
+        a41Var.setTransformType(1);
+        a41Var.setDrawBackground(false);
+        org.telegram.ui.Components.h20 h20Var = new org.telegram.ui.Components.h20(context, null, false);
+        this.h = h20Var;
+        h20Var.addView(a41Var, w7.z5.e(56, 56, 17));
+        h20Var.a(a41Var);
+        final int i10 = 0;
+        h20Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.pf0
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view4) {
+                switch (i10) {
+                    case 0:
+                        bg0Var.a(this);
+                        break;
+                    default:
+                        bg0Var.a(this);
+                        break;
+                }
+            }
+        });
+        h20Var.setContentDescription(LocaleController.getString(R.string.Done));
+        addView(h20Var, w7.z5.e(56, 56, 51));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.w = frameLayout;
+        addView(frameLayout, w7.z5.d(-1, 140.0f, 49, 24.0f, 0.0f, 24.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.n = textView;
+        textView.setText(LocaleController.getString(R.string.ConfirmCorrectNumber));
+        textView.setTextSize(1, 14.0f);
+        textView.setSingleLine();
+        TextView j10 = org.telegram.ui.Cells.c1.j(frameLayout, textView, w7.z5.d(-1, -2.0f, LocaleController.isRTL ? 5 : 3, 24.0f, 20.0f, 24.0f, 0.0f), context);
+        this.r = j10;
+        j10.setText(str);
+        j10.setTextSize(1, 18.0f);
+        j10.setTypeface(AndroidUtilities.bold());
+        j10.setSingleLine();
+        frameLayout.addView(j10, w7.z5.d(-1, -2.0f, LocaleController.isRTL ? 5 : 3, 24.0f, 48.0f, 24.0f, 0.0f));
+        int dp = AndroidUtilities.dp(16.0f);
+        TextView textView2 = new TextView(context);
+        this.s = textView2;
+        textView2.setText(LocaleController.getString(R.string.Edit));
+        textView2.setSingleLine();
+        textView2.setTextSize(1, 16.0f);
+        int dp2 = AndroidUtilities.dp(6.0f);
+        int i11 = org.telegram.ui.ActionBar.h6.Wh;
+        textView2.setBackground(org.telegram.ui.ActionBar.h6.H0(dp2, org.telegram.ui.ActionBar.h6.x0(null, i11, false)));
+        textView2.setOnClickListener(new of0(this, bg0Var));
+        Typeface typeface = Typeface.DEFAULT_BOLD;
+        textView2.setTypeface(typeface);
+        int i12 = dp / 2;
+        textView2.setPadding(dp, i12, dp, i12);
+        float f7 = 8;
+        TextView j11 = org.telegram.ui.Cells.c1.j(frameLayout, textView2, w7.z5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 80, f7, f7, f7, f7), context);
+        this.v = j11;
+        j11.setText(LocaleController.getString(R.string.CheckPhoneNumberYes));
+        j11.setSingleLine();
+        j11.setTextSize(1, 16.0f);
+        j11.setBackground(org.telegram.ui.ActionBar.h6.H0(AndroidUtilities.dp(6.0f), org.telegram.ui.ActionBar.h6.x0(null, i11, false)));
+        final int i13 = 1;
+        j11.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.pf0
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view4) {
+                switch (i13) {
+                    case 0:
+                        bg0Var.a(this);
+                        break;
+                    default:
+                        bg0Var.a(this);
+                        break;
+                }
+            }
+        });
+        j11.setTypeface(typeface);
+        j11.setPadding(dp, i12, dp, i12);
+        frameLayout.addView(j11, w7.z5.d(-2, -2.0f, (LocaleController.isRTL ? 3 : 5) | 80, f7, f7, f7, f7));
+        ih.j.b(view, viewGroup, pointF);
+        h20Var.setTranslationX(pointF.x);
+        h20Var.setTranslationY(pointF.y);
+        requestLayout();
+        b();
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                if (AndroidUtilities.isAccessibilityTouchExplorationEnabled()) {
-                    this.b.h.requestFocus();
-                    break;
-                }
-                break;
-            default:
-                sf0 sf0Var = this.b;
-                if (sf0Var.getParent() instanceof ViewGroup) {
-                    ((ViewGroup) sf0Var.getParent()).removeView(sf0Var);
-                }
-                sf0Var.c.setVisibility(0);
-                break;
+    public final void a() {
+        if (this.x) {
+            return;
         }
+        this.x = true;
+        this.a.a.V.b0 = null;
+        ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(250L);
+        duration.addListener(new qf0(this, 1));
+        duration.addUpdateListener(new nf0(this, 0));
+        duration.setInterpolator(org.telegram.ui.Components.bs.f);
+        duration.start();
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                sf0 sf0Var = this.b;
-                sf0Var.c.setVisibility(8);
-                int measuredWidth = (int) (sf0Var.b.getMeasuredWidth() / 10.0f);
-                int measuredHeight = (int) (sf0Var.b.getMeasuredHeight() / 10.0f);
-                Bitmap createBitmap = Bitmap.createBitmap(measuredWidth, measuredHeight, Bitmap.Config.ARGB_8888);
-                Canvas canvas = new Canvas(createBitmap);
-                canvas.scale(0.1f, 0.1f);
-                canvas.drawColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
-                sf0Var.b.draw(canvas);
-                Utilities.stackBlurBitmap(createBitmap, Math.max(8, Math.max(measuredWidth, measuredHeight) / ImageReceiver.DEFAULT_CROSSFADE_DURATION));
-                sf0Var.d.setBackground(new BitmapDrawable(sf0Var.getContext().getResources(), createBitmap));
-                sf0Var.d.setAlpha(0.0f);
-                sf0Var.d.setVisibility(0);
-                sf0Var.b.addView(sf0Var);
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
-        }
+    public final void b() {
+        int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.O9, false);
+        org.telegram.ui.Components.a41 a41Var = this.f;
+        a41Var.setColor(x02);
+        a41Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.P9, false));
+        this.w.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(12.0f), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.h5, false)));
+        this.n.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.q5, false));
+        this.r.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, false));
+        int i10 = org.telegram.ui.ActionBar.h6.Wh;
+        this.s.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
+        this.v.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
+        this.h.g();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        FrameLayout frameLayout = this.w;
+        int measuredHeight = frameLayout.getMeasuredHeight();
+        int translationY = (int) (this.h.getTranslationY() - AndroidUtilities.dp(32.0f));
+        frameLayout.layout(frameLayout.getLeft(), translationY - measuredHeight, frameLayout.getRight(), translationY);
     }
 }

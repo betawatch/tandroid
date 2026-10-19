@@ -1,10 +1,10 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class x3 extends b2 {
     @Override // org.telegram.ui.ActionBar.b2
-    public final int e(int i10) {
+    public final int f(int i10) {
         if (i10 == h6.h5) {
             return -14277082;
         }

@@ -1,66 +1,54 @@
 package ai;
 
-import android.content.Context;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class n9 implements Utilities.Callback {
-    public final /* synthetic */ ga a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean[] d;
-    public final /* synthetic */ Utilities.Callback2 e;
-    public final /* synthetic */ Context f;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 g;
-    public final /* synthetic */ TLRPC.ChatInvite h;
-    public final /* synthetic */ String i;
+public final /* synthetic */ class n9 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLObject b;
+    public final /* synthetic */ Utilities.Callback c;
 
-    public /* synthetic */ n9(ga gaVar, long j10, int i10, boolean[] zArr, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.d6 d6Var, TLRPC.ChatInvite chatInvite, String str) {
-        this.a = gaVar;
-        this.b = j10;
-        this.c = i10;
-        this.d = zArr;
-        this.e = callback2;
-        this.f = context;
-        this.g = d6Var;
-        this.h = chatInvite;
-        this.i = str;
+    public /* synthetic */ n9(TLObject tLObject, Utilities.Callback callback, int i10) {
+        this.a = i10;
+        this.b = tLObject;
+        this.c = callback;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        Utilities.Callback callback = (Utilities.Callback) obj;
-        ga gaVar = this.a;
-        long j10 = gaVar.f.amount;
-        long j11 = this.b;
-        boolean[] zArr = this.d;
-        Utilities.Callback2 callback2 = this.e;
-        TLRPC.ChatInvite chatInvite = this.h;
-        String str = this.i;
-        if (j10 >= j11) {
-            gaVar.Z(str, chatInvite, new w7(callback, zArr, callback2));
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                TLObject tLObject = this.b;
+                boolean z11 = tLObject instanceof TL_account.paidMessagesRevenue;
+                Utilities.Callback callback = this.c;
+                if (!z11) {
+                    callback.run(0L);
+                    break;
+                } else {
+                    callback.run(Long.valueOf(((TL_account.paidMessagesRevenue) tLObject).stars_amount));
+                    break;
+                }
+            default:
+                TLObject tLObject2 = this.b;
+                if (tLObject2 instanceof TLRPC.TL_messages_stickerSet) {
+                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject2;
+                    MediaDataController.getInstance(UserConfig.selectedAccount).putStickerSet(tL_messages_stickerSet);
+                    if (!MediaDataController.getInstance(UserConfig.selectedAccount).isStickerPackInstalled(tL_messages_stickerSet.set.id)) {
+                        MediaDataController.getInstance(UserConfig.selectedAccount).toggleStickerSet(null, tL_messages_stickerSet, 2, null, false, false);
+                    }
+                    z10 = true;
+                } else {
+                    z10 = false;
+                }
+                this.c.run(Boolean.valueOf(z10));
+                break;
         }
-        boolean starsPurchaseAvailable = MessagesController.getInstance(this.c).starsPurchaseAvailable();
-        Context context = this.f;
-        org.telegram.ui.ActionBar.d6 d6Var = this.g;
-        if (starsPurchaseAvailable) {
-            boolean[] zArr2 = {false};
-            cd cdVar = new cd(context, d6Var, j11, 1, chatInvite.title, new u7(gaVar, zArr2, str, chatInvite, zArr, callback2, callback), 0L);
-            cdVar.setOnDismissListener(new v7(gaVar, callback, zArr2, zArr, callback2, 0));
-            cdVar.show();
-            return;
-        }
-        if (callback != null) {
-            callback.run(Boolean.FALSE);
-        }
-        if (!zArr[0]) {
-            callback2.run("cancelled", 0L);
-            zArr[0] = true;
-        }
-        ga.e0(context, d6Var);
     }
 }

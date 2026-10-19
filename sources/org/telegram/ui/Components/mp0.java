@@ -13,7 +13,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class mp0 extends hm0 {
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
@@ -63,11 +63,11 @@ public final class mp0 extends hm0 {
                 qp0Var.c.setText(LocaleController.getString(R.string.VoipGroupPersonalAccount));
                 qp0Var.a.setAvatar(user);
             }
-            zv0 zv0Var = qp0Var.a;
+            aw0 aw0Var = qp0Var.a;
             if (peer2 == null ? i10 != 0 : peer2.user_id != peer.user_id) {
                 z10 = false;
             }
-            zv0Var.a(z10, false);
+            aw0Var.a(z10, false);
             return;
         }
         TLRPC.Chat chat = messagesController.getChat(Long.valueOf(-j11));
@@ -93,11 +93,11 @@ public final class mp0 extends hm0 {
             qp0Var.c.setText(LocaleController.formatPluralString((!ChatObject.isChannel(chat) || chat.megagroup) ? "Members" : "Subscribers", chat.participants_count, new Object[0]));
             qp0Var.a.setAvatar(chat);
         }
-        zv0 zv0Var2 = qp0Var.a;
+        aw0 aw0Var2 = qp0Var.a;
         if (peer2 == null ? i10 != 0 : peer2.channel_id != peer.channel_id) {
             z10 = false;
         }
-        zv0Var2.a(z10, false);
+        aw0Var2.a(z10, false);
     }
 
     @Override // s4.g0

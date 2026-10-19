@@ -1,57 +1,35 @@
 package ai;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class v4 implements RequestDelegate {
+public final /* synthetic */ class v4 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k7 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b2 b;
 
-    public /* synthetic */ v4(k7 k7Var, int i10) {
+    public /* synthetic */ v4(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         this.a = i10;
-        this.b = k7Var;
+        this.b = b2Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                final int i10 = 1;
-                final k7 k7Var = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.i2
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                k7.e1(k7Var, tLObject, tL_error);
-                                break;
-                            default:
-                                k7.x0(k7Var, tLObject, tL_error);
-                                break;
-                        }
-                    }
-                });
+                this.b.dismiss();
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                if (U != null) {
+                    org.telegram.ui.Components.qc Q = org.telegram.ui.Components.xc.a0(U).Q(R.raw.error, 36, LocaleController.getString(R.string.MessageNotFound));
+                    Q.t = true;
+                    Q.j();
+                    break;
+                }
                 break;
             default:
-                final int i11 = 0;
-                final k7 k7Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.i2
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                k7.e1(k7Var2, tLObject, tL_error);
-                                break;
-                            default:
-                                k7.x0(k7Var2, tLObject, tL_error);
-                                break;
-                        }
-                    }
-                });
+                this.b.dismiss();
                 break;
         }
     }

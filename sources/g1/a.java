@@ -16,10 +16,10 @@ import v0.c;
 import v0.o;
 import w0.d;
 import w7.a8;
-import w7.a9;
-import w7.b8;
+import w7.z7;
+import w7.z8;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class a {
     public static d a(Intent intent) {
@@ -29,7 +29,7 @@ public abstract class a {
         }
         String type = createCredentialException.getType();
         i.d(type, "getType(...)");
-        return a9.a(createCredentialException.getMessage(), type);
+        return z8.a(createCredentialException.getMessage(), type);
     }
 
     public static c b(String str, Intent intent) {
@@ -39,7 +39,7 @@ public abstract class a {
         }
         Bundle data = createCredentialResponse.getData();
         i.d(data, "getData(...)");
-        return a8.a(str, data);
+        return z7.a(str, data);
     }
 
     public static w0.i c(Intent intent) {
@@ -50,7 +50,7 @@ public abstract class a {
         }
         String type = getCredentialException.getType();
         i.d(type, "getType(...)");
-        return a9.b(getCredentialException.getMessage(), type);
+        return z8.b(getCredentialException.getMessage(), type);
     }
 
     public static o d(Intent intent) {
@@ -65,7 +65,7 @@ public abstract class a {
         i.d(type, "getType(...)");
         Bundle data = credential.getData();
         i.d(data, "getData(...)");
-        return new o(b8.a(type, data));
+        return new o(a8.a(type, data));
     }
 
     public static AccessibilityNodeInfo.AccessibilityAction e() {

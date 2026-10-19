@@ -7,7 +7,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u10 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class u10 implements View.OnLongClickListener {
                 int i11 = org.telegram.ui.ActionBar.h6.G8;
                 a1Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(i11, fragmentContextView.q0));
                 org.telegram.ui.ActionBar.a1 a1Var2 = fragmentContextView.I;
-                a1Var2.N = fragmentContextView.h instanceof org.telegram.ui.sn;
+                a1Var2.N = fragmentContextView.h instanceof org.telegram.ui.qn;
                 a1Var2.F.setShader(null);
                 a1Var2.h = null;
                 Bitmap bitmap = a1Var2.f;
@@ -69,7 +69,7 @@ public final /* synthetic */ class u10 implements View.OnLongClickListener {
                 }
                 return true;
             default:
-                return dr0.o((dr0) obj);
+                return er0.o((er0) obj);
         }
     }
 }

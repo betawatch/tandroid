@@ -3,11 +3,11 @@ package com.google.android.gms.internal.cast;
 import android.content.Context;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.a81;
+import org.telegram.ui.Components.b81;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.aa;
+import org.telegram.ui.y9;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class a implements d6.h, y6.c {
     public int a;
@@ -21,7 +21,7 @@ public final class a implements d6.h, y6.c {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void g(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void h(d6.f fVar, int i10) {
     }
 
     @Override // d6.h
@@ -29,13 +29,9 @@ public final class a implements d6.h, y6.c {
     }
 
     @Override // d6.h
-    public void j(d6.f fVar, int i10) {
+    public void n(d6.f fVar, int i10) {
         b5.d.d(false);
         b5.d.C();
-    }
-
-    @Override // d6.h
-    public /* bridge */ /* synthetic */ void n(d6.f fVar) {
     }
 
     @Override // y6.c
@@ -44,17 +40,21 @@ public final class a implements d6.h, y6.c {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void s(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void p(d6.f fVar) {
     }
 
     @Override // d6.h
-    public void u(d6.f fVar) {
+    public /* bridge */ /* synthetic */ void q(d6.f fVar, int i10) {
+    }
+
+    @Override // d6.h
+    public void r(d6.f fVar) {
         b5.d.d(false);
         b5.d.C();
     }
 
     @Override // d6.h
-    public void w(d6.f fVar, String str) {
+    public void v(d6.f fVar, String str) {
         d6.c cVar = (d6.c) fVar;
         if (cVar == null) {
             return;
@@ -68,7 +68,7 @@ public final class a implements d6.h, y6.c {
         if (atomicInteger != null) {
             atomicInteger.set(0);
         }
-        hVar.p(new aa());
+        hVar.p(new y9());
         n6.l.e("Must be called from the main thread.");
         if (hVar.w()) {
             e6.h.x(new e6.j(hVar, 3));
@@ -78,9 +78,9 @@ public final class a implements d6.h, y6.c {
         int i10 = this.a;
         long j10 = -1;
         if (i10 == 0) {
-            a81 a81Var = PhotoViewer.t1().F2;
-            if (a81Var != null) {
-                j10 = a81Var.n();
+            b81 b81Var = PhotoViewer.t1().F2;
+            if (b81Var != null) {
+                j10 = b81Var.n();
             }
         } else if (i10 == 1) {
             j10 = MediaController.getInstance().getCurrentPosition();
@@ -92,7 +92,7 @@ public final class a implements d6.h, y6.c {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void x(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void w(d6.f fVar, int i10) {
     }
 
     @Override // y6.c

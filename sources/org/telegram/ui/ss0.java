@@ -1,59 +1,29 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
-import org.telegram.messenger.video.VideoFramesRewinder;
-import org.telegram.messenger.video.VideoPlayerRewinder;
+import android.content.Context;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class ss0 extends VideoPlayerRewinder {
-    public final /* synthetic */ PhotoViewer a;
+public final class ss0 extends org.telegram.ui.Components.i81 {
+    public final /* synthetic */ PhotoViewer h0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ss0(PhotoViewer photoViewer, VideoFramesRewinder videoFramesRewinder) {
-        super(videoFramesRewinder);
-        this.a = photoViewer;
+    public ss0(PhotoViewer photoViewer, Context context, yq0 yq0Var) {
+        super(context, yq0Var);
+        this.h0 = photoViewer;
     }
 
-    @Override // org.telegram.messenger.video.VideoPlayerRewinder
-    public final void onRewindCanceled() {
-        MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
-        PhotoViewer photoViewer = this.a;
-        PhotoViewer.k(photoViewer, obtain);
-        photoViewer.z1.f(false);
-        org.telegram.ui.Components.zg0.p0.Q.f(false);
+    @Override // android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        PhotoViewer.X(this.h0);
     }
 
-    @Override // org.telegram.messenger.video.VideoPlayerRewinder
-    public final void onRewindStart(boolean z10) {
-        PhotoViewer photoViewer = this.a;
-        photoViewer.z1.e(false);
-        photoViewer.z1.d(!z10);
-        photoViewer.z1.f(true);
-        photoViewer.e0.invalidate();
-        org.telegram.ui.Components.zg0.v(z10);
-    }
-
-    @Override // org.telegram.messenger.video.VideoPlayerRewinder
-    public final void updateRewindProgressUi(long j10, float f7, boolean z10) {
-        PhotoViewer photoViewer = this.a;
-        photoViewer.z1.g(Math.abs(j10));
-        if (z10) {
-            photoViewer.q3.h(f7, false);
-            photoViewer.r3.invalidate();
-        }
-        org.telegram.ui.Components.zg0 zg0Var = org.telegram.ui.Components.zg0.p0;
-        zg0Var.Q.g(0L);
-        if (z10) {
-            zg0Var.Z = f7;
-            ci.h3 h3Var = zg0Var.b0;
-            if (h3Var != null) {
-                h3Var.invalidate();
-            }
-            org.telegram.ui.Components.yg0 yg0Var = zg0Var.h;
-            if (yg0Var != null) {
-                yg0Var.invalidate();
-            }
+    @Override // android.view.View
+    public final void setVisibility(int i10) {
+        super.setVisibility(i10);
+        if (i10 == 0) {
+            PhotoViewer.X(this.h0);
         }
     }
 }

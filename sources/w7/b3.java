@@ -1,16 +1,16 @@
 package w7;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class b3 implements ja.d {
     public static final b3 a = new b3();
-    public static final ja.c b = new ja.c("durationMs", i2.d.o(r4.c.l(d.class, new a(1))));
-    public static final ja.c c = new ja.c("imageSource", i2.d.o(r4.c.l(d.class, new a(2))));
-    public static final ja.c d = new ja.c("imageFormat", i2.d.o(r4.c.l(d.class, new a(3))));
-    public static final ja.c e = new ja.c("imageByteSize", i2.d.o(r4.c.l(d.class, new a(4))));
-    public static final ja.c f = new ja.c("imageWidth", i2.d.o(r4.c.l(d.class, new a(5))));
-    public static final ja.c g = new ja.c("imageHeight", i2.d.o(r4.c.l(d.class, new a(6))));
-    public static final ja.c h = new ja.c("rotationDegrees", i2.d.o(r4.c.l(d.class, new a(7))));
+    public static final ja.c b = new ja.c("durationMs", i2.e.o(r4.c.l(d.class, new a(1))));
+    public static final ja.c c = new ja.c("imageSource", i2.e.o(r4.c.l(d.class, new a(2))));
+    public static final ja.c d = new ja.c("imageFormat", i2.e.o(r4.c.l(d.class, new a(3))));
+    public static final ja.c e = new ja.c("imageByteSize", i2.e.o(r4.c.l(d.class, new a(4))));
+    public static final ja.c f = new ja.c("imageWidth", i2.e.o(r4.c.l(d.class, new a(5))));
+    public static final ja.c g = new ja.c("imageHeight", i2.e.o(r4.c.l(d.class, new a(6))));
+    public static final ja.c h = new ja.c("rotationDegrees", i2.e.o(r4.c.l(d.class, new a(7))));
 
     @Override // ja.a
     public final void a(Object obj, Object obj2) {

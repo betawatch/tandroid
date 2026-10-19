@@ -1,24 +1,33 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class y5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ LocationSharingService b;
+import android.content.DialogInterface;
+import org.telegram.messenger.MediaController;
 
-    public /* synthetic */ y5(LocationSharingService locationSharingService, int i10) {
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* loaded from: classes.dex */
+public final /* synthetic */ class y5 implements DialogInterface.OnCancelListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ y5(Object obj, int i10) {
         this.a = i10;
-        this.b = locationSharingService;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                this.b.lambda$onCreate$1();
+                MediaController.lambda$saveFile$45((boolean[]) this.b, dialogInterface);
+                break;
+            case 1:
+                MediaController.lambda$saveFile$52((boolean[]) this.b, dialogInterface);
+                break;
+            case 2:
+                MessagesController.lambda$openByUserName$460((boolean[]) this.b, dialogInterface);
                 break;
             default:
-                this.b.lambda$didReceivedNotification$2();
+                ((MediaController.MediaLoader) this.b).lambda$new$0(dialogInterface);
                 break;
         }
     }

@@ -7,10 +7,10 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.lk;
-import org.telegram.ui.d00;
+import org.telegram.messenger.kk;
+import org.telegram.ui.b00;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class zc extends org.telegram.ui.Components.q6 {
     public final /* synthetic */ int s = 0;
@@ -31,14 +31,14 @@ public final class zc extends org.telegram.ui.Components.q6 {
                 Drawable drawable = (Drawable) this.v;
                 if (!((ad) this.w).d) {
                     int measuredWidth = (int) ((getMeasuredWidth() - getDrawable().c()) - AndroidUtilities.dp(20.0f));
-                    drawable.setBounds(measuredWidth, lk.A(17.0f, getMeasuredHeight(), 2), AndroidUtilities.dp(17.0f) + measuredWidth, (AndroidUtilities.dp(17.0f) + getMeasuredHeight()) / 2);
+                    drawable.setBounds(measuredWidth, kk.A(17.0f, getMeasuredHeight(), 2), AndroidUtilities.dp(17.0f) + measuredWidth, (AndroidUtilities.dp(17.0f) + getMeasuredHeight()) / 2);
                     drawable.draw(canvas);
                 }
                 super.dispatchDraw(canvas);
                 break;
             default:
-                d00 d00Var = (d00) this.w;
-                int a2 = d00Var.w.a(d00Var.v, false);
+                b00 b00Var = (b00) this.w;
+                int a2 = b00Var.w.a(b00Var.v, false);
                 setTextColor(a2);
                 Paint paint = (Paint) this.v;
                 paint.setColor(org.telegram.ui.ActionBar.h6.m1(org.telegram.ui.ActionBar.h6.I.q() ? 0.2f : 0.1f, a2));
@@ -51,9 +51,9 @@ public final class zc extends org.telegram.ui.Components.q6 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zc(d00 d00Var, Context context) {
+    public zc(b00 b00Var, Context context) {
         super(context, false, true, true);
-        this.w = d00Var;
+        this.w = b00Var;
         this.v = new Paint(1);
     }
 }

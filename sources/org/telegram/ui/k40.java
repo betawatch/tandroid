@@ -1,27 +1,29 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class k40 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ s50 a;
+public final class k40 extends org.telegram.ui.Components.er0 {
+    public final /* synthetic */ q50 c1;
 
-    public k40(s50 s50Var) {
-        this.a = s50Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k40(q50 q50Var, Context context, String str, String str2, String str3, String str4) {
+        super(context, null, str, str2, false, str3, str4, true);
+        this.c1 = q50Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        ViewGroup viewGroup;
-        s50 s50Var = this.a;
-        s50Var.Q.getViewTreeObserver().removeOnPreDrawListener(this);
-        s50Var.a2.j(null);
-        AndroidUtilities.updateVisibleRows(s50Var.m2);
-        viewGroup = ((org.telegram.ui.ActionBar.f3) s50Var).containerView;
-        viewGroup.requestLayout();
-        return false;
+    @Override // org.telegram.ui.Components.er0
+    public final void T0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            int m10 = hVar.m();
+            q50 q50Var = this.c1;
+            if (m10 == 1) {
+                q50Var.l1().m(((TLRPC.Dialog) hVar.n(0)).id, Integer.valueOf(i10), 41);
+            } else {
+                q50Var.l1().k(0L, 41, Integer.valueOf(i10), Integer.valueOf(hVar.m()), null, null);
+            }
+        }
     }
 }

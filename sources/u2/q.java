@@ -11,7 +11,7 @@ import java.util.List;
 import m.g3;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class q implements f0 {
     public final jg.f a;
@@ -200,9 +200,9 @@ public final class q implements f0 {
                         vVar.b = ((b2.n0) n0Var3.get(i10)).f;
                         vVar.a = ((b2.n0) n0Var3.get(i10)).g;
                         b2.w wVar = new b2.w(vVar);
-                        org.telegram.ui.web.n nVar = new org.telegram.ui.web.n(11, this, wVar);
+                        org.telegram.ui.web.m mVar2 = new org.telegram.ui.web.m(11, this, wVar);
                         qf.b bVar = this.b;
-                        qg.g0 g0Var2 = new qg.g0(nVar, 17);
+                        qg.h0 h0Var = new qg.h0(mVar2, 17);
                         g3 g3Var = new g3(5);
                         oa.d dVar = new oa.d(27);
                         if (this.c.a0(wVar)) {
@@ -219,18 +219,18 @@ public final class q implements f0 {
                         b2.f0 f0Var4 = new b2.f0();
                         List list3 = Collections.EMPTY_LIST;
                         x1 x1Var = x1.e;
-                        b2.h0 h0Var = new b2.h0();
+                        b2.h0 h0Var2 = new b2.h0();
                         b2.k0 k0Var3 = b2.k0.d;
                         Uri parse = uri4 == null ? uri : Uri.parse(uri4);
                         u6.p((f0Var4.b == null || f0Var4.a != null) ? z10 : z11 ? 1 : 0);
                         b2.j0 j0Var4 = parse != null ? new b2.j0(parse, null, f0Var4.a != null ? new b2.g0(f0Var4) : uri, null, list3, null, x1Var, -9223372036854775807L) : uri;
-                        b2.o0 o0Var3 = new b2.o0("", new b2.e0(c0Var2), j0Var4, new b2.i0(h0Var), b2.r0.L, k0Var3);
+                        b2.o0 o0Var3 = new b2.o0("", new b2.e0(c0Var2), j0Var4, new b2.i0(h0Var2), b2.r0.L, k0Var3);
                         j0Var4.getClass();
-                        aVarArr[i11] = new z0(o0Var3, bVar, g0Var2, g3Var.B(o0Var3), dVar, 1048576, wVar2);
+                        aVarArr[i11] = new y0(o0Var3, bVar, h0Var, g3Var.B(o0Var3), dVar, 1048576, wVar2);
                     } else {
                         qf.b bVar2 = this.b;
                         bVar2.getClass();
-                        aVarArr[i10 + 1] = new o1((b2.n0) n0Var3.get(i10), bVar2, new oa.d(27));
+                        aVarArr[i10 + 1] = new n1((b2.n0) n0Var3.get(i10), bVar2, new oa.d(27));
                     }
                 }
                 a11 = new o0(aVarArr);

@@ -1,50 +1,15 @@
 package c5;
 
-import android.text.TextUtils;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import java.util.List;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class t {
-    public final String a;
-    public final String b;
-    public final String c;
-    public final int d;
+    public final List a;
+    public final List b;
 
-    public t(String str) {
-        this.a = str;
-        JSONObject jSONObject = new JSONObject(str);
-        this.b = jSONObject.optString("productId");
-        String optString = jSONObject.optString(TeXSymbolParser.TYPE_ATTR);
-        this.c = optString;
-        this.d = jSONObject.has("statusCode") ? jSONObject.optInt("statusCode") : 0;
-        if (TextUtils.isEmpty(optString)) {
-            throw new IllegalArgumentException("Product type cannot be empty.");
-        }
-        jSONObject.optString("serializedDocid");
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof t) {
-            return TextUtils.equals(this.a, ((t) obj).a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("UnfetchedProduct{productId='");
-        sb2.append(this.b);
-        sb2.append("', productType='");
-        sb2.append(this.c);
-        sb2.append("', statusCode=");
-        return a1.g.n(this.d, "}", sb2);
+    public t(List list, List list2) {
+        this.a = list;
+        this.b = list2;
     }
 }

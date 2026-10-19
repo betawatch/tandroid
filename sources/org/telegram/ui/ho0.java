@@ -1,86 +1,141 @@
 package org.telegram.ui;
 
-import android.graphics.RectF;
-import android.os.Build;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import java.util.Iterator;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.SharedPreferences;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.util.SparseIntArray;
+import java.io.File;
+import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ho0 implements zf.a0, r0.n, org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class ho0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ kp0 b;
+    public final /* synthetic */ ip0 b;
 
-    public /* synthetic */ ho0(kp0 kp0Var, int i10) {
+    public /* synthetic */ ho0(ip0 ip0Var, int i10) {
         this.a = i10;
-        this.b = kp0Var;
+        this.b = ip0Var;
     }
 
-    @Override // r0.n
-    public r0.k1 B0(View view, r0.k1 k1Var) {
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
-        kp0 kp0Var = this.b;
-        kp0Var.b0 = defaultWindowInsets;
-        vo0 vo0Var = kp0Var.h.b;
-        int i10 = defaultWindowInsets.a;
-        int paddingTop = vo0Var.getPaddingTop();
-        i0.b bVar = kp0Var.b0;
-        vo0Var.setPadding(i10, paddingTop, bVar.c, AndroidUtilities.dp(72.0f) + bVar.d);
-        vo0 vo0Var2 = kp0Var.n.b;
-        int i11 = kp0Var.b0.a;
-        int paddingTop2 = vo0Var2.getPaddingTop();
-        i0.b bVar2 = kp0Var.b0;
-        vo0Var2.setPadding(i11, paddingTop2, bVar2.c, AndroidUtilities.dp(72.0f) + bVar2.d);
-        FrameLayout frameLayout = kp0Var.P;
-        i0.b bVar3 = kp0Var.b0;
-        frameLayout.setPadding(bVar3.a, 0, bVar3.c, bVar3.d);
-        return r0.k1.b;
-    }
-
-    @Override // zf.a0
-    public void a(int i10) {
-        kp0 kp0Var = this.b;
-        gh.d dVar = kp0Var.g0;
-        ArrayList arrayList = kp0Var.k0;
-        bh.f fVar = kp0Var.f0;
-        int i11 = Build.VERSION.SDK_INT;
-        if (i11 < 31 || fVar == null) {
-            return;
-        }
-        ArrayList arrayList2 = kp0Var.j0;
-        int a2 = zf.f0.a(arrayList2, (i11 < 29 || dVar == null) ? 0 : dVar.d(0, AndroidUtilities.dp(8.0f), arrayList2), arrayList);
-        int measuredWidth = kp0Var.d.getMeasuredWidth();
-        for (int i12 = 0; i12 < a2; i12++) {
-            RectF rectF = (RectF) arrayList.get(i12);
-            float f7 = measuredWidth;
-            rectF.left = w7.r.a(rectF.left, 0.0f, f7);
-            rectF.top = Math.max(0.0f, rectF.top);
-            rectF.right = w7.r.a(rectF.right, 0.0f, f7);
-            rectF.bottom = Math.min(kp0Var.d.getHeight(), rectF.bottom);
-        }
-        fVar.g(a2, arrayList);
-        if (fVar.e(kp0Var.i0, kp0Var.d.getWidth(), kp0Var.d.getHeight())) {
-            if (dVar != null) {
-                dVar.e();
-            }
-            Iterator it = kp0Var.d0.iterator();
-            while (it.hasNext()) {
-                ((View) it.next()).invalidate();
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0076  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x008b  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x00b4 A[LOOP:1: B:37:0x00ae->B:39:0x00b4, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00ca  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x00ea  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x00f9  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0090  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x007b  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        org.telegram.ui.ActionBar.g6 O0;
+        String[] strArr;
+        SparseIntArray R0;
+        int[] iArr;
+        int i10;
+        org.telegram.ui.ActionBar.f6 k10;
+        cp0 cp0Var;
+        boolean z10;
+        Drawable drawable;
         switch (this.a) {
-            case 2:
-                this.b.finishFragment();
+            case 0:
+                ip0 ip0Var = this.b;
+                ip0Var.S = !ip0Var.S;
+                SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0);
+                String str = "Blue";
+                String string = sharedPreferences.getString("lastDayTheme", "Blue");
+                if (org.telegram.ui.ActionBar.h6.O0(string) == null || org.telegram.ui.ActionBar.h6.O0(string).q()) {
+                    string = "Blue";
+                }
+                String str2 = "Dark Blue";
+                String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
+                if (org.telegram.ui.ActionBar.h6.O0(string2) == null || !org.telegram.ui.ActionBar.h6.O0(string2).q()) {
+                    string2 = "Dark Blue";
+                }
+                org.telegram.ui.ActionBar.g6 g6Var = org.telegram.ui.ActionBar.h6.I;
+                if (string.equals(string2)) {
+                    if (g6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
+                        str2 = string2;
+                        O0 = !ip0Var.S ? org.telegram.ui.ActionBar.h6.O0(str2) : org.telegram.ui.ActionBar.h6.O0(str);
+                        ip0Var.v.clear();
+                        strArr = new String[1];
+                        String str3 = O0.d;
+                        R0 = str3 == null ? org.telegram.ui.ActionBar.h6.R0(null, str3, strArr) : org.telegram.ui.ActionBar.h6.R0(new File(O0.b), null, strArr);
+                        iArr = org.telegram.ui.ActionBar.h6.ql;
+                        if (iArr != null) {
+                            for (int i11 = 0; i11 < iArr.length; i11++) {
+                                ip0Var.v.put(i11, iArr[i11]);
+                            }
+                        }
+                        for (i10 = 0; i10 < R0.size(); i10++) {
+                            ip0Var.v.put(R0.keyAt(i10), R0.valueAt(i10));
+                        }
+                        k10 = O0.k(false);
+                        if (k10 != null) {
+                            k10.c(R0, ip0Var.v);
+                        }
+                        cp0Var = ip0Var.h;
+                        if (cp0Var != null && cp0Var.v != null) {
+                            com.google.android.gms.internal.cast.z5 H = org.telegram.ui.ActionBar.h6.H(O0, ip0Var.v, strArr[0], 0, true);
+                            xo0 xo0Var = ip0Var.h.v;
+                            drawable = (BitmapDrawable) H.c;
+                            if (drawable == null) {
+                                drawable = (Drawable) H.b;
+                            }
+                            xo0Var.setOverrideBackground(drawable);
+                        }
+                        z10 = ip0Var.S;
+                        if (ip0Var.a0 != z10) {
+                            ip0Var.a0 = z10;
+                            org.telegram.ui.Components.uj0 uj0Var = ip0Var.T;
+                            uj0Var.P(z10 ? uj0Var.e[0] : 0);
+                            org.telegram.ui.Components.uj0 uj0Var2 = ip0Var.T;
+                            if (uj0Var2 != null) {
+                                uj0Var2.start();
+                            }
+                        }
+                        ip0Var.F0();
+                        break;
+                    }
+                } else {
+                    str2 = string2;
+                }
+                str = string;
+                if (!ip0Var.S) {
+                }
+                ip0Var.v.clear();
+                strArr = new String[1];
+                String str32 = O0.d;
+                if (str32 == null) {
+                }
+                iArr = org.telegram.ui.ActionBar.h6.ql;
+                if (iArr != null) {
+                }
+                while (i10 < R0.size()) {
+                }
+                k10 = O0.k(false);
+                if (k10 != null) {
+                }
+                cp0Var = ip0Var.h;
+                if (cp0Var != null) {
+                    com.google.android.gms.internal.cast.z5 H2 = org.telegram.ui.ActionBar.h6.H(O0, ip0Var.v, strArr[0], 0, true);
+                    xo0 xo0Var2 = ip0Var.h.v;
+                    drawable = (BitmapDrawable) H2.c;
+                    if (drawable == null) {
+                    }
+                    xo0Var2.setOverrideBackground(drawable);
+                }
+                z10 = ip0Var.S;
+                if (ip0Var.a0 != z10) {
+                }
+                ip0Var.F0();
                 break;
             default:
-                this.b.y0();
+                this.b.D0(2);
                 break;
         }
     }

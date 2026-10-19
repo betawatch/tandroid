@@ -1,21 +1,22 @@
 package w7;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+import java.util.Date;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class q8 {
-    public static int a(int i10) {
-        if (i10 == 0) {
-            return 0;
-        }
-        if (i10 == 90) {
-            return 1;
-        }
-        if (i10 == 180) {
-            return 2;
-        }
-        if (i10 == 270) {
-            return 3;
-        }
-        throw new IllegalArgumentException(i2.d.j(i10, "Invalid rotation: "));
+    public static u2.c a(String str) {
+        JSONObject jSONObject = new JSONObject(str);
+        String a2 = m9.a(jSONObject.getString("id"));
+        long j10 = jSONObject.getLong("created");
+        jSONObject.getBoolean("livemode");
+        String str2 = "card".equals(m9.a(jSONObject.getString(TeXSymbolParser.TYPE_ATTR))) ? "card" : null;
+        Boolean valueOf = Boolean.valueOf(jSONObject.getBoolean("used"));
+        JSONObject jSONObject2 = jSONObject.getJSONObject("card");
+        wc.a aVar = new wc.a(null, Integer.valueOf(jSONObject2.getInt("exp_month")), Integer.valueOf(jSONObject2.getInt("exp_year")), null, m9.a(jSONObject2.optString("name")), m9.a(jSONObject2.optString("address_line1")), m9.a(jSONObject2.optString("address_line2")), m9.a(jSONObject2.optString("address_city")), m9.a(jSONObject2.optString("address_state")), m9.a(jSONObject2.optString("address_zip")), m9.a(jSONObject2.optString("address_country")), o9.a(m9.a(jSONObject2.optString("brand"))), m9.a(jSONObject2.optString("last4")), m9.a(jSONObject2.optString("fingerprint")), o9.b(m9.a(jSONObject2.optString("funding"))), m9.a(jSONObject2.optString("country")), m9.a(jSONObject2.optString("currency")));
+        new Date(j10 * 1000);
+        return new u2.c(a2, valueOf, aVar, str2);
     }
 }

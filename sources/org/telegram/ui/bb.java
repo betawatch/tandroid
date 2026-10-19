@@ -1,17 +1,48 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class bb implements org.telegram.ui.Components.kl0, ni.c {
-    public final /* synthetic */ xb a;
+import j$.util.Objects;
+import j$.util.function.Predicate$-CC;
+import java.util.function.Predicate;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_stars;
 
-    @Override // org.telegram.ui.Components.kl0
-    public void b() {
-        this.a.c1();
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class bb implements Predicate {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ bb(int i10) {
+        this.a = i10;
     }
 
-    @Override // ni.c
-    public void c(int i10) {
-        xb.X(this.a, i10);
+    public /* synthetic */ Predicate and(Predicate predicate) {
+        int i10 = this.a;
+        return Predicate$-CC.$default$and(this, predicate);
+    }
+
+    public /* synthetic */ Predicate negate() {
+        switch (this.a) {
+        }
+        return Predicate$-CC.$default$negate(this);
+    }
+
+    public /* synthetic */ Predicate or(Predicate predicate) {
+        int i10 = this.a;
+        return Predicate$-CC.$default$or(this, predicate);
+    }
+
+    @Override // java.util.function.Predicate
+    public final boolean test(Object obj) {
+        switch (this.a) {
+            case 0:
+                return ((String) obj) != null;
+            case 1:
+                return !((MessageObject) obj).isEphemeral();
+            case 2:
+                return Objects.nonNull((TLObject) obj);
+            default:
+                return !((TL_stars.StarGift) obj).auction;
+        }
     }
 }

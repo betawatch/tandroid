@@ -19,7 +19,7 @@ import android.view.WindowManager;
 import b2.f1;
 import b2.v0;
 import b2.w0;
-import ci.u7;
+import ci.v7;
 import j$.util.DesugarTimeZone;
 import j$.util.Objects;
 import java.io.IOException;
@@ -58,7 +58,7 @@ import v7.s6;
 import v7.u6;
 import v7.v6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class m0 {
     public static final String a;
@@ -191,7 +191,7 @@ public abstract class m0 {
             case 6:
                 return "camera motion";
             default:
-                return i10 >= 10000 ? i2.d.k(i10, "custom (", ")") : "?";
+                return i10 >= 10000 ? i2.e.k(i10, "custom (", ")") : "?";
         }
     }
 
@@ -701,19 +701,19 @@ public abstract class m0 {
         }
     }
 
-    public static int c(c5.b0 b0Var, long j10) {
-        int i10 = b0Var.b - 1;
+    public static int c(c5.c0 c0Var, long j10) {
+        int i10 = c0Var.b - 1;
         int i11 = 0;
         while (i11 <= i10) {
             int i12 = (i11 + i10) >>> 1;
-            if (b0Var.n(i12) < j10) {
+            if (c0Var.n(i12) < j10) {
                 i11 = i12 + 1;
             } else {
                 i10 = i12 - 1;
             }
         }
         int i13 = i10 + 1;
-        if (i13 < b0Var.b && b0Var.n(i13) == j10) {
+        if (i13 < c0Var.b && c0Var.n(i13) == j10) {
             return i13;
         }
         if (i10 == -1) {
@@ -878,9 +878,9 @@ public abstract class m0 {
 
     public static j9.e0 g0(j9.y yVar, j9.q qVar) {
         j9.e0 e0Var = new j9.e0();
-        u7 u7Var = new u7(19, e0Var, yVar);
+        v7 v7Var = new v7(19, e0Var, yVar);
         j9.r rVar = j9.r.a;
-        e0Var.a(u7Var, rVar);
+        e0Var.a(v7Var, rVar);
         yVar.a(new a3.l0(yVar, e0Var, qVar, 28), rVar);
         return e0Var;
     }

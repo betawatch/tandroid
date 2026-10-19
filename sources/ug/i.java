@@ -27,7 +27,7 @@ import org.telegram.ui.Components.ru;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class i {
     public static void a(b2 b2Var, boolean z10) {
@@ -290,7 +290,7 @@ public abstract class i {
         if (tL_payments_giveawayInfoResults.winner) {
             string = LocaleController.getString(R.string.BoostingGiveawayYouWon);
             if ((tL_payments_giveawayInfoResults.flags & 16) == 0) {
-                alertDialog$Builder.k(LocaleController.getString("BoostingGiveawayViewPrize", R.string.BoostingGiveawayViewPrize), new qg.g0(tL_payments_giveawayInfoResults, 20));
+                alertDialog$Builder.k(LocaleController.getString("BoostingGiveawayViewPrize", R.string.BoostingGiveawayViewPrize), new qg.h0(tL_payments_giveawayInfoResults, 20));
             }
             alertDialog$Builder.h(LocaleController.getString("Close", R.string.Close), new sg.y(i14));
         } else {

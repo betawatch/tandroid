@@ -7,12 +7,12 @@ import android.widget.Button;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.dr0;
+import org.telegram.ui.Components.er0;
 import org.telegram.ui.Components.vg;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ey;
+import org.telegram.ui.cy;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class y1 extends vg {
     public final /* synthetic */ int l0;
@@ -62,7 +62,7 @@ public final class y1 extends vg {
         Object obj = this.m0;
         switch (i10) {
             case 2:
-                return ((dr0) obj).getThemedColor(h6.S5);
+                return ((er0) obj).getThemedColor(h6.S5);
             case 3:
             default:
                 return super.getFillColor();
@@ -92,7 +92,7 @@ public final class y1 extends vg {
         switch (this.l0) {
             case 3:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", ((ey) this.m0).I2.size(), new Object[0]));
+                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", ((cy) this.m0).I2.size(), new Object[0]));
                 accessibilityNodeInfo.setClassName(Button.class.getName());
                 accessibilityNodeInfo.setLongClickable(true);
                 accessibilityNodeInfo.setClickable(true);

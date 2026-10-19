@@ -1,42 +1,82 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.regex.Pattern;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gf implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class gf implements org.telegram.ui.ActionBar.a2, MessagesController.ErrorDelegate, do0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sn b;
-    public final /* synthetic */ View c;
+    public final /* synthetic */ Runnable b;
 
-    public /* synthetic */ gf(sn snVar, org.telegram.ui.Cells.w0 w0Var, int i10) {
+    public /* synthetic */ gf(int i10, Runnable runnable) {
         this.a = i10;
-        this.b = snVar;
-        this.c = w0Var;
+        this.b = runnable;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                sn snVar = this.b;
-                snVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                snVar.A9 = AndroidUtilities.dp(30.0f) * floatValue;
-                snVar.t9();
-                this.c.setAlpha(floatValue);
+    @Override // org.telegram.ui.do0
+    public void c(int i10) {
+        int i11 = this.a;
+        Runnable runnable = this.b;
+        switch (i11) {
+            case 9:
+                Pattern pattern = LaunchActivity.C1;
+                if (i10 == 1) {
+                    runnable.run();
+                    break;
+                }
                 break;
             default:
-                sn snVar2 = this.b;
-                snVar2.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                snVar2.A9 = AndroidUtilities.dp(30.0f) * floatValue2;
-                snVar2.t9();
-                snVar2.w9();
-                this.c.setAlpha(floatValue2);
+                if (i10 == 1) {
+                    runnable.run();
+                    break;
+                }
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.run();
+                break;
+            case 1:
+                this.b.run();
+                break;
+            default:
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.MessagesController.ErrorDelegate
+    public boolean run(TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 3:
+                this.b.run();
+                break;
+            case 4:
+                this.b.run();
+                break;
+            case 5:
+                this.b.run();
+                break;
+            case 6:
+                this.b.run();
+                break;
+            case 7:
+                this.b.run();
+                break;
+            default:
+                this.b.run();
+                break;
+        }
+        return true;
     }
 }

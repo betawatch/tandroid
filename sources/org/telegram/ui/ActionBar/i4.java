@@ -15,14 +15,14 @@ import org.telegram.ui.Components.cd;
 import org.telegram.ui.Components.fm0;
 import org.telegram.ui.Components.hh0;
 import org.telegram.ui.Components.n9;
-import org.telegram.ui.Components.qu0;
-import org.telegram.ui.Components.rq0;
-import org.telegram.ui.iu;
-import org.telegram.ui.jr;
+import org.telegram.ui.Components.ru0;
+import org.telegram.ui.Components.sq0;
+import org.telegram.ui.gu;
+import org.telegram.ui.hr;
 import org.telegram.ui.v6;
 import org.telegram.ui.x6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i4 implements Comparator {
     public final /* synthetic */ int a;
@@ -127,8 +127,8 @@ public final /* synthetic */ class i4 implements Comparator {
             case 11:
                 TLObject tLObject = (TLObject) obj;
                 TLObject tLObject2 = (TLObject) obj2;
-                int j02 = jr.j0(tLObject);
-                int j03 = jr.j0(tLObject2);
+                int j02 = hr.j0(tLObject);
+                int j03 = hr.j0(tLObject2);
                 if (j02 > j03) {
                     return 1;
                 }
@@ -140,8 +140,8 @@ public final /* synthetic */ class i4 implements Comparator {
                 }
                 return 0;
             case 12:
-                int j04 = jr.j0((TLObject) obj);
-                int j05 = jr.j0((TLObject) obj2);
+                int j04 = hr.j0((TLObject) obj);
+                int j05 = hr.j0((TLObject) obj2);
                 if (j04 > j05) {
                     return 1;
                 }
@@ -198,15 +198,15 @@ public final /* synthetic */ class i4 implements Comparator {
                 }
                 return ((Float) pair4.first).floatValue() > ((Float) pair3.first).floatValue() ? -1 : 0;
             case 23:
-                int i16 = ((rq0) obj).c;
-                int i17 = ((rq0) obj2).c;
+                int i16 = ((sq0) obj).c;
+                int i17 = ((sq0) obj2).c;
                 if (i16 < i17) {
                     return 1;
                 }
                 return i16 > i17 ? -1 : 0;
             case 24:
-                id2 = ((qu0) obj2).c;
-                id3 = ((qu0) obj).c;
+                id2 = ((ru0) obj2).c;
+                id3 = ((ru0) obj).c;
                 break;
             case 25:
                 Pair pair5 = (Pair) obj;
@@ -271,7 +271,7 @@ public final /* synthetic */ class i4 implements Comparator {
                 }
                 return j12 < j13 ? -1 : 0;
             case 27:
-                return Long.compare(((iu) obj2).c, ((iu) obj).c);
+                return Long.compare(((gu) obj2).c, ((gu) obj).c);
             case 28:
                 long j14 = UserConfig.getInstance(((Integer) obj).intValue()).loginTime;
                 long j15 = UserConfig.getInstance(((Integer) obj2).intValue()).loginTime;

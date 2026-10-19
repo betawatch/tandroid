@@ -16,11 +16,11 @@ import oa.f;
 import r9.a;
 import r9.j;
 import r9.r;
-import w7.x8;
+import w7.w8;
 import ya.b;
 import ya.c;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class FirebaseCommonRegistrar implements ComponentRegistrar {
     public static /* synthetic */ String a(Context context) {
@@ -49,15 +49,15 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
         m0Var.a(new j(rVar, 1, 0));
         m0Var.f = new j5.b(rVar, 21);
         arrayList.add(m0Var.b());
-        arrayList.add(x8.a("fire-android", String.valueOf(Build.VERSION.SDK_INT)));
-        arrayList.add(x8.a("fire-core", "20.4.2"));
-        arrayList.add(x8.a("device-name", b(Build.PRODUCT)));
-        arrayList.add(x8.a("device-model", b(Build.DEVICE)));
-        arrayList.add(x8.a("device-brand", b(Build.BRAND)));
-        arrayList.add(x8.b("android-target-sdk", new f0(5)));
-        arrayList.add(x8.b("android-min-sdk", new f0(6)));
-        arrayList.add(x8.b("android-platform", new f0(7)));
-        arrayList.add(x8.b("android-installer", new f0(8)));
+        arrayList.add(w8.a("fire-android", String.valueOf(Build.VERSION.SDK_INT)));
+        arrayList.add(w8.a("fire-core", "20.4.2"));
+        arrayList.add(w8.a("device-name", b(Build.PRODUCT)));
+        arrayList.add(w8.a("device-model", b(Build.DEVICE)));
+        arrayList.add(w8.a("device-brand", b(Build.BRAND)));
+        arrayList.add(w8.b("android-target-sdk", new f0(5)));
+        arrayList.add(w8.b("android-min-sdk", new f0(6)));
+        arrayList.add(w8.b("android-platform", new f0(7)));
+        arrayList.add(w8.b("android-installer", new f0(8)));
         try {
             id.b.b.getClass();
             str = "2.1.20";
@@ -65,7 +65,7 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
             str = null;
         }
         if (str != null) {
-            arrayList.add(x8.a("kotlin", str));
+            arrayList.add(w8.a("kotlin", str));
         }
         return arrayList;
     }

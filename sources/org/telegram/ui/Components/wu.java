@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import android.webkit.WebView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class wu extends WebView {
     public final /* synthetic */ int a;
@@ -26,11 +26,11 @@ public final class wu extends WebView {
     public void draw(Canvas canvas) {
         switch (this.a) {
             case 1:
-                org.telegram.ui.qt0 qt0Var = (org.telegram.ui.qt0) this.c;
+                org.telegram.ui.ot0 ot0Var = (org.telegram.ui.ot0) this.c;
                 super.draw(canvas);
-                if (zg0.p0.f == this && qt0Var.h.getVisibility() == 0) {
+                if (zg0.p0.f == this && ot0Var.h.getVisibility() == 0) {
                     canvas.drawColor(-16777216);
-                    qt0Var.j(canvas, getWidth(), getHeight());
+                    ot0Var.j(canvas, getWidth(), getHeight());
                     break;
                 }
                 break;

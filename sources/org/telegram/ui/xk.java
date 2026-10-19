@@ -1,66 +1,175 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.util.SparseArray;
+import android.view.View;
+import java.util.HashSet;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class xk extends org.telegram.ui.Components.cl0 {
-    public final int[] l1;
-    public ValueAnimator m1;
-    public boolean n1;
-    public final /* synthetic */ sn o1;
+public final class xk implements org.telegram.ui.Components.bl0 {
+    public final /* synthetic */ qn a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xk(sn snVar, sn snVar2, Activity activity, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(3, i10, activity, snVar2, d6Var);
-        this.o1 = snVar;
-        this.l1 = new int[2];
-        this.n1 = true;
+    public xk(qn qnVar) {
+        this.a = qnVar;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        org.telegram.ui.ActionBar.k kVar;
-        super.onLayout(z10, i10, i11, i12, i13);
-        kVar = ((org.telegram.ui.ActionBar.n2) this.o1).actionBar;
-        org.telegram.ui.ActionBar.u0 k10 = kVar.j(null).k(28);
-        if (k10 != null) {
-            int[] iArr = this.l1;
-            getLocationInWindow(iArr);
-            float x10 = getX();
-            float width = getWidth() + x10;
-            k10.getLocationInWindow(iArr);
-            float width2 = (k10.getWidth() / 2.0f) + iArr[0];
-            int dp = AndroidUtilities.dp(20.0f);
-            boolean z11 = LocaleController.isRTL;
-            float f7 = width2 + (dp * (z11 ? -1 : 1));
-            if (z11) {
-                s(f7 - x10, !this.n1);
-            } else {
-                s(f7 - width, !this.n1);
-            }
-            this.n1 = false;
-        }
+    @Override // org.telegram.ui.Components.bl0
+    public final /* synthetic */ boolean i() {
+        return true;
     }
 
-    public final void s(float f7, boolean z10) {
-        ValueAnimator valueAnimator = this.m1;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.m1 = null;
-        }
-        if (!z10) {
-            setBubbleOffset(f7);
+    @Override // org.telegram.ui.Components.bl0
+    public final /* synthetic */ boolean m() {
+        return false;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x008b, code lost:
+    
+        if (r5 == null) goto L26;
+     */
+    @Override // org.telegram.ui.Components.bl0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void o(View view, ah.i1 i1Var, boolean z10, boolean z11) {
+        TLRPC.Document f7;
+        boolean z12;
+        HashSet hashSet;
+        int i10;
+        int i11;
+        MessageObject messageObject;
+        TLRPC.Message message;
+        qn qnVar = this.a;
+        SparseArray[] sparseArrayArr = qnVar.W5;
+        if (qnVar.bb == null) {
             return;
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.U0, f7);
-        this.m1 = ofFloat;
-        ofFloat.addUpdateListener(new e3(this, 6));
-        this.m1.setInterpolator(org.telegram.ui.Components.bs.h);
-        this.m1.setDuration(420L);
-        this.m1.start();
+        if (qnVar.a() == qnVar.getUserConfig().getClientUserId() && !qnVar.getUserConfig().isPremium()) {
+            new sg.y0((org.telegram.ui.ActionBar.n2) qnVar, 24, true).show();
+            qnVar.C7(false);
+            return;
+        }
+        boolean contains = qnVar.bb.getSelectedReactions().contains(i1Var);
+        HashSet hashSet2 = new HashSet();
+        int i12 = 0;
+        boolean z13 = false;
+        boolean z14 = false;
+        int i13 = 0;
+        while (i12 < sparseArrayArr.length) {
+            boolean z15 = z13;
+            boolean z16 = z14;
+            int i14 = i13;
+            int i15 = 0;
+            while (i15 < sparseArrayArr[i12].size()) {
+                MessageObject messageObject2 = (MessageObject) sparseArrayArr[i12].valueAt(i15);
+                if (messageObject2.hasValidGroupId()) {
+                    MessageObject.GroupedMessages c92 = qnVar.c9(messageObject2);
+                    if (c92 != null && !hashSet2.contains(Long.valueOf(c92.groupId))) {
+                        hashSet2.add(Long.valueOf(c92.groupId));
+                        messageObject2 = c92.findPrimaryMessageObject();
+                    }
+                    z12 = contains;
+                    hashSet = hashSet2;
+                    i10 = i12;
+                    i11 = i15;
+                    i15 = i11 + 1;
+                    hashSet2 = hashSet;
+                    contains = z12;
+                    i12 = i10;
+                }
+                if (messageObject2.hasReaction(i1Var) == contains) {
+                    hashSet = hashSet2;
+                    messageObject = messageObject2;
+                    z12 = contains;
+                    i10 = i12;
+                    i11 = i15;
+                    qnVar.eb(qnVar.t8(messageObject2.getId(), false), messageObject, null, null, 0.0f, 0.0f, i1Var, false, false, false, true);
+                    if (!z12) {
+                        i14++;
+                    }
+                } else {
+                    z12 = contains;
+                    hashSet = hashSet2;
+                    i10 = i12;
+                    i11 = i15;
+                    messageObject = messageObject2;
+                }
+                if (messageObject.messageOwner != null) {
+                    boolean z17 = qnVar.A0.N;
+                    if (z17) {
+                        MessageObject messageObject3 = (MessageObject) qnVar.o6[0].get(messageObject.getId());
+                        if (messageObject3 != null && (message = messageObject3.messageOwner) != null) {
+                            message.reactions = messageObject.messageOwner.reactions;
+                        }
+                    } else if (!z17 && qnVar.q3 != null) {
+                        z15 = true;
+                    }
+                }
+                if (qnVar.A0.N && !messageObject.hasReaction(qnVar.q3)) {
+                    MessageObject.GroupedMessages c93 = qnVar.c9(messageObject);
+                    if (c93 != null) {
+                        for (int i16 = 0; i16 < c93.messages.size(); i16++) {
+                            qnVar.getMediaDataController().removeMessageFromResults(c93.messages.get(i16).getId());
+                        }
+                    } else {
+                        qnVar.getMediaDataController().removeMessageFromResults(messageObject.getId());
+                    }
+                    hg.n1 n1Var = qnVar.M3;
+                    if (n1Var != null) {
+                        n1Var.l();
+                    }
+                    z15 = true;
+                    z16 = true;
+                }
+                i15 = i11 + 1;
+                hashSet2 = hashSet;
+                contains = z12;
+                i12 = i10;
+            }
+            i12++;
+            z13 = z15;
+            z14 = z16;
+            i13 = i14;
+        }
+        if (z13) {
+            qnVar.oc(z14);
+        }
+        qnVar.C7(true);
+        if (i13 > 0) {
+            long j10 = i1Var.g;
+            if (j10 == 0) {
+                TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(i1Var.f);
+                if (tL_availableReaction == null) {
+                    return;
+                } else {
+                    f7 = tL_availableReaction.activate_animation;
+                }
+            } else {
+                f7 = org.telegram.ui.Components.r5.f(UserConfig.selectedAccount, j10);
+            }
+            if (f7 == null) {
+                return;
+            }
+            org.telegram.ui.Components.xc.a0(qnVar).y(i13, f7, null).k(true);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public final /* synthetic */ boolean w() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public final /* synthetic */ void v() {
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public final /* synthetic */ void q(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

@@ -9,14 +9,14 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class vn0 extends Drawable {
     public final Paint b;
     public boolean f;
     public int j;
     public boolean m;
-    public ai.y8 o;
+    public ai.z8 o;
     public float p;
     public float q;
     public float r;
@@ -63,16 +63,16 @@ public final class vn0 extends Drawable {
         }
         if (!z11 && i10 == 2) {
             if (this.o == null) {
-                ai.y8 y8Var = new ai.y8(this, i10, z10, 3);
-                this.o = y8Var;
-                AndroidUtilities.runOnUIThread(y8Var, 65L);
+                ai.z8 z8Var = new ai.z8(this, i10, z10, 3);
+                this.o = z8Var;
+                AndroidUtilities.runOnUIThread(z8Var, 65L);
                 return;
             }
             return;
         }
-        ai.y8 y8Var2 = this.o;
-        if (y8Var2 != null) {
-            AndroidUtilities.cancelRunOnUIThread(y8Var2);
+        ai.z8 z8Var2 = this.o;
+        if (z8Var2 != null) {
+            AndroidUtilities.cancelRunOnUIThread(z8Var2);
         }
         f6 f6Var = this.n;
         boolean z12 = false;

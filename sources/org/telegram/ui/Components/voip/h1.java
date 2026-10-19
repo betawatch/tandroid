@@ -32,23 +32,23 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.cw0;
+import org.telegram.ui.Components.dw0;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.sc;
+import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.tg0;
 import org.telegram.ui.Components.w9;
 import org.webrtc.RendererCommon;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class h1 implements NotificationCenter.NotificationCenterDelegate, tf.a {
-    public static final cw0 b0 = new cw0(new tg0(16), new tg0(17));
-    public static final cw0 c0 = new cw0(new tg0(18), new tg0(19));
+    public static final dw0 b0 = new dw0(new tg0(16), new tg0(17));
+    public static final dw0 c0 = new dw0(new tg0(18), new tg0(19));
     public static final h1 d0;
     public AccountInstance E;
     public ScaleGestureDetector F;
-    public k0.b G;
+    public le.b G;
     public boolean H;
     public boolean I;
     public View J;
@@ -98,7 +98,7 @@ public final class h1 implements NotificationCenter.NotificationCenterDelegate, 
         h1 h1Var = d0;
         if (h1Var.V) {
             h1Var.V = false;
-            AndroidUtilities.runOnUIThread(new sc(19), 100L);
+            AndroidUtilities.runOnUIThread(new rc(20), 100L);
             h1Var.E.getNotificationCenter().removeObserver(h1Var, NotificationCenter.groupCallUpdated);
             h1Var.E.getNotificationCenter().removeObserver(h1Var, NotificationCenter.applyGroupCallVisibleParticipants);
             NotificationCenter.getGlobalInstance().removeObserver(h1Var, NotificationCenter.didEndCall);
@@ -161,12 +161,12 @@ public final class h1 implements NotificationCenter.NotificationCenterDelegate, 
         h1Var.F = scaleGestureDetector;
         scaleGestureDetector.setQuickScaleEnabled(false);
         h1Var.F.setStylusScaleEnabled(false);
-        h1Var.G = new k0.b(activity2, new f1(h1Var, scaledTouchSlop));
+        h1Var.G = new le.b(activity2, new f1(h1Var, scaledTouchSlop));
         h1Var.e = new ah.v(h1Var, activity2);
         org.telegram.ui.f fVar = new org.telegram.ui.f(h1Var, activity2, i10);
         h1Var.d = fVar;
         fVar.addView(h1Var.e, z5.c(-1.0f, -1));
-        h1Var.e.setOutlineProvider(new ci.n1(17));
+        h1Var.e.setOutlineProvider(new ci.o1(17));
         h1Var.e.setClipToOutline(true);
         h1Var.e.setBackgroundColor(h6.x0(null, h6.gg, false));
         w9 w9Var = new w9(activity2);

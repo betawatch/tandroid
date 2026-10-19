@@ -5,7 +5,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.view.View;
-import ci.o1;
+import ci.p1;
 import ei.c4;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
@@ -26,7 +26,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.Wallet.z2;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 int i11 = a2.D0;
                 break;
             case 2:
-                o1.j();
+                p1.j();
                 break;
             case 3:
                 int i12 = c4.d;
@@ -96,7 +96,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 zg0 zg0Var = zg0.p0;
                 cv cvVar = zg0Var.U;
                 if (cvVar != null) {
-                    cvVar.H();
+                    cvVar.G();
                 } else {
                     PhotoViewer photoViewer = zg0Var.V;
                     if (photoViewer != null) {
@@ -143,7 +143,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
                     return;
                 }
             case 24:
-                int i18 = z2.U;
+                int i18 = z2.W;
                 break;
             case 25:
                 PhotoViewer.t1().j0(1.0f, 0.0f, 0.0f, false);

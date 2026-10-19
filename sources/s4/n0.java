@@ -17,7 +17,7 @@ import ki.t1;
 import m.g3;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class n0 {
     public g3 a;
@@ -36,10 +36,10 @@ public abstract class n0 {
     public int n;
 
     public n0() {
-        t1 t1Var = new t1(this, 27);
-        le.b bVar = new le.b(this, 20);
-        this.c = new mi.q((h1) t1Var);
-        this.d = new mi.q((h1) bVar);
+        l2.f fVar = new l2.f(this, 21);
+        t1 t1Var = new t1(this, 28);
+        this.c = new mi.q((h1) fVar);
+        this.d = new mi.q((h1) t1Var);
         this.f = false;
         this.g = true;
         this.h = true;
@@ -303,11 +303,11 @@ public abstract class n0 {
             } else {
                 U.l &= -33;
             }
-            this.a.t(view, i10, view.getLayoutParams(), false);
+            this.a.r(view, i10, view.getLayoutParams(), false);
         } else if (view.getParent() == this.b) {
             g3 g3Var = this.a;
             ad.d dVar = (ad.d) g3Var.c;
-            int indexOfChild = ((ih.g) g3Var.b).a.indexOfChild(view);
+            int indexOfChild = ((RecyclerView) ((t1) g3Var.b).b).indexOfChild(view);
             int A = (indexOfChild == -1 || dVar.D(indexOfChild)) ? -1 : indexOfChild - dVar.A(indexOfChild);
             if (i10 == -1) {
                 i10 = this.a.D();
@@ -336,10 +336,10 @@ public abstract class n0 {
                 } else {
                     n0Var.b.f.m0(U2);
                 }
-                n0Var.a.t(q6, i10, o0Var2, U2.j());
+                n0Var.a.r(q6, i10, o0Var2, U2.j());
             }
         } else {
-            this.a.p(view, i10, false);
+            this.a.n(view, i10, false);
             o0Var.c = true;
             x0 x0Var = this.e;
             if (x0Var != null && x0Var.e) {
@@ -449,15 +449,15 @@ public abstract class n0 {
         if (q(i10) != null) {
             g3 g3Var = this.a;
             int J = g3Var.J(i10);
-            ih.g gVar = (ih.g) g3Var.b;
-            View childAt = gVar.a.getChildAt(J);
+            t1 t1Var = (t1) g3Var.b;
+            View childAt = ((RecyclerView) t1Var.b).getChildAt(J);
             if (childAt == null) {
                 return;
             }
             if (((ad.d) g3Var.c).F(J)) {
                 g3Var.X(childAt);
             }
-            gVar.a(J);
+            t1Var.Y(J);
         }
     }
 

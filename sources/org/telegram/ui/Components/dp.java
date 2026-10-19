@@ -4,10 +4,10 @@ import android.animation.ValueAnimator;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class dp extends FrameLayout {
-    public b91 a;
+    public c91 a;
     public float b;
     public boolean c;
     public float d;
@@ -30,7 +30,7 @@ public abstract class dp extends FrameLayout {
         ofFloat.addUpdateListener(new l6(this, 13));
         this.e.setInterpolator(bs.h);
         this.e.setDuration(320L);
-        this.e.addListener(new org.telegram.ui.ho(5, this, z10));
+        this.e.addListener(new org.telegram.ui.fo(5, this, z10));
         this.e.start();
     }
 
@@ -45,9 +45,9 @@ public abstract class dp extends FrameLayout {
 
     public void setShown(float f7) {
         this.b = f7;
-        b91 b91Var = this.a;
-        if (b91Var != null) {
-            b91Var.setPivotX(b91Var.getWidth() / 2.0f);
+        c91 c91Var = this.a;
+        if (c91Var != null) {
+            c91Var.setPivotX(c91Var.getWidth() / 2.0f);
             this.a.setPivotY(0.0f);
             this.a.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, f7));
             this.a.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, f7));
@@ -56,8 +56,8 @@ public abstract class dp extends FrameLayout {
         invalidate();
     }
 
-    public void setTabs(b91 b91Var) {
-        this.a = b91Var;
-        addView(b91Var, w7.z5.c(-1.0f, -1));
+    public void setTabs(c91 c91Var) {
+        this.a = c91Var;
+        addView(c91Var, w7.z5.c(-1.0f, -1));
     }
 }

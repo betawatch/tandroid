@@ -11,19 +11,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class y1 extends View implements org.telegram.ui.Cells.m9, g3 {
-    public final d70 a;
+    public final b70 a;
     public final j4 b;
     public d3 c;
     public int d;
     public int e;
     public TL_iv.PageBlock f;
 
-    public y1(Context context, d70 d70Var, j4 j4Var) {
+    public y1(Context context, b70 b70Var, j4 j4Var) {
         super(context);
-        this.a = d70Var;
+        this.a = b70Var;
         this.b = j4Var;
     }
 
@@ -69,7 +69,7 @@ public final class y1 extends View implements org.telegram.ui.Cells.m9, g3 {
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.lk.a(this);
+        return org.telegram.messenger.kk.a(this);
     }
 
     @Override // android.view.View
@@ -117,23 +117,23 @@ public final class y1 extends View implements org.telegram.ui.Cells.m9, g3 {
     public final void onMeasure(int i10, int i11) {
         int i12;
         int size = View.MeasureSpec.getSize(i10);
-        d70 d70Var = this.a;
-        d70Var.getClass();
+        b70 b70Var = this.a;
+        b70Var.getClass();
         this.d = AndroidUtilities.dp(18);
-        d70Var.getClass();
+        b70Var.getClass();
         this.e = AndroidUtilities.dp(8);
         TL_iv.PageBlock pageBlock = this.f;
         if (pageBlock != null) {
             TL_iv.RichText richText = pageBlock.text;
-            d70 d70Var2 = this.a;
-            d70Var2.getClass();
+            b70 b70Var2 = this.a;
+            b70Var2.getClass();
             int dp = size - AndroidUtilities.dp(36);
             TL_iv.PageBlock pageBlock2 = this.f;
             j4 j4Var = this.b;
-            d3 p5 = l4.p(d70Var2, this, null, richText, dp, 0, pageBlock2, (j4Var == null || !j4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.dx0.a(), 0, this.b);
+            d3 p5 = l4.p(b70Var2, this, null, richText, dp, 0, pageBlock2, (j4Var == null || !j4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.ex0.a(), 0, this.b);
             this.c = p5;
             if (p5 != null) {
-                d70Var.getClass();
+                b70Var.getClass();
                 i12 = this.c.d.getHeight() + AndroidUtilities.dp(16);
                 d3 d3Var = this.c;
                 d3Var.s = this.d;

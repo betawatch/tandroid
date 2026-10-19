@@ -1,6 +1,6 @@
 package sg;
 
-import ai.n5;
+import ai.o5;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -16,12 +16,12 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.j5;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class g0 extends FrameLayout {
     public final ImageView a;
     public final j5 b;
-    public final n5 c;
+    public final o5 c;
     public final j5 d;
     public f0 e;
     public e0 f;
@@ -51,11 +51,11 @@ public final class g0 extends FrameLayout {
         j5Var2.setWidthWrapContent(true);
         j5Var2.setTypeface(AndroidUtilities.bold());
         j5Var2.setTextSize(14);
-        n5 n5Var = new n5(this, context, d6Var);
-        this.c = n5Var;
-        n5Var.setWillNotDraw(false);
-        n5Var.addView(j5Var2, z5.e(-2, -2, 17));
-        addView(n5Var, z5.c(-1.0f, -1));
+        o5 o5Var = new o5(this, context, d6Var);
+        this.c = o5Var;
+        o5Var.setWillNotDraw(false);
+        o5Var.addView(j5Var2, z5.e(-2, -2, 17));
+        addView(o5Var, z5.c(-1.0f, -1));
     }
 
     @Override // android.widget.FrameLayout, android.view.View

@@ -1,46 +1,108 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.text.style.URLSpan;
-import android.view.View;
+import android.net.Uri;
+import android.util.Log;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URI;
+import org.json.JSONArray;
+import org.json.JSONTokener;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class h41 extends ClickableSpan {
-    public final /* synthetic */ URLSpan a;
-    public final /* synthetic */ r41 b;
+public final class h41 extends Thread {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ Utilities.Callback2 d;
 
-    public h41(r41 r41Var, URLSpan uRLSpan) {
-        this.b = r41Var;
-        this.a = uRLSpan;
+    public h41(String str, String str2, String str3, Utilities.Callback2 callback2) {
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
+        this.d = callback2;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        r41 r41Var = this.b;
-        Utilities.CallbackReturn callbackReturn = r41Var.N;
-        URLSpan uRLSpan = this.a;
-        if (callbackReturn != null) {
-            if (((Boolean) callbackReturn.run(uRLSpan)).booleanValue()) {
-                r41Var.dismiss();
-            }
-        } else {
-            org.telegram.ui.ActionBar.n2 n2Var = r41Var.M;
-            if (n2Var != null) {
-                f5.p0(n2Var, uRLSpan.getURL(), false, false);
-            }
+    @Override // java.lang.Thread, java.lang.Runnable
+    public final void run() {
+        HttpURLConnection httpURLConnection;
+        String str;
+        Utilities.Callback2 callback2 = this.d;
+        String str2 = this.c;
+        boolean z10 = false;
+        try {
+            httpURLConnection = (HttpURLConnection) new URI(("https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + Uri.encode(this.a) + "&tl=" + Uri.encode(this.b) + "&dt=t&ie=UTF-8&oe=UTF-8&otf=1&ssel=0&tsel=0&kc=7&dt=at&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss&q=") + str2).toURL().openConnection();
+        } catch (Exception e) {
+            e = e;
+            httpURLConnection = null;
         }
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int min = Math.min(textPaint.getAlpha(), (textPaint.getColor() >> 24) & 255);
-        if (!(this.a instanceof j61)) {
-            textPaint.setUnderlineText(true);
+        try {
+            httpURLConnection.setRequestMethod("GET");
+            httpURLConnection.setRequestProperty("User-Agent", s41.R[(int) Math.round(Math.random() * 5)]);
+            httpURLConnection.setRequestProperty("Content-Type", "application/json");
+            StringBuilder sb2 = new StringBuilder();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream(), d9.j.a));
+            while (true) {
+                try {
+                    int read = bufferedReader.read();
+                    if (read == -1) {
+                        break;
+                    } else {
+                        sb2.append((char) read);
+                    }
+                } finally {
+                }
+            }
+            bufferedReader.close();
+            JSONArray jSONArray = new JSONArray(new JSONTokener(sb2.toString()));
+            JSONArray jSONArray2 = jSONArray.getJSONArray(0);
+            try {
+                str = jSONArray.getString(2);
+            } catch (Exception unused) {
+                str = null;
+            }
+            if (str != null && str.contains("-")) {
+                str.substring(0, str.indexOf("-"));
+            }
+            String str3 = "";
+            for (int i10 = 0; i10 < jSONArray2.length(); i10++) {
+                String string = jSONArray2.getJSONArray(i10).getString(0);
+                if (string != null && !string.equals("null")) {
+                    str3 = str3 + string;
+                }
+            }
+            if (str2.length() > 0 && str2.charAt(0) == '\n') {
+                str3 = "\n" + str3;
+            }
+            AndroidUtilities.runOnUIThread(new g41(str3, 0, callback2));
+        } catch (Exception e7) {
+            e = e7;
+            try {
+                StringBuilder sb3 = new StringBuilder();
+                sb3.append("failed to translate a text ");
+                sb3.append(httpURLConnection != null ? Integer.valueOf(httpURLConnection.getResponseCode()) : null);
+                sb3.append(" ");
+                sb3.append(httpURLConnection != null ? httpURLConnection.getResponseMessage() : null);
+                Log.e("translate", sb3.toString());
+            } catch (IOException e10) {
+                e10.printStackTrace();
+            }
+            e.printStackTrace();
+            if (httpURLConnection != null) {
+                try {
+                    if (httpURLConnection.getResponseCode() == 429) {
+                        z10 = true;
+                    }
+                } catch (Exception unused2) {
+                    AndroidUtilities.runOnUIThread(new gr0(callback2, 21));
+                    return;
+                }
+            }
+            AndroidUtilities.runOnUIThread(new b60(8, callback2, z10));
         }
-        textPaint.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.k5, false));
-        textPaint.setAlpha(min);
     }
 }

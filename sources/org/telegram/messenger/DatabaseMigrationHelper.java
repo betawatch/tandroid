@@ -12,7 +12,7 @@ import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class DatabaseMigrationHelper {
     private static void executeNoException(SQLiteDatabase sQLiteDatabase, String str) {
@@ -47,7 +47,7 @@ public class DatabaseMigrationHelper {
         long j11;
         long longValue;
         StringBuilder sb2;
-        File file4 = new File(ApplicationLoader.getFilesDirFixed(), i2.d.k(i10, "recover_database_", "/"));
+        File file4 = new File(ApplicationLoader.getFilesDirFixed(), i2.e.k(i10, "recover_database_", "/"));
         file4.mkdirs();
         File file5 = new File(file4, "cache4.db");
         File file6 = new File(file4, "cache4.db-wal");

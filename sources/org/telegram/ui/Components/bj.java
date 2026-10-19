@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class bj extends a71 {
+public final class bj extends b71 {
     public final /* synthetic */ fj d3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -14,7 +14,7 @@ public final class bj extends a71 {
         this.d3 = fjVar;
     }
 
-    @Override // org.telegram.ui.Components.a71
+    @Override // org.telegram.ui.Components.b71
     public final void D1() {
         fj fjVar = this.d3;
         fjVar.b.b2(fjVar, 0);

@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class di implements TextWatcher {
     public boolean a;
@@ -51,7 +51,7 @@ public final class di implements TextWatcher {
         tiVar.e.a(codePointCount > 0, true);
         int i12 = tiVar.K;
         if (i12 <= 0 || (i10 = i12 - tiVar.L) > 100) {
-            q6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new org.telegram.ui.pq(this, 10));
+            q6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new org.telegram.ui.nq(this, 10));
             q6Var.setAlpha(0.0f);
             z10 = true;
         } else {

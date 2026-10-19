@@ -11,20 +11,20 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ey;
-import org.telegram.ui.te1;
+import org.telegram.ui.cy;
+import org.telegram.ui.re1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r1 implements Utilities.Callback {
-    public final /* synthetic */ te1 a;
-    public final /* synthetic */ ey b;
+    public final /* synthetic */ re1 a;
+    public final /* synthetic */ cy b;
     public final /* synthetic */ long c;
     public final /* synthetic */ int d;
 
-    public /* synthetic */ r1(te1 te1Var, ey eyVar, long j10, int i10) {
-        this.a = te1Var;
-        this.b = eyVar;
+    public /* synthetic */ r1(re1 re1Var, cy cyVar, long j10, int i10) {
+        this.a = re1Var;
+        this.b = cyVar;
         this.c = j10;
         this.d = i10;
     }
@@ -35,13 +35,13 @@ public final /* synthetic */ class r1 implements Utilities.Callback {
         String str;
         TLRPC.Chat chat;
         Boolean bool = (Boolean) obj;
-        te1 te1Var = this.a;
-        ey eyVar = this.b;
-        if (te1Var != null) {
-            te1Var.finishFragment();
-            eyVar.removeSelfFromStack();
+        re1 re1Var = this.a;
+        cy cyVar = this.b;
+        if (re1Var != null) {
+            re1Var.finishFragment();
+            cyVar.removeSelfFromStack();
         } else {
-            eyVar.finishFragment();
+            cyVar.finishFragment();
         }
         org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
         if (U == null) {

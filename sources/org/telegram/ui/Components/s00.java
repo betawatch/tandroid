@@ -29,7 +29,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class s00 extends FrameLayout {
     public static final /* synthetic */ int A0 = 0;
@@ -209,7 +209,7 @@ public abstract class s00 extends FrameLayout {
         this.x = animatorSet2;
         animatorSet2.playTogether(ObjectAnimator.ofFloat(this, this.x0, 0.0f, 1.0f));
         this.x.setDuration(320L);
-        this.x.addListener(new org.telegram.ui.pq(this, 27));
+        this.x.addListener(new org.telegram.ui.nq(this, 27));
         this.x.start();
     }
 
@@ -224,8 +224,8 @@ public abstract class s00 extends FrameLayout {
         boolean z10 = false;
         for (int i10 = 0; i10 < size; i10++) {
             p00 p00Var = (p00) arrayList.get(i10);
-            if (p00Var.d != ((org.telegram.ui.dw) this.J).a(p00Var.a)) {
-                if (((org.telegram.ui.dw) this.J).a(p00Var.a) < 0) {
+            if (p00Var.d != ((org.telegram.ui.bw) this.J).a(p00Var.a)) {
+                if (((org.telegram.ui.bw) this.J).a(p00Var.a) < 0) {
                     continue;
                 } else {
                     if (this.m0.get(i10) != p00Var.a(true) || this.h0) {
@@ -434,7 +434,7 @@ public abstract class s00 extends FrameLayout {
         if (p00Var.f) {
             n00 n00Var = this.J;
             if (n00Var != null) {
-                ((org.telegram.ui.dw) n00Var).c(p00Var, false);
+                ((org.telegram.ui.bw) n00Var).c(p00Var, false);
                 return;
             }
             return;
@@ -459,7 +459,7 @@ public abstract class s00 extends FrameLayout {
         AndroidUtilities.runOnUIThread(k7Var, 16L);
         n00 n00Var2 = this.J;
         if (n00Var2 != null) {
-            ((org.telegram.ui.dw) n00Var2).c(p00Var, z10);
+            ((org.telegram.ui.bw) n00Var2).c(p00Var, z10);
         }
         e(i10);
     }
@@ -605,7 +605,7 @@ public abstract class s00 extends FrameLayout {
                 setEnabled(true);
                 n00 n00Var = this.J;
                 if (n00Var != null) {
-                    ((org.telegram.ui.dw) n00Var).b(1.0f);
+                    ((org.telegram.ui.bw) n00Var).b(1.0f);
                 }
             }
         }
@@ -665,7 +665,7 @@ public abstract class s00 extends FrameLayout {
         invalidate();
         n00 n00Var = this.J;
         if (n00Var != null) {
-            ((org.telegram.ui.dw) n00Var).b(f7);
+            ((org.telegram.ui.bw) n00Var).b(f7);
         }
     }
 
@@ -702,7 +702,7 @@ public abstract class s00 extends FrameLayout {
             }
         }
         MessagesController.getInstance(UserConfig.selectedAccount).lockFiltersInternal();
-        ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_messages_updateDialogFiltersOrder, new ci.d6(14));
+        ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_messages_updateDialogFiltersOrder, new ci.e6(14));
         this.y = false;
     }
 }

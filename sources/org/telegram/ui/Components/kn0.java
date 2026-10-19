@@ -8,7 +8,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class kn0 extends HorizontalScrollView {
     public boolean a;
@@ -64,7 +64,7 @@ public abstract class kn0 extends HorizontalScrollView {
 
     public final void c() {
         r5 r5Var;
-        ci.f3 f3Var;
+        ci.g3 g3Var;
         uj0 uj0Var;
         ValueAnimator valueAnimator;
         int childCount = this.b.getChildCount();
@@ -87,8 +87,8 @@ public abstract class kn0 extends HorizontalScrollView {
                             c1Var.invalidate();
                         }
                         sg.c1 c1Var2 = gwVar.f;
-                        if (c1Var2 != null && (r5Var = gwVar.w) != null && (f3Var = r5Var.k) != null) {
-                            c1Var2.setImageReceiver(f3Var);
+                        if (c1Var2 != null && (r5Var = gwVar.w) != null && (g3Var = r5Var.k) != null) {
+                            c1Var2.setImageReceiver(g3Var);
                         }
                         w9 w9Var = gwVar.d;
                         if (w9Var != null) {

@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class vx extends kw {
     public final /* synthetic */ tz g0;
@@ -98,7 +98,7 @@ public final class vx extends kw {
                 if (num != null) {
                     tzVar.P.B0();
                     tzVar.U(num.intValue());
-                    tzVar.G(num.intValue(), i11);
+                    tzVar.F(num.intValue(), i11);
                     tzVar.n(0, null);
                 }
                 return true;

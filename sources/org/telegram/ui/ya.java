@@ -1,45 +1,35 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ya implements ch.a {
+public final /* synthetic */ class ya implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ vb b;
 
-    public /* synthetic */ ya(Object obj, int i10) {
+    public /* synthetic */ ya(vb vbVar, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = vbVar;
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // ch.a
-    public final void e(bh.a aVar, RectF rectF) {
-        switch (this.a) {
-        }
-        aVar.a = true;
-    }
-
-    @Override // ch.a
-    public final void f(Canvas canvas, RectF rectF) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((ub) this.b).Z(canvas, rectF);
+                vb vbVar = this.b;
+                vbVar.G0 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                vbVar.H0 = -1;
+                vbVar.d1();
+                vbVar.I0 = null;
                 break;
             case 1:
-                kp0 kp0Var = (kp0) this.b;
-                m0 m0Var = kp0Var.d;
-                vo0 vo0Var = kp0Var.h.b;
-                hh.d.a(vo0Var, canvas, rectF, vo0Var, m0Var);
-                vo0 vo0Var2 = kp0Var.n.b;
-                hh.d.a(vo0Var2, canvas, rectF, vo0Var2, m0Var);
+                vb vbVar2 = this.b;
+                vbVar2.W0(false);
+                vbVar2.E.l();
                 break;
             default:
-                PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.b;
-                org.telegram.ui.Components.im0 im0Var = premiumPreviewFragment.a;
-                hh.d.a(im0Var, canvas, rectF, im0Var, premiumPreviewFragment.d0);
+                this.b.V0();
                 break;
         }
     }

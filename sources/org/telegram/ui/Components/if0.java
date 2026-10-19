@@ -27,7 +27,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class if0 extends org.telegram.ui.ActionBar.f3 {
     public static final /* synthetic */ int O = 0;
@@ -395,15 +395,15 @@ public final class if0 extends org.telegram.ui.ActionBar.f3 {
             restrictionReason.platform = "";
             tL_userContact_old2.restriction_reason.add(restrictionReason);
         }
-        boolean z10 = n2Var instanceof org.telegram.ui.sn;
+        boolean z10 = n2Var instanceof org.telegram.ui.qn;
         if (z10) {
-            org.telegram.ui.sn snVar = (org.telegram.ui.sn) n2Var;
-            if (snVar.c()) {
-                f5.L(if0Var.getContext(), snVar.a(), new xe0(if0Var), d6Var);
+            org.telegram.ui.qn qnVar = (org.telegram.ui.qn) n2Var;
+            if (qnVar.c()) {
+                f5.L(if0Var.getContext(), qnVar.a(), new xe0(if0Var), d6Var);
                 return;
             }
         }
-        f5.Z(if0Var.currentAccount, 1, z10 ? ((org.telegram.ui.sn) n2Var).a() : 0L, new z2(if0Var, 10));
+        f5.Z(if0Var.currentAccount, 1, z10 ? ((org.telegram.ui.qn) n2Var).a() : 0L, new z2(if0Var, 10));
     }
 
     public static boolean o(if0 if0Var, int i10, org.telegram.ui.ActionBar.d6 d6Var, Context context) {

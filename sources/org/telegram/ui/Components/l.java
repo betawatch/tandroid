@@ -9,20 +9,20 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class l extends dr0 {
-    public final /* synthetic */ e0 b1;
+public final class l extends er0 {
+    public final /* synthetic */ e0 c1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public l(e0 e0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context, null, str, false, str2, false, d6Var);
-        this.b1 = e0Var;
+        this.c1 = e0Var;
     }
 
-    @Override // org.telegram.ui.Components.dr0
-    public final void S0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        FrameLayout frameLayout = this.b1.G0;
+    @Override // org.telegram.ui.Components.er0
+    public final void T0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        FrameLayout frameLayout = this.c1.G0;
         if (z10) {
             xc xcVar = new xc(frameLayout, this.resourcesProvider);
             if (hVar.m() == 1) {

@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class ax extends pg.d {
     public boolean W2;
@@ -52,7 +52,7 @@ public final class ax extends pg.d {
         if (tzVar.f) {
             return false;
         }
-        org.telegram.ui.gt q6 = org.telegram.ui.gt.q();
+        org.telegram.ui.et q6 = org.telegram.ui.et.q();
         ax axVar = tzVar.D0;
         tzVar.getMeasuredHeight();
         return super.onInterceptTouchEvent(motionEvent) || q6.r(motionEvent, axVar, tzVar.g2, this.n2);

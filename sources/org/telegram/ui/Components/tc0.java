@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class tc0 extends FrameLayout {
     public boolean E;
@@ -83,11 +83,11 @@ public final class tc0 extends FrameLayout {
         addView(linearLayout, w7.z5.d(-1, -2.0f, 19, 38.0f, 0.0f, 8.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.e = textView2;
-        org.telegram.messenger.lk.o(i12, d6Var, textView2, 1, 14.0f);
+        org.telegram.messenger.kk.o(i12, d6Var, textView2, 1, 14.0f);
         TextView i13 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView2, w7.z5.t(-2, -2, 19, 0, -1, 0, 0), context);
         this.f = i13;
         i13.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(20.0f), org.telegram.ui.ActionBar.h6.m1(0.75f, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d7, d6Var))));
-        org.telegram.messenger.lk.o(i12, d6Var, i13, 1, 11.0f);
+        org.telegram.messenger.kk.o(i12, d6Var, i13, 1, 11.0f);
         i13.setPadding(AndroidUtilities.dp(5.33f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(5.33f), AndroidUtilities.dp(2.33f));
         linearLayout.addView(i13, w7.z5.t(-2, -2, 19, 4, 0, 0, 0));
         a();
@@ -97,7 +97,7 @@ public final class tc0 extends FrameLayout {
         final org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, context, d6Var, false);
         f3Var.fixNavigationBar(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, d6Var));
         boolean premiumFeaturesBlocked = MessagesController.getInstance(i10).premiumFeaturesBlocked();
-        LinearLayout e = org.telegram.messenger.lk.e(context, 1);
+        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
         e.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
         xj0 xj0Var = new xj0(context);
         xj0Var.setScaleType(ImageView.ScaleType.CENTER);
@@ -110,16 +110,16 @@ public final class tc0 extends FrameLayout {
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
         int i11 = org.telegram.ui.ActionBar.h6.j5;
-        org.telegram.messenger.lk.o(i11, d6Var, textView, 1, 20.0f);
+        org.telegram.messenger.kk.o(i11, d6Var, textView, 1, 20.0f);
         textView.setText(LocaleController.getString(z10 ? R.string.PremiumLastSeenHeader1 : R.string.PremiumReadHeader1));
         e.addView(textView, w7.z5.t(-1, -2, 1, 12, 0, 12, 0));
         TextView textView2 = new TextView(context);
         textView2.setGravity(17);
-        org.telegram.messenger.lk.o(i11, d6Var, textView2, 1, 14.0f);
+        org.telegram.messenger.kk.o(i11, d6Var, textView2, 1, 14.0f);
         String firstName = j10 > 0 ? UserObject.getFirstName(MessagesController.getInstance(i10).getUser(Long.valueOf(j10))) : "";
-        org.telegram.messenger.lk.r(z10 ? premiumFeaturesBlocked ? R.string.PremiumLastSeenText1Locked : R.string.PremiumLastSeenText1 : premiumFeaturesBlocked ? R.string.PremiumReadText1Locked : R.string.PremiumReadText1, new Object[]{firstName}, textView2);
+        org.telegram.messenger.kk.r(z10 ? premiumFeaturesBlocked ? R.string.PremiumLastSeenText1Locked : R.string.PremiumLastSeenText1 : premiumFeaturesBlocked ? R.string.PremiumReadText1Locked : R.string.PremiumReadText1, new Object[]{firstName}, textView2);
         e.addView(textView2, w7.z5.t(-1, -2, 1, 32, 9, 32, 19));
-        final ei.d f7 = org.telegram.messenger.lk.f(24, context, d6Var, true);
+        final ei.d f7 = org.telegram.messenger.kk.f(24, context, d6Var, true);
         f7.g(LocaleController.getString(z10 ? R.string.PremiumLastSeenButton1 : R.string.PremiumReadButton1), false, true);
         e.addView(f7, w7.z5.q(-1, 48, 1));
         f7.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.pc0
@@ -135,7 +135,7 @@ public final class tc0 extends FrameLayout {
                     TL_account.setPrivacy setprivacy = new TL_account.setPrivacy();
                     setprivacy.key = new TLRPC.TL_inputPrivacyKeyStatusTimestamp();
                     setprivacy.rules.add(new TLRPC.TL_inputPrivacyValueAllowAll());
-                    ConnectionsManager.getInstance(i12).sendRequest(setprivacy, new ai.k2(dVar, f3Var2, runnable3, 16));
+                    ConnectionsManager.getInstance(i12).sendRequest(setprivacy, new ai.j2(dVar, f3Var2, runnable3, 16));
                     return;
                 }
                 TL_account.setGlobalPrivacySettings setglobalprivacysettings = new TL_account.setGlobalPrivacySettings();
@@ -165,8 +165,8 @@ public final class tc0 extends FrameLayout {
             e.addView(textView3, w7.z5.t(-1, -2, 1, 12, 0, 12, 0));
             TextView textView4 = new TextView(context);
             textView4.setGravity(17);
-            org.telegram.messenger.lk.o(i11, d6Var, textView4, 1, 14.0f);
-            org.telegram.messenger.lk.r(z10 ? R.string.PremiumLastSeenText2 : R.string.PremiumReadText2, new Object[]{firstName}, textView4);
+            org.telegram.messenger.kk.o(i11, d6Var, textView4, 1, 14.0f);
+            org.telegram.messenger.kk.r(z10 ? R.string.PremiumLastSeenText2 : R.string.PremiumReadText2, new Object[]{firstName}, textView4);
             e.addView(textView4, w7.z5.t(-1, -2, 1, 32, 9, 32, 19));
             sg.q0 q0Var = new sg.q0(context, d6Var, true);
             q0Var.setOnClickListener(new qc0(z10, f3Var, runnable));

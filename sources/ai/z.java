@@ -41,16 +41,16 @@ import org.telegram.ui.Components.zs;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.ac0;
-import org.telegram.ui.dq;
-import org.telegram.ui.hs0;
-import org.telegram.ui.jr;
-import org.telegram.ui.ju0;
-import org.telegram.ui.sn;
-import org.telegram.ui.uq;
-import org.telegram.ui.vq;
+import org.telegram.ui.bq;
+import org.telegram.ui.fs0;
+import org.telegram.ui.hr;
+import org.telegram.ui.hu0;
+import org.telegram.ui.qn;
+import org.telegram.ui.sq;
+import org.telegram.ui.tq;
+import org.telegram.ui.yb0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ Object f;
 
     public /* synthetic */ z(long j10, Runnable runnable, ConferenceCall conferenceCall, TLObject tLObject, TLRPC.TL_error tL_error) {
-        this.a = 7;
+        this.a = 8;
         this.d = conferenceCall;
         this.c = j10;
         this.b = tLObject;
@@ -118,6 +118,9 @@ public final /* synthetic */ class z implements Runnable {
                 callback.run(null);
                 return;
             case 1:
+                l7.n1((l7) this.d, (pf.c) this.e, (TLObject) this.b, this.c, (TLRPC.TL_error) this.f);
+                return;
+            case 2:
                 ga gaVar = (ga) this.d;
                 TLObject tLObject2 = (TLObject) this.b;
                 MessageObject messageObject = (MessageObject) this.e;
@@ -139,7 +142,7 @@ public final /* synthetic */ class z implements Runnable {
                     gaVar.l0(messageObject, j11, runnable, true);
                     return;
                 }
-            case 2:
+            case 3:
                 ga gaVar2 = (ga) this.d;
                 Utilities.Callback2 callback2 = (Utilities.Callback2) this.e;
                 long j12 = this.c;
@@ -153,7 +156,7 @@ public final /* synthetic */ class z implements Runnable {
                     callback2.run(Boolean.FALSE, null);
                     return;
                 }
-            case 3:
+            case 4:
                 ga gaVar3 = (ga) this.d;
                 Utilities.Callback2 callback22 = (Utilities.Callback2) this.e;
                 TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift = (TLRPC.TL_payments_paymentFormStarGift) this.b;
@@ -167,13 +170,13 @@ public final /* synthetic */ class z implements Runnable {
                     callback22.run(Boolean.FALSE, null);
                     return;
                 }
-            case 4:
+            case 5:
                 ProfileActivity profileActivity = (ProfileActivity) this.d;
                 TL_stars.StarGift starGift3 = (TL_stars.StarGift) this.e;
                 CharSequence charSequence = (CharSequence) this.b;
                 long j14 = this.c;
                 String str3 = (String) this.f;
-                AndroidUtilities.runOnUIThread(new s8(profileActivity, 0), 200L);
+                AndroidUtilities.runOnUIThread(new t8(profileActivity, 0), 200L);
                 org.telegram.ui.Components.xc a02 = org.telegram.ui.Components.xc.a0(profileActivity);
                 TLRPC.Document document2 = starGift3.sticker;
                 String string = LocaleController.getString(R.string.StarsGiftCompleted);
@@ -182,7 +185,7 @@ public final /* synthetic */ class z implements Runnable {
                 }
                 a02.s(document2, string, charSequence).k(false);
                 return;
-            case 5:
+            case 6:
                 fa faVar = (fa) this.d;
                 TLObject tLObject4 = (TLObject) this.b;
                 MessagesController messagesController = (MessagesController) this.e;
@@ -218,15 +221,15 @@ public final /* synthetic */ class z implements Runnable {
                     return;
                 }
                 return;
-            case 6:
+            case 7:
                 le leVar = (le) this.d;
                 long j16 = this.c;
                 ga gaVar4 = (ga) this.e;
                 MessageObject messageObject2 = (MessageObject) this.b;
-                sn snVar = (sn) this.f;
+                qn qnVar = (qn) this.f;
                 a1.c cVar = leVar.Q;
                 if (cVar == null) {
-                    fa d02 = gaVar4.d0(messageObject2, snVar, j16, false, true, Long.valueOf(leVar.E));
+                    fa d02 = gaVar4.d0(messageObject2, qnVar, j16, false, true, Long.valueOf(leVar.E));
                     if (d02 == null) {
                         return;
                     }
@@ -242,30 +245,30 @@ public final /* synthetic */ class z implements Runnable {
                     AndroidUtilities.runOnUIThread(new nd(leVar, 0));
                     return;
                 }
-            case 7:
+            case 8:
                 ((ConferenceCall) this.d).lambda$requestLastBlock$2(this.c, (TLObject) this.b, (TLRPC.TL_error) this.e, (Runnable) this.f);
                 return;
-            case 8:
-                jr jrVar = (jr) this.d;
+            case 9:
+                hr hrVar = (hr) this.d;
                 long j17 = this.c;
                 TLRPC.TL_chatBannedRights tL_chatBannedRights = (TLRPC.TL_chatBannedRights) this.e;
                 String str5 = (String) this.f;
                 TLObject tLObject5 = (TLObject) this.b;
-                dq dqVar = new dq(j17, jrVar.N, null, jrVar.E, tL_chatBannedRights, str5, 1, true, false, null);
-                dqVar.X0 = new uq(jrVar, tLObject5);
-                jrVar.presentFragment(dqVar);
+                bq bqVar = new bq(j17, hrVar.N, null, hrVar.E, tL_chatBannedRights, str5, 1, true, false, null);
+                bqVar.X0 = new sq(hrVar, tLObject5);
+                hrVar.presentFragment(bqVar);
                 return;
-            case 9:
-                jr jrVar2 = (jr) this.d;
+            case 10:
+                hr hrVar2 = (hr) this.d;
                 long j18 = this.c;
                 TLRPC.TL_chatAdminRights tL_chatAdminRights = (TLRPC.TL_chatAdminRights) this.e;
                 String str6 = (String) this.f;
                 TLObject tLObject6 = (TLObject) this.b;
-                dq dqVar2 = new dq(j18, jrVar2.N, tL_chatAdminRights, null, null, str6, 0, true, false, null);
-                dqVar2.X0 = new vq(jrVar2, tLObject6);
-                jrVar2.presentFragment(dqVar2);
+                bq bqVar2 = new bq(j18, hrVar2.N, tL_chatAdminRights, null, null, str6, 0, true, false, null);
+                bqVar2.X0 = new tq(hrVar2, tLObject6);
+                hrVar2.presentFragment(bqVar2);
                 return;
-            case 10:
+            case 11:
                 zs zsVar = (zs) this.d;
                 MessagesStorage messagesStorage = (MessagesStorage) this.e;
                 ArrayList arrayList = (ArrayList) this.b;
@@ -294,7 +297,7 @@ public final /* synthetic */ class z implements Runnable {
                     FileLog.e(e);
                     break;
                 }
-            case 11:
+            case 12:
                 zs zsVar2 = (zs) this.d;
                 ArrayList<TLRPC.User> arrayList2 = (ArrayList) this.e;
                 long j20 = this.c;
@@ -308,7 +311,7 @@ public final /* synthetic */ class z implements Runnable {
                 zsVar2.d = true;
                 ysVar.run();
                 return;
-            case 12:
+            case 13:
                 org.telegram.ui.ActionBar.b2 b2Var2 = (org.telegram.ui.ActionBar.b2) this.e;
                 TLObject tLObject7 = (TLObject) this.b;
                 long j21 = this.c;
@@ -331,7 +334,7 @@ public final /* synthetic */ class z implements Runnable {
                     return;
                 }
                 return;
-            case 13:
+            case 14:
                 PhotoViewer photoViewer = (PhotoViewer) this.d;
                 MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) this.e;
                 long j22 = this.c;
@@ -350,13 +353,13 @@ public final /* synthetic */ class z implements Runnable {
                 photoEntry.coverPhoto = null;
                 photoEntry.coverPhotoParentObject = null;
                 photoViewer.q5.b.setLoading(false);
-                ju0 ju0Var = photoViewer.d;
-                if (ju0Var != null) {
-                    ju0Var.X(photoViewer.P4);
+                hu0 hu0Var = photoViewer.d;
+                if (hu0Var != null) {
+                    hu0Var.X(photoViewer.P4);
                 }
-                hs0 hs0Var = photoViewer.g1;
-                if (hs0Var != null) {
-                    hs0Var.setImage(bitmap);
+                fs0 fs0Var = photoViewer.g1;
+                if (fs0Var != null) {
+                    fs0Var.setImage(bitmap);
                 }
                 photoViewer.e3(0);
                 CheckBox checkBox = photoViewer.N0;
@@ -365,7 +368,7 @@ public final /* synthetic */ class z implements Runnable {
                 }
                 checkBox.callOnClick();
                 return;
-            case 14:
+            case 15:
                 ProfileActivity profileActivity2 = (ProfileActivity) this.d;
                 boolean[] zArr = (boolean[]) this.e;
                 ArrayList arrayList3 = (ArrayList) this.b;
@@ -432,7 +435,7 @@ public final /* synthetic */ class z implements Runnable {
                             spannableStringBuilder2.setSpan(new org.telegram.ui.Components.a6(document3, u0Var.getPaint().getFontMetricsInt()), spannableStringBuilder2.length() - 1, spannableStringBuilder2.length(), 33);
                         }
                         spannableStringBuilder2.append((CharSequence) " >");
-                        spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(spannableStringBuilder2, new ac0(o1Var, callback3, j24, 5)), true));
+                        spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(spannableStringBuilder2, new yb0(o1Var, callback3, j24, 5)), true));
                     } else {
                         spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(LocaleController.getString(R.string.Gift2StarsInfoLink), new ra(context, 12)), true));
                     }
@@ -450,7 +453,7 @@ public final /* synthetic */ class z implements Runnable {
     }
 
     public /* synthetic */ z(fa faVar, TLObject tLObject, MessagesController messagesController, TLRPC.TL_error tL_error, long j10) {
-        this.a = 5;
+        this.a = 6;
         this.d = faVar;
         this.b = tLObject;
         this.e = messagesController;
@@ -459,7 +462,7 @@ public final /* synthetic */ class z implements Runnable {
     }
 
     public /* synthetic */ z(ga gaVar, TLObject tLObject, MessageObject messageObject, long j10, Runnable runnable) {
-        this.a = 1;
+        this.a = 2;
         this.d = gaVar;
         this.b = tLObject;
         this.e = messageObject;
@@ -467,13 +470,13 @@ public final /* synthetic */ class z implements Runnable {
         this.f = runnable;
     }
 
-    public /* synthetic */ z(le leVar, long j10, ga gaVar, MessageObject messageObject, sn snVar) {
-        this.a = 6;
+    public /* synthetic */ z(le leVar, long j10, ga gaVar, MessageObject messageObject, qn qnVar) {
+        this.a = 7;
         this.d = leVar;
         this.c = j10;
         this.e = gaVar;
         this.b = messageObject;
-        this.f = snVar;
+        this.f = qnVar;
     }
 
     public /* synthetic */ z(Object obj, Object obj2, long j10, Object obj3, Object obj4, int i10) {
@@ -504,7 +507,7 @@ public final /* synthetic */ class z implements Runnable {
     }
 
     public /* synthetic */ z(org.telegram.ui.ActionBar.b2 b2Var, TLObject tLObject, long j10, AccountInstance accountInstance, MessagesStorage.BooleanCallback booleanCallback) {
-        this.a = 12;
+        this.a = 13;
         this.e = b2Var;
         this.b = tLObject;
         this.c = j10;
@@ -512,9 +515,9 @@ public final /* synthetic */ class z implements Runnable {
         this.f = booleanCallback;
     }
 
-    public /* synthetic */ z(jr jrVar, long j10, TLObject tLObject, String str, TLObject tLObject2, int i10) {
+    public /* synthetic */ z(hr hrVar, long j10, TLObject tLObject, String str, TLObject tLObject2, int i10) {
         this.a = i10;
-        this.d = jrVar;
+        this.d = hrVar;
         this.c = j10;
         this.e = tLObject;
         this.f = str;
@@ -522,7 +525,7 @@ public final /* synthetic */ class z implements Runnable {
     }
 
     public /* synthetic */ z(yh.o1 o1Var, y9 y9Var, long j10, Utilities.Callback callback, Context context) {
-        this.a = 15;
+        this.a = 16;
         this.d = o1Var;
         this.e = y9Var;
         this.c = j10;

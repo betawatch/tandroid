@@ -3,18 +3,18 @@ package ci;
 import android.content.Context;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.vw;
+import org.telegram.ui.tw;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class k extends org.telegram.ui.ActionBar.m {
     public final /* synthetic */ int d = 1;
     public final /* synthetic */ FrameLayout e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(vw vwVar, Context context, c2.b bVar) {
+    public k(tw twVar, Context context, c2.b bVar) {
         super(context, null, bVar);
-        this.e = vwVar;
+        this.e = twVar;
     }
 
     @Override // org.telegram.ui.ActionBar.m, ne.k
@@ -22,14 +22,14 @@ public final class k extends org.telegram.ui.ActionBar.m {
         switch (this.d) {
             case 0:
                 super.e(lVar);
-                ((vw) this.e).invalidate();
+                ((tw) this.e).invalidate();
                 break;
             default:
                 super.e(lVar);
                 float totalVisibility = getTotalVisibility();
-                h4 h4Var = ((org.telegram.ui.ActionBar.k) this.e).F0;
-                if (h4Var != null) {
-                    h4Var.setTranslationY(totalVisibility * AndroidUtilities.dp(-11.0f));
+                i4 i4Var = ((org.telegram.ui.ActionBar.k) this.e).F0;
+                if (i4Var != null) {
+                    i4Var.setTranslationY(totalVisibility * AndroidUtilities.dp(-11.0f));
                     break;
                 }
                 break;

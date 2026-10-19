@@ -3,19 +3,19 @@ package di;
 import ai.r0;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import ci.x4;
+import ci.y4;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class u extends bb {
     public final int X;
     public final CharSequence Y;
-    public s61 Z;
+    public t61 Z;
 
     public u(n2 n2Var, String str, r0 r0Var) {
         super(n2Var, true, false, n2Var.getResourceProvider());
@@ -32,7 +32,7 @@ public final class u extends bb {
         im0 im0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
         im0Var.setPadding(i10, 0, i10, 0);
-        this.d.setOnItemClickListener(new x4(1, this, r0Var));
+        this.d.setOnItemClickListener(new y4(1, this, r0Var));
     }
 
     @Override // org.telegram.ui.Components.bb
@@ -42,9 +42,9 @@ public final class u extends bb {
 
     @Override // org.telegram.ui.Components.bb
     public final hm0 x(im0 im0Var) {
-        s61 s61Var = new s61(im0Var, getContext(), this.X, 0, false, new ai.q(this, 11), this.resourcesProvider);
-        this.Z = s61Var;
-        s61Var.r = false;
-        return s61Var;
+        t61 t61Var = new t61(im0Var, getContext(), this.X, 0, false, new ai.q(this, 11), this.resourcesProvider);
+        this.Z = t61Var;
+        t61Var.r = false;
+        return t61Var;
     }
 }

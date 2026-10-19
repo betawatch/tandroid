@@ -1,7 +1,6 @@
 package yh;
 
-import ai.g6;
-import ai.k7;
+import ai.l7;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -20,7 +19,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -30,14 +29,14 @@ import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.x90;
-import org.telegram.ui.aw0;
+import org.telegram.ui.yv0;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class c0 extends bb implements GiftAuctionController.OnAuctionUpdateListener {
     public static final /* synthetic */ int f0 = 0;
@@ -48,7 +47,7 @@ public final class c0 extends bb implements GiftAuctionController.OnAuctionUpdat
     public final TextView b0;
     public final z c0;
     public GiftAuctionController.Auction d0;
-    public s61 e0;
+    public t61 e0;
 
     /* JADX WARN: Multi-variable type inference failed */
     public c0(Context context, d6 d6Var, long j10, TL_stars.StarGift starGift, ArrayList arrayList, Runnable runnable, boolean z10) {
@@ -90,7 +89,7 @@ public final class c0 extends bb implements GiftAuctionController.OnAuctionUpdat
         int i14 = 29;
         x xVar = new x(this, context, d6Var, new tg.p(this, 14), new ah.f(i14), new ah.f(i14), new ah.f(i14), new ah.f(i14), new ah.f(i14), new ah.f(i14), i13);
         this.a0 = xVar;
-        xVar.d(new g6(1, 1));
+        xVar.d(new ai.h6(1, 1));
         xVar.setPreviewingAttributes(arrayList);
         xVar.removeView(xVar.P);
         wVar.addView(xVar, 0, z5.e(-1, i13, 48));
@@ -113,7 +112,7 @@ public final class c0 extends bb implements GiftAuctionController.OnAuctionUpdat
         w9Var.e(chat, h9Var);
         TextView textView = new TextView(context);
         this.b0 = textView;
-        lk.k(21.0f, 1, textView);
+        kk.k(21.0f, 1, textView);
         textView.setText(DialogObject.getShortName(j10 != 0 ? j10 : UserConfig.getInstance(this.currentAccount).getClientUserId()));
         textView.setGravity(17);
         textView.setTextColor(-1);
@@ -262,38 +261,38 @@ public final class c0 extends bb implements GiftAuctionController.OnAuctionUpdat
             linearLayout.addView(textView7, z5.t(-1, -2, 17, 20, 14, 20, 6));
             TextView textView8 = new TextView(context);
             textView8.setGravity(17);
-            lk.j(14.0f, R.string.GiftAuctionWearInfoText, 1, textView8);
+            kk.j(14.0f, R.string.GiftAuctionWearInfoText, 1, textView8);
             textView8.setTextColor(h6.w0(i16, d6Var3));
             linearLayout.addView(textView8, z5.t(-1, -2, 17, 20, 0, 20, 16));
-            aw0 aw0Var = new aw0(context, d6Var3);
-            aw0Var.a.l(LocaleController.getString(R.string.GiftAuctionWearInfo1Header), false);
-            aw0Var.b.setText(LocaleController.getString(R.string.GiftAuctionWearInfo1Text));
-            aw0Var.d.setVisibility(8);
+            yv0 yv0Var = new yv0(context, d6Var3);
+            yv0Var.a.l(LocaleController.getString(R.string.GiftAuctionWearInfo1Header), false);
+            yv0Var.b.setText(LocaleController.getString(R.string.GiftAuctionWearInfo1Text));
+            yv0Var.d.setVisibility(8);
             int i17 = R.drawable.msg_emoji_gem;
-            ImageView imageView2 = aw0Var.c;
+            ImageView imageView2 = yv0Var.c;
             imageView2.setImageResource(i17);
             imageView2.setColorFilter(h6.w0(i16, d6Var3));
-            linearLayout.addView(aw0Var, z5.k(6.0f, 0.0f, 6.0f, -2.0f, -1, -2));
-            aw0 aw0Var2 = new aw0(context, d6Var3);
-            aw0Var2.a.l(LocaleController.getString(R.string.GiftAuctionWearInfo2Header), false);
-            aw0Var2.b.setText(LocaleController.getString(R.string.GiftAuctionWearInfo2Text));
-            aw0Var2.d.setVisibility(8);
+            linearLayout.addView(yv0Var, z5.k(6.0f, 0.0f, 6.0f, -2.0f, -1, -2));
+            yv0 yv0Var2 = new yv0(context, d6Var3);
+            yv0Var2.a.l(LocaleController.getString(R.string.GiftAuctionWearInfo2Header), false);
+            yv0Var2.b.setText(LocaleController.getString(R.string.GiftAuctionWearInfo2Text));
+            yv0Var2.d.setVisibility(8);
             int i18 = R.drawable.menu_feature_cover_24;
-            ImageView imageView3 = aw0Var2.c;
+            ImageView imageView3 = yv0Var2.c;
             imageView3.setImageResource(i18);
             imageView3.setColorFilter(h6.w0(i16, d6Var3));
-            linearLayout.addView(aw0Var2, z5.k(6.0f, 0.0f, 6.0f, -2.0f, -1, -2));
-            aw0 aw0Var3 = new aw0(context, d6Var3);
-            aw0Var3.a.l(LocaleController.getString(R.string.GiftAuctionWearInfo3Header), false);
-            aw0Var3.b.setText(LocaleController.getString(R.string.GiftAuctionWearInfo3Text));
-            aw0Var3.d.setVisibility(8);
+            linearLayout.addView(yv0Var2, z5.k(6.0f, 0.0f, 6.0f, -2.0f, -1, -2));
+            yv0 yv0Var3 = new yv0(context, d6Var3);
+            yv0Var3.a.l(LocaleController.getString(R.string.GiftAuctionWearInfo3Header), false);
+            yv0Var3.b.setText(LocaleController.getString(R.string.GiftAuctionWearInfo3Text));
+            yv0Var3.d.setVisibility(8);
             int i19 = R.drawable.menu_verification;
-            ImageView imageView4 = aw0Var3.c;
+            ImageView imageView4 = yv0Var3.c;
             imageView4.setImageResource(i19);
             imageView4.setColorFilter(h6.w0(i16, d6Var3));
-            linearLayout.addView(aw0Var3, z5.k(6.0f, 0.0f, 6.0f, 14.0f, -1, -2));
+            linearLayout.addView(yv0Var3, z5.k(6.0f, 0.0f, 6.0f, 14.0f, -1, -2));
         }
-        dVar.g(k7.B2(LocaleController.getString(R.string.Understood)), false, true);
+        dVar.g(l7.I2(LocaleController.getString(R.string.Understood)), false, true);
         dVar.setOnClickListener(new hg.r0(this, 27));
     }
 
@@ -315,9 +314,9 @@ public final class c0 extends bb implements GiftAuctionController.OnAuctionUpdat
 
     @Override // org.telegram.ui.Components.bb
     public final hm0 x(im0 im0Var) {
-        s61 s61Var = new s61(this.d, getContext(), this.currentAccount, 0, true, new hg.o(this, 26), this.resourcesProvider);
-        this.e0 = s61Var;
-        s61Var.r = false;
-        return s61Var;
+        t61 t61Var = new t61(this.d, getContext(), this.currentAccount, 0, true, new hg.o(this, 26), this.resourcesProvider);
+        this.e0 = t61Var;
+        t61Var.r = false;
+        return t61Var;
     }
 }

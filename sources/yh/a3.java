@@ -8,11 +8,11 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.z00;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class a3 extends sn {
+public final class a3 extends qn {
     public boolean Rc;
     public final /* synthetic */ TL_stars.TL_starGiftUnique Sc;
     public final /* synthetic */ long Tc;
@@ -25,7 +25,7 @@ public final class a3 extends sn {
         this.Rc = false;
     }
 
-    @Override // org.telegram.ui.sn, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.qn, org.telegram.ui.ActionBar.n2
     public final void onBecomeFullyVisible() {
         super.onBecomeFullyVisible();
         if (this.Rc) {

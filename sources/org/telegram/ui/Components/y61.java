@@ -1,25 +1,20 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
-/* loaded from: classes3.dex */
-public final class y61 extends g.o {
-    public final /* synthetic */ x61 c;
-    public final /* synthetic */ a71 d;
+import org.telegram.messenger.AndroidUtilities;
 
-    public y61(a71 a71Var, x61 x61Var) {
-        this.d = a71Var;
-        this.c = x61Var;
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* loaded from: classes3.dex */
+public final class y61 extends wz {
+    public final /* synthetic */ b71 X;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y61(b71 b71Var, int i10) {
+        super(i10, false);
+        this.X = b71Var;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        int i11;
-        s61 s61Var = this.d.W2;
-        x61 x61Var = this.c;
-        if (s61Var == null) {
-            return x61Var.J;
-        }
-        f61 G = s61Var.G(i10);
-        return (G == null || (i11 = G.u) == -1) ? x61Var.J : i11;
+    @Override // s4.b0
+    public final int W0(s4.y0 y0Var) {
+        return this.X.Y2 ? AndroidUtilities.displaySize.y : super.W0(y0Var);
     }
 }

@@ -15,19 +15,19 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class bc implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ bc(i2.b0 b0Var, SurfaceTexture surfaceTexture) {
+    public /* synthetic */ bc(i2.c0 c0Var, SurfaceTexture surfaceTexture) {
         this.a = 15;
-        this.b = b0Var;
+        this.b = c0Var;
     }
 
     @Override // java.lang.Runnable
@@ -115,16 +115,16 @@ public final /* synthetic */ class bc implements Runnable {
                 ((e2.j0) this.b).getClass();
                 return;
             case 13:
-                ci.t6 t6Var = ((hg.n1) this.b).y;
-                if (t6Var != null) {
-                    t6Var.p(3, true);
+                ci.u6 u6Var = ((hg.n1) this.b).y;
+                if (u6Var != null) {
+                    u6Var.p(3, true);
                     return;
                 }
                 return;
             case 14:
-                i2.h0 h0Var = (i2.h0) this.b;
-                e2.c cVar = h0Var.C;
-                Context context = h0Var.e;
+                i2.i0 i0Var = (i2.i0) this.b;
+                e2.c cVar = i0Var.C;
+                Context context = i0Var.e;
                 String str = e2.m0.a;
                 int generateAudioSessionId = c2.i.e(context).generateAudioSessionId();
                 if (generateAudioSessionId == -1) {
@@ -142,25 +142,25 @@ public final /* synthetic */ class bc implements Runnable {
                     Integer valueOf = Integer.valueOf(generateAudioSessionId);
                     cVar.f = valueOf;
                     e2.b bVar = new e2.b(cVar, valueOf, i10);
-                    e2.i0 i0Var = (e2.i0) cVar.c;
-                    if (i0Var.a.getLooper().getThread().isAlive()) {
-                        i0Var.d(bVar);
+                    e2.i0 i0Var2 = (e2.i0) cVar.c;
+                    if (i0Var2.a.getLooper().getThread().isAlive()) {
+                        i0Var2.d(bVar);
                     }
-                    h0Var.t1(1, 10, Integer.valueOf(generateAudioSessionId));
-                    h0Var.t1(2, 10, Integer.valueOf(generateAudioSessionId));
+                    i0Var.t1(1, 10, Integer.valueOf(generateAudioSessionId));
+                    i0Var.t1(2, 10, Integer.valueOf(generateAudioSessionId));
                     return;
                 }
                 return;
             case 15:
-                i2.h0 h0Var2 = ((i2.b0) this.b).a;
-                h0Var2.x1(null);
-                h0Var2.q1(0, 0);
+                i2.i0 i0Var3 = ((i2.c0) this.b).a;
+                i0Var3.x1(null);
+                i0Var3.q1(0, 0);
                 return;
             case 16:
                 try {
-                    i2.q0.f((i2.l1) this.b);
+                    i2.r0.g((i2.m1) this.b);
                     return;
-                } catch (i2.m e7) {
+                } catch (i2.n e7) {
                     e2.a.d("ExoPlayerImplInternal", "Unexpected error delivering message on external thread.", e7);
                     throw new RuntimeException(e7);
                 }
@@ -175,9 +175,9 @@ public final /* synthetic */ class bc implements Runnable {
                 return;
             case 19:
                 ig.k0 k0Var = (ig.k0) this.b;
-                s61 s61Var = k0Var.d0;
-                if (s61Var != null) {
-                    s61Var.N(true);
+                t61 t61Var = k0Var.d0;
+                if (t61Var != null) {
+                    t61Var.N(true);
                 }
                 k0Var.U(true);
                 return;
@@ -197,7 +197,7 @@ public final /* synthetic */ class bc implements Runnable {
                 f1Var.Y(true);
                 return;
             case 23:
-                ((ci.y2) this.b).run(Boolean.FALSE);
+                ((ci.z2) this.b).run(Boolean.FALSE);
                 return;
             case 24:
                 NotificationCenter.getInstance(((ig.a2) this.b).a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
@@ -235,9 +235,9 @@ public final /* synthetic */ class bc implements Runnable {
         }
     }
 
-    public /* synthetic */ bc(i2.q0 q0Var, i2.l1 l1Var) {
+    public /* synthetic */ bc(i2.r0 r0Var, i2.m1 m1Var) {
         this.a = 16;
-        this.b = l1Var;
+        this.b = m1Var;
     }
 
     public /* synthetic */ bc(Object obj, int i10) {

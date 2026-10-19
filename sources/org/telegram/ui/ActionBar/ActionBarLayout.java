@@ -38,7 +38,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
-import ci.z9;
+import ci.aa;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -56,7 +56,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.bd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.bs;
@@ -65,15 +65,15 @@ import org.telegram.ui.Components.n9;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.eg0;
-import org.telegram.ui.l80;
-import org.telegram.ui.nn;
-import org.telegram.ui.og0;
+import org.telegram.ui.dg0;
+import org.telegram.ui.j80;
+import org.telegram.ui.ln;
+import org.telegram.ui.ng0;
+import org.telegram.ui.on;
+import org.telegram.ui.py;
 import org.telegram.ui.qn;
-import org.telegram.ui.ry;
-import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class ActionBarLayout extends FrameLayout implements d5, ng.b {
     public static Drawable p1;
@@ -92,7 +92,7 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
     public n2 H;
     public int H0;
     public n2 I;
-    public l80 I0;
+    public j80 I0;
     public ActionBarPopupWindow$ActionBarPopupWindowLayout J;
     public a5 J0;
     public AnimatorSet K;
@@ -142,7 +142,7 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
     public boolean f;
     public f5 f0;
     public float f1;
-    public nn g0;
+    public ln g0;
     public boolean g1;
     public boolean h;
     public final ArrayList h0;
@@ -397,7 +397,7 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
             i30Var.e(false);
             return;
         }
-        if (!e0() && (kVar = this.y) != null && !kVar.s()) {
+        if (!e0() && (kVar = this.y) != null && !kVar.t()) {
             k kVar2 = this.y;
             if (kVar2.n0) {
                 kVar2.h(true);
@@ -627,11 +627,11 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
         }
         int i13 = 0;
         while (true) {
-            arrayList = z9.y1;
+            arrayList = aa.y1;
             if (i13 >= arrayList.size()) {
                 break;
             }
-            ((z9) arrayList.get(i13)).q(false);
+            ((aa) arrayList.get(i13)).q(false);
             i13++;
         }
         arrayList.clear();
@@ -773,15 +773,15 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
         setInnerTranslationX(0.0f);
         this.s.setTranslationY(0.0f);
         if (z13) {
-            if (!(n2Var2 instanceof sn)) {
+            if (!(n2Var2 instanceof qn)) {
                 float dp4 = AndroidUtilities.dp(actionBarPopupWindow$ActionBarPopupWindowLayout == null ? 24.0f : 12.0f);
-                ci.n1 n1Var = zf.j0.a;
+                ci.o1 o1Var = zf.j0.a;
                 view.setOutlineProvider(new zf.i0(0, dp4));
             } else if (actionBarPopupWindow$ActionBarPopupWindowLayout != null) {
                 view.setOutlineProvider(new t());
             } else {
                 float dp5 = AndroidUtilities.dp(29.0f);
-                ci.n1 n1Var2 = zf.j0.a;
+                ci.o1 o1Var2 = zf.j0.a;
                 view.setOutlineProvider(new zf.i0(0, dp5));
             }
             view.setClipToOutline(true);
@@ -874,9 +874,9 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
         this.a0 = z13;
         this.v0 = System.currentTimeMillis();
         this.W = true;
-        cd cdVar = new cd(this, z13, actionBarPopupWindow$ActionBarPopupWindowLayout, z10, n2Var, n2Var2);
+        bd bdVar = new bd(this, z13, actionBarPopupWindow$ActionBarPopupWindowLayout, z10, n2Var, n2Var2);
         n2 n2Var3 = n2Var;
-        this.z0 = cdVar;
+        this.z0 = bdVar;
         boolean needDelayOpenAnimation = n2Var2.needDelayOpenAnimation();
         boolean z16 = !needDelayOpenAnimation;
         if (!needDelayOpenAnimation) {
@@ -1026,7 +1026,7 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
         if (i10 < 0 || i10 >= getFragmentStack().size()) {
             return;
         }
-        a0((n2) getFragmentStack().get(i10), false);
+        Z((n2) getFragmentStack().get(i10));
     }
 
     public final void Z(n2 n2Var) {
@@ -1442,7 +1442,7 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
                 int width2 = getWidth();
                 getY();
                 getHeight();
-                z5Var.r(canvas, z10, z11, width2, 1.0f);
+                z5Var.l(canvas, z10, z11, width2, 1.0f);
                 canvas2 = canvas;
                 this.U0 = false;
             }
@@ -1726,7 +1726,7 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
                 if (i10 != 0) {
                     h6.T = 2000;
                     h6.U = SystemClock.elapsedRealtime();
-                    AndroidUtilities.runOnUIThread(new ah.j(20), 2100L);
+                    AndroidUtilities.runOnUIThread(new ah.j(21), 2100L);
                 }
             }
             h6.I = g6Var3;
@@ -1839,7 +1839,7 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
 
     public n2 getLastFragmentIncludeMainTabs() {
         n2 lastFragment = getLastFragment();
-        return lastFragment instanceof og0 ? ((og0) lastFragment).X() : lastFragment;
+        return lastFragment instanceof ng0 ? ((ng0) lastFragment).X() : lastFragment;
     }
 
     @Override // org.telegram.ui.ActionBar.d5
@@ -1880,7 +1880,7 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
         return null;
     }
 
-    public ry getSheetFragment() {
+    public py getSheetFragment() {
         return w();
     }
 
@@ -2201,7 +2201,7 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
     public final boolean onKeyUp(int i10, KeyEvent keyEvent) {
         k kVar;
         y yVar;
-        if (i10 == 82 && !j() && !this.Q && (kVar = this.y) != null && !kVar.s() && (yVar = kVar.E) != null) {
+        if (i10 == 82 && !j() && !this.Q && (kVar = this.y) != null && !kVar.t() && (yVar = kVar.E) != null) {
             int childCount = yVar.getChildCount();
             int i11 = 0;
             while (true) {
@@ -2766,13 +2766,13 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
                 j6Var2.e(h6.w0(j6Var2.f, j6Var2.o), false, false);
             }
         }
-        nn nnVar = this.g0;
-        if (nnVar != null) {
-            qn qnVar = nnVar.a;
-            qnVar.V.x0.invalidate();
-            qnVar.I.K = f7;
-            qnVar.J.K = f7;
-            qnVar.m(f7);
+        ln lnVar = this.g0;
+        if (lnVar != null) {
+            on onVar = lnVar.a;
+            onVar.V.x0.invalidate();
+            onVar.I.K = f7;
+            onVar.J.K = f7;
+            onVar.m(f7);
         }
         a5 a5Var = this.J0;
         if (a5Var != null) {
@@ -2797,7 +2797,7 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
         }
         for (int size = getFragmentStack().size() - 1; size >= 0; size--) {
             n2 n2Var = (n2) getFragmentStack().get(size);
-            if (n2Var != null && !n2Var.isFinishing() && !n2Var.isRemovingFromStack() && eg0.class.isInstance(n2Var)) {
+            if (n2Var != null && !n2Var.isFinishing() && !n2Var.isRemovingFromStack() && dg0.class.isInstance(n2Var)) {
                 return n2Var;
             }
         }
@@ -2812,7 +2812,7 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
         return z10 ? (int) n3Var.G : n3Var.H;
     }
 
-    public final ry w() {
+    public final py w() {
         Activity activity = this.K0;
         if (activity == null) {
             return null;

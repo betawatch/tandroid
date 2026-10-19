@@ -20,7 +20,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class j10 extends FrameLayout {
     public final boolean a;
@@ -75,26 +75,26 @@ public final class j10 extends FrameLayout {
         int x02 = org.telegram.ui.ActionBar.h6.x0(null, i11, false);
         if (string != null) {
             f7 = 15.33f;
-            d11 d11Var = new d11(i10.a(string), 15.33f, AndroidUtilities.bold());
-            d11Var.s(i10Var);
-            d11Var.a.setColor(m12);
-            i10Var.e = d11Var;
+            e11 e11Var = new e11(i10.a(string), 15.33f, AndroidUtilities.bold());
+            e11Var.s(i10Var);
+            e11Var.a.setColor(m12);
+            i10Var.e = e11Var;
         } else {
             f7 = 15.33f;
         }
         CharSequence a2 = i10.a(spannableStringBuilder);
-        d11 d11Var2 = new d11(a2, f7, AndroidUtilities.bold());
-        d11Var2.s(i10Var);
-        TextPaint textPaint3 = d11Var2.a;
+        e11 e11Var2 = new e11(a2, f7, AndroidUtilities.bold());
+        e11Var2.s(i10Var);
+        TextPaint textPaint3 = e11Var2.a;
         textPaint3.setColor(x02);
-        i10Var.f = d11Var2;
-        d11Var2.r(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(a2, textPaint3.getFontMetricsInt(), false), arrayList, textPaint3.getFontMetricsInt()));
-        d11Var2.p(z11 ? 26 : 0);
+        i10Var.f = e11Var2;
+        e11Var2.r(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(a2, textPaint3.getFontMetricsInt(), false), arrayList, textPaint3.getFontMetricsInt()));
+        e11Var2.p(z11 ? 26 : 0);
         if (string2 != null) {
-            d11 d11Var3 = new d11(i10.a(string2), 15.33f, AndroidUtilities.bold());
-            d11Var3.s(i10Var);
-            d11Var3.a.setColor(m12);
-            i10Var.h = d11Var3;
+            e11 e11Var3 = new e11(i10.a(string2), 15.33f, AndroidUtilities.bold());
+            e11Var3.s(i10Var);
+            e11Var3.a.setColor(m12);
+            i10Var.h = e11Var3;
         }
         float dp = AndroidUtilities.dp(3.0f);
         fArr[3] = dp;
@@ -166,7 +166,7 @@ public final class j10 extends FrameLayout {
         }
         int size = arrayList != null ? arrayList.size() : 0;
         i10 i10Var = this.c;
-        i10Var.y.t(size > 0 ? i2.d.j(size, "+") : "", false, true);
+        i10Var.y.t(size > 0 ? i2.e.j(size, "+") : "", false, true);
         i10Var.invalidate();
         if (arrayList == null || arrayList.isEmpty()) {
             z5Var.setText(AndroidUtilities.replaceTags(LocaleController.formatSpannable(R.string.FolderLinkSubtitleAlready, charSequence)));

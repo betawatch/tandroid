@@ -1,39 +1,85 @@
 package org.telegram.ui;
 
+import android.graphics.PointF;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yc0 implements org.telegram.ui.Components.iw0 {
+public final /* synthetic */ class yc0 implements o1.g {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ yc0(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
+    public /* synthetic */ yc0(Object obj, int i10) {
         this.a = i10;
-        this.b = n2Var;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.iw0
-    public final void H(int i10, boolean z10) {
-        tf0 tf0Var;
-        zk0 zk0Var;
-        switch (this.a) {
+    @Override // o1.g
+    public final void a(o1.h hVar, float f7, float f10) {
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
             case 0:
-                eg0 eg0Var = (eg0) this.b;
-                if (i10 > AndroidUtilities.dp(20.0f) && eg0Var.h1()) {
-                    AndroidUtilities.hideKeyboard(eg0Var.fragmentView);
-                }
-                if (i10 <= AndroidUtilities.dp(20.0f) && (tf0Var = eg0Var.T) != null) {
-                    tf0Var.run();
-                    eg0Var.T = null;
+                rf0 rf0Var = ((dg0) obj).b0;
+                if (rf0Var != null) {
+                    int i11 = rf0.E;
+                    View view = rf0Var.c;
+                    ViewGroup viewGroup = rf0Var.b;
+                    PointF pointF = rf0Var.y;
+                    ih.j.b(view, viewGroup, pointF);
+                    org.telegram.ui.Components.h20 h20Var = rf0Var.h;
+                    h20Var.setTranslationX(pointF.x);
+                    h20Var.setTranslationY(pointF.y);
+                    rf0Var.requestLayout();
                     break;
                 }
                 break;
+            case 1:
+                ao0 ao0Var = (ao0) obj;
+                float f11 = f7 / 100.0f;
+                ao0Var.b = f11;
+                TextView textView = ao0Var.d.U;
+                if (textView != null) {
+                    textView.setAlpha((f11 * 0.2f) + 0.8f);
+                }
+                ao0Var.invalidate();
+                break;
+            case 2:
+                ut0 ut0Var = (ut0) obj;
+                ut0Var.c0 = f7;
+                ut0Var.e0 = f10;
+                ut0Var.G();
+                break;
+            case 3:
+                qu0 qu0Var = (qu0) obj;
+                int dp = qu0Var.e > qu0Var.f ? AndroidUtilities.dp(48.0f) : 0;
+                org.telegram.ui.Components.d81 d81Var = qu0Var.s.q3;
+                int measuredHeight = qu0Var.getMeasuredHeight();
+                d81Var.h = (int) (((qu0Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - f7) - dp);
+                d81Var.i = measuredHeight;
+                View view2 = d81Var.v;
+                if (view2 != null) {
+                    view2.invalidate();
+                    break;
+                }
+                break;
+            case 4:
+                x21 x21Var = (x21) obj;
+                x21Var.y = f7 / 1000.0f;
+                x21Var.invalidate();
+                break;
             default:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;
-                if (i10 >= AndroidUtilities.dp(20.0f) && (zk0Var = passcodeActivity.T) != null) {
-                    zk0Var.run();
-                    passcodeActivity.T = null;
+                r31 r31Var = (r31) obj;
+                org.telegram.ui.Components.d81 d81Var2 = r31Var.r.Q;
+                int measuredHeight2 = r31Var.getMeasuredHeight();
+                d81Var2.h = (int) (((r31Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - f7) - 0);
+                d81Var2.i = measuredHeight2;
+                View view3 = d81Var2.v;
+                if (view3 != null) {
+                    view3.invalidate();
                     break;
                 }
                 break;

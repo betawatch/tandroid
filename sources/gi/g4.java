@@ -1,7 +1,7 @@
 package gi;
 
 import ai.cb;
-import ai.k7;
+import ai.l7;
 import ai.ua;
 import ai.v9;
 import java.util.ArrayList;
@@ -16,10 +16,10 @@ import org.telegram.ui.Components.k10;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.p6;
-import org.telegram.ui.yh1;
-import org.telegram.ui.yq0;
+import org.telegram.ui.wh1;
+import org.telegram.ui.wq0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class g4 implements Utilities.Callback {
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new cb((TLRPC.UserFull) obj, (org.telegram.ui.web.s) this.c, this.b, (TLRPC.User) this.d, 3));
+                AndroidUtilities.runOnUIThread(new cb((TLRPC.UserFull) obj, (org.telegram.ui.web.r) this.c, this.b, (TLRPC.User) this.d, 3));
                 break;
             case 1:
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.c;
@@ -64,7 +64,7 @@ public final /* synthetic */ class g4 implements Utilities.Callback {
                 callback.run(Integer.valueOf(i11));
                 break;
             case 4:
-                Utilities.themeQueue.postRunnable(new yh1((rg.m2) this.c, this.b, (List) obj, new ArrayList(), (yq0) this.d, 1));
+                Utilities.themeQueue.postRunnable(new wh1((rg.n2) this.c, this.b, (List) obj, new ArrayList(), (wq0) this.d, 1));
                 break;
             default:
                 yh.p2 p2Var = (yh.p2) this.c;
@@ -82,7 +82,7 @@ public final /* synthetic */ class g4 implements Utilities.Callback {
                     if (arrayList.size() <= 1) {
                         if (arrayList.size() == 1) {
                             TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) arrayList.get(0);
-                            qc R = xc.a0(n2Var2).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, k7.R1(savedStarGift.gift), c10.title)));
+                            qc R = xc.a0(n2Var2).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, l7.Y1(savedStarGift.gift), c10.title)));
                             R.r = false;
                             R.j();
                             break;

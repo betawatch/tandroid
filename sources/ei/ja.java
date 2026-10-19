@@ -6,9 +6,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.kw;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ch1;
+import org.telegram.ui.ah1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ja implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -55,14 +55,14 @@ public final /* synthetic */ class ja implements ValueAnimator.AnimatorUpdateLis
                 kwVar.b.invalidate();
                 break;
             case 3:
-                ch1 ch1Var = (ch1) obj;
-                ch1Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ah1 ah1Var = (ah1) obj;
+                ah1Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 float dp = f10 + AndroidUtilities.dp(28.0f);
                 float dp2 = f7 + AndroidUtilities.dp(52.0f);
-                float f11 = ch1Var.y;
-                ch1Var.G = dp - (dp * f11);
-                ch1Var.H = dp2 - (f11 * dp2);
-                ch1Var.invalidate();
+                float f11 = ah1Var.y;
+                ah1Var.G = dp - (dp * f11);
+                ah1Var.H = dp2 - (f11 * dp2);
+                ah1Var.invalidate();
                 break;
             case 4:
                 PhotoViewer photoViewer = (PhotoViewer) obj;
@@ -78,19 +78,19 @@ public final /* synthetic */ class ja implements ValueAnimator.AnimatorUpdateLis
                 photoViewer.C1.c.b(AndroidUtilities.lerp(f7, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
                 break;
             case 5:
-                org.telegram.ui.Wallet.m3 m3Var = (org.telegram.ui.Wallet.m3) obj;
+                org.telegram.ui.Wallet.n3 n3Var = (org.telegram.ui.Wallet.n3) obj;
                 float floatValue4 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m3Var.A = (f10 * floatValue4) + m3Var.i();
-                m3Var.B = (f7 * floatValue4) + (m3Var.k.E * 0.14f);
-                m3Var.D = floatValue4 > 0.0f;
-                m3Var.a.invalidate();
+                n3Var.A = (f10 * floatValue4) + n3Var.g();
+                n3Var.B = (f7 * floatValue4) + (n3Var.k.E * 0.14f);
+                n3Var.D = floatValue4 > 0.0f;
+                n3Var.a.invalidate();
                 break;
             case 6:
                 org.telegram.ui.Wallet.s5 s5Var = (org.telegram.ui.Wallet.s5) obj;
                 s5Var.getClass();
                 float floatValue5 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                s5Var.M = f10 * floatValue5;
-                s5Var.N = f7 * floatValue5;
+                s5Var.N = f10 * floatValue5;
+                s5Var.O = f7 * floatValue5;
                 break;
             default:
                 tg.f fVar = (tg.f) obj;

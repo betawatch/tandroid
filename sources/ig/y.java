@@ -1,7 +1,7 @@
 package ig;
 
-import ai.k2;
-import ai.x7;
+import ai.j2;
+import ai.y7;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.rd;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class y {
     public static volatile y[] e = new y[4];
@@ -76,7 +76,7 @@ public final class y {
             tL_inputBusinessChatLink.flags |= 2;
         }
         editbusinesschatlink.link = tL_inputBusinessChatLink;
-        ConnectionsManager.getInstance(this.a).sendRequest(editbusinesschatlink, new k2(this, tL_businessChatLink, rdVar, 9));
+        ConnectionsManager.getInstance(this.a).sendRequest(editbusinesschatlink, new j2(this, tL_businessChatLink, rdVar, 9));
     }
 
     public final TL_account.TL_businessChatLink c(String str) {
@@ -116,7 +116,7 @@ public final class y {
             int i10 = this.a;
             if (z10) {
                 MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
-                messagesStorage.getStorageQueue().postRunnable(new x7(this, messagesStorage, z11, 5));
+                messagesStorage.getStorageQueue().postRunnable(new y7(this, messagesStorage, z11, 5));
             } else {
                 ConnectionsManager.getInstance(i10).sendRequest(new TL_account.getBusinessChatLinks(), new x(this, 0));
             }

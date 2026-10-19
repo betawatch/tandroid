@@ -6,13 +6,13 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public abstract class qb {
     public float b;
     public org.telegram.ui.Cells.d7 d;
     public ImageReceiver e;
-    public ci.q3 f;
+    public ci.r3 f;
     public int a = 0;
     public final RectF c = new RectF();
 
@@ -51,25 +51,25 @@ public abstract class qb {
         return pbVar;
     }
 
-    public static ob d(ci.z9 z9Var) {
-        ci.p4 currentPeerView;
-        ci.q3 q3Var;
-        if (z9Var == null) {
+    public static ob d(ci.aa aaVar) {
+        ci.q4 currentPeerView;
+        ci.r3 r3Var;
+        if (aaVar == null) {
             return null;
         }
-        ob obVar = new ob(z9Var, 1);
-        ci.p9 p9Var = z9Var.n0;
-        if (p9Var == null || (currentPeerView = p9Var.getCurrentPeerView()) == null || (q3Var = currentPeerView.c1) == null) {
+        ob obVar = new ob(aaVar, 1);
+        ci.q9 q9Var = aaVar.n0;
+        if (q9Var == null || (currentPeerView = q9Var.getCurrentPeerView()) == null || (r3Var = currentPeerView.c1) == null) {
             return null;
         }
-        ci.n9 n9Var = z9Var.s;
-        float x10 = n9Var == null ? 0.0f : n9Var.getX();
-        ci.n9 n9Var2 = z9Var.s;
-        float y3 = n9Var2 != null ? n9Var2.getY() : 0.0f;
-        obVar.c.set(q3Var.getX() + currentPeerView.getX() + z9Var.X + x10 + z9Var.v.getLeft(), q3Var.getY() + currentPeerView.getY() + z9Var.W + y3 + z9Var.v.getTop(), (((x10 + z9Var.X) + z9Var.v.getRight()) - (z9Var.v.getWidth() - currentPeerView.getRight())) - (currentPeerView.getWidth() - q3Var.getRight()), (((y3 + z9Var.W) + z9Var.v.getBottom()) - (z9Var.v.getHeight() - currentPeerView.getBottom())) - (currentPeerView.getHeight() - q3Var.getBottom()));
+        ci.o9 o9Var = aaVar.s;
+        float x10 = o9Var == null ? 0.0f : o9Var.getX();
+        ci.o9 o9Var2 = aaVar.s;
+        float y3 = o9Var2 != null ? o9Var2.getY() : 0.0f;
+        obVar.c.set(r3Var.getX() + currentPeerView.getX() + aaVar.X + x10 + aaVar.v.getLeft(), r3Var.getY() + currentPeerView.getY() + aaVar.W + y3 + aaVar.v.getTop(), (((x10 + aaVar.X) + aaVar.v.getRight()) - (aaVar.v.getWidth() - currentPeerView.getRight())) - (currentPeerView.getWidth() - r3Var.getRight()), (((y3 + aaVar.W) + aaVar.v.getBottom()) - (aaVar.v.getHeight() - currentPeerView.getBottom())) - (currentPeerView.getHeight() - r3Var.getBottom()));
         obVar.a = 1;
         obVar.b = AndroidUtilities.dp(8.0f);
-        ci.p4 t10 = z9Var.t();
+        ci.q4 t10 = aaVar.t();
         if (t10 != null) {
             obVar.f = t10.c1;
         }

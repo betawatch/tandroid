@@ -17,17 +17,17 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.jc0;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.xj0;
-import org.telegram.ui.n00;
-import org.telegram.ui.to0;
+import org.telegram.ui.l00;
+import org.telegram.ui.ro0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class q8 extends FrameLayout {
     public static final /* synthetic */ int Q = 0;
@@ -65,9 +65,9 @@ public class q8 extends FrameLayout {
     public static SpannableStringBuilder a(CharSequence charSequence) {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
         spannableStringBuilder.append((CharSequence) "  d");
-        n00 n00Var = new n00();
-        n00Var.f = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Lj, false);
-        spannableStringBuilder.setSpan(n00Var, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
+        l00 l00Var = new l00();
+        l00Var.f = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Lj, false);
+        spannableStringBuilder.setSpan(l00Var, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
         return spannableStringBuilder;
     }
 
@@ -227,7 +227,7 @@ public class q8 extends FrameLayout {
         if (i10 <= 0) {
             j5Var.i(null);
         } else {
-            j5Var.i(new to0(i10, getContext(), this.E, false));
+            j5Var.i(new ro0(i10, getContext(), this.E, false));
             j5Var.setDrawablePadding(AndroidUtilities.dp(6.0f));
         }
     }
@@ -524,7 +524,7 @@ public class q8 extends FrameLayout {
         org.telegram.ui.ActionBar.j5 j5Var3 = this.b;
         if (j5Var3.getVisibility() == 0) {
             float f7 = this.v > 50 ? 4 : 2;
-            int dp4 = AndroidUtilities.dp(1.0f) + lk.A(f7, (i14 - j5Var2.getTextHeight()) - j5Var3.getTextHeight(), 2);
+            int dp4 = AndroidUtilities.dp(1.0f) + kk.A(f7, (i14 - j5Var2.getTextHeight()) - j5Var3.getTextHeight(), 2);
             j5Var2.layout(dp, dp4, j5Var2.getMeasuredWidth() + dp, j5Var2.getMeasuredHeight() + dp4);
             int dp5 = AndroidUtilities.dp(f7) + j5Var2.getTextHeight() + dp4;
             j5Var3.layout(dp, dp5, j5Var3.getMeasuredWidth() + dp, j5Var3.getMeasuredHeight() + dp5);
@@ -569,8 +569,8 @@ public class q8 extends FrameLayout {
         org.telegram.ui.ActionBar.j5 j5Var2 = this.d;
         org.telegram.ui.ActionBar.j5 j5Var3 = this.a;
         if (z10) {
-            j5Var3.measure(lk.c(this.n + 71, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
-            j5Var.measure(lk.c(this.n + 71, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
+            j5Var3.measure(kk.c(this.n + 71, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
+            j5Var.measure(kk.c(this.n + 71, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
             q6Var.measure(View.MeasureSpec.makeMeasureSpec((size - AndroidUtilities.dp(this.n + 103)) - j5Var3.getTextWidth(), LocaleController.isRTL ? Integer.MIN_VALUE : 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
             j5Var2.measure(View.MeasureSpec.makeMeasureSpec((size - AndroidUtilities.dp(this.n + 103)) - j5Var3.getTextWidth(), LocaleController.isRTL ? Integer.MIN_VALUE : 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
         } else {

@@ -17,12 +17,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.nc0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class j8 extends org.telegram.ui.Components.bb implements NotificationCenter.NotificationCenterDelegate {
     public f8 X;
@@ -32,7 +32,7 @@ public final class j8 extends org.telegram.ui.Components.bb implements Notificat
     public final d b0;
     public boolean c0;
     public boolean d0;
-    public ai.n2 e0;
+    public ai.o2 e0;
     public long f0;
     public TLRPC.WebPage g0;
     public boolean h0;
@@ -44,10 +44,10 @@ public final class j8 extends org.telegram.ui.Components.bb implements Notificat
     public boolean n0;
     public boolean o0;
 
-    public j8(Context context, t5 t5Var, r6 r6Var, ai.n2 n2Var) {
+    public j8(Context context, t5 t5Var, r6 r6Var, ai.o2 o2Var) {
         super(context, null, true, true, 2, t5Var);
         this.k0 = new c8(this, 0);
-        this.e0 = n2Var;
+        this.e0 = o2Var;
         fixNavigationBar();
         L();
         this.I = AndroidUtilities.dp(4.0f);
@@ -116,7 +116,7 @@ public final class j8 extends org.telegram.ui.Components.bb implements Notificat
         TLRPC.WebPage webPage;
         org.telegram.ui.Cells.i3 i3Var = j8Var.Z;
         org.telegram.ui.Cells.i3 i3Var2 = j8Var.Y;
-        f61 G = j8Var.X.G(i10 - 1);
+        g61 G = j8Var.X.G(i10 - 1);
         if (G == null) {
             return;
         }
@@ -136,7 +136,7 @@ public final class j8 extends org.telegram.ui.Components.bb implements Notificat
             }
             return;
         }
-        rg.s2 s2Var = new rg.s2(context, j8Var.currentAccount);
+        rg.t2 t2Var = new rg.t2(context, j8Var.currentAccount);
         rg.n0 n0Var = new rg.n0();
         n0Var.c = i3Var2.b.getText().toString();
         n0Var.b = j8Var.m0 ? i3Var.b.getText().toString() : null;
@@ -145,16 +145,16 @@ public final class j8 extends org.telegram.ui.Components.bb implements Notificat
         n0Var.e = j8Var.o0;
         n0Var.f = j8Var.n0;
         ai.r0 r0Var = new ai.r0(j8Var, 21);
-        s2Var.G = n0Var;
+        t2Var.G = n0Var;
         int i11 = (webPage2 == null || (webPage2.photo == null && !MessageObject.isVideoDocument(webPage2.document))) ? 8 : 0;
-        nc0 nc0Var = s2Var.x;
+        nc0 nc0Var = t2Var.x;
         nc0Var.setVisibility(i11);
-        s2Var.f.b(s2Var.a, n0Var, false);
-        s2Var.w.a(!n0Var.f, false);
+        t2Var.f.b(t2Var.a, n0Var, false);
+        t2Var.w.a(!n0Var.f, false);
         nc0Var.a(!n0Var.e, false);
-        s2Var.H = r0Var;
-        s2Var.e.setImageDrawable(new w3(r6Var, 7));
-        s2Var.show();
+        t2Var.H = r0Var;
+        t2Var.e.setImageDrawable(new w3(r6Var, 7));
+        t2Var.show();
     }
 
     public static /* synthetic */ void R(j8 j8Var) {

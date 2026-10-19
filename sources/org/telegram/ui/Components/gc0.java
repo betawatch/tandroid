@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class gc0 implements org.telegram.ui.Cells.l1 {
     public final /* synthetic */ hc0 a;
@@ -69,7 +69,7 @@ public final class gc0 implements org.telegram.ui.Cells.l1 {
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public final /* synthetic */ org.telegram.ui.xu0 P1() {
+    public final /* synthetic */ org.telegram.ui.vu0 P1() {
         return null;
     }
 
@@ -100,9 +100,9 @@ public final class gc0 implements org.telegram.ui.Cells.l1 {
         MessagePreviewParams messagePreviewParams = oc0Var.d;
         messagePreviewParams.currentLink = characterStyle;
         messagePreviewParams.webpage = null;
-        org.telegram.ui.sn snVar = oc0Var.c;
-        if (snVar != null && url != null) {
-            snVar.cb(url, true);
+        org.telegram.ui.qn qnVar = oc0Var.c;
+        if (qnVar != null && url != null) {
+            qnVar.cb(url, true);
         }
         ic0.b(hc0Var.c, u1Var);
     }

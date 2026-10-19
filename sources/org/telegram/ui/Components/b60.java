@@ -14,11 +14,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.ad1;
-import org.telegram.ui.rc1;
+import org.telegram.ui.pc1;
+import org.telegram.ui.wc1;
 import org.telegram.ui.yc1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b60 implements Runnable {
     public final /* synthetic */ int a;
@@ -73,53 +73,53 @@ public final /* synthetic */ class b60 implements Runnable {
                 ((tn0) obj).G.presentFragment(new PremiumPreviewFragment(0, z10 ? "upload_speed" : "download_speed"));
                 break;
             case 3:
-                sv0 sv0Var = (sv0) obj;
+                tv0 tv0Var = (tv0) obj;
                 if (!z10) {
-                    sv0Var.m0.setVisibility(8);
+                    tv0Var.m0.setVisibility(8);
                     break;
                 } else {
-                    sv0Var.getClass();
+                    tv0Var.getClass();
                     break;
                 }
             case 4:
-                is0 is0Var = (is0) obj;
+                js0 js0Var = (js0) obj;
                 if (!z10) {
-                    is0Var.U.q0.setVisibility(0);
+                    js0Var.U.q0.setVisibility(0);
                     break;
                 } else {
-                    is0Var.getClass();
+                    js0Var.getClass();
                     break;
                 }
             case 5:
-                ns0 ns0Var = (ns0) obj;
+                os0 os0Var = (os0) obj;
                 if (!z10) {
-                    ns0Var.H.q0.setVisibility(0);
+                    os0Var.H.q0.setVisibility(0);
                     break;
                 } else {
-                    ns0Var.getClass();
+                    os0Var.getClass();
                     break;
                 }
             case 6:
-                jw0 jw0Var = (jw0) obj;
-                ArrayList arrayList = jw0Var.r;
-                iw0 iw0Var = jw0Var.n;
-                if (iw0Var != null) {
-                    iw0Var.H(jw0Var.f, z10);
+                kw0 kw0Var = (kw0) obj;
+                ArrayList arrayList = kw0Var.r;
+                jw0 jw0Var = kw0Var.n;
+                if (jw0Var != null) {
+                    jw0Var.G(kw0Var.f, z10);
                 }
                 while (i12 < arrayList.size()) {
-                    ((iw0) arrayList.get(i12)).H(jw0Var.f, z10);
+                    ((jw0) arrayList.get(i12)).G(kw0Var.f, z10);
                     i12++;
                 }
                 break;
             case 7:
-                kw0 kw0Var = (kw0) obj;
-                ArrayList arrayList2 = kw0Var.r;
-                iw0 iw0Var2 = kw0Var.n;
-                if (iw0Var2 != null) {
-                    iw0Var2.H(kw0Var.y0, z10);
+                lw0 lw0Var = (lw0) obj;
+                ArrayList arrayList2 = lw0Var.r;
+                jw0 jw0Var2 = lw0Var.n;
+                if (jw0Var2 != null) {
+                    jw0Var2.G(lw0Var.y0, z10);
                 }
                 while (i12 < arrayList2.size()) {
-                    ((iw0) arrayList2.get(i12)).H(kw0Var.y0, z10);
+                    ((jw0) arrayList2.get(i12)).G(lw0Var.y0, z10);
                     i12++;
                 }
                 break;
@@ -127,20 +127,20 @@ public final /* synthetic */ class b60 implements Runnable {
                 ((Utilities.Callback2) obj).run(null, Boolean.valueOf(z10));
                 break;
             case 9:
-                ((s61) obj).P(z10);
+                ((t61) obj).P(z10);
                 break;
             case 10:
-                org.telegram.ui.ey eyVar = (org.telegram.ui.ey) obj;
-                f5.L(eyVar.getParentActivity(), z10 ? eyVar.getUserConfig().getClientUserId() : -1L, new org.telegram.ui.lx(eyVar), eyVar.getResourceProvider());
+                org.telegram.ui.cy cyVar = (org.telegram.ui.cy) obj;
+                f5.L(cyVar.getParentActivity(), z10 ? cyVar.getUserConfig().getClientUserId() : -1L, new org.telegram.ui.jx(cyVar), cyVar.getResourceProvider());
                 break;
             case 11:
-                org.telegram.ui.nz nzVar = (org.telegram.ui.nz) obj;
-                nzVar.Z(nzVar.P, z10);
+                org.telegram.ui.lz lzVar = (org.telegram.ui.lz) obj;
+                lzVar.Z(lzVar.P, z10);
                 break;
             case 12:
-                org.telegram.ui.eg0 eg0Var = (org.telegram.ui.eg0) obj;
+                org.telegram.ui.dg0 dg0Var = (org.telegram.ui.dg0) obj;
                 if (!z10) {
-                    eg0Var.W.setVisibility(8);
+                    dg0Var.W.setVisibility(8);
                     break;
                 }
                 break;
@@ -158,20 +158,20 @@ public final /* synthetic */ class b60 implements Runnable {
                 ((ProfileActivity) obj).e5(z10, true);
                 break;
             case 15:
-                pf.d.r(((org.telegram.ui.d01) obj).e.getParentActivity(), LocaleController.getString(z10 ? R.string.ProfileBotOpenAppInfoOwnerLink : R.string.ProfileBotOpenAppInfoLink));
+                pf.d.r(((org.telegram.ui.b01) obj).e.getParentActivity(), LocaleController.getString(z10 ? R.string.ProfileBotOpenAppInfoOwnerLink : R.string.ProfileBotOpenAppInfoLink));
                 break;
             case 16:
-                ad1 ad1Var = (ad1) obj;
-                AndroidUtilities.runOnUIThread(new rc1(ad1Var, i11));
-                org.telegram.ui.Cells.u1 u1Var = ad1Var.K;
+                yc1 yc1Var = (yc1) obj;
+                AndroidUtilities.runOnUIThread(new pc1(yc1Var, i11));
+                org.telegram.ui.Cells.u1 u1Var = yc1Var.K;
                 if (u1Var != null) {
                     u1Var.setVisibility(0);
                     if (!z10) {
-                        org.telegram.ui.Cells.u1 u1Var2 = ad1Var.K;
-                        int O2 = u1Var2.O2(ad1Var.O);
-                        yc1 yc1Var = ad1Var.I;
+                        org.telegram.ui.Cells.u1 u1Var2 = yc1Var.K;
+                        int O2 = u1Var2.O2(yc1Var.O);
+                        wc1 wc1Var = yc1Var.I;
                         CheckBoxBase[] checkBoxBaseArr2 = u1Var2.R8;
-                        if (checkBoxBaseArr2 != null && O2 >= 0 && O2 < checkBoxBaseArr2.length && (checkBoxBase = checkBoxBaseArr2[O2]) != null && yc1Var != null && (checkBoxBaseArr = yc1Var.R8) != null && O2 >= 0 && O2 < checkBoxBaseArr.length && (checkBoxBase2 = checkBoxBaseArr[O2]) != null) {
+                        if (checkBoxBaseArr2 != null && O2 >= 0 && O2 < checkBoxBaseArr2.length && (checkBoxBase = checkBoxBaseArr2[O2]) != null && wc1Var != null && (checkBoxBaseArr = wc1Var.R8) != null && O2 >= 0 && O2 < checkBoxBaseArr.length && (checkBoxBase2 = checkBoxBaseArr[O2]) != null) {
                             ObjectAnimator objectAnimator = checkBoxBase.p;
                             if (objectAnimator != null) {
                                 objectAnimator.cancel();
@@ -181,14 +181,14 @@ public final /* synthetic */ class b60 implements Runnable {
                             checkBoxBase.f(-1, checkBoxBase2.q, true);
                         }
                     }
-                    org.telegram.ui.Cells.u1 u1Var3 = ad1Var.K;
+                    org.telegram.ui.Cells.u1 u1Var3 = yc1Var.K;
                     u1Var3.K7 = -1;
                     u1Var3.invalidate();
                 }
-                org.telegram.ui.pm pmVar = ad1Var.c0;
-                if (pmVar != null) {
-                    AndroidUtilities.runOnUIThread(pmVar);
-                    ad1Var.c0 = null;
+                org.telegram.ui.nm nmVar = yc1Var.c0;
+                if (nmVar != null) {
+                    AndroidUtilities.runOnUIThread(nmVar);
+                    yc1Var.c0 = null;
                     break;
                 }
                 break;
@@ -211,7 +211,7 @@ public final /* synthetic */ class b60 implements Runnable {
                 String str = kVar.t;
                 kVar.w = true;
                 kVar.A = false;
-                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (!isEmpty || arrayList3.isEmpty()) ? null : (TLRPC.TL_chatInviteImporter) i2.d.h(1, arrayList3);
+                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (!isEmpty || arrayList3.isEmpty()) ? null : (TLRPC.TL_chatInviteImporter) i2.e.h(1, arrayList3);
                 boolean z11 = tL_chatInviteImporter == null;
                 if (isEmpty && z11 && z10) {
                     eVar = new xh.e(kVar, 1);
@@ -220,7 +220,7 @@ public final /* synthetic */ class b60 implements Runnable {
                 if (isEmpty) {
                     AndroidUtilities.runOnUIThread(eVar2, 300L);
                 }
-                kVar.v = kVar.i.getImporters(kVar.j, str, tL_chatInviteImporter, kVar.d, new ai.w4(kVar, isEmpty, eVar2, str, z11));
+                kVar.v = kVar.i.getImporters(kVar.j, str, tL_chatInviteImporter, kVar.d, new ai.x4(kVar, isEmpty, eVar2, str, z11));
                 break;
         }
     }

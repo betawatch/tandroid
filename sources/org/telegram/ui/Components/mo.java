@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class mo extends org.telegram.ui.ActionBar.m1 {
     public final /* synthetic */ oo o;
@@ -16,10 +16,10 @@ public final class mo extends org.telegram.ui.ActionBar.m1 {
     @Override // org.telegram.ui.ActionBar.m1, android.widget.PopupWindow
     public final void dismiss() {
         d(true);
-        org.telegram.ui.sn snVar = this.o.G;
-        if (snVar != null) {
-            snVar.getClass();
-            snVar.j8(false, true, 0.0f);
+        org.telegram.ui.qn qnVar = this.o.G;
+        if (qnVar != null) {
+            qnVar.getClass();
+            qnVar.j8(false, true, 0.0f);
         }
     }
 }

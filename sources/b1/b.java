@@ -1,13 +1,13 @@
 package b1;
 
 import ai.pa;
-import ci.u7;
+import ci.v7;
 import com.google.android.gms.common.api.r;
 import java.util.concurrent.Executor;
 import v0.i;
 import v0.o;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements td.a {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class b implements td.a {
                 } else {
                     cVar = new w0.c("Conditional create failed, failure: " + exc, 2);
                 }
-                this.b.execute(new u7(13, this.c, cVar));
+                this.b.execute(new v7(13, this.c, cVar));
                 break;
         }
         return id.i.a;

@@ -1,60 +1,58 @@
 package w7;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import android.os.Bundle;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class z7 {
-    public static String a(String str, Object... objArr) {
-        int length;
-        int length2;
-        int indexOf;
-        String k10;
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            length = objArr.length;
-            if (i11 >= length) {
-                break;
+    public static v0.c a(String type, Bundle data) {
+        kotlin.jvm.internal.i.e(type, "type");
+        kotlin.jvm.internal.i.e(data, "data");
+        try {
+            int hashCode = type.hashCode();
+            if (hashCode != -1678407252) {
+                if (hashCode != -543568185) {
+                    if (hashCode == -95037569 && type.equals("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL")) {
+                        try {
+                            String string = data.getString("androidx.credentials.BUNDLE_KEY_REGISTRATION_RESPONSE_JSON");
+                            kotlin.jvm.internal.i.b(string);
+                            return new v0.f(string, data);
+                        } catch (Exception unused) {
+                            throw new z0.a();
+                        }
+                    }
+                } else if (type.equals("android.credentials.TYPE_PASSWORD_CREDENTIAL")) {
+                    return new v0.d("android.credentials.TYPE_PASSWORD_CREDENTIAL", data);
+                }
+                throw new z0.a();
             }
-            Object obj = objArr[i11];
-            if (obj == null) {
-                k10 = "null";
-            } else {
+            if (type.equals("androidx.credentials.TYPE_DIGITAL_CREDENTIAL")) {
                 try {
-                    k10 = obj.toString();
-                } catch (Exception e) {
-                    String C = a1.g.C(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(C), (Throwable) e);
-                    k10 = org.telegram.ui.Cells.c1.k("<", C, " threw ", e.getClass().getName(), ">");
+                    String string2 = data.getString("androidx.credentials.BUNDLE_KEY_RESPONSE_JSON");
+                    kotlin.jvm.internal.i.b(string2);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("androidx.credentials.BUNDLE_KEY_RESPONSE_JSON", string2);
+                    v0.d dVar = new v0.d("androidx.credentials.TYPE_DIGITAL_CREDENTIAL", bundle);
+                    if (string2.length() != 0) {
+                        try {
+                            new JSONObject(string2);
+                            return dVar;
+                        } catch (Exception unused2) {
+                        }
+                    }
+                    throw new IllegalArgumentException("responseJson must not be empty, and must be a valid JSON");
+                } catch (Exception unused3) {
+                    throw new z0.a();
                 }
             }
-            objArr[i11] = k10;
-            i11++;
-        }
-        StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));
-        int i12 = 0;
-        while (true) {
-            length2 = objArr.length;
-            if (i10 >= length2 || (indexOf = str.indexOf("%s", i12)) == -1) {
-                break;
+            throw new z0.a();
+        } catch (z0.a unused4) {
+            v0.d dVar2 = new v0.d(type, data);
+            if (type.length() > 0) {
+                return dVar2;
             }
-            sb2.append((CharSequence) str, i12, indexOf);
-            sb2.append(objArr[i10]);
-            i10++;
-            i12 = indexOf + 2;
+            throw new IllegalArgumentException("type should not be empty");
         }
-        sb2.append((CharSequence) str, i12, str.length());
-        if (i10 < length2) {
-            sb2.append(" [");
-            sb2.append(objArr[i10]);
-            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
-                sb2.append(", ");
-                sb2.append(objArr[i13]);
-            }
-            sb2.append(']');
-        }
-        return sb2.toString();
     }
 }

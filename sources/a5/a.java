@@ -3,7 +3,7 @@ package a5;
 import a0.f;
 import a1.g;
 import ah.l0;
-import ai.b5;
+import ai.c5;
 import ai.cb;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -24,12 +24,11 @@ import android.util.SparseArray;
 import android.util.Xml;
 import android.view.animation.Interpolator;
 import android.widget.ImageView;
-import b2.w;
 import c3.h;
 import c3.i;
 import c3.s;
 import c3.u;
-import c5.v;
+import c5.w;
 import com.google.android.gms.common.api.internal.l;
 import com.google.android.gms.internal.cast.a0;
 import e2.k0;
@@ -65,18 +64,18 @@ import m.m1;
 import m.r;
 import m.s3;
 import m4.f0;
+import m4.v;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ik;
+import org.telegram.messenger.hk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.ry;
-import org.telegram.ui.ha;
-import org.telegram.ui.web.g2;
-import org.telegram.ui.web.n;
+import org.telegram.ui.fa;
+import org.telegram.ui.web.m;
 import org.xmlpull.v1.XmlPullParserException;
 import qi.e;
 import tg.p;
@@ -103,7 +102,7 @@ import z7.xe;
 import z7.y;
 import zf.z;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class a implements i, t {
     public final /* synthetic */ int a;
@@ -332,7 +331,7 @@ public class a implements i, t {
         ValueAnimator ofInt = ValueAnimator.ofInt(0, i10);
         this.c = ofInt;
         ofInt.addUpdateListener(new l0(25, this, iArr));
-        ((ValueAnimator) this.c).addListener(new b5(this, i10, iArr, 2));
+        ((ValueAnimator) this.c).addListener(new c5(this, i10, iArr, 2));
         ((ValueAnimator) this.c).setDuration(j10);
         ((ValueAnimator) this.c).setInterpolator(interpolator);
         ((ValueAnimator) this.c).start();
@@ -391,7 +390,7 @@ public class a implements i, t {
         }
         map.put(str, lVar);
         if (this.b > 0) {
-            new a0(Looper.getMainLooper(), 4).post(new v(this, lVar, str, false, 4));
+            new a0(Looper.getMainLooper(), 4).post(new w(this, lVar, str, false, 4));
         }
     }
 
@@ -599,28 +598,8 @@ public class a implements i, t {
         r.d(drawable, e3Var, imageView.getDrawableState());
     }
 
-    public c2 d(boolean z10) {
-        p0 p0Var;
-        p0 p0Var2;
-        if (z10 && (p0Var2 = (p0) this.d) != null) {
-            throw p0Var2.a();
-        }
-        c2 f7 = c2.f(this.b, (Object[]) this.c, this);
-        if (!z10 || (p0Var = (p0) this.d) == null) {
-            return f7;
-        }
-        throw p0Var.a();
-    }
-
-    public ta.b e() {
-        if ("".isEmpty()) {
-            return new ta.b((String) this.c, ((Long) this.d).longValue(), this.b);
-        }
-        throw new IllegalStateException("Missing required properties:".concat(""));
-    }
-
     @Override // c3.i
-    public void f() {
+    public void d() {
         switch (this.a) {
             case 8:
                 break;
@@ -633,8 +612,28 @@ public class a implements i, t {
         }
     }
 
+    public c2 e(boolean z10) {
+        p0 p0Var;
+        p0 p0Var2;
+        if (z10 && (p0Var2 = (p0) this.d) != null) {
+            throw p0Var2.a();
+        }
+        c2 f7 = c2.f(this.b, (Object[]) this.c, this);
+        if (!z10 || (p0Var = (p0) this.d) == null) {
+            return f7;
+        }
+        throw p0Var.a();
+    }
+
+    public ta.b f() {
+        if ("".isEmpty()) {
+            return new ta.b((String) this.c, ((Long) this.d).longValue(), this.b);
+        }
+        throw new IllegalStateException("Missing required properties:".concat(""));
+    }
+
     public q0 g() {
-        return d(false);
+        return e(false);
     }
 
     public void h(int i10) {
@@ -663,12 +662,12 @@ public class a implements i, t {
         Iterator it = ((CopyOnWriteArrayList) this.d).iterator();
         while (it.hasNext()) {
             j0 j0Var = (j0) it.next();
-            m0.W(j0Var.a, new g2(29, jVar, j0Var.b));
+            m0.W(j0Var.a, new p2.b(28, jVar, j0Var.b));
         }
     }
 
-    public void m(int i10, w wVar, int i11, Object obj, long j10) {
-        l(new n(12, this, new c0(1, i10, wVar, i11, obj, m0.h0(j10), -9223372036854775807L)));
+    public void m(int i10, b2.w wVar, int i11, Object obj, long j10) {
+        l(new m(12, this, new c0(1, i10, wVar, i11, obj, m0.h0(j10), -9223372036854775807L)));
     }
 
     public long n(c3.p pVar) {
@@ -730,7 +729,7 @@ public class a implements i, t {
         List list = (List) obj;
         f0 f0Var = ((m4.p0) this.d).g;
         Handler handler = f0Var.l;
-        m4.v vVar = (m4.v) this.c;
+        v vVar = (v) this.c;
         m0.W(handler, new hi.t(f0Var, vVar, new cb(this, this.b, list, vVar, 7)));
     }
 
@@ -739,16 +738,16 @@ public class a implements i, t {
         return ((Shader) this.c) == null && (colorStateList = (ColorStateList) this.d) != null && colorStateList.isStateful();
     }
 
-    public void q(u2.u uVar, int i10, int i11, w wVar, int i12, Object obj, long j10, long j11) {
+    public void q(u2.u uVar, int i10, int i11, b2.w wVar, int i12, Object obj, long j10, long j11) {
         l(new i0(this, uVar, new c0(i10, i11, wVar, i12, obj, m0.h0(j10), m0.h0(j11)), 1));
     }
 
-    public void r(u2.u uVar, int i10, int i11, w wVar, int i12, Object obj, long j10, long j11) {
+    public void r(u2.u uVar, int i10, int i11, b2.w wVar, int i12, Object obj, long j10, long j11) {
         l(new i0(this, uVar, new c0(i10, i11, wVar, i12, obj, m0.h0(j10), m0.h0(j11)), 0));
     }
 
-    public void s(u2.u uVar, int i10, int i11, w wVar, int i12, Object obj, long j10, long j11, IOException iOException, boolean z10) {
-        l(new ik(this, uVar, new c0(i10, i11, wVar, i12, obj, m0.h0(j10), m0.h0(j11)), iOException, z10));
+    public void s(u2.u uVar, int i10, int i11, b2.w wVar, int i12, Object obj, long j10, long j11, IOException iOException, boolean z10) {
+        l(new hk(this, uVar, new c0(i10, i11, wVar, i12, obj, m0.h0(j10), m0.h0(j11)), iOException, z10));
     }
 
     public void t(u2.u uVar, int i10, IOException iOException, boolean z10) {
@@ -784,8 +783,8 @@ public class a implements i, t {
         }
     }
 
-    public void v(u2.u uVar, int i10, int i11, w wVar, int i12, Object obj, long j10, long j11, int i13) {
-        l(new ha(this, uVar, new c0(i10, i11, wVar, i12, obj, m0.h0(j10), m0.h0(j11)), i13, 9));
+    public void v(u2.u uVar, int i10, int i11, b2.w wVar, int i12, Object obj, long j10, long j11, int i13) {
+        l(new fa(this, uVar, new c0(i10, i11, wVar, i12, obj, m0.h0(j10), m0.h0(j11)), i13, 9));
     }
 
     public a x(Object obj, Object obj2) {
@@ -1025,7 +1024,7 @@ public class a implements i, t {
         this.b = ConnectionsManager.DEFAULT_DATACENTER_ID;
     }
 
-    public a(m4.p0 p0Var, m4.v vVar, int i10) {
+    public a(m4.p0 p0Var, v vVar, int i10) {
         this.a = 13;
         this.d = p0Var;
         this.c = vVar;

@@ -8,9 +8,9 @@ import android.view.WindowInsets;
 import j$.util.Objects;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import w7.t6;
+import w7.s6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class b1 extends h1 {
     public static boolean i = false;
@@ -180,7 +180,7 @@ public abstract class b1 extends h1 {
             if (i10 != 2) {
                 if (i10 == 8) {
                     i0.b[] bVarArr = this.d;
-                    i11 = bVarArr != null ? bVarArr[t6.a(8)] : null;
+                    i11 = bVarArr != null ? bVarArr[s6.a(8)] : null;
                     if (i11 != null) {
                         return i11;
                     }

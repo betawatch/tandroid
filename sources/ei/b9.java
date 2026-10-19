@@ -5,7 +5,7 @@ import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b9 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -42,13 +42,13 @@ public final /* synthetic */ class b9 implements Utilities.Callback {
             case 1:
                 r9 r9Var2 = this.b.W;
                 i10 = ((org.telegram.ui.ActionBar.f3) r9Var2).currentAccount;
-                r9Var2.h1(new p9(5, i10, (ArrayList) obj), new ci.d4(r9Var2, 1), false);
+                r9Var2.h1(new p9(5, i10, (ArrayList) obj), new ci.e4(r9Var2, 1), false);
                 break;
             case 2:
                 k9 k9Var2 = this.b;
                 r9 r9Var3 = k9Var2.W;
                 HashSet hashSet2 = r9Var3.v;
-                hashSet2.add(Integer.valueOf(((ci.a7) obj).a));
+                hashSet2.add(Integer.valueOf(((ci.b7) obj).a));
                 k9Var2.g(true);
                 u9 u9Var2 = r9Var3.X;
                 if (u9Var2 != null) {

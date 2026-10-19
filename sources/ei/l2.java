@@ -23,7 +23,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Components.ca0;
 import org.telegram.ui.Components.we0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class l2 extends View {
     public final Paint a;
@@ -83,7 +83,7 @@ public final class l2 extends View {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("___");
                     spannableStringBuilder.setSpan(new ca0(AndroidUtilities.dp(68.0f), this), 0, spannableStringBuilder.length(), 33);
                     j2VarArr[0] = new j2(this, spannableStringBuilder);
-                    uc.a(false, new ai.n2(7, this, j2VarArr));
+                    uc.a(false, new ai.o2(7, this, j2VarArr));
                     charSequence = spannableStringBuilder;
                 }
             }

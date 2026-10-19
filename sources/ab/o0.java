@@ -16,6 +16,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
+import ki.t1;
 import org.telegram.ui.Components.q20;
 import org.telegram.ui.Components.r20;
 import org.telegram.ui.Components.s20;
@@ -23,7 +24,7 @@ import org.telegram.ui.Components.t20;
 import org.telegram.ui.Components.u20;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class o0 extends Handler {
     public final /* synthetic */ int a;
@@ -344,10 +345,10 @@ public final class o0 extends Handler {
                     return;
                 }
                 g3Var.c = false;
-                le.b bVar2 = (le.b) g3Var.f;
-                if (bVar2 != null) {
+                t1 t1Var = (t1) g3Var.f;
+                if (t1Var != null) {
                     b2.t tVar = (b2.t) g3Var.n;
-                    p4.e eVar2 = (p4.e) bVar2.b;
+                    p4.e eVar2 = (p4.e) t1Var.b;
                     p4.u d = eVar2.d(g3Var);
                     if (d != null) {
                         eVar2.m(d, tVar);

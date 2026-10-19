@@ -12,6 +12,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.WeakHashMap;
+import ki.t1;
 import m.g3;
 import r0.i0;
 import s4.b1;
@@ -23,7 +24,7 @@ import s4.s0;
 import s4.t0;
 import s4.y0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class e {
     public int a;
@@ -74,7 +75,7 @@ public final class e {
         if (i10 >= 0 && i10 < recyclerView.u0.b()) {
             return !recyclerView.u0.g ? i10 : recyclerView.d.g(i10, 0);
         }
-        StringBuilder l4 = i2.d.l(i10, "invalid position ", ". State item count is ");
+        StringBuilder l4 = i2.e.l(i10, "invalid position ", ". State item count is ");
         l4.append(recyclerView.u0.b());
         l4.append(recyclerView.C());
         throw new IndexOutOfBoundsException(l4.toString());
@@ -264,14 +265,14 @@ public final class e {
         ((ArrayList) this.c).add(U);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:242:0x0417, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:242:0x041b, code lost:
     
         if (r12.h() == false) goto L230;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:223:0x0508  */
-    /* JADX WARN: Removed duplicated region for block: B:226:0x0528 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:231:0x0512  */
+    /* JADX WARN: Removed duplicated region for block: B:223:0x050c  */
+    /* JADX WARN: Removed duplicated region for block: B:226:0x052c A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:231:0x0516  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -299,7 +300,7 @@ public final class e {
         RecyclerView recyclerView = (RecyclerView) this.h;
         y0 y0Var = recyclerView.u0;
         if (i10 < 0 || i10 >= y0Var.b()) {
-            StringBuilder m10 = i2.d.m("Invalid item position ", i10, "(", i10, "). Item count:");
+            StringBuilder m10 = i2.e.m("Invalid item position ", i10, "(", i10, "). Item count:");
             m10.append(y0Var.b());
             m10.append(recyclerView.C());
             throw new IndexOutOfBoundsException(m10.toString());
@@ -382,7 +383,7 @@ public final class e {
                 b1 U2 = RecyclerView.U(view);
                 g3 g3Var = recyclerView.e;
                 ad.d dVar = (ad.d) g3Var.c;
-                int indexOfChild = ((ih.g) g3Var.b).a.indexOfChild(view);
+                int indexOfChild = ((RecyclerView) ((t1) g3Var.b).b).indexOfChild(view);
                 if (indexOfChild < 0) {
                     throw new IllegalArgumentException("view is not a child, cannot hide " + view);
                 }
@@ -393,7 +394,7 @@ public final class e {
                 g3Var.X(view);
                 g3 g3Var2 = recyclerView.e;
                 ad.d dVar2 = (ad.d) g3Var2.c;
-                int indexOfChild2 = ((ih.g) g3Var2.b).a.indexOfChild(view);
+                int indexOfChild2 = ((RecyclerView) ((t1) g3Var2.b).b).indexOfChild(view);
                 int A = (indexOfChild2 == -1 || dVar2.D(indexOfChild2)) ? -1 : indexOfChild2 - dVar2.A(indexOfChild2);
                 if (A == -1) {
                     throw new IllegalStateException("layout index should not be -1 after unhiding a view:" + U2 + recyclerView.C());
@@ -441,7 +442,7 @@ public final class e {
             j11 = 3;
             int g11 = recyclerView.d.g(i10, 0);
             if (g11 < 0 || g11 >= recyclerView.w.h()) {
-                StringBuilder m11 = i2.d.m("Inconsistency detected. Invalid item position ", i10, "(offset:", g11, ").state:");
+                StringBuilder m11 = i2.e.m("Inconsistency detected. Invalid item position ", i10, "(offset:", g11, ").state:");
                 m11.append(y0Var.b());
                 m11.append(recyclerView.C());
                 throw new IndexOutOfBoundsException(m11.toString());

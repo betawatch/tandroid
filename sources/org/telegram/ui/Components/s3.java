@@ -6,19 +6,19 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class s3 extends LinearLayout {
-    public final d11 a;
+    public final e11 a;
     public boolean b;
-    public d11 c;
+    public e11 c;
     public final /* synthetic */ r3 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public s3(Context context, r3 r3Var) {
         super(context);
         this.d = r3Var;
-        this.a = new d11(":", 18.0f, null);
+        this.a = new e11(":", 18.0f, null);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -29,7 +29,7 @@ public final class s3 extends LinearLayout {
             boolean z10 = this.d.getValue() % 24 < 12;
             if (this.b != z10 || this.c == null) {
                 this.b = z10;
-                this.c = new d11(z10 ? "AM" : "PM", 18.0f, null);
+                this.c = new e11(z10 ? "AM" : "PM", 18.0f, null);
             }
             this.c.c((getWidth() / 2.0f) + AndroidUtilities.dp(43.0f), (getHeight() / 2.0f) + AndroidUtilities.dp(1.0f), 1.0f, org.telegram.ui.ActionBar.h6.x0(null, i10, false), canvas);
         }

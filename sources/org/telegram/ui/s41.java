@@ -1,52 +1,36 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import java.util.ArrayList;
+import android.graphics.Outline;
+import android.graphics.Rect;
+import android.view.View;
+import android.view.ViewOutlineProvider;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class s41 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ z51 c;
+public final class s41 extends ViewOutlineProvider {
+    public final Rect a = new Rect();
+    public final /* synthetic */ Integer b;
+    public final /* synthetic */ x51 c;
 
-    public /* synthetic */ s41(z51 z51Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = z51Var;
-        this.b = z10;
+    public s41(x51 x51Var, Integer num) {
+        this.c = x51Var;
+        this.b = num;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        switch (this.a) {
-            case 0:
-                z51 z51Var = this.c;
-                m41 m41Var = z51Var.i0;
-                boolean z10 = this.b;
-                m41Var.setVisibility(z10 ? 0 : 8);
-                z51Var.h0.setVisibility(z10 ? 8 : 0);
-                z51Var.E1 = null;
-                if (!z10 && (arrayList2 = z51Var.A1) != null) {
-                    arrayList2.clear();
-                    ArrayList arrayList3 = z51Var.D1;
-                    if (arrayList3 != null) {
-                        arrayList3.clear();
-                    }
-                    z51Var.q0.E(false);
-                }
-                if (!z10 && (arrayList = z51Var.B1) != null) {
-                    arrayList.clear();
-                    break;
-                }
-                break;
-            default:
-                z51 z51Var2 = this.c;
-                z51Var2.j0.setVisibility((this.b && z51Var2.i0.getVisibility() == 0) ? 0 : 8);
-                z51Var2.H1 = null;
-                break;
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        float width = (this.b == null ? view.getWidth() / 2.0f : r0.intValue()) + AndroidUtilities.dp(20.0f);
+        float width2 = (view.getWidth() - view.getPaddingLeft()) - view.getPaddingRight();
+        float height = (view.getHeight() - view.getPaddingBottom()) - view.getPaddingTop();
+        x51 x51Var = this.c;
+        boolean n10 = x51Var.n();
+        Rect rect = this.a;
+        if (n10) {
+            rect.set((int) ((width - (x51Var.a1 * width)) + view.getPaddingLeft()), (int) com.google.android.gms.internal.play_billing.k3.y(1.0f, x51Var.b1, AndroidUtilities.dp(x51Var.d1), com.google.android.gms.internal.play_billing.k3.y(1.0f, x51Var.b1, height, view.getPaddingTop())), (int) (((width2 - width) * x51Var.a1) + view.getPaddingLeft() + width), (int) com.google.android.gms.internal.play_billing.k3.y(1.0f, x51Var.b1, AndroidUtilities.dp(x51Var.d1), view.getPaddingTop() + height));
+        } else {
+            rect.set((int) ((width - (x51Var.a1 * width)) + view.getPaddingLeft()), view.getPaddingTop(), (int) (((width2 - width) * x51Var.a1) + view.getPaddingLeft() + width), (int) ((height * x51Var.b1) + view.getPaddingTop()));
         }
+        outline.setRoundRect(rect, AndroidUtilities.dp(12.0f));
     }
 }

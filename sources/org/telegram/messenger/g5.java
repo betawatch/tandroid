@@ -1,30 +1,111 @@
 package org.telegram.messenger;
 
 import org.telegram.messenger.ImageLoader;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g5 implements Runnable {
+public final /* synthetic */ class g5 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ImageLoader.HttpFileTask b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
 
-    public /* synthetic */ g5(ImageLoader.HttpFileTask httpFileTask, long j10, long j11, int i10) {
+    public /* synthetic */ g5(int i10) {
         this.a = i10;
-        this.b = httpFileTask;
-        this.c = j10;
-        this.d = j11;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$reportProgress$0(this.c, this.d);
+                ImageLoader.HttpImageTask.lambda$doInBackground$2(tLObject, tL_error);
+                break;
+            case 1:
+                ChatThemeController.lambda$clearWallpaper$15(tLObject, tL_error);
+                break;
+            case 2:
+                ContactsController.lambda$resetImportedContacts$10(tLObject, tL_error);
+                break;
+            case 3:
+                DownloadController.lambda$savePresetToServer$3(tLObject, tL_error);
+                break;
+            case 4:
+                FileRefController.lambda$onUpdateObjectReference$40(tLObject, tL_error);
+                break;
+            case 5:
+                FileRefController.lambda$onUpdateObjectReference$37(tLObject, tL_error);
+                break;
+            case 6:
+                FileRefController.lambda$onUpdateObjectReference$38(tLObject, tL_error);
+                break;
+            case 7:
+                FileRefController.lambda$onUpdateObjectReference$39(tLObject, tL_error);
+                break;
+            case 8:
+                MediaDataController.lambda$saveDraft$189(tLObject, tL_error);
+                break;
+            case 9:
+                MediaDataController.lambda$removeInline$152(tLObject, tL_error);
+                break;
+            case 10:
+                MediaDataController.lambda$removePeer$154(tLObject, tL_error);
+                break;
+            case 11:
+                MediaDataController.lambda$markFeaturedStickersByIdAsRead$66(tLObject, tL_error);
+                break;
+            case 12:
+                MediaDataController.lambda$markFeaturedStickersAsRead$65(tLObject, tL_error);
+                break;
+            case 13:
+                MediaDataController.lambda$removeWebapp$153(tLObject, tL_error);
+                break;
+            case 14:
+                MessagesController.lambda$markPollVotesAsRead$440(tLObject, tL_error);
+                break;
+            case 15:
+                MessagesController.lambda$deleteParticipantFromChat$310(tLObject, tL_error);
+                break;
+            case 16:
+                MessagesController.lambda$setContentSettings$507(tLObject, tL_error);
+                break;
+            case 17:
+                MessagesController.lambda$unregistedPush$319(tLObject, tL_error);
+                break;
+            case 18:
+                MessagesController.lambda$completeReadTask$236(tLObject, tL_error);
+                break;
+            case 19:
+                MessagesController.lambda$completeReadTask$238(tLObject, tL_error);
+                break;
+            case 20:
+                MessagesController.lambda$markMentionMessageAsRead$232(tLObject, tL_error);
+                break;
+            case 21:
+                MessagesController.lambda$hidePeerSettingsBar$74(tLObject, tL_error);
+                break;
+            case 22:
+                MessagesController.lambda$installTheme$116(tLObject, tL_error);
+                break;
+            case 23:
+                MessagesController.lambda$installTheme$117(tLObject, tL_error);
+                break;
+            case 24:
+                MessagesController.lambda$markMessageContentAsRead$230(tLObject, tL_error);
+                break;
+            case 25:
+                MessagesController.lambda$saveTheme$115(tLObject, tL_error);
+                break;
+            case 26:
+                MessagesController.lambda$reportSpam$75(tLObject, tL_error);
+                break;
+            case 27:
+                MessagesController.lambda$markReactionsAsRead$439(tLObject, tL_error);
+                break;
+            case 28:
+                MessagesController.lambda$reportSpam$76(tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$reportProgress$1(this.c, this.d);
+                MessagesController.lambda$removeSuggestion$39(tLObject, tL_error);
                 break;
         }
     }

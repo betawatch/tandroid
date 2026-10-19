@@ -25,7 +25,7 @@ import ki.t1;
 import v7.u6;
 import w7.a0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class b implements h {
     public final List a;
@@ -425,7 +425,7 @@ public final class b implements h {
             byte[] H = this.b.H();
             this.v = H;
             this.b.h(H, this.j);
-            this.t = this.b.u(this.v);
+            this.t = this.b.r(this.v);
             this.p = 3;
             e2.k kVar = this.h;
             synchronized (kVar.a) {
@@ -459,7 +459,7 @@ public final class b implements h {
         try {
             synchronized (this.o) {
                 try {
-                    this.y = new le.b(3);
+                    this.y = new le.b();
                     List list = this.a;
                     if (list != null) {
                         n0.u(list);

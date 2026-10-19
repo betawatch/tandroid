@@ -13,10 +13,10 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class sp0 extends View {
-    public static final cw0 v;
+    public static final dw0 v;
     public ImageReceiver a;
     public h9 b;
     public org.telegram.ui.Cells.z c;
@@ -29,9 +29,9 @@ public final class sp0 extends View {
     public boolean s;
 
     static {
-        cw0 cw0Var = new cw0(new tg0(5), new tg0(6));
-        cw0Var.c = 100.0f;
-        v = cw0Var;
+        dw0 dw0Var = new dw0(new tg0(5), new tg0(6));
+        dw0Var.c = 100.0f;
+        v = dw0Var;
     }
 
     public final void a(boolean z10, boolean z11, float f7) {

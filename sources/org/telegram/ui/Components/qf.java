@@ -5,7 +5,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class qf implements View.OnKeyListener {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -41,8 +41,8 @@ public final class qf implements View.OnKeyListener {
             chatActivityEnterView.C0 = keyEvent.isCtrlPressed();
         }
         if (i10 == 4 && !chatActivityEnterView.z2 && chatActivityEnterView.r0() && keyEvent.getAction() == 1) {
-            if (org.telegram.ui.gt.g0 != null && org.telegram.ui.gt.q().E) {
-                org.telegram.ui.gt.q().o();
+            if (org.telegram.ui.et.g0 != null && org.telegram.ui.et.q().E) {
+                org.telegram.ui.et.q().o();
                 return true;
             }
             if (chatActivityEnterView.f2 != 1 || chatActivityEnterView.m2 == null) {
@@ -54,21 +54,21 @@ public final class qf implements View.OnKeyListener {
                         chatActivityEnterView.j1(0, true);
                         dg dgVar = chatActivityEnterView.U0;
                         if (dgVar != null) {
-                            dgVar.t(true);
+                            dgVar.u(true);
                         }
                         chatActivityEnterView.E0.requestFocus();
                         return true;
                     }
                     if (chatActivityEnterView.z3) {
-                        chatActivityEnterView.l1(false, true, false, true);
+                        chatActivityEnterView.k1(false, true, false, true);
                         return true;
                     }
                     if (chatActivityEnterView.B3 == null) {
                         if (chatActivityEnterView.m2 != null && chatActivityEnterView.f2 != 1 && TextUtils.isEmpty(chatActivityEnterView.E0.getTextToUse())) {
-                            chatActivityEnterView.r1(1, 1, true, true);
+                            chatActivityEnterView.q1(1, 1, true, true);
                             return true;
                         }
-                        chatActivityEnterView.r1(0, 0, true, false);
+                        chatActivityEnterView.q1(0, 0, true, false);
                     }
                 }
                 return true;

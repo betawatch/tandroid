@@ -20,7 +20,7 @@ import java.util.concurrent.Executors;
 import k2.f0;
 import v7.o6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class FirebaseMessagingService extends g {
     public static final String ACTION_DIRECT_BOOT_REMOTE_INTENT = "com.google.firebase.messaging.RECEIVE_DIRECT_BOOT";
@@ -206,7 +206,7 @@ public class FirebaseMessagingService extends g {
                                     l9.h c13 = l9.h.c();
                                     c13.a();
                                     String packageName = c13.a.getPackageName();
-                                    xa.b bVar = !ya.d.Y(extras2) ? xa.b.c : xa.b.b;
+                                    xa.b bVar = !ya.d.Z(extras2) ? xa.b.c : xa.b.b;
                                     string2 = extras2.getString("google.message_id");
                                     if (string2 == null) {
                                         string2 = extras2.getString("message_id");
@@ -280,7 +280,7 @@ public class FirebaseMessagingService extends g {
                             l9.h c132 = l9.h.c();
                             c132.a();
                             String packageName2 = c132.a.getPackageName();
-                            xa.b bVar2 = !ya.d.Y(extras2) ? xa.b.c : xa.b.b;
+                            xa.b bVar2 = !ya.d.Z(extras2) ? xa.b.c : xa.b.b;
                             string2 = extras2.getString("google.message_id");
                             if (string2 == null) {
                             }
@@ -320,11 +320,11 @@ public class FirebaseMessagingService extends g {
                         extras = new Bundle();
                     }
                     extras.remove("androidx.content.wakelockid");
-                    if (ya.d.Y(extras)) {
+                    if (ya.d.Z(extras)) {
                         ya.d dVar = new ya.d(extras);
-                        ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new c5.w("Firebase-Messaging-Network-Io"));
+                        ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new c5.x("Firebase-Messaging-Network-Io"));
                         try {
-                            if (new androidx.biometric.e(this, dVar, newSingleThreadExecutor).r()) {
+                            if (new androidx.biometric.e(this, dVar, newSingleThreadExecutor).p()) {
                                 break;
                             } else {
                                 newSingleThreadExecutor.shutdown();
@@ -346,7 +346,7 @@ public class FirebaseMessagingService extends g {
                 if (extras == null) {
                 }
                 extras.remove("androidx.content.wakelockid");
-                if (ya.d.Y(extras)) {
+                if (ya.d.Z(extras)) {
                 }
                 onMessageReceived(new p(extras));
                 break;

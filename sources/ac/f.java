@@ -12,7 +12,7 @@ import n6.j;
 import n6.l;
 import org.telegram.tgnet.ConnectionsManager;
 import v7.z8;
-import w7.l8;
+import w7.k8;
 import x7.d7;
 import x7.da;
 import x7.e7;
@@ -29,7 +29,7 @@ import x7.o7;
 import x7.r0;
 import x7.s;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class f extends rb.e {
     public boolean d = true;
@@ -42,8 +42,8 @@ public final class f extends rb.e {
         l.i(aVar, "ImageLabelerOptions can not be null");
         this.f = bVar;
         this.g = faVar;
-        uc.b bVar2 = new uc.b();
-        bVar2.a = Float.valueOf(aVar.a);
+        le.b bVar2 = new le.b(28);
+        bVar2.b = Float.valueOf(aVar.a);
         this.e = new h8(bVar2);
         this.h = new z8(rb.g.c().b(), 1);
     }
@@ -58,7 +58,7 @@ public final class f extends rb.e {
         eVar.b = this.e;
         m mVar = o.b;
         Object[] objArr = {n7.b};
-        l8.a(1, objArr);
+        k8.a(1, objArr);
         eVar.c = new s(1, objArr);
         lVar.d = new g8(eVar);
         rb.m.a.execute(new p(faVar, new a5.a(lVar, 0), o7.e, faVar.b(), 7));

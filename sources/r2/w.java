@@ -1,11 +1,11 @@
 package r2;
 
-import ai.t5;
+import ai.u5;
 import android.media.MediaCodecInfo;
 import android.os.Build;
 import android.util.Pair;
 import b2.v0;
-import c5.b0;
+import c5.c0;
 import e9.k0;
 import e9.n0;
 import e9.x1;
@@ -16,7 +16,7 @@ import java.util.List;
 import org.telegram.messenger.MediaController;
 import v7.s6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class w {
     public static final HashMap a = new HashMap();
@@ -26,7 +26,7 @@ public abstract class w {
             if (Build.VERSION.SDK_INT < 26 && Build.DEVICE.equals("R9") && arrayList.size() == 1 && ((o) arrayList.get(0)).a.equals("OMX.MTK.AUDIO.DECODER.RAW")) {
                 arrayList.add(o.i("OMX.google.raw.decoder", "audio/raw", "audio/raw", null, false, true, false, false));
             }
-            Collections.sort(arrayList, new t5(new i(), 4));
+            Collections.sort(arrayList, new u5(new i(), 4));
         }
         if (Build.VERSION.SDK_INT >= 32 || arrayList.size() <= 1 || !"OMX.qti.audio.decoder.flac".equals(((o) arrayList.get(0)).a)) {
             return;
@@ -112,7 +112,7 @@ public abstract class w {
                 if (list != null) {
                     return list;
                 }
-                ArrayList f7 = f(sVar, new b0(z10, z11, str.equals("video/mv-hevc")));
+                ArrayList f7 = f(sVar, new c0(z10, z11, str.equals("video/mv-hevc")));
                 if (z10 && f7.isEmpty() && Build.VERSION.SDK_INT == 23) {
                     f7 = f(sVar, new rb.b(20));
                     if (!f7.isEmpty()) {
@@ -150,14 +150,14 @@ public abstract class w {
             ArrayList arrayList = new ArrayList();
             String str2 = sVar2.a;
             int k10 = uVar.k();
-            boolean u10 = uVar.u();
+            boolean v = uVar.v();
             int i11 = 0;
             while (i11 < k10) {
                 MediaCodecInfo a2 = uVar.a(i11);
                 int i12 = Build.VERSION.SDK_INT;
                 if (i12 < 29 || !a2.isAlias()) {
                     String name = a2.getName();
-                    if (h(a2, name, u10, str2)) {
+                    if (h(a2, name, v, str2)) {
                         int i13 = i11;
                         String d = d(a2, name, str2);
                         if (d != null) {
@@ -168,7 +168,7 @@ public abstract class w {
                                 z11 = sVar2.c;
                             } catch (Exception e) {
                                 e = e;
-                                z10 = u10;
+                                z10 = v;
                                 str = name;
                             }
                             if (z11 || !h) {
@@ -178,7 +178,7 @@ public abstract class w {
                                     if (z13 || !h10) {
                                         if (!z13 || f10) {
                                             boolean i14 = i(a2, str2);
-                                            z10 = u10;
+                                            z10 = v;
                                             try {
                                                 j10 = j(a2, str2);
                                                 if (i12 >= 29) {
@@ -214,7 +214,7 @@ public abstract class w {
                                                 }
                                                 i11 = i10 + 1;
                                                 sVar2 = sVar;
-                                                u10 = z10;
+                                                v = z10;
                                             } else {
                                                 i10 = i13;
                                                 try {
@@ -229,29 +229,29 @@ public abstract class w {
                                                     e2.a.c("MediaCodecUtil", "Skipping codec " + str + " (failed to query capabilities)");
                                                     i11 = i10 + 1;
                                                     sVar2 = sVar;
-                                                    u10 = z10;
+                                                    v = z10;
                                                 }
                                                 i11 = i10 + 1;
                                                 sVar2 = sVar;
-                                                u10 = z10;
+                                                v = z10;
                                             }
                                         }
                                     }
                                 }
                             }
                         }
-                        z10 = u10;
+                        z10 = v;
                         i10 = i13;
                         i11 = i10 + 1;
                         sVar2 = sVar;
-                        u10 = z10;
+                        v = z10;
                     }
                 }
-                z10 = u10;
+                z10 = v;
                 i10 = i11;
                 i11 = i10 + 1;
                 sVar2 = sVar;
-                u10 = z10;
+                v = z10;
             }
             return arrayList;
         } catch (Exception e12) {

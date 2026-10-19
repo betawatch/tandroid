@@ -21,7 +21,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class c4 {
     public static final int[] h = {h6.ra, h6.Aa, h6.Oh, h6.Nd, h6.Od, h6.Pd, h6.Qd, h6.Rd};
@@ -146,7 +146,7 @@ public final class c4 {
     public final TLRPC.Document e() {
         TLRPC.ChatTheme chatTheme = this.d;
         if (chatTheme instanceof TLRPC.TL_chatThemeUniqueGift) {
-            return ag.e.e(((TLRPC.TL_chatThemeUniqueGift) chatTheme).gift);
+            return ag.d.e(((TLRPC.TL_chatThemeUniqueGift) chatTheme).gift);
         }
         if (chatTheme instanceof TLRPC.TL_chatTheme) {
             return MediaDataController.getInstance(this.g).getEmojiAnimatedSticker(((TLRPC.TL_chatTheme) this.d).emoticon);
@@ -347,7 +347,7 @@ public final class c4 {
                     ImageReceiver imageReceiver = new ImageReceiver();
                     imageReceiver.setAllowLoadingOnAttachedOnly(false);
                     imageReceiver.setImage(forDocument, "120_140", null, null, null, 1);
-                    imageReceiver.setDelegate(new ai.f(resultCallback, h10, file, 3));
+                    imageReceiver.setDelegate(new ai.f(resultCallback, h10, file, 4));
                     ImageLoader.getInstance().loadImageForImageReceiver(imageReceiver);
                     return;
                 }

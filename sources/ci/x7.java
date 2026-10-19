@@ -1,216 +1,29 @@
 package ci;
 
-import android.graphics.RectF;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewGroup;
-import android.view.ViewParent;
-import androidx.recyclerview.widget.RecyclerView;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.yc;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public class x7 {
-    public int A;
-    public boolean D;
-    public final boolean E;
-    public float G;
-    public yc H;
-    public org.telegram.ui.ActionBar.d6 J;
-    public float K;
-    public boolean L;
-    public float M;
-    public boolean N;
-    public float O;
-    public float P;
-    public u7 Q;
-    public View R;
-    public int c;
-    public TL_stories.StoryItem d;
-    public boolean l;
-    public boolean m;
-    public int n;
-    public boolean o;
-    public boolean p;
-    public int q;
-    public boolean r;
-    public long s;
-    public float t;
-    public boolean v;
-    public boolean w;
-    public long x;
-    public int y;
-    public int z;
-    public boolean a = true;
-    public boolean b = true;
-    public float e = 1.0f;
-    public float f = 0.0f;
-    public float g = 0.0f;
-    public float h = 0.0f;
-    public float i = 0.0f;
-    public float j = 0.0f;
-    public boolean k = true;
-    public float u = 1.0f;
-    public float B = 1.0f;
-    public boolean C = false;
-    public final RectF F = new RectF();
-    public boolean I = false;
+public final class x7 extends ImageReceiver {
+    public final /* synthetic */ Runnable[] a;
+    public final /* synthetic */ z7 b;
 
-    public x7(org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
-        this.E = z10;
-        this.J = d6Var;
+    public x7(Runnable[] runnableArr, z7 z7Var) {
+        this.a = runnableArr;
+        this.b = z7Var;
     }
 
-    public final boolean a(MotionEvent motionEvent, View view) {
-        TLRPC.TL_recentStory tL_recentStory;
-        TLRPC.TL_recentStory tL_recentStory2;
-        TLRPC.User user;
-        TLRPC.TL_recentStory tL_recentStory3;
-        boolean z10;
-        TLRPC.TL_recentStory tL_recentStory4;
-        this.R = view;
-        h7 storiesController = MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController();
-        boolean z11 = false;
-        if (motionEvent.getAction() == 0) {
-            if (this.F.contains(motionEvent.getX(), motionEvent.getY())) {
-                TLRPC.Chat chat = null;
-                if (this.x > 0) {
-                    user = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(this.x));
-                } else {
-                    chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-this.x));
-                    user = null;
-                }
-                if (c(chat, user)) {
-                    z10 = true;
-                } else if (this.r) {
-                    z10 = !storiesController.h.isEmpty();
-                } else {
-                    if (this.x <= 0 ? MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController().I(this.x) || (chat != null && !chat.stories_unavailable && (tL_recentStory3 = chat.stories_max_id) != null && tL_recentStory3.max_id > 0) : MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController().I(this.x) || (user != null && !user.stories_unavailable && (tL_recentStory4 = user.stories_max_id) != null && tL_recentStory4.max_id > 0)) {
-                        z11 = true;
-                    }
-                    z10 = z11;
-                }
-                if (this.x != UserConfig.getInstance(UserConfig.selectedAccount).clientUserId && z10) {
-                    yc ycVar = this.H;
-                    if (ycVar == null) {
-                        this.H = new yc(view, 1.5f, 5.0f);
-                    } else {
-                        ycVar.a = view;
-                    }
-                    view.getParent().requestDisallowInterceptTouchEvent(true);
-                    this.H.c(true);
-                    this.N = true;
-                    this.O = motionEvent.getX();
-                    this.P = motionEvent.getY();
-                    if (this.I) {
-                        u7 u7Var = this.Q;
-                        if (u7Var != null) {
-                            AndroidUtilities.cancelRunOnUIThread(u7Var);
-                        }
-                        u7 u7Var2 = new u7(4, this, view);
-                        this.Q = u7Var2;
-                        AndroidUtilities.runOnUIThread(u7Var2, ViewConfiguration.getLongPressTimeout());
-                    }
-                }
-                return this.N;
-            }
+    @Override // org.telegram.messenger.ImageReceiver
+    public final boolean setImageBitmapByKey(Drawable drawable, String str, int i10, boolean z10, int i11) {
+        boolean imageBitmapByKey = super.setImageBitmapByKey(drawable, str, i10, z10, i11);
+        Runnable runnable = this.a[0];
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+            ((v7) this.b.d).run();
         }
-        if (motionEvent.getAction() == 2 && this.N) {
-            if (Math.abs(this.O - motionEvent.getX()) > AndroidUtilities.touchSlop || Math.abs(this.P - motionEvent.getY()) > AndroidUtilities.touchSlop) {
-                yc ycVar2 = this.H;
-                if (ycVar2 != null) {
-                    ycVar2.a = view;
-                    ycVar2.c(false);
-                }
-                u7 u7Var3 = this.Q;
-                if (u7Var3 != null) {
-                    AndroidUtilities.cancelRunOnUIThread(u7Var3);
-                }
-                view.getParent().requestDisallowInterceptTouchEvent(false);
-                this.N = false;
-            }
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            yc ycVar3 = this.H;
-            if (ycVar3 != null) {
-                ycVar3.a = view;
-                ycVar3.c(false);
-            }
-            if (this.N && motionEvent.getAction() == 1 && !d(this.x)) {
-                MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
-                h7 storiesController2 = messagesController.getStoriesController();
-                if (this.r) {
-                    f(0L);
-                } else if (this.x != UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId()) {
-                    if (storiesController2.I(this.x)) {
-                        f(this.x);
-                    } else {
-                        long j10 = this.x;
-                        if (j10 > 0) {
-                            TLRPC.User user2 = messagesController.getUser(Long.valueOf(j10));
-                            if (user2 != null && !user2.stories_unavailable && (tL_recentStory2 = user2.stories_max_id) != null && tL_recentStory2.max_id > 0) {
-                                new b8().a(this.x, view, this);
-                            }
-                        } else {
-                            TLRPC.Chat chat2 = messagesController.getChat(Long.valueOf(-j10));
-                            if (chat2 != null && !chat2.stories_unavailable && (tL_recentStory = chat2.stories_max_id) != null && tL_recentStory.max_id > 0) {
-                                new b8().a(this.x, view, this);
-                            }
-                        }
-                    }
-                }
-            }
-            ViewParent parent = view.getParent();
-            if (parent instanceof ViewGroup) {
-                ((ViewGroup) parent).requestDisallowInterceptTouchEvent(false);
-            }
-            this.N = false;
-            u7 u7Var4 = this.Q;
-            if (u7Var4 != null) {
-                AndroidUtilities.cancelRunOnUIThread(u7Var4);
-            }
-        }
-        return this.N;
-    }
-
-    public final float b() {
-        yc ycVar = this.H;
-        if (ycVar == null) {
-            return 1.0f;
-        }
-        return ycVar.a(0.08f);
-    }
-
-    public boolean c(TLRPC.Chat chat, TLRPC.User user) {
-        return false;
-    }
-
-    public boolean d(long j10) {
-        return false;
-    }
-
-    public void f(long j10) {
-        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
-        if (R == null || this.R == null) {
-            return;
-        }
-        R.getOrCreateStoryViewer().getClass();
-        ViewParent parent = this.R.getParent();
-        R.getOrCreateStoryViewer().D(R.getContext(), j10, parent instanceof RecyclerView ? q7.a((im0) parent) : null);
-    }
-
-    public final void g() {
-        this.H = null;
-        this.N = false;
-    }
-
-    public void e() {
+        AndroidUtilities.runOnUIThread(new androidx.fragment.app.d(this, 20));
+        return imageBitmapByKey;
     }
 }

@@ -10,7 +10,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w6 implements Runnable {
     public final /* synthetic */ int a;
@@ -58,9 +58,9 @@ public final /* synthetic */ class w6 implements Runnable {
                     if (nftitem != null && (e0Var = m0Var.o) != null) {
                         e0.a(e0Var, wallettransaction);
                     }
-                    l0Var.j();
-                    l0Var.h();
-                    l0Var.f();
+                    l0Var.k();
+                    l0Var.i();
+                    l0Var.g();
                     m0Var.Q();
                     break;
                 }
@@ -73,7 +73,7 @@ public final /* synthetic */ class w6 implements Runnable {
                 if (!zArr[0]) {
                     WalletEngine2 walletEngine2 = m0Var2.b;
                     if (walletEngine2 != null) {
-                        walletEngine2.previewTonConnect(e2Var, new ai.q5(27, zArr, qVar));
+                        walletEngine2.previewTonConnect(e2Var, new ai.r5(27, zArr, qVar));
                         break;
                     } else {
                         qVar.run(null, "NULL_ENGINE");
@@ -90,9 +90,9 @@ public final /* synthetic */ class w6 implements Runnable {
                 m0.F("disable backup: fail!");
                 wallettransaction2.pending = false;
                 wallettransaction2.failed = true;
-                l0Var2.j();
-                l0Var2.h();
-                l0Var2.f();
+                l0Var2.k();
+                l0Var2.i();
+                l0Var2.g();
                 m0Var3.Q();
                 break;
             case 6:
@@ -119,9 +119,9 @@ public final /* synthetic */ class w6 implements Runnable {
                 byte[] bArr2 = (byte[]) this.b;
                 x xVar2 = (x) this.d;
                 String str = (String) this.c;
-                ai.o3 o3Var = (ai.o3) this.e;
+                ai.r3 r3Var = (ai.r3) this.e;
                 if (bArr2 != null) {
-                    o3Var.run(bArr2);
+                    r3Var.run(bArr2);
                     break;
                 } else {
                     xVar2.run(str);
@@ -139,10 +139,10 @@ public final /* synthetic */ class w6 implements Runnable {
                     h = f2.h("sign data", e);
                     jSONObject = null;
                 }
-                AndroidUtilities.runOnUIThread(new ai.j3(f2Var2, b2Var, j0Var2, xVar3, jSONObject, h, 23));
+                AndroidUtilities.runOnUIThread(new ai.g3(f2Var2, b2Var, j0Var2, xVar3, jSONObject, h, 23));
                 break;
             case 10:
-                n5.f0((n5) this.b, (LinearLayout) this.d, (m0) this.e, (i80) this.c);
+                o5.f0((o5) this.b, (LinearLayout) this.d, (m0) this.e, (i80) this.c);
                 break;
             case 11:
                 m0 m0Var5 = (m0) this.b;

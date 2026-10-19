@@ -32,7 +32,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -42,9 +42,9 @@ import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class le extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public long E;
@@ -57,13 +57,13 @@ public final class le extends org.telegram.ui.ActionBar.f3 implements Notificati
     public final MessageObject L;
     public final ArrayList M;
     public final c N;
-    public ci.m2 O;
+    public ci.n2 O;
     public int P;
     public a1.c Q;
     public final yq[] R;
     public boolean S;
     public boolean T;
-    public sn U;
+    public qn U;
     public View V;
     public ValueAnimator W;
     public final org.telegram.ui.ActionBar.d6 b;
@@ -80,7 +80,7 @@ public final class le extends org.telegram.ui.ActionBar.f3 implements Notificati
     public final ei.d x;
     public final ke y;
 
-    public le(Context context, final int i10, final long j10, sn snVar, MessageObject messageObject, ArrayList arrayList, boolean z10, final boolean z11, long j11, final org.telegram.ui.ActionBar.d6 d6Var) {
+    public le(Context context, final int i10, final long j10, qn qnVar, MessageObject messageObject, ArrayList arrayList, boolean z10, final boolean z11, long j11, final org.telegram.ui.ActionBar.d6 d6Var) {
         super(1, context, d6Var, false);
         TLRPC.MessageReactor messageReactor;
         boolean z12;
@@ -206,7 +206,7 @@ public final class le extends org.telegram.ui.ActionBar.f3 implements Notificati
         this.w = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(14.0f));
         w9Var.getImageReceiver().setCrossfadeWithOldImage(true);
-        s();
+        t();
         frameLayout3.addView(w9Var, w7.z5.e(28, 28, 115));
         ImageView imageView = new ImageView(context);
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
@@ -230,7 +230,7 @@ public final class le extends org.telegram.ui.ActionBar.f3 implements Notificati
         vdVar.setTypeface(AndroidUtilities.bold());
         vdVar.setEllipsize(TextUtils.TruncateAt.END);
         linearLayout2.addView(vdVar, w7.z5.p(-1, -2, 1.0f, 119, 2, 0, 2, 0));
-        r(false);
+        s(false);
         ImageView imageView2 = new ImageView(context);
         imageView2.setScaleType(scaleType);
         imageView2.setImageResource(R.drawable.ic_close_white);
@@ -255,7 +255,7 @@ public final class le extends org.telegram.ui.ActionBar.f3 implements Notificati
                         xp xpVar = leVar.J;
                         xpVar.a(!xpVar.a.q, true);
                         leVar.E = xpVar.a.q ? leVar.F : UserObject.ANONYMOUS;
-                        leVar.s();
+                        leVar.t();
                         ke keVar = leVar.y;
                         if (keVar != null) {
                             keVar.setMyPrivacy(leVar.E);
@@ -271,7 +271,7 @@ public final class le extends org.telegram.ui.ActionBar.f3 implements Notificati
         this.h.addView(linearLayout3, w7.z5.d(-1, -2.0f, 55, 0.0f, z11 ? 0.0f : z10 ? 179.0f : 45.0f, 0.0f, 15.0f));
         TLRPC.Chat chat2 = MessagesController.getInstance(i10).getChat(Long.valueOf(-j10));
         TextView textView = new TextView(context);
-        lk.o(i18, d6Var, textView, 1, 14.0f);
+        kk.o(i18, d6Var, textView, 1, 14.0f);
         textView.setGravity(17);
         textView.setSingleLine(false);
         textView.setMaxLines(3);
@@ -340,7 +340,7 @@ public final class le extends org.telegram.ui.ActionBar.f3 implements Notificati
             this.f.addView(b10, w7.z5.t(-1, -2, 7, 32, 6, 32, 9));
             TextView b11 = w7.d6.b(context, 14.0f, i20, false, d6Var);
             b11.setGravity(17);
-            lk.r(z10 ? R.string.LiveStoryReactText : z12 ? R.string.LiveStoryReactAdminText : R.string.LiveStoryReactAdminEmptyText, new Object[]{DialogObject.getName(j10)}, b11);
+            kk.r(z10 ? R.string.LiveStoryReactText : z12 ? R.string.LiveStoryReactAdminText : R.string.LiveStoryReactAdminEmptyText, new Object[]{DialogObject.getName(j10)}, b11);
             this.f.addView(b11, w7.z5.t(-1, -2, 7, 32, 0, 32, 20));
         }
         if (z11) {
@@ -365,7 +365,7 @@ public final class le extends org.telegram.ui.ActionBar.f3 implements Notificati
         }
         xpVar.setDrawBackgroundAsArc(10);
         TextView textView2 = new TextView(context);
-        lk.o(i18, d6Var, textView2, 1, 14.0f);
+        kk.o(i18, d6Var, textView2, 1, 14.0f);
         textView2.setText(LocaleController.getString(R.string.StarsReactionShowMeInTopSenders));
         LinearLayout linearLayout4 = new LinearLayout(context);
         linearLayout4.setOrientation(0);
@@ -391,7 +391,7 @@ public final class le extends org.telegram.ui.ActionBar.f3 implements Notificati
                         xp xpVar2 = leVar.J;
                         xpVar2.a(!xpVar2.a.q, true);
                         leVar.E = xpVar2.a.q ? leVar.F : UserObject.ANONYMOUS;
-                        leVar.s();
+                        leVar.t();
                         ke keVar3 = leVar.y;
                         if (keVar3 != null) {
                             keVar3.setMyPrivacy(leVar.E);
@@ -417,13 +417,13 @@ public final class le extends org.telegram.ui.ActionBar.f3 implements Notificati
             }
             this.f.addView(dVar, w7.z5.k(14.0f, 0.0f, 14.0f, 0.0f, -1, 48));
         }
-        t(0L);
+        u(0L);
         dVar.g(md.W0(false, LocaleController.formatString(R.string.StarsReactionSend, LocaleController.formatNumber(50L, ',')), this.R), true, true);
         if (z10) {
             j12 = 0;
             i11 = 17;
             context2 = context;
-            dVar.setOnClickListener(new mb(this, messageObject, snVar, i10, z11, context, d6Var, j10, chat));
+            dVar.setOnClickListener(new mb(this, messageObject, qnVar, i10, z11, context, d6Var, j10, chat));
         } else {
             j12 = 0;
             i11 = 17;
@@ -543,7 +543,7 @@ public final class le extends org.telegram.ui.ActionBar.f3 implements Notificati
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         if (i10 == NotificationCenter.adminedChannelsLoaded) {
-            r(true);
+            s(true);
         }
     }
 
@@ -613,7 +613,7 @@ public final class le extends org.telegram.ui.ActionBar.f3 implements Notificati
         ah.g1 g1Var;
         View view;
         ah.j1 j1Var;
-        ci.m2 m2Var;
+        ci.n2 n2Var;
         View view2;
         ah.j1 j1Var2;
         ah.g1 g1Var2;
@@ -704,13 +704,13 @@ public final class le extends org.telegram.ui.ActionBar.f3 implements Notificati
         }
         ah.g1 g1Var3 = g1Var;
         ci.q0[] q0VarArr = new ci.q0[1];
-        if (this.d && (m2Var = this.O) != null) {
-            q0VarArr[0] = m2Var.d(this.P);
+        if (this.d && (n2Var = this.O) != null) {
+            q0VarArr[0] = n2Var.d(this.P);
         }
         final RectF rectF2 = new RectF();
-        final u7 u7Var = new u7(this, q0VarArr, iArr, rectF2, view, j1Var, g1Var3, 3);
+        final v7 v7Var = new v7(this, q0VarArr, iArr, rectF2, view, j1Var, g1Var3, 3);
         View view4 = view;
-        u7Var.run();
+        v7Var.run();
         zdVar.setPaused(false);
         zdVar.setVisibility(0);
         final RectF rectF3 = new RectF();
@@ -730,7 +730,7 @@ public final class le extends org.telegram.ui.ActionBar.f3 implements Notificati
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                 float floatValue = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
-                u7Var.run();
+                v7Var.run();
                 RectF rectF4 = rectF;
                 RectF rectF5 = rectF2;
                 RectF rectF6 = rectF3;
@@ -789,7 +789,7 @@ public final class le extends org.telegram.ui.ActionBar.f3 implements Notificati
         return false;
     }
 
-    public final void r(boolean z10) {
+    public final void s(boolean z10) {
         FrameLayout frameLayout = this.s;
         if ((frameLayout.getVisibility() == 0) != q()) {
             frameLayout.setVisibility(q() ? 0 : 8);
@@ -807,7 +807,7 @@ public final class le extends org.telegram.ui.ActionBar.f3 implements Notificati
         }
     }
 
-    public final void s() {
+    public final void t() {
         org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
         h9Var.p = 0.42f;
         long j10 = this.E;
@@ -832,7 +832,7 @@ public final class le extends org.telegram.ui.ActionBar.f3 implements Notificati
         }
     }
 
-    public final void t(long j10) {
+    public final void u(long j10) {
         ke keVar;
         long j11;
         long j12;

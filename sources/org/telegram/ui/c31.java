@@ -1,60 +1,113 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.util.LongSparseArray;
 import android.view.View;
-import android.widget.FrameLayout;
-import java.util.Locale;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.SaveToGallerySettingsHelper;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class c31 extends org.telegram.ui.ActionBar.n2 {
-    public static final int[] c = {MediaController.VIDEO_BITRATE_360, MediaController.VIDEO_BITRATE_480, 1200000, 2000000};
-    public org.telegram.ui.Components.im0 a;
-    public b31 b;
+public final /* synthetic */ class c31 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public static String U(int i10) {
-        if (i10 % MediaController.VIDEO_BITRATE_480 == 0) {
-            return (i10 / MediaController.VIDEO_BITRATE_480) + " Mbps";
-        }
-        if (i10 > 1000000) {
-            return String.format(Locale.US, "%.1f Mbps", Float.valueOf(i10 / 1000000.0f));
-        }
-        return (i10 / MediaDataController.MAX_STYLE_RUNS_COUNT) + " kbps";
+    public /* synthetic */ c31(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public final void V(int i10, CharSequence[] charSequenceArr, hk0 hk0Var) {
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-        alertDialog$Builder.a.R = LocaleController.getString(i10);
-        alertDialog$Builder.f(charSequenceArr, new mg.j(11, this, hk0Var));
-        showDialog(alertDialog$Builder.a);
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final View createView(Context context) {
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString(R.string.RoundVideoSettings));
-        this.actionBar.setActionBarMenuOnItemClick(new a31(this, 0));
-        FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
-        this.fragmentView = frameLayout;
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
-        this.a = im0Var;
-        im0Var.p1();
-        this.actionBar.setAdaptiveBackground(this.a);
-        this.a.setLayoutManager(new s4.b0());
-        this.a.setVerticalScrollBarEnabled(false);
-        org.telegram.ui.Components.im0 im0Var2 = this.a;
-        b31 b31Var = new b31(context);
-        this.b = b31Var;
-        im0Var2.setAdapter(b31Var);
-        this.a.setOnItemClickListener(new h11(this, 3));
-        frameLayout.addView(this.a, w7.z5.c(-1.0f, -1));
-        return this.fragmentView;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                SaveToGallerySettingsActivity saveToGallerySettingsActivity = (SaveToGallerySettingsActivity) this.b;
+                if (saveToGallerySettingsActivity.d) {
+                    LongSparseArray<SaveToGallerySettingsHelper.DialogException> saveGalleryExceptions = saveToGallerySettingsActivity.getUserConfig().getSaveGalleryExceptions(saveToGallerySettingsActivity.a);
+                    SaveToGallerySettingsHelper.DialogException dialogException = saveToGallerySettingsActivity.c;
+                    saveGalleryExceptions.put(dialogException.dialogId, dialogException);
+                    saveToGallerySettingsActivity.getUserConfig().updateSaveGalleryExceptions(saveToGallerySettingsActivity.a, saveGalleryExceptions);
+                }
+                saveToGallerySettingsActivity.finishFragment();
+                break;
+            case 1:
+                ((h31) this.b).dismiss();
+                break;
+            case 2:
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
+                MessageObject messageObject = secretMediaViewer.h0;
+                if (messageObject != null) {
+                    TLRPC.Message message = messageObject.messageOwner;
+                    if (message.destroyTime != 0 || message.ttl == Integer.MAX_VALUE) {
+                        ei.x3 x3Var = secretMediaViewer.r;
+                        if (x3Var.V) {
+                            x3Var.e(true);
+                            break;
+                        } else {
+                            secretMediaViewer.l();
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 3:
+                h61 h61Var = (h61) this.b;
+                if (h61Var.a0 instanceof TLRPC.User) {
+                    ei.d dVar = h61Var.h0;
+                    if (!dVar.N) {
+                        dVar.setLoading(true);
+                        h61Var.U((TLRPC.User) h61Var.a0, null, null);
+                        break;
+                    }
+                }
+                break;
+            case 4:
+                SessionsActivity sessionsActivity = ((i71) this.b).d;
+                if (sessionsActivity.getParentActivity() != null) {
+                    if (sessionsActivity.getParentActivity().checkSelfPermission("android.permission.CAMERA") != 0) {
+                        sessionsActivity.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 34);
+                        break;
+                    } else {
+                        w9.e0(sessionsActivity.getParentActivity(), 2, new g71(sessionsActivity));
+                        break;
+                    }
+                }
+                break;
+            case 5:
+                ((yc1) this.b).c(true);
+                break;
+            case 6:
+                ((yc1) ((ai.j5) this.b).c).c(true);
+                break;
+            case 7:
+                gd1 gd1Var = (gd1) this.b;
+                ArrayList arrayList = gd1Var.f;
+                HashSet hashSet = gd1Var.w;
+                if (!hashSet.isEmpty()) {
+                    TLRPC.User user = gd1Var.getMessagesController().getUser(Long.valueOf(gd1Var.getUserConfig().getClientUserId()));
+                    ArrayList arrayList2 = new ArrayList();
+                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                        if (hashSet.contains(Long.valueOf(((TLRPC.Chat) arrayList.get(i10)).id))) {
+                            arrayList2.add((TLRPC.Chat) arrayList.get(i10));
+                        }
+                    }
+                    for (int i11 = 0; i11 < arrayList2.size(); i11++) {
+                        TLRPC.Chat chat = (TLRPC.Chat) arrayList2.get(i11);
+                        gd1Var.getMessagesController().putChat(chat, false);
+                        gd1Var.getMessagesController().deleteParticipantFromChat(chat.id, user);
+                    }
+                    gd1Var.finishFragment();
+                    break;
+                }
+                break;
+            default:
+                zh1 zh1Var = (zh1) this.b;
+                zh1Var.a.c(!r0.b(), true);
+                zh1Var.c.setEnabled(zh1Var.a.b());
+                zh1Var.c.animate().alpha(zh1Var.a.b() ? 1.0f : 0.5f).start();
+                break;
+        }
     }
 }

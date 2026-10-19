@@ -3,9 +3,9 @@ package org.telegram.ui.Wallet;
 import android.text.TextUtils;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.v61;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t8 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -41,9 +41,9 @@ public final /* synthetic */ class t8 implements Utilities.Callback2 {
                     if (walletuseraddress != null) {
                         i9Var2.f = walletuseraddress.address;
                     }
-                    u61 u61Var = i9Var2.a;
-                    if (u61Var != null) {
-                        u61Var.W2.N(true);
+                    v61 v61Var = i9Var2.a;
+                    if (v61Var != null) {
+                        v61Var.W2.N(true);
                     }
                     i9Var2.w0();
                     i9Var2.n0();

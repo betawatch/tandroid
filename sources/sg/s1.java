@@ -11,31 +11,31 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.q8;
 import org.telegram.ui.Components.xj0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class s1 extends q8 {
     public final de R;
     public final int S;
-    public final org.telegram.ui.web.a2 T;
+    public final org.telegram.ui.web.z1 T;
 
     public s1(Context context, int i10, d6 d6Var) {
         super(context, d6Var);
         this.R = new de(1, 15);
-        this.T = new org.telegram.ui.web.a2(this, 25);
+        this.T = new org.telegram.ui.web.z1(this, 25);
         this.S = i10 == 1 ? h6.fk : h6.Mj;
     }
 
     @Override // org.telegram.ui.Cells.q8, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         boolean isEnabled = LiteMode.isEnabled(131072);
-        org.telegram.ui.web.a2 a2Var = this.T;
+        org.telegram.ui.web.z1 z1Var = this.T;
         if (isEnabled) {
             de deVar = this.R;
             deVar.d();
             deVar.a(canvas, h6.x0(null, this.S, false));
-            zf.h.d().a(15, a2Var);
+            zf.h.d().a(15, z1Var);
         } else {
-            zf.h.d().f(a2Var);
+            zf.h.d().f(z1Var);
         }
         super.dispatchDraw(canvas);
     }

@@ -1,6 +1,6 @@
 package hg;
 
-import ai.l5;
+import ai.m5;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.text.TextUtils;
@@ -24,7 +24,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.im0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class q0 extends im0 {
     public static final o0[] a3 = {new o0(R.drawable.search_media_filled, R.string.SharedMediaTab2, new TLRPC.TL_inputMessagesFilterPhotoVideo(), 0), new o0(R.drawable.search_links_filled, R.string.SharedLinksTab2, new TLRPC.TL_inputMessagesFilterUrl(), 2), new o0(R.drawable.search_files_filled, R.string.SharedFilesTab2, new TLRPC.TL_inputMessagesFilterDocument(), 1), new o0(R.drawable.search_music_filled, R.string.SharedMusicTab2, new TLRPC.TL_inputMessagesFilterMusic(), 3), new o0(R.drawable.search_voice_filled, R.string.SharedVoiceTab2, new TLRPC.TL_inputMessagesFilterRoundVoice(), 5)};
@@ -51,7 +51,7 @@ public final class q0 extends im0 {
         i0Var.j1(0);
         setLayoutManager(i0Var);
         int i10 = 1;
-        setAdapter(new l5(this, i10));
+        setAdapter(new m5(this, i10));
         i(new ci.l(i10));
         setItemAnimator(new k0());
         setWillNotDraw(false);

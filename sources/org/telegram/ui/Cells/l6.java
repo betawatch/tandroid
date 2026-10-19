@@ -5,9 +5,9 @@ import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.ko;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class l6 extends ci.x7 {
+public final class l6 extends ci.y7 {
     public final /* synthetic */ int S = 0;
     public final /* synthetic */ View T;
 
@@ -17,7 +17,7 @@ public final class l6 extends ci.x7 {
         this.T = n6Var;
     }
 
-    @Override // ci.x7
+    @Override // ci.y7
     public final void f(long j10) {
         switch (this.S) {
             case 0:
@@ -28,7 +28,7 @@ public final class l6 extends ci.x7 {
                 org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                 if (R != null) {
                     R.getOrCreateStoryViewer().getClass();
-                    R.getOrCreateStoryViewer().D(vaVar.getContext(), j10, ci.q7.a((im0) vaVar.getParent()));
+                    R.getOrCreateStoryViewer().D(vaVar.getContext(), j10, ci.r7.a((im0) vaVar.getParent()));
                     break;
                 }
                 break;

@@ -7,21 +7,21 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.cw0;
+import org.telegram.ui.Components.dw0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public class z3 extends View {
-    public final cw0 a;
+    public final dw0 a;
     public final Paint b;
     public float c;
     public o1.k d;
 
     public z3(Context context, d6 d6Var) {
         super(context);
-        cw0 cw0Var = new cw0(new fh.b(9), new fh.b(10));
-        cw0Var.c = 100.0f;
-        this.a = cw0Var;
+        dw0 dw0Var = new dw0(new fh.b(9), new fh.b(10));
+        dw0Var.c = 100.0f;
+        this.a = dw0Var;
         Paint paint = new Paint(1);
         this.b = paint;
         paint.setColor(h6.w0(h6.Oh, d6Var));

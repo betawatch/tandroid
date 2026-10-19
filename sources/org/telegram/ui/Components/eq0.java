@@ -1,57 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class eq0 extends s4.r0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dr0 b;
+public final class eq0 extends g.o {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ er0 d;
 
-    public /* synthetic */ eq0(dr0 dr0Var, int i10) {
-        this.a = i10;
-        this.b = dr0Var;
+    public /* synthetic */ eq0(er0 er0Var, int i10) {
+        this.c = i10;
+        this.d = er0Var;
     }
 
-    @Override // s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        bh.f fVar;
-        ub ubVar;
-        switch (this.a) {
+    @Override // g.o
+    public final int i(int i10) {
+        switch (this.c) {
             case 0:
-                if (i11 != 0) {
-                    dr0 dr0Var = this.b;
-                    dr0.t0(dr0Var);
-                    dr0Var.q0 = dr0Var.p0;
-                    break;
+                if (i10 == 0) {
+                    return this.d.J.J;
                 }
-                break;
+                return 1;
             case 1:
-                dr0 dr0Var2 = this.b;
-                if (i11 != 0) {
-                    dr0.t0(dr0Var2);
-                    dr0Var2.q0 = dr0Var2.p0;
+                if (i10 == 0) {
+                    return this.d.I.J;
                 }
-                qc qcVar = qc.w;
-                if (qcVar != null && (ubVar = qcVar.e) != null && (ubVar.getParent() instanceof View) && ((View) qc.w.e.getParent()).getParent() == dr0Var2.w) {
-                    qc.e();
-                }
-                if (Build.VERSION.SDK_INT >= 31 && (fVar = dr0Var2.O0) != null) {
-                    fVar.f(i10, i11);
-                    dr0.B0(dr0Var2);
-                    break;
-                }
-                break;
+                return 1;
             default:
-                if (i11 != 0) {
-                    dr0 dr0Var3 = this.b;
-                    dr0.t0(dr0Var3);
-                    dr0Var3.q0 = dr0Var3.p0;
-                    break;
-                }
-                break;
+                ar0 ar0Var = this.d.N;
+                return (i10 == ar0Var.w || i10 == ar0Var.x || i10 == ar0Var.y || i10 == ar0Var.F || ar0Var.j(i10) == 0) ? 4 : 1;
         }
     }
 }

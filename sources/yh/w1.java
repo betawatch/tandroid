@@ -8,28 +8,28 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.dr0;
-import org.telegram.ui.Components.is0;
+import org.telegram.ui.Components.er0;
+import org.telegram.ui.Components.js0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class w1 extends dr0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b1;
-    public final /* synthetic */ is0 c1;
+public final class w1 extends er0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 c1;
+    public final /* synthetic */ js0 d1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w1(is0 is0Var, Context context, String str, String str2, d6 d6Var, org.telegram.ui.ActionBar.n2 n2Var) {
+    public w1(js0 js0Var, Context context, String str, String str2, d6 d6Var, org.telegram.ui.ActionBar.n2 n2Var) {
         super(context, null, str, false, str2, false, d6Var);
-        this.c1 = is0Var;
-        this.b1 = n2Var;
+        this.d1 = js0Var;
+        this.c1 = n2Var;
     }
 
-    @Override // org.telegram.ui.Components.dr0
-    public final void S0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+    @Override // org.telegram.ui.Components.er0
+    public final void T0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
         xc a02;
-        if (z10 && (a02 = xc.a0(this.b1)) != null) {
+        if (z10 && (a02 = xc.a0(this.c1)) != null) {
             if (hVar.m() == 1) {
                 long j10 = hVar.j(0);
                 if (j10 == UserConfig.getInstance(this.currentAccount).clientUserId) {
@@ -51,7 +51,7 @@ public final class w1 extends dr0 {
                 Q.j();
             }
             try {
-                this.c1.performHapticFeedback(3);
+                this.d1.performHapticFeedback(3);
             } catch (Exception unused) {
             }
         }

@@ -9,7 +9,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.bs;
 import zf.j0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class b extends ei.d implements ne.d {
     public final ne.b h0;
@@ -25,11 +25,11 @@ public final class b extends ei.d implements ne.d {
 
     public final int m(int i10) {
         d6 d6Var = this.i0;
-        return d6Var != null ? d6Var.u(i10) : h6.x0(null, i10, false);
+        return d6Var != null ? d6Var.w(i10) : h6.x0(null, i10, false);
     }
 
     @Override // ne.d
-    public final void u(int i10, float f7, float f10, e eVar) {
+    public final void r(int i10, float f7, float f10, e eVar) {
         d6 d6Var = this.i0;
         boolean a2 = d6Var != null ? d6Var.a() : h6.I.q();
         float f11 = this.h0.e;
@@ -48,6 +48,6 @@ public final class b extends ei.d implements ne.d {
     }
 
     @Override // ne.d
-    public final /* synthetic */ void E(float f7, int i10) {
+    public final /* synthetic */ void H(float f7, int i10) {
     }
 }

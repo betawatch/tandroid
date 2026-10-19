@@ -1,9 +1,9 @@
 package qc;
 
-import c5.b0;
+import c5.c0;
 import java.io.InputStream;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class a {
     public static int f;
@@ -11,7 +11,7 @@ public final class a {
     public int b;
     public int c;
     public int d;
-    public b0 e;
+    public c0 e;
 
     public final int a() {
         if (this.d == 8) {
@@ -26,13 +26,13 @@ public final class a {
         int i11 = this.d;
         int i12 = (i10 >> (7 - i11)) & 1;
         this.d = i11 + 1;
-        b0 b0Var = this.e;
+        c0 c0Var = this.e;
         char c10 = i12 == 0 ? '0' : '1';
-        int i13 = b0Var.b;
-        char[] cArr = (char[]) b0Var.c;
+        int i13 = c0Var.b;
+        char[] cArr = (char[]) c0Var.c;
         if (i13 < cArr.length - 1) {
             cArr[i13] = c10;
-            b0Var.b = i13 + 1;
+            c0Var.b = i13 + 1;
         }
         f++;
         return i12;
@@ -77,20 +77,20 @@ public final class a {
     public final void f(String str, String str2) {
         StringBuilder sb2 = new StringBuilder();
         int i10 = f;
-        b0 b0Var = this.e;
-        String valueOf = String.valueOf(i10 - b0Var.b);
+        c0 c0Var = this.e;
+        String valueOf = String.valueOf(i10 - c0Var.b);
         int length = 8 - valueOf.length();
         sb2.append("@".concat(valueOf));
         for (int i11 = 0; i11 < length; i11++) {
             sb2.append(' ');
         }
         sb2.append(str);
-        int length2 = (100 - sb2.length()) - b0Var.b;
+        int length2 = (100 - sb2.length()) - c0Var.b;
         for (int i12 = 0; i12 < length2; i12++) {
             sb2.append(' ');
         }
-        sb2.append(b0Var);
+        sb2.append(c0Var);
         sb2.append(" (" + str2 + ")");
-        b0Var.b = 0;
+        c0Var.b = 0;
     }
 }

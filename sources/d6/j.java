@@ -9,9 +9,9 @@ import c6.e0;
 import com.google.android.gms.cast.CastDevice;
 import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.ui.hk0;
+import org.telegram.ui.fk0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class j extends b8.b {
     public final /* synthetic */ int b = 2;
@@ -34,16 +34,16 @@ public final class j extends b8.b {
         int i13 = 0;
         switch (i11) {
             case 0:
-                hk0 hk0Var = (hk0) obj;
+                fk0 fk0Var = (fk0) obj;
                 if (i10 == 1) {
-                    x6.b bVar = new x6.b(hk0Var);
+                    x6.b bVar = new x6.b(fk0Var);
                     parcel2.writeNoException();
                     com.google.android.gms.internal.cast.v.d(parcel2, bVar);
                     break;
                 } else if (i10 == 2) {
                     int readInt = parcel.readInt();
                     com.google.android.gms.internal.cast.v.b(parcel);
-                    hk0Var.getClass();
+                    fk0Var.getClass();
                     Log.d("CAST_STATE", "onCastStateChanged " + readInt);
                     parcel2.writeNoException();
                     break;
@@ -265,8 +265,8 @@ public final class j extends b8.b {
         this.c = bVar;
     }
 
-    public j(hk0 hk0Var) {
+    public j(fk0 fk0Var) {
         super("com.google.android.gms.cast.framework.ICastStateListener", 1);
-        this.c = hk0Var;
+        this.c = fk0Var;
     }
 }

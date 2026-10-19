@@ -12,7 +12,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_toncenter;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class a1 {
     public final int a;
@@ -366,9 +366,9 @@ public final class a1 {
                     long elapsedRealtime2 = SystemClock.elapsedRealtime();
                     a1Var.d("opening websocket; attempt=" + i11);
                     try {
-                        c5.b0 b0Var = new c5.b0(13, (short) 0);
-                        b0Var.b = 10000;
-                        tc.u j11 = b0Var.j(str);
+                        c5.c0 c0Var = new c5.c0(13, (short) 0);
+                        c0Var.b = 10000;
+                        tc.u j11 = c0Var.j(str);
                         a1Var.k = j11;
                         z0 z0Var = new z0(a1Var, i11, elapsedRealtime2);
                         c2.b bVar = j11.d;

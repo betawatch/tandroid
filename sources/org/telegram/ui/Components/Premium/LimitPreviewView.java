@@ -1,6 +1,6 @@
 package org.telegram.ui.Components.Premium;
 
-import ai.n5;
+import ai.o5;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -17,7 +17,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import ei.i6;
-import i2.d;
+import i2.e;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -35,7 +35,7 @@ import org.telegram.ui.Components.q6;
 import org.telegram.ui.Components.su;
 import org.telegram.ui.Components.uz;
 import org.telegram.ui.Components.yq;
-import org.telegram.ui.n40;
+import org.telegram.ui.l40;
 import sg.a1;
 import sg.p;
 import sg.q;
@@ -44,7 +44,7 @@ import sg.t;
 import w7.r;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class LimitPreviewView extends LinearLayout {
     public static final /* synthetic */ int l0 = 0;
@@ -52,7 +52,7 @@ public class LimitPreviewView extends LinearLayout {
     public int F;
     public boolean G;
     public boolean H;
-    public final n5 I;
+    public final o5 I;
     public boolean J;
     public final Paint K;
     public boolean L;
@@ -289,7 +289,7 @@ public class LimitPreviewView extends LinearLayout {
         this.L = false;
         int i11 = tl_starsRating.level;
         int i12 = tl_starsRating2.level;
-        n5 n5Var = this.I;
+        o5 o5Var = this.I;
         q6 q6Var = this.v;
         q6 q6Var2 = this.N;
         if (i11 == i12) {
@@ -322,7 +322,7 @@ public class LimitPreviewView extends LinearLayout {
             this.U = z14;
             this.V = z14;
             this.a0 = this.n;
-            n5Var.requestLayout();
+            o5Var.requestLayout();
             requestLayout();
             q6Var.setTextColor(this.L ? -1 : h6.w0(h6.G6, d6Var));
             q6Var2.setTextColor(-1);
@@ -341,7 +341,7 @@ public class LimitPreviewView extends LinearLayout {
             this.U = false;
             this.V = z11;
             this.a0 = this.n;
-            n5Var.requestLayout();
+            o5Var.requestLayout();
             requestLayout();
             q6Var.setTextColor(this.L ? -1 : h6.w0(h6.G6, d6Var));
             q6Var2.setTextColor(-1);
@@ -388,7 +388,7 @@ public class LimitPreviewView extends LinearLayout {
             this.U = false;
             this.V = z10;
             this.a0 = this.n;
-            n5Var.requestLayout();
+            o5Var.requestLayout();
             requestLayout();
             ViewPropertyAnimator duration2 = q6Var2.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(320L);
             bs bsVar2 = bs.h;
@@ -716,7 +716,7 @@ public class LimitPreviewView extends LinearLayout {
                                 i15 = i22;
                                 i16 = i15;
                             }
-                            rVar.b.add(new StaticLayout(d.j(i15, ""), textPaint2, (int) sVar.e, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
+                            rVar.b.add(new StaticLayout(e.j(i15, ""), textPaint2, (int) sVar.e, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
                             i22 = i16 + 1;
                             i21 = i23;
                         }
@@ -815,7 +815,7 @@ public class LimitPreviewView extends LinearLayout {
                 }
             }
         });
-        this.i0.addListener(new n40(16, this, z19));
+        this.i0.addListener(new l40(16, this, z19));
         this.i0.setInterpolator(new OvershootInterpolator());
         if (this.W) {
             ValueAnimator ofFloat3 = ValueAnimator.ofFloat(0.0f, 1.0f);
@@ -1014,10 +1014,10 @@ public class LimitPreviewView extends LinearLayout {
             dh0Var2.addView(textView2, z5.d(-1, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
             dh0Var2.addView(q6Var2, z5.d(-2, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
         }
-        n5 n5Var = new n5(this, context, d6Var);
-        this.I = n5Var;
-        n5Var.addView(dh0Var, z5.c(30.0f, -1));
-        n5Var.addView(dh0Var2, z5.c(30.0f, -1));
-        addView(n5Var, z5.p(-1, 30, 0.0f, 0, 14, i10 != 0 ? 12 : 0, 14, 0));
+        o5 o5Var = new o5(this, context, d6Var);
+        this.I = o5Var;
+        o5Var.addView(dh0Var, z5.c(30.0f, -1));
+        o5Var.addView(dh0Var2, z5.c(30.0f, -1));
+        addView(o5Var, z5.p(-1, 30, 0.0f, 0, 14, i10 != 0 ? 12 : 0, 14, 0));
     }
 }

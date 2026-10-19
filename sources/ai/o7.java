@@ -1,87 +1,44 @@
 package ai;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.c50;
+import java.util.ArrayList;
+import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class o7 extends AnimatorListenerAdapter {
+public final /* synthetic */ class o7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Runnable c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ q7 b;
 
-    public /* synthetic */ o7(Object obj, float f7, Runnable runnable, int i10) {
+    public /* synthetic */ o7(q7 q7Var, int i10) {
         this.a = i10;
-        this.d = obj;
-        this.b = f7;
-        this.c = runnable;
+        this.b = q7Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10 = this.a;
-        Runnable runnable = this.c;
-        float f7 = this.b;
-        Object obj = this.d;
-        switch (i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                p7 p7Var = (p7) obj;
-                p7Var.y = f7;
-                p7Var.invalidate();
-                if (animator == p7Var.E && runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                q7 q7Var = this.b;
+                q7Var.r = false;
+                q7Var.invalidate();
+                q7Var.a();
+                q7Var.c();
                 break;
             case 1:
-                ci.w1 w1Var = (ci.w1) obj;
-                w1Var.n = f7;
-                w1Var.invalidate();
-                if (animator == w1Var.r && runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 2:
-                ei.s2 s2Var = (ei.s2) obj;
-                s2Var.h = f7;
-                s2Var.i();
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 3:
-                ei.vb vbVar = (ei.vb) obj;
-                vbVar.L = null;
-                vbVar.I = f7;
-                vbVar.j();
-                vbVar.r.invalidate();
-                vbVar.n.invalidate();
-                runnable.run();
-                vbVar.P.unlock();
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                NotificationCenter.getGlobalInstance().runDelayedNotifications();
-                vbVar.n();
-                Runnable runnable2 = vbVar.Q;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    vbVar.Q = null;
-                }
-                vbVar.r.invalidate();
-                vbVar.h0.invalidate();
+                this.b.invalidate();
                 break;
             default:
-                c50 c50Var = (c50) obj;
-                c50Var.h = f7;
-                c50Var.a.invalidate();
-                if (runnable != null) {
-                    runnable.run();
-                    break;
+                q7 q7Var2 = this.b;
+                q7Var2.setMessageCell(null);
+                ArrayList arrayList = q7Var2.J;
+                int size = arrayList.size();
+                int i10 = 0;
+                while (i10 < size) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
+                    ((uj0) obj).C(true);
                 }
+                arrayList.clear();
                 break;
         }
     }

@@ -1,23 +1,19 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.MotionEvent;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class vw extends ci.r {
-    public final /* synthetic */ ey O0;
+public final class vw extends s4.b0 {
+    public final /* synthetic */ ay I;
+    public final /* synthetic */ ww J;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vw(ey eyVar, Context context, ey eyVar2, int i10, int i11) {
-        super(context, eyVar2, i10, i11);
-        this.O0 = eyVar;
+    public vw(ww wwVar, ay ayVar) {
+        this.J = wwVar;
+        this.I = ayVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.k kVar;
-        kVar = ((org.telegram.ui.ActionBar.n2) this.O0).actionBar;
-        return !kVar.s() && super.dispatchTouchEvent(motionEvent);
+    @Override // s4.b0
+    public final int R0() {
+        ay ayVar = this.I;
+        return (ayVar.s == 0 && this.J.W.X3() && ayVar.v == 2) ? 1 : 0;
     }
 }

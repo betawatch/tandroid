@@ -1,72 +1,81 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.SpannableStringBuilder;
-import android.text.TextWatcher;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class na implements TextWatcher {
-    public final /* synthetic */ oa a;
+public final class na extends s4.v {
+    public final /* synthetic */ sa d;
 
-    public na(oa oaVar) {
-        this.a = oaVar;
+    public na(sa saVar) {
+        this.d = saVar;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int i10;
-        ua uaVar = this.a.c;
-        if (uaVar.r.startsWith("@")) {
-            uaVar.r = uaVar.r.substring(1);
+    @Override // s4.v
+    public final void a(RecyclerView recyclerView, s4.b1 b1Var) {
+        super.a(recyclerView, b1Var);
+        View view = b1Var.a;
+        view.setPressed(false);
+        view.setTag(R.id.dragging, null);
+    }
+
+    @Override // s4.v
+    public final int e(RecyclerView recyclerView, s4.b1 b1Var) {
+        return (b1Var.f == 4 && ((pa) b1Var.a).G) ? s4.v.l(3, 0) : s4.v.l(0, 0);
+    }
+
+    @Override // s4.v
+    public final boolean n(RecyclerView recyclerView, s4.b1 b1Var, s4.b1 b1Var2) {
+        if (b1Var.f != b1Var2.f) {
+            return false;
         }
-        if (uaVar.r.length() > 0) {
-            StringBuilder sb2 = new StringBuilder("https://");
-            i10 = ((org.telegram.ui.ActionBar.n2) uaVar).currentAccount;
-            sb2.append(MessagesController.getInstance(i10).linkPrefix);
-            sb2.append("/");
-            sb2.append(uaVar.r);
-            String sb3 = sb2.toString();
-            String formatString = LocaleController.formatString("UsernameHelpLink", R.string.UsernameHelpLink, sb3);
-            int indexOf = formatString.indexOf(sb3);
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(formatString);
-            if (indexOf >= 0) {
-                spannableStringBuilder.setSpan(new org.telegram.ui.Cells.i(sb3, uaVar, 3), indexOf, sb3.length() + indexOf, 33);
+        View view = b1Var2.a;
+        if ((view instanceof pa) && !((pa) view).G) {
+            return false;
+        }
+        ja jaVar = this.d.c;
+        int b10 = b1Var.b();
+        int b11 = b1Var2.b();
+        int i10 = b10 - 4;
+        int i11 = b11 - 4;
+        sa saVar = jaVar.c;
+        ArrayList arrayList = saVar.v;
+        if (i10 < arrayList.size() && i11 < arrayList.size()) {
+            if (b10 != b11) {
+                saVar.d = true;
+            }
+            TLRPC.TL_username tL_username = (TLRPC.TL_username) arrayList.get(i10);
+            arrayList.set(i10, (TLRPC.TL_username) arrayList.get(i11));
+            arrayList.set(i11, tL_username);
+            jaVar.p(b10, b11);
+            int size = arrayList.size() + 3;
+            if (b10 == size || b11 == size) {
+                jaVar.n(b10, 3);
+                jaVar.n(b11, 3);
             }
         }
+        return true;
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        oa oaVar = this.a;
-        ua uaVar = oaVar.c;
-        String str = uaVar.r;
-        uaVar.r = charSequence == null ? "" : charSequence.toString();
-        ua uaVar2 = oaVar.c;
-        ra raVar = uaVar2.E;
-        if (raVar == null || str == null) {
-            return;
+    @Override // s4.v
+    public final void p(s4.b1 b1Var, int i10) {
+        sa saVar = this.d;
+        if (i10 == 0) {
+            sa.Y(saVar);
+        } else {
+            saVar.b.I0(false);
+            b1Var.a.setPressed(true);
         }
-        raVar.b(uaVar2.r);
+        if (b1Var != null) {
+            b1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
+        }
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        oa oaVar = this.a;
-        ua uaVar = oaVar.c;
-        String str = uaVar.r;
-        uaVar.r = charSequence == null ? "" : charSequence.toString();
-        ua uaVar2 = oaVar.c;
-        ra raVar = uaVar2.E;
-        if (raVar != null && str != null) {
-            raVar.b(uaVar2.r);
-        }
-        if (uaVar.n) {
-            return;
-        }
-        uaVar.d0(uaVar.r);
+    @Override // s4.v
+    public final void q(s4.b1 b1Var) {
     }
 }

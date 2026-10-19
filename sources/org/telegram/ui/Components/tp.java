@@ -5,7 +5,7 @@ import android.graphics.PorterDuffColorFilter;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class tp implements org.telegram.ui.ActionBar.i6 {
     public boolean a = false;
@@ -50,7 +50,7 @@ public final class tp implements org.telegram.ui.ActionBar.i6 {
             wpVar.P = false;
             this.a = false;
         }
-        wpVar.F();
+        wpVar.E();
         ah.v vVar = wpVar.Z;
         if (vVar != null) {
             int dp = AndroidUtilities.dp(0.0f);

@@ -1,30 +1,16 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class ar implements i60 {
-    public final /* synthetic */ n60 a;
-    public final /* synthetic */ jr b;
+public interface ar {
+    void a(TLRPC.User user);
 
-    public ar(jr jrVar, n60 n60Var) {
-        this.b = jrVar;
-        this.a = n60Var;
-    }
+    void b(long j10);
 
-    @Override // org.telegram.ui.i60
-    public final void h(TLRPC.User user) {
-        this.b.t0(user.id, null, null, null, "", true, 0, false);
-    }
+    void c(long j10, TLObject tLObject);
 
-    @Override // org.telegram.ui.i60
-    public final void i(int i10, ArrayList arrayList) {
-        if (this.a.getParentActivity() == null) {
-            return;
-        }
-        jr jrVar = this.b;
-        jrVar.getMessagesController().addUsersToChat(jrVar.r, jrVar, arrayList, i10, new j3(this, 2), new zq(0), null);
-    }
+    void d(long j10);
 }

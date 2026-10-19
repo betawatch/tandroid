@@ -1,47 +1,13 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class nb extends li.m {
-    public int W;
-    public ut0 X;
-    public final /* synthetic */ xb Y;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nb(xb xbVar, mb mbVar, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(null, mbVar, d6Var);
-        this.Y = xbVar;
-        this.W = -1;
-    }
-
-    @Override // li.m, s4.k
-    public final void N() {
-        super.N();
-        ut0 ut0Var = this.X;
-        if (ut0Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(ut0Var);
-        }
-        ut0 ut0Var2 = new ut0(this, 20);
-        this.X = ut0Var2;
-        AndroidUtilities.runOnUIThread(ut0Var2);
-    }
-
-    @Override // li.m
-    public final void W() {
-        if (this.W == -1) {
-            this.W = this.Y.getNotificationCenter().setAnimationInProgress(this.W, xb.R0, false);
-        }
-        ut0 ut0Var = this.X;
-        if (ut0Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(ut0Var);
-            this.X = null;
-        }
-        if (BuildVars.LOGS_ENABLED) {
-            FileLog.d("admin logs chatItemAnimator disable notifications");
-        }
+public final class nb extends org.telegram.ui.Cells.w0 {
+    @Override // org.telegram.ui.Cells.w0, android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setVisibleToUser(true);
     }
 }

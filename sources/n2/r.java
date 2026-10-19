@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public interface r {
     boolean B0(String str, byte[] bArr);
@@ -29,9 +29,9 @@ public interface r {
 
     q o();
 
+    h2.b r(byte[] bArr);
+
     void release();
 
     void t0(l2.f fVar);
-
-    h2.b u(byte[] bArr);
 }

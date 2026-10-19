@@ -9,6 +9,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import com.google.android.gms.internal.play_billing.k3;
 import java.util.HashMap;
@@ -16,10 +17,9 @@ import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.TelegramQRCodeWriter;
-import org.telegram.messenger.lk;
-import org.telegram.ui.Cells.c1;
+import org.telegram.messenger.kk;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class f {
     public static final float S;
@@ -81,7 +81,7 @@ public final class f {
                 break;
             }
             float f11 = i11 / 1000.0f;
-            if (o(f11 * 0.467f) >= 0.5f) {
+            if (p(f11 * 0.467f) >= 0.5f) {
                 f7 = f11;
                 break;
             }
@@ -93,7 +93,7 @@ public final class f {
                 break;
             }
             float f12 = i10 / 1000.0f;
-            if (o(f12 * 0.467f) >= 0.8f) {
+            if (p(f12 * 0.467f) >= 0.8f) {
                 f10 = f12;
                 break;
             }
@@ -103,7 +103,7 @@ public final class f {
         T = f10;
     }
 
-    public static synchronized Bitmap a() {
+    public static synchronized Bitmap b() {
         Bitmap bitmap;
         synchronized (f.class) {
             try {
@@ -127,16 +127,17 @@ public final class f {
         return bitmap;
     }
 
-    public static e b(int i10, String str) {
+    public static e c(String str, int i10, ic.c cVar, float f7, ColorDrawable colorDrawable) {
         try {
             HashMap hashMap = new HashMap();
-            dc.b bVar = dc.b.a;
-            ic.c cVar = ic.c.c;
-            hashMap.put(bVar, cVar);
+            hashMap.put(dc.b.a, cVar);
             hashMap.put(dc.b.c, 0);
             TelegramQRCodeWriter telegramQRCodeWriter = new TelegramQRCodeWriter();
+            if (colorDrawable != null) {
+                telegramQRCodeWriter.setCenterDrawable(colorDrawable);
+            }
             e eVar = new e();
-            Bitmap encode = telegramQRCodeWriter.encode(str, i10, i10, hashMap, null, 0.75f, 0, -1);
+            Bitmap encode = telegramQRCodeWriter.encode(str, i10, i10, hashMap, null, f7, 0, -1);
             eVar.b = encode.getWidth();
             int i11 = ((kc.b) kc.c.b(str, cVar, hashMap).f).b;
             eVar.e = i11;
@@ -147,11 +148,11 @@ public final class f {
             Random random = new Random(str.hashCode());
             for (int i13 = 0; i13 < eVar.e; i13++) {
                 for (int i14 = 0; i14 < eVar.e; i14++) {
-                    float f7 = eVar.g;
-                    float f10 = i14 + 0.5f;
-                    float f11 = eVar.f;
-                    int i15 = (int) ((f10 * f11) + f7);
-                    int b10 = (int) lk.b(i13, 0.5f, f11, f7);
+                    float f10 = eVar.g;
+                    float f11 = i14 + 0.5f;
+                    float f12 = eVar.f;
+                    int i15 = (int) ((f11 * f12) + f10);
+                    int b10 = (int) kk.b(i13, 0.5f, f12, f10);
                     boolean z10 = false;
                     for (int i16 = -1; i16 <= 1 && !z10; i16++) {
                         z10 = Color.alpha(encode.getPixel(Math.max(0, Math.min(eVar.b - 1, ((int) ((((float) i16) * eVar.f) * 0.3f)) + i15)), b10)) > 40;
@@ -162,13 +163,13 @@ public final class f {
                     eVar.i[i17] = random.nextFloat();
                 }
             }
-            Bitmap a2 = a();
+            Bitmap b11 = b();
             int i18 = eVar.b;
             eVar.d = i18 + 2;
-            eVar.a = Bitmap.createBitmap(Math.max(i18, a2.getWidth()), eVar.d + a2.getHeight(), Bitmap.Config.ARGB_8888);
+            eVar.a = Bitmap.createBitmap(Math.max(i18, b11.getWidth()), eVar.d + b11.getHeight(), Bitmap.Config.ARGB_8888);
             Canvas canvas = new Canvas(eVar.a);
             canvas.drawBitmap(encode, 0.0f, 0.0f, (Paint) null);
-            canvas.drawBitmap(a2, 0.0f, eVar.d, (Paint) null);
+            canvas.drawBitmap(b11, 0.0f, eVar.d, (Paint) null);
             encode.recycle();
             eVar.a.prepareToDraw();
             Rect rect = eVar.c;
@@ -185,16 +186,16 @@ public final class f {
         }
     }
 
-    public static int c(float f7) {
+    public static int d(float f7) {
         return Math.max(0, Math.min(255, Math.round(f7 * 255.0f)));
     }
 
-    public static float g(e eVar, float f7) {
+    public static float h(e eVar, float f7) {
         float f10 = 1.0f - f7;
-        return lk.b(eVar.e, 6.0f, 1.0f - (((f10 * 0.45f) + 0.55f) * (f10 * f10)), -1.5f);
+        return kk.b(eVar.e, 6.0f, 1.0f - (((f10 * 0.45f) + 0.55f) * (f10 * f10)), -1.5f);
     }
 
-    public static boolean h(e eVar, int i10, int i11) {
+    public static boolean i(e eVar, int i10, int i11) {
         if (i10 < 7 && i11 < 7) {
             return true;
         }
@@ -205,45 +206,45 @@ public final class f {
         return true;
     }
 
-    public static float i(float f7) {
+    public static float j(float f7) {
         return f7 <= 0.0031308f ? f7 * 12.92f : (((float) Math.pow(f7, 0.4166666567325592d)) * 1.055f) - 0.055f;
     }
 
-    public static int j(float f7, int i10, int i11) {
+    public static int k(float f7, int i10, int i11) {
         if (f7 <= 0.0f) {
             return i10;
         }
         if (f7 >= 1.0f) {
             return i11;
         }
-        float p5 = p(Color.red(i10) / 255.0f);
-        float p9 = p(Color.green(i10) / 255.0f);
-        float p10 = p(Color.blue(i10) / 255.0f);
-        float p11 = p(Color.red(i11) / 255.0f);
-        float p12 = p(Color.green(i11) / 255.0f);
-        float p13 = p(Color.blue(i11) / 255.0f);
-        float f10 = p10 * 0.051445995f;
-        float cbrt = (float) Math.cbrt(f10 + (p9 * 0.53633255f) + (p5 * 0.41222146f));
-        float f11 = p10 * 0.10739696f;
-        float cbrt2 = (float) Math.cbrt(f11 + (p9 * 0.6806995f) + (p5 * 0.2119035f));
-        float f12 = p10 * 0.6299787f;
-        float cbrt3 = (float) Math.cbrt(f12 + (p9 * 0.28171885f) + (p5 * 0.08830246f));
-        float f13 = 0.051445995f * p13;
-        float cbrt4 = (float) Math.cbrt(f13 + (0.53633255f * p12) + (0.41222146f * p11));
-        float f14 = 0.10739696f * p13;
-        float cbrt5 = (float) Math.cbrt(f14 + (0.6806995f * p12) + (0.2119035f * p11));
-        float f15 = p13 * 0.6299787f;
-        float cbrt6 = (float) Math.cbrt(f15 + (p12 * 0.28171885f) + (p11 * 0.08830246f));
+        float q6 = q(Color.red(i10) / 255.0f);
+        float q10 = q(Color.green(i10) / 255.0f);
+        float q11 = q(Color.blue(i10) / 255.0f);
+        float q12 = q(Color.red(i11) / 255.0f);
+        float q13 = q(Color.green(i11) / 255.0f);
+        float q14 = q(Color.blue(i11) / 255.0f);
+        float f10 = q11 * 0.051445995f;
+        float cbrt = (float) Math.cbrt(f10 + (q10 * 0.53633255f) + (q6 * 0.41222146f));
+        float f11 = q11 * 0.10739696f;
+        float cbrt2 = (float) Math.cbrt(f11 + (q10 * 0.6806995f) + (q6 * 0.2119035f));
+        float f12 = q11 * 0.6299787f;
+        float cbrt3 = (float) Math.cbrt(f12 + (q10 * 0.28171885f) + (q6 * 0.08830246f));
+        float f13 = 0.051445995f * q14;
+        float cbrt4 = (float) Math.cbrt(f13 + (0.53633255f * q13) + (0.41222146f * q12));
+        float f14 = 0.10739696f * q14;
+        float cbrt5 = (float) Math.cbrt(f14 + (0.6806995f * q13) + (0.2119035f * q12));
+        float f15 = q14 * 0.6299787f;
+        float cbrt6 = (float) Math.cbrt(f15 + (q13 * 0.28171885f) + (q12 * 0.08830246f));
         float y3 = k3.y(cbrt4, cbrt, f7, cbrt);
         float y10 = k3.y(cbrt5, cbrt2, f7, cbrt2);
         float y11 = k3.y(cbrt6, cbrt3, f7, cbrt3);
         float f16 = y3 * y3 * y3;
         float f17 = y10 * y10 * y10;
         float f18 = y11 * y11 * y11;
-        return Color.argb((int) (((Color.alpha(i11) - Color.alpha(i10)) * f7) + Color.alpha(i10)), c(i((0.23096994f * f18) + ((4.0767417f * f16) - (3.3077116f * f17)))), c(i(((2.6097574f * f17) + ((-1.268438f) * f16)) - (0.34131938f * f18))), c(i((f18 * 1.7076147f) + ((f16 * (-0.0041960864f)) - (f17 * 0.7034186f)))));
+        return Color.argb((int) (((Color.alpha(i11) - Color.alpha(i10)) * f7) + Color.alpha(i10)), d(j((0.23096994f * f18) + ((4.0767417f * f16) - (3.3077116f * f17)))), d(j(((2.6097574f * f17) + ((-1.268438f) * f16)) - (0.34131938f * f18))), d(j((f18 * 1.7076147f) + ((f16 * (-0.0041960864f)) - (f17 * 0.7034186f)))));
     }
 
-    public static float k(float f7) {
+    public static float l(float f7) {
         if (f7 <= 0.0f) {
             return 0.0f;
         }
@@ -258,7 +259,7 @@ public final class f {
         return 1.08f - ((3.0f - (f11 * 2.0f)) * ((0.08f * f11) * f11));
     }
 
-    public static void l(e eVar) {
+    public static void m(e eVar) {
         int i10;
         int i11;
         if (eVar.n != null) {
@@ -297,19 +298,19 @@ public final class f {
                         float hypot = ((float) Math.hypot(r8 - r2, r11 - r2)) / f7;
                         float f10 = eVar.i[i21] * 3.17f;
                         float floor = f10 - ((float) Math.floor(f10));
-                        boolean h = h(eVar, i18, i17);
+                        boolean i22 = i(eVar, i18, i17);
                         float[] fArr = eVar.n;
                         float f11 = eVar.g;
                         float f12 = eVar.f;
                         fArr[i16] = ((i18 + 0.5f) * f12) + f11;
-                        eVar.o[i16] = lk.b(i17, 0.5f, f12, f11);
+                        eVar.o[i16] = kk.b(i17, 0.5f, f12, f11);
                         float f13 = hypot * 0.5f;
-                        eVar.p[i16] = h ? f13 * 0.85f : f13 + (floor * 0.06f);
+                        eVar.p[i16] = i22 ? f13 * 0.85f : f13 + (floor * 0.06f);
                         eVar.q[i16] = eVar.h[i21];
                         int[] iArr = eVar.r;
-                        int i22 = i16 * 4;
-                        iArr[i22] = i18;
-                        iArr[i22 + 1] = i17;
+                        int i23 = i16 * 4;
+                        iArr[i23] = i18;
+                        iArr[i23 + 1] = i17;
                         i16++;
                     }
                     i18++;
@@ -318,7 +319,7 @@ public final class f {
         }
     }
 
-    public static void m(float[] fArr, float[] fArr2, int[] iArr, int i10, float f7, float f10, float f11, float f12, float f13, float f14, float f15, float f16, int i11) {
+    public static void n(float[] fArr, float[] fArr2, int[] iArr, int i10, float f7, float f10, float f11, float f12, float f13, float f14, float f15, float f16, int i11) {
         int i12 = i10 * 8;
         fArr[i12] = f7;
         int i13 = i12 + 1;
@@ -350,14 +351,24 @@ public final class f {
         iArr[i20 + 3] = i11;
     }
 
-    public static float o(float f7) {
+    public static float p(float f7) {
         double d = f7;
         double sqrt = Math.sqrt(0.18999999999999995d) * 10.134169850289656d * d;
         return (float) Math.min(1.0d, (1.0d - (((Math.sin(sqrt) * (0.9d / Math.sqrt(0.18999999999999995d))) + Math.cos(sqrt)) * Math.exp((-9.120752865260691d) * d))) * 1.02d);
     }
 
-    public static float p(float f7) {
+    public static float q(float f7) {
         return f7 <= 0.04045f ? f7 / 12.92f : (float) Math.pow((f7 + 0.055f) / 1.055f, 2.4000000953674316d);
+    }
+
+    public final void a(e eVar) {
+        this.m = eVar;
+        this.n = null;
+        this.q = 2;
+        this.o = 0.0f;
+        this.p = 0L;
+        this.E = 0L;
+        this.F = false;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:170:0x0318, code lost:
@@ -384,7 +395,7 @@ public final class f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void d(Canvas canvas, float f7, float f10, float f11) {
+    public final void e(Canvas canvas, float f7, float f10, float f11) {
         float f12;
         byte[] bArr;
         float f13;
@@ -459,28 +470,28 @@ public final class f {
             }
             this.F = true;
             long j11 = currentTimeMillis - this.E;
-            float[] fArr = w0.b;
+            float[] fArr = d1.b;
             float min2 = Math.min(1.0f, j11 / Math.max(100.0f, fArr[51]));
             float f29 = fArr[53] / 100.0f;
             if (f29 > 0.01f) {
                 float f30 = S;
                 min2 = min2 < f29 ? (min2 * f30) / f29 : (((1.0f - f30) * (min2 - f29)) / Math.max(0.01f, 1.0f - f29)) + f30;
             }
-            float o10 = o(min2 * 0.467f);
+            float p5 = p(min2 * 0.467f);
             float f31 = fArr[52];
             if (f31 > 0.0f) {
                 float f32 = T;
                 if (min2 > f32) {
-                    float o11 = o(f32 * 0.467f);
+                    float p9 = p(f32 * 0.467f);
                     float f33 = 1.0f - f32;
                     f12 = 0.01f;
-                    float min3 = Math.min(((o((f32 + 0.002f) * 0.467f) - o11) / 0.002f) * f33, (1.0f - o11) * 3.0f);
+                    float min3 = Math.min(((p((f32 + 0.002f) * 0.467f) - p9) / 0.002f) * f33, (1.0f - p9) * 3.0f);
                     float f34 = (min2 - f32) / f33;
                     float f35 = f34 * f34;
                     float f36 = f35 * f34;
                     float f37 = f35 * 3.0f;
-                    o10 = ((((((f36 * (-2.0f)) + f37) * 1.0f) + ((((f36 - (f35 * 2.0f)) + f34) * min3) + ((((f36 * 2.0f) - f37) + 1.0f) * o11))) - o10) * f31) + o10;
-                    max = Math.max(f28, min2 < 1.0f ? 1.0f : Math.min(1.0f, o10));
+                    p5 = ((((((f36 * (-2.0f)) + f37) * 1.0f) + ((((f36 - (f35 * 2.0f)) + f34) * min3) + ((((f36 * 2.0f) - f37) + 1.0f) * p9))) - p5) * f31) + p5;
+                    max = Math.max(f28, min2 < 1.0f ? 1.0f : Math.min(1.0f, p5));
                     this.o = max;
                     if (max >= 1.0f) {
                         this.F = false;
@@ -488,7 +499,7 @@ public final class f {
                 }
             }
             f12 = 0.01f;
-            max = Math.max(f28, min2 < 1.0f ? 1.0f : Math.min(1.0f, o10));
+            max = Math.max(f28, min2 < 1.0f ? 1.0f : Math.min(1.0f, p5));
             this.o = max;
             if (max >= 1.0f) {
             }
@@ -517,7 +528,7 @@ public final class f {
             float f40 = this.o;
             if (f40 < 1.0f) {
                 bArr = bArr2;
-                e(canvas, this.m, f7, f10, f11, f40);
+                f(canvas, this.m, f7, f10, f11, f40);
                 fVar = this;
                 canvas2 = canvas;
                 f18 = 0.0f;
@@ -613,7 +624,7 @@ public final class f {
                                                 float f49 = fArr10[i18];
                                                 f26 = Math.min(1.0f, Math.max(max3, Math.max(f48 - f49, Math.max(0.0f, f49 - rectF5.bottom))) / AndroidUtilities.dp(36.0f));
                                             }
-                                            paint4.setColor(f26 > f25 ? j(f26, fVar.y, -1) : fVar.y);
+                                            paint4.setColor(f26 > f25 ? k(f26, fVar.y, -1) : fVar.y);
                                             paint4.setAlpha((int) (x10 * 255.0f));
                                             canvas2.save();
                                             canvas2.rotate(fArr4[i18], fArr11[i18], fArr10[i18]);
@@ -724,7 +735,7 @@ public final class f {
                                     double d = radians;
                                     fArr8[i26] = (Math.min(1.0f, max4 / (f11 * 0.5f)) * Math.signum(f65) * nextFloat * 0.18f) + (((float) Math.sin(d)) * nextFloat);
                                     fArr7[i26] = (-((float) Math.cos(d))) * nextFloat;
-                                    fArr6[i26] = c1.d(random, 0.06f, 0.24f);
+                                    fArr6[i26] = org.telegram.ui.Cells.c1.d(random, 0.06f, 0.24f);
                                     fArr5[i26] = (-(((eVar4.e - 1) - i23) / 4)) * 0.018f;
                                     fArr4[i26] = random.nextFloat() * 90.0f;
                                     fArr3[i26] = (random.nextFloat() - 0.5f) * 720.0f;
@@ -750,7 +761,7 @@ public final class f {
                     }
                     canvas.save();
                     canvas.scale(f21, f21, this.B, this.C);
-                    e(canvas, this.m, f7, f10, f11, max5);
+                    f(canvas, this.m, f7, f10, f11, max5);
                     fVar = this;
                     canvas.restore();
                 } else {
@@ -785,12 +796,12 @@ public final class f {
             canvas2.drawBitmap(eVar5.a, eVar5.c, rectF, paint3);
         } else {
             e eVar6 = fVar.m;
-            l(eVar);
+            m(eVar);
             int i28 = eVar.g;
-            l(eVar6);
+            m(eVar6);
             Rect rect3 = eVar6.c;
             int i29 = eVar6.g;
-            fVar.f(Math.max(eVar.m, eVar6.m));
+            fVar.g(Math.max(eVar.m, eVar6.m));
             Bitmap bitmap = fVar.H;
             Bitmap bitmap2 = eVar.a;
             Paint paint5 = fVar.I;
@@ -815,8 +826,8 @@ public final class f {
             } else {
                 paint = paint5;
             }
-            float g10 = g(eVar, fVar.o);
-            float g11 = g(eVar6, fVar.o);
+            float h = h(eVar, fVar.o);
+            float h10 = h(eVar6, fVar.o);
             float f72 = f11 / eVar.b;
             float f73 = f11 / eVar6.b;
             int i30 = 0;
@@ -830,7 +841,7 @@ public final class f {
                     i12 = i30;
                     int i35 = (i34 * eVar.e) + i33;
                     float f74 = (eVar.i[i35] * 3.2f) + ((r10 - 1) - i34);
-                    if (g10 > f74) {
+                    if (h > f74) {
                         boolean[] zArr = fVar.s;
                         if (zArr[i35]) {
                             rect2 = rect3;
@@ -889,10 +900,10 @@ public final class f {
                                 }
                                 float nextFloat3 = (random.nextFloat() * AndroidUtilities.dp(150.0f)) + AndroidUtilities.dp(110.0f);
                                 float f85 = f83;
-                                float d10 = c1.d(random, 0.35f, f69);
+                                float d10 = org.telegram.ui.Cells.c1.d(random, 0.35f, f69);
                                 fArr8[i39] = ((random.nextFloat() - 0.5f) * AndroidUtilities.dp(90.0f)) + (f85 * nextFloat3 * d10);
                                 fArr7[i39] = k3.D(1.0f, d10, nextFloat3, (f20 * nextFloat3) * d10) - AndroidUtilities.dp(30.0f);
-                                fArr6[i39] = c1.d(random, 0.2f, f39);
+                                fArr6[i39] = org.telegram.ui.Cells.c1.d(random, 0.2f, f39);
                                 fArr5[i39] = 0.0f;
                                 fArr4[i39] = random.nextFloat() * 90.0f;
                                 fArr3[i39] = (random.nextFloat() - 0.5f) * 720.0f;
@@ -919,7 +930,7 @@ public final class f {
                         rect2 = rect3;
                         i13 = i29;
                         rectF3 = rectF4;
-                        float min4 = 1.0f - Math.min(1.0f, (f74 - g10) / 2.2f);
+                        float min4 = 1.0f - Math.min(1.0f, (f74 - h) / 2.2f);
                         float dpf2 = min4 > 0.0f ? AndroidUtilities.dpf2(1.4f) * ((float) Math.sin((fVar.o * 60.0f) + (i34 * 7) + (i33 * 13))) * min4 : 0.0f;
                         float dpf22 = AndroidUtilities.dpf2(1.5f) * (-min4);
                         float f86 = i28;
@@ -931,7 +942,7 @@ public final class f {
                         eVar3 = eVar;
                         float f92 = f90 + f88;
                         i14 = i28;
-                        m(fVar.L, fVar.M, fVar.P, i31, r4.c.c(f89, f72, f14, dpf2), r4.c.c(f90, f72, f15, dpf22), r4.c.c(f91, f72, f14, dpf2), r4.c.c(f92, f72, f15, dpf22), f89, f90, f91, f92, (((int) k3.B(min4, 0.25f, 1.0f, 255.0f)) << 24) | fVar.n());
+                        n(fVar.L, fVar.M, fVar.P, i31, r4.c.c(f89, f72, f14, dpf2), r4.c.c(f90, f72, f15, dpf22), r4.c.c(f91, f72, f14, dpf2), r4.c.c(f92, f72, f15, dpf22), f89, f90, f91, f92, (((int) k3.B(min4, 0.25f, 1.0f, 255.0f)) << 24) | fVar.o());
                         i31++;
                         i30 = i12 + 1;
                         eVar = eVar3;
@@ -974,12 +985,12 @@ public final class f {
                     int i45 = iArr2[i44];
                     int i46 = iArr2[i44 + 1];
                     float c10 = r4.c.c(eVar6.i[(i46 * eVar6.e) + i45], f93, (r6 - 1) - i46, 1.6f);
-                    if (g11 <= c10) {
+                    if (h10 <= c10) {
                         i11 = i41;
                         z12 = false;
                         f93 = 3.2f;
                     } else {
-                        float min5 = Math.min(1.0f, (g11 - c10) / 2.4f);
+                        float min5 = Math.min(1.0f, (h10 - c10) / 2.4f);
                         i11 = i41;
                         float f94 = i11;
                         float f95 = eVar6.f;
@@ -991,13 +1002,13 @@ public final class f {
                         f93 = 3.2f;
                         float f101 = (((f100 * 2.2f * f100) + (f100 * 3.2f * f100 * f100) + 1.0f) * 0.65f) + 0.35f;
                         if (min5 >= 1.0f || (min5 > 0.4f && Math.abs(f101 - 1.0f) < f12)) {
-                            m(fVar.N, fVar.O, fVar.Q, i43, (f96 * f73) + f14, (f97 * f73) + f15, (f98 * f73) + f14, (f99 * f73) + f15, f96, f97, f98, f99, fVar.n() | (-16777216));
+                            n(fVar.N, fVar.O, fVar.Q, i43, (f96 * f73) + f14, (f97 * f73) + f15, (f98 * f73) + f14, (f99 * f73) + f15, f96, f97, f98, f99, fVar.o() | (-16777216));
                             i43++;
                         } else {
                             float f102 = ((f96 + f98) * f68 * f73) + f14;
                             float f103 = ((f97 + f99) * f68 * f73) + f15;
                             float C = k3.C(eVar6.f, f68, f73, f101);
-                            m(fVar.N, fVar.O, fVar.Q, i43, f102 - C, f103 - C, f102 + C, f103 + C, f96, f97, f98, f99, (((int) (Math.min(1.0f, min5 * 2.5f) * 255.0f)) << 24) | fVar.n());
+                            n(fVar.N, fVar.O, fVar.Q, i43, f102 - C, f103 - C, f102 + C, f103 + C, f96, f97, f98, f99, (((int) (Math.min(1.0f, min5 * 2.5f) * 255.0f)) << 24) | fVar.o());
                             i43++;
                             z12 = false;
                         }
@@ -1064,7 +1075,7 @@ public final class f {
         }
     }
 
-    public final void e(Canvas canvas, e eVar, float f7, float f10, float f11, float f12) {
+    public final void f(Canvas canvas, e eVar, float f7, float f10, float f11, float f12) {
         float f13;
         float f14;
         float f15;
@@ -1100,7 +1111,7 @@ public final class f {
                     int i18 = eVar.e;
                     if (i17 < i18) {
                         int i19 = (i18 * i16) + i17;
-                        if (!eVar.h[i19] || h(eVar, i17, i16)) {
+                        if (!eVar.h[i19] || i(eVar, i17, i16)) {
                             f13 = f26;
                             f14 = f27;
                             f15 = f28;
@@ -1115,9 +1126,9 @@ public final class f {
                                     z10 = 1.0f;
                                 } else {
                                     float f31 = 1.0f - d;
-                                    z10 = c1.z(f31, f31, f31, 1.0f);
+                                    z10 = org.telegram.ui.Cells.c1.z(f31, f31, f31, 1.0f);
                                 }
-                                float k10 = this.q == 2 ? (0.6f * z10) + 0.4f : k(d);
+                                float l4 = this.q == 2 ? (0.6f * z10) + 0.4f : l(d);
                                 if (this.q != 2) {
                                     z10 = Math.min(1.0f, d * 6.0f);
                                 }
@@ -1127,7 +1138,7 @@ public final class f {
                                     float f33 = eVar.f;
                                     int i21 = (int) ((f29 * f33) + f32);
                                     int i22 = (int) ((f30 * f33) + f32);
-                                    float f34 = k10;
+                                    float f34 = l4;
                                     float f35 = ((i17 + 1) * f33) + f32;
                                     float f36 = f27;
                                     f15 = f28;
@@ -1191,9 +1202,9 @@ public final class f {
                     float f49 = (((i25 * f47) + f46) * f44) + f42;
                     float f50 = ((((i24 + 7) * f47) + f46) * f44) + f43;
                     float f51 = ((((i25 + 7) * f47) + f46) * f44) + f42;
-                    float k11 = k(f45);
+                    float l10 = l(f45);
                     canvas.save();
-                    canvas.scale(k11, k11, (f48 + f50) / 2.0f, (f49 + f51) / 2.0f);
+                    canvas.scale(l10, l10, (f48 + f50) / 2.0f, (f49 + f51) / 2.0f);
                     canvas.clipRect(f48 - 1.0f, f49 - 1.0f, f50 + 1.0f, f51 + 1.0f);
                     rectF.set(f43, f42, f43 + f11, f42 + f11);
                     paint2.setAlpha(255);
@@ -1206,11 +1217,11 @@ public final class f {
             paint2.setAlpha(255);
             return;
         }
-        l(eVar);
+        m(eVar);
         int i26 = eVar.g;
         int i27 = eVar.m * 2;
         int i28 = eVar.e;
-        f((i28 * i28) + i27);
+        g((i28 * i28) + i27);
         Bitmap bitmap = this.J;
         Bitmap bitmap2 = eVar.a;
         Paint paint3 = this.K;
@@ -1251,7 +1262,7 @@ public final class f {
                     int min2 = Math.min(7, (int) ((f19 * 7.0f) + 0.5f));
                     float f60 = (f54 - f59) * min;
                     if (f60 > 0.004f) {
-                        m(this.L, this.M, this.P, i30, f57 - A, f58 - A, f57 + A, f58 + A, min2 * 48, eVar.d, r7 + 48, r5 + 48, (((int) (f60 * 255.0f)) << 24) | n());
+                        n(this.L, this.M, this.P, i30, f57 - A, f58 - A, f57 + A, f58 + A, min2 * 48, eVar.d, r7 + 48, r5 + 48, (((int) (f60 * 255.0f)) << 24) | o());
                         i30++;
                     }
                     z11 = false;
@@ -1265,7 +1276,7 @@ public final class f {
                     float f65 = (iArr[r5 + 1] * f63) + f61;
                     float f66 = f64 + f63;
                     float f67 = f65 + f63;
-                    m(this.N, this.O, this.Q, i31, (f64 * f52) + f21, (f65 * f52) + f22, (f66 * f52) + f21, (f67 * f52) + f22, f64, f65, f66, f67, (((int) (min * 255.0f)) << 24) | n());
+                    n(this.N, this.O, this.Q, i31, (f64 * f52) + f21, (f65 * f52) + f22, (f66 * f52) + f21, (f67 * f52) + f22, f64, f65, f66, f67, (((int) (min * 255.0f)) << 24) | o());
                     i31++;
                 }
             } else {
@@ -1284,7 +1295,7 @@ public final class f {
                     z11 = z12;
                 } else {
                     float f70 = f53 * f52 * f20;
-                    m(this.L, this.M, this.P, i30, f57 - f70, f58 - f70, f57 + f70, f58 + f70, 0.0f, eVar.d, 48.0f, r5 + 48, (((int) (f69 * 255.0f)) << 24) | n());
+                    n(this.L, this.M, this.P, i30, f57 - f70, f58 - f70, f57 + f70, f58 + f70, 0.0f, eVar.d, 48.0f, r5 + 48, (((int) (f69 * 255.0f)) << 24) | o());
                     z11 = z12;
                     i30++;
                 }
@@ -1296,7 +1307,7 @@ public final class f {
         }
         Paint paint4 = paint3;
         float max = 1.0f - Math.max(0.0f, Math.min(1.0f, (f12 - 0.05f) / 0.45f));
-        float z13 = c1.z(max, max, max, 1.0f);
+        float z13 = org.telegram.ui.Cells.c1.z(max, max, max, 1.0f);
         if (z13 > 0.0f) {
             int i32 = eVar.j;
             while (i32 < eVar.k) {
@@ -1311,7 +1322,7 @@ public final class f {
                         f18 = z13;
                         float f75 = f73 + f72;
                         float f76 = f74 + f72;
-                        m(this.N, this.O, this.Q, i34, (f73 * f52) + f21, (f74 * f52) + f22, (f75 * f52) + f21, (f76 * f52) + f22, f73, f74, f75, f76, (((int) ((min * 255.0f) * f18)) << 24) | n());
+                        n(this.N, this.O, this.Q, i34, (f73 * f52) + f21, (f74 * f52) + f22, (f75 * f52) + f21, (f76 * f52) + f22, f73, f74, f75, f76, (((int) ((min * 255.0f) * f18)) << 24) | o());
                         i34++;
                     } else {
                         f18 = z13;
@@ -1341,7 +1352,7 @@ public final class f {
         }
     }
 
-    public final void f(int i10) {
+    public final void g(int i10) {
         float[] fArr = this.L;
         if (fArr == null || fArr.length < i10 * 8) {
             int i11 = i10 * 8;
@@ -1369,7 +1380,7 @@ public final class f {
         }
     }
 
-    public final int n() {
+    public final int o() {
         return this.y & 16777215;
     }
 }

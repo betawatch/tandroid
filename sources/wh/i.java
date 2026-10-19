@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import c5.b0;
+import c5.c0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Stack;
@@ -18,7 +18,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class i {
     public static i q;
@@ -32,7 +32,7 @@ public final class i {
     public boolean l;
     public boolean p;
     public final DispatchQueue a = new DispatchQueue("SpoilerEffectBitmapFactory", true, 3);
-    public final b0[] b = new b0[g.C.length];
+    public final c0[] b = new c0[g.C.length];
     public final q[] c = new q[2];
     public int d = 0;
     public final Rect m = new Rect();
@@ -46,15 +46,15 @@ public final class i {
         this.k = min < AndroidUtilities.dp(80.0f) ? AndroidUtilities.dp(80.0f) : min;
         int i10 = 0;
         while (true) {
-            b0[] b0VarArr = this.b;
-            if (i10 >= b0VarArr.length) {
+            c0[] c0VarArr = this.b;
+            if (i10 >= c0VarArr.length) {
                 return;
             }
             boolean z10 = false;
-            b0 b0Var = new b0(16, z10, z10);
-            b0Var.c = new float[Math.max(64, 2)];
-            b0Var.b = 0;
-            b0VarArr[i10] = b0Var;
+            c0 c0Var = new c0(16, z10, z10);
+            c0Var.c = new float[Math.max(64, 2)];
+            c0Var.b = 0;
+            c0VarArr[i10] = c0Var;
             i10++;
         }
     }
@@ -67,9 +67,9 @@ public final class i {
         int i13;
         float f10;
         Rect rect2 = rect;
-        b0[] b0VarArr = this.b;
-        for (b0 b0Var : b0VarArr) {
-            b0Var.b = 0;
+        c0[] c0VarArr = this.b;
+        for (c0 c0Var : c0VarArr) {
+            c0Var.b = 0;
         }
         int i14 = 0;
         while (i14 < 100) {
@@ -78,8 +78,8 @@ public final class i {
                 float[][] fArr = g.D;
                 int[] iArr = gVar.f;
                 float[] fArr2 = gVar.e;
-                if (b0VarArr != null) {
-                    int length = b0VarArr.length;
+                if (c0VarArr != null) {
+                    int length = c0VarArr.length;
                     float[] fArr3 = g.C;
                     if (length == fArr3.length) {
                         long currentTimeMillis = System.currentTimeMillis();
@@ -254,16 +254,16 @@ public final class i {
                             size2 = i11;
                         }
                         for (int i35 = 0; i35 < length2; i35++) {
-                            b0 b0Var2 = b0VarArr[i35];
+                            c0 c0Var2 = c0VarArr[i35];
                             float[] fArr5 = fArr[i35];
                             int i36 = iArr[i35];
-                            int i37 = b0Var2.b + i36;
-                            float[] fArr6 = (float[]) b0Var2.c;
+                            int i37 = c0Var2.b + i36;
+                            float[] fArr6 = (float[]) c0Var2.c;
                             if (i37 > fArr6.length) {
-                                b0Var2.c = Arrays.copyOf((float[]) b0Var2.c, Math.max(i37, fArr6.length * 2));
+                                c0Var2.c = Arrays.copyOf((float[]) c0Var2.c, Math.max(i37, fArr6.length * 2));
                             }
-                            System.arraycopy(fArr5, 0, (float[]) b0Var2.c, b0Var2.b, i36);
-                            b0Var2.b += i36;
+                            System.arraycopy(fArr5, 0, (float[]) c0Var2.c, c0Var2.b, i36);
+                            c0Var2.b += i36;
                         }
                         i14 = i10 + 1;
                         rect2 = rect;
@@ -277,15 +277,15 @@ public final class i {
         g gVar2 = (g) this.i.get(0);
         gVar2.getClass();
         float[] fArr7 = g.C;
-        if (b0VarArr == null || b0VarArr.length != fArr7.length) {
+        if (c0VarArr == null || c0VarArr.length != fArr7.length) {
             return;
         }
         for (int i38 = 0; i38 < fArr7.length; i38++) {
-            b0 b0Var3 = b0VarArr[i38];
+            c0 c0Var3 = c0VarArr[i38];
             Paint paint = gVar2.a[i38];
-            int i39 = b0Var3.b;
+            int i39 = c0Var3.b;
             if (i39 > 0) {
-                canvas.drawPoints((float[]) b0Var3.c, 0, i39, paint);
+                canvas.drawPoints((float[]) c0Var3.c, 0, i39, paint);
             }
         }
     }

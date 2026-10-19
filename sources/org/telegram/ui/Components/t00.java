@@ -5,6 +5,9 @@ import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
@@ -18,7 +21,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class t00 extends FrameLayout {
     public final /* synthetic */ int a = 1;
@@ -50,6 +53,103 @@ public final class t00 extends FrameLayout {
         animatorSet.playTogether(ObjectAnimator.ofFloat(textViewArr[0], (Property<TextView, Float>) property, 1.0f, 0.0f), ObjectAnimator.ofFloat(textViewArr[0], (Property<TextView, Float>) property2, 0.0f, -AndroidUtilities.dp(10.0f)), ObjectAnimator.ofFloat(textViewArr[1], (Property<TextView, Float>) property, 0.0f, 1.0f), ObjectAnimator.ofFloat(textViewArr[1], (Property<TextView, Float>) property2, AndroidUtilities.dp(10.0f), 0.0f));
         animatorSet.addListener(new c80(this, 1));
         animatorSet.start();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 3:
+                org.telegram.ui.Wallet.s5 s5Var = (org.telegram.ui.Wallet.s5) this.e;
+                org.telegram.ui.Wallet.p5 p5Var = s5Var.b;
+                if (p5Var != null) {
+                    float[] fArr = (float[]) s5Var.h.b;
+                    float[] fArr2 = p5Var.k;
+                    float[] fArr3 = p5Var.l;
+                    Paint paint = p5Var.b;
+                    Paint paint2 = p5Var.d;
+                    Path path = p5Var.p;
+                    if (p5Var.q != 0.0f && (Math.abs(Math.sin(Math.toRadians(p5Var.S))) >= 0.009999999776482582d || Math.abs(Math.sin(Math.toRadians(p5Var.T))) >= 0.009999999776482582d)) {
+                        int a2 = org.telegram.ui.Wallet.h7.a(fArr, -16216082);
+                        int a10 = org.telegram.ui.Wallet.h7.a(fArr, -15291399);
+                        paint.setShader(null);
+                        paint.setAlpha(255);
+                        paint.setColor(org.telegram.ui.Wallet.p5.d(0.82500005f, 0.0f, 0.0f, a2, a10));
+                        path.rewind();
+                        path.moveTo(fArr3[0], fArr3[1]);
+                        for (int i10 = 1; i10 < 76; i10++) {
+                            int i11 = i10 * 2;
+                            path.lineTo(fArr3[i11], fArr3[i11 + 1]);
+                        }
+                        path.close();
+                        canvas.drawPath(path, paint);
+                        paint2.setShader(null);
+                        paint2.setAlpha(255);
+                        float f7 = 0.6f;
+                        paint2.setStrokeWidth(p5Var.q * 0.6f);
+                        int[] iArr = p5Var.o;
+                        int length = iArr.length;
+                        int i12 = 0;
+                        while (i12 < length) {
+                            int i13 = iArr[i12];
+                            int i14 = (i13 + 1) % 76;
+                            int i15 = i13 * 2;
+                            int i16 = i14 * 2;
+                            float f10 = f7;
+                            float[] fArr4 = p5Var.j;
+                            float f11 = (fArr4[i15] + fArr4[i16]) * 0.5f;
+                            int i17 = i15 + 1;
+                            int i18 = i16 + 1;
+                            float f12 = (fArr4[i17] + fArr4[i18]) * 0.5f;
+                            int[] iArr2 = iArr;
+                            int i19 = length;
+                            float sqrt = 1.0f / ((float) Math.sqrt(r4.c.c(f12, f12, f11 * f11, 0.0144f)));
+                            float f13 = f11 * sqrt;
+                            float f14 = f12 * sqrt;
+                            float f15 = (p5Var.r ? -0.12f : 0.12f) * sqrt;
+                            float c10 = org.telegram.ui.Wallet.p5.c((p5Var.Y * f15) + (p5Var.X * f14) + (p5Var.W * f13));
+                            float c11 = org.telegram.ui.Wallet.p5.c((p5Var.b0 * f15) + (f14 * p5Var.a0) + (f13 * p5Var.Z));
+                            int i20 = i12;
+                            float[] fArr5 = fArr2;
+                            float[] fArr6 = fArr3;
+                            float pow = (float) Math.pow(c11, 24.0d);
+                            float A = com.google.android.gms.internal.play_billing.k3.A(c10, 0.38f, 0.36f, 1.5f);
+                            float f16 = pow * 0.1f * 1.5f;
+                            int d = org.telegram.ui.Wallet.p5.d(A, 0.089999996f, f16, a2, a10);
+                            paint.setColor(d);
+                            paint2.setColor(d);
+                            path.rewind();
+                            path.moveTo(fArr5[i15], fArr5[i17]);
+                            path.lineTo(fArr5[i16], fArr5[i18]);
+                            path.lineTo(fArr6[i16], fArr6[i18]);
+                            path.lineTo(fArr6[i15], fArr6[i17]);
+                            path.close();
+                            paint2.setStrokeWidth(p5Var.q * f10);
+                            canvas.drawPath(path, paint);
+                            canvas.drawPath(path, paint2);
+                            paint2.setColor(org.telegram.ui.Wallet.p5.d(A * 0.75f, 0.067499995f, f16 * 0.75f, a2, a10));
+                            paint2.setStrokeWidth(p5Var.q * 0.7f);
+                            canvas.drawLine(fArr6[i15], fArr6[i17], fArr6[i16], fArr6[i18], paint2);
+                            i12 = i20 + 1;
+                            length = i19;
+                            f7 = f10;
+                            fArr2 = fArr5;
+                            iArr = iArr2;
+                            fArr3 = fArr6;
+                        }
+                    }
+                }
+                if (this.b) {
+                    int save = canvas.save();
+                    canvas.concat((Matrix) this.c);
+                    super.dispatchDraw(canvas);
+                    canvas.restoreToCount(save);
+                    break;
+                }
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
+        }
     }
 
     @Override // android.view.View
@@ -181,7 +281,7 @@ public final class t00 extends FrameLayout {
         switch (this.a) {
             case 0:
                 super.onLayout(z10, i10, i11, i12, i13);
-                v00.H((v00) this.e);
+                v00.G((v00) this.e);
                 break;
             default:
                 super.onLayout(z10, i10, i11, i12, i13);
@@ -190,7 +290,7 @@ public final class t00 extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
+    public void onMeasure(int i10, int i11) {
         int i12;
         int i13;
         int i14;
@@ -227,7 +327,7 @@ public final class t00 extends FrameLayout {
             case 1:
                 super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.b ? 80.0f : 50.0f), TLObject.FLAG_30));
                 break;
-            default:
+            case 2:
                 org.telegram.ui.ActionBar.j5 j5Var = (org.telegram.ui.ActionBar.j5) this.c;
                 View view = (View) getParent();
                 if (view != null && view.getWidth() > 0) {
@@ -239,8 +339,26 @@ public final class t00 extends FrameLayout {
                 j5Var.setVisibility(0);
                 j5Var.getLayoutParams().width = getMeasuredWidth();
                 this.b = false;
-                ((org.telegram.ui.x70) this.e).f();
+                ((org.telegram.ui.v70) this.e).f();
                 super.onMeasure(i10, i11);
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void onSizeChanged(int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 3:
+                super.onSizeChanged(i10, i11, i12, i13);
+                org.telegram.ui.Wallet.s5 s5Var = (org.telegram.ui.Wallet.s5) this.e;
+                s5Var.i0 = -1;
+                s5Var.b(s5Var.c0, s5Var.f0);
+                break;
+            default:
+                super.onSizeChanged(i10, i11, i12, i13);
                 break;
         }
     }
@@ -315,9 +433,9 @@ public final class t00 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t00(org.telegram.ui.x70 x70Var, Context context) {
+    public t00(org.telegram.ui.v70 v70Var, Context context) {
         super(context);
-        this.e = x70Var;
+        this.e = v70Var;
         org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
         this.c = j5Var;
         j5Var.setTextSize(16);
@@ -332,5 +450,15 @@ public final class t00 extends FrameLayout {
         k9Var.setAvatarsTextSize(AndroidUtilities.dp(22.0f));
         addView(k9Var, w7.z5.d(56, -1.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
         setBackground(org.telegram.ui.ActionBar.h6.Z(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i6, false), 0, 4));
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t00(org.telegram.ui.Wallet.s5 s5Var, Context context) {
+        super(context);
+        this.e = s5Var;
+        this.c = new Matrix();
+        this.d = new float[8];
+        setClipChildren(false);
+        setClipToPadding(false);
     }
 }

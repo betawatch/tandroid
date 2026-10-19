@@ -8,7 +8,7 @@ import android.view.ViewTreeObserver;
 import android.widget.ListAdapter;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class n0 extends e2 implements p0 {
     public CharSequence S;
@@ -29,7 +29,7 @@ public final class n0 extends e2 implements p0 {
     }
 
     @Override // m.p0
-    public final CharSequence d() {
+    public final CharSequence e() {
         return this.S;
     }
 

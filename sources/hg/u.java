@@ -13,14 +13,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.ir0;
+import org.telegram.ui.Components.jr0;
 import org.telegram.ui.Components.n40;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.f9;
-import org.telegram.ui.ha;
-import org.telegram.ui.tx0;
+import org.telegram.ui.fa;
+import org.telegram.ui.rx0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -63,10 +63,10 @@ public final /* synthetic */ class u implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new cb((n40) this.d, this.b, tLObject, (String) this.c, 22));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new cb((ir0) this.d, this.b, tLObject, (String) this.c, 24));
+                AndroidUtilities.runOnUIThread(new cb((jr0) this.d, this.b, tLObject, (String) this.c, 24));
                 break;
             case 8:
-                AndroidUtilities.runOnUIThread(new tx0((ProfileActivity) this.d, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) this.c, 0), this.b);
+                AndroidUtilities.runOnUIThread(new rx0((ProfileActivity) this.d, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) this.c, 0), this.b);
                 break;
             default:
                 TLRPC.Chat chat = (TLRPC.Chat) this.d;
@@ -92,7 +92,7 @@ public final /* synthetic */ class u implements RequestDelegate {
                         AndroidUtilities.runOnUIThread(new ug.n(chat, i11, arrayList, callback, 0));
                         break;
                     } else {
-                        BillingController.getInstance().queryProductDetails(arrayList2, new ha(arrayList, chat, i11, callback, 10));
+                        BillingController.getInstance().queryProductDetails(arrayList2, new fa(arrayList, chat, i11, callback, 10));
                         break;
                     }
                 }

@@ -7,10 +7,10 @@ import android.os.SystemClock;
 import java.io.File;
 import java.util.HashMap;
 import java.util.HashSet;
-import org.telegram.ui.ac0;
+import org.telegram.ui.yb0;
 import ri.p;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 final class AudioRecorderV2Controller {
     private boolean finishRequested;
@@ -23,7 +23,7 @@ final class AudioRecorderV2Controller {
     private final HashSet<Long> deliveredOutputIds = new HashSet<>();
     private ri.n previousState = ri.n.a;
 
-    /* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
     public interface Listener {
         void onCompleted(ri.m mVar);
 
@@ -235,9 +235,9 @@ final class AudioRecorderV2Controller {
         }
         pVar.r = max;
         pVar.s = max2;
-        i2.h0 h0Var = pVar.A;
-        if (h0Var != null) {
-            h0Var.Z0(5, max);
+        i2.i0 i0Var = pVar.A;
+        if (i0Var != null) {
+            i0Var.Z0(5, max);
         }
         gVar.onPreviewProgress(pVar.r, j12);
         gVar.onStateChanged(pVar.e());
@@ -311,7 +311,7 @@ final class AudioRecorderV2Controller {
                         if (j15 >= p.q(pVar3.p)) {
                             file2 = file;
                             pVar3.g.b("resume prefix prepared: source=" + file.getName() + ", prefix=" + file2.getName() + ", trim=" + j14 + ".." + j15 + ", bytes=" + file2.length() + ", elapsedMs=" + (SystemClock.elapsedRealtime() - elapsedRealtime));
-                            handler.post(new ac0(pVar3, j13, file2, 3));
+                            handler.post(new yb0(pVar3, j13, file2, 3));
                         }
                     } catch (Throwable th2) {
                         handler.post(new ri.d(pVar3, th2, 1));
@@ -327,13 +327,13 @@ final class AudioRecorderV2Controller {
                     throw new IllegalStateException("Unable to trim Opus prefix");
                 }
                 pVar3.g.b("resume prefix prepared: source=" + file.getName() + ", prefix=" + file2.getName() + ", trim=" + j14 + ".." + j15 + ", bytes=" + file2.length() + ", elapsedMs=" + (SystemClock.elapsedRealtime() - elapsedRealtime));
-                handler.post(new ac0(pVar3, j13, file2, 3));
+                handler.post(new yb0(pVar3, j13, file2, 3));
             }
         });
         return true;
     }
 
-    /* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
     public class 2 implements ri.l {
         final /* synthetic */ Listener val$listener;
 

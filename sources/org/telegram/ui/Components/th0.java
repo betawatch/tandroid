@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class th0 extends FrameLayout {
     public final w9 E;
@@ -38,9 +38,9 @@ public final class th0 extends FrameLayout {
     public su T;
     public final yq[] U;
     public final qh0 V;
-    public final org.telegram.ui.ey a;
+    public final org.telegram.ui.cy a;
     public final int b;
-    public final a71 c;
+    public final b71 c;
     public TLRPC.SearchPostsFlood d;
     public final ArrayList e;
     public int f;
@@ -53,7 +53,7 @@ public final class th0 extends FrameLayout {
     public final FrameLayout x;
     public final ai.r y;
 
-    public th0(Context context, org.telegram.ui.ey eyVar) {
+    public th0(Context context, org.telegram.ui.cy cyVar) {
         super(context);
         this.e = new ArrayList();
         this.n = new ArrayList();
@@ -62,13 +62,13 @@ public final class th0 extends FrameLayout {
         this.O = -1;
         this.U = new yq[1];
         this.V = new qh0(this, 1);
-        this.a = eyVar;
-        int currentAccount = eyVar.getCurrentAccount();
+        this.a = cyVar;
+        int currentAccount = cyVar.getCurrentAccount();
         this.b = currentAccount;
-        a71 a71Var = new a71(context, currentAccount, 0, false, new d(this, 18), new tv(this, 12), null, null);
-        this.c = a71Var;
-        a71Var.j(new ki.m3(3, this, eyVar));
-        addView(a71Var, w7.z5.e(-1, -1, 119));
+        b71 b71Var = new b71(context, currentAccount, 0, false, new d(this, 18), new tv(this, 12), null, null);
+        this.c = b71Var;
+        b71Var.j(new ki.m3(3, this, cyVar));
+        addView(b71Var, w7.z5.e(-1, -1, 119));
         FrameLayout frameLayout = new FrameLayout(context);
         this.x = frameLayout;
         ai.r rVar = new ai.r(context, 5);
@@ -97,7 +97,7 @@ public final class th0 extends FrameLayout {
         textView2.setMaxLines(4);
         textView2.setEllipsize(truncateAt);
         rVar.addView(textView2, w7.z5.t(-2, -2, 1, 0, 9, 0, 0));
-        ei.d f7 = org.telegram.messenger.lk.f(24, context, null, true);
+        ei.d f7 = org.telegram.messenger.kk.f(24, context, null, true);
         this.H = f7;
         rVar.addView(f7, w7.z5.t(-1, 44, 7, 0, 19, 0, 0));
         TextView textView3 = new TextView(context);
@@ -106,10 +106,10 @@ public final class th0 extends FrameLayout {
         textView3.setGravity(17);
         rVar.addView(textView3, w7.z5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
         addView(frameLayout, w7.z5.e(-1, -1, 119));
-        a71Var.setHideIfEmpty(false);
-        a71Var.setEmptyView(frameLayout);
-        a71Var.W1 = true;
-        a71Var.X1 = 0;
+        b71Var.setHideIfEmpty(false);
+        b71Var.setEmptyView(frameLayout);
+        b71Var.W1 = true;
+        b71Var.X1 = 0;
         c();
         d();
     }
@@ -139,7 +139,7 @@ public final class th0 extends FrameLayout {
                     if (arrayList.isEmpty()) {
                         tL_channels_searchPosts.offset_peer = new TLRPC.TL_inputPeerEmpty();
                     } else {
-                        MessageObject messageObject = (MessageObject) i2.d.h(1, arrayList);
+                        MessageObject messageObject = (MessageObject) i2.e.h(1, arrayList);
                         tL_channels_searchPosts.offset_rate = this.f;
                         tL_channels_searchPosts.offset_id = messageObject.getRealId();
                         tL_channels_searchPosts.offset_peer = messagesController.getInputPeer(messageObject.messageOwner.peer_id);
@@ -149,7 +149,7 @@ public final class th0 extends FrameLayout {
                     if (arrayList2.isEmpty()) {
                         tL_channels_searchPosts.offset_peer = new TLRPC.TL_inputPeerEmpty();
                     } else {
-                        MessageObject messageObject2 = (MessageObject) i2.d.h(1, arrayList2);
+                        MessageObject messageObject2 = (MessageObject) i2.e.h(1, arrayList2);
                         tL_channels_searchPosts.offset_rate = this.r;
                         tL_channels_searchPosts.offset_id = messageObject2.getRealId();
                         tL_channels_searchPosts.offset_peer = messagesController.getInputPeer(messageObject2.messageOwner.peer_id);
@@ -194,9 +194,9 @@ public final class th0 extends FrameLayout {
         int i10 = org.telegram.ui.ActionBar.h6.y6;
         this.I.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
         this.G.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
-        a71 a71Var = this.c;
-        a71Var.setAdapter(null);
-        a71Var.setAdapter(a71Var.W2);
+        b71 b71Var = this.c;
+        b71Var.setAdapter(null);
+        b71Var.setAdapter(b71Var.W2);
         if (this.T != null) {
             this.T = null;
             d();
@@ -287,9 +287,9 @@ public final class th0 extends FrameLayout {
                 int i19 = R.string.SearchPostsFreeSearchUnlocksIn;
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(i15 > 0 ? a1.g.m(i15, ":") : "");
-                sb2.append(i17 < 10 ? i2.d.j(i17, "0") : Integer.valueOf(i17));
+                sb2.append(i17 < 10 ? i2.e.j(i17, "0") : Integer.valueOf(i17));
                 sb2.append(":");
-                sb2.append(i18 < 10 ? i2.d.j(i18, "0") : Integer.valueOf(i18));
+                sb2.append(i18 < 10 ? i2.e.j(i18, "0") : Integer.valueOf(i18));
                 dVar.f(LocaleController.formatString(i19, sb2.toString()), true);
                 dVar.e.r(false, true);
                 dVar.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.rh0

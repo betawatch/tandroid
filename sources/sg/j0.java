@@ -21,7 +21,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.d6;
@@ -29,17 +29,17 @@ import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.l2;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.e11;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.b60;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
+import org.telegram.ui.z50;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class j0 extends LinearLayout {
     public TextView a;
@@ -194,7 +194,7 @@ public final class j0 extends LinearLayout {
                 spannableStringBuilder.append((CharSequence) " ");
                 spannableStringBuilder.append((CharSequence) LocaleController.formatString(R.string.GroupBoostedByUserWithDescription, t12 == null ? "" : t12.title));
                 str = spannableStringBuilder.toString();
-            } else if (n2Var instanceof b60) {
+            } else if (n2Var instanceof z50) {
                 str = LocaleController.formatPluralString("BoostingGroupBoostWhatAreBoostsDescription", ug.r.g(), new Object[0]);
             } else {
                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(k0Var.r1(true));
@@ -311,7 +311,7 @@ public final class j0 extends LinearLayout {
                                 addView(k9Var, z5.t(((min - 1) * 30) + 72, 72, 1, 0, 16, 0, 13));
                                 TextView textView = new TextView(context);
                                 textView.setGravity(17);
-                                lk.k(20.0f, i17, textView);
+                                kk.k(20.0f, i17, textView);
                                 int i55 = h6.j5;
                                 d6Var = ((f3) k0Var).resourcesProvider;
                                 textView.setTextColor(h6.w0(i55, d6Var));
@@ -359,7 +359,7 @@ public final class j0 extends LinearLayout {
                                             int size6 = arrayList3.size() - 2;
                                             int themedColor = k0Var.getThemedColor(h6.h5);
                                             k9Var.b = new a1(h6.Lj, h6.Mj, -1, -1, null);
-                                            k9Var.c = new d11(i2.d.j(size6, "+"), 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+                                            k9Var.c = new e11(i2.e.j(size6, "+"), 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
                                             Paint paint = new Paint(1);
                                             k9Var.d = paint;
                                             paint.setColor(themedColor);
@@ -409,7 +409,7 @@ public final class j0 extends LinearLayout {
                                                             break;
                                                         default:
                                                             k0 k0Var2 = this.b.e;
-                                                            k0Var2.n.presentFragment(sn.W9(k0Var2.a0));
+                                                            k0Var2.n.presentFragment(qn.W9(k0Var2.a0));
                                                             k0Var2.dismiss();
                                                             break;
                                                     }
@@ -539,7 +539,7 @@ public final class j0 extends LinearLayout {
                         } else {
                             i35 = 19;
                             if (i42 == 19) {
-                                if (n2Var instanceof b60) {
+                                if (n2Var instanceof z50) {
                                     this.a.setText(LocaleController.getString(R.string.BoostingGroupBoostWhatAreBoosts));
                                 } else {
                                     this.a.setText(k0Var.s1());
@@ -662,7 +662,7 @@ public final class j0 extends LinearLayout {
                                                             break;
                                                         default:
                                                             k0 k0Var2 = this.b.e;
-                                                            k0Var2.n.presentFragment(sn.W9(k0Var2.a0));
+                                                            k0Var2.n.presentFragment(qn.W9(k0Var2.a0));
                                                             k0Var2.dismiss();
                                                             break;
                                                     }
@@ -791,7 +791,7 @@ public final class j0 extends LinearLayout {
                     addView(k9Var2, z5.t(((min - 1) * 30) + 72, 72, 1, 0, 16, 0, 13));
                     TextView textView13 = new TextView(context);
                     textView13.setGravity(17);
-                    lk.k(20.0f, i17, textView13);
+                    kk.k(20.0f, i17, textView13);
                     int i552 = h6.j5;
                     d6Var = ((f3) k0Var).resourcesProvider;
                     textView13.setTextColor(h6.w0(i552, d6Var));

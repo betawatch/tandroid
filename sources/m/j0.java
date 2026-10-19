@@ -6,7 +6,7 @@ import android.util.Log;
 import android.widget.ListAdapter;
 import androidx.appcompat.app.AlertController$RecycleListView;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class j0 implements p0, DialogInterface.OnClickListener {
     public g.f a;
@@ -38,17 +38,17 @@ public final class j0 implements p0, DialogInterface.OnClickListener {
     }
 
     @Override // m.p0
-    public final CharSequence d() {
-        return this.c;
-    }
-
-    @Override // m.p0
     public final void dismiss() {
         g.f fVar = this.a;
         if (fVar != null) {
             fVar.dismiss();
             this.a = null;
         }
+    }
+
+    @Override // m.p0
+    public final CharSequence e() {
+        return this.c;
     }
 
     @Override // m.p0
@@ -82,8 +82,8 @@ public final class j0 implements p0, DialogInterface.OnClickListener {
             return;
         }
         q0 q0Var = this.d;
-        c5.b0 b0Var = new c5.b0(q0Var.getPopupContext());
-        g.b bVar = (g.b) b0Var.c;
+        c5.c0 c0Var = new c5.c0(q0Var.getPopupContext());
+        g.b bVar = (g.b) c0Var.c;
         CharSequence charSequence = this.c;
         if (charSequence != null) {
             bVar.d = charSequence;
@@ -94,7 +94,7 @@ public final class j0 implements p0, DialogInterface.OnClickListener {
         bVar.j = this;
         bVar.m = selectedItemPosition;
         bVar.l = true;
-        g.f i12 = b0Var.i();
+        g.f i12 = c0Var.i();
         this.a = i12;
         AlertController$RecycleListView alertController$RecycleListView = i12.f.e;
         h0.d(alertController$RecycleListView, i10);

@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class be0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -21,10 +21,10 @@ public final /* synthetic */ class be0 implements ValueAnimator.AnimatorUpdateLi
             case 0:
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 le0 le0Var = this.b;
-                ci.h4 h4Var = le0Var.e;
-                h4Var.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, floatValue));
-                h4Var.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, floatValue));
-                h4Var.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, floatValue));
+                ci.i4 i4Var = le0Var.e;
+                i4Var.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, floatValue));
+                i4Var.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, floatValue));
+                i4Var.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, floatValue));
                 TextView textView = le0Var.w;
                 textView.setScaleX(AndroidUtilities.lerp(1.0f, 0.9f, floatValue));
                 textView.setScaleY(AndroidUtilities.lerp(1.0f, 0.9f, floatValue));

@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static Pattern V;
@@ -251,7 +251,7 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
                                     if (z11 && view2 != null) {
                                         Context context = n2Var3.getFragmentView().getContext();
                                         TLObject tLObject4 = tL_messages_stickerSet2;
-                                        qc.g(n2Var3, new tx0(context, tLObject4 == null ? stickerSet4 : tLObject4, 1, 2, null, n2Var3.getResourceProvider()), 1500).j();
+                                        qc.g(n2Var3, new ux0(context, tLObject4 == null ? stickerSet4 : tLObject4, 1, 2, null, n2Var3.getResourceProvider()), 1500).j();
                                     }
                                     if (tLObject3 instanceof TLRPC.TL_messages_stickerSetInstallResultArchive) {
                                         MediaDataController.getInstance(i12).processStickerSetInstallResultArchive(n2Var3, true, i11, (TLRPC.TL_messages_stickerSetInstallResultArchive) tLObject3);
@@ -289,7 +289,7 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
                 awVar.G = null;
                 return;
             }
-            if ((n2Var instanceof org.telegram.ui.sn) && ((org.telegram.ui.sn) n2Var).Y.getVisibility() == 0 && (view instanceof rv)) {
+            if ((n2Var instanceof org.telegram.ui.qn) && ((org.telegram.ui.qn) n2Var).Y.getVisibility() == 0 && (view instanceof rv)) {
                 a6 a6Var = ((rv) view).c;
                 try {
                     TLRPC.Document document = a6Var.document;
@@ -298,7 +298,7 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
                     }
                     SpannableString spannableString = new SpannableString(MessageObject.findAnimatedEmojiEmoticon(document));
                     spannableString.setSpan(a6Var, 0, spannableString.length(), 33);
-                    ((org.telegram.ui.sn) n2Var).Y.E0.getText().append((CharSequence) spannableString);
+                    ((org.telegram.ui.qn) n2Var).Y.E0.getText().append((CharSequence) spannableString);
                     awVar.Z();
                     awVar.dismiss();
                 } catch (Exception unused) {
@@ -358,7 +358,7 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
         SpannableString spannableString = new SpannableString(MessageObject.findAnimatedEmojiEmoticon(r5.f(awVar.currentAccount, a6Var.getDocumentId())));
         spannableString.setSpan(a6Var, 0, spannableString.length(), 33);
         if (AndroidUtilities.addToClipboard(spannableString)) {
-            org.telegram.messenger.lk.p(R.string.EmojiCopied, new xc((FrameLayout) awVar.containerView, awVar.resourcesProvider));
+            org.telegram.messenger.kk.p(R.string.EmojiCopied, new xc((FrameLayout) awVar.containerView, awVar.resourcesProvider));
         }
     }
 
@@ -706,8 +706,8 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
 
     @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
     public final void onBackPressed() {
-        if (org.telegram.ui.gt.q().E) {
-            org.telegram.ui.gt.q().o();
+        if (org.telegram.ui.et.q().E) {
+            org.telegram.ui.et.q().o();
         } else {
             super.onBackPressed();
         }
@@ -751,7 +751,7 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
                         org.telegram.ui.ActionBar.n2 n2Var = awVar.c;
                         TLRPC.InputStickerSet inputStickerSet = (TLRPC.InputStickerSet) jvVar.a.get(i12);
                         org.telegram.ui.ActionBar.n2 n2Var2 = awVar.c;
-                        new oy0(context, n2Var, inputStickerSet, null, n2Var2 instanceof org.telegram.ui.sn ? ((org.telegram.ui.sn) n2Var2).Y : null, awVar.resourcesProvider).show();
+                        new py0(context, n2Var, inputStickerSet, null, n2Var2 instanceof org.telegram.ui.qn ? ((org.telegram.ui.qn) n2Var2).Y : null, awVar.resourcesProvider).show();
                     }
                 } else {
                     aw awVar2 = jvVar.h;

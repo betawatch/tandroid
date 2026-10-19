@@ -20,7 +20,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class dh0 extends FrameLayout {
     public final /* synthetic */ int a = 4;
@@ -46,7 +46,7 @@ public final class dh0 extends FrameLayout {
                 if (this.b) {
                     paint.setStyle(Paint.Style.STROKE);
                     paint.setStrokeWidth(AndroidUtilities.dp(1.33f));
-                    paint.setColor(((org.telegram.ui.ey) obj).getThemedColor(org.telegram.ui.ActionBar.h6.Oh));
+                    paint.setColor(((org.telegram.ui.cy) obj).getThemedColor(org.telegram.ui.ActionBar.h6.Oh));
                     canvas.drawCircle(getWidth() / 2.0f, getHeight() / 2.0f, AndroidUtilities.dp(16.0f), paint);
                 }
                 super.dispatchDraw(canvas);
@@ -56,14 +56,14 @@ public final class dh0 extends FrameLayout {
                 if (this.b) {
                     paint2.setStyle(Paint.Style.STROKE);
                     paint2.setStrokeWidth(AndroidUtilities.dp(1.33f));
-                    paint2.setColor(((org.telegram.ui.og0) obj).getThemedColor(org.telegram.ui.ActionBar.h6.Oh));
+                    paint2.setColor(((org.telegram.ui.ng0) obj).getThemedColor(org.telegram.ui.ActionBar.h6.Oh));
                     canvas.drawCircle(getWidth() / 2.0f, getHeight() / 2.0f, AndroidUtilities.dp(16.0f), paint2);
                 }
                 super.dispatchDraw(canvas);
                 break;
             case 3:
-                org.telegram.ui.q41 q41Var = (org.telegram.ui.q41) obj;
-                if (!this.b && q41Var.r > 0.0f) {
+                org.telegram.ui.o41 o41Var = (org.telegram.ui.o41) obj;
+                if (!this.b && o41Var.r > 0.0f) {
                     if (((Paint) this.c) == null) {
                         Paint paint3 = new Paint();
                         this.c = paint3;
@@ -72,7 +72,7 @@ public final class dh0 extends FrameLayout {
                     }
                     canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), 255, 31);
                     super.dispatchDraw(canvas);
-                    ((Paint) this.c).setAlpha((int) (q41Var.r * 255.0f));
+                    ((Paint) this.c).setAlpha((int) (o41Var.r * 255.0f));
                     canvas.drawRect(0.0f, 0.0f, AndroidUtilities.dp(18.0f), getMeasuredHeight(), (Paint) this.c);
                     canvas.restore();
                     break;
@@ -310,9 +310,9 @@ public final class dh0 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dh0(org.telegram.ui.og0 og0Var, Activity activity, boolean z10) {
+    public dh0(org.telegram.ui.ng0 ng0Var, Activity activity, boolean z10) {
         super(activity);
-        this.d = og0Var;
+        this.d = ng0Var;
         this.b = z10;
         this.c = new Paint(1);
     }
@@ -329,16 +329,16 @@ public final class dh0 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dh0(org.telegram.ui.q41 q41Var, Context context, boolean z10) {
+    public dh0(org.telegram.ui.o41 o41Var, Context context, boolean z10) {
         super(context);
-        this.d = q41Var;
+        this.d = o41Var;
         this.b = z10;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dh0(org.telegram.ui.ey eyVar, Activity activity, boolean z10) {
+    public dh0(org.telegram.ui.cy cyVar, Activity activity, boolean z10) {
         super(activity);
-        this.d = eyVar;
+        this.d = cyVar;
         this.b = z10;
         this.c = new Paint(1);
     }

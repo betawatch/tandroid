@@ -5,14 +5,14 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import ci.u4;
+import ci.v4;
 import java.util.ArrayList;
 import org.telegram.messenger.SegmentTree;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.b91;
-import org.telegram.ui.rp0;
+import org.telegram.ui.pp0;
+import org.telegram.ui.z81;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class p extends g {
     public long[] D1;
@@ -59,9 +59,9 @@ public final class p extends g {
             e eVar = this.Q0;
             if (eVar != null) {
                 getSelectedDate();
-                b91 b91Var = (b91) ((rp0) eVar).b;
-                b91Var.f();
-                b91Var.b.t0.d(false, false);
+                z81 z81Var = (z81) ((pp0) eVar).b;
+                z81Var.f();
+                z81Var.b.t0.d(false, false);
             }
             invalidate();
             B();
@@ -95,7 +95,7 @@ public final class p extends g {
                     if (animator != null) {
                         animator.cancel();
                     }
-                    ValueAnimator e = g.e(this.j0, this.l0, new u4(this, 5));
+                    ValueAnimator e = g.e(this.j0, this.l0, new v4(this, 5));
                     this.d0 = e;
                     e.start();
                 }

@@ -1,6 +1,6 @@
 package ei;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class va implements zb {
     public final /* synthetic */ ai.q a;
@@ -19,7 +19,11 @@ public final class va implements zb {
     }
 
     @Override // ei.zb
-    public final /* synthetic */ void E(boolean z10) {
+    public final /* synthetic */ void D(boolean z10) {
+    }
+
+    @Override // ei.zb
+    public final /* synthetic */ void J(float f7) {
     }
 
     @Override // ei.zb
@@ -27,23 +31,19 @@ public final class va implements zb {
     }
 
     @Override // ei.zb
-    public final /* synthetic */ void M(float f7) {
+    public final /* synthetic */ void N(float f7) {
     }
 
     @Override // ei.zb
-    public final /* synthetic */ void P(float f7) {
+    public final /* synthetic */ void P() {
     }
 
     @Override // ei.zb
-    public final /* synthetic */ void Q() {
+    public final /* synthetic */ void Q(float f7) {
     }
 
     @Override // ei.zb
-    public final /* synthetic */ void S(float f7) {
-    }
-
-    @Override // ei.zb
-    public final /* synthetic */ void W(long j10) {
+    public final /* synthetic */ void V(long j10) {
     }
 
     @Override // ei.zb
@@ -67,7 +67,7 @@ public final class va implements zb {
     }
 
     @Override // ei.zb
-    public final /* synthetic */ void w(boolean z10) {
+    public final /* synthetic */ void u(boolean z10) {
     }
 
     @Override // ei.zb
@@ -75,11 +75,11 @@ public final class va implements zb {
     }
 
     @Override // ei.zb
-    public final /* synthetic */ void G(float f7, int i10) {
+    public final /* synthetic */ void I(float f7, int i10) {
     }
 
     @Override // ei.zb
-    public final /* synthetic */ void N(float f7, int i10) {
+    public final /* synthetic */ void M(float f7, int i10) {
     }
 
     @Override // ei.zb

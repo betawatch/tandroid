@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class g10 extends FrameLayout {
     public ValueAnimator E;
@@ -44,7 +44,7 @@ public final class g10 extends FrameLayout {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, z10 ? 1.0f : 0.0f);
             this.r = ofFloat;
             ofFloat.addUpdateListener(new f10(this, 2));
-            this.r.addListener(new org.telegram.ui.ho(10, this, z10));
+            this.r.addListener(new org.telegram.ui.fo(10, this, z10));
             this.r.setDuration(320L);
             this.r.setInterpolator(bs.h);
             this.r.start();

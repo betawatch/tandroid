@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
     public int E;
@@ -51,7 +51,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
     public boolean W;
     public boolean X;
     public long Y;
-    public bu a;
+    public zt a;
     public ai.u1 b;
     public ArrayList c;
     private int clearDraftsRow;
@@ -177,7 +177,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
             org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
             b2Var.R = string;
             b2Var.T = LocaleController.getString(R.string.ResetAutomaticMediaDownloadAlert);
-            alertDialog$Builder.k(LocaleController.getString(R.string.Reset), new org.telegram.ui.ActionBar.a2(dataSettingsActivity) { // from class: org.telegram.ui.zt
+            alertDialog$Builder.k(LocaleController.getString(R.string.Reset), new org.telegram.ui.ActionBar.a2(dataSettingsActivity) { // from class: org.telegram.ui.xt
                 public final /* synthetic */ DataSettingsActivity b;
 
                 {
@@ -226,7 +226,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
                 Activity parentActivity = dataSettingsActivity.getParentActivity();
                 String[] strArr = {LocaleController.getString(R.string.UseLessDataNever), LocaleController.getString(R.string.UseLessDataOnRoaming), LocaleController.getString(R.string.UseLessDataOnMobile), LocaleController.getString(R.string.UseLessDataAlways)};
                 String string2 = LocaleController.getString(R.string.VoipUseLessData);
-                au auVar = new au(dataSettingsActivity, globalMainSettings, i10);
+                yt ytVar = new yt(dataSettingsActivity, globalMainSettings, i10);
                 Pattern pattern = org.telegram.ui.Components.f5.a;
                 LinearLayout e = org.telegram.messenger.g0.e(parentActivity, 1);
                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(parentActivity);
@@ -239,7 +239,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
                     k6Var.a(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.g7, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.E5, false));
                     k6Var.b(strArr[i13], i16 == i13);
                     e.addView(k6Var);
-                    k6Var.setOnClickListener(new org.telegram.ui.ActionBar.s1(23, alertDialog$Builder2, auVar));
+                    k6Var.setOnClickListener(new org.telegram.ui.ActionBar.s1(23, alertDialog$Builder2, ytVar));
                     i13++;
                     f10 = f11;
                 }
@@ -255,7 +255,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
             Activity parentActivity2 = dataSettingsActivity.getParentActivity();
             String[] strArr2 = {LocaleController.getString(R.string.UseLessDataNever), LocaleController.getString(R.string.UseLessDataOnRoaming), LocaleController.getString(R.string.UseLessDataOnMobile), LocaleController.getString(R.string.UseLessDataAlways)};
             String string22 = LocaleController.getString(R.string.VoipUseLessData);
-            au auVar2 = new au(dataSettingsActivity, globalMainSettings, i10);
+            yt ytVar2 = new yt(dataSettingsActivity, globalMainSettings, i10);
             Pattern pattern2 = org.telegram.ui.Components.f5.a;
             LinearLayout e7 = org.telegram.messenger.g0.e(parentActivity2, 1);
             AlertDialog$Builder alertDialog$Builder22 = new AlertDialog$Builder(parentActivity2);
@@ -271,7 +271,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
             return;
         }
         if (i10 == dataSettingsActivity.v) {
-            dataSettingsActivity.presentFragment(new nu(null));
+            dataSettingsActivity.presentFragment(new lu(null));
             return;
         }
         if (i10 != dataSettingsActivity.n) {
@@ -300,9 +300,9 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
                 return;
             }
             if (i10 == dataSettingsActivity.N) {
-                w11 w11Var = new w11(null);
-                w11Var.n = new org.telegram.ui.Cells.j3[4];
-                dataSettingsActivity.presentFragment(w11Var);
+                u11 u11Var = new u11(null);
+                u11Var.n = new org.telegram.ui.Cells.j3[4];
+                dataSettingsActivity.presentFragment(u11Var);
                 return;
             }
             if (i10 == dataSettingsActivity.J) {
@@ -328,7 +328,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
                 b2Var3.R = string3;
                 b2Var3.T = LocaleController.getString(R.string.AreYouSureClearDrafts);
                 final int i21 = 1;
-                alertDialog$Builder3.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.ActionBar.a2(dataSettingsActivity) { // from class: org.telegram.ui.zt
+                alertDialog$Builder3.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.ActionBar.a2(dataSettingsActivity) { // from class: org.telegram.ui.xt
                     public final /* synthetic */ DataSettingsActivity b;
 
                     {
@@ -429,7 +429,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
                     radioButton.a(absolutePath3.startsWith(str3), z13);
                     p4Var.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I5, z13), 2, -1));
                     linearLayout.addView(p4Var);
-                    p4Var.setOnClickListener(new ci.y3(dataSettingsActivity, absolutePath3, contains, alertDialog$Builder4, 1));
+                    p4Var.setOnClickListener(new ci.z3(dataSettingsActivity, absolutePath3, contains, alertDialog$Builder4, 1));
                     i11 = i23 + 1;
                     size = size;
                     i16 = 2;
@@ -493,12 +493,12 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setTitle(LocaleController.getString(R.string.DataSettings));
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new ga(this, 21));
+        this.actionBar.setActionBarMenuOnItemClick(new ea(this, 21));
         org.telegram.ui.ActionBar.d5 d5Var = this.parentLayout;
         if (d5Var != null && ((ActionBarLayout) d5Var).N0) {
             this.actionBar.setBackButtonImage(R.drawable.ic_ab_close);
         }
-        this.a = new bu(this, context);
+        this.a = new zt(this, context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
@@ -599,15 +599,15 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
             this.U = i10 + 1;
         }
         this.resetDownloadRow = i10;
-        bu buVar = this.a;
-        if (buVar != null && !z10) {
+        zt ztVar = this.a;
+        if (ztVar != null && !z10) {
             if (i13 < 0 && i10 >= 0) {
-                buVar.m(this.f);
+                ztVar.m(this.f);
                 this.a.o(this.resetDownloadRow);
             } else if (i13 < 0 || i10 >= 0) {
                 z10 = true;
             } else {
-                buVar.m(this.f);
+                ztVar.m(this.f);
                 this.a.u(i13);
             }
         }
@@ -642,11 +642,11 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
         this.clearDraftsRow = i16 + 7;
         this.U = i16 + 9;
         this.R = i16 + 8;
-        bu buVar2 = this.a;
-        if (buVar2 == null || !z10) {
+        zt ztVar2 = this.a;
+        if (ztVar2 == null || !z10) {
             return;
         }
-        buVar2.l();
+        ztVar2.l();
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -677,17 +677,17 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
     @Override // org.telegram.ui.ActionBar.n2
     public final void onResume() {
         super.onResume();
-        yt ytVar = new yt(this, 1);
-        AndroidUtilities.runOnUIThread(ytVar, 100L);
-        c7.j0(new ai.e2(this, ytVar, System.currentTimeMillis(), 1));
+        wt wtVar = new wt(this, 1);
+        AndroidUtilities.runOnUIThread(wtVar, 100L);
+        c7.j0(new ai.f2(this, wtVar, System.currentTimeMillis(), 1));
         if (this.b != null && this.a != null) {
             for (int i10 = 0; i10 < this.b.getChildCount(); i10++) {
                 View childAt = this.b.getChildAt(i10);
                 s4.b1 T = this.b.T(childAt);
                 if (T != null) {
-                    bu buVar = this.a;
+                    zt ztVar = this.a;
                     this.b.getClass();
-                    buVar.v(T, RecyclerView.R(childAt));
+                    ztVar.v(T, RecyclerView.R(childAt));
                 }
             }
         }

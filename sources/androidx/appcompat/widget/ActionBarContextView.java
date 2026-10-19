@@ -16,10 +16,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.mediarouter.app.w;
 import c5.f;
+import i2.e;
 import java.util.WeakHashMap;
 import l.k;
 import l.z;
-import m.e;
 import m.i;
 import m.v3;
 import org.telegram.messenger.beta.R;
@@ -28,7 +28,7 @@ import r0.i0;
 import r0.l0;
 import v7.q7;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class ActionBarContextView extends ViewGroup {
     public TextView E;
@@ -64,7 +64,7 @@ public class ActionBarContextView extends ViewGroup {
     public static int g(int i10, int i11, int i12, View view, boolean z10) {
         int measuredWidth = view.getMeasuredWidth();
         int measuredHeight = view.getMeasuredHeight();
-        int C = i2.d.C(i12, measuredHeight, 2, i11);
+        int C = e.C(i12, measuredHeight, 2, i11);
         if (z10) {
             view.layout(i10 - measuredWidth, C, i10, measuredHeight + C);
         } else {
@@ -85,11 +85,11 @@ public class ActionBarContextView extends ViewGroup {
         View findViewById = this.v.findViewById(R.id.action_mode_close_button);
         this.w = findViewById;
         findViewById.setOnClickListener(new w(aVar, 6));
-        k d = aVar.d();
+        k c10 = aVar.c();
         i iVar = this.d;
         if (iVar != null) {
             iVar.f();
-            e eVar = iVar.J;
+            m.e eVar = iVar.J;
             if (eVar != null && eVar.b()) {
                 eVar.i.dismiss();
             }
@@ -99,7 +99,7 @@ public class ActionBarContextView extends ViewGroup {
         iVar2.w = true;
         iVar2.x = true;
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-2, -1);
-        d.b(this.d, this.b);
+        c10.b(this.d, this.b);
         i iVar3 = this.d;
         z zVar = iVar3.n;
         if (zVar == null) {
@@ -247,7 +247,7 @@ public class ActionBarContextView extends ViewGroup {
         i iVar = this.d;
         if (iVar != null) {
             iVar.f();
-            e eVar = this.d.J;
+            m.e eVar = this.d.J;
             if (eVar == null || !eVar.b()) {
                 return;
             }

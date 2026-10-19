@@ -36,8 +36,8 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.gi;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.fi;
+import org.telegram.messenger.kk;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
@@ -49,14 +49,14 @@ import org.telegram.ui.Cells.v8;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.aa;
 import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.r80;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.s50;
-import org.telegram.ui.sy0;
+import org.telegram.ui.q50;
+import org.telegram.ui.qy0;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public abstract class d2 {
     public static long a;
@@ -129,7 +129,7 @@ public abstract class d2 {
                         d2.b(TLRPC.User.this, chat, str, inputPeer, false, z11, z12, z13, activity, n2Var, accountInstance, false, false, false);
                     }
                 });
-                i2.d.r(R.string.Cancel, alertDialog$Builder, null);
+                i2.e.r(R.string.Cancel, alertDialog$Builder, null);
                 return;
             }
             if (chat != null && inputPeer != null && (chatFull = accountInstance.getMessagesController().getChatFull(chat.id)) != null) {
@@ -153,7 +153,7 @@ public abstract class d2 {
                 }
             }
             if (chat != null && !z13 && (groupCall = accountInstance.getMessagesController().getGroupCall(chat.id, false)) != null && groupCall.isScheduled()) {
-                s50.d1((LaunchActivity) activity, accountInstance, chat, inputPeer, z10, str);
+                q50.d1((LaunchActivity) activity, accountInstance, chat, inputPeer, z10, str);
                 return;
             }
             a = SystemClock.elapsedRealtime();
@@ -268,7 +268,7 @@ public abstract class d2 {
                 if (!TextUtils.isEmpty(str)) {
                     sharedInstance.setGroupCallHash(str);
                 }
-                s50.d1((LaunchActivity) activity, AccountInstance.getInstance(UserConfig.selectedAccount), null, null, false, null);
+                q50.d1((LaunchActivity) activity, AccountInstance.getInstance(UserConfig.selectedAccount), null, null, false, null);
                 return;
             }
             if (sharedInstance.isConference()) {
@@ -330,7 +330,7 @@ public abstract class d2 {
             objArr[c10] = formatName;
             b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString(i10, objArr));
             alertDialog$Builder.k(LocaleController.getString(R.string.OK), new v1(user, chat, str, z10, z11, z12, activity, n2Var, accountInstance));
-            i2.d.r(R.string.Cancel, alertDialog$Builder, null);
+            i2.e.r(R.string.Cancel, alertDialog$Builder, null);
         }
     }
 
@@ -542,7 +542,7 @@ public abstract class d2 {
         }
     }
 
-    public static void k(final Context context, sy0 sy0Var, boolean z10, final long j10, final long j11, final int i10, final boolean z11) {
+    public static void k(final Context context, qy0 qy0Var, boolean z10, final long j10, final long j11, final int i10, final boolean z11) {
         File file;
         String string;
         String str;
@@ -564,7 +564,7 @@ public abstract class d2 {
         final File file4 = file;
         final int[] iArr = {0};
         int i11 = 1;
-        LinearLayout e = lk.e(context, 1);
+        LinearLayout e = kk.e(context, 1);
         int dp = AndroidUtilities.dp(16.0f);
         e.setPadding(dp, dp, dp, 0);
         final TextView textView = new TextView(context);
@@ -653,16 +653,16 @@ public abstract class d2 {
         e.addView(editTextBoldCursor, z5.k(8.0f, 8.0f, 8.0f, 0.0f, -1, -2));
         final boolean[] zArr = {true};
         final org.telegram.ui.Cells.a2 a2Var2 = new org.telegram.ui.Cells.a2(context, 1);
-        g51 g51Var = new g51(5, zArr, a2Var2);
+        h51 h51Var = new h51(5, zArr, a2Var2);
         a2Var2.e(LocaleController.getString(R.string.CallReportIncludeLogs), null, true, false, false);
         a2Var2.setClipToPadding(false);
-        a2Var2.setOnClickListener(g51Var);
+        a2Var2.setOnClickListener(h51Var);
         e.addView(a2Var2, z5.k(-8.0f, 0.0f, -8.0f, 0.0f, -1, -2));
         final TextView textView2 = new TextView(context);
         textView2.setTextSize(2, 14.0f);
         textView2.setTextColor(h6.x0(null, h6.r5, false));
         textView2.setPadding(org.telegram.ui.Cells.c1.e(8.0f, R.string.CallReportLogsExplain, textView2), 0, AndroidUtilities.dp(8.0f), 0);
-        textView2.setOnClickListener(g51Var);
+        textView2.setOnClickListener(h51Var);
         e.addView(textView2);
         a2Var2.setVisibility(8);
         textView2.setVisibility(8);
@@ -674,7 +674,7 @@ public abstract class d2 {
         alertDialog$Builder.n(e);
         alertDialog$Builder.k(LocaleController.getString(R.string.Send), new sg.y(12));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        alertDialog$Builder.a.setOnDismissListener(new a2(1, sy0Var));
+        alertDialog$Builder.a.setOnDismissListener(new a2(1, qy0Var));
         final org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
         if (BuildVars.LOGS_ENABLED && file4.exists()) {
             org.telegram.ui.Components.q2 q2Var = new org.telegram.ui.Components.q2(25, context, file4);
@@ -737,7 +737,7 @@ public abstract class d2 {
                 tL_inputPhoneCall.access_hash = j11;
                 tL_inputPhoneCall.id = j10;
                 setcallrating.user_initiative = z11;
-                ConnectionsManager.getInstance(i10).sendRequest(setcallrating, new gi(i13, zArr2, file5, setcallrating, arrayList, context));
+                ConnectionsManager.getInstance(i10).sendRequest(setcallrating, new fi(i13, zArr2, file5, setcallrating, arrayList, context));
                 b2Var2.dismiss();
             }
         });

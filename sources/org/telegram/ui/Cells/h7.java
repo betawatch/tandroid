@@ -33,9 +33,9 @@ import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.lt;
 import org.telegram.ui.Components.xp;
-import org.telegram.ui.g10;
+import org.telegram.ui.e10;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class h7 extends FrameLayout implements DownloadController.FileDownloadProgressListener, NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.Components.w5 E;
@@ -558,7 +558,7 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
                     if (this.N.isRoundVideo()) {
                     }
                 }
-                d = g10.d(this.N, true, 1, null);
+                d = e10.d(this.N, true, 1, null);
                 f7 = 4.0f;
                 highlightText2 = AndroidUtilities.highlightText(d, this.N.highlightedWords, d6Var);
                 if (highlightText2 != null) {
@@ -661,7 +661,7 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
                 replace2 = highlightText;
             }
             if (i13 == 1) {
-                replace2 = new SpannableStringBuilder(replace2).append(' ').append((CharSequence) this.a).append(' ').append(g10.d(this.N, true, 1, null));
+                replace2 = new SpannableStringBuilder(replace2).append(' ').append((CharSequence) this.a).append(' ').append(e10.d(this.N, true, 1, null));
             }
             if (i13 == 1) {
                 textPaint2 = org.telegram.ui.ActionBar.h6.g3;
@@ -908,7 +908,7 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
             this.h0 = textPaint3;
             textPaint3.setTypeface(AndroidUtilities.bold());
             textPaint3.setTextSize(AndroidUtilities.dp(15.0f));
-            textPaint3.setColor(d6Var.u(org.telegram.ui.ActionBar.h6.G6));
+            textPaint3.setColor(d6Var.w(org.telegram.ui.ActionBar.h6.G6));
         }
     }
 

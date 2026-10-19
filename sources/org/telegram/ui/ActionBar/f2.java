@@ -16,7 +16,7 @@ import android.widget.FrameLayout;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class f2 extends b2 {
     public static final int[] n1 = {R.attr.windowEnterAnimation, R.attr.windowExitAnimation};
@@ -38,12 +38,12 @@ public final class f2 extends b2 {
         this.m1 = new p(this, 7);
     }
 
-    public static Activity r(Context context) {
+    public static Activity s(Context context) {
         if (context instanceof Activity) {
             return (Activity) context;
         }
         if (context instanceof ContextThemeWrapper) {
-            return r(((ContextThemeWrapper) context).getBaseContext());
+            return s(((ContextThemeWrapper) context).getBaseContext());
         }
         return null;
     }
@@ -54,7 +54,7 @@ public final class f2 extends b2 {
             this.k1 = true;
             AndroidUtilities.cancelRunOnUIThread(this.m1);
             if (this.f1.getVisibility() != 0) {
-                s().removeView(this.f1);
+                t().removeView(this.f1);
                 return;
             }
             Animation loadAnimation = AnimationUtils.loadAnimation(getContext(), this.e1);
@@ -68,20 +68,16 @@ public final class f2 extends b2 {
 
     @Override // android.app.Dialog
     public final boolean isShowing() {
-        return (s().indexOfChild(this.f1) == -1 || this.k1) ? false : true;
+        return (t().indexOfChild(this.f1) == -1 || this.k1) ? false : true;
     }
 
     @Override // org.telegram.ui.ActionBar.b2
-    public final void q(long j10) {
+    public final void r(long j10) {
         if (isShowing()) {
             return;
         }
         this.l1 = j10;
         show();
-    }
-
-    public final ViewGroup s() {
-        return (ViewGroup) r(getContext()).getWindow().getDecorView();
     }
 
     @Override // android.app.Dialog
@@ -103,9 +99,9 @@ public final class f2 extends b2 {
         this.e1 = obtainStyledAttributes.getResourceId(1, -1);
         obtainStyledAttributes.recycle();
         this.h0 = true;
-        ViewGroup f7 = f(false);
-        this.g1 = f7;
-        f7.setClickable(true);
+        ViewGroup g10 = g(false);
+        this.g1 = g10;
+        g10.setClickable(true);
         WindowManager.LayoutParams attributes = getWindow().getAttributes();
         FrameLayout frameLayout = new FrameLayout(getContext());
         frameLayout.setOnClickListener(new w(this, 1));
@@ -117,7 +113,7 @@ public final class f2 extends b2 {
         frameLayout2.addView(this.g1, new FrameLayout.LayoutParams(-1, -2, 17));
         frameLayout.addView(frameLayout2, new FrameLayout.LayoutParams(attributes.width, -2, 17));
         this.f1 = frameLayout;
-        s().addView(this.f1);
+        t().addView(this.f1);
         FrameLayout frameLayout3 = this.f1;
         WeakHashMap weakHashMap = r0.i0.a;
         r0.y.c(frameLayout3);
@@ -130,5 +126,9 @@ public final class f2 extends b2 {
         } else {
             AndroidUtilities.runOnUIThread(pVar, j10);
         }
+    }
+
+    public final ViewGroup t() {
+        return (ViewGroup) s(getContext()).getWindow().getDecorView();
     }
 }

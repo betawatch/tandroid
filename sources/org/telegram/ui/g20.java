@@ -1,46 +1,37 @@
 package org.telegram.ui;
 
-import java.util.Calendar;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g20 implements org.telegram.ui.Components.kd0 {
+public final /* synthetic */ class g20 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Calendar c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ q50 b;
 
-    public /* synthetic */ g20(long j10, Calendar calendar, int i10, int i11) {
-        this.a = i11;
-        this.b = j10;
-        this.c = calendar;
-        this.d = i10;
+    public /* synthetic */ g20(q50 q50Var, int i10) {
+        this.a = i10;
+        this.b = q50Var;
     }
 
-    @Override // org.telegram.ui.Components.kd0
-    public final String e(int i10) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                if (i10 == 0) {
-                    return LocaleController.getString(R.string.MessageScheduleToday);
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                if (this.b.x0 && (U instanceof qn)) {
+                    ((qn) U).Y9(true, true);
+                    break;
                 }
-                long j10 = (i10 * 86400000) + this.b;
-                Calendar calendar = this.c;
-                calendar.setTimeInMillis(j10);
-                if (calendar.get(1) != this.d) {
-                    return LocaleController.getInstance().getFormatterScheduleYear().format(j10);
-                }
-                return LocaleController.getInstance().getFormatterWeek().format(j10) + " " + LocaleController.getInstance().getFormatterScheduleDay().format(j10);
+                break;
+            case 1:
+                this.b.dismiss();
+                break;
+            case 2:
+                this.b.E1 = null;
+                break;
             default:
-                if (i10 == 0) {
-                    return LocaleController.getString("MessageScheduleToday", R.string.MessageScheduleToday);
-                }
-                long j11 = (i10 * 86400000) + this.b;
-                Calendar calendar2 = this.c;
-                calendar2.setTimeInMillis(j11);
-                return calendar2.get(1) == this.d ? LocaleController.getInstance().getFormatterScheduleDay().format(j11) : LocaleController.getInstance().getFormatterScheduleYear().format(j11);
+                this.b.r0 = null;
+                break;
         }
     }
 }

@@ -8,13 +8,13 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.l4;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.t61;
 import s4.b1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class d extends s61 {
+public final class d extends t61 {
     public final /* synthetic */ g N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -23,7 +23,7 @@ public final class d extends s61 {
         this.N = gVar;
     }
 
-    @Override // org.telegram.ui.Components.s61, s4.g0
+    @Override // org.telegram.ui.Components.t61, s4.g0
     public final b1 x(ViewGroup viewGroup, int i10) {
         d6 d6Var;
         if (i10 != 42) {

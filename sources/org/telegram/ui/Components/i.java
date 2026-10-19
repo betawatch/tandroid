@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -44,8 +44,8 @@ public final /* synthetic */ class i implements View.OnLongClickListener {
                 if (i10 != 1 && i10 != 3 && i10 != 8) {
                     return false;
                 }
-                org.telegram.ui.ni0 ni0Var = new org.telegram.ui.ni0(chatActivityEnterView.getContext(), d6Var);
-                ni0Var.h0 = true;
+                org.telegram.ui.mi0 mi0Var = new org.telegram.ui.mi0(chatActivityEnterView.getContext(), d6Var);
+                mi0Var.h0 = true;
                 ArrayList arrayList = new ArrayList();
                 if (groupedMessages != null) {
                     int i11 = 0;
@@ -56,16 +56,16 @@ public final /* synthetic */ class i implements View.OnLongClickListener {
                 } else {
                     arrayList.add(chatActivityEnterView.e0(messageObject, true));
                 }
-                ni0Var.q(arrayList);
+                mi0Var.q(arrayList);
                 i80 F = i80.F(chatActivityEnterView.m1, d6Var, chatActivityEnterView.F1);
                 nc0 nc0Var = new nc0(chatActivityEnterView.getContext(), R.raw.position_below, LocaleController.getString(R.string.CaptionAbove), R.raw.position_above, LocaleController.getString(R.string.CaptionBelow), chatActivityEnterView.W3);
                 nc0Var.a(!chatActivityEnterView.R4, false);
-                nc0Var.setOnClickListener(new ci.b4(chatActivityEnterView, arrayList, nc0Var, ni0Var, 10));
+                nc0Var.setOnClickListener(new ci.c4(chatActivityEnterView, arrayList, nc0Var, mi0Var, 10));
                 F.q(nc0Var);
                 F.Y();
-                ni0Var.p(F);
-                ni0Var.r(chatActivityEnterView.F1, false, new ci.b4(chatActivityEnterView, groupedMessages, messageObject, ni0Var, 11));
-                ni0Var.show();
+                mi0Var.p(F);
+                mi0Var.r(chatActivityEnterView.F1, false, new ci.c4(chatActivityEnterView, groupedMessages, messageObject, mi0Var, 11));
+                mi0Var.show();
                 return true;
         }
     }

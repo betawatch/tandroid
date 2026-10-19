@@ -1,7 +1,7 @@
 package uh;
 
 import ai.h;
-import ai.n5;
+import ai.o5;
 import ai.u;
 import android.content.Context;
 import android.graphics.Rect;
@@ -42,7 +42,7 @@ import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.k20;
 import org.telegram.ui.Components.kv;
 import org.telegram.ui.Components.o20;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.v30;
 import r0.a0;
 import s4.k;
@@ -50,7 +50,7 @@ import ug.t0;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class f extends bb implements ne.d {
     public static final /* synthetic */ int r0 = 0;
@@ -60,10 +60,10 @@ public final class f extends bb implements ne.d {
     public final ArrayList a0;
     public final ArrayList b0;
     public String c0;
-    public s61 d0;
+    public t61 d0;
     public final ei.d e0;
     public final n f0;
-    public final n5 g0;
+    public final o5 g0;
     public final o20 h0;
     public final u3 i0;
     public final HashMap j0;
@@ -123,18 +123,18 @@ public final class f extends bb implements ne.d {
         o20 o20Var = new o20(context, this.currentAccount);
         this.h0 = o20Var;
         o20Var.setDelegate(new b(this));
-        n5 n5Var = new n5(context, d6Var, this);
-        this.g0 = n5Var;
+        o5 o5Var = new o5(context, d6Var, this);
+        this.g0 = o5Var;
         int i11 = this.backgroundPaddingLeft;
-        n5Var.setPadding(i11, 0, i11, 0);
-        n5Var.addView(k20Var, z5.d(-1, 40.0f, 48, 10.0f, 0.0f, 10.0f, 0.0f));
-        n5Var.addView(o20Var, z5.d(-1, 144.0f, 48, -3.0f, 40.0f, -3.0f, 0.0f));
+        o5Var.setPadding(i11, 0, i11, 0);
+        o5Var.addView(k20Var, z5.d(-1, 40.0f, 48, 10.0f, 0.0f, 10.0f, 0.0f));
+        o5Var.addView(o20Var, z5.d(-1, 144.0f, 48, -3.0f, 40.0f, -3.0f, 0.0f));
         u3 u3Var = new u3(context, 18, d6Var);
         this.i0 = u3Var;
         u3Var.setTranslationY(AndroidUtilities.dp(48.0f));
         u3Var.c(LocaleController.getString(R.string.SearchCountriesTitle), LocaleController.getString(R.string.DeselectAll), new a(this, 2));
-        n5Var.addView(u3Var, z5.e(-1, 32, 48));
-        this.containerView.addView(n5Var, z5.e(-1, 216, 48));
+        o5Var.addView(u3Var, z5.e(-1, 32, 48));
+        this.containerView.addView(o5Var, z5.e(-1, 216, 48));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setPadding(AndroidUtilities.dp(10.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(10.0f) + AndroidUtilities.navigationBarHeight);
         frameLayout.addView(dVar, z5.c(48.0f, -1));
@@ -231,9 +231,9 @@ public final class f extends bb implements ne.d {
             i10++;
         }
         float max = Math.max(org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight, f7 + AndroidUtilities.dp(8.0f));
-        n5 n5Var = this.g0;
-        if (n5Var.getTranslationY() != max) {
-            n5Var.setTranslationY(max);
+        o5 o5Var = this.g0;
+        if (o5Var.getTranslationY() != max) {
+            o5Var.setTranslationY(max);
             im0Var.invalidate();
         }
     }
@@ -266,7 +266,7 @@ public final class f extends bb implements ne.d {
     }
 
     @Override // ne.d
-    public final void u(int i10, float f7, float f10, ne.e eVar) {
+    public final void r(int i10, float f7, float f10, ne.e eVar) {
         if (i10 != 3) {
             if (i10 == 4) {
                 h20.d(this.f0, f7);
@@ -280,13 +280,13 @@ public final class f extends bb implements ne.d {
 
     @Override // org.telegram.ui.Components.bb
     public final hm0 x(im0 im0Var) {
-        s61 s61Var = new s61(im0Var, getContext(), this.currentAccount, 0, true, new o(this, 19), this.resourcesProvider);
-        this.d0 = s61Var;
-        s61Var.r = false;
-        return s61Var;
+        t61 t61Var = new t61(im0Var, getContext(), this.currentAccount, 0, true, new o(this, 19), this.resourcesProvider);
+        this.d0 = t61Var;
+        t61Var.r = false;
+        return t61Var;
     }
 
     @Override // ne.d
-    public final /* synthetic */ void E(float f7, int i10) {
+    public final /* synthetic */ void H(float f7, int i10) {
     }
 }

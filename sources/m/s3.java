@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.i80;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class s3 implements n5.b {
     public Object a;
@@ -223,7 +223,7 @@ public final class s3 implements n5.b {
     public s3(String str, ca.c cVar, com.google.firebase.messaging.r rVar) {
         this.d = new c2.b(this, false);
         this.e = new c2.b(this, true);
-        this.f = new c5.b0(18, (short) 0);
+        this.f = new c5.c0(18, (short) 0);
         this.h = new AtomicMarkableReference(null, false);
         this.c = str;
         this.a = new y9.f(cVar);

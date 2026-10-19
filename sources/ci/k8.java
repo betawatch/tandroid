@@ -1,57 +1,43 @@
 package ci;
 
-import android.widget.FrameLayout;
+import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k8 implements o1.g {
+public final /* synthetic */ class k8 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ FrameLayout b;
+    public final /* synthetic */ s8 b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
 
-    public /* synthetic */ k8(int i10, FrameLayout frameLayout) {
+    public /* synthetic */ k8(s8 s8Var, float f7, float f10, int i10) {
         this.a = i10;
-        this.b = frameLayout;
+        this.b = s8Var;
+        this.c = f7;
+        this.d = f10;
     }
 
-    @Override // o1.g
-    public final void a(o1.h hVar, float f7, float f10) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                r8 r8Var = (r8) this.b;
-                r8Var.d0 = f7;
-                r8Var.f0 = f10;
-                break;
-            case 1:
-                ei.f6 f6Var = (ei.f6) this.b;
-                float f11 = f7 / 1000.0f;
-                f6Var.t1 = f11;
-                rg.t1 t1Var = f6Var.m1;
-                t1Var.setAlpha(f11);
-                t1Var.invalidate();
-                f6Var.U0.invalidate();
-                f6Var.l1.getTypefaceCell().setAlpha(1.0f - f6Var.t1);
-                break;
-            case 2:
-                ng.i iVar = (ng.i) this.b;
-                float f12 = f7 / 1000.0f;
-                ah.v vVar = iVar.a;
-                vVar.setPivotX(AndroidUtilities.dp(28.0f));
-                vVar.setPivotY(AndroidUtilities.dp(28.0f));
-                vVar.setScaleX(f12);
-                vVar.setScaleY(f12);
-                vVar.setAlpha(w7.r.a(f12, 0.0f, 1.0f));
-                iVar.invalidate();
+                s8 s8Var = this.b;
+                s8Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                s8Var.setScrollY((int) AndroidUtilities.lerp(this.c, 0.0f, floatValue));
+                r8 r8Var = s8Var.b0;
+                r8Var.w = AndroidUtilities.lerp(this.d, 0.0f, floatValue);
+                r8Var.invalidate();
                 break;
             default:
-                rg.m0 m0Var = (rg.m0) this.b;
-                float f13 = f7 / 1000.0f;
-                m0Var.D1 = f13;
-                rg.t1 t1Var2 = m0Var.v1;
-                t1Var2.setAlpha(f13);
-                t1Var2.invalidate();
-                m0Var.d1.invalidate();
-                m0Var.u1.getTypefaceCell().setAlpha(1.0f - m0Var.D1);
+                s8 s8Var2 = this.b;
+                s8Var2.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                s8Var2.setScrollY((int) AndroidUtilities.lerp(this.c, Math.min((s8Var2.getMeasuredHeight() - s8Var2.u0) - AndroidUtilities.dp(64.0f), s8Var2.r0.getBottom() - s8Var2.getMeasuredHeight()), floatValue2));
+                r8 r8Var2 = s8Var2.b0;
+                r8Var2.w = AndroidUtilities.lerp(this.d, 1.0f, floatValue2);
+                r8Var2.invalidate();
                 break;
         }
     }

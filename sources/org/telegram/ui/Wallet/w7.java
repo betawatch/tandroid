@@ -20,17 +20,17 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.jw0;
+import org.telegram.ui.Components.kw0;
 import org.telegram.ui.Components.su;
-import org.telegram.ui.Components.w31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class w7 extends org.telegram.ui.ActionBar.n2 {
     public int a;
-    public i5 b;
+    public j5 b;
     public LinearLayout c;
     public ei.d d;
     public ImageView e;
@@ -63,7 +63,7 @@ public final class w7 extends org.telegram.ui.ActionBar.n2 {
         if (w7Var.r && !TextUtils.isEmpty(str) && !TextUtils.equals(str, m0Var.s())) {
             new q0(w7Var.getParentActivity(), str, w7Var.currentAccount).B();
         }
-        AndroidUtilities.runOnUIThread(new v3(13, w7Var, n2Var), 300L);
+        AndroidUtilities.runOnUIThread(new z3(12, w7Var, n2Var), 300L);
     }
 
     public static void V(w7 w7Var) {
@@ -80,7 +80,7 @@ public final class w7 extends org.telegram.ui.ActionBar.n2 {
         while (i10 < size) {
             Object obj = arrayList2.get(i10);
             i10++;
-            arrayList.add(((ga) obj).getWord().toLowerCase().trim());
+            arrayList.add(((ha) obj).getWord().toLowerCase().trim());
         }
         j0 d = j0.d(arrayList);
         try {
@@ -186,23 +186,23 @@ public final class w7 extends org.telegram.ui.ActionBar.n2 {
         while (i10 < size) {
             Object obj = arrayList2.get(i10);
             i10++;
-            arrayList.add(((ga) obj).getWord());
+            arrayList.add(((ha) obj).getWord());
         }
         this.c.removeAllViews();
         arrayList2.clear();
         int i11 = 0;
         while (i11 < this.a) {
-            ga gaVar = new ga(i11, context, this.resourceProvider, i11 == 0);
-            gaVar.setOnTextChangedListener(new v7(this, 1));
-            gaVar.setOnPasteListener(new j(this, i11, 4));
-            gaVar.setOnNextListener(new w31(this, i11, gaVar, 20));
-            this.c.addView(gaVar, w7.z5.t(-1, 50, 1, 0, i11 == 0 ? 0 : 12, 0, 0));
-            arrayList2.add(gaVar);
+            ha haVar = new ha(i11, context, this.resourceProvider, i11 == 0);
+            haVar.setOnTextChangedListener(new v7(this, 1));
+            haVar.setOnPasteListener(new j(this, i11, 4));
+            haVar.setOnNextListener(new x31(this, i11, haVar, 20));
+            this.c.addView(haVar, w7.z5.t(-1, 50, 1, 0, i11 == 0 ? 0 : 12, 0, 0));
+            arrayList2.add(haVar);
             i11++;
         }
         for (int i12 = 0; i12 < arrayList.size() && i12 < arrayList2.size(); i12++) {
             if (!((String) arrayList.get(i12)).isEmpty()) {
-                ((ga) arrayList2.get(i12)).setText((String) arrayList.get(i12));
+                ((ha) arrayList2.get(i12)).setText((String) arrayList.get(i12));
             }
         }
     }
@@ -219,7 +219,7 @@ public final class w7 extends org.telegram.ui.ActionBar.n2 {
             }
             Object obj = arrayList.get(i10);
             i10++;
-            if (((ga) obj).getWord().isEmpty()) {
+            if (((ha) obj).getWord().isEmpty()) {
                 break;
             }
         }
@@ -231,9 +231,9 @@ public final class w7 extends org.telegram.ui.ActionBar.n2 {
         final int i10 = 0;
         this.actionBar.setAddToContainer(false);
         this.actionBar.setOccupyStatusBar(false);
-        jw0 jw0Var = new jw0(context, null);
-        this.fragmentView = jw0Var;
-        jw0Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, this.resourceProvider));
+        kw0 kw0Var = new kw0(context, null);
+        this.fragmentView = kw0Var;
+        kw0Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, this.resourceProvider));
         ScrollView scrollView = new ScrollView(context);
         final int i11 = 1;
         scrollView.setFillViewport(true);
@@ -301,10 +301,10 @@ public final class w7 extends org.telegram.ui.ActionBar.n2 {
             this.h.setText(LocaleController.formatSpannable(R.string.WalletImportPhraseInfo, 12));
         }
         linearLayout.addView(this.h, w7.z5.t(-1, -2, 1, 32, 0, 32, 8));
-        i5 i5Var = new i5(context, new CharSequence[]{LocaleController.formatPluralString("WalletPhraseWords", 12, new Object[0]), LocaleController.formatPluralString("WalletPhraseWords", 24, new Object[0])}, new l(this, 5), this.resourceProvider);
-        this.b = i5Var;
-        i5Var.e = true;
-        i5Var.d();
+        j5 j5Var = new j5(context, new CharSequence[]{LocaleController.formatPluralString("WalletPhraseWords", 12, new Object[0]), LocaleController.formatPluralString("WalletPhraseWords", 24, new Object[0])}, new l(this, 5), this.resourceProvider);
+        this.b = j5Var;
+        j5Var.e = true;
+        j5Var.d();
         this.b.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         this.b.setClipToPadding(false);
         linearLayout.addView(this.b, w7.z5.t(-1, -2, 1, 0, 0, 0, 4));

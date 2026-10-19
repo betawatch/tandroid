@@ -6,7 +6,7 @@ import b2.a2;
 import b2.v0;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class g0 {
     public final qf.b a;
@@ -95,14 +95,14 @@ public final class g0 {
                                     ((f) bVar.c).h.onFirstFrameRendered();
                                     break;
                                 default:
-                                    ((f) bVar.c).h.h();
+                                    ((f) bVar.c).h.k();
                                     break;
                             }
                         }
                     });
                 }
                 b2.w wVar = (b2.w) bVar.b;
-                fVar.j.a(d, nanoTime, wVar == null ? new b2.w(new b2.v()) : wVar, null);
+                fVar.j.b(d, nanoTime, wVar == null ? new b2.w(new b2.v()) : wVar, null);
                 j jVar = (j) fVar.d.remove();
                 jVar.c.M0(jVar.a, jVar.b, nanoTime);
             } else if (a2 == 2 || a2 == 3) {
@@ -117,7 +117,7 @@ public final class g0 {
                                 ((f) bVar.c).h.onFirstFrameRendered();
                                 break;
                             default:
-                                ((f) bVar.c).h.h();
+                                ((f) bVar.c).h.k();
                                 break;
                         }
                     }
@@ -127,7 +127,7 @@ public final class g0 {
                 r2.l lVar = jVar2.a;
                 int i13 = jVar2.b;
                 Trace.beginSection("dropVideoBuffer");
-                lVar.d(i13);
+                lVar.c(i13);
                 Trace.endSection();
                 nVar.R0(0, 1);
             } else {

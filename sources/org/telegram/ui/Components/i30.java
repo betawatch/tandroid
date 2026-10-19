@@ -31,7 +31,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class i30 implements NotificationCenter.NotificationCenterDelegate {
     public static i30 d0 = null;
@@ -92,7 +92,7 @@ public final class i30 implements NotificationCenter.NotificationCenterDelegate 
         k9Var.setDelegate(new hq(this, 19));
         g(false);
         f30Var.addView(k9Var, w7.z5.e(108, 36, 49));
-        ah.x xVar = new ah.x(this, context, 19);
+        ah.x xVar = new ah.x(this, context, 18);
         this.b = xVar;
         ei.g6 g6Var = new ei.g6(this, context);
         this.c = g6Var;
@@ -190,7 +190,7 @@ public final class i30 implements NotificationCenter.NotificationCenterDelegate 
                     default:
                         Context context3 = m30Var.getContext();
                         Context context4 = context;
-                        org.telegram.ui.s50.u1(context3, new k30(context4, 0), Settings.canDrawOverlays(context4), false);
+                        org.telegram.ui.q50.u1(context3, new k30(context4, 0), Settings.canDrawOverlays(context4), false);
                         break;
                 }
             }
@@ -241,7 +241,7 @@ public final class i30 implements NotificationCenter.NotificationCenterDelegate 
                     default:
                         Context context3 = m30Var.getContext();
                         Context context4 = context;
-                        org.telegram.ui.s50.u1(context3, new k30(context4, 0), Settings.canDrawOverlays(context4), false);
+                        org.telegram.ui.q50.u1(context3, new k30(context4, 0), Settings.canDrawOverlays(context4), false);
                         break;
                 }
             }
@@ -290,7 +290,7 @@ public final class i30 implements NotificationCenter.NotificationCenterDelegate 
                     default:
                         Context context3 = m30Var.getContext();
                         Context context4 = context;
-                        org.telegram.ui.s50.u1(context3, new k30(context4, 0), Settings.canDrawOverlays(context4), false);
+                        org.telegram.ui.q50.u1(context3, new k30(context4, 0), Settings.canDrawOverlays(context4), false);
                         break;
                 }
             }
@@ -332,13 +332,13 @@ public final class i30 implements NotificationCenter.NotificationCenterDelegate 
         if (!ApplicationLoader.canDrawOverlays || (sharedInstance = VoIPService.getSharedInstance()) == null || sharedInstance.groupCall == null || sharedInstance.isHangingUp() || e0) {
             return false;
         }
-        return ApplicationLoader.mainInterfaceStopped || !org.telegram.ui.s50.E3;
+        return ApplicationLoader.mainInterfaceStopped || !org.telegram.ui.q50.E3;
     }
 
     public static void j(Context context) {
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         boolean z10 = (sharedInstance == null || sharedInstance.groupCall == null || sharedInstance.isHangingUp()) ? false : true;
-        if (!AndroidUtilities.checkInlinePermissions(ApplicationLoader.applicationContext) || !z10 || e0 || (!ApplicationLoader.mainInterfaceStopped && org.telegram.ui.s50.E3)) {
+        if (!AndroidUtilities.checkInlinePermissions(ApplicationLoader.applicationContext) || !z10 || e0 || (!ApplicationLoader.mainInterfaceStopped && org.telegram.ui.q50.E3)) {
             i30 i30Var = d0;
             if (i30Var != null) {
                 i30Var.e(false);

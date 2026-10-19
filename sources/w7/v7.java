@@ -1,16 +1,23 @@
 package w7;
 
-import java.io.DataInputStream;
+import android.os.Build;
+import android.widget.EdgeEffect;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class v7 {
-    public static float[] a(DataInputStream dataInputStream) {
-        int readInt = dataInputStream.readInt();
-        float[] fArr = new float[readInt];
-        for (int i10 = 0; i10 < readInt; i10++) {
-            fArr[i10] = dataInputStream.readFloat();
+    public static float a(EdgeEffect edgeEffect) {
+        if (Build.VERSION.SDK_INT >= 31) {
+            return u0.c.b(edgeEffect);
         }
-        return fArr;
+        return 0.0f;
+    }
+
+    public static float b(EdgeEffect edgeEffect, float f7, float f10) {
+        if (Build.VERSION.SDK_INT >= 31) {
+            return u0.c.c(edgeEffect, f7, f10);
+        }
+        u0.b.a(edgeEffect, f7, f10);
+        return f7;
     }
 }

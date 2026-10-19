@@ -30,17 +30,17 @@ import org.telegram.ui.ActionBar.l2;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.r3;
 import org.telegram.ui.Components.q6;
-import org.telegram.ui.Components.w31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.ch1;
-import org.telegram.ui.mg;
-import org.telegram.ui.ni0;
-import rg.s2;
+import org.telegram.ui.ah1;
+import org.telegram.ui.kg;
+import org.telegram.ui.mi0;
+import rg.t2;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -132,9 +132,9 @@ public final /* synthetic */ class r0 implements View.OnClickListener {
             case 8:
                 ki.q qVar = (ki.q) this.b;
                 qVar.K(0, true, 0, false, 0L);
-                ni0 ni0Var = qVar.O;
-                if (ni0Var != null) {
-                    ni0Var.h(true);
+                mi0 mi0Var = qVar.O;
+                if (mi0Var != null) {
+                    mi0Var.h(true);
                     qVar.O = null;
                     break;
                 }
@@ -165,7 +165,7 @@ public final /* synthetic */ class r0 implements View.OnClickListener {
                 o4 o4Var = (o4) this.b;
                 ki.a aVar2 = o4Var.a;
                 if (aVar2 != null && (m4Var = o4Var.G) != null) {
-                    ((s3) m4Var).a.f3.h(aVar2);
+                    ((s3) m4Var).a.f3.i(aVar2);
                     break;
                 }
                 break;
@@ -189,13 +189,13 @@ public final /* synthetic */ class r0 implements View.OnClickListener {
                 }
                 break;
             case 13:
-                ch1 ch1Var = (ch1) this.b;
-                if (!ch1Var.a) {
-                    if (ch1Var.w != 0) {
-                        ch1Var.a(false, true);
+                ah1 ah1Var = (ah1) this.b;
+                if (!ah1Var.a) {
+                    if (ah1Var.w != 0) {
+                        ah1Var.a(false, true);
                         break;
                     } else {
-                        ((Activity) ch1Var.getContext()).startActivityForResult(((MediaProjectionManager) ch1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
+                        ((Activity) ah1Var.getContext()).startActivityForResult(((MediaProjectionManager) ah1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
                         break;
                     }
                 }
@@ -214,24 +214,24 @@ public final /* synthetic */ class r0 implements View.OnClickListener {
                 }
                 break;
             case 15:
-                org.telegram.ui.web.l lVar = (org.telegram.ui.web.l) this.b;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(lVar.getContext());
+                org.telegram.ui.web.k kVar = (org.telegram.ui.web.k) this.b;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(kVar.getContext());
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.WebRecentClearTitle);
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.WebRecentClearText);
-                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new org.telegram.ui.web.a(lVar));
-                i2.d.r(R.string.Cancel, alertDialog$Builder, null);
+                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new org.telegram.ui.web.a(kVar));
+                i2.e.r(R.string.Cancel, alertDialog$Builder, null);
                 break;
             case 16:
-                ((qg.x) this.b).dismiss();
+                ((qg.y) this.b).dismiss();
                 break;
             case 17:
-                ((w31) this.b).run();
+                ((x31) this.b).run();
                 break;
             case 18:
-                ((s2) this.b).onBackPressed();
+                ((t2) this.b).onBackPressed();
                 break;
             case 19:
-                ((mg) this.b).run();
+                ((kg) this.b).run();
                 break;
             case 20:
                 ((x90) this.b).performClick();

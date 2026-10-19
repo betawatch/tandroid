@@ -3,7 +3,7 @@ package androidx.credentials.playservices;
 import a1.e;
 import a1.h;
 import ah.h0;
-import ai.s7;
+import ai.t7;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.CancellationSignal;
@@ -34,9 +34,9 @@ import v0.q;
 import v0.r;
 import w0.a;
 import w0.c;
-import w7.i8;
+import w7.h8;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class CredentialProviderPlayServicesImpl implements j {
     public static final h Companion = new h();
@@ -161,7 +161,7 @@ public final class CredentialProviderPlayServicesImpl implements j {
     }
 
     private final void runFallbackClearCredFlow(v0.a aVar, final CancellationSignal cancellationSignal, final Executor executor, final v0.i iVar) {
-        i7.b a2 = i8.a(this.context);
+        i7.b a2 = h8.a(this.context);
         int i10 = 0;
         a2.a.getSharedPreferences("com.google.android.gms.signin", 0).edit().clear().apply();
         Set set = m.a;
@@ -271,7 +271,7 @@ public final class CredentialProviderPlayServicesImpl implements j {
             g gVar = new g(context, g.k, aVar, com.google.android.gms.common.api.i.c);
             u b10 = v.b();
             b10.d = new k6.c[]{q7.b.b};
-            b10.c = new ag.b(fVar, 20);
+            b10.c = new a4.l(fVar, 21);
             b10.a = 32704;
             Task e = gVar.e(1, b10.a());
             i.d(e, "doWrite(...)");
@@ -291,7 +291,7 @@ public final class CredentialProviderPlayServicesImpl implements j {
             }
             b7.a aVar2 = new b7.a(context, b7.a.k, aVar, new com.google.android.gms.common.api.internal.a());
             u b11 = v.b();
-            b11.c = new ag.b(aVar2, d, 5);
+            b11.c = new a4.l(aVar2, d, 6);
             b11.a = 5407;
             aVar2.e(0, b11.a()).addOnSuccessListener(new a1.c(new b1.f(2, cancellationSignal, eVar4), 27)).addOnFailureListener(new h0(10, eVar4, cancellationSignal));
         } catch (JSONException e7) {
@@ -399,11 +399,11 @@ public final class CredentialProviderPlayServicesImpl implements j {
         g gVar = new g(context2, g.k, com.google.android.gms.common.api.b.p, com.google.android.gms.common.api.i.c);
         u b10 = v.b();
         b10.d = new k6.c[]{q7.b.a};
-        b10.c = new a6.m(getCredentialRequest, 25);
+        b10.c = new qb.c(getCredentialRequest, 25);
         b10.a = 32701;
         Task e = gVar.e(0, b10.a());
         i.d(e, "doRead(...)");
-        e.addOnSuccessListener(new e1.c(new e1.b(cancellationSignal, aVar, executor, callback, 1), 9)).addOnFailureListener(new s7(request, aVar, callback, executor, cancellationSignal));
+        e.addOnSuccessListener(new e1.c(new e1.b(cancellationSignal, aVar, executor, callback, 1), 9)).addOnFailureListener(new t7(request, aVar, callback, executor, cancellationSignal));
     }
 
     public static /* synthetic */ void getGoogleApiAvailability$annotations() {

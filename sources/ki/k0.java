@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.n9;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class k0 {
     public final h1 a;
@@ -82,14 +82,14 @@ public final class k0 {
 
     public final void c(Canvas canvas) {
         j0 j0Var = this.c;
-        n9 t10 = j0Var.t();
-        if (t10 != null) {
+        n9 w9 = j0Var.w();
+        if (w9 != null) {
             if (this.a.getLayout() == null) {
                 return;
             }
             canvas.save();
             canvas.translate(r2.getPaddingLeft() + r2.getLeft(), r2.getPaddingTop() + r2.getTop());
-            t10.Z(canvas, j0Var.B(), 0);
+            w9.Z(canvas, j0Var.D(), 0);
             canvas.restore();
         }
     }

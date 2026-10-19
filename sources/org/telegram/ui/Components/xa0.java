@@ -2,16 +2,16 @@ package org.telegram.ui.Components;
 
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class xa0 extends xh.k {
     public final /* synthetic */ int E = 1;
     public final /* synthetic */ Object F;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xa0(org.telegram.ui.kh0 kh0Var, org.telegram.ui.kh0 kh0Var2, FrameLayout frameLayout, long j10) {
-        super(kh0Var2, frameLayout, j10, true);
-        this.F = kh0Var;
+    public xa0(org.telegram.ui.jh0 jh0Var, org.telegram.ui.jh0 jh0Var2, FrameLayout frameLayout, long j10) {
+        super(jh0Var2, frameLayout, j10, true);
+        this.F = jh0Var;
     }
 
     @Override // xh.k
@@ -20,7 +20,7 @@ public final class xa0 extends xh.k {
         switch (this.E) {
             case 0:
                 xh.b bVar = (xh.b) this.F;
-                rx0 rx0Var = bVar.W;
+                sx0 sx0Var = bVar.W;
                 if (!this.e.isEmpty()) {
                     if (!z11) {
                         super.f(str, z10, z11);
@@ -29,8 +29,8 @@ public final class xa0 extends xh.k {
                         bVar.w.J.setText("");
                         break;
                     }
-                } else if (rx0Var.getVisibility() != 4) {
-                    rx0Var.setVisibility(4);
+                } else if (sx0Var.getVisibility() != 4) {
+                    sx0Var.setVisibility(4);
                     break;
                 }
                 break;
@@ -39,7 +39,7 @@ public final class xa0 extends xh.k {
                     super.f(str, z10, z11);
                     break;
                 } else {
-                    kVar = ((org.telegram.ui.ActionBar.n2) ((org.telegram.ui.kh0) this.F)).actionBar;
+                    kVar = ((org.telegram.ui.ActionBar.n2) ((org.telegram.ui.jh0) this.F)).actionBar;
                     kVar.setSearchFieldText("");
                     break;
                 }

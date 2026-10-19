@@ -20,11 +20,11 @@ import org.telegram.ui.Components.ba0;
 import org.telegram.ui.Components.r90;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.voip.v0;
-import org.telegram.ui.l70;
+import org.telegram.ui.j70;
 import sg.j0;
 import sg.w1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class n extends TextView {
     public final /* synthetic */ int a;
@@ -121,7 +121,7 @@ public final class n extends TextView {
                 super.draw(canvas);
                 break;
             case 9:
-                ((l70) this.c).h.draw(canvas);
+                ((j70) this.c).h.draw(canvas);
                 super.draw(canvas);
                 break;
             default:
@@ -329,9 +329,9 @@ public final class n extends TextView {
                 break;
             case 9:
                 super.onSizeChanged(i10, i11, i12, i13);
-                l70 l70Var = (l70) this.c;
-                l70Var.h.setBounds(0, 0, i10, i11);
-                l70Var.h.setCornerRadius(Math.min(i10, i11) / 2.0f);
+                j70 j70Var = (j70) this.c;
+                j70Var.h.setBounds(0, 0, i10, i11);
+                j70Var.h.setCornerRadius(Math.min(i10, i11) / 2.0f);
                 ((org.telegram.ui.Components.voip.h) this.b).f = i10;
                 break;
             default:
@@ -422,10 +422,10 @@ public final class n extends TextView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n(l70 l70Var, Context context) {
+    public n(j70 j70Var, Context context) {
         super(context);
         this.a = 9;
-        this.c = l70Var;
+        this.c = j70Var;
         org.telegram.ui.Components.voip.h hVar = new org.telegram.ui.Components.voip.h();
         this.b = hVar;
         hVar.k = false;

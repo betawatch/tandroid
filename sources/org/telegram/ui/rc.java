@@ -1,55 +1,75 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.ViewGroup;
+import android.app.Activity;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewParent;
+import android.widget.FrameLayout;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class rc extends org.telegram.ui.Components.hm0 {
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ tc f;
+public final class rc extends FrameLayout {
+    public final org.telegram.ui.ActionBar.d6 a;
+    public final sa1 b;
+    public final s4.b0 c;
+    public final int d;
+    public int e;
 
-    public rc(tc tcVar, Context context, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
-        this.f = tcVar;
-        this.c = context;
-        this.d = d6Var;
-        this.e = i10;
+    public rc(int i10, Activity activity, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(activity);
+        this.d = i10;
+        this.a = d6Var;
+        sa1 sa1Var = new sa1(activity, 3, d6Var);
+        this.b = sa1Var;
+        sa1Var.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(6.0f), 0);
+        sa1Var.setClipToPadding(false);
+        sa1Var.setAdapter(new pc(this, activity, d6Var, i10));
+        s4.b0 b0Var = new s4.b0();
+        this.c = b0Var;
+        b0Var.j1(0);
+        sa1Var.setLayoutManager(b0Var);
+        addView(sa1Var, w7.z5.c(-1.0f, -1));
     }
 
-    @Override // org.telegram.ui.Components.hm0
-    public final boolean D(s4.b1 b1Var) {
-        return true;
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        MessagesController.PeerColors peerColors = MessagesController.getInstance(this.e).peerColors;
-        if (peerColors == null) {
-            return 0;
+    public final void a(int i10, boolean z10) {
+        MessagesController.PeerColors peerColors = MessagesController.getInstance(this.d).peerColors;
+        int i11 = 0;
+        if (peerColors != null) {
+            int i12 = 0;
+            while (true) {
+                if (i12 >= peerColors.colors.size()) {
+                    break;
+                }
+                if (peerColors.colors.get(i12).id == i10) {
+                    i11 = i12;
+                    break;
+                }
+                i12++;
+            }
         }
-        return peerColors.colors.size();
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        sc scVar = (sc) b1Var.a;
-        scVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, this.d));
-        boolean z10 = i10 == this.f.e;
-        scVar.s = z10;
-        scVar.v.f(z10, true);
-        scVar.invalidate();
-        MessagesController.PeerColors peerColors = MessagesController.getInstance(this.e).peerColors;
-        if (peerColors == null || i10 < 0 || i10 >= peerColors.colors.size()) {
-            return;
+        if (i11 != this.e) {
+            this.e = i11;
+            if (!z10) {
+                this.c.h1(i11, (AndroidUtilities.displaySize.x - AndroidUtilities.dp(56.0f)) / 2);
+            }
+            AndroidUtilities.forEachViews((RecyclerView) this.b, (Utilities.Callback<View>) new ai.y8(4, this, z10));
         }
-        scVar.a(peerColors.colors.get(i10));
     }
 
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.sl0(new sc(this.f, this.c));
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (getParent() != null) {
+            ViewParent parent = getParent();
+            boolean z10 = true;
+            if (!canScrollHorizontally(-1) && !canScrollHorizontally(1)) {
+                z10 = false;
+            }
+            parent.requestDisallowInterceptTouchEvent(z10);
+        }
+        return super.onInterceptTouchEvent(motionEvent);
     }
 }

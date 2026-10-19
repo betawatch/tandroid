@@ -1,33 +1,36 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final /* synthetic */ class bc implements RequestDelegate {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class bc implements Runnable {
+    public final /* synthetic */ int a = 0;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ TLObject c;
     public final /* synthetic */ long d;
 
-    public /* synthetic */ bc(int i10, long j10, long j11, MessagesController messagesController) {
-        this.a = i10;
+    public /* synthetic */ bc(MessagesController messagesController, long j10, TLObject tLObject) {
         this.b = messagesController;
-        this.c = j10;
-        this.d = j11;
+        this.d = j10;
+        this.c = tLObject;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadUnknownDialog$207(this.c, this.d, tLObject, tL_error);
+                this.b.lambda$loadPeerSettings$78(this.d, this.c);
                 break;
             default:
-                this.b.lambda$deleteMessages$123(this.c, this.d, tLObject, tL_error);
+                this.b.lambda$deleteUserPhoto$113(this.c, this.d);
                 break;
         }
+    }
+
+    public /* synthetic */ bc(MessagesController messagesController, TLObject tLObject, long j10) {
+        this.b = messagesController;
+        this.c = tLObject;
+        this.d = j10;
     }
 }

@@ -1,65 +1,28 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.view.View;
-import java.util.WeakHashMap;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class dk extends org.telegram.ui.Components.u81 {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ sn b;
+public final class dk implements Runnable {
+    public final /* synthetic */ qn a;
 
-    public dk(sn snVar, Context context) {
-        this.b = snVar;
-        this.a = context;
+    public dk(qn qnVar) {
+        this.a = qnVar;
     }
 
-    @Override // org.telegram.ui.Components.u81
-    public final void b(View view, int i10, int i11) {
-        if (view instanceof un) {
-            ((un) view).a.Nc(this.b.u3);
+    @Override // java.lang.Runnable
+    public final void run() {
+        qn qnVar = this.a;
+        MessageObject messageObject = qnVar.d5;
+        if (messageObject == null || qnVar.T8 == null) {
+            return;
         }
-        WeakHashMap weakHashMap = r0.i0.a;
-        r0.y.c(view);
-    }
-
-    @Override // org.telegram.ui.Components.u81
-    public final View d(int i10) {
-        Context context = this.a;
-        sn snVar = this.b;
-        if (i10 == 0) {
-            return new gn(snVar, context);
-        }
-        Bundle bundle = new Bundle();
-        bundle.putInt("chatMode", 7);
-        bundle.putInt("searchType", i10);
-        bundle.putString("searchHashtag", snVar.u3);
-        ck ckVar = new ck(context, snVar.getParentLayout(), bundle, 0);
-        ckVar.h = false;
-        tn tnVar = ckVar.a;
-        tnVar.L.a = snVar.L;
-        tnVar.ca = snVar.ea;
-        tnVar.da = snVar;
-        tnVar.V8 = new g(this, 13);
-        return ckVar;
-    }
-
-    @Override // org.telegram.ui.Components.u81
-    public final int e() {
-        return 3;
-    }
-
-    @Override // org.telegram.ui.Components.u81
-    public final CharSequence g(int i10) {
-        return i10 != 1 ? i10 != 2 ? LocaleController.getString(R.string.SearchThisChat) : LocaleController.getString(R.string.SearchPublicPosts) : LocaleController.getString(R.string.SearchMyMessages);
-    }
-
-    @Override // org.telegram.ui.Components.u81
-    public final int h(int i10) {
-        return i10;
+        int max = Math.max(0, messageObject.messageOwner.ttl_period - (qnVar.getConnectionsManager().getCurrentTime() - qnVar.d5.messageOwner.date));
+        qnVar.T8.setSubtext(LocaleController.formatString(R.string.AutoDeleteIn, max < 86400 ? AndroidUtilities.formatDuration(max, false, true) : LocaleController.formatPluralString("Days", Math.round(max / 86400.0f), new Object[0])));
+        AndroidUtilities.runOnUIThread(qnVar.U8, 1000L);
     }
 }

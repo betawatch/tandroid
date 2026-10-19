@@ -1,18 +1,32 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.Shader;
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class f61 implements View.OnLayoutChangeListener {
-    public final /* synthetic */ j61 a;
+public final class f61 extends View {
+    public final Paint a;
+    public final LinearGradient b;
 
-    public f61(j61 j61Var) {
-        this.a = j61Var;
+    public f61(h61 h61Var, Context context) {
+        super(context);
+        this.a = new Paint(1);
+        float dp = AndroidUtilities.dp(68.0f);
+        int i10 = org.telegram.ui.ActionBar.h6.h5;
+        this.b = new LinearGradient(0.0f, 0.0f, 0.0f, dp, new int[]{org.telegram.ui.ActionBar.h6.m1(0.0f, h61Var.getThemedColor(i10)), h61Var.getThemedColor(i10)}, new float[]{0.0f, 0.2f}, Shader.TileMode.CLAMP);
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        j61.T(this.a);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        LinearGradient linearGradient = this.b;
+        Paint paint = this.a;
+        paint.setShader(linearGradient);
+        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
     }
 }

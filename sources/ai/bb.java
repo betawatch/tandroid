@@ -4,7 +4,7 @@ import android.content.DialogInterface;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class bb implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -17,10 +17,10 @@ public final /* synthetic */ class bb implements DialogInterface.OnDismissListen
 
     @Override // android.content.DialogInterface.OnDismissListener
     public final void onDismiss(DialogInterface dialogInterface) {
-        org.telegram.ui.web.h0 h0Var;
+        org.telegram.ui.web.g0 g0Var;
         switch (this.a) {
             case 0:
-                ((w8) this.b).run();
+                ((x8) this.b).run();
                 break;
             case 1:
                 AndroidUtilities.hideKeyboard((EditTextBoldCursor) this.b);
@@ -32,10 +32,10 @@ public final /* synthetic */ class bb implements DialogInterface.OnDismissListen
                 ((androidx.fragment.app.d) this.b).run();
                 break;
             case 4:
-                ci.z9 z9Var = (ci.z9) this.b;
-                if (dialogInterface == z9Var.u0) {
-                    z9Var.u0 = null;
-                    z9Var.P();
+                ci.aa aaVar = (ci.aa) this.b;
+                if (dialogInterface == aaVar.u0) {
+                    aaVar.u0 = null;
+                    aaVar.P();
                     break;
                 }
                 break;
@@ -61,16 +61,16 @@ public final /* synthetic */ class bb implements DialogInterface.OnDismissListen
                 }
                 break;
             case 10:
-                org.telegram.ui.web.b1 b1Var = ((org.telegram.ui.web.n0) this.b).e.Q;
-                if (b1Var != null && (h0Var = b1Var.c) != null) {
-                    h0Var.y();
+                org.telegram.ui.web.a1 a1Var = ((org.telegram.ui.web.m0) this.b).e.Q;
+                if (a1Var != null && (g0Var = a1Var.c) != null) {
+                    g0Var.y();
                     break;
                 }
                 break;
             case 11:
-                org.telegram.ui.web.h0 h0Var2 = ((org.telegram.ui.web.u0) this.b).b.e.Q.c;
-                if (h0Var2 != null) {
-                    h0Var2.y();
+                org.telegram.ui.web.g0 g0Var2 = ((org.telegram.ui.web.t0) this.b).b.e.Q.c;
+                if (g0Var2 != null) {
+                    g0Var2.y();
                     break;
                 }
                 break;

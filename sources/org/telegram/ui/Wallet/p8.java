@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class p8 extends org.telegram.ui.ActionBar.n2 {
     public final ArrayList a;
@@ -34,9 +34,9 @@ public final class p8 extends org.telegram.ui.ActionBar.n2 {
     public static void U(p8 p8Var) {
         ArrayList arrayList = p8Var.a;
         if (arrayList.size() == 12 || arrayList.size() == 24) {
-            y9 y9Var = new y9(arrayList, new n(p8Var, 11));
-            y9Var.setCurrentAccount(p8Var.currentAccount);
-            p8Var.presentFragment(y9Var);
+            z9 z9Var = new z9(arrayList, new n(p8Var, 12));
+            z9Var.setCurrentAccount(p8Var.currentAccount);
+            p8Var.presentFragment(z9Var);
         }
     }
 

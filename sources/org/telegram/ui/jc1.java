@@ -1,11 +1,9 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
-/* loaded from: classes3.dex */
-public final class jc1 {
-    public final /* synthetic */ kc1 a;
+import org.telegram.tgnet.TLRPC;
 
-    public jc1(kc1 kc1Var) {
-        this.a = kc1Var;
-    }
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* loaded from: classes3.dex */
+public interface jc1 {
+    void a(TLRPC.TL_wallPaper tL_wallPaper);
 }

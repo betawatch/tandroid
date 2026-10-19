@@ -9,7 +9,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class v7 {
     public static NinePatchDrawable a(Bitmap bitmap, Rect rect, int i10, int i11) {
@@ -22,7 +22,7 @@ public abstract class v7 {
         if (i10 >= 0 && i10 < bitmap.getWidth() && i11 >= 0 && i11 < bitmap.getHeight()) {
             return new NinePatchDrawable(ApplicationLoader.applicationContext.getResources(), bitmap, c(i10, i10 + 1, i11, i11 + 1, rect.left, rect.top, rect.right, rect.bottom, bitmap.getPixel(i10, i11)).array(), rect, null);
         }
-        StringBuilder m10 = i2.d.m("center pixel is outside bitmap: (", i10, ", ", i11, ") for ");
+        StringBuilder m10 = i2.e.m("center pixel is outside bitmap: (", i10, ", ", i11, ") for ");
         m10.append(bitmap.getWidth());
         m10.append("x");
         m10.append(bitmap.getHeight());

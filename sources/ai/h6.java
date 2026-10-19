@@ -1,43 +1,47 @@
 package ai;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class h6 {
-    public final ag.c a;
-    public final TLRPC.TL_payments_paymentFormStarGift b;
-    public final ag.a c;
+    public float a;
+    public final int b;
+    public final int c;
 
-    public h6(ag.c cVar, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift) {
-        long j10;
-        this.a = cVar;
-        this.b = tL_payments_paymentFormStarGift;
-        ga[][] gaVarArr = ga.S;
-        if (tL_payments_paymentFormStarGift != null) {
-            ArrayList<TLRPC.TL_labeledPrice> arrayList = tL_payments_paymentFormStarGift.invoice.prices;
-            int size = arrayList.size();
-            int i10 = 0;
-            j10 = 0;
-            while (i10 < size) {
-                TLRPC.TL_labeledPrice tL_labeledPrice = arrayList.get(i10);
-                i10++;
-                j10 += tL_labeledPrice.amount;
-            }
-        } else {
-            j10 = 0;
+    public h6(float f7, int i10, int i11) {
+        this.a = f7;
+        this.b = i10;
+        this.c = i11;
+    }
+
+    public float a(int i10) {
+        int i11 = this.b;
+        int i12 = this.c;
+        if (i12 == i10 && i11 == i10) {
+            return 1.0f;
         }
-        ag.c cVar2 = ag.c.a;
-        if (cVar == cVar2) {
-            this.c = ag.a.g(j10, cVar2);
-            return;
+        if (i12 == i10) {
+            return this.a;
         }
-        ag.c cVar3 = ag.c.b;
-        if (cVar == cVar3) {
-            this.c = ag.a.i(j10, cVar3);
-        } else {
-            this.c = ag.a.i(0L, cVar2);
+        if (i11 == i10) {
+            return 1.0f - this.a;
         }
+        return 0.0f;
+    }
+
+    public boolean b(int i10) {
+        return this.b == i10 || this.c == i10;
+    }
+
+    public boolean c(int i10) {
+        return this.c == i10;
+    }
+
+    public boolean d(int i10) {
+        return this.c == i10;
+    }
+
+    public h6(int i10, int i11) {
+        this.b = i10;
+        this.c = i11;
     }
 }

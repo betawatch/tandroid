@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class b implements d {
     public static final r c = new r(new ya.b(5), s1.b);
@@ -109,7 +109,7 @@ public final class b implements d {
     }
 
     @Override // z3.d
-    public final int c(long j10) {
+    public final int d(long j10) {
         int b10 = m0.b(this.b, j10, false);
         if (b10 < this.a.size()) {
             return b10;
@@ -118,13 +118,13 @@ public final class b implements d {
     }
 
     @Override // z3.d
-    public final long d(int i10) {
+    public final long k(int i10) {
         u6.g(i10 < this.a.size());
         return this.b[i10];
     }
 
     @Override // z3.d
-    public final List e(long j10) {
+    public final List s(long j10) {
         int f7 = m0.f(this.b, j10, false);
         if (f7 != -1) {
             return (n0) this.a.get(f7);
@@ -134,7 +134,7 @@ public final class b implements d {
     }
 
     @Override // z3.d
-    public final int h() {
+    public final int u() {
         return this.a.size();
     }
 }

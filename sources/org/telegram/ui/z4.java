@@ -19,7 +19,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class z4 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -135,18 +135,18 @@ public final class z4 extends FrameLayout {
                 break;
             default:
                 Paint paint = (Paint) obj;
-                mc1 mc1Var = (mc1) this.h;
-                mb1 mb1Var = mc1Var.a;
+                kc1 kc1Var = (kc1) this.h;
+                kb1 kb1Var = kc1Var.a;
                 if (this.c) {
                     RectF rectF = AndroidUtilities.rectTmp;
                     rectF.set(0.0f, 0.0f, getWidth(), getHeight());
                     canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-                    org.telegram.ui.ActionBar.h6.s(this, mc1Var.x0, mb1Var);
-                    Paint n10 = mb1Var.n("paintChatActionBackground");
+                    org.telegram.ui.ActionBar.h6.s(this, kc1Var.x0, kb1Var);
+                    Paint n10 = kb1Var.n("paintChatActionBackground");
                     ColorFilter colorFilter = n10.getColorFilter();
                     n10.setColorFilter((ColorMatrixColorFilter) this.f);
-                    bc1 bc1Var = mc1Var.x0;
-                    if (bc1Var != null && (bc1Var.getBackground() instanceof org.telegram.ui.Components.wc0) && mc1Var.l1 < 0.0f) {
+                    zb1 zb1Var = kc1Var.x0;
+                    if (zb1Var != null && (zb1Var.getBackground() instanceof org.telegram.ui.Components.wc0) && kc1Var.l1 < 0.0f) {
                         f7 = 0.33f;
                     }
                     int alpha = n10.getAlpha();
@@ -154,10 +154,10 @@ public final class z4 extends FrameLayout {
                     canvas.drawRect(rectF, n10);
                     n10.setAlpha(alpha);
                     n10.setColorFilter(colorFilter);
-                    if (mc1Var.M1) {
-                        float f10 = mc1Var.n1;
+                    if (kc1Var.M1) {
+                        float f10 = kc1Var.n1;
                         if (f10 > 0.0f) {
-                            canvas.drawColor(i0.a.o(-16777216, (int) (f10 * 255.0f * mc1Var.o1)));
+                            canvas.drawColor(i0.a.o(-16777216, (int) (f10 * 255.0f * kc1Var.o1)));
                         }
                     }
                     canvas.save();
@@ -213,9 +213,9 @@ public final class z4 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z4(mc1 mc1Var, Context context, boolean z10) {
+    public z4(kc1 kc1Var, Context context, boolean z10) {
         super(context);
-        this.h = mc1Var;
+        this.h = kc1Var;
         this.c = z10;
         Paint paint = new Paint(3);
         this.e = paint;

@@ -1,19 +1,19 @@
 package hg;
 
 import java.util.ArrayList;
-import org.telegram.ui.os;
+import org.telegram.ui.ms;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class q1 implements z1 {
-    public final /* synthetic */ os a;
+    public final /* synthetic */ ms a;
 
-    public q1(os osVar) {
-        this.a = osVar;
+    public q1(ms msVar) {
+        this.a = msVar;
     }
 
     @Override // hg.z1
-    public final a0.h J() {
+    public final a0.h G() {
         return null;
     }
 
@@ -24,10 +24,10 @@ public final class q1 implements z1 {
 
     @Override // hg.z1
     public final void f(int i10) {
-        os osVar = this.a;
-        osVar.l();
+        ms msVar = this.a;
+        msVar.l();
         if (i10 != 0) {
-            osVar.F();
+            msVar.F();
         }
     }
 
@@ -37,6 +37,6 @@ public final class q1 implements z1 {
     }
 
     @Override // hg.z1
-    public final /* synthetic */ void Y(ArrayList arrayList) {
+    public final /* synthetic */ void S(ArrayList arrayList) {
     }
 }

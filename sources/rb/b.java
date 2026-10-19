@@ -26,10 +26,10 @@ import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.o9;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.a6;
-import org.telegram.ui.xu0;
+import org.telegram.ui.vu0;
 import r2.u;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class b implements cg.a, dg.a, fa.a, gb.n, n6.k, r9.d, l1, u, u5.a, v9.a, Continuation, y6.d {
     public static volatile b b;
@@ -72,7 +72,7 @@ public final class b implements cg.a, dg.a, fa.a, gb.n, n6.k, r9.d, l1, u, u5.a,
             throw new IllegalArgumentException("Illegal use of UpsampleAudioResampler");
         }
         if (i12 != 1 && i12 != 2) {
-            throw new IllegalArgumentException(i2.d.j(i12, "Illegal use of UpsampleAudioResampler. Channels:"));
+            throw new IllegalArgumentException(i2.e.j(i12, "Illegal use of UpsampleAudioResampler. Channels:"));
         }
         int remaining = shortBuffer.remaining() / i12;
         int ceil = ((int) Math.ceil((i11 / i10) * remaining)) - remaining;
@@ -260,7 +260,7 @@ public final class b implements cg.a, dg.a, fa.a, gb.n, n6.k, r9.d, l1, u, u5.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ xu0 P1() {
+    public /* synthetic */ vu0 P1() {
         switch (this.a) {
         }
         return null;
@@ -657,14 +657,14 @@ public final class b implements cg.a, dg.a, fa.a, gb.n, n6.k, r9.d, l1, u, u5.a,
         return null;
     }
 
-    @Override // r2.u
-    public boolean u() {
-        return false;
-    }
-
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void u0(u1 u1Var, TLRPC.User user, float f7, float f10) {
         int i10 = this.a;
+    }
+
+    @Override // r2.u
+    public boolean v() {
+        return false;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -1025,7 +1025,7 @@ public final class b implements cg.a, dg.a, fa.a, gb.n, n6.k, r9.d, l1, u, u5.a,
     private final /* synthetic */ void t0(u1 u1Var, TLObject tLObject, boolean z10) {
     }
 
-    private final /* synthetic */ void v(u1 u1Var, float f7, float f10) {
+    private final /* synthetic */ void u(u1 u1Var, float f7, float f10) {
     }
 
     private final /* synthetic */ void x(u1 u1Var, float f7, float f10) {

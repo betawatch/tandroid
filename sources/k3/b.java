@@ -14,13 +14,14 @@ import e2.x;
 import e9.l0;
 import e9.n0;
 import e9.x1;
+import i2.e;
 import j$.util.Objects;
 import java.util.List;
 import org.xmlpull.v1.XmlPullParserException;
 import w3.l;
 import z3.k;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class b implements o {
     public q b;
@@ -192,7 +193,7 @@ public final class b implements o {
             v vVar = new v();
             vVar.q = v0.n("image/jpeg");
             vVar.k = new t0(bVar2);
-            i2.d.u(vVar, j02);
+            e.u(vVar, j02);
             this.c = 5;
             return 0;
         }

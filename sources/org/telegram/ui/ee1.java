@@ -1,28 +1,71 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import java.util.ArrayList;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class ee1 extends re1 {
-    public final /* synthetic */ te1 g3;
+public final class ee1 extends s4.k {
+    public Runnable F;
+    public int G;
+    public final /* synthetic */ re1 H;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ee1(te1 te1Var, Context context) {
-        super(te1Var, context);
-        this.g3 = te1Var;
+    public ee1(re1 re1Var) {
+        this.H = re1Var;
     }
 
-    @Override // org.telegram.ui.Components.im0
-    public final boolean S0() {
-        ArrayList arrayList = this.g3.b;
-        return (getAdapter() == null || this.V1 || (arrayList == null || arrayList.size() != 1 || arrayList.get(0) == null || ((ke1) arrayList.get(0)).c == null || ((ke1) arrayList.get(0)).c.id != 1 ? getAdapter().h() > 1 : getAdapter().h() > 2)) ? false : true;
+    @Override // s4.k
+    public final void F() {
+        if (this.G == -1) {
+            this.G = this.H.getNotificationCenter().setAnimationInProgress(this.G, null, false);
+            Runnable runnable = this.F;
+            if (runnable != null) {
+                AndroidUtilities.cancelRunOnUIThread(runnable);
+                this.F = null;
+            }
+        }
     }
 
-    @Override // org.telegram.ui.re1, org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.g3.y0();
+    @Override // s4.k
+    public final void N() {
+        Runnable runnable = this.F;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+            this.F = null;
+        }
+        de1 de1Var = new de1(this, 0);
+        this.F = de1Var;
+        AndroidUtilities.runOnUIThread(de1Var);
+    }
+
+    @Override // s4.k, s4.l0
+    public final void g() {
+        super.g();
+        Runnable runnable = this.F;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+        }
+        de1 de1Var = new de1(this, 1);
+        this.F = de1Var;
+        AndroidUtilities.runOnUIThread(de1Var);
+    }
+
+    @Override // s4.k
+    public final void z(s4.b1 b1Var) {
+        re1 re1Var = this.H;
+        View view = re1Var.b1;
+        if (view == b1Var.a) {
+            view.setTranslationX(0.0f);
+            vd1 vd1Var = re1Var.O;
+            if (vd1Var != null) {
+                vd1Var.F.clear();
+            }
+            View view2 = re1Var.b1;
+            if (view2 instanceof oe1) {
+                oe1 oe1Var = (oe1) view2;
+                oe1Var.setTopicIcon(oe1Var.c5);
+            }
+            re1Var.b1 = null;
+        }
     }
 }

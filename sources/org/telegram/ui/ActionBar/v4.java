@@ -32,9 +32,9 @@ import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.sa1;
+import org.telegram.ui.qa1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class v4 {
     public final Rect A = new Rect();
@@ -60,7 +60,7 @@ public final class v4 {
     public final int d;
     public final int e;
     public final RelativeLayout f;
-    public final sa1 g;
+    public final qa1 g;
     public final u4 h;
     public final FrameLayout i;
     public final View j;
@@ -220,7 +220,7 @@ public final class v4 {
         frameLayout.addView(view2, w7.z5.a(-1.0f, f7 / AndroidUtilities.density, 55));
         r4Var.measure(0, 0);
         this.H = new Size(r4Var.getMeasuredWidth(), r4Var.getMeasuredHeight());
-        this.g = new sa1(this, context, 6);
+        this.g = new qa1(this, context, 6);
         com.google.firebase.messaging.n nVar = new com.google.firebase.messaging.n();
         nVar.e = this;
         nVar.c = context;
@@ -346,7 +346,7 @@ public final class v4 {
         boolean z10 = this.N;
         Interpolator interpolator = this.t;
         u4 u4Var = this.h;
-        sa1 sa1Var = this.g;
+        qa1 qa1Var = this.g;
         t4 t4Var = this.r;
         Interpolator interpolator2 = this.s;
         FrameLayout frameLayout = this.i;
@@ -378,7 +378,7 @@ public final class v4 {
             relativeLayout.startAnimation(animationSet);
             this.N = false;
             n();
-            sa1Var.animate().alpha(1.0f).withLayer().setInterpolator(this.u).setDuration(100L).start();
+            qa1Var.animate().alpha(1.0f).withLayer().setInterpolator(this.u).setDuration(100L).start();
             u4Var.animate().alpha(0.0f).withLayer().setInterpolator(interpolator).setDuration(150L).start();
             return;
         }
@@ -409,7 +409,7 @@ public final class v4 {
         relativeLayout.startAnimation(animationSet2);
         this.N = true;
         n();
-        sa1Var.animate().alpha(0.0f).withLayer().setInterpolator(interpolator).setDuration(250L).start();
+        qa1Var.animate().alpha(0.0f).withLayer().setInterpolator(interpolator).setDuration(250L).start();
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) frameLayout.getLayoutParams();
         layoutParams.width = u4Var.getWidth();
         frameLayout.setLayoutParams(layoutParams);
@@ -511,36 +511,36 @@ public final class v4 {
         int i10 = this.d;
         Size size = this.H;
         int i11 = this.e;
-        sa1 sa1Var = this.g;
+        qa1 qa1Var = this.g;
         RelativeLayout relativeLayout = this.f;
         if (z10) {
             m(relativeLayout, this.I);
-            sa1Var.setAlpha(0.0f);
-            sa1Var.setVisibility(4);
+            qa1Var.setAlpha(0.0f);
+            qa1Var.setVisibility(4);
             u4Var.setAlpha(1.0f);
             u4Var.setVisibility(0);
             r4Var.setImageDrawable(this.m);
             frameLayout.setContentDescription(LocaleController.getString(org.telegram.messenger.R.string.AccDescrMoreOptions));
             relativeLayout.setX((popupWindow.getWidth() - r2.getWidth()) - i10);
-            sa1Var.setX(-relativeLayout.getX());
+            qa1Var.setX(-relativeLayout.getX());
             frameLayout.setX(0.0f);
             u4Var.setX(0.0f);
             if (this.M) {
                 relativeLayout.setY(i11);
-                sa1Var.setY(r2.getHeight() - relativeLayout.getHeight());
+                qa1Var.setY(r2.getHeight() - relativeLayout.getHeight());
                 frameLayout.setY(r2.getHeight() - size.getHeight());
                 u4Var.setY(0.0f);
                 return;
             }
             relativeLayout.setY(i11);
-            sa1Var.setY(0.0f);
+            qa1Var.setY(0.0f);
             frameLayout.setY(0.0f);
             u4Var.setY(size.getHeight());
             return;
         }
         m(relativeLayout, this.J);
-        sa1Var.setAlpha(1.0f);
-        sa1Var.setVisibility(0);
+        qa1Var.setAlpha(1.0f);
+        qa1Var.setVisibility(0);
         u4Var.setAlpha(0.0f);
         u4Var.setVisibility(4);
         r4Var.setImageDrawable(this.n);
@@ -548,23 +548,23 @@ public final class v4 {
         if (this.I == null) {
             relativeLayout.setX(i10);
             relativeLayout.setY(i11);
-            sa1Var.setX(0.0f);
-            sa1Var.setY(0.0f);
+            qa1Var.setX(0.0f);
+            qa1Var.setY(0.0f);
             return;
         }
         relativeLayout.setX((popupWindow.getWidth() - r2.getWidth()) - i10);
-        sa1Var.setX(0.0f);
+        qa1Var.setX(0.0f);
         frameLayout.setX(r2.getWidth() - size.getWidth());
         u4Var.setX(r2.getWidth() - this.I.getWidth());
         if (this.M) {
             relativeLayout.setY((this.I.getHeight() + i11) - r2.getHeight());
-            sa1Var.setY(0.0f);
+            qa1Var.setY(0.0f);
             frameLayout.setY(0.0f);
             u4Var.setY(r2.getHeight() - this.I.getHeight());
             return;
         }
         relativeLayout.setY(i11);
-        sa1Var.setY(0.0f);
+        qa1Var.setY(0.0f);
         frameLayout.setY(0.0f);
         u4Var.setY(size.getHeight());
     }

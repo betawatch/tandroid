@@ -1,11 +1,11 @@
 package hi;
 
-import ai.n2;
+import ai.o2;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g61;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements Utilities.Callback5, Utilities.Callback5Return, MessagesStorage.StringCallback {
     public final /* synthetic */ f a;
@@ -24,13 +24,13 @@ public final /* synthetic */ class c implements Utilities.Callback5, Utilities.C
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        f.U(this.a, (f61) obj);
+        f.U(this.a, (g61) obj);
     }
 
     @Override // org.telegram.messenger.MessagesStorage.StringCallback
     public void run(String str) {
         f fVar = this.a;
         fVar.getMessagesController().getChat(Long.valueOf(-fVar.a));
-        fVar.showDialog(new ji.a(fVar.getParentActivity(), null, fVar.a, new n2(20, fVar, str)));
+        fVar.showDialog(new ji.a(fVar.getParentActivity(), null, fVar.a, new o2(20, fVar, str)));
     }
 }

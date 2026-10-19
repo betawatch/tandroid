@@ -1,8 +1,8 @@
 package com.google.firebase.messaging;
 
 import ah.i1;
-import ai.r2;
-import ai.z4;
+import ai.a5;
+import ai.u2;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.media.MediaCodec;
@@ -13,6 +13,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.Surface;
 import android.view.ViewGroup;
+import ci.t6;
 import com.google.android.gms.internal.cast.z5;
 import e2.m0;
 import ei.a2;
@@ -58,7 +59,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.hs0;
+import org.telegram.ui.Components.is0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.w9;
@@ -66,7 +67,7 @@ import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 import sg.y0;
 import v7.s6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -276,9 +277,9 @@ public final /* synthetic */ class s implements Runnable {
                 return;
             case 3:
                 di.r rVar = (di.r) this.b;
-                hs0 hs0Var = rVar.W;
-                ci.s6 s6Var = rVar.a;
-                hs0Var.a(s6Var == null ? "" : s6Var.E);
+                is0 is0Var = rVar.W;
+                t6 t6Var = rVar.a;
+                is0Var.a(t6Var == null ? "" : t6Var.E);
                 return;
             case 4:
                 a();
@@ -306,7 +307,7 @@ public final /* synthetic */ class s implements Runnable {
             case 10:
                 o5 o5Var = (o5) this.b;
                 qc.e();
-                y0 y0Var = new y0((n2) new z4(o5Var), 14, false);
+                y0 y0Var = new y0((n2) new a5(o5Var), 14, false);
                 y0Var.setOnDismissListener(new e1(0));
                 y0Var.show();
                 return;
@@ -356,7 +357,7 @@ public final /* synthetic */ class s implements Runnable {
                     MediaDataController.getInstance(i11).fetchNewEmojiKeywords(currentKeyboardLanguage);
                 }
                 a2Var.J = currentKeyboardLanguage;
-                mediaDataController.getEmojiSuggestions(currentKeyboardLanguage, a2Var.H, false, new r2(a2Var, str2, mediaDataController, 6), null, false, false, false, true, 50, false);
+                mediaDataController.getEmojiSuggestions(currentKeyboardLanguage, a2Var.H, false, new u2(a2Var, str2, mediaDataController, 6), null, false, false, false, true, 50, false);
                 return;
             case 13:
                 h2 h2Var = (h2) ((ai.u) this.b).b;
@@ -428,7 +429,7 @@ public final /* synthetic */ class s implements Runnable {
             case 23:
                 ub ubVar = (ub) this.b;
                 ubVar.x0.onTouchEvent(AndroidUtilities.emptyMotionEvent());
-                ubVar.w0.j0(AndroidUtilities.emptyMotionEvent());
+                ubVar.w0.k(AndroidUtilities.emptyMotionEvent());
                 return;
             case 24:
                 vb vbVar = ((ua) this.b).k0;

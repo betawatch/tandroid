@@ -1,23 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class yz0 extends ViewGroup.MarginLayoutParams {
-    public a01 a;
-    public a01 b;
+public final class yz0 {
+    public final int a;
+    public final int b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yz0() {
-        super(-2, -2);
-        a01 a01Var = a01.e;
-        this.a = a01Var;
-        this.b = a01Var;
-        setMargins(TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31);
-        this.a = a01Var;
-        this.b = a01Var;
+    public yz0(int i10, int i11) {
+        this.a = i10;
+        this.b = i11;
+    }
+
+    public final int a() {
+        return this.b - this.a;
     }
 
     public final boolean equals(Object obj) {
@@ -28,10 +23,10 @@ public final class yz0 extends ViewGroup.MarginLayoutParams {
             return false;
         }
         yz0 yz0Var = (yz0) obj;
-        return this.b.equals(yz0Var.b) && this.a.equals(yz0Var.a);
+        return this.b == yz0Var.b && this.a == yz0Var.a;
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + (this.a.hashCode() * 31);
+        return (this.a * 31) + this.b;
     }
 }

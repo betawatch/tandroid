@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.Intro;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class o2 implements z4.e {
     public final /* synthetic */ int a;
@@ -26,14 +26,14 @@ public final class o2 implements z4.e {
                 }
                 break;
             case 1:
-                l70 l70Var = (l70) this.b;
-                org.telegram.ui.Components.sa saVar = l70Var.e;
+                j70 j70Var = (j70) this.b;
+                org.telegram.ui.Components.sa saVar = j70Var.e;
                 saVar.b = f7;
                 saVar.c = i10;
                 saVar.invalidate();
-                float measuredWidth2 = l70Var.d.getMeasuredWidth();
+                float measuredWidth2 = j70Var.d.getMeasuredWidth();
                 if (measuredWidth2 != 0.0f) {
-                    Intro.setScrollOffset((((i10 * measuredWidth2) + i11) - (l70Var.H * measuredWidth2)) / measuredWidth2);
+                    Intro.setScrollOffset((((i10 * measuredWidth2) + i11) - (j70Var.H * measuredWidth2)) / measuredWidth2);
                     break;
                 }
                 break;
@@ -49,10 +49,10 @@ public final class o2 implements z4.e {
                 s2Var.c.invalidate();
                 break;
             case 1:
-                ((l70) this.b).H = i10;
+                ((j70) this.b).H = i10;
                 break;
             default:
-                ((mc1) this.b).a0.invalidate();
+                ((kc1) this.b).a0.invalidate();
                 break;
         }
     }
@@ -61,21 +61,21 @@ public final class o2 implements z4.e {
     public final void c(int i10) {
         switch (this.a) {
             case 1:
-                l70 l70Var = (l70) this.b;
+                j70 j70Var = (j70) this.b;
                 if (i10 != 1) {
                     if (i10 == 0 || i10 == 2) {
-                        if (l70Var.K) {
-                            l70Var.K = false;
+                        if (j70Var.K) {
+                            j70Var.K = false;
                         }
-                        if (l70Var.w != l70Var.d.getCurrentItem()) {
-                            l70Var.w = l70Var.d.getCurrentItem();
+                        if (j70Var.w != j70Var.d.getCurrentItem()) {
+                            j70Var.w = j70Var.d.getCurrentItem();
                             break;
                         }
                     }
                 } else {
-                    l70Var.K = true;
-                    l70Var.d.getCurrentItem();
-                    l70Var.d.getMeasuredWidth();
+                    j70Var.K = true;
+                    j70Var.d.getCurrentItem();
+                    j70Var.d.getMeasuredWidth();
                     break;
                 }
                 break;

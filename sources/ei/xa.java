@@ -12,7 +12,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.ui.Components.ah0;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class xa extends f6 {
     public final /* synthetic */ vb A2;
@@ -115,13 +115,13 @@ public final class xa extends f6 {
         vbVar.c1.f.d();
         vbVar.k0(0, false, true);
         rg.j jVar = this.J0;
-        if (!(jVar instanceof rg.u2) || this.K0) {
+        if (!(jVar instanceof rg.v2) || this.K0) {
             return;
         }
-        rg.u2 u2Var = (rg.u2) jVar;
+        rg.v2 v2Var = (rg.v2) jVar;
         this.K0 = true;
-        u2Var.q();
-        View focusedView = u2Var.getFocusedView();
+        v2Var.q();
+        View focusedView = v2Var.getFocusedView();
         focusedView.requestFocus();
         AndroidUtilities.showKeyboard(focusedView);
     }

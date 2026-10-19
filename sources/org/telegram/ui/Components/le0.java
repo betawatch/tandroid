@@ -33,7 +33,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class le0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final int[] i0 = {R.id.passcode_btn_0, R.id.passcode_btn_1, R.id.passcode_btn_2, R.id.passcode_btn_3, R.id.passcode_btn_4, R.id.passcode_btn_5, R.id.passcode_btn_6, R.id.passcode_btn_7, R.id.passcode_btn_8, R.id.passcode_btn_9, R.id.passcode_btn_backspace, R.id.passcode_btn_fingerprint};
@@ -64,7 +64,7 @@ public class le0 extends FrameLayout implements NotificationCenter.NotificationC
     public final org.telegram.ui.Cells.k7 c0;
     public final FrameLayout d;
     public int d0;
-    public final ci.h4 e;
+    public final ci.i4 e;
     public ei.b4 e0;
     public final ArrayList f;
     public boolean f0;
@@ -443,7 +443,7 @@ public class le0 extends FrameLayout implements NotificationCenter.NotificationC
                                             le0Var2.b(wc0Var);
                                         } else {
                                             ?? r32 = linkedList2;
-                                            r32.offer(new ai.x7(le0Var2, z12, wc0Var, 23));
+                                            r32.offer(new ai.y7(le0Var2, z12, wc0Var, 23));
                                             ?? r22 = linkedList;
                                             r22.offer(Boolean.valueOf(z12));
                                             ?? arrayList4 = new ArrayList();
@@ -770,7 +770,7 @@ public class le0 extends FrameLayout implements NotificationCenter.NotificationC
                                             le0Var2.b(wc0Var);
                                         } else {
                                             ?? r32 = linkedList2;
-                                            r32.offer(new ai.x7(le0Var2, z12, wc0Var, 23));
+                                            r32.offer(new ai.y7(le0Var2, z12, wc0Var, 23));
                                             ?? r22 = linkedList;
                                             r22.offer(Boolean.valueOf(z12));
                                             ?? arrayList4 = new ArrayList();
@@ -812,13 +812,13 @@ public class le0 extends FrameLayout implements NotificationCenter.NotificationC
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.d = frameLayout2;
         vVar.addView(frameLayout2, w7.z5.e(-1, -1, 51));
-        ci.h4 h4Var = new ci.h4(context, 17);
-        this.e = h4Var;
-        h4Var.setClipChildren(false);
-        frameLayout2.addView(h4Var, w7.z5.e(-2, -2, 17));
+        ci.i4 i4Var = new ci.i4(context, 17);
+        this.e = i4Var;
+        i4Var.setClipChildren(false);
+        frameLayout2.addView(i4Var, w7.z5.e(-2, -2, 17));
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.b = frameLayout3;
-        h4Var.addView(frameLayout3, w7.z5.e(-2, -2, 49));
+        i4Var.addView(frameLayout3, w7.z5.e(-2, -2, 49));
         TextView f7 = org.telegram.messenger.g0.f(context, 1, 15.0f);
         f7.setTypeface(AndroidUtilities.bold());
         f7.setTextColor(-1);
@@ -1181,7 +1181,7 @@ public class le0 extends FrameLayout implements NotificationCenter.NotificationC
                                                     le0Var2.b(wc0Var);
                                                 } else {
                                                     ?? r32 = linkedList2;
-                                                    r32.offer(new ai.x7(le0Var2, z12, wc0Var, 23));
+                                                    r32.offer(new ai.y7(le0Var2, z12, wc0Var, 23));
                                                     ?? r22 = linkedList;
                                                     r22.offer(Boolean.valueOf(z12));
                                                     ?? arrayList4 = new ArrayList();
@@ -1505,7 +1505,7 @@ public class le0 extends FrameLayout implements NotificationCenter.NotificationC
                                                 le0Var2.b(wc0Var);
                                             } else {
                                                 ?? r32 = linkedList2;
-                                                r32.offer(new ai.x7(le0Var2, z12, wc0Var, 23));
+                                                r32.offer(new ai.y7(le0Var2, z12, wc0Var, 23));
                                                 ?? r22 = linkedList;
                                                 r22.offer(Boolean.valueOf(z12));
                                                 ?? arrayList4 = new ArrayList();
@@ -1555,7 +1555,7 @@ public class le0 extends FrameLayout implements NotificationCenter.NotificationC
         boolean z10 = x8Var == null || ((StringBuilder) x8Var.d).length() > 0;
         if (frameLayout != null) {
             frameLayout.animate().cancel();
-            org.telegram.messenger.lk.t(frameLayout.animate().alpha(z10 ? 0.0f : 1.0f).scaleX(z10 ? 0.8f : 1.0f).scaleY(z10 ? 0.8f : 1.0f), bs.h, 320L);
+            org.telegram.messenger.kk.t(frameLayout.animate().alpha(z10 ? 0.0f : 1.0f).scaleX(z10 ? 0.8f : 1.0f).scaleY(z10 ? 0.8f : 1.0f), bs.h, 320L);
         }
     }
 
@@ -1585,7 +1585,7 @@ public class le0 extends FrameLayout implements NotificationCenter.NotificationC
             LaunchActivity launchActivity = (LaunchActivity) findActivity;
             ArrayList arrayList = launchActivity.B0;
             if (!arrayList.isEmpty() || (ne0Var = launchActivity.A0) == null) {
-                if (i2.d.h(1, arrayList) != this) {
+                if (i2.e.h(1, arrayList) != this) {
                     return;
                 }
             } else if (this != ne0Var.b) {
@@ -1593,13 +1593,13 @@ public class le0 extends FrameLayout implements NotificationCenter.NotificationC
             }
         }
         try {
-            if (new androidx.biometric.e(new k6.h(getContext(), 1)).i(15) == 0 && FingerprintController.isKeyReady() && !FingerprintController.checkDeviceFingerprintsChanged()) {
-                a6.m mVar = new a6.m(LaunchActivity.H1, f0.c.d(getContext()), new de0(this));
+            if (new androidx.biometric.e(new k6.h(getContext(), 1)).f(15) == 0 && FingerprintController.isKeyReady() && !FingerprintController.checkDeviceFingerprintsChanged()) {
+                qb.c cVar = new qb.c(LaunchActivity.H1, f0.c.d(getContext()), new de0(this));
                 j6.l lVar = new j6.l(1);
                 lVar.b = LocaleController.getString(R.string.UnlockToUse);
                 lVar.d = LocaleController.getString(R.string.UsePIN);
                 lVar.a = 15;
-                mVar.c(lVar.a(), null);
+                cVar.c(lVar.a(), null);
                 n(false);
             }
         } catch (Exception e) {
@@ -1760,7 +1760,7 @@ public class le0 extends FrameLayout implements NotificationCenter.NotificationC
         }
     }
 
-    public final void l(boolean z10, int i10, int i11, org.telegram.ui.b80 b80Var) {
+    public final void l(boolean z10, int i10, int i11, org.telegram.ui.z70 z70Var) {
         View currentFocus;
         boolean z11;
         int i12;
@@ -1852,11 +1852,11 @@ public class le0 extends FrameLayout implements NotificationCenter.NotificationC
         int i16 = SharedConfig.passcodeType;
         ImageView imageView = this.E;
         ImageView imageView2 = this.y;
-        ci.h4 h4Var = this.e;
+        ci.i4 i4Var = this.e;
         ei.x8 x8Var = this.s;
         if (i16 == 0) {
             if (textView.getVisibility() != 0) {
-                h4Var.setVisibility(0);
+                i4Var.setVisibility(0);
             }
             editTextBoldCursor.setVisibility(8);
             x8Var.setVisibility(0);
@@ -1865,7 +1865,7 @@ public class le0 extends FrameLayout implements NotificationCenter.NotificationC
         } else if (i16 == 1) {
             editTextBoldCursor.setFilters(new InputFilter[0]);
             editTextBoldCursor.setInputType(129);
-            h4Var.setVisibility(8);
+            i4Var.setVisibility(8);
             editTextBoldCursor.setFocusable(true);
             editTextBoldCursor.setFocusableInTouchMode(true);
             editTextBoldCursor.setVisibility(0);
@@ -1879,7 +1879,7 @@ public class le0 extends FrameLayout implements NotificationCenter.NotificationC
         ei.x8.a(x8Var, false);
         if (z10) {
             setAlpha(0.0f);
-            getViewTreeObserver().addOnGlobalLayoutListener(new ge0(this, i10, i11, b80Var));
+            getViewTreeObserver().addOnGlobalLayoutListener(new ge0(this, i10, i11, z70Var));
             requestLayout();
         } else {
             setAlpha(1.0f);
@@ -1890,8 +1890,8 @@ public class le0 extends FrameLayout implements NotificationCenter.NotificationC
             xj0Var.setScaleY(1.0f);
             xj0Var.i();
             xj0Var.getAnimatedDrawable().N(38, false, false);
-            if (b80Var != null) {
-                b80Var.run();
+            if (z70Var != null) {
+                z70Var.run();
             }
         }
         setOnTouchListener(new di.d(19));
@@ -1991,7 +1991,7 @@ public class le0 extends FrameLayout implements NotificationCenter.NotificationC
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.e.getAlpha(), z10 ? 1.0f : 0.0f);
         this.g0 = ofFloat;
         ofFloat.addUpdateListener(new be0(this, 0));
-        this.g0.addListener(new org.telegram.ui.ho(17, this, z10));
+        this.g0.addListener(new org.telegram.ui.fo(17, this, z10));
         this.g0.setInterpolator(bs.h);
         this.g0.setDuration(320L);
         this.g0.start();
@@ -2078,7 +2078,7 @@ public class le0 extends FrameLayout implements NotificationCenter.NotificationC
             view.setVisibility(SharedConfig.passcodeType == 1 ? 0 : 8);
         }
         xj0 xj0Var = this.M;
-        ci.h4 h4Var = this.e;
+        ci.i4 i4Var = this.e;
         FrameLayout frameLayout = this.d;
         FrameLayout frameLayout2 = this.h;
         if (z10) {
@@ -2093,7 +2093,7 @@ public class le0 extends FrameLayout implements NotificationCenter.NotificationC
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) frameLayout2.getLayoutParams();
             layoutParams.width = SharedConfig.passcodeType == 0 ? size / 2 : size;
             layoutParams.height = AndroidUtilities.dp(180.0f);
-            layoutParams.topMargin = org.telegram.messenger.lk.A(140.0f, i14, 2) + (SharedConfig.passcodeType == 0 ? AndroidUtilities.dp(40.0f) : 0);
+            layoutParams.topMargin = org.telegram.messenger.kk.A(140.0f, i14, 2) + (SharedConfig.passcodeType == 0 ? AndroidUtilities.dp(40.0f) : 0);
             frameLayout2.setLayoutParams(layoutParams);
             FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) frameLayout.getLayoutParams();
             layoutParams2.height = i14;
@@ -2102,24 +2102,24 @@ public class le0 extends FrameLayout implements NotificationCenter.NotificationC
             layoutParams2.topMargin = AndroidUtilities.statusBarHeight;
             layoutParams2.width = i15;
             frameLayout.setLayoutParams(layoutParams2);
-            FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) h4Var.getLayoutParams();
+            FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) i4Var.getLayoutParams();
             layoutParams3.height = (Math.max(0, 3) * dp2) + (dp3 * 4) + AndroidUtilities.dp(82.0f);
             layoutParams3.width = (Math.max(0, 2) * dp) + (dp3 * 3);
             layoutParams3.gravity = 17;
-            h4Var.setLayoutParams(layoutParams3);
+            i4Var.setLayoutParams(layoutParams3);
             i13 = 0;
         } else {
             xj0Var.setTranslationX((size / 2.0f) - AndroidUtilities.dp(29.0f));
             int i16 = AndroidUtilities.statusBarHeight;
             if (AndroidUtilities.isTablet()) {
                 if (size > AndroidUtilities.dp(498.0f)) {
-                    i12 = org.telegram.messenger.lk.A(498.0f, size, 2);
+                    i12 = org.telegram.messenger.kk.A(498.0f, size, 2);
                     size = AndroidUtilities.dp(498.0f);
                 } else {
                     i12 = 0;
                 }
                 if (i14 > AndroidUtilities.dp(528.0f)) {
-                    i16 = org.telegram.messenger.lk.A(528.0f, i14, 2);
+                    i16 = org.telegram.messenger.kk.A(528.0f, i14, 2);
                     i14 = AndroidUtilities.dp(528.0f);
                 }
             } else {
@@ -2133,7 +2133,7 @@ public class le0 extends FrameLayout implements NotificationCenter.NotificationC
             frameLayout2.setTag(Integer.valueOf(i16));
             frameLayout2.setLayoutParams(layoutParams4);
             int i17 = layoutParams4.topMargin + layoutParams4.height;
-            FrameLayout.LayoutParams layoutParams5 = (FrameLayout.LayoutParams) h4Var.getLayoutParams();
+            FrameLayout.LayoutParams layoutParams5 = (FrameLayout.LayoutParams) i4Var.getLayoutParams();
             i13 = 0;
             layoutParams5.height = (Math.max(0, 3) * dp2) + (dp3 * 4) + AndroidUtilities.dp(82.0f);
             layoutParams5.width = (Math.max(0, 2) * dp) + (dp3 * 3);
@@ -2142,7 +2142,7 @@ public class le0 extends FrameLayout implements NotificationCenter.NotificationC
             } else {
                 layoutParams5.gravity = 49;
             }
-            h4Var.setLayoutParams(layoutParams5);
+            i4Var.setLayoutParams(layoutParams5);
             int i18 = i14 - layoutParams5.height;
             FrameLayout.LayoutParams layoutParams6 = (FrameLayout.LayoutParams) frameLayout.getLayoutParams();
             layoutParams6.leftMargin = i12;

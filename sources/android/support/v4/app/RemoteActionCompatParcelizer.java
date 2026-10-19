@@ -3,7 +3,7 @@ package android.support.v4.app;
 import androidx.core.app.RemoteActionCompat;
 import y4.b;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class RemoteActionCompatParcelizer extends androidx.core.app.RemoteActionCompatParcelizer {
     public static RemoteActionCompat read(b bVar) {

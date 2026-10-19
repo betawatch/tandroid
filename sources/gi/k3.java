@@ -1,6 +1,6 @@
 package gi;
 
-import ai.e9;
+import ai.f9;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.i80;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k3 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -93,7 +93,7 @@ public final /* synthetic */ class k3 implements View.OnClickListener {
                         }
                         i12 = i13;
                     }
-                    F.g(tLObject, j10 == this.e, new e9(i11, j10, this.f, this.h, f3Var, d6Var));
+                    F.g(tLObject, j10 == this.e, new f9(i11, j10, this.f, this.h, f3Var, d6Var));
                     i12 = i13;
                 }
                 F.t = false;

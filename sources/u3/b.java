@@ -3,13 +3,13 @@ package u3;
 import c3.p;
 import java.util.ArrayDeque;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class b {
     public final byte[] a = new byte[8];
     public final ArrayDeque b = new ArrayDeque();
-    public final h c = new h();
-    public c d;
+    public final g c = new g();
+    public l2.f d;
     public int e;
     public int f;
     public long g;

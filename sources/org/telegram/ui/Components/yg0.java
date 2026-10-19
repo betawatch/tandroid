@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class yg0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final class yg0 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         PhotoViewer photoViewer;
-        org.telegram.ui.ss0 ss0Var;
+        org.telegram.ui.qs0 qs0Var;
         switch (this.a) {
             case 0:
                 int actionMasked = motionEvent.getActionMasked();
@@ -65,8 +65,8 @@ public final class yg0 extends FrameLayout {
                     zg0Var.f0 = false;
                     zg0Var.i();
                     AndroidUtilities.cancelRunOnUIThread(zg0Var.h0);
-                } else if (actionMasked == 2 && (photoViewer = zg0Var.V) != null && (ss0Var = photoViewer.c4) != null && ss0Var.rewinding) {
-                    ss0Var.setX(motionEvent.getX());
+                } else if (actionMasked == 2 && (photoViewer = zg0Var.V) != null && (qs0Var = photoViewer.c4) != null && qs0Var.rewinding) {
+                    qs0Var.setX(motionEvent.getX());
                 }
                 if (zg0Var.y != null) {
                     MotionEvent obtain = MotionEvent.obtain(motionEvent);
@@ -84,7 +84,7 @@ public final class yg0 extends FrameLayout {
                 obtain2.offsetLocation(motionEvent.getRawX() - motionEvent.getX(), motionEvent.getRawY() - motionEvent.getY());
                 boolean onTouchEvent = zg0Var.s.onTouchEvent(obtain2);
                 obtain2.recycle();
-                boolean z10 = !zg0Var.s.isInProgress() && zg0Var.v.j0(motionEvent);
+                boolean z10 = !zg0Var.s.isInProgress() && zg0Var.v.k(motionEvent);
                 if (actionMasked == 1 || actionMasked == 3 || actionMasked == 6) {
                     zg0Var.w = false;
                     zg0Var.x = false;
@@ -93,7 +93,7 @@ public final class yg0 extends FrameLayout {
                         zg0 zg0Var2 = zg0.p0;
                         cv cvVar = zg0Var2.U;
                         if (cvVar != null) {
-                            cvVar.H();
+                            cvVar.G();
                         } else {
                             PhotoViewer photoViewer2 = zg0Var2.V;
                             if (photoViewer2 != null) {
@@ -169,9 +169,9 @@ public final class yg0 extends FrameLayout {
         switch (this.a) {
             case 1:
                 zg0 zg0Var = this.b;
-                r71 r71Var = zg0Var.Q;
-                if (r71Var.j) {
-                    r71Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
+                s71 s71Var = zg0Var.Q;
+                if (s71Var.j) {
+                    s71Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
                     zg0Var.Q.draw(canvas);
                 }
                 PhotoViewer photoViewer = zg0Var.V;

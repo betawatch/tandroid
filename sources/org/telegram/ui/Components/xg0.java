@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class xg0 extends u20 {
     public float a;
@@ -40,7 +40,7 @@ public final class xg0 extends u20 {
         boolean z10;
         zg0 zg0Var = this.d;
         PhotoViewer photoViewer = zg0Var.V;
-        r71 r71Var = zg0Var.Q;
+        s71 s71Var = zg0Var.Q;
         if (photoViewer != null && ((photoViewer.F2 != null || zg0Var.r != null) && !zg0Var.c0 && !zg0Var.Y && !zg0Var.w && !zg0Var.s.isInProgress() && zg0Var.f0)) {
             zg0Var.V.getClass();
             boolean z11 = motionEvent.getX() >= (((float) zg0Var.t()) * zg0Var.J) * 0.5f;
@@ -59,25 +59,25 @@ public final class xg0 extends u20 {
                         z10 = true;
                     }
                     if (z10) {
-                        r71Var.e(true);
-                        r71Var.d(!z11);
-                        long j11 = r71Var.o + 10000;
-                        r71Var.o = j11;
-                        r71Var.p = LocaleController.formatPluralString("Seconds", (int) (j11 / 1000), new Object[0]);
+                        s71Var.e(true);
+                        s71Var.d(!z11);
+                        long j11 = s71Var.o + 10000;
+                        s71Var.o = j11;
+                        s71Var.p = LocaleController.formatPluralString("Seconds", (int) (j11 / 1000), new Object[0]);
                         kg0 kg0Var = zg0Var.r;
                         if (kg0Var != null) {
                             kg0Var.i(j10);
                         } else {
-                            a81 a81Var = zg0Var.V.F2;
-                            if (a81Var != null) {
-                                a81Var.K(j10);
+                            b81 b81Var = zg0Var.V.F2;
+                            if (b81Var != null) {
+                                b81Var.K(j10);
                             }
                         }
-                        r71Var.g(0L);
+                        s71Var.g(0L);
                         zg0Var.Z = j10 / m10;
-                        ci.h3 h3Var = zg0Var.b0;
-                        if (h3Var != null) {
-                            h3Var.invalidate();
+                        ci.i3 i3Var = zg0Var.b0;
+                        if (i3Var != null) {
+                            i3Var.invalidate();
                         }
                         yg0 yg0Var = zg0Var.h;
                         if (yg0Var != null) {

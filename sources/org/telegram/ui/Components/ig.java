@@ -8,7 +8,7 @@ import org.telegram.messenger.camera.CameraController;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class ig implements Runnable {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -52,10 +52,10 @@ public final class ig implements Runnable {
             MessageObject messageObject = chatActivityEnterView.T2;
             threadMessage = chatActivityEnterView.getThreadMessage();
             int i11 = chatActivityEnterView.G2;
-            org.telegram.ui.sn snVar = chatActivityEnterView.P2;
-            mediaController.startRecording(i10, j10, messageObject, threadMessage, a12, i11, true, snVar != null ? snVar.H8() : null, chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
+            org.telegram.ui.qn qnVar = chatActivityEnterView.P2;
+            mediaController.startRecording(i10, j10, messageObject, threadMessage, a12, i11, true, qnVar != null ? qnVar.H8() : null, chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
             chatActivityEnterView.F2 = true;
-            chatActivityEnterView.J1(0, true);
+            chatActivityEnterView.I1(0, true);
             xg xgVar = chatActivityEnterView.Y0;
             if (xgVar != null) {
                 xgVar.a(0L);
@@ -97,7 +97,7 @@ public final class ig implements Runnable {
             return;
         }
         chatActivityEnterView.F2 = true;
-        chatActivityEnterView.J1(0, true);
+        chatActivityEnterView.I1(0, true);
         ChatActivityEnterView.RecordCircle recordCircle2 = chatActivityEnterView.N1;
         if (recordCircle2 != null) {
             recordCircle2.H = 0.5f;

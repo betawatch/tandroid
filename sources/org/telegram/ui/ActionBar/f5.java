@@ -25,7 +25,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.wc0;
 import v7.v7;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class f5 extends Drawable {
     public static final wc0[] S = new wc0[3];
@@ -449,7 +449,7 @@ public class f5 extends Drawable {
             return h6.x0(null, i10, false);
         }
         d6 d6Var = this.p;
-        return d6Var != null ? d6Var.u(i10) : h6.x0(null, i10, false);
+        return d6Var != null ? d6Var.w(i10) : h6.x0(null, i10, false);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -462,7 +462,7 @@ public class f5 extends Drawable {
             return h6.x0(null, i10, false);
         }
         d6 d6Var = this.p;
-        return d6Var != null ? d6Var.I(i10) : h6.ul.get(i10);
+        return d6Var != null ? d6Var.G(i10) : h6.ul.get(i10);
     }
 
     public final wc0 i() {

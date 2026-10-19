@@ -5,15 +5,15 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class kf implements View.OnTouchListener {
     public final /* synthetic */ int a = 0;
     public final Rect b = new Rect();
     public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
 
-    public kf(org.telegram.ui.up0 up0Var) {
-        this.c = up0Var;
+    public kf(org.telegram.ui.sp0 sp0Var) {
+        this.c = sp0Var;
     }
 
     @Override // android.view.View.OnTouchListener
@@ -34,23 +34,23 @@ public final class kf implements View.OnTouchListener {
                 }
                 break;
             case 1:
-                org.telegram.ui.up0 up0Var = (org.telegram.ui.up0) this.c;
-                if (motionEvent.getActionMasked() == 0 && (m1Var = up0Var.I) != null && m1Var.isShowing()) {
+                org.telegram.ui.sp0 sp0Var = (org.telegram.ui.sp0) this.c;
+                if (motionEvent.getActionMasked() == 0 && (m1Var = sp0Var.I) != null && m1Var.isShowing()) {
                     Rect rect2 = this.b;
                     view.getHitRect(rect2);
                     if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        up0Var.I.d(true);
+                        sp0Var.I.d(true);
                         break;
                     }
                 }
                 break;
             default:
-                org.telegram.ui.lq0 lq0Var = (org.telegram.ui.lq0) this.c;
-                if (motionEvent.getActionMasked() == 0 && (m1Var2 = lq0Var.m0) != null && m1Var2.isShowing()) {
+                org.telegram.ui.jq0 jq0Var = (org.telegram.ui.jq0) this.c;
+                if (motionEvent.getActionMasked() == 0 && (m1Var2 = jq0Var.m0) != null && m1Var2.isShowing()) {
                     Rect rect3 = this.b;
                     view.getHitRect(rect3);
                     if (!rect3.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        lq0Var.m0.d(true);
+                        jq0Var.m0.d(true);
                         break;
                     }
                 }
@@ -59,8 +59,8 @@ public final class kf implements View.OnTouchListener {
         return false;
     }
 
-    public kf(org.telegram.ui.lq0 lq0Var) {
-        this.c = lq0Var;
+    public kf(org.telegram.ui.jq0 jq0Var) {
+        this.c = jq0Var;
     }
 
     public kf(ChatActivityEnterView chatActivityEnterView) {

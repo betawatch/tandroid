@@ -1,249 +1,147 @@
 package ai;
 
-import android.view.View;
-import android.view.ViewTreeObserver;
-import java.util.ArrayList;
-import org.telegram.ui.Components.br;
-import org.telegram.ui.Components.pm0;
-import org.telegram.ui.Components.zo0;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class m6 implements View.OnAttachStateChangeListener {
+public final /* synthetic */ class m6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ t6 b;
 
-    public /* synthetic */ m6(Object obj, int i10) {
+    public /* synthetic */ m6(t6 t6Var, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = t6Var;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ArrayList arrayList = ((s6) this.b).e;
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    q6 q6Var = (q6) obj;
-                    if (q6Var.c) {
-                        q6Var.d.onAttachedToWindow();
-                    }
-                }
+                this.b.b();
                 break;
             case 1:
-                ((ci.v1) this.b).f.onAttachedToWindow();
-                break;
-            case 2:
-                androidx.biometric.e eVar = (androidx.biometric.e) this.b;
-                ih.j jVar = (ih.j) eVar.c;
-                ViewTreeObserver viewTreeObserver = ((View) eVar.b).getViewTreeObserver();
-                ViewTreeObserver viewTreeObserver2 = (ViewTreeObserver) eVar.d;
-                if (viewTreeObserver2 != viewTreeObserver) {
-                    if (viewTreeObserver2 != null) {
-                        if (viewTreeObserver2.isAlive()) {
-                            ((ViewTreeObserver) eVar.d).removeOnPreDrawListener(jVar);
+                t6 t6Var = this.b;
+                f7 f7Var = t6Var.a;
+                if (!t6Var.u) {
+                    t6Var.v = false;
+                    if (t6Var.o) {
+                        t6Var.u = true;
+                        long currentTimeMillis = System.currentTimeMillis();
+                        float min = Math.min((currentTimeMillis - t6Var.m) / 1000.0f, 0.25f);
+                        float f7 = t6Var.n + min;
+                        t6Var.n = f7;
+                        float f10 = t6Var.j.f(min, f7 > AndroidUtilities.lerp(0.1f, 1.0f, t6Var.t));
+                        float f11 = t6Var.k.f(min, t6Var.n > AndroidUtilities.lerp(0.1f, 1.0f, t6Var.t));
+                        float f12 = t6Var.i.f(min, t6Var.j.b(0.5f));
+                        float f13 = t6Var.h.f(min, t6Var.j.b(0.5f) && t6Var.i.b(0.5f));
+                        t6Var.m = currentTimeMillis;
+                        if (t6Var.j.c() && t6Var.i.c() && t6Var.h.c() && !t6Var.p) {
+                            t6Var.p = true;
+                            AndroidUtilities.runOnUIThread(new m6(t6Var, 2));
                         }
-                        eVar.d = null;
-                    }
-                    eVar.d = viewTreeObserver;
-                    if (viewTreeObserver.isAlive()) {
-                        viewTreeObserver.addOnPreDrawListener(jVar);
+                        if (t6Var.j.c() && t6Var.i.c() && t6Var.h.b(0.25f) && !t6Var.q) {
+                            t6Var.q = true;
+                            AndroidUtilities.runOnUIThread(new m6(t6Var, 3));
+                        }
+                        y6 y6Var = t6Var.b;
+                        if (y6Var != null) {
+                            p6 p6Var = t6Var.h;
+                            o6 o6Var = p6Var.b;
+                            float f14 = p6Var.e - f13;
+                            float f15 = f14 - 1.0f;
+                            o6 o6Var2 = p6Var.i;
+                            boolean z10 = o6Var == o6Var2;
+                            o6 o6Var3 = p6Var.c;
+                            boolean z11 = o6Var3 == o6Var2;
+                            o6 o6Var4 = p6Var.d;
+                            y6Var.a(o6Var, f15, z10, o6Var3, f14, z11, o6Var4, f14 + 1.0f, o6Var4 == o6Var2);
+                        }
+                        y6 y6Var2 = t6Var.c;
+                        if (y6Var2 != null) {
+                            p6 p6Var2 = t6Var.i;
+                            o6 o6Var5 = p6Var2.b;
+                            float f16 = p6Var2.e - f12;
+                            float f17 = f16 - 1.0f;
+                            o6 o6Var6 = p6Var2.i;
+                            boolean z12 = o6Var5 == o6Var6;
+                            o6 o6Var7 = p6Var2.c;
+                            boolean z13 = o6Var7 == o6Var6;
+                            o6 o6Var8 = p6Var2.d;
+                            y6Var2.a(o6Var5, f17, z12, o6Var7, f16, z13, o6Var8, f16 + 1.0f, o6Var8 == o6Var6);
+                        }
+                        y6 y6Var3 = t6Var.d;
+                        if (y6Var3 != null) {
+                            p6 p6Var3 = t6Var.k;
+                            o6 o6Var9 = p6Var3.b;
+                            float f18 = p6Var3.e - f11;
+                            float f19 = f18 - 1.0f;
+                            o6 o6Var10 = p6Var3.i;
+                            boolean z14 = o6Var9 == o6Var10;
+                            o6 o6Var11 = p6Var3.c;
+                            boolean z15 = o6Var11 == o6Var10;
+                            o6 o6Var12 = p6Var3.d;
+                            y6Var3.a(o6Var9, f19, z14, o6Var11, f18, z15, o6Var12, f18 + 1.0f, o6Var12 == o6Var10);
+                        }
+                        f7Var.g(0, ((s6) t6Var.i.c).c, true);
+                        w6 w6Var = f7Var.c;
+                        p6 p6Var4 = t6Var.h;
+                        o6 o6Var13 = p6Var4.b;
+                        r6 r6Var = (r6) o6Var13;
+                        float f20 = p6Var4.e - f13;
+                        float f21 = f20 - 1.0f;
+                        o6 o6Var14 = p6Var4.i;
+                        boolean z16 = o6Var13 == o6Var14;
+                        o6 o6Var15 = p6Var4.c;
+                        r6 r6Var2 = (r6) o6Var15;
+                        boolean z17 = o6Var15 == o6Var14;
+                        o6 o6Var16 = p6Var4.d;
+                        r6 r6Var3 = (r6) o6Var16;
+                        float f22 = f20 + 1.0f;
+                        boolean z18 = o6Var16 == o6Var14;
+                        p6 p6Var5 = t6Var.j;
+                        q6 q6Var = (q6) p6Var5.b;
+                        float f23 = p6Var5.e - f10;
+                        q6 q6Var2 = (q6) p6Var5.c;
+                        q6 q6Var3 = (q6) p6Var5.d;
+                        w6Var.a = r6Var;
+                        w6Var.b = r6Var2;
+                        w6Var.c = r6Var3;
+                        w6Var.d = f21;
+                        w6Var.e = f20;
+                        w6Var.f = f22;
+                        w6Var.h = z16;
+                        w6Var.n = z17;
+                        w6Var.r = z18;
+                        w6Var.s = q6Var;
+                        w6Var.v = q6Var2;
+                        w6Var.w = q6Var3;
+                        w6Var.x = f23 - 1.0f;
+                        w6Var.y = f23;
+                        w6Var.E = f23 + 1.0f;
+                        w6Var.invalidate();
+                        t6Var.u = false;
+                        t6Var.b();
                         break;
                     }
                 }
-                break;
-            case 3:
-            case 4:
-                break;
-            case 5:
-                ((yh.j2) this.b).a(view);
-                break;
-            case 6:
-                org.telegram.ui.Components.ja jaVar = (org.telegram.ui.Components.ja) this.b;
-                ArrayList arrayList2 = jaVar.c;
-                arrayList2.clear();
-                for (View view2 = jaVar.b; view2 != null; view2 = (View) view2.getParent()) {
-                    arrayList2.add(0, view2);
-                    if (!(view2.getParent() instanceof View)) {
-                        break;
-                    }
-                }
-                break;
-            case 7:
-                break;
-            case 8:
-                ((br) this.b).a();
-                break;
-            case 9:
-                pm0 pm0Var = (pm0) this.b;
-                org.telegram.ui.Components.p5 p5Var = pm0Var.t;
-                if (p5Var != null) {
-                    p5Var.a();
-                }
-                org.telegram.ui.Components.p5 p5Var2 = pm0Var.u;
-                if (p5Var2 != null) {
-                    p5Var2.a();
-                    break;
-                }
-                break;
-            case 10:
-                break;
-            case 11:
-                ((org.telegram.ui.Components.p5) this.b).a();
-                break;
-            case 12:
-                com.google.firebase.messaging.r rVar = (com.google.firebase.messaging.r) this.b;
-                if (view == ((View) rVar.c)) {
-                    rVar.u(view.getViewTreeObserver());
-                    break;
-                }
-                break;
-            case 13:
-                ((yh.d1) this.b).l.a();
-                break;
-            case 14:
-                yh.n3 n3Var = (yh.n3) this.b;
-                yh.l3 l3Var = n3Var.N;
-                if (l3Var != null) {
-                    l3Var.a(n3Var.c);
-                    break;
-                }
-                break;
-            default:
-                yh.q3 q3Var = (yh.q3) this.b;
-                yh.o3 o3Var = q3Var.N;
-                if (o3Var != null) {
-                    o3Var.a(q3Var.c);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = ((s6) this.b).e;
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    ((q6) obj).a();
-                }
-                break;
-            case 1:
-                ((ci.v1) this.b).f.onDetachedFromWindow();
                 break;
             case 2:
-                androidx.biometric.e eVar = (androidx.biometric.e) this.b;
-                ViewTreeObserver viewTreeObserver = (ViewTreeObserver) eVar.d;
-                if (viewTreeObserver != null) {
-                    if (viewTreeObserver.isAlive()) {
-                        ((ViewTreeObserver) eVar.d).removeOnPreDrawListener((ih.j) eVar.c);
-                    }
-                    eVar.d = null;
-                    break;
-                }
-                break;
-            case 3:
-                l.e eVar2 = (l.e) this.b;
-                ViewTreeObserver viewTreeObserver2 = eVar2.N;
-                if (viewTreeObserver2 != null) {
-                    if (!viewTreeObserver2.isAlive()) {
-                        eVar2.N = view.getViewTreeObserver();
-                    }
-                    eVar2.N.removeGlobalOnLayoutListener(eVar2.r);
-                }
-                view.removeOnAttachStateChangeListener(this);
-                break;
-            case 4:
-                l.c0 c0Var = (l.c0) this.b;
-                ViewTreeObserver viewTreeObserver3 = c0Var.E;
-                if (viewTreeObserver3 != null) {
-                    if (!viewTreeObserver3.isAlive()) {
-                        c0Var.E = view.getViewTreeObserver();
-                    }
-                    c0Var.E.removeGlobalOnLayoutListener(c0Var.r);
-                }
-                view.removeOnAttachStateChangeListener(this);
-                break;
-            case 5:
-                ((yh.j2) this.b).o(view);
-                break;
-            case 6:
-                ((org.telegram.ui.Components.ja) this.b).c.clear();
-                break;
-            case 7:
-                org.telegram.ui.Components.qc qcVar = (org.telegram.ui.Components.qc) this.b;
-                qcVar.e.removeOnAttachStateChangeListener(this);
-                qcVar.c(0L, false);
-                break;
-            case 8:
-                ((br) this.b).b();
-                break;
-            case 9:
-                pm0 pm0Var = (pm0) this.b;
-                org.telegram.ui.Components.p5 p5Var = pm0Var.t;
-                if (p5Var != null) {
-                    p5Var.b();
-                }
-                org.telegram.ui.Components.p5 p5Var2 = pm0Var.u;
-                if (p5Var2 != null) {
-                    p5Var2.a();
-                    break;
-                }
-                break;
-            case 10:
-                view.removeCallbacks((Runnable) ((zo0) this.b).a.remove(view));
-                view.removeOnAttachStateChangeListener(this);
-                break;
-            case 11:
-                ((org.telegram.ui.Components.p5) this.b).b();
-                break;
-            case 12:
-                com.google.firebase.messaging.r rVar = (com.google.firebase.messaging.r) this.b;
-                if (view == ((View) rVar.c)) {
-                    rVar.u(null);
-                    break;
-                }
-                break;
-            case 13:
-                ((yh.d1) this.b).l.b();
-                break;
-            case 14:
-                yh.n3 n3Var = (yh.n3) this.b;
-                yh.l3 l3Var = n3Var.N;
-                if (l3Var != null) {
-                    l3Var.o(n3Var.c);
+                t6 t6Var2 = this.b;
+                t6Var2.o = false;
+                t6Var2.a.c.c();
+                d2 d2Var = t6Var2.r;
+                if (d2Var != null) {
+                    d2Var.run();
                     break;
                 }
                 break;
             default:
-                yh.q3 q3Var = (yh.q3) this.b;
-                yh.o3 o3Var = q3Var.N;
-                if (o3Var != null) {
-                    o3Var.o(q3Var.c);
+                d2 d2Var2 = this.b.s;
+                if (d2Var2 != null) {
+                    d2Var2.run();
                     break;
                 }
                 break;
         }
-    }
-
-    private final void a(View view) {
-    }
-
-    private final void b(View view) {
-    }
-
-    private final void c(View view) {
-    }
-
-    private final void d(View view) {
     }
 }

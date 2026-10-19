@@ -1,53 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class h31 extends Drawable {
-    public final Drawable a;
-    public final Paint b = new Paint(1);
-    public final RectF c = new RectF();
+public final class h31 extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ r31 b;
 
-    public h31(Context context) {
-        this.a = context.getResources().getDrawable(R.drawable.menu_topic_add).mutate();
+    public h31(r31 r31Var, boolean z10) {
+        this.b = r31Var;
+        this.a = z10;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        canvas.drawRoundRect(this.c, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), this.b);
-        this.a.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        this.c.set(rect);
-        int centerX = rect.centerX() - AndroidUtilities.dp(12.0f);
-        int centerY = rect.centerY() - AndroidUtilities.dp(12.0f);
-        this.a.setBounds(centerX, centerY, AndroidUtilities.dp(24.0f) + centerX, AndroidUtilities.dp(24.0f) + centerY);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.b.setAlpha(i10);
-        this.a.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        r31 r31Var = this.b;
+        long j10 = r31Var.c;
+        if (r31Var.U == animator) {
+            boolean z10 = this.a;
+            r31Var.R = z10 ? 1.0f : 0.0f;
+            r31Var.n();
+            r31Var.S = false;
+            r31Var.E.setImageResource(r31Var.P ? R.drawable.menu_sidebar_top : R.drawable.menu_sidebar_bottom);
+            r31Var.U = null;
+            MessagesController.getInstance(r31Var.b).getMainSettings().edit().putBoolean(a1.g.o(j10, "topicssidetabs"), r31Var.Q).putBoolean(a1.g.o(j10, "topicssidetabsb"), r31Var.P).apply();
+            Boolean bool = r31Var.T;
+            if (bool != null && z10 != bool.booleanValue()) {
+                boolean booleanValue = r31Var.T.booleanValue();
+                r31Var.T = null;
+                r31Var.d(booleanValue);
+            }
+            AndroidUtilities.runOnUIThread(new gr0(this, 19));
+        }
     }
 }

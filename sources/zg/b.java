@@ -7,7 +7,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import ci.j4;
+import ci.k4;
 import java.util.Date;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -19,7 +19,7 @@ import org.telegram.ui.Cells.va;
 import org.telegram.ui.Components.h9;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class b extends va {
     public final TextView a0;
@@ -83,24 +83,24 @@ public final class b extends va {
             frameLayout.setVisibility(0);
             int i10 = ((boost.expires - boost.date) / 30) / 86400;
             long j10 = boost.stars;
-            j4 j4Var = this.a;
+            k4 k4Var = this.a;
             h9 h9Var = this.E;
             if (j10 > 0) {
                 j5Var.l(LocaleController.formatPluralString("BoostingBoostStars", (int) j10, new Object[0]), false);
                 h9Var.g(26);
-                j4Var.e(null, h9Var);
+                k4Var.e(null, h9Var);
                 j5Var.i(null);
             } else if (boost.unclaimed) {
                 j5Var.l(LocaleController.getString(R.string.BoostingUnclaimed), false);
                 h9Var.g(18);
                 setAvatarColorByMonths(i10);
-                j4Var.e(null, h9Var);
+                k4Var.e(null, h9Var);
                 j5Var.i(null);
             } else if (boost.user_id == -1) {
                 j5Var.l(LocaleController.getString(R.string.BoostingToBeDistributed), false);
                 h9Var.g(19);
                 setAvatarColorByMonths(i10);
-                j4Var.e(null, h9Var);
+                k4Var.e(null, h9Var);
                 j5Var.i(null);
             }
             String format = LocaleController.getInstance().getFormatterBoostExpired().format(new Date(boost.expires * 1000));

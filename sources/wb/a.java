@@ -2,7 +2,7 @@ package wb;
 
 import android.graphics.Bitmap;
 import android.os.SystemClock;
-import c5.v;
+import c5.w;
 import com.google.android.gms.tasks.Task;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
@@ -21,7 +21,7 @@ import w7.la;
 import w7.na;
 import w7.y6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class a {
     public volatile Bitmap a;
@@ -94,7 +94,7 @@ public final class a {
         e7 e7Var = new e7(s3Var);
         c cVar = new c(7, false);
         cVar.d = e7Var;
-        m.a.execute(new v(a2, new e(cVar), task.isSuccessful() ? (String) task.getResult() : i.c.a(a2.g)));
+        m.a.execute(new w(a2, new e(cVar), task.isSuccessful() ? (String) task.getResult() : i.c.a(a2.g)));
         return aVar;
     }
 }

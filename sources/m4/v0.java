@@ -10,17 +10,17 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.Components.aw0;
 import org.telegram.ui.Components.bw0;
-import org.telegram.ui.Components.mw0;
+import org.telegram.ui.Components.cw0;
+import org.telegram.ui.Components.nw0;
 import org.telegram.ui.Components.vl0;
-import org.telegram.ui.vr;
+import org.telegram.ui.tr;
 import org.telegram.utils.code.highlight.PrismaHighlighter;
 import v7.q8;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v0 implements e2.j, g1, n2.m, d9.k, a2, mw0, Utilities.Callback2Return, ih.h, vl0, aw0, bw0 {
+public final /* synthetic */ class v0 implements e2.j, g1, n2.m, d9.k, a2, nw0, Utilities.Callback2Return, ih.h, vl0, bw0, cw0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ v0(int i10) {
@@ -83,25 +83,25 @@ public final /* synthetic */ class v0 implements e2.j, g1, n2.m, d9.k, a2, mw0, 
     @Override // d9.k
     public Object apply(Object obj) {
         o2.q qVar = (o2.q) obj;
-        qVar.e();
+        qVar.f();
         return e9.n0.u(e9.s.x(qVar.Y.b, new sg.y(10)));
     }
 
-    @Override // org.telegram.ui.Components.bw0
+    @Override // org.telegram.ui.Components.cw0
     public void b(Object obj, float f7) {
-        vr vrVar = (vr) obj;
+        tr trVar = (tr) obj;
         switch (this.a) {
             case 27:
-                vrVar.b = f7;
-                if (vrVar.getParent() != null) {
-                    ((View) vrVar.getParent()).invalidate();
+                trVar.b = f7;
+                if (trVar.getParent() != null) {
+                    ((View) trVar.getParent()).invalidate();
                     break;
                 }
                 break;
             default:
-                vrVar.c = f7;
-                if (vrVar.getParent() != null) {
-                    ((View) vrVar.getParent()).invalidate();
+                trVar.c = f7;
+                if (trVar.getParent() != null) {
+                    ((View) trVar.getParent()).invalidate();
                     break;
                 }
                 break;
@@ -145,18 +145,18 @@ public final /* synthetic */ class v0 implements e2.j, g1, n2.m, d9.k, a2, mw0, 
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.bw0
     public float get(Object obj) {
-        vr vrVar = (vr) obj;
+        tr trVar = (tr) obj;
         switch (this.a) {
             case 26:
-                return vrVar.b;
+                return trVar.b;
             default:
-                return vrVar.c;
+                return trVar.c;
         }
     }
 
-    @Override // org.telegram.ui.Components.mw0
+    @Override // org.telegram.ui.Components.nw0
     public void h(int i10) {
         if (i10 == 0) {
             SharedConfig.setKeepMedia(3);
@@ -194,7 +194,7 @@ public final /* synthetic */ class v0 implements e2.j, g1, n2.m, d9.k, a2, mw0, 
         }
     }
 
-    @Override // org.telegram.ui.Components.mw0
+    @Override // org.telegram.ui.Components.nw0
     public /* synthetic */ void m() {
     }
 

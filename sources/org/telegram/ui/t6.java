@@ -11,7 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class t6 extends View {
     public final /* synthetic */ int a = 0;
@@ -25,15 +25,15 @@ public final class t6 extends View {
     }
 
     public void a() {
-        this.b.setShader(new LinearGradient(0.0f, 0.0f, getWidth(), 0.0f, new int[]{0, ((qg.x) this.e).f}, (float[]) null, Shader.TileMode.CLAMP));
+        this.b.setShader(new LinearGradient(0.0f, 0.0f, getWidth(), 0.0f, new int[]{0, ((qg.y) this.e).f}, (float[]) null, Shader.TileMode.CLAMP));
     }
 
     public void b(float f7) {
         float dp = AndroidUtilities.dp(6.0f);
         float a2 = w7.r.a(((f7 - dp) + (AndroidUtilities.dp(13.0f) - (this.c.getStrokeWidth() / 2.0f))) / (getWidth() - (dp * 2.0f)), 0.0f, 1.0f);
         this.d = a2;
-        qg.x xVar = (qg.x) this.e;
-        xVar.n(i0.a.o(xVar.f, (int) (a2 * 255.0f)), 1);
+        qg.y yVar = (qg.y) this.e;
+        yVar.n(i0.a.o(yVar.f, (int) (a2 * 255.0f)), 1);
         invalidate();
     }
 
@@ -57,10 +57,10 @@ public final class t6 extends View {
                 float f10 = height + dp;
                 rectF2.set(dp, f7, getWidth() - dp, f10);
                 canvas.save();
-                qg.x xVar = (qg.x) this.e;
-                xVar.e.rewind();
-                xVar.e.addRoundRect(rectF2, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Path.Direction.CW);
-                canvas.clipPath(xVar.e);
+                qg.y yVar = (qg.y) this.e;
+                yVar.e.rewind();
+                yVar.e.addRoundRect(rectF2, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Path.Direction.CW);
+                canvas.clipPath(yVar.e);
                 rg.i1.x1(canvas, rectF2, AndroidUtilities.dp(6.0f));
                 canvas.restore();
                 rectF2.set(dp, f7, getWidth() - dp, f10);
@@ -70,7 +70,7 @@ public final class t6 extends View {
                 float strokeWidth = dp2 - (paint.getStrokeWidth() / 2.0f);
                 float max = Math.max(dp + strokeWidth, (((getWidth() - (2.0f * dp)) * this.d) + dp) - strokeWidth);
                 canvas.drawCircle(max, height, dp2, paint);
-                rg.i1.y1(max, height, strokeWidth, i0.a.o(xVar.f, (int) (this.d * 255.0f)), canvas);
+                rg.i1.y1(max, height, strokeWidth, i0.a.o(yVar.f, (int) (this.d * 255.0f)), canvas);
                 break;
         }
     }
@@ -113,9 +113,9 @@ public final class t6 extends View {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t6(qg.x xVar, Context context) {
+    public t6(qg.y yVar, Context context) {
         super(context);
-        this.e = xVar;
+        this.e = yVar;
         this.b = new Paint(1);
         Paint paint = new Paint(1);
         this.c = paint;

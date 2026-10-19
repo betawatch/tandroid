@@ -15,7 +15,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
@@ -25,14 +25,14 @@ import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class x extends bb {
     public final int X;
     public final Utilities.Callback Y;
-    public s61 Z;
+    public t61 Z;
     public final FrameLayout a0;
     public final FrameLayout b0;
     public final RichMessageLayout.PreviewView c0;
@@ -132,7 +132,7 @@ public final class x extends bb {
         g3Var.addTextChangedListener(new w(this));
         frameLayout3.addView(i3Var, w7.z5.c(-2.0f, -1));
         frameLayout3.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-        ei.d f7 = lk.f(24, context, d6Var, true);
+        ei.d f7 = kk.f(24, context, d6Var, true);
         this.f0 = f7;
         f7.g(LocaleController.getString(R.string.ArticleAIGenerate), false, true);
         final int i15 = 1;
@@ -230,8 +230,8 @@ public final class x extends bb {
 
     @Override // org.telegram.ui.Components.bb
     public final hm0 x(im0 im0Var) {
-        s61 s61Var = new s61(im0Var, getContext(), this.X, 0, true, new hg.o(this, 14), this.resourcesProvider);
-        this.Z = s61Var;
-        return s61Var;
+        t61 t61Var = new t61(im0Var, getContext(), this.X, 0, true, new hg.o(this, 14), this.resourcesProvider);
+        this.Z = t61Var;
+        return t61Var;
     }
 }

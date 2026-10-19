@@ -1,12 +1,12 @@
 package y8;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class d implements x8.c {
-    public final l2.f a;
+    public final k2.w0 a;
 
-    public d(l2.f fVar) {
-        this.a = fVar;
+    public d(k2.w0 w0Var) {
+        this.a = w0Var;
     }
 
     public final boolean equals(Object obj) {

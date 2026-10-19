@@ -9,9 +9,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public abstract class ct extends s61 {
+public abstract class ct extends t61 {
     public final int N;
     public final int O;
     public final ArrayList P;
@@ -69,7 +69,7 @@ public abstract class ct extends s61 {
         if (z10) {
             ArrayList arrayList = this.P;
             if (!arrayList.isEmpty()) {
-                MessageObject messageObject = (MessageObject) i2.d.h(1, arrayList);
+                MessageObject messageObject = (MessageObject) i2.e.h(1, arrayList);
                 tL_messages_searchGlobal.offset_rate = this.Z;
                 tL_messages_searchGlobal.offset_id = messageObject.getId();
                 if (messageObject.messageOwner.peer_id == null) {
@@ -84,7 +84,7 @@ public abstract class ct extends s61 {
                     tL_contacts_search.limit = 20;
                     tL_contacts_search.broadcasts = true;
                     tL_contacts_search.q = this.b0;
-                    ConnectionsManager.getInstance(i12).sendRequestTyped(tL_contacts_search, new org.telegram.messenger.a(), new ai.q5(16, this, tL_contacts_search));
+                    ConnectionsManager.getInstance(i12).sendRequestTyped(tL_contacts_search, new org.telegram.messenger.a(), new ai.r5(16, this, tL_contacts_search));
                     return;
                 }
                 return;

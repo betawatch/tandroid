@@ -1,11 +1,10 @@
 package ah;
 
-import ai.b3;
+import ai.j2;
 import ai.k2;
-import ai.k7;
-import ai.n2;
-import ai.t3;
-import ai.w2;
+import ai.l7;
+import ai.o2;
+import ai.v3;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.RectF;
@@ -20,10 +19,10 @@ import b2.p1;
 import b2.q1;
 import b2.s1;
 import b2.t1;
-import ci.g4;
-import ci.n4;
-import ci.p4;
-import ci.z9;
+import ci.aa;
+import ci.h4;
+import ci.o4;
+import ci.q4;
 import com.google.android.gms.internal.cast.z5;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -54,6 +53,7 @@ import ki.g6;
 import ki.i4;
 import ki.o5;
 import ki.r5;
+import ki.t3;
 import ki.w3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
@@ -85,15 +85,15 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.xl0;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.dc0;
-import org.telegram.ui.jf1;
-import org.telegram.ui.kc0;
-import org.telegram.ui.pc0;
-import org.telegram.ui.z41;
+import org.telegram.ui.bc0;
+import org.telegram.ui.hf1;
+import org.telegram.ui.ic0;
+import org.telegram.ui.nc0;
+import org.telegram.ui.x41;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureListener, v8, OnCompleteListener, Continuation, r9.d, xl0, yl0, Utilities.Callback3Return, kc0, e2.p, e2.o, ki.o0, gu, i4, m4.o0, e2.j {
+public final /* synthetic */ class h0 implements x41, hf1, a2, ih.h, OnFailureListener, v8, OnCompleteListener, Continuation, r9.d, xl0, yl0, Utilities.Callback3Return, ic0, e2.p, e2.o, ki.o0, gu, i4, m4.o0, e2.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -105,13 +105,13 @@ public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureLi
     }
 
     @Override // org.telegram.ui.Components.gu
-    public void F() {
+    public void E() {
         switch (this.a) {
             case 23:
                 ki.k0 k0Var = (ki.k0) this.b;
                 ki.j0 j0Var = (ki.j0) this.c;
                 k0Var.i();
-                j0Var.W();
+                j0Var.X();
                 break;
             default:
                 o5 o5Var = (o5) this.b;
@@ -235,17 +235,17 @@ public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureLi
     
         if (r1 == null) goto L15;
      */
-    @Override // org.telegram.ui.kc0
+    @Override // org.telegram.ui.ic0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10) {
         ig.d1 d1Var = (ig.d1) this.b;
-        pc0 pc0Var = (pc0) this.c;
+        nc0 nc0Var = (nc0) this.c;
         d1Var.x = messageMedia.geo;
         String str = null;
         if (TextUtils.isEmpty(d1Var.y)) {
-            dc0 dc0Var = pc0Var.T;
+            bc0 bc0Var = nc0Var.T;
         }
     }
 
@@ -311,9 +311,9 @@ public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureLi
                         }
                         d6Var2 = ((f3) r9Var).resourcesProvider;
                         i80 F = i80.F(k9Var, d6Var2, view);
-                        F.c(R.drawable.msg_addfolder, LocaleController.getString(R.string.StoriesAlbumNewAlbum), new t3(k9Var, clientUserId, 7), false);
+                        F.c(R.drawable.msg_addfolder, LocaleController.getString(R.string.StoriesAlbumNewAlbum), new v3(k9Var, clientUserId, 7), false);
                         F.k();
-                        i80.f(F, r9Var.j1().B(clientUserId, true), r9Var.v, false, null, new n2(11, k9Var, F));
+                        i80.f(F, r9Var.j1().B(clientUserId, true), r9Var.v, false, null, new o2(11, k9Var, F));
                         F.Z();
                         return;
                     }
@@ -328,7 +328,7 @@ public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureLi
                     Context context2 = k9Var.getContext();
                     d6Var = ((f3) r9Var).resourcesProvider;
                     b2 b2Var = new b2(context2, 3, d6Var);
-                    b2Var.q(500L);
+                    b2Var.r(500L);
                     TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl = new TL_phone.getGroupCallStreamRtmpUrl();
                     getgroupcallstreamrtmpurl.live_story = true;
                     TLRPC.InputPeer inputPeer2 = r9Var.c;
@@ -337,7 +337,7 @@ public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureLi
                     }
                     getgroupcallstreamrtmpurl.peer = inputPeer2;
                     i11 = ((f3) r9Var).currentAccount;
-                    ConnectionsManager.getInstance(i11).sendRequest(getgroupcallstreamrtmpurl, new k2(k9Var, b2Var, getgroupcallstreamrtmpurl));
+                    ConnectionsManager.getInstance(i11).sendRequest(getgroupcallstreamrtmpurl, new j2(k9Var, b2Var, getgroupcallstreamrtmpurl));
                     return;
                 }
                 return;
@@ -489,10 +489,10 @@ public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureLi
                         d6Var8 = ((f3) r9Var).resourcesProvider;
                         b2 b2Var3 = new b2(context4, 3, d6Var8);
                         k9Var.G = b2Var3;
-                        b2Var3.q(50L);
+                        b2Var3.r(50L);
                         i15 = ((f3) r9Var).currentAccount;
                         MessagesStorage messagesStorage = MessagesStorage.getInstance(i15);
-                        messagesStorage.getStorageQueue().postRunnable(new b3(k9Var, chat2, messagesStorage, j10, 12));
+                        messagesStorage.getStorageQueue().postRunnable(new ai.c3(k9Var, chat2, messagesStorage, j10, 12));
                     } else {
                         k9Var.d(j10, chatFull.participants);
                     }
@@ -553,25 +553,25 @@ public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureLi
     public void e(p9 p9Var, boolean z10, boolean z11, boolean z12, boolean z13, TLRPC.InputPeer inputPeer, int i10, p6 p6Var, com.google.firebase.messaging.s sVar) {
         switch (this.a) {
             case 5:
-                p4 p4Var = (p4) this.b;
+                q4 q4Var = (q4) this.b;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.c;
                 TL_stories.TL_stories_editStory tL_stories_editStory = new TL_stories.TL_stories_editStory();
-                tL_stories_editStory.peer = MessagesController.getInstance(p4Var.C2).getInputPeer(storyItem.dialogId);
+                tL_stories_editStory.peer = MessagesController.getInstance(q4Var.C2).getInputPeer(storyItem.dialogId);
                 tL_stories_editStory.id = storyItem.id;
                 tL_stories_editStory.flags |= 4;
                 tL_stories_editStory.privacy_rules = p9Var.b;
-                ConnectionsManager.getInstance(p4Var.C2).sendRequest(tL_stories_editStory, new w2(p4Var, p6Var, storyItem, p9Var, 5));
+                ConnectionsManager.getInstance(q4Var.C2).sendRequest(tL_stories_editStory, new k2(q4Var, p6Var, storyItem, p9Var, 5));
                 break;
             default:
-                g4 g4Var = (g4) this.b;
+                h4 h4Var = (h4) this.b;
                 r9 r9Var = (r9) this.c;
-                p4 p4Var2 = g4Var.l;
-                n4 n4Var = p4Var2.O1;
-                TL_stories.StoryItem storyItem2 = n4Var.a;
+                q4 q4Var2 = h4Var.l;
+                o4 o4Var = q4Var2.O1;
+                TL_stories.StoryItem storyItem2 = o4Var.a;
                 if ((storyItem2 != null && storyItem2.pinned) != z12) {
-                    MessagesController.getInstance(p4Var2.C2).getStoriesController().o0(p4Var2.B1, p4Var2.v1, z12, null);
+                    MessagesController.getInstance(q4Var2.C2).getStoriesController().o0(q4Var2.B1, q4Var2.v1, z12, null);
                 }
-                TL_stories.StoryItem storyItem3 = n4Var.a;
+                TL_stories.StoryItem storyItem3 = o4Var.a;
                 if (storyItem3 != null) {
                     TLRPC.MessageMedia messageMedia = storyItem3.media;
                     if (messageMedia instanceof TLRPC.TL_messageMediaVideoStream) {
@@ -580,7 +580,7 @@ public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureLi
                         togglegroupcallsettings.call = inputGroupCall;
                         togglegroupcallsettings.messages_enabled = Boolean.valueOf(z10);
                         togglegroupcallsettings.send_paid_messages_stars = Long.valueOf(i10);
-                        ConnectionsManager.getInstance(p4Var2.C2).sendRequest(togglegroupcallsettings, new ai.g(8, g4Var, r9Var));
+                        ConnectionsManager.getInstance(q4Var2.C2).sendRequest(togglegroupcallsettings, new ai.g(8, h4Var, r9Var));
                         break;
                     }
                 }
@@ -626,13 +626,13 @@ public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureLi
     public void g(b2 b2Var, int i10) {
         switch (this.a) {
             case 2:
-                k7.d1((k7) this.b, (ug.m1) this.c, b2Var, i10);
+                l7.K0((l7) this.b, (ug.m1) this.c, b2Var, i10);
                 break;
             case 7:
-                g4 g4Var = (g4) this.b;
-                ci.h1 h1Var = ((z9) this.c).A0;
+                h4 h4Var = (h4) this.b;
+                ci.h1 h1Var = ((aa) this.c).A0;
                 if (h1Var == null) {
-                    p4.f0(g4Var.l);
+                    q4.f0(h4Var.l);
                     break;
                 } else if (!h1Var.w) {
                     TL_phone.discardGroupCall discardgroupcall = new TL_phone.discardGroupCall();
@@ -703,7 +703,7 @@ public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureLi
         }
     }
 
-    @Override // org.telegram.ui.jf1
+    @Override // org.telegram.ui.hf1
     public void k(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         ((ai.x) this.b).h0(false, 0L, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.c);
     }
@@ -770,7 +770,7 @@ public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureLi
 
     @Override // ki.i4
     public void run(long j10) {
-        ki.t3 t3Var = (ki.t3) this.b;
+        t3 t3Var = (t3) this.b;
         String str = (String) this.c;
         TL_keyboard.TL_inlineButtonTypeUserProfile tL_inlineButtonTypeUserProfile = new TL_keyboard.TL_inlineButtonTypeUserProfile();
         tL_inlineButtonTypeUserProfile.user_id = j10;

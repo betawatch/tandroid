@@ -29,8 +29,9 @@ import u2.g0;
 import u2.u;
 import v7.n7;
 import v7.u6;
+import zh.l0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class h extends u2.a {
     public y2.l A;
@@ -101,7 +102,7 @@ public final class h extends u2.a {
         this.M = -9223372036854775807L;
         this.K = -9223372036854775807L;
         this.s = new t1(this, 3);
-        this.y = new ag.b(this, 29);
+        this.y = new l0(this);
         final int i10 = 0;
         this.v = new Runnable(this) { // from class: l2.c
             public final /* synthetic */ h b;
@@ -314,8 +315,8 @@ public final class h extends u2.a {
         boolean z10;
         y2.l lVar = this.A;
         d dVar = new d(this);
-        synchronized (z2.b.b) {
-            z10 = z2.b.c;
+        synchronized (z2.c.b) {
+            z10 = z2.c.c;
         }
         if (z10) {
             dVar.a();
@@ -324,7 +325,7 @@ public final class h extends u2.a {
         if (lVar == null) {
             lVar = new y2.l("SntpClient");
         }
-        lVar.f(new pb.a(28), new f(dVar, 27), 1);
+        lVar.f(new pb.a(28), new z2.b(dVar), 1);
     }
 
     public final void x(y2.o oVar, long j10, long j11) {
@@ -455,7 +456,7 @@ public final class h extends u2.a {
                     }
                     sparseArray = sparseArray3;
                     z14 = true;
-                    bVar.G.v(bVar);
+                    bVar.G.h(bVar);
                 } else {
                     sparseArray = sparseArray3;
                     z14 = true;
@@ -505,7 +506,7 @@ public final class h extends u2.a {
             boolean z16 = (i19 == i17 || i19 == 2) ? false : true;
             if ((!v || !z16) && !list2.isEmpty()) {
                 i c11 = ((m2.m) list2.get(0)).c();
-                if (c11 != null && c11.x(d11, S) != 0) {
+                if (c11 != null && c11.y(d11, S) != 0) {
                     S2 = Math.max(S2, c11.a(c11.e(d11, S)) + S2);
                 }
             }
@@ -541,15 +542,15 @@ public final class h extends u2.a {
                         j11 = S2;
                         break;
                     }
-                    long x10 = c10.x(d10, S);
-                    if (x10 == j10) {
+                    long y3 = c10.y(d10, S);
+                    if (y3 == j10) {
                         hVar2 = this;
                         j11 = S2;
                         j12 = j24;
                         break;
                     } else {
                         j19 = S2;
-                        long e11 = (c10.e(d10, S) + x10) - 1;
+                        long e11 = (c10.e(d10, S) + y3) - 1;
                         j23 = Math.min(j23, c10.d(e11, d10) + c10.a(e11) + j24);
                     }
                 } else {

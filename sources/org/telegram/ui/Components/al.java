@@ -38,7 +38,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class al extends li implements NotificationCenter.NotificationCenterDelegate {
     public boolean A0;
@@ -60,7 +60,7 @@ public final class al extends li implements NotificationCenter.NotificationCente
     public final xk K;
     public boolean K0;
     public final LinearLayout L;
-    public ai.t3 L0;
+    public ai.v3 L0;
     public final FrameLayout M;
     public TL_wallet.walletTransaction M0;
     public final TextView N;
@@ -468,12 +468,12 @@ public final class al extends li implements NotificationCenter.NotificationCente
         frameLayout4.addView(frameLayout5, w7.z5.c(-1.0f, -1));
         TextView textView3 = new TextView(context);
         this.T = textView3;
-        org.telegram.messenger.lk.o(i16, this.a, textView3, 1, 14.0f);
+        org.telegram.messenger.kk.o(i16, this.a, textView3, 1, 14.0f);
         textView3.setGravity(17);
         frameLayout5.addView(textView3, w7.z5.e(-1, 20, 55));
         TextView textView4 = new TextView(context);
         this.U = textView4;
-        org.telegram.messenger.lk.o(i16, this.a, textView4, 1, 14.0f);
+        org.telegram.messenger.kk.o(i16, this.a, textView4, 1, 14.0f);
         textView4.setGravity(17);
         textView4.setPadding(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
         textView4.setVisibility(8);
@@ -481,7 +481,7 @@ public final class al extends li implements NotificationCenter.NotificationCente
         SpannableString spannableString3 = new SpannableString(LocaleController.getString(R.string.Loading));
         this.V = spannableString3;
         spannableString3.setSpan(new ca0(AndroidUtilities.dp(80.0f), textView4), 0, spannableString3.length(), 33);
-        ei.d f7 = org.telegram.messenger.lk.f(24, context, d6Var, true);
+        ei.d f7 = org.telegram.messenger.kk.f(24, context, d6Var, true);
         this.l0 = f7;
         f7.setText(LocaleController.getString(R.string.WalletSendGrams));
         f7.setEnabled(false);
@@ -536,7 +536,7 @@ public final class al extends li implements NotificationCenter.NotificationCente
     */
     public static void N(final al alVar) {
         boolean z10;
-        ai.t3 t3Var;
+        ai.v3 v3Var;
         EditTextBoldCursor editTextBoldCursor = alVar.P;
         int i10 = alVar.n;
         ei.d dVar = alVar.l0;
@@ -576,9 +576,9 @@ public final class al extends li implements NotificationCenter.NotificationCente
                 dVar.setLoading(true);
                 alVar.K0 = true;
                 alVar.J0 = false;
-                t3Var = alVar.L0;
-                if (t3Var != null) {
-                    alVar.removeCallbacks(t3Var);
+                v3Var = alVar.L0;
+                if (v3Var != null) {
+                    alVar.removeCallbacks(v3Var);
                     alVar.L0 = null;
                 }
                 alVar.M0 = null;
@@ -673,8 +673,8 @@ public final class al extends li implements NotificationCenter.NotificationCente
         dVar.setLoading(true);
         alVar.K0 = true;
         alVar.J0 = false;
-        t3Var = alVar.L0;
-        if (t3Var != null) {
+        v3Var = alVar.L0;
+        if (v3Var != null) {
         }
         alVar.M0 = null;
         TLRPC.User user2 = alVar.r;
@@ -997,7 +997,7 @@ public final class al extends li implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.li
-    public final void G(li liVar) {
+    public final void F(li liVar) {
         Activity findActivity;
         R();
         if (this.I == null && !AndroidUtilities.isTablet()) {
@@ -1130,9 +1130,9 @@ public final class al extends li implements NotificationCenter.NotificationCente
             return;
         }
         c0();
-        ai.t3 t3Var = new ai.t3(this, SystemClock.uptimeMillis() + 1500, 24);
-        this.L0 = t3Var;
-        post(t3Var);
+        ai.v3 v3Var = new ai.v3(this, SystemClock.uptimeMillis() + 1500, 24);
+        this.L0 = v3Var;
+        post(v3Var);
     }
 
     public final void b0() {
@@ -1428,9 +1428,9 @@ public final class al extends li implements NotificationCenter.NotificationCente
             return false;
         }
         this.J0 = false;
-        ai.t3 t3Var = this.L0;
-        if (t3Var != null) {
-            removeCallbacks(t3Var);
+        ai.v3 v3Var = this.L0;
+        if (v3Var != null) {
+            removeCallbacks(v3Var);
             this.L0 = null;
         }
         EditTextBoldCursor editTextBoldCursor = this.P;
@@ -1594,9 +1594,9 @@ public final class al extends li implements NotificationCenter.NotificationCente
         this.l0.animate().cancel();
         this.T.animate().cancel();
         this.U.animate().cancel();
-        ai.t3 t3Var = this.L0;
-        if (t3Var != null) {
-            removeCallbacks(t3Var);
+        ai.v3 v3Var = this.L0;
+        if (v3Var != null) {
+            removeCallbacks(v3Var);
             this.L0 = null;
         }
         org.telegram.ui.ActionBar.b2 b2Var = this.Q0;
@@ -1647,7 +1647,7 @@ public final class al extends li implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.li
-    public final void t() {
+    public final void u() {
         R();
         Activity activity = this.I;
         if (activity != null) {
@@ -1661,9 +1661,9 @@ public final class al extends li implements NotificationCenter.NotificationCente
         this.b.a1.setDrawGlassTitle(true);
         this.I0 = false;
         this.J0 = false;
-        ai.t3 t3Var = this.L0;
-        if (t3Var != null) {
-            removeCallbacks(t3Var);
+        ai.v3 v3Var = this.L0;
+        if (v3Var != null) {
+            removeCallbacks(v3Var);
             this.L0 = null;
         }
         org.telegram.ui.ActionBar.b2 b2Var = this.Q0;
@@ -1679,7 +1679,7 @@ public final class al extends li implements NotificationCenter.NotificationCente
     @Override // org.telegram.ui.Components.li
     public final void w(int i10) {
         if (i10 == 2) {
-            org.telegram.ui.Wallet.n5.D0(getContext(), this.n, this.a);
+            org.telegram.ui.Wallet.o5.E0(getContext(), this.n, this.a);
         } else if (i10 == 3) {
             Z();
         }

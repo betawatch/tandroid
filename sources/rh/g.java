@@ -20,19 +20,19 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.e11;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.xo0;
 import org.telegram.ui.Components.yo0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class g extends Drawable implements DownloadController.FileDownloadProgressListener, xo0 {
     public String E;
@@ -69,10 +69,10 @@ public final class g extends Drawable implements DownloadController.FileDownload
     public int f0;
     public int g0;
     public String h;
-    public d11 n;
-    public d11 r;
-    public d11 s;
-    public d11 v;
+    public e11 n;
+    public e11 r;
+    public e11 s;
+    public e11 v;
     public final RadialProgress2 x;
     public final boolean y;
     public final Paint w = new Paint(1);
@@ -118,14 +118,14 @@ public final class g extends Drawable implements DownloadController.FileDownload
     }
 
     public final void d(boolean z10) {
-        d11 d11Var = this.n;
-        if (d11Var != null) {
-            d11Var.o(h6.x0(null, z10 ? h6.Fb : h6.Dd, false));
+        e11 e11Var = this.n;
+        if (e11Var != null) {
+            e11Var.o(h6.x0(null, z10 ? h6.Fb : h6.Dd, false));
         }
         this.w.setColor(1711276032);
-        d11 d11Var2 = this.v;
-        if (d11Var2 != null) {
-            d11Var2.o(-1);
+        e11 e11Var2 = this.v;
+        if (e11Var2 != null) {
+            e11Var2.o(-1);
         }
         SvgHelper.SvgDrawable svgDrawable = this.N;
         if (svgDrawable != null) {
@@ -170,9 +170,9 @@ public final class g extends Drawable implements DownloadController.FileDownload
             int dp = i11 + (z11 ? 0 : AndroidUtilities.dp(8.0f));
             int dp2 = bounds.top + (z11 ? 0 : AndroidUtilities.dp(3.0f));
             int dp3 = this.X ? 0 : AndroidUtilities.dp(3.0f);
-            d11 d11Var = this.n;
-            if (d11Var != null) {
-                d11Var.e(canvas, AndroidUtilities.dp(56.0f) + dp, AndroidUtilities.dp(15.0f) + dp2 + dp3);
+            e11 e11Var = this.n;
+            if (e11Var != null) {
+                e11Var.e(canvas, AndroidUtilities.dp(56.0f) + dp, AndroidUtilities.dp(15.0f) + dp2 + dp3);
             }
             if (this.X) {
                 float f7 = this.a.e;
@@ -188,7 +188,7 @@ public final class g extends Drawable implements DownloadController.FileDownload
                 if (f7 > 0.0f) {
                     yo0 yo0Var = this.K;
                     yo0Var.t = f7;
-                    yo0Var.j(lk.y(56.0f, dp, bounds.right), AndroidUtilities.dp(30.0f));
+                    yo0Var.j(kk.y(56.0f, dp, bounds.right), AndroidUtilities.dp(30.0f));
                     canvas.save();
                     float dp4 = AndroidUtilities.dp(45.0f) + dp;
                     this.L = dp4;
@@ -199,9 +199,9 @@ public final class g extends Drawable implements DownloadController.FileDownload
                     canvas.restore();
                 }
             }
-            d11 d11Var2 = this.s;
-            if (d11Var2 != null) {
-                d11Var2.e(canvas, AndroidUtilities.dp(56.0f) + dp, AndroidUtilities.dp((this.X ? 20 : 2) + 34) + dp3 + dp2);
+            e11 e11Var2 = this.s;
+            if (e11Var2 != null) {
+                e11Var2.e(canvas, AndroidUtilities.dp(56.0f) + dp, AndroidUtilities.dp((this.X ? 20 : 2) + 34) + dp3 + dp2);
             }
             int dp6 = AndroidUtilities.dp(2.0f) + dp;
             this.a0 = dp6;
@@ -277,29 +277,29 @@ public final class g extends Drawable implements DownloadController.FileDownload
             String str = this.e;
             if (str != null) {
                 if (this.n == null) {
-                    this.n = new d11(str, 15.0f, AndroidUtilities.bold());
+                    this.n = new e11(str, 15.0f, AndroidUtilities.bold());
                 }
-                d11 d11Var = this.n;
-                d11Var.r(TextUtils.ellipsize(this.e, d11Var.a, width, TextUtils.TruncateAt.MIDDLE));
+                e11 e11Var = this.n;
+                e11Var.r(TextUtils.ellipsize(this.e, e11Var.a, width, TextUtils.TruncateAt.MIDDLE));
             }
             String str2 = this.f;
             if (str2 != null) {
                 if (this.r == null) {
-                    this.r = new d11(str2, 14.0f, null);
+                    this.r = new e11(str2, 14.0f, null);
                 }
-                d11 d11Var2 = this.r;
-                d11Var2.r(TextUtils.ellipsize(this.f, d11Var2.a, width, TextUtils.TruncateAt.END));
+                e11 e11Var2 = this.r;
+                e11Var2.r(TextUtils.ellipsize(this.f, e11Var2.a, width, TextUtils.TruncateAt.END));
             }
             String str3 = this.h;
             if (str3 != null) {
                 if (this.s == null) {
-                    this.s = new d11(str3, 12.0f, null);
+                    this.s = new e11(str3, 12.0f, null);
                 }
-                d11 d11Var3 = this.s;
-                d11Var3.r(TextUtils.ellipsize(this.h, d11Var3.a, width, TextUtils.TruncateAt.END));
+                e11 e11Var3 = this.s;
+                e11Var3.r(TextUtils.ellipsize(this.h, e11Var3.a, width, TextUtils.TruncateAt.END));
             }
             if (this.G && this.v == null) {
-                this.v = new d11(AndroidUtilities.formatLongDuration(this.J), 12.0f, null);
+                this.v = new e11(AndroidUtilities.formatLongDuration(this.J), 12.0f, null);
             }
         }
     }

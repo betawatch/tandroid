@@ -1,128 +1,59 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.MotionEvent;
+import org.telegram.messenger.video.VideoFramesRewinder;
+import org.telegram.messenger.video.VideoPlayerRewinder;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class qs0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PhotoViewer b;
+public final class qs0 extends VideoPlayerRewinder {
+    public final /* synthetic */ PhotoViewer a;
 
-    public /* synthetic */ qs0(PhotoViewer photoViewer, int i10) {
-        this.a = i10;
-        this.b = photoViewer;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qs0(PhotoViewer photoViewer, VideoFramesRewinder videoFramesRewinder) {
+        super(videoFramesRewinder);
+        this.a = photoViewer;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        org.telegram.ui.Components.ti tiVar;
-        int i10 = this.a;
-        PhotoViewer photoViewer = this.b;
-        switch (i10) {
-            case 0:
-                photoViewer.p6 = null;
-                org.telegram.ui.Components.nf0 nf0Var = photoViewer.C1;
-                if (nf0Var != null) {
-                    if (nf0Var.b.j()) {
-                        photoViewer.a1.setColorFilter(new PorterDuffColorFilter(photoViewer.z1(org.telegram.ui.ActionBar.h6.zf), PorterDuff.Mode.MULTIPLY));
-                    } else {
-                        photoViewer.a1.setColorFilter((ColorFilter) null);
-                    }
-                    photoViewer.g6 = 0.0f;
-                    photoViewer.e0.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                photoViewer.t3 = null;
-                break;
-            case 2:
-                Drawable[] drawableArr = PhotoViewer.U8;
-                photoViewer.g3();
-                break;
-            case 3:
-                photoViewer.L1.o0(false);
-                it0 it0Var = photoViewer.L1;
-                it0Var.u1.setTypeface(qg.u0.e(it0Var.P1).j);
-                it0Var.Z0.setVisibility(0);
-                it0Var.W0.setVisibility(0);
-                it0Var.X0.setVisibility(0);
-                org.telegram.ui.Components.zd0 zd0Var = photoViewer.y4;
-                int childCount = zd0Var.getChildCount();
-                for (int i11 = 0; i11 < childCount; i11++) {
-                    zd0Var.getChildAt(i11).setVisibility(4);
-                }
-                photoViewer.p6 = null;
-                photoViewer.u4 = 3;
-                photoViewer.f1().L.b(photoViewer.u4 != 0);
-                ei.b4 b4Var = photoViewer.K1;
-                if (b4Var != null) {
-                    b4Var.b(photoViewer.u4 != 3);
-                }
-                photoViewer.o6 = -1;
-                float r22 = photoViewer.r2(false);
-                photoViewer.a6 = r22;
-                photoViewer.e6 = r22;
-                photoViewer.c6 = 0.0f;
-                photoViewer.d6 = 0.0f;
-                photoViewer.w3(r22);
-                photoViewer.t2 = true;
-                photoViewer.e0.invalidate();
-                ju0 ju0Var = photoViewer.d;
-                if (ju0Var == null || !ju0Var.P()) {
-                    photoViewer.S1();
-                    break;
-                }
-                break;
-            case 4:
-                AnimatorSet animatorSet = photoViewer.B1;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    photoViewer.o1.setVisibility(8);
-                    photoViewer.B1 = null;
-                    break;
-                }
-                break;
-            case 5:
-                AndroidUtilities.runOnUIThread(new ek0(this, 21));
-                break;
-            case 6:
-                photoViewer.m6 = 1.0f;
-                Runnable runnable = photoViewer.p4;
-                if (runnable != null) {
-                    sn snVar = photoViewer.l4;
-                    if (snVar == null && (tiVar = photoViewer.a2) != null) {
-                        org.telegram.ui.ActionBar.n2 n2Var = tiVar.f0;
-                        if (n2Var instanceof sn) {
-                            snVar = (sn) n2Var;
-                        }
-                    }
-                    if (snVar != null) {
-                        snVar.k8(runnable);
-                        break;
-                    } else {
-                        runnable.run();
-                        photoViewer.p4 = null;
-                        break;
-                    }
-                }
-                break;
-            case 7:
-                photoViewer.p6 = null;
-                photoViewer.e0.invalidate();
-                break;
-            case 8:
-                photoViewer.y3[0].setTag(null);
-                break;
-            default:
-                photoViewer.y3[0].setTag(null);
-                break;
+    @Override // org.telegram.messenger.video.VideoPlayerRewinder
+    public final void onRewindCanceled() {
+        MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
+        PhotoViewer photoViewer = this.a;
+        PhotoViewer.k(photoViewer, obtain);
+        photoViewer.z1.f(false);
+        org.telegram.ui.Components.zg0.p0.Q.f(false);
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerRewinder
+    public final void onRewindStart(boolean z10) {
+        PhotoViewer photoViewer = this.a;
+        photoViewer.z1.e(false);
+        photoViewer.z1.d(!z10);
+        photoViewer.z1.f(true);
+        photoViewer.e0.invalidate();
+        org.telegram.ui.Components.zg0.v(z10);
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerRewinder
+    public final void updateRewindProgressUi(long j10, float f7, boolean z10) {
+        PhotoViewer photoViewer = this.a;
+        photoViewer.z1.g(Math.abs(j10));
+        if (z10) {
+            photoViewer.q3.h(f7, false);
+            photoViewer.r3.invalidate();
+        }
+        org.telegram.ui.Components.zg0 zg0Var = org.telegram.ui.Components.zg0.p0;
+        zg0Var.Q.g(0L);
+        if (z10) {
+            zg0Var.Z = f7;
+            ci.i3 i3Var = zg0Var.b0;
+            if (i3Var != null) {
+                i3Var.invalidate();
+            }
+            org.telegram.ui.Components.yg0 yg0Var = zg0Var.h;
+            if (yg0Var != null) {
+                yg0Var.invalidate();
+            }
         }
     }
 }

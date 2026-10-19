@@ -5,7 +5,7 @@ import android.view.View;
 import ki.c6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u0 implements View.OnFocusChangeListener {
     public final /* synthetic */ int a;
@@ -51,14 +51,14 @@ public final /* synthetic */ class u0 implements View.OnFocusChangeListener {
                 c6.a((c6) this.b, z10);
                 break;
             case 6:
-                EditTextBoldCursor editTextBoldCursor = ((qg.v) this.b).c;
+                EditTextBoldCursor editTextBoldCursor = ((qg.w) this.b).c;
                 if (!z10 && TextUtils.isEmpty(editTextBoldCursor.getText())) {
                     editTextBoldCursor.setText("0");
                     break;
                 }
                 break;
             default:
-                EditTextBoldCursor editTextBoldCursor2 = ((qg.w) this.b).d;
+                EditTextBoldCursor editTextBoldCursor2 = ((qg.x) this.b).d;
                 if (!z10 && TextUtils.isEmpty(editTextBoldCursor2.getText())) {
                     editTextBoldCursor2.setText("0");
                     break;

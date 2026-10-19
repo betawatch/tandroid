@@ -4,19 +4,19 @@ import android.animation.ValueAnimator;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.b91;
+import org.telegram.ui.Components.c91;
 import org.telegram.ui.Components.cl0;
-import org.telegram.ui.Components.d31;
+import org.telegram.ui.Components.e31;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.ib0;
 import org.telegram.ui.Components.m00;
 import org.telegram.ui.Components.s00;
-import org.telegram.ui.Components.w81;
+import org.telegram.ui.Components.x81;
 import org.telegram.ui.StickersActivity;
-import org.telegram.ui.dw;
-import org.telegram.ui.jr;
+import org.telegram.ui.bw;
+import org.telegram.ui.hr;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class i0 extends s4.b0 {
     public final /* synthetic */ int I;
@@ -41,7 +41,7 @@ public final class i0 extends s4.b0 {
                 break;
             case 6:
                 super.S(eVar, y0Var, cVar);
-                if (((b91) this.J).V) {
+                if (((c91) this.J).V) {
                     cVar.p(false);
                     break;
                 }
@@ -56,7 +56,7 @@ public final class i0 extends s4.b0 {
     public int W0(s4.y0 y0Var) {
         switch (this.I) {
             case 5:
-                if (!((d31) this.J).Y2) {
+                if (!((e31) this.J).Y2) {
                     break;
                 } else {
                     break;
@@ -82,7 +82,7 @@ public final class i0 extends s4.b0 {
     public int m0(int i10, qf.e eVar, s4.y0 y0Var) {
         switch (this.I) {
             case 2:
-                i80 i80Var = ((dw) ((s00) this.J).J).b.L0;
+                i80 i80Var = ((bw) ((s00) this.J).J).b.L0;
                 if (i80Var != null && i80Var.D()) {
                     i10 = 0;
                 }
@@ -144,8 +144,8 @@ public final class i0 extends s4.b0 {
     public int o0(int i10, qf.e eVar, s4.y0 y0Var) {
         switch (this.I) {
             case 1:
-                jr jrVar = (jr) this.J;
-                if (jrVar.R || jrVar.O != 0 || jrVar.F.size() != 0) {
+                hr hrVar = (hr) this.J;
+                if (hrVar.R || hrVar.O != 0 || hrVar.F.size() != 0) {
                     break;
                 }
                 break;
@@ -162,9 +162,9 @@ public final class i0 extends s4.b0 {
                 w0(m00Var);
                 break;
             case 6:
-                w81 w81Var = new w81(this, recyclerView.getContext());
-                w81Var.a = i10;
-                w0(w81Var);
+                x81 x81Var = new x81(this, recyclerView.getContext());
+                x81Var.a = i10;
+                w0(x81Var);
                 break;
             default:
                 super.v0(recyclerView, y0Var, i10);
@@ -206,9 +206,9 @@ public final class i0 extends s4.b0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i0(jr jrVar) {
+    public i0(hr hrVar) {
         super(1, false);
         this.I = 1;
-        this.J = jrVar;
+        this.J = hrVar;
     }
 }

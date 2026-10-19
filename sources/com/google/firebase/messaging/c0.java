@@ -5,13 +5,13 @@ import android.os.Process;
 import android.util.Log;
 import com.google.android.gms.tasks.Task;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class c0 extends Binder {
-    public final a6.m a;
+    public final qb.c a;
 
-    public c0(a6.m mVar) {
-        this.a = mVar;
+    public c0(qb.c cVar) {
+        this.a = cVar;
     }
 
     public final void a(d0 d0Var) {

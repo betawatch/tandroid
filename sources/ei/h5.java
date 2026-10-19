@@ -5,24 +5,24 @@ import android.graphics.Matrix;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class h5 implements qg.u {
+public final class h5 implements qg.v {
     public boolean a;
-    public final /* synthetic */ qg.u0 b;
+    public final /* synthetic */ qg.v0 b;
     public final /* synthetic */ xa c;
 
-    public h5(xa xaVar, qg.u0 u0Var) {
+    public h5(xa xaVar, qg.v0 v0Var) {
         this.c = xaVar;
-        this.b = u0Var;
+        this.b = v0Var;
     }
 
-    @Override // qg.u
+    @Override // qg.v
     public final void a() {
         this.a = true;
     }
 
-    @Override // qg.u
+    @Override // qg.v
     public final void b(Canvas canvas) {
         v5 v5Var = this.c.O0;
         Matrix matrix = v5Var.getMatrix();
@@ -33,41 +33,41 @@ public final class h5 implements qg.u {
         throw null;
     }
 
-    @Override // qg.u
+    @Override // qg.v
     public final boolean c() {
         return this.a;
     }
 
-    @Override // qg.u
+    @Override // qg.v
     public final void d() {
         this.a = false;
     }
 
-    @Override // qg.u
+    @Override // qg.v
     public final View e() {
         return this.c;
     }
 
-    @Override // qg.u
+    @Override // qg.v
     public final FrameLayout f() {
         return this.c.V0;
     }
 
-    @Override // qg.u
+    @Override // qg.v
     public final boolean g() {
         return false;
     }
 
-    @Override // qg.u
+    @Override // qg.v
     public final void h(int i10) {
         xa xaVar = this.c;
         xaVar.H0(false);
-        qg.u0 u0Var = this.b;
-        u0Var.h(i10, true);
-        u0Var.g();
+        qg.v0 v0Var = this.b;
+        v0Var.h(i10, true);
+        v0Var.g();
         xaVar.setNewColor(i10);
         g5 g5Var = xaVar.w1;
-        g5Var.setSelectedColorIndex(u0Var.d());
+        g5Var.setSelectedColorIndex(v0Var.d());
         g5Var.getAdapter().l();
     }
 }

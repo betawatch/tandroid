@@ -19,7 +19,7 @@ import org.telegram.messenger.g0;
 import r0.k1;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public float E;
@@ -54,7 +54,7 @@ public final class f extends FrameLayout {
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
         addView(frameLayout, z5.e(-1, -2, 80));
-        x xVar = new x(this, context, 9);
+        x xVar = new x(this, context, 8);
         this.d = xVar;
         addView(xVar, z5.e(-1, -2, 80));
         this.b = new ic(this, context, 6);

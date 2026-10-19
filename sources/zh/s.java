@@ -6,7 +6,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class s implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
@@ -35,7 +35,7 @@ public final class s implements NotificationCenter.NotificationCenterDelegate {
         }
         this.f = true;
         NotificationCenter.getInstance(this.a).removeObserver(this, NotificationCenter.fileLoaded);
-        Utilities.globalQueue.postRunnable(new u2.q0(22, this, FileLoader.getInstance(this.a).getPathToAttach(this.b, true)));
+        Utilities.globalQueue.postRunnable(new uf.c(21, this, FileLoader.getInstance(this.a).getPathToAttach(this.b, true)));
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate

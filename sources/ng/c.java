@@ -10,18 +10,18 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.k4;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.cp0;
-import org.telegram.ui.Components.jw0;
+import org.telegram.ui.Components.kw0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.n5;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -38,15 +38,15 @@ public final /* synthetic */ class c implements Runnable {
             case 0:
                 n2 R = LaunchActivity.R();
                 n5 n5Var = new n5(R.getParentActivity(), false);
-                if (R.getFragmentView() instanceof jw0) {
-                    n5Var.b = (jw0) R.getFragmentView();
+                if (R.getFragmentView() instanceof kw0) {
+                    n5Var.b = (kw0) R.getFragmentView();
                 }
                 Activity parentActivity = R.getParentActivity();
                 LinearLayout e = g0.e(parentActivity, 1);
                 TextView textView = new TextView(parentActivity);
                 textView.setText("Saturation " + (n5.c * 5.0f));
                 int i10 = h6.n5;
-                lk.u(textView, h6.x0(null, i10, false), 1, 16.0f, 1);
+                kk.u(textView, h6.x0(null, i10, false), 1, 16.0f, 1);
                 textView.setMaxLines(1);
                 textView.setSingleLine(true);
                 textView.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
@@ -57,7 +57,7 @@ public final /* synthetic */ class c implements Runnable {
                 e.addView(cp0Var, z5.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
                 TextView textView2 = new TextView(parentActivity);
                 textView2.setText("Alpha " + n5.e);
-                lk.u(textView2, h6.x0(null, i10, false), 1, 16.0f, 1);
+                kk.u(textView2, h6.x0(null, i10, false), 1, 16.0f, 1);
                 textView2.setMaxLines(1);
                 textView2.setSingleLine(true);
                 textView2.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
@@ -68,7 +68,7 @@ public final /* synthetic */ class c implements Runnable {
                 e.addView(cp0Var2, z5.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
                 TextView textView3 = new TextView(parentActivity);
                 textView3.setText("Blur Radius");
-                lk.u(textView3, h6.x0(null, i10, false), 1, 16.0f, 1);
+                kk.u(textView3, h6.x0(null, i10, false), 1, 16.0f, 1);
                 textView3.setMaxLines(1);
                 textView3.setSingleLine(true);
                 textView3.setGravity((LocaleController.isRTL ? 3 : 5) | 48);

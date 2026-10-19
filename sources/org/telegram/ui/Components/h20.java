@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class h20 extends FrameLayout implements ne.d {
     public final ne.b a;
@@ -130,22 +130,8 @@ public final class h20 extends FrameLayout implements ne.d {
         }
     }
 
-    public void setImageResource(int i10) {
-        this.c.setImageResource(i10);
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f7) {
-        if (this.w != f7) {
-            this.x = true;
-            super.setTranslationY(this.v + f7);
-            this.x = false;
-            this.w = f7;
-        }
-    }
-
     @Override // ne.d
-    public final void u(int i10, float f7, float f10, ne.e eVar) {
+    public final void r(int i10, float f7, float f10, ne.e eVar) {
         int i11 = 0;
         if (i10 == 0) {
             d(this, f7);
@@ -164,6 +150,20 @@ public final class h20 extends FrameLayout implements ne.d {
                     d((View) obj, f11);
                 }
             }
+        }
+    }
+
+    public void setImageResource(int i10) {
+        this.c.setImageResource(i10);
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        if (this.w != f7) {
+            this.x = true;
+            super.setTranslationY(this.v + f7);
+            this.x = false;
+            this.w = f7;
         }
     }
 
@@ -209,6 +209,6 @@ public final class h20 extends FrameLayout implements ne.d {
     }
 
     @Override // ne.d
-    public final /* synthetic */ void E(float f7, int i10) {
+    public final /* synthetic */ void H(float f7, int i10) {
     }
 }

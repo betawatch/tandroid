@@ -23,24 +23,24 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.e11;
 import org.telegram.ui.Components.f6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class o0 extends View {
     public final Paint E;
     public boolean F;
-    public d11 G;
+    public e11 G;
     public final Paint H;
     public boolean I;
-    public d11 J;
+    public e11 J;
     public boolean K;
-    public d11 L;
+    public e11 L;
     public boolean M;
     public final TextPaint N;
     public StaticLayout O;
@@ -138,8 +138,8 @@ public class o0 extends View {
         float f16;
         float e;
         float f17;
-        d11 d11Var;
-        d11 d11Var2;
+        e11 e11Var;
+        e11 e11Var2;
         Canvas canvas2 = canvas;
         d();
         float d = this.r0.d(this.a0, false);
@@ -166,8 +166,8 @@ public class o0 extends View {
             canvas2.translate(i10, i11);
             float e11 = this.l0.e(this.F);
             float f20 = (7.33f * f18) + 0.0f;
-            d11 d11Var3 = this.G;
-            if (d11Var3 == null || e11 <= 0.0f) {
+            e11 e11Var3 = this.G;
+            if (e11Var3 == null || e11 <= 0.0f) {
                 f11 = e11;
                 f7 = 1.0f;
                 f12 = e10;
@@ -178,7 +178,7 @@ public class o0 extends View {
                 direction = direction2;
                 f11 = e11;
                 f7 = 1.0f;
-                d11Var3.c(f18 * 10.0f, k3.D(1.0f, e11, (15.0f * f18) + this.G.j(), (d11Var3.j() / 2.0f) + f20), e10, -15033089, canvas2);
+                e11Var3.c(f18 * 10.0f, k3.D(1.0f, e11, (15.0f * f18) + this.G.j(), (e11Var3.j() / 2.0f) + f20), e10, -15033089, canvas2);
                 f12 = e10;
                 f20 = (((7.0f * f18) + this.G.j()) * f11) + f20;
             }
@@ -200,21 +200,21 @@ public class o0 extends View {
             canvas.restore();
             float f23 = (5.66f * f18) + f21;
             if (this.K) {
-                d11 d11Var4 = this.L;
-                if (d11Var4 != null) {
-                    float j10 = (d11Var4.j() / f10) + f23;
+                e11 e11Var4 = this.L;
+                if (e11Var4 != null) {
+                    float j10 = (e11Var4.j() / f10) + f23;
                     int color = paint2.getColor();
                     f13 = d;
                     e10 = f12;
                     f15 = f11;
                     f16 = 2.66f;
-                    d11Var4.c(f18 * 20.0f, j10, e10, color, canvas);
+                    e11Var4.c(f18 * 20.0f, j10, e10, color, canvas);
                     f14 = r4.c.c(f18, 2.66f, this.L.j(), f23);
-                    if (this.I || (d11Var2 = this.J) == null) {
+                    if (this.I || (e11Var2 = this.J) == null) {
                         canvas2 = canvas;
                     } else {
                         canvas2 = canvas;
-                        d11Var2.c(f18 * 20.0f, (d11Var2.j() / f10) + f14, e10, i0.a.f(e7, -13421773, -1), canvas2);
+                        e11Var2.c(f18 * 20.0f, (e11Var2.j() / f10) + f14, e10, i0.a.f(e7, -13421773, -1), canvas2);
                         f14 = r4.c.c(f18, f16, this.J.j(), f14);
                     }
                     if (this.M && this.O != null) {
@@ -240,12 +240,12 @@ public class o0 extends View {
                         imageReceiver.setImageCoords(f24, f25, width, height);
                         imageReceiver.setAlpha(e * e10);
                         imageReceiver.draw(canvas2);
-                        f14 = lk.b(f18 * f16, this.d0, f7 - e12, f14);
+                        f14 = kk.b(f18 * f16, this.d0, f7 - e12, f14);
                     }
                     f17 = (5.0f * f18) + (7.0f * f18) + f14;
-                    d11Var = this.G;
-                    if (d11Var != null && f7 - f15 > 0.0f) {
-                        d11Var.c(f18 * 10.0f, (d11Var.j() / f10) + f17 + (((15.0f * f18) + this.G.j()) * f15), e10, -15033089, canvas2);
+                    e11Var = this.G;
+                    if (e11Var != null && f7 - f15 > 0.0f) {
+                        e11Var.c(f18 * 10.0f, (e11Var.j() / f10) + f17 + (((15.0f * f18) + this.G.j()) * f15), e10, -15033089, canvas2);
                         this.G.j();
                     }
                     canvas2.restore();
@@ -276,9 +276,9 @@ public class o0 extends View {
             if (e > 0.0f) {
             }
             f17 = (5.0f * f18) + (7.0f * f18) + f14;
-            d11Var = this.G;
-            if (d11Var != null) {
-                d11Var.c(f18 * 10.0f, (d11Var.j() / f10) + f17 + (((15.0f * f18) + this.G.j()) * f15), e10, -15033089, canvas2);
+            e11Var = this.G;
+            if (e11Var != null) {
+                e11Var.c(f18 * 10.0f, (e11Var.j() / f10) + f17 + (((15.0f * f18) + this.G.j()) * f15), e10, -15033089, canvas2);
                 this.G.j();
             }
             canvas2.restore();
@@ -376,12 +376,12 @@ public class o0 extends View {
             this.H.setColor(color1);
             this.b0 = (7.33f * f12) + this.b0;
             this.F = this.W.f;
-            d11 d11Var = new d11(str2, 16.0f, null);
-            d11Var.a.setTextSize(16.0f * f12);
+            e11 e11Var = new e11(str2, 16.0f, null);
+            e11Var.a.setTextSize(16.0f * f12);
             float f14 = 20.0f * f12;
-            d11Var.q(f13 - f14);
-            this.G = d11Var;
-            this.a0 = Math.max(this.a0, Math.min(f14 + d11Var.c, f13));
+            e11Var.q(f13 - f14);
+            this.G = e11Var;
+            this.a0 = Math.max(this.a0, Math.min(f14 + e11Var.c, f13));
             float f15 = 7.0f * f12;
             this.b0 = this.G.j() + this.b0 + f15;
             this.R = webPage.photo != null || MessageObject.isVideoDocument(webPage.document);
@@ -429,12 +429,12 @@ public class o0 extends View {
             if (isEmpty) {
                 i12 = 0;
             } else {
-                d11 d11Var2 = new d11(webPage.site_name, 14.0f, AndroidUtilities.bold());
-                d11Var2.a.setTextSize(f12 * 14.0f);
+                e11 e11Var2 = new e11(webPage.site_name, 14.0f, AndroidUtilities.bold());
+                e11Var2.a.setTextSize(f12 * 14.0f);
                 float f16 = f12 * 40.0f;
-                d11Var2.q((int) Math.ceil((f13 - f16) - ((this.R && this.S) ? f12 * 60.0f : 0.0f)));
-                this.L = d11Var2;
-                this.a0 = Math.max(this.a0, Math.min(f16 + d11Var2.c + ((this.R && this.S) ? f12 * 60.0f : 0.0f), f13));
+                e11Var2.q((int) Math.ceil((f13 - f16) - ((this.R && this.S) ? f12 * 60.0f : 0.0f)));
+                this.L = e11Var2;
+                this.a0 = Math.max(this.a0, Math.min(f16 + e11Var2.c + ((this.R && this.S) ? f12 * 60.0f : 0.0f), f13));
                 this.c0 = (f12 * 2.66f) + this.L.j() + this.c0;
                 i12 = this.L.b.getLineCount();
             }
@@ -444,14 +444,14 @@ public class o0 extends View {
                 f10 = 2.66f;
                 f11 = f12;
             } else {
-                d11 d11Var3 = new d11(webPage.title, 14.0f, AndroidUtilities.bold());
-                d11Var3.a.setTextSize(f12 * 14.0f);
+                e11 e11Var3 = new e11(webPage.title, 14.0f, AndroidUtilities.bold());
+                e11Var3.a.setTextSize(f12 * 14.0f);
                 float f17 = f12 * 40.0f;
                 f10 = 2.66f;
                 f11 = f12;
-                d11Var3.q((int) Math.ceil((f13 - f17) - ((this.R && this.S) ? f12 * 60.0f : 0.0f)));
-                this.J = d11Var3;
-                this.a0 = Math.max(this.a0, Math.min(f17 + d11Var3.c + ((this.R && this.S) ? 60.0f * f11 : 0.0f), f13));
+                e11Var3.q((int) Math.ceil((f13 - f17) - ((this.R && this.S) ? f12 * 60.0f : 0.0f)));
+                this.J = e11Var3;
+                this.a0 = Math.max(this.a0, Math.min(f17 + e11Var3.c + ((this.R && this.S) ? 60.0f * f11 : 0.0f), f13));
                 this.c0 = (f11 * 2.66f) + this.J.j() + this.c0;
                 i12 += this.J.b.getLineCount();
             }

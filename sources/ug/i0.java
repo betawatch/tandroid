@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import ci.n1;
+import ci.o1;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -19,10 +19,10 @@ import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.sa1;
+import org.telegram.ui.qa1;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class i0 extends sg.m1 {
     public final ArrayList Q0;
@@ -99,7 +99,7 @@ public final class i0 extends sg.m1 {
     @Override // sg.m1
     public final void W(int i10, View view) {
         if (i10 == 0) {
-            view.setOutlineProvider(new n1(21));
+            view.setOutlineProvider(new o1(21));
             view.setClipToOutline(true);
             view.setBackgroundColor(h6.w0(h6.a7, this.resourcesProvider));
             ((ViewGroup.MarginLayoutParams) view.getLayoutParams()).topMargin = -AndroidUtilities.dp(6.0f);
@@ -107,10 +107,10 @@ public final class i0 extends sg.m1 {
     }
 
     @Override // sg.m1
-    public final void X(sa1 sa1Var) {
+    public final void X(qa1 qa1Var) {
         View view = this.B0;
         ArrayList arrayList = this.Q0;
-        sa1Var.addView(view, z5.k(0.0f, arrayList.size() == 1 ? 28.0f : 34.0f, 0.0f, arrayList.size() == 1 ? 9.0f : 14.0f, -1, arrayList.size() == 1 ? 94 : 83));
+        qa1Var.addView(view, z5.k(0.0f, arrayList.size() == 1 ? 28.0f : 34.0f, 0.0f, arrayList.size() == 1 ? 9.0f : 14.0f, -1, arrayList.size() == 1 ? 94 : 83));
     }
 
     @Override // sg.m1

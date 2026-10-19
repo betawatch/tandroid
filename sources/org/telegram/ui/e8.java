@@ -2,15 +2,15 @@ package org.telegram.ui;
 
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class e8 implements MessagesStorage.BooleanCallback {
-    public final /* synthetic */ sn a;
+    public final /* synthetic */ qn a;
     public final /* synthetic */ f8 b;
 
-    public e8(f8 f8Var, sn snVar) {
+    public e8(f8 f8Var, qn qnVar) {
         this.b = f8Var;
-        this.a = snVar;
+        this.a = qnVar;
     }
 
     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback

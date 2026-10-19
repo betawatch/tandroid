@@ -26,14 +26,14 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.cg0;
 import org.telegram.ui.Components.e00;
 import org.telegram.ui.Components.f00;
-import org.telegram.ui.Components.o71;
-import org.telegram.ui.Components.v91;
+import org.telegram.ui.Components.p71;
 import org.telegram.ui.Components.w91;
 import org.telegram.ui.Components.we0;
+import org.telegram.ui.Components.x91;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class ca implements CameraView.CameraViewDelegate, r0.n, org.telegram.ui.ActionBar.a2, v91, Utilities.CallbackVoidReturn, o71, v8, y7 {
+public final /* synthetic */ class ca implements CameraView.CameraViewDelegate, r0.n, org.telegram.ui.ActionBar.a2, w91, Utilities.CallbackVoidReturn, p71, v8, y7 {
     public final /* synthetic */ int a;
     public final /* synthetic */ vb b;
 
@@ -55,7 +55,7 @@ public final /* synthetic */ class ca implements CameraView.CameraViewDelegate, 
         return r0.k1.b;
     }
 
-    @Override // org.telegram.ui.Components.v91
+    @Override // org.telegram.ui.Components.w91
     public void b(float f7) {
         vb vbVar = this.b;
         ya yaVar = vbVar.B0;
@@ -66,7 +66,7 @@ public final /* synthetic */ class ca implements CameraView.CameraViewDelegate, 
         vbVar.i0(true);
     }
 
-    @Override // org.telegram.ui.Components.o71
+    @Override // org.telegram.ui.Components.p71
     public void c(e00 e00Var) {
         MediaController.SavedFilterState savedFilterState;
         vb vbVar = this.b;
@@ -169,7 +169,7 @@ public final /* synthetic */ class ca implements CameraView.CameraViewDelegate, 
                         ConnectionsManager.getInstance(i16).sendRequest(tL_startLive, new RequestDelegate() { // from class: ei.ba
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                AndroidUtilities.runOnUIThread(new ai.r8(vb.this, tLObject, tL_startLive, z16, clientUserId, z15, tL_error, sVar2));
+                                AndroidUtilities.runOnUIThread(new ai.s8(vb.this, tLObject, tL_startLive, z16, clientUserId, z15, tL_error, sVar2));
                             }
                         });
                     }
@@ -297,10 +297,10 @@ public final /* synthetic */ class ca implements CameraView.CameraViewDelegate, 
             B = null;
         }
         vbVar.d0(vbVar.f0 == 0 ? B : null);
-        w91 w91Var = vbVar.V0;
-        if (w91Var != null) {
+        x91 x91Var = vbVar.V0;
+        if (x91Var != null) {
             vbVar.T1 = 0.0f;
-            w91Var.b(0.0f, false);
+            x91Var.b(0.0f, false);
         }
         vbVar.l0(true);
     }

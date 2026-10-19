@@ -16,20 +16,20 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 import m.s3;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class y0 extends n6.g {
     public final ExecutorService U;
-    public final qb.c V;
-    public final qb.c W;
-    public final qb.c X;
-    public final qb.c Y;
-    public final qb.c Z;
-    public final qb.c a0;
-    public final qb.c b0;
-    public final qb.c c0;
-    public final qb.c d0;
-    public final qb.c e0;
+    public final i2.c V;
+    public final i2.c W;
+    public final i2.c X;
+    public final i2.c Y;
+    public final i2.c Z;
+    public final i2.c a0;
+    public final i2.c b0;
+    public final i2.c c0;
+    public final i2.c d0;
+    public final i2.c e0;
     public final z0 f0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -37,16 +37,16 @@ public final class y0 extends n6.g {
         super(context, looper, 14, s3Var, kVar, lVar, 0);
         ExecutorService unconfigurableExecutorService = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool());
         z0 a2 = z0.a(context);
-        this.V = new qb.c();
-        this.W = new qb.c();
-        this.X = new qb.c();
-        this.Y = new qb.c();
-        this.Z = new qb.c();
-        this.a0 = new qb.c();
-        this.b0 = new qb.c();
-        this.c0 = new qb.c();
-        this.d0 = new qb.c();
-        this.e0 = new qb.c();
+        this.V = new i2.c(1);
+        this.W = new i2.c(1);
+        this.X = new i2.c(1);
+        this.Y = new i2.c(1);
+        this.Z = new i2.c(1);
+        this.a0 = new i2.c(1);
+        this.b0 = new i2.c(1);
+        this.c0 = new i2.c(1);
+        this.d0 = new i2.c(1);
+        this.e0 = new i2.c(1);
         n6.l.h(unconfigurableExecutorService);
         this.U = unconfigurableExecutorService;
         this.f0 = a2;

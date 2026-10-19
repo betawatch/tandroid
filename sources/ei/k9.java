@@ -35,7 +35,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.v30;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class k9 extends FrameLayout implements View.OnClickListener, NotificationCenter.NotificationCenterDelegate {
     public final x8 E;
@@ -118,7 +118,7 @@ public final class k9 extends FrameLayout implements View.OnClickListener, Notif
         im0Var.setClipToPadding(false);
         im0Var.setTranslateSelector(true);
         d6Var5 = ((org.telegram.ui.ActionBar.f3) r9Var).resourcesProvider;
-        g9 g9Var = new g9(this, context, d6Var5, d9Var, new ci.d4(r9Var, 2));
+        g9 g9Var = new g9(this, context, d6Var5, d9Var, new ci.e4(r9Var, 2));
         this.n = g9Var;
         im0Var.setAdapter(g9Var);
         g9Var.h = im0Var;
@@ -313,7 +313,7 @@ public final class k9 extends FrameLayout implements View.OnClickListener, Notif
         d6Var = ((org.telegram.ui.ActionBar.f3) r9Var).resourcesProvider;
         AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(context2, 0, d6Var);
         alertDialog$Builder2.a.T = arrayList2.size() + " members are not in your contact list";
-        alertDialog$Builder2.k("Add " + arrayList.size() + " contacts", new ai.f(this, j10, arrayList, 1));
+        alertDialog$Builder2.k("Add " + arrayList.size() + " contacts", new ai.f(this, j10, arrayList, 2));
         alertDialog$Builder2.h("Cancel", null);
         alertDialog$Builder2.o();
     }
@@ -416,7 +416,7 @@ public final class k9 extends FrameLayout implements View.OnClickListener, Notif
         dVar2.setEnabled(true);
         dVar2.g(LocaleController.getString(R.string.StoryPrivacyButtonSaveCloseFriends), z10, true);
         i10 = ((org.telegram.ui.ActionBar.f3) r9Var).currentAccount;
-        ci.h7 storiesController = MessagesController.getInstance(i10).getStoriesController();
+        ci.i7 storiesController = MessagesController.getInstance(i10).getStoriesController();
         if (!storiesController.O) {
             while (true) {
                 a0.h hVar = this.b;
@@ -1137,7 +1137,7 @@ public final class k9 extends FrameLayout implements View.OnClickListener, Notif
                             Iterator it3 = hashSet.iterator();
                             while (it3.hasNext()) {
                                 Iterator it4 = it3;
-                                ci.a7 b10 = r9Var.j1().B(j10, true).b(((Integer) it3.next()).intValue());
+                                ci.b7 b10 = r9Var.j1().B(j10, true).b(((Integer) it3.next()).intValue());
                                 if (b10 != null) {
                                     if (sb2.length() != 0) {
                                         sb2.append(", ");

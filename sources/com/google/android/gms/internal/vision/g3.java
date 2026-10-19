@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.os.RemoteException;
 import android.util.Log;
 import j$.util.Objects;
-import w7.n6;
+import w7.m6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class g3 {
     public final Context a;
@@ -114,7 +114,7 @@ public abstract class g3 {
                 try {
                     eVar = y6.e.c(this.a, y6.e.b, str);
                 } catch (y6.b e) {
-                    n6.a(e, "Error loading optional module %s", str);
+                    m6.a(e, "Error loading optional module %s", str);
                     if (!this.b) {
                         String str2 = (String) this.n;
                         if (Log.isLoggable("Vision", 3)) {
@@ -149,12 +149,12 @@ public abstract class g3 {
         }
     }
 
-    public g3(Context context, k0.b bVar) {
+    public g3(Context context, le.b bVar) {
         this.e = new ab.o0(this, 11);
         if (context != null) {
             this.a = context;
             if (bVar == null) {
-                this.d = new k0.b(new ComponentName(context, getClass()), 19);
+                this.d = new le.b(new ComponentName(context, getClass()), 14);
                 return;
             } else {
                 this.d = bVar;

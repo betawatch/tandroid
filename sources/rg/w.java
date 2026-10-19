@@ -5,11 +5,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class w extends sn {
+public final class w extends qn {
     public final /* synthetic */ m0 Rc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -18,12 +18,12 @@ public final class w extends sn {
         this.Rc = m0Var;
     }
 
-    @Override // org.telegram.ui.sn
+    @Override // org.telegram.ui.qn
     public final boolean C9() {
         return false;
     }
 
-    @Override // org.telegram.ui.sn, org.telegram.ui.Components.bh, org.telegram.ui.Components.y50
+    @Override // org.telegram.ui.qn, org.telegram.ui.Components.bh, org.telegram.ui.Components.y50
     public final long a() {
         return 0L;
     }
@@ -33,17 +33,17 @@ public final class w extends sn {
         return AndroidUtilities.findActivity(this.Rc.getContext());
     }
 
-    @Override // org.telegram.ui.sn, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.qn, org.telegram.ui.ActionBar.n2
     public final d6 getResourceProvider() {
         return this.Rc.Q1;
     }
 
-    @Override // org.telegram.ui.sn, org.telegram.ui.Components.bh
+    @Override // org.telegram.ui.qn, org.telegram.ui.Components.bh
     public final TLRPC.User i() {
         return UserConfig.getInstance(this.currentAccount).getCurrentUser();
     }
 
-    @Override // org.telegram.ui.sn, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.qn, org.telegram.ui.ActionBar.n2
     public final boolean isLightStatusBar() {
         return false;
     }

@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class MusicPlayerService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private static final int ID_NOTIFICATION = 5;
@@ -301,13 +301,13 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         this.mediaSession.f(this.playbackState.b());
         updateRepeatMode();
         updateShuffleMode();
-        ag.b bVar = new ag.b(1);
+        a4.l lVar = new a4.l(2);
         String str8 = str3;
-        bVar.X("android.media.metadata.ALBUM_ARTIST", str8);
-        bVar.X("android.media.metadata.ARTIST", str8);
-        bVar.U(duration);
+        lVar.c0("android.media.metadata.ALBUM_ARTIST", str8);
+        lVar.c0("android.media.metadata.ARTIST", str8);
+        lVar.b0(duration);
         String str9 = str2;
-        bVar.X("android.media.metadata.TITLE", str9);
+        lVar.c0("android.media.metadata.TITLE", str9);
         if (aVar == null || !messageObject2.isMusic()) {
             aVar2 = aVar;
             str6 = str5;
@@ -315,14 +315,14 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             aVar2 = aVar;
             str6 = aVar2.f;
         }
-        bVar.X("android.media.metadata.ALBUM", str6);
+        lVar.c0("android.media.metadata.ALBUM", str6);
         if (bitmap4 == null || bitmap4.isRecycled()) {
             bitmap3 = bitmap4;
         } else {
             bitmap3 = bitmap4;
-            bVar.Q("android.media.metadata.ALBUM_ART", bitmap3);
+            lVar.a0("android.media.metadata.ALBUM_ART", bitmap3);
         }
-        this.mediaSession.e(new MediaMetadataCompat((Bundle) bVar.b));
+        this.mediaSession.e(new MediaMetadataCompat((Bundle) lVar.b));
         builder.setVisibility(1);
         Notification build = builder.build();
         if (i10 >= 31) {

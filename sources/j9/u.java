@@ -7,6 +7,7 @@ import android.os.RemoteException;
 import android.util.Log;
 import androidx.recyclerview.widget.RecyclerView;
 import be.z0;
+import c5.h0;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import e2.j0;
 import java.lang.ref.ReferenceQueue;
@@ -22,17 +23,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.u8;
 import org.telegram.ui.Components.qc;
+import org.telegram.ui.br;
 import org.telegram.ui.dr;
-import org.telegram.ui.fr;
-import org.telegram.ui.jm;
-import org.telegram.ui.jr;
-import org.telegram.ui.qy;
-import org.telegram.ui.sn;
+import org.telegram.ui.hm;
+import org.telegram.ui.hr;
+import org.telegram.ui.oy;
+import org.telegram.ui.qn;
 import s4.b1;
 import s4.l0;
 import v7.q8;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class u implements Runnable {
     public final /* synthetic */ int a;
@@ -113,8 +114,8 @@ public final class u implements Runnable {
             case 3:
                 c5.c cVar = (c5.c) this.b;
                 c5.i iVar = (c5.i) this.c;
-                if (((c5.q) cVar.f.c) != null) {
-                    ((c5.q) cVar.f.c).onPurchasesUpdated(iVar, null);
+                if (((c5.r) cVar.f.c) != null) {
+                    ((c5.r) cVar.f.c).onPurchasesUpdated(iVar, null);
                     return;
                 } else {
                     com.google.android.gms.internal.play_billing.u.h("BillingClient", "No valid listener is set in BroadcastManager");
@@ -136,19 +137,19 @@ public final class u implements Runnable {
             case 5:
                 c5.c cVar2 = (c5.c) this.b;
                 org.telegram.messenger.d0 d0Var = (org.telegram.messenger.d0) this.c;
-                c5.i iVar2 = c5.g0.i;
+                c5.i iVar2 = h0.i;
                 cVar2.y(24, 7, iVar2);
                 com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
                 com.google.android.gms.internal.play_billing.v vVar = com.google.android.gms.internal.play_billing.v.e;
-                d0Var.a(iVar2, new c5.s(vVar, vVar));
+                d0Var.a(iVar2, new c5.t(vVar, vVar));
                 return;
             case 6:
                 c5.c cVar3 = (c5.c) this.b;
-                c5.p pVar2 = (c5.p) this.c;
-                c5.i iVar3 = c5.g0.i;
+                c5.q qVar = (c5.q) this.c;
+                c5.i iVar3 = h0.i;
                 cVar3.y(24, 9, iVar3);
-                com.google.android.gms.internal.play_billing.p pVar3 = com.google.android.gms.internal.play_billing.r.b;
-                pVar2.b(iVar3, com.google.android.gms.internal.play_billing.v.e);
+                com.google.android.gms.internal.play_billing.p pVar2 = com.google.android.gms.internal.play_billing.r.b;
+                qVar.b(iVar3, com.google.android.gms.internal.play_billing.v.e);
                 return;
             case 7:
                 c6.e0 e0Var = ((c6.d0) this.b).b;
@@ -395,13 +396,13 @@ public final class u implements Runnable {
                 }
                 return;
             case 21:
-                ((c5.z) this.b).accept(this.c);
+                ((c5.a0) this.b).accept(this.c);
                 return;
             case 22:
-                sn snVar = ((jm) this.c).c;
-                if (this == snVar.J5) {
-                    snVar.cb((CharSequence) this.b, false);
-                    snVar.J5 = null;
+                qn qnVar = ((hm) this.c).c;
+                if (this == qnVar.J5) {
+                    qnVar.cb((CharSequence) this.b, false);
+                    qnVar.J5 = null;
                     return;
                 }
                 return;
@@ -409,8 +410,8 @@ public final class u implements Runnable {
                 u8 u8Var = (u8) this.b;
                 boolean z20 = u8Var.d.h;
                 u8Var.setChecked(!z20);
-                jr jrVar = ((fr) this.c).d;
-                TLRPC.TL_chatBannedRights tL_chatBannedRights = jrVar.E;
+                hr hrVar = ((dr) this.c).d;
+                TLRPC.TL_chatBannedRights tL_chatBannedRights = hrVar.E;
                 tL_chatBannedRights.send_media = z20;
                 tL_chatBannedRights.send_gifs = z20;
                 tL_chatBannedRights.send_inline = z20;
@@ -425,14 +426,14 @@ public final class u implements Runnable {
                 tL_chatBannedRights.embed_links = z20;
                 tL_chatBannedRights.send_polls = z20;
                 tL_chatBannedRights.send_reactions = z20;
-                AndroidUtilities.updateVisibleRows(jrVar.c);
-                dr w02 = jrVar.w0();
-                jrVar.B0();
-                jrVar.A0(w02);
+                AndroidUtilities.updateVisibleRows(hrVar.c);
+                br w02 = hrVar.w0();
+                hrVar.B0();
+                hrVar.A0(w02);
                 return;
             case 24:
                 ((qc) this.b).j();
-                ((qy) this.c).E = null;
+                ((oy) this.c).E = null;
                 return;
             case 25:
                 ReferenceQueue referenceQueue = (ReferenceQueue) this.b;

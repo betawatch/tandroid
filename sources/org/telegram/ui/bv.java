@@ -1,33 +1,59 @@
 package org.telegram.ui;
 
+import android.app.Activity;
 import android.content.Context;
-import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class bv extends FrameLayout {
-    public org.telegram.ui.ActionBar.n2 a;
-    public FrameLayout b;
-    public org.telegram.ui.ActionBar.k c;
-    public org.telegram.ui.Components.im0 d;
-    public ai.u1 e;
-    public int f;
-    public final /* synthetic */ cv h;
+public final /* synthetic */ class bv implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bv(cv cvVar, Context context) {
-        super(context);
-        this.h = cvVar;
+    public /* synthetic */ bv(Context context, int i10) {
+        this.a = i10;
+        this.b = context;
     }
 
-    @Override // android.view.View
-    public final void setTranslationX(float f7) {
-        bv bvVar;
-        super.setTranslationX(f7);
-        cv cvVar = this.h;
-        bv[] bvVarArr = cvVar.f;
-        if (cvVar.n && (bvVar = bvVarArr[0]) == this) {
-            cvVar.e.j(Math.abs(bvVar.getTranslationX()) / bvVarArr[0].getMeasuredWidth(), bvVarArr[1].f);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.ActionBar.h6.J(this.b, false);
+                break;
+            case 1:
+                Activity findActivity = AndroidUtilities.findActivity(this.b);
+                if (findActivity == null) {
+                    findActivity = LaunchActivity.H1;
+                }
+                if (findActivity != null && !findActivity.isFinishing()) {
+                    findActivity.moveTaskToBack(true);
+                    break;
+                }
+                break;
+            case 2:
+                pf.d.r(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            case 3:
+                pf.d.r(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            case 4:
+                pf.d.r(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            case 5:
+                pf.d.r(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            case 6:
+                pf.d.r(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            case 7:
+                pf.d.r(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            default:
+                pf.d.r(this.b, LocaleController.getString(R.string.WebAppDisclaimerUrl));
+                break;
         }
     }
 }

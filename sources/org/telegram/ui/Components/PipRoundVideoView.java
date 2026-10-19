@@ -19,7 +19,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class PipRoundVideoView implements NotificationCenter.NotificationCenterDelegate {
     public static PipRoundVideoView F;
@@ -101,7 +101,7 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
         if (this.y == null) {
             this.y = new DecelerateInterpolator();
         }
-        this.r.addListener(new org.telegram.ui.ho(18, this, z10));
+        this.r.addListener(new org.telegram.ui.fo(18, this, z10));
         this.r.setInterpolator(this.y);
         this.r.start();
     }
@@ -119,7 +119,7 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
         this.n = AndroidUtilities.dp(126.0f);
         rg0 rg0Var = new rg0(this, activity, 0);
         this.e = rg0Var;
-        rg0Var.setOutlineProvider(new ci.n1(14));
+        rg0Var.setOutlineProvider(new ci.o1(14));
         this.e.setClipToOutline(true);
         this.e.a(1.0f, 0);
         this.a.addView(this.e, w7.z5.d(120, 120.0f, 51, 3.0f, 3.0f, 0.0f, 0.0f));

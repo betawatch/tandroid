@@ -5,16 +5,16 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class mq0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
-    public final /* synthetic */ dr0 c;
+    public final /* synthetic */ er0 c;
 
-    public /* synthetic */ mq0(dr0 dr0Var, boolean z10, int i10) {
+    public /* synthetic */ mq0(er0 er0Var, boolean z10, int i10) {
         this.a = i10;
-        this.c = dr0Var;
+        this.c = er0Var;
         this.b = z10;
     }
 
@@ -22,7 +22,7 @@ public final class mq0 extends AnimatorListenerAdapter {
     public final void onAnimationCancel(Animator animator) {
         switch (this.a) {
             case 0:
-                AnimatorSet[] animatorSetArr = this.c.T;
+                AnimatorSet[] animatorSetArr = this.c.U;
                 AnimatorSet animatorSet = animatorSetArr[0];
                 if (animatorSet != null && animatorSet.equals(animator)) {
                     animatorSetArr[0] = null;
@@ -30,9 +30,9 @@ public final class mq0 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                dr0 dr0Var = this.c;
-                if (animator.equals(dr0Var.y)) {
-                    dr0Var.y = null;
+                er0 er0Var = this.c;
+                if (animator.equals(er0Var.E)) {
+                    er0Var.E = null;
                     break;
                 }
                 break;
@@ -43,32 +43,32 @@ public final class mq0 extends AnimatorListenerAdapter {
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                dr0 dr0Var = this.c;
-                AnimatorSet[] animatorSetArr = dr0Var.T;
+                er0 er0Var = this.c;
+                AnimatorSet[] animatorSetArr = er0Var.U;
                 AnimatorSet animatorSet = animatorSetArr[0];
                 if (animatorSet != null && animatorSet.equals(animator)) {
                     if (!this.b) {
-                        dr0Var.S[0].setVisibility(4);
+                        er0Var.T[0].setVisibility(4);
                     }
                     animatorSetArr[0] = null;
                     break;
                 }
                 break;
             default:
-                dr0 dr0Var2 = this.c;
-                FrameLayout frameLayout = dr0Var2.h;
-                if (animator.equals(dr0Var2.y)) {
+                er0 er0Var2 = this.c;
+                FrameLayout frameLayout = er0Var2.h;
+                if (animator.equals(er0Var2.E)) {
                     if (!this.b) {
-                        dr0Var2.c.setVisibility(4);
-                        FrameLayout frameLayout2 = dr0Var2.c0;
+                        er0Var2.c.setVisibility(4);
+                        FrameLayout frameLayout2 = er0Var2.d0;
                         if (frameLayout2 != null && frameLayout == null) {
                             frameLayout2.setVisibility(4);
                         }
-                        dr0Var2.f.setVisibility(4);
+                        er0Var2.f.setVisibility(4);
                     } else if (frameLayout != null) {
                         frameLayout.setVisibility(4);
                     }
-                    dr0Var2.y = null;
+                    er0Var2.E = null;
                     break;
                 }
                 break;

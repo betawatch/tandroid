@@ -1,40 +1,41 @@
 package org.telegram.ui;
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i41 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ LinkedHashSet b;
-    public final /* synthetic */ Runnable c;
+public final class i41 extends g.o {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ x51 d;
 
-    public /* synthetic */ i41(LinkedHashSet linkedHashSet, Runnable runnable, int i10) {
-        this.a = i10;
-        this.b = linkedHashSet;
-        this.c = runnable;
+    public /* synthetic */ i41(x51 x51Var, int i10) {
+        this.c = i10;
+        this.d = x51Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
+    @Override // g.o
+    public final int i(int i10) {
+        int i11;
+        ArrayList arrayList;
+        int i12;
+        switch (this.c) {
             case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                if (arrayList != null) {
-                    this.b.addAll(arrayList);
-                }
-                this.c.run();
-                break;
+                x51 x51Var = this.d;
+                return (x51Var.w0.indexOfKey(i10) >= 0 || x51Var.z0.indexOfKey(i10) >= 0 || i10 == x51Var.f || i10 == x51Var.y || i10 == x51Var.n || i10 == x51Var.h || i10 == x51Var.v || i10 == x51Var.a || i10 == x51Var.x) ? x51Var.r0.J : ((i10 < x51Var.E || i10 >= x51Var.F) && !x51Var.Q) ? 5 : 8;
             default:
-                TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) obj;
-                if (tL_emojiList != null) {
-                    this.b.addAll(tL_emojiList.document_id);
+                x51 x51Var2 = this.d;
+                h51 h51Var = x51Var2.q0;
+                int j10 = h51Var.j(i10);
+                if (j10 == 6) {
+                    return x51Var2.r0.J;
                 }
-                this.c.run();
-                break;
+                if (j10 != 5) {
+                    x51 x51Var3 = h51Var.s;
+                    if (x51Var3.W != 14 ? i10 <= (i11 = h51Var.c) || (i10 - i11) - 1 >= x51Var3.C1.size() : (arrayList = x51Var3.B1) == null || i10 < (i12 = h51Var.c) || i10 - i12 >= arrayList.size()) {
+                        return 5;
+                    }
+                }
+                return 8;
         }
     }
 }

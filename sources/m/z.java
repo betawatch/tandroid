@@ -21,9 +21,9 @@ import android.view.inputmethod.InputConnection;
 import android.widget.AbsSeekBar;
 import android.widget.EditText;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-import w7.l6;
+import w7.k6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class z {
     public static final int[] d = {R.attr.indeterminateDrawable, R.attr.progressDrawable};
@@ -38,7 +38,7 @@ public class z {
         if (keyListener instanceof NumberKeyListener) {
             return keyListener;
         }
-        ((mi.q) ((k0.b) this.c).b).getClass();
+        ((mi.q) ((le.b) this.c).b).getClass();
         if (keyListener instanceof q1.e) {
             return keyListener;
         }
@@ -91,7 +91,7 @@ public class z {
     }
 
     public q1.b c(InputConnection inputConnection, EditorInfo editorInfo) {
-        k0.b bVar = (k0.b) this.c;
+        le.b bVar = (le.b) this.c;
         if (inputConnection == null) {
             bVar.getClass();
             inputConnection = null;
@@ -106,13 +106,13 @@ public class z {
     }
 
     public void d(boolean z10) {
-        q1.i iVar = (q1.i) ((mi.q) ((k0.b) this.c).b).c;
+        q1.i iVar = (q1.i) ((mi.q) ((le.b) this.c).b).c;
         if (iVar.c != z10) {
             if (iVar.b != null) {
                 androidx.emoji2.text.l a2 = androidx.emoji2.text.l.a();
                 q1.h hVar = iVar.b;
                 a2.getClass();
-                l6.a(hVar, "initCallback cannot be null");
+                k6.a(hVar, "initCallback cannot be null");
                 ReentrantReadWriteLock reentrantReadWriteLock = a2.a;
                 reentrantReadWriteLock.writeLock().lock();
                 try {
@@ -177,6 +177,6 @@ public class z {
 
     public z(EditText editText) {
         this.b = editText;
-        this.c = new k0.b(editText);
+        this.c = new le.b(editText);
     }
 }

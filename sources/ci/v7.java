@@ -1,592 +1,412 @@
 package ci;
 
-import ai.pa;
+import android.content.Context;
+import android.content.IntentFilter;
+import android.database.SQLException;
+import android.graphics.Bitmap;
+import android.location.Address;
+import android.location.Geocoder;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.Build;
+import android.os.PowerManager;
 import android.text.TextUtils;
-import j$.util.Comparator$-CC;
+import android.text.style.CharacterStyle;
+import android.text.style.URLSpan;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewParent;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import com.google.firebase.messaging.FirebaseMessaging;
+import j$.util.Objects;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLiteException;
-import org.telegram.SQLite.SQLitePreparedStatement;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.Timer;
-import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
 import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.u90;
+import org.telegram.ui.Components.y90;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class v7 {
-    public int a;
-    public MessagesStorage b;
+public final /* synthetic */ class v7 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0250 A[DONT_GENERATE] */
-    /* JADX WARN: Type inference failed for: r12v16 */
-    /* JADX WARN: Type inference failed for: r12v7, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r12v9 */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static void a(v7 v7Var, h6 h6Var) {
-        SQLiteCursor sQLiteCursor;
-        boolean z10;
-        SQLiteDatabase sQLiteDatabase;
+    public /* synthetic */ v7(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        r3 r3Var;
+        p4 p4Var;
+        PowerManager.WakeLock wakeLock;
         int i10;
-        Object obj;
-        boolean z11;
         int i11;
-        Object obj2;
-        MessagesStorage messagesStorage = v7Var.b;
-        SQLiteDatabase database = messagesStorage.getDatabase();
-        ArrayList<TL_stories.PeerStories> arrayList = new ArrayList<>();
-        ArrayList<Long> arrayList2 = new ArrayList<>();
-        ArrayList<Long> arrayList3 = new ArrayList<>();
-        int i12 = v7Var.a;
-        ConnectionsManager.getInstance(i12).getCurrentTime();
-        try {
-            int i13 = 0;
-            SQLiteCursor queryFinalized = database.queryFinalized("SELECT dialog_id, max_read FROM stories_counter", new Object[0]);
-            try {
-                LongSparseIntArray longSparseIntArray = new LongSparseIntArray();
+        int i12;
+        int i13 = 2;
+        int i14 = 1;
+        int i15 = 0;
+        switch (this.a) {
+            case 0:
+                ((w7) this.b).j((ArrayList) this.c);
+                return;
+            case 1:
+                ((i6) this.b).b.f = (LongSparseIntArray) this.c;
+                return;
+            case 2:
+                z7 z7Var = (z7) this.b;
+                Runnable runnable = (Runnable) this.c;
+                if (z7Var.b) {
+                    return;
+                }
+                runnable.run();
+                return;
+            case 3:
+                Runnable[] runnableArr = (Runnable[]) this.b;
+                z7 z7Var2 = (z7) this.c;
+                runnableArr[0] = null;
+                ((v7) z7Var2.d).run();
+                x7 x7Var = (x7) z7Var2.e;
+                if (x7Var != null) {
+                    x7Var.onDetachedFromWindow();
+                    return;
+                }
+                return;
+            case 4:
+                y7 y7Var = (y7) this.b;
+                View view = (View) this.c;
+                y7Var.getClass();
+                try {
+                    view.performHapticFeedback(0);
+                } catch (Exception unused) {
+                }
+                yc ycVar = y7Var.H;
+                if (ycVar != null) {
+                    ycVar.c(false);
+                }
+                ViewParent parent = view.getParent();
+                if (parent instanceof ViewGroup) {
+                    ((ViewGroup) parent).requestDisallowInterceptTouchEvent(false);
+                }
+                y7Var.N = false;
+                y7Var.e();
+                return;
+            case 5:
+                q8 q8Var = (q8) this.b;
+                y90 y90Var = (y90) this.c;
+                y90 y90Var2 = q8Var.a;
+                if (y90Var != y90Var2 || y90Var2 == null) {
+                    return;
+                }
+                CharacterStyle characterStyle = y90Var2.i;
+                if (characterStyle instanceof URLSpan) {
+                    r8 r8Var = q8Var.v;
+                    u90 u90Var = q8Var.c;
+                    Objects.requireNonNull(u90Var);
+                    r8Var.J.H((URLSpan) characterStyle, r8Var, new androidx.fragment.app.d(u90Var, 22));
+                    q8Var.a = null;
+                    return;
+                }
+                return;
+            case 6:
+                e9 e9Var = (e9) this.b;
+                ei.x3 x3Var = (ei.x3) this.c;
+                e9Var.d.removeView(x3Var);
+                if (x3Var == e9Var.c) {
+                    e9Var.b = null;
+                    e9Var.invalidate();
+                    e9Var.b(false);
+                    return;
+                }
+                return;
+            case 7:
+                r9 r9Var = (r9) this.b;
+                z9 z9Var = (z9) this.c;
+                aa aaVar = r9Var.d;
+                q4 currentPeerView = aaVar.n0.getCurrentPeerView();
+                if (currentPeerView == null || (r3Var = currentPeerView.c1) == null || (p4Var = aaVar.G0) == null || ((z9) p4Var.c) != z9Var) {
+                    return;
+                }
+                r3Var.invalidate();
+                return;
+            case 8:
+                FirebaseMessaging firebaseMessaging = (FirebaseMessaging) this.b;
+                TaskCompletionSource taskCompletionSource = (TaskCompletionSource) this.c;
+                a6.i iVar = FirebaseMessaging.l;
+                firebaseMessaging.getClass();
+                try {
+                    taskCompletionSource.setResult(firebaseMessaging.a());
+                    return;
+                } catch (Exception e) {
+                    taskCompletionSource.setException(e);
+                    return;
+                }
+            case 9:
+                com.google.firebase.messaging.m mVar = (com.google.firebase.messaging.m) this.b;
+                TaskCompletionSource taskCompletionSource2 = (TaskCompletionSource) this.c;
+                try {
+                    taskCompletionSource2.setResult(mVar.a());
+                    return;
+                } catch (Exception e7) {
+                    taskCompletionSource2.setException(e7);
+                    return;
+                }
+            case 10:
+                d1.e eVar = (d1.e) this.b;
+                v0.f fVar = (v0.f) this.c;
+                v0.i iVar2 = eVar.f;
+                if (iVar2 != null) {
+                    iVar2.onResult(fVar);
+                    return;
+                } else {
+                    kotlin.jvm.internal.i.h("callback");
+                    throw null;
+                }
+            case 11:
+                da.c cVar = (da.c) this.b;
+                CountDownLatch countDownLatch = (CountDownLatch) this.c;
+                try {
+                    l5.t.a().d.e(cVar.h.a.b(i5.d.c), 1);
+                } catch (SQLException unused2) {
+                }
+                countDownLatch.countDown();
+                return;
+            case 12:
+                di.v vVar = (di.v) this.b;
+                String str = (String) this.c;
+                ArrayList arrayList = vVar.f;
                 while (true) {
-                    z10 = true;
-                    if (!queryFinalized.next()) {
-                        break;
-                    }
-                    long longValue = queryFinalized.longValue(0);
-                    longSparseIntArray.put(longValue, queryFinalized.intValue(1));
-                    if (longValue > 0) {
-                        arrayList2.add(Long.valueOf(longValue));
-                    } else {
-                        arrayList3.add(Long.valueOf(longValue));
+                    if (i15 >= arrayList.size()) {
+                        i15 = -1;
+                    } else if (!TextUtils.equals(((t6) arrayList.get(i15)).E, str)) {
+                        i15++;
                     }
                 }
-                queryFinalized.dispose();
-                int i14 = 0;
-                while (i14 < longSparseIntArray.size()) {
-                    long keyAt = longSparseIntArray.keyAt(i14);
-                    int valueAt = longSparseIntArray.valueAt(i14);
-                    Locale locale = Locale.US;
-                    sQLiteCursor = database.queryFinalized("SELECT data, custom_params FROM stories WHERE dialog_id = " + keyAt, new Object[i13]);
+                if (i15 >= 0) {
+                    vVar.r.d(str.hashCode(), i15 + 1);
+                    return;
+                }
+                return;
+            case 13:
+                ((v0.i) this.b).onError((w0.d) this.c);
+                return;
+            case 14:
+                ((v0.i) this.b).onResult((v0.f) this.c);
+                return;
+            case 15:
+                e1.e eVar2 = (e1.e) this.b;
+                v0.c cVar2 = (v0.c) this.c;
+                v0.i iVar3 = eVar2.f;
+                if (iVar3 != null) {
+                    iVar3.onResult(cVar2);
+                    return;
+                } else {
+                    kotlin.jvm.internal.i.h("callback");
+                    throw null;
+                }
+            case 16:
+                e2.c cVar3 = (e2.c) this.b;
+                Object apply = ((i2.w) this.c).apply(cVar3.f);
+                cVar3.f = apply;
+                e2.b bVar = new e2.b(cVar3, apply, i14);
+                e2.i0 i0Var = (e2.i0) cVar3.c;
+                if (i0Var.a.getLooper().getThread().isAlive()) {
+                    i0Var.d(bVar);
+                    return;
+                }
+                return;
+            case 17:
+                e2.w wVar = (e2.w) this.b;
+                Context context = (Context) this.c;
+                IntentFilter intentFilter = new IntentFilter();
+                intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+                context.registerReceiver(new androidx.mediarouter.app.f(wVar, i13), intentFilter);
+                return;
+            case 18:
+                androidx.mediarouter.app.f fVar2 = (androidx.mediarouter.app.f) this.b;
+                Context context2 = (Context) this.c;
+                e2.w wVar2 = (e2.w) fVar2.b;
+                ConnectivityManager connectivityManager = (ConnectivityManager) context2.getSystemService("connectivity");
+                if (connectivityManager != null) {
                     try {
-                        ArrayList<TL_stories.StoryItem> arrayList4 = new ArrayList<>();
-                        sQLiteCursor = sQLiteCursor;
-                        ?? r12 = z10;
-                        while (sQLiteCursor.next()) {
-                            LongSparseIntArray longSparseIntArray2 = longSparseIntArray;
-                            NativeByteBuffer byteBufferValue = sQLiteCursor.byteBufferValue(i13);
-                            NativeByteBuffer byteBufferValue2 = sQLiteCursor.byteBufferValue(r12);
-                            if (byteBufferValue != 0) {
-                                sQLiteDatabase = database;
-                                TL_stories.StoryItem TLdeserialize = TL_stories.StoryItem.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(r12), r12);
-                                TLdeserialize.dialogId = keyAt;
-                                z11 = r12;
-                                TL_stories.StoryFwdHeader storyFwdHeader = TLdeserialize.fwd_from;
-                                if (storyFwdHeader != null) {
-                                    try {
-                                        TLRPC.Peer peer = storyFwdHeader.from;
-                                        if (peer != null) {
-                                            MessagesStorage.addLoadPeerInfo(peer, arrayList2, arrayList3);
+                        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+                        if (activeNetworkInfo != null && activeNetworkInfo.isConnected()) {
+                            int type = activeNetworkInfo.getType();
+                            if (type != 0) {
+                                if (type != 1) {
+                                    if (type != 4 && type != 5) {
+                                        if (type != 6) {
+                                            i13 = type != 9 ? 8 : 7;
                                         }
-                                    } catch (Throwable th2) {
-                                        th = th2;
-                                        try {
-                                            FileLog.e(th);
-                                            AndroidUtilities.runOnUIThread(new androidx.fragment.app.d(h6Var, 19));
-                                            return;
-                                        } finally {
-                                            if (sQLiteCursor != 0) {
-                                                sQLiteCursor.dispose();
-                                            }
-                                        }
+                                        i13 = 5;
                                     }
                                 }
-                                int i15 = 0;
-                                Object obj3 = sQLiteCursor;
-                                while (i15 < TLdeserialize.media_areas.size()) {
-                                    if (TLdeserialize.media_areas.get(i15) instanceof TL_stories.TL_mediaAreaChannelPost) {
-                                        i11 = i12;
-                                        obj2 = obj3;
-                                        try {
-                                            long j10 = ((TL_stories.TL_mediaAreaChannelPost) TLdeserialize.media_areas.get(i15)).channel_id;
-                                            if (!arrayList3.contains(Long.valueOf(j10))) {
-                                                arrayList3.add(Long.valueOf(j10));
-                                            }
-                                        } catch (Throwable th3) {
-                                            th = th3;
-                                            sQLiteCursor = obj2;
-                                            FileLog.e(th);
-                                            AndroidUtilities.runOnUIThread(new androidx.fragment.app.d(h6Var, 19));
-                                            return;
-                                        }
-                                    } else {
-                                        i11 = i12;
-                                        obj2 = obj3;
+                            }
+                            switch (activeNetworkInfo.getSubtype()) {
+                                case 1:
+                                case 2:
+                                    i13 = 3;
+                                    break;
+                                case 3:
+                                case 4:
+                                case 5:
+                                case 6:
+                                case 7:
+                                case 8:
+                                case 9:
+                                case 10:
+                                case 11:
+                                case 12:
+                                case 14:
+                                case 15:
+                                case 17:
+                                    i13 = 4;
+                                    break;
+                                case 13:
+                                    i13 = 5;
+                                    break;
+                                case 16:
+                                case 19:
+                                default:
+                                    i13 = 6;
+                                    break;
+                                case 18:
+                                    break;
+                                case 20:
+                                    if (Build.VERSION.SDK_INT >= 29) {
+                                        i13 = 9;
+                                        break;
                                     }
-                                    i15++;
-                                    obj3 = obj2;
-                                    i12 = i11;
-                                }
-                                i10 = i12;
-                                obj = obj3;
-                                TLRPC.Peer peer2 = TLdeserialize.from_id;
-                                if (peer2 != null) {
-                                    MessagesStorage.addLoadPeerInfo(peer2, arrayList2, arrayList3);
-                                }
-                                w8.a(TLdeserialize, byteBufferValue2);
-                                arrayList4.add(TLdeserialize);
-                                byteBufferValue.reuse();
-                            } else {
-                                sQLiteDatabase = database;
-                                i10 = i12;
-                                obj = sQLiteCursor;
-                                z11 = r12;
+                                    break;
                             }
-                            if (byteBufferValue2 != null) {
-                                byteBufferValue2.reuse();
-                            }
-                            longSparseIntArray = longSparseIntArray2;
-                            database = sQLiteDatabase;
-                            r12 = z11;
-                            sQLiteCursor = obj;
-                            i12 = i10;
-                            i13 = 0;
-                        }
-                        LongSparseIntArray longSparseIntArray3 = longSparseIntArray;
-                        SQLiteDatabase sQLiteDatabase2 = database;
-                        int i16 = i12;
-                        boolean z12 = r12;
-                        sQLiteCursor.dispose();
-                        TL_stories.TL_peerStories tL_peerStories = new TL_stories.TL_peerStories();
-                        tL_peerStories.stories = arrayList4;
-                        tL_peerStories.max_read_id = valueAt;
-                        tL_peerStories.peer = MessagesController.getInstance(i16).getPeer(keyAt);
-                        arrayList.add(tL_peerStories);
-                        i14++;
-                        longSparseIntArray = longSparseIntArray3;
-                        database = sQLiteDatabase2;
-                        z10 = z12;
-                        i12 = i16;
-                        i13 = 0;
-                    } catch (Throwable th4) {
-                        th = th4;
-                    }
-                }
-                int i17 = i12;
-                boolean z13 = z10 ? 1 : 0;
-                TL_stories.TL_stories_allStories tL_stories_allStories = new TL_stories.TL_stories_allStories();
-                tL_stories_allStories.peer_stories = arrayList;
-                tL_stories_allStories.users = messagesStorage.getUsers(arrayList2);
-                tL_stories_allStories.chats = messagesStorage.getChats(arrayList3);
-                int i18 = 0;
-                while (i18 < tL_stories_allStories.peer_stories.size()) {
-                    TL_stories.PeerStories peerStories = tL_stories_allStories.peer_stories.get(i18);
-                    long peerDialogId = DialogObject.getPeerDialogId(peerStories.peer);
-                    ArrayList<TL_stories.StoryItem> arrayList5 = peerStories.stories;
-                    int currentTime = ConnectionsManager.getInstance(i17).getCurrentTime();
-                    SQLiteDatabase database2 = messagesStorage.getDatabase();
-                    int i19 = 0;
-                    ArrayList arrayList6 = null;
-                    ArrayList arrayList7 = null;
-                    while (i19 < arrayList5.size()) {
-                        TL_stories.StoryItem storyItem = arrayList5.get(i19);
-                        if (currentTime > arrayList5.get(i19).expire_date) {
-                            if (arrayList7 == null) {
-                                arrayList7 = new ArrayList();
-                                arrayList6 = new ArrayList();
-                            }
-                            arrayList7.add(Integer.valueOf(storyItem.id));
-                            arrayList6.add(storyItem);
-                            arrayList5.remove(i19);
-                            i19--;
-                        }
-                        i19++;
-                    }
-                    if (arrayList6 != null) {
-                        String join = TextUtils.join(", ", arrayList7);
-                        try {
-                            Locale locale2 = Locale.US;
-                            database2.executeFast("DELETE FROM stories WHERE dialog_id = " + peerDialogId + " AND story_id IN (" + join + ")").stepThis().dispose();
-                        } catch (SQLiteException e) {
-                            FileLog.e(e);
-                        }
-                    }
-                    if (peerStories.stories.isEmpty()) {
-                        tL_stories_allStories.peer_stories.remove(i18);
-                        i18--;
-                    }
-                    Collections.sort(peerStories.stories, h7.X);
-                    i18++;
-                }
-                Collections.sort(tL_stories_allStories.peer_stories, Comparator$-CC.comparingInt(new ai.u8(8)));
-                AndroidUtilities.runOnUIThread(new pa(29, h6Var, tL_stories_allStories));
-            } catch (Throwable th5) {
-                th = th5;
-                sQLiteCursor = queryFinalized;
-            }
-        } catch (Throwable th6) {
-            th = th6;
-            sQLiteCursor = 0;
-        }
-    }
-
-    public static void b(int i10, long j10, MessageObject messageObject, TL_stories.StoryItem storyItem) {
-        TLRPC.WebPage webPage;
-        TLRPC.Message message = messageObject.messageOwner;
-        TLRPC.MessageReplyHeader messageReplyHeader = message.reply_to;
-        if ((messageReplyHeader instanceof TLRPC.TL_messageReplyStoryHeader) && messageReplyHeader.story_id == storyItem.id) {
-            message.replyStory = c(i10, j10, storyItem);
-        }
-        int i11 = messageObject.type;
-        if (i11 == 23 || i11 == 24) {
-            p1 p1Var = new p1();
-            p1Var.user_id = DialogObject.getPeerDialogId(messageObject.messageOwner.media.peer);
-            TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
-            p1Var.peer = messageMedia.peer;
-            p1Var.id = messageMedia.id;
-            p1Var.storyItem = c(i10, j10, storyItem);
-            TLRPC.Message message2 = messageObject.messageOwner;
-            p1Var.via_mention = message2.media.via_mention;
-            message2.media = p1Var;
-        }
-        TLRPC.MessageMedia messageMedia2 = messageObject.messageOwner.media;
-        if (messageMedia2 == null || (webPage = messageMedia2.webpage) == null || webPage.attributes == null) {
-            return;
-        }
-        for (int i12 = 0; i12 < messageObject.messageOwner.media.webpage.attributes.size(); i12++) {
-            TLRPC.WebPageAttribute webPageAttribute = messageObject.messageOwner.media.webpage.attributes.get(i12);
-            if (webPageAttribute instanceof TLRPC.TL_webPageAttributeStory) {
-                TLRPC.TL_webPageAttributeStory tL_webPageAttributeStory = (TLRPC.TL_webPageAttributeStory) webPageAttribute;
-                if (tL_webPageAttributeStory.id == storyItem.id) {
-                    webPageAttribute.flags |= 1;
-                    tL_webPageAttributeStory.storyItem = c(i10, j10, storyItem);
-                }
-            }
-        }
-    }
-
-    public static TL_stories.StoryItem c(int i10, long j10, TL_stories.StoryItem storyItem) {
-        if (storyItem instanceof TL_stories.TL_storyItemDeleted) {
-            return storyItem;
-        }
-        int currentTime = ConnectionsManager.getInstance(i10).getCurrentTime();
-        int i11 = storyItem.expire_date;
-        boolean z10 = false;
-        if (i11 <= 0 ? currentTime - storyItem.date > 86400 : currentTime > i11) {
-            z10 = true;
-        }
-        if (storyItem.pinned || !z10 || j10 == 0 || j10 == UserConfig.getInstance(i10).clientUserId) {
-            return storyItem;
-        }
-        TL_stories.TL_storyItemDeleted tL_storyItemDeleted = new TL_stories.TL_storyItemDeleted();
-        tL_storyItemDeleted.id = storyItem.id;
-        return tL_storyItemDeleted;
-    }
-
-    public static int e(MessageObject messageObject) {
-        TLRPC.WebPage webPage;
-        int i10 = messageObject.type;
-        if (i10 == 23 || i10 == 24) {
-            return messageObject.messageOwner.media.id;
-        }
-        TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
-        if (messageMedia != null && (webPage = messageMedia.webpage) != null && webPage.attributes != null) {
-            for (int i11 = 0; i11 < messageObject.messageOwner.media.webpage.attributes.size(); i11++) {
-                TLRPC.WebPageAttribute webPageAttribute = messageObject.messageOwner.media.webpage.attributes.get(i11);
-                if (webPageAttribute instanceof TLRPC.TL_webPageAttributeStory) {
-                    return ((TLRPC.TL_webPageAttributeStory) webPageAttribute).id;
-                }
-            }
-        }
-        return messageObject.messageOwner.reply_to.story_id;
-    }
-
-    public final void d(a0.h hVar, Runnable runnable, int i10, boolean z10, Timer timer) {
-        v7 v7Var = this;
-        Timer timer2 = timer;
-        int i11 = v7Var.a;
-        if (hVar == null) {
-            runnable.run();
-            return;
-        }
-        ArrayList arrayList = new ArrayList();
-        Timer.Task start = Timer.start(timer2, "fillMessagesWithStories: applying stories for existing array");
-        int i12 = 0;
-        while (i12 < hVar.m()) {
-            long j10 = hVar.j(i12);
-            ArrayList arrayList2 = (ArrayList) hVar.n(i12);
-            int i13 = 0;
-            while (i13 < arrayList2.size()) {
-                MessageObject messageObject = (MessageObject) arrayList2.get(i13);
-                TL_stories.StoryItem f7 = v7Var.f(e(messageObject), j10);
-                if (f7 != null && !(f7 instanceof TL_stories.TL_storyItemSkipped)) {
-                    b(i11, j10, messageObject, f7);
-                    arrayList.add(messageObject);
-                    arrayList2.remove(i13);
-                    i13--;
-                    if (arrayList2.isEmpty()) {
-                        Object[] objArr = hVar.c;
-                        Object obj = objArr[i12];
-                        Object obj2 = a0.i.a;
-                        if (obj != obj2) {
-                            objArr[i12] = obj2;
-                            hVar.a = true;
-                        }
-                        i12--;
-                    }
-                }
-                i13++;
-            }
-            i12++;
-        }
-        Timer.done(start);
-        if (z10) {
-            v7Var.j(arrayList);
-        }
-        if (hVar.i()) {
-            runnable.run();
-            return;
-        }
-        int[] iArr = {hVar.m()};
-        int i14 = 0;
-        while (i14 < hVar.m()) {
-            long j11 = hVar.j(i14);
-            ArrayList arrayList3 = (ArrayList) hVar.n(i14);
-            TL_stories.TL_stories_getStoriesByID tL_stories_getStoriesByID = new TL_stories.TL_stories_getStoriesByID();
-            tL_stories_getStoriesByID.peer = MessagesController.getInstance(i11).getInputPeer(j11);
-            for (int i15 = 0; i15 < arrayList3.size(); i15++) {
-                tL_stories_getStoriesByID.id.add(Integer.valueOf(e((MessageObject) arrayList3.get(i15))));
-            }
-            StringBuilder t10 = a1.g.t(j11, "fillMessagesWithStories: getStoriesByID did=", " ids=");
-            t10.append(TextUtils.join(",", tL_stories_getStoriesByID.id));
-            int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(tL_stories_getStoriesByID, new t7(v7Var, Timer.start(timer2, t10.toString()), arrayList3, j11, z10, timer2, iArr, runnable));
-            if (i10 != 0) {
-                ConnectionsManager.getInstance(i11).bindRequestToGuid(sendRequest, i10);
-            }
-            i14++;
-            v7Var = this;
-            timer2 = timer;
-        }
-    }
-
-    public final TL_stories.StoryItem f(int i10, long j10) {
-        SQLiteDatabase database = this.b.getDatabase();
-        TL_stories.StoryItem storyItem = null;
-        try {
-            Locale locale = Locale.US;
-            SQLiteCursor queryFinalized = database.queryFinalized("SELECT data, custom_params FROM stories WHERE dialog_id = " + j10 + " AND story_id = " + i10, new Object[0]);
-            if (queryFinalized.next()) {
-                NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
-                NativeByteBuffer byteBufferValue2 = queryFinalized.byteBufferValue(1);
-                if (byteBufferValue != null) {
-                    storyItem = TL_stories.StoryItem.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(true), true);
-                    storyItem.dialogId = j10;
-                    byteBufferValue.reuse();
-                }
-                if (storyItem != null) {
-                    w8.a(storyItem, byteBufferValue2);
-                }
-                if (byteBufferValue2 != null) {
-                    byteBufferValue2.reuse();
-                }
-            }
-            queryFinalized.dispose();
-            return storyItem;
-        } catch (SQLiteException e) {
-            FileLog.e(e);
-            return storyItem;
-        }
-    }
-
-    public final void g(long j10, TL_stories.PeerStories peerStories) {
-        SQLiteDatabase database = this.b.getDatabase();
-        if (peerStories != null) {
-            try {
-                ArrayList<TL_stories.StoryItem> arrayList = peerStories.stories;
-                SQLitePreparedStatement executeFast = database.executeFast("REPLACE INTO stories VALUES(?, ?, ?, ?)");
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    executeFast.requery();
-                    TL_stories.StoryItem storyItem = arrayList.get(i10);
-                    if (storyItem instanceof TL_stories.TL_storyItemDeleted) {
-                        FileLog.e("try write deleted story");
-                    } else {
-                        executeFast.bindLong(1, j10);
-                        executeFast.bindLong(2, storyItem.id);
-                        NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(storyItem.getObjectSize());
-                        storyItem.serializeToStream(nativeByteBuffer);
-                        executeFast.bindByteBuffer(3, nativeByteBuffer);
-                        NativeByteBuffer b10 = w8.b(storyItem);
-                        if (b10 != null) {
-                            executeFast.bindByteBuffer(4, b10);
                         } else {
-                            executeFast.bindNull(4);
+                            i13 = 1;
                         }
-                        if (b10 != null) {
-                            b10.reuse();
-                        }
-                        executeFast.step();
-                        nativeByteBuffer.reuse();
+                    } catch (SecurityException unused3) {
                     }
-                }
-                executeFast.dispose();
-                Locale locale = Locale.US;
-                database.executeFast("REPLACE INTO stories_counter VALUES(" + j10 + ", 0, " + peerStories.max_read_id + ")").stepThis().dispose();
-            } catch (Exception e) {
-                FileLog.e(e);
-            }
-        }
-    }
-
-    public final void h(long j10, TL_stories.StoryItem storyItem) {
-        try {
-            SQLitePreparedStatement executeFast = this.b.getDatabase().executeFast("REPLACE INTO stories VALUES(?, ?, ?, ?)");
-            if (storyItem instanceof TL_stories.TL_storyItemDeleted) {
-                FileLog.e("putStoryInternal: try write deleted story");
-                return;
-            }
-            executeFast.bindLong(1, j10);
-            executeFast.bindLong(2, storyItem.id);
-            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(storyItem.getObjectSize());
-            storyItem.serializeToStream(nativeByteBuffer);
-            executeFast.bindByteBuffer(3, nativeByteBuffer);
-            NativeByteBuffer b10 = w8.b(storyItem);
-            if (b10 != null) {
-                executeFast.bindByteBuffer(4, b10);
-            } else {
-                executeFast.bindNull(4);
-            }
-            if (b10 != null) {
-                b10.reuse();
-            }
-            executeFast.step();
-            nativeByteBuffer.reuse();
-            executeFast.dispose();
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    public final void i(int i10, long j10) {
-        TL_stories.PeerStories peerStories;
-        TL_stories.PeerStories peerStories2;
-        int i11 = this.a;
-        MessagesStorage messagesStorage = this.b;
-        if (j10 > 0) {
-            TLRPC.UserFull userFull = MessagesController.getInstance(i11).getUserFull(j10);
-            if (userFull != null && (peerStories2 = userFull.stories) != null) {
-                peerStories2.max_read_id = i10;
-                messagesStorage.updateUserInfo(userFull, false);
-            }
-        } else {
-            TLRPC.ChatFull chatFull = MessagesController.getInstance(i11).getChatFull(-j10);
-            if (chatFull != null && (peerStories = chatFull.stories) != null) {
-                peerStories.max_read_id = i10;
-                messagesStorage.updateChatInfo(chatFull, false);
-            }
-        }
-        messagesStorage.getStorageQueue().postRunnable(new r7(this, j10, i10, 0));
-    }
-
-    public final void j(List list) {
-        MessagesStorage messagesStorage = this.b;
-        try {
-            SQLiteDatabase database = messagesStorage.getDatabase();
-            if (list.isEmpty()) {
-                return;
-            }
-            SQLitePreparedStatement executeFast = database.executeFast("UPDATE messages_v2 SET replydata = ? WHERE mid = ? AND uid = ?");
-            SQLitePreparedStatement executeFast2 = database.executeFast("UPDATE messages_topics SET replydata = ? WHERE mid = ? AND uid = ?");
-            SQLitePreparedStatement executeFast3 = database.executeFast("UPDATE messages_v2 SET data = ? WHERE mid = ? AND uid = ?");
-            SQLitePreparedStatement executeFast4 = database.executeFast("UPDATE messages_topics SET data = ? WHERE mid = ? AND uid = ?");
-            for (int i10 = 0; i10 < list.size(); i10++) {
-                MessageObject messageObject = (MessageObject) list.get(i10);
-                int i11 = 0;
-                while (i11 < 2) {
-                    if (messageObject.messageOwner.replyStory != null) {
-                        SQLitePreparedStatement sQLitePreparedStatement = i11 == 0 ? executeFast : executeFast2;
-                        if (sQLitePreparedStatement != null) {
-                            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(messageObject.messageOwner.replyStory.getObjectSize());
-                            messageObject.messageOwner.replyStory.serializeToStream(nativeByteBuffer);
-                            sQLitePreparedStatement.requery();
-                            sQLitePreparedStatement.bindByteBuffer(1, nativeByteBuffer);
-                            sQLitePreparedStatement.bindInteger(2, messageObject.getId());
-                            sQLitePreparedStatement.bindLong(3, messageObject.getDialogId());
-                            sQLitePreparedStatement.step();
-                        }
+                    if (Build.VERSION.SDK_INT >= 31 || i13 != 5) {
+                        wVar2.c(i13);
+                        return;
                     } else {
-                        SQLitePreparedStatement sQLitePreparedStatement2 = i11 == 0 ? executeFast3 : executeFast4;
-                        if (sQLitePreparedStatement2 != null) {
-                            NativeByteBuffer nativeByteBuffer2 = new NativeByteBuffer(messageObject.messageOwner.getObjectSize());
-                            messageObject.messageOwner.serializeToStream(nativeByteBuffer2);
-                            sQLitePreparedStatement2.requery();
-                            sQLitePreparedStatement2.bindByteBuffer(1, nativeByteBuffer2);
-                            sQLitePreparedStatement2.bindInteger(2, messageObject.getId());
-                            sQLitePreparedStatement2.bindLong(3, messageObject.getDialogId());
-                            sQLitePreparedStatement2.step();
-                        }
+                        e2.u.a(context2, wVar2);
+                        return;
                     }
-                    i11++;
                 }
-            }
-            executeFast.dispose();
-            executeFast2.dispose();
-            executeFast3.dispose();
-            executeFast4.dispose();
-        } catch (Throwable th2) {
-            messagesStorage.checkSQLException(th2);
-        }
-    }
-
-    public final void k(long j10, TL_stories.StoryItem storyItem) {
-        if (j10 == 0) {
-            return;
-        }
-        this.b.getStorageQueue().postRunnable(new a3.i0(this, j10, storyItem, 8));
-    }
-
-    public final void l(long j10, TL_stories.StoryItem storyItem) {
-        if (j10 == 0 || storyItem == null) {
-            return;
-        }
-        if (storyItem instanceof TL_stories.TL_storyItemDeleted) {
-            FileLog.e("StoriesStorage: try write deleted story");
-        }
-        if (c8.w(this.a, storyItem)) {
-            FileLog.e("StoriesStorage: try write expired story");
-        }
-        try {
-            SQLitePreparedStatement executeFast = this.b.getDatabase().executeFast("REPLACE INTO stories VALUES(?, ?, ?, ?)");
-            executeFast.requery();
-            executeFast.bindLong(1, j10);
-            executeFast.bindLong(2, storyItem.id);
-            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(storyItem.getObjectSize());
-            storyItem.serializeToStream(nativeByteBuffer);
-            executeFast.bindByteBuffer(3, nativeByteBuffer);
-            NativeByteBuffer b10 = w8.b(storyItem);
-            if (b10 != null) {
-                executeFast.bindByteBuffer(4, b10);
-            } else {
-                executeFast.bindNull(4);
-            }
-            if (b10 != null) {
-                b10.reuse();
-            }
-            executeFast.step();
-            nativeByteBuffer.reuse();
-        } catch (Exception e) {
-            FileLog.e(e);
+                i13 = 0;
+                if (Build.VERSION.SDK_INT >= 31) {
+                }
+                wVar2.c(i13);
+                return;
+            case 19:
+                j9.e0 e0Var = (j9.e0) this.b;
+                j9.y yVar = (j9.y) this.c;
+                if (e0Var.a instanceof j9.a) {
+                    yVar.cancel(false);
+                    return;
+                }
+                return;
+            case 20:
+                ac.a aVar = (ac.a) this.b;
+                AtomicBoolean atomicBoolean = (AtomicBoolean) this.c;
+                qf.b bVar2 = (qf.b) aVar.c;
+                bVar2.getClass();
+                if (atomicBoolean.get()) {
+                    new Thread(new v7(21, bVar2, atomicBoolean), "ExoPlayer:WakeLockManager").start();
+                    return;
+                }
+                return;
+            case 21:
+                qf.b bVar3 = (qf.b) this.b;
+                AtomicBoolean atomicBoolean2 = (AtomicBoolean) this.c;
+                synchronized (bVar3) {
+                    if (atomicBoolean2.get() && (wakeLock = (PowerManager.WakeLock) bVar3.c) != null) {
+                        wakeLock.release();
+                    }
+                }
+                return;
+            case 22:
+                ei.d dVar = (ei.d) this.b;
+                org.telegram.ui.Cells.g gVar = (org.telegram.ui.Cells.g) this.c;
+                int i16 = dVar.F - 1;
+                dVar.F = i16;
+                dVar.b(i16, true);
+                if (dVar.F > 0) {
+                    AndroidUtilities.runOnUIThread(dVar.G, 1000L);
+                    return;
+                } else {
+                    dVar.setClickable(true);
+                    gVar.run();
+                    return;
+                }
+            case 23:
+                ((Utilities.Callback) this.b).run((ArrayList) this.c);
+                return;
+            case 24:
+                ei.t1 t1Var = (ei.t1) this.b;
+                TLObject tLObject = (TLObject) this.c;
+                ei.v1 v1Var = t1Var.s;
+                if (tLObject instanceof TLRPC.TL_contacts_resolvedPeer) {
+                    TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
+                    ei.n2 n2Var = v1Var.r;
+                    i10 = ((org.telegram.ui.ActionBar.f3) n2Var).currentAccount;
+                    MessagesController.getInstance(i10).putUsers(tL_contacts_resolvedPeer.users, false);
+                    i11 = ((org.telegram.ui.ActionBar.f3) n2Var).currentAccount;
+                    MessagesController.getInstance(i11).putChats(tL_contacts_resolvedPeer.chats, false);
+                    i12 = ((org.telegram.ui.ActionBar.f3) n2Var).currentAccount;
+                    MessagesStorage.getInstance(i12).putUsersAndChats(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
+                }
+                t1Var.n = true;
+                t1Var.G();
+                return;
+            case 25:
+                ((ei.s2) this.b).e(0.0f, 240L, (Runnable) this.c);
+                return;
+            case 26:
+                ei.f6 f6Var = (ei.f6) this.b;
+                View view2 = (View) this.c;
+                f6Var.getClass();
+                if (view2 instanceof rg.j) {
+                    rg.j jVar = (rg.j) view2;
+                    jVar.m();
+                    f6Var.C0(jVar, true);
+                    return;
+                }
+                return;
+            case 27:
+                TLRPC.MessageMedia messageMedia = (TLRPC.MessageMedia) this.b;
+                TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint = (TL_stories.TL_mediaAreaGeoPoint) this.c;
+                try {
+                    List<Address> fromLocationName = new Geocoder(ApplicationLoader.applicationContext, LocaleController.getInstance().getCurrentLocale()).getFromLocationName(messageMedia.title, 1);
+                    if (fromLocationName.size() <= 0) {
+                        return;
+                    }
+                    tL_mediaAreaGeoPoint.geo.lat = fromLocationName.get(0).getLatitude();
+                    tL_mediaAreaGeoPoint.geo._long = fromLocationName.get(0).getLongitude();
+                    return;
+                } catch (Exception unused4) {
+                    return;
+                }
+            case 28:
+                ((Utilities.Callback) this.b).run((Bitmap) this.c);
+                return;
+            default:
+                ei.r6.a((ei.r6) this.b, (ei.a8) this.c);
+                return;
         }
     }
 }

@@ -22,19 +22,20 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.ym0;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.Components.zh0;
-import org.telegram.ui.ef0;
-import org.telegram.ui.u10;
+import org.telegram.ui.cf0;
+import org.telegram.ui.s10;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class z2 extends Dialog {
-    public static final /* synthetic */ int U = 0;
+    public static final /* synthetic */ int W = 0;
     public final gh.b E;
     public final bh.b F;
     public Bitmap G;
@@ -42,15 +43,17 @@ public final class z2 extends Dialog {
     public float I;
     public float J;
     public boolean K;
-    public final u10 L;
+    public final s10 L;
     public final RectF M;
     public final RectF N;
     public ValueAnimator O;
-    public boolean P;
-    public boolean Q;
+    public ValueAnimator P;
+    public float Q;
     public boolean R;
-    public Runnable S;
-    public final int[] T;
+    public boolean S;
+    public boolean T;
+    public Runnable U;
+    public final int[] V;
     public final org.telegram.ui.ActionBar.n2 a;
     public final zh0 b;
     public final boolean c;
@@ -61,7 +64,7 @@ public final class z2 extends Dialog {
     public final y2 n;
     public final x5 r;
     public final t7 s;
-    public final ci.h4 v;
+    public final ci.i4 v;
     public final TextView w;
     public final Paint x;
     public final RectF y;
@@ -75,10 +78,10 @@ public final class z2 extends Dialog {
         gh.b bVar = new gh.b();
         this.E = bVar;
         this.H = i0.b.e;
-        this.L = new u10();
+        this.L = new s10();
         this.M = new RectF();
         this.N = new RectF();
-        this.T = new int[2];
+        this.V = new int[2];
         this.a = n2Var;
         this.b = zh0Var;
         int i10 = 1;
@@ -88,7 +91,7 @@ public final class z2 extends Dialog {
         this.c = z11;
         this.d = (user == null || z10 || z11) ? false : true;
         zh0Var.getLocationOnScreen(new int[2]);
-        rectF.set(zh0Var.w);
+        rectF.set(zh0Var.v);
         rectF.offset(r12[0], r12[1]);
         AndroidUtilities.enableEdgeToEdge(getWindow());
         x2 x2Var = new x2(this, getContext());
@@ -111,14 +114,14 @@ public final class z2 extends Dialog {
         Locale locale = Locale.ROOT;
         x5Var.setCardHolder(userName.toUpperCase(locale));
         if (!TextUtils.isEmpty(cardVar.address)) {
-            x5Var.setCardNumber(x5.c(cardVar.address.toUpperCase(locale)));
+            x5Var.setCardNumber(x5.d(cardVar.address.toUpperCase(locale)));
         }
         x5Var.j(currentAccount, cardVar.balance);
         CharSequence l4 = m0.w(currentAccount).l(cardVar.balance, false);
         if (!TextUtils.isEmpty(l4)) {
-            x5Var.P.c(l4, false, true);
+            x5Var.O.c(l4, false, true);
         }
-        x5Var.setCardOnClickListener(new ef0(23, this, n2Var));
+        x5Var.setCardOnClickListener(new cf0(23, this, n2Var));
         x5Var.setOnClickListener(new ah.f(24));
         x5Var.setAlpha(0.0f);
         x2Var.addView(x5Var, w7.z5.c(-2.0f, -2));
@@ -129,13 +132,13 @@ public final class z2 extends Dialog {
         this.F = bVar2;
         bVar2.f = new ih.j(x2Var);
         bVar2.g = x2Var;
-        ci.h4 h4Var = new ci.h4(getContext());
-        this.v = h4Var;
-        dh.d c10 = bVar2.c(h4Var, new eh.b(org.telegram.ui.ActionBar.h6.d6, n2Var.getResourceProvider()), false);
+        ci.i4 i4Var = new ci.i4(getContext());
+        this.v = i4Var;
+        dh.d c10 = bVar2.c(i4Var, new eh.b(org.telegram.ui.ActionBar.h6.d6, n2Var.getResourceProvider()), false);
         c10.p(AndroidUtilities.dp(8.0f));
         c10.q(AndroidUtilities.dp(22.0f));
-        h4Var.setBackground(c10);
-        w7.b6.b(h4Var, 0.02f, 1.2f);
+        i4Var.setBackground(c10);
+        w7.b6.b(i4Var, 0.02f, 1.2f);
         ei.d dVar = new ei.d(getContext(), n2Var.getResourceProvider(), true);
         dVar.setUseWrapContent(true);
         dVar.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
@@ -152,25 +155,25 @@ public final class z2 extends Dialog {
             dVar.g(string, false, true);
         }
         dVar.setStateListAnimator(null);
-        h4Var.addView(dVar, w7.z5.e(-2, -1, 17));
-        h4Var.setContentDescription(string);
-        h4Var.setOnClickListener(new n1(this, n2Var, cardVar, i10));
-        h4Var.setAlpha(0.0f);
-        h4Var.setVisibility(c() ? 0 : 8);
-        x2Var.addView(h4Var, w7.z5.e(-2, 60, 81));
+        i4Var.addView(dVar, w7.z5.e(-2, -1, 17));
+        i4Var.setContentDescription(string);
+        i4Var.setOnClickListener(new n1(this, n2Var, cardVar, i10));
+        i4Var.setAlpha(0.0f);
+        i4Var.setVisibility(c() ? 0 : 8);
+        x2Var.addView(i4Var, w7.z5.e(-2, 60, 81));
         TextView textView = new TextView(getContext());
         this.w = textView;
         textView.setTextSize(14.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
         textView.setLineSpacing(AndroidUtilities.dp(18.0f) - textView.getPaint().getFontMetricsInt(null), 1.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.h6.m1(0.41f, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, n2Var.getResourceProvider())));
+        d();
         textView.setAlpha(0.0f);
         if (z10) {
             textView.setText(LocaleController.getString(R.string.WalletPublicBalanceNote));
         } else if (user != null) {
             String firstName = UserObject.getFirstName(user);
-            textView.setText(ei.x3.b(new BigDecimal(m0.o(cardVar.balance, false)).signum() == 0 ? LocaleController.formatString(R.string.WalletProfileOwnsNoGrams, firstName) : LocaleController.formatString(R.string.WalletProfileOwnsGrams, firstName, m0.k("Grams", x5.d(cardVar.balance).toString(), R.string.Grams_other)), textView.getPaint()));
+            textView.setText(ei.x3.b(new BigDecimal(m0.o(cardVar.balance, false)).signum() == 0 ? LocaleController.formatString(R.string.WalletProfileOwnsNoGrams, firstName) : LocaleController.formatString(R.string.WalletProfileOwnsGrams, firstName, m0.k("Grams", x5.e(cardVar.balance).toString(), R.string.Grams_other).toString().replace(' ', (char) 160)), textView.getPaint()));
         }
         textView.setVisibility(user == null ? 8 : 0);
         x2Var.addView(textView, w7.z5.e(-2, -2, 49));
@@ -181,13 +184,12 @@ public final class z2 extends Dialog {
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
-        if (f7 == 1.0f && this.R) {
+        if (f7 == 1.0f && this.T) {
             return;
         }
         if (f7 == 1.0f) {
-            this.R = true;
+            this.T = true;
         }
-        int i10 = 0;
         this.K = f7 == 1.0f;
         x5 x5Var = this.r;
         x5Var.getClass();
@@ -196,27 +198,27 @@ public final class z2 extends Dialog {
         this.O = ofFloat;
         ofFloat.setDuration(f7 == 1.0f ? 650L : 380L);
         this.O.setInterpolator(new LinearInterpolator());
-        this.O.addUpdateListener(new v2(this, i10));
+        this.O.addUpdateListener(new w2(this, 0));
         this.O.addListener(new org.telegram.ui.ActionBar.y0(this, f7, 6));
         this.O.start();
     }
 
     public final void b() {
-        if (this.Q) {
+        if (this.S) {
             return;
         }
-        this.Q = true;
+        this.S = true;
         this.r.setLayerType(0, null);
         this.b.setEjectProgress(0.0f);
         super.dismiss();
         this.s.p();
         this.E.a(null);
         this.G = null;
-        if (this.S == null || this.a.getParentActivity() == null) {
+        if (this.U == null || this.a.getParentActivity() == null) {
             return;
         }
-        Runnable runnable = this.S;
-        this.S = null;
+        Runnable runnable = this.U;
+        this.U = null;
         AndroidUtilities.runOnUIThread(runnable);
     }
 
@@ -225,6 +227,37 @@ public final class z2 extends Dialog {
     }
 
     public final void d() {
+        boolean q6 = org.telegram.ui.ActionBar.h6.I.q();
+        Bitmap bitmap = this.G;
+        TextView textView = this.w;
+        if (bitmap != null && !bitmap.isRecycled()) {
+            x2 x2Var = this.h;
+            if (x2Var.getWidth() > 0 && x2Var.getHeight() > 0) {
+                q6 = AndroidUtilities.computePerceivedBrightness(this.G.getPixel(Utilities.clamp((int) (((((float) (textView.getRight() + textView.getLeft())) / 2.0f) / ((float) x2Var.getWidth())) * ((float) this.G.getWidth())), this.G.getWidth() - 1, 0), Utilities.clamp((int) (((((float) (textView.getBottom() + textView.getTop())) / 2.0f) / ((float) x2Var.getHeight())) * ((float) this.G.getHeight())), this.G.getHeight() - 1, 0))) < 0.5f;
+            }
+        }
+        textView.setTextColor(org.telegram.ui.ActionBar.h6.m1(0.41f, q6 ? -1 : -16777216));
+    }
+
+    @Override // android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        if (this.S || this.R) {
+            return;
+        }
+        this.R = true;
+        ValueAnimator valueAnimator = this.P;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        this.v.setEnabled(false);
+        if (!this.h.isAttachedToWindow() || this.I == 0.0f) {
+            b();
+        } else {
+            a(0.0f);
+        }
+    }
+
+    public final void e() {
         float f7;
         float interpolation = bs.g.getInterpolation(Math.max(0.0f, Math.min(1.0f, this.I / 0.4f)));
         float max = Math.max(0.0f, Math.min(1.0f, (this.I - 0.3f) / 0.7f));
@@ -243,7 +276,7 @@ public final class z2 extends Dialog {
         float max2 = Math.max(0.2f, Math.min(1.0f, rectF.width() / Math.max(1.0f, height)));
         float lerp = AndroidUtilities.lerp(max2, 1.0f, f7);
         float centerY = rectF.centerY();
-        int[] iArr = this.T;
+        int[] iArr = this.V;
         float f10 = centerY - iArr[1];
         float f11 = max2 * width;
         float centerX = rectF.centerX() - iArr[0];
@@ -273,35 +306,21 @@ public final class z2 extends Dialog {
         x5Var.setTranslationX((((cos * f20) - (sin * f21)) * lerp) + ((lerp2 - x5Var.getLeft()) - lerp4));
         x5Var.setTranslationY((((cos * f21) + (sin * f20)) * lerp) + ((lerp3 - x5Var.getTop()) - lerp5));
         x5Var.setAlpha(this.I > 0.0f ? 1.0f : 0.0f);
-        x5Var.setUseGyroscope(interpolation2);
+        x5Var.setUseGyroscope(this.Q * interpolation2);
         float f22 = 1.0f - interpolation2;
         this.J = Math.max(0.0f, f10 * f22);
         this.b.setEjectProgress(interpolation);
         this.n.setAlpha(this.I);
         this.s.setAlpha(interpolation2);
-        ci.h4 h4Var = this.v;
-        h4Var.setAlpha(interpolation2);
+        ci.i4 i4Var = this.v;
+        i4Var.setAlpha(interpolation2);
         TextView textView = this.w;
         textView.setAlpha(interpolation2);
         textView.setTranslationY((-AndroidUtilities.dp(8.0f)) * f22);
-        h4Var.setTranslationY(AndroidUtilities.dp(16.0f) * f22);
-        h4Var.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, interpolation2));
-        h4Var.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, interpolation2));
+        i4Var.setTranslationY(AndroidUtilities.dp(16.0f) * f22);
+        i4Var.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, interpolation2));
+        i4Var.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, interpolation2));
         this.h.invalidate();
-    }
-
-    @Override // android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        if (this.Q || this.P) {
-            return;
-        }
-        this.P = true;
-        this.v.setEnabled(false);
-        if (!this.h.isAttachedToWindow() || this.I == 0.0f) {
-            b();
-        } else {
-            a(0.0f);
-        }
     }
 
     @Override // android.app.Dialog

@@ -1,73 +1,180 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.util.Property;
+import android.graphics.Bitmap;
 import android.view.View;
-import java.util.ArrayList;
+import android.view.ViewTreeObserver;
+import android.view.WindowManager;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class vh extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ org.telegram.ui.Components.w9 c;
-    public final /* synthetic */ rn d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.j5 e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ ai.vd h;
-    public final /* synthetic */ sn n;
+public final class vh implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public vh(sn snVar, boolean z10, boolean z11, org.telegram.ui.Components.w9 w9Var, rn rnVar, org.telegram.ui.ActionBar.j5 j5Var, boolean z12, ai.vd vdVar) {
-        this.n = snVar;
-        this.a = z10;
-        this.b = z11;
-        this.c = w9Var;
-        this.d = rnVar;
-        this.e = j5Var;
-        this.f = z12;
-        this.h = vdVar;
+    public /* synthetic */ vh(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        sn snVar = this.n;
-        snVar.H2[1] = null;
-        snVar.B2[1].setTranslationY(0.0f);
-    }
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        final int i10 = 0;
+        final int i11 = 1;
+        switch (this.a) {
+            case 0:
+                qn qnVar = (qn) this.b;
+                hj hjVar = qnVar.a1;
+                if (hjVar != null) {
+                    hjVar.getViewTreeObserver().removeOnPreDrawListener(this);
+                }
+                break;
+            case 1:
+                ((ei.g6) this.b).invalidate();
+                break;
+            case 2:
+                View view = ((c70) this.b).fragmentView;
+                if (view != null) {
+                    view.getViewTreeObserver().removeOnPreDrawListener(this);
+                    int rotation = ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
+                    if (rotation == 3 || rotation == 1) {
+                        ((c70) this.b).f.setOrientation(0);
+                    } else {
+                        ((c70) this.b).f.setOrientation(1);
+                    }
+                    View view2 = ((c70) this.b).fragmentView;
+                    view2.setPadding(view2.getPaddingLeft(), 0, ((c70) this.b).fragmentView.getPaddingRight(), ((c70) this.b).fragmentView.getPaddingBottom());
+                    break;
+                }
+                break;
+            case 3:
+                sp0 sp0Var = (sp0) this.b;
+                if (sp0Var.getParentActivity() != null) {
+                    int rotation2 = ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
+                    sp0Var.f = 2;
+                    if (!AndroidUtilities.isTablet() && (rotation2 == 3 || rotation2 == 1)) {
+                        sp0Var.f = 4;
+                    }
+                    sp0Var.n.l();
+                }
+                org.telegram.ui.Components.im0 im0Var = ((sp0) this.b).h;
+                if (im0Var != null) {
+                    im0Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                    break;
+                }
+                break;
+            case 4:
+                PhotoViewer photoViewer = (PhotoViewer) this.b;
+                photoViewer.w3.getViewTreeObserver().removeOnPreDrawListener(this);
+                ImageView imageView = photoViewer.x3;
+                if (imageView != null) {
+                    if (photoViewer.J3) {
+                        AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.ui.qt0
+                            public final /* synthetic */ vh b;
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        AnimatorSet[] animatorSetArr = this.n.H2;
-        if (animator.equals(animatorSetArr[1])) {
-            org.telegram.ui.Components.w9 w9Var = this.c;
-            boolean z10 = this.b;
-            boolean z11 = this.a;
-            if (!z11 && !z10 && w9Var == null) {
-                animatorSetArr[1] = null;
-                return;
-            }
-            animatorSetArr[1] = new AnimatorSet();
-            animatorSetArr[1].setInterpolator(org.telegram.ui.Components.bs.h);
-            animatorSetArr[1].setDuration(360L);
-            ArrayList arrayList = new ArrayList();
-            if (z11) {
-                arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<rn, Float>) View.TRANSLATION_Y, 0.0f));
-            }
-            if (z10) {
-                arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<org.telegram.ui.ActionBar.j5, Float>) View.TRANSLATION_Y, 0.0f));
-            }
-            if (this.f) {
-                arrayList.add(ObjectAnimator.ofFloat(this.h, (Property<ai.vd, Float>) View.TRANSLATION_Y, 0.0f));
-            }
-            if (w9Var != null) {
-                arrayList.add(ObjectAnimator.ofFloat(w9Var, (Property<org.telegram.ui.Components.w9, Float>) View.TRANSLATION_Y, 0.0f));
-            }
-            animatorSetArr[1].addListener(new m.a(this, 23));
-            animatorSetArr[1].playTogether(arrayList);
-            animatorSetArr[1].start();
+                            {
+                                this.b = this;
+                            }
+
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                switch (i10) {
+                                    case 0:
+                                        PhotoViewer photoViewer2 = (PhotoViewer) this.b.b;
+                                        photoViewer2.x3.setVisibility(4);
+                                        photoViewer2.x3.setImageDrawable(null);
+                                        Bitmap bitmap = photoViewer2.C3;
+                                        if (bitmap != null) {
+                                            bitmap.recycle();
+                                            photoViewer2.C3 = null;
+                                            break;
+                                        }
+                                        break;
+                                    default:
+                                        PhotoViewer photoViewer3 = (PhotoViewer) this.b.b;
+                                        if (photoViewer3.J3) {
+                                            photoViewer3.T0();
+                                            break;
+                                        }
+                                        break;
+                                }
+                            }
+                        }, 300L);
+                    } else {
+                        imageView.setVisibility(4);
+                        photoViewer.x3.setImageDrawable(null);
+                        Bitmap bitmap = photoViewer.C3;
+                        if (bitmap != null) {
+                            bitmap.recycle();
+                            photoViewer.C3 = null;
+                        }
+                    }
+                }
+                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.ui.qt0
+                    public final /* synthetic */ vh b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                PhotoViewer photoViewer2 = (PhotoViewer) this.b.b;
+                                photoViewer2.x3.setVisibility(4);
+                                photoViewer2.x3.setImageDrawable(null);
+                                Bitmap bitmap2 = photoViewer2.C3;
+                                if (bitmap2 != null) {
+                                    bitmap2.recycle();
+                                    photoViewer2.C3 = null;
+                                    break;
+                                }
+                                break;
+                            default:
+                                PhotoViewer photoViewer3 = (PhotoViewer) this.b.b;
+                                if (photoViewer3.J3) {
+                                    photoViewer3.T0();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                photoViewer.G3 = 0;
+                break;
+            case 5:
+                ProfileActivity profileActivity = (ProfileActivity) this.b;
+                if (profileActivity.fragmentView != null) {
+                    profileActivity.A3();
+                    profileActivity.k4(true);
+                    profileActivity.fragmentView.getViewTreeObserver().removeOnPreDrawListener(this);
+                    break;
+                }
+                break;
+            default:
+                WallpapersListActivity wallpapersListActivity = (WallpapersListActivity) this.b;
+                int[][] iArr = WallpapersListActivity.k0;
+                if (wallpapersListActivity.getParentActivity() != null) {
+                    int rotation3 = ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
+                    if (AndroidUtilities.isTablet()) {
+                        wallpapersListActivity.R = 3;
+                    } else if (rotation3 == 3 || rotation3 == 1) {
+                        wallpapersListActivity.R = 5;
+                    } else {
+                        wallpapersListActivity.R = 3;
+                    }
+                    wallpapersListActivity.C0();
+                }
+                org.telegram.ui.Components.im0 im0Var2 = ((WallpapersListActivity) this.b).H;
+                if (im0Var2 != null) {
+                    im0Var2.getViewTreeObserver().removeOnPreDrawListener(this);
+                    break;
+                }
+                break;
         }
+        return true;
     }
 }

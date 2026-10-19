@@ -19,16 +19,16 @@ import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.yp;
-import org.telegram.ui.rw0;
+import org.telegram.ui.pw0;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class r1 extends ViewGroup {
     public r1 E;
@@ -47,7 +47,7 @@ public class r1 extends ViewGroup {
     public final TextView e;
     public final int f;
     public final int h;
-    public rw0 n;
+    public pw0 n;
     public final TextView r;
     public final int s;
     public final int v;
@@ -117,12 +117,12 @@ public class r1 extends ViewGroup {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(rw0 rw0Var, boolean z10) {
+    public final void a(pw0 pw0Var, boolean z10) {
         boolean z11;
-        this.n = rw0Var;
+        this.n = pw0Var;
         this.M = z10;
-        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = rw0Var.a;
-        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption2 = rw0Var.a;
+        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = pw0Var.a;
+        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption2 = pw0Var.a;
         int i10 = tL_premiumSubscriptionOption.months;
         TextView textView = this.b;
         if (i10 == 1) {
@@ -136,7 +136,7 @@ public class r1 extends ViewGroup {
         }
         if (!BuildVars.useInvoiceBilling()) {
             if (BillingController.getInstance().isReady()) {
-                rw0Var.a();
+                pw0Var.a();
             }
             z11 = true;
             this.L = z11;
@@ -145,19 +145,19 @@ public class r1 extends ViewGroup {
             TextView textView4 = this.r;
             TextView textView5 = this.e;
             if (z11) {
-                if (rw0Var.c() <= 0) {
+                if (pw0Var.c() <= 0) {
                     textView4.setVisibility(8);
                     textView3.setVisibility(8);
                     textView5.setVisibility(8);
                 } else {
-                    textView4.setText(LocaleController.formatString(R.string.GiftPremiumOptionDiscount, Integer.valueOf(rw0Var.c())));
+                    textView4.setText(LocaleController.formatString(R.string.GiftPremiumOptionDiscount, Integer.valueOf(pw0Var.c())));
                     textView4.setVisibility(0);
                     textView3.setVisibility(0);
                     textView5.setVisibility(0);
                 }
-                textView3.setText((BuildVars.useInvoiceBilling() || tL_premiumSubscriptionOption2.store_product == null) ? BillingController.getInstance().formatCurrency(rw0Var.e, rw0Var.b()) : rw0Var.f == null ? "" : BillingController.getInstance().formatCurrency(rw0Var.e, rw0Var.b(), 6));
-                textView5.setText(LocaleController.formatString(R.string.PricePerYear, rw0Var.f()));
-                textView2.setText(LocaleController.formatString(R.string.PricePerMonthMe, rw0Var.e()));
+                textView3.setText((BuildVars.useInvoiceBilling() || tL_premiumSubscriptionOption2.store_product == null) ? BillingController.getInstance().formatCurrency(pw0Var.e, pw0Var.b()) : pw0Var.f == null ? "" : BillingController.getInstance().formatCurrency(pw0Var.e, pw0Var.b(), 6));
+                textView5.setText(LocaleController.formatString(R.string.PricePerYear, pw0Var.f()));
+                textView2.setText(LocaleController.formatString(R.string.PricePerMonthMe, pw0Var.e()));
                 if (tL_premiumSubscriptionOption2.current) {
                     textView5.setVisibility(0);
                     textView5.setText(LocaleController.getString(R.string.YourCurrentPlan));
@@ -274,7 +274,7 @@ public class r1 extends ViewGroup {
         }
     }
 
-    public rw0 getTier() {
+    public pw0 getTier() {
         return this.n;
     }
 
@@ -355,7 +355,7 @@ public class r1 extends ViewGroup {
         int makeMeasureSpec5 = View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31);
         TextView textView3 = this.d;
         textView3.measure(makeMeasureSpec4, makeMeasureSpec5);
-        int c10 = lk.c(6.0f, (size - xpVar.getMeasuredWidth()) - (textView3.getVisibility() == 0 ? textView3.getMeasuredWidth() : 0), TLObject.FLAG_31);
+        int c10 = kk.c(6.0f, (size - xpVar.getMeasuredWidth()) - (textView3.getVisibility() == 0 ? textView3.getMeasuredWidth() : 0), TLObject.FLAG_31);
         int makeMeasureSpec6 = View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31);
         TextView textView4 = this.e;
         textView4.measure(c10, makeMeasureSpec6);

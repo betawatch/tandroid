@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class r4 extends rm0 {
     public final /* synthetic */ a3 d;
@@ -31,7 +31,7 @@ public final class r4 extends rm0 {
         xj0Var.d();
         frameLayout.addView(xj0Var, w7.z5.d(160, 160.0f, 49, 17.0f, 14.0f, 17.0f, 0.0f));
         TextView textView = new TextView(context);
-        org.telegram.messenger.lk.k(24.0f, 1, textView);
+        org.telegram.messenger.kk.k(24.0f, 1, textView);
         textView.setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.j5));
         if (i10 == 0) {
             textView.setText(LocaleController.getString(R.string.ReportTitleSpam));
@@ -85,7 +85,7 @@ public final class r4 extends rm0 {
         textView2.setGravity(1);
         textView2.setEllipsize(TextUtils.TruncateAt.END);
         textView2.setGravity(17);
-        textView2.setTextColor(bVar.u(org.telegram.ui.ActionBar.h6.Sh));
+        textView2.setTextColor(bVar.w(org.telegram.ui.ActionBar.h6.Sh));
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(AndroidUtilities.bold());
         qm0Var.addView(textView2, w7.z5.e(-2, -2, 17));

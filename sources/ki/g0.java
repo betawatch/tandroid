@@ -20,7 +20,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class g0 extends a0 implements org.telegram.ui.ActionBar.y5 {
     public e0 E;
@@ -71,7 +71,7 @@ public final class g0 extends a0 implements org.telegram.ui.ActionBar.y5 {
                         if (e0Var != null && (aVar = g0Var.a) != null) {
                             w3 w3Var = ((o3) e0Var).a;
                             w3Var.p3(false);
-                            w3Var.f3.m(new t3(w3Var, aVar, -1), view);
+                            w3Var.f3.n(new t3(w3Var, aVar, -1), view);
                             break;
                         }
                         break;
@@ -81,7 +81,7 @@ public final class g0 extends a0 implements org.telegram.ui.ActionBar.y5 {
                         if (e0Var2 != null && (aVar2 = g0Var2.a) != null) {
                             w3 w3Var2 = ((o3) e0Var2).a;
                             w3Var2.p3(false);
-                            w3Var2.f3.m(new t3(w3Var2, aVar2, -1), view);
+                            w3Var2.f3.n(new t3(w3Var2, aVar2, -1), view);
                             break;
                         }
                         break;
@@ -116,7 +116,7 @@ public final class g0 extends a0 implements org.telegram.ui.ActionBar.y5 {
                         if (e0Var != null && (aVar = g0Var.a) != null) {
                             w3 w3Var = ((o3) e0Var).a;
                             w3Var.p3(false);
-                            w3Var.f3.m(new t3(w3Var, aVar, -1), view);
+                            w3Var.f3.n(new t3(w3Var, aVar, -1), view);
                             break;
                         }
                         break;
@@ -126,7 +126,7 @@ public final class g0 extends a0 implements org.telegram.ui.ActionBar.y5 {
                         if (e0Var2 != null && (aVar2 = g0Var2.a) != null) {
                             w3 w3Var2 = ((o3) e0Var2).a;
                             w3Var2.p3(false);
-                            w3Var2.f3.m(new t3(w3Var2, aVar2, -1), view);
+                            w3Var2.f3.n(new t3(w3Var2, aVar2, -1), view);
                             break;
                         }
                         break;

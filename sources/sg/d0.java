@@ -1,6 +1,6 @@
 package sg;
 
-import ai.n5;
+import ai.o5;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -34,7 +34,7 @@ import org.telegram.ui.Cells.f4;
 import org.telegram.ui.Cells.l4;
 import org.telegram.ui.Cells.z6;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.c61;
+import org.telegram.ui.Components.d61;
 import org.telegram.ui.Components.ea0;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.un;
@@ -42,7 +42,7 @@ import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.yq;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class d0 extends hm0 {
     public final /* synthetic */ k0 c;
@@ -177,7 +177,7 @@ public final class d0 extends hm0 {
         }
         g0 g0Var = (g0) view;
         f0 f0Var = (f0) k0Var.u0.get(i14);
-        n5 n5Var = g0Var.c;
+        o5 o5Var = g0Var.c;
         ImageView imageView = g0Var.a;
         j5 j5Var = g0Var.b;
         if (f0Var instanceof e0) {
@@ -185,7 +185,7 @@ public final class d0 extends hm0 {
             g0Var.e = null;
             imageView.setVisibility(8);
             j5Var.setVisibility(8);
-            n5Var.setVisibility(0);
+            o5Var.setVisibility(0);
             j5 j5Var2 = g0Var.d;
             e0 e0Var = g0Var.f;
             j5Var2.l(LocaleController.formatPluralString(e0Var.h ? "BoostLevelUnlocks" : "BoostLevel", e0Var.g, new Object[0]), false);
@@ -211,7 +211,7 @@ public final class d0 extends hm0 {
                 if (indexOf >= 0) {
                     spannableStringBuilder = new SpannableStringBuilder(string);
                     SpannableString spannableString = new SpannableString(a1.g.n(g0Var.e.e, "", new StringBuilder()));
-                    spannableString.setSpan(new c61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
+                    spannableString.setSpan(new d61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
                     spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) spannableString);
                 }
                 j5Var.l(spannableStringBuilder, false);
@@ -224,7 +224,7 @@ public final class d0 extends hm0 {
                     if (indexOf2 >= 0) {
                         spannableStringBuilder2 = new SpannableStringBuilder(str);
                         SpannableString spannableString2 = new SpannableString(g0Var.e.c);
-                        spannableString2.setSpan(new c61(AndroidUtilities.bold()), 0, spannableString2.length(), 33);
+                        spannableString2.setSpan(new d61(AndroidUtilities.bold()), 0, spannableString2.length(), 33);
                         spannableStringBuilder2.replace(indexOf2, indexOf2 + 2, (CharSequence) spannableString2);
                     }
                     j5Var.l(spannableStringBuilder2, false);
@@ -232,7 +232,7 @@ public final class d0 extends hm0 {
                     j5Var.l(str, false);
                 }
             }
-            n5Var.setVisibility(8);
+            o5Var.setVisibility(8);
         }
     }
 
@@ -307,7 +307,7 @@ public final class d0 extends hm0 {
                 frameLayout.setPadding(dp, 0, AndroidUtilities.dp(6.0f) + i14, 0);
                 TextView textView = new TextView(context);
                 if (k0Var.Q0 == null && ChatObject.hasAdminRights(k0Var.t1())) {
-                    k0Var.Q0 = new org.telegram.ui.web.a2(this, 21);
+                    k0Var.Q0 = new org.telegram.ui.web.z1(this, 21);
                 }
                 textView.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(k0Var.Q0 == null ? 18.0f : 50.0f), AndroidUtilities.dp(13.0f));
                 textView.setTextSize(1, 16.0f);

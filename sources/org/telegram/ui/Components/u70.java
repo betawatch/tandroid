@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class u70 extends ViewGroup {
     public boolean a;
@@ -171,7 +171,7 @@ public final class u70 extends ViewGroup {
                 v70Var.R.h1(0, K.a.getTop() - u1Var.getPaddingTop());
                 if (u1Var.getItemAnimator() != null) {
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    ofFloat.addUpdateListener(new ci.u4(this, 8));
+                    ofFloat.addUpdateListener(new ci.v4(this, 8));
                     ofFloat.setDuration(u1Var.getItemAnimator().i()).start();
                 }
             }

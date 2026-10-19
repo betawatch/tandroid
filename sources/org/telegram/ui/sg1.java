@@ -4,39 +4,91 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sg1 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ jh1 b;
-    public final /* synthetic */ VoIPService c;
+    public final /* synthetic */ hh1 b;
 
-    public /* synthetic */ sg1(jh1 jh1Var, VoIPService voIPService, int i10) {
+    public /* synthetic */ sg1(hh1 hh1Var, int i10) {
         this.a = i10;
-        this.b = jh1Var;
-        this.c = voIPService;
+        this.b = hh1Var;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
+        VoIPService sharedInstance;
         switch (this.a) {
             case 0:
-                jh1 jh1Var = this.b;
-                AndroidUtilities.runOnUIThread(new tg1(jh1Var, 8));
-                int i10 = jh1Var.L;
-                if (i10 > 0) {
-                    this.c.sendCallRating(i10);
+                if (VoIPService.getSharedInstance() != null) {
+                    hh1 hh1Var = this.b;
+                    AndroidUtilities.cancelRunOnUIThread(hh1Var.S0);
+                    hh1Var.R0 = false;
+                    VoIPService.getSharedInstance().hangUp();
+                    break;
+                }
+                break;
+            case 1:
+                hh1 hh1Var2 = this.b;
+                if (hh1Var2.n0 && hh1Var2.m0 && System.currentTimeMillis() - hh1Var2.K0 > 500) {
+                    AndroidUtilities.cancelRunOnUIThread(hh1Var2.S0);
+                    hh1Var2.R0 = false;
+                    hh1Var2.K0 = System.currentTimeMillis();
+                    hh1Var2.Z.setRelativePosition(hh1Var2.Y);
+                    hh1Var2.a0 = true;
+                    hh1Var2.H0 = true;
+                    hh1Var2.q0 = hh1Var2.p0;
+                    hh1Var2.G();
+                    break;
+                }
+                break;
+            case 2:
+                hh1 hh1Var3 = this.b;
+                if (hh1Var3.H0 && System.currentTimeMillis() - hh1Var3.K0 > 500) {
+                    AndroidUtilities.cancelRunOnUIThread(hh1Var3.S0);
+                    hh1Var3.R0 = false;
+                    hh1Var3.K0 = System.currentTimeMillis();
+                    hh1Var3.Y.setRelativePosition(hh1Var3.Z);
+                    hh1Var3.a0 = false;
+                    hh1Var3.H0 = false;
+                    hh1Var3.q0 = hh1Var3.p0;
+                    hh1Var3.G();
+                    break;
+                }
+                break;
+            case 3:
+                long currentTimeMillis = System.currentTimeMillis();
+                hh1 hh1Var4 = this.b;
+                if (currentTimeMillis - hh1Var4.K0 >= 500) {
+                    hh1Var4.K0 = System.currentTimeMillis();
+                    boolean z10 = hh1Var4.C0;
+                    if (!z10 && hh1Var4.B0) {
+                        hh1Var4.l(!z10);
+                        break;
+                    }
+                }
+                break;
+            case 4:
+                long currentTimeMillis2 = System.currentTimeMillis();
+                hh1 hh1Var5 = this.b;
+                if (currentTimeMillis2 - hh1Var5.K0 >= 500) {
+                    hh1Var5.K0 = System.currentTimeMillis();
+                    if (hh1Var5.B0) {
+                        hh1Var5.l(!hh1Var5.C0);
+                        break;
+                    }
+                }
+                break;
+            case 5:
+                hh1 hh1Var6 = this.b;
+                if (hh1Var6.K.getTag() != null && (sharedInstance = VoIPService.getSharedInstance()) != null) {
+                    hh1Var6.A();
+                    sharedInstance.toggleSpeakerphoneOrShowRouteSheet(hh1Var6.b, false, Integer.valueOf(sharedInstance.isBluetoothOn() ? 2 : sharedInstance.isSpeakerphoneOn() ? 0 : 1));
                     break;
                 }
                 break;
             default:
-                jh1 jh1Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new tg1(jh1Var2, 10));
-                int i11 = jh1Var2.L;
-                if (i11 > 0) {
-                    this.c.sendCallRating(i11);
-                    break;
-                }
+                this.b.o();
                 break;
         }
     }

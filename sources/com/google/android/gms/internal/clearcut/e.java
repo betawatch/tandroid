@@ -8,7 +8,12 @@ import java.util.HashMap;
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements h {
     public final /* synthetic */ int a;
-    public String b;
+    public final String b;
+
+    public /* synthetic */ e(String str, int i10) {
+        this.a = i10;
+        this.b = str;
+    }
 
     public String toString() {
         switch (this.a) {
@@ -53,10 +58,5 @@ public final /* synthetic */ class e implements h {
             z10 = z11;
         }
         return Boolean.valueOf(z10);
-    }
-
-    public /* synthetic */ e(String str, int i10) {
-        this.a = i10;
-        this.b = str;
     }
 }

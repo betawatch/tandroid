@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y0 implements NativeInstance.PayloadCallback, RequestDelegateTimestamp, NativeInstance.VideoSourcesCallback, NativeInstance.RequestBroadcastPartCallback, NativeInstance.RequestCurrentTimeCallback {
     public final /* synthetic */ int a;
@@ -100,7 +100,7 @@ public final /* synthetic */ class y0 implements NativeInstance.PayloadCallback,
         while (i10 < iArr.length) {
             i10 = com.google.android.gms.internal.play_billing.k3.f(iArr[i10], i10, 1, getgroupparticipants.sources);
         }
-        ConnectionsManager.getInstance(h1Var.e).sendRequest(getgroupparticipants, new ai.p9(h1Var, iArr, j10, 2));
+        ConnectionsManager.getInstance(h1Var.e).sendRequest(getgroupparticipants, new ai.m3(h1Var, iArr, j10, 3));
     }
 
     @Override // org.telegram.messenger.voip.NativeInstance.RequestBroadcastPartCallback

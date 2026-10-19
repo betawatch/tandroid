@@ -2,7 +2,7 @@ package ug;
 
 import ai.bd;
 import ai.ga;
-import ai.k2;
+import ai.j2;
 import ai.vc;
 import android.content.Context;
 import android.content.Intent;
@@ -65,17 +65,17 @@ import org.telegram.ui.Components.zl0;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.e20;
-import org.telegram.ui.sn;
+import org.telegram.ui.c20;
+import org.telegram.ui.qn;
 import w7.b6;
 import w7.z5;
 import yh.o1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class m1 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public static e1 J0;
-    public e20 A0;
+    public c20 A0;
     public Utilities.Callback B0;
     public final HashSet C0;
     public Utilities.Callback2 D0;
@@ -259,7 +259,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
         this.d.j(new j1(this));
         this.d.setOnItemClickListener(new m4.s0(this, i11, d6Var, i10));
         if (i11 == 4) {
-            this.d.setOnItemLongClickListener((zl0) new i2.r(this, i11, 19));
+            this.d.setOnItemLongClickListener((zl0) new i2.s(this, i11, 19));
         }
         s4.k kVar = new s4.k();
         kVar.n(350L);
@@ -339,9 +339,9 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
                 f5.l(m1Var.getContext(), LocaleController.getString(R.string.EditProfileBirthdayTitle), LocaleController.getString(R.string.EditProfileBirthdayButton), null, new a1(m1Var, i13), new z0(m1Var, 9), false, false, m1Var.resourcesProvider).a.show();
                 return;
             }
-            e20 e20Var = m1Var.A0;
-            if (e20Var != null) {
-                e20Var.run();
+            c20 c20Var = m1Var.A0;
+            if (c20Var != null) {
+                c20Var.run();
                 m1Var.dismiss();
                 return;
             }
@@ -496,7 +496,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
                             if (n2Var != null) {
                                 Bundle bundle = new Bundle();
                                 bundle.putLong("user_id", user2.id);
-                                n2Var.presentFragment(new sn(bundle));
+                                n2Var.presentFragment(new qn(bundle));
                                 break;
                             } else {
                                 n2 U = LaunchActivity.U();
@@ -505,7 +505,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
                                 if (U != null) {
                                     Bundle bundle2 = new Bundle();
                                     bundle2.putLong("user_id", user2.id);
-                                    U.showAsSheet(new sn(bundle2), l2Var);
+                                    U.showAsSheet(new qn(bundle2), l2Var);
                                     break;
                                 }
                             }
@@ -554,7 +554,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
                             if (n2Var != null) {
                                 Bundle bundle = new Bundle();
                                 bundle.putLong("user_id", user2.id);
-                                n2Var.presentFragment(new sn(bundle));
+                                n2Var.presentFragment(new qn(bundle));
                                 break;
                             } else {
                                 n2 U = LaunchActivity.U();
@@ -563,7 +563,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
                                 if (U != null) {
                                     Bundle bundle2 = new Bundle();
                                     bundle2.putLong("user_id", user2.id);
-                                    U.showAsSheet(new sn(bundle2), l2Var);
+                                    U.showAsSheet(new qn(bundle2), l2Var);
                                     break;
                                 }
                             }
@@ -607,7 +607,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
             userFull.flags2 |= 32;
             userFull.birthday = tL_birthday;
         }
-        ConnectionsManager.getInstance(m1Var.currentAccount).sendRequest(updatebirthday, new k2(m1Var, userFull, tL_birthday2, 25), 1024);
+        ConnectionsManager.getInstance(m1Var.currentAccount).sendRequest(updatebirthday, new j2(m1Var, userFull, tL_birthday2, 25), 1024);
         MessagesController.getInstance(m1Var.currentAccount).invalidateContentSettings();
         MessagesController.getInstance(m1Var.currentAccount).removeSuggestion(0L, "BIRTHDAY_SETUP");
         NotificationCenter.getInstance(m1Var.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.newSuggestionsAvailable, new Object[0]);
@@ -760,7 +760,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
     public final vg.g Z(vg.g gVar) {
         int i10 = this.X;
         if (i10 != 4) {
-            gVar.n = i10 == 3 ? null : new org.telegram.ui.web.c(7, this, gVar.c);
+            gVar.n = i10 == 3 ? null : new qg.n(6, this, gVar.c);
             return gVar;
         }
         TLRPC.User user = gVar.c;
@@ -1254,9 +1254,9 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
                     }
                     if (gVar != null && arrayList4.size() > 0 && !hashSet3.isEmpty()) {
                         String string6 = LocaleController.getString(R.string.DeselectAll);
-                        org.telegram.ui.web.c cVar = new org.telegram.ui.web.c(6, this, arrayList4);
+                        qg.n nVar = new qg.n(5, this, arrayList4);
                         gVar.h = string6;
-                        gVar.m = cVar;
+                        gVar.m = nVar;
                     }
                 }
             }
@@ -1269,9 +1269,9 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
             }
             if (gVar != null) {
                 String string62 = LocaleController.getString(R.string.DeselectAll);
-                org.telegram.ui.web.c cVar2 = new org.telegram.ui.web.c(6, this, arrayList4);
+                qg.n nVar2 = new qg.n(5, this, arrayList4);
                 gVar.h = string62;
-                gVar.m = cVar2;
+                gVar.m = nVar2;
             }
         } else {
             ArrayList arrayList11 = this.k0;

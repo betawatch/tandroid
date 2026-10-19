@@ -1,22 +1,89 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import android.text.TextUtils;
+import android.view.View;
+import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class e00 extends org.telegram.ui.Cells.l4 {
-    public final org.telegram.ui.Cells.t3 r;
+public final class e00 extends pg.a {
+    public View.OnClickListener c;
+    public CharSequence d;
+    public String e;
+    public boolean f;
+    public boolean g;
+    public long h;
+    public String i;
+    public int j;
+    public int k;
+    public boolean l;
+    public TL_chatlists.TL_exportedChatlistInvite m;
 
-    public e00(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context);
-        org.telegram.ui.Cells.t3 t3Var = new org.telegram.ui.Cells.t3(context, true, true, true, 3);
-        this.r = t3Var;
-        t3Var.setGravity(LocaleController.isRTL ? 3 : 5);
-        t3Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.L6, d6Var));
-        t3Var.setTextSize(AndroidUtilities.dpf2(15.0f));
-        addView(t3Var, w7.z5.d(-1, 18.0f, (LocaleController.isRTL ? 3 : 5) | 48, 22.0f, 17.0f, 22.0f, 0.0f));
-        w7.b6.b(t3Var, 0.04f, 1.2f);
+    public static e00 b(int i10, String str, boolean z10) {
+        e00 e00Var = new e00(4, false);
+        e00Var.k = i10;
+        e00Var.d = str;
+        e00Var.l = z10;
+        return e00Var;
+    }
+
+    public static e00 c(int i10, String str, String str2, boolean z10) {
+        e00 e00Var = new e00(1, false);
+        e00Var.g = z10;
+        e00Var.d = str;
+        e00Var.i = str2;
+        e00Var.j = i10;
+        return e00Var;
+    }
+
+    public static e00 d(String str) {
+        e00 e00Var = new e00(TextUtils.isEmpty(str) ? 3 : 6, false);
+        e00Var.d = str;
+        return e00Var;
+    }
+
+    public final boolean equals(Object obj) {
+        TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite;
+        TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite2;
+        if (this != obj) {
+            if (obj == null || e00.class != obj.getClass()) {
+                return false;
+            }
+            e00 e00Var = (e00) obj;
+            int i10 = this.a;
+            if (i10 != e00Var.a) {
+                return false;
+            }
+            if (i10 == 11) {
+                if (!TextUtils.equals(this.d, e00Var.d) || !TextUtils.equals(this.e, e00Var.e)) {
+                    return false;
+                }
+            } else {
+                if ((i10 == 0 || i10 == 1 || i10 == 3 || i10 == 4) && !TextUtils.equals(this.d, e00Var.d)) {
+                    return false;
+                }
+                int i11 = this.a;
+                if (i11 == 0) {
+                    if (this.f != e00Var.f) {
+                        return false;
+                    }
+                } else if (i11 == 1) {
+                    if (this.h != e00Var.h || !TextUtils.equals(this.i, e00Var.i) || this.j != e00Var.j) {
+                        return false;
+                    }
+                } else if (i11 == 7 && (tL_exportedChatlistInvite = this.m) != (tL_exportedChatlistInvite2 = e00Var.m)) {
+                    if (!TextUtils.equals(tL_exportedChatlistInvite.url, tL_exportedChatlistInvite2.url)) {
+                        return false;
+                    }
+                    TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite3 = this.m;
+                    boolean z10 = tL_exportedChatlistInvite3.revoked;
+                    TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite4 = e00Var.m;
+                    if (z10 != tL_exportedChatlistInvite4.revoked || !TextUtils.equals(tL_exportedChatlistInvite3.title, tL_exportedChatlistInvite4.title) || this.m.peers.size() != e00Var.m.peers.size()) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
     }
 }

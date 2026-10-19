@@ -12,6 +12,7 @@ import e2.x;
 import e9.l0;
 import e9.n0;
 import e9.x1;
+import i2.e;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
@@ -22,7 +23,7 @@ import z3.d;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class a implements m {
     public final x a = new x();
@@ -101,7 +102,7 @@ public final class a implements m {
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // z3.m
-    public final void g(byte[] bArr, int i10, int i11, l lVar, j jVar) {
+    public final void f(byte[] bArr, int i10, int i11, l lVar, j jVar) {
         String y3;
         int i12;
         int i13;
@@ -156,7 +157,7 @@ public final class a implements m {
                     xVar.O(i14);
                     int m12 = xVar.m();
                     if (H4 > spannableStringBuilder.length()) {
-                        StringBuilder l4 = i2.d.l(H4, "Truncating styl end (", ") to cueText.length() (");
+                        StringBuilder l4 = e.l(H4, "Truncating styl end (", ") to cueText.length() (");
                         l4.append(spannableStringBuilder.length());
                         l4.append(").");
                         e2.a.l("Tx3gParser", l4.toString());

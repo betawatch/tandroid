@@ -9,7 +9,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d8 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class d8 implements Utilities.Callback {
                         Object obj2 = arrayList.get(i10);
                         i10++;
                         org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj2;
-                        if ((n2Var instanceof r9) || (n2Var instanceof p8) || (n2Var instanceof y9)) {
+                        if ((n2Var instanceof r9) || (n2Var instanceof p8) || (n2Var instanceof z9)) {
                             ((ActionBarLayout) parentLayout).a0(n2Var, false);
                         }
                     }
@@ -76,7 +76,7 @@ public final /* synthetic */ class d8 implements Utilities.Callback {
                             Object obj3 = arrayList2.get(i11);
                             i11++;
                             org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) obj3;
-                            if ((n2Var2 instanceof r9) || (n2Var2 instanceof p8) || (n2Var2 instanceof y9) || (n2Var2 instanceof h8)) {
+                            if ((n2Var2 instanceof r9) || (n2Var2 instanceof p8) || (n2Var2 instanceof z9) || (n2Var2 instanceof h8)) {
                                 ((ActionBarLayout) parentLayout2).a0(n2Var2, false);
                             }
                         }

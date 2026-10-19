@@ -6,11 +6,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final class p5 extends sn {
+public final class p5 extends qn {
     public final /* synthetic */ Utilities.Callback2 Rc;
     public final /* synthetic */ f6 Sc;
 
@@ -21,18 +21,18 @@ public final class p5 extends sn {
         this.Rc = callback2;
     }
 
-    @Override // org.telegram.ui.sn
+    @Override // org.telegram.ui.qn
     public final boolean C9() {
         return false;
     }
 
-    @Override // org.telegram.ui.sn, org.telegram.ui.Components.bh, org.telegram.ui.Components.y50
+    @Override // org.telegram.ui.qn, org.telegram.ui.Components.bh, org.telegram.ui.Components.y50
     public final long a() {
         return 0L;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.sn, org.telegram.ui.kc0
+    @Override // org.telegram.ui.qn, org.telegram.ui.ic0
     public final void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10) {
         TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint;
         TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint2;
@@ -53,7 +53,7 @@ public final class p5 extends sn {
                 if (tL_geoPointAddress != null) {
                     tL_mediaAreaGeoPoint3.flags |= 1;
                 }
-                Utilities.globalQueue.postRunnable(new ci.u7(27, messageMedia, tL_mediaAreaGeoPoint3));
+                Utilities.globalQueue.postRunnable(new ci.v7(27, messageMedia, tL_mediaAreaGeoPoint3));
                 tL_mediaAreaGeoPoint = tL_mediaAreaGeoPoint3;
             } else {
                 TL_stories.TL_inputMediaAreaVenue tL_inputMediaAreaVenue = new TL_stories.TL_inputMediaAreaVenue();
@@ -71,17 +71,17 @@ public final class p5 extends sn {
         return AndroidUtilities.findActivity(this.Sc.getContext());
     }
 
-    @Override // org.telegram.ui.sn, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.qn, org.telegram.ui.ActionBar.n2
     public final org.telegram.ui.ActionBar.d6 getResourceProvider() {
         return this.Sc.G1;
     }
 
-    @Override // org.telegram.ui.sn, org.telegram.ui.Components.bh
+    @Override // org.telegram.ui.qn, org.telegram.ui.Components.bh
     public final TLRPC.User i() {
         return UserConfig.getInstance(this.currentAccount).getCurrentUser();
     }
 
-    @Override // org.telegram.ui.sn, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.qn, org.telegram.ui.ActionBar.n2
     public final boolean isLightStatusBar() {
         return false;
     }

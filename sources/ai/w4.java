@@ -4,43 +4,55 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w4 implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l7 b;
 
-    public /* synthetic */ w4(k7 k7Var, boolean z10, TLRPC.Document document, boolean z11, TL_stars.saveStarGift savestargift) {
-        this.d = k7Var;
-        this.b = z10;
-        this.e = document;
-        this.c = z11;
-        this.f = savestargift;
+    public /* synthetic */ w4(l7 l7Var, int i10) {
+        this.a = i10;
+        this.b = l7Var;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new l2((k7) this.d, tLObject, this.b, (TLRPC.Document) this.e, this.c, tL_error, (TL_stars.saveStarGift) this.f));
+                final int i10 = 1;
+                final l7 l7Var = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.p2
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                l7.S(l7Var, tLObject, tL_error);
+                                break;
+                            default:
+                                l7.D0(l7Var, tLObject, tL_error);
+                                break;
+                        }
+                    }
+                });
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new l2((xh.k) this.d, this.b, (Runnable) this.e, (String) this.f, tL_error, tLObject, this.c));
+                final int i11 = 0;
+                final l7 l7Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.p2
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                l7.S(l7Var2, tLObject, tL_error);
+                                break;
+                            default:
+                                l7.D0(l7Var2, tLObject, tL_error);
+                                break;
+                        }
+                    }
+                });
                 break;
         }
-    }
-
-    public /* synthetic */ w4(xh.k kVar, boolean z10, xh.e eVar, String str, boolean z11) {
-        this.d = kVar;
-        this.b = z10;
-        this.e = eVar;
-        this.f = str;
-        this.c = z11;
     }
 }

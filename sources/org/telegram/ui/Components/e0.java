@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class e0 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final org.telegram.ui.Cells.i3 A0;
@@ -54,7 +54,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
     public boolean L0;
     public String M0;
     public uj0 N0;
-    public s61 O0;
+    public t61 O0;
     public boolean P0;
     public int Q0;
     public boolean R0;
@@ -146,7 +146,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         d0Var2.n = new ei.e5(this, d6Var, context, 1);
         t0();
         d0Var2.c(-1);
-        String C = r41.C();
+        String C = s41.C();
         this.s0 = C;
         if (C == null) {
             this.s0 = TranslateController.currentLanguage();
@@ -165,12 +165,12 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         dVar.setRoundRadius(24);
         this.E0 = dVar;
         linearLayout.addView(dVar, w7.z5.o(-1, 48, 1.0f, 119));
-        ei.d f7 = org.telegram.messenger.lk.f(24, context, d6Var, true);
+        ei.d f7 = org.telegram.messenger.kk.f(24, context, d6Var, true);
         this.F0 = f7;
         f7.setOnClickListener(new b(this, 9));
         f7.setOnLongClickListener(new i(this, d6Var, context, 0));
         linearLayout.addView(f7, w7.z5.t(48, 48, 5, 10, 0, 0, 0));
-        ei.d f10 = org.telegram.messenger.lk.f(24, context, d6Var, true);
+        ei.d f10 = org.telegram.messenger.kk.f(24, context, d6Var, true);
         this.D0 = f10;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.AIEditorLimitButton));
         spannableStringBuilder.append((CharSequence) " ");
@@ -220,11 +220,11 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
     }
 
     public static void Q(e0 e0Var, TL_aicompose.TL_aiComposeTone tL_aiComposeTone, org.telegram.ui.ActionBar.b2 b2Var) {
-        pf.c g10 = b2Var.g(-1, true, true);
-        g10.d();
+        pf.c h = b2Var.h(-1, true, true);
+        h.d();
         TL_aicompose.deleteTone deletetone = new TL_aicompose.deleteTone();
         deletetone.tone = TL_aicompose.InputAiComposeTone.from(tL_aiComposeTone);
-        ConnectionsManager.getInstance(e0Var.currentAccount).sendRequestTyped(deletetone, new org.telegram.messenger.a(), new ai.s0(e0Var, g10, tL_aiComposeTone, 3));
+        ConnectionsManager.getInstance(e0Var.currentAccount).sendRequestTyped(deletetone, new org.telegram.messenger.a(), new ai.s0(e0Var, h, tL_aiComposeTone, 3));
     }
 
     public static void R(e0 e0Var) {
@@ -395,7 +395,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
             e0Var2 = e0Var;
         } else {
             e0Var2 = e0Var;
-            e0Var2.c0(F, linearLayout, true, r41.A(r41.F(e0Var.s0, null, null)), null);
+            e0Var2.c0(F, linearLayout, true, s41.A(s41.E(e0Var.s0, null, null)), null);
         }
         int size = suggestedLanguages.size();
         int i11 = 0;
@@ -420,7 +420,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
                                 e0Var3.d0();
                                 String str = language2.code;
                                 e0Var3.s0 = str;
-                                r41.J(str);
+                                s41.J(str);
                                 e0Var3.l0();
                                 break;
                             default:
@@ -428,7 +428,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
                                 e0Var4.d0();
                                 String str2 = language2.code;
                                 e0Var4.s0 = str2;
-                                r41.J(str2);
+                                s41.J(str2);
                                 e0Var4.l0();
                                 break;
                         }
@@ -460,7 +460,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
                             e0Var3.d0();
                             String str = language4.code;
                             e0Var3.s0 = str;
-                            r41.J(str);
+                            s41.J(str);
                             e0Var3.l0();
                             break;
                         default:
@@ -468,7 +468,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
                             e0Var4.d0();
                             String str2 = language4.code;
                             e0Var4.s0 = str2;
-                            r41.J(str2);
+                            s41.J(str2);
                             e0Var4.l0();
                             break;
                     }
@@ -811,11 +811,11 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         return this.Y != null;
     }
 
-    public final f61 k0(int i10, TL_iv.RichMessage richMessage, boolean z10) {
+    public final g61 k0(int i10, TL_iv.RichMessage richMessage, boolean z10) {
         if (richMessage == null) {
             richMessage = this.Y;
         }
-        f61 of2 = RichMessageLayout.PreviewView.Factory.of(richMessage);
+        g61 of2 = RichMessageLayout.PreviewView.Factory.of(richMessage);
         of2.d = i10;
         of2.e = z10;
         return of2;
@@ -1056,7 +1056,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         int i11 = 0;
         if (com.google.android.gms.internal.play_billing.k3.s(editable)) {
             spannableStringBuilder = new SpannableStringBuilder(editable.toString());
-            Class[] clsArr = {m11.class, mi.h.class, vw0.class, m61.class, l61.class, i61.class, j61.class, p10.class, h61.class, g61.class, a6.class};
+            Class[] clsArr = {n11.class, mi.h.class, ww0.class, n61.class, m61.class, j61.class, k61.class, p10.class, i61.class, h61.class, a6.class};
             for (int i12 = 0; i12 < 11; i12++) {
                 for (Object obj : editable.getSpans(0, editable.length(), clsArr[i12])) {
                     spannableStringBuilder.setSpan(obj, editable.getSpanStart(obj), editable.getSpanEnd(obj), 33);
@@ -1067,7 +1067,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         }
         this.X = spannableStringBuilder;
         if (LanguageDetector.hasSupport()) {
-            LanguageDetector.detectLanguage(editable.toString(), new a(this, i11), new org.telegram.ui.tr(i10));
+            LanguageDetector.detectLanguage(editable.toString(), new a(this, i11), new org.telegram.ui.rr(i10));
         }
     }
 
@@ -1082,7 +1082,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
                 }
                 e0(richMessage2.blocks.get(i10), sb2);
             }
-            LanguageDetector.detectLanguage(sb2.toString(), new a(this, 1), new org.telegram.ui.tr(5));
+            LanguageDetector.detectLanguage(sb2.toString(), new a(this, 1), new org.telegram.ui.rr(5));
         }
         t0();
     }
@@ -1151,7 +1151,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         }
         ViewPropertyAnimator animate = i3Var.b.animate();
         this.H0 = z10;
-        org.telegram.messenger.lk.s(animate, !equals ? 1.0f : 0.5f, 320L);
+        org.telegram.messenger.kk.s(animate, !equals ? 1.0f : 0.5f, 320L);
         this.O0.N(true);
     }
 
@@ -1169,7 +1169,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
                 break;
             }
             view = im0Var.getChildAt(i10);
-            f61 G = this.O0.G(RecyclerView.R(view) - 1);
+            g61 G = this.O0.G(RecyclerView.R(view) - 1);
             if (G != null && G.c == this.x0) {
                 break;
             } else {
@@ -1228,9 +1228,9 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.ui.Components.bb
     public final hm0 x(im0 im0Var) {
-        s61 s61Var = new s61(im0Var, getContext(), this.currentAccount, 0, true, new d(this, 0), this.resourcesProvider);
-        this.O0 = s61Var;
-        s61Var.r = false;
-        return s61Var;
+        t61 t61Var = new t61(im0Var, getContext(), this.currentAccount, 0, true, new d(this, 0), this.resourcesProvider);
+        this.O0 = t61Var;
+        t61Var.r = false;
+        return t61Var;
     }
 }

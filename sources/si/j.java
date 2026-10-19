@@ -28,13 +28,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
+import k2.w0;
 import m.g3;
 import org.telegram.ui.Components.b60;
 import org.telegram.ui.Components.t50;
-import org.telegram.ui.web.g2;
-import org.telegram.ui.z70;
+import org.telegram.ui.x70;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class j {
     public CameraCaptureSession A;
@@ -118,7 +118,7 @@ public final class j {
     public final n j;
     public i j0;
     public long j1;
-    public final l2.f k;
+    public final w0 k;
     public boolean k0;
     public long k1;
     public boolean l0;
@@ -162,7 +162,7 @@ public final class j {
     public final Rect l = new Rect();
     public float O = 1.0f;
 
-    public j(Context context, TextureView textureView, q0 q0Var, int i10, m0 m0Var, n0 n0Var, boolean z10, n nVar, l2.f fVar) {
+    public j(Context context, TextureView textureView, q0 q0Var, int i10, m0 m0Var, n0 n0Var, boolean z10, n nVar, w0 w0Var) {
         y3 y3Var = new y3(this, 2);
         this.l1 = y3Var;
         this.m1 = new a(this, 4);
@@ -183,7 +183,7 @@ public final class j {
         this.h = n0Var;
         this.i = z10;
         this.j = nVar;
-        this.k = fVar;
+        this.k = w0Var;
         textureView.addOnLayoutChangeListener(y3Var);
     }
 
@@ -681,7 +681,7 @@ public final class j {
                             t tVar2 = this.w;
                             Handler handler = tVar2.u;
                             if (tVar2.r0 && handler != null) {
-                                handler.post(new z70(tVar2, z10, surface, 17));
+                                handler.post(new x70(tVar2, z10, surface, 17));
                             }
                         }
                         t tVar3 = this.w;
@@ -863,13 +863,13 @@ public final class j {
         if (handler == null || handlerThread == null) {
             return;
         }
-        handler.post(new g2(23, this, handlerThread));
+        handler.post(new p2.b(22, this, handlerThread));
     }
 
     public final void N(Exception exc) {
         this.j.a("camera error", exc);
-        l2.f fVar = this.k;
-        ((s0) fVar.b).i.post(new g2(26, fVar, exc));
+        w0 w0Var = this.k;
+        ((s0) w0Var.b).i.post(new p2.b(25, w0Var, exc));
     }
 
     public final void O() {
@@ -1526,8 +1526,8 @@ public final class j {
         this.P = false;
         this.Q = false;
         this.N = 0.0f;
-        l2.f fVar = this.k;
-        ((s0) fVar.b).i.post(new g2(25, fVar, l0Var));
+        w0 w0Var = this.k;
+        ((s0) w0Var.b).i.post(new p2.b(24, w0Var, l0Var));
         this.H0 = SystemClock.elapsedRealtimeNanos();
         this.D0 = false;
         this.j.b("camera device switch started: from=" + this.G + ", to=" + l0Var);
@@ -1613,7 +1613,7 @@ public final class j {
             b bVar = new b(this, l0Var, j10, 0);
             Handler handler = tVar.u;
             if (tVar.r0 && handler != null) {
-                handler.post(new z70(tVar, z11, bVar, 17));
+                handler.post(new x70(tVar, z11, bVar, 17));
             }
             this.o0 = true;
             this.p0 = true;
@@ -1624,8 +1624,8 @@ public final class j {
             O();
             this.j.b("camera switch path: DUAL_ACTIVE, activeId=" + this.z.getId() + ", standbyId=" + this.s0.getId() + ", input=" + (this.q0 ? 1 : 0) + ", elapsedMs=" + z(this.H0));
             this.c.post(new a(this, 1));
-            l2.f fVar = this.k;
-            ((s0) fVar.b).i.post(new z70(fVar, new h(this.G, this.I, this.J, this.q, this.r, this.O, F()), z10, 18));
+            w0 w0Var = this.k;
+            ((s0) w0Var.b).i.post(new x70(w0Var, new h(this.G, this.I, this.J, this.q, this.r, this.O, F()), z10, 18));
             return true;
         } catch (CameraAccessException e10) {
             e = e10;
@@ -1960,9 +1960,9 @@ public final class j {
         int i11 = this.f;
         int i12 = this.J.a;
         n nVar = this.j;
-        l2.f fVar = this.k;
-        Objects.requireNonNull(fVar);
-        m mVar = new m(wVar, j10, i10, i11, i12, nVar, new c(fVar));
+        w0 w0Var = this.k;
+        Objects.requireNonNull(w0Var);
+        m mVar = new m(wVar, j10, i10, i11, i12, nVar, new c(w0Var));
         this.x = mVar;
         synchronized (mVar) {
             if (mVar.y) {
@@ -1993,9 +1993,9 @@ public final class j {
         boolean z11 = this.i;
         n nVar2 = this.j;
         m mVar2 = this.x;
-        l2.f fVar2 = this.k;
-        Objects.requireNonNull(fVar2);
-        t tVar = new t(size, surface4, surface5, z10, i13, i14, D, z11, nVar2, mVar2, new c(fVar2));
+        w0 w0Var2 = this.k;
+        Objects.requireNonNull(w0Var2);
+        t tVar = new t(size, surface4, surface5, z10, i13, i14, D, z11, nVar2, mVar2, new c(w0Var2));
         this.w = tVar;
         tVar.t0 = new a(this, 2);
         t tVar2 = this.w;
@@ -2027,7 +2027,7 @@ public final class j {
             nVar3.b(sb2.toString());
             Handler handler = new Handler(tVar2.t.getLooper());
             tVar2.u = handler;
-            handler.post(new g2(24, tVar2, countDownLatch));
+            handler.post(new p2.b(23, tVar2, countDownLatch));
             try {
                 countDownLatch.await();
                 if (tVar2.w0 != null) {

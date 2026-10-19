@@ -18,11 +18,10 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import ki.t1;
 import org.telegram.messenger.beta.R;
 import s4.b1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class l0 extends s4.g0 {
     public final ArrayList c = new ArrayList();
@@ -89,7 +88,7 @@ public final class l0 extends s4.g0 {
         uVar.getClass();
         p4.x.b();
         for (p4.v vVar : DesugarCollections.unmodifiableList(uVar.b)) {
-            t1 b10 = n0Var.r.b(vVar);
+            l2.f b10 = n0Var.r.b(vVar);
             if (b10 != null && (oVar = (p4.o) b10.b) != null && oVar.d) {
                 arrayList3.add(vVar);
             }
@@ -188,7 +187,7 @@ public final class l0 extends s4.g0 {
 
     @Override // s4.g0
     public final void v(b1 b1Var, int i10) {
-        t1 b10;
+        l2.f b10;
         p4.o oVar;
         ArrayList arrayList = this.c;
         int i11 = (i10 == 0 ? this.r : (j0) arrayList.get(i10 - 1)).b;

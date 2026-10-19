@@ -1,90 +1,36 @@
 package org.telegram.ui;
 
-import android.view.Window;
-import java.lang.ref.WeakReference;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class pa0 implements zf.k0 {
+public final /* synthetic */ class pa0 implements Runnable {
     public final /* synthetic */ int a;
-    public boolean b;
-    public boolean c;
-    public final Object d;
+    public final /* synthetic */ ab0 b;
 
-    public /* synthetic */ pa0(Object obj, int i10) {
+    public /* synthetic */ pa0(ab0 ab0Var, int i10) {
         this.a = i10;
-        this.d = obj;
+        this.b = ab0Var;
     }
 
-    @Override // zf.k0
-    public void a(boolean z10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                if (this.b != z10 && !this.c) {
-                    this.b = z10;
-                    LaunchActivity launchActivity = (LaunchActivity) ((WeakReference) this.d).get();
-                    if (launchActivity != null) {
-                        int i10 = launchActivity.B1 + (z10 ? 1 : -1);
-                        launchActivity.B1 = i10;
-                        m0 m0Var = launchActivity.w0;
-                        if (m0Var != null) {
-                            m0Var.setVisibility(i10 > 0 ? 8 : 0);
-                        }
-                        launchActivity.getWindow();
-                        break;
-                    }
-                }
+                ab0 ab0Var = this.b;
+                ab0Var.r.b.requestFocus();
+                AndroidUtilities.showKeyboard(ab0Var.r.b);
+                break;
+            case 1:
+                ab0 ab0Var2 = this.b;
+                ab0Var2.r.b.clearFocus();
+                AndroidUtilities.hideKeyboard(ab0Var2.r.b);
                 break;
             default:
-                zf.l0 l0Var = (zf.l0) this.d;
-                if (this.b != z10 && !this.c) {
-                    this.b = z10;
-                    if (z10) {
-                        l0Var.a++;
-                    } else {
-                        l0Var.a--;
-                    }
-                    boolean z11 = l0Var.a > 0;
-                    if (l0Var.b != z11) {
-                        l0Var.b = z11;
-                        Window window = (Window) ((WeakReference) l0Var.c.b).get();
-                        if (window != null) {
-                            window.getDecorView().setVisibility(z11 ? 8 : 0);
-                            break;
-                        }
-                    }
-                }
+                pf.d.r(this.b.getParentActivity(), LocaleController.getString(R.string.RequireMonthlyFeeInfoLink));
                 break;
         }
-    }
-
-    public void b() {
-        if (this.b) {
-            return;
-        }
-        this.b = true;
-        Runnable runnable = (Runnable) this.d;
-        if (runnable != null) {
-            runnable.run();
-        }
-    }
-
-    @Override // zf.k0
-    public void destroy() {
-        switch (this.a) {
-            case 0:
-                a(false);
-                this.c = true;
-                break;
-            default:
-                a(false);
-                this.c = true;
-                break;
-        }
-    }
-
-    public pa0(LaunchActivity launchActivity, boolean z10) {
-        this.a = 0;
-        this.d = new WeakReference(launchActivity);
     }
 }

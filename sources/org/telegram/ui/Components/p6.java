@@ -25,10 +25,10 @@ import android.view.animation.LinearInterpolator;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class p6 extends Drawable {
-    public static final LinearInterpolator d0 = new LinearInterpolator();
+    public static final LinearInterpolator c0 = new LinearInterpolator();
     public float A;
     public int B;
     public final Rect C;
@@ -52,15 +52,14 @@ public class p6 extends Drawable {
     public boolean U;
     public float V;
     public float W;
-    public float X;
-    public int Y;
-    public ValueAnimator Z;
+    public int X;
+    public ValueAnimator Y;
+    public int Z;
     public final TextPaint a;
-    public int a0;
+    public ColorFilter a0;
     public int b;
-    public ColorFilter b0;
+    public Runnable b0;
     public boolean c;
-    public Runnable c0;
     public float d;
     public float e;
     public float f;
@@ -507,13 +506,12 @@ public class p6 extends Drawable {
         this.H = false;
     }
 
-    public final void s(float f7, float f10, float f11, int i10) {
+    public final void s(float f7, float f10, int i10) {
         this.U = true;
         this.V = f7;
         this.W = f10;
-        this.X = f11;
-        this.Y = i10;
-        this.a.setShadowLayer(f7, f10, f11, i10);
+        this.X = i10;
+        this.a.setShadowLayer(f7, 0.0f, f10, i10);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -598,7 +596,7 @@ public class p6 extends Drawable {
             this.l = f7;
             this.k = f7;
             invalidateSelf();
-            Runnable runnable = this.c0;
+            Runnable runnable = this.b0;
             if (runnable != null) {
                 runnable.run();
                 return;
@@ -633,7 +631,7 @@ public class p6 extends Drawable {
         this.l = 0.0f;
         this.k = 0.0f;
         this.c = AndroidUtilities.isRTL(this.i);
-        org.telegram.ui.ha haVar = new org.telegram.ui.ha(this, i16, arrayList2, arrayList, 1);
+        org.telegram.ui.fa faVar = new org.telegram.ui.fa(this, i16, arrayList2, arrayList, 1);
         n6 n6Var = new n6(this) { // from class: org.telegram.ui.Components.k6
             public final /* synthetic */ p6 b;
 
@@ -714,7 +712,7 @@ public class p6 extends Drawable {
             if (length < o6Var2.length()) {
                 CharSequence subSequence = o6Var2.subSequence(length, o6Var2.length());
                 o6Var2.length();
-                haVar.d(subSequence);
+                faVar.d(subSequence);
             }
         } else if (this.E) {
             int min2 = Math.min(o6Var2.length(), o6Var.length());
@@ -753,9 +751,9 @@ public class p6 extends Drawable {
                     if ((size % 2 == 0 ? 1 : 0) == i14) {
                         i11 = i14;
                         if (o6Var2.length() > o6Var.length()) {
-                            haVar.d(o6Var2.subSequence(length5, length5 + intValue));
+                            faVar.d(o6Var2.subSequence(length5, length5 + intValue));
                         } else {
-                            haVar.d(o6Var.subSequence(length6, length6 + intValue));
+                            faVar.d(o6Var.subSequence(length6, length6 + intValue));
                         }
                     } else {
                         i11 = i14;
@@ -778,7 +776,7 @@ public class p6 extends Drawable {
                     if (z13 != z14 || i25 == min2) {
                         if (i25 - i26 > 0) {
                             if (z13) {
-                                k(haVar, o6Var2.subSequence(i26, i25), i26, i25);
+                                k(faVar, o6Var2.subSequence(i26, i25), i26, i25);
                             } else {
                                 k(n6Var, o6Var2.subSequence(i26, i25), i26, i25);
                                 k(n6Var2, o6Var.subSequence(i26, i25), i26, i25);
@@ -816,7 +814,7 @@ public class p6 extends Drawable {
                     int i32 = i28 - i30;
                     if (i31 > 0 || i32 > 0) {
                         if (i31 == i32 && z17) {
-                            haVar.d(o6Var2.subSequence(i29, i27));
+                            faVar.d(o6Var2.subSequence(i29, i27));
                         } else {
                             if (i31 > 0) {
                                 k(n6Var, o6Var2.subSequence(i29, i27), i29, i27);
@@ -874,15 +872,15 @@ public class p6 extends Drawable {
         this.r = 0.0f;
         this.q = 0.0f;
         this.t = ValueAnimator.ofFloat(0.0f, 1.0f);
-        Runnable runnable2 = this.c0;
+        Runnable runnable2 = this.b0;
         if (runnable2 != null) {
             runnable2.run();
         }
         this.t.addUpdateListener(new l6(this, 0));
-        this.t.addListener(new org.telegram.ui.pq(this, 3));
+        this.t.addListener(new org.telegram.ui.nq(this, 3));
         this.t.setStartDelay(0L);
         this.t.setDuration(this.w);
-        this.t.setInterpolator(d0);
+        this.t.setInterpolator(c0);
         this.t.start();
     }
 
@@ -892,22 +890,22 @@ public class p6 extends Drawable {
     }
 
     public final void v(int i10, boolean z10) {
-        ValueAnimator valueAnimator = this.Z;
+        ValueAnimator valueAnimator = this.Y;
         if (valueAnimator != null) {
             valueAnimator.cancel();
-            this.Z = null;
+            this.Y = null;
         }
         if (!z10) {
             u(i10);
             return;
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.Z = ofFloat;
+        this.Y = ofFloat;
         ofFloat.addUpdateListener(new ei.u4(this, this.a.getColor(), i10, 2));
-        this.Z.addListener(new gi.p2(this, i10, 4));
-        this.Z.setDuration(240L);
-        this.Z.setInterpolator(bs.h);
-        this.Z.start();
+        this.Y.addListener(new gi.p2(this, i10, 4));
+        this.Y.setDuration(240L);
+        this.Y.setInterpolator(bs.h);
+        this.Y.start();
     }
 
     public final void w(float f7) {

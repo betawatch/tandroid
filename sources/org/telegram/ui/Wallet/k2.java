@@ -9,12 +9,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public class k2 extends bb implements org.telegram.ui.ActionBar.y5 {
-    public s61 X;
+    public t61 X;
     public final ViewGroup Y;
     public final Paint Z;
     public float a0;
@@ -37,7 +37,7 @@ public class k2 extends bb implements org.telegram.ui.ActionBar.y5 {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public void G(float f7) {
+    public void F(float f7) {
         this.a0 = f7;
         if (this.topBulletinContainer != null) {
             this.topBulletinContainer.setTranslationY(Math.max((this.containerView.getY() + f7) + this.backgroundPaddingTop, this.topBulletinContainer.getHeight() + (AndroidUtilities.dp(56.0f) + AndroidUtilities.statusBarHeight)) - this.topBulletinContainer.getBottom());
@@ -67,7 +67,8 @@ public class k2 extends bb implements org.telegram.ui.ActionBar.y5 {
         if (max >= height) {
             return;
         }
-        canvas.drawRect(0.0f, max, getContainer().getWidth(), height, this.Z);
+        boolean z10 = this.containerView.getWidth() < getContainer().getWidth();
+        canvas.drawRect(z10 ? this.containerView.getX() + this.backgroundPaddingLeft : 0.0f, max, z10 ? (this.containerView.getX() + this.containerView.getWidth()) - this.backgroundPaddingLeft : getContainer().getWidth(), height, this.Z);
     }
 
     @Override // org.telegram.ui.ActionBar.f3
@@ -92,8 +93,8 @@ public class k2 extends bb implements org.telegram.ui.ActionBar.y5 {
 
     @Override // org.telegram.ui.Components.bb
     public final hm0 x(im0 im0Var) {
-        s61 s61Var = new s61(im0Var, getContext(), this.currentAccount, 0, true, new d(this, 5), this.resourcesProvider);
-        this.X = s61Var;
-        return s61Var;
+        t61 t61Var = new t61(im0Var, getContext(), this.currentAccount, 0, true, new d(this, 5), this.resourcesProvider);
+        this.X = t61Var;
+        return t61Var;
     }
 }

@@ -1,87 +1,48 @@
 package org.telegram.ui;
 
-import android.graphics.PointF;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ad0 implements o1.g {
+public final class ad0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ dg0 b;
 
-    public /* synthetic */ ad0(Object obj, int i10) {
+    public /* synthetic */ ad0(dg0 dg0Var, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = dg0Var;
     }
 
-    @Override // o1.g
-    public final void a(o1.h hVar, float f7, float f10) {
-        int i10 = this.a;
-        Object obj = this.b;
-        switch (i10) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
             case 0:
-                sf0 sf0Var = ((eg0) obj).b0;
-                if (sf0Var != null) {
-                    int i11 = sf0.E;
-                    View view = sf0Var.c;
-                    ViewGroup viewGroup = sf0Var.b;
-                    PointF pointF = sf0Var.y;
-                    ih.j.b(view, viewGroup, pointF);
-                    org.telegram.ui.Components.h20 h20Var = sf0Var.h;
-                    h20Var.setTranslationX(pointF.x);
-                    h20Var.setTranslationY(pointF.y);
-                    sf0Var.requestLayout();
+                dg0 dg0Var = this.b;
+                if (dg0Var.d == animator) {
+                    dg0Var.d = null;
                     break;
                 }
-                break;
-            case 1:
-                co0 co0Var = (co0) obj;
-                float f11 = f7 / 100.0f;
-                co0Var.b = f11;
-                TextView textView = co0Var.d.U;
-                if (textView != null) {
-                    textView.setAlpha((f11 * 0.2f) + 0.8f);
-                }
-                co0Var.invalidate();
-                break;
-            case 2:
-                wt0 wt0Var = (wt0) obj;
-                wt0Var.c0 = f7;
-                wt0Var.e0 = f10;
-                wt0Var.G();
-                break;
-            case 3:
-                su0 su0Var = (su0) obj;
-                int dp = su0Var.e > su0Var.f ? AndroidUtilities.dp(48.0f) : 0;
-                org.telegram.ui.Components.c81 c81Var = su0Var.s.q3;
-                int measuredHeight = su0Var.getMeasuredHeight();
-                c81Var.h = (int) (((su0Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - f7) - dp);
-                c81Var.i = measuredHeight;
-                View view2 = c81Var.v;
-                if (view2 != null) {
-                    view2.invalidate();
-                    break;
-                }
-                break;
-            case 4:
-                z21 z21Var = (z21) obj;
-                z21Var.y = f7 / 1000.0f;
-                z21Var.invalidate();
                 break;
             default:
-                t31 t31Var = (t31) obj;
-                org.telegram.ui.Components.c81 c81Var2 = t31Var.r.Q;
-                int measuredHeight2 = t31Var.getMeasuredHeight();
-                c81Var2.h = (int) (((t31Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - f7) - 0);
-                c81Var2.i = measuredHeight2;
-                View view3 = c81Var2.v;
-                if (view3 != null) {
-                    view3.invalidate();
+                dg0 dg0Var2 = this.b;
+                dg0Var2.c.setVisibility(8);
+                if (dg0Var2.d == animator) {
+                    dg0Var2.d = null;
                     break;
                 }
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.c.setVisibility(0);
+                break;
+            default:
+                super.onAnimationStart(animator);
                 break;
         }
     }

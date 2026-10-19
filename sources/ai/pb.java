@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.DataAutoDownloadActivity;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class pb implements View.OnClickListener {
     public final /* synthetic */ int a = 2;
@@ -24,13 +24,13 @@ public final /* synthetic */ class pb implements View.OnClickListener {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ pb(ei.d dVar, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, boolean[] zArr, org.telegram.ui.ActionBar.f3 f3Var, ei.d dVar2, org.telegram.ui.web.b1 b1Var, int i10) {
+    public /* synthetic */ pb(ei.d dVar, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, boolean[] zArr, org.telegram.ui.ActionBar.f3 f3Var, ei.d dVar2, org.telegram.ui.web.a1 a1Var, int i10) {
         this.c = dVar;
         this.d = tL_messages_requestUrlAuth;
         this.h = zArr;
         this.e = f3Var;
         this.f = dVar2;
-        this.n = b1Var;
+        this.n = a1Var;
         this.b = i10;
     }
 
@@ -78,22 +78,22 @@ public final /* synthetic */ class pb implements View.OnClickListener {
                 boolean[] zArr2 = (boolean[]) obj6;
                 org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) obj2;
                 ei.d dVar2 = (ei.d) obj4;
-                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) obj;
+                org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) obj;
                 if (!((ei.d) obj5).N) {
                     if (tL_messages_requestUrlAuth != null && !TextUtils.isEmpty(tL_messages_requestUrlAuth.url)) {
                         if (!dVar2.N) {
                             dVar2.setLoading(true);
-                            if (b1Var != null) {
-                                boolean z10 = org.telegram.ui.web.b1.P0;
+                            if (a1Var != null) {
+                                boolean z10 = org.telegram.ui.web.a1.P0;
                                 try {
                                     jSONObject = new JSONObject();
                                 } catch (Exception unused) {
                                 }
-                                b1Var.y("oauth_result_failed", jSONObject);
+                                a1Var.y("oauth_result_failed", jSONObject);
                             }
                             TLRPC.TL_messages_declineUrlAuth tL_messages_declineUrlAuth = new TLRPC.TL_messages_declineUrlAuth();
                             tL_messages_declineUrlAuth.url = tL_messages_requestUrlAuth.url;
-                            ConnectionsManager.getInstance(i11).sendRequestTyped(tL_messages_declineUrlAuth, new org.telegram.messenger.a(), new q5(20, zArr2, f3Var));
+                            ConnectionsManager.getInstance(i11).sendRequestTyped(tL_messages_declineUrlAuth, new org.telegram.messenger.a(), new r5(20, zArr2, f3Var));
                             break;
                         }
                     } else {

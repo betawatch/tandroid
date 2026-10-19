@@ -12,12 +12,12 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.gn0;
-import org.telegram.ui.gx;
-import org.telegram.ui.n80;
-import org.telegram.ui.sn;
+import org.telegram.ui.en0;
+import org.telegram.ui.ex;
+import org.telegram.ui.l80;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -54,7 +54,6 @@ public final /* synthetic */ class h implements Runnable {
                     callback2.run(null, str);
                     break;
                 }
-                break;
             case 1:
                 m0 m0Var = (m0) this.b;
                 String str2 = (String) this.c;
@@ -76,10 +75,10 @@ public final /* synthetic */ class h implements Runnable {
                 }
                 break;
             case 2:
-                gx gxVar = (gx) this.b;
+                ex exVar = (ex) this.b;
                 b2 b2Var = (b2) this.c;
                 ei.d dVar = (ei.d) this.d;
-                if (!gxVar.canScrollVertically(1)) {
+                if (!exVar.canScrollVertically(1)) {
                     b2Var.p = true;
                 }
                 dVar.setEnabled((!b2Var.p || b2Var.m || b2Var.n) ? false : true);
@@ -87,9 +86,9 @@ public final /* synthetic */ class h implements Runnable {
             case 3:
                 f2 f2Var = (f2) this.b;
                 a2 a2Var = (a2) this.c;
-                n80 n80Var = (n80) this.d;
+                l80 l80Var = (l80) this.d;
                 f2Var.getClass();
-                l lVar = new l(n80Var, 2);
+                l lVar = new l(l80Var, 2);
                 TL_wallet.tonConnectSession tonconnectsession = a2Var.e;
                 if (!tonconnectsession.closed && !tonconnectsession.closing && tonconnectsession.manifest_error == null && tonconnectsession.manifest != null) {
                     if (!a2Var.f) {
@@ -104,6 +103,7 @@ public final /* synthetic */ class h implements Runnable {
                     lVar.run("The dApp manifest is unavailable or the session is closed");
                     break;
                 }
+                break;
             case 4:
                 f2 f2Var2 = (f2) this.b;
                 TL_wallet.tonConnectSession tonconnectsession2 = (TL_wallet.tonConnectSession) this.c;
@@ -128,7 +128,6 @@ public final /* synthetic */ class h implements Runnable {
                     lVar2.run("Missing TON Connect session data");
                     break;
                 }
-                break;
             case 5:
                 ((s1) this.b).run((TL_wallet.inputTonConnectOauthSession) this.c, (String) this.d);
                 break;
@@ -141,7 +140,7 @@ public final /* synthetic */ class h implements Runnable {
                 byte[] x10 = m0Var2.x();
                 byte[] bArr = x10 == null ? null : (byte[]) x10.clone();
                 if (s10 != null && bArr != null) {
-                    m0Var2.y(new ai.v3(f2Var3, pVar2, tonconnectsession3, s10, bArr, 7), true, false);
+                    m0Var2.y(new ai.x3(f2Var3, pVar2, tonconnectsession3, s10, bArr, 7), true, false);
                     break;
                 } else {
                     pVar2.run("Wallet is not ready");
@@ -155,20 +154,13 @@ public final /* synthetic */ class h implements Runnable {
                 lVar3.run(str3);
                 break;
             case 8:
-                n5 n5Var = (n5) this.b;
-                boolean[] zArr = (boolean[]) this.c;
-                w6 w6Var = (w6) this.d;
-                zArr[0] = false;
-                n5Var.M0.remove(w6Var);
-                break;
-            case 9:
-                w6 w6Var2 = (w6) this.b;
+                w6 w6Var = (w6) this.b;
                 i80 i80Var = (i80) this.c;
                 i80 i80Var2 = (i80) this.d;
-                w6Var2.run();
+                w6Var.run();
                 i80Var.K(i80Var2);
                 break;
-            case 10:
+            case 9:
                 Utilities.Callback3 callback3 = (Utilities.Callback3) this.b;
                 k2[] k2VarArr = (k2[]) this.c;
                 TL_wallet.walletTransactionPeerUser wallettransactionpeeruser = (TL_wallet.walletTransactionPeerUser) this.d;
@@ -179,17 +171,17 @@ public final /* synthetic */ class h implements Runnable {
                     }
                     org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                     if (U != null) {
-                        U.presentFragment(sn.W9(wallettransactionpeeruser.user_id));
+                        U.presentFragment(qn.W9(wallettransactionpeeruser.user_id));
                         break;
                     }
                 }
                 break;
-            case 11:
+            case 10:
                 k2[] k2VarArr2 = (k2[]) this.b;
-                k2VarArr2[0].setOnDismissListener(new ai.x3(15, (TLRPC.User) this.c, (TL_wallet.walletTransactionPeerUser) this.d));
+                k2VarArr2[0].setOnDismissListener(new ai.z3(15, (TLRPC.User) this.c, (TL_wallet.walletTransactionPeerUser) this.d));
                 k2VarArr2[0].dismiss();
                 break;
-            case 12:
+            case 11:
                 Utilities.Callback3 callback32 = (Utilities.Callback3) this.b;
                 k2[] k2VarArr3 = (k2[]) this.c;
                 TL_wallet.WalletTransactionPeer walletTransactionPeer = (TL_wallet.WalletTransactionPeer) this.d;
@@ -200,44 +192,44 @@ public final /* synthetic */ class h implements Runnable {
                     }
                     org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
                     if (U2 != null) {
-                        U2.presentFragment(sn.W9(-walletTransactionPeer.channel_id));
+                        U2.presentFragment(qn.W9(-walletTransactionPeer.channel_id));
                         break;
                     }
                 }
                 break;
-            case 13:
+            case 12:
                 ((Utilities.Callback2) this.d).run(((String[]) this.b)[0], Boolean.valueOf(((boolean[]) this.c)[0]));
                 break;
-            case 14:
+            case 13:
                 s5 s5Var = (s5) this.b;
-                o5 o5Var = (o5) this.c;
-                p5 p5Var = (p5) this.d;
-                s5Var.b = o5Var;
-                o5Var.j(s5Var.c);
-                s5Var.d0 = Float.NaN;
-                s5Var.b(s5Var.W, s5Var.c0);
+                p5 p5Var = (p5) this.c;
+                q5 q5Var = (q5) this.d;
+                s5Var.b = p5Var;
+                p5Var.j(s5Var.c);
+                s5Var.g0 = Float.NaN;
+                s5Var.b(s5Var.c0, s5Var.f0);
                 s5Var.e.setVisibility(0);
-                p5Var.run();
-                u2 u2Var = s5Var.d;
-                if (u2Var != null) {
+                q5Var.run();
+                v2 v2Var = s5Var.d;
+                if (v2Var != null) {
                     s5Var.d = null;
-                    u2Var.run();
+                    v2Var.run();
                     break;
                 }
                 break;
-            case 15:
+            case 14:
                 ((Utilities.Callback2) this.d).run((String) this.b, (String) this.c);
                 break;
-            case 16:
+            case 15:
                 ((WalletEngine2) this.b).lambda$previewSignMessage$8((e2) this.c, (Utilities.Callback) this.d);
                 break;
-            case 17:
+            case 16:
                 ((Utilities.Callback2) this.d).run((Long) this.b, (String) this.c);
                 break;
-            case 18:
+            case 17:
                 ((WalletEngine2) this.b).lambda$previewTonConnect$2((e2) this.c, (Utilities.Callback2) this.d);
                 break;
-            case 19:
+            case 18:
                 s7 s7Var = (s7) this.b;
                 int[] iArr = (int[]) this.c;
                 Bitmap bitmap = (Bitmap) this.d;
@@ -265,7 +257,7 @@ public final /* synthetic */ class h implements Runnable {
                     break;
                 }
                 break;
-            case 20:
+            case 19:
                 h8 h8Var = (h8) this.b;
                 m0 m0Var3 = (m0) this.c;
                 h0 h0Var = (h0) this.d;
@@ -284,7 +276,7 @@ public final /* synthetic */ class h implements Runnable {
                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(h8Var2.getParentActivity(), 0, h8Var2.getResourceProvider());
                 alertDialog$Builder2.a.R = LocaleController.getString(R.string.WalletReplaceWalletTitle);
                 alertDialog$Builder2.k(LocaleController.getString(R.string.WalletCreateNew), new b8(h8Var2, bool, m0Var4, 0));
-                alertDialog$Builder2.h(LocaleController.getString(R.string.WalletImportExisting), new gn0(26, h8Var2, bool));
+                alertDialog$Builder2.h(LocaleController.getString(R.string.WalletImportExisting), new en0(26, h8Var2, bool));
                 alertDialog$Builder2.o();
                 break;
         }

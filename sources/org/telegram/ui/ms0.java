@@ -1,22 +1,47 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import android.widget.ImageView;
+import android.content.Context;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class ms0 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ PhotoViewer a;
+public final class ms0 extends org.telegram.ui.Components.er0 {
+    public final /* synthetic */ FrameLayout c1;
+    public final /* synthetic */ boolean d1;
+    public final /* synthetic */ PhotoViewer e1;
 
-    public ms0(PhotoViewer photoViewer) {
-        this.a = photoViewer;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ms0(PhotoViewer photoViewer, Context context, qn qnVar, ArrayList arrayList, String str, Integer num, FrameLayout frameLayout, boolean z10) {
+        super(context, qnVar, arrayList, null, null, false, str, null, false, true, false, num, null);
+        this.e1 = photoViewer;
+        this.c1 = frameLayout;
+        this.d1 = z10;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        ImageView imageView = this.a.E3;
-        if (imageView != null) {
-            imageView.animate().alpha(0.0f).withEndAction(new ek0(this, 16)).setDuration(150L).start();
+    @Override // org.telegram.ui.Components.er0
+    public final void T0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.bz0(this, this.c1, hVar, i10, 11), 250L);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.er0, org.telegram.ui.ActionBar.f3
+    public final void dismissInternal() {
+        super.dismissInternal();
+        if (this.d1) {
+            AndroidUtilities.runOnUIThread(new ck0(this, 17), 50L);
+        }
+        PhotoViewer photoViewer = this.e1;
+        photoViewer.d0.softInputMode = 272;
+        try {
+            ((WindowManager) photoViewer.y.getSystemService("window")).updateViewLayout(photoViewer.g0, photoViewer.d0);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 }

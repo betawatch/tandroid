@@ -13,14 +13,14 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.bk;
-import org.telegram.ui.pj;
-import org.telegram.ui.sn;
+import org.telegram.ui.nj;
+import org.telegram.ui.qn;
+import org.telegram.ui.zj;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class f0 extends FrameLayout {
-    public final sn a;
+    public final qn a;
     public e0 b;
     public List c;
     public boolean d;
@@ -35,17 +35,17 @@ public final class f0 extends FrameLayout {
     public boolean x;
     public final int[] y;
 
-    public f0(sn snVar, Context context) {
+    public f0(qn qnVar, Context context) {
         super(context);
         this.c = Collections.EMPTY_LIST;
         this.f = 22;
         this.h = 24;
         this.y = new int[2];
         setVisibility(8);
-        this.a = snVar;
+        this.a = qnVar;
         setClipToPadding(false);
         setClipChildren(false);
-        snVar.x0.j(new d0(this, 0));
+        qnVar.x0.j(new d0(this, 0));
     }
 
     public final void a(boolean z10) {
@@ -108,17 +108,17 @@ public final class f0 extends FrameLayout {
             }
             AndroidUtilities.runOnUIThread(new b0(this, 0));
         }
-        sn snVar = this.a;
-        pj pjVar = snVar.x0;
+        qn qnVar = this.a;
+        nj njVar = qnVar.x0;
         int[] iArr = this.y;
-        pjVar.getLocationInWindow(iArr);
+        njVar.getLocationInWindow(iArr);
         boolean z13 = true;
         float f12 = iArr[1];
         getLocationInWindow(iArr);
-        float f13 = (f12 - iArr[1]) - snVar.N9;
+        float f13 = (f12 - iArr[1]) - qnVar.N9;
         boolean z14 = false;
-        for (int i10 = 0; i10 < pjVar.getChildCount(); i10++) {
-            View childAt = pjVar.getChildAt(i10);
+        for (int i10 = 0; i10 < njVar.getChildCount(); i10++) {
+            View childAt = njVar.getChildAt(i10);
             if (childAt instanceof u1) {
                 u1 u1Var = (u1) childAt;
                 MessageObject messageObject = u1Var.getMessageObject();
@@ -140,7 +140,7 @@ public final class f0 extends FrameLayout {
                         }
                         e0Var2.setPadding(i12, dp2, dp3 + i11, AndroidUtilities.dp(f14));
                     }
-                    int height2 = getHeight() != 0 ? getHeight() : pjVar.getHeight();
+                    int height2 = getHeight() != 0 ? getHeight() : njVar.getHeight();
                     if (u1Var.getCurrentMessagesGroup() != null) {
                         MessageObject.GroupedMessages.TransitionParams transitionParams = u1Var.getCurrentMessagesGroup().transitionParams;
                         height = transitionParams.bottom - transitionParams.top;
@@ -150,9 +150,9 @@ public final class f0 extends FrameLayout {
                     float y3 = (u1Var.getY() + f13) - AndroidUtilities.dp(74.0f);
                     float dp4 = AndroidUtilities.dp(14.0f);
                     float dp5 = height2 - AndroidUtilities.dp(218.0f);
-                    bk bkVar = snVar.X1;
-                    if (bkVar != null && bkVar.getVisibility() == 0) {
-                        dp4 += bkVar.getHeight();
+                    zj zjVar = qnVar.X1;
+                    if (zjVar != null && zjVar.getVisibility() == 0) {
+                        dp4 += zjVar.getHeight();
                     }
                     float f15 = height;
                     if (y3 <= dp4 - (f15 / 2.0f) || y3 >= dp5) {
@@ -188,7 +188,7 @@ public final class f0 extends FrameLayout {
                             this.b.setVisibility(0);
                             if (!this.x) {
                                 this.x = true;
-                                this.b.p(this.e, snVar.Z7, true);
+                                this.b.p(this.e, qnVar.Z7, true);
                             }
                         }
                     }
@@ -256,10 +256,10 @@ public final class f0 extends FrameLayout {
         TLRPC.ChatFull chatFull;
         TLRPC.Message message;
         this.c = list;
-        sn snVar = this.a;
-        int i10 = snVar.R3;
+        qn qnVar = this.a;
+        int i10 = qnVar.R3;
         boolean z10 = true;
-        if (i10 != 1 && i10 != 5 && i10 != 6 && !snVar.F9() && !snVar.x() && (((chatFull = snVar.Z7) == null || !(chatFull.available_reactions instanceof TLRPC.TL_chatReactionsNone)) && !list.isEmpty())) {
+        if (i10 != 1 && i10 != 5 && i10 != 6 && !qnVar.F9() && !qnVar.x() && (((chatFull = qnVar.Z7) == null || !(chatFull.available_reactions instanceof TLRPC.TL_chatReactionsNone)) && !list.isEmpty())) {
             long j10 = 0;
             boolean z11 = false;
             for (MessageObject messageObject : list) {

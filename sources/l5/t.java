@@ -7,9 +7,9 @@ import java.nio.charset.Charset;
 import java.util.Collections;
 import java.util.Set;
 import java.util.concurrent.Executor;
-import org.telegram.ui.web.a2;
+import org.telegram.ui.web.z1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class t {
     public static volatile k e;
@@ -23,7 +23,7 @@ public final class t {
         this.b = aVar2;
         this.c = bVar;
         this.d = bVar2;
-        ((Executor) rVar.b).execute(new a2(rVar, 11));
+        ((Executor) rVar.b).execute(new z1(rVar, 11));
     }
 
     public static t a() {
@@ -69,6 +69,6 @@ public final class t {
             bytes = k3.k("1$", str, "\\", str2).getBytes(Charset.forName("UTF-8"));
         }
         a2.c = bytes;
-        return new r(unmodifiableSet, a2.g(), this);
+        return new r(unmodifiableSet, a2.e(), this);
     }
 }

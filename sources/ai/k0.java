@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class k0 {
     public static volatile k0[] m = new k0[4];
@@ -126,7 +126,7 @@ public final class k0 {
         int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(getconnectedstarrefbot, new d0(this, b2Var, j11, callback, 0));
         b2Var.g0 = true;
         b2Var.setOnCancelListener(new e0(this, sendRequest, 0));
-        b2Var.q(200L);
+        b2Var.r(200L);
     }
 
     public final TLRPC.TL_payments_starsRevenueStats h(long j10, boolean z10) {
@@ -247,14 +247,14 @@ public final class k0 {
             l(peerDialogId);
             return;
         }
-        org.telegram.ui.ke keVar = org.telegram.ui.ke.x1;
-        if (keVar == null || keVar.z0 != DialogObject.getPeerDialogId(tL_updateStarsRevenueStatus.peer)) {
+        org.telegram.ui.ie ieVar = org.telegram.ui.ie.x1;
+        if (ieVar == null || ieVar.z0 != DialogObject.getPeerDialogId(tL_updateStarsRevenueStatus.peer)) {
             return;
         }
-        org.telegram.ui.ke keVar2 = org.telegram.ui.ke.x1;
+        org.telegram.ui.ie ieVar2 = org.telegram.ui.ie.x1;
         TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus = tL_updateStarsRevenueStatus.status;
-        keVar2.g0(tL_starsRevenueStatus.current_balance instanceof TL_stars.TL_starsTonAmount, tL_starsRevenueStatus);
-        org.telegram.ui.ke.x1.e0();
+        ieVar2.g0(tL_starsRevenueStatus.current_balance instanceof TL_stars.TL_starsTonAmount, tL_starsRevenueStatus);
+        org.telegram.ui.ie.x1.e0();
     }
 
     public final void r(long j10) {

@@ -22,13 +22,13 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.Components.wc0;
-import org.telegram.ui.uh1;
-import org.telegram.ui.vh1;
+import org.telegram.ui.sh1;
+import org.telegram.ui.th1;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class za extends FrameLayout {
-    public final ci.j4 a;
+    public final ci.k4 a;
     public final ImageView b;
     public final CheckBox c;
     public final View d;
@@ -42,9 +42,9 @@ public final class za extends FrameLayout {
         super(context);
         this.n = abVar;
         setWillNotDraw(false);
-        ci.j4 j4Var = new ci.j4(this, context, 4);
-        this.a = j4Var;
-        addView(j4Var, w7.z5.e(-1, -1, 51));
+        ci.k4 k4Var = new ci.k4(this, context, 4);
+        this.a = k4Var;
+        addView(k4Var, w7.z5.e(-1, -1, 51));
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setImageResource(R.drawable.ic_gallery_background);
@@ -64,16 +64,16 @@ public final class za extends FrameLayout {
     public final void a(Object obj, Object obj2) {
         int patternColor;
         int patternColor2;
-        ci.j4 j4Var;
+        ci.k4 k4Var;
         this.h = obj;
-        ci.j4 j4Var2 = this.a;
-        j4Var2.setVisibility(0);
+        ci.k4 k4Var2 = this.a;
+        k4Var2.setVisibility(0);
         this.b.setVisibility(4);
-        j4Var2.setBackgroundDrawable(null);
-        j4Var2.getImageReceiver().setColorFilter(null);
-        j4Var2.getImageReceiver().setAlpha(1.0f);
-        j4Var2.getImageReceiver().setBlendMode(null);
-        j4Var2.getImageReceiver().setGradientBitmap(null);
+        k4Var2.setBackgroundDrawable(null);
+        k4Var2.getImageReceiver().setColorFilter(null);
+        k4Var2.getImageReceiver().setAlpha(1.0f);
+        k4Var2.getImageReceiver().setBlendMode(null);
+        k4Var2.getImageReceiver().setGradientBitmap(null);
         this.e = obj == obj2;
         if (obj instanceof TLRPC.TL_wallPaper) {
             TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) obj;
@@ -83,10 +83,10 @@ public final class za extends FrameLayout {
             long j10 = photoSize != null ? photoSize.size : tL_wallPaper.document.size;
             if (!tL_wallPaper.pattern) {
                 if (photoSize != null) {
-                    j4Var2.k(ImageLocation.getForDocument(photoSize, tL_wallPaper.document), "180_180", ImageLocation.getForDocument(closestPhotoSizeWithSize, tL_wallPaper.document), "100_100_b", j10, "jpg", tL_wallPaper, 1);
+                    k4Var2.k(ImageLocation.getForDocument(photoSize, tL_wallPaper.document), "180_180", ImageLocation.getForDocument(closestPhotoSizeWithSize, tL_wallPaper.document), "100_100_b", j10, "jpg", tL_wallPaper, 1);
                     return;
                 } else {
-                    j4Var2.k(ImageLocation.getForDocument(tL_wallPaper.document), "180_180", ImageLocation.getForDocument(closestPhotoSizeWithSize, tL_wallPaper.document), "100_100_b", j10, "jpg", tL_wallPaper, 1);
+                    k4Var2.k(ImageLocation.getForDocument(tL_wallPaper.document), "180_180", ImageLocation.getForDocument(closestPhotoSizeWithSize, tL_wallPaper.document), "100_100_b", j10, "jpg", tL_wallPaper, 1);
                     return;
                 }
             }
@@ -95,52 +95,52 @@ public final class za extends FrameLayout {
                 TLRPC.WallPaperSettings wallPaperSettings2 = tL_wallPaper.settings;
                 wc0 wc0Var = new wc0(true, wallPaperSettings2.background_color, wallPaperSettings2.second_background_color, wallPaperSettings2.third_background_color, wallPaperSettings2.fourth_background_color);
                 if (tL_wallPaper.settings.intensity >= 0 || !org.telegram.ui.ActionBar.h6.I.q()) {
-                    j4Var2.setBackground(wc0Var);
+                    k4Var2.setBackground(wc0Var);
                     if (Build.VERSION.SDK_INT >= 29) {
-                        j4Var2.getImageReceiver().setBlendMode(BlendMode.SOFT_LIGHT);
+                        k4Var2.getImageReceiver().setBlendMode(BlendMode.SOFT_LIGHT);
                     }
                 } else {
-                    j4Var2.getImageReceiver().setGradientBitmap(wc0Var.k);
+                    k4Var2.getImageReceiver().setGradientBitmap(wc0Var.k);
                 }
                 TLRPC.WallPaperSettings wallPaperSettings3 = tL_wallPaper.settings;
                 patternColor2 = wc0.g(wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
             } else {
-                j4Var2.setBackgroundColor(org.telegram.ui.ActionBar.h6.Y0(wallPaperSettings.background_color));
+                k4Var2.setBackgroundColor(org.telegram.ui.ActionBar.h6.Y0(wallPaperSettings.background_color));
                 patternColor2 = AndroidUtilities.getPatternColor(tL_wallPaper.settings.background_color);
             }
             if (Build.VERSION.SDK_INT < 29 || tL_wallPaper.settings.third_background_color == 0) {
-                j4Var2.getImageReceiver().setColorFilter(new PorterDuffColorFilter(AndroidUtilities.getPatternColor(patternColor2), PorterDuff.Mode.SRC_IN));
+                k4Var2.getImageReceiver().setColorFilter(new PorterDuffColorFilter(AndroidUtilities.getPatternColor(patternColor2), PorterDuff.Mode.SRC_IN));
             }
             if (photoSize != null) {
                 ImageLocation forDocument = ImageLocation.getForDocument(photoSize, tL_wallPaper.document);
                 ImageLocation forDocument2 = ImageLocation.getForDocument(closestPhotoSizeWithSize, tL_wallPaper.document);
-                j4Var = j4Var2;
-                j4Var.k(forDocument, "180_180", forDocument2, null, j10, "jpg", tL_wallPaper, 1);
+                k4Var = k4Var2;
+                k4Var.k(forDocument, "180_180", forDocument2, null, j10, "jpg", tL_wallPaper, 1);
             } else {
                 ImageLocation forDocument3 = ImageLocation.getForDocument(closestPhotoSizeWithSize, tL_wallPaper.document);
-                j4Var = j4Var2;
-                j4Var.k(forDocument3, "180_180", null, null, j10, "jpg", tL_wallPaper, 1);
+                k4Var = k4Var2;
+                k4Var.k(forDocument3, "180_180", null, null, j10, "jpg", tL_wallPaper, 1);
             }
-            j4Var.getImageReceiver().setAlpha(Math.abs(tL_wallPaper.settings.intensity) / 100.0f);
+            k4Var.getImageReceiver().setAlpha(Math.abs(tL_wallPaper.settings.intensity) / 100.0f);
             return;
         }
-        if (!(obj instanceof uh1)) {
-            if (obj instanceof vh1) {
-                vh1 vh1Var = (vh1) obj;
-                File file = vh1Var.e;
+        if (!(obj instanceof sh1)) {
+            if (obj instanceof th1) {
+                th1 th1Var = (th1) obj;
+                File file = th1Var.e;
                 if (file != null) {
-                    j4Var2.f(file.getAbsolutePath(), "180_180", null);
+                    k4Var2.f(file.getAbsolutePath(), "180_180", null);
                     return;
                 }
-                File file2 = vh1Var.d;
+                File file2 = th1Var.d;
                 if (file2 != null) {
-                    j4Var2.f(file2.getAbsolutePath(), "180_180", null);
+                    k4Var2.f(file2.getAbsolutePath(), "180_180", null);
                     return;
-                } else if ("t".equals(vh1Var.a)) {
-                    j4Var2.setImageDrawable(org.telegram.ui.ActionBar.h6.X0(j4Var2, true));
+                } else if ("t".equals(th1Var.a)) {
+                    k4Var2.setImageDrawable(org.telegram.ui.ActionBar.h6.X0(k4Var2, true));
                     return;
                 } else {
-                    j4Var2.setImageResource(vh1Var.c);
+                    k4Var2.setImageResource(th1Var.c);
                     return;
                 }
             }
@@ -151,7 +151,7 @@ public final class za extends FrameLayout {
             MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
             TLRPC.Photo photo = searchImage.photo;
             if (photo == null) {
-                j4Var2.f(searchImage.thumbUrl, "180_180", null);
+                k4Var2.f(searchImage.thumbUrl, "180_180", null);
                 return;
             }
             TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.dp(100));
@@ -159,59 +159,59 @@ public final class za extends FrameLayout {
             if (closestPhotoSizeWithSize4 == closestPhotoSizeWithSize3) {
                 closestPhotoSizeWithSize4 = null;
             }
-            j4Var2.k(ImageLocation.getForPhoto(closestPhotoSizeWithSize4, searchImage.photo), "180_180", ImageLocation.getForPhoto(closestPhotoSizeWithSize3, searchImage.photo), "100_100_b", closestPhotoSizeWithSize4 != null ? closestPhotoSizeWithSize4.size : 0, "jpg", searchImage, 1);
+            k4Var2.k(ImageLocation.getForPhoto(closestPhotoSizeWithSize4, searchImage.photo), "180_180", ImageLocation.getForPhoto(closestPhotoSizeWithSize3, searchImage.photo), "100_100_b", closestPhotoSizeWithSize4 != null ? closestPhotoSizeWithSize4.size : 0, "jpg", searchImage, 1);
             return;
         }
-        uh1 uh1Var = (uh1) obj;
-        File file3 = uh1Var.i;
-        int i10 = uh1Var.d;
-        int i11 = uh1Var.c;
-        int i12 = uh1Var.b;
-        if (file3 == null && uh1Var.g == null && !"d".equals(uh1Var.a)) {
-            j4Var2.setImageBitmap(null);
-            if (uh1Var.k) {
-                j4Var2.setBackground(new wc0(true, uh1Var.b, uh1Var.c, uh1Var.d, uh1Var.e));
+        sh1 sh1Var = (sh1) obj;
+        File file3 = sh1Var.i;
+        int i10 = sh1Var.d;
+        int i11 = sh1Var.c;
+        int i12 = sh1Var.b;
+        if (file3 == null && sh1Var.g == null && !"d".equals(sh1Var.a)) {
+            k4Var2.setImageBitmap(null);
+            if (sh1Var.k) {
+                k4Var2.setBackground(new wc0(true, sh1Var.b, sh1Var.c, sh1Var.d, sh1Var.e));
                 return;
             } else if (i11 != 0) {
-                j4Var2.setBackground(new GradientDrawable(GradientDrawable.Orientation.BL_TR, new int[]{i12 | (-16777216), i11 | (-16777216)}));
+                k4Var2.setBackground(new GradientDrawable(GradientDrawable.Orientation.BL_TR, new int[]{i12 | (-16777216), i11 | (-16777216)}));
                 return;
             } else {
-                j4Var2.setBackgroundColor(i12 | (-16777216));
+                k4Var2.setBackgroundColor(i12 | (-16777216));
                 return;
             }
         }
         if (i10 != 0) {
-            wc0 wc0Var2 = new wc0(true, uh1Var.b, uh1Var.c, uh1Var.d, uh1Var.e);
-            if (uh1Var.h >= 0.0f) {
-                j4Var2.setBackground(new wc0(true, uh1Var.b, uh1Var.c, uh1Var.d, uh1Var.e));
+            wc0 wc0Var2 = new wc0(true, sh1Var.b, sh1Var.c, sh1Var.d, sh1Var.e);
+            if (sh1Var.h >= 0.0f) {
+                k4Var2.setBackground(new wc0(true, sh1Var.b, sh1Var.c, sh1Var.d, sh1Var.e));
                 if (Build.VERSION.SDK_INT >= 29) {
-                    j4Var2.getImageReceiver().setBlendMode(BlendMode.SOFT_LIGHT);
+                    k4Var2.getImageReceiver().setBlendMode(BlendMode.SOFT_LIGHT);
                 }
             } else {
-                j4Var2.getImageReceiver().setGradientBitmap(wc0Var2.k);
+                k4Var2.getImageReceiver().setGradientBitmap(wc0Var2.k);
             }
-            patternColor = wc0.g(i12, i11, i10, uh1Var.e);
+            patternColor = wc0.g(i12, i11, i10, sh1Var.e);
         } else {
             patternColor = AndroidUtilities.getPatternColor(i12);
         }
         int i13 = patternColor;
-        if ("d".equals(uh1Var.a)) {
-            if (uh1Var.m == null) {
-                uh1Var.m = SvgHelper.getBitmap(R.raw.default_pattern, 100, 180, -16777216);
+        if ("d".equals(sh1Var.a)) {
+            if (sh1Var.m == null) {
+                sh1Var.m = SvgHelper.getBitmap(R.raw.default_pattern, 100, 180, -16777216);
             }
-            j4Var2.setImageBitmap(uh1Var.m);
-            j4Var2.getImageReceiver().setAlpha(Math.abs(uh1Var.h));
+            k4Var2.setImageBitmap(sh1Var.m);
+            k4Var2.getImageReceiver().setAlpha(Math.abs(sh1Var.h));
             return;
         }
         if (file3 != null) {
-            j4Var2.f(file3.getAbsolutePath(), "180_180", null);
+            k4Var2.f(file3.getAbsolutePath(), "180_180", null);
             return;
         }
-        TLRPC.PhotoSize closestPhotoSizeWithSize5 = FileLoader.getClosestPhotoSizeWithSize(uh1Var.g.document.thumbs, 100);
-        j4Var2.k(ImageLocation.getForDocument(closestPhotoSizeWithSize5, uh1Var.g.document), "180_180", null, null, closestPhotoSizeWithSize5 != null ? closestPhotoSizeWithSize5.size : uh1Var.g.document.size, "jpg", uh1Var.g, 1);
-        j4Var2.getImageReceiver().setAlpha(Math.abs(uh1Var.h));
+        TLRPC.PhotoSize closestPhotoSizeWithSize5 = FileLoader.getClosestPhotoSizeWithSize(sh1Var.g.document.thumbs, 100);
+        k4Var2.k(ImageLocation.getForDocument(closestPhotoSizeWithSize5, sh1Var.g.document), "180_180", null, null, closestPhotoSizeWithSize5 != null ? closestPhotoSizeWithSize5.size : sh1Var.g.document.size, "jpg", sh1Var.g, 1);
+        k4Var2.getImageReceiver().setAlpha(Math.abs(sh1Var.h));
         if (Build.VERSION.SDK_INT < 29 || i10 == 0) {
-            j4Var2.getImageReceiver().setColorFilter(new PorterDuffColorFilter(AndroidUtilities.getPatternColor(i13), PorterDuff.Mode.SRC_IN));
+            k4Var2.getImageReceiver().setColorFilter(new PorterDuffColorFilter(AndroidUtilities.getPatternColor(i13), PorterDuff.Mode.SRC_IN));
         }
     }
 
@@ -235,8 +235,8 @@ public final class za extends FrameLayout {
     public final void onDraw(Canvas canvas) {
         ab abVar = this.n;
         if (!abVar.b || !this.c.x) {
-            ci.j4 j4Var = this.a;
-            if (j4Var.getImageReceiver().hasBitmapImage() && j4Var.getImageReceiver().getCurrentAlpha() == 1.0f) {
+            ci.k4 k4Var = this.a;
+            if (k4Var.getImageReceiver().hasBitmapImage() && k4Var.getImageReceiver().getCurrentAlpha() == 1.0f) {
                 return;
             }
         }

@@ -12,7 +12,7 @@ import java.util.List;
 import org.telegram.messenger.ImageReceiver;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class h extends k {
     public final x h = new x();
@@ -46,7 +46,7 @@ public final class h extends k {
         List list = this.n;
         this.o = list;
         list.getClass();
-        return new l(list);
+        return new l(list, 0);
     }
 
     @Override // a4.k, h2.e

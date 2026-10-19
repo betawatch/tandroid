@@ -9,7 +9,7 @@ import m4.o1;
 import m4.s1;
 import v7.q8;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f0 implements e2.o, d9.k, i5.g, m4.e0, g1, e2.j, f1 {
     public final /* synthetic */ int a;
@@ -128,7 +128,7 @@ public final /* synthetic */ class f0 implements e2.o, d9.k, i5.g, m4.e0, g1, e2
             default:
                 x xVar = ((o0) obj).a.n;
                 if (xVar != null) {
-                    xVar.A();
+                    xVar.B();
                     break;
                 }
                 break;

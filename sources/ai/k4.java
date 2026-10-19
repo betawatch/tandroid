@@ -1,35 +1,64 @@
 package ai;
 
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.ui.Components.tv0;
+import org.telegram.ui.eh;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k4 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k7 b;
-    public final /* synthetic */ TwoStepVerificationActivity c;
-    public final /* synthetic */ boolean d;
+public final /* synthetic */ class k4 implements Utilities.Callback {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ k4(k7 k7Var, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10, int i10) {
-        this.a = i10;
-        this.b = k7Var;
-        this.c = twoStepVerificationActivity;
-        this.d = z10;
+    public /* synthetic */ k4(int i10, long j10, TLRPC.Document document) {
+        this.b = i10;
+        this.c = j10;
+        this.d = document;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        TLRPC.StickerSet stickerSet;
+        int i10 = this.a;
+        int i11 = this.b;
+        long j10 = this.c;
+        Object obj2 = this.d;
+        int i12 = 0;
+        switch (i10) {
             case 0:
-                AndroidUtilities.runOnUIThread(new p4(this.b, tLObject, this.c, this.d, tL_error));
+                TLRPC.Document document = (TLRPC.Document) obj2;
+                if (((Boolean) obj).booleanValue()) {
+                    ga.y(i11, false).Q(j10);
+                    AndroidUtilities.runOnUIThread(new a3.l0(new o4(j10, i12), document, LocaleController.getString(R.string.Gift2MovedToProfile), 8));
+                    break;
+                }
+                break;
+            case 1:
+                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj;
+                AndroidUtilities.runOnUIThread(new eh(26, (org.telegram.ui.Components.qc) obj2, (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) ? LocaleController.getString(R.string.AddEmojiNotFound) : i11 == 1 ? AndroidUtilities.replaceTags(LocaleController.formatString("TopicContainsEmojiPackSingle", R.string.TopicContainsEmojiPackSingle, stickerSet.title)) : i11 == 2 ? AndroidUtilities.replaceTags(LocaleController.formatString("StoryContainsEmojiPackSingle", R.string.StoryContainsEmojiPackSingle, stickerSet.title)) : AndroidUtilities.replaceTags(LocaleController.formatString("MessageContainsEmojiPackSingle", R.string.MessageContainsEmojiPackSingle, stickerSet.title))), Math.max(1L, 750 - (System.currentTimeMillis() - j10)));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new p4(this.b, tL_error, this.c, tLObject, this.d));
+                ((tv0) obj2).getStoriesController().b(i11, j10, (ArrayList) obj);
                 break;
         }
+    }
+
+    public /* synthetic */ k4(int i10, org.telegram.ui.Components.qc qcVar, long j10) {
+        this.b = i10;
+        this.d = qcVar;
+        this.c = j10;
+    }
+
+    public /* synthetic */ k4(tv0 tv0Var, long j10, int i10) {
+        this.d = tv0Var;
+        this.c = j10;
+        this.b = i10;
     }
 }

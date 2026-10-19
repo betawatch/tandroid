@@ -8,7 +8,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import androidx.appcompat.view.menu.ExpandedMenuView;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class g implements x, AdapterView.OnItemClickListener {
     public Context a;
@@ -78,8 +78,8 @@ public final class g implements x, AdapterView.OnItemClickListener {
         }
         l lVar = new l();
         lVar.a = d0Var;
-        c5.b0 b0Var = new c5.b0(context);
-        g.b bVar = (g.b) b0Var.c;
+        c5.c0 c0Var = new c5.c0(context);
+        g.b bVar = (g.b) c0Var.c;
         g gVar = new g(bVar.a);
         lVar.c = gVar;
         gVar.e = lVar;
@@ -98,7 +98,7 @@ public final class g implements x, AdapterView.OnItemClickListener {
             bVar.d = d0Var.m;
         }
         bVar.h = lVar;
-        g.f i10 = b0Var.i();
+        g.f i10 = c0Var.i();
         lVar.b = i10;
         i10.setOnDismissListener(lVar);
         WindowManager.LayoutParams attributes = lVar.b.getWindow().getAttributes();
@@ -109,7 +109,7 @@ public final class g implements x, AdapterView.OnItemClickListener {
         if (wVar == null) {
             return true;
         }
-        wVar.u(d0Var);
+        wVar.r(d0Var);
         return true;
     }
 

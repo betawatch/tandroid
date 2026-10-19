@@ -4,9 +4,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.sn;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class h7 extends i7 {
     public final /* synthetic */ TLRPC.Chat b;
@@ -29,7 +29,7 @@ public final class h7 extends i7 {
 
     @Override // ei.i7
     public final void c(org.telegram.ui.ActionBar.n2 n2Var) {
-        n2Var.presentFragment(sn.W9(-this.b.id));
+        n2Var.presentFragment(qn.W9(-this.b.id));
     }
 
     @Override // ei.i7

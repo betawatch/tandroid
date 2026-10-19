@@ -12,12 +12,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class t8 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public final int b;
@@ -64,15 +64,15 @@ public final class t8 extends org.telegram.ui.ActionBar.f3 implements Notificati
                 Context context2 = t8Var.getContext();
                 org.telegram.ui.ActionBar.d6 d6Var2 = d6Var;
                 org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(context2, 3, d6Var2);
-                b2Var.q(200L);
-                MessagesController.getInstance(i10).getStoriesController().k(DialogObject.getPeerDialogId(inputPeer2), new ai.y3(b2Var, callback2, inputPeer2, 5), true, d6Var2);
+                b2Var.r(200L);
+                MessagesController.getInstance(i10).getStoriesController().k(DialogObject.getPeerDialogId(inputPeer2), new ai.a4(b2Var, callback2, inputPeer2, 5), true, d6Var2);
                 t8Var.dismiss();
             }
         });
         im0Var.setOnScrollListener(new r8(this));
         TextView textView = new TextView(getContext());
         this.n = textView;
-        lk.o(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 20.0f);
+        kk.o(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 20.0f);
         textView.setPadding(AndroidUtilities.dp(22.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(22.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(14.0f));
         textView.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, d6Var));
         textView.setTypeface(AndroidUtilities.bold());
@@ -82,7 +82,7 @@ public final class t8 extends org.telegram.ui.ActionBar.f3 implements Notificati
 
     @Override // org.telegram.ui.ActionBar.f3
     public final boolean canDismissWithSwipe() {
-        return t() > ((float) ((int) (((float) AndroidUtilities.displaySize.y) * 0.5f)));
+        return u() > ((float) ((int) (((float) AndroidUtilities.displaySize.y) * 0.5f)));
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -105,7 +105,7 @@ public final class t8 extends org.telegram.ui.ActionBar.f3 implements Notificati
         NotificationCenter.getInstance(this.b).removeObserver(this, NotificationCenter.storiesSendAsUpdate);
     }
 
-    public final float t() {
+    public final float u() {
         int R;
         float measuredHeight = this.containerView.getMeasuredHeight();
         int i10 = 0;

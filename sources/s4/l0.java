@@ -5,13 +5,14 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
+import ki.t1;
 import m.g3;
 import org.telegram.ui.Components.gl0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public abstract class l0 {
-    public l2.f a;
+    public k2.w0 a;
     public ArrayList b;
     public long c;
     public long d;
@@ -45,9 +46,9 @@ public abstract class l0 {
     public abstract boolean c(b1 b1Var, List list);
 
     public final void d(b1 b1Var) {
-        l2.f fVar = this.a;
-        if (fVar != null) {
-            RecyclerView recyclerView = (RecyclerView) fVar.b;
+        k2.w0 w0Var = this.a;
+        if (w0Var != null) {
+            RecyclerView recyclerView = (RecyclerView) w0Var.b;
             boolean z10 = true;
             b1Var.q(true);
             View view = b1Var.a;
@@ -62,14 +63,14 @@ public abstract class l0 {
             recyclerView.y0();
             g3 g3Var = recyclerView.e;
             ad.d dVar = (ad.d) g3Var.c;
-            ih.g gVar = (ih.g) g3Var.b;
-            int indexOfChild = gVar.a.indexOfChild(view);
+            t1 t1Var = (t1) g3Var.b;
+            int indexOfChild = ((RecyclerView) t1Var.b).indexOfChild(view);
             if (indexOfChild == -1) {
                 g3Var.X(view);
             } else if (dVar.D(indexOfChild)) {
                 dVar.F(indexOfChild);
                 g3Var.X(view);
-                gVar.a(indexOfChild);
+                t1Var.Y(indexOfChild);
             } else {
                 z10 = false;
             }

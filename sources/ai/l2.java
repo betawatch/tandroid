@@ -1,101 +1,174 @@
 package ai;
 
-import android.text.TextUtils;
-import android.text.style.CharacterStyle;
+import android.graphics.Bitmap;
+import android.view.View;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.sn;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class l2 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
+public final /* synthetic */ class l2 implements Utilities.Callback3 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
 
-    public /* synthetic */ l2(k7 k7Var, TLObject tLObject, boolean z10, TLRPC.Document document, boolean z11, TLRPC.TL_error tL_error, TL_stars.saveStarGift savestargift) {
-        this.d = k7Var;
-        this.e = tLObject;
-        this.b = z10;
-        this.f = document;
-        this.c = z11;
-        this.h = tL_error;
-        this.n = savestargift;
+    public /* synthetic */ l2(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+        this.a = i10;
+        this.b = notificationCenterDelegate;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback3
+    public final void run(Object obj, Object obj2, Object obj3) {
+        int i10;
+        ei.t tVar;
         switch (this.a) {
             case 0:
-                k7.a1((k7) this.d, (TLObject) this.e, this.b, (TLRPC.Document) this.f, this.c, (TLRPC.TL_error) this.h, (TL_stars.saveStarGift) this.n);
+                ((l7) this.b).S2((View) obj2, (CharSequence) obj, ((Boolean) obj3).booleanValue());
                 break;
             case 1:
-                sn snVar = (sn) this.d;
-                String str = (String) this.e;
-                CharacterStyle characterStyle = (CharacterStyle) this.f;
-                MessageObject messageObject = (MessageObject) this.h;
-                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.n;
-                if (!str.startsWith("video?")) {
-                    if (this.b && !this.c) {
-                        snVar.getParentActivity();
-                        pf.d.m(str);
-                        break;
-                    } else {
-                        snVar.O9(messageObject, false, false);
-                        snVar.ea(characterStyle, str, false, u1Var, messageObject);
-                        break;
-                    }
-                } else {
-                    snVar.X7(characterStyle, false, messageObject, u1Var);
-                    break;
-                }
+                l7.j0((l7) this.b, (ArrayList) obj, (Utilities.Callback2) obj2, (Runnable) obj3);
                 break;
             default:
-                xh.k kVar = (xh.k) this.d;
-                Runnable runnable = (Runnable) this.f;
-                String str2 = (String) this.n;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.h;
-                TLObject tLObject = (TLObject) this.e;
-                kVar.w = false;
-                kVar.z = true;
-                if (this.b) {
-                    AndroidUtilities.cancelRunOnUIThread(runnable);
-                }
-                xh.k.k(kVar.q, false, false);
-                if (TextUtils.equals(str2, kVar.t) && tL_error == null) {
-                    kVar.z = true;
-                    kVar.g((TLRPC.TL_messages_chatInviteImporters) tLObject, str2, this.c, false);
-                    break;
+                ei.vb vbVar = (ei.vb) this.b;
+                Boolean bool = (Boolean) obj;
+                ArrayList arrayList = (ArrayList) obj2;
+                ArrayList arrayList2 = (ArrayList) obj3;
+                if (vbVar.f0 == 0 && arrayList != null && !arrayList.isEmpty() && vbVar.p2 == null && !vbVar.W && vbVar.I()) {
+                    vbVar.H1 = null;
+                    vbVar.I1 = null;
+                    vbVar.J1 = null;
+                    if (bool.booleanValue()) {
+                        if (arrayList.size() + vbVar.A0.getFilledCount() > vbVar.A0.getTotalCount()) {
+                            int size = arrayList.size() + vbVar.A0.getFilledCount();
+                            ArrayList a2 = ei.t.a();
+                            int size2 = a2.size();
+                            int i11 = 0;
+                            while (true) {
+                                if (i11 < size2) {
+                                    Object obj4 = a2.get(i11);
+                                    i11++;
+                                    tVar = (ei.t) obj4;
+                                    if (tVar.e.size() >= size) {
+                                    }
+                                } else {
+                                    tVar = null;
+                                }
+                            }
+                            if (tVar == null) {
+                                vbVar.A0.o(null);
+                                vbVar.A0.e();
+                                vbVar.I0.setSelected((ei.t) null);
+                                ei.ya yaVar = vbVar.B0;
+                                if (yaVar != null) {
+                                    yaVar.recordHevc = !vbVar.A0.j();
+                                }
+                                vbVar.I0.a(false, true);
+                                vbVar.l0(true);
+                                break;
+                            } else {
+                                ei.ib ibVar = vbVar.A0;
+                                vbVar.z0 = tVar;
+                                ibVar.o(tVar);
+                                vbVar.I0.setSelected(tVar);
+                                int indexOf = ei.t.a().indexOf(tVar);
+                                if (indexOf >= 0) {
+                                    vbVar.I0.a.u0(indexOf);
+                                }
+                                ei.ya yaVar2 = vbVar.B0;
+                                if (yaVar2 != null) {
+                                    yaVar2.recordHevc = !vbVar.A0.j();
+                                }
+                                vbVar.G0.setDrawable(new ei.u(tVar, false));
+                                vbVar.b0(vbVar.H0, vbVar.I0.e, true);
+                                vbVar.O0.e(vbVar.A0.j() ? vbVar.A0.getFilledProgress() : 0.0f, true);
+                            }
+                        }
+                    }
+                    vbVar.L1 = true;
+                    int i12 = 0;
+                    while (true) {
+                        if (i12 < arrayList.size()) {
+                            ei.a8 l4 = ei.a8.l((MediaController.PhotoEntry) arrayList.get(i12));
+                            l4.M0 = (Bitmap) arrayList2.get(i12);
+                            l4.J0 = vbVar.v0;
+                            l4.K0 = vbVar.w0;
+                            l4.A();
+                            if (!bool.booleanValue()) {
+                                if (vbVar.K1 == null) {
+                                    vbVar.K1 = l4;
+                                } else {
+                                    if (vbVar.H1 == null) {
+                                        ArrayList arrayList3 = new ArrayList();
+                                        vbVar.H1 = arrayList3;
+                                        arrayList3.add(vbVar.K1);
+                                    }
+                                    if (vbVar.H1.size() < 10) {
+                                        vbVar.H1.add(l4);
+                                    }
+                                }
+                                i12++;
+                            } else if (vbVar.A0.l(l4)) {
+                                vbVar.K1 = ei.a8.a(vbVar.A0.getLayout(), vbVar.A0.getContent());
+                            } else {
+                                i12++;
+                            }
+                        }
+                    }
+                    if (vbVar.H1 != null) {
+                        vbVar.h0(false, true);
+                        vbVar.Q0.a(vbVar.O1);
+                        ei.z6 z6Var = vbVar.O0;
+                        boolean z10 = vbVar.O1 == 1;
+                        z6Var.n0 = -1.0f;
+                        z6Var.o0 = z10;
+                        z6Var.invalidate();
+                        vbVar.I1 = new ArrayList();
+                        vbVar.J1 = new ArrayList();
+                        for (int i13 = 0; i13 < vbVar.H1.size(); i13 = com.google.android.gms.internal.play_billing.k3.f(i13, i13, 1, vbVar.J1)) {
+                            vbVar.I1.add(Integer.valueOf(i13));
+                        }
+                        vbVar.A0.n(null);
+                        vbVar.I0.a(false, true);
+                        vbVar.l0(true);
+                        vbVar.e(false);
+                        vbVar.J(1, true);
+                        ei.ma maVar = vbVar.d1;
+                        if (maVar != null) {
+                            com.google.firebase.messaging.s sVar = maVar.h;
+                            if (!maVar.I && !maVar.M && (i10 = MessagesController.getGlobalMainSettings().getInt("multistorieshint", 0)) < 3) {
+                                MessagesController.getGlobalMainSettings().edit().putInt("multistorieshint", i10 + 1).apply();
+                                AndroidUtilities.cancelRunOnUIThread(sVar);
+                                maVar.I = true;
+                                maVar.invalidate();
+                                AndroidUtilities.runOnUIThread(sVar, 5500L);
+                            }
+                        }
+                        ei.ua uaVar = vbVar.M0;
+                        if (uaVar != null) {
+                            vbVar.l2 = uaVar.e.e0();
+                            vbVar.m2 = vbVar.M0.getSelectedAlbum();
+                            break;
+                        }
+                    } else {
+                        ei.a8 a8Var = vbVar.K1;
+                        if (a8Var != null) {
+                            a8Var.B();
+                        }
+                        vbVar.I0.a(false, true);
+                        vbVar.l0(true);
+                        vbVar.e(false);
+                        ei.ua uaVar2 = vbVar.M0;
+                        if (uaVar2 != null) {
+                            vbVar.l2 = uaVar2.e.e0();
+                            vbVar.m2 = vbVar.M0.getSelectedAlbum();
+                            break;
+                        }
+                    }
                 }
                 break;
         }
-    }
-
-    public /* synthetic */ l2(sn snVar, String str, CharacterStyle characterStyle, MessageObject messageObject, org.telegram.ui.Cells.u1 u1Var, boolean z10, boolean z11) {
-        this.d = snVar;
-        this.e = str;
-        this.f = characterStyle;
-        this.h = messageObject;
-        this.n = u1Var;
-        this.b = z10;
-        this.c = z11;
-    }
-
-    public /* synthetic */ l2(xh.k kVar, boolean z10, Runnable runnable, String str, TLRPC.TL_error tL_error, TLObject tLObject, boolean z11) {
-        this.d = kVar;
-        this.b = z10;
-        this.f = runnable;
-        this.n = str;
-        this.h = tL_error;
-        this.e = tLObject;
-        this.c = z11;
     }
 }

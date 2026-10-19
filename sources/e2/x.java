@@ -10,7 +10,7 @@ import v7.b8;
 import v7.f8;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class x {
     public static final char[] d = {'\r', '\n'};
@@ -92,7 +92,7 @@ public final class x {
         if (m10 >= 0) {
             return m10;
         }
-        throw new IllegalStateException(i2.d.j(m10, "Top bit not zero: "));
+        throw new IllegalStateException(i2.e.j(m10, "Top bit not zero: "));
     }
 
     public final int F() {
@@ -231,7 +231,7 @@ public final class x {
         if (!g.get() || a() >= i10) {
             return;
         }
-        StringBuilder l4 = i2.d.l(i10, "bytesNeeded= ", ", bytesLeft=");
+        StringBuilder l4 = i2.e.l(i10, "bytesNeeded= ", ", bytesLeft=");
         l4.append(a());
         throw new IndexOutOfBoundsException(l4.toString());
     }
@@ -479,7 +479,7 @@ public final class x {
         if (o10 >= 0) {
             return o10;
         }
-        throw new IllegalStateException(i2.d.j(o10, "Top bit not zero: "));
+        throw new IllegalStateException(i2.e.j(o10, "Top bit not zero: "));
     }
 
     public final int t() {

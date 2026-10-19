@@ -2,137 +2,51 @@ package ai;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RadialGradient;
-import android.graphics.Shader;
+import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class z5 extends View {
     public final Paint a;
-    public final Paint b;
-    public final Paint c;
-    public final RadialGradient[] d;
-    public final Matrix e;
-    public final org.telegram.ui.Components.f6 f;
-    public final RadialGradient h;
-    public final Path n;
-    public int r;
-    public int s;
+    public final org.telegram.ui.Components.f6 b;
+    public final org.telegram.ui.Components.f6 c;
+    public float d;
+    public float e;
 
     public z5(Context context) {
         super(context);
-        this.a = new Paint(1);
-        this.b = new Paint(1);
         Paint paint = new Paint(1);
-        this.c = paint;
-        this.d = new RadialGradient[2];
-        this.e = new Matrix();
-        this.f = new org.telegram.ui.Components.f6(1.0f, this, 0L, 420L, bs.h);
-        this.h = new RadialGradient(0.0f, 0.0f, 100.0f, new int[]{0, -1, -1, 0}, new float[]{0.15f, 0.35f, 0.65f, 0.88f}, Shader.TileMode.CLAMP);
-        this.n = new Path();
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-    }
-
-    public final void a(int i10, int i11) {
-        if (this.r == i10 && this.s == i11) {
-            return;
-        }
-        RadialGradient[] radialGradientArr = this.d;
-        radialGradientArr[0] = radialGradientArr[1];
-        this.r = i10;
-        this.s = i11;
-        radialGradientArr[1] = new RadialGradient(0.0f, 0.0f, 100.0f, new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        this.f.d(0.0f, true);
-        invalidate();
+        this.a = paint;
+        int i10 = 17;
+        a3.d dVar = new a3.d(this, i10);
+        bs bsVar = bs.h;
+        this.b = new org.telegram.ui.Components.f6(dVar, 420L, bsVar, 0);
+        this.c = new org.telegram.ui.Components.f6(new a3.d(this, i10), 420L, bsVar, 0);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
     }
 
     @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float f7;
-        Paint paint;
-        float f10 = 1.0f;
-        int i10 = 0;
-        float d = this.f.d(1.0f, false);
-        float currentTimeMillis = ((System.currentTimeMillis() % 15000) / 15000.0f) * 360.0f;
-        float f11 = 0.0f;
-        if (getAlpha() > 0.0f) {
-            invalidate();
-        }
-        Paint.Style style = Paint.Style.STROKE;
-        Paint paint2 = this.b;
-        paint2.setStyle(style);
-        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        Path path = this.n;
-        path.rewind();
+    public final void dispatchDraw(Canvas canvas) {
+        float d = this.b.d(this.d, false);
+        float e = this.c.e(this.d > 0.0f);
         float width = getWidth() / 2.0f;
         float height = getHeight() / 2.0f;
-        float min = Math.min(getWidth(), getHeight()) / 2.0f;
-        int i11 = 0;
-        while (i11 < 6) {
-            float c10 = r4.c.c(i11, 60.0f, 12.5f, currentTimeMillis);
-            path.moveTo(width, height);
-            double d10 = ((c10 - 12.5f) / 180.0f) * 3.141592653589793d;
-            path.lineTo((((float) Math.cos(d10)) * min) + width, (((float) Math.sin(d10)) * min) + height);
-            double d11 = ((c10 + 12.5f) / 180.0f) * 3.141592653589793d;
-            path.lineTo((((float) Math.cos(d11)) * min) + width, (((float) Math.sin(d11)) * min) + height);
-            path.lineTo(width, height);
-            i11++;
-            f10 = f10;
-        }
-        float f12 = f10;
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        while (true) {
-            RadialGradient[] radialGradientArr = this.d;
-            int length = radialGradientArr.length;
-            Matrix matrix = this.e;
-            if (i10 >= length) {
-                matrix.reset();
-                float f13 = min / 100.0f;
-                matrix.postScale(f13, f13);
-                matrix.postTranslate(width, height);
-                RadialGradient radialGradient = this.h;
-                radialGradient.setLocalMatrix(matrix);
-                Paint paint3 = this.c;
-                paint3.setShader(radialGradient);
-                canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint3);
-                canvas.restore();
-                return;
-            }
-            if (radialGradientArr[i10] == null) {
-                f7 = f11;
-                paint = paint2;
-            } else {
-                f7 = f11;
-                paint = paint2;
-                float pow = (float) Math.pow(f12 - Math.abs(i10 - d), 0.5d);
-                if (pow > f7) {
-                    matrix.reset();
-                    float f14 = min / 100.0f;
-                    matrix.postScale(f14, f14);
-                    matrix.postTranslate(width, height);
-                    radialGradientArr[i10].setLocalMatrix(matrix);
-                    RadialGradient radialGradient2 = radialGradientArr[i10];
-                    Paint paint4 = this.a;
-                    paint4.setShader(radialGradient2);
-                    float f15 = pow * 255.0f;
-                    paint4.setAlpha((int) (0.3f * f15));
-                    paint.setShader(radialGradientArr[i10]);
-                    paint.setAlpha((int) f15);
-                    canvas.drawPath(path, paint4);
-                    canvas.drawPath(path, paint);
-                }
-            }
-            i10++;
-            f11 = f7;
-            paint2 = paint;
+        float f7 = this.e;
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(width - f7, height - f7, width + f7, height + f7);
+        int m12 = org.telegram.ui.ActionBar.h6.m1(0.25f, -1);
+        Paint paint = this.a;
+        paint.setColor(m12);
+        canvas.drawArc(rectF, 135.0f, 270.0f, false, paint);
+        if (e > 0.0f) {
+            paint.setColor(org.telegram.ui.ActionBar.h6.m1(e, -1));
+            canvas.drawArc(rectF, 135.0f, d * 270.0f, false, paint);
         }
     }
 }

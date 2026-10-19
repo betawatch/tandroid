@@ -13,13 +13,13 @@ import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.cl0;
 import org.telegram.ui.Components.r5;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.i51;
-import org.telegram.ui.sn;
-import org.telegram.ui.z51;
+import org.telegram.ui.g51;
+import org.telegram.ui.qn;
+import org.telegram.ui.x51;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class n0 extends z51 {
+public final class n0 extends x51 {
     public final /* synthetic */ cl0 d2;
     public final /* synthetic */ n2 e2;
     public final /* synthetic */ t0 f2;
@@ -32,12 +32,12 @@ public final class n0 extends z51 {
         this.e2 = n2Var2;
     }
 
-    @Override // org.telegram.ui.z51
+    @Override // org.telegram.ui.x51
     public final void m() {
         this.f2.a.invalidate();
     }
 
-    @Override // org.telegram.ui.z51
+    @Override // org.telegram.ui.x51
     public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
         v vVar = this.f2.c;
         cl0 cl0Var = this.d2;
@@ -64,7 +64,7 @@ public final class n0 extends z51 {
         AndroidUtilities.hideKeyboard(vVar);
     }
 
-    @Override // org.telegram.ui.z51
+    @Override // org.telegram.ui.x51
     public final void q() {
         t0 t0Var = this.f2;
         if (t0Var.v) {
@@ -75,26 +75,26 @@ public final class n0 extends z51 {
             t0Var.b.updateViewLayout(t0Var.c, t0Var.b(true));
         }
         n2 n2Var = this.e2;
-        if (n2Var instanceof sn) {
-            ((sn) n2Var).U9();
+        if (n2Var instanceof qn) {
+            ((qn) n2Var).U9();
         }
         cl0 cl0Var = this.d2;
         if (cl0Var.getDelegate() != null) {
-            cl0Var.getDelegate().k();
+            cl0Var.getDelegate().m();
         }
     }
 
-    @Override // org.telegram.ui.z51
-    public final void r(i51 i51Var, i1 i1Var) {
-        this.d2.l(i51Var, i1Var, false);
+    @Override // org.telegram.ui.x51
+    public final void r(g51 g51Var, i1 i1Var) {
+        this.d2.l(g51Var, i1Var, false);
         AndroidUtilities.hideKeyboard(this.f2.c);
     }
 
-    @Override // org.telegram.ui.z51
+    @Override // org.telegram.ui.x51
     public final boolean u() {
         cl0 cl0Var = this.d2;
         if (cl0Var.getDelegate() != null) {
-            return cl0Var.getDelegate().k();
+            return cl0Var.getDelegate().m();
         }
         return false;
     }

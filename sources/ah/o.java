@@ -1,15 +1,14 @@
 package ah;
 
-import ai.b6;
 import ai.c6;
 import ai.d6;
+import ai.e6;
 import ai.ga;
-import ai.t6;
+import ai.u6;
 import ai.ua;
 import ai.ub;
-import ai.w5;
-import ai.w6;
-import ai.z5;
+import ai.x5;
+import ai.x6;
 import android.content.Context;
 import android.graphics.SurfaceTexture;
 import android.text.Editable;
@@ -17,9 +16,9 @@ import android.util.Pair;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
-import ci.p9;
+import ci.aa;
 import ci.q9;
-import ci.z9;
+import ci.r9;
 import ei.f6;
 import ei.yb;
 import gi.f4;
@@ -31,6 +30,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
 import ki.e3;
 import ki.o5;
 import ki.r5;
+import ki.w5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotGuardHelper;
 import org.telegram.messenger.LocaleController;
@@ -57,8 +57,9 @@ import org.telegram.ui.Components.xj0;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 import org.telegram.ui.l4;
 import rg.r1;
+import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -95,54 +96,54 @@ public final /* synthetic */ class o implements Runnable {
                 }
                 break;
             case 1:
-                d6 d6Var = (d6) this.c;
+                e6 e6Var = (e6) this.c;
                 int i14 = this.b;
                 TL_stars.StarGift starGift = (TL_stars.StarGift) this.d;
-                int[] iArr = d6Var.V;
-                z5 z5Var = d6Var.f;
-                w5 w5Var = d6Var.h;
+                int[] iArr = e6Var.V;
+                ai.a6 a6Var2 = e6Var.f;
+                x5 x5Var = e6Var.h;
                 int i15 = 2;
                 if (starGift == null) {
-                    FrameLayout frameLayout = new FrameLayout(d6Var.getContext());
-                    xj0 xj0Var = new xj0(d6Var.getContext());
+                    FrameLayout frameLayout = new FrameLayout(e6Var.getContext());
+                    xj0 xj0Var = new xj0(e6Var.getContext());
                     xj0Var.f(R.raw.gift_broken, 32, 32, null);
-                    frameLayout.addView(xj0Var, w7.z5.e(32, 32, 17));
+                    frameLayout.addView(xj0Var, z5.e(32, 32, 17));
                     xj0Var.setScaleX(0.5f);
                     xj0Var.setScaleY(0.5f);
                     xj0Var.setAlpha(0.0f);
                     xj0Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).start();
-                    d6Var.l0 = xj0Var;
-                    frameLayout.setBackground(new t6(AndroidUtilities.dp(12.0f), h6.m1(0.075f, -1)));
-                    w5Var.a[i14].setVisibility(8);
+                    e6Var.l0 = xj0Var;
+                    frameLayout.setBackground(new u6(AndroidUtilities.dp(12.0f), h6.m1(0.075f, -1)));
+                    x5Var.a[i14].setVisibility(8);
                     frameLayout.setRotation(180.0f);
-                    w5Var.f(i14, frameLayout);
-                    d6Var.F.a(iArr[2], iArr[3]);
-                    c6 c6Var = d6Var.b;
-                    int[] iArr2 = d6Var.U;
-                    c6Var.a(iArr2[2], iArr2[3]);
-                    z5Var.a(iArr[3], iArr[2]);
+                    x5Var.f(i14, frameLayout);
+                    e6Var.F.a(iArr[2], iArr[3]);
+                    d6 d6Var = e6Var.b;
+                    int[] iArr2 = e6Var.U;
+                    d6Var.a(iArr2[2], iArr2[3]);
+                    a6Var2.a(iArr[3], iArr[2]);
                     break;
                 } else {
-                    b6 b6Var = new b6(d6Var.getContext());
-                    b6Var.a(starGift, false);
-                    b6Var.setRotation(180.0f);
-                    w5Var.f(i14, b6Var);
-                    b6Var.setScaleX(0.5f);
-                    b6Var.setScaleY(0.5f);
-                    b6Var.setAlpha(0.0f);
-                    ViewPropertyAnimator duration = b6Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(520L);
+                    c6 c6Var = new c6(e6Var.getContext());
+                    c6Var.a(starGift, false);
+                    c6Var.setRotation(180.0f);
+                    x5Var.f(i14, c6Var);
+                    c6Var.setScaleX(0.5f);
+                    c6Var.setScaleY(0.5f);
+                    c6Var.setAlpha(0.0f);
+                    ViewPropertyAnimator duration = c6Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(520L);
                     bs bsVar = bs.h;
                     ViewPropertyAnimator interpolator = duration.setInterpolator(bsVar);
-                    interpolator.setUpdateListener(new c0(d6Var, i15));
+                    interpolator.setUpdateListener(new c0(e6Var, i15));
                     interpolator.start();
-                    w5Var.a[i14].setVisibility(8);
-                    z5Var.setVisibility(0);
-                    z5Var.setAlpha(0.0f);
-                    z5Var.animate().alpha(0.5f).setDuration(820L).setInterpolator(bsVar).start();
+                    x5Var.a[i14].setVisibility(8);
+                    a6Var2.setVisibility(0);
+                    a6Var2.setAlpha(0.0f);
+                    a6Var2.animate().alpha(0.5f).setDuration(820L).setInterpolator(bsVar).start();
                     break;
                 }
             case 2:
-                ((Utilities.Callback3) this.d).run(LocaleController.formatString(R.string.Gift2RarityHint, gi.l.H0(this.b)), (w6) this.c, Boolean.FALSE);
+                ((Utilities.Callback3) this.d).run(LocaleController.formatString(R.string.Gift2RarityHint, gi.l.H0(this.b)), (x6) this.c, Boolean.FALSE);
                 break;
             case 3:
                 ga gaVar = (ga) this.c;
@@ -195,18 +196,18 @@ public final /* synthetic */ class o implements Runnable {
                 uaVar.run(null);
                 break;
             case 7:
-                q9 q9Var = (q9) this.c;
+                r9 r9Var = (r9) this.c;
                 ArrayList arrayList2 = (ArrayList) this.d;
                 int i20 = this.b;
-                z9 z9Var = q9Var.d;
-                p9 p9Var = z9Var.n0;
-                int i21 = z9Var.h;
-                p9Var.A0 = arrayList2;
-                p9Var.y0 = i21;
-                p9Var.setAdapter(null);
-                p9Var.setAdapter(p9Var.z0);
-                p9Var.setCurrentItem(i20);
-                p9Var.C0 = true;
+                aa aaVar = r9Var.d;
+                q9 q9Var = aaVar.n0;
+                int i21 = aaVar.h;
+                q9Var.A0 = arrayList2;
+                q9Var.y0 = i21;
+                q9Var.setAdapter(null);
+                q9Var.setAdapter(q9Var.z0);
+                q9Var.setCurrentItem(i20);
+                q9Var.C0 = true;
                 break;
             case 8:
                 CopyOnWriteArraySet copyOnWriteArraySet = (CopyOnWriteArraySet) this.c;
@@ -296,9 +297,9 @@ public final /* synthetic */ class o implements Runnable {
                 }
                 break;
             case 17:
-                i2.e1 e1Var = (i2.e1) this.c;
+                i2.f1 f1Var = (i2.f1) this.c;
                 Pair pair = (Pair) this.d;
-                e1Var.b.h.a(((Integer) pair.first).intValue(), (u2.g0) pair.second, this.b);
+                f1Var.b.h.a(((Integer) pair.first).intValue(), (u2.g0) pair.second, this.b);
                 break;
             case 18:
                 ig.y yVar = (ig.y) this.c;
@@ -318,10 +319,10 @@ public final /* synthetic */ class o implements Runnable {
                 }
                 break;
             case 20:
-                ki.w5 w5Var2 = (ki.w5) this.c;
+                w5 w5Var = (w5) this.c;
                 ki.a aVar = (ki.a) this.d;
                 int i30 = this.b;
-                ki.c6 c6Var2 = w5Var2.a;
+                ki.c6 c6Var2 = w5Var.a;
                 if (c6Var2.y != null) {
                     ki.c6.f(aVar.b, "");
                     ((e3) c6Var2.y).c(aVar, i30);

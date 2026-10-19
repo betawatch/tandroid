@@ -1,30 +1,31 @@
 package org.telegram.messenger;
 
-import java.util.function.ToLongFunction;
-import org.telegram.messenger.NotificationsController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
-public final /* synthetic */ class he implements ToLongFunction {
+public final /* synthetic */ class he implements RequestDelegate {
     public final /* synthetic */ int a;
+    public final /* synthetic */ Utilities.Callback4 b;
 
-    public /* synthetic */ he(int i10) {
+    public /* synthetic */ he(Utilities.Callback4 callback4, int i10) {
         this.a = i10;
+        this.b = callback4;
     }
 
-    @Override // java.util.function.ToLongFunction
-    public final long applyAsLong(Object obj) {
-        long j10;
-        long j11;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                return Long.parseLong((String) obj);
-            case 1:
-                j10 = ((NotificationsController.StoryNotification) obj).date;
-                return j10;
+                MessagesController.1.lambda$getRemote$0(this.b, tLObject, tL_error);
+                break;
             default:
-                j11 = ((NotificationsController.StoryNotification) obj).date;
-                return j11;
+                MessagesController.4.lambda$getRemote$0(this.b, tLObject, tL_error);
+                break;
         }
     }
 }

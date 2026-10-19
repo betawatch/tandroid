@@ -9,7 +9,7 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
-import ci.k4;
+import ci.l4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -24,13 +24,13 @@ import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yq;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public abstract class c extends FrameLayout {
     public final d6 a;
     public final h9 b;
     public final w9 c;
-    public final k4 d;
+    public final l4 d;
     public final j5 e;
     public final RadioButton f;
     public final Paint h;
@@ -52,15 +52,15 @@ public abstract class c extends FrameLayout {
         this.c = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
         addView(w9Var);
-        k4 k4Var = new k4(context, 5);
-        this.d = k4Var;
-        NotificationCenter.listenEmojiLoading(k4Var);
+        l4 l4Var = new l4(context, 5);
+        this.d = l4Var;
+        NotificationCenter.listenEmojiLoading(l4Var);
         NotificationCenter.listenEmojiLoading(w9Var);
-        k4Var.setTextSize(16);
+        l4Var.setTextSize(16);
         int i10 = h6.j5;
-        k4Var.setTextColor(h6.w0(i10, d6Var));
-        k4Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(k4Var);
+        l4Var.setTextColor(h6.w0(i10, d6Var));
+        l4Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        addView(l4Var);
         j5 j5Var = new j5(context);
         this.e = j5Var;
         j5Var.setTextSize(14);
@@ -175,23 +175,23 @@ public abstract class c extends FrameLayout {
 
     public void setSubtitle(CharSequence charSequence) {
         boolean isEmpty = TextUtils.isEmpty(charSequence);
-        k4 k4Var = this.d;
+        l4 l4Var = this.d;
         j5 j5Var = this.e;
         if (isEmpty) {
-            k4Var.setTranslationY(0.0f);
+            l4Var.setTranslationY(0.0f);
             j5Var.setVisibility(8);
         } else {
-            k4Var.setTranslationY(AndroidUtilities.dp(-9.0f));
+            l4Var.setTranslationY(AndroidUtilities.dp(-9.0f));
             j5Var.setTranslationY(AndroidUtilities.dp(12.0f));
             j5Var.l(charSequence, false);
             j5Var.setVisibility(0);
         }
         if (this.c.getVisibility() == 8) {
             if (LocaleController.isRTL) {
-                k4Var.setTranslationX(AndroidUtilities.dp(40.0f));
+                l4Var.setTranslationX(AndroidUtilities.dp(40.0f));
                 j5Var.setTranslationX(AndroidUtilities.dp(40.0f));
             } else {
-                k4Var.setTranslationX(AndroidUtilities.dp(-40.0f));
+                l4Var.setTranslationX(AndroidUtilities.dp(-40.0f));
                 j5Var.setTranslationX(AndroidUtilities.dp(-40.0f));
             }
         }

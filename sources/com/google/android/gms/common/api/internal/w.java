@@ -20,7 +20,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import m.s3;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class w implements w0 {
     public final Context a;
@@ -44,7 +44,7 @@ public final class w implements w0 {
         this.o = reentrantLock;
         this.c = looper;
         this.j = cVar;
-        this.d = new l0(context, i0Var, reentrantLock, looper, eVar, fVar2, null, fVar4, null, arrayList2, new a6.m(this, 14));
+        this.d = new l0(context, i0Var, reentrantLock, looper, eVar, fVar2, null, fVar4, null, arrayList2, new qb.c(this, 14));
         this.e = new l0(context, i0Var, reentrantLock, looper, eVar, fVar, s3Var, fVar3, dVar, arrayList, new ya.d(this, 11));
         a0.f fVar5 = new a0.f(0);
         Iterator it = ((a0.c) fVar2.keySet()).iterator();
@@ -111,7 +111,7 @@ public final class w implements w0 {
             } else {
                 i0 i0Var = wVar.b;
                 n6.l.h(i0Var);
-                i0Var.o(wVar.k);
+                i0Var.p(wVar.k);
             }
         }
         wVar.i();
@@ -159,7 +159,7 @@ public final class w implements w0 {
             l0 l0Var2 = this.d;
             l0Var2.getClass();
             eVar.l();
-            return l0Var2.m.B(eVar);
+            return l0Var2.m.D(eVar);
         }
         if (j()) {
             com.google.android.gms.common.api.c cVar = this.j;
@@ -169,7 +169,7 @@ public final class w implements w0 {
         l0 l0Var3 = this.e;
         l0Var3.getClass();
         eVar.l();
-        return l0Var3.m.B(eVar);
+        return l0Var3.m.D(eVar);
     }
 
     @Override // com.google.android.gms.common.api.internal.w0

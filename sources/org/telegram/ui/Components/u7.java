@@ -4,7 +4,7 @@ import android.content.Context;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class u7 extends ld {
     public final /* synthetic */ int b;
@@ -23,9 +23,9 @@ public final class u7 extends ld {
             case 0:
                 k8 k8Var = (k8) this.c;
                 k8Var.d();
-                org.telegram.ui.nr nrVar = k8Var.O;
-                if (nrVar != null) {
-                    nrVar.a(b5.d.u());
+                org.telegram.ui.lr lrVar = k8Var.O;
+                if (lrVar != null) {
+                    lrVar.a(b5.d.u());
                     break;
                 }
                 break;
@@ -36,13 +36,13 @@ public final class u7 extends ld {
                     e1Var.d(z10);
                     photoViewer.F0.setSelectorColor(z10 ? 259241196 : 268435455);
                 }
-                a81 a81Var = photoViewer.F2;
-                if (a81Var != null) {
-                    a81Var.O(b5.d.u() || photoViewer.r);
+                b81 b81Var = photoViewer.F2;
+                if (b81Var != null) {
+                    b81Var.O(b5.d.u() || photoViewer.r);
                 }
-                org.telegram.ui.nr nrVar2 = photoViewer.w0;
-                if (nrVar2 != null) {
-                    nrVar2.a(b5.d.u());
+                org.telegram.ui.lr lrVar2 = photoViewer.w0;
+                if (lrVar2 != null) {
+                    lrVar2.a(b5.d.u());
                     break;
                 }
                 break;

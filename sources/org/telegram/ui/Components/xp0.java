@@ -4,26 +4,26 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xp0 implements r0.n, org.telegram.ui.ActionBar.k1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ dr0 b;
+    public final /* synthetic */ er0 b;
 
-    public /* synthetic */ xp0(dr0 dr0Var, int i10) {
+    public /* synthetic */ xp0(er0 er0Var, int i10) {
         this.a = i10;
-        this.b = dr0Var;
+        this.b = er0Var;
     }
 
     @Override // r0.n
     public r0.k1 B0(View view, r0.k1 k1Var) {
         WindowInsets g10 = k1Var.g();
-        dr0 dr0Var = this.b;
-        dr0Var.processLegacyContainerInsets(g10);
+        er0 er0Var = this.b;
+        er0Var.processLegacyContainerInsets(g10);
         i0.b f7 = k1Var.a.f(519);
-        if (!dr0Var.G0.equals(f7)) {
-            dr0Var.G0 = f7;
-            dr0Var.container.requestLayout();
+        if (!er0Var.H0.equals(f7)) {
+            er0Var.H0 = f7;
+            er0Var.container.requestLayout();
         }
         return r0.k1.b;
     }
@@ -34,18 +34,18 @@ public final /* synthetic */ class xp0 implements r0.n, org.telegram.ui.ActionBa
         org.telegram.ui.ActionBar.m1 m1Var2;
         switch (this.a) {
             case 1:
-                dr0 dr0Var = this.b;
-                dr0Var.getClass();
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (m1Var = dr0Var.J0) != null && m1Var.isShowing()) {
-                    dr0Var.J0.d(true);
+                er0 er0Var = this.b;
+                er0Var.getClass();
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (m1Var = er0Var.K0) != null && m1Var.isShowing()) {
+                    er0Var.K0.d(true);
                     break;
                 }
                 break;
             default:
-                dr0 dr0Var2 = this.b;
-                dr0Var2.getClass();
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (m1Var2 = dr0Var2.J0) != null && m1Var2.isShowing()) {
-                    dr0Var2.J0.d(true);
+                er0 er0Var2 = this.b;
+                er0Var2.getClass();
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (m1Var2 = er0Var2.K0) != null && m1Var2.isShowing()) {
+                    er0Var2.K0.d(true);
                     break;
                 }
                 break;

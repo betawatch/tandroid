@@ -16,7 +16,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class j0 {
     public int a;
@@ -168,7 +168,7 @@ public class j0 {
         return obj;
     }
 
-    public int i(c5.b0 b0Var, int[] iArr) {
+    public int i(c5.c0 c0Var, int[] iArr) {
         int i10 = this.a;
         while (true) {
             int i11 = 1;
@@ -181,7 +181,7 @@ public class j0 {
                 int i14 = i10 - 1;
                 int i15 = 0;
                 while (i14 >= 0) {
-                    if (b0Var.o(i13 + i14)) {
+                    if (c0Var.o(i13 + i14)) {
                         i15 += i11;
                     }
                     i14--;

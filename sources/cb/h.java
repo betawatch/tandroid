@@ -1,6 +1,5 @@
 package cb;
 
-import a6.m;
 import ab.f0;
 import android.content.Context;
 import android.os.Bundle;
@@ -8,12 +7,12 @@ import org.telegram.tgnet.TLObject;
 import v7.i8;
 import w7.s;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class h {
     public static final f c = new f();
     public static final m1.c d = s.a(ab.s.b);
-    public final m a;
+    public final qb.c a;
     public final d b;
 
     public h(l9.h hVar, kd.h hVar2, kd.h hVar3, ra.d dVar) {
@@ -22,11 +21,11 @@ public final class h {
         kotlin.jvm.internal.i.d(context, "firebaseApp.applicationContext");
         f0 f0Var = f0.a;
         ab.b a2 = f0.a(hVar);
-        m mVar = new m(context);
+        qb.c cVar = new qb.c(context);
         androidx.biometric.e eVar = new androidx.biometric.e(a2, hVar2);
         c.getClass();
         d dVar2 = new d(hVar3, dVar, a2, eVar, d.a(context, f.a[0]));
-        this.a = mVar;
+        this.a = cVar;
         this.b = dVar2;
     }
 

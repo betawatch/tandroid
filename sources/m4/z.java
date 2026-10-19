@@ -1,7 +1,7 @@
 package m4;
 
 import ai.ua;
-import ai.x7;
+import ai.y7;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -42,10 +42,10 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.wo0;
-import org.telegram.ui.v21;
+import org.telegram.ui.t21;
 import v7.u6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
@@ -213,9 +213,9 @@ public final /* synthetic */ class z implements Runnable {
                 o2.j jVar = (o2.j) this.c;
                 le.b bVar = qVar3.c;
                 Uri uri = jVar.x;
-                p2.c cVar = (p2.c) ((o2.k) bVar.b).b.d.get(uri);
-                if (cVar != null) {
-                    p2.c.b(cVar, uri, true);
+                p2.d dVar2 = (p2.d) ((o2.k) bVar.b).b.d.get(uri);
+                if (dVar2 != null) {
+                    p2.d.b(dVar2, uri, true);
                     return;
                 }
                 return;
@@ -257,7 +257,7 @@ public final /* synthetic */ class z implements Runnable {
                 ((VideoAds) this.b).lambda$show$16((Utilities.Callback) this.c);
                 return;
             case 12:
-                v21.U((Context) this.b, null, false, (ci.k0) this.c, null);
+                t21.U((Context) this.b, null, false, (ci.k0) this.c, null);
                 return;
             case 13:
                 ((ConferenceCall) this.b).lambda$processUpdates$4((TLRPC.Updates) this.c);
@@ -406,7 +406,7 @@ public final /* synthetic */ class z implements Runnable {
                 if (bitmap != null) {
                     bitmap.recycle();
                 }
-                AndroidUtilities.runOnUIThread(new x7(c6Var2, arrayList5, (boolean) r11, 13));
+                AndroidUtilities.runOnUIThread(new y7(c6Var2, arrayList5, (boolean) r11, 13));
                 return;
             case 28:
                 g6 g6Var = (g6) this.b;

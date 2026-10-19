@@ -9,7 +9,7 @@ import android.view.ViewConfiguration;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public class yx extends gn0 {
     public boolean A0;
@@ -159,9 +159,9 @@ public class yx extends gn0 {
                 if (fVar.d()) {
                     chatActivityEnterView.E3 = false;
                     if ((!fVar.b || yVelocity < AndroidUtilities.dp(200.0f)) && ((fVar.b || yVelocity > AndroidUtilities.dp(-200.0f)) && ((!(z10 = fVar.b) || chatActivityEnterView.C3 > 0.6f) && (z10 || chatActivityEnterView.C3 < 0.4f)))) {
-                        chatActivityEnterView.l1(z10, true, true, true);
+                        chatActivityEnterView.k1(z10, true, true, true);
                     } else {
-                        chatActivityEnterView.l1(!fVar.b, true, true, true);
+                        chatActivityEnterView.k1(!fVar.b, true, true, true);
                     }
                 }
             } else {
@@ -169,7 +169,7 @@ public class yx extends gn0 {
                 ChatActivityEnterView chatActivityEnterView2 = (ChatActivityEnterView) fVar2.c;
                 if (chatActivityEnterView2.x3) {
                     chatActivityEnterView2.E3 = false;
-                    chatActivityEnterView2.l1(fVar2.b, true, false, true);
+                    chatActivityEnterView2.k1(fVar2.b, true, false, true);
                 }
             }
             this.x0 = true;

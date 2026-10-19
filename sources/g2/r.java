@@ -21,7 +21,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class r extends c {
     public final boolean a;
@@ -120,7 +120,7 @@ public final class r extends c {
         while (true) {
             int i13 = i12 + 1;
             if (i12 > 20) {
-                throw new v(new NoRouteToHostException(i2.d.j(i13, "Too many redirects: ")), 2001, 1);
+                throw new v(new NoRouteToHostException(i2.e.j(i13, "Too many redirects: ")), 2001, 1);
             }
             f7 = f(url, i10, bArr, j10, j11, z10, false, mVar.d);
             int responseCode = f7.getResponseCode();
@@ -152,9 +152,9 @@ public final class r extends c {
         HashMap hashMap = new HashMap();
         n4.s sVar = this.e;
         if (sVar != null) {
-            hashMap.putAll(sVar.A());
+            hashMap.putAll(sVar.v());
         }
-        hashMap.putAll(this.f.A());
+        hashMap.putAll(this.f.v());
         hashMap.putAll(map);
         for (Map.Entry entry : hashMap.entrySet()) {
             httpURLConnection.setRequestProperty((String) entry.getKey(), (String) entry.getValue());

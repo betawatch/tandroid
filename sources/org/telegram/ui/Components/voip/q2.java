@@ -23,14 +23,14 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.n31;
+import org.telegram.ui.Components.o31;
 import org.telegram.ui.Components.wc0;
 import org.webrtc.RendererCommon;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public class q2 extends FrameLayout {
     public boolean E;
@@ -132,7 +132,7 @@ public class q2 extends FrameLayout {
         if (this.c) {
             float scaleX = ((View) getParent()).getScaleX();
             this.v.setAlpha(1.0f - f7);
-            float x10 = !z10 ? lk.x(0.4f, scaleX, f7, 1.0f / scaleX) : 1.0f - (0.4f * f7);
+            float x10 = !z10 ? kk.x(0.4f, scaleX, f7, 1.0f / scaleX) : 1.0f - (0.4f * f7);
             ImageView imageView = this.s;
             imageView.setScaleX(x10);
             imageView.setScaleY(x10);
@@ -353,7 +353,7 @@ public class q2 extends FrameLayout {
             this.b0.setDuration(350L);
         }
         this.b0.setInterpolator(bs.f);
-        this.b0.addListener(new n31(this, 14));
+        this.b0.addListener(new o31(this, 14));
         this.b0.start();
         ArrayList arrayList = this.G;
         if (!arrayList.isEmpty()) {

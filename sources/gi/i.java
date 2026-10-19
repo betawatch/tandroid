@@ -11,13 +11,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.messenger.lk;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import w7.z5;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class i extends FrameLayout {
     public final ImageView a;
@@ -45,7 +45,7 @@ public final class i extends FrameLayout {
         addView(linearLayout, d10);
         TextView textView = new TextView(context);
         this.d = textView;
-        lk.k(15.0f, 1, textView);
+        kk.k(15.0f, 1, textView);
         textView.setTextColor(h6.w0(h6.G6, d6Var));
         TextView i10 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, z5.t(-1, -2, 55, 0, 0, 0, 0), context);
         this.e = i10;

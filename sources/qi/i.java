@@ -30,16 +30,15 @@ import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.ay0;
+import org.telegram.ui.Components.by0;
 import org.telegram.ui.Components.gg0;
 import org.telegram.ui.Components.n10;
 import org.telegram.ui.Components.o10;
 import org.telegram.ui.web.a2;
-import org.telegram.ui.web.b2;
-import org.telegram.ui.web.g2;
-import qg.g0;
+import org.telegram.ui.web.z1;
+import qg.h0;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class i implements n10 {
     public static i A;
@@ -126,7 +125,7 @@ public final class i implements n10 {
                         webView.setWebViewClient(new gg0(iVar, 2));
                         HashSet hashSet = new HashSet();
                         hashSet.add(iVar.f);
-                        a5.c.a(webView, "TelegramWebProxy", hashSet, new g0(iVar, 1));
+                        a5.c.a(webView, "TelegramWebProxy", hashSet, new h0(iVar, 1));
                         webView.loadUrl(iVar.g);
                     } catch (Exception e) {
                         FileLog.e(e);
@@ -159,7 +158,7 @@ public final class i implements n10 {
                                 hVar.e = true;
                                 iVar.l(1, andUpdate, null);
                             }
-                            iVar.j.execute(new g2(4, iVar, hVar));
+                            iVar.j.execute(new p2.b(3, iVar, hVar));
                         }
                         try {
                             accept.close();
@@ -409,12 +408,12 @@ public final class i implements n10 {
                         return;
                     }
                     WebView webView = this.o;
-                    ay0 ay0Var = new ay0(this, webView, hVar, 15);
-                    AndroidUtilities.runOnUIThread(ay0Var, 5000L);
+                    by0 by0Var = new by0(this, webView, hVar, 15);
+                    AndroidUtilities.runOnUIThread(by0Var, 5000L);
                     try {
-                        webView.evaluateJavascript("(function(){\n'use strict';\ntry {\n var bridge=window.TelegramWebProxy;\n if(!bridge||typeof bridge.postMessage!=='function'||typeof bridge.onmessage!=='function')return false;\n var nativePost=bridge.postMessage;\n var receive=bridge.onmessage;\n var prefix='tproxy-base64:';\n var maxBytes=1048584;\n var maxChars=1398112;\n function post(value){\n  if(value instanceof ArrayBuffer){\n   if(value.byteLength>maxBytes)throw new Error('WEB proxy frame too large');\n   var bytes=new Uint8Array(value),parts=[];\n   for(var i=0;i<bytes.length;i+=8192){\n    parts.push(String.fromCharCode.apply(null,bytes.subarray(i,Math.min(i+8192,bytes.length))));\n   }\n   nativePost.call(bridge,prefix+btoa(parts.join('')));\n  }else nativePost.call(bridge,value);\n }\n function onmessage(event){\n  var data=event.data;\n  if(typeof data==='string'&&data.indexOf(prefix)===0){\n   try {\n    var encoded=data.substring(prefix.length);\n    if(encoded.length>maxChars)throw new Error('WEB proxy frame too large');\n    var binary=atob(encoded);\n    if(binary.length>maxBytes)throw new Error('WEB proxy frame too large');\n    var bytes=new Uint8Array(binary.length);\n    for(var i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);\n    receive.call(bridge,{data:bytes.buffer});\n   }catch(error){nativePost.call(bridge,'{\"t\":\"close\"}');}\n  }else receive.call(bridge,event);\n }\n bridge.postMessage=post;\n bridge.onmessage=onmessage;\n return bridge.postMessage===post&&bridge.onmessage===onmessage;\n}catch(error){return false;}\n})()\n", new b2(this, ay0Var, webView, hVar));
+                        webView.evaluateJavascript("(function(){\n'use strict';\ntry {\n var bridge=window.TelegramWebProxy;\n if(!bridge||typeof bridge.postMessage!=='function'||typeof bridge.onmessage!=='function')return false;\n var nativePost=bridge.postMessage;\n var receive=bridge.onmessage;\n var prefix='tproxy-base64:';\n var maxBytes=1048584;\n var maxChars=1398112;\n function post(value){\n  if(value instanceof ArrayBuffer){\n   if(value.byteLength>maxBytes)throw new Error('WEB proxy frame too large');\n   var bytes=new Uint8Array(value),parts=[];\n   for(var i=0;i<bytes.length;i+=8192){\n    parts.push(String.fromCharCode.apply(null,bytes.subarray(i,Math.min(i+8192,bytes.length))));\n   }\n   nativePost.call(bridge,prefix+btoa(parts.join('')));\n  }else nativePost.call(bridge,value);\n }\n function onmessage(event){\n  var data=event.data;\n  if(typeof data==='string'&&data.indexOf(prefix)===0){\n   try {\n    var encoded=data.substring(prefix.length);\n    if(encoded.length>maxChars)throw new Error('WEB proxy frame too large');\n    var binary=atob(encoded);\n    if(binary.length>maxBytes)throw new Error('WEB proxy frame too large');\n    var bytes=new Uint8Array(binary.length);\n    for(var i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);\n    receive.call(bridge,{data:bytes.buffer});\n   }catch(error){nativePost.call(bridge,'{\"t\":\"close\"}');}\n  }else receive.call(bridge,event);\n }\n bridge.postMessage=post;\n bridge.onmessage=onmessage;\n return bridge.postMessage===post&&bridge.onmessage===onmessage;\n}catch(error){return false;}\n})()\n", new a2(this, by0Var, webView, hVar));
                     } catch (Exception e) {
-                        AndroidUtilities.cancelRunOnUIThread(ay0Var);
+                        AndroidUtilities.cancelRunOnUIThread(by0Var);
                         FileLog.e(e);
                         FileLog.e("WEB proxy: Base64 bridge installation threw an exception; transport stopped");
                         o();
@@ -535,7 +534,7 @@ public final class i implements n10 {
                             c cVar = this.x;
                             this.a.notifyAll();
                             if (cVar != null) {
-                                AndroidUtilities.runOnUIThread(new a2(cVar, 9));
+                                AndroidUtilities.runOnUIThread(new z1(cVar, 9));
                             }
                         }
                     } finally {

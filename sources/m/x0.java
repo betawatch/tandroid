@@ -19,9 +19,9 @@ import android.widget.TextView;
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
 import v7.q7;
-import w7.x7;
+import w7.w7;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final class x0 {
     public final TextView a;
@@ -388,10 +388,10 @@ public final class x0 {
         int dimensionPixelSize3 = obtainStyledAttributes4.getDimensionPixelSize(19, -1);
         obtainStyledAttributes4.recycle();
         if (dimensionPixelSize != -1) {
-            x7.b(dimensionPixelSize, textView);
+            w7.b(dimensionPixelSize, textView);
         }
         if (dimensionPixelSize2 != -1) {
-            x7.c(dimensionPixelSize2, textView);
+            w7.c(dimensionPixelSize2, textView);
         }
         if (dimensionPixelSize3 != -1) {
             if (dimensionPixelSize3 < 0) {
@@ -478,7 +478,7 @@ public final class x0 {
                 return;
             }
             if (i10 != 1) {
-                throw new IllegalArgumentException(i2.d.j(i10, "Unknown auto-size text type: "));
+                throw new IllegalArgumentException(i2.e.j(i10, "Unknown auto-size text type: "));
             }
             DisplayMetrics displayMetrics = h1Var.j.getResources().getDisplayMetrics();
             h1Var.k(TypedValue.applyDimension(2, 12.0f, displayMetrics), TypedValue.applyDimension(2, 112.0f, displayMetrics), 1.0f);

@@ -8,7 +8,7 @@ import org.telegram.ui.Components.ob0;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Wallet.h7;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class y5 extends CharacterStyle {
     public final /* synthetic */ int a;
@@ -37,13 +37,13 @@ public final class y5 extends CharacterStyle {
                 textPaint.setColor(h6.v(h6.m1(0.55f, textPaint.getColor()), h6.m1(0.4f, ((pj0) this.b).I)));
                 break;
             case 3:
-                textPaint.setColor(((org.telegram.ui.Wallet.m3) this.b).u0);
+                textPaint.setColor(((org.telegram.ui.Wallet.n3) this.b).t0);
                 break;
             default:
-                float[] fArr = ((org.telegram.ui.Wallet.x5) this.b).b0;
+                float[] fArr = ((org.telegram.ui.Wallet.x5) this.b).a0;
                 int i11 = -9577217;
                 if (fArr != null) {
-                    i11 = i0.a.f(fArr[8], h7.q(fArr, -9577217, 0), h7.q(fArr, -9577217, 3));
+                    i11 = i0.a.f(fArr[8], h7.p(fArr, -9577217, 0), h7.p(fArr, -9577217, 3));
                 }
                 textPaint.setColor(i11);
                 break;

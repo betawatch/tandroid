@@ -12,7 +12,7 @@ import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class bd {
     public float A;
@@ -105,7 +105,7 @@ public final class bd {
                 float f23 = f20 * sqrt;
                 float f24 = f19;
                 double lerp = AndroidUtilities.lerp(f15 - f23, f16 + f23, sin);
-                float f25 = (float) i2.d.f(dd.a(f22), lerp, f7);
+                float f25 = (float) i2.e.f(dd.a(f22), lerp, f7);
                 int i10 = width;
                 float sin2 = (float) ((Math.sin(dd.a(f22)) * lerp) + f10);
                 float abs = (Math.abs(sin - 0.5f) * (-1.75f)) + 1.0f;

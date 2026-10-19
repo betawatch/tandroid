@@ -6,13 +6,13 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final class jq0 implements hg.f0 {
-    public final /* synthetic */ dr0 a;
+    public final /* synthetic */ er0 a;
 
-    public jq0(dr0 dr0Var) {
-        this.a = dr0Var;
+    public jq0(er0 er0Var) {
+        this.a = er0Var;
     }
 
     @Override // hg.f0
@@ -29,22 +29,22 @@ public final class jq0 implements hg.f0 {
             }
             i13++;
         }
-        dr0 dr0Var = this.a;
-        dr0Var.E0 = arrayList;
-        for (int i14 = 0; i14 < dr0Var.E0.size(); i14++) {
-            hg.g0 g0Var = (hg.g0) dr0Var.E0.get(i14);
+        er0 er0Var = this.a;
+        er0Var.F0 = arrayList;
+        for (int i14 = 0; i14 < er0Var.F0.size(); i14++) {
+            hg.g0 g0Var = (hg.g0) er0Var.F0.get(i14);
             TLObject tLObject2 = g0Var.a;
             if (tLObject2 instanceof TLRPC.User) {
-                i12 = ((org.telegram.ui.ActionBar.f3) dr0Var).currentAccount;
+                i12 = ((org.telegram.ui.ActionBar.f3) er0Var).currentAccount;
                 MessagesController.getInstance(i12).putUser((TLRPC.User) g0Var.a, true);
             } else if (tLObject2 instanceof TLRPC.Chat) {
-                i11 = ((org.telegram.ui.ActionBar.f3) dr0Var).currentAccount;
+                i11 = ((org.telegram.ui.ActionBar.f3) er0Var).currentAccount;
                 MessagesController.getInstance(i11).putChat((TLRPC.Chat) g0Var.a, true);
             } else if (tLObject2 instanceof TLRPC.EncryptedChat) {
-                i10 = ((org.telegram.ui.ActionBar.f3) dr0Var).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.f3) er0Var).currentAccount;
                 MessagesController.getInstance(i10).putEncryptedChat((TLRPC.EncryptedChat) g0Var.a, true);
             }
         }
-        dr0Var.M.l();
+        er0Var.N.l();
     }
 }

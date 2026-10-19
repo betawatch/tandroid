@@ -28,7 +28,7 @@ import v7.q8;
 import v7.u6;
 import v7.w6;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public class f0 {
     public static final s1 B = new s1(1);
@@ -272,7 +272,7 @@ public class f0 {
             oVar.c = this;
             oVar.b = s10;
             oVar.a = z10;
-            vVar2.a(new j9.u(0, vVar2, oVar), new i2.f0(this, 2));
+            vVar2.a(new j9.u(0, vVar2, oVar), new i2.g0(this, 2));
         }
     }
 

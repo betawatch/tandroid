@@ -25,7 +25,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ee implements Runnable {
     public final /* synthetic */ int a;
@@ -150,7 +150,7 @@ public final /* synthetic */ class ee implements Runnable {
                 TLRPC.User user = (TLRPC.User) this.c;
                 ti tiVar5 = alVar.b;
                 tiVar5.dismiss();
-                tiVar5.f0.presentFragment(org.telegram.ui.sn.W9(user.id));
+                tiVar5.f0.presentFragment(org.telegram.ui.qn.W9(user.id));
                 break;
             case 15:
                 org.telegram.messenger.g0.q(R.string.WalletAddressCopiedBulletin, new xc((al) this.b, (org.telegram.ui.ActionBar.d6) this.c), R.raw.copy, 36);
@@ -238,11 +238,11 @@ public final /* synthetic */ class ee implements Runnable {
                     xrVar2.c0 = groupcallstreamrtmpurl.key;
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(xrVar2.c0);
                     xrVar2.d0 = spannableStringBuilder;
-                    l11 l11Var = new l11();
-                    l11Var.a |= 256;
-                    l11Var.b = 0;
-                    l11Var.c = spannableStringBuilder.length();
-                    xrVar2.d0.setSpan(new m11(l11Var, 0), 0, xrVar2.d0.length(), 0);
+                    m11 m11Var = new m11();
+                    m11Var.a |= 256;
+                    m11Var.b = 0;
+                    m11Var.c = spannableStringBuilder.length();
+                    xrVar2.d0.setSpan(new n11(m11Var, 0), 0, xrVar2.d0.length(), 0);
                     xrVar2.e0.N(false);
                     break;
                 }
@@ -271,7 +271,7 @@ public final /* synthetic */ class ee implements Runnable {
                         for (int i13 = 0; i13 < arrayList4.size(); i13 = com.google.android.gms.internal.play_billing.k3.h(((TLRPC.User) arrayList4.get(i13)).id, arrayList5, i13, 1)) {
                         }
                         MessagesStorage messagesStorage = MessagesStorage.getInstance(i12);
-                        messagesStorage.getStorageQueue().postRunnable(new ai.z(zsVar, messagesStorage, arrayList5, currentTimeMillis, str5, 10));
+                        messagesStorage.getStorageQueue().postRunnable(new ai.z(zsVar, messagesStorage, arrayList5, currentTimeMillis, str5, 11));
                     }
                     zsVar.c = false;
                     wsVar.run();

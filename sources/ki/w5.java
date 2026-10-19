@@ -12,9 +12,9 @@ import java.util.HashMap;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.n9;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final class w5 implements g1 {
     public final /* synthetic */ c6 a;
@@ -24,19 +24,7 @@ public final class w5 implements g1 {
     }
 
     @Override // ki.g1
-    public final void D(CharSequence charSequence) {
-        z5 z5Var = this.a.y;
-        if (z5Var != null) {
-            e3 e3Var = (e3) z5Var;
-            if (charSequence == null || charSequence.length() <= 0) {
-                return;
-            }
-            e3Var.a.u4(charSequence.toString());
-        }
-    }
-
-    @Override // ki.g1
-    public final void M(Editable editable) {
+    public final void G(Editable editable) {
         a aVar;
         c6 c6Var = this.a;
         if (c6Var.x == null) {
@@ -63,7 +51,7 @@ public final class w5 implements g1 {
         }
         z5 z5Var2 = c6Var.y;
         if (z5Var2 != null) {
-            ((e3) z5Var2).a.f3.x(c6Var, c6.b(editable.toString()));
+            ((e3) z5Var2).a.f3.C(c6Var, c6.b(editable.toString()));
         }
         String obj = editable.toString();
         a aVar2 = c6Var.x;
@@ -84,7 +72,7 @@ public final class w5 implements g1 {
     }
 
     @Override // ki.g1
-    public final boolean Q(boolean z10) {
+    public final boolean M(boolean z10) {
         a aVar;
         c6 c6Var = this.a;
         z5 z5Var = c6Var.y;
@@ -95,7 +83,7 @@ public final class w5 implements g1 {
     }
 
     @Override // ki.g1
-    public final boolean R(h1 h1Var) {
+    public final boolean P(h1 h1Var) {
         a aVar;
         ClipData primaryClip;
         int indexOf;
@@ -131,7 +119,7 @@ public final class w5 implements g1 {
     }
 
     @Override // ki.g1
-    public final void V(h1 h1Var, int i10, int i11) {
+    public final void R(h1 h1Var, int i10, int i11) {
         z5 z5Var;
         n9 textSelectionHelper;
         c6 c6Var = this.a;
@@ -147,12 +135,12 @@ public final class w5 implements g1 {
         if (z5Var != null) {
             w3 w3Var = ((e3) z5Var).a;
             w3.N1(w3Var, h1Var);
-            w3Var.f3.n(h1Var, true);
+            w3Var.f3.o(h1Var, true);
         }
     }
 
     @Override // ki.g1
-    public final boolean f() {
+    public final boolean e() {
         c6 c6Var = this.a;
         z5 z5Var = c6Var.y;
         if (z5Var == null || c6Var.x == null) {
@@ -162,7 +150,7 @@ public final class w5 implements g1 {
     }
 
     @Override // ki.g1
-    public final void h(int i10, int i11) {
+    public final void f(int i10, int i11) {
         h2 h2Var;
         c6 c6Var = this.a;
         z5 z5Var = c6Var.y;
@@ -173,7 +161,7 @@ public final class w5 implements g1 {
     }
 
     @Override // ki.g1
-    public final void l(h1 h1Var) {
+    public final void k(h1 h1Var) {
         int length;
         Spanned spanned;
         boolean z10;
@@ -186,7 +174,7 @@ public final class w5 implements g1 {
             return;
         }
         String obj = h1Var.getText().toString();
-        ((e3) c6Var.y).a.f3.x(c6Var, null);
+        ((e3) c6Var.y).a.f3.C(c6Var, null);
         String b10 = c6.b(obj);
         if (b10 != null) {
             ArrayList a2 = n0.a(b10);
@@ -213,7 +201,7 @@ public final class w5 implements g1 {
         a aVar = c6Var.x;
         w3 w3Var = ((e3) z5Var).a;
         ArrayList arrayList = w3Var.n4;
-        s61 s61Var = w3Var.W2;
+        t61 t61Var = w3Var.W2;
         ArrayList arrayList2 = w3Var.j3;
         int indexOf = arrayList2.indexOf(aVar);
         if (indexOf < 0) {
@@ -243,7 +231,7 @@ public final class w5 implements g1 {
                 ArrayList arrayList3 = aVar.k;
                 arrayList3.remove(arrayList3.size() - 1);
                 w3Var.t4();
-                s61Var.N(false);
+                t61Var.N(false);
                 h2 h2Var2 = w3Var.H3;
                 if (h2Var2 != null) {
                     h2Var2.h();
@@ -254,7 +242,7 @@ public final class w5 implements g1 {
             if (aVar.c > 0) {
                 w3Var.u2(indexOf);
                 w3Var.t4();
-                s61Var.N(false);
+                t61Var.N(false);
                 h2 h2Var3 = w3Var.H3;
                 if (h2Var3 != null) {
                     h2Var3.h();
@@ -295,7 +283,7 @@ public final class w5 implements g1 {
         arrayList2.add(i12, aVar2);
         w3Var.t4();
         if (z11) {
-            s61Var.N(false);
+            t61Var.N(false);
             h2 h2Var4 = w3Var.H3;
             if (h2Var4 != null) {
                 h2Var4.h();
@@ -308,17 +296,17 @@ public final class w5 implements g1 {
             text.delete(length, text.length());
             editText.h = false;
         }
-        s61Var.S();
+        t61Var.S();
         w3Var.q4(i12);
         int indexOf2 = arrayList.indexOf(aVar2);
         if (indexOf2 < 0) {
-            s61Var.l();
+            t61Var.l();
         } else {
             s4.l0 itemAnimator = w3Var.getItemAnimator();
             w3Var.setItemAnimator(null);
-            s61Var.o(indexOf2);
+            t61Var.o(indexOf2);
             if (aVar.d > 0 && (i10 = indexOf2 + 1) < arrayList.size()) {
-                s61Var.q(i10, (arrayList.size() - indexOf2) - 1);
+                t61Var.q(i10, (arrayList.size() - indexOf2) - 1);
             }
             w3Var.post(new y2(w3Var, itemAnimator, 0));
         }
@@ -330,7 +318,7 @@ public final class w5 implements g1 {
     }
 
     @Override // ki.g1
-    public final void m() {
+    public final void o() {
         a aVar;
         c6 c6Var = this.a;
         z5 z5Var = c6Var.y;
@@ -341,7 +329,7 @@ public final class w5 implements g1 {
     }
 
     @Override // ki.g1
-    public final boolean q(h1 h1Var) {
+    public final boolean s(h1 h1Var) {
         a aVar;
         c6 c6Var = this.a;
         z5 z5Var = c6Var.y;
@@ -349,5 +337,17 @@ public final class w5 implements g1 {
             return false;
         }
         return w3.R1(((e3) z5Var).a, aVar, false);
+    }
+
+    @Override // ki.g1
+    public final void x(CharSequence charSequence) {
+        z5 z5Var = this.a.y;
+        if (z5Var != null) {
+            e3 e3Var = (e3) z5Var;
+            if (charSequence == null || charSequence.length() <= 0) {
+                return;
+            }
+            e3Var.a.u4(charSequence.toString());
+        }
     }
 }

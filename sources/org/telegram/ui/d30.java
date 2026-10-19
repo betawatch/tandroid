@@ -1,31 +1,48 @@
 package org.telegram.ui;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class d30 extends TextView {
-    public final RectF a;
-    public final /* synthetic */ s50 b;
+public final class d30 extends org.telegram.ui.Components.im0 {
+    public final /* synthetic */ q50 V2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d30(s50 s50Var, Context context) {
-        super(context);
-        this.b = s50Var;
-        this.a = new RectF();
+    public d30(q50 q50Var, LaunchActivity launchActivity) {
+        super(launchActivity, null);
+        this.V2 = q50Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        float width = getWidth();
-        float height = getHeight();
-        RectF rectF = this.a;
-        rectF.set(0.0f, 0.0f, width, height);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), this.b.g1);
-        super.onDraw(canvas);
+    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        org.telegram.ui.Components.z20 z20Var = (org.telegram.ui.Components.z20) view;
+        q50 q50Var = this.V2;
+        w40 w40Var = q50Var.Q;
+        h30 h30Var = q50Var.a2;
+        if (h30Var.r == null && !q50Var.N2.k()) {
+            z20Var.setAlpha(1.0f);
+            z20Var.setTranslationX(0.0f);
+            z20Var.setTranslationY(0.0f);
+        }
+        d30 d30Var = q50Var.m2;
+        z20Var.getClass();
+        d30Var.getClass();
+        if (RecyclerView.R(z20Var) == -1 && z20Var.getRenderer() != null) {
+            return true;
+        }
+        if (z20Var.getTranslationY() == 0.0f || z20Var.getRenderer() == null || z20Var.getRenderer().c == null) {
+            return super.drawChild(canvas, view, j10);
+        }
+        float top = w40Var.getTop() - getTop();
+        float measuredHeight = w40Var.getMeasuredHeight() + top;
+        float f7 = h30Var.c;
+        canvas.save();
+        float f10 = 1.0f - f7;
+        canvas.clipRect(0.0f, top * f10, getMeasuredWidth(), (getMeasuredHeight() * f7) + (measuredHeight * f10));
+        boolean drawChild = super.drawChild(canvas, view, j10);
+        canvas.restore();
+        return drawChild;
     }
 }

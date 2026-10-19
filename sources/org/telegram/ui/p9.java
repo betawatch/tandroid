@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p9 implements o1.f {
     public final /* synthetic */ int a;
@@ -15,23 +15,23 @@ public final /* synthetic */ class p9 implements o1.f {
     public final void a(o1.h hVar, boolean z10, float f7, float f10) {
         switch (this.a) {
             case 0:
-                y9 y9Var = (y9) this.b;
-                o1.k kVar = y9Var.E;
+                w9 w9Var = (w9) this.b;
+                o1.k kVar = w9Var.y;
                 if (kVar != null) {
                     kVar.c();
-                    y9Var.E = null;
+                    w9Var.y = null;
                     break;
                 }
                 break;
             case 1:
-                co0 co0Var = (co0) this.b;
-                if (hVar == co0Var.c) {
-                    co0Var.c = null;
+                ao0 ao0Var = (ao0) this.b;
+                if (hVar == ao0Var.c) {
+                    ao0Var.c = null;
                     break;
                 }
                 break;
             default:
-                ((wt0) this.b).D();
+                ((ut0) this.b).D();
                 break;
         }
     }

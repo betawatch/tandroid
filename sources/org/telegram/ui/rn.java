@@ -1,33 +1,24 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.NumberTextView;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes3.dex */
-public final class rn extends org.telegram.ui.ActionBar.j5 {
-    public boolean M0;
-    public final /* synthetic */ sn N0;
+public final class rn extends qn {
+    public final /* synthetic */ sn Rc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rn(sn snVar, Activity activity) {
-        super(activity);
-        this.N0 = snVar;
-        this.M0 = true;
+    public rn(sn snVar, Bundle bundle) {
+        super(bundle);
+        this.Rc = snVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.j5
-    public final void d(int i10) {
-        super.d(i10);
-        if (this.M0 && getVisibility() == 0) {
-            int dp = AndroidUtilities.dp(4.0f) + getTextWidth();
-            sn snVar = this.N0;
-            snVar.G2 = dp;
-            NumberTextView numberTextView = snVar.F2;
-            if (numberTextView != null) {
-                numberTextView.setTranslationX(dp);
-            }
-        }
+    @Override // org.telegram.ui.qn
+    public final void aa(boolean z10) {
+        this.Rc.b(z10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void setNavigationBarColor(int i10) {
     }
 }

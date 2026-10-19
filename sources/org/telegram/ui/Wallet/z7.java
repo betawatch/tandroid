@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z7 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class z7 implements Utilities.Callback2 {
                         arrayList.addAll(j0Var.g());
                     }
                     p8Var.V();
-                    p8Var.f = new v3(15, h8Var, this.d);
+                    p8Var.f = new z3(14, h8Var, this.d);
                     h8Var.presentFragment(p8Var);
                     break;
                 } else {
@@ -63,7 +63,7 @@ public final /* synthetic */ class z7 implements Utilities.Callback2 {
                             arrayList2.addAll(j0Var2.g());
                         }
                         p8Var2.V();
-                        p8Var2.f = new h(h8Var2, this.d, h0Var, 20);
+                        p8Var2.f = new h(h8Var2, this.d, h0Var, 19);
                         h8Var2.presentFragment(p8Var2);
                         break;
                     } else {

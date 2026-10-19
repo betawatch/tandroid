@@ -1,16 +1,16 @@
 package k2;
 
-/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ qf.b b;
-    public final /* synthetic */ i2.e c;
+    public final /* synthetic */ i2.f c;
 
-    public /* synthetic */ r(qf.b bVar, i2.e eVar, int i10) {
+    public /* synthetic */ r(qf.b bVar, i2.f fVar, int i10) {
         this.a = i10;
         this.b = bVar;
-        this.c = eVar;
+        this.c = fVar;
     }
 
     @Override // java.lang.Runnable
@@ -18,23 +18,23 @@ public final /* synthetic */ class r implements Runnable {
         switch (this.a) {
             case 0:
                 qf.b bVar = this.b;
-                i2.e eVar = this.c;
-                synchronized (eVar) {
+                i2.f fVar = this.c;
+                synchronized (fVar) {
                 }
                 u uVar = (u) bVar.c;
                 String str = e2.m0.a;
-                j2.f fVar = ((i2.b0) uVar).a.s;
-                j2.a n10 = fVar.n((u2.g0) fVar.d.e);
-                fVar.q(n10, 1013, new j2.c(n10, eVar, 26));
+                j2.f fVar2 = ((i2.c0) uVar).a.s;
+                j2.a n10 = fVar2.n((u2.g0) fVar2.d.e);
+                fVar2.q(n10, 1013, new j2.c(n10, fVar, 26));
                 break;
             default:
                 qf.b bVar2 = this.b;
-                i2.e eVar2 = this.c;
+                i2.f fVar3 = this.c;
                 u uVar2 = (u) bVar2.c;
                 String str2 = e2.m0.a;
-                j2.f fVar2 = ((i2.b0) uVar2).a.s;
-                j2.a p5 = fVar2.p();
-                fVar2.q(p5, 1007, new j2.c(p5, eVar2, 21));
+                j2.f fVar4 = ((i2.c0) uVar2).a.s;
+                j2.a p5 = fVar4.p();
+                fVar4.q(p5, 1007, new j2.c(p5, fVar3, 21));
                 break;
         }
     }
