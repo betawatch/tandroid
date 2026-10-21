@@ -3,9 +3,9 @@ package yh;
 import ai.n5;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w2 implements n5, Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ g4 a;
@@ -29,6 +29,6 @@ public final /* synthetic */ class w2 implements n5, Utilities.Callback5, Utilit
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        g4.Y(this.a, (g61) obj);
+        g4.Y(this.a, (h61) obj);
     }
 }

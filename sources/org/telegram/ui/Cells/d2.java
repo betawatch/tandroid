@@ -6,16 +6,16 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.e91;
-import org.telegram.ui.Components.nf0;
+import org.telegram.ui.Components.f91;
+import org.telegram.ui.Components.of0;
 import org.telegram.ui.Components.s00;
-import org.telegram.ui.Components.w91;
 import org.telegram.ui.Components.x91;
+import org.telegram.ui.Components.y91;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class d2 extends org.telegram.ui.Components.s6 {
     public final /* synthetic */ int b;
@@ -80,24 +80,24 @@ public final class d2 extends org.telegram.ui.Components.s6 {
                 ((s00) obj).invalidate();
                 break;
             case 4:
-                e91 e91Var = (e91) this.c;
-                e91Var.x = f7;
-                e91Var.invalidate();
+                f91 f91Var = (f91) this.c;
+                f91Var.x = f7;
+                f91Var.invalidate();
                 break;
             case 5:
-                x91 x91Var = (x91) this.c;
-                x91Var.E = f7;
-                w91 w91Var = x91Var.L;
-                if (w91Var != null) {
-                    w91Var.b(f7);
+                y91 y91Var = (y91) this.c;
+                y91Var.E = f7;
+                x91 x91Var = y91Var.L;
+                if (x91Var != null) {
+                    x91Var.b(f7);
                 }
-                x91Var.invalidate();
+                y91Var.invalidate();
                 break;
             case 6:
                 ((View) obj).setAlpha(f7);
-                nf0 nf0Var = ((PhotoViewer) this.c).C1;
-                if (nf0Var != null) {
-                    nf0Var.setVideoThumbFlashAlpha(f7);
+                of0 of0Var = ((PhotoViewer) this.c).C1;
+                if (of0Var != null) {
+                    of0Var.setVideoThumbFlashAlpha(f7);
                     break;
                 }
                 break;
@@ -119,9 +119,9 @@ public final class d2 extends org.telegram.ui.Components.s6 {
             case 3:
                 return Float.valueOf(((s00) this.c).w0);
             case 4:
-                return Float.valueOf(((e91) this.c).x);
+                return Float.valueOf(((f91) this.c).x);
             case 5:
-                return Float.valueOf(((x91) this.c).E);
+                return Float.valueOf(((y91) this.c).E);
             case 6:
                 return Float.valueOf(((View) obj).getAlpha());
             default:
@@ -130,17 +130,17 @@ public final class d2 extends org.telegram.ui.Components.s6 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d2(e91 e91Var) {
+    public d2(f91 f91Var) {
         super("progress", 0);
         this.b = 4;
-        this.c = e91Var;
+        this.c = f91Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d2(x91 x91Var) {
+    public d2(y91 y91Var) {
         super("clipProgress", 0);
         this.b = 5;
-        this.c = x91Var;
+        this.c = y91Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

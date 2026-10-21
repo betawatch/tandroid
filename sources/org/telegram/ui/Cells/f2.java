@@ -36,7 +36,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.f90;
@@ -45,7 +45,7 @@ import org.telegram.ui.Components.yc;
 import org.telegram.ui.PhotoViewer;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class f2 extends FrameLayout implements DownloadController.FileDownloadProgressListener {
     public final int E;
@@ -440,7 +440,7 @@ public final class f2 extends FrameLayout implements DownloadController.FileDown
         int i10;
         ImageReceiver imageReceiver = this.a;
         xp xpVar = this.a0;
-        if (xpVar != null && (xpVar.a.q || !imageReceiver.hasBitmapImage() || imageReceiver.getCurrentAlpha() != 1.0f || PhotoViewer.N1((MessageObject) this.e))) {
+        if (xpVar != null && (xpVar.a.q || !imageReceiver.hasBitmapImage() || imageReceiver.getCurrentAlpha() != 1.0f || PhotoViewer.P1((MessageObject) this.e))) {
             canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.S);
         }
         if (this.F != null) {
@@ -484,7 +484,7 @@ public final class f2 extends FrameLayout implements DownloadController.FileDown
         } else {
             boolean z13 = this.b;
             f90 f90Var = this.c;
-            if (!z13 || PhotoViewer.O1(this.I)) {
+            if (!z13 || PhotoViewer.Q1(this.I)) {
                 f90Var.setAlpha(255);
             } else {
                 f90Var.setAlpha((int) ((1.0f - imageReceiver.getCurrentAlpha()) * 255.0f));
@@ -532,7 +532,7 @@ public final class f2 extends FrameLayout implements DownloadController.FileDown
         }
         if (this.b) {
             if (this.I != null) {
-                imageReceiver.setVisible(!PhotoViewer.O1(r1), false);
+                imageReceiver.setVisible(!PhotoViewer.Q1(r1), false);
             }
             canvas.save();
             float f7 = this.g0;
@@ -1113,8 +1113,8 @@ public final class f2 extends FrameLayout implements DownloadController.FileDown
                                     size2 = AndroidUtilities.dp(f7);
                                 }
                                 setMeasuredDimension(size, size2);
-                                int A = kk.A(24.0f, size, 2);
-                                int A2 = kk.A(24.0f, size2, 2);
+                                int A = mk.A(24.0f, size, 2);
+                                int A2 = mk.A(24.0f, size2, 2);
                                 radialProgress2.q(A, A2, AndroidUtilities.dp(24.0f) + A, AndroidUtilities.dp(24.0f) + A2);
                                 radialProgress2.setCircleRadius(AndroidUtilities.dp(12.0f));
                                 imageReceiver4.setImageCoords(0.0f, 0.0f, size, size2);

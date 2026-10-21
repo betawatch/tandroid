@@ -7,9 +7,9 @@ import android.view.TextureView;
 import b2.z1;
 import ei.bc;
 import java.util.ArrayList;
-import org.telegram.ui.Components.b81;
+import org.telegram.ui.Components.c81;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final class c0 implements a3.m0, k2.u, SurfaceHolder.Callback, TextureView.SurfaceTextureListener {
     public final /* synthetic */ i0 a;
@@ -21,9 +21,9 @@ public final class c0 implements a3.m0, k2.u, SurfaceHolder.Callback, TextureVie
     @Override // android.view.TextureView.SurfaceTextureListener
     public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
         i0 i0Var = this.a;
-        org.telegram.messenger.f1 f1Var = i0Var.s0;
-        if (f1Var != null) {
-            f1Var.execute(new a0(this, surfaceTexture, i10, i11, 0));
+        org.telegram.messenger.g1 g1Var = i0Var.s0;
+        if (g1Var != null) {
+            g1Var.execute(new a0(this, surfaceTexture, i10, i11, 0));
             return;
         }
         Surface surface = new Surface(surfaceTexture);
@@ -41,13 +41,13 @@ public final class c0 implements a3.m0, k2.u, SurfaceHolder.Callback, TextureVie
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            if (((b81) ((z1) obj)).J.onSurfaceDestroyed(surfaceTexture)) {
+            if (((c81) ((z1) obj)).J.onSurfaceDestroyed(surfaceTexture)) {
                 return false;
             }
         }
-        org.telegram.messenger.f1 f1Var = i0Var.s0;
-        if (f1Var != null) {
-            f1Var.execute(new bc(this, surfaceTexture));
+        org.telegram.messenger.g1 g1Var = i0Var.s0;
+        if (g1Var != null) {
+            g1Var.execute(new bc(this, surfaceTexture));
             return true;
         }
         i0Var.x1(null);
@@ -58,9 +58,9 @@ public final class c0 implements a3.m0, k2.u, SurfaceHolder.Callback, TextureVie
     @Override // android.view.TextureView.SurfaceTextureListener
     public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
         i0 i0Var = this.a;
-        org.telegram.messenger.f1 f1Var = i0Var.s0;
-        if (f1Var != null) {
-            f1Var.execute(new hg.n(this, surfaceTexture, i10, i11));
+        org.telegram.messenger.g1 g1Var = i0Var.s0;
+        if (g1Var != null) {
+            g1Var.execute(new hg.n(this, surfaceTexture, i10, i11));
         } else {
             i0Var.q1(i10, i11);
         }
@@ -69,9 +69,9 @@ public final class c0 implements a3.m0, k2.u, SurfaceHolder.Callback, TextureVie
     @Override // android.view.TextureView.SurfaceTextureListener
     public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         i0 i0Var = this.a;
-        org.telegram.messenger.f1 f1Var = i0Var.s0;
-        if (f1Var != null) {
-            f1Var.execute(new hi.t(2, this, surfaceTexture));
+        org.telegram.messenger.g1 g1Var = i0Var.s0;
+        if (g1Var != null) {
+            g1Var.execute(new hi.t(2, this, surfaceTexture));
             return;
         }
         ArrayList arrayList = i0Var.t0;
@@ -80,7 +80,7 @@ public final class c0 implements a3.m0, k2.u, SurfaceHolder.Callback, TextureVie
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            ((b81) ((z1) obj)).J.onSurfaceTextureUpdated(surfaceTexture);
+            ((c81) ((z1) obj)).J.onSurfaceTextureUpdated(surfaceTexture);
         }
     }
 

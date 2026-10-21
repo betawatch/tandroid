@@ -13,13 +13,13 @@ import org.telegram.ui.ActionBar.g5;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.ck;
 import org.telegram.ui.Components.gk;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.k8;
 import org.telegram.ui.Components.ll;
 import org.telegram.ui.Components.mk;
 import org.telegram.ui.Components.nk;
 import org.telegram.ui.Components.rl;
-import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.xa0;
 import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.LanguageSelectActivity;
@@ -44,7 +44,7 @@ import org.telegram.ui.vb;
 import org.telegram.ui.x71;
 import org.telegram.ui.z60;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class c2 extends g5 {
     public final /* synthetic */ int r;
@@ -270,9 +270,9 @@ public final class c2 extends g5 {
             case 19:
                 dg1 dg1Var = (dg1) this.s;
                 dg1Var.h = null;
-                v61 v61Var = dg1Var.a;
-                if (v61Var != null) {
-                    v61Var.W2.N(true);
+                w61 w61Var = dg1Var.a;
+                if (w61Var != null) {
+                    w61Var.W2.N(true);
                     break;
                 }
                 break;
@@ -413,7 +413,7 @@ public final class c2 extends g5 {
 
     @Override // org.telegram.ui.ActionBar.g5
     public void q(EditText editText) {
-        im0 im0Var;
+        jm0 jm0Var;
         ai.u1 u1Var;
         switch (this.r) {
             case 0:
@@ -426,8 +426,8 @@ public final class c2 extends g5 {
                 ip ipVar = (ip) this.s;
                 if (ipVar.e != null) {
                     String obj = editText.getText().toString();
-                    if (obj.length() != 0 && (im0Var = ipVar.b) != null) {
-                        s4.g0 adapter = im0Var.getAdapter();
+                    if (obj.length() != 0 && (jm0Var = ipVar.b) != null) {
+                        s4.g0 adapter = jm0Var.getAdapter();
                         hp hpVar = ipVar.e;
                         if (adapter != hpVar) {
                             ipVar.b.setAdapter(hpVar);
@@ -486,7 +486,7 @@ public final class c2 extends g5 {
                 rl rlVar = (rl) this.s;
                 ah.x xVar = rlVar.N;
                 ai.u1 u1Var3 = rlVar.P;
-                im0 im0Var2 = rlVar.Q;
+                jm0 jm0Var2 = rlVar.Q;
                 ll llVar = rlVar.R;
                 if (llVar != null) {
                     String obj3 = editText.getText().toString();
@@ -496,10 +496,10 @@ public final class c2 extends g5 {
                         rlVar.E.setShowSearchProgress(true);
                         u1Var3.setVisibility(8);
                         xVar.setVisibility(8);
-                        if (im0Var2.getAdapter() != llVar) {
-                            im0Var2.setAdapter(llVar);
+                        if (jm0Var2.getAdapter() != llVar) {
+                            jm0Var2.setAdapter(llVar);
                         }
-                        im0Var2.setVisibility(0);
+                        jm0Var2.setVisibility(0);
                         if (llVar.s.size() == 0 && llVar.r.size() == 0) {
                             z10 = true;
                         }
@@ -508,8 +508,8 @@ public final class c2 extends g5 {
                     } else {
                         u1Var3.setVisibility(0);
                         xVar.setVisibility(0);
-                        im0Var2.setAdapter(null);
-                        im0Var2.setVisibility(8);
+                        jm0Var2.setAdapter(null);
+                        jm0Var2.setVisibility(8);
                         rlVar.v.setVisibility(8);
                     }
                     llVar.G(obj3, rlVar.r0);
@@ -523,17 +523,17 @@ public final class c2 extends g5 {
                     contactsActivity.c.a(!obj4.isEmpty(), true);
                     contactsActivity.i0 = obj4;
                     if (obj4.isEmpty()) {
-                        im0 im0Var3 = contactsActivity.f;
-                        if (im0Var3 != null) {
-                            im0Var3.setAdapter(contactsActivity.d);
+                        jm0 jm0Var3 = contactsActivity.f;
+                        if (jm0Var3 != null) {
+                            jm0Var3.setAdapter(contactsActivity.d);
                             contactsActivity.f.setSectionsType(1);
                             break;
                         }
                     } else {
                         contactsActivity.E = true;
-                        im0 im0Var4 = contactsActivity.f;
-                        if (im0Var4 != null) {
-                            im0Var4.setAdapter(contactsActivity.r);
+                        jm0 jm0Var4 = contactsActivity.f;
+                        if (jm0Var4 != null) {
+                            jm0Var4.setAdapter(contactsActivity.r);
                             contactsActivity.f.setSectionsType(0);
                             contactsActivity.r.l();
                             contactsActivity.f.setFastScrollVisible(false);
@@ -593,9 +593,9 @@ public final class c2 extends g5 {
                 boolean z11 = !isEmpty;
                 if (z11 != a70Var.M) {
                     a70Var.M = z11;
-                    im0 im0Var5 = a70Var.d;
-                    if (im0Var5 != null) {
-                        im0Var5.setAdapter(!isEmpty ? a70Var.f : a70Var.e);
+                    jm0 jm0Var5 = a70Var.d;
+                    if (jm0Var5 != null) {
+                        jm0Var5.setAdapter(!isEmpty ? a70Var.f : a70Var.e);
                         break;
                     }
                 }
@@ -606,9 +606,9 @@ public final class c2 extends g5 {
                 languageSelectActivity.i0(obj7);
                 if (obj7.length() != 0) {
                     languageSelectActivity.getClass();
-                    im0 im0Var6 = languageSelectActivity.b;
-                    if (im0Var6 != null) {
-                        im0Var6.setAdapter(languageSelectActivity.c);
+                    jm0 jm0Var6 = languageSelectActivity.b;
+                    if (jm0Var6 != null) {
+                        jm0Var6.setAdapter(languageSelectActivity.c);
                         break;
                     }
                 } else {
@@ -691,9 +691,9 @@ public final class c2 extends g5 {
                     r21Var.c.l();
                 }
                 if (obj9.length() != 0) {
-                    im0 im0Var7 = r21Var.b;
-                    if (im0Var7 != null) {
-                        im0Var7.setAdapter(r21Var.c);
+                    jm0 jm0Var7 = r21Var.b;
+                    if (jm0Var7 != null) {
+                        jm0Var7.setAdapter(r21Var.c);
                         break;
                     }
                 } else if (r21Var.b != null) {
@@ -716,9 +716,9 @@ public final class c2 extends g5 {
             case 19:
                 dg1 dg1Var = (dg1) this.s;
                 dg1Var.h = editText.getText().toString();
-                v61 v61Var = dg1Var.a;
-                if (v61Var != null) {
-                    v61Var.W2.N(true);
+                w61 w61Var = dg1Var.a;
+                if (w61Var != null) {
+                    w61Var.W2.N(true);
                     break;
                 }
                 break;

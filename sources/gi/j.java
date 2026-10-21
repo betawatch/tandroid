@@ -3,38 +3,38 @@ package gi;
 import android.content.Context;
 import android.view.View;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.b71;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.c71;
 import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class j extends f61 {
+public final class j extends g61 {
     static {
-        f61.setup(new j());
+        g61.setup(new j());
     }
 
-    public static g61 a(int i10, String str, String str2) {
-        g61 J = g61.J(j.class);
+    public static h61 a(int i10, String str, String str2) {
+        h61 J = h61.J(j.class);
         J.k = i10;
         J.l = str;
         J.m = str2;
         return J;
     }
 
-    @Override // org.telegram.ui.Components.f61
-    public final void bindView(View view, g61 g61Var, boolean z10, t61 t61Var, b71 b71Var) {
-        ((k) view).a(g61Var.l, g61Var.m, g61Var.k);
+    @Override // org.telegram.ui.Components.g61
+    public final void bindView(View view, h61 h61Var, boolean z10, u61 u61Var, c71 c71Var) {
+        ((k) view).a(h61Var.l, h61Var.m, h61Var.k);
     }
 
-    @Override // org.telegram.ui.Components.f61
-    public final View createView(Context context, im0 im0Var, int i10, int i11, d6 d6Var) {
+    @Override // org.telegram.ui.Components.g61
+    public final View createView(Context context, jm0 jm0Var, int i10, int i11, d6 d6Var) {
         return new k(context, d6Var, false);
     }
 
-    @Override // org.telegram.ui.Components.f61
+    @Override // org.telegram.ui.Components.g61
     public final boolean isClickable() {
         return false;
     }

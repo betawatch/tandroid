@@ -6,9 +6,9 @@ import android.view.View;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s3 implements org.telegram.ui.ActionBar.a2, Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ o5 a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class s3 implements org.telegram.ui.ActionBar.a2, U
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        return Boolean.valueOf(this.a.X((g61) obj, (View) obj2));
+        return Boolean.valueOf(this.a.X((h61) obj, (View) obj2));
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5
@@ -43,6 +43,6 @@ public final /* synthetic */ class s3 implements org.telegram.ui.ActionBar.a2, U
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        this.a.W((g61) obj, (View) obj2);
+        this.a.W((h61) obj, (View) obj2);
     }
 }

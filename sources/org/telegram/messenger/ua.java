@@ -1,28 +1,46 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ua implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ TLRPC.TL_help_peerColors c;
+    public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ ua(MessagesController messagesController, TLRPC.TL_help_peerColors tL_help_peerColors, int i10) {
+    public /* synthetic */ ua(MessagesController messagesController, ArrayList arrayList, int i10) {
         this.a = i10;
         this.b = messagesController;
-        this.c = tL_help_peerColors;
+        this.c = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$checkPeerColors$493(this.c);
+                this.b.lambda$processUpdates$382(this.c);
+                break;
+            case 1:
+                this.b.lambda$processUpdateArray$400(this.c);
+                break;
+            case 2:
+                this.b.lambda$checkChatInviter$372(this.c);
+                break;
+            case 3:
+                this.b.lambda$processUpdates$381(this.c);
+                break;
+            case 4:
+                this.b.lambda$processUpdateArray$401(this.c);
+                break;
+            case 5:
+                this.b.lambda$getChannelDifference$340(this.c);
+                break;
+            case 6:
+                this.b.lambda$reloadMentionsCountForChannels$221(this.c);
                 break;
             default:
-                this.b.lambda$checkPeerColors$495(this.c);
+                this.b.lambda$checkChatInviter$371(this.c);
                 break;
         }
     }

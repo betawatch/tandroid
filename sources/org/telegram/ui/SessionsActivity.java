@@ -29,7 +29,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class SessionsActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -166,7 +166,7 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.n2 implements No
                             spannableStringBuilder.append((CharSequence) ", ");
                         }
                         SpannableStringBuilder append = new SpannableStringBuilder("@").append((CharSequence) publicUsername);
-                        append.setSpan(new org.telegram.ui.Components.k61(r4.c.h("https://t.me/", publicUsername), (org.telegram.ui.Components.m11) null), 0, append.length(), 33);
+                        append.setSpan(new org.telegram.ui.Components.l61(r4.c.h("https://t.me/", publicUsername), (org.telegram.ui.Components.n11) null), 0, append.length(), 33);
                         spannableStringBuilder.append((CharSequence) append);
                     }
                 }
@@ -243,11 +243,11 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.n2 implements No
         LinearLayout linearLayout2 = new LinearLayout(parentActivity);
         linearLayout2.setOrientation(1);
         linearLayout2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        org.telegram.ui.Components.xj0 xj0Var = new org.telegram.ui.Components.xj0(parentActivity);
-        u61Var.d = xj0Var;
-        xj0Var.setOnClickListener(new l61(u61Var));
-        xj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        linearLayout2.addView(xj0Var, w7.z5.t(70, 70, 1, 0, 16, 0, 0));
+        org.telegram.ui.Components.yj0 yj0Var = new org.telegram.ui.Components.yj0(parentActivity);
+        u61Var.d = yj0Var;
+        yj0Var.setOnClickListener(new l61(u61Var));
+        yj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        linearLayout2.addView(yj0Var, w7.z5.t(70, 70, 1, 0, 16, 0, 0));
         TextView textView3 = new TextView(parentActivity);
         com.google.android.gms.internal.play_billing.k3.m(20.0f, 2, textView3);
         com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.h6.G6, null, false, textView3, 17);
@@ -323,11 +323,11 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.n2 implements No
             }
             i15 = 1;
         }
-        xj0Var.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(42.0f), org.telegram.ui.ActionBar.h6.x0(null, i12, false)));
+        yj0Var.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(42.0f), org.telegram.ui.ActionBar.h6.x0(null, i12, false)));
         if (i15 != 0) {
-            xj0Var.f(i11, 50, 50, new int[]{0, org.telegram.ui.ActionBar.h6.x0(null, i12, false)});
+            yj0Var.f(i11, 50, 50, new int[]{0, org.telegram.ui.ActionBar.h6.x0(null, i12, false)});
         } else {
-            xj0Var.setImageDrawable(u61Var.getContext().getDrawable(i11));
+            yj0Var.setImageDrawable(u61Var.getContext().getDrawable(i11));
         }
         t61 t61Var = new t61(parentActivity, false);
         StringBuilder sb3 = new StringBuilder();

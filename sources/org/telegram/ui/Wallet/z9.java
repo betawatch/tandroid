@@ -17,12 +17,12 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
-import org.telegram.ui.Components.jw0;
+import org.telegram.messenger.mk;
 import org.telegram.ui.Components.kw0;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class z9 extends org.telegram.ui.ActionBar.n2 {
     public final String[] a;
@@ -93,9 +93,9 @@ public final class z9 extends org.telegram.ui.ActionBar.n2 {
         final int i10 = 0;
         this.actionBar.setAddToContainer(false);
         this.actionBar.setOccupyStatusBar(false);
-        kw0 kw0Var = new kw0(context, null);
-        kw0Var.setDelegate(new jw0() { // from class: org.telegram.ui.Wallet.x9
-            @Override // org.telegram.ui.Components.jw0
+        lw0 lw0Var = new lw0(context, null);
+        lw0Var.setDelegate(new kw0() { // from class: org.telegram.ui.Wallet.x9
+            @Override // org.telegram.ui.Components.kw0
             public final void G(int i11, boolean z10) {
                 z9 z9Var = z9.this;
                 z9Var.getClass();
@@ -106,8 +106,8 @@ public final class z9 extends org.telegram.ui.ActionBar.n2 {
                 z9Var.onInsets(z9Var.r, z9Var.s, z9Var.v, z9Var.w);
             }
         });
-        kw0Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, this.resourceProvider));
-        this.fragmentView = kw0Var;
+        lw0Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, this.resourceProvider));
+        this.fragmentView = lw0Var;
         ScrollView scrollView = new ScrollView(context);
         this.e = scrollView;
         final int i11 = 1;
@@ -115,7 +115,7 @@ public final class z9 extends org.telegram.ui.ActionBar.n2 {
         this.e.setVerticalScrollBarEnabled(false);
         this.e.setClipToPadding(false);
         this.e.setPadding(0, AndroidUtilities.dp(96.0f), 0, 0);
-        kw0Var.addView(this.e, w7.z5.c(-1.0f, -1));
+        lw0Var.addView(this.e, w7.z5.c(-1.0f, -1));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setPadding(AndroidUtilities.dp(36.0f), 0, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(24.0f));
@@ -183,7 +183,7 @@ public final class z9 extends org.telegram.ui.ActionBar.n2 {
                 }
             }
         });
-        kw0Var.addView(this.f, w7.z5.d(48, 48.0f, 51, 4.0f, 12.0f, 0.0f, 0.0f));
+        lw0Var.addView(this.f, w7.z5.d(48, 48.0f, 51, 4.0f, 12.0f, 0.0f, 0.0f));
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         w9Var.setAspectFit(true);
         w9Var.getImageReceiver().setCurrentAccount(AndroidUtilities.getAccountInProduction());
@@ -202,7 +202,7 @@ public final class z9 extends org.telegram.ui.ActionBar.n2 {
         i13.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.z6, this.resourceProvider));
         int i14 = R.string.WalletTestPhraseInfo;
         int[] iArr = this.b;
-        kk.r(i14, new Object[]{Integer.valueOf(iArr[0] + 1), Integer.valueOf(iArr[1] + 1), Integer.valueOf(iArr[2] + 1)}, i13);
+        mk.r(i14, new Object[]{Integer.valueOf(iArr[0] + 1), Integer.valueOf(iArr[1] + 1), Integer.valueOf(iArr[2] + 1)}, i13);
         linearLayout.addView(i13, w7.z5.t(-1, -2, 1, 32, 0, 32, 8));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(1);
@@ -226,7 +226,7 @@ public final class z9 extends org.telegram.ui.ActionBar.n2 {
                 haVar.setText((String) arrayList.get(i16));
             }
             haVar.setOnTextChangedListener(new n(this, 14));
-            haVar.setOnNextListener(new x31(this, i16, haVar, 21));
+            haVar.setOnNextListener(new y31(this, i16, haVar, 21));
             linearLayout2.addView(haVar, w7.z5.t(-1, 50, 1, 0, i16 == 0 ? 0 : 12, 0, 0));
             arrayList2.add(haVar);
             i16++;

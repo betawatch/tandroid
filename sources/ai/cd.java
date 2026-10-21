@@ -16,17 +16,17 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.z00;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.fk;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class cd extends org.telegram.ui.Components.bb implements NotificationCenter.NotificationCenterDelegate {
     public final long X;
@@ -36,7 +36,7 @@ public final class cd extends org.telegram.ui.Components.bb implements Notificat
     public Runnable b0;
     public final TLRPC.InputPeer c0;
     public final boolean d0;
-    public t61 e0;
+    public u61 e0;
     public boolean f0;
 
     /* JADX WARN: Code restructure failed: missing block: B:46:0x0103, code lost:
@@ -57,9 +57,9 @@ public final class cd extends org.telegram.ui.Components.bb implements Notificat
         boolean isReady = (inputPeer == null || !AppGlobalConfig.getInstance(ga.y(this.currentAccount, false).a).starsSpendTopUpInvoiceDisabled.get()) ? true : BillingController.getInstance().isReady();
         this.d0 = isReady;
         fixNavigationBar();
-        im0 im0Var = this.d;
+        jm0 jm0Var = this.d;
         int i11 = this.backgroundPaddingLeft;
-        im0Var.setPadding(i11, 0, i11, 0);
+        jm0Var.setPadding(i11, 0, i11, 0);
         this.d.setOnItemClickListener(new wa(this, 2));
         this.d.p1();
         s4.k kVar = new s4.k();
@@ -125,22 +125,22 @@ public final class cd extends org.telegram.ui.Components.bb implements Notificat
         z00 z00Var = new z00(getContext());
         this.a0 = z00Var;
         this.containerView.addView(z00Var, w7.z5.c(-1.0f, -1));
-        t61 t61Var = this.e0;
-        if (t61Var != null) {
-            t61Var.N(false);
+        u61 u61Var = this.e0;
+        if (u61Var != null) {
+            u61Var.N(false);
         }
     }
 
     public static void Q(cd cdVar, int i10) {
-        g61 G;
-        t61 t61Var = cdVar.e0;
-        if (t61Var == null || (G = t61Var.G(i10 - 1)) == null) {
+        h61 G;
+        u61 u61Var = cdVar.e0;
+        if (u61Var == null || (G = u61Var.G(i10 - 1)) == null) {
             return;
         }
-        t61 t61Var2 = cdVar.e0;
+        u61 u61Var2 = cdVar.e0;
         if (G.d == -1) {
             cdVar.f0 = !cdVar.f0;
-            t61Var2.N(true);
+            u61Var2.N(true);
         } else if (G.G(xc.class) && (G.G instanceof TL_stars.TL_starsTopupOption)) {
             Activity findActivity = AndroidUtilities.findActivity(cdVar.getContext());
             if (findActivity == null) {
@@ -153,12 +153,12 @@ public final class cd extends org.telegram.ui.Components.bb implements Notificat
         }
     }
 
-    public static void R(cd cdVar, g61 g61Var, Boolean bool, String str) {
+    public static void R(cd cdVar, h61 h61Var, Boolean bool, String str) {
         if (cdVar.getContext() == null) {
             return;
         }
         if (bool.booleanValue()) {
-            new org.telegram.ui.Components.xc((FrameLayout) cdVar.containerView, cdVar.resourcesProvider).M(LocaleController.getString(R.string.StarsAcquired), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsAcquiredInfo", (int) g61Var.B, new Object[0])), R.raw.stars_topup).j();
+            new org.telegram.ui.Components.xc((FrameLayout) cdVar.containerView, cdVar.resourcesProvider).M(LocaleController.getString(R.string.StarsAcquired), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsAcquiredInfo", (int) h61Var.B, new Object[0])), R.raw.stars_topup).j();
             cdVar.a0.c(true);
             ga.y(cdVar.currentAccount, false).T(true);
         } else if (str != null) {
@@ -175,10 +175,10 @@ public final class cd extends org.telegram.ui.Components.bb implements Notificat
         return ((TextView) bdVar.b).getText();
     }
 
-    public final void S(ArrayList arrayList, t61 t61Var) {
+    public final void S(ArrayList arrayList, u61 u61Var) {
         long j10;
         bd bdVar = this.Y;
-        arrayList.add(g61.l(bdVar));
+        arrayList.add(h61.l(bdVar));
         boolean z10 = this.d0;
         if (z10) {
             i2.e.p(R.string.TelegramStarsChoose, arrayList);
@@ -187,9 +187,9 @@ public final class cd extends org.telegram.ui.Components.bb implements Notificat
         ArrayList z11 = ga.y(this.currentAccount, false).z();
         if (z10) {
             if (z11 == null || z11.isEmpty()) {
-                arrayList.add(g61.n(31));
-                arrayList.add(g61.n(31));
-                arrayList.add(g61.n(31));
+                arrayList.add(h61.n(31));
+                arrayList.add(h61.n(31));
+                arrayList.add(h61.n(31));
             } else {
                 int i11 = 1;
                 int i12 = 0;
@@ -217,7 +217,7 @@ public final class cd extends org.telegram.ui.Components.bb implements Notificat
                 }
                 if (i13 < 3) {
                     arrayList.clear();
-                    arrayList.add(g61.k(bdVar));
+                    arrayList.add(h61.k(bdVar));
                     i2.e.p(R.string.TelegramStarsChoose, arrayList);
                     int i15 = 0;
                     for (int i16 = 0; i16 < z11.size(); i16++) {
@@ -239,7 +239,7 @@ public final class cd extends org.telegram.ui.Components.bb implements Notificat
                             String string = LocaleController.getString(z13 ? R.string.NotifyLessOptions : R.string.NotifyMoreOptions);
                             boolean z14 = !this.f0;
                             int i17 = qc.a;
-                            g61 J = g61.J(qc.class);
+                            h61 J = h61.J(qc.class);
                             J.d = -1;
                             J.l = string;
                             J.f = z14;
@@ -255,7 +255,7 @@ public final class cd extends org.telegram.ui.Components.bb implements Notificat
                         String string2 = LocaleController.getString(z15 ? R.string.NotifyLessOptions : R.string.NotifyMoreOptions);
                         boolean z16 = !this.f0;
                         int i18 = qc.a;
-                        g61 J2 = g61.J(qc.class);
+                        h61 J2 = h61.J(qc.class);
                         J2.d = -1;
                         J2.l = string2;
                         J2.f = z16;
@@ -271,16 +271,16 @@ public final class cd extends org.telegram.ui.Components.bb implements Notificat
                 }
             }
         }
-        arrayList.add(g61.k(this.Z));
+        arrayList.add(h61.k(this.Z));
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         Runnable runnable;
         if (i10 == NotificationCenter.starOptionsLoaded || i10 == NotificationCenter.starBalanceUpdated) {
-            t61 t61Var = this.e0;
-            if (t61Var != null) {
-                t61Var.N(true);
+            u61 u61Var = this.e0;
+            if (u61Var != null) {
+                u61Var.N(true);
             }
             long j10 = ga.y(this.currentAccount, false).p().amount;
             TextView textView = (TextView) this.Y.b;
@@ -344,9 +344,9 @@ public final class cd extends org.telegram.ui.Components.bb implements Notificat
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
-        t61 t61Var = new t61(this.d, getContext(), this.currentAccount, 0, true, new q(this, 8), this.resourcesProvider);
-        this.e0 = t61Var;
-        return t61Var;
+    public final im0 x(jm0 jm0Var) {
+        u61 u61Var = new u61(this.d, getContext(), this.currentAccount, 0, true, new q(this, 8), this.resourcesProvider);
+        this.e0 = u61Var;
+        return u61Var;
     }
 }

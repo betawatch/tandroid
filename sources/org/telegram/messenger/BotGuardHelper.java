@@ -7,13 +7,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public class BotGuardHelper extends BaseController {
     private static volatile BotGuardHelper[] Instance = new BotGuardHelper[4];
     private final LongSparseLongArray queryIdToBotId;
 
-    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
     public static class GuardBotDecisionResultNotification {
         public final long dialogId;
         public final long guardBotId;
@@ -98,7 +98,7 @@ public class BotGuardHelper extends BaseController {
                 openGuardBotWebApp(j10, j11, j12, true);
                 return;
             } else {
-                org.telegram.ui.Components.f5.n(R, user, new n0(this, j10, j11, j12, 0), new y1(8));
+                org.telegram.ui.Components.f5.n(R, user, new o0(this, j10, j11, j12, 0), new z1(8));
                 return;
             }
         }

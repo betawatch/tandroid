@@ -9,13 +9,13 @@ import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class fu0 {
     public final View i;
     public boolean p;
     public final org.telegram.ui.Components.zq q;
-    public final org.telegram.ui.Components.ah0 r;
+    public final org.telegram.ui.Components.bh0 r;
     public final /* synthetic */ PhotoViewer s;
     public long a = 0;
     public float b = 0.0f;
@@ -49,10 +49,10 @@ public abstract class fu0 {
             float[] fArr = this.n;
             if (i10 >= fArr.length) {
                 a();
-                org.telegram.ui.Components.ah0 ah0Var = new org.telegram.ui.Components.ah0(28);
-                this.r = ah0Var;
-                ah0Var.h = 200;
-                this.q = new org.telegram.ui.Components.zq(photoViewer.y.getDrawable(R.drawable.circle_big).mutate(), ah0Var);
+                org.telegram.ui.Components.bh0 bh0Var = new org.telegram.ui.Components.bh0(28);
+                this.r = bh0Var;
+                bh0Var.h = 200;
+                this.q = new org.telegram.ui.Components.zq(photoViewer.y.getDrawable(R.drawable.circle_big).mutate(), bh0Var);
                 return;
             }
             this.m[i10] = 1.0f;
@@ -82,7 +82,7 @@ public abstract class fu0 {
             ds0 ds0Var = (ds0) this;
             PhotoViewer photoViewer = ds0Var.t;
             if (ds0Var == photoViewer.W0[0]) {
-                photoViewer.r3();
+                photoViewer.t3();
             }
         }
     }
@@ -167,16 +167,16 @@ public abstract class fu0 {
             return;
         }
         View view = this.i;
-        org.telegram.ui.Components.ah0 ah0Var = this.r;
-        if (ah0Var != null) {
+        org.telegram.ui.Components.bh0 bh0Var = this.r;
+        if (bh0Var != null) {
             boolean z12 = z11 && (i12 == 3 || i12 == 4);
             if (i10 == 3) {
-                ah0Var.a(false, z12);
+                bh0Var.a(false, z12);
             } else if (i10 == 4) {
-                ah0Var.a(true, z12);
+                bh0Var.a(true, z12);
             }
-            ah0Var.f = view;
-            ah0Var.invalidateSelf();
+            bh0Var.f = view;
+            bh0Var.invalidateSelf();
         }
         this.a = System.currentTimeMillis();
         if (!z10 || (i11 = this.h) == i10) {
@@ -189,7 +189,7 @@ public abstract class fu0 {
         ds0 ds0Var = (ds0) this;
         PhotoViewer photoViewer = ds0Var.t;
         if (ds0Var == photoViewer.W0[0]) {
-            photoViewer.r3();
+            photoViewer.t3();
         }
         view.invalidate();
     }

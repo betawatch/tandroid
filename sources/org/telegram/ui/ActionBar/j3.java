@@ -34,7 +34,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
@@ -42,7 +42,7 @@ import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.er0;
+import org.telegram.ui.Components.fr0;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.mf;
 import org.telegram.ui.Components.mi;
@@ -75,7 +75,7 @@ import org.telegram.ui.t21;
 import org.telegram.ui.tn;
 import org.telegram.ui.vc;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -292,7 +292,7 @@ public final /* synthetic */ class j3 implements Utilities.Callback {
                                 str4 = l4Var.u0[0].getWebView().getUrl();
                             }
                             String u10 = org.telegram.ui.web.a1.u(str4);
-                            l4Var.a0(new er0(l4Var.L, null, u10, false, u10, false, AndroidUtilities.computePerceivedBrightness(l4Var.h0.getBackgroundColor()) < 0.721f ? new ci.b() : null));
+                            l4Var.a0(new fr0(l4Var.L, null, u10, false, u10, false, AndroidUtilities.computePerceivedBrightness(l4Var.h0.getBackgroundColor()) < 0.721f ? new ci.b() : null));
                             break;
                         } else if (num.intValue() == 6) {
                             if (!l4Var.u0[0].f()) {
@@ -404,7 +404,7 @@ public final /* synthetic */ class j3 implements Utilities.Callback {
                                     boolean z13 = LocaleController.isRTL;
                                     m0Var.addView(radioButton, w7.z5.d(22, 22.0f, (z13 ? 5 : 3) | 48, z13 ? 0 : 22, 13.0f, z13 ? 22 : 0, 0.0f));
                                     TextView textView = new TextView(activity3);
-                                    kk.u(textView, h6.x0(null, h6.G6, false), 1, 16.0f, 1);
+                                    mk.u(textView, h6.x0(null, h6.G6, false), 1, 16.0f, 1);
                                     textView.setMaxLines(1);
                                     textView.setSingleLine(true);
                                     textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
@@ -714,7 +714,7 @@ public final /* synthetic */ class j3 implements Utilities.Callback {
                 boolean J1 = tiVar2.J1(0, true, 0, tiVar2.u1(), tiVar2.Q0);
                 mf mfVar = tiVar2.h0;
                 if (mfVar != null) {
-                    mfVar.h(!J1);
+                    mfVar.g(!J1);
                     tiVar2.h0 = null;
                     break;
                 }

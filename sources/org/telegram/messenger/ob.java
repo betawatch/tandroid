@@ -1,43 +1,30 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ob implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ TLObject c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
 
-    public /* synthetic */ ob(MessagesController messagesController, TLObject tLObject, int i10) {
+    public /* synthetic */ ob(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
         this.a = i10;
-        this.b = messagesController;
-        this.c = tLObject;
+        this.b = n2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadGlobalNotificationsSettings$201(this.c);
+                MessagesController.lambda$checkSensitive$450(this.b);
                 break;
             case 1:
-                this.b.lambda$reloadReactionsNotifySettings$203(this.c);
+                org.telegram.ui.Components.f5.s0(7, this.b, null);
                 break;
             case 2:
-                this.b.lambda$getContentSettings$504(this.c);
-                break;
-            case 3:
-                this.b.lambda$loadSuggestedFilters$24(this.c);
-                break;
-            case 4:
-                this.b.lambda$loadHintDialogs$194(this.c);
-                break;
-            case 5:
-                this.b.lambda$loadUnreadDialogs$360(this.c);
+                org.telegram.ui.Components.f5.s0(8, this.b, null);
                 break;
             default:
-                this.b.lambda$loadSignUpNotificationsSettings$205(this.c);
+                TranslateController.lambda$pushToSummarize$18(this.b);
                 break;
         }
     }

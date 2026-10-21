@@ -15,7 +15,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.qa1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class q extends HorizontalScrollView {
     public org.telegram.ui.web.m a;
@@ -24,12 +24,12 @@ public final class q extends HorizontalScrollView {
     public final Paint d;
     public int e;
     public float f;
-    public final /* synthetic */ j0 h;
+    public final /* synthetic */ k0 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q(j0 j0Var, Context context) {
+    public q(k0 k0Var, Context context) {
         super(context);
-        this.h = j0Var;
+        this.h = k0Var;
         Paint paint = new Paint(1);
         this.d = paint;
         this.e = -1;
@@ -92,29 +92,29 @@ public final class q extends HorizontalScrollView {
             float scrollX = getScrollX();
             float width = getWidth() + getScrollX();
             float height = getHeight();
-            m0 m0Var = (m0) mVar.b;
+            n0 n0Var = (n0) mVar.b;
             q qVar = (q) mVar.c;
-            RectF rectF = m0Var.m0;
-            int[] iArr = m0Var.k0;
-            int[] iArr2 = m0Var.i0;
-            Path path = m0Var.l0;
-            RectF rectF2 = m0Var.h0;
-            if (m0Var.Z != null && m0Var.d != null) {
-                float f10 = m0Var.a0;
+            RectF rectF = n0Var.m0;
+            int[] iArr = n0Var.k0;
+            int[] iArr2 = n0Var.i0;
+            Path path = n0Var.l0;
+            RectF rectF2 = n0Var.h0;
+            if (n0Var.Z != null && n0Var.d != null) {
+                float f10 = n0Var.a0;
                 f7 = 2.0f;
-                rectF2.set(scrollX + f10, m0Var.b0 + 0.0f, width - f10, height - m0Var.c0);
+                rectF2.set(scrollX + f10, n0Var.b0 + 0.0f, width - f10, height - n0Var.c0);
                 canvas.save();
                 path.rewind();
                 path.addRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, Path.Direction.CW);
                 canvas.clipPath(path);
                 qVar.getLocationOnScreen(iArr2);
-                m0Var.d.getLocationOnScreen(iArr);
+                n0Var.d.getLocationOnScreen(iArr);
                 float max = Math.max(0.01f, qVar.getScaleX());
                 canvas.translate(scrollX, 0.0f);
                 float f11 = 1.0f / max;
                 canvas.scale(f11, f11);
                 rectF.set((rectF2.left - scrollX) * max, (rectF2.top - 0.0f) * max, (rectF2.right - scrollX) * max, (rectF2.bottom - 0.0f) * max);
-                c1 c1Var = m0Var.d;
+                c1 c1Var = n0Var.d;
                 int i10 = iArr2[0];
                 int i11 = iArr[0];
                 int i12 = iArr2[1];
@@ -123,24 +123,24 @@ public final class q extends HorizontalScrollView {
                 paint.setColor(c1Var.t0());
                 canvas.drawRect(rectF, paint);
                 canvas.restore();
-                if (m0Var.n0 == null) {
-                    m0Var.n0 = new Paint(1);
+                if (n0Var.n0 == null) {
+                    n0Var.n0 = new Paint(1);
                 }
-                Paint paint2 = m0Var.n0;
-                a1 a1Var = m0Var.d.n;
+                Paint paint2 = n0Var.n0;
+                a1 a1Var = n0Var.d.n;
                 paint2.setColor(a1Var != null ? a1Var.h : 872415231);
-                canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, m0Var.n0);
+                canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, n0Var.n0);
                 super.draw(canvas);
                 c0Var = this.b;
                 if (c0Var == null) {
                     float scrollX2 = getScrollX();
                     float width2 = getWidth() + getScrollX();
                     float height2 = getHeight();
-                    m0 m0Var2 = c0Var.a;
-                    RectF rectF3 = m0Var2.p0;
-                    float f12 = m0Var2.a0;
-                    rectF3.set(scrollX2 + f12, 0.0f + m0Var2.b0, width2 - f12, height2 - m0Var2.c0);
-                    m0Var2.o0.a(canvas, rectF3, rectF3.height() / f7, 0, 1.0f);
+                    n0 n0Var2 = c0Var.a;
+                    RectF rectF3 = n0Var2.p0;
+                    float f12 = n0Var2.a0;
+                    rectF3.set(scrollX2 + f12, 0.0f + n0Var2.b0, width2 - f12, height2 - n0Var2.c0);
+                    n0Var2.o0.a(canvas, rectF3, rectF3.height() / f7, 0, 1.0f);
                     return;
                 }
                 return;

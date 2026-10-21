@@ -13,9 +13,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pe implements org.telegram.ui.Components.n60, org.telegram.ui.Components.q60, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.so, MessagesStorage.BooleanCallback, org.telegram.ui.Components.jk0, ResultCallback, xh.c, kh.a, kh.b, g60, es, org.telegram.ui.Components.yl0, kh.d, org.telegram.ui.Components.kl0 {
+public final /* synthetic */ class pe implements org.telegram.ui.Components.n60, org.telegram.ui.Components.q60, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.so, MessagesStorage.BooleanCallback, org.telegram.ui.Components.kk0, ResultCallback, xh.c, kh.a, kh.b, g60, es, org.telegram.ui.Components.zl0, kh.d, org.telegram.ui.Components.ll0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ qn b;
 
@@ -24,7 +24,7 @@ public final /* synthetic */ class pe implements org.telegram.ui.Components.n60,
         this.b = qnVar;
     }
 
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.zl0
     public boolean a(int i10, View view) {
         qn qnVar = this.b;
         boolean z10 = false;
@@ -38,7 +38,7 @@ public final /* synthetic */ class pe implements org.telegram.ui.Components.n60,
                 Object J = qnVar.I1.getAdapter().J(i10 - 1);
                 if (J instanceof hg.g1) {
                     hg.g1 g1Var = (hg.g1) J;
-                    if (qnVar.I1.getAdapter().J != null && org.telegram.ui.Components.h61.h) {
+                    if (qnVar.I1.getAdapter().J != null && org.telegram.ui.Components.i61.h) {
                         qnVar.Y.setFieldText("");
                         fk fkVar = qnVar.Y;
                         String str = g1Var.a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class pe implements org.telegram.ui.Components.n60,
                         qnVar.showDialog(alertDialog$Builder.a);
                         return true;
                     }
-                    if (org.telegram.ui.Components.h61.h) {
+                    if (org.telegram.ui.Components.i61.h) {
                         qnVar.Y.setFieldText("");
                         fk fkVar2 = qnVar.Y;
                         String str2 = (String) J;
@@ -76,7 +76,7 @@ public final /* synthetic */ class pe implements org.telegram.ui.Components.n60,
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public void b() {
         qn qnVar = this.b;
         qnVar.v9(1);
@@ -105,7 +105,7 @@ public final /* synthetic */ class pe implements org.telegram.ui.Components.n60,
         }
     }
 
-    @Override // org.telegram.ui.Components.jk0
+    @Override // org.telegram.ui.Components.kk0
     public void e(ArrayList arrayList) {
         switch (this.a) {
             case 11:
@@ -164,7 +164,7 @@ public final /* synthetic */ class pe implements org.telegram.ui.Components.n60,
                 if (messageObject == null) {
                     messageObject = (MessageObject) qnVar.o6[0].get(qnVar.L4);
                 }
-                qnVar.gc(messageObject);
+                qnVar.hc(messageObject);
                 break;
             case 6:
                 qn qnVar2 = this.b;
@@ -227,8 +227,8 @@ public final /* synthetic */ class pe implements org.telegram.ui.Components.n60,
         qn qnVar = this.b;
         qnVar.getMessagesController().addUsersToChat(qnVar.e, qnVar, arrayList, i10, null, null, null);
         qnVar.getMessagesController().hidePeerSettingsBar(qnVar.T5, qnVar.f, qnVar.e);
-        qnVar.Uc(true);
-        qnVar.sc(true);
+        qnVar.Vc(true);
+        qnVar.tc(true);
     }
 
     @Override // kh.a

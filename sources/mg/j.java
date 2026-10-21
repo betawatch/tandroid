@@ -27,7 +27,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
@@ -40,9 +40,9 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.e2;
-import org.telegram.ui.Components.er0;
-import org.telegram.ui.Components.if0;
-import org.telegram.ui.Components.qt0;
+import org.telegram.ui.Components.fr0;
+import org.telegram.ui.Components.jf0;
+import org.telegram.ui.Components.rt0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.a10;
@@ -69,7 +69,7 @@ import si.m0;
 import si.n0;
 import si.q0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -191,14 +191,14 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 }
                 return;
             case 5:
-                if0 if0Var = (if0) this.b;
+                jf0 jf0Var = (jf0) this.b;
                 AndroidUtilities.VcardItem vcardItem = (AndroidUtilities.VcardItem) this.c;
-                if0Var.getClass();
+                jf0Var.getClass();
                 if (i10 == 0) {
                     try {
                         ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", vcardItem.getValue(false)));
                         if (AndroidUtilities.shouldShowClipboardToast()) {
-                            Toast.makeText(if0Var.r.getParentActivity(), LocaleController.getString(R.string.TextCopied), 0).show();
+                            Toast.makeText(jf0Var.r.getParentActivity(), LocaleController.getString(R.string.TextCopied), 0).show();
                             return;
                         }
                         return;
@@ -209,13 +209,13 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 }
                 return;
             case 6:
-                qt0 qt0Var = (qt0) this.b;
+                rt0 rt0Var = (rt0) this.b;
                 String str6 = (String) this.c;
                 if (i10 == 0) {
-                    qt0Var.a.T0(str6);
+                    rt0Var.a.T0(str6);
                     return;
                 }
-                qt0Var.getClass();
+                rt0Var.getClass();
                 if (i10 == 1) {
                     if (str6.startsWith("mailto:")) {
                         str6 = str6.substring(7);
@@ -318,7 +318,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
             case 12:
                 u61 u61Var = (u61) this.b;
                 ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.c));
-                kk.p(R.string.TextCopied, new xc(u61Var.getContainer(), null));
+                mk.p(R.string.TextCopied, new xc(u61Var.getContainer(), null));
                 return;
             case 13:
                 ua1 ua1Var = (ua1) this.b;
@@ -334,7 +334,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                         return;
                     }
                     String str8 = "https://" + themeActivity.getMessagesController().linkPrefix + "/addtheme/" + g6Var.F.slug;
-                    themeActivity.showDialog(new er0(themeActivity.getParentActivity(), null, str8, false, str8, false, null));
+                    themeActivity.showDialog(new fr0(themeActivity.getParentActivity(), null, str8, false, str8, false, null));
                     return;
                 }
                 if (i10 != 1) {

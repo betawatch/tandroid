@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.nl0;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.Components.z7;
 import org.telegram.ui.PremiumPreviewFragment;
@@ -37,7 +37,7 @@ import org.telegram.ui.pw0;
 import org.telegram.ui.y21;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class y0 extends f3 implements NotificationCenter.NotificationCenterDelegate {
     public final boolean E;
@@ -273,7 +273,7 @@ public final class y0 extends f3 implements NotificationCenter.NotificationCente
                 o0Var.setOffset(r0.getMeasuredWidth());
                 this.w = true;
                 ofFloat.addUpdateListener(new v4(o0Var, 13));
-                ofFloat.addListener(new ml0(21, this, o0Var));
+                ofFloat.addListener(new nl0(21, this, o0Var));
                 ofFloat.setDuration(500L);
                 ofFloat.setStartDelay(100L);
                 ofFloat.setInterpolator(bs.h);

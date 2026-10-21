@@ -6,17 +6,17 @@ import org.telegram.ui.kc1;
 import org.telegram.ui.uh1;
 import org.telegram.ui.vh1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class hj extends org.telegram.ui.Cells.ab {
     public final /* synthetic */ int w;
-    public final /* synthetic */ hm0 x;
+    public final /* synthetic */ im0 x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ hj(hm0 hm0Var, Context context, int i10) {
+    public /* synthetic */ hj(im0 im0Var, Context context, int i10) {
         super(context, 5);
         this.w = i10;
-        this.x = hm0Var;
+        this.x = im0Var;
     }
 
     @Override // org.telegram.ui.Cells.ab

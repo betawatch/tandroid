@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class jz0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Context a;
@@ -58,14 +58,14 @@ public final class jz0 extends org.telegram.ui.ActionBar.j {
         int i18;
         Runnable runnable;
         int i19;
-        org.telegram.ui.Components.jt0 jt0Var;
+        org.telegram.ui.Components.kt0 kt0Var;
         if (this.b.getParentActivity() == null) {
             return;
         }
         if (i10 == -1) {
             ProfileActivity profileActivity = this.b;
             nz0 nz0Var = profileActivity.O;
-            if (nz0Var == null || (jt0Var = nz0Var.I0) == null || !jt0Var.n0) {
+            if (nz0Var == null || (kt0Var = nz0Var.I0) == null || !kt0Var.n0) {
                 profileActivity.finishFragment();
                 return;
             } else {
@@ -92,7 +92,7 @@ public final class jz0 extends org.telegram.ui.ActionBar.j {
             return;
         }
         if (i10 == 3) {
-            Bundle d = org.telegram.messenger.kk.d(3, "onlySelect", "dialogsType", true);
+            Bundle d = org.telegram.messenger.mk.d(3, "onlySelect", "dialogsType", true);
             d.putString("selectAlertString", LocaleController.getString(R.string.SendContactToText));
             d.putString("selectAlertStringGroup", LocaleController.getString(R.string.SendContactToGroupText));
             cy cyVar = new cy(d);
@@ -152,21 +152,21 @@ public final class jz0 extends org.telegram.ui.ActionBar.j {
                 return;
             }
             boolean[] zArr = new boolean[1];
-            org.telegram.ui.ActionBar.f3 i24 = org.telegram.messenger.kk.i(1, context, null, false);
+            org.telegram.ui.ActionBar.f3 i24 = org.telegram.messenger.mk.i(1, context, null, false);
             runnable = i24.dismissRunnable;
             LinearLayout linearLayout = new LinearLayout(context);
             linearLayout.setOrientation(1);
             linearLayout.setClipChildren(false);
             linearLayout.setClipToPadding(false);
-            org.telegram.ui.Components.xj0 xj0Var = new org.telegram.ui.Components.xj0(context);
-            linearLayout.addView(xj0Var, w7.z5.t(110, 110, 17, 0, 21, 0, 11));
-            xj0Var.f(R.raw.raised_hand, 110, 110, null);
-            xj0Var.setAutoRepeat(false);
-            xj0Var.d();
+            org.telegram.ui.Components.yj0 yj0Var = new org.telegram.ui.Components.yj0(context);
+            linearLayout.addView(yj0Var, w7.z5.t(110, 110, 17, 0, 21, 0, 11));
+            yj0Var.f(R.raw.raised_hand, 110, 110, null);
+            yj0Var.setAutoRepeat(false);
+            yj0Var.d();
             TextView textView2 = new TextView(context);
             textView2.setTypeface(AndroidUtilities.bold());
             textView2.setGravity(17);
-            org.telegram.messenger.kk.j(20.0f, R.string.DisableSharingInfoHeader, 1, textView2);
+            org.telegram.messenger.mk.j(20.0f, R.string.DisableSharingInfoHeader, 1, textView2);
             int i25 = org.telegram.ui.ActionBar.h6.G6;
             textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(i25, d6Var));
             linearLayout.addView(textView2, w7.z5.t(-1, -2, 17, 20, 0, 20, 14));
@@ -435,7 +435,7 @@ public final class jz0 extends org.telegram.ui.ActionBar.j {
             if (user3 == null) {
                 return;
             }
-            Bundle d10 = org.telegram.messenger.kk.d(2, "onlySelect", "dialogsType", true);
+            Bundle d10 = org.telegram.messenger.mk.d(2, "onlySelect", "dialogsType", true);
             d10.putBoolean("resetDelegate", false);
             d10.putBoolean("closeFragment", false);
             cy cyVar2 = new cy(d10);
@@ -795,12 +795,12 @@ public final class jz0 extends org.telegram.ui.ActionBar.j {
                 i12 = ((org.telegram.ui.ActionBar.n2) this.b).currentAccount;
                 FileLoader fileLoader = FileLoader.getInstance(i12);
                 Drawable[] drawableArr = PhotoViewer.U8;
-                File pathToAttach2 = fileLoader.getPathToAttach(D2.location, PhotoViewer.q1(D2), true);
+                File pathToAttach2 = fileLoader.getPathToAttach(D2.location, PhotoViewer.r1(D2), true);
                 boolean z11 = D2.imageType == 2;
                 if (z11) {
                     ImageLocation G = this.b.o0.G(realPosition);
                     i13 = ((org.telegram.ui.ActionBar.n2) this.b).currentAccount;
-                    str = FileLoader.getInstance(i13).getPathToAttach(G == null ? null : G.location, PhotoViewer.q1(G), true).getAbsolutePath();
+                    str = FileLoader.getInstance(i13).getPathToAttach(G == null ? null : G.location, PhotoViewer.r1(G), true).getAbsolutePath();
                 } else {
                     str = null;
                 }
@@ -1043,9 +1043,9 @@ public final class jz0 extends org.telegram.ui.ActionBar.j {
             ImageLocation imageLocation3 = (ImageLocation) arrayList5.get(realPosition2);
             arrayList5.remove(realPosition2);
             arrayList5.add(0, imageLocation3);
-            org.telegram.ui.Components.m71 m71Var = (org.telegram.ui.Components.m71) arrayList4.get(realPosition2);
+            org.telegram.ui.Components.n71 n71Var = (org.telegram.ui.Components.n71) arrayList4.get(realPosition2);
             arrayList4.remove(realPosition2);
-            arrayList4.add(0, m71Var);
+            arrayList4.add(0, n71Var);
             Integer num = (Integer) arrayList3.get(realPosition2);
             arrayList3.remove(realPosition2);
             arrayList3.add(0, num);

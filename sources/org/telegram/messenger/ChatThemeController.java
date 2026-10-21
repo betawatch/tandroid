@@ -31,7 +31,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.tn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public class ChatThemeController extends BaseController {
     public static final int THEME_LIST_WITH_DEFAULT = 1;
@@ -50,7 +50,7 @@ public class ChatThemeController extends BaseController {
     private final Map<String, Long> usedGiftThemesBySlug;
     private final Map<Long, String> usedGiftThemesByUsers;
 
-    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
     public static class ThemeList {
         private boolean completed;
         private long hash;
@@ -147,7 +147,7 @@ public class ChatThemeController extends BaseController {
         if (this.themesHash == 0) {
             resultCallback.onComplete(null);
         } else {
-            chatThemeQueue.postRunnable(new g3(14, getPatternFile(j10), resultCallback));
+            chatThemeQueue.postRunnable(new i3(14, getPatternFile(j10), resultCallback));
         }
     }
 
@@ -170,7 +170,7 @@ public class ChatThemeController extends BaseController {
             FileLog.e(e);
         }
         this.allChatThemes = getAllChatThemesFromPrefs();
-        getMessagesStorage().loadGiftChatTheme(new d1(this, 0));
+        getMessagesStorage().loadGiftChatTheme(new e1(this, 0));
         preloadSticker("❌");
         if (this.allChatThemes.isEmpty()) {
             return;
@@ -197,7 +197,7 @@ public class ChatThemeController extends BaseController {
             FileLog.e(e);
         }
         if (resultCallback != null) {
-            AndroidUtilities.runOnUIThread(new g3(15, resultCallback, bitmap));
+            AndroidUtilities.runOnUIThread(new i3(15, resultCallback, bitmap));
         }
     }
 
@@ -303,16 +303,16 @@ public class ChatThemeController extends BaseController {
             } catch (Exception e) {
                 e = e;
                 FileLog.e(e);
-                AndroidUtilities.runOnUIThread(new g3(18, callback, bitmap != null ? new eg.a(bitmap, 1, arrayList) : null));
+                AndroidUtilities.runOnUIThread(new i3(18, callback, bitmap != null ? new eg.a(bitmap, 1, arrayList) : null));
             }
         } catch (Exception e7) {
             e = e7;
             bitmap = null;
             arrayList = null;
             FileLog.e(e);
-            AndroidUtilities.runOnUIThread(new g3(18, callback, bitmap != null ? new eg.a(bitmap, 1, arrayList) : null));
+            AndroidUtilities.runOnUIThread(new i3(18, callback, bitmap != null ? new eg.a(bitmap, 1, arrayList) : null));
         }
-        AndroidUtilities.runOnUIThread(new g3(18, callback, bitmap != null ? new eg.a(bitmap, 1, arrayList) : null));
+        AndroidUtilities.runOnUIThread(new i3(18, callback, bitmap != null ? new eg.a(bitmap, 1, arrayList) : null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -377,10 +377,10 @@ public class ChatThemeController extends BaseController {
             list = arrayList;
         } else {
             if (!(themes instanceof TL_account.TL_themesNotModified)) {
-                AndroidUtilities.runOnUIThread(new c1(resultCallback, tL_error, 0));
+                AndroidUtilities.runOnUIThread(new d1(resultCallback, tL_error, 0));
                 list = null;
                 if (z11) {
-                    AndroidUtilities.runOnUIThread(new wj(this, list, resultCallback, z10, 3));
+                    AndroidUtilities.runOnUIThread(new yj(this, list, resultCallback, z10, 3));
                     return;
                 }
                 return;
@@ -437,13 +437,13 @@ public class ChatThemeController extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public void lambda$requestNextChatThemes$21(ResultCallback resultCallback, TL_account.ChatThemes chatThemes, TLRPC.TL_error tL_error) {
         if (tL_error != null) {
-            AndroidUtilities.runOnUIThread(new c1(resultCallback, tL_error, 1));
+            AndroidUtilities.runOnUIThread(new d1(resultCallback, tL_error, 1));
             return;
         }
         ArrayList arrayList = new ArrayList();
         if (!(chatThemes instanceof TL_account.Tl_chatThemes)) {
             if (chatThemes instanceof TL_account.TL_chatThemesNotModified) {
-                AndroidUtilities.runOnUIThread(new g3(19, this, resultCallback));
+                AndroidUtilities.runOnUIThread(new i3(19, this, resultCallback));
                 return;
             }
             return;
@@ -473,7 +473,7 @@ public class ChatThemeController extends BaseController {
             c4Var.n(1, null);
             arrayList3.add(c4Var);
         }
-        AndroidUtilities.runOnUIThread(new e5(this, tl_chatThemes, arrayList3, arrayList, resultCallback, 3));
+        AndroidUtilities.runOnUIThread(new g5(this, tl_chatThemes, arrayList3, arrayList, resultCallback, 3));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -618,13 +618,13 @@ public class ChatThemeController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setWallpaperToPeer$17(long j10, boolean z10, String str, Runnable runnable, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new td(this, tLObject, j10, z10, str, runnable));
+        AndroidUtilities.runOnUIThread(new vd(this, tLObject, j10, z10, str, runnable));
     }
 
     private void loadWallpaperPatternBitmap(long j10, Utilities.Callback<eg.a> callback) {
         File filesDirFixed = ApplicationLoader.getFilesDirFixed("rasterized/wallpaper");
         Locale locale = Locale.US;
-        chatThemeQueue.postRunnable(new g3(17, new File(filesDirFixed, r4.c.g(j10, "pattern_", ".pgm.gz")), callback));
+        chatThemeQueue.postRunnable(new i3(17, new File(filesDirFixed, r4.c.g(j10, "pattern_", ".pgm.gz")), callback));
     }
 
     private void preloadSticker(String str) {
@@ -645,12 +645,12 @@ public class ChatThemeController extends BaseController {
             ConnectionsManager connectionsManager = getConnectionsManager();
             DispatchQueue dispatchQueue = chatThemeQueue;
             Objects.requireNonNull(dispatchQueue);
-            connectionsManager.sendRequestTyped(tl_getUniqueGiftChatThemes, new f1(dispatchQueue), new g1(0, this, resultCallback));
+            connectionsManager.sendRequestTyped(tl_getUniqueGiftChatThemes, new g1(dispatchQueue), new h1(0, this, resultCallback));
         }
     }
 
     private void saveWallpaperBitmap(Bitmap bitmap, long j10) {
-        chatThemeQueue.postRunnable(new g3(20, getPatternFile(j10), bitmap));
+        chatThemeQueue.postRunnable(new i3(20, getPatternFile(j10), bitmap));
     }
 
     private void saveWallpaperPatternBitmap(Bitmap bitmap, List<eg.c> list, long j10) {
@@ -884,7 +884,7 @@ public class ChatThemeController extends BaseController {
             }
             getMessagesStorage().updateChatInfo(chatFull, false);
             saveChatWallpaper(j10, chatFull.wallpaper);
-            AndroidUtilities.runOnUIThread(new g3(16, this, chatFull));
+            AndroidUtilities.runOnUIThread(new i3(16, this, chatFull));
             return;
         }
         TLRPC.UserFull userFull = getMessagesController().getUserFull(tL_updatePeerWallpaper.peer.user_id);
@@ -903,7 +903,7 @@ public class ChatThemeController extends BaseController {
         }
         getMessagesStorage().updateUserInfo(userFull, false);
         saveChatWallpaper(j11, userFull.wallpaper);
-        AndroidUtilities.runOnUIThread(new e4(this, j11, userFull, 4));
+        AndroidUtilities.runOnUIThread(new g4(this, j11, userFull, 4));
     }
 
     public void putThemeIfNeeded(TLRPC.ChatTheme chatTheme) {
@@ -931,7 +931,7 @@ public class ChatThemeController extends BaseController {
             ConnectionsManager connectionsManager = getConnectionsManager();
             DispatchQueue dispatchQueue = chatThemeQueue;
             Objects.requireNonNull(dispatchQueue);
-            connectionsManager.sendRequestTyped(getchatthemes, new f1(dispatchQueue), new Utilities.Callback2() { // from class: org.telegram.messenger.e1
+            connectionsManager.sendRequestTyped(getchatthemes, new g1(dispatchQueue), new Utilities.Callback2() { // from class: org.telegram.messenger.f1
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     ChatThemeController.this.lambda$requestAllChatThemes$3(resultCallback, z10, (TL_account.Themes) obj, (TLRPC.TL_error) obj2);
@@ -1090,7 +1090,7 @@ public class ChatThemeController extends BaseController {
         }
         tL_messages_setChatWallPaper.flags |= 4;
         tL_messages_setChatWallPaper.settings = MessagesController.getWallpaperSetting(a6Var);
-        return ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_setChatWallPaper, new qa(this, j10, z10, str, runnable));
+        return ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_setChatWallPaper, new sa(this, j10, z10, str, runnable));
     }
 
     public void clearWallpaper(long j10, boolean z10, boolean z11) {
@@ -1128,7 +1128,7 @@ public class ChatThemeController extends BaseController {
                 notificationCenter.lambda$postNotificationNameOnUIThread$1(i11, chatFull, 0, bool, bool);
             }
         }
-        getConnectionsManager().sendRequest(tL_messages_setChatWallPaper, new g5(i10));
+        getConnectionsManager().sendRequest(tL_messages_setChatWallPaper, new i5(i10));
     }
 
     public void saveWallpaperBitmap(eg.a aVar, long j10) {
@@ -1199,7 +1199,7 @@ public class ChatThemeController extends BaseController {
                     tl_inputChatThemeEmpty = tl_inputChatTheme;
                     tL_messages_setChatTheme.theme = tl_inputChatThemeEmpty;
                     tL_messages_setChatTheme.peer = getMessagesController().getInputPeer(j10);
-                    getConnectionsManager().sendRequestTyped(tL_messages_setChatTheme, null, new je(this, 2));
+                    getConnectionsManager().sendRequestTyped(tL_messages_setChatTheme, null, new le(this, 2));
                     return;
                 }
             }
@@ -1211,14 +1211,14 @@ public class ChatThemeController extends BaseController {
                     tl_inputChatThemeEmpty = tl_inputChatThemeUniqueGift;
                     tL_messages_setChatTheme.theme = tl_inputChatThemeEmpty;
                     tL_messages_setChatTheme.peer = getMessagesController().getInputPeer(j10);
-                    getConnectionsManager().sendRequestTyped(tL_messages_setChatTheme, null, new je(this, 2));
+                    getConnectionsManager().sendRequestTyped(tL_messages_setChatTheme, null, new le(this, 2));
                     return;
                 }
             }
             tl_inputChatThemeEmpty = new TLRPC.Tl_inputChatThemeEmpty();
             tL_messages_setChatTheme.theme = tl_inputChatThemeEmpty;
             tL_messages_setChatTheme.peer = getMessagesController().getInputPeer(j10);
-            getConnectionsManager().sendRequestTyped(tL_messages_setChatTheme, null, new je(this, 2));
+            getConnectionsManager().sendRequestTyped(tL_messages_setChatTheme, null, new le(this, 2));
             return;
         }
         str = null;

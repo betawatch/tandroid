@@ -5,9 +5,9 @@ import android.graphics.Canvas;
 import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class lx extends org.telegram.ui.Components.vo0 {
+public final class lx extends org.telegram.ui.Components.wo0 {
     public final zf.y Z0;
     public final zf.y a1;
     public final /* synthetic */ cy b1;
@@ -72,7 +72,7 @@ public final class lx extends org.telegram.ui.Components.vo0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.d91
+    @Override // org.telegram.ui.Components.e91
     public final void w(boolean z10) {
         if (Build.VERSION.SDK_INT >= 31) {
             cy cyVar = this.b1;
@@ -82,9 +82,9 @@ public final class lx extends org.telegram.ui.Components.vo0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.d91
+    @Override // org.telegram.ui.Components.e91
     public final void x(int i10) {
-        org.telegram.ui.Components.uo0 uo0Var = this.T;
-        this.b1.a5(uo0Var != null && uo0Var.h(i10) == 2);
+        org.telegram.ui.Components.vo0 vo0Var = this.T;
+        this.b1.a5(vo0Var != null && vo0Var.h(i10) == 2);
     }
 }

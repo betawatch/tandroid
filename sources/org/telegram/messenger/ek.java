@@ -1,118 +1,79 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashSet;
+import org.telegram.messenger.LanguageDetector;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.x51;
+import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.ui.hf1;
+import org.telegram.ui.qn;
+import org.telegram.ui.r21;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ek implements Utilities.Callback {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+public final /* synthetic */ class ek implements hf1, org.telegram.ui.Components.e5, LanguageDetector.StringCallback {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+    public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
 
-    public /* synthetic */ ek(SendMessagesHelper sendMessagesHelper, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, SendMessagesHelper.DelayedMessage delayedMessage, boolean z10) {
-        this.c = sendMessagesHelper;
-        this.d = arrayList;
-        this.e = arrayList2;
-        this.f = arrayList3;
-        this.g = delayedMessage;
-        this.b = z10;
+    public /* synthetic */ ek(MessageObject messageObject, SendMessagesHelper sendMessagesHelper, TL_keyboard.KeyboardButtonProto keyboardButtonProto, qn qnVar, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10) {
+        this.b = sendMessagesHelper;
+        this.a = z10;
+        this.c = messageObject;
+        this.d = keyboardButtonProto;
+        this.e = twoStepVerificationActivity;
+        this.f = qnVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        ArrayList<TLRPC.Document> arrayList;
-        ArrayList<TLRPC.Document> arrayList2;
-        switch (this.a) {
-            case 0:
-                ((SendMessagesHelper) this.c).lambda$performSendMessageRequestMulti$67((ArrayList) this.d, (ArrayList) this.e, (ArrayList) this.f, (SendMessagesHelper.DelayedMessage) this.g, this.b, (TLObject) obj);
-                break;
-            case 1:
-                ProfileActivity profileActivity = (ProfileActivity) this.c;
-                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) this.d;
-                TLRPC.User user = (TLRPC.User) this.e;
-                TLRPC.ChatParticipant chatParticipant = (TLRPC.ChatParticipant) this.f;
-                String str = (String) this.g;
-                Integer num = (Integer) obj;
-                profileActivity.getClass();
-                boolean z10 = this.b;
-                if (channelParticipant != null) {
-                    profileActivity.A4(num.intValue(), user, chatParticipant, channelParticipant.admin_rights, channelParticipant.banned_rights, channelParticipant.rank, z10);
-                    break;
-                } else {
-                    profileActivity.A4(num.intValue(), user, chatParticipant, null, null, str, z10);
-                    break;
-                }
-            default:
-                x51 x51Var = (x51) this.c;
-                LinkedHashSet linkedHashSet = (LinkedHashSet) this.e;
-                String str2 = (String) this.f;
-                HashMap hashMap = (HashMap) this.g;
-                ArrayList arrayList3 = (ArrayList) this.d;
-                Runnable runnable = (Runnable) obj;
-                int i10 = x51Var.V;
-                if (this.b) {
-                    ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(i10).getStickerSets(5);
-                    for (int i11 = 0; i11 < stickerSets.size(); i11++) {
-                        if (stickerSets.get(i11).documents != null && (arrayList2 = stickerSets.get(i11).documents) != null) {
-                            for (int i12 = 0; i12 < arrayList2.size(); i12++) {
-                                String findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(arrayList2.get(i12), null);
-                                long j10 = arrayList2.get(i12).id;
-                                if (findAnimatedEmojiEmoticon != null && !linkedHashSet.contains(Long.valueOf(j10)) && str2.contains(findAnimatedEmojiEmoticon.toLowerCase())) {
-                                    linkedHashSet.add(Long.valueOf(j10));
-                                }
-                            }
-                        }
-                    }
-                    ArrayList<TLRPC.StickerSetCovered> featuredEmojiSets = MediaDataController.getInstance(i10).getFeaturedEmojiSets();
-                    for (int i13 = 0; i13 < featuredEmojiSets.size(); i13++) {
-                        if ((featuredEmojiSets.get(i13) instanceof TLRPC.TL_stickerSetFullCovered) && ((TLRPC.TL_stickerSetFullCovered) featuredEmojiSets.get(i13)).keywords != null && (arrayList = ((TLRPC.TL_stickerSetFullCovered) featuredEmojiSets.get(i13)).documents) != null) {
-                            for (int i14 = 0; i14 < arrayList.size(); i14++) {
-                                String findAnimatedEmojiEmoticon2 = MessageObject.findAnimatedEmojiEmoticon(arrayList.get(i14), null);
-                                long j11 = arrayList.get(i14).id;
-                                if (findAnimatedEmojiEmoticon2 != null && !linkedHashSet.contains(Long.valueOf(j11)) && str2.contains(findAnimatedEmojiEmoticon2)) {
-                                    linkedHashSet.add(Long.valueOf(j11));
-                                }
-                            }
-                        }
-                    }
-                    runnable.run();
-                    break;
-                } else {
-                    MediaDataController.getInstance(i10).getEmojiSuggestions(x51.a2, str2, false, new ai.t7(x51Var, linkedHashSet, hashMap, arrayList3, runnable), null, true, x51Var.W == 3, false, 30);
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.e5
+    public void C(int i10, int i11, boolean z10) {
+        ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.b;
+        TLRPC.Document document = (TLRPC.Document) this.c;
+        String str = (String) this.d;
+        MessageObject.SendAnimationData sendAnimationData = (MessageObject.SendAnimationData) this.f;
+        int i12 = ChatActivityEnterView.n5;
+        chatActivityEnterView.e(document, str, this.e, sendAnimationData, this.a, z10, i10, i11);
     }
 
-    public /* synthetic */ ek(ProfileActivity profileActivity, TLRPC.ChannelParticipant channelParticipant, TLRPC.User user, TLRPC.ChatParticipant chatParticipant, boolean z10, String str) {
-        this.c = profileActivity;
-        this.d = channelParticipant;
-        this.e = user;
-        this.f = chatParticipant;
-        this.b = z10;
-        this.g = str;
+    @Override // org.telegram.ui.hf1
+    public void k(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
+        ((SendMessagesHelper) this.b).lambda$sendCallback$43(this.a, (MessageObject) this.c, (TL_keyboard.KeyboardButtonProto) this.d, (TwoStepVerificationActivity) this.e, (qn) this.f, tL_inputCheckPasswordSRP);
     }
 
-    public /* synthetic */ ek(x51 x51Var, boolean z10, LinkedHashSet linkedHashSet, String str, HashMap hashMap, ArrayList arrayList) {
-        this.c = x51Var;
-        this.b = z10;
-        this.e = linkedHashSet;
-        this.f = str;
-        this.g = hashMap;
-        this.d = arrayList;
+    @Override // org.telegram.messenger.LanguageDetector.StringCallback
+    public void run(String str) {
+        TLRPC.Chat chat;
+        ProfileActivity profileActivity = (ProfileActivity) this.b;
+        String[] strArr = (String[]) this.c;
+        boolean[] zArr = (boolean[]) this.d;
+        String str2 = (String) this.e;
+        hg.d1 d1Var = (hg.d1) this.f;
+        strArr[0] = str;
+        zArr[0] = str != null && (!str.equals(str2) || str.equals(TranslateController.UNKNOWN_LANGUAGE)) && ((this.a && !r21.Y().contains(str)) || ((chat = profileActivity.F2) != null && ((chat.has_link || ChatObject.isPublic(chat)) && ("uk".equals(str) || "ru".equals(str)))));
+        d1Var.run();
+    }
+
+    public /* synthetic */ ek(ChatActivityEnterView chatActivityEnterView, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10) {
+        this.b = chatActivityEnterView;
+        this.c = document;
+        this.d = str;
+        this.e = obj;
+        this.f = sendAnimationData;
+        this.a = z10;
+    }
+
+    public /* synthetic */ ek(ProfileActivity profileActivity, String[] strArr, boolean[] zArr, String str, boolean z10, hg.d1 d1Var) {
+        this.b = profileActivity;
+        this.c = strArr;
+        this.d = zArr;
+        this.e = str;
+        this.a = z10;
+        this.f = d1Var;
     }
 }

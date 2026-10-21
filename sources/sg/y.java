@@ -27,7 +27,7 @@ import m.s3;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.Components.kd0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y implements org.telegram.ui.ActionBar.a2, qa.a, r9.d, d9.k, e2.j, kd0, q3.g, Continuation {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class y implements org.telegram.ui.ActionBar.a2, qa
     public void accept(Object obj) {
         switch (this.a) {
             case 9:
-                ((u2.a1) obj).b.release();
+                ((u2.b1) obj).b.release();
                 break;
             default:
                 ((ExecutorService) obj).shutdown();
@@ -64,11 +64,11 @@ public final /* synthetic */ class y implements org.telegram.ui.ActionBar.a2, qa
             case 25:
                 return (w3.q) obj;
             default:
-                u2.r1 r1Var = (u2.r1) obj;
-                r1Var.getClass();
+                u2.s1 s1Var = (u2.s1) obj;
+                s1Var.getClass();
                 Bundle bundle = new Bundle();
-                String str = u2.r1.e;
-                e9.x1 x1Var = r1Var.b;
+                String str = u2.s1.e;
+                e9.x1 x1Var = s1Var.b;
                 ArrayList<? extends Parcelable> arrayList = new ArrayList<>(x1Var.d);
                 e9.l0 listIterator = x1Var.listIterator(0);
                 while (listIterator.hasNext()) {

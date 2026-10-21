@@ -38,15 +38,15 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Cells.z;
-import org.telegram.ui.Components.ex0;
+import org.telegram.ui.Components.fx0;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.r90;
 import org.telegram.ui.Components.u90;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.vj0;
 import org.telegram.ui.Components.y90;
 import ug.r;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class c {
     public TextPaint A;
@@ -71,7 +71,7 @@ public final class c {
     public h9[] b;
     public final u1 c;
     public ImageReceiver d;
-    public uj0 e;
+    public vj0 e;
     public CharSequence[] f;
     public TLRPC.User[] g;
     public float[] h;
@@ -451,7 +451,7 @@ public final class c {
             }
             this.d.setAllowStartLottieAnimation(false);
             if (this.e == null) {
-                this.e = new uj0(org.telegram.messenger.R.raw.giveaway_results, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f));
+                this.e = new vj0(org.telegram.messenger.R.raw.giveaway_results, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f));
             }
             this.d.setImageBitmap(this.e);
             TLRPC.TL_messageMediaGiveawayResults tL_messageMediaGiveawayResults = (TLRPC.TL_messageMediaGiveawayResults) messageObject.messageOwner.media;
@@ -506,9 +506,9 @@ public final class c {
             Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
             float dp3 = AndroidUtilities.dp(2.0f);
             TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-            this.s = ex0.c(spannableStringBuilder, textPaint2, dp2, alignment, dp3, truncateAt, dp2, 10, true);
-            this.t = ex0.c(this.R, this.y, dp2, alignment, AndroidUtilities.dp(2.0f), truncateAt, dp2, 10, true);
-            this.u = ex0.c(spannableStringBuilder2, this.y, dp2, alignment, AndroidUtilities.dp(3.0f), truncateAt, dp2, 10, true);
+            this.s = fx0.c(spannableStringBuilder, textPaint2, dp2, alignment, dp3, truncateAt, dp2, 10, true);
+            this.t = fx0.c(this.R, this.y, dp2, alignment, AndroidUtilities.dp(2.0f), truncateAt, dp2, 10, true);
+            this.u = fx0.c(spannableStringBuilder2, this.y, dp2, alignment, AndroidUtilities.dp(3.0f), truncateAt, dp2, 10, true);
             int max = Math.max(i10, dp2);
             this.r = max - dp2;
             float f7 = max;

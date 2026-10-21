@@ -30,7 +30,7 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ae;
+import org.telegram.messenger.ce;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLObject;
@@ -46,9 +46,9 @@ import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Components.e5;
 import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.g4;
-import org.telegram.ui.Components.lk0;
+import org.telegram.ui.Components.mk0;
 import org.telegram.ui.Components.wc0;
-import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
@@ -84,9 +84,9 @@ import org.telegram.ui.y3;
 import org.telegram.ui.yh;
 import v7.q8;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui.Cells.v, xl0, a2, vx, a5, e5, MessagesController.ErrorDelegate, LanguageDetector.ExceptionCallback, lk0, MessagesStorage.BooleanCallback, ResultCallback, MessagesStorage.LongCallback, hf1 {
+public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui.Cells.v, yl0, a2, vx, a5, e5, MessagesController.ErrorDelegate, LanguageDetector.ExceptionCallback, mk0, MessagesStorage.BooleanCallback, ResultCallback, MessagesStorage.LongCallback, hf1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -135,7 +135,7 @@ public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui
         return false;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ boolean P0(View view) {
         return false;
     }
@@ -184,7 +184,7 @@ public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui
         }
     }
 
-    @Override // org.telegram.ui.Components.lk0
+    @Override // org.telegram.ui.Components.mk0
     public void c(long j10, TLRPC.MessagePeerReaction messagePeerReaction) {
         yh yhVar = (yh) this.b;
         MessageObject messageObject = (MessageObject) this.c;
@@ -201,7 +201,7 @@ public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui
         qnVar.D7(true);
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public void d(float f7, float f10, int i10, View view) {
         l4 l4Var = (l4) this.b;
         o3 o3Var = (o3) this.c;
@@ -229,7 +229,7 @@ public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui
                         l4Var.b0(true);
                         TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
                         tL_contacts_resolveUsername.username = "previews";
-                        l4Var.G0 = ConnectionsManager.getInstance(i11).sendRequest(tL_contacts_resolveUsername, new ae(l4Var, i11, j10));
+                        l4Var.G0 = ConnectionsManager.getInstance(i11).sendRequest(tL_contacts_resolveUsername, new ce(l4Var, i11, j10));
                         return;
                     }
                     return;
@@ -568,7 +568,7 @@ public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui
         }
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ void a0(View view, float f7, float f10) {
     }
 }

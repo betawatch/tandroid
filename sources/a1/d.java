@@ -42,7 +42,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -56,9 +56,9 @@ import org.telegram.ui.Components.ai;
 import org.telegram.ui.Components.e5;
 import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.fo;
-import org.telegram.ui.Components.h01;
-import org.telegram.ui.Components.k01;
+import org.telegram.ui.Components.i01;
 import org.telegram.ui.Components.k8;
+import org.telegram.ui.Components.l01;
 import org.telegram.ui.Components.md0;
 import org.telegram.ui.Components.od0;
 import org.telegram.ui.Components.rd0;
@@ -89,7 +89,7 @@ import w7.z5;
 import x2.k;
 import x2.m;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements OnFailureListener, BillingController.ProductDetailsResponseListenerLegacy, vx, a2, e5, md0, MediaDataController.KeywordResultCallback, MessagesStorage.LongCallback, Utilities.Callback2Return, k {
     public final /* synthetic */ int a;
@@ -426,10 +426,10 @@ public final /* synthetic */ class d implements OnFailureListener, BillingContro
         Context context = (Context) this.b;
         int[] iArr = (int[]) this.c;
         d6 d6Var = (d6) this.d;
-        k01 k01Var = (k01) this.e;
+        l01 l01Var = (l01) this.e;
         Integer num = (Integer) obj;
         Float f7 = (Float) obj2;
-        LinearLayout e = kk.e(context, 1);
+        LinearLayout e = mk.e(context, 1);
         LinearLayout linearLayout = new LinearLayout(context);
         e.addView(linearLayout, z5.t(-2, -2, 1, 0, 0, 0, 0));
         ImageView imageView = new ImageView(context);
@@ -458,7 +458,7 @@ public final /* synthetic */ class d implements OnFailureListener, BillingContro
         textView.setTextSize(1, 13.0f);
         textView.setGravity(17);
         e.addView(textView, z5.k(0.0f, 3.0f, 0.0f, 0.0f, -1, -2));
-        return new h01(k01Var, e, false);
+        return new i01(l01Var, e, false);
     }
 
     @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback

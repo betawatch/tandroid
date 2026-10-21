@@ -11,7 +11,7 @@ import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.h6;
@@ -20,7 +20,7 @@ import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.x90;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class q0 extends LinearLayout {
     public final ArrayList a;
@@ -54,7 +54,7 @@ public final class q0 extends LinearLayout {
         addView(frameLayout, z5.k(0.0f, 15.0f, 0.0f, 0.0f, -1, 70));
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.bold());
-        kk.j(20.0f, R.string.BoostingReassignBoost, 1, textView);
+        mk.j(20.0f, R.string.BoostingReassignBoost, 1, textView);
         textView.setTextColor(h6.x0(null, h6.G6, false));
         addView(textView, z5.t(-2, -2, 1, 0, 15, 0, 7));
         x90 x90Var = new x90(getContext(), null);

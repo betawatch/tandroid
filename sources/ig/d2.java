@@ -13,21 +13,21 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.v8;
-import org.telegram.ui.Components.b71;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.w9;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class d2 extends n2 implements NotificationCenter.NotificationCenterDelegate {
-    public b71 a;
+    public c71 a;
     public LinearLayout b;
     public o2 c;
     public boolean d;
@@ -36,8 +36,8 @@ public final class d2 extends n2 implements NotificationCenter.NotificationCente
     public boolean h;
     public String n;
 
-    public static void U(d2 d2Var, g61 g61Var, View view) {
-        if (g61Var.d == -1) {
+    public static void U(d2 d2Var, h61 h61Var, View view) {
+        if (h61Var.d == -1) {
             boolean z10 = d2Var.h;
             d2Var.h = !z10;
             if (!z10) {
@@ -55,14 +55,14 @@ public final class d2 extends n2 implements NotificationCenter.NotificationCente
         if (view.isEnabled()) {
             f2 b10 = f2.b(d2Var.currentAccount);
             ArrayList arrayList = b10.d;
-            int i10 = g61Var.d;
+            int i10 = h61Var.d;
             if (i10 >= 0) {
                 b10.g();
                 if (i10 >= arrayList.size()) {
                     return;
                 }
                 b10.g();
-                TLRPC.TL_timezone tL_timezone = (TLRPC.TL_timezone) arrayList.get(g61Var.d);
+                TLRPC.TL_timezone tL_timezone = (TLRPC.TL_timezone) arrayList.get(h61Var.d);
                 d2Var.h = false;
                 String str2 = tL_timezone.id;
                 d2Var.n = str2;
@@ -78,22 +78,22 @@ public final class d2 extends n2 implements NotificationCenter.NotificationCente
         }
     }
 
-    public static void V(d2 d2Var, ArrayList arrayList, t61 t61Var) {
+    public static void V(d2 d2Var, ArrayList arrayList, u61 u61Var) {
         boolean z10 = d2Var.d && !TextUtils.isEmpty(d2Var.e);
         f2 b10 = f2.b(d2Var.currentAccount);
         ArrayList arrayList2 = b10.d;
         if (!z10) {
-            t61Var.U();
+            u61Var.U();
             String string = LocaleController.getString(R.string.TimezoneDetectAutomatically);
-            g61 g61Var = new g61(9);
-            g61Var.d = -1;
-            g61Var.l = string;
-            g61Var.K(d2Var.h);
-            arrayList.add(g61Var);
-            t61Var.T();
-            arrayList.add(g61.B(LocaleController.formatString(R.string.TimezoneDetectAutomaticallyInfo, b10.d(d2Var.n, true))));
+            h61 h61Var = new h61(9);
+            h61Var.d = -1;
+            h61Var.l = string;
+            h61Var.K(d2Var.h);
+            arrayList.add(h61Var);
+            u61Var.T();
+            arrayList.add(h61.B(LocaleController.formatString(R.string.TimezoneDetectAutomaticallyInfo, b10.d(d2Var.n, true))));
         }
-        t61Var.U();
+        u61Var.U();
         if (!z10) {
             i2.e.p(R.string.TimezoneHeader, arrayList);
         }
@@ -117,21 +117,21 @@ public final class d2 extends n2 implements NotificationCenter.NotificationCente
                 }
             }
             String f7 = f2.f(tL_timezone);
-            g61 g61Var2 = new g61(10);
-            g61Var2.d = i10;
-            g61Var2.l = e;
-            g61Var2.n = f7;
-            g61Var2.K(TextUtils.equals(tL_timezone.id, d2Var.n));
-            g61Var2.g = !d2Var.h || z10;
-            arrayList.add(g61Var2);
+            h61 h61Var2 = new h61(10);
+            h61Var2.d = i10;
+            h61Var2.l = e;
+            h61Var2.n = f7;
+            h61Var2.K(TextUtils.equals(tL_timezone.id, d2Var.n));
+            h61Var2.g = !d2Var.h || z10;
+            arrayList.add(h61Var2);
             z11 = false;
             i10++;
         }
-        t61Var.T();
+        u61Var.T();
         if (z11) {
-            arrayList.add(g61.l(d2Var.b));
+            arrayList.add(h61.l(d2Var.b));
         } else {
-            arrayList.add(g61.B(null));
+            arrayList.add(h61.B(null));
         }
     }
 
@@ -147,9 +147,9 @@ public final class d2 extends n2 implements NotificationCenter.NotificationCente
         a2.setSearchFieldHint(LocaleController.getString(R.string.Search));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setBackgroundColor(h6.x0(null, h6.a7, false));
-        b71 b71Var = new b71(this, new hg.o(this, 10), new e1.c(this, 23), null);
-        this.a = b71Var;
-        b71Var.p1();
+        c71 c71Var = new c71(this, new hg.o(this, 10), new e1.c(this, 23), null);
+        this.a = c71Var;
+        c71Var.p1();
         this.actionBar.setAdaptiveBackground(this.a);
         frameLayout.addView(this.a, z5.c(-1.0f, -1));
         this.a.setOnScrollListener(new ah.d0(this, 15));
@@ -163,7 +163,7 @@ public final class d2 extends n2 implements NotificationCenter.NotificationCente
         this.b.addView(w9Var, z5.t(130, 130, 49, 0, 42, 0, 12));
         TextView textView = new TextView(context);
         textView.setText(LocaleController.getString(R.string.TimezoneNotFound));
-        kk.o(h6.y6, this.resourceProvider, textView, 1, 15.0f);
+        mk.o(h6.y6, this.resourceProvider, textView, 1, 15.0f);
         this.b.addView(textView, z5.t(-2, -2, 49, 0, 0, 0, 0));
         this.fragmentView = frameLayout;
         return frameLayout;
@@ -171,12 +171,12 @@ public final class d2 extends n2 implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        b71 b71Var;
-        t61 t61Var;
-        if (i10 != NotificationCenter.timezonesUpdated || (b71Var = this.a) == null || (t61Var = b71Var.W2) == null) {
+        c71 c71Var;
+        u61 u61Var;
+        if (i10 != NotificationCenter.timezonesUpdated || (c71Var = this.a) == null || (u61Var = c71Var.W2) == null) {
             return;
         }
-        t61Var.N(true);
+        u61Var.N(true);
     }
 
     @Override // org.telegram.ui.ActionBar.n2

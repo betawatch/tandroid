@@ -11,11 +11,11 @@ import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.o31;
+import org.telegram.ui.Components.p31;
 import org.telegram.ui.hh1;
 import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public abstract class u2 extends FrameLayout {
     public Activity a;
@@ -76,7 +76,7 @@ public abstract class u2 extends FrameLayout {
             }
         } else {
             this.c.lock();
-            animate().translationY(getMeasuredHeight()).alpha(0.0f).setListener(new o31(this, 16)).setDuration(j10).setInterpolator(bs.f).start();
+            animate().translationY(getMeasuredHeight()).alpha(0.0f).setListener(new p31(this, 16)).setDuration(j10).setInterpolator(bs.f).start();
         }
     }
 

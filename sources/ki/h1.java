@@ -20,11 +20,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.iu;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.n11;
+import org.telegram.ui.Components.n61;
+import org.telegram.ui.Components.o11;
 import org.telegram.ui.Components.r90;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class h1 extends iu {
     public boolean E;
@@ -111,7 +111,7 @@ public final class h1 extends iu {
     }
 
     @Override // org.telegram.ui.Components.iu
-    public final m61 createUrlSpan(String str) {
+    public final n61 createUrlSpan(String str) {
         return e6.k(str);
     }
 
@@ -249,15 +249,15 @@ public final class h1 extends iu {
                 this.F = null;
                 if (text instanceof Spanned) {
                     Spanned spanned = (Spanned) text;
-                    n11[] n11VarArr = (n11[]) spanned.getSpans(0, spanned.length(), n11.class);
-                    int length = n11VarArr.length;
+                    o11[] o11VarArr = (o11[]) spanned.getSpans(0, spanned.length(), o11.class);
+                    int length = o11VarArr.length;
                     int i11 = 0;
                     while (i11 < length) {
-                        n11 n11Var = n11VarArr[i11];
-                        int i12 = n11Var.b.a;
+                        o11 o11Var = o11VarArr[i11];
+                        int i12 = o11Var.b.a;
                         if ((65536 & i12) != 0) {
-                            int spanStart = spanned.getSpanStart(n11Var);
-                            int spanEnd = spanned.getSpanEnd(n11Var);
+                            int spanStart = spanned.getSpanStart(o11Var);
+                            int spanEnd = spanned.getSpanEnd(o11Var);
                             r90Var = r90Var;
                             if (spanStart >= 0 && spanEnd > spanStart) {
                                 if (r90Var == null) {

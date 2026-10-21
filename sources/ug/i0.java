@@ -16,13 +16,13 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.qa1;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class i0 extends sg.m1 {
     public final ArrayList Q0;
@@ -40,9 +40,9 @@ public final class i0 extends sg.m1 {
         aVar.setOnClickListener(new hg.r0(this, 23));
         aVar.setCloseStyle(true);
         this.containerView.addView(aVar, z5.d(-1, 64.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
-        im0 im0Var = this.d;
+        jm0 jm0Var = this.d;
         int i11 = this.backgroundPaddingLeft;
-        im0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f));
+        jm0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f));
         Context context = getContext();
         int i12 = h0.f;
         FrameLayout frameLayout = new FrameLayout(context);

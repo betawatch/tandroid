@@ -58,7 +58,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class k8 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener {
     public static k8 T0;
@@ -117,7 +117,7 @@ public final class k8 extends org.telegram.ui.ActionBar.f3 implements Notificati
     public final org.telegram.ui.ActionBar.e1 f0;
     public final ImageView g0;
     public boolean h;
-    public final ah0 h0;
+    public final bh0 h0;
     public final q7 i0;
     public final w9 j0;
     public final org.telegram.ui.ActionBar.u0 k0;
@@ -352,10 +352,10 @@ public final class k8 extends org.telegram.ui.ActionBar.f3 implements Notificati
         this.g0 = imageView;
         viewArr[2] = imageView;
         imageView.setScaleType(scaleType);
-        ah0 ah0Var = new ah0(28);
-        this.h0 = ah0Var;
-        imageView.setImageDrawable(ah0Var);
-        ah0Var.a(!MediaController.getInstance().isMessagePaused(), false);
+        bh0 bh0Var = new bh0(28);
+        this.h0 = bh0Var;
+        imageView.setImageDrawable(bh0Var);
+        bh0Var.a(!MediaController.getInstance().isMessagePaused(), false);
         imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(i19), PorterDuff.Mode.MULTIPLY));
         imageView.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.g0(getThemedColor(i18), 1, AndroidUtilities.dp(24.0f)));
         q7Var2.addView(imageView, w7.z5.e(48, 48, 51));
@@ -918,10 +918,10 @@ public final class k8 extends org.telegram.ui.ActionBar.f3 implements Notificati
         }
         boolean z10 = false;
         View childAt = v7Var.getChildAt(0);
-        sl0 sl0Var = (sl0) v7Var.G(childAt);
+        tl0 tl0Var = (tl0) v7Var.G(childAt);
         int top = childAt instanceof org.telegram.ui.Cells.x ? childAt.getTop() : childAt.getBottom();
         int dp = AndroidUtilities.dp(7.0f);
-        if (top < AndroidUtilities.dp(7.0f) || sl0Var == null || sl0Var.b() != 0) {
+        if (top < AndroidUtilities.dp(7.0f) || tl0Var == null || tl0Var.b() != 0) {
             top = dp;
         }
         boolean z11 = top <= AndroidUtilities.dp(12.0f);
@@ -950,7 +950,7 @@ public final class k8 extends org.telegram.ui.ActionBar.f3 implements Notificati
             k8Var.C0.start();
         }
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) v7Var.getLayoutParams();
-        int D = org.telegram.messenger.kk.D(11.0f, layoutParams.topMargin - AndroidUtilities.statusBarHeight, top);
+        int D = org.telegram.messenger.mk.D(11.0f, layoutParams.topMargin - AndroidUtilities.statusBarHeight, top);
         if (k8Var.A0 != D) {
             k8Var.A0 = D;
             v7Var.setTopGlowOffset((D - layoutParams.topMargin) - AndroidUtilities.statusBarHeight);
@@ -1111,7 +1111,7 @@ public final class k8 extends org.telegram.ui.ActionBar.f3 implements Notificati
                 cyVar.finishFragment();
                 return;
             }
-            qnVar.Eb(arrayList3);
+            qnVar.Fb(arrayList3);
             if (topicKey.topicId != 0) {
                 cyVar.removeSelfFromStack();
                 return;
@@ -1248,7 +1248,7 @@ public final class k8 extends org.telegram.ui.ActionBar.f3 implements Notificati
             a8 a8Var = this.I;
             w9Var.setImageBitmap(a8Var.a[a8Var.b].getImageReceiver().getBitmap());
             this.m0 = true;
-            ym0.d(new b7(this, 1));
+            zm0.d(new b7(this, 1));
             q7Var.setVisibility(0);
             q7Var.animate().alpha(1.0f).setDuration(180L).setListener(new x7(this, 0)).start();
             w9Var.animate().scaleX(1.0f).scaleY(1.0f).setDuration(180L).start();
@@ -1642,12 +1642,12 @@ public final class k8 extends org.telegram.ui.ActionBar.f3 implements Notificati
             i10 = 8;
         }
         boolean isMessagePaused = MediaController.getInstance().isMessagePaused();
-        ah0 ah0Var = this.h0;
+        bh0 bh0Var = this.h0;
         if (isMessagePaused) {
-            ah0Var.a(false, true);
+            bh0Var.a(false, true);
             imageView.setContentDescription(LocaleController.getString(R.string.AccActionPlay));
         } else {
-            ah0Var.a(true, true);
+            bh0Var.a(true, true);
             imageView.setContentDescription(LocaleController.getString(R.string.AccActionPause));
         }
         String musicTitle = messageObject2.getMusicTitle();
@@ -1979,17 +1979,17 @@ public final class k8 extends org.telegram.ui.ActionBar.f3 implements Notificati
         arrayList.add(new org.telegram.ui.ActionBar.j6(u0Var3, 0, null, null, null, z6Var, i17));
         arrayList.add(new org.telegram.ui.ActionBar.j6(u0Var3, 0, null, null, null, z6Var, i18));
         s7 s7Var = this.K;
-        arrayList.add(new org.telegram.ui.ActionBar.j6(s7Var, (Class[]) null, new uj0[]{s7Var.getAnimatedDrawable()}, "Triangle 3", i15));
-        arrayList.add(new org.telegram.ui.ActionBar.j6(s7Var, (Class[]) null, new uj0[]{s7Var.getAnimatedDrawable()}, "Triangle 4", i15));
-        arrayList.add(new org.telegram.ui.ActionBar.j6(s7Var, (Class[]) null, new uj0[]{s7Var.getAnimatedDrawable()}, "Rectangle 4", i15));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(s7Var, (Class[]) null, new vj0[]{s7Var.getAnimatedDrawable()}, "Triangle 3", i15));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(s7Var, (Class[]) null, new vj0[]{s7Var.getAnimatedDrawable()}, "Triangle 4", i15));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(s7Var, (Class[]) null, new vj0[]{s7Var.getAnimatedDrawable()}, "Rectangle 4", i15));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.K, 131080, null, null, null, null, i16));
         ImageView imageView = this.g0;
         arrayList.add(new org.telegram.ui.ActionBar.j6(imageView, 8, null, null, null, null, i15));
         arrayList.add(new org.telegram.ui.ActionBar.j6(imageView, 131080, null, null, null, null, i16));
         t7 t7Var = this.L;
-        arrayList.add(new org.telegram.ui.ActionBar.j6(t7Var, (Class[]) null, new uj0[]{t7Var.getAnimatedDrawable()}, "Triangle 3", i15));
-        arrayList.add(new org.telegram.ui.ActionBar.j6(t7Var, (Class[]) null, new uj0[]{t7Var.getAnimatedDrawable()}, "Triangle 4", i15));
-        arrayList.add(new org.telegram.ui.ActionBar.j6(t7Var, (Class[]) null, new uj0[]{t7Var.getAnimatedDrawable()}, "Rectangle 4", i15));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(t7Var, (Class[]) null, new vj0[]{t7Var.getAnimatedDrawable()}, "Triangle 3", i15));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(t7Var, (Class[]) null, new vj0[]{t7Var.getAnimatedDrawable()}, "Triangle 4", i15));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(t7Var, (Class[]) null, new vj0[]{t7Var.getAnimatedDrawable()}, "Rectangle 4", i15));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.L, 131080, null, null, null, null, i16));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.E, 1, null, null, null, null, org.telegram.ui.ActionBar.h6.Ri));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.e, 1, null, null, null, null, org.telegram.ui.ActionBar.h6.V5));
@@ -2095,7 +2095,7 @@ public final class k8 extends org.telegram.ui.ActionBar.f3 implements Notificati
         if (i10 != i11) {
             launchActivity.O0(i11);
         }
-        Bundle d = org.telegram.messenger.kk.d(3, "onlySelect", "dialogsType", true);
+        Bundle d = org.telegram.messenger.mk.d(3, "onlySelect", "dialogsType", true);
         d.putBoolean("canSelectTopics", true);
         org.telegram.ui.cy cyVar = new org.telegram.ui.cy(d);
         if (messageObject.getId() >= 0) {

@@ -35,12 +35,12 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.Components.x20;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public abstract class d8 {
     public static x20 b;
@@ -50,7 +50,7 @@ public abstract class d8 {
     public static RectF f;
     public static Paint g;
     public static Paint h;
-    public static e11 i;
+    public static f11 i;
     public static int j;
     public static BitmapDrawable m;
     public static final x20[] a = new x20[2];
@@ -734,7 +734,7 @@ public abstract class d8 {
     public static void k(float f7, float f10, Canvas canvas, RectF rectF, boolean z10) {
         Canvas canvas2;
         if (i == null) {
-            i = new e11(LocaleController.getString(R.string.LiveStoryBadge), 9.66f, AndroidUtilities.bold());
+            i = new f11(LocaleController.getString(R.string.LiveStoryBadge), 9.66f, AndroidUtilities.bold());
         }
         if (g == null) {
             Paint paint = new Paint(1);
@@ -766,10 +766,10 @@ public abstract class d8 {
             f.set(rectF.centerX() - f11, rectF.bottom - f12, rectF.centerX() + f11, rectF.bottom + f13);
             RectF rectF3 = f;
             canvas.drawRoundRect(rectF3, rectF3.height() / 2.0f, f.height() / 2.0f, h);
-            e11 e11Var = i;
+            f11 f11Var = i;
             RectF rectF4 = f;
             canvas2 = canvas;
-            e11Var.c(rectF4.left + lerp, rectF4.centerY(), f7, -1, canvas2);
+            f11Var.c(rectF4.left + lerp, rectF4.centerY(), f7, -1, canvas2);
         } else {
             canvas2 = canvas;
         }

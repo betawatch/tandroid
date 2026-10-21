@@ -24,7 +24,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class gg implements uy {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -44,7 +44,7 @@ public final class gg implements uy {
         org.telegram.ui.qn qnVar = chatActivityEnterView.P2;
         org.telegram.ui.gn gnVar = chatActivityEnterView.V2;
         if (gnVar != null && qnVar != null && gnVar.f) {
-            qnVar.Vb();
+            qnVar.Wb();
             return;
         }
         if (c() && i10 == 0) {
@@ -99,10 +99,10 @@ public final class gg implements uy {
             inputStickerSet.access_hash = stickerSet.access_hash;
             inputStickerSet.id = stickerSet.id;
         }
-        py0 py0Var = new py0(chatActivityEnterView.O2, n2Var2, inputStickerSet, null, chatActivityEnterView, chatActivityEnterView.W3);
-        n2Var2.showDialog(py0Var);
+        qy0 qy0Var = new qy0(chatActivityEnterView.O2, n2Var2, inputStickerSet, null, chatActivityEnterView, chatActivityEnterView.W3);
+        n2Var2.showDialog(qy0Var);
         if (z10) {
-            py0Var.q0();
+            qy0Var.q0();
         }
     }
 
@@ -113,7 +113,7 @@ public final class gg implements uy {
         if (qnVar == null) {
             return;
         }
-        PhotoViewer.t1().K2(null, qnVar, qnVar.ea);
+        PhotoViewer.u1().M2(null, qnVar, qnVar.ea);
         File pathToAttach = obj instanceof TLRPC.Document ? FileLoader.getInstance(chatActivityEnterView.Q).getPathToAttach((TLRPC.Document) obj) : null;
         if (pathToAttach == null) {
             return;
@@ -131,7 +131,7 @@ public final class gg implements uy {
         photoEntry.caption = null;
         photoEntry.isVideo = true;
         arrayList.add(photoEntry);
-        PhotoViewer.t1().g2(arrayList, 0, 12, false, new eg(this, obj, obj2, photoEntry), chatActivityEnterView.P2);
+        PhotoViewer.u1().i2(arrayList, 0, 12, false, new eg(this, obj, obj2, photoEntry), chatActivityEnterView.P2);
     }
 
     @Override // org.telegram.ui.Components.uy
@@ -266,7 +266,7 @@ public final class gg implements uy {
     }
 
     @Override // org.telegram.ui.Components.uy
-    public final void o(c61 c61Var) {
+    public final void o(d61 d61Var) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         org.telegram.ui.ActionBar.n2 n2Var = chatActivityEnterView.P2;
         if (n2Var == null) {
@@ -274,7 +274,7 @@ public final class gg implements uy {
         }
         org.telegram.ui.ActionBar.n2 n2Var2 = n2Var;
         if (n2Var2 != null) {
-            chatActivityEnterView.a3 = new fg(this, chatActivityEnterView.getContext(), n2Var2, c61Var, chatActivityEnterView.W3);
+            chatActivityEnterView.a3 = new fg(this, chatActivityEnterView.getContext(), n2Var2, d61Var, chatActivityEnterView.W3);
             og ogVar = chatActivityEnterView.Z2;
             if (ogVar != null) {
                 ogVar.C(true);

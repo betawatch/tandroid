@@ -35,10 +35,10 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.k7;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.by0;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.go0;
-import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.cy0;
+import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.ho0;
+import org.telegram.ui.Components.i51;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.yr;
 import org.telegram.ui.Components.z20;
@@ -47,7 +47,7 @@ import org.telegram.ui.h30;
 import org.telegram.ui.q50;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public abstract class l0 extends FrameLayout {
     public boolean A0;
@@ -245,7 +245,7 @@ public abstract class l0 extends FrameLayout {
         int dp4 = AndroidUtilities.dp(4.0f);
         imageView.setPadding(dp4, dp4, dp4, dp4);
         imageView.setBackground(h6.g0(i0.a.o(-1, 55), 1, -1));
-        imageView.setOnClickListener(new h51(3, h30Var, q50Var));
+        imageView.setOnClickListener(new i51(3, h30Var, q50Var));
         addView(imageView, z5.d(32, 32.0f, 53, 12.0f, 12.0f, 12.0f, 12.0f));
         g0 g0Var = new g0(h30Var, context, h6.c0(AndroidUtilities.dp(18.0f), i0.a.o(h6.x0(null, h6.tg, false), 204)));
         this.I = g0Var;
@@ -874,12 +874,12 @@ public abstract class l0 extends FrameLayout {
                                     tVar2.setScaleY(0.5f);
                                     tVar2.E = true;
                                 }
-                                by0 by0Var = new by0(this, tVar, tVar2, 5);
+                                cy0 cy0Var = new cy0(this, tVar, tVar2, 5);
                                 if (oVar.d.isFirstFrameRendered()) {
-                                    AndroidUtilities.runOnUIThread(by0Var, 250L);
-                                    tVar8.m0.add(by0Var);
+                                    AndroidUtilities.runOnUIThread(cy0Var, 250L);
+                                    tVar8.m0.add(cy0Var);
                                 } else {
-                                    by0Var.run();
+                                    cy0Var.run();
                                 }
                                 d();
                                 this.y = tVar8;
@@ -918,7 +918,7 @@ public abstract class l0 extends FrameLayout {
                         ofFloat2.addListener(new j0(this, tVar82, tVar));
                         if (tVar2 != null) {
                         }
-                        by0 by0Var2 = new by0(this, tVar, tVar2, 5);
+                        cy0 cy0Var2 = new cy0(this, tVar, tVar2, 5);
                         if (oVar.d.isFirstFrameRendered()) {
                         }
                         d();
@@ -984,12 +984,12 @@ public abstract class l0 extends FrameLayout {
                     tVar11.setScaleX(0.5f);
                     tVar11.setScaleY(0.5f);
                     tVar11.E = true;
-                    go0 go0Var = new go0(27, this, tVar11);
+                    ho0 ho0Var = new ho0(27, this, tVar11);
                     if (tVar11.a.d.isFirstFrameRendered()) {
-                        go0Var.run();
+                        ho0Var.run();
                     } else {
-                        AndroidUtilities.runOnUIThread(go0Var, 250L);
-                        tVar11.m0.add(go0Var);
+                        AndroidUtilities.runOnUIThread(ho0Var, 250L);
+                        tVar11.m0.add(ho0Var);
                     }
                     t tVar102 = new t(this, this.i0, q50Var);
                     tVar102.w = videoParticipant;
@@ -1423,9 +1423,9 @@ public abstract class l0 extends FrameLayout {
                                 spannableStringBuilder.append((CharSequence) ", ");
                             }
                             if (user != null) {
-                                spannableStringBuilder.append(UserObject.getFirstName(user), new d61(AndroidUtilities.bold()), 0);
+                                spannableStringBuilder.append(UserObject.getFirstName(user), new e61(AndroidUtilities.bold()), 0);
                             } else {
-                                spannableStringBuilder.append(chat.title, new d61(AndroidUtilities.bold()), 0);
+                                spannableStringBuilder.append(chat.title, new e61(AndroidUtilities.bold()), 0);
                             }
                         }
                     }

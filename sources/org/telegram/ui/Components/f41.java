@@ -1,27 +1,45 @@
 package org.telegram.ui.Components;
 
+import android.view.View;
 import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class f41 extends s4.k {
-    public final /* synthetic */ s41 F;
+public final class f41 extends s4.r0 {
+    public final /* synthetic */ t41 a;
 
-    public f41(s41 s41Var) {
-        this.F = s41Var;
+    public f41(t41 t41Var) {
+        this.a = t41Var;
     }
 
-    @Override // s4.k
-    public final void O() {
-        ViewGroup viewGroup;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) this.F).containerView;
-        viewGroup.invalidate();
+    @Override // s4.r0
+    public final void a(RecyclerView recyclerView, int i10) {
+        t41 t41Var = this.a;
+        e41 e41Var = t41Var.H;
+        if (i10 == 0) {
+            t41Var.G = false;
+        }
+        if ((i10 == 0 || i10 == 2) && t41Var.B(false) > 0.0f && t41Var.B(false) < AndroidUtilities.dp(96.0f) && e41Var.canScrollVertically(1) && t41.w(t41Var)) {
+            t41Var.G = true;
+            e41Var.v0(0, (int) t41Var.B(false), null);
+        }
     }
 
-    @Override // s4.k
-    public final void P(s4.b1 b1Var) {
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
         ViewGroup viewGroup;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) this.F).containerView;
+        t41 t41Var = this.a;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) t41Var).containerView;
         viewGroup.invalidate();
+        boolean canScrollVertically = t41Var.H.canScrollVertically(1);
+        View view = t41Var.L;
+        Boolean bool = t41Var.Q;
+        if (bool == null || bool.booleanValue() != canScrollVertically) {
+            t41Var.Q = Boolean.valueOf(canScrollVertically);
+            view.animate().cancel();
+            org.telegram.messenger.mk.t(view.animate().alpha(canScrollVertically ? 1.0f : 0.0f), bs.h, 320L);
+        }
     }
 }

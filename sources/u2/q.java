@@ -11,7 +11,7 @@ import java.util.List;
 import m.g3;
 import v7.u6;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final class q implements f0 {
     public final jg.f a;
@@ -226,14 +226,14 @@ public final class q implements f0 {
                         b2.j0 j0Var4 = parse != null ? new b2.j0(parse, null, f0Var4.a != null ? new b2.g0(f0Var4) : uri, null, list3, null, x1Var, -9223372036854775807L) : uri;
                         b2.o0 o0Var3 = new b2.o0("", new b2.e0(c0Var2), j0Var4, new b2.i0(h0Var2), b2.r0.L, k0Var3);
                         j0Var4.getClass();
-                        aVarArr[i11] = new y0(o0Var3, bVar, h0Var, g3Var.B(o0Var3), dVar, 1048576, wVar2);
+                        aVarArr[i11] = new z0(o0Var3, bVar, h0Var, g3Var.B(o0Var3), dVar, 1048576, wVar2);
                     } else {
                         qf.b bVar2 = this.b;
                         bVar2.getClass();
-                        aVarArr[i10 + 1] = new n1((b2.n0) n0Var3.get(i10), bVar2, new oa.d(27));
+                        aVarArr[i10 + 1] = new o1((b2.n0) n0Var3.get(i10), bVar2, new oa.d(27));
                     }
                 }
-                a11 = new o0(aVarArr);
+                a11 = new p0(aVarArr);
             }
             b2.e0 e0Var3 = o0Var2.e;
             if (e0Var3.b != 0 || e0Var3.d != Long.MIN_VALUE || e0Var3.f) {

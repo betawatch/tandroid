@@ -4,7 +4,7 @@ import java.io.File;
 import java.nio.ByteBuffer;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 final class AudioRecorderNative {
     public long a;
@@ -14,8 +14,8 @@ final class AudioRecorderNative {
         this.a = j10;
     }
 
-    public static AudioRecorderNative a(File file, File file2) {
-        long nCreate = nCreate(file.getAbsolutePath(), 48000, file2 == null ? null : file2.getAbsolutePath());
+    public static AudioRecorderNative a(File file, long j10, long j11, File file2) {
+        long nCreate = nCreate(file.getAbsolutePath(), 48000, file2 == null ? null : file2.getAbsolutePath(), j10, j11);
         if (nCreate == 0) {
             return null;
         }
@@ -30,7 +30,7 @@ final class AudioRecorderNative {
         return nGetWaveform(str);
     }
 
-    private static native long nCreate(String str, int i10, String str2);
+    private static native long nCreate(String str, int i10, String str2, long j10, long j11);
 
     private static native boolean nCropOpusFile(String str, String str2, long j10, long j11);
 

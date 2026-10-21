@@ -5,16 +5,16 @@ import java.util.ArrayList;
 import m4.s1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.b81;
-import org.telegram.ui.Components.l81;
+import org.telegram.ui.Components.c81;
 import org.telegram.ui.Components.m81;
+import org.telegram.ui.Components.n81;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ck0;
 import org.telegram.ui.ot0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final class u implements l81 {
+public final class u implements m81 {
     public int a;
     public boolean b;
     public Object c;
@@ -49,19 +49,19 @@ public final class u implements l81 {
 
     public void c(int i10) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        Object obj = m81.f0;
+        Object obj = n81.f0;
         if (i10 == 2) {
             Drawable[] drawableArr = PhotoViewer.U8;
-            photoViewer.u0();
+            photoViewer.v0();
             boolean z10 = true;
             if (photoViewer.c2 == 1) {
-                photoViewer.s0();
+                photoViewer.t0();
                 photoViewer.V7 = -1L;
             }
             ot0 ot0Var = photoViewer.f0;
             if (ot0Var == null || !ot0Var.x) {
-                b81 b81Var = photoViewer.F2;
-                if (b81Var == null || !b81Var.y()) {
+                c81 c81Var = photoViewer.F2;
+                if (c81Var == null || !c81Var.y()) {
                     z10 = false;
                 }
             } else {
@@ -70,7 +70,7 @@ public final class u implements l81 {
             this.b = z10;
             if (z10) {
                 photoViewer.H2 = false;
-                photoViewer.h2();
+                photoViewer.j2();
                 photoViewer.e0.invalidate();
             }
         }
@@ -84,15 +84,15 @@ public final class u implements l81 {
             ((ck0) this.c).run();
         }
         Drawable[] drawableArr = PhotoViewer.U8;
-        photoViewer.u0();
+        photoViewer.v0();
         int i11 = photoViewer.c2;
         if (i11 == 1 && photoViewer.z2 != null) {
-            Object obj = m81.f0;
+            Object obj = n81.f0;
             if (i10 == 2) {
-                photoViewer.s0();
+                photoViewer.t0();
                 photoViewer.V7 = photoViewer.v8;
                 if (photoViewer.W7 == this.a) {
-                    PhotoViewer.V(photoViewer);
+                    PhotoViewer.W(photoViewer);
                     return;
                 }
                 return;
@@ -100,7 +100,7 @@ public final class u implements l81 {
         }
         if (i11 == 1 || this.b) {
             photoViewer.H2 = false;
-            photoViewer.j2();
+            photoViewer.l2();
         }
     }
 
@@ -115,11 +115,11 @@ public final class u implements l81 {
 
     public void f(float f7) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        b81 b81Var = photoViewer.F2;
-        if (b81Var == null) {
+        c81 c81Var = photoViewer.F2;
+        if (c81Var == null) {
             return;
         }
-        if (b81Var.y()) {
+        if (c81Var.y()) {
             photoViewer.H2 = false;
             photoViewer.F2.B();
             photoViewer.e0.invalidate();
@@ -128,7 +128,7 @@ public final class u implements l81 {
         h(f7);
         photoViewer.q3.h(1.0f, false);
         photoViewer.S7.setProgress(f7);
-        photoViewer.B3();
+        photoViewer.D3();
     }
 
     public void g() {
@@ -159,7 +159,7 @@ public final class u implements l81 {
             }
             return;
         }
-        photoViewer.t2(this.a);
+        photoViewer.v2(this.a);
         if (photoViewer.c2 == 1) {
             long j10 = this.a;
             photoViewer.X7 = j10;

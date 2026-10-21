@@ -14,19 +14,19 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.FragmentContextView;
+import org.telegram.ui.Components.ah0;
 import org.telegram.ui.Components.cv;
 import org.telegram.ui.Components.fs;
 import org.telegram.ui.Components.voip.k2;
 import org.telegram.ui.Components.wq;
 import org.telegram.ui.Components.zc;
-import org.telegram.ui.Components.zg0;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.Wallet.z2;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 int i12 = c4.d;
                 break;
             case 4:
-                PhotoViewer.t1().j0(1.0f, 0.0f, 0.0f, false);
+                PhotoViewer.u1().k0(1.0f, 0.0f, 0.0f, false);
                 break;
             case 5:
                 int i13 = gi.n.n;
@@ -93,18 +93,18 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 MediaController.getInstance().updateSilent(false);
                 break;
             case 14:
-                zg0 zg0Var = zg0.p0;
-                cv cvVar = zg0Var.U;
+                ah0 ah0Var = ah0.p0;
+                cv cvVar = ah0Var.U;
                 if (cvVar != null) {
                     cvVar.G();
                 } else {
-                    PhotoViewer photoViewer = zg0Var.V;
+                    PhotoViewer photoViewer = ah0Var.V;
                     if (photoViewer != null) {
-                        photoViewer.Q0();
+                        photoViewer.R0();
                         MediaController.getInstance().tryResumePausedAudio();
                     }
                 }
-                zg0.j(false);
+                ah0.j(false);
                 break;
             case 15:
                 org.telegram.ui.Components.voip.h1.j();
@@ -146,7 +146,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 int i18 = z2.W;
                 break;
             case 25:
-                PhotoViewer.t1().j0(1.0f, 0.0f, 0.0f, false);
+                PhotoViewer.u1().k0(1.0f, 0.0f, 0.0f, false);
                 break;
             case 26:
                 try {

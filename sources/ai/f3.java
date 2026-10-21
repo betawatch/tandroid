@@ -16,12 +16,12 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.ey;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.ky;
-import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.n61;
 import org.telegram.ui.Components.rw;
 import org.telegram.ui.Components.sy;
 import org.telegram.ui.Components.ty;
 import org.telegram.ui.Components.tz;
-import org.telegram.ui.Components.ym0;
+import org.telegram.ui.Components.zm0;
 import org.telegram.ui.cy;
 import org.telegram.ui.ig;
 import org.telegram.ui.qe;
@@ -30,7 +30,7 @@ import org.telegram.ui.re;
 import org.telegram.ui.st0;
 import org.telegram.ui.vx;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -85,8 +85,8 @@ public final /* synthetic */ class f3 implements Utilities.Callback {
                 final TLRPC.User user = (TLRPC.User) obj;
                 final TLRPC.UserFull userFull = user != null ? qnVar2.getMessagesController().getUserFull(user.id) : null;
                 i80 I = i80.I(qnVar2, u1Var);
-                ym0 ym0Var = new ym0(qnVar2.getParentActivity(), qnVar2.ea);
-                I.p = new qe(ym0Var, 1);
+                zm0 zm0Var = new zm0(qnVar2.getParentActivity(), qnVar2.ea);
+                I.p = new qe(zm0Var, 1);
                 org.telegram.ui.z zVar = new org.telegram.ui.z(qnVar2, user, str2, 2);
                 i80 J = I.J();
                 J.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new st0(I, 26), false);
@@ -190,11 +190,11 @@ public final /* synthetic */ class f3 implements Utilities.Callback {
                     I.c(R.drawable.msg_calls_regular, LocaleController.getString(R.string.VoiceCallViaCarrier), new re(qnVar2, str2, 6), false);
                     I.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyNumber), new re(qnVar2, str2, 7), false);
                     I.k();
-                    I.n(user, LocaleController.getString(R.string.ViewProfile), new org.telegram.ui.t1(qnVar2, ym0Var, user, 17));
+                    I.n(user, LocaleController.getString(R.string.ViewProfile), new org.telegram.ui.t1(qnVar2, zm0Var, user, 17));
                 }
-                ym0Var.e(I);
-                if (characterStyle instanceof m61) {
-                    String url = ((m61) characterStyle).getURL();
+                zm0Var.e(I);
+                if (characterStyle instanceof n61) {
+                    String url = ((n61) characterStyle).getURL();
                     if (url == null) {
                         url = "";
                     }
@@ -207,11 +207,11 @@ public final /* synthetic */ class f3 implements Utilities.Callback {
                     }
                     SpannableString spannableString = new SpannableString(trim);
                     spannableString.setSpan(characterStyle, 0, spannableString.length(), 33);
-                    ym0Var.f(u1Var, characterStyle, spannableString, false);
+                    zm0Var.f(u1Var, characterStyle, spannableString, false);
                 } else {
-                    ym0Var.f(u1Var, characterStyle, null, false);
+                    zm0Var.f(u1Var, characterStyle, null, false);
                 }
-                qnVar2.showDialog(ym0Var);
+                qnVar2.showDialog(zm0Var);
                 break;
             case 4:
                 sy syVar = (sy) this.b;

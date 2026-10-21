@@ -22,13 +22,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.aw;
-import org.telegram.ui.Components.ux0;
+import org.telegram.ui.Components.vx0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.z70;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ua implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -120,7 +120,7 @@ public final /* synthetic */ class ua implements Utilities.Callback {
                 }
                 if (iArr[0] == i12 && iArr[1] > 0) {
                     awVar.dismiss();
-                    org.telegram.ui.Components.qc.g(n2Var2, new ux0(n2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, n2Var2.getResourceProvider()), 1500).j();
+                    org.telegram.ui.Components.qc.g(n2Var2, new vx0(n2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, n2Var2.getResourceProvider()), 1500).j();
                     break;
                 }
                 break;

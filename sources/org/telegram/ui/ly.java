@@ -14,11 +14,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ly extends org.telegram.ui.ActionBar.n2 {
     public iy a;
-    public org.telegram.ui.Components.im0 b;
+    public org.telegram.ui.Components.jm0 b;
     public s4.y c;
     public ImageView d;
     public final ArrayList e;
@@ -106,9 +106,9 @@ public final class ly extends org.telegram.ui.ActionBar.n2 {
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
         this.fragmentView = frameLayout;
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
-        this.b = im0Var;
-        im0Var.setLayoutManager(new s4.b0(1, false));
+        org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, null);
+        this.b = jm0Var;
+        jm0Var.setLayoutManager(new s4.b0(1, false));
         this.b.setVerticalScrollBarEnabled(false);
         this.b.setAdapter(this.a);
         ((s4.k) this.b.getItemAnimator()).C = false;

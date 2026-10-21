@@ -54,7 +54,7 @@ import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class m60 extends r60 implements NotificationCenter.NotificationCenterDelegate {
     public static final int[] m1 = {285904780, -1394191079};
@@ -62,9 +62,9 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
     public volatile boolean B0;
     public volatile String C0;
     public float D0;
-    public uj0 E;
+    public vj0 E;
     public float E0;
-    public uj0 F;
+    public vj0 F;
     public final float[] F0;
     public final ImageView G;
     public final float[] G0;
@@ -92,7 +92,7 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
     public float R0;
     public VideoEditedInfo S;
     public float S0;
-    public b81 T;
+    public c81 T;
     public boolean T0;
     public Bitmap U;
     public boolean U0;
@@ -147,7 +147,7 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
     public Camera2Session w0;
     public final ei.s2 x;
     public boolean x0;
-    public uj0 y;
+    public vj0 y;
     public volatile long y0;
     public volatile int z0;
 
@@ -233,10 +233,10 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
                                 if (!m60Var.u0) {
                                     m60Var.u();
                                 }
-                                uj0 uj0Var = m60Var.F;
+                                vj0 vj0Var = m60Var.F;
                                 int i13 = 0;
-                                if (uj0Var != null) {
-                                    uj0Var.M(0);
+                                if (vj0Var != null) {
+                                    vj0Var.M(0);
                                     m60Var.F.start();
                                 }
                                 m60Var.O0 = true;
@@ -293,10 +293,10 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
                                 if (!m60Var.u0) {
                                     m60Var.u();
                                 }
-                                uj0 uj0Var = m60Var.F;
+                                vj0 vj0Var = m60Var.F;
                                 int i132 = 0;
-                                if (uj0Var != null) {
-                                    uj0Var.M(0);
+                                if (vj0Var != null) {
+                                    vj0Var.M(0);
                                     m60Var.F.start();
                                 }
                                 m60Var.O0 = true;
@@ -391,9 +391,9 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
     @Override // org.telegram.ui.Components.r60
     public final void a(boolean z10) {
         t();
-        b81 b81Var = this.T;
-        if (b81Var != null) {
-            b81Var.H();
+        c81 c81Var = this.T;
+        if (c81Var != null) {
+            c81Var.H();
             this.T = null;
         }
         if (this.q0 == null) {
@@ -429,8 +429,8 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
 
     @Override // org.telegram.ui.Components.r60
     public final void b(float f7, int i10) {
-        b81 b81Var = this.T;
-        if (b81Var == null) {
+        c81 c81Var = this.T;
+        if (c81Var == null) {
             return;
         }
         if (i10 == 0) {
@@ -440,7 +440,7 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
             t();
             this.T.B();
         } else if (i10 == 2) {
-            b81Var.L((long) (f7 * b81Var.p()), false);
+            c81Var.L((long) (f7 * c81Var.p()), false);
         }
     }
 
@@ -520,9 +520,9 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
             return;
         }
         t();
-        b81 b81Var = this.T;
-        if (b81Var != null) {
-            b81Var.H();
+        c81 c81Var = this.T;
+        if (c81Var != null) {
+            c81Var.H();
             this.T = null;
         }
         int i14 = this.f;
@@ -672,9 +672,9 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
         if (this.F == null) {
             int i10 = R.raw.roundcamera_flip;
             int i11 = this.c1;
-            uj0 uj0Var = new uj0(i10, i11, i11);
-            this.F = uj0Var;
-            uj0Var.M(0);
+            vj0 vj0Var = new vj0(i10, i11, i11);
+            this.F = vj0Var;
+            vj0Var.M(0);
             this.F.setCallback(this.v);
         }
         this.v.setImageDrawable(this.F);
@@ -797,9 +797,9 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
             if (f60Var != null) {
                 f60Var.T.sendMessage(f60Var.T.obtainMessage(5));
                 c(false);
-                b81 b81Var = this.T;
-                if (b81Var != null) {
-                    b81Var.H();
+                c81 c81Var = this.T;
+                if (c81Var != null) {
+                    c81Var.H();
                     this.T = null;
                 }
                 h(true);
@@ -1064,12 +1064,12 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        b81 b81Var;
+        c81 c81Var;
         if (motionEvent.getAction() == 0 && motionEvent.getY() > getMeasuredHeight() - getPaddingBottom()) {
             return false;
         }
-        if (motionEvent.getAction() == 0 && this.n != null && (b81Var = this.T) != null) {
-            boolean x10 = b81Var.x();
+        if (motionEvent.getAction() == 0 && this.n != null && (c81Var = this.T) != null) {
+            boolean x10 = c81Var.x();
             this.T.O(!x10);
             AnimatorSet animatorSet = this.L;
             if (animatorSet != null) {
@@ -1392,28 +1392,28 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
                 int i10 = this.c1;
                 if (z11) {
                     if (this.E == null) {
-                        uj0 uj0Var = new uj0(R.raw.roundcamera_flash_off, i10, i10);
-                        this.E = uj0Var;
-                        uj0Var.setCallback(q2Var);
+                        vj0 vj0Var = new vj0(R.raw.roundcamera_flash_off, i10, i10);
+                        this.E = vj0Var;
+                        vj0Var.setCallback(q2Var);
                     }
                     q2Var.setImageDrawable(this.E);
                     if (this.d1 == null) {
-                        uj0 uj0Var2 = this.E;
-                        uj0Var2.M(uj0Var2.e[0] - 1);
+                        vj0 vj0Var2 = this.E;
+                        vj0Var2.M(vj0Var2.e[0] - 1);
                     } else {
                         this.E.M(0);
                         this.E.start();
                     }
                 } else {
                     if (this.y == null) {
-                        uj0 uj0Var3 = new uj0(R.raw.roundcamera_flash_on, i10, i10);
-                        this.y = uj0Var3;
-                        uj0Var3.setCallback(q2Var);
+                        vj0 vj0Var3 = new vj0(R.raw.roundcamera_flash_on, i10, i10);
+                        this.y = vj0Var3;
+                        vj0Var3.setCallback(q2Var);
                     }
                     q2Var.setImageDrawable(this.y);
                     if (this.d1 == null) {
-                        uj0 uj0Var4 = this.y;
-                        uj0Var4.M(uj0Var4.e[0] - 1);
+                        vj0 vj0Var4 = this.y;
+                        vj0Var4.M(vj0Var4.e[0] - 1);
                     } else {
                         this.y.M(0);
                         this.y.start();

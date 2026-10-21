@@ -1,11 +1,11 @@
 package ei;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.lw0;
-import org.telegram.ui.Components.ot0;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.mw0;
+import org.telegram.ui.Components.pt0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -13,11 +13,11 @@ public final /* synthetic */ class o4 implements ValueAnimator.AnimatorUpdateLis
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ o4(ot0 ot0Var, int i10, im0 im0Var) {
+    public /* synthetic */ o4(pt0 pt0Var, int i10, jm0 jm0Var) {
         this.a = 1;
-        this.c = ot0Var;
+        this.c = pt0Var;
         this.b = i10;
-        this.d = im0Var;
+        this.d = jm0Var;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -35,10 +35,10 @@ public final /* synthetic */ class o4 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 1:
-                ot0 ot0Var = (ot0) this.c;
-                im0 im0Var = (im0) this.d;
-                ot0Var.e.O1.put(this.b, (Float) valueAnimator.getAnimatedValue());
-                im0Var.invalidate();
+                pt0 pt0Var = (pt0) this.c;
+                jm0 jm0Var = (jm0) this.d;
+                pt0Var.e.O1.put(this.b, (Float) valueAnimator.getAnimatedValue());
+                jm0Var.invalidate();
                 break;
             default:
                 rg.m0 m0Var = (rg.m0) this.c;
@@ -54,9 +54,9 @@ public final /* synthetic */ class o4 implements ValueAnimator.AnimatorUpdateLis
         }
     }
 
-    public /* synthetic */ o4(lw0 lw0Var, Integer num, int i10, int i11) {
+    public /* synthetic */ o4(mw0 mw0Var, Integer num, int i10, int i11) {
         this.a = i11;
-        this.c = lw0Var;
+        this.c = mw0Var;
         this.d = num;
         this.b = i10;
     }

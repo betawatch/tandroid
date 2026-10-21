@@ -43,10 +43,10 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.ca0;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.w61;
+import org.telegram.ui.Components.x61;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.yq;
@@ -55,9 +55,9 @@ import org.telegram.ui.kk;
 import org.telegram.ui.qn;
 import org.telegram.ui.y21;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class i9 extends w61 implements NotificationCenter.NotificationCenterDelegate {
+public final class i9 extends x61 implements NotificationCenter.NotificationCenterDelegate {
     public EditTextBoldCursor E;
     public boolean F;
     public final Runnable G;
@@ -293,9 +293,9 @@ public final class i9 extends w61 implements NotificationCenter.NotificationCent
         if (walletuseraddress != null && walletuseraddress.user_id != 0) {
             i9Var.e = MessagesController.getInstance(i9Var.currentAccount).getUser(Long.valueOf(walletuseraddress.user_id));
         }
-        v61 v61Var = i9Var.a;
-        if (v61Var != null) {
-            v61Var.W2.N(true);
+        w61 w61Var = i9Var.a;
+        if (w61Var != null) {
+            w61Var.W2.N(true);
         }
         i9Var.w0();
         k8 k8Var = i9Var.s;
@@ -372,17 +372,17 @@ public final class i9 extends w61 implements NotificationCenter.NotificationCent
         }
     }
 
-    @Override // org.telegram.ui.Components.w61
+    @Override // org.telegram.ui.Components.x61
     public final CharSequence V() {
         return LocaleController.getString(R.string.WalletSendMoneyTo);
     }
 
-    @Override // org.telegram.ui.Components.w61
-    public final boolean X(g61 g61Var, View view) {
+    @Override // org.telegram.ui.Components.x61
+    public final boolean X(h61 h61Var, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.w61, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.Components.x61, org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
         View createView = super.createView(context);
         this.fragmentView = createView;
@@ -1351,11 +1351,11 @@ public final class i9 extends w61 implements NotificationCenter.NotificationCent
         m0.w(this.currentAccount).X(str, new t8(this, 0));
     }
 
-    @Override // org.telegram.ui.Components.w61
-    public final void U(ArrayList arrayList, t61 t61Var) {
+    @Override // org.telegram.ui.Components.x61
+    public final void U(ArrayList arrayList, u61 u61Var) {
     }
 
-    @Override // org.telegram.ui.Components.w61
-    public final void W(g61 g61Var, View view) {
+    @Override // org.telegram.ui.Components.x61
+    public final void W(h61 h61Var, View view) {
     }
 }

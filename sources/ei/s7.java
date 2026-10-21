@@ -30,14 +30,14 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.k20;
 import org.telegram.ui.Components.si;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class s7 extends org.telegram.ui.Components.bb implements NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener, ne.d {
     public String A0;
@@ -74,7 +74,7 @@ public final class s7 extends org.telegram.ui.Components.bb implements Notificat
     public final gh.d n0;
     public final bh.b o0;
     public final m7 p0;
-    public t61 q0;
+    public u61 q0;
     public MessageObject r0;
     public String s0;
     public int t0;
@@ -199,9 +199,9 @@ public final class s7 extends org.telegram.ui.Components.bb implements Notificat
         frameLayout.setPadding(AndroidUtilities.dp(8.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(8.0f) + this.backgroundPaddingLeft, 0);
         this.containerView.addView(frameLayout, w7.z5.e(-1, -2, 55));
         setBackgroundColor(getThemedColor(i12));
-        im0 im0Var = this.d;
+        jm0 jm0Var = this.d;
         int i13 = this.backgroundPaddingLeft;
-        im0Var.setPadding(i13, 0, i13, 0);
+        jm0Var.setPadding(i13, 0, i13, 0);
         this.d.p1();
         s4.k kVar = new s4.k();
         kVar.m = false;
@@ -302,7 +302,7 @@ public final class s7 extends org.telegram.ui.Components.bb implements Notificat
 
     public static void R(s7 s7Var, Utilities.Callback callback, org.telegram.ui.ActionBar.d6 d6Var, View view, int i10) {
         if (!(view instanceof org.telegram.ui.Cells.h7)) {
-            g61 G = s7Var.q0.G(i10 - 1);
+            h61 G = s7Var.q0.G(i10 - 1);
             if (G != null && G.d == 1) {
                 new s7(s7Var.getContext(), true, s7Var, callback, d6Var).show();
                 return;
@@ -530,31 +530,31 @@ public final class s7 extends org.telegram.ui.Components.bb implements Notificat
                 if (arrayList.isEmpty() || arrayList.size() <= 1) {
                     i11 = 0;
                 } else {
-                    arrayList.add(g61.B(null));
+                    arrayList.add(h61.B(null));
                     i11 = AndroidUtilities.dp(12.0f);
                 }
                 this.q0.U();
-                arrayList.add(g61.t(str));
+                arrayList.add(h61.t(str));
                 int size2 = arrayList3.size();
                 while (i12 < size2) {
                     Object obj2 = arrayList3.get(i12);
                     i12++;
                     ai.jc jcVar = new ai.jc(this, i14);
                     int i15 = org.telegram.ui.Cells.g7.a;
-                    g61 J = g61.J(org.telegram.ui.Cells.g7.class);
+                    h61 J = h61.J(org.telegram.ui.Cells.g7.class);
                     J.G = (MessageObject) obj2;
                     J.H = jcVar;
                     arrayList.add(J);
                     i11 += AndroidUtilities.dp(56.0f);
                 }
                 if (z11) {
-                    arrayList.add(g61.n(4));
-                    arrayList.add(g61.n(4));
-                    arrayList.add(g61.n(4));
+                    arrayList.add(h61.n(4));
+                    arrayList.add(h61.n(4));
+                    arrayList.add(h61.n(4));
                     i11 += AndroidUtilities.dp(56.0f) * 3;
                 }
                 if (z12 && !z11) {
-                    g61 c10 = g61.c(i10, R.drawable.arrow_more, LocaleController.getString(R.string.ShowMore));
+                    h61 c10 = h61.c(i10, R.drawable.arrow_more, LocaleController.getString(R.string.ShowMore));
                     c10.q = true;
                     arrayList.add(c10);
                     i11 += AndroidUtilities.dp(50.0f);
@@ -709,11 +709,11 @@ public final class s7 extends org.telegram.ui.Components.bb implements Notificat
         float f7 = AndroidUtilities.displaySize.y;
         int i10 = 0;
         while (true) {
-            im0 im0Var = this.d;
-            if (i10 >= im0Var.getChildCount()) {
+            jm0 jm0Var = this.d;
+            if (i10 >= jm0Var.getChildCount()) {
                 break;
             }
-            View childAt = im0Var.getChildAt(i10);
+            View childAt = jm0Var.getChildAt(i10);
             if (RecyclerView.R(childAt) >= 1 && childAt.getY() < f7) {
                 f7 = childAt.getY();
             }
@@ -764,11 +764,11 @@ public final class s7 extends org.telegram.ui.Components.bb implements Notificat
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
-        t61 t61Var = new t61(im0Var, getContext(), this.currentAccount, 0, false, new k7(this, 0), this.resourcesProvider);
-        this.q0 = t61Var;
-        t61Var.r = false;
-        return t61Var;
+    public final im0 x(jm0 jm0Var) {
+        u61 u61Var = new u61(jm0Var, getContext(), this.currentAccount, 0, false, new k7(this, 0), this.resourcesProvider);
+        this.q0 = u61Var;
+        u61Var.r = false;
+        return u61Var;
     }
 
     @Override // ne.d

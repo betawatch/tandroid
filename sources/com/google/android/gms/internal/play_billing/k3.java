@@ -13,9 +13,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.tl0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class k3 {
     public static float A(float f7, float f10, float f11, float f12) {
@@ -646,9 +646,9 @@ public abstract /* synthetic */ class k3 {
         return str + str2 + str3 + str4;
     }
 
-    public static sl0 l(View view, View view2, int i10, int i11) {
+    public static tl0 l(View view, View view2, int i10, int i11) {
         view.setLayoutParams(new s4.o0(i10, i11));
-        return new sl0(view2);
+        return new tl0(view2);
     }
 
     public static void m(float f7, int i10, TextView textView) {

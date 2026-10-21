@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class a6 implements Runnable {
     public final /* synthetic */ int a;
@@ -90,9 +90,9 @@ public final class a6 implements Runnable {
                     e10Var.f.clear();
                     e10Var.n.clear();
                     e10Var.r.clear();
-                    org.telegram.ui.Components.hm0 hm0Var = e10Var.d;
-                    if (hm0Var != null) {
-                        hm0Var.l();
+                    org.telegram.ui.Components.im0 im0Var = e10Var.d;
+                    if (im0Var != null) {
+                        im0Var.l();
                         break;
                     }
                 }
@@ -129,7 +129,7 @@ public final class a6 implements Runnable {
                     EGLSurface eGLSurface = h70Var3.f;
                     if (!egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, h70Var3.e)) {
                         if (BuildVars.LOGS_ENABLED) {
-                            org.telegram.messenger.kk.v(((h70) this.b).b, new StringBuilder("eglMakeCurrent failed "));
+                            org.telegram.messenger.mk.v(((h70) this.b).b, new StringBuilder("eglMakeCurrent failed "));
                             break;
                         }
                     }

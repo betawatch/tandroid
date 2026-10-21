@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s50 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class s50 implements View.OnClickListener {
     */
     public final void onClick(View view) {
         int b10;
-        org.telegram.ui.Components.hz0 hz0Var;
+        org.telegram.ui.Components.iz0 iz0Var;
         int i10 = 19;
         final int i11 = 4;
         final int i12 = 3;
@@ -762,11 +762,11 @@ public final /* synthetic */ class s50 implements View.OnClickListener {
                         if (R == 0) {
                             photoViewer.p1.m(0);
                         }
-                        photoViewer.A3();
+                        photoViewer.C3();
                         break;
                     }
                 } else {
-                    int k10 = photoViewer.d.k(indexOf, photoViewer.n1());
+                    int k10 = photoViewer.d.k(indexOf, photoViewer.o1());
                     boolean x10 = photoViewer.d.x(indexOf);
                     if (indexOf == photoViewer.P4) {
                         photoViewer.N0.b(x10, true);
@@ -777,7 +777,7 @@ public final /* synthetic */ class s50 implements View.OnClickListener {
                             photoViewer.p1.m(0);
                         }
                     }
-                    photoViewer.A3();
+                    photoViewer.C3();
                     break;
                 }
                 break;
@@ -826,9 +826,9 @@ public final /* synthetic */ class s50 implements View.OnClickListener {
                                     textView.clearFocus();
                                     fv0Var.i0();
                                     fv0Var.r0();
-                                    hz0Var = fv0Var.Q;
-                                    if (hz0Var != null) {
-                                        hz0Var.f();
+                                    iz0Var = fv0Var.Q;
+                                    if (iz0Var != null) {
+                                        iz0Var.f();
                                         fv0Var.Q.setDelegate(null);
                                     }
                                     fv0Var.b.m(fv0Var.p0);
@@ -844,8 +844,8 @@ public final /* synthetic */ class s50 implements View.OnClickListener {
                             textView.clearFocus();
                             fv0Var.i0();
                             fv0Var.r0();
-                            hz0Var = fv0Var.Q;
-                            if (hz0Var != null) {
+                            iz0Var = fv0Var.Q;
+                            if (iz0Var != null) {
                             }
                             fv0Var.b.m(fv0Var.p0);
                         }

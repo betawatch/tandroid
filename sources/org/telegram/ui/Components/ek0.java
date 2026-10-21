@@ -1,27 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class ek0 extends im0 {
-    public final /* synthetic */ mk0 V2;
+public final /* synthetic */ class ek0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ nk0 b;
+    public final /* synthetic */ TLObject c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ek0(mk0 mk0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, d6Var);
-        this.V2 = mk0Var;
+    public /* synthetic */ ek0(nk0 nk0Var, TLObject tLObject, int i10) {
+        this.a = i10;
+        this.b = nk0Var;
+        this.c = tLObject;
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        mk0 mk0Var = this.V2;
-        ob0 ob0Var = mk0Var.J;
-        if (ob0Var != null) {
-            ob0Var.measure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), 0));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                nk0 nk0Var = this.b;
+                NotificationCenter.getInstance(nk0Var.b).doOnIdle(new ek0(nk0Var, this.c, 1));
+                break;
+            default:
+                nk0.a(this.b, this.c);
+                break;
         }
-        super.onMeasure(i10, i11);
-        mk0Var.j();
     }
 }

@@ -13,16 +13,16 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class hk0 extends org.telegram.ui.Components.hm0 {
+public final class hk0 extends org.telegram.ui.Components.im0 {
     public final /* synthetic */ kk0 c;
 
     public hk0(kk0 kk0Var) {
         this.c = kk0Var;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         int i10 = b1Var.f;
         return i10 == 0 || i10 == 2;
@@ -162,7 +162,7 @@ public final class hk0 extends org.telegram.ui.Components.hm0 {
             xpVar.a(true, false);
             TextView textView = new TextView(context);
             jk0Var.a = textView;
-            org.telegram.messenger.kk.o(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 16.0f);
+            org.telegram.messenger.mk.o(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 16.0f);
             textView.setLines(1);
             textView.setMaxLines(1);
             textView.setSingleLine(true);

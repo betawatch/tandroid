@@ -1,111 +1,63 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 import android.view.View;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class s81 extends AnimatorListenerAdapter {
+public final /* synthetic */ class s81 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ d91 b;
+    public final /* synthetic */ e91 b;
 
-    public /* synthetic */ s81(d91 d91Var, int i10) {
+    public /* synthetic */ s81(e91 e91Var, int i10) {
         this.a = i10;
-        this.b = d91Var;
+        this.b = e91Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                d91 d91Var = this.b;
-                View[] viewArr = d91Var.e;
-                View[] viewArr2 = d91Var.e;
-                if (viewArr[1] != null) {
-                    d91Var.F();
-                    d91Var.h.put(d91Var.f[1], viewArr2[1]);
-                    d91Var.removeView(viewArr2[1]);
-                    d91Var.E(viewArr2[0], 0.0f);
-                    viewArr2[1] = null;
+                e91 e91Var = this.b;
+                e91Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View[] viewArr = e91Var.e;
+                View view = viewArr[1];
+                if (view != null) {
+                    if (e91Var.y) {
+                        e91Var.E(view, (1.0f - floatValue) * viewArr[0].getMeasuredWidth());
+                        e91Var.E(viewArr[0], (-r1.getMeasuredWidth()) * floatValue);
+                    } else {
+                        e91Var.E(view, (1.0f - floatValue) * (-viewArr[0].getMeasuredWidth()));
+                        e91Var.E(viewArr[0], r1.getMeasuredWidth() * floatValue);
+                    }
+                    e91Var.c = floatValue;
+                    e91Var.w(true);
+                    u81 u81Var = e91Var.M;
+                    if (u81Var != null) {
+                        u81Var.v.invalidate();
+                        e91Var.M.v.f1();
+                        e91Var.M.invalidate();
+                        break;
+                    }
                 }
-                d91Var.Q = null;
-                d91Var.w(true);
-                t81 t81Var = d91Var.M;
-                if (t81Var != null) {
-                    t81Var.v.invalidate();
-                    d91Var.M.v.f1();
-                    d91Var.M.invalidate();
-                }
-                d91Var.u();
-                d91Var.J.unlock();
                 break;
             case 1:
-                d91 d91Var2 = this.b;
-                d91Var2.w = null;
-                View[] viewArr3 = d91Var2.e;
-                if (viewArr3[1] != null) {
-                    if (!d91Var2.F) {
-                        d91Var2.F();
-                    }
-                    d91Var2.h.put(d91Var2.f[1], viewArr3[1]);
-                    d91Var2.removeView(viewArr3[1]);
-                    viewArr3[1].setVisibility(8);
-                    viewArr3[1] = null;
-                }
-                d91Var2.x = false;
-                d91Var2.I = false;
-                t81 t81Var2 = d91Var2.M;
-                if (t81Var2 != null) {
-                    t81Var2.setEnabled(true);
-                }
-                d91Var2.w(false);
-                d91Var2.u();
-                d91Var2.J.unlock();
+                e91 e91Var2 = this.b;
+                e91Var2.getClass();
+                e91Var2.R = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
             case 2:
-                d91 d91Var3 = this.b;
-                d91Var3.w = null;
-                View[] viewArr4 = d91Var3.e;
-                View view = viewArr4[1];
-                if (view != null) {
-                    d91Var3.removeView(view);
-                    viewArr4[1] = null;
-                }
-                d91Var3.x = false;
-                t81 t81Var3 = d91Var3.M;
-                if (t81Var3 != null) {
-                    t81Var3.setEnabled(true);
-                    t81 t81Var4 = d91Var3.M;
-                    t81Var4.J = false;
-                    t81Var4.a = 1.0f;
-                    t81Var4.v.f1();
-                    d91Var3.M.invalidate();
-                    break;
-                }
+                e91 e91Var3 = this.b;
+                e91Var3.N.onAnimationUpdate(valueAnimator);
+                e91Var3.M.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                e91Var3.M.v.f1();
+                e91Var3.M.invalidate();
                 break;
             default:
-                d91 d91Var4 = this.b;
-                d91Var4.w = null;
-                View[] viewArr5 = d91Var4.e;
-                if (viewArr5[1] != null) {
-                    if (!d91Var4.F) {
-                        d91Var4.F();
-                    }
-                    d91Var4.h.put(d91Var4.f[1], viewArr5[1]);
-                    d91Var4.removeView(viewArr5[1]);
-                    viewArr5[1].setVisibility(8);
-                    viewArr5[1] = null;
-                }
-                d91Var4.x = false;
-                d91Var4.I = false;
-                t81 t81Var5 = d91Var4.M;
-                if (t81Var5 != null) {
-                    t81Var5.setEnabled(true);
-                }
-                d91Var4.w(false);
-                d91Var4.u();
-                d91Var4.J.unlock();
+                e91 e91Var4 = this.b;
+                e91Var4.getClass();
+                e91Var4.R = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
         }
     }

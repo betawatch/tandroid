@@ -81,7 +81,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.gd1;
 import org.telegram.ui.pg1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class f5 {
     public static final Pattern a = Pattern.compile("^([a-zA-Z][a-zA-Z0-9+\\-.]*://)?([a-zA-Z0-9\\-]+\\.)+[a-zA-Z]{2,}(:\\d+)?(/[^\\s]*)?$");
@@ -165,7 +165,7 @@ public abstract class f5 {
             b2Var.R = LocaleController.getString(R.string.LiveLocationAlertExpandTitle);
         } else {
             int r11 = d6Var != null ? d6Var.r(org.telegram.ui.ActionBar.h6.L5) : org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.L5, false);
-            b2Var.b0 = new fr0(activity, 0);
+            b2Var.b0 = new gr0(activity, 0);
             b2Var.c0 = r11;
         }
         alertDialog$Builder.n(e);
@@ -487,8 +487,8 @@ public abstract class f5 {
         String[] strArr;
         org.telegram.ui.ActionBar.u0 u0Var2;
         String[] strArr2;
-        xj0 xj0Var;
-        uj0 uj0Var;
+        yj0 yj0Var;
+        vj0 vj0Var;
         Calendar calendar2;
         int[] iArr2;
         int i15;
@@ -498,7 +498,7 @@ public abstract class f5 {
         TextView textView3;
         TextView textView4;
         final org.telegram.ui.ActionBar.f3 f3Var;
-        xj0 xj0Var2;
+        yj0 yj0Var2;
         int i16;
         TLRPC.User user;
         TLRPC.UserStatus userStatus;
@@ -596,18 +596,18 @@ public abstract class f5 {
             u0Var.setOnClickListener(new org.telegram.ui.ActionBar.s1(21, u0Var, d5Var));
             u0Var.setDelegate(new ai.u2(e5Var, zArr, a3Var, 20));
         }
-        xj0 xj0Var3 = new xj0(context2);
-        uj0 uj0Var2 = new uj0(R.raw.notify_toggle, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), true, null);
-        uj0Var2.J(true);
-        uj0Var2.h = true;
-        uj0Var2.start();
-        uj0Var2.M(40);
-        uj0Var2.P(40);
-        xj0Var3.setScaleType(ImageView.ScaleType.CENTER);
-        xj0Var3.setAnimation(uj0Var2);
-        xj0Var3.setColorFilter(new PorterDuffColorFilter(i17, PorterDuff.Mode.SRC_IN));
-        xj0Var3.setBackground(org.telegram.ui.ActionBar.h6.g0(i18, 1, i12));
-        viewGroup2.addView(xj0Var3, w7.z5.d(40, 40.0f, 53, 0.0f, 8.0f, (u0Var != null ? 42 : r82) + 8, 0.0f));
+        yj0 yj0Var3 = new yj0(context2);
+        vj0 vj0Var2 = new vj0(R.raw.notify_toggle, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), true, null);
+        vj0Var2.J(true);
+        vj0Var2.h = true;
+        vj0Var2.start();
+        vj0Var2.M(40);
+        vj0Var2.P(40);
+        yj0Var3.setScaleType(ImageView.ScaleType.CENTER);
+        yj0Var3.setAnimation(vj0Var2);
+        yj0Var3.setColorFilter(new PorterDuffColorFilter(i17, PorterDuff.Mode.SRC_IN));
+        yj0Var3.setBackground(org.telegram.ui.ActionBar.h6.g0(i18, 1, i12));
+        viewGroup2.addView(yj0Var3, w7.z5.d(40, 40.0f, 53, 0.0f, 8.0f, (u0Var != null ? 42 : r82) + 8, 0.0f));
         ?? linearLayout = new LinearLayout(context2);
         linearLayout.setOrientation(r82);
         linearLayout.setWeightSum(1.0f);
@@ -700,8 +700,8 @@ public abstract class f5 {
         if (z10) {
             u0Var2 = u0Var3;
             strArr2 = strArr;
-            xj0Var = xj0Var3;
-            uj0Var = uj0Var2;
+            yj0Var = yj0Var3;
+            vj0Var = vj0Var2;
             calendar2 = calendar;
             iArr2 = iArr;
             i15 = i20;
@@ -718,8 +718,8 @@ public abstract class f5 {
             strArr2 = strArr;
             int m12 = org.telegram.ui.ActionBar.h6.m1(0.1f, i17);
             textView4 = new TextView(context2);
-            xj0Var = xj0Var3;
-            uj0Var = uj0Var2;
+            yj0Var = yj0Var3;
+            vj0Var = vj0Var2;
             textView4.setTextSize(1, 13.0f);
             textView4.setTextColor(i17);
             textView4.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
@@ -780,38 +780,38 @@ public abstract class f5 {
         f3Var2.setBackgroundColor(i15);
         f3Var2.fixNavigationBar(i15);
         if (textView4 != null) {
-            xj0Var2 = xj0Var;
+            yj0Var2 = yj0Var;
             i16 = 1;
             f3Var = f3Var2;
             textView4.setOnClickListener(new a2(frameLayout2, d6Var, f3Var2, (FrameLayout) textView2, iArr2, strArr2, iArr3, (org.telegram.messenger.camera.i) textView3));
         } else {
             f3Var = f3Var2;
-            xj0Var2 = xj0Var;
+            yj0Var2 = yj0Var;
             i16 = 1;
         }
         final ei.x3[] x3VarArr = new ei.x3[i16];
         final org.telegram.ui.ActionBar.u0 u0Var4 = u0Var2;
-        final uj0 uj0Var3 = uj0Var;
-        xj0Var2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.d2
+        final vj0 vj0Var3 = vj0Var;
+        yj0Var2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.d2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 String string;
                 boolean[] zArr5 = zArr3;
                 boolean z11 = zArr5[0];
                 zArr5[0] = !z11;
-                uj0 uj0Var4 = uj0Var3;
+                vj0 vj0Var4 = vj0Var3;
                 if (z11) {
-                    if (uj0Var4.a0 < 40) {
-                        uj0Var4.M(40);
+                    if (vj0Var4.a0 < 40) {
+                        vj0Var4.M(40);
                     }
-                    uj0Var4.P(80);
-                    uj0Var4.start();
+                    vj0Var4.P(80);
+                    vj0Var4.start();
                 } else {
-                    if (uj0Var4.a0 >= 40) {
-                        uj0Var4.M(0);
+                    if (vj0Var4.a0 >= 40) {
+                        vj0Var4.M(0);
                     }
-                    uj0Var4.P(40);
-                    uj0Var4.start();
+                    vj0Var4.P(40);
+                    vj0Var4.start();
                 }
                 ei.x3[] x3VarArr2 = x3VarArr;
                 ei.x3 x3Var2 = x3VarArr2[0];
@@ -1021,7 +1021,7 @@ public abstract class f5 {
         w4Var.setTextOffset(-AndroidUtilities.dp(34.0f));
         x3 x3Var = new x3(context, od0Var, v4Var, w4Var, 5);
         x3Var.setOrientation(1);
-        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
+        LinearLayout e = org.telegram.messenger.mk.e(context, 1);
         x3Var.addView(e, w7.z5.t(-1, -2, 51, 22, 0, 22, 4));
         TextView textView = new TextView(context);
         textView.setText(LocaleController.getString(i10 == 1 ? R.string.SuggestedPostAcceptTitle : R.string.PostSuggestionsAddTime));
@@ -1031,7 +1031,7 @@ public abstract class f5 {
         e.addView(textView, w7.z5.t(-2, -2, 51, 0, 12, 0, 0));
         textView.setOnTouchListener(new di.d(10));
         TextView textView2 = new TextView(context);
-        org.telegram.messenger.kk.o(org.telegram.ui.ActionBar.h6.z6, d6Var, textView2, 1, 14.0f);
+        org.telegram.messenger.mk.o(org.telegram.ui.ActionBar.h6.z6, d6Var, textView2, 1, 14.0f);
         textView2.setText(LocaleController.getString(R.string.PostSuggestionsAddTimeHint));
         e.addView(textView2, w7.z5.t(-2, -2, 51, 0, 2, 0, 0));
         textView2.setOnTouchListener(new di.d(10));
@@ -1606,7 +1606,7 @@ public abstract class f5 {
         }
         Activity activity = AndroidUtilities.getActivity();
         org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-        org.telegram.ui.ActionBar.d6 bVar = (PhotoViewer.t1().R1() || (U != null && U.hasShownSheet())) ? new ci.b() : U != null ? U.getResourceProvider() : null;
+        org.telegram.ui.ActionBar.d6 bVar = (PhotoViewer.u1().T1() || (U != null && U.hasShownSheet())) ? new ci.b() : U != null ? U.getResourceProvider() : null;
         String shortName = DialogObject.getShortName(i10, j10);
         if (ChatObject.isMonoForum(i10, j10)) {
             shortName = og.d.h(i10, j10);
@@ -1717,7 +1717,7 @@ public abstract class f5 {
         }
         Activity activity = AndroidUtilities.getActivity();
         org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-        org.telegram.ui.ActionBar.d6 bVar = (PhotoViewer.t1().R1() || (U != null && U.hasShownSheet())) ? new ci.b() : U != null ? U.getResourceProvider() : null;
+        org.telegram.ui.ActionBar.d6 bVar = (PhotoViewer.u1().T1() || (U != null && U.hasShownSheet())) ? new ci.b() : U != null ? U.getResourceProvider() : null;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("MessageLockedStarsConfirmMessageMulti1", i12)));
         spannableStringBuilder.append((CharSequence) " ");
@@ -1883,7 +1883,7 @@ public abstract class f5 {
                             public final void run() {
                                 Activity activity = AndroidUtilities.getActivity();
                                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-                                org.telegram.ui.ActionBar.d6 bVar = (PhotoViewer.t1().R1() || (U != null && U.hasShownSheet())) ? new ci.b() : U != null ? U.getResourceProvider() : null;
+                                org.telegram.ui.ActionBar.d6 bVar = (PhotoViewer.u1().T1() || (U != null && U.hasShownSheet())) ? new ci.b() : U != null ? U.getResourceProvider() : null;
                                 int i11 = i10;
                                 long j11 = j10;
                                 new ai.cd(activity, bVar, o10, 13, DialogObject.getShortName(i11, j11), new ah.j(26), j11).show();
@@ -2566,11 +2566,11 @@ public abstract class f5 {
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.addView(g4Var, w7.z5.k(24.0f, 4.0f, 24.0f, 9.0f, -1, -2));
-        int i12 = l91.f;
+        int i12 = m91.f;
         if (webPage != null && (webPage.site_name != null || webPage.title != null || webPage.description != null || webPage.photo != null || webPage.document != null)) {
-            l91 l91Var = new l91(context, d6Var);
-            l91Var.setWebPage(webPage);
-            linearLayout.addView(l91Var, w7.z5.k(22.0f, 3.0f, 22.0f, 7.0f, -1, -2));
+            m91 m91Var = new m91(context, d6Var);
+            m91Var.setWebPage(webPage);
+            linearLayout.addView(m91Var, w7.z5.k(22.0f, 3.0f, 22.0f, 7.0f, -1, -2));
         }
         alertDialog$Builder.c();
         alertDialog$Builder.n(linearLayout);
@@ -3154,8 +3154,8 @@ public abstract class f5 {
     }
 
     public static void k0(Context context, int i10, long j10) {
-        org.telegram.ui.ActionBar.f3 i11 = org.telegram.messenger.kk.i(1, context, null, false);
-        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
+        org.telegram.ui.ActionBar.f3 i11 = org.telegram.messenger.mk.i(1, context, null, false);
+        LinearLayout e = org.telegram.messenger.mk.e(context, 1);
         e.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setClipChildren(false);
@@ -3173,7 +3173,7 @@ public abstract class f5 {
         TextView textView = new TextView(context);
         int i12 = org.telegram.ui.ActionBar.h6.G6;
         org.telegram.messenger.g0.m(20.0f, org.telegram.ui.ActionBar.h6.x0(null, i12, false), 1, textView);
-        org.telegram.messenger.kk.m(R.string.CallForbiddenInviteLinkTitle, textView, 17);
+        org.telegram.messenger.mk.m(R.string.CallForbiddenInviteLinkTitle, textView, 17);
         TextView i13 = com.google.android.gms.internal.play_billing.k3.i(e, textView, w7.z5.k(32.0f, 16.0f, 32.0f, 8.0f, -1, -2), context);
         i13.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i12, false));
         i13.setTextSize(1, 14.0f);
@@ -3401,7 +3401,7 @@ public abstract class f5 {
             TextView textView = new TextView(context);
             int x03 = org.telegram.ui.ActionBar.h6.x0(zArr, org.telegram.ui.ActionBar.h6.m5, false);
             int i10 = 1;
-            org.telegram.messenger.kk.u(textView, x03, 1, 14.0f, 1);
+            org.telegram.messenger.mk.u(textView, x03, 1, 14.0f, 1);
             textView.setMaxLines(1);
             textView.setSingleLine(true);
             textView.setGravity((!LocaleController.isRTL ? 5 : 3) | 16);
@@ -3455,7 +3455,7 @@ public abstract class f5 {
         TextView textView2 = new TextView(context);
         int x032 = org.telegram.ui.ActionBar.h6.x0(zArr, org.telegram.ui.ActionBar.h6.m5, false);
         int i102 = 1;
-        org.telegram.messenger.kk.u(textView2, x032, 1, 14.0f, 1);
+        org.telegram.messenger.mk.u(textView2, x032, 1, 14.0f, 1);
         textView2.setMaxLines(1);
         textView2.setSingleLine(true);
         textView2.setGravity((!LocaleController.isRTL ? 5 : 3) | 16);
@@ -3494,11 +3494,11 @@ public abstract class f5 {
 
     public static void m0(Context context, org.telegram.ui.ActionBar.d6 d6Var, int i10, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, Runnable runnable) {
         TLObject userOrChat = MessagesController.getInstance(i10).getUserOrChat(j10);
-        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
+        LinearLayout e = org.telegram.messenger.mk.e(context, 1);
         e.addView(new ai.f6(context, tL_starGiftUnique, userOrChat), w7.z5.t(-1, -2, 48, 0, -4, 0, 0));
         TextView textView = new TextView(context);
-        org.telegram.messenger.kk.o(org.telegram.ui.ActionBar.h6.j5, d6Var, textView, 1, 16.0f);
-        org.telegram.messenger.kk.r(R.string.GiftThemesSetInReuseInfo, new Object[]{DialogObject.getDialogTitle(userOrChat)}, textView);
+        org.telegram.messenger.mk.o(org.telegram.ui.ActionBar.h6.j5, d6Var, textView, 1, 16.0f);
+        org.telegram.messenger.mk.r(R.string.GiftThemesSetInReuseInfo, new Object[]{DialogObject.getDialogTitle(userOrChat)}, textView);
         e.addView(textView, w7.z5.t(-1, -2, 48, 24, 0, 24, 4));
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
         alertDialog$Builder.n(e);
@@ -3544,7 +3544,7 @@ public abstract class f5 {
             j5Var.i(new zq(mutate, mutate2));
         }
         TextView textView = new TextView(context);
-        org.telegram.messenger.kk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.m5, false), 1, 14.0f, 1);
+        org.telegram.messenger.mk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.m5, false), 1, 14.0f, 1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
@@ -3773,11 +3773,11 @@ public abstract class f5 {
                 linearLayout = new LinearLayout(context);
                 linearLayout.setOrientation(1);
                 linearLayout.addView(textView, w7.z5.k(22.0f, 4.0f, 22.0f, 9.0f, -1, -2));
-                int i11 = l91.f;
+                int i11 = m91.f;
                 if (webPage != null && (webPage.site_name != null || webPage.title != null || webPage.description != null || webPage.photo != null || webPage.document != null)) {
-                    l91 l91Var = new l91(context, d6Var);
-                    l91Var.setWebPage(webPage);
-                    linearLayout.addView(l91Var, w7.z5.k(22.0f, 3.0f, 22.0f, 7.0f, -1, -2));
+                    m91 m91Var = new m91(context, d6Var);
+                    m91Var.setWebPage(webPage);
+                    linearLayout.addView(m91Var, w7.z5.k(22.0f, 3.0f, 22.0f, 7.0f, -1, -2));
                 }
                 alertDialog$Builder.n(linearLayout);
                 b2Var.a = Math.min(AndroidUtilities.dp(320.0f), (AndroidUtilities.displaySize.x * 85) / 100);
@@ -3806,11 +3806,11 @@ public abstract class f5 {
             linearLayout = new LinearLayout(context);
             linearLayout.setOrientation(1);
             linearLayout.addView(textView2, w7.z5.k(22.0f, 4.0f, 22.0f, 9.0f, -1, -2));
-            int i112 = l91.f;
+            int i112 = m91.f;
             if (webPage != null) {
-                l91 l91Var2 = new l91(context, d6Var);
-                l91Var2.setWebPage(webPage);
-                linearLayout.addView(l91Var2, w7.z5.k(22.0f, 3.0f, 22.0f, 7.0f, -1, -2));
+                m91 m91Var2 = new m91(context, d6Var);
+                m91Var2.setWebPage(webPage);
+                linearLayout.addView(m91Var2, w7.z5.k(22.0f, 3.0f, 22.0f, 7.0f, -1, -2));
             }
             alertDialog$Builder2.n(linearLayout);
             b2Var2.a = Math.min(AndroidUtilities.dp(320.0f), (AndroidUtilities.displaySize.x * 85) / 100);
@@ -5520,7 +5520,7 @@ public abstract class f5 {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
         alertDialog$Builder.a.R = str;
         alertDialog$Builder.n(linearLayout);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Set), new org.telegram.messenger.hk(z10, od0Var2, od0Var, od0Var3, b2Var));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Set), new org.telegram.messenger.jk(z10, od0Var2, od0Var, od0Var3, b2Var));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         return alertDialog$Builder;
     }

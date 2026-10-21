@@ -8,7 +8,7 @@ import android.view.KeyEvent;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class bi implements TextWatcher {
     public final /* synthetic */ int a;
@@ -155,11 +155,11 @@ public final class bi implements TextWatcher {
                             z10 = true;
                         }
                         if (m6Var.x && m6Var.r && m6Var.y == -1) {
-                            xj0 xj0Var = m6Var.h;
-                            if (xj0Var == null) {
+                            yj0 yj0Var = m6Var.h;
+                            if (yj0Var == null) {
                                 m6Var.d0 = Math.max(-360.0f, Math.min(360.0f, m6Var.d0 + (z10 ? -160.0f : 160.0f)));
                                 break;
-                            } else if (!xj0Var.b()) {
+                            } else if (!yj0Var.b()) {
                                 m6Var.h.setProgress(0.0f);
                                 m6Var.h.d();
                                 break;

@@ -11,14 +11,14 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.q6;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class k0 extends FrameLayout {
     public final /* synthetic */ int a = 2;
@@ -80,7 +80,7 @@ public final class k0 extends FrameLayout {
     public void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 1:
-                super.onMeasure(i10, kk.C(2.0f, ((sg.y0) this.c).s, TLObject.FLAG_30));
+                super.onMeasure(i10, mk.C(2.0f, ((sg.y0) this.c).s, TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i10, i11);
@@ -90,7 +90,7 @@ public final class k0 extends FrameLayout {
 
     public k0(Context context, d6 d6Var) {
         super(context);
-        LinearLayout e = kk.e(context, 1);
+        LinearLayout e = mk.e(context, 1);
         q6 q6Var = new q6(context, false, false, false);
         this.b = q6Var;
         int i10 = h6.G6;

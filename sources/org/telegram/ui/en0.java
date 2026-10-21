@@ -29,9 +29,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class en0 implements org.telegram.ui.ActionBar.a2, FileLoader.FileResolver, org.telegram.ui.Components.e5, GenericProvider, MediaDataController.KeywordResultCallback, org.telegram.ui.Components.xl0, org.telegram.ui.Components.yl0, ev0, MessagesStorage.BooleanCallback, y01, OnSuccessListener {
+public final /* synthetic */ class en0 implements org.telegram.ui.ActionBar.a2, FileLoader.FileResolver, org.telegram.ui.Components.e5, GenericProvider, MediaDataController.KeywordResultCallback, org.telegram.ui.Components.yl0, org.telegram.ui.Components.zl0, ev0, MessagesStorage.BooleanCallback, y01, OnSuccessListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -62,12 +62,12 @@ public final /* synthetic */ class en0 implements org.telegram.ui.ActionBar.a2, 
         }
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ boolean P0(View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.zl0
     public boolean a(int i10, View view) {
         final ua1 ua1Var = (ua1) this.b;
         final wa1 wa1Var = (wa1) this.c;
@@ -101,7 +101,7 @@ public final /* synthetic */ class en0 implements org.telegram.ui.ActionBar.a2, 
                                 return;
                             }
                             String str = "https://" + themeActivity2.getMessagesController().linkPrefix + "/addtheme/" + f6Var2.r.slug;
-                            themeActivity2.showDialog(new org.telegram.ui.Components.er0(themeActivity2.getParentActivity(), null, str, false, str, false, null));
+                            themeActivity2.showDialog(new org.telegram.ui.Components.fr0(themeActivity2.getParentActivity(), null, str, false, str, false, null));
                             return;
                         }
                         if (i11 == 2) {
@@ -151,7 +151,7 @@ public final /* synthetic */ class en0 implements org.telegram.ui.ActionBar.a2, 
         qnVar.getSendMessagesHelper().editMessage(yc1Var.G, null, null, null, null, null, null, false, false, null);
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public void d(float f7, float f10, int i10, View view) {
         ThemeActivity.W((ThemeActivity) this.b, (Context) this.c, view, i10, f7);
     }
@@ -193,7 +193,7 @@ public final /* synthetic */ class en0 implements org.telegram.ui.ActionBar.a2, 
                 m0Var.j0(new e2.o0((Object) m0Var, (Object) new org.telegram.ui.Components.qy(26, m0Var, d8Var), true, false, 3));
                 break;
             case 3:
-                PhotoViewer.C(((yr0) this.b).b, (ArrayList) this.c);
+                PhotoViewer.D(((yr0) this.b).b, (ArrayList) this.c);
                 break;
             case 4:
                 yr0 yr0Var = (yr0) this.b;
@@ -206,14 +206,14 @@ public final /* synthetic */ class en0 implements org.telegram.ui.ActionBar.a2, 
                 ArrayList arrayList5 = photoViewer.e7;
                 ArrayList arrayList6 = photoViewer.f7;
                 if (!hu0Var.N()) {
-                    photoViewer.G0(false, false);
+                    photoViewer.H0(false, false);
                     break;
                 } else if (!arrayList4.isEmpty()) {
                     int i11 = photoViewer.P4;
                     if (i11 >= 0 && i11 < arrayList4.size()) {
                         MessageObject messageObject = (MessageObject) arrayList4.get(photoViewer.P4);
                         if (messageObject.isSent()) {
-                            photoViewer.G0(false, false);
+                            photoViewer.H0(false, false);
                             ArrayList<Integer> arrayList7 = new ArrayList<>();
                             int i12 = photoViewer.v;
                             if (i12 != 0) {
@@ -244,7 +244,7 @@ public final /* synthetic */ class en0 implements org.telegram.ui.ActionBar.a2, 
                             MessagesController.getInstance(photoViewer.T).deleteMessages(arrayList9, null, null, MessageObject.getDialogId(message), message.quick_reply_shortcut_id, true, 0);
                             NotificationCenter.getInstance(photoViewer.T).lambda$postNotificationNameOnUIThread$1(NotificationCenter.reloadDialogPhotos, new Object[0]);
                         }
-                        if (!photoViewer.J1()) {
+                        if (!photoViewer.K1()) {
                             TLRPC.Photo photo = (TLRPC.Photo) arrayList6.get(photoViewer.P4);
                             if (photo != null) {
                                 TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
@@ -265,14 +265,14 @@ public final /* synthetic */ class en0 implements org.telegram.ui.ActionBar.a2, 
                                 arrayList3.remove(photoViewer.P4);
                                 arrayList6.remove(photoViewer.P4);
                                 if (arrayList2.isEmpty()) {
-                                    photoViewer.G0(false, false);
+                                    photoViewer.H0(false, false);
                                 } else {
                                     int i14 = photoViewer.P4;
                                     if (i14 >= arrayList6.size()) {
                                         i14 = arrayList6.size() - 1;
                                     }
                                     photoViewer.P4 = -1;
-                                    photoViewer.B2(i14);
+                                    photoViewer.D2(i14);
                                 }
                                 if (message == null) {
                                     NotificationCenter.getInstance(photoViewer.T).lambda$postNotificationNameOnUIThread$1(NotificationCenter.reloadDialogPhotos, new Object[0]);
@@ -285,7 +285,7 @@ public final /* synthetic */ class en0 implements org.telegram.ui.ActionBar.a2, 
                             } else {
                                 MessagesController.getInstance(photoViewer.T).changeChatAvatar(-photoViewer.z5, null, null, null, null, 0.0d, null, null, null, null);
                             }
-                            photoViewer.G0(false, false);
+                            photoViewer.H0(false, false);
                             break;
                         }
                     }
@@ -298,10 +298,10 @@ public final /* synthetic */ class en0 implements org.telegram.ui.ActionBar.a2, 
                             i15 = arrayList5.size() - 1;
                         }
                         photoViewer.P4 = -1;
-                        photoViewer.B2(i15);
+                        photoViewer.D2(i15);
                         break;
                     } else {
-                        photoViewer.G0(false, false);
+                        photoViewer.H0(false, false);
                         break;
                     }
                 }
@@ -521,7 +521,7 @@ public final /* synthetic */ class en0 implements org.telegram.ui.ActionBar.a2, 
     public /* synthetic */ void O() {
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ void a0(View view, float f7, float f10) {
     }
 }

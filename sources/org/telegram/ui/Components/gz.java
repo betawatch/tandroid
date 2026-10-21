@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class gz extends FrameLayout implements ne.d {
     public hq E;
@@ -25,7 +25,7 @@ public abstract class gz extends FrameLayout implements ne.d {
     public final /* synthetic */ tz G;
     public final ne.b a;
     public final int b;
-    public final vn0 c;
+    public final wn0 c;
     public final sq d;
     public final View e;
     public final View f;
@@ -77,13 +77,13 @@ public abstract class gz extends FrameLayout implements ne.d {
         this.s = vVar;
         frameLayout.addView(vVar, w7.z5.d(-1, 40.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
-        vn0 vn0Var = new vn0();
-        this.c = vn0Var;
-        vn0Var.c(0, false, false);
-        vn0Var.a(z10 ? tzVar.w(0.4f) : tzVar.A(org.telegram.ui.ActionBar.h6.Je));
+        wn0 wn0Var = new wn0();
+        this.c = wn0Var;
+        wn0Var.c(0, false, false);
+        wn0Var.a(z10 ? tzVar.w(0.4f) : tzVar.A(org.telegram.ui.ActionBar.h6.Je));
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
-        imageView.setImageDrawable(vn0Var);
+        imageView.setImageDrawable(wn0Var);
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.dz
             public final /* synthetic */ gz b;
 
@@ -246,14 +246,14 @@ public abstract class gz extends FrameLayout implements ne.d {
                             gzVar.g(false);
                             break;
                         default:
-                            mx0 mx0Var = (mx0) obj;
+                            nx0 nx0Var = (nx0) obj;
                             gz gzVar2 = this.b;
                             tz tzVar2 = gzVar2.G;
                             fz fzVar2 = gzVar2.r;
-                            if (mx0Var != null) {
-                                if (fzVar2.getSelectedCategory() != mx0Var) {
-                                    gzVar2.c(mx0Var.a, false);
-                                    fzVar2.G1(mx0Var);
+                            if (nx0Var != null) {
+                                if (fzVar2.getSelectedCategory() != nx0Var) {
+                                    gzVar2.c(nx0Var.a, false);
+                                    fzVar2.G1(nx0Var);
                                     break;
                                 } else {
                                     gzVar2.c(null, false);
@@ -290,14 +290,14 @@ public abstract class gz extends FrameLayout implements ne.d {
                             gzVar.g(false);
                             break;
                         default:
-                            mx0 mx0Var = (mx0) obj;
+                            nx0 nx0Var = (nx0) obj;
                             gz gzVar2 = this.b;
                             tz tzVar2 = gzVar2.G;
                             fz fzVar2 = gzVar2.r;
-                            if (mx0Var != null) {
-                                if (fzVar2.getSelectedCategory() != mx0Var) {
-                                    gzVar2.c(mx0Var.a, false);
-                                    fzVar2.G1(mx0Var);
+                            if (nx0Var != null) {
+                                if (fzVar2.getSelectedCategory() != nx0Var) {
+                                    gzVar2.c(nx0Var.a, false);
+                                    fzVar2.G1(nx0Var);
                                     break;
                                 } else {
                                     gzVar2.c(null, false);

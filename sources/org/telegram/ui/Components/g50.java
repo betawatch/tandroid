@@ -19,17 +19,17 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class g50 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public final TextView[] b;
     public final TextView c;
     public final g90 d;
     public final org.telegram.ui.qn e;
-    public final xj0 f;
+    public final yj0 f;
     public final f50 h;
     public boolean n;
-    public final uj0 r;
+    public final vj0 r;
     public final TextView[] s;
     public final String v;
 
@@ -45,23 +45,23 @@ public final class g50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         FrameLayout frameLayout = new FrameLayout(context);
         setCustomView(frameLayout);
         TextView textView = new TextView(context);
-        org.telegram.messenger.kk.k(20.0f, 1, textView);
+        org.telegram.messenger.mk.k(20.0f, 1, textView);
         int i10 = org.telegram.ui.ActionBar.h6.j5;
         textView.setTextColor(getThemedColor(i10));
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
         frameLayout.addView(textView, w7.z5.d(-2, -2.0f, 51, 17.0f, 20.0f, 17.0f, 0.0f));
-        uj0 uj0Var = new uj0(R.raw.import_finish, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f), false, null);
-        this.r = uj0Var;
-        uj0Var.J(true);
-        xj0 xj0Var = new xj0(context);
-        this.f = xj0Var;
-        xj0Var.setAutoRepeat(true);
-        xj0Var.f(R.raw.import_loop, 120, 120, null);
-        xj0Var.d();
-        frameLayout.addView(xj0Var, w7.z5.d(160, 160.0f, 49, 17.0f, 79.0f, 17.0f, 0.0f));
-        xj0Var.getAnimatedDrawable().S(178, hqVar);
+        vj0 vj0Var = new vj0(R.raw.import_finish, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f), false, null);
+        this.r = vj0Var;
+        vj0Var.J(true);
+        yj0 yj0Var = new yj0(context);
+        this.f = yj0Var;
+        yj0Var.setAutoRepeat(true);
+        yj0Var.f(R.raw.import_loop, 120, 120, null);
+        yj0Var.d();
+        frameLayout.addView(yj0Var, w7.z5.d(160, 160.0f, 49, 17.0f, 79.0f, 17.0f, 0.0f));
+        yj0Var.getAnimatedDrawable().S(178, hqVar);
         TextView textView2 = new TextView(context);
         this.c = textView2;
         textView2.setTypeface(AndroidUtilities.bold());
@@ -86,17 +86,17 @@ public final class g50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         f50Var.d = linearLayout;
         linearLayout.setOrientation(0);
         f50Var.addView(linearLayout, w7.z5.e(-2, -2, 17));
-        xj0 xj0Var2 = new xj0(context);
-        f50Var.c = xj0Var2;
+        yj0 yj0Var2 = new yj0(context);
+        f50Var.c = yj0Var2;
         int dp2 = AndroidUtilities.dp(20.0f);
         int i12 = org.telegram.ui.ActionBar.h6.Sh;
-        xj0Var2.setBackground(org.telegram.ui.ActionBar.h6.K(dp2, org.telegram.ui.ActionBar.h6.w0(i12, d6Var)));
-        xj0Var2.setScaleType(ImageView.ScaleType.CENTER);
-        xj0Var2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(i11, d6Var), PorterDuff.Mode.MULTIPLY));
-        xj0Var2.f(R.raw.import_check, 26, 26, null);
-        xj0Var2.setScaleX(0.8f);
-        xj0Var2.setScaleY(0.8f);
-        linearLayout.addView(xj0Var2, w7.z5.q(20, 20, 16));
+        yj0Var2.setBackground(org.telegram.ui.ActionBar.h6.K(dp2, org.telegram.ui.ActionBar.h6.w0(i12, d6Var)));
+        yj0Var2.setScaleType(ImageView.ScaleType.CENTER);
+        yj0Var2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(i11, d6Var), PorterDuff.Mode.MULTIPLY));
+        yj0Var2.f(R.raw.import_check, 26, 26, null);
+        yj0Var2.setScaleX(0.8f);
+        yj0Var2.setScaleY(0.8f);
+        linearLayout.addView(yj0Var2, w7.z5.q(20, 20, 16));
         TextView textView3 = new TextView(context);
         f50Var.b = textView3;
         textView3.setLines(1);
@@ -162,7 +162,7 @@ public final class g50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         g90 g90Var = this.d;
         TextView[] textViewArr = this.b;
         TextView textView = this.c;
-        xj0 xj0Var = this.f;
+        yj0 yj0Var = this.f;
         if (i10 == i12) {
             if (objArr.length > 1) {
                 dismiss();
@@ -174,8 +174,8 @@ public final class g50 extends org.telegram.ui.ActionBar.f3 implements Notificat
                 n();
                 return;
             }
-            if (!this.n && ((180 - xj0Var.getAnimatedDrawable().a0) * 16.6d) + 3000.0d >= importingHistory.timeUntilFinish) {
-                xj0Var.setAutoRepeat(false);
+            if (!this.n && ((180 - yj0Var.getAnimatedDrawable().a0) * 16.6d) + 3000.0d >= importingHistory.timeUntilFinish) {
+                yj0Var.setAutoRepeat(false);
                 this.n = true;
             }
             textView.setText(String.format("%d%%", Integer.valueOf(importingHistory.uploadProgress)));
@@ -193,8 +193,8 @@ public final class g50 extends org.telegram.ui.ActionBar.f3 implements Notificat
                 n();
                 return;
             }
-            if (!this.n && ((180 - xj0Var.getAnimatedDrawable().a0) * 16.6d) + 3000.0d >= importingStickers.timeUntilFinish) {
-                xj0Var.setAutoRepeat(false);
+            if (!this.n && ((180 - yj0Var.getAnimatedDrawable().a0) * 16.6d) + 3000.0d >= importingStickers.timeUntilFinish) {
+                yj0Var.setAutoRepeat(false);
                 this.n = true;
             }
             textView.setText(String.format("%d%%", Integer.valueOf(importingStickers.uploadProgress)));

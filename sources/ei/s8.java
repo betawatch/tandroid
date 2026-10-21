@@ -8,19 +8,19 @@ import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.hm0;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.tl0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class s8 extends hm0 {
+public final class s8 extends im0 {
     public final /* synthetic */ t8 c;
 
     public s8(t8 t8Var) {
         this.c = t8Var;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         return b1Var.f == 2;
     }
@@ -91,6 +91,6 @@ public final class s8 extends hm0 {
             d6Var = ((org.telegram.ui.ActionBar.f3) t8Var).resourcesProvider;
             view = new q9(context, d6Var);
         }
-        return new sl0(view);
+        return new tl0(view);
     }
 }

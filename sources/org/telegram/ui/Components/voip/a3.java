@@ -14,10 +14,10 @@ import android.widget.FrameLayout;
 import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
-import org.telegram.ui.Components.o31;
+import org.telegram.ui.Components.p31;
 import org.telegram.ui.Components.wc0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class a3 extends FrameLayout {
     public int E;
@@ -171,7 +171,7 @@ public final class a3 extends FrameLayout {
         this.T.e = true;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, (float) max);
         ofFloat.addUpdateListener(new y2(this, 1));
-        ofFloat.addListener(new o31(this, 17));
+        ofFloat.addListener(new p31(this, 17));
         ofFloat.setDuration(z10 ? 400L : 0L);
         ofFloat.start();
     }

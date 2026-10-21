@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public class FileRefController extends BaseController {
     private static volatile FileRefController[] Instance = new FileRefController[4];
@@ -32,7 +32,7 @@ public class FileRefController extends BaseController {
     private ArrayList<Waiter> savedGifsWaiters;
     private ArrayList<Waiter> wallpaperWaiters;
 
-    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
     public static class CachedResult {
         private long firstQueryTime;
         private TLObject response;
@@ -41,7 +41,7 @@ public class FileRefController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
     public static class Requester {
         private Object[] args;
         private boolean completed;
@@ -52,7 +52,7 @@ public class FileRefController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
     public static class Waiter {
         private String locationKey;
         private String parentKey;
@@ -1003,7 +1003,7 @@ public class FileRefController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$requestReferenceFromServer$1(String str, String str2, ci.s6 s6Var) {
-        Utilities.stageQueue.postRunnable(new lk(this, str, str2, s6Var, 7));
+        Utilities.stageQueue.postRunnable(new nk(this, str, str2, s6Var, 7));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1554,7 +1554,7 @@ public class FileRefController extends BaseController {
                                             fileRefController = this;
                                             bArr3 = fileRefController.getFileReference(tL_theme.document, null, requester.location, zArr, inputFileLocationArr2);
                                             if (bArr3 != null && z10) {
-                                                AndroidUtilities.runOnUIThread(new h1(tL_theme, 20));
+                                                AndroidUtilities.runOnUIThread(new i1(tL_theme, 20));
                                             }
                                         } else {
                                             fileRefController = this;
@@ -1580,7 +1580,7 @@ public class FileRefController extends BaseController {
                                                                 i10 = size8;
                                                                 i11 = i32;
                                                                 fileRefController.getMessagesStorage().putUsersAndChats(arrayList9, null, true, true);
-                                                                AndroidUtilities.runOnUIThread(new i2(8, fileRefController, user));
+                                                                AndroidUtilities.runOnUIThread(new j2(8, fileRefController, user));
                                                             }
                                                         } else {
                                                             vector = vector2;
@@ -1594,7 +1594,7 @@ public class FileRefController extends BaseController {
                                                                     arrayList10.add(chat);
                                                                     fileRefController.getMessagesStorage().putUsersAndChats(null, arrayList10, true, true);
                                                                     final int i33 = 0;
-                                                                    AndroidUtilities.runOnUIThread(new Runnable(fileRefController) { // from class: org.telegram.messenger.t3
+                                                                    AndroidUtilities.runOnUIThread(new Runnable(fileRefController) { // from class: org.telegram.messenger.v3
                                                                         public final /* synthetic */ FileRefController b;
 
                                                                         {
@@ -1647,7 +1647,7 @@ public class FileRefController extends BaseController {
                                                                 final int i35 = 1;
                                                                 obj = null;
                                                                 fileRefController.getMessagesStorage().putUsersAndChats(null, arrayList11, true, true);
-                                                                AndroidUtilities.runOnUIThread(new Runnable(fileRefController) { // from class: org.telegram.messenger.t3
+                                                                AndroidUtilities.runOnUIThread(new Runnable(fileRefController) { // from class: org.telegram.messenger.v3
                                                                     public final /* synthetic */ FileRefController b;
 
                                                                     {
@@ -1719,7 +1719,7 @@ public class FileRefController extends BaseController {
                                                     bArr3 = bArr4;
                                                 }
                                                 if (z10) {
-                                                    AndroidUtilities.runOnUIThread(new i2(9, fileRefController, tL_messages_stickerSet));
+                                                    AndroidUtilities.runOnUIThread(new j2(9, fileRefController, tL_messages_stickerSet));
                                                 }
                                             } else {
                                                 FileRefController fileRefController3 = this;
@@ -1957,7 +1957,7 @@ public class FileRefController extends BaseController {
                             }
                             if (z11) {
                                 this.multiMediaCache.remove(tL_messages_sendMultiMedia);
-                                AndroidUtilities.runOnUIThread(new n3(this, tL_messages_sendMultiMedia, objArr, 0));
+                                AndroidUtilities.runOnUIThread(new p3(this, tL_messages_sendMultiMedia, objArr, 0));
                                 return true;
                             }
                         }
@@ -1998,7 +1998,7 @@ public class FileRefController extends BaseController {
                             }
                             if (z12) {
                                 this.multiMediaCache.remove(tL_messages_sendMedia);
-                                AndroidUtilities.runOnUIThread(new o3(this, tL_messages_sendMedia, objArr2, 0));
+                                AndroidUtilities.runOnUIThread(new q3(this, tL_messages_sendMedia, objArr2, 0));
                                 return true;
                             }
                         }
@@ -2041,7 +2041,7 @@ public class FileRefController extends BaseController {
                             }
                             if (z13) {
                                 this.multiMediaCache.remove(tL_sendMessage);
-                                AndroidUtilities.runOnUIThread(new p3(this, tL_sendMessage, objArr3, 0));
+                                AndroidUtilities.runOnUIThread(new r3(this, tL_sendMessage, objArr3, 0));
                                 return true;
                             }
                         }
@@ -2073,7 +2073,7 @@ public class FileRefController extends BaseController {
                     }
                 }
                 final int i13 = 0;
-                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.q3
+                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.s3
                     public final /* synthetic */ FileRefController b;
 
                     {
@@ -2104,7 +2104,7 @@ public class FileRefController extends BaseController {
             if (!z10 || !isSameReference(tL_inputMediaDocument4.id.file_reference, bArr)) {
                 tL_inputMediaDocument4.id.file_reference = bArr;
                 final int i132 = 0;
-                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.q3
+                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.s3
                     public final /* synthetic */ FileRefController b;
 
                     {
@@ -2141,7 +2141,7 @@ public class FileRefController extends BaseController {
                     }
                 }
                 final int i14 = 1;
-                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.q3
+                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.s3
                     public final /* synthetic */ FileRefController b;
 
                     {
@@ -2172,7 +2172,7 @@ public class FileRefController extends BaseController {
             if (!z10 || !isSameReference(tL_inputMediaDocument5.id.file_reference, bArr)) {
                 tL_inputMediaDocument5.id.file_reference = bArr;
                 final int i142 = 1;
-                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.q3
+                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.s3
                     public final /* synthetic */ FileRefController b;
 
                     {
@@ -2209,7 +2209,7 @@ public class FileRefController extends BaseController {
                     }
                 }
                 final int i15 = 2;
-                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.q3
+                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.s3
                     public final /* synthetic */ FileRefController b;
 
                     {
@@ -2240,7 +2240,7 @@ public class FileRefController extends BaseController {
             if (!z10 || !isSameReference(tL_inputMediaDocument6.id.file_reference, bArr)) {
                 tL_inputMediaDocument6.id.file_reference = bArr;
                 final int i152 = 2;
-                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.q3
+                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.s3
                     public final /* synthetic */ FileRefController b;
 
                     {
@@ -2298,7 +2298,7 @@ public class FileRefController extends BaseController {
                         }
                     }
                     final int i16 = 3;
-                    AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.q3
+                    AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.s3
                         public final /* synthetic */ FileRefController b;
 
                         {
@@ -2329,7 +2329,7 @@ public class FileRefController extends BaseController {
                 if (!z10 || !isSameReference(tL_inputMediaDocument7.id.file_reference, bArr)) {
                     tL_inputMediaDocument7.id.file_reference = bArr;
                     final int i162 = 3;
-                    AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.q3
+                    AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.s3
                         public final /* synthetic */ FileRefController b;
 
                         {
@@ -2360,28 +2360,28 @@ public class FileRefController extends BaseController {
                 TLRPC.TL_messages_saveGif tL_messages_saveGif = (TLRPC.TL_messages_saveGif) requester.args[0];
                 if (!z10 || !isSameReference(tL_messages_saveGif.id.file_reference, bArr)) {
                     tL_messages_saveGif.id.file_reference = bArr;
-                    getConnectionsManager().sendRequest(tL_messages_saveGif, new g5(5));
+                    getConnectionsManager().sendRequest(tL_messages_saveGif, new i5(5));
                     return true;
                 }
             } else if (requester.args[0] instanceof TLRPC.TL_messages_saveRecentSticker) {
                 TLRPC.TL_messages_saveRecentSticker tL_messages_saveRecentSticker = (TLRPC.TL_messages_saveRecentSticker) requester.args[0];
                 if (!z10 || !isSameReference(tL_messages_saveRecentSticker.id.file_reference, bArr)) {
                     tL_messages_saveRecentSticker.id.file_reference = bArr;
-                    getConnectionsManager().sendRequest(tL_messages_saveRecentSticker, new g5(6));
+                    getConnectionsManager().sendRequest(tL_messages_saveRecentSticker, new i5(6));
                     return true;
                 }
             } else if (requester.args[0] instanceof TLRPC.TL_stickers_addStickerToSet) {
                 TLRPC.TL_stickers_addStickerToSet tL_stickers_addStickerToSet = (TLRPC.TL_stickers_addStickerToSet) requester.args[0];
                 if (!z10 || !isSameReference(tL_stickers_addStickerToSet.sticker.document.file_reference, bArr)) {
                     tL_stickers_addStickerToSet.sticker.document.file_reference = bArr;
-                    getConnectionsManager().sendRequest(tL_stickers_addStickerToSet, new g5(7));
+                    getConnectionsManager().sendRequest(tL_stickers_addStickerToSet, new i5(7));
                     return true;
                 }
             } else if (requester.args[0] instanceof TLRPC.TL_messages_faveSticker) {
                 TLRPC.TL_messages_faveSticker tL_messages_faveSticker = (TLRPC.TL_messages_faveSticker) requester.args[0];
                 if (!z10 || !isSameReference(tL_messages_faveSticker.id.file_reference, bArr)) {
                     tL_messages_faveSticker.id.file_reference = bArr;
-                    getConnectionsManager().sendRequest(tL_messages_faveSticker, new g5(4));
+                    getConnectionsManager().sendRequest(tL_messages_faveSticker, new i5(4));
                     return true;
                 }
             } else {
@@ -2458,7 +2458,7 @@ public class FileRefController extends BaseController {
                 sendErrorToObject(objArr, 0);
                 return;
             }
-            a3.l0 l0Var = new a3.l0(t6Var, s6Var, new j2(this, str, str2, 2), 23);
+            a3.l0 l0Var = new a3.l0(t6Var, s6Var, new k2(this, str, str2, 2), 23);
             if (t6Var.F != 0) {
                 ConnectionsManager.getInstance(t6Var.c).cancelRequest(t6Var.F, true);
                 t6Var.F = 0;
@@ -2474,7 +2474,7 @@ public class FileRefController extends BaseController {
             tL_stories_getStoriesByID.peer = getMessagesController().getInputPeer(storyItem.dialogId);
             tL_stories_getStoriesByID.id.add(Integer.valueOf(storyItem.id));
             final int i10 = 7;
-            getConnectionsManager().sendRequest(tL_stories_getStoriesByID, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+            getConnectionsManager().sendRequest(tL_stories_getStoriesByID, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                 public final /* synthetic */ FileRefController b;
 
                 {
@@ -2563,7 +2563,7 @@ public class FileRefController extends BaseController {
         }
         if (obj instanceof TLRPC.TL_help_premiumPromo) {
             final int i11 = 16;
-            getConnectionsManager().sendRequest(new TLRPC.TL_help_getPremiumPromo(), new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+            getConnectionsManager().sendRequest(new TLRPC.TL_help_getPremiumPromo(), new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                 public final /* synthetic */ FileRefController b;
 
                 {
@@ -2654,7 +2654,7 @@ public class FileRefController extends BaseController {
             TLRPC.TL_messages_getAvailableReactions tL_messages_getAvailableReactions = new TLRPC.TL_messages_getAvailableReactions();
             tL_messages_getAvailableReactions.hash = 0;
             final int i12 = 17;
-            getConnectionsManager().sendRequest(tL_messages_getAvailableReactions, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+            getConnectionsManager().sendRequest(tL_messages_getAvailableReactions, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                 public final /* synthetic */ FileRefController b;
 
                 {
@@ -2745,7 +2745,7 @@ public class FileRefController extends BaseController {
             TLRPC.TL_users_getFullUser tL_users_getFullUser = new TLRPC.TL_users_getFullUser();
             tL_users_getFullUser.id = getMessagesController().getInputUser(((TL_bots.BotInfo) obj).user_id);
             final int i13 = 18;
-            getConnectionsManager().sendRequest(tL_users_getFullUser, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+            getConnectionsManager().sendRequest(tL_users_getFullUser, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                 public final /* synthetic */ FileRefController b;
 
                 {
@@ -2836,7 +2836,7 @@ public class FileRefController extends BaseController {
             TLRPC.TL_messages_getAttachMenuBot tL_messages_getAttachMenuBot = new TLRPC.TL_messages_getAttachMenuBot();
             tL_messages_getAttachMenuBot.bot = getMessagesController().getInputUser(((TLRPC.TL_attachMenuBot) obj).bot_id);
             final int i14 = 19;
-            getConnectionsManager().sendRequest(tL_messages_getAttachMenuBot, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+            getConnectionsManager().sendRequest(tL_messages_getAttachMenuBot, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                 public final /* synthetic */ FileRefController b;
 
                 {
@@ -2932,7 +2932,7 @@ public class FileRefController extends BaseController {
                 tL_messages_getScheduledMessages.peer = getMessagesController().getInputPeer(messageObject.getDialogId());
                 tL_messages_getScheduledMessages.id.add(Integer.valueOf(messageObject.getRealId()));
                 final int i15 = 20;
-                getConnectionsManager().sendRequest(tL_messages_getScheduledMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+                getConnectionsManager().sendRequest(tL_messages_getScheduledMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                     public final /* synthetic */ FileRefController b;
 
                     {
@@ -3025,7 +3025,7 @@ public class FileRefController extends BaseController {
                 tL_messages_getQuickReplyMessages.flags |= 1;
                 tL_messages_getQuickReplyMessages.id.add(Integer.valueOf(messageObject.getRealId()));
                 final int i16 = 21;
-                getConnectionsManager().sendRequest(tL_messages_getQuickReplyMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+                getConnectionsManager().sendRequest(tL_messages_getQuickReplyMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                     public final /* synthetic */ FileRefController b;
 
                     {
@@ -3118,7 +3118,7 @@ public class FileRefController extends BaseController {
                 getrichmessage.peer = inputPeer;
                 getrichmessage.id = messageObject.getRealId();
                 final int i17 = 22;
-                getConnectionsManager().sendRequest(getrichmessage, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+                getConnectionsManager().sendRequest(getrichmessage, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                     public final /* synthetic */ FileRefController b;
 
                     {
@@ -3209,7 +3209,7 @@ public class FileRefController extends BaseController {
                 TLRPC.TL_messages_getMessages tL_messages_getMessages = new TLRPC.TL_messages_getMessages();
                 tL_messages_getMessages.id.add(Integer.valueOf(messageObject.getRealId()));
                 final int i18 = 0;
-                getConnectionsManager().sendRequest(tL_messages_getMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+                getConnectionsManager().sendRequest(tL_messages_getMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                     public final /* synthetic */ FileRefController b;
 
                     {
@@ -3300,7 +3300,7 @@ public class FileRefController extends BaseController {
             tL_channels_getMessages.channel = getMessagesController().getInputChannel(channelId);
             tL_channels_getMessages.id.add(Integer.valueOf(messageObject.getRealId()));
             final int i19 = 23;
-            getConnectionsManager().sendRequest(tL_channels_getMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+            getConnectionsManager().sendRequest(tL_channels_getMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                 public final /* synthetic */ FileRefController b;
 
                 {
@@ -3395,7 +3395,7 @@ public class FileRefController extends BaseController {
             tL_inputWallPaper.access_hash = tL_wallPaper.access_hash;
             getwallpaper.wallpaper = tL_inputWallPaper;
             final int i20 = 1;
-            getConnectionsManager().sendRequest(getwallpaper, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+            getConnectionsManager().sendRequest(getwallpaper, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                 public final /* synthetic */ FileRefController b;
 
                 {
@@ -3491,7 +3491,7 @@ public class FileRefController extends BaseController {
             gettheme.theme = tL_inputTheme;
             gettheme.format = "android";
             final int i21 = 2;
-            getConnectionsManager().sendRequest(gettheme, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+            getConnectionsManager().sendRequest(gettheme, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                 public final /* synthetic */ FileRefController b;
 
                 {
@@ -3583,7 +3583,7 @@ public class FileRefController extends BaseController {
             tL_messages_getWebPage.url = ((TLRPC.WebPage) obj).url;
             tL_messages_getWebPage.hash = 0;
             final int i22 = 3;
-            getConnectionsManager().sendRequest(tL_messages_getWebPage, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+            getConnectionsManager().sendRequest(tL_messages_getWebPage, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                 public final /* synthetic */ FileRefController b;
 
                 {
@@ -3674,7 +3674,7 @@ public class FileRefController extends BaseController {
             TLRPC.TL_users_getUsers tL_users_getUsers = new TLRPC.TL_users_getUsers();
             tL_users_getUsers.id.add(getMessagesController().getInputUser((TLRPC.User) obj));
             final int i23 = 4;
-            getConnectionsManager().sendRequest(tL_users_getUsers, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+            getConnectionsManager().sendRequest(tL_users_getUsers, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                 public final /* synthetic */ FileRefController b;
 
                 {
@@ -3767,7 +3767,7 @@ public class FileRefController extends BaseController {
                 TLRPC.TL_messages_getChats tL_messages_getChats = new TLRPC.TL_messages_getChats();
                 tL_messages_getChats.id.add(Long.valueOf(chat.id));
                 final int i24 = 5;
-                getConnectionsManager().sendRequest(tL_messages_getChats, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+                getConnectionsManager().sendRequest(tL_messages_getChats, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                     public final /* synthetic */ FileRefController b;
 
                     {
@@ -3858,7 +3858,7 @@ public class FileRefController extends BaseController {
                 TLRPC.TL_channels_getChannels tL_channels_getChannels = new TLRPC.TL_channels_getChannels();
                 tL_channels_getChannels.id.add(MessagesController.getInputChannel(chat));
                 final int i25 = 6;
-                getConnectionsManager().sendRequest(tL_channels_getChannels, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+                getConnectionsManager().sendRequest(tL_channels_getChannels, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                     public final /* synthetic */ FileRefController b;
 
                     {
@@ -3956,7 +3956,7 @@ public class FileRefController extends BaseController {
                 tL_inputStickerSetID.id = stickerSet.id;
                 tL_inputStickerSetID.access_hash = stickerSet.access_hash;
                 final int i26 = 13;
-                getConnectionsManager().sendRequest(tL_messages_getStickerSet, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+                getConnectionsManager().sendRequest(tL_messages_getStickerSet, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                     public final /* synthetic */ FileRefController b;
 
                     {
@@ -4051,7 +4051,7 @@ public class FileRefController extends BaseController {
                 TLRPC.TL_messages_getStickerSet tL_messages_getStickerSet2 = new TLRPC.TL_messages_getStickerSet();
                 tL_messages_getStickerSet2.stickerset = (TLRPC.InputStickerSet) obj;
                 final int i27 = 15;
-                getConnectionsManager().sendRequest(tL_messages_getStickerSet2, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+                getConnectionsManager().sendRequest(tL_messages_getStickerSet2, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                     public final /* synthetic */ FileRefController b;
 
                     {
@@ -4145,7 +4145,7 @@ public class FileRefController extends BaseController {
             tL_inputStickerSetID2.id = stickerSet2.id;
             tL_inputStickerSetID2.access_hash = stickerSet2.access_hash;
             final int i28 = 14;
-            getConnectionsManager().sendRequest(tL_messages_getStickerSet3, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+            getConnectionsManager().sendRequest(tL_messages_getStickerSet3, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                 public final /* synthetic */ FileRefController b;
 
                 {
@@ -4236,7 +4236,7 @@ public class FileRefController extends BaseController {
         if ("wallpaper".equals(str3)) {
             if (this.wallpaperWaiters.isEmpty()) {
                 final int i29 = 0;
-                getConnectionsManager().sendRequest(new TL_account.getWallPapers(), new RequestDelegate(this) { // from class: org.telegram.messenger.s3
+                getConnectionsManager().sendRequest(new TL_account.getWallPapers(), new RequestDelegate(this) { // from class: org.telegram.messenger.u3
                     public final /* synthetic */ FileRefController b;
 
                     {
@@ -4268,7 +4268,7 @@ public class FileRefController extends BaseController {
         if (str3.startsWith("gif")) {
             if (this.savedGifsWaiters.isEmpty()) {
                 final int i30 = 1;
-                getConnectionsManager().sendRequest(new TLRPC.TL_messages_getSavedGifs(), new RequestDelegate(this) { // from class: org.telegram.messenger.s3
+                getConnectionsManager().sendRequest(new TLRPC.TL_messages_getSavedGifs(), new RequestDelegate(this) { // from class: org.telegram.messenger.u3
                     public final /* synthetic */ FileRefController b;
 
                     {
@@ -4300,7 +4300,7 @@ public class FileRefController extends BaseController {
         if ("recent".equals(str3)) {
             if (this.recentStickersWaiter.isEmpty()) {
                 final int i31 = 2;
-                getConnectionsManager().sendRequest(new TLRPC.TL_messages_getRecentStickers(), new RequestDelegate(this) { // from class: org.telegram.messenger.s3
+                getConnectionsManager().sendRequest(new TLRPC.TL_messages_getRecentStickers(), new RequestDelegate(this) { // from class: org.telegram.messenger.u3
                     public final /* synthetic */ FileRefController b;
 
                     {
@@ -4332,7 +4332,7 @@ public class FileRefController extends BaseController {
         if ("fav".equals(str3)) {
             if (this.favStickersWaiter.isEmpty()) {
                 final int i32 = 3;
-                getConnectionsManager().sendRequest(new TLRPC.TL_messages_getFavedStickers(), new RequestDelegate(this) { // from class: org.telegram.messenger.s3
+                getConnectionsManager().sendRequest(new TLRPC.TL_messages_getFavedStickers(), new RequestDelegate(this) { // from class: org.telegram.messenger.u3
                     public final /* synthetic */ FileRefController b;
 
                     {
@@ -4371,7 +4371,7 @@ public class FileRefController extends BaseController {
                 tL_help_getAppUpdate.source = "";
             }
             final int i33 = 8;
-            getConnectionsManager().sendRequest(tL_help_getAppUpdate, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+            getConnectionsManager().sendRequest(tL_help_getAppUpdate, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                 public final /* synthetic */ FileRefController b;
 
                 {
@@ -4467,7 +4467,7 @@ public class FileRefController extends BaseController {
                 tL_photos_getUserPhotos.max_id = 0L;
                 tL_photos_getUserPhotos.user_id = getMessagesController().getInputUser(longValue);
                 final int i34 = 9;
-                getConnectionsManager().sendRequest(tL_photos_getUserPhotos, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+                getConnectionsManager().sendRequest(tL_photos_getUserPhotos, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                     public final /* synthetic */ FileRefController b;
 
                     {
@@ -4561,7 +4561,7 @@ public class FileRefController extends BaseController {
             tL_messages_search.q = "";
             tL_messages_search.peer = getMessagesController().getInputPeer(longValue);
             final int i35 = 10;
-            getConnectionsManager().sendRequest(tL_messages_search, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+            getConnectionsManager().sendRequest(tL_messages_search, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                 public final /* synthetic */ FileRefController b;
 
                 {
@@ -4662,7 +4662,7 @@ public class FileRefController extends BaseController {
             TLRPC.TL_messages_getMessages tL_messages_getMessages2 = new TLRPC.TL_messages_getMessages();
             tL_messages_getMessages2.id.add(Utilities.parseInt((CharSequence) split[2]));
             final int i36 = 12;
-            getConnectionsManager().sendRequest(tL_messages_getMessages2, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+            getConnectionsManager().sendRequest(tL_messages_getMessages2, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
                 public final /* synthetic */ FileRefController b;
 
                 {
@@ -4753,7 +4753,7 @@ public class FileRefController extends BaseController {
         tL_channels_getMessages2.channel = getMessagesController().getInputChannel(longValue2);
         tL_channels_getMessages2.id.add(Utilities.parseInt((CharSequence) split[2]));
         final int i37 = 11;
-        getConnectionsManager().sendRequest(tL_channels_getMessages2, new RequestDelegate(this) { // from class: org.telegram.messenger.r3
+        getConnectionsManager().sendRequest(tL_channels_getMessages2, new RequestDelegate(this) { // from class: org.telegram.messenger.t3
             public final /* synthetic */ FileRefController b;
 
             {
@@ -4859,7 +4859,7 @@ public class FileRefController extends BaseController {
             Object[] objArr2 = this.multiMediaCache.get(tL_messages_sendMultiMedia);
             if (objArr2 != null) {
                 this.multiMediaCache.remove(tL_messages_sendMultiMedia);
-                AndroidUtilities.runOnUIThread(new n3(this, tL_messages_sendMultiMedia, objArr2, 1));
+                AndroidUtilities.runOnUIThread(new p3(this, tL_messages_sendMultiMedia, objArr2, 1));
                 return;
             }
             return;
@@ -4872,7 +4872,7 @@ public class FileRefController extends BaseController {
                 Object[] objArr3 = this.multiMediaCache.get(tL_messages_sendMedia);
                 if (objArr3 != null) {
                     this.multiMediaCache.remove(tL_messages_sendMedia);
-                    AndroidUtilities.runOnUIThread(new o3(this, tL_messages_sendMedia, objArr3, 1));
+                    AndroidUtilities.runOnUIThread(new q3(this, tL_messages_sendMedia, objArr3, 1));
                     return;
                 }
                 return;
@@ -4885,7 +4885,7 @@ public class FileRefController extends BaseController {
                 Object[] objArr4 = this.multiMediaCache.get(tL_sendMessage);
                 if (objArr4 != null) {
                     this.multiMediaCache.remove(tL_sendMessage);
-                    AndroidUtilities.runOnUIThread(new p3(this, tL_sendMessage, objArr4, 1));
+                    AndroidUtilities.runOnUIThread(new r3(this, tL_sendMessage, objArr4, 1));
                     return;
                 }
                 return;
@@ -4922,7 +4922,7 @@ public class FileRefController extends BaseController {
                 return;
             }
             final int i11 = 1;
-            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.u3
+            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.w3
                 public final /* synthetic */ FileRefController b;
 
                 {
@@ -4944,7 +4944,7 @@ public class FileRefController extends BaseController {
             return;
         }
         final int i12 = 0;
-        AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.u3
+        AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.w3
             public final /* synthetic */ FileRefController b;
 
             {

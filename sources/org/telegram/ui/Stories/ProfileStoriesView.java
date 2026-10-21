@@ -41,7 +41,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
@@ -51,13 +51,13 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.f6;
 import org.telegram.ui.Components.p6;
 import org.telegram.ui.Components.x20;
-import org.telegram.ui.Components.yj0;
+import org.telegram.ui.Components.zj0;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.oz0;
 import org.telegram.ui.uy0;
 import v7.f7;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public class ProfileStoriesView extends View implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int s0 = 0;
@@ -111,7 +111,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
     public s4 v;
     public final ArrayList w;
     public boolean x;
-    public yj0 y;
+    public zj0 y;
 
     /* JADX WARN: Type inference failed for: r0v12, types: [ci.r4] */
     public ProfileStoriesView(Context context, int i10, long j10, boolean z10, View view, oz0 oz0Var, d6 d6Var) {
@@ -482,12 +482,12 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
             rectF8.inset(-AndroidUtilities.dpf2(3.775f), -AndroidUtilities.dpf2(3.775f));
             paint = a8Var5.a(rectF8);
             if (profileStoriesView5.y == null) {
-                yj0 yj0Var = new yj0(profileStoriesView5);
-                profileStoriesView5.y = yj0Var;
+                zj0 zj0Var = new zj0(profileStoriesView5);
+                profileStoriesView5.y = zj0Var;
                 a8Var = a8Var5;
                 f10 = d;
                 arrayList2 = arrayList;
-                yj0Var.d(null, true, false);
+                zj0Var.d(null, true, false);
                 profileStoriesView5.y.u = ChatObject.isForum(UserConfig.selectedAccount, j11);
             } else {
                 a8Var = a8Var5;
@@ -515,11 +515,11 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
             int alpha = paint.getAlpha();
             paint.setAlpha((int) (alpha * clamp2 * lerp2));
             paint.setStrokeWidth(AndroidUtilities.dpf2(2.33f));
-            yj0 yj0Var2 = profileStoriesView5.y;
-            yj0Var2.t = paint;
+            zj0 zj0Var2 = profileStoriesView5.y;
+            zj0Var2.t = paint;
             f7 = clamp;
             j10 = j11;
-            yj0Var2.f((int) rectF8.left, (int) rectF8.top, (int) rectF8.right, (int) rectF8.bottom);
+            zj0Var2.f((int) rectF8.left, (int) rectF8.top, (int) rectF8.right, (int) rectF8.bottom);
             profileStoriesView5.y.e(Utilities.clamp(f19, 1.0f, 0.0f), true);
             if (oz0Var.Q) {
                 profileStoriesView5.y.a(canvas4);
@@ -1208,7 +1208,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
             this.a0 = ofFloat;
             ofFloat.addUpdateListener(new l0(3, this, zArr));
             this.a0.addListener(new me(2, this, zArr));
-            kk.l(3.0f, this.a0);
+            mk.l(3.0f, this.a0);
             this.a0.setDuration(400L);
             this.a0.setStartDelay(120L);
             this.a0.start();

@@ -4,12 +4,12 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.lw0;
 import org.telegram.ui.Components.wc0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class e0 extends kw0 {
+public final class e0 extends lw0 {
     public final /* synthetic */ i0 w0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -18,17 +18,17 @@ public final class e0 extends kw0 {
         this.w0 = i0Var;
     }
 
-    @Override // org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.lw0
     public final boolean P() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.lw0
     public final boolean Q() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.lw0
     public final void U(Drawable drawable) {
         if (drawable instanceof wc0) {
             ((wc0) drawable).p();
@@ -51,13 +51,13 @@ public final class e0 extends kw0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.lw0
     public final Drawable getNewDrawable() {
         Drawable drawable = this.w0.y;
         return drawable != null ? drawable : super.getNewDrawable();
     }
 
-    @Override // org.telegram.ui.Components.kw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         this.w0.p();

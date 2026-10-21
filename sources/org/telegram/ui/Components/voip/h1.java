@@ -32,19 +32,19 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.dw0;
+import org.telegram.ui.Components.ew0;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.rc;
-import org.telegram.ui.Components.tg0;
+import org.telegram.ui.Components.ug0;
 import org.telegram.ui.Components.w9;
 import org.webrtc.RendererCommon;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class h1 implements NotificationCenter.NotificationCenterDelegate, tf.a {
-    public static final dw0 b0 = new dw0(new tg0(16), new tg0(17));
-    public static final dw0 c0 = new dw0(new tg0(18), new tg0(19));
+    public static final ew0 b0 = new ew0(new ug0(16), new ug0(17));
+    public static final ew0 c0 = new ew0(new ug0(18), new ug0(19));
     public static final h1 d0;
     public AccountInstance E;
     public ScaleGestureDetector F;

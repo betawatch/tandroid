@@ -12,9 +12,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public class at extends t61 {
+public class at extends u61 {
     public final int N;
     public final int O;
     public final boolean P;
@@ -37,8 +37,8 @@ public class at extends t61 {
     public boolean g0;
     public final z2 h0;
 
-    public at(im0 im0Var, Context context, int i10, int i11, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(im0Var, context, i10, 0, true, null, d6Var);
+    public at(jm0 jm0Var, Context context, int i10, int i11, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(jm0Var, context, i10, 0, true, null, d6Var);
         this.R = new ArrayList();
         this.S = new ArrayList();
         this.T = new ArrayList();
@@ -57,12 +57,12 @@ public class at extends t61 {
 
     public final void V() {
         boolean isEmpty = TextUtils.isEmpty(this.e0);
-        im0 im0Var = this.d;
+        jm0 jm0Var = this.d;
         if (isEmpty) {
             if (!this.g0) {
-                if (im0Var != null) {
-                    for (int i10 = 0; i10 < im0Var.getChildCount(); i10++) {
-                        if (!(im0Var.getChildAt(i10) instanceof b10)) {
+                if (jm0Var != null) {
+                    for (int i10 = 0; i10 < jm0Var.getChildCount(); i10++) {
+                        if (!(jm0Var.getChildAt(i10) instanceof b10)) {
                         }
                     }
                 }
@@ -70,13 +70,13 @@ public class at extends t61 {
             this.Q.a();
             break;
         }
-        if (this.b0 && !this.Z && im0Var != null) {
+        if (this.b0 && !this.Z && jm0Var != null) {
             int i11 = 0;
             while (true) {
-                if (i11 >= im0Var.getChildCount()) {
+                if (i11 >= jm0Var.getChildCount()) {
                     break;
                 }
-                if (!(im0Var.getChildAt(i11) instanceof b10)) {
+                if (!(jm0Var.getChildAt(i11) instanceof b10)) {
                     i11++;
                 } else if (this.b0 && !this.Z && !TextUtils.isEmpty(this.e0)) {
                     W(true);

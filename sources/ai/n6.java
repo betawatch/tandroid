@@ -3,11 +3,11 @@ package ai;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import java.util.ArrayList;
+import org.telegram.ui.Components.ap0;
 import org.telegram.ui.Components.br;
-import org.telegram.ui.Components.pm0;
-import org.telegram.ui.Components.zo0;
+import org.telegram.ui.Components.qm0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class n6 implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -79,12 +79,12 @@ public final class n6 implements View.OnAttachStateChangeListener {
                 ((br) this.b).a();
                 break;
             case 9:
-                pm0 pm0Var = (pm0) this.b;
-                org.telegram.ui.Components.p5 p5Var = pm0Var.t;
+                qm0 qm0Var = (qm0) this.b;
+                org.telegram.ui.Components.p5 p5Var = qm0Var.t;
                 if (p5Var != null) {
                     p5Var.a();
                 }
-                org.telegram.ui.Components.p5 p5Var2 = pm0Var.u;
+                org.telegram.ui.Components.p5 p5Var2 = qm0Var.u;
                 if (p5Var2 != null) {
                     p5Var2.a();
                     break;
@@ -188,19 +188,19 @@ public final class n6 implements View.OnAttachStateChangeListener {
                 ((br) this.b).b();
                 break;
             case 9:
-                pm0 pm0Var = (pm0) this.b;
-                org.telegram.ui.Components.p5 p5Var = pm0Var.t;
+                qm0 qm0Var = (qm0) this.b;
+                org.telegram.ui.Components.p5 p5Var = qm0Var.t;
                 if (p5Var != null) {
                     p5Var.b();
                 }
-                org.telegram.ui.Components.p5 p5Var2 = pm0Var.u;
+                org.telegram.ui.Components.p5 p5Var2 = qm0Var.u;
                 if (p5Var2 != null) {
                     p5Var2.a();
                     break;
                 }
                 break;
             case 10:
-                view.removeCallbacks((Runnable) ((zo0) this.b).a.remove(view));
+                view.removeCallbacks((Runnable) ((ap0) this.b).a.remove(view));
                 view.removeOnAttachStateChangeListener(this);
                 break;
             case 11:

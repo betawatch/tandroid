@@ -7,10 +7,10 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.web.z1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class j implements Utilities.Callback2 {
                     int i12 = messagePeerVote.date;
                     b2 b2Var = new b2(pVar, peerDialogId, 3);
                     int i13 = m.a;
-                    g61 J = g61.J(m.class);
+                    h61 J = h61.J(m.class);
                     J.G = userOrChat;
                     J.B = peerDialogId;
                     J.z = i12;
@@ -51,15 +51,15 @@ public final /* synthetic */ class j implements Utilities.Callback2 {
                 if (!pVar.h) {
                     if (!arrayList2.isEmpty()) {
                         int i14 = o.a;
-                        arrayList.add(g61.J(o.class));
+                        arrayList.add(h61.J(o.class));
                         break;
                     } else {
                         int i15 = n.a;
-                        arrayList.add(g61.J(n.class));
-                        arrayList.add(g61.J(n.class));
-                        arrayList.add(g61.J(n.class));
-                        arrayList.add(g61.J(n.class));
-                        arrayList.add(g61.J(n.class));
+                        arrayList.add(h61.J(n.class));
+                        arrayList.add(h61.J(n.class));
+                        arrayList.add(h61.J(n.class));
+                        arrayList.add(h61.J(n.class));
+                        arrayList.add(h61.J(n.class));
                         break;
                     }
                 }

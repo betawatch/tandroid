@@ -21,10 +21,10 @@ import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.cm;
 import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.oz;
-import org.telegram.ui.Components.qx0;
-import org.telegram.ui.Components.s11;
+import org.telegram.ui.Components.rx0;
 import org.telegram.ui.Components.t11;
 import org.telegram.ui.Components.u11;
+import org.telegram.ui.Components.v11;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.br0;
 import org.telegram.ui.df0;
@@ -32,7 +32,7 @@ import org.telegram.ui.g41;
 import org.telegram.ui.qq0;
 import org.telegram.ui.ve0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class oc implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -146,9 +146,9 @@ public final /* synthetic */ class oc implements Utilities.Callback {
                 rg.n2 n2Var = photoViewer.p5;
                 if (!n2Var.y || (k2VarArr = n2Var.H) == null || k2VarArr.length <= 0) {
                     photoViewer.t5.setCutOutState(true);
-                    photoViewer.X2(false, true);
+                    photoViewer.Z2(false, true);
                 } else {
-                    u11 thanosEffect = photoViewer.p5.getThanosEffect();
+                    v11 thanosEffect = photoViewer.p5.getThanosEffect();
                     rg.n2 n2Var2 = photoViewer.p5;
                     n2Var2.L = true;
                     n2Var2.E = k2Var;
@@ -234,7 +234,7 @@ public final /* synthetic */ class oc implements Utilities.Callback {
                         } else {
                             MediaController.CropState cropState = mediaEditState.cropState;
                             if (cropState != null) {
-                                bitmap2 = PhotoViewer.I0(bitmap2, cropState, new int[]{photoViewer.C4.getOrientation(), photoViewer.C4.getInvert()}, true);
+                                bitmap2 = PhotoViewer.J0(bitmap2, cropState, new int[]{photoViewer.C4.getOrientation(), photoViewer.C4.getInvert()}, true);
                             }
                             if (bitmap2 == null) {
                                 Utilities.themeQueue.postRunnable(new br0(photoViewer, b10, 2));
@@ -251,7 +251,7 @@ public final /* synthetic */ class oc implements Utilities.Callback {
                                 }
                                 float f14 = width2;
                                 float f15 = height4;
-                                float min = Math.min(photoViewer.k1(photoViewer.u4) / f14, photoViewer.i1() / f15);
+                                float min = Math.min(photoViewer.l1(photoViewer.u4) / f14, photoViewer.j1() / f15);
                                 float f16 = f14 * min;
                                 float f17 = f15 * min;
                                 if ((photoViewer.C4.getOrientation() == 0 || photoEntry3.isCropped) && photoViewer.b6 == 0.0f) {
@@ -283,18 +283,18 @@ public final /* synthetic */ class oc implements Utilities.Callback {
                                 matrix3.postScale(f10, f11);
                                 float f23 = photoViewer.a6;
                                 matrix3.postScale(f23, f23, f10 / f7, f11 / f7);
-                                matrix3.postTranslate(photoViewer.X5 + f13 + Math.max(0, (int) ((photoViewer.k1(photoViewer.u4) - f16) / f7)), photoViewer.Y5 + f12 + Math.max(0, (int) ((photoViewer.i1() - f17) / f7)));
+                                matrix3.postTranslate(photoViewer.X5 + f13 + Math.max(0, (int) ((photoViewer.l1(photoViewer.u4) - f16) / f7)), photoViewer.Y5 + f12 + Math.max(0, (int) ((photoViewer.j1() - f17) / f7)));
                                 photoViewer.p5.V = true;
                                 Utilities.themeQueue.postRunnable(new br0(photoViewer, b10, 3));
                                 qq0 qq0Var = new qq0(photoViewer, 13);
                                 ve0 ve0Var = new ve0(photoViewer, b10, qq0Var, 19);
                                 df0 df0Var = new df0(3);
-                                s11 s11Var = thanosEffect.a;
-                                if (s11Var != null) {
-                                    s11Var.c(matrix3, bitmap2, ve0Var, df0Var);
+                                t11 t11Var = thanosEffect.a;
+                                if (t11Var != null) {
+                                    t11Var.c(matrix3, bitmap2, ve0Var, df0Var);
                                     Choreographer.getInstance().postFrameCallback(thanosEffect.b);
                                 } else {
-                                    thanosEffect.c.add(new t11(matrix3, bitmap2, ve0Var, df0Var));
+                                    thanosEffect.c.add(new u11(matrix3, bitmap2, ve0Var, df0Var));
                                 }
                                 AndroidUtilities.runOnUIThread(qq0Var, 1200L);
                             }
@@ -313,7 +313,7 @@ public final /* synthetic */ class oc implements Utilities.Callback {
                     runnable2.run();
                     break;
                 } else {
-                    qx0.w3.fetch(UserConfig.selectedAccount, str2, new g41(linkedHashSet, runnable2, 1));
+                    rx0.w3.fetch(UserConfig.selectedAccount, str2, new g41(linkedHashSet, runnable2, 1));
                     break;
                 }
         }

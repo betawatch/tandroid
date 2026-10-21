@@ -11,9 +11,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.vf1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class qa0 extends kw0 {
+public final class qa0 extends lw0 {
     public final /* synthetic */ int w0;
     public final /* synthetic */ FrameLayout x0;
     public final /* synthetic */ org.telegram.ui.ActionBar.n2 y0;
@@ -26,7 +26,7 @@ public final class qa0 extends kw0 {
         this.x0 = frameLayout;
     }
 
-    @Override // org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.lw0
     public void L(Canvas canvas, ArrayList arrayList) {
         switch (this.w0) {
             case 0:
@@ -37,13 +37,13 @@ public final class qa0 extends kw0 {
 
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        mu0[] mu0VarArr;
-        mu0 mu0Var;
+        nu0[] nu0VarArr;
+        nu0 nu0Var;
         switch (this.w0) {
             case 0:
                 wa0 wa0Var = (wa0) this.y0;
                 ta0 ta0Var = wa0Var.V;
-                if (ta0Var != null && (mu0Var = (mu0VarArr = ta0Var.k0)[0]) != null && mu0Var.h.getFastScroll() != null && mu0VarArr[0].h.getFastScroll().n) {
+                if (ta0Var != null && (nu0Var = (nu0VarArr = ta0Var.k0)[0]) != null && nu0Var.h.getFastScroll() != null && nu0VarArr[0].h.getFastScroll().n) {
                     return wa0Var.V.O(motionEvent);
                 }
                 ta0 ta0Var2 = wa0Var.V;
@@ -56,7 +56,7 @@ public final class qa0 extends kw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.kw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int measuredHeight;
         int measuredHeight2;
@@ -136,13 +136,13 @@ public final class qa0 extends kw0 {
                 layoutParams2.height = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
                 for (int i12 = 0; i12 < 2; i12++) {
                     if (j5VarArr[i12] != null) {
-                        ((FrameLayout.LayoutParams) j5VarArr[i12].getLayoutParams()).topMargin = AndroidUtilities.dp((AndroidUtilities.isTablet() || getResources().getConfiguration().orientation != 2) ? 5.0f : 4.0f) + org.telegram.messenger.kk.A(22.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2, 2);
+                        ((FrameLayout.LayoutParams) j5VarArr[i12].getLayoutParams()).topMargin = AndroidUtilities.dp((AndroidUtilities.isTablet() || getResources().getConfiguration().orientation != 2) ? 5.0f : 4.0f) + org.telegram.messenger.mk.A(22.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2, 2);
                     }
                     if (q6VarArr[i12] != null) {
                         ((FrameLayout.LayoutParams) q6VarArr[i12].getLayoutParams()).topMargin = ((((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2) - AndroidUtilities.dp(19.0f)) / 2) + (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2)) - AndroidUtilities.dp(7.0f);
                     }
                 }
-                ((FrameLayout.LayoutParams) wa0Var.y.getLayoutParams()).topMargin = org.telegram.messenger.kk.A(42.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                ((FrameLayout.LayoutParams) wa0Var.y.getLayoutParams()).topMargin = org.telegram.messenger.mk.A(42.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
                 super.onMeasure(i10, i11);
                 break;
             case 1:

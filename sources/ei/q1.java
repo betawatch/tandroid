@@ -6,10 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.ui.Components.aw;
 import org.telegram.ui.Components.ey;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.jy;
 import org.telegram.ui.Components.tz;
 import org.telegram.ui.Components.zv;
@@ -17,7 +17,7 @@ import org.telegram.ui.bj0;
 import org.telegram.ui.cp0;
 import org.telegram.ui.qh0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class q1 extends s4.m0 {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final class q1 extends s4.m0 {
                         rect.right = AndroidUtilities.dp(24.0f);
                         break;
                     } else {
-                        rect.right = kk.B(58.0f, h, tVar.getWidth() - AndroidUtilities.dp(36.0f)) / (h - 1);
+                        rect.right = mk.B(58.0f, h, tVar.getWidth() - AndroidUtilities.dp(36.0f)) / (h - 1);
                         break;
                     }
                 } else {
@@ -74,7 +74,7 @@ public final class q1 extends s4.m0 {
                 tz tzVar = (tz) this.b;
                 ey eyVar = tzVar.P;
                 if (!(view instanceof org.telegram.ui.Cells.n8)) {
-                    if (!(view instanceof im0) && !(view instanceof jy)) {
+                    if (!(view instanceof jm0) && !(view instanceof jy)) {
                         if (view instanceof org.telegram.ui.Components.w9) {
                             rect.bottom = AndroidUtilities.dp(12.0f);
                             break;

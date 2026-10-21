@@ -1,14 +1,14 @@
 package yh;
 
-import org.telegram.ui.Components.js0;
+import org.telegram.ui.Components.ks0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class h2 extends s4.k {
-    public final /* synthetic */ js0 F;
+    public final /* synthetic */ ks0 F;
 
-    public h2(js0 js0Var) {
-        this.F = js0Var;
+    public h2(ks0 ks0Var) {
+        this.F = ks0Var;
     }
 
     @Override // s4.k

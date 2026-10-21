@@ -1,27 +1,65 @@
 package org.telegram.messenger;
 
+import java.util.HashMap;
 import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ImageLoader.ArtworkLoadTask b;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ d5(ImageLoader.ArtworkLoadTask artworkLoadTask, int i10) {
-        this.a = i10;
-        this.b = artworkLoadTask;
+    public /* synthetic */ d5(int i10, String str, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2, long j10) {
+        this.c = i10;
+        this.d = str;
+        this.e = inputFile;
+        this.f = inputEncryptedFile;
+        this.h = bArr;
+        this.n = bArr2;
+        this.b = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$onCancelled$2();
+                ImageLoader.5.lambda$fileDidUploaded$1(this.c, (String) this.d, (TLRPC.InputFile) this.e, (TLRPC.InputEncryptedFile) this.f, (byte[]) this.h, (byte[]) this.n, this.b);
+                break;
+            case 1:
+                ((MessagesController) this.d).lambda$ensureMessagesLoaded$462((boolean[]) this.e, (TLRPC.Chat) this.f, (Runnable[]) this.h, this.b, this.c, (MessagesController.MessagesLoadedCallback) this.n);
                 break;
             default:
-                this.b.lambda$onPostExecute$1();
+                ((MessagesController) this.e).lambda$reloadWebPages$185((HashMap) this.f, (String) this.d, (TLObject) this.h, (a0.h) this.n, this.b, this.c);
                 break;
         }
+    }
+
+    public /* synthetic */ d5(MessagesController messagesController, HashMap hashMap, String str, TLObject tLObject, a0.h hVar, long j10, int i10) {
+        this.e = messagesController;
+        this.f = hashMap;
+        this.d = str;
+        this.h = tLObject;
+        this.n = hVar;
+        this.b = j10;
+        this.c = i10;
+    }
+
+    public /* synthetic */ d5(MessagesController messagesController, boolean[] zArr, TLRPC.Chat chat, Runnable[] runnableArr, long j10, int i10, MessagesController.MessagesLoadedCallback messagesLoadedCallback) {
+        this.d = messagesController;
+        this.e = zArr;
+        this.f = chat;
+        this.h = runnableArr;
+        this.b = j10;
+        this.c = i10;
+        this.n = messagesLoadedCallback;
     }
 }

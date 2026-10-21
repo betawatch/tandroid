@@ -9,11 +9,11 @@ import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.d91;
+import org.telegram.ui.Components.e91;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class k extends d91 {
+public final class k extends e91 {
     public final Path T;
     public final Paint U;
     public boolean V;
@@ -78,12 +78,12 @@ public final class k extends d91 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.d91
+    @Override // org.telegram.ui.Components.e91
     public final float getAvailableTranslationX() {
         return (this.a0 || this.e0.d) ? getMeasuredWidth() : super.getAvailableTranslationX();
     }
 
-    @Override // org.telegram.ui.Components.d91
+    @Override // org.telegram.ui.Components.e91
     public final boolean i(MotionEvent motionEvent) {
         return this.e0.b.getCurrentPosition() == 1;
     }
@@ -102,13 +102,13 @@ public final class k extends d91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.d91
+    @Override // org.telegram.ui.Components.e91
     public final void u() {
         this.V = false;
         this.e0.b.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.d91
+    @Override // org.telegram.ui.Components.e91
     public final void w(boolean z10) {
         m mVar = this.e0;
         k kVar = mVar.b;

@@ -1,28 +1,28 @@
 package u2;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final class d implements d1 {
-    public final d1 a;
+public final class d implements e1 {
+    public final e1 a;
     public boolean b;
     public final /* synthetic */ e c;
 
-    public d(e eVar, d1 d1Var) {
+    public d(e eVar, e1 e1Var) {
         this.c = eVar;
-        this.a = d1Var;
+        this.a = e1Var;
     }
 
-    @Override // u2.d1
+    @Override // u2.e1
     public final void a() {
         this.a.a();
     }
 
-    @Override // u2.d1
+    @Override // u2.e1
     public final boolean f() {
         return !this.c.b() && this.a.f();
     }
 
-    @Override // u2.d1
+    @Override // u2.e1
     public final int g(qf.b bVar, h2.h hVar, int i10) {
         e eVar = this.c;
         if (eVar.b()) {
@@ -68,7 +68,7 @@ public final class d implements d1 {
         return -5;
     }
 
-    @Override // u2.d1
+    @Override // u2.e1
     public final int m(long j10) {
         if (this.c.b()) {
             return -3;

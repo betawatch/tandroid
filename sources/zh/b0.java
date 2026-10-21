@@ -53,11 +53,11 @@ import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.q10;
-import org.telegram.ui.Components.w61;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.x61;
+import org.telegram.ui.Components.y31;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class b0 extends FrameLayout {
     public final Paint E;
@@ -315,10 +315,10 @@ public final class b0 extends FrameLayout {
         return f7 >= rectF.left - ((float) AndroidUtilities.dp(8.0f)) && f7 <= rectF.right + ((float) AndroidUtilities.dp(8.0f)) && f10 >= rectF.top - ((float) AndroidUtilities.dp(8.0f)) && f10 <= rectF.bottom + ((float) AndroidUtilities.dp(8.0f));
     }
 
-    public static b0 k(w61 w61Var, View view, Utilities.CallbackReturn callbackReturn, Utilities.Callback callback, Runnable runnable) {
-        d5 parentLayout = w61Var.getParentLayout();
+    public static b0 k(x61 x61Var, View view, Utilities.CallbackReturn callbackReturn, Utilities.Callback callback, Runnable runnable) {
+        d5 parentLayout = x61Var.getParentLayout();
         FrameLayout overlayContainerView = parentLayout != null ? parentLayout.getOverlayContainerView() : null;
-        if (overlayContainerView == null || w61Var.getParentActivity() == null) {
+        if (overlayContainerView == null || x61Var.getParentActivity() == null) {
             return null;
         }
         overlayContainerView.getLocationInWindow(new int[2]);
@@ -327,10 +327,10 @@ public final class b0 extends FrameLayout {
         float width = (view.getWidth() / 2.0f) + (r1[0] - r2[0]);
         float height = (view.getHeight() / 2.0f) + (r1[1] - r2[1]);
         float f7 = min / 2.0f;
-        b0 b0Var = new b0(w61Var.getParentActivity(), new RectF(width - f7, height - f7, width + f7, height + f7), new RectF(), new w(callback, runnable));
+        b0 b0Var = new b0(x61Var.getParentActivity(), new RectF(width - f7, height - f7, width + f7, height + f7), new RectF(), new w(callback, runnable));
         b0Var.setPlainButton(true);
         b0Var.setAccept(callbackReturn);
-        b0Var.setOnGallery(new si.o(w61Var, b0Var, callbackReturn, callback, 3));
+        b0Var.setOnGallery(new si.o(x61Var, b0Var, callbackReturn, callback, 3));
         overlayContainerView.addView(b0Var, z5.c(-1.0f, -1));
         return b0Var;
     }
@@ -370,7 +370,7 @@ public final class b0 extends FrameLayout {
         if (parentLayout == null || ((parentLayout.getLastFragment() == n2Var && !((ActionBarLayout) parentLayout).A()) || i10 >= 40)) {
             xVar.run();
         } else {
-            AndroidUtilities.runOnUIThread(new x31(n2Var, i10, xVar, 27), 50L);
+            AndroidUtilities.runOnUIThread(new y31(n2Var, i10, xVar, 27), 50L);
         }
     }
 

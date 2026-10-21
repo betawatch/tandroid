@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tl implements w91, e5, yl0 {
+public final /* synthetic */ class tl implements x91, e5, zl0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ChatAttachAlertPhotoLayout b;
 
@@ -33,7 +33,7 @@ public final /* synthetic */ class tl implements w91, e5, yl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.zl0
     public boolean a(int i10, View view) {
         boolean z10 = ChatAttachAlertPhotoLayout.q1;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
@@ -47,16 +47,16 @@ public final /* synthetic */ class tl implements w91, e5, yl0 {
                 return true;
             }
             if (view instanceof org.telegram.ui.Cells.s5) {
-                km0 km0Var = chatAttachAlertPhotoLayout.I;
+                lm0 lm0Var = chatAttachAlertPhotoLayout.I;
                 boolean z11 = !((org.telegram.ui.Cells.s5) view).a();
                 chatAttachAlertPhotoLayout.K = z11;
-                km0Var.d(view, i10, z11);
+                lm0Var.d(view, i10, z11);
             }
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.w91
+    @Override // org.telegram.ui.Components.x91
     public void b(float f7) {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
         om omVar = chatAttachAlertPhotoLayout.P;

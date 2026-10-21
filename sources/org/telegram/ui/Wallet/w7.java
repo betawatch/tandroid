@@ -20,13 +20,13 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.lw0;
 import org.telegram.ui.Components.su;
-import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class w7 extends org.telegram.ui.ActionBar.n2 {
     public int a;
@@ -195,7 +195,7 @@ public final class w7 extends org.telegram.ui.ActionBar.n2 {
             ha haVar = new ha(i11, context, this.resourceProvider, i11 == 0);
             haVar.setOnTextChangedListener(new v7(this, 1));
             haVar.setOnPasteListener(new j(this, i11, 4));
-            haVar.setOnNextListener(new x31(this, i11, haVar, 20));
+            haVar.setOnNextListener(new y31(this, i11, haVar, 20));
             this.c.addView(haVar, w7.z5.t(-1, 50, 1, 0, i11 == 0 ? 0 : 12, 0, 0));
             arrayList2.add(haVar);
             i11++;
@@ -231,9 +231,9 @@ public final class w7 extends org.telegram.ui.ActionBar.n2 {
         final int i10 = 0;
         this.actionBar.setAddToContainer(false);
         this.actionBar.setOccupyStatusBar(false);
-        kw0 kw0Var = new kw0(context, null);
-        this.fragmentView = kw0Var;
-        kw0Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, this.resourceProvider));
+        lw0 lw0Var = new lw0(context, null);
+        this.fragmentView = lw0Var;
+        lw0Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, this.resourceProvider));
         ScrollView scrollView = new ScrollView(context);
         final int i11 = 1;
         scrollView.setFillViewport(true);

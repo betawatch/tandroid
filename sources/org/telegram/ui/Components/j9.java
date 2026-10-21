@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class j9 {
     public float A;
@@ -378,7 +378,7 @@ public final class j9 {
                                 if (i29 == 0) {
                                     if (this.l) {
                                         f15 = f21;
-                                        i17 = org.telegram.messenger.kk.A(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), i10);
+                                        i17 = org.telegram.messenger.mk.A(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), i10);
                                     } else {
                                         f15 = f21;
                                         i17 = dp2;
@@ -408,7 +408,7 @@ public final class j9 {
                                         f17 = this.e;
                                     } else if (i31 == i10) {
                                         if (this.l) {
-                                            i16 = org.telegram.messenger.kk.A(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), i10);
+                                            i16 = org.telegram.messenger.mk.A(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), i10);
                                         } else {
                                             i16 = dp2;
                                         }
@@ -417,7 +417,7 @@ public final class j9 {
                                         float f24 = this.e;
                                         imageReceiver.setImageX((int) com.google.android.gms.internal.play_billing.k3.y(f15, f24, i33, i32 * f24));
                                     } else if (i31 == -1 && this.l) {
-                                        int A = org.telegram.messenger.kk.A(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), i10) + (i21 * i28);
+                                        int A = org.telegram.messenger.mk.A(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), i10) + (i21 * i28);
                                         float f25 = this.e;
                                         imageReceiver.setImageX((int) com.google.android.gms.internal.play_billing.k3.y(1.0f, f25, e + r5, A * f25));
                                     }
@@ -506,7 +506,7 @@ public final class j9 {
                     if (imageReceiver2.hasImageSet()) {
                         if (i37 == 0) {
                             if (this.l) {
-                                i14 = org.telegram.messenger.kk.A(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), 2);
+                                i14 = org.telegram.messenger.mk.A(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), 2);
                             } else {
                                 i14 = dp2;
                             }
@@ -532,7 +532,7 @@ public final class j9 {
                                         f14 = this.e;
                                     } else if (i39 == 2) {
                                         if (this.l) {
-                                            i13 = org.telegram.messenger.kk.A(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), 2);
+                                            i13 = org.telegram.messenger.mk.A(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), 2);
                                         } else {
                                             i13 = dp2;
                                         }
@@ -541,7 +541,7 @@ public final class j9 {
                                         float f29 = this.e;
                                         imageReceiver2.setImageX((int) com.google.android.gms.internal.play_billing.k3.y(1.0f, f29, i41, i40 * f29));
                                     } else if (i39 == -1 && this.l) {
-                                        int A2 = org.telegram.messenger.kk.A(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), 2) + (i21 * i36);
+                                        int A2 = org.telegram.messenger.mk.A(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), 2) + (i21 * i36);
                                         float f30 = this.e;
                                         imageReceiver2.setImageX((int) com.google.android.gms.internal.play_billing.k3.y(1.0f, f30, e + r10, A2 * f30));
                                     }

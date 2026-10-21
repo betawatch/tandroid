@@ -10,20 +10,20 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class n extends FrameLayout {
     public final TextView a;
     public final TextView b;
-    public final /* synthetic */ j0 c;
+    public final /* synthetic */ k0 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n(j0 j0Var, Context context) {
+    public n(k0 k0Var, Context context) {
         super(context);
-        this.c = j0Var;
+        this.c = k0Var;
         TextView textView = new TextView(context);
         this.a = textView;
-        textView.setTextColor(j0Var.x);
+        textView.setTextColor(k0Var.x);
         textView.setTextSize(1, 15.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setSingleLine();

@@ -7,7 +7,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class od implements Runnable {
     public final /* synthetic */ int a;
@@ -25,9 +25,9 @@ public final /* synthetic */ class od implements Runnable {
                 pf.d.r(this.b.getContext(), LocaleController.getString(R.string.MonetizationStarsInfoLink));
                 break;
             case 1:
-                org.telegram.ui.Components.b71 b71Var = this.b.a1;
-                if (b71Var != null) {
-                    b71Var.W2.N(true);
+                org.telegram.ui.Components.c71 c71Var = this.b.a1;
+                if (c71Var != null) {
+                    c71Var.W2.N(true);
                     break;
                 }
                 break;
@@ -35,7 +35,7 @@ public final /* synthetic */ class od implements Runnable {
                 ie ieVar = this.b;
                 ieVar.getClass();
                 try {
-                    org.telegram.ui.Components.im0 currentListView = ieVar.e1.getCurrentListView();
+                    org.telegram.ui.Components.jm0 currentListView = ieVar.e1.getCurrentListView();
                     if (currentListView != null && currentListView.getAdapter() != null) {
                         currentListView.getAdapter().l();
                         break;

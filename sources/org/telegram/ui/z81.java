@@ -17,7 +17,7 @@ import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class z81 extends FrameLayout {
     public final Window a;
@@ -41,11 +41,11 @@ public abstract class z81 extends FrameLayout {
             this.a = null;
         }
         this.s = i10;
-        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
+        LinearLayout e = org.telegram.messenger.mk.e(context, 1);
         this.h = new j41(context, 2);
         lg.c cVar = new lg.c(getContext(), d6Var);
         this.d = cVar;
-        cVar.d.setOnTouchListener(new org.telegram.ui.Components.rl0());
+        cVar.d.setOnTouchListener(new org.telegram.ui.Components.sl0());
         final int i11 = 0;
         cVar.d.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.v81
             public final /* synthetic */ z81 b;
@@ -140,7 +140,7 @@ public abstract class z81 extends FrameLayout {
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.s5, d6Var));
         this.b.setDateSelectionListener(new pp0(this, 18));
         this.b.t0.d(false, false);
-        this.b.t0.setOnTouchListener(new org.telegram.ui.Components.rl0());
+        this.b.t0.setOnTouchListener(new org.telegram.ui.Components.sl0());
         final int i13 = 1;
         this.b.t0.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.v81
             public final /* synthetic */ z81 b;
@@ -379,7 +379,7 @@ public abstract class z81 extends FrameLayout {
                 org.telegram.ui.Components.a10 a10Var = y81Var.a;
                 a10Var.setText(str3);
                 a10Var.a(fVar.n, false);
-                a10Var.setOnTouchListener(new org.telegram.ui.Components.rl0());
+                a10Var.setOnTouchListener(new org.telegram.ui.Components.sl0());
                 a10Var.setOnClickListener(new cf0(17, y81Var, fVar));
                 a10Var.setOnLongClickListener(new ci.m2(6, y81Var, fVar));
             }

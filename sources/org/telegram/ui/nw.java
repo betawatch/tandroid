@@ -7,7 +7,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class nw implements org.telegram.ui.Components.og {
     public final /* synthetic */ cy a;
@@ -64,11 +64,11 @@ public final class nw implements org.telegram.ui.Components.og {
     public final void g1(CharSequence charSequence, boolean z10, boolean z11) {
         cy cyVar = this.a;
         AndroidUtilities.runOnUIThread(new sv(cyVar, 13), 100L);
-        org.telegram.ui.Components.jr0 jr0Var = cyVar.G2;
-        if (jr0Var != null) {
+        org.telegram.ui.Components.kr0 kr0Var = cyVar.G2;
+        if (kr0Var != null) {
             if (z10) {
-                if (jr0Var.h) {
-                    jr0Var.e(charSequence, true);
+                if (kr0Var.h) {
+                    kr0Var.e(charSequence, true);
                 }
             } else {
                 lt ltVar = cyVar.H2;

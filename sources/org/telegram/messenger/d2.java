@@ -1,30 +1,29 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d2 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ DownloadController b;
-    public final /* synthetic */ TLRPC.Document c;
-    public final /* synthetic */ MessageObject d;
+    public final /* synthetic */ MessageObject c;
 
-    public /* synthetic */ d2(DownloadController downloadController, TLRPC.Document document, MessageObject messageObject, int i10) {
+    public /* synthetic */ d2(DownloadController downloadController, MessageObject messageObject, int i10) {
         this.a = i10;
         this.b = downloadController;
-        this.c = document;
-        this.d = messageObject;
+        this.c = messageObject;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$onDownloadComplete$7(this.c, this.d);
+                this.b.lambda$startDownloadFile$4(this.c);
+                break;
+            case 1:
+                this.b.lambda$onDownloadFail$9(this.c);
                 break;
             default:
-                this.b.lambda$startDownloadFile$5(this.c, this.d);
+                this.b.lambda$onDownloadComplete$6(this.c);
                 break;
         }
     }

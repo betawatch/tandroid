@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class o21 extends org.telegram.ui.ActionBar.f3 {
     public static final /* synthetic */ int v = 0;
@@ -256,27 +256,27 @@ public final class o21 extends org.telegram.ui.ActionBar.f3 {
         h1Var.D(h1Var.b + 1);
         n21 n21Var = (n21) h1Var.getViewPages()[1];
         if (n21Var != null) {
-            org.telegram.ui.Components.b71 b71Var = n21Var.f;
+            org.telegram.ui.Components.c71 c71Var = n21Var.f;
             if (tLObject instanceof TLRPC.TL_reportResultChooseOption) {
                 n21Var.b = null;
                 n21Var.c = (TLRPC.TL_reportResultChooseOption) tLObject;
                 n21Var.d = null;
-                b71Var.W2.N(false);
+                c71Var.W2.N(false);
             } else if (tLObject instanceof TLRPC.TL_reportResultAddComment) {
                 n21Var.b((TLRPC.TL_reportResultAddComment) tLObject);
             } else if (z10) {
                 n21Var.b = (TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject;
                 n21Var.c = null;
                 n21Var.d = null;
-                b71Var.W2.N(false);
+                c71Var.W2.N(false);
             }
             if (charSequence != null) {
                 ai.o5 o5Var = n21Var.h;
                 ((TextView) o5Var.c).setText(charSequence);
                 ((TextView) o5Var.c).getText();
                 o5Var.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(120.0f), TLObject.FLAG_31));
-                if (b71Var != null) {
-                    b71Var.W2.N(true);
+                if (c71Var != null) {
+                    c71Var.W2.N(true);
                 }
             }
         }

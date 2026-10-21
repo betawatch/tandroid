@@ -15,7 +15,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dz implements Runnable {
     public final /* synthetic */ int a;
@@ -209,7 +209,7 @@ public final /* synthetic */ class dz implements Runnable {
                 break;
             case 18:
                 try {
-                    org.telegram.ui.Components.im0 currentListView = ((nc0) ((lc0) obj).z0).K0.getCurrentListView();
+                    org.telegram.ui.Components.jm0 currentListView = ((nc0) ((lc0) obj).z0).K0.getCurrentListView();
                     if (currentListView != null && currentListView.getAdapter() != null) {
                         currentListView.getAdapter().l();
                         break;
@@ -230,19 +230,19 @@ public final /* synthetic */ class dz implements Runnable {
                 break;
             case 20:
                 vd0 vd0Var = (vd0) obj;
-                org.telegram.ui.Components.xj0 xj0Var = vd0Var.e;
+                org.telegram.ui.Components.yj0 yj0Var = vd0Var.e;
                 EditTextBoldCursor editTextBoldCursor2 = vd0Var.a;
                 if (editTextBoldCursor2 != null) {
                     editTextBoldCursor2.requestFocus();
                     editTextBoldCursor2.setSelection(editTextBoldCursor2.length());
                     dg0.T0(vd0Var.y, editTextBoldCursor2);
-                    xj0Var.getAnimatedDrawable().N(0, false, false);
-                    xj0Var.d();
+                    yj0Var.getAnimatedDrawable().N(0, false, false);
+                    yj0Var.d();
                     break;
                 }
                 break;
             case 21:
-                ((org.telegram.ui.Components.xj0) obj).d();
+                ((org.telegram.ui.Components.yj0) obj).d();
                 break;
             case 22:
                 ((de0) ((ei.e2) obj).c).getClass();

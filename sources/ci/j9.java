@@ -6,9 +6,9 @@ import android.view.SurfaceView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.yj0;
+import org.telegram.ui.Components.zj0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class j9 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final class j9 extends AnimatorListenerAdapter {
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         q4 t10;
-        yj0 yj0Var;
+        zj0 zj0Var;
         switch (this.a) {
             case 0:
                 super.onAnimationEnd(animator);
@@ -50,14 +50,14 @@ public final class j9 extends AnimatorListenerAdapter {
                     imageReceiver2.setAlpha(1.0f);
                     x9Var.c.setVisible(true, true);
                 }
-                if (x9Var.d != null && (t10 = aaVar.t()) != null && (yj0Var = t10.o1.d) != null) {
-                    yj0 yj0Var2 = x9Var.d;
-                    yj0Var2.getClass();
-                    yj0Var2.c = yj0Var.c;
-                    yj0Var2.f = yj0Var.f;
-                    yj0Var2.b = yj0Var.b;
-                    yj0Var2.a = System.currentTimeMillis();
-                    yj0Var2.c();
+                if (x9Var.d != null && (t10 = aaVar.t()) != null && (zj0Var = t10.o1.d) != null) {
+                    zj0 zj0Var2 = x9Var.d;
+                    zj0Var2.getClass();
+                    zj0Var2.c = zj0Var.c;
+                    zj0Var2.f = zj0Var.f;
+                    zj0Var2.b = zj0Var.b;
+                    zj0Var2.a = System.currentTimeMillis();
+                    zj0Var2.c();
                 }
                 p4 p4Var = aaVar.G0;
                 if (p4Var != null) {

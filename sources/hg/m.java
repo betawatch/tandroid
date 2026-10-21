@@ -56,17 +56,17 @@ import org.telegram.ui.Cells.x2;
 import org.telegram.ui.Cells.z2;
 import org.telegram.ui.Cells.z6;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.ej0;
+import org.telegram.ui.Components.fj0;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.o11;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.p11;
 import org.telegram.ui.Components.st;
+import org.telegram.ui.Components.tl0;
 import org.telegram.ui.Components.un;
 import org.telegram.ui.Components.w6;
 import org.telegram.ui.Components.x90;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.ay;
 import org.telegram.ui.cy;
@@ -74,9 +74,9 @@ import org.telegram.ui.wx;
 import org.telegram.ui.xx;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public class m extends hm0 implements n2 {
+public class m extends im0 implements n2 {
     public static final boolean c0 = BuildVars.DEBUG_PRIVATE_VERSION;
     public boolean E;
     public final int F;
@@ -84,8 +84,8 @@ public class m extends hm0 implements n2 {
     public boolean H;
     public long I;
     public boolean J;
-    public im0 K;
-    public ej0 L;
+    public jm0 K;
+    public fj0 L;
     public Drawable O;
     public final j P;
     public boolean Q;
@@ -137,7 +137,7 @@ public class m extends hm0 implements n2 {
         this.T = requestPeerType;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         int i10 = b1Var.f;
         return (i10 == 1 || i10 == 5 || i10 == 3 || i10 == 8 || i10 == 7 || i10 == 10 || i10 == 11 || i10 == 13 || i10 == 15 || i10 == 16 || i10 == 18 || i10 == 19 || i10 == 20) ? false : true;
@@ -221,30 +221,30 @@ public class m extends hm0 implements n2 {
         this.n = z10;
     }
 
-    public final void N(ej0 ej0Var) {
-        this.L = ej0Var;
+    public final void N(fj0 fj0Var) {
+        this.L = fj0Var;
     }
 
-    public final void O(im0 im0Var, boolean z10) {
+    public final void O(jm0 jm0Var, boolean z10) {
         this.J = z10;
-        for (int i10 = 0; i10 < im0Var.getChildCount(); i10++) {
-            if (im0Var.getChildAt(i10) instanceof r2) {
-                ((r2) im0Var.getChildAt(i10)).f = z10;
+        for (int i10 = 0; i10 < jm0Var.getChildCount(); i10++) {
+            if (jm0Var.getChildAt(i10) instanceof r2) {
+                ((r2) jm0Var.getChildAt(i10)).f = z10;
             }
         }
-        for (int i11 = 0; i11 < im0Var.getCachedChildCount(); i11++) {
-            if (im0Var.P(i11) instanceof r2) {
-                ((r2) im0Var.P(i11)).f = z10;
+        for (int i11 = 0; i11 < jm0Var.getCachedChildCount(); i11++) {
+            if (jm0Var.P(i11) instanceof r2) {
+                ((r2) jm0Var.P(i11)).f = z10;
             }
         }
-        for (int i12 = 0; i12 < im0Var.getHiddenChildCount(); i12++) {
-            if (im0Var.V(i12) instanceof r2) {
-                ((r2) im0Var.V(i12)).f = z10;
+        for (int i12 = 0; i12 < jm0Var.getHiddenChildCount(); i12++) {
+            if (jm0Var.V(i12) instanceof r2) {
+                ((r2) jm0Var.V(i12)).f = z10;
             }
         }
-        for (int i13 = 0; i13 < im0Var.getAttachedScrapChildCount(); i13++) {
-            if (im0Var.O(i13) instanceof r2) {
-                ((r2) im0Var.O(i13)).f = z10;
+        for (int i13 = 0; i13 < jm0Var.getAttachedScrapChildCount(); i13++) {
+            if (jm0Var.O(i13) instanceof r2) {
+                ((r2) jm0Var.O(i13)).f = z10;
             }
         }
     }
@@ -669,7 +669,7 @@ public class m extends hm0 implements n2 {
         if (MessagesController.getInstance(i10).getStoriesController().I(r2Var.getDialogId())) {
             cy cyVar = this.R;
             cyVar.getOrCreateStoryViewer().getClass();
-            cyVar.getOrCreateStoryViewer().D(cyVar.getParentActivity(), r2Var.getDialogId(), r7.a((im0) r2Var.getParent()));
+            cyVar.getOrCreateStoryViewer().D(cyVar.getParentActivity(), r2Var.getDialogId(), r7.a((jm0) r2Var.getParent()));
         }
     }
 
@@ -839,9 +839,9 @@ public class m extends hm0 implements n2 {
             int i17 = this.b0;
             int E = E();
             this.b0 = E;
-            o11 o11Var = x2Var.n;
+            p11 p11Var = x2Var.n;
             TextView textView = x2Var.h;
-            xj0 xj0Var = x2Var.f;
+            yj0 yj0Var = x2Var.f;
             if (x2Var.r != E) {
                 x2Var.r = E;
                 if (E == 0 || E == 1) {
@@ -849,12 +849,12 @@ public class m extends hm0 implements n2 {
                     string = LocaleController.getString(R.string.NoChatsHelp);
                     textView.setText(LocaleController.getString(R.string.NoChats));
                 } else if (E != 2) {
-                    xj0Var.setAutoRepeat(true);
+                    yj0Var.setAutoRepeat(true);
                     i11 = R.raw.filter_new;
                     string = LocaleController.getString(R.string.FilterAddingChatsInfo);
                     textView.setText(LocaleController.getString(R.string.FilterAddingChats));
                 } else {
-                    xj0Var.setAutoRepeat(false);
+                    yj0Var.setAutoRepeat(false);
                     i11 = R.raw.filter_no_chats;
                     if (this.w) {
                         textView.setText(LocaleController.getString(R.string.FilterNoChatsToForward));
@@ -865,7 +865,7 @@ public class m extends hm0 implements n2 {
                     }
                 }
                 if (i11 != 0) {
-                    xj0Var.setVisibility(0);
+                    yj0Var.setVisibility(0);
                     if (x2Var.r == 1) {
                         if (x2Var.d) {
                             x2Var.a = 1.0f;
@@ -873,24 +873,24 @@ public class m extends hm0 implements n2 {
                             if (AndroidUtilities.isTablet() && !AndroidUtilities.isSmallTablet()) {
                                 string2 = string2.replace('\n', ' ');
                             }
-                            o11Var.a(string2, true, false);
+                            p11Var.a(string2, true, false);
                             x2Var.requestLayout();
                         } else {
                             x2Var.a(true);
                         }
                     }
                     if (x2Var.s != i11) {
-                        xj0Var.f(i11, 100, 100, null);
-                        xj0Var.d();
+                        yj0Var.f(i11, 100, 100, null);
+                        yj0Var.d();
                         x2Var.s = i11;
                     }
                 } else {
-                    xj0Var.setVisibility(8);
+                    yj0Var.setVisibility(8);
                 }
                 if (AndroidUtilities.isTablet() && !AndroidUtilities.isSmallTablet()) {
                     string = string.replace('\n', ' ');
                 }
-                o11Var.a(string, false, false);
+                p11Var.a(string, false, false);
             }
             int i18 = this.h;
             if (i18 != 7 && i18 != 8) {
@@ -1252,7 +1252,7 @@ public class m extends hm0 implements n2 {
                 break;
         }
         r22.setLayoutParams(new s4.o0(-1, (i10 == 5 || i10 == 19) ? -1 : -2));
-        return new sl0(r22);
+        return new tl0(r22);
     }
 
     @Override // s4.g0

@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class j21 extends FrameLayout {
     public final org.telegram.ui.Components.f6 a;
@@ -32,9 +32,9 @@ public final class j21 extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         int i10;
         int i11;
-        org.telegram.ui.Components.t61 t61Var;
+        org.telegram.ui.Components.u61 u61Var;
         View[] viewArr;
-        org.telegram.ui.Components.g61 G;
+        org.telegram.ui.Components.h61 G;
         o21 o21Var = this.e;
         View[] viewPages = o21Var.b.getViewPages();
         float f7 = 0.0f;
@@ -48,22 +48,22 @@ public final class j21 extends FrameLayout {
             } else {
                 n21 n21Var = (n21) view;
                 FrameLayout frameLayout = n21Var.e;
-                org.telegram.ui.Components.b71 b71Var = n21Var.f;
+                org.telegram.ui.Components.c71 c71Var = n21Var.f;
                 float clamp = Utilities.clamp(1.0f - Math.abs(n21Var.getTranslationX() / n21Var.getMeasuredWidth()), 1.0f, f7);
                 float f10 = this.b;
                 float paddingTop = frameLayout.getPaddingTop();
                 int i13 = 0;
                 while (true) {
-                    int childCount = b71Var.getChildCount();
-                    t61Var = b71Var.W2;
+                    int childCount = c71Var.getChildCount();
+                    u61Var = c71Var.W2;
                     if (i13 >= childCount) {
                         break;
                     }
-                    View childAt = b71Var.getChildAt(i13);
-                    b71Var.V2.getClass();
+                    View childAt = c71Var.getChildAt(i13);
+                    c71Var.V2.getClass();
                     int H = s4.n0.H(childAt);
                     View[] viewArr2 = viewPages;
-                    if (H >= 0 && H < t61Var.x.size() && (G = t61Var.G(H)) != null && G.a == 28) {
+                    if (H >= 0 && H < u61Var.x.size() && (G = u61Var.G(H)) != null && G.a == 28) {
                         paddingTop = childAt.getY() + frameLayout.getPaddingTop();
                     }
                     i13++;
@@ -76,12 +76,12 @@ public final class j21 extends FrameLayout {
                     float f11 = -o5Var.getHeight();
                     int i14 = 0;
                     while (true) {
-                        if (i14 >= b71Var.getChildCount()) {
+                        if (i14 >= c71Var.getChildCount()) {
                             break;
                         }
-                        View childAt2 = b71Var.getChildAt(i14);
-                        b71Var.V2.getClass();
-                        if (t61Var.G(s4.n0.H(childAt2)).a == 28) {
+                        View childAt2 = c71Var.getChildAt(i14);
+                        c71Var.V2.getClass();
+                        if (u61Var.G(s4.n0.H(childAt2)).a == 28) {
                             f11 = childAt2.getY() + frameLayout.getPaddingTop();
                             break;
                         }

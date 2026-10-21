@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import org.telegram.messenger.EmojiData;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class nd0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -74,12 +74,12 @@ public final class nd0 implements Runnable {
                 org.telegram.ui.oy oyVar = (org.telegram.ui.oy) this.d;
                 int i13 = this.b;
                 int i14 = this.c;
-                im0 im0Var = oyVar.H;
+                jm0 jm0Var = oyVar.H;
                 if (oyVar.n) {
                     int i15 = 0;
                     while (true) {
-                        if (i15 < im0Var.getChildCount()) {
-                            View childAt = im0Var.getChildAt(i15);
+                        if (i15 < jm0Var.getChildCount()) {
+                            View childAt = jm0Var.getChildAt(i15);
                             if (childAt instanceof org.telegram.ui.Cells.u1) {
                                 u1Var = (org.telegram.ui.Cells.u1) childAt;
                                 String stickerEmoji = u1Var.getMessageObject().getStickerEmoji();

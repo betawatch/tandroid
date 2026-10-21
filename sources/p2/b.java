@@ -16,7 +16,6 @@ import android.os.SystemClock;
 import android.util.Base64;
 import android.widget.FrameLayout;
 import androidx.car.app.hardware.common.CarResultStub;
-import c3.c0;
 import com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService;
 import gi.p2;
 import java.io.File;
@@ -35,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.q2;
 import org.telegram.ui.Components.aa0;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.l60;
 import org.telegram.ui.el;
 import qg.a1;
@@ -54,7 +53,7 @@ import sg.k0;
 import si.l0;
 import si.s0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -109,7 +108,27 @@ public final /* synthetic */ class b implements Runnable {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:189:?, code lost:
+    private final void d() {
+        int i10;
+        ri.o oVar = (ri.o) this.b;
+        File file = (File) this.c;
+        synchronized (oVar.m) {
+            while (i10 < oVar.m.size()) {
+                try {
+                    File file2 = (File) oVar.m.get(i10);
+                    i10 = (file != null && file.equals(file2)) ? i10 + 1 : 0;
+                    if (file2.exists() && !file2.delete()) {
+                        oVar.h.b("temporary file deletion failed: " + file2.getName());
+                    }
+                } catch (Throwable th2) {
+                    throw th2;
+                }
+            }
+            oVar.m.clear();
+        }
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:211:?, code lost:
     
         return;
      */
@@ -258,6 +277,15 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 return;
             case 15:
+                ri.o oVar = (ri.o) this.b;
+                Throwable th2 = (Throwable) this.c;
+                oVar.getClass();
+                oVar.g(th2 instanceof Exception ? (Exception) th2 : new RuntimeException(th2));
+                return;
+            case 16:
+                d();
+                return;
+            case 17:
                 s9.a aVar = (s9.a) this.b;
                 Runnable runnable2 = (Runnable) this.c;
                 Process.setThreadPriority(aVar.c);
@@ -267,7 +295,7 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 runnable2.run();
                 return;
-            case 16:
+            case 18:
                 Callable callable = (Callable) this.b;
                 s9.h hVar2 = (s9.h) ((le.b) this.c).b;
                 try {
@@ -277,11 +305,11 @@ public final /* synthetic */ class b implements Runnable {
                     hVar2.l(e7);
                     return;
                 }
-            case 17:
+            case 19:
                 k0 k0Var = (k0) this.b;
                 TLObject tLObject = (TLObject) this.c;
                 ArrayList arrayList2 = k0Var.i0;
-                im0 im0Var = k0Var.d;
+                jm0 jm0Var = k0Var.d;
                 if (tLObject != null) {
                     arrayList2.clear();
                     arrayList2.addAll(((TLRPC.TL_messages_chats) tLObject).chats);
@@ -289,17 +317,17 @@ public final /* synthetic */ class b implements Runnable {
                     k0Var.J0.b(k0Var.n0 + 4);
                     int i14 = 0;
                     while (true) {
-                        if (i14 >= im0Var.getChildCount()) {
+                        if (i14 >= jm0Var.getChildCount()) {
                             i10 = 0;
-                        } else if (im0Var.getChildAt(i14) instanceof j0) {
-                            i10 = im0Var.getChildAt(i14).getTop();
+                        } else if (jm0Var.getChildAt(i14) instanceof j0) {
+                            i10 = jm0Var.getChildAt(i14).getTop();
                         } else {
                             i14++;
                         }
                     }
                     k0Var.N1();
                     if (k0Var.l0 >= 0 && i10 != 0) {
-                        ((b0) im0Var.getLayoutManager()).h1(k0Var.l0 + 1, i10);
+                        ((b0) jm0Var.getLayoutManager()).h1(k0Var.l0 + 1, i10);
                     }
                 }
                 int max = Math.max(arrayList2.size(), k0Var.M0.b);
@@ -309,22 +337,22 @@ public final /* synthetic */ class b implements Runnable {
                 i0Var.H = true;
                 i0Var.requestLayout();
                 return;
-            case 18:
+            case 20:
                 ((k0) this.b).n1((aa0) this.c, true);
                 return;
-            case 19:
+            case 21:
                 a2 a2Var = (a2) this.b;
-                AndroidUtilities.runOnUIThread(new b(20, a2Var, FileLoader.getInstance(a2Var.s).getPathToAttach((TLRPC.Document) this.c)));
+                AndroidUtilities.runOnUIThread(new b(22, a2Var, FileLoader.getInstance(a2Var.s).getPathToAttach((TLRPC.Document) this.c)));
                 return;
-            case 20:
+            case 22:
                 a2 a2Var2 = (a2) this.b;
                 a2Var2.e = (File) this.c;
                 a2Var2.a();
                 return;
-            case 21:
+            case 23:
                 ((si.j) this.b).a0((l0) this.c);
                 return;
-            case 22:
+            case 24:
                 si.j jVar = (si.j) this.b;
                 HandlerThread handlerThread = (HandlerThread) this.c;
                 jVar.k();
@@ -348,7 +376,7 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 handlerThread.quitSafely();
                 return;
-            case 23:
+            case 25:
                 si.t tVar2 = (si.t) this.b;
                 CountDownLatch countDownLatch = (CountDownLatch) this.c;
                 tVar2.getClass();
@@ -364,7 +392,7 @@ public final /* synthetic */ class b implements Runnable {
                 } finally {
                     countDownLatch.countDown();
                 }
-            case 24:
+            case 26:
                 w0 w0Var = (w0) this.b;
                 l0 l0Var = (l0) this.c;
                 s0 s0Var = (s0) w0Var.b;
@@ -409,13 +437,13 @@ public final /* synthetic */ class b implements Runnable {
                 l60Var.y();
                 s0Var.o();
                 return;
-            case 25:
+            case 27:
                 ((s0) ((w0) this.b).b).h((Exception) this.c);
                 return;
-            case 26:
+            case 28:
                 ((tg.f) this.b).c((ArrayList) this.c);
                 return;
-            case 27:
+            default:
                 tg.q qVar = (tg.q) this.b;
                 tg.s sVar = (tg.s) this.c;
                 qVar.getClass();
@@ -438,12 +466,6 @@ public final /* synthetic */ class b implements Runnable {
                 } finally {
                     sVar.b.release();
                 }
-            case 28:
-                ((e2.j) this.b).accept(this.c);
-                return;
-            default:
-                ((u2.w0) this.b).A((c0) this.c);
-                return;
         }
     }
 }

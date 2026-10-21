@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class t50 {
     public static void a(org.telegram.ui.ActionBar.b2 b2Var, pf.c cVar, TLObject tLObject, final int i10, Context context, TLRPC.TL_inputGroupCallSlug tL_inputGroupCallSlug, TLRPC.TL_error tL_error) {
@@ -70,7 +70,7 @@ public abstract class t50 {
         ci.b bVar = new ci.b();
         org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, context, (org.telegram.ui.ActionBar.d6) bVar, false);
         f3Var.fixNavigationBar();
-        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
+        LinearLayout e = org.telegram.messenger.mk.e(context, 1);
         float f10 = 8.0f;
         e.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(8.0f));
         FrameLayout frameLayout = new FrameLayout(context);
@@ -195,7 +195,7 @@ public abstract class t50 {
         getgroupcall.limit = 10;
         int sendRequest = ConnectionsManager.getInstance(i10).sendRequest(getgroupcall, new ai.sb(b2Var, cVar, i10, activity, tL_inputGroupCallSlug, 10));
         if (cVar != null) {
-            cVar.b = new org.telegram.messenger.fh(i10, sendRequest, 3);
+            cVar.b = new org.telegram.messenger.hh(i10, sendRequest, 3);
             cVar.d();
         }
     }

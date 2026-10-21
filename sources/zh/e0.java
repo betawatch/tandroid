@@ -15,14 +15,14 @@ import java.util.WeakHashMap;
 import java.util.function.Consumer;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e0 implements Consumer {
-    public final /* synthetic */ m0 a;
+    public final /* synthetic */ n0 a;
     public final /* synthetic */ m b;
 
-    public /* synthetic */ e0(m0 m0Var, m mVar) {
-        this.a = m0Var;
+    public /* synthetic */ e0(n0 n0Var, m mVar) {
+        this.a = n0Var;
         this.b = mVar;
     }
 
@@ -35,8 +35,8 @@ public final /* synthetic */ class e0 implements Consumer {
         float[] fArr;
         e0 e0Var = this;
         Canvas canvas = (Canvas) obj;
-        m0 m0Var = e0Var.a;
-        c cVar2 = m0Var.x;
+        n0 n0Var = e0Var.a;
+        c cVar2 = n0Var.x;
         RectF rectF = cVar2.M;
         WeakHashMap weakHashMap = cVar2.N;
         Paint paint = cVar2.c;
@@ -88,10 +88,10 @@ public final /* synthetic */ class e0 implements Consumer {
             e0Var = this;
             cVar2 = cVar;
         }
-        if (m0Var.d.I.isEmpty()) {
+        if (n0Var.d.I.isEmpty()) {
             return;
         }
-        m0Var.x.invalidate();
+        n0Var.x.invalidate();
     }
 
     public /* synthetic */ Consumer andThen(Consumer consumer) {

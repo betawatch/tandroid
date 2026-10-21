@@ -33,9 +33,9 @@ import org.telegram.ui.ActionBar.d5;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.k;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.q6;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.Components.z00;
 import org.telegram.ui.Wallet.m6;
@@ -48,7 +48,7 @@ import sg.x1;
 import ug.m1;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class g extends y10 implements NotificationCenter.NotificationCenterDelegate {
     public FrameLayout P;
@@ -78,7 +78,7 @@ public final class g extends y10 implements NotificationCenter.NotificationCente
     }
 
     public static void y0(g gVar, int i10) {
-        g61 G;
+        h61 G;
         d dVar = gVar.f0;
         if (dVar == null || (G = dVar.G(i10)) == null) {
             return;
@@ -103,16 +103,16 @@ public final class g extends y10 implements NotificationCenter.NotificationCente
         }
     }
 
-    public final void D0(ArrayList arrayList, t61 t61Var) {
+    public final void D0(ArrayList arrayList, u61 u61Var) {
         if (getParentActivity() == null) {
             return;
         }
         ga y3 = ga.y(this.currentAccount, true);
         v10 v10Var = (v10) super.r0(getParentActivity());
-        g61 g61Var = new g61(-2);
-        g61Var.c = v10Var;
-        arrayList.add(g61Var);
-        arrayList.add(g61.k(this.U));
+        h61 h61Var = new h61(-2);
+        h61Var.c = v10Var;
+        arrayList.add(h61Var);
+        arrayList.add(h61.k(this.U));
         boolean z10 = this.T;
         if (z10) {
             i2.e.B(R.string.GramEarningsHint, arrayList);
@@ -120,13 +120,13 @@ public final class g extends y10 implements NotificationCenter.NotificationCente
         boolean O = y3.O(0);
         this.d0 = O;
         if (!O) {
-            arrayList.add(g61.l(this.S));
+            arrayList.add(h61.l(this.S));
             return;
         }
         if (!z10) {
-            arrayList.add(g61.B(null));
+            arrayList.add(h61.B(null));
         }
-        arrayList.add(g61.p(this.R, AndroidUtilities.dp(24.0f) + k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.navigationBarHeight, false));
+        arrayList.add(h61.p(this.R, AndroidUtilities.dp(24.0f) + k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.navigationBarHeight, false));
     }
 
     public final void E0() {

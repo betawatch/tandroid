@@ -47,7 +47,7 @@ import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.ActionBar.n3;
 import org.telegram.ui.Cells.ka;
 import org.telegram.ui.Cells.ma;
-import org.telegram.ui.Components.aw0;
+import org.telegram.ui.Components.bw0;
 import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.ff;
 import org.telegram.ui.Components.i80;
@@ -55,10 +55,10 @@ import org.telegram.ui.Components.k8;
 import org.telegram.ui.Components.lg;
 import org.telegram.ui.Components.ng;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.qp0;
+import org.telegram.ui.Components.rp0;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e2 implements Runnable {
     public final /* synthetic */ int a;
@@ -367,11 +367,11 @@ public final /* synthetic */ class e2 implements Runnable {
                 return;
             case 28:
                 ff ffVar = (ff) this.b;
-                aw0 aw0Var = (aw0) this.c;
-                qp0 qp0Var = (qp0) this.d;
+                bw0 bw0Var = (bw0) this.c;
+                rp0 rp0Var = (rp0) this.d;
                 ffVar.getClass();
-                aw0Var.getViewTreeObserver().removeOnDrawListener(ffVar);
-                qp0Var.a.setHideAvatar(true);
+                bw0Var.getViewTreeObserver().removeOnDrawListener(ffVar);
+                rp0Var.a.setHideAvatar(true);
                 return;
             default:
                 ng ngVar = (ng) this.b;

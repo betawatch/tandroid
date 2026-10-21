@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class ui0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
@@ -47,7 +47,7 @@ public class ui0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
     public int P;
     public int Q;
     public final a0.g R;
-    public org.telegram.ui.Components.xj0 S;
+    public org.telegram.ui.Components.yj0 S;
     public LinearLayout T;
     public int U;
     public boolean V;
@@ -65,7 +65,7 @@ public class ui0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
     public final boolean d0;
     public org.telegram.ui.Components.vz e;
     public m91 e0;
-    public org.telegram.ui.Components.im0 f;
+    public org.telegram.ui.Components.jm0 f;
     public s4.b0 h;
     public final MessageObject n;
     public b91 r;
@@ -305,9 +305,9 @@ public class ui0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         LinearLayout linearLayout = new LinearLayout(context);
         this.T = linearLayout;
         linearLayout.setOrientation(1);
-        org.telegram.ui.Components.xj0 xj0Var = new org.telegram.ui.Components.xj0(context);
-        this.S = xj0Var;
-        xj0Var.setAutoRepeat(true);
+        org.telegram.ui.Components.yj0 yj0Var = new org.telegram.ui.Components.yj0(context);
+        this.S = yj0Var;
+        yj0Var.setAutoRepeat(true);
         this.S.f(R.raw.statistic_preload, 120, 120, null);
         this.S.d();
         TextView textView = new TextView(context);
@@ -323,24 +323,24 @@ public class ui0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         int i12 = org.telegram.ui.ActionBar.h6.Pi;
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(i12, getResourceProvider()));
         textView2.setTag(Integer.valueOf(i12));
-        org.telegram.messenger.kk.m(R.string.LoadingStatsDescription, textView2, 1);
+        org.telegram.messenger.mk.m(R.string.LoadingStatsDescription, textView2, 1);
         this.T.addView(this.S, w7.z5.t(120, 120, 1, 0, 0, 0, 20));
         this.T.addView(textView, w7.z5.t(-2, -2, 1, 0, 0, 0, 10));
         this.T.addView(textView2, w7.z5.q(-2, -2, 1));
         this.T.setAlpha(0.0f);
         frameLayout2.addView(this.T, w7.z5.d(240, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, getResourceProvider());
-        this.f = im0Var;
-        im0Var.p1();
-        org.telegram.ui.Components.im0 im0Var2 = this.f;
+        org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, getResourceProvider());
+        this.f = jm0Var;
+        jm0Var.p1();
+        org.telegram.ui.Components.jm0 jm0Var2 = this.f;
         s4.b0 b0Var = new s4.b0(1, false);
         this.h = b0Var;
-        im0Var2.setLayoutManager(b0Var);
+        jm0Var2.setLayoutManager(b0Var);
         ((s4.e1) this.f.getItemAnimator()).m = false;
-        org.telegram.ui.Components.im0 im0Var3 = this.f;
+        org.telegram.ui.Components.jm0 jm0Var3 = this.f;
         si0 si0Var = new si0(this, context);
         this.d = si0Var;
-        im0Var3.setAdapter(si0Var);
+        jm0Var3.setAdapter(si0Var);
         this.f.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
         this.actionBar.setAdaptiveBackground(this.f);
         this.f.setOnItemClickListener(new i(this, 19));

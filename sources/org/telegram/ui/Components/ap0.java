@@ -1,45 +1,81 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.os.Bundle;
 import android.text.TextUtils;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ProfileActivity;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import java.util.HashMap;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class ap0 extends e8 {
-    public final /* synthetic */ Context E;
-    public final /* synthetic */ Object F;
-    public final /* synthetic */ int y;
+public abstract class ap0 extends View.AccessibilityDelegate {
+    public static final String c = "android.widget.SeekBar";
+    public final HashMap a = new HashMap(4);
+    public final ai.n6 b = new ai.n6(this, 10);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ap0(Object obj, Context context, Context context2, int i10) {
-        super(context);
-        this.y = i10;
-        this.F = obj;
-        this.E = context2;
+    public abstract boolean a();
+
+    public abstract boolean b();
+
+    public abstract void c(boolean z10);
+
+    public CharSequence d() {
+        return null;
     }
 
-    @Override // org.telegram.ui.Components.e8
-    public final TextView a() {
-        switch (this.y) {
-            case 0:
-                ma0 ma0Var = new ma0(this.E);
-                ma0Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Si, ((cp0) this.F).M));
-                ma0Var.setTextSize(1, 12.0f);
-                ma0Var.setEllipsize(TextUtils.TruncateAt.END);
-                ma0Var.setSingleLine(true);
-                ma0Var.setPadding(AndroidUtilities.dp(0.0f), 0, AndroidUtilities.dp(0.0f), AndroidUtilities.dp(0.0f));
-                return ma0Var;
-            default:
-                TextView textView = new TextView(this.E);
-                textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Pi, ((ProfileActivity) this.F).A0));
-                textView.setTextSize(0, AndroidUtilities.dp(13.5f));
-                textView.setSingleLine(true);
-                textView.setEllipsize(TextUtils.TruncateAt.END);
-                textView.setGravity(3);
-                return textView;
+    public void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        accessibilityNodeInfo.setClassName(c);
+        CharSequence d = d();
+        if (!TextUtils.isEmpty(d)) {
+            accessibilityNodeInfo.setText(d);
         }
+        if (a()) {
+            accessibilityNodeInfo.addAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_BACKWARD);
+        }
+        if (b()) {
+            accessibilityNodeInfo.addAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_FORWARD);
+        }
+    }
+
+    public final void f(AccessibilityNodeInfo accessibilityNodeInfo) {
+        e(null, accessibilityNodeInfo);
+    }
+
+    public boolean g(View view, int i10, Bundle bundle) {
+        if (i10 != 4096 && i10 != 8192) {
+            return false;
+        }
+        c(i10 == 8192);
+        if (view != null) {
+            WeakHashMap weakHashMap = r0.i0.a;
+            if (view.isAttachedToWindow()) {
+                HashMap hashMap = this.a;
+                Runnable runnable = (Runnable) hashMap.get(view);
+                if (runnable == null) {
+                    runnable = new ho0(2, this, view);
+                    hashMap.put(view, runnable);
+                    view.addOnAttachStateChangeListener(this.b);
+                } else {
+                    view.removeCallbacks(runnable);
+                }
+                view.postDelayed(runnable, 400L);
+            }
+        }
+        return true;
+    }
+
+    @Override // android.view.View.AccessibilityDelegate
+    public final void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+        e(view, accessibilityNodeInfo);
+    }
+
+    @Override // android.view.View.AccessibilityDelegate
+    public final boolean performAccessibilityAction(View view, int i10, Bundle bundle) {
+        if (super.performAccessibilityAction(view, i10, bundle)) {
+            return true;
+        }
+        return g(view, i10, bundle);
     }
 }

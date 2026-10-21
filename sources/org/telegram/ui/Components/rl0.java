@@ -1,44 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewParent;
-
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class rl0 implements View.OnTouchListener {
-    public float a;
-    public float b;
-    public boolean c;
+public abstract class rl0 extends im0 {
+    public boolean E(jm0 jm0Var) {
+        return true;
+    }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        ViewParent parent = view.getParent();
-        if (parent != null) {
-            if (motionEvent.getAction() == 0) {
-                this.a = motionEvent.getX();
-                this.b = motionEvent.getY();
-                this.c = true;
-                parent.requestDisallowInterceptTouchEvent(true);
-            }
-            if (motionEvent.getAction() == 2) {
-                float x10 = this.a - motionEvent.getX();
-                float y3 = this.b - motionEvent.getY();
-                float scaledTouchSlop = ViewConfiguration.get(view.getContext()).getScaledTouchSlop();
-                if (this.c) {
-                    if (Math.sqrt((y3 * y3) + (x10 * x10)) > scaledTouchSlop) {
-                        this.c = false;
-                        parent.requestDisallowInterceptTouchEvent(false);
-                        return false;
-                    }
-                }
-            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                this.c = false;
-                parent.requestDisallowInterceptTouchEvent(false);
-                return false;
-            }
-        }
-        return false;
+    public abstract String F(int i10);
+
+    public abstract void G(jm0 jm0Var, float f7, int[] iArr);
+
+    public float H(jm0 jm0Var) {
+        return jm0Var.computeVerticalScrollOffset() / ((k() * jm0Var.getChildAt(0).getMeasuredHeight()) - jm0Var.getMeasuredHeight());
+    }
+
+    public void I() {
+    }
+
+    public void J(jm0 jm0Var) {
+    }
+
+    public void K() {
     }
 }

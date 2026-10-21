@@ -1,51 +1,51 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import java.util.Comparator;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ta implements Runnable {
+public final /* synthetic */ class ta implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ boolean f;
+    public final /* synthetic */ MessagesController b;
 
-    public /* synthetic */ ta(int i10, int i11, int i12, long j10, MessagesController messagesController, boolean z10) {
-        this.a = i12;
+    public /* synthetic */ ta(MessagesController messagesController, int i10) {
+        this.a = i10;
         this.b = messagesController;
-        this.c = j10;
-        this.d = i10;
-        this.e = i11;
-        this.f = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.b;
-        switch (i10) {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int lambda$processUpdatesQueue$326;
+        int lambda$renameSavedReactionTag$487;
+        int lambda$updateSavedReactionTags$486;
+        int lambda$new$9;
+        int lambda$new$10;
+        int lambda$new$11;
+        int lambda$new$12;
+        switch (this.a) {
             case 0:
-                ((MessagesController) notificationCenterDelegate).lambda$markDialogAsRead$240(this.c, this.d, this.e, this.f);
-                break;
+                lambda$processUpdatesQueue$326 = this.b.lambda$processUpdatesQueue$326((TLRPC.Updates) obj, (TLRPC.Updates) obj2);
+                return lambda$processUpdatesQueue$326;
             case 1:
-                ((MessagesController) notificationCenterDelegate).lambda$markDialogAsRead$241(this.c, this.d, this.e, this.f);
-                break;
+                lambda$renameSavedReactionTag$487 = this.b.lambda$renameSavedReactionTag$487((TLRPC.TL_savedReactionTag) obj, (TLRPC.TL_savedReactionTag) obj2);
+                return lambda$renameSavedReactionTag$487;
+            case 2:
+                lambda$updateSavedReactionTags$486 = this.b.lambda$updateSavedReactionTags$486((TLRPC.TL_savedReactionTag) obj, (TLRPC.TL_savedReactionTag) obj2);
+                return lambda$updateSavedReactionTags$486;
+            case 3:
+                lambda$new$9 = this.b.lambda$new$9((TLRPC.Dialog) obj, (TLRPC.Dialog) obj2);
+                return lambda$new$9;
+            case 4:
+                lambda$new$10 = this.b.lambda$new$10((TLRPC.Dialog) obj, (TLRPC.Dialog) obj2);
+                return lambda$new$10;
+            case 5:
+                lambda$new$11 = this.b.lambda$new$11((MessagesController.CommunityPeerDialog) obj, (MessagesController.CommunityPeerDialog) obj2);
+                return lambda$new$11;
             default:
-                int i11 = ChatActivityEnterView.n5;
-                ((ChatActivityEnterView) notificationCenterDelegate).R0(this.d, this.f, this.e, false, this.c);
-                break;
+                lambda$new$12 = this.b.lambda$new$12((TLRPC.Update) obj, (TLRPC.Update) obj2);
+                return lambda$new$12;
         }
-    }
-
-    public /* synthetic */ ta(ChatActivityEnterView chatActivityEnterView, boolean z10, int i10, int i11, long j10) {
-        this.a = 2;
-        this.b = chatActivityEnterView;
-        this.f = z10;
-        this.d = i10;
-        this.e = i11;
-        this.c = j10;
     }
 }

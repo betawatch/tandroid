@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class oi extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -67,7 +67,7 @@ public final class oi extends AnimatorListenerAdapter {
                 qn qnVar6 = this.b;
                 if (animator.equals(qnVar6.h3)) {
                     qnVar6.i3 = 1.0f;
-                    qnVar6.pc();
+                    qnVar6.qc();
                     qnVar6.h3 = null;
                     break;
                 }
@@ -76,7 +76,7 @@ public final class oi extends AnimatorListenerAdapter {
                 qn qnVar7 = this.b;
                 if (animator.equals(qnVar7.h3)) {
                     qnVar7.i3 = 0.0f;
-                    qnVar7.pc();
+                    qnVar7.qc();
                     qnVar7.h3 = null;
                     break;
                 }

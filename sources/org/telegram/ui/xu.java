@@ -28,9 +28,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xu implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.xl0, vx, ContactsLoadingObserver.Callback, org.telegram.ui.Components.wv0, org.telegram.ui.Components.yl0, ImageReceiver.ImageReceiverDelegate, OnCompleteListener, nt {
+public final /* synthetic */ class xu implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.yl0, vx, ContactsLoadingObserver.Callback, org.telegram.ui.Components.xv0, org.telegram.ui.Components.zl0, ImageReceiver.ImageReceiverDelegate, OnCompleteListener, nt {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -64,7 +64,7 @@ public final /* synthetic */ class xu implements org.telegram.ui.ActionBar.a2, o
         editTextBoldCursor.setText(htVar.a);
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ boolean P0(View view) {
         switch (this.a) {
             case 2:
@@ -75,7 +75,7 @@ public final /* synthetic */ class xu implements org.telegram.ui.ActionBar.a2, o
         return false;
     }
 
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.zl0
     public boolean a(int i10, View view) {
         nc0 nc0Var = (nc0) this.c;
         Context context = (Context) this.b;
@@ -86,7 +86,7 @@ public final /* synthetic */ class xu implements org.telegram.ui.ActionBar.a2, o
                 org.telegram.ui.ActionBar.e1 e1Var = new org.telegram.ui.ActionBar.e1(0, nc0Var.getParentActivity(), nc0Var.getResourceProvider(), true, true);
                 e1Var.setMinimumWidth(AndroidUtilities.dp(200.0f));
                 e1Var.g(LocaleController.getString(R.string.GetDirections), R.drawable.filled_directions, null);
-                e1Var.setOnClickListener(new org.telegram.ui.Components.h51(26, nc0Var, (hc0) J));
+                e1Var.setOnClickListener(new org.telegram.ui.Components.i51(26, nc0Var, (hc0) J));
                 actionBarPopupWindow$ActionBarPopupWindowLayout.addView(e1Var);
                 fc0 fc0Var = new fc0(nc0Var, actionBarPopupWindow$ActionBarPopupWindowLayout);
                 nc0Var.I0 = fc0Var;
@@ -104,12 +104,12 @@ public final /* synthetic */ class xu implements org.telegram.ui.ActionBar.a2, o
         return false;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ void a0(View view, float f7, float f10) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.xv0
     public void b(LocationController.SharingLocationInfo sharingLocationInfo) {
         LaunchActivity launchActivity = (LaunchActivity) this.c;
         int[] iArr = (int[]) this.b;
@@ -123,7 +123,7 @@ public final /* synthetic */ class xu implements org.telegram.ui.ActionBar.a2, o
         launchActivity.t0(nc0Var);
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public void d(float f7, float f10, int i10, View view) {
         switch (this.a) {
             case 2:
@@ -152,7 +152,7 @@ public final /* synthetic */ class xu implements org.telegram.ui.ActionBar.a2, o
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.k5.a(this, i10, str, drawable);
+        org.telegram.messenger.m5.a(this, i10, str, drawable);
     }
 
     @Override // org.telegram.ui.ActionBar.a2
@@ -309,7 +309,7 @@ public final /* synthetic */ class xu implements org.telegram.ui.ActionBar.a2, o
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.k5.b(this, imageReceiver);
+        org.telegram.messenger.m5.b(this, imageReceiver);
     }
 
     @Override // com.google.android.gms.tasks.OnCompleteListener

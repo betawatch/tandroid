@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class b10 extends org.telegram.ui.Components.em0 {
+public final class b10 extends org.telegram.ui.Components.fm0 {
     public final Context r;
     public final a10 s = new a10(this);
     public final /* synthetic */ e10 v;
@@ -19,18 +19,18 @@ public final class b10 extends org.telegram.ui.Components.em0 {
         this.r = context;
     }
 
-    @Override // org.telegram.ui.Components.ql0
+    @Override // org.telegram.ui.Components.rl0
     public final String F(int i10) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.ql0
-    public final void G(org.telegram.ui.Components.im0 im0Var, float f7, int[] iArr) {
+    @Override // org.telegram.ui.Components.rl0
+    public final void G(org.telegram.ui.Components.jm0 jm0Var, float f7, int[] iArr) {
         iArr[0] = 0;
         iArr[1] = 0;
     }
 
-    @Override // org.telegram.ui.Components.em0
+    @Override // org.telegram.ui.Components.fm0
     public final int M(int i10) {
         e10 e10Var = this.v;
         if (i10 < e10Var.n.size()) {
@@ -39,12 +39,12 @@ public final class b10 extends org.telegram.ui.Components.em0 {
         return 1;
     }
 
-    @Override // org.telegram.ui.Components.em0
+    @Override // org.telegram.ui.Components.fm0
     public final Object O(int i10, int i11) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.em0
+    @Override // org.telegram.ui.Components.fm0
     public final int P(int i10, int i11) {
         if (i10 < this.v.n.size()) {
             return (i10 == 0 || i11 != 0) ? 1 : 0;
@@ -52,7 +52,7 @@ public final class b10 extends org.telegram.ui.Components.em0 {
         return 2;
     }
 
-    @Override // org.telegram.ui.Components.em0
+    @Override // org.telegram.ui.Components.fm0
     public final int R() {
         e10 e10Var = this.v;
         ArrayList arrayList = e10Var.n;
@@ -67,7 +67,7 @@ public final class b10 extends org.telegram.ui.Components.em0 {
         return size + i10;
     }
 
-    @Override // org.telegram.ui.Components.em0
+    @Override // org.telegram.ui.Components.fm0
     public final View T(int i10, View view) {
         if (view == null) {
             view = new org.telegram.ui.Cells.u3(this.r, null);
@@ -84,12 +84,12 @@ public final class b10 extends org.telegram.ui.Components.em0 {
         return view;
     }
 
-    @Override // org.telegram.ui.Components.em0
+    @Override // org.telegram.ui.Components.fm0
     public final boolean V(int i10, int i11, s4.b1 b1Var) {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.em0
+    @Override // org.telegram.ui.Components.fm0
     public final void W(int i10, int i11, s4.b1 b1Var) {
         e10 e10Var = this.v;
         ArrayList arrayList = e10Var.n;

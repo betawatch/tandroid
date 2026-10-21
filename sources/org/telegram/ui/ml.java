@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ml extends zt0 {
     public final /* synthetic */ ArrayList a;
@@ -35,7 +35,7 @@ public final class ml extends zt0 {
                 arrayList.remove(size);
             }
         }
-        this.c.ib(arrayList, i11, z10, z11);
+        this.c.jb(arrayList, i11, z10, z11);
     }
 
     @Override // org.telegram.ui.zt0, org.telegram.ui.hu0

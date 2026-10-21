@@ -10,13 +10,13 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.c71;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yq;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class f0 extends h0 {
     public final w9 h;
@@ -36,12 +36,12 @@ public final class f0 extends h0 {
         u uVar = new u(k0Var, 3);
         u uVar2 = new u(k0Var, 4);
         d6Var = ((f3) k0Var).resourcesProvider;
-        b71 b71Var = new b71(context, i10, 0, false, sVar, uVar, uVar2, d6Var);
-        this.d = b71Var;
-        b71Var.p1();
-        b71 b71Var2 = this.d;
-        b71Var2.W2.r = false;
-        b71Var2.setClipToPadding(false);
+        c71 c71Var = new c71(context, i10, 0, false, sVar, uVar, uVar2, d6Var);
+        this.d = c71Var;
+        c71Var.p1();
+        c71 c71Var2 = this.d;
+        c71Var2.W2.r = false;
+        c71Var2.setClipToPadding(false);
         this.d.setPadding(0, 0, 0, AndroidUtilities.dp(60.0f) + AndroidUtilities.navigationBarHeight);
         AndroidUtilities.removeFromParent(this.b);
         this.c.addView(k0Var.F, z5.g());

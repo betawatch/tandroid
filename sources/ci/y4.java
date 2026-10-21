@@ -29,27 +29,27 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.d51;
+import org.telegram.ui.Components.e51;
 import org.telegram.ui.Components.fb0;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.gr0;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.hr0;
 import org.telegram.ui.Components.ib0;
-import org.telegram.ui.Components.if0;
+import org.telegram.ui.Components.jf0;
 import org.telegram.ui.Components.jj;
-import org.telegram.ui.Components.kh0;
 import org.telegram.ui.Components.l70;
-import org.telegram.ui.Components.n61;
+import org.telegram.ui.Components.lh0;
 import org.telegram.ui.Components.n80;
-import org.telegram.ui.Components.q21;
+import org.telegram.ui.Components.o61;
+import org.telegram.ui.Components.r21;
 import org.telegram.ui.Components.r80;
 import org.telegram.ui.Components.rj;
-import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.tj;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.vp;
 import org.telegram.ui.Components.wj;
-import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.xj;
+import org.telegram.ui.Components.xl0;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PrivacySettingsActivity;
 import org.telegram.ui.ProfileActivity;
@@ -72,9 +72,9 @@ import org.telegram.ui.sa1;
 import org.telegram.ui.tg0;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y4 implements wl0 {
+public final /* synthetic */ class y4 implements xl0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -90,7 +90,7 @@ public final /* synthetic */ class y4 implements wl0 {
         if (r13.equals("🎨") != false) goto L91;
      */
     /* JADX WARN: Removed duplicated region for block: B:182:0x051a  */
-    @Override // org.telegram.ui.Components.wl0
+    @Override // org.telegram.ui.Components.xl0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -98,7 +98,7 @@ public final /* synthetic */ class y4 implements wl0 {
         ArrayList arrayList;
         TL_stories.TL_storyReactionPublicRepost tL_storyReactionPublicRepost;
         TL_stories.StoryItem storyItem;
-        g61 G;
+        h61 G;
         Object O;
         ContactsController.Contact contact;
         String str;
@@ -109,7 +109,7 @@ public final /* synthetic */ class y4 implements wl0 {
         ib0 ib0Var;
         Paint.FontMetricsInt fontMetricsInt;
         String str5;
-        gr0 gr0Var;
+        hr0 hr0Var;
         String str6;
         ic0 ic0Var;
         float maxZoomLevel;
@@ -191,8 +191,8 @@ public final /* synthetic */ class y4 implements wl0 {
             case 1:
                 di.u uVar = (di.u) this.b;
                 ai.r0 r0Var = (ai.r0) this.c;
-                t61 t61Var = uVar.Z;
-                if (t61Var != null && (G = t61Var.G(i10 - 1)) != null) {
+                u61 u61Var = uVar.Z;
+                if (u61Var != null && (G = u61Var.G(i10 - 1)) != null) {
                     Object obj = G.G;
                     if (obj instanceof TranslateController.Language) {
                         r0Var.run(((TranslateController.Language) obj).code);
@@ -252,7 +252,7 @@ public final /* synthetic */ class y4 implements wl0 {
             case 8:
                 org.telegram.ui.Components.y yVar = (org.telegram.ui.Components.y) this.b;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.c;
-                g61 G2 = yVar.m0.G(i10 - 1);
+                h61 G2 = yVar.m0.G(i10 - 1);
                 if (G2 != null && G2.d == 1) {
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(yVar.getContext(), 0, d6Var);
                     alertDialog$Builder.a.R = LocaleController.getString(R.string.AIEditorDeleteStyle);
@@ -310,9 +310,9 @@ public final /* synthetic */ class y4 implements wl0 {
                             str = str7;
                             str2 = str8;
                         }
-                        if0 if0Var = new if0(xjVar.b.f0, contact, null, null, null, null, str, str2, d6Var2);
-                        if0Var.K = new jj(xjVar);
-                        if0Var.show();
+                        jf0 jf0Var = new jf0(xjVar.b.f0, contact, null, null, null, null, str, str2, d6Var2);
+                        jf0Var.K = new jj(xjVar);
+                        jf0Var.show();
                         break;
                     } else {
                         xjVar.O((wj) view, O);
@@ -397,7 +397,7 @@ public final /* synthetic */ class y4 implements wl0 {
                                         StringBuilder sb3 = new StringBuilder("");
                                         ib0Var = ib0Var2;
                                         sb3.append(user3.id);
-                                        spannableString.setSpan(new n61(sb3.toString(), 3, null), 0, spannableString.length(), 33);
+                                        spannableString.setSpan(new o61(sb3.toString(), 3, null), 0, spannableString.length(), 33);
                                         fb0Var.I(i16, i17, spannableString, false);
                                     }
                                 } else {
@@ -439,8 +439,8 @@ public final /* synthetic */ class y4 implements wl0 {
                                     } else {
                                         ArrayList arrayList4 = new ArrayList(ib0Var.getAdapter().R);
                                         ib0Var.P = arrayList4;
-                                        PhotoViewer.t1().K2(null, ib0Var.h, ib0Var.a);
-                                        PhotoViewer.t1().g2(arrayList4, ib0Var.getAdapter().M(i15), 3, false, ib0Var.Q, null);
+                                        PhotoViewer.u1().M2(null, ib0Var.h, ib0Var.a);
+                                        PhotoViewer.u1().i2(arrayList4, ib0Var.getAdapter().M(i15), 3, false, ib0Var.Q, null);
                                         break;
                                     }
                                 }
@@ -458,10 +458,10 @@ public final /* synthetic */ class y4 implements wl0 {
                 }
                 break;
             case 13:
-                kh0.p((kh0) this.b, (Context) this.c, view, i10);
+                lh0.p((lh0) this.b, (Context) this.c, view, i10);
                 break;
             case 14:
-                d51.T((d51) this.b, (org.telegram.ui.ActionBar.d6) this.c, i10);
+                e51.T((e51) this.b, (org.telegram.ui.ActionBar.d6) this.c, i10);
                 break;
             case 15:
                 ru ruVar = (ru) this.b;
@@ -512,13 +512,13 @@ public final /* synthetic */ class y4 implements wl0 {
                 }
                 ruVar.c.E(ruVar.r);
                 for (int i20 = 0; i20 < ruVar.a.getChildCount(); i20++) {
-                    q21 q21Var = (q21) ruVar.a.getChildAt(i20);
-                    if (q21Var != view && (gr0Var = q21Var.J) != null) {
-                        AndroidUtilities.cancelRunOnUIThread(gr0Var);
-                        q21Var.J.run();
+                    r21 r21Var = (r21) ruVar.a.getChildAt(i20);
+                    if (r21Var != view && (hr0Var = r21Var.J) != null) {
+                        AndroidUtilities.cancelRunOnUIThread(hr0Var);
+                        r21Var.J.run();
                     }
                 }
-                ((q21) view).d();
+                ((r21) view).d();
                 if (i18 != null) {
                     SharedPreferences.Editor edit = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0).edit();
                     edit.putString((ruVar.s == 1 || i18.q()) ? "lastDarkTheme" : "lastDayTheme", i18.m());

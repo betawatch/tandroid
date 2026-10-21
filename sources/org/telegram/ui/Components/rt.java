@@ -15,7 +15,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.PhotoViewer;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class rt implements SensorEventListener {
     public int E;
@@ -33,7 +33,7 @@ public final class rt implements SensorEventListener {
     public final PowerManager.WakeLock h;
     public boolean n;
     public boolean r;
-    public b81 s;
+    public c81 s;
     public boolean v;
     public long w;
     public int x;
@@ -65,11 +65,11 @@ public final class rt implements SensorEventListener {
     }
 
     public final void a() {
-        b81 b81Var = this.s;
-        if (b81Var == null) {
+        c81 c81Var = this.s;
+        if (c81Var == null) {
             return;
         }
-        b81Var.S(this.r ? 0 : 3);
+        c81Var.S(this.r ? 0 : 3);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -255,7 +255,7 @@ public final class rt implements SensorEventListener {
                 } catch (Exception e) {
                     FileLog.e(e);
                 }
-                if (!VoIPService.isAnyKindOfCallActive() && !PhotoViewer.t1().R1()) {
+                if (!VoIPService.isAnyKindOfCallActive() && !PhotoViewer.u1().T1()) {
                     z10 = i10;
                     wakeLock = this.h;
                     if (wakeLock != null && !Build.MANUFACTURER.equalsIgnoreCase("samsung")) {

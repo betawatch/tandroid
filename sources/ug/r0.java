@@ -16,13 +16,13 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class r0 extends bb {
     public final ArrayList X;
@@ -64,9 +64,9 @@ public final class r0 extends bb {
         ViewGroup viewGroup = this.containerView;
         int i11 = this.backgroundPaddingLeft;
         viewGroup.addView(bdVar, z5.f(-2.0f, 87, i11, 0, i11, 0));
-        im0 im0Var = this.d;
+        jm0 jm0Var = this.d;
         int i12 = this.backgroundPaddingLeft;
-        im0Var.setPadding(i12, 0, i12, AndroidUtilities.dp(64.0f));
+        jm0Var.setPadding(i12, 0, i12, AndroidUtilities.dp(64.0f));
         this.d.setOnItemClickListener(new y4(24, this, chat));
         fixNavigationBar();
         O();
@@ -129,7 +129,7 @@ public final class r0 extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
+    public final im0 x(jm0 jm0Var) {
         return new l0(this);
     }
 }

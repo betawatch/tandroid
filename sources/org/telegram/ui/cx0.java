@@ -19,9 +19,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class cx0 extends org.telegram.ui.Components.hm0 {
+public final class cx0 extends org.telegram.ui.Components.im0 {
     public final Context c;
     public final /* synthetic */ PrivacyControlActivity d;
 
@@ -30,7 +30,7 @@ public final class cx0 extends org.telegram.ui.Components.hm0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         int i10;
         int i11;
@@ -665,7 +665,7 @@ public final class cx0 extends org.telegram.ui.Components.hm0 {
                 }
                 privacyControlActivity.u0.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.L0(false));
                 privacyControlActivity.u0.e(org.telegram.ui.ActionBar.h6.v6, org.telegram.ui.ActionBar.h6.u6);
-                privacyControlActivity.t0 = new org.telegram.ui.Components.uj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
+                privacyControlActivity.t0 = new org.telegram.ui.Components.vj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
                 privacyControlActivity.u0.e.setTranslationX(-AndroidUtilities.dp(8.0f));
                 privacyControlActivity.u0.e.setAnimation(privacyControlActivity.t0);
                 view = privacyControlActivity.u0;
@@ -720,6 +720,6 @@ public final class cx0 extends org.telegram.ui.Components.hm0 {
                 view = frameLayout;
                 break;
         }
-        return new org.telegram.ui.Components.sl0(view);
+        return new org.telegram.ui.Components.tl0(view);
     }
 }

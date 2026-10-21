@@ -2,10 +2,10 @@ package ci;
 
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.Components.xd0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class x5 implements z4.e {
     public final /* synthetic */ int a;
@@ -67,23 +67,23 @@ public final class x5 implements z4.e {
                 }
                 break;
             default:
-                bi0 bi0Var = (bi0) this.b;
-                if (!bi0Var.a && Math.abs(i10 - bi0Var.w) == 1) {
-                    int i12 = bi0Var.w;
+                ci0 ci0Var = (ci0) this.b;
+                if (!ci0Var.a && Math.abs(i10 - ci0Var.w) == 1) {
+                    int i12 = ci0Var.w;
                     if (i10 > i12) {
-                        bi0.a(bi0Var, 0, 1, 1);
+                        ci0.a(ci0Var, 0, 1, 1);
                     } else if (i10 < i12) {
-                        bi0.a(bi0Var, 1, 0, 0);
-                        bi0.a(bi0Var, 2, 0, -1);
+                        ci0.a(ci0Var, 1, 0, 0);
+                        ci0.a(ci0Var, 2, 0, -1);
                     }
                 }
-                int i13 = bi0Var.w;
-                int i14 = bi0Var.x;
-                bi0Var.w = i10;
-                bi0Var.x = i11;
+                int i13 = ci0Var.w;
+                int i14 = ci0Var.x;
+                ci0Var.w = i10;
+                ci0Var.x = i11;
                 if (i13 != i10 || i14 != i11) {
-                    bi0Var.H = true;
-                    bi0Var.postInvalidateOnAnimation();
+                    ci0Var.H = true;
+                    ci0Var.postInvalidateOnAnimation();
                     break;
                 }
                 break;

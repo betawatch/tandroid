@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -90,31 +90,31 @@ public final /* synthetic */ class z2 implements Utilities.Callback {
                 ic0Var.n.y(ic0Var.f.T((View) obj));
                 break;
             case 9:
-                le0 le0Var = (le0) this.b;
+                me0 me0Var = (me0) this.b;
                 Integer num2 = (Integer) obj;
-                FrameLayout frameLayout = le0Var.h;
-                if (le0Var.getContext() != null) {
-                    boolean z10 = le0Var.getContext().getResources().getConfiguration().orientation == 2;
+                FrameLayout frameLayout = me0Var.h;
+                if (me0Var.getContext() != null) {
+                    boolean z10 = me0Var.getContext().getResources().getConfiguration().orientation == 2;
                     int intValue = num2.intValue() - AndroidUtilities.navigationBarHeight;
                     if (SharedConfig.passcodeType == 1) {
                         ViewPropertyAnimator animate = frameLayout.animate();
                         if (intValue <= AndroidUtilities.dp(20.0f)) {
                             height = 0.0f;
                         } else {
-                            height = (((le0Var.getHeight() - intValue) / 2.0f) - (frameLayout.getHeight() / (z10 ? 1.0f : 2.0f))) - frameLayout.getTop();
+                            height = (((me0Var.getHeight() - intValue) / 2.0f) - (frameLayout.getHeight() / (z10 ? 1.0f : 2.0f))) - frameLayout.getTop();
                         }
                         ViewPropertyAnimator duration = animate.translationY(height).setDuration(320L);
                         bs bsVar = bs.h;
                         duration.setInterpolator(bsVar).start();
-                        le0Var.M.animate().alpha(intValue > AndroidUtilities.dp(20.0f) ? 0.0f : 1.0f).setDuration(320L).setInterpolator(bsVar);
+                        me0Var.M.animate().alpha(intValue > AndroidUtilities.dp(20.0f) ? 0.0f : 1.0f).setDuration(320L).setInterpolator(bsVar);
                         break;
                     }
                 }
                 break;
             case 10:
-                if0 if0Var = (if0) this.b;
-                if0Var.K.b(if0Var.N, true, 0, ((Long) obj).longValue());
-                if0Var.dismiss();
+                jf0 jf0Var = (jf0) this.b;
+                jf0Var.K.b(jf0Var.N, true, 0, ((Long) obj).longValue());
+                jf0Var.dismiss();
                 break;
             case 11:
                 Utilities.Callback2 callback2 = (Utilities.Callback2) this.b;
@@ -135,12 +135,12 @@ public final /* synthetic */ class z2 implements Utilities.Callback {
                 callback2.run(applyColorMatrix, applyColorMatrix2);
                 break;
             case 12:
-                az0 az0Var = (az0) this.b;
+                bz0 bz0Var = (bz0) this.b;
                 TL_account.TL_birthday tL_birthday = (TL_account.TL_birthday) obj;
                 TL_account.updateBirthday updatebirthday = new TL_account.updateBirthday();
                 updatebirthday.flags |= 1;
                 updatebirthday.birthday = tL_birthday;
-                int i12 = az0Var.a;
+                int i12 = bz0Var.a;
                 TLRPC.UserFull userFull = MessagesController.getInstance(i12).getUserFull(UserConfig.getInstance(i12).getClientUserId());
                 TL_account.TL_birthday tL_birthday2 = userFull != null ? userFull.birthday : null;
                 if (userFull != null) {
@@ -148,14 +148,14 @@ public final /* synthetic */ class z2 implements Utilities.Callback {
                     userFull.birthday = tL_birthday;
                     MessagesStorage.getInstance(i12).updateUserInfo(userFull, false);
                 }
-                ConnectionsManager.getInstance(i12).sendRequest(updatebirthday, new ai.j2(az0Var, userFull, tL_birthday2, 18), 1024);
+                ConnectionsManager.getInstance(i12).sendRequest(updatebirthday, new ai.j2(bz0Var, userFull, tL_birthday2, 18), 1024);
                 MessagesController.getInstance(i12).invalidateContentSettings();
                 MessagesController.getInstance(i12).removeSuggestion(0L, "BIRTHDAY_SETUP");
                 NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.newSuggestionsAvailable, new Object[0]);
                 break;
             default:
-                b71 b71Var = (b71) this.b;
-                b71Var.W2.Q(b71Var.T((View) obj), b71Var.a3);
+                c71 c71Var = (c71) this.b;
+                c71Var.W2.Q(c71Var.T((View) obj), c71Var.a3);
                 break;
         }
     }

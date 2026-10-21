@@ -20,10 +20,10 @@ import java.util.Map;
 import t7.u;
 import u2.e0;
 import u2.g0;
-import u2.j1;
+import u2.k1;
 import v7.u6;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final class l extends u2.a {
     public final c h;
@@ -212,7 +212,7 @@ public final class l extends u2.a {
 
     public final void v(p2.n nVar) {
         long j10;
-        j1 j1Var;
+        k1 k1Var;
         long j11;
         long j12;
         long j13;
@@ -278,7 +278,7 @@ public final class l extends u2.a {
                 }
                 j18 = j13;
             }
-            j1Var = new j1(j17, h02, j20, nVar.u, j19, j18, true, !z12, i10 == 2 && nVar.f, uVar, i(), this.q);
+            k1Var = new k1(j17, h02, j20, nVar.u, j19, j18, true, !z12, i10 == 2 && nVar.f, uVar, i(), this.q);
         } else {
             if (j15 == -9223372036854775807L || n0Var.isEmpty()) {
                 j10 = 0;
@@ -289,8 +289,8 @@ public final class l extends u2.a {
                 j10 = j15;
             }
             long j24 = nVar.u;
-            j1Var = new j1(j17, h02, j24, j24, 0L, j10, true, false, true, uVar, i(), null);
+            k1Var = new k1(j17, h02, j24, j24, 0L, j10, true, false, true, uVar, i(), null);
         }
-        n(j1Var);
+        n(k1Var);
     }
 }

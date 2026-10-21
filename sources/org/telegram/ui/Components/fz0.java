@@ -1,21 +1,74 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
+import android.graphics.drawable.Drawable;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public interface fz0 {
-    void a(ai.u uVar);
+public final class fz0 extends im0 {
+    public final iz0 c;
+    public final /* synthetic */ iz0 d;
 
-    EditTextBoldCursor getEditField();
+    public fz0(iz0 iz0Var, iz0 iz0Var2) {
+        this.d = iz0Var;
+        this.c = iz0Var2;
+    }
 
-    Editable getEditText();
+    @Override // org.telegram.ui.Components.im0
+    public final boolean D(s4.b1 b1Var) {
+        return true;
+    }
 
-    CharSequence getFieldText();
+    @Override // s4.g0
+    public final int h() {
+        ArrayList arrayList = this.c.w;
+        if (arrayList == null) {
+            return 0;
+        }
+        return arrayList.size();
+    }
 
-    org.telegram.ui.ActionBar.n2 getParentFragment();
+    @Override // s4.g0
+    public final long i(int i10) {
+        if (this.c.w == null) {
+            return 0L;
+        }
+        return ((MediaDataController.KeywordResult) r0.get(i10)).emoji.hashCode();
+    }
 
-    int getVisibility();
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        hz0 hz0Var = (hz0) b1Var.a;
+        iz0 iz0Var = this.c;
+        ArrayList arrayList = iz0Var.w;
+        String str = arrayList == null ? null : ((MediaDataController.KeywordResult) arrayList.get(i10)).emoji;
+        int direction = iz0Var.getDirection();
+        hz0Var.a = str;
+        if (str == null || !str.startsWith("animated_")) {
+            hz0Var.setImageDrawable(Emoji.getEmojiBigDrawable(str));
+        } else {
+            try {
+                long parseLong = Long.parseLong(str.substring(9));
+                Drawable drawable = hz0Var.b;
+                if (!(drawable instanceof r5) || ((r5) drawable).i() != parseLong) {
+                    hz0Var.setImageDrawable(r5.n(UserConfig.selectedAccount, parseLong, null, hz0Var.f.d()));
+                }
+            } catch (Exception unused) {
+                hz0Var.setImageDrawable(null);
+            }
+        }
+        if (hz0Var.d != direction) {
+            hz0Var.d = direction;
+            hz0Var.requestLayout();
+        }
+    }
 
-    void setFieldText(CharSequence charSequence);
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        return new tl0(new hz0(this.d, this.c.getContext()));
+    }
 }

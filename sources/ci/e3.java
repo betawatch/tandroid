@@ -8,13 +8,13 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.er0;
+import org.telegram.ui.Components.fr0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class e3 extends er0 {
+public final class e3 extends fr0 {
     public final /* synthetic */ q4 c1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -23,7 +23,7 @@ public final class e3 extends er0 {
         this.c1 = q4Var;
     }
 
-    @Override // org.telegram.ui.Components.er0
+    @Override // org.telegram.ui.Components.fr0
     public final void T0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
         if (z10) {
             q4 q4Var = this.c1;
@@ -55,12 +55,12 @@ public final class e3 extends er0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.er0
+    @Override // org.telegram.ui.Components.fr0
     public final void U0(View view) {
         this.c1.e1();
     }
 
-    @Override // org.telegram.ui.Components.er0, org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.Components.fr0, org.telegram.ui.ActionBar.f3
     public final void dismissInternal() {
         super.dismissInternal();
         this.c1.Z2 = null;

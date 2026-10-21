@@ -12,9 +12,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class z60 extends org.telegram.ui.Components.hm0 {
+public final class z60 extends org.telegram.ui.Components.im0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public ArrayList e = new ArrayList();
@@ -70,7 +70,7 @@ public final class z60 extends org.telegram.ui.Components.hm0 {
         AndroidUtilities.runOnUIThread(ltVar2, 300L);
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         return j(b1Var.b()) == 0;
     }
@@ -157,6 +157,6 @@ public final class z60 extends org.telegram.ui.Components.hm0 {
             l8Var = l8Var2;
         }
         l8Var.setLayoutParams(new s4.o0(-1, -2));
-        return new org.telegram.ui.Components.sl0(l8Var);
+        return new org.telegram.ui.Components.tl0(l8Var);
     }
 }

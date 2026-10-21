@@ -5,9 +5,9 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ss implements r0.n, org.telegram.ui.Components.bl0 {
+public final /* synthetic */ class ss implements r0.n, org.telegram.ui.Components.cl0 {
     public final /* synthetic */ et a;
 
     public /* synthetic */ ss(et etVar) {
@@ -20,17 +20,17 @@ public final /* synthetic */ class ss implements r0.n, org.telegram.ui.Component
         return k1Var;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public /* synthetic */ boolean i() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public /* synthetic */ boolean m() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public void o(View view, ah.i1 i1Var, boolean z10, boolean z11) {
         if (i1Var == null) {
             return;
@@ -59,16 +59,16 @@ public final /* synthetic */ class ss implements r0.n, org.telegram.ui.Component
         }
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public /* synthetic */ boolean w() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public /* synthetic */ void v() {
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public /* synthetic */ void q(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

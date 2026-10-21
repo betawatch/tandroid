@@ -12,14 +12,14 @@ import ci.o1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.x90;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class c0 extends FrameLayout {
     public final TextView a;
@@ -154,7 +154,7 @@ public final class c0 extends FrameLayout {
         } else {
             textView = new TextView(getContext());
         }
-        kk.o(z10 ? h6.m5 : h6.j5, d6Var, textView, 1, 14.0f);
+        mk.o(z10 ? h6.m5 : h6.j5, d6Var, textView, 1, 14.0f);
         if (!z10) {
             textView.setGravity(LocaleController.isRTL ? 5 : 3);
         }

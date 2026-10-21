@@ -5,11 +5,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.x10;
 import org.telegram.ui.y10;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class wc extends x10 {
     public final /* synthetic */ int K0 = 0;
@@ -41,7 +41,7 @@ public final class wc extends x10 {
                     if (i11 >= 0) {
                         if (!z10) {
                             if (i11 > 0) {
-                                im0 currentListView = mdVar.R.getCurrentListView();
+                                jm0 currentListView = mdVar.R.getCurrentListView();
                                 if ((mdVar.c.getHeight() - mdVar.c.getPaddingBottom()) - bottom >= 0 && currentListView != null && !currentListView.canScrollVertically(1)) {
                                     iArr[1] = i11;
                                     mdVar.c.B0();
@@ -49,7 +49,7 @@ public final class wc extends x10 {
                                 }
                             }
                         } else {
-                            im0 currentListView2 = mdVar.R.getCurrentListView();
+                            jm0 currentListView2 = mdVar.R.getCurrentListView();
                             iArr[1] = i11;
                             if (top > 0) {
                                 iArr[1] = 0;
@@ -61,7 +61,7 @@ public final class wc extends x10 {
                         }
                     } else {
                         if ((mdVar.c.getHeight() - mdVar.c.getPaddingBottom()) - bottom >= 0) {
-                            im0 currentListView3 = mdVar.R.getCurrentListView();
+                            jm0 currentListView3 = mdVar.R.getCurrentListView();
                             int L0 = ((s4.b0) currentListView3.getLayoutManager()).L0();
                             if (L0 != -1) {
                                 s4.b1 K = currentListView3.K(L0);
@@ -97,7 +97,7 @@ public final class wc extends x10 {
                     if (i11 >= 0) {
                         if (!z12) {
                             if (i11 > 0) {
-                                im0 currentListView4 = gVar.R.getCurrentListView();
+                                jm0 currentListView4 = gVar.R.getCurrentListView();
                                 if (gVar.c.getHeight() - bottom2 >= 0 && currentListView4 != null && !currentListView4.canScrollVertically(1)) {
                                     iArr[1] = i11;
                                     gVar.c.B0();
@@ -105,7 +105,7 @@ public final class wc extends x10 {
                                 }
                             }
                         } else {
-                            im0 currentListView5 = gVar.R.getCurrentListView();
+                            jm0 currentListView5 = gVar.R.getCurrentListView();
                             iArr[1] = i11;
                             if (top3 > 0) {
                                 iArr[1] = 0;
@@ -117,7 +117,7 @@ public final class wc extends x10 {
                         }
                     } else {
                         if (gVar.c.getHeight() - bottom2 >= 0) {
-                            im0 currentListView6 = gVar.R.getCurrentListView();
+                            jm0 currentListView6 = gVar.R.getCurrentListView();
                             int L02 = ((s4.b0) currentListView6.getLayoutManager()).L0();
                             if (L02 != -1) {
                                 s4.b1 K2 = currentListView6.K(L02);
@@ -157,7 +157,7 @@ public final class wc extends x10 {
                 md mdVar = (md) this.M0;
                 try {
                     if (viewGroup == mdVar.c && mdVar.R.isAttachedToWindow()) {
-                        im0 currentListView = mdVar.R.getCurrentListView();
+                        jm0 currentListView = mdVar.R.getCurrentListView();
                         if ((mdVar.c.getHeight() - mdVar.c.getPaddingBottom()) - ((View) mdVar.R.getParent()).getBottom() >= 0) {
                             iArr[1] = i13;
                             currentListView.scrollBy(0, i13);
@@ -174,7 +174,7 @@ public final class wc extends x10 {
                 fi.g gVar = (fi.g) this.M0;
                 try {
                     if (viewGroup == gVar.c && gVar.R.isAttachedToWindow()) {
-                        im0 currentListView2 = gVar.R.getCurrentListView();
+                        jm0 currentListView2 = gVar.R.getCurrentListView();
                         if (gVar.c.getHeight() - ((View) gVar.R.getParent()).getBottom() >= 0) {
                             iArr[1] = i13;
                             currentListView2.scrollBy(0, i13);

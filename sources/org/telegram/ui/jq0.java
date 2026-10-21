@@ -39,7 +39,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class jq0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public final boolean E;
@@ -48,10 +48,10 @@ public final class jq0 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public int H;
     public boolean I;
     public final MediaController.AlbumEntry J;
-    public org.telegram.ui.Components.im0 K;
+    public org.telegram.ui.Components.jm0 K;
     public hq0 L;
     public cq0 M;
-    public org.telegram.ui.Components.sx0 N;
+    public org.telegram.ui.Components.tx0 N;
     public fq0 O;
     public org.telegram.ui.ActionBar.u0 P;
     public org.telegram.ui.ActionBar.e1 Q;
@@ -59,7 +59,7 @@ public final class jq0 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public boolean S;
     public final int T;
     public final qn U;
-    public org.telegram.ui.Components.km0 V;
+    public org.telegram.ui.Components.lm0 V;
     public int W;
     public boolean X;
     public boolean Y;
@@ -309,42 +309,42 @@ public final class jq0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.f0 = bq0Var;
         bq0Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, i11, false));
         this.fragmentView = this.f0;
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
-        this.K = im0Var;
-        im0Var.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(50.0f));
+        org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, null);
+        this.K = jm0Var;
+        jm0Var.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(50.0f));
         this.K.setClipToPadding(false);
         this.K.setHorizontalScrollBarEnabled(false);
         this.K.setVerticalScrollBarEnabled(false);
         this.K.setItemAnimator(null);
         this.K.setLayoutAnimation(null);
-        org.telegram.ui.Components.im0 im0Var2 = this.K;
+        org.telegram.ui.Components.jm0 jm0Var2 = this.K;
         int i15 = 4;
         cq0 cq0Var = new cq0(4);
         this.M = cq0Var;
-        im0Var2.setLayoutManager(cq0Var);
+        jm0Var2.setLayoutManager(cq0Var);
         this.M.O = new dq0(this);
         this.f0.addView(this.K, w7.z5.e(-1, -1, 51));
-        org.telegram.ui.Components.im0 im0Var3 = this.K;
+        org.telegram.ui.Components.jm0 jm0Var3 = this.K;
         hq0 hq0Var = new hq0(this, context);
         this.L = hq0Var;
-        im0Var3.setAdapter(hq0Var);
+        jm0Var3.setAdapter(hq0Var);
         this.K.setGlowColor(org.telegram.ui.ActionBar.h6.x0(null, i11, false));
         this.K.setOnItemClickListener(new i(this, 22));
         if (this.H != 1) {
             this.K.setOnItemLongClickListener(new wp0(this, i14));
         }
-        org.telegram.ui.Components.km0 km0Var = new org.telegram.ui.Components.km0(new eq0(this));
-        this.V = km0Var;
+        org.telegram.ui.Components.lm0 lm0Var = new org.telegram.ui.Components.lm0(new eq0(this));
+        this.V = lm0Var;
         if (this.H != 1) {
-            this.K.E.add(km0Var);
+            this.K.E.add(lm0Var);
         }
         fq0 fq0Var = new fq0(context, i10, getResourceProvider());
         this.O = fq0Var;
         fq0Var.setAlpha(0.0f);
         this.O.setVisibility(8);
-        org.telegram.ui.Components.sx0 sx0Var = new org.telegram.ui.Components.sx0(context, this.O, 1, getResourceProvider());
-        this.N = sx0Var;
-        sx0Var.setAnimateLayoutChange(true);
+        org.telegram.ui.Components.tx0 tx0Var = new org.telegram.ui.Components.tx0(context, this.O, 1, getResourceProvider());
+        this.N = tx0Var;
+        tx0Var.setAnimateLayoutChange(true);
         this.N.d.setTypeface(Typeface.DEFAULT);
         this.N.d.setTextSize(1, 16.0f);
         this.N.d.setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.y6));
@@ -425,9 +425,9 @@ public final class jq0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         }
         this.e = (albumEntry != null || i13 == 0 || i13 == 1) && this.I;
         this.K.setEmptyView(this.N);
-        org.telegram.ui.Components.im0 im0Var4 = this.K;
-        im0Var4.W1 = true;
-        im0Var4.X1 = 0;
+        org.telegram.ui.Components.jm0 jm0Var4 = this.K;
+        jm0Var4.W1 = true;
+        jm0Var4.X1 = 0;
         i0(0);
         return this.fragmentView;
     }
@@ -474,7 +474,7 @@ public final class jq0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         }
         int i10 = this.y + 1;
         this.y = i10;
-        this.x = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getInlineBotResults, new org.telegram.messenger.sb(this, str, i10, z10, user));
+        this.x = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getInlineBotResults, new org.telegram.messenger.ub(this, str, i10, z10, user));
         ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(this.x, this.classGuid);
     }
 
@@ -695,12 +695,12 @@ public final class jq0 extends org.telegram.ui.ActionBar.n2 implements Notificat
 
     @Override // org.telegram.ui.ActionBar.n2
     public final void onPanTranslationUpdate(float f7) {
-        org.telegram.ui.Components.im0 im0Var = this.K;
-        if (im0Var == null) {
+        org.telegram.ui.Components.jm0 jm0Var = this.K;
+        if (jm0Var == null) {
             return;
         }
         if (!this.d0.e) {
-            im0Var.setTranslationY(f7);
+            jm0Var.setTranslationY(f7);
         } else {
             this.fragmentView.setTranslationY(f7);
             this.K.setTranslationY(0.0f);

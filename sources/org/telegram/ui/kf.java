@@ -10,7 +10,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kf implements Runnable {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class kf implements Runnable {
             case 5:
                 if (qnVar.getUserConfig().isPremium()) {
                     qnVar.Mb = null;
-                    qnVar.Uc(true);
+                    qnVar.Vc(true);
                     org.telegram.ui.Components.xc.a0(qnVar).c(LocaleController.getString(R.string.AdHidden)).j();
                     qnVar.getMessagesController().disableAds(true);
                     break;
@@ -89,7 +89,7 @@ public final /* synthetic */ class kf implements Runnable {
                 qnVar.l6 = 0;
                 qnVar.getMessagesController().markMentionsAsRead(qnVar.T5, qnVar.d());
                 qnVar.m6 = true;
-                qnVar.Ob(false);
+                qnVar.Pb(false);
                 org.telegram.ui.ActionBar.m1 m1Var = qnVar.Q8;
                 if (m1Var != null) {
                     m1Var.dismiss();
@@ -102,7 +102,7 @@ public final /* synthetic */ class kf implements Runnable {
                     ((MessageObject) arrayList2.get(i14)).markReactionsAsRead();
                 }
                 qnVar.l1 = 0;
-                qnVar.Fc(true);
+                qnVar.Gc(true);
                 qnVar.getMessagesController().markReactionsAsRead(qnVar.T5, qnVar.d());
                 org.telegram.ui.ActionBar.m1 m1Var2 = qnVar.Q8;
                 if (m1Var2 != null) {
@@ -116,7 +116,7 @@ public final /* synthetic */ class kf implements Runnable {
                     ((MessageObject) arrayList3.get(i15)).markPollVotesAsRead();
                 }
                 qnVar.m1 = 0;
-                qnVar.Ec(true);
+                qnVar.Fc(true);
                 qnVar.getMessagesController().markPollVotesAsRead(qnVar.T5, qnVar.d());
                 org.telegram.ui.ActionBar.m1 m1Var3 = qnVar.Q8;
                 if (m1Var3 != null) {
@@ -228,7 +228,7 @@ public final /* synthetic */ class kf implements Runnable {
                 dm dmVar = qnVar.A0;
                 dmVar.L = false;
                 dmVar.O(true);
-                qnVar.Tb(false);
+                qnVar.Ub(false);
                 break;
             default:
                 if (qnVar.getParentActivity() != null && qnVar.fragmentView != null && qnVar.Y != null && qnVar.Fa == null && qnVar.getMessagesController().getSendPaidMessagesStars(qnVar.a()) <= 0 && (sendButton2 = qnVar.Y.getSendButton()) != null && qnVar.Y.getEditField() != null && qnVar.Y.getEditField().getText().length() != 0) {

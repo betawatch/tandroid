@@ -1,128 +1,46 @@
 package org.telegram.messenger;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-import android.util.SparseArray;
-import java.io.File;
-import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import java.util.HashMap;
 import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ResultCallback;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ g3(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public /* synthetic */ g3(FileLoader.1 r22, boolean z10, String str, boolean z11) {
+        this.a = 0;
+        this.d = r22;
+        this.b = z10;
+        this.e = str;
+        this.c = z11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                FileLoader.2.lambda$didPreFinishLoading$0((FileLoadOperation) this.b, (FileLoaderPriorityQueue) this.c);
+                ((FileLoader.1) this.d).lambda$didFailedUploadingFile$1(this.b, (String) this.e, this.c);
                 break;
             case 1:
-                ((ImageLoader) this.b).lambda$runHttpFileLoadTasks$13((ImageLoader.HttpFileTask) this.c);
-                break;
-            case 2:
-                ((ImageLoader.ArtworkLoadTask) this.b).lambda$onPostExecute$0((String) this.c);
-                break;
-            case 3:
-                ((ImageLoader.CacheOutTask) this.b).lambda$onPostExecute$1((Drawable) this.c);
-                break;
-            case 4:
-                ((ImageLoader.ThumbGenerateTask) this.b).lambda$removeTask$0((String) this.c);
-                break;
-            case 5:
-                ((MediaController.2) this.b).lambda$run$0((ByteBuffer) this.c);
-                break;
-            case 6:
-                ((MediaController.5) this.b).lambda$run$1((MessageObject) this.c);
-                break;
-            case 7:
-                ((MediaController.MediaLoader) this.b).lambda$addMessageToLoad$7((MessageObject) this.c);
-                break;
-            case 8:
-                ((MediaDataController.2) this.b).lambda$run$0((ArrayList) this.c);
-                break;
-            case 9:
-                ((MediaDataController.3) this.b).lambda$run$0((ArrayList) this.c);
-                break;
-            case 10:
-                ((SendMessagesHelper.ImportingHistory.2) this.b).lambda$run$0((String) this.c);
-                break;
-            case 11:
-                ((BetaUpdaterController) this.b).lambda$downloadUpdate$4((File) this.c);
-                break;
-            case 12:
-                ((BirthdayController) this.b).lambda$check$2((TLObject) this.c);
-                break;
-            case 13:
-                ((ChatMessagesMetadataController) this.b).lambda$loadStoriesForMessages$0((ArrayList) this.c);
-                break;
-            case 14:
-                ChatThemeController.lambda$getWallpaperBitmap$7((File) this.b, (ResultCallback) this.c);
-                break;
-            case 15:
-                ((ResultCallback) this.b).onComplete((Bitmap) this.c);
-                break;
-            case 16:
-                ((ChatThemeController) this.b).lambda$processUpdate$14((TLRPC.ChatFull) this.c);
-                break;
-            case 17:
-                ChatThemeController.lambda$loadWallpaperPatternBitmap$11((File) this.b, (Utilities.Callback) this.c);
-                break;
-            case 18:
-                ((Utilities.Callback) this.b).run((eg.a) this.c);
-                break;
-            case 19:
-                ((ChatThemeController) this.b).lambda$requestNextChatThemes$20((ResultCallback) this.c);
-                break;
-            case 20:
-                ChatThemeController.lambda$saveWallpaperBitmap$8((File) this.b, (Bitmap) this.c);
-                break;
-            case 21:
-                ((ContactsController) this.b).lambda$addContact$50((TLRPC.User) this.c);
-                break;
-            case 22:
-                ((ContactsController) this.b).lambda$deleteAllContacts$8((Runnable) this.c);
-                break;
-            case 23:
-                ((ContactsController) this.b).lambda$checkInviteText$2((TLRPC.TL_help_inviteText) this.c);
-                break;
-            case 24:
-                ((ContactsController) this.b).lambda$applyContactsUpdates$46((Long) this.c);
-                break;
-            case 25:
-                ((ContactsController) this.b).lambda$migratePhoneBookToV7$12((SparseArray) this.c);
-                break;
-            case 26:
-                ((ContactsController) this.b).lambda$deleteContactsUndoable$53((HashMap) this.c);
-                break;
-            case 27:
-                ((DispatchQueuePoolBackground) this.b).lambda$execute$0((DispatchQueue) this.c);
-                break;
-            case 28:
-                ((DownloadController) this.b).lambda$deleteRecentFiles$13((ArrayList) this.c);
+                ((MessagesStorage) this.d).lambda$saveDialogFilter$74((MessagesController.DialogFilter) this.e, this.b, this.c);
                 break;
             default:
-                ((DownloadController) this.b).lambda$loadAutoDownloadConfig$1((TLObject) this.c);
+                ((MessagesStorage) this.d).lambda$updateUsers$215((ArrayList) this.e, this.b, this.c);
                 break;
         }
+    }
+
+    public /* synthetic */ g3(MessagesStorage messagesStorage, Object obj, boolean z10, boolean z11, int i10) {
+        this.a = i10;
+        this.d = messagesStorage;
+        this.e = obj;
+        this.b = z10;
+        this.c = z11;
     }
 }

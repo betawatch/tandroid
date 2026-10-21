@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gh implements Runnable {
     public final /* synthetic */ int a;
@@ -28,22 +28,22 @@ public final /* synthetic */ class gh implements Runnable {
             case 2:
                 ti tiVar2 = this.b;
                 mf mfVar = tiVar2.h0;
-                long k10 = mfVar != null ? mfVar.k() : 0L;
+                long j10 = mfVar != null ? mfVar.j() : 0L;
                 ei eiVar = tiVar2.L0;
-                tiVar2.Q0 = k10;
-                eiVar.setEffect(k10);
+                tiVar2.Q0 = j10;
+                eiVar.setEffect(j10);
                 li liVar = tiVar2.B0;
                 if (liVar == tiVar2.j0 || liVar == tiVar2.q0) {
-                    J1 = tiVar2.J1(0, false, 0, tiVar2.u1(), k10);
+                    J1 = tiVar2.J1(0, false, 0, tiVar2.u1(), j10);
                 } else {
-                    if (!liVar.K(0, false, 0, tiVar2.u1(), k10)) {
+                    if (!liVar.K(0, false, 0, tiVar2.u1(), j10)) {
                         tiVar2.dismiss();
                     }
                     J1 = false;
                 }
                 mf mfVar2 = tiVar2.h0;
                 if (mfVar2 != null) {
-                    mfVar2.h(!J1);
+                    mfVar2.g(!J1);
                     tiVar2.h0 = null;
                     break;
                 }

@@ -23,7 +23,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ob0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -80,11 +80,11 @@ public final class ob0 extends FrameLayout implements NotificationCenter.Notific
         if (arrayList.size() > 1) {
             SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(i11 == 0 ? LocaleController.formatPluralString("MessageContainsEmojiPacks", arrayList.size(), new Object[0]) : LocaleController.formatPluralString("MessageContainsReactionsPacks", arrayList.size(), new Object[0]));
             this.n = replaceTags;
-            d61[] d61VarArr = (d61[]) replaceTags.getSpans(0, replaceTags.length(), d61.class);
-            for (int i12 = 0; d61VarArr != null && i12 < d61VarArr.length; i12++) {
-                int spanStart = replaceTags.getSpanStart(d61VarArr[i12]);
-                int spanEnd = replaceTags.getSpanEnd(d61VarArr[i12]);
-                replaceTags.removeSpan(d61VarArr[i12]);
+            e61[] e61VarArr = (e61[]) replaceTags.getSpans(0, replaceTags.length(), e61.class);
+            for (int i12 = 0; e61VarArr != null && i12 < e61VarArr.length; i12++) {
+                int spanStart = replaceTags.getSpanStart(e61VarArr[i12]);
+                int spanEnd = replaceTags.getSpanEnd(e61VarArr[i12]);
+                replaceTags.removeSpan(e61VarArr[i12]);
                 replaceTags.setSpan(new ki.y5(this, 1), spanStart, spanEnd, 33);
             }
             return;

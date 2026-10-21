@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class qt extends org.telegram.ui.Components.bb {
     public final FrameLayout X;
@@ -30,7 +30,7 @@ public final class qt extends org.telegram.ui.Components.bb {
     public final ArrayList a0;
     public final HashSet b0;
     public boolean c0;
-    public org.telegram.ui.Components.t61 d0;
+    public org.telegram.ui.Components.u61 d0;
 
     public qt(Activity activity, HashSet hashSet) {
         super(activity, null, false, false, new ci.b());
@@ -90,9 +90,9 @@ public final class qt extends org.telegram.ui.Components.bb {
         a10.setGravity(17);
         a10.setMaxWidth(ei.x3.a(a10.getText(), a10.getPaint()));
         e.addView(a10, w7.z5.t(-1, -2, 1, 2, 0, 2, 23));
-        org.telegram.ui.Components.t61 t61Var = this.d0;
-        if (t61Var != null) {
-            t61Var.N(false);
+        org.telegram.ui.Components.u61 u61Var = this.d0;
+        if (u61Var != null) {
+            u61Var.N(false);
         }
         s4.k kVar = new s4.k();
         kVar.m = false;
@@ -168,9 +168,9 @@ public final class qt extends org.telegram.ui.Components.bb {
             }
         });
         this.containerView.addView(frameLayout3, w7.z5.e(-1, -2, 87));
-        org.telegram.ui.Components.im0 im0Var = this.d;
+        org.telegram.ui.Components.jm0 jm0Var = this.d;
         int i14 = this.backgroundPaddingLeft;
-        im0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(76.0f));
+        jm0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(76.0f));
     }
 
     public static void R(qt qtVar, TLObject tLObject, ei.d dVar, boolean z10, HashSet hashSet, TLRPC.TL_error tL_error) {
@@ -224,8 +224,8 @@ public final class qt extends org.telegram.ui.Components.bb {
     }
 
     public static void S(qt qtVar, ArrayList arrayList) {
-        arrayList.add(org.telegram.ui.Components.g61.k(qtVar.X));
-        arrayList.add(org.telegram.ui.Components.g61.B(null));
+        arrayList.add(org.telegram.ui.Components.h61.k(qtVar.X));
+        arrayList.add(org.telegram.ui.Components.h61.B(null));
         ArrayList arrayList2 = qtVar.a0;
         if (arrayList2 == null || arrayList2.isEmpty()) {
             return;
@@ -239,7 +239,7 @@ public final class qt extends org.telegram.ui.Components.bb {
                 return;
             }
             int i11 = yg.j.a;
-            org.telegram.ui.Components.g61 J = org.telegram.ui.Components.g61.J(yg.j.class);
+            org.telegram.ui.Components.h61 J = org.telegram.ui.Components.h61.J(yg.j.class);
             J.G = user;
             J.K(qtVar.b0.contains(l4));
             arrayList.add(J);
@@ -266,9 +266,9 @@ public final class qt extends org.telegram.ui.Components.bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final org.telegram.ui.Components.hm0 x(org.telegram.ui.Components.im0 im0Var) {
-        org.telegram.ui.Components.t61 t61Var = new org.telegram.ui.Components.t61(im0Var, getContext(), this.currentAccount, 0, true, new g5(this, 10), this.resourcesProvider);
-        this.d0 = t61Var;
-        return t61Var;
+    public final org.telegram.ui.Components.im0 x(org.telegram.ui.Components.jm0 jm0Var) {
+        org.telegram.ui.Components.u61 u61Var = new org.telegram.ui.Components.u61(jm0Var, getContext(), this.currentAccount, 0, true, new g5(this, 10), this.resourcesProvider);
+        this.d0 = u61Var;
+        return u61Var;
     }
 }

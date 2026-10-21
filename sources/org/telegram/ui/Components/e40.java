@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class e40 extends View implements GestureDetector.OnGestureListener {
     public float E;
@@ -647,10 +647,10 @@ public final class e40 extends View implements GestureDetector.OnGestureListener
             d40 d40Var = this.W;
             if (d40Var != null) {
                 PhotoViewer photoViewer = ((org.telegram.ui.bs0) d40Var).a;
-                if (PhotoViewer.R2(photoViewer.T4)) {
+                if (PhotoViewer.T2(photoViewer.T4)) {
                     photoViewer.Y2 = true;
-                    photoViewer.U1(true);
-                    photoViewer.B0(0, true);
+                    photoViewer.W1(true);
+                    photoViewer.C0(0, true);
                 }
             }
         }

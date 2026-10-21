@@ -25,12 +25,12 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.nk0;
 import org.telegram.ui.Components.od0;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.ok0;
 import org.telegram.ui.Components.xr;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class nb implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -128,17 +128,17 @@ public final /* synthetic */ class nb implements View.OnClickListener {
                 LinearLayout linearLayout2 = (LinearLayout) obj4;
                 AtomicBoolean atomicBoolean = (AtomicBoolean) obj3;
                 HorizontalScrollView horizontalScrollView = (HorizontalScrollView) obj2;
-                nk0 nk0Var = (nk0) obj;
+                ok0 ok0Var = (ok0) obj;
                 int currentItem = gVar.getCurrentItem();
                 if (i12 != currentItem) {
-                    nk0 nk0Var2 = (nk0) linearLayout2.getChildAt(currentItem);
+                    ok0 ok0Var2 = (ok0) linearLayout2.getChildAt(currentItem);
                     atomicBoolean.set(true);
                     gVar.x(i12, true);
                     float scrollX = horizontalScrollView.getScrollX();
-                    float x10 = nk0Var.getX() - ((horizontalScrollView.getWidth() - nk0Var.getWidth()) / 2.0f);
+                    float x10 = ok0Var.getX() - ((horizontalScrollView.getWidth() - ok0Var.getWidth()) / 2.0f);
                     ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
                     duration.setInterpolator(bs.f);
-                    duration.addUpdateListener(new org.telegram.ui.Cells.b(horizontalScrollView, scrollX, x10, nk0Var2, nk0Var));
+                    duration.addUpdateListener(new org.telegram.ui.Cells.b(horizontalScrollView, scrollX, x10, ok0Var2, ok0Var));
                     duration.start();
                     break;
                 }
@@ -175,7 +175,7 @@ public final /* synthetic */ class nb implements View.OnClickListener {
                 Context context = (Context) obj;
                 i80 F2 = i80.F(((org.telegram.ui.Wallet.k2[]) obj5)[0].getContainer(), d6Var2, (ImageView) obj3);
                 if (!TextUtils.isEmpty(wallettransactionArr[0].tx_hash)) {
-                    F2.c(R.drawable.msg_search, LocaleController.getString(R.string.WalletViewInExplorer), new x31(context, i12, wallettransactionArr, 18), false);
+                    F2.c(R.drawable.msg_search, LocaleController.getString(R.string.WalletViewInExplorer), new y31(context, i12, wallettransactionArr, 18), false);
                 }
                 F2.c(R.drawable.wallet_help, LocaleController.getString(R.string.WalletWhatIsGram), new b(context, i11, d6Var2), false);
                 F2.a0(0.0f, -AndroidUtilities.dp(48.0f));
@@ -211,13 +211,13 @@ public final /* synthetic */ class nb implements View.OnClickListener {
         this.h = callback;
     }
 
-    public /* synthetic */ nb(z4.g gVar, int i10, LinearLayout linearLayout, AtomicBoolean atomicBoolean, HorizontalScrollView horizontalScrollView, nk0 nk0Var) {
+    public /* synthetic */ nb(z4.g gVar, int i10, LinearLayout linearLayout, AtomicBoolean atomicBoolean, HorizontalScrollView horizontalScrollView, ok0 ok0Var) {
         this.c = gVar;
         this.b = i10;
         this.d = linearLayout;
         this.e = atomicBoolean;
         this.f = horizontalScrollView;
-        this.h = nk0Var;
+        this.h = ok0Var;
     }
 
     public /* synthetic */ nb(org.telegram.ui.Wallet.k2[] k2VarArr, org.telegram.ui.ActionBar.d6 d6Var, ImageView imageView, TL_wallet.walletTransaction[] wallettransactionArr, Context context, int i10) {

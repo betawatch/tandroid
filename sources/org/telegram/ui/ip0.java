@@ -39,7 +39,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ip0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public final bh.b E;
@@ -57,7 +57,7 @@ public final class ip0 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public ei.d Q;
     public cp0 R;
     public boolean S;
-    public org.telegram.ui.Components.uj0 T;
+    public org.telegram.ui.Components.vj0 T;
     public boolean U;
     public boolean V;
     public boolean W;
@@ -274,12 +274,12 @@ public final class ip0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                     a03.getClass();
                     org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(a03.W(), a03.c);
                     boolean isTextColorEmoji = MessageObject.isTextColorEmoji(f7);
-                    org.telegram.ui.Components.xj0 xj0Var = ybVar.a;
+                    org.telegram.ui.Components.yj0 yj0Var = ybVar.a;
                     if (isTextColorEmoji) {
-                        xj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Hi, false), PorterDuff.Mode.SRC_IN));
+                        yj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Hi, false), PorterDuff.Mode.SRC_IN));
                     }
                     ybVar.e(f7, new String[0]);
-                    xj0Var.i();
+                    yj0Var.i();
                     ybVar.b.setText(string);
                     ybVar.b.setTextSize(1, 14.0f);
                     ybVar.b.setSingleLine(false);
@@ -552,14 +552,14 @@ public final class ip0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         });
         w7.b6.a(this.J);
         this.L.addView(this.J, w7.z5.e(54, 54, 19));
-        org.telegram.ui.Components.uj0 uj0Var = new org.telegram.ui.Components.uj0(R.raw.sun_outline, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
-        this.T = uj0Var;
-        uj0Var.h = true;
+        org.telegram.ui.Components.vj0 vj0Var = new org.telegram.ui.Components.vj0(R.raw.sun_outline, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
+        this.T = vj0Var;
+        vj0Var.h = true;
         if (this.S) {
-            uj0Var.M(35);
+            vj0Var.M(35);
             this.T.P(36);
         } else {
-            uj0Var.P(0);
+            vj0Var.P(0);
             this.T.M(0);
         }
         this.T.Z = true;

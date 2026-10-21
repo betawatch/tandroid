@@ -34,13 +34,13 @@ import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.aw;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.c71;
 import org.telegram.ui.Components.h10;
 import org.telegram.ui.Components.k10;
-import org.telegram.ui.Components.le0;
-import org.telegram.ui.Components.py0;
-import org.telegram.ui.Components.th0;
+import org.telegram.ui.Components.me0;
+import org.telegram.ui.Components.qy0;
 import org.telegram.ui.Components.ti;
+import org.telegram.ui.Components.uh0;
 import org.telegram.ui.Components.wa0;
 import org.telegram.ui.Components.wc0;
 import org.telegram.ui.FiltersSetupActivity;
@@ -57,7 +57,7 @@ import org.telegram.ui.qn;
 import org.telegram.ui.to;
 import org.telegram.ui.vo;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y7 implements Runnable {
     public final /* synthetic */ int a;
@@ -329,7 +329,7 @@ public final /* synthetic */ class y7 implements Runnable {
                 }
                 return;
             case 14:
-                ((qn) obj2).vc((MessageObject) obj, z10);
+                ((qn) obj2).wc((MessageObject) obj, z10);
                 return;
             case 15:
                 org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj2;
@@ -364,9 +364,9 @@ public final /* synthetic */ class y7 implements Runnable {
                 tL_inputStickerSetID.access_hash = stickerSet.access_hash;
                 tL_inputStickerSetID.id = stickerSet.id;
                 if (!z10) {
-                    py0 py0Var = new py0(qnVar.getParentActivity(), qnVar, tL_inputStickerSetID, null, qnVar.Y, qnVar.ea);
-                    py0Var.setCalcMandatoryInsets(qnVar.C9());
-                    qnVar.showDialog(py0Var);
+                    qy0 qy0Var = new qy0(qnVar.getParentActivity(), qnVar, tL_inputStickerSetID, null, qnVar.Y, qnVar.ea);
+                    qy0Var.setCalcMandatoryInsets(qnVar.C9());
+                    qnVar.showDialog(qy0Var);
                     return;
                 } else {
                     ArrayList arrayList11 = new ArrayList(1);
@@ -423,14 +423,14 @@ public final /* synthetic */ class y7 implements Runnable {
                 wa0Var.getMessagesController().getStoriesController().o0(wa0Var.e, (ArrayList) obj, this.b, null);
                 return;
             case 23:
-                le0 le0Var = (le0) obj2;
+                me0 me0Var = (me0) obj2;
                 wc0 wc0Var = (wc0) obj;
                 if (z10) {
                     wc0Var.w(true);
                 } else {
                     wc0Var.x();
                 }
-                le0Var.b(wc0Var);
+                me0Var.b(wc0Var);
                 return;
             case 24:
                 u uVar = (u) obj2;
@@ -440,26 +440,26 @@ public final /* synthetic */ class y7 implements Runnable {
                 } else {
                     wc0Var2.x();
                 }
-                ((le0) uVar.b).b(wc0Var2);
+                ((me0) uVar.b).b(wc0Var2);
                 return;
             case 25:
-                th0 th0Var = (th0) obj2;
-                b71 b71Var = th0Var.c;
+                uh0 uh0Var = (uh0) obj2;
+                c71 c71Var = uh0Var.c;
                 ArrayList arrayList12 = (ArrayList) obj;
                 if (z10) {
-                    arrayList12 = th0Var.e;
+                    arrayList12 = uh0Var.e;
                 }
                 if (arrayList12.isEmpty()) {
                     return;
                 }
-                if (b71Var.canScrollVertically(1)) {
-                    for (int i19 = 0; i19 < b71Var.getChildCount(); i19++) {
-                        if (!(b71Var.getChildAt(i19) instanceof b10)) {
+                if (c71Var.canScrollVertically(1)) {
+                    for (int i19 = 0; i19 < c71Var.getChildCount(); i19++) {
+                        if (!(c71Var.getChildAt(i19) instanceof b10)) {
                         }
                     }
                     return;
                 }
-                th0Var.a(false);
+                uh0Var.a(false);
                 return;
             case 26:
                 org.telegram.ui.Components.voip.t tVar = (org.telegram.ui.Components.voip.t) obj2;

@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
@@ -17,7 +17,7 @@ import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.r2;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.y31;
 import org.telegram.ui.ay;
 import org.telegram.ui.cn;
 import org.telegram.ui.cy;
@@ -26,7 +26,7 @@ import org.telegram.ui.qn;
 import org.telegram.ui.ul;
 import org.telegram.ui.zx;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -76,7 +76,7 @@ public final /* synthetic */ class a0 implements Runnable {
                 qn qnVar = cnVar.a;
                 if (qnVar.A1 != null) {
                     u1Var.getLocationInWindow(new int[2]);
-                    qnVar.A1.setTranslationY(kk.D(520.0f, r3[1] - r2.getTop(), this.b));
+                    qnVar.A1.setTranslationY(mk.D(520.0f, r3[1] - r2.getTop(), this.b));
                     qnVar.A1.m(0.0f, (-AndroidUtilities.dp(16.0f)) + r3[0] + this.c);
                     qnVar.A1.u();
                     break;
@@ -175,7 +175,7 @@ public final /* synthetic */ class a0 implements Runnable {
                             }
                             UndoView W3 = cyVar.W3();
                             if (W3 != null) {
-                                W3.l(dialog.id, z10 ? 2 : 3, null, new x31(zxVar, dialog, i11, 2));
+                                W3.l(dialog.id, z10 ? 2 : 3, null, new y31(zxVar, dialog, i11, 2));
                             }
                         }
                         if (cyVar.W2 != 0 && cyVar.R1.isEmpty()) {

@@ -12,20 +12,20 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ci implements View.OnClickListener {
     public final /* synthetic */ qh0 a;
-    public final /* synthetic */ org.telegram.ui.Components.im0 b;
+    public final /* synthetic */ org.telegram.ui.Components.jm0 b;
     public final /* synthetic */ LinearLayout c;
     public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout d;
     public final /* synthetic */ int[] e;
     public final /* synthetic */ qn f;
 
-    public ci(qn qnVar, qh0 qh0Var, org.telegram.ui.Components.im0 im0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
+    public ci(qn qnVar, qh0 qh0Var, org.telegram.ui.Components.jm0 jm0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
         this.f = qnVar;
         this.a = qh0Var;
-        this.b = im0Var;
+        this.b = jm0Var;
         this.c = linearLayout;
         this.d = actionBarPopupWindow$ActionBarPopupWindowLayout;
         this.e = iArr;
@@ -62,10 +62,10 @@ public final class ci implements View.OnClickListener {
             t10.j();
             SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
         }
-        org.telegram.ui.Components.im0 im0Var = this.b;
-        im0Var.requestLayout();
+        org.telegram.ui.Components.jm0 jm0Var = this.b;
+        jm0Var.requestLayout();
         this.c.requestLayout();
-        im0Var.getAdapter().l();
+        jm0Var.getAdapter().l();
         this.d.getSwipeBack().e(this.e[0]);
     }
 }

@@ -9,9 +9,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.j5;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class k0 extends CountDownTimer {
     public final /* synthetic */ r0 a;
@@ -25,7 +25,7 @@ public final class k0 extends CountDownTimer {
     @Override // android.os.CountDownTimer
     public final void onTick(long j10) {
         r0 r0Var = this.a;
-        im0 im0Var = r0Var.d;
+        jm0 jm0Var = r0Var.d;
         ArrayList arrayList = r0Var.Y;
         ArrayList arrayList2 = new ArrayList(arrayList.size());
         int size = arrayList.size();
@@ -44,8 +44,8 @@ public final class k0 extends CountDownTimer {
         if (arrayList2.isEmpty()) {
             return;
         }
-        for (int i11 = 0; i11 < im0Var.getChildCount(); i11++) {
-            View childAt = im0Var.getChildAt(i11);
+        for (int i11 = 0; i11 < jm0Var.getChildCount(); i11++) {
+            View childAt = jm0Var.getChildAt(i11);
             if (childAt instanceof yg.k) {
                 yg.k kVar = (yg.k) childAt;
                 if (arrayList2.contains(kVar.getBoost())) {

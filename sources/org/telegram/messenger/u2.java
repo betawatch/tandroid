@@ -1,28 +1,26 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.FileLoadOperation;
-
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u2 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ FileLoadOperation b;
-    public final /* synthetic */ FileLoadOperation.RequestInfo c;
+    public final /* synthetic */ FileLoadOperationStream c;
 
-    public /* synthetic */ u2(FileLoadOperation fileLoadOperation, FileLoadOperation.RequestInfo requestInfo, int i10) {
+    public /* synthetic */ u2(FileLoadOperation fileLoadOperation, FileLoadOperationStream fileLoadOperationStream, int i10) {
         this.a = i10;
         this.b = fileLoadOperation;
-        this.c = requestInfo;
+        this.c = fileLoadOperationStream;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$startDownloadRequest$28(this.c);
+                this.b.lambda$removeStreamListener$6(this.c);
                 break;
             default:
-                this.b.lambda$clearOperation$25(this.c);
+                this.b.lambda$setStream$1(this.c);
                 break;
         }
     }

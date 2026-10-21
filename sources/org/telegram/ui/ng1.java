@@ -9,9 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class ng1 extends org.telegram.ui.Components.d91 {
+public final class ng1 extends org.telegram.ui.Components.e91 {
     public boolean T;
     public final Path U;
     public final /* synthetic */ og1 V;
@@ -41,17 +41,17 @@ public final class ng1 extends org.telegram.ui.Components.d91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.d91
+    @Override // org.telegram.ui.Components.e91
     public float getAvailableTranslationX() {
         return getMeasuredWidth();
     }
 
-    @Override // org.telegram.ui.Components.d91
+    @Override // org.telegram.ui.Components.e91
     public long getManualScrollDuration() {
         return 320L;
     }
 
-    @Override // org.telegram.ui.Components.d91
+    @Override // org.telegram.ui.Components.e91
     public final boolean j(MotionEvent motionEvent) {
         Object X = ((ng0) this.V).X();
         if (X instanceof mg0) {
@@ -60,7 +60,7 @@ public final class ng1 extends org.telegram.ui.Components.d91 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.d91
+    @Override // org.telegram.ui.Components.e91
     public final boolean k(MotionEvent motionEvent) {
         Object X = ((ng0) this.V).X();
         if (X instanceof mg0) {
@@ -87,12 +87,12 @@ public final class ng1 extends org.telegram.ui.Components.d91 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.d91
+    @Override // org.telegram.ui.Components.e91
     public final void t(View view, View view2, int i10, int i11) {
         this.V.U();
     }
 
-    @Override // org.telegram.ui.Components.d91
+    @Override // org.telegram.ui.Components.e91
     public final void u() {
         cy cyVar;
         og1 og1Var = this.V;
@@ -121,7 +121,7 @@ public final class ng1 extends org.telegram.ui.Components.d91 {
         og1Var.U();
     }
 
-    @Override // org.telegram.ui.Components.d91
+    @Override // org.telegram.ui.Components.e91
     public final void w(boolean z10) {
         og1 og1Var = this.V;
         ng0 ng0Var = (ng0) og1Var;

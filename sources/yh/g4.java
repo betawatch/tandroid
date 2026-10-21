@@ -25,7 +25,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.ActionBarLayout;
@@ -35,14 +35,14 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.ao;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.h20;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.iu;
 import org.telegram.ui.Components.kv;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.vj0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.xc;
@@ -55,7 +55,7 @@ import org.telegram.ui.y8;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public class g4 extends org.telegram.ui.ActionBar.n2 implements ne.d {
     public LinearLayout E;
@@ -279,8 +279,8 @@ public class g4 extends org.telegram.ui.ActionBar.n2 implements ne.d {
         }
     }
 
-    public static void Y(g4 g4Var, g61 g61Var) {
-        Object obj = g61Var.G;
+    public static void Y(g4 g4Var, h61 h61Var) {
+        Object obj = h61Var.G;
         if (obj instanceof TL_stars.TL_starGiftUnique) {
             TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj;
             l7 l7Var = new l7(g4Var.getParentActivity(), g4Var.currentAccount, g4Var.b, g4Var.resourceProvider, null);
@@ -362,13 +362,13 @@ public class g4 extends org.telegram.ui.ActionBar.n2 implements ne.d {
         };
         d6 d6Var = this.resourceProvider;
         k3 k3Var = new k3(context);
-        LinearLayout e = kk.e(context, 1);
+        LinearLayout e = mk.e(context, 1);
         k3Var.addView(e, z5.e(-1, -2, 23));
         w9 w9Var = new w9(context);
-        w9Var.setImageDrawable(new uj0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
+        w9Var.setImageDrawable(new vj0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
         e.addView(w9Var, z5.q(130, 130, 17));
         TextView textView = new TextView(context);
-        kk.o(h6.G6, d6Var, textView, 1, 17.0f);
+        mk.o(h6.G6, d6Var, textView, 1, 17.0f);
         textView.setGravity(17);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setText(LocaleController.getString(R.string.Gift2ResaleFiltersEmptyTitle));
@@ -425,7 +425,7 @@ public class g4 extends org.telegram.ui.ActionBar.n2 implements ne.d {
         xpVar.setScaleY(0.8f);
         linearLayout2.addView(xpVar, z5.q(26, 26, 16));
         TextView textView3 = new TextView(context);
-        kk.o(h6.j5, this.resourceProvider, textView3, 1, 14.0f);
+        mk.o(h6.j5, this.resourceProvider, textView3, 1, 14.0f);
         textView3.setText(LocaleController.getString(R.string.GiftResaleStarsOnly));
         linearLayout2.addView(textView3, z5.t(-2, -2, 16, 9, 0, 0, 0));
         int dp = AndroidUtilities.dp(18.0f);
@@ -807,7 +807,7 @@ public class g4 extends org.telegram.ui.ActionBar.n2 implements ne.d {
     }
 
     public final void e0(boolean z10) {
-        t61 t61Var;
+        u61 u61Var;
         s3 s3Var = this.d;
         int i10 = s3Var.e;
         HashSet hashSet = s3Var.l;
@@ -821,8 +821,8 @@ public class g4 extends org.telegram.ui.ActionBar.n2 implements ne.d {
         }
         b3 b3Var = this.n;
         boolean z11 = false;
-        if (b3Var != null && (t61Var = b3Var.W2) != null) {
-            t61Var.N(true);
+        if (b3Var != null && (u61Var = b3Var.W2) != null) {
+            u61Var.N(true);
             if (z10) {
                 this.n.u0(0);
             }

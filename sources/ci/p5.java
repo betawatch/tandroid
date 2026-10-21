@@ -16,16 +16,16 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.hm0;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.tl0;
 import org.telegram.ui.Components.u80;
 import org.telegram.ui.Components.uc0;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.qa1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class p5 extends hm0 {
+public final class p5 extends im0 {
     public final ArrayList c = new ArrayList();
     public final /* synthetic */ u5 d;
 
@@ -33,7 +33,7 @@ public final class p5 extends hm0 {
         this.d = u5Var;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         return b1Var.f == 1;
     }
@@ -376,6 +376,6 @@ public final class p5 extends hm0 {
                 view = x90Var2;
                 break;
         }
-        return new sl0(view);
+        return new tl0(view);
     }
 }

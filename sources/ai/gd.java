@@ -20,30 +20,30 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.b71;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.c71;
 import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.d70;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class gd extends f61 {
+public final class gd extends g61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        f61.setup(new gd());
+        g61.setup(new gd());
     }
 
     /* JADX WARN: Removed duplicated region for block: B:59:0x074d  */
     /* JADX WARN: Removed duplicated region for block: B:61:0x0750  */
-    @Override // org.telegram.ui.Components.f61
+    @Override // org.telegram.ui.Components.g61
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void bindView(View view, g61 g61Var, boolean z10, t61 t61Var, b71 b71Var) {
+    public final void bindView(View view, h61 h61Var, boolean z10, u61 u61Var, c71 c71Var) {
         SpannableString spannableString;
         int dp;
         int i10;
@@ -53,8 +53,8 @@ public final class gd extends f61 {
         long j10;
         boolean z13;
         hd hdVar = (hd) view;
-        TL_stars.StarsTransaction starsTransaction = (TL_stars.StarsTransaction) g61Var.G;
-        boolean z14 = g61Var.q;
+        TL_stars.StarsTransaction starsTransaction = (TL_stars.StarsTransaction) h61Var.G;
+        boolean z14 = h61Var.q;
         org.telegram.ui.Components.w9 w9Var = hdVar.d;
         SpannableString spannableString2 = hdVar.v;
         SpannableString spannableString3 = hdVar.w;
@@ -348,8 +348,8 @@ public final class gd extends f61 {
         hdVar.setWillNotDraw(!z13);
     }
 
-    @Override // org.telegram.ui.Components.f61
-    public final View createView(Context context, im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+    @Override // org.telegram.ui.Components.g61
+    public final View createView(Context context, jm0 jm0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
         hd hdVar = (hd) getCached();
         return hdVar != null ? hdVar : new hd(context, i10, d6Var);
     }

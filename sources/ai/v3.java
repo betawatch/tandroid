@@ -31,12 +31,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.al;
 import org.telegram.ui.Components.cg;
-import org.telegram.ui.Components.fg0;
+import org.telegram.ui.Components.gg0;
 import org.telegram.ui.Components.ji;
-import org.telegram.ui.Components.kg0;
-import org.telegram.ui.Components.qh0;
-import org.telegram.ui.Components.th0;
+import org.telegram.ui.Components.lg0;
+import org.telegram.ui.Components.rh0;
 import org.telegram.ui.Components.ti;
+import org.telegram.ui.Components.uh0;
 import org.telegram.ui.Components.zk;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
@@ -46,7 +46,7 @@ import org.telegram.ui.p91;
 import org.telegram.ui.q50;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v3 implements Runnable {
     public final /* synthetic */ int a;
@@ -325,20 +325,20 @@ public final /* synthetic */ class v3 implements Runnable {
                 }
                 break;
             case 25:
-                kg0 kg0Var = (kg0) obj;
-                kg0Var.h("seekTo(" + Math.round(j10 / 1000.0f) + ", true);");
-                AndroidUtilities.runOnUIThread(new fg0(kg0Var, 1), 100L);
+                lg0 lg0Var = (lg0) obj;
+                lg0Var.h("seekTo(" + Math.round(j10 / 1000.0f) + ", true);");
+                AndroidUtilities.runOnUIThread(new gg0(lg0Var, 1), 100L);
                 break;
             case 26:
-                th0 th0Var = (th0) obj;
+                uh0 uh0Var = (uh0) obj;
                 Activity activity2 = AndroidUtilities.getActivity();
                 org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
-                if (PhotoViewer.t1().R1() || (U2 != null && U2.hasShownSheet())) {
+                if (PhotoViewer.u1().T1() || (U2 != null && U2.hasShownSheet())) {
                     d6Var2 = new ci.b();
                 } else if (U2 != null) {
                     d6Var2 = U2.getResourceProvider();
                 }
-                new cd(activity2, d6Var2, this.b, 15, "", new qh0(th0Var, 0), 0L).show();
+                new cd(activity2, d6Var2, this.b, 15, "", new rh0(uh0Var, 0), 0L).show();
                 break;
             case 27:
                 cy cyVar = (cy) obj;

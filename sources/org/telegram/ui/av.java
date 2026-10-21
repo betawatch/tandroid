@@ -20,10 +20,10 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class av extends org.telegram.ui.ActionBar.n2 {
-    public static final org.telegram.ui.Components.fs0 x = new org.telegram.ui.Components.fs0(2);
+    public static final org.telegram.ui.Components.gs0 x = new org.telegram.ui.Components.gs0(2);
     public cy a;
     public ContactsActivity b;
     public org.telegram.ui.ActionBar.u0 c;
@@ -131,10 +131,10 @@ public final class av extends org.telegram.ui.ActionBar.n2 {
             zuVarArr[i10].c.setVisibility(8);
             int i11 = 0;
             while (i11 < 2) {
-                org.telegram.ui.Components.im0 im0Var = i11 == 0 ? zuVarArr[i10].d : zuVarArr[i10].e;
-                if (im0Var != null) {
-                    im0Var.setClipToPadding(false);
-                    im0Var.setOnScrollListener(new ki.m3(5, this, im0Var.getOnScrollListener()));
+                org.telegram.ui.Components.jm0 jm0Var = i11 == 0 ? zuVarArr[i10].d : zuVarArr[i10].e;
+                if (jm0Var != null) {
+                    jm0Var.setClipToPadding(false);
+                    jm0Var.setOnScrollListener(new ki.m3(5, this, jm0Var.getOnScrollListener()));
                 }
                 i11++;
             }
@@ -211,12 +211,12 @@ public final class av extends org.telegram.ui.ActionBar.n2 {
         }
         int i11 = 0;
         while (i11 < 2) {
-            org.telegram.ui.Components.im0 im0Var = i11 == 0 ? zuVarArr[z10 ? 1 : 0].d : zuVarArr[z10 ? 1 : 0].e;
-            if (im0Var != null) {
-                im0Var.getAdapter();
-                im0Var.setPinnedHeaderShadowDrawable(null);
+            org.telegram.ui.Components.jm0 jm0Var = i11 == 0 ? zuVarArr[z10 ? 1 : 0].d : zuVarArr[z10 ? 1 : 0].e;
+            if (jm0Var != null) {
+                jm0Var.getAdapter();
+                jm0Var.setPinnedHeaderShadowDrawable(null);
                 if (this.actionBar.getTranslationY() != 0.0f) {
-                    ((s4.b0) im0Var.getLayoutManager()).h1(0, (int) this.actionBar.getTranslationY());
+                    ((s4.b0) jm0Var.getLayoutManager()).h1(0, (int) this.actionBar.getTranslationY());
                 }
             }
             i11++;

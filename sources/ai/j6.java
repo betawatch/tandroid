@@ -21,21 +21,21 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SecureDocument;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.bz0;
-import org.telegram.ui.Components.ez0;
-import org.telegram.ui.Components.hz0;
+import org.telegram.ui.Components.cz0;
+import org.telegram.ui.Components.fz0;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.js0;
+import org.telegram.ui.Components.iz0;
+import org.telegram.ui.Components.ks0;
 import org.telegram.ui.Components.md0;
-import org.telegram.ui.Components.ms0;
+import org.telegram.ui.Components.ns0;
 import org.telegram.ui.Components.od0;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.y31;
 import org.telegram.ui.mf0;
 import org.telegram.ui.tm0;
 import org.telegram.ui.vm0;
 import org.telegram.ui.wq0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j6 implements org.telegram.ui.ActionBar.a2, md0, MediaDataController.KeywordResultCallback, BillingController.ProductDetailsResponseListenerLegacy, OnFailureListener, Utilities.Callback2Return {
     public final /* synthetic */ int a;
@@ -106,7 +106,7 @@ public final /* synthetic */ class j6 implements org.telegram.ui.ActionBar.a2, m
         n2Var.x = false;
         FileLog.e(exc);
         if ((exc instanceof nb.a) && exc.getMessage() != null && exc.getMessage().contains("segmentation optional module to be downloaded") && n2Var.isAttachedToWindow()) {
-            AndroidUtilities.runOnUIThread(new bz0(n2Var, bitmap, i10, wq0Var, 20), 2000L);
+            AndroidUtilities.runOnUIThread(new cz0(n2Var, bitmap, i10, wq0Var, 20), 2000L);
         } else {
             g4Var.run(new ArrayList());
         }
@@ -129,15 +129,15 @@ public final /* synthetic */ class j6 implements org.telegram.ui.ActionBar.a2, m
 
     @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
     public void run(ArrayList arrayList, String str) {
-        hz0 hz0Var = (hz0) this.c;
+        iz0 iz0Var = (iz0) this.c;
         String str2 = (String) this.d;
         HashSet hashSet = (HashSet) this.e;
         ArrayList arrayList2 = (ArrayList) this.f;
-        if (this.b != hz0Var.I) {
+        if (this.b != iz0Var.I) {
             return;
         }
-        hz0Var.G = 1;
-        hz0Var.H = str2;
+        iz0Var.G = 1;
+        iz0Var.H = str2;
         if (arrayList != null) {
             int size = arrayList.size();
             int i10 = 0;
@@ -152,29 +152,29 @@ public final /* synthetic */ class j6 implements org.telegram.ui.ActionBar.a2, m
             }
         }
         if (arrayList2.isEmpty()) {
-            hz0Var.w = null;
-            hz0Var.x = true;
-            hz0Var.f();
+            iz0Var.w = null;
+            iz0Var.x = true;
+            iz0Var.f();
             return;
         }
-        hz0Var.x = false;
-        hz0Var.v = false;
-        hz0Var.c();
-        ah.x xVar = hz0Var.d;
+        iz0Var.x = false;
+        iz0Var.v = false;
+        iz0Var.c();
+        ah.x xVar = iz0Var.d;
         if (xVar != null) {
             xVar.setVisibility(0);
         }
-        hz0Var.U = AndroidUtilities.dp(10.0f);
-        hz0Var.w = arrayList;
-        hz0Var.V = 0;
-        hz0Var.W = Integer.valueOf(str2.length());
-        ah.x xVar2 = hz0Var.d;
+        iz0Var.U = AndroidUtilities.dp(10.0f);
+        iz0Var.w = arrayList;
+        iz0Var.V = 0;
+        iz0Var.W = Integer.valueOf(str2.length());
+        ah.x xVar2 = iz0Var.d;
         if (xVar2 != null) {
             xVar2.invalidate();
         }
-        ez0 ez0Var = hz0Var.f;
-        if (ez0Var != null) {
-            ez0Var.l();
+        fz0 fz0Var = iz0Var.f;
+        if (fz0Var != null) {
+            fz0Var.l();
         }
     }
 
@@ -196,9 +196,9 @@ public final /* synthetic */ class j6 implements org.telegram.ui.ActionBar.a2, m
         this.f = obj3;
     }
 
-    public /* synthetic */ j6(js0 js0Var, int i10, org.telegram.ui.ActionBar.n2 n2Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public /* synthetic */ j6(ks0 ks0Var, int i10, org.telegram.ui.ActionBar.n2 n2Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         this.a = 6;
-        this.c = js0Var;
+        this.c = ks0Var;
         this.b = i10;
         this.f = n2Var;
         this.d = context;
@@ -217,14 +217,14 @@ public final /* synthetic */ class j6 implements org.telegram.ui.ActionBar.a2, m
     @Override // org.telegram.messenger.Utilities.Callback2Return
     public Object run(Object obj, Object obj2) {
         TL_stars.TL_starGiftCollection tL_starGiftCollection;
-        js0 js0Var = (js0) this.c;
+        ks0 ks0Var = (ks0) this.c;
         org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.f;
         Context context = (Context) this.d;
         org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.e;
         Integer num = (Integer) obj;
         View view = (View) obj2;
-        v9 v9Var = js0Var.e;
-        if (num.intValue() != -1 && num.intValue() != -2 && num.intValue() != 0 && !js0Var.L) {
+        v9 v9Var = ks0Var.e;
+        if (num.intValue() != -1 && num.intValue() != -2 && num.intValue() != 0 && !ks0Var.L) {
             int i10 = 0;
             while (true) {
                 if (i10 >= v9Var.d().size()) {
@@ -241,19 +241,19 @@ public final /* synthetic */ class j6 implements org.telegram.ui.ActionBar.a2, m
             TL_stars.TL_starGiftCollection tL_starGiftCollection2 = tL_starGiftCollection;
             int i11 = i10;
             int i12 = this.b;
-            String publicUsername = DialogObject.getPublicUsername(MessagesController.getInstance(i12).getUserOrChat(js0Var.c));
+            String publicUsername = DialogObject.getPublicUsername(MessagesController.getInstance(i12).getUserOrChat(ks0Var.c));
             boolean h = v9Var.h();
             if (TextUtils.isEmpty(publicUsername) && !h) {
                 return Boolean.FALSE;
             }
             i80 H = i80.H(n2Var, view);
-            H.W(new ms0(js0Var));
-            H.l(R.drawable.menu_gift_add, LocaleController.getString(R.string.Gift2CollectionsAdd), new yh.q1(js0Var, 0), h);
-            H.l(R.drawable.msg_share, LocaleController.getString(R.string.Gift2CollectionsShare), new hg.d1(js0Var, i12, publicUsername, tL_starGiftCollection2, context, d6Var, n2Var, 17), !TextUtils.isEmpty(publicUsername));
-            H.l(R.drawable.msg_edit, LocaleController.getString(R.string.Gift2CollectionsRename), new uf.c(18, js0Var, tL_starGiftCollection2), h);
-            H.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2CollectionsReorder), new yh.q1(js0Var, 1), h);
-            H.m(h, R.drawable.msg_delete, LocaleController.getString(R.string.Gift2CollectionsDelete), true, new x31(js0Var, i11, tL_starGiftCollection2, 26));
-            js0Var.I = H;
+            H.W(new ns0(ks0Var));
+            H.l(R.drawable.menu_gift_add, LocaleController.getString(R.string.Gift2CollectionsAdd), new yh.q1(ks0Var, 0), h);
+            H.l(R.drawable.msg_share, LocaleController.getString(R.string.Gift2CollectionsShare), new hg.d1(ks0Var, i12, publicUsername, tL_starGiftCollection2, context, d6Var, n2Var, 17), !TextUtils.isEmpty(publicUsername));
+            H.l(R.drawable.msg_edit, LocaleController.getString(R.string.Gift2CollectionsRename), new u2.j0(20, ks0Var, tL_starGiftCollection2), h);
+            H.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2CollectionsReorder), new yh.q1(ks0Var, 1), h);
+            H.m(h, R.drawable.msg_delete, LocaleController.getString(R.string.Gift2CollectionsDelete), true, new y31(ks0Var, i11, tL_starGiftCollection2, 26));
+            ks0Var.I = H;
             H.Z();
             return Boolean.TRUE;
         }

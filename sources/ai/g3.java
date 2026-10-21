@@ -40,12 +40,12 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.by0;
-import org.telegram.ui.Components.go0;
+import org.telegram.ui.Components.cy0;
+import org.telegram.ui.Components.ho0;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.py0;
+import org.telegram.ui.Components.qy0;
 import org.telegram.ui.Components.x90;
-import org.telegram.ui.Components.ym0;
+import org.telegram.ui.Components.zm0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
@@ -61,7 +61,7 @@ import org.telegram.ui.uk0;
 import org.telegram.ui.vm0;
 import org.telegram.ui.wh1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g3 implements Runnable {
     public final /* synthetic */ int a;
@@ -200,7 +200,7 @@ public final /* synthetic */ class g3 implements Runnable {
             return;
         }
         int[] iArr = new int[11];
-        Utilities.globalQueue.postRunnable(new by0(file, iArr, new v7((NotificationCenter.NotificationCenterDelegate) a1Var, (Object) iArr, (Object) file, (Object) b2Var, str, (Object) str2, (Object) str3, 14), 6));
+        Utilities.globalQueue.postRunnable(new cy0(file, iArr, new v7((NotificationCenter.NotificationCenterDelegate) a1Var, (Object) iArr, (Object) file, (Object) b2Var, str, (Object) str2, (Object) str3, 14), 6));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:67:0x0231, code lost:
@@ -955,9 +955,9 @@ public final /* synthetic */ class g3 implements Runnable {
                 CharacterStyle characterStyle = (CharacterStyle) this.d;
                 cVar3.b();
                 i80 I = i80.I(qnVar, u1Var);
-                ym0 ym0Var = new ym0(qnVar.getParentActivity(), qnVar.ea);
-                I.p = new qe(ym0Var, i14);
-                I.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyCardNumber), new ue(qnVar, ym0Var, str13, 3), false);
+                zm0 zm0Var = new zm0(qnVar.getParentActivity(), qnVar.ea);
+                I.p = new qe(zm0Var, i14);
+                I.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyCardNumber), new ue(qnVar, zm0Var, str13, 3), false);
                 if (tLObject6 instanceof TLRPC.TL_payments_bankCardData) {
                     TLRPC.TL_payments_bankCardData tL_payments_bankCardData = (TLRPC.TL_payments_bankCardData) tLObject6;
                     ArrayList<TLRPC.TL_bankCardOpenUrl> arrayList11 = tL_payments_bankCardData.open_urls;
@@ -974,9 +974,9 @@ public final /* synthetic */ class g3 implements Runnable {
                         I.p(13, AndroidUtilities.dp(200.0f), tL_payments_bankCardData.title);
                     }
                 }
-                ym0Var.e(I);
-                ym0Var.f(u1Var, characterStyle, null, false);
-                qnVar.showDialog(ym0Var);
+                zm0Var.e(I);
+                zm0Var.f(u1Var, characterStyle, null, false);
+                qnVar.showDialog(zm0Var);
                 break;
             case 14:
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) this.d;
@@ -996,19 +996,19 @@ public final /* synthetic */ class g3 implements Runnable {
                     break;
                 }
             case 15:
-                py0 py0Var = (py0) this.b;
+                qy0 qy0Var = (qy0) this.b;
                 TLObject tLObject7 = (TLObject) this.c;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.e;
                 TextView textView = (TextView) this.f;
                 TextView textView2 = (TextView) this.h;
                 int[] iArr2 = (int[]) this.d;
-                py0Var.getClass();
+                qy0Var.getClass();
                 if (!(tLObject7 instanceof TLRPC.TL_stickers_suggestedShortName) || (str5 = ((TLRPC.TL_stickers_suggestedShortName) tLObject7).short_name) == null) {
                     z15 = false;
                 } else {
                     editTextBoldCursor.setText(str5);
                     editTextBoldCursor.setSelection(0, editTextBoldCursor.length());
-                    py0Var.n0(textView, editTextBoldCursor.getText().toString(), true);
+                    qy0Var.n0(textView, editTextBoldCursor.getText().toString(), true);
                 }
                 textView2.setVisibility(0);
                 editTextBoldCursor.setPadding(textView2.getMeasuredWidth(), AndroidUtilities.dp(4.0f), 0, 0);
@@ -1029,10 +1029,10 @@ public final /* synthetic */ class g3 implements Runnable {
                 org.telegram.ui.ActionBar.d6 d6Var3 = (org.telegram.ui.ActionBar.d6) this.e;
                 byte[] bArr = (byte[]) this.f;
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.h;
-                go0 go0Var = (go0) this.d;
+                ho0 ho0Var = (ho0) this.d;
                 o21 o21Var = new o21(context2, d6Var3, 0L, bArr);
                 o21Var.P((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject8);
-                o21Var.s = new i21(n2Var, context2, d6Var3, go0Var);
+                o21Var.s = new i21(n2Var, context2, d6Var3, ho0Var);
                 o21Var.show();
                 break;
             case 19:

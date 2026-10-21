@@ -27,24 +27,24 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ba0;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.e11;
-import org.telegram.ui.Components.ln0;
+import org.telegram.ui.Components.f11;
+import org.telegram.ui.Components.mn0;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class o0 {
     public boolean A;
     public boolean B;
     public float C;
     public VelocityTracker D;
-    public final ln0 E;
+    public final mn0 E;
     public n0 F;
     public ka G;
     public final u1 a;
@@ -60,7 +60,7 @@ public final class o0 {
     public float p;
     public ba0 s;
     public final org.telegram.ui.Components.f6 u;
-    public e11 v;
+    public f11 v;
     public final yc y;
     public final TextPaint f = new TextPaint(1);
     public final Paint k = new Paint(1);
@@ -76,7 +76,7 @@ public final class o0 {
 
     public o0(u1 u1Var) {
         this.a = u1Var;
-        this.E = new ln0(u1Var.getContext(), null);
+        this.E = new mn0(u1Var.getContext(), null);
         this.y = new yc(u1Var);
         this.u = new org.telegram.ui.Components.f6(u1Var, 350L, bs.h);
     }
@@ -243,9 +243,9 @@ public final class o0 {
     }
 
     public final void b() {
-        ln0 ln0Var = this.E;
-        if (ln0Var.b()) {
-            float f7 = ln0Var.j;
+        mn0 mn0Var = this.E;
+        if (mn0Var.b()) {
+            float f7 = mn0Var.j;
             this.o = f7;
             this.o = Utilities.clamp(f7, this.p - (this.w.width() - AndroidUtilities.dp(14.0f)), 0.0f);
             this.a.a3();
@@ -365,10 +365,10 @@ public final class o0 {
             paint.setShadowLayer(AndroidUtilities.dpf2(1.0f), 0.0f, AndroidUtilities.dpf2(0.33f), i0.a.o(-16777216, (int) (27.0f * clamp)));
             canvas.drawPath(path, paint);
             canvas.clipPath(path);
-            e11 e11Var = this.v;
-            if (e11Var != null) {
+            f11 f11Var = this.v;
+            if (f11Var != null) {
                 arrayList = arrayList2;
-                e11Var.c(rectF3.left + AndroidUtilities.dp(17.0f), rectF3.top + AndroidUtilities.dp(20.0f), clamp, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, u1Var.Id), canvas);
+                f11Var.c(rectF3.left + AndroidUtilities.dp(17.0f), rectF3.top + AndroidUtilities.dp(20.0f), clamp, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, u1Var.Id), canvas);
                 canvas2 = canvas;
             } else {
                 canvas2 = canvas;
@@ -399,7 +399,7 @@ public final class o0 {
                     int i18 = floor;
                     yc ycVar = n0Var.n;
                     int i19 = ceil;
-                    e11 e11Var2 = n0Var.k;
+                    f11 f11Var2 = n0Var.k;
                     Paint paint2 = n0Var.j;
                     canvas2.save();
                     int i20 = max;
@@ -432,9 +432,9 @@ public final class o0 {
                     u1 u1Var3 = u1Var;
                     RectF rectF6 = rectF3;
                     ArrayList arrayList4 = arrayList;
-                    if (e11Var2 != null) {
-                        e11Var2.p = i17 - AndroidUtilities.dp(32.0f);
-                        float l4 = e11Var2.l() + AndroidUtilities.dp(drawable != null ? 17.0f : f11);
+                    if (f11Var2 != null) {
+                        f11Var2.p = i17 - AndroidUtilities.dp(32.0f);
+                        float l4 = f11Var2.l() + AndroidUtilities.dp(drawable != null ? 17.0f : f11);
                         float dp5 = AndroidUtilities.dp(1.0f) + AndroidUtilities.dp(54.0f) + AndroidUtilities.dp(10.0f);
                         f15 = 32.0f;
                         i11 = 2;
@@ -536,12 +536,12 @@ public final class o0 {
                     } else {
                         i12 = 1;
                     }
-                    if (e11Var2 == null) {
-                        e11Var2.p = i22 - AndroidUtilities.dp(f15);
-                        float l10 = (f35 - (e11Var2.l() + AndroidUtilities.dp(drawable != null ? 17.0f : f11))) / f13;
+                    if (f11Var2 == null) {
+                        f11Var2.p = i22 - AndroidUtilities.dp(f15);
+                        float l10 = (f35 - (f11Var2.l() + AndroidUtilities.dp(drawable != null ? 17.0f : f11))) / f13;
                         float dp6 = AndroidUtilities.dp(54.0f) + AndroidUtilities.dp(4.165f);
                         if (drawable != null) {
-                            drawable.setBounds((int) ((z10 ? e11Var2.l() + AndroidUtilities.dp(1.33f) : 0.0f) + l10 + AndroidUtilities.dp(3.0f)), (int) kk.x(drawable.getIntrinsicHeight(), f13, 0.625f, dp6), (int) ((drawable.getIntrinsicWidth() * 0.625f) + (z10 ? AndroidUtilities.dp(1.33f) + e11Var2.l() : 0.0f) + l10 + AndroidUtilities.dp(3.0f)), (int) a1.g.d(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp6));
+                            drawable.setBounds((int) ((z10 ? f11Var2.l() + AndroidUtilities.dp(1.33f) : 0.0f) + l10 + AndroidUtilities.dp(3.0f)), (int) mk.x(drawable.getIntrinsicHeight(), f13, 0.625f, dp6), (int) ((drawable.getIntrinsicWidth() * 0.625f) + (z10 ? AndroidUtilities.dp(1.33f) + f11Var2.l() : 0.0f) + l10 + AndroidUtilities.dp(3.0f)), (int) a1.g.d(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp6));
                             drawable.draw(canvas2);
                         }
                         float dp7 = AndroidUtilities.dp(!z10 ? 12.66f : 4.0f) + l10;
@@ -714,9 +714,9 @@ public final class o0 {
             }
         }
         if (this.v == null) {
-            e11 e11Var = new e11(LocaleController.getString(this.c > 0 ? R.string.SimilarBots : R.string.SimilarChannels), 14.0f, AndroidUtilities.bold());
-            e11Var.o = true;
-            this.v = e11Var;
+            f11 f11Var = new f11(LocaleController.getString(this.c > 0 ? R.string.SimilarBots : R.string.SimilarChannels), 14.0f, AndroidUtilities.bold());
+            f11Var.o = true;
+            this.v = f11Var;
         }
         if (d()) {
             u1Var.s0 = AndroidUtilities.dp(144.0f) + u1Var.s0;

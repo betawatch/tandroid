@@ -25,7 +25,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -113,18 +113,21 @@ public final /* synthetic */ class h0 implements Runnable {
                 ((FileLoader) this.b).lambda$setForceStreamLoadingFile$6((TLRPC.FileLocation) this.c, (String) this.d);
                 break;
             case 23:
-                ((FileLoader) this.b).lambda$checkDownloadQueue$15((FileLoaderPriorityQueue) this.c, (FileLoadOperation) this.d);
+                ((FileLoader) this.b).lambda$startVideoStream$15((TLRPC.Document) this.c, this.d);
                 break;
             case 24:
-                ((FilePathDatabase) this.b).lambda$saveFileDialogId$5((File) this.c, (FilePathDatabase.FileMeta) this.d);
+                ((FileLoader) this.b).lambda$checkDownloadQueue$17((FileLoaderPriorityQueue) this.c, (FileLoadOperation) this.d);
                 break;
             case 25:
-                LocaleController.lambda$applyRemoteLanguage$13((int[]) this.b, (int[]) this.c, (Runnable) this.d);
+                ((FilePathDatabase) this.b).lambda$saveFileDialogId$5((File) this.c, (FilePathDatabase.FileMeta) this.d);
                 break;
             case 26:
-                ((LocationController) this.b).lambda$addSharingLocation$11((LocationController.SharingLocationInfo) this.c, (LocationController.SharingLocationInfo) this.d);
+                LocaleController.lambda$applyRemoteLanguage$13((int[]) this.b, (int[]) this.c, (Runnable) this.d);
                 break;
             case 27:
+                ((LocationController) this.b).lambda$addSharingLocation$11((LocationController.SharingLocationInfo) this.c, (LocationController.SharingLocationInfo) this.d);
+                break;
+            case 28:
                 ((MediaDataController) this.b).lambda$saveToRingtones$204((TLObject) this.c, (TLRPC.Document) this.d);
                 break;
             default:

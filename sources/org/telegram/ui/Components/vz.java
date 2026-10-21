@@ -14,14 +14,14 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class vz extends FrameLayout {
     public static final /* synthetic */ int h = 0;
     public final org.telegram.ui.ActionBar.d6 a;
     public final TextView b;
     public final View c;
-    public final xj0 d;
+    public final yj0 d;
     public boolean e;
     public int f;
 
@@ -37,12 +37,12 @@ public final class vz extends FrameLayout {
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         linearLayout.setOrientation(1);
-        xj0 xj0Var = new xj0(context);
-        this.d = xj0Var;
-        xj0Var.setScaleType(ImageView.ScaleType.FIT_XY);
-        xj0Var.setImportantForAccessibility(2);
-        xj0Var.setVisibility(8);
-        linearLayout.addView(xj0Var, w7.z5.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 17, 0, 0, 0, 20));
+        yj0 yj0Var = new yj0(context);
+        this.d = yj0Var;
+        yj0Var.setScaleType(ImageView.ScaleType.FIT_XY);
+        yj0Var.setImportantForAccessibility(2);
+        yj0Var.setVisibility(8);
+        linearLayout.addView(yj0Var, w7.z5.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 17, 0, 0, 0, 20));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 20.0f);
@@ -57,11 +57,11 @@ public final class vz extends FrameLayout {
 
     public final void a(int i10, int i11, int i12) {
         int i13 = i10 != 0 ? 0 : 8;
-        xj0 xj0Var = this.d;
-        xj0Var.setVisibility(i13);
+        yj0 yj0Var = this.d;
+        yj0Var.setVisibility(i13);
         if (i10 != 0) {
-            xj0Var.f(i10, i11, i12, null);
-            xj0Var.d();
+            yj0Var.f(i10, i11, i12, null);
+            yj0Var.d();
         }
     }
 

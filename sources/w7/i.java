@@ -1,13 +1,13 @@
 package w7;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.pm0;
+import org.telegram.ui.Components.qm0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public abstract class i {
-    public static void a(pm0 pm0Var, org.telegram.ui.ActionBar.d6 d6Var) {
-        pm0Var.q(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var), d6Var != null ? d6Var.a() : org.telegram.ui.ActionBar.h6.I.q());
+    public static void a(qm0 qm0Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        qm0Var.q(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var), d6Var != null ? d6Var.a() : org.telegram.ui.ActionBar.h6.I.q());
     }
 
     public static int b(ki.a aVar) {

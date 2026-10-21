@@ -15,7 +15,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class i71 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final org.telegram.ui.Components.w9 a;
@@ -58,7 +58,7 @@ public final class i71 extends FrameLayout implements NotificationCenter.Notific
             x90Var.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
             spannableStringBuilder.replace(indexOf2, indexOf2 + 1, (CharSequence) "");
             spannableStringBuilder.replace(indexOf, i13, (CharSequence) "");
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.k61(LocaleController.getString(R.string.AuthAnotherClientDownloadClientUrl), (org.telegram.ui.Components.m11) null), indexOf, indexOf2 - 1, 33);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.l61(LocaleController.getString(R.string.AuthAnotherClientDownloadClientUrl), (org.telegram.ui.Components.n11) null), indexOf, indexOf2 - 1, 33);
         }
         String spannableStringBuilder2 = spannableStringBuilder.toString();
         int indexOf3 = spannableStringBuilder2.indexOf(42);
@@ -68,7 +68,7 @@ public final class i71 extends FrameLayout implements NotificationCenter.Notific
             x90Var.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
             spannableStringBuilder.replace(indexOf4, indexOf4 + 1, (CharSequence) "");
             spannableStringBuilder.replace(indexOf3, i14, (CharSequence) "");
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.k61(LocaleController.getString(R.string.AuthAnotherWebClientUrl), (org.telegram.ui.Components.m11) null), indexOf3, indexOf4 - 1, 33);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.l61(LocaleController.getString(R.string.AuthAnotherWebClientUrl), (org.telegram.ui.Components.n11) null), indexOf3, indexOf4 - 1, 33);
         }
         x90Var.setText(spannableStringBuilder);
         kk kkVar = new kk(this, context, 3);

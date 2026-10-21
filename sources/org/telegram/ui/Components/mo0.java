@@ -1,26 +1,16 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class mo0 extends n40 {
-    public final /* synthetic */ org.telegram.ui.lx c0;
+public final class mo0 extends s4.k {
+    public final /* synthetic */ org.telegram.ui.lx F;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mo0(org.telegram.ui.lx lxVar, im0 im0Var, Context context, int i10) {
-        super(im0Var, context, i10);
-        this.c0 = lxVar;
+    public mo0(org.telegram.ui.lx lxVar) {
+        this.F = lxVar;
     }
 
-    @Override // org.telegram.ui.Components.t61
-    public final void N(boolean z10) {
-        super.N(z10);
-        io0 io0Var = this.c0.s0;
-        io0Var.e(false, z10);
-        io0Var.d.setText(LocaleController.getString(R.string.NoResult));
-        io0Var.e.setVisibility(8);
+    @Override // s4.k
+    public final void P(s4.b1 b1Var) {
+        this.F.invalidate();
     }
 }

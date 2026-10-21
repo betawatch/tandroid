@@ -30,9 +30,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class ny0 implements org.telegram.ui.Components.yl0 {
+public final class ny0 implements org.telegram.ui.Components.zl0 {
     public int a = 0;
     public final /* synthetic */ Context b;
     public final /* synthetic */ ProfileActivity c;
@@ -471,7 +471,7 @@ public final class ny0 implements org.telegram.ui.Components.yl0 {
     /* JADX WARN: Removed duplicated region for block: B:133:0x0209  */
     /* JADX WARN: Removed duplicated region for block: B:134:0x01f0  */
     /* JADX WARN: Removed duplicated region for block: B:135:0x01e5  */
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.zl0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

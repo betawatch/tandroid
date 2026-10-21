@@ -16,15 +16,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.js0;
-import org.telegram.ui.Components.w61;
+import org.telegram.ui.Components.ks0;
+import org.telegram.ui.Components.x61;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.sp0;
 import yh.g1;
 import yh.l2;
 import yh.o2;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -100,7 +100,7 @@ public final /* synthetic */ class o implements Runnable {
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
                 g1 g1Var = (g1) this.d;
                 final View view = (View) this.e;
-                js0 js0Var = l2Var.a;
+                ks0 ks0Var = l2Var.a;
                 if (savedStarGift.unsaved) {
                     savedStarGift.unsaved = false;
                     g1Var.h(savedStarGift, true, false);
@@ -112,7 +112,7 @@ public final /* synthetic */ class o implements Runnable {
                 boolean z10 = savedStarGift.pinned_to_top;
                 final boolean z11 = !z10;
                 if (l2Var.e.o(savedStarGift, z11, false)) {
-                    new o2(l2Var.getContext(), js0Var.c, savedStarGift, l2Var.c, new Utilities.Callback0Return() { // from class: yh.e2
+                    new o2(l2Var.getContext(), ks0Var.c, savedStarGift, l2Var.c, new Utilities.Callback0Return() { // from class: yh.e2
                         @Override // org.telegram.messenger.Utilities.Callback0Return
                         public final Object run() {
                             ((g1) view).c(z11, true);
@@ -124,26 +124,26 @@ public final /* synthetic */ class o implements Runnable {
                     return;
                 }
                 if (z10) {
-                    org.telegram.messenger.g0.q(R.string.Gift2Unpinned, xc.a0(js0Var.a), R.raw.ic_unpin, 36);
+                    org.telegram.messenger.g0.q(R.string.Gift2Unpinned, xc.a0(ks0Var.a), R.raw.ic_unpin, 36);
                 } else {
-                    xc.a0(js0Var.a).M(LocaleController.getString(R.string.Gift2PinnedTitle), LocaleController.getString(R.string.Gift2PinnedSubtitle), R.raw.ic_pin).j();
+                    xc.a0(ks0Var.a).M(LocaleController.getString(R.string.Gift2PinnedTitle), LocaleController.getString(R.string.Gift2PinnedSubtitle), R.raw.ic_pin).j();
                 }
                 ((g1) view).c(z11, true);
                 l2Var.f.u0(0);
                 return;
             case 3:
-                w61 w61Var = (w61) this.b;
+                x61 x61Var = (x61) this.b;
                 zh.b0 b0Var = (zh.b0) this.c;
                 Utilities.CallbackReturn callbackReturn = (Utilities.CallbackReturn) this.d;
                 Utilities.Callback callback3 = (Utilities.Callback) this.e;
-                if (zh.b0.d(w61Var.getParentActivity())) {
+                if (zh.b0.d(x61Var.getParentActivity())) {
                     b0Var.e();
                     sp0 sp0Var = new sp0(10, false, false, null);
                     sp0Var.G = 1;
                     sp0Var.H = false;
                     sp0Var.x = false;
-                    sp0Var.V = new zh.y(callbackReturn, w61Var, callback3);
-                    w61Var.presentFragment(sp0Var);
+                    sp0Var.V = new zh.y(callbackReturn, x61Var, callback3);
+                    x61Var.presentFragment(sp0Var);
                     return;
                 }
                 return;

@@ -13,7 +13,7 @@ import org.telegram.ui.Components.ClippingImageView;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class lt0 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ ClippingImageView[] a;
@@ -41,7 +41,7 @@ public final class lt0 implements ViewTreeObserver.OnPreDrawListener {
     @Override // android.view.ViewTreeObserver.OnPreDrawListener
     public final boolean onPreDraw() {
         int i10;
-        float r22;
+        float t22;
         float c10;
         float c11;
         boolean z10;
@@ -69,16 +69,16 @@ public final class lt0 implements ViewTreeObserver.OnPreDrawListener {
             float f11 = min / 2.0f;
             float f12 = f10 - f11;
             float f13 = (f10 + f11) - f12;
-            r22 = Math.max(((measuredWidth + f11) - (measuredWidth - f11)) / layoutParams.width, f13 / layoutParams.height);
-            c10 = ((f13 - (layoutParams.height * r22)) / 2.0f) + f12;
+            t22 = Math.max(((measuredWidth + f11) - (measuredWidth - f11)) / layoutParams.width, f13 / layoutParams.height);
+            c10 = ((f13 - (layoutParams.height * t22)) / 2.0f) + f12;
             int measuredWidth2 = photoViewer.g0.getMeasuredWidth();
-            c11 = com.google.android.gms.internal.play_billing.k3.c(layoutParams.width, r22, (measuredWidth2 - r11) - rect.right, 2.0f) + rect.left;
+            c11 = com.google.android.gms.internal.play_billing.k3.c(layoutParams.width, t22, (measuredWidth2 - r11) - rect.right, 2.0f) + rect.left;
         } else {
             i10 = 0;
             float min2 = Math.min(photoViewer.g0.getMeasuredWidth() / layoutParams.width, (AndroidUtilities.displaySize.y + (!photoViewer.s ? AndroidUtilities.statusBarHeight : 0)) / layoutParams.height);
-            r22 = photoViewer.c2 == 11 ? photoViewer.r2(true) * min2 : min2;
-            c10 = com.google.android.gms.internal.play_billing.k3.c(layoutParams.height, r22, AndroidUtilities.displaySize.y + (!photoViewer.s ? AndroidUtilities.statusBarHeight : 0), 2.0f);
-            c11 = com.google.android.gms.internal.play_billing.k3.c(layoutParams.width, r22, photoViewer.g0.getMeasuredWidth(), 2.0f);
+            t22 = photoViewer.c2 == 11 ? photoViewer.t2(true) * min2 : min2;
+            c10 = com.google.android.gms.internal.play_billing.k3.c(layoutParams.height, t22, AndroidUtilities.displaySize.y + (!photoViewer.s ? AndroidUtilities.statusBarHeight : 0), 2.0f);
+            c11 = com.google.android.gms.internal.play_billing.k3.c(layoutParams.width, t22, photoViewer.g0.getMeasuredWidth(), 2.0f);
             photoViewer.b6 = 0.0f;
             photoViewer.f6 = 0.0f;
         }
@@ -129,8 +129,8 @@ public final class lt0 implements ViewTreeObserver.OnPreDrawListener {
         fArr3[11] = abs2 * f19;
         fArr3[12] = f16 * f19;
         float[] fArr4 = fArr[1];
-        fArr4[i10] = r22;
-        fArr4[1] = r22;
+        fArr4[i10] = t22;
+        fArr4[1] = t22;
         fArr4[2] = c11;
         fArr4[3] = c10;
         fArr4[4] = 0.0f;
@@ -187,13 +187,13 @@ public final class lt0 implements ViewTreeObserver.OnPreDrawListener {
             arrayList.add(ObjectAnimator.ofFloat(bu0Var, (Property<bu0, Float>) property, 0.0f, 1.0f));
             arrayList.add(ObjectAnimator.ofFloat(photoViewer.j0, (Property<View, Float>) property, 0.0f, 1.0f));
             if (photoViewer.c2 == 1) {
-                arrayList.add(ObjectAnimator.ofFloat(photoViewer.C1, (Property<org.telegram.ui.Components.nf0, Float>) property, 0.0f, 1.0f));
+                arrayList.add(ObjectAnimator.ofFloat(photoViewer.C1, (Property<org.telegram.ui.Components.of0, Float>) property, 0.0f, 1.0f));
             }
             animatorSet.playTogether(arrayList);
             animatorSet.setDuration(200L);
             animatorSet.addListener(new zb0(this, 13));
             photoViewer.e0.setLayerType(2, null);
-            photoViewer.y2(false);
+            photoViewer.A2(false);
             photoViewer.o4 = System.currentTimeMillis();
             AndroidUtilities.runOnUIThread(new xg0(27, this, animatorSet));
         }

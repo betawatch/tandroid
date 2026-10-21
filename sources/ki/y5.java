@@ -5,10 +5,10 @@ import android.text.style.CharacterStyle;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.ob0;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qj0;
 import org.telegram.ui.Wallet.h7;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class y5 extends CharacterStyle {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final class y5 extends CharacterStyle {
                 textPaint.setAlpha(alpha);
                 break;
             case 2:
-                textPaint.setColor(h6.v(h6.m1(0.55f, textPaint.getColor()), h6.m1(0.4f, ((pj0) this.b).I)));
+                textPaint.setColor(h6.v(h6.m1(0.55f, textPaint.getColor()), h6.m1(0.4f, ((qj0) this.b).I)));
                 break;
             case 3:
                 textPaint.setColor(((org.telegram.ui.Wallet.n3) this.b).t0);
@@ -50,8 +50,8 @@ public final class y5 extends CharacterStyle {
         }
     }
 
-    public y5(pj0 pj0Var) {
+    public y5(qj0 qj0Var) {
         this.a = 2;
-        this.b = pj0Var;
+        this.b = qj0Var;
     }
 }

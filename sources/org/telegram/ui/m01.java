@@ -26,9 +26,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public class m01 extends org.telegram.ui.Components.hm0 {
+public class m01 extends org.telegram.ui.Components.im0 {
     public TLRPC.WebPage E;
     public boolean F;
     public l01[] c;
@@ -13393,7 +13393,7 @@ public class m01 extends org.telegram.ui.Components.hm0 {
         return new l01[]{l01Var23, l01Var24, l01Var25, l01Var26, l01Var27, l01Var28, l01Var29, l01Var30, l01Var31, l01Var32, l01Var33, l01Var34, l01Var35, l01Var36, l01Var37, l01Var38, l01Var39, l01Var, l01Var41, l01Var42, l01Var2, l01Var44, l01Var45, l01Var46, l01Var47, l01Var48, l01Var49, l01Var50, l01Var51, l01Var52, l01Var3, l01Var4, l01Var54, l01Var55, l01Var56, l01Var57, l01Var58, l01Var59, l01Var60, l01Var61, l01Var62, l01Var63, l01Var64, l01Var65, l01Var66, l01Var67, l01Var68, l01Var69, l01Var70, l01Var71, l01Var72, l01Var73, l01Var74, l01Var75, l01Var76, l01Var77, l01Var78, l01Var79, l01Var80, l01Var81, l01Var82, l01Var83, l01Var84, l01Var85, l01Var86, l01Var87, l01Var88, l01Var89, l01Var90, l01Var91, l01Var92, l01Var93, l01Var94, l01Var95, l01Var96, l01Var97, l01Var98, l01Var99, l01Var100, l01Var101, l01Var102, l01Var103, l01Var104, l01Var105, l01Var106, l01Var107, l01Var108, l01Var109, l01Var110, l01Var111, l01Var112, l01Var6, l01Var114, l01Var7, l01Var116, l01Var8, l01Var118, l01Var119, l01Var120, l01Var121, l01Var5, l01Var9, l01Var10, l01Var11, l01Var12, l01Var13, l01Var14, l01Var15, l01Var16, l01Var123, l01Var17, l01Var18, l01Var19, l01Var20, l01Var21, l01Var124, l01Var125, l01Var126, l01Var127, l01Var128, l01Var129, l01Var130, l01Var131, l01Var132, l01Var133, l01Var134, l01Var135, l01Var22, l01Var136, l01Var137, l01Var138, l01Var139, l01Var140, l01Var141, l01Var142, l01Var43, l01Var144, l01Var145, l01Var146};
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         return b1Var.f == 0;
     }
@@ -13603,6 +13603,6 @@ public class m01 extends org.telegram.ui.Components.hm0 {
         Context context = this.h;
         View l4Var = i10 != 0 ? i10 != 1 ? new org.telegram.ui.Cells.l4(context, 16) : new org.telegram.ui.Cells.u3(context, null) : new org.telegram.ui.Cells.w6(context);
         l4Var.setLayoutParams(new s4.o0(-1, -2));
-        return new org.telegram.ui.Components.sl0(l4Var);
+        return new org.telegram.ui.Components.tl0(l4Var);
     }
 }

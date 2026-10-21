@@ -17,12 +17,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class td0 extends Dialog implements org.telegram.ui.ActionBar.a5 {
     public final ActionBarLayout a;
     public final FrameLayout b;
-    public final le0 c;
+    public final me0 c;
 
     public td0(Context context) {
         super(context, R.style.TransparentDialog);
@@ -43,9 +43,9 @@ public final class td0 extends Dialog implements org.telegram.ui.ActionBar.a5 {
             actionBarLayout.setRemoveActionBarExtraHeight(true);
             m.g3.p(actionBarLayout.getView());
         }
-        le0 le0Var = new le0(context);
-        this.c = le0Var;
-        frameLayout.addView(le0Var, w7.z5.c(-1.0f, -1));
+        me0 me0Var = new me0(context);
+        this.c = me0Var;
+        frameLayout.addView(me0Var, w7.z5.c(-1.0f, -1));
         setContentView(frameLayout);
     }
 

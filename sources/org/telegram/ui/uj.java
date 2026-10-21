@@ -9,7 +9,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class uj extends s4.r0 {
     public boolean b;
@@ -43,7 +43,7 @@ public final class uj extends s4.r0 {
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startSpoilers, new Object[0]);
             qnVar.x0.setOverScrollMode(0);
             qnVar.c9.V();
-            qnVar.ad(false);
+            qnVar.bd(false);
             qnVar.v9(1);
             qnVar.sa = false;
             return;
@@ -134,16 +134,16 @@ public final class uj extends s4.r0 {
         if (i11 != 0 && qnVar.j3 && !qnVar.f3) {
             if (qnVar.L7 != Integer.MAX_VALUE) {
                 qnVar.Ma();
-                qnVar.ad(false);
+                qnVar.bd(false);
             }
-            qnVar.Jb(true);
+            qnVar.Kb(true);
         }
         if (qnVar.y9() && i11 != 0 && qnVar.k3 && !qnVar.f3) {
             if (qnVar.L7 != Integer.MAX_VALUE) {
                 qnVar.Ma();
-                qnVar.ad(false);
+                qnVar.bd(false);
             }
-            qnVar.Kb(true);
+            qnVar.Lb(true);
         }
         qnVar.d7(true);
         if (L0 != -1) {
@@ -160,7 +160,7 @@ public final class uj extends s4.r0 {
                         if (f7 > i12) {
                             this.a = 0.0f;
                             qnVar.g9 = true;
-                            qnVar.zc();
+                            qnVar.Ac();
                             qnVar.k1 = true;
                         }
                     }
@@ -169,13 +169,13 @@ public final class uj extends s4.r0 {
                     this.a = f10;
                     if (f10 < (-i12)) {
                         qnVar.g9 = false;
-                        qnVar.zc();
+                        qnVar.Ac();
                         this.a = 0.0f;
                     }
                 }
             } else if (i11 >= 0) {
                 qnVar.g9 = false;
-                qnVar.zc();
+                qnVar.Ac();
             }
         }
         qnVar.w9();

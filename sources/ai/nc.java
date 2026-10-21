@@ -3,9 +3,9 @@ package ai;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.vj0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class nc implements ImageReceiver.ImageReceiverDelegate {
     public final /* synthetic */ boolean[] a;
@@ -16,7 +16,7 @@ public final class nc implements ImageReceiver.ImageReceiverDelegate {
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public final void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        uj0 lottieAnimation;
+        vj0 lottieAnimation;
         if (!z10 || (lottieAnimation = imageReceiver.getLottieAnimation()) == null) {
             return;
         }
@@ -31,11 +31,11 @@ public final class nc implements ImageReceiver.ImageReceiverDelegate {
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public final /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.k5.a(this, i10, str, drawable);
+        org.telegram.messenger.m5.a(this, i10, str, drawable);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public final /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.k5.b(this, imageReceiver);
+        org.telegram.messenger.m5.b(this, imageReceiver);
     }
 }

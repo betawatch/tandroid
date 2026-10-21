@@ -26,9 +26,9 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public class UserInfoActivity extends org.telegram.ui.Components.w61 implements NotificationCenter.NotificationCenterDelegate {
+public class UserInfoActivity extends org.telegram.ui.Components.x61 implements NotificationCenter.NotificationCenterDelegate {
     public String E;
     public String F;
     public String G;
@@ -55,7 +55,7 @@ public class UserInfoActivity extends org.telegram.ui.Components.w61 implements 
     public int usernameRow;
     public org.telegram.ui.Components.as v;
     public org.telegram.ui.ActionBar.u0 w;
-    public org.telegram.ui.Components.v61 x;
+    public org.telegram.ui.Components.w61 x;
     public int h = TLObject.FLAG_31;
     public ArrayList s = new ArrayList();
     public final ArrayList y = new ArrayList();
@@ -68,7 +68,7 @@ public class UserInfoActivity extends org.telegram.ui.Components.w61 implements 
         if (tL_error == null) {
             if (tLObject2 instanceof TLRPC.TL_boolFalse) {
                 userInfoActivity.v.a(0.0f);
-                org.telegram.messenger.kk.q(R.string.UnknownError, org.telegram.ui.Components.xc.a0(userInfoActivity), null);
+                org.telegram.messenger.mk.q(R.string.UnknownError, org.telegram.ui.Components.xc.a0(userInfoActivity), null);
                 return;
             }
             userInfoActivity.P = true;
@@ -123,8 +123,8 @@ public class UserInfoActivity extends org.telegram.ui.Components.w61 implements 
         return (tL_birthday == null) != (tL_birthday2 != null) && (tL_birthday == null || (tL_birthday.day == tL_birthday2.day && tL_birthday.month == tL_birthday2.month && tL_birthday.year == tL_birthday2.year));
     }
 
-    @Override // org.telegram.ui.Components.w61
-    public final void U(ArrayList arrayList, org.telegram.ui.Components.t61 t61Var) {
+    @Override // org.telegram.ui.Components.x61
+    public final void U(ArrayList arrayList, org.telegram.ui.Components.u61 u61Var) {
         ArrayList<TLRPC.PrivacyRule> privacyRules;
         this.addAccountRow = -1;
         this.numberRow = -1;
@@ -136,20 +136,20 @@ public class UserInfoActivity extends org.telegram.ui.Components.w61 implements 
             }
         }
         Collections.sort(arrayList2, new jg0(8));
-        arrayList.add(org.telegram.ui.Components.g61.t(LocaleController.getString(R.string.EditProfileName)));
+        arrayList.add(org.telegram.ui.Components.h61.t(LocaleController.getString(R.string.EditProfileName)));
         this.firstNameRow = arrayList.size();
-        arrayList.add(org.telegram.ui.Components.g61.k(this.d));
+        arrayList.add(org.telegram.ui.Components.h61.k(this.d));
         this.lastNameRow = arrayList.size();
-        arrayList.add(org.telegram.ui.Components.g61.k(this.e));
-        arrayList.add(org.telegram.ui.Components.g61.A(-1, null));
+        arrayList.add(org.telegram.ui.Components.h61.k(this.e));
+        arrayList.add(org.telegram.ui.Components.h61.A(-1, null));
         this.bioRow = arrayList.size();
-        arrayList.add(org.telegram.ui.Components.g61.k(this.f));
-        arrayList.add(org.telegram.ui.Components.g61.B(this.n));
+        arrayList.add(org.telegram.ui.Components.h61.k(this.f));
+        arrayList.add(org.telegram.ui.Components.h61.B(this.n));
         TLRPC.User currentUser = getUserConfig().getCurrentUser();
         i2.e.p(R.string.EditAccountInfoHeader, arrayList);
         if (currentUser != null) {
             this.numberRow = arrayList.size();
-            arrayList.add(t71.a(7, -11154873, -14175180, R.drawable.settings_calls, org.telegram.messenger.kk.g(new StringBuilder("+"), currentUser.phone, jf.b.c()), LocaleController.getString(R.string.TapToChangePhone), null));
+            arrayList.add(t71.a(7, -11154873, -14175180, R.drawable.settings_calls, org.telegram.messenger.mk.g(new StringBuilder("+"), currentUser.phone, jf.b.c()), LocaleController.getString(R.string.TapToChangePhone), null));
         }
         this.usernameRow = arrayList.size();
         if (UserObject.getPublicUsername(currentUser) != null) {
@@ -185,7 +185,7 @@ public class UserInfoActivity extends org.telegram.ui.Components.w61 implements 
             }
             this.r = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(string, new yf1(this, i11)), true);
         }
-        arrayList.add(org.telegram.ui.Components.g61.B(this.r));
+        arrayList.add(org.telegram.ui.Components.h61.B(this.r));
         this.channelRow = arrayList.size();
         if (this.K == null) {
             arrayList.add(t71.a(3, -1007845, -1996271, R.drawable.msg_filled_menu_channels, LocaleController.getString(R.string.EditProfileChannelTitle), null, LocaleController.getString(R.string.EditProfileChannelAdd)));
@@ -219,14 +219,14 @@ public class UserInfoActivity extends org.telegram.ui.Components.w61 implements 
             }
             arrayList.add(t71.a(6, -3903756, -6335009, R.drawable.premium_ai_editor, LocaleController.getString(R.string.EditProfileChatAutomation), sb2, null));
         }
-        arrayList.add(org.telegram.ui.Components.g61.A(-3, LocaleController.getString(R.string.EditProfileChatAutomationInfo)));
+        arrayList.add(org.telegram.ui.Components.h61.A(-3, LocaleController.getString(R.string.EditProfileChatAutomationInfo)));
         boolean z10 = UserConfig.getActivatedAccountsCount() < 4;
         if (z10) {
             this.addAccountRow = arrayList.size();
             int i14 = R.drawable.outline_add_account;
             String string2 = LocaleController.getString(R.string.AddAccount);
             int i15 = eg1.a;
-            org.telegram.ui.Components.g61 J = org.telegram.ui.Components.g61.J(eg1.class);
+            org.telegram.ui.Components.h61 J = org.telegram.ui.Components.h61.J(eg1.class);
             J.d = 10;
             J.k = i14;
             J.l = string2;
@@ -242,23 +242,23 @@ public class UserInfoActivity extends org.telegram.ui.Components.w61 implements 
             for (int i16 = 0; i16 < arrayList2.size(); i16++) {
                 int intValue = ((Integer) arrayList2.get(i16)).intValue();
                 int i17 = r71.a;
-                org.telegram.ui.Components.g61 J2 = org.telegram.ui.Components.g61.J(r71.class);
+                org.telegram.ui.Components.h61 J2 = org.telegram.ui.Components.h61.J(r71.class);
                 J2.d = i16;
                 J2.z = intValue;
                 arrayList.add(J2);
             }
             if (UserConfig.hasPremiumOnAccounts()) {
-                arrayList.add(org.telegram.ui.Components.g61.B(null));
+                arrayList.add(org.telegram.ui.Components.h61.B(null));
             } else {
                 int max = Math.max(0, UserConfig.getMaxAccountCount() - UserConfig.getActivatedAccountsCount());
-                arrayList.add(org.telegram.ui.Components.g61.B(TextUtils.concat(max > 0 ? LocaleController.formatPluralStringComma("AddAccountInfo1", max) + " " : "", AndroidUtilities.replaceSingleTag(LocaleController.formatPluralStringComma("AddAccountInfo2", UserConfig.getMaxAccountCount()), new yf1(this, 3)))));
+                arrayList.add(org.telegram.ui.Components.h61.B(TextUtils.concat(max > 0 ? LocaleController.formatPluralStringComma("AddAccountInfo1", max) + " " : "", AndroidUtilities.replaceSingleTag(LocaleController.formatPluralStringComma("AddAccountInfo2", UserConfig.getMaxAccountCount()), new yf1(this, 3)))));
             }
         }
         this.logoutRow = arrayList.size();
         int i18 = R.drawable.msg_leave;
         String string3 = LocaleController.getString(R.string.LogOut);
         int i19 = eg1.a;
-        org.telegram.ui.Components.g61 J3 = org.telegram.ui.Components.g61.J(eg1.class);
+        org.telegram.ui.Components.h61 J3 = org.telegram.ui.Components.h61.J(eg1.class);
         J3.d = 11;
         J3.k = i18;
         J3.l = string3;
@@ -266,19 +266,19 @@ public class UserInfoActivity extends org.telegram.ui.Components.w61 implements 
         J3.z = 0;
         J3.r = true;
         arrayList.add(J3);
-        arrayList.add(org.telegram.ui.Components.g61.A(-4, null));
+        arrayList.add(org.telegram.ui.Components.h61.A(-4, null));
     }
 
-    @Override // org.telegram.ui.Components.w61
+    @Override // org.telegram.ui.Components.x61
     public final CharSequence V() {
         return LocaleController.getString(R.string.EditAccountInfo2);
     }
 
-    @Override // org.telegram.ui.Components.w61
-    public final void W(org.telegram.ui.Components.g61 g61Var, View view) {
+    @Override // org.telegram.ui.Components.x61
+    public final void W(org.telegram.ui.Components.h61 h61Var, View view) {
         int i10 = 0;
         Integer num = null;
-        if (g61Var.d == 10) {
+        if (h61Var.d == 10) {
             for (int i11 = 3; i11 >= 0; i11--) {
                 if (!UserConfig.getInstance(i11).isClientActivated()) {
                     i10++;
@@ -301,8 +301,8 @@ public class UserInfoActivity extends org.telegram.ui.Components.w61 implements 
                 return;
             }
         }
-        if (g61Var.G(r71.class)) {
-            int i12 = g61Var.z;
+        if (h61Var.G(r71.class)) {
+            int i12 = h61Var.z;
             LaunchActivity launchActivity = LaunchActivity.H1;
             if (launchActivity != null) {
                 launchActivity.O0(i12);
@@ -310,7 +310,7 @@ public class UserInfoActivity extends org.telegram.ui.Components.w61 implements 
             }
             return;
         }
-        int i13 = g61Var.d;
+        int i13 = h61Var.d;
         if (i13 == 1 || i13 == 9) {
             Activity parentActivity = getParentActivity();
             String string = LocaleController.getString(R.string.EditProfileBirthdayTitle);
@@ -321,9 +321,9 @@ public class UserInfoActivity extends org.telegram.ui.Components.w61 implements 
         }
         if (i13 == 2) {
             this.J = null;
-            org.telegram.ui.Components.v61 v61Var = this.x;
-            if (v61Var != null) {
-                v61Var.W2.N(true);
+            org.telegram.ui.Components.w61 w61Var = this.x;
+            if (w61Var != null) {
+                w61Var.W2.N(true);
             }
             b0(true);
             return;
@@ -368,8 +368,8 @@ public class UserInfoActivity extends org.telegram.ui.Components.w61 implements 
         }
     }
 
-    @Override // org.telegram.ui.Components.w61
-    public final boolean X(org.telegram.ui.Components.g61 g61Var, View view) {
+    @Override // org.telegram.ui.Components.x61
+    public final boolean X(org.telegram.ui.Components.h61 h61Var, View view) {
         return false;
     }
 
@@ -505,7 +505,7 @@ public class UserInfoActivity extends org.telegram.ui.Components.w61 implements 
         }
     }
 
-    @Override // org.telegram.ui.Components.w61, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.Components.x61, org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
         ag1 ag1Var = new ag1(this, context, LocaleController.getString(R.string.EditProfileFirstName), this.resourceProvider, 0);
         this.d = ag1Var;
@@ -528,9 +528,9 @@ public class UserInfoActivity extends org.telegram.ui.Components.w61 implements 
         e0();
         this.n = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.EditProfileBioInfo2), new yf1(this, 0));
         super.createView(context);
-        org.telegram.ui.Components.v61 v61Var = this.a;
-        this.x = v61Var;
-        v61Var.p1();
+        org.telegram.ui.Components.w61 w61Var = this.a;
+        this.x = w61Var;
+        w61Var.p1();
         this.x.setClipToPadding(false);
         this.actionBar.setAdaptiveBackground(this.x);
         org.telegram.ui.ActionBar.d5 d5Var = this.parentLayout;
@@ -549,7 +549,7 @@ public class UserInfoActivity extends org.telegram.ui.Components.w61 implements 
     }
 
     public final void d0() {
-        org.telegram.ui.Components.t61 t61Var;
+        org.telegram.ui.Components.u61 u61Var;
         if (this.O) {
             return;
         }
@@ -590,9 +590,9 @@ public class UserInfoActivity extends org.telegram.ui.Components.w61 implements 
         this.L = userFull.business_work_hours != null;
         this.M = userFull.business_location != null;
         b0(true);
-        org.telegram.ui.Components.v61 v61Var = this.x;
-        if (v61Var != null && (t61Var = v61Var.W2) != null) {
-            t61Var.N(true);
+        org.telegram.ui.Components.w61 w61Var = this.x;
+        if (w61Var != null && (u61Var = w61Var.W2) != null) {
+            u61Var.N(true);
         }
         this.O = true;
     }
@@ -605,18 +605,18 @@ public class UserInfoActivity extends org.telegram.ui.Components.w61 implements 
             return;
         }
         if (i10 == NotificationCenter.updateInterfaces) {
-            org.telegram.ui.Components.v61 v61Var = this.x;
-            if (v61Var != null) {
-                v61Var.W2.N(true);
+            org.telegram.ui.Components.w61 w61Var = this.x;
+            if (w61Var != null) {
+                w61Var.W2.N(true);
                 return;
             }
             return;
         }
         if (i10 == NotificationCenter.privacyRulesUpdated) {
             e0();
-            org.telegram.ui.Components.v61 v61Var2 = this.x;
-            if (v61Var2 != null) {
-                v61Var2.W2.N(true);
+            org.telegram.ui.Components.w61 w61Var2 = this.x;
+            if (w61Var2 != null) {
+                w61Var2.W2.N(true);
                 return;
             }
             return;
@@ -627,9 +627,9 @@ public class UserInfoActivity extends org.telegram.ui.Components.w61 implements 
                 arrayList = new ArrayList<>();
             }
             this.s = arrayList;
-            org.telegram.ui.Components.v61 v61Var3 = this.x;
-            if (v61Var3 != null) {
-                v61Var3.W2.N(true);
+            org.telegram.ui.Components.w61 w61Var3 = this.x;
+            if (w61Var3 != null) {
+                w61Var3.W2.N(true);
             }
         }
     }
@@ -642,7 +642,7 @@ public class UserInfoActivity extends org.telegram.ui.Components.w61 implements 
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void e0() {
-        org.telegram.ui.Components.v61 v61Var;
+        org.telegram.ui.Components.w61 w61Var;
         int i10 = this.h;
         ag1 ag1Var = this.f;
         int i11 = 0;
@@ -740,10 +740,10 @@ public class UserInfoActivity extends org.telegram.ui.Components.w61 implements 
                 this.h = Objects.hash(Integer.valueOf(i12 + 10), Integer.valueOf(i14), Integer.valueOf(i13));
             }
         }
-        if (i10 == this.h || (v61Var = this.x) == null) {
+        if (i10 == this.h || (w61Var = this.x) == null) {
             return;
         }
-        v61Var.W2.N(true);
+        w61Var.W2.N(true);
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -794,9 +794,9 @@ public class UserInfoActivity extends org.telegram.ui.Components.w61 implements 
             ConnectionsManager.getInstance(bg1Var.a).sendRequest(tL_channels_getAdminedPublicChannels, new m(bg1Var, 23));
         }
         this.r = null;
-        org.telegram.ui.Components.v61 v61Var = this.x;
-        if (v61Var != null) {
-            v61Var.W2.N(true);
+        org.telegram.ui.Components.w61 w61Var = this.x;
+        if (w61Var != null) {
+            w61Var.W2.N(true);
         }
     }
 }

@@ -5,42 +5,42 @@ import android.view.View;
 import ci.t6;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.is0;
-import org.telegram.ui.Components.s41;
-import org.telegram.ui.Components.v81;
+import org.telegram.ui.Components.js0;
+import org.telegram.ui.Components.t41;
+import org.telegram.ui.Components.w81;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class b extends v81 {
+public final class b extends w81 {
     public final /* synthetic */ Context a;
-    public final /* synthetic */ is0 b;
+    public final /* synthetic */ js0 b;
 
-    public b(is0 is0Var, Context context) {
-        this.b = is0Var;
+    public b(js0 js0Var, Context context) {
+        this.b = js0Var;
         this.a = context;
     }
 
-    @Override // org.telegram.ui.Components.v81
+    @Override // org.telegram.ui.Components.w81
     public final void b(View view, int i10, int i11) {
         r rVar = (r) view;
-        is0 is0Var = this.b;
-        t6 t6Var = i10 == 0 ? is0Var.e : (t6) is0Var.f.get(i10 - 1);
+        js0 js0Var = this.b;
+        t6 t6Var = i10 == 0 ? js0Var.e : (t6) js0Var.f.get(i10 - 1);
         t6Var.H(null);
         rVar.setList(t6Var);
-        rVar.setVisibleHeight(is0Var.v);
+        rVar.setVisibleHeight(js0Var.v);
     }
 
-    @Override // org.telegram.ui.Components.v81
+    @Override // org.telegram.ui.Components.w81
     public final View d(int i10) {
         return new r(this.b, this.a);
     }
 
-    @Override // org.telegram.ui.Components.v81
+    @Override // org.telegram.ui.Components.w81
     public final int e() {
         return this.b.f.size() + 1;
     }
 
-    @Override // org.telegram.ui.Components.v81
+    @Override // org.telegram.ui.Components.w81
     public final int f(int i10) {
         if (i10 == 0) {
             return 0;
@@ -48,12 +48,12 @@ public final class b extends v81 {
         return ((t6) this.b.f.get(i10 - 1)).E.hashCode();
     }
 
-    @Override // org.telegram.ui.Components.v81
+    @Override // org.telegram.ui.Components.w81
     public final CharSequence g(int i10) {
         if (i10 == 0) {
             return LocaleController.getString(R.string.ProfileBotLanguageGeneral);
         }
-        String E = s41.E(((t6) this.b.f.get(i10 - 1)).E, null, null);
+        String E = t41.E(((t6) this.b.f.get(i10 - 1)).E, null, null);
         if (E == null) {
             return null;
         }

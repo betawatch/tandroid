@@ -10,13 +10,13 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.PathInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.b71;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.ti;
-import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w61;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class v9 {
     public final ti a;
@@ -73,13 +73,13 @@ public final class v9 {
                             v9Var.c(rectF2.centerX(), rectF2.centerY(), rectF2.width());
                             o5 o5Var2 = v9Var.e;
                             TL_wallet.walletTransaction wallettransaction3 = v9Var.f;
-                            b71 b71Var = o5Var2.q0[0];
+                            c71 c71Var = o5Var2.q0[0];
                             g3 g3Var2 = null;
-                            if (b71Var != null) {
+                            if (c71Var != null) {
                                 int i11 = 0;
                                 while (true) {
-                                    if (i11 < b71Var.getChildCount()) {
-                                        View childAt = b71Var.getChildAt(i11);
+                                    if (i11 < c71Var.getChildCount()) {
+                                        View childAt = c71Var.getChildAt(i11);
                                         if ((childAt instanceof g3) && (wallettransaction2 = (g3Var = (g3) childAt).R) != null && e3.a(wallettransaction2, wallettransaction3)) {
                                             g3Var2 = g3Var;
                                         } else {
@@ -178,13 +178,13 @@ public final class v9 {
                             v9Var.c(rectF2.centerX(), rectF2.centerY(), rectF2.width());
                             o5 o5Var2 = v9Var.e;
                             TL_wallet.walletTransaction wallettransaction3 = v9Var.f;
-                            b71 b71Var = o5Var2.q0[0];
+                            c71 c71Var = o5Var2.q0[0];
                             g3 g3Var2 = null;
-                            if (b71Var != null) {
+                            if (c71Var != null) {
                                 int i112 = 0;
                                 while (true) {
-                                    if (i112 < b71Var.getChildCount()) {
-                                        View childAt = b71Var.getChildAt(i112);
+                                    if (i112 < c71Var.getChildCount()) {
+                                        View childAt = c71Var.getChildAt(i112);
                                         if ((childAt instanceof g3) && (wallettransaction2 = (g3Var = (g3) childAt).R) != null && e3.a(wallettransaction2, wallettransaction3)) {
                                             g3Var2 = g3Var;
                                         } else {
@@ -242,24 +242,24 @@ public final class v9 {
         animatorSet.addListener(new u9(this, tiVar, m6Var));
         o5Var.J0();
         o5Var.R0(false);
-        v61 v61Var = o5Var.a;
-        if (v61Var != null) {
-            v61Var.B0();
+        w61 w61Var = o5Var.a;
+        if (w61Var != null) {
+            w61Var.B0();
             o5Var.a.V2.h1(0, 0);
-            b71 b71Var = o5Var.q0[0];
-            if (b71Var != null) {
-                t61 t61Var = b71Var.W2;
-                b71Var.B0();
-                t61Var.N(false);
-                for (int i12 = 0; i12 < t61Var.x.size(); i12++) {
-                    g61 G = t61Var.G(i12);
+            c71 c71Var = o5Var.q0[0];
+            if (c71Var != null) {
+                u61 u61Var = c71Var.W2;
+                c71Var.B0();
+                u61Var.N(false);
+                for (int i12 = 0; i12 < u61Var.x.size(); i12++) {
+                    h61 G = u61Var.G(i12);
                     if (G != null) {
                         Object obj = G.G;
                         if (obj instanceof TL_wallet.walletTransaction) {
                             TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) obj;
                             int i13 = e3.a;
                             if ((wallettransaction2 instanceof d3 ? ((d3) wallettransaction2).a : wallettransaction2) == wallettransaction || m0.f0((TL_wallet.walletTransaction) obj, wallettransaction)) {
-                                b71Var.V2.h1(i12, 0);
+                                c71Var.V2.h1(i12, 0);
                                 break;
                             }
                         } else {

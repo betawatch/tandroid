@@ -17,7 +17,7 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.ah0;
+import org.telegram.ui.Components.bh0;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.i30;
 import org.telegram.ui.Components.pg;
@@ -37,7 +37,7 @@ import org.telegram.ui.vf1;
 import org.telegram.ui.x51;
 import org.telegram.ui.x71;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class g6 extends View implements ne.d {
     public final /* synthetic */ int a;
@@ -119,11 +119,11 @@ public final class g6 extends View implements ne.d {
                 Paint paint = (Paint) this.b;
                 paint.setStrokeWidth(AndroidUtilities.dpf2(1.66f));
                 canvas.drawCircle(getWidth() / 2.0f, getHeight() / 2.0f, AndroidUtilities.dp(10.0f), paint);
-                ah0 ah0Var = (ah0) this.c;
-                ah0Var.setBounds(0, 0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
+                bh0 bh0Var = (bh0) this.c;
+                bh0Var.setBounds(0, 0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
                 canvas.save();
                 canvas.translate((getWidth() - AndroidUtilities.dp(10.0f)) / 2.0f, (getHeight() - AndroidUtilities.dp(10.0f)) / 2.0f);
-                ah0Var.draw(canvas);
+                bh0Var.draw(canvas);
                 canvas.restore();
                 break;
             case 1:
@@ -598,7 +598,7 @@ public final class g6 extends View implements ne.d {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 0:
-                return drawable == ((ah0) this.c) || super.verifyDrawable(drawable);
+                return drawable == ((bh0) this.c) || super.verifyDrawable(drawable);
             default:
                 return super.verifyDrawable(drawable);
         }
@@ -618,13 +618,13 @@ public final class g6 extends View implements ne.d {
         this.a = 0;
         Paint paint = new Paint(1);
         this.b = paint;
-        ah0 ah0Var = new ah0(10);
-        this.c = ah0Var;
+        bh0 bh0Var = new bh0(10);
+        this.c = bh0Var;
         paint.setColor(-1);
         paint.setShadowLayer(1.0f, 0.0f, 0.0f, 419430400);
         paint.setStyle(Paint.Style.STROKE);
-        ah0Var.setCallback(this);
-        ah0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        bh0Var.setCallback(this);
+        bh0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

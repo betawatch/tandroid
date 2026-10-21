@@ -41,11 +41,11 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.wo0;
+import org.telegram.ui.Components.xo0;
 import org.telegram.ui.t21;
 import v7.u6;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
@@ -288,7 +288,7 @@ public final /* synthetic */ class z implements Runnable {
                 return;
             case 22:
                 org.telegram.ui.ActionBar.k kVar = (org.telegram.ui.ActionBar.k) this.b;
-                boolean canScrollVertically = ((wo0) this.c).canScrollVertically(-1);
+                boolean canScrollVertically = ((xo0) this.c).canScrollVertically(-1);
                 boolean z10 = !canScrollVertically;
                 if (kVar.r1 == z10) {
                     return;

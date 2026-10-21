@@ -3,11 +3,11 @@ package org.telegram.ui;
 import android.app.Activity;
 import android.content.Context;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ia extends pa {
     public final /* synthetic */ int J = 0;
-    public final /* synthetic */ org.telegram.ui.Components.hm0 K;
+    public final /* synthetic */ org.telegram.ui.Components.im0 K;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ia(ja jaVar, Activity activity, org.telegram.ui.ActionBar.d6 d6Var) {

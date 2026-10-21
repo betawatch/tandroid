@@ -20,8 +20,8 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.xl0;
 import org.telegram.ui.Components.xr;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.cy;
@@ -29,9 +29,9 @@ import org.telegram.ui.hf1;
 import org.telegram.ui.jz0;
 import org.telegram.ui.q50;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f implements hf1, org.telegram.ui.ActionBar.a2, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, xl0, MessagesController.IsInChatCheckedCallback, t5.b, s5.e, qa.a {
+public final /* synthetic */ class f implements hf1, org.telegram.ui.ActionBar.a2, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, yl0, MessagesController.IsInChatCheckedCallback, t5.b, s5.e, qa.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -44,7 +44,7 @@ public final /* synthetic */ class f implements hf1, org.telegram.ui.ActionBar.a
         this.d = obj2;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ boolean P0(View view) {
         return false;
     }
@@ -75,7 +75,7 @@ public final /* synthetic */ class f implements hf1, org.telegram.ui.ActionBar.a
         }
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public void d(float f7, float f10, int i10, View view) {
         ProfileActivity.a0((ProfileActivity) this.c, (Context) this.d, this.b, view, i10, f7, f10);
     }
@@ -108,7 +108,7 @@ public final /* synthetic */ class f implements hf1, org.telegram.ui.ActionBar.a
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.k5.a(this, i10, str, drawable);
+        org.telegram.messenger.m5.a(this, i10, str, drawable);
     }
 
     @Override // org.telegram.ui.ActionBar.a2
@@ -170,7 +170,7 @@ public final /* synthetic */ class f implements hf1, org.telegram.ui.ActionBar.a
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.k5.b(this, imageReceiver);
+        org.telegram.messenger.m5.b(this, imageReceiver);
     }
 
     @Override // org.telegram.messenger.ChatObject.Call.OnParticipantsLoad
@@ -190,7 +190,7 @@ public final /* synthetic */ class f implements hf1, org.telegram.ui.ActionBar.a
         this.b = j10;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ void a0(View view, float f7, float f10) {
     }
 }

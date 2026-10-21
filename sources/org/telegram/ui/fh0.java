@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class fh0 extends FrameLayout {
     public float E;
@@ -30,7 +30,7 @@ public final class fh0 extends FrameLayout {
     public boolean G;
     public boolean H;
     public boolean I;
-    public final org.telegram.ui.Components.t21 J;
+    public final org.telegram.ui.Components.u21 J;
     public final /* synthetic */ ih0 K;
     public int a;
     public final LinearLayout b;
@@ -56,7 +56,7 @@ public final class fh0 extends FrameLayout {
         this.v = paint;
         this.w = new RectF();
         this.E = 1.0f;
-        this.J = new org.telegram.ui.Components.t21();
+        this.J = new org.telegram.ui.Components.u21();
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         LinearLayout linearLayout = new LinearLayout(context);

@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class PrivacyControlActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.d50 {
     public boolean A0;
@@ -82,7 +82,7 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.n2 impleme
     public org.telegram.ui.ActionBar.u0 c;
     public int c0;
     private int currentPhotoForRestRow;
-    public org.telegram.ui.Components.im0 d;
+    public org.telegram.ui.Components.jm0 d;
     public int d0;
     public dx0 e;
     public int e0;
@@ -113,7 +113,7 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.n2 impleme
     public final org.telegram.ui.Components.e50 s0;
     private int setBirthdayRow;
     private int showGiftIconRow;
-    public org.telegram.ui.Components.uj0 t0;
+    public org.telegram.ui.Components.vj0 t0;
     public org.telegram.ui.Cells.q8 u0;
     public final boolean[] v;
     public org.telegram.ui.Components.w9 v0;
@@ -752,9 +752,9 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.n2 impleme
             for (int i36 = 0; i36 < childCount; i36++) {
                 View childAt = this.d.getChildAt(i36);
                 if (childAt instanceof org.telegram.ui.Cells.j6) {
-                    org.telegram.ui.Components.im0 im0Var = this.d;
-                    View F = im0Var.F(childAt);
-                    s4.b1 T = F == null ? null : im0Var.T(F);
+                    org.telegram.ui.Components.jm0 jm0Var = this.d;
+                    View F = jm0Var.F(childAt);
+                    s4.b1 T = F == null ? null : jm0Var.T(F);
                     if (T != null) {
                         int b10 = T.b();
                         org.telegram.ui.Cells.j6 j6Var = (org.telegram.ui.Cells.j6) childAt;
@@ -913,9 +913,9 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.n2 impleme
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
-        this.d = im0Var;
-        im0Var.p1();
+        org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, null);
+        this.d = jm0Var;
+        jm0Var.p1();
         this.actionBar.setAdaptiveBackground(this.d);
         this.d.setLayoutManager(new s4.b0(1, false));
         this.d.setVerticalScrollBarEnabled(false);
@@ -989,20 +989,20 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.n2 impleme
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.d, 16384, new Class[]{org.telegram.ui.Cells.j6.class}, new String[]{"radioButton"}, null, null, -1, null, org.telegram.ui.ActionBar.h6.h7));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.d, 0, null, null, new Drawable[]{org.telegram.ui.ActionBar.h6.m3, org.telegram.ui.ActionBar.h6.q3}, null, org.telegram.ui.ActionBar.h6.ra));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.d, 0, null, null, new Drawable[]{org.telegram.ui.ActionBar.h6.n3, org.telegram.ui.ActionBar.h6.r3}, null, org.telegram.ui.ActionBar.h6.dc));
-        org.telegram.ui.Components.im0 im0Var = this.d;
+        org.telegram.ui.Components.jm0 jm0Var = this.d;
         Drawable[] drawableArr = org.telegram.ui.ActionBar.h6.m3.A;
         int i13 = org.telegram.ui.ActionBar.h6.ta;
-        arrayList.add(new org.telegram.ui.ActionBar.j6(im0Var, 0, null, null, drawableArr, null, i13));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(jm0Var, 0, null, null, drawableArr, null, i13));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.d, 0, null, null, org.telegram.ui.ActionBar.h6.q3.A, null, i13));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.d, 0, null, null, new Drawable[]{org.telegram.ui.ActionBar.h6.o3, org.telegram.ui.ActionBar.h6.s3}, null, org.telegram.ui.ActionBar.h6.Aa));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.d, 0, null, null, new Drawable[]{org.telegram.ui.ActionBar.h6.o3, org.telegram.ui.ActionBar.h6.s3}, null, org.telegram.ui.ActionBar.h6.Da));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.d, 0, null, null, new Drawable[]{org.telegram.ui.ActionBar.h6.o3, org.telegram.ui.ActionBar.h6.s3}, null, org.telegram.ui.ActionBar.h6.Ea));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.d, 0, null, null, new Drawable[]{org.telegram.ui.ActionBar.h6.o3, org.telegram.ui.ActionBar.h6.s3}, null, org.telegram.ui.ActionBar.h6.Fa));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.d, 0, null, null, new Drawable[]{org.telegram.ui.ActionBar.h6.p3, org.telegram.ui.ActionBar.h6.t3}, null, org.telegram.ui.ActionBar.h6.Ba));
-        org.telegram.ui.Components.im0 im0Var2 = this.d;
+        org.telegram.ui.Components.jm0 jm0Var2 = this.d;
         Drawable[] drawableArr2 = org.telegram.ui.ActionBar.h6.o3.A;
         int i14 = org.telegram.ui.ActionBar.h6.Ca;
-        arrayList.add(new org.telegram.ui.ActionBar.j6(im0Var2, 0, null, null, drawableArr2, null, i14));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(jm0Var2, 0, null, null, drawableArr2, null, i14));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.d, 0, null, null, org.telegram.ui.ActionBar.h6.s3.A, null, i14));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.d, 0, null, null, null, null, org.telegram.ui.ActionBar.h6.ec));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.d, 0, null, null, null, null, org.telegram.ui.ActionBar.h6.fc));

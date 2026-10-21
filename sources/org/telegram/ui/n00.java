@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class n00 extends org.telegram.ui.ActionBar.n2 {
     public int E;
@@ -237,11 +237,11 @@ public final class n00 extends org.telegram.ui.ActionBar.n2 {
             return;
         }
         if ("PEERS_LIST_EMPTY".equals(tL_error.text)) {
-            org.telegram.messenger.kk.q(R.string.FolderLinkNoChatsError, xcVar, null);
+            org.telegram.messenger.mk.q(R.string.FolderLinkNoChatsError, xcVar, null);
             return;
         }
         if ("USER_CHANNELS_TOO_MUCH".equals(tL_error.text)) {
-            org.telegram.messenger.kk.q(R.string.FolderLinkOtherAdminLimitError, xcVar, null);
+            org.telegram.messenger.mk.q(R.string.FolderLinkOtherAdminLimitError, xcVar, null);
             return;
         }
         if ("CHANNELS_TOO_MUCH".equals(tL_error.text)) {
@@ -257,13 +257,13 @@ public final class n00 extends org.telegram.ui.ActionBar.n2 {
             return;
         }
         if ("INVITE_SLUG_EXPIRED".equals(tL_error.text)) {
-            org.telegram.messenger.kk.q(R.string.NoFolderFound, xcVar, null);
+            org.telegram.messenger.mk.q(R.string.NoFolderFound, xcVar, null);
             return;
         }
         if ("FILTER_INCLUDE_TOO_MUCH".equals(tL_error.text)) {
             new sg.k0(4, n2Var.getCurrentAccount(), n2Var.getContext(), n2Var, null).show();
         } else if (!"DIALOG_FILTERS_TOO_MUCH".equals(tL_error.text)) {
-            org.telegram.messenger.kk.q(R.string.UnknownError, xcVar, null);
+            org.telegram.messenger.mk.q(R.string.UnknownError, xcVar, null);
         } else {
             new sg.k0(3, n2Var.getCurrentAccount(), n2Var.getContext(), n2Var, null).show();
         }

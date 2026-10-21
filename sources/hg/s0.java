@@ -40,7 +40,7 @@ import org.telegram.ui.Cells.w4;
 import org.telegram.ui.Cells.z6;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.tl0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.dc0;
@@ -48,7 +48,7 @@ import org.telegram.ui.hc0;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class s0 extends c implements LocationController.LocationFetchCallback {
     public final int K;
@@ -96,7 +96,7 @@ public class s0 extends c implements LocationController.LocationFetchCallback {
         this.b0 = d6Var;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         int i10 = b1Var.f;
         if (i10 == 6) {
@@ -845,7 +845,7 @@ public class s0 extends c implements LocationController.LocationFetchCallback {
                 view2 = this.h0;
                 break;
         }
-        return new sl0(view2);
+        return new tl0(view2);
     }
 
     public void K() {

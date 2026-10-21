@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class oe1 extends org.telegram.ui.Cells.r2 {
     public boolean a5;
@@ -107,7 +107,7 @@ public final class oe1 extends org.telegram.ui.Cells.r2 {
 
     @Override // org.telegram.ui.Cells.r2, android.view.View
     public final void onDraw(Canvas canvas) {
-        org.telegram.ui.Components.ej0 ej0Var;
+        org.telegram.ui.Components.fj0 fj0Var;
         ei.k3 k3Var;
         re1 re1Var = this.l5;
         if (re1Var.getMessagesController().isMonoForum(-re1Var.a)) {
@@ -133,7 +133,7 @@ public final class oe1 extends org.telegram.ui.Cells.r2 {
                 canvas.drawLine(dp - this.w1, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.h6.k0);
             }
         }
-        if ((!this.g5 || (ej0Var = this.e2) == null || ej0Var.C != 0.0f) && (this.d5 != null || this.e5 != null)) {
+        if ((!this.g5 || (fj0Var = this.e2) == null || fj0Var.C != 0.0f) && (this.d5 != null || this.e5 != null)) {
             int dp2 = AndroidUtilities.dp(10.0f);
             int dp3 = AndroidUtilities.dp(10.0f);
             int dp4 = AndroidUtilities.dp(28.0f);

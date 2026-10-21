@@ -15,7 +15,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wq0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final /* synthetic */ class wq0 implements Utilities.Callback {
                     rg.k2 k2Var2 = n2Var.E;
                     photoViewer.C4.setImageBitmap(k2Var2 == null ? n2Var.I : (isEmpty || bitmap == null) ? k2Var2.b() : n2Var.e(bitmap));
                     photoViewer.t5.setUndoCutState(true);
-                    photoViewer.a3(true, true);
+                    photoViewer.c3(true, true);
                     photoViewer.t5.post(new qq0(photoViewer, i11));
                     break;
                 } catch (Exception e) {
@@ -116,14 +116,14 @@ public final /* synthetic */ class wq0 implements Utilities.Callback {
                 PhotoViewer photoViewer3 = this.b;
                 MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
                 if (!photoViewer3.q5.b.N && (i10 = photoViewer3.P4) >= 0 && i10 < photoViewer3.g7.size() && (photoViewer3.g7.get(photoViewer3.P4) instanceof MediaController.PhotoEntry)) {
-                    org.telegram.ui.Components.dg0 dg0Var = photoViewer3.q5;
-                    ei.u3 u3Var = dg0Var.h;
+                    org.telegram.ui.Components.eg0 eg0Var = photoViewer3.q5;
+                    ei.u3 u3Var = eg0Var.h;
                     if (u3Var != null) {
                         u3Var.dismiss();
-                        dg0Var.h = null;
+                        eg0Var.h = null;
                     }
                     photoViewer3.q5.b.setLoading(true);
-                    Utilities.globalQueue.postRunnable(new fn0(photoViewer3, photoEntry, (MediaController.PhotoEntry) photoViewer3.g7.get(photoViewer3.P4), PhotoViewer.y1(), 2));
+                    Utilities.globalQueue.postRunnable(new fn0(photoViewer3, photoEntry, (MediaController.PhotoEntry) photoViewer3.g7.get(photoViewer3.P4), PhotoViewer.z1(), 2));
                     break;
                 }
                 break;
@@ -137,7 +137,7 @@ public final /* synthetic */ class wq0 implements Utilities.Callback {
                     ((MediaController.SearchImage) obj2).ttl = num.intValue();
                 }
                 if (num.intValue() != 0 && !photoViewer4.d.x(photoViewer4.P4)) {
-                    photoViewer4.M2();
+                    photoViewer4.O2();
                 }
                 photoViewer4.V1.setTimer(num.intValue());
                 break;
@@ -167,7 +167,7 @@ public final /* synthetic */ class wq0 implements Utilities.Callback {
                     ((MediaController.SearchImage) obj3).ttl = num3.intValue();
                 }
                 if (num3.intValue() != 0 && !photoViewer6.d.x(photoViewer6.P4)) {
-                    photoViewer6.M2();
+                    photoViewer6.O2();
                 }
                 photoViewer6.U1.setTimer(num3.intValue());
                 break;
@@ -182,12 +182,12 @@ public final /* synthetic */ class wq0 implements Utilities.Callback {
             case 8:
                 PhotoViewer photoViewer7 = this.b;
                 Drawable[] drawableArr2 = PhotoViewer.U8;
-                photoViewer7.B0(0, false);
+                photoViewer7.C0(0, false);
                 break;
             default:
                 PhotoViewer photoViewer8 = this.b;
                 Drawable[] drawableArr3 = PhotoViewer.U8;
-                photoViewer8.B0(0, false);
+                photoViewer8.C0(0, false);
                 break;
         }
     }

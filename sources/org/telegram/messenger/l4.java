@@ -1,15 +1,28 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.GoogleMapsProvider;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class l4 implements h8.f {
-    public final /* synthetic */ GoogleMapsProvider.GoogleMapView a;
+public final /* synthetic */ class l4 implements OnCompleteListener {
+    public final /* synthetic */ int a;
     public final /* synthetic */ q0.a b;
 
-    public /* synthetic */ l4(GoogleMapsProvider.GoogleMapView googleMapView, q0.a aVar) {
-        this.a = googleMapView;
+    public /* synthetic */ l4(q0.a aVar, int i10) {
+        this.a = i10;
         this.b = aVar;
+    }
+
+    @Override // com.google.android.gms.tasks.OnCompleteListener
+    public void onComplete(Task task) {
+        switch (this.a) {
+            case 0:
+                GoogleLocationProvider.lambda$getLastLocation$0(this.b, task);
+                break;
+            default:
+                GoogleLocationProvider.lambda$checkLocationSettings$1(this.b, task);
+                break;
+        }
     }
 }

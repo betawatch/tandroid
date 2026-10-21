@@ -28,10 +28,10 @@ import ki.t1;
 import m.g3;
 import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.k7;
-import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.ml0;
 import org.telegram.ui.web.z1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final class e {
     public static final /* synthetic */ int F = 0;
@@ -44,7 +44,7 @@ public final class e {
     public v d;
     public q e;
     public com.google.android.gms.internal.cast.q f;
-    public ll0 g;
+    public ml0 g;
     public final Context h;
     public final e2.s n;
     public final t1 o;
@@ -292,20 +292,20 @@ public final class e {
 
     public final void h(e eVar, v vVar, q qVar, int i10, v vVar2, Collection collection) {
         final com.google.android.gms.internal.cast.q qVar2;
-        ll0 ll0Var = this.g;
-        if (ll0Var != null) {
-            ll0Var.a();
+        ml0 ml0Var = this.g;
+        if (ml0Var != null) {
+            ml0Var.a();
             this.g = null;
         }
-        ll0 ll0Var2 = new ll0(eVar, vVar, qVar, i10, vVar2, collection);
-        this.g = ll0Var2;
+        ml0 ml0Var2 = new ml0(eVar, vVar, qVar, i10, vVar2, collection);
+        this.g = ml0Var2;
         int i11 = 3;
-        if (ll0Var2.b != 3 || (qVar2 = this.f) == null) {
-            ll0Var2.b();
+        if (ml0Var2.b != 3 || (qVar2 = this.f) == null) {
+            ml0Var2.b();
             return;
         }
         final v vVar3 = this.d;
-        final v vVar4 = (v) ll0Var2.g;
+        final v vVar4 = (v) ml0Var2.g;
         com.google.android.gms.internal.cast.q.c.b("Prepare transfer from Route(%s) to Route(%s)", vVar3, vVar4);
         c0.l a2 = v7.h0.a(new c0.j() { // from class: com.google.android.gms.internal.cast.o
             @Override // c0.j
@@ -315,17 +315,17 @@ public final class e {
                 return Boolean.valueOf(qVar3.b.post(new p(qVar3, vVar3, vVar4, iVar, 0)));
             }
         });
-        ll0 ll0Var3 = this.g;
-        e eVar2 = (e) ((WeakReference) ll0Var3.j).get();
-        if (eVar2 == null || eVar2.g != ll0Var3) {
+        ml0 ml0Var3 = this.g;
+        e eVar2 = (e) ((WeakReference) ml0Var3.j).get();
+        if (eVar2 == null || eVar2.g != ml0Var3) {
             Log.w("AxMediaRouter", "Router is released. Cancel transfer");
-            ll0Var3.a();
+            ml0Var3.a();
         } else {
-            if (((c0.l) ll0Var3.k) != null) {
+            if (((c0.l) ml0Var3.k) != null) {
                 throw new IllegalStateException("future is already set");
             }
-            ll0Var3.k = a2;
-            z1 z1Var = new z1(ll0Var3, i11);
+            ml0Var3.k = a2;
+            z1 z1Var = new z1(ml0Var3, i11);
             b bVar = eVar2.a;
             Objects.requireNonNull(bVar);
             a2.b.a(z1Var, new i2.g0(bVar, i11));

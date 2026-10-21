@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ii0 extends s4.t {
     public final /* synthetic */ mi0 S;
@@ -18,14 +18,14 @@ public final class ii0 extends s4.t {
     public final boolean B1(int i10) {
         byte b10;
         mi0 mi0Var = this.S;
-        MessageObject messageObject = (MessageObject) mi0Var.N.get((B() - 1) - i10);
-        MessageObject.GroupedMessages l4 = mi0Var.l(messageObject);
-        if (l4 != null) {
-            MessageObject.GroupedMessagePosition position = l4.getPosition(messageObject);
+        MessageObject messageObject = (MessageObject) mi0Var.M.get((B() - 1) - i10);
+        MessageObject.GroupedMessages k10 = mi0Var.k(messageObject);
+        if (k10 != null) {
+            MessageObject.GroupedMessagePosition position = k10.getPosition(messageObject);
             if (position.minX != position.maxX && (b10 = position.minY) == position.maxY && b10 != 0) {
-                int size = l4.posArray.size();
+                int size = k10.posArray.size();
                 for (int i11 = 0; i11 < size; i11++) {
-                    MessageObject.GroupedMessagePosition groupedMessagePosition = l4.posArray.get(i11);
+                    MessageObject.GroupedMessagePosition groupedMessagePosition = k10.posArray.get(i11);
                     if (groupedMessagePosition != position) {
                         byte b11 = groupedMessagePosition.minY;
                         byte b12 = position.minY;

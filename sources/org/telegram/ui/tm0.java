@@ -16,13 +16,13 @@ import org.telegram.messenger.SecureDocument;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class tm0 extends FrameLayout implements DownloadController.FileDownloadProgressListener {
     public final TextView a;
     public final TextView b;
     public final org.telegram.ui.Components.w9 c;
-    public final org.telegram.ui.Components.yj0 d;
+    public final org.telegram.ui.Components.zj0 d;
     public int e;
     public SecureDocument f;
     public final int h;
@@ -35,13 +35,13 @@ public final class tm0 extends FrameLayout implements DownloadController.FileDow
         this.n = vm0Var;
         i10 = ((org.telegram.ui.ActionBar.n2) vm0Var).currentAccount;
         this.h = DownloadController.getInstance(i10).generateObserverTag();
-        this.d = new org.telegram.ui.Components.yj0(this);
+        this.d = new org.telegram.ui.Components.zj0(this);
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(activity);
         this.c = w9Var;
         addView(w9Var, w7.z5.d(48, 48.0f, (LocaleController.isRTL ? 5 : 3) | 48, 21.0f, 8.0f, 21.0f, 0.0f));
         TextView textView = new TextView(activity);
         this.a = textView;
-        org.telegram.messenger.kk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
+        org.telegram.messenger.mk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
@@ -70,9 +70,9 @@ public final class tm0 extends FrameLayout implements DownloadController.FileDow
         String attachFileName = FileLoader.getAttachFileName(this.f);
         boolean exists = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(this.f).exists();
         boolean isEmpty = TextUtils.isEmpty(attachFileName);
-        org.telegram.ui.Components.yj0 yj0Var = this.d;
+        org.telegram.ui.Components.zj0 zj0Var = this.d;
         if (isEmpty) {
-            yj0Var.d(null, false, false);
+            zj0Var.d(null, false, false);
             return;
         }
         SecureDocument secureDocument = this.f;
@@ -82,7 +82,7 @@ public final class tm0 extends FrameLayout implements DownloadController.FileDow
             if (secureDocument.inputFile != null) {
                 i13 = ((org.telegram.ui.ActionBar.n2) vm0Var).currentAccount;
                 DownloadController.getInstance(i13).removeLoadingFileObserver(this);
-                yj0Var.d(null, false, z10);
+                zj0Var.d(null, false, z10);
                 this.e = -1;
                 return;
             }
@@ -90,8 +90,8 @@ public final class tm0 extends FrameLayout implements DownloadController.FileDow
             DownloadController.getInstance(i12).addLoadingFileObserver(this.f.path, this);
             this.e = 1;
             Float fileProgress = ImageLoader.getInstance().getFileProgress(this.f.path);
-            yj0Var.d(getResources().getDrawable(R.drawable.circle), true, z10);
-            yj0Var.e(fileProgress != null ? fileProgress.floatValue() : 0.0f, false);
+            zj0Var.d(getResources().getDrawable(R.drawable.circle), true, z10);
+            zj0Var.e(fileProgress != null ? fileProgress.floatValue() : 0.0f, false);
             invalidate();
             return;
         }
@@ -99,7 +99,7 @@ public final class tm0 extends FrameLayout implements DownloadController.FileDow
             i11 = ((org.telegram.ui.ActionBar.n2) vm0Var).currentAccount;
             DownloadController.getInstance(i11).removeLoadingFileObserver(this);
             this.e = -1;
-            yj0Var.d(null, false, z10);
+            zj0Var.d(null, false, z10);
             invalidate();
             return;
         }
@@ -107,8 +107,8 @@ public final class tm0 extends FrameLayout implements DownloadController.FileDow
         DownloadController.getInstance(i10).addLoadingFileObserver(attachFileName, this);
         this.e = 1;
         Float fileProgress2 = ImageLoader.getInstance().getFileProgress(attachFileName);
-        yj0Var.d(getResources().getDrawable(R.drawable.circle), true, z10);
-        yj0Var.e(fileProgress2 != null ? fileProgress2.floatValue() : 0.0f, z10);
+        zj0Var.d(getResources().getDrawable(R.drawable.circle), true, z10);
+        zj0Var.e(fileProgress2 != null ? fileProgress2.floatValue() : 0.0f, z10);
         invalidate();
     }
 
@@ -153,7 +153,7 @@ public final class tm0 extends FrameLayout implements DownloadController.FileDow
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), org.telegram.messenger.kk.C(64.0f, 1, TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), org.telegram.messenger.mk.C(64.0f, 1, TLObject.FLAG_30));
     }
 
     @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener

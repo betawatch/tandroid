@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s80 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -111,7 +111,7 @@ public final /* synthetic */ class s80 implements Runnable {
                     qnVar.Q7 = num2;
                     qnVar.L7 = i14;
                 } else {
-                    qnVar.qb(i14, i15, str);
+                    qnVar.rb(i14, i15, str);
                 }
                 if (!((ActionBarLayout) (AndroidUtilities.isTablet() ? launchActivity3.s0 : launchActivity3.O())).P(qnVar)) {
                     final long j11 = this.n;
@@ -157,7 +157,7 @@ public final /* synthetic */ class s80 implements Runnable {
                                                 Bundle bundle4 = bundle3;
                                                 if (n2Var3 == null || MessagesController.getInstance(launchActivity5.O).checkCanOpenChat(bundle4, n2Var3)) {
                                                     qn qnVar3 = new qn(bundle4);
-                                                    qnVar2.qb(i18, i17, str2);
+                                                    qnVar2.rb(i18, i17, str2);
                                                     ((ActionBarLayout) launchActivity5.O()).P(qnVar3);
                                                     return;
                                                 }

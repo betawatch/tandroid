@@ -30,7 +30,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class fj extends li implements NotificationCenter.NotificationCenterDelegate, ne.d {
     public int E;
@@ -756,16 +756,16 @@ public final class fj extends li implements NotificationCenter.NotificationCente
         this.v.setPadding(0, (int) (this.x.c(0.0f) + AndroidUtilities.dp(56.0f) + i10 + AndroidUtilities.statusBarHeight), 0, this.e);
     }
 
-    public final void P(g61 g61Var, View view) {
-        if (g61Var != null && g61Var.d == this.R) {
+    public final void P(h61 h61Var, View view) {
+        if (h61Var != null && h61Var.d == this.R) {
             this.J.load();
             return;
         }
-        if (g61Var != null && g61Var.d == this.P) {
+        if (h61Var != null && h61Var.d == this.P) {
             Q();
             return;
         }
-        if (g61Var != null && g61Var.d == this.Q) {
+        if (h61Var != null && h61Var.d == this.Q) {
             R();
             return;
         }
@@ -784,7 +784,7 @@ public final class fj extends li implements NotificationCenter.NotificationCente
                 HashSet hashSet = this.I;
                 if (hashSet.contains(audioEntry)) {
                     hashSet.remove(audioEntry);
-                    g61Var.e = false;
+                    h61Var.e = false;
                     h7Var.e(false, true);
                     i10 = 2;
                 } else {
@@ -802,7 +802,7 @@ public final class fj extends li implements NotificationCenter.NotificationCente
                             return;
                         }
                     }
-                    g61Var.e = true;
+                    h61Var.e = true;
                     hashSet.add(audioEntry);
                     h7Var.e(true, true);
                 }

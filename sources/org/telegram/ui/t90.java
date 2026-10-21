@@ -11,7 +11,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t90 implements org.telegram.ui.Components.ke0, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ LaunchActivity a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class t90 implements org.telegram.ui.Components.ke0
     }
 
     @Override // org.telegram.ui.Components.ke0
-    public void j(org.telegram.ui.Components.le0 le0Var) {
+    public void j(org.telegram.ui.Components.me0 me0Var) {
         Pattern pattern = LaunchActivity.C1;
         SharedConfig.isWaitingForPasscodeEnter = false;
         LaunchActivity launchActivity = this.a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class t90 implements org.telegram.ui.Components.ke0
             }
             launchActivity.s0.getView().setVisibility(0);
         }
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.passcodeDismissed, le0Var);
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.passcodeDismissed, me0Var);
         try {
             NotificationsController.getInstance(UserConfig.selectedAccount).showNotifications();
         } catch (Exception e) {

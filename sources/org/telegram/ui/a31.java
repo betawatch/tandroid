@@ -10,11 +10,11 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class a31 extends org.telegram.ui.ActionBar.n2 {
     public static final int[] c = {MediaController.VIDEO_BITRATE_360, MediaController.VIDEO_BITRATE_480, 1200000, 2000000};
-    public org.telegram.ui.Components.im0 a;
+    public org.telegram.ui.Components.jm0 a;
     public z21 b;
 
     public static String U(int i10) {
@@ -43,16 +43,16 @@ public final class a31 extends org.telegram.ui.ActionBar.n2 {
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
         this.fragmentView = frameLayout;
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
-        this.a = im0Var;
-        im0Var.p1();
+        org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, null);
+        this.a = jm0Var;
+        jm0Var.p1();
         this.actionBar.setAdaptiveBackground(this.a);
         this.a.setLayoutManager(new s4.b0());
         this.a.setVerticalScrollBarEnabled(false);
-        org.telegram.ui.Components.im0 im0Var2 = this.a;
+        org.telegram.ui.Components.jm0 jm0Var2 = this.a;
         z21 z21Var = new z21(context);
         this.b = z21Var;
-        im0Var2.setAdapter(z21Var);
+        jm0Var2.setAdapter(z21Var);
         this.a.setOnItemClickListener(new f11(this, 3));
         frameLayout.addView(this.a, w7.z5.c(-1.0f, -1));
         return this.fragmentView;

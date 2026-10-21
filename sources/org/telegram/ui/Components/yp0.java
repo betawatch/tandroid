@@ -1,42 +1,54 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yp0 implements Runnable {
+public final /* synthetic */ class yp0 implements r0.n, org.telegram.ui.ActionBar.k1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ er0 b;
+    public final /* synthetic */ fr0 b;
 
-    public /* synthetic */ yp0(er0 er0Var, int i10) {
+    public /* synthetic */ yp0(fr0 fr0Var, int i10) {
         this.a = i10;
-        this.b = er0Var;
+        this.b = fr0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // r0.n
+    public r0.k1 B0(View view, r0.k1 k1Var) {
+        WindowInsets g10 = k1Var.g();
+        fr0 fr0Var = this.b;
+        fr0Var.processLegacyContainerInsets(g10);
+        i0.b f7 = k1Var.a.f(519);
+        if (!fr0Var.H0.equals(f7)) {
+            fr0Var.H0 = f7;
+            fr0Var.container.requestLayout();
+        }
+        return r0.k1.b;
+    }
+
+    @Override // org.telegram.ui.ActionBar.k1
+    public void n(KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.m1 m1Var;
+        org.telegram.ui.ActionBar.m1 m1Var2;
         switch (this.a) {
-            case 0:
-                er0 er0Var = this.b;
-                er0Var.B0 = true;
-                k20 k20Var = er0Var.z0;
-                k20Var.r.setText("");
-                AndroidUtilities.showKeyboard(k20Var.r);
-                break;
-            default:
-                rc rcVar = new rc(14);
-                er0 er0Var2 = this.b;
-                if (!er0Var2.isKeyboardVisible()) {
-                    rcVar.run();
-                    break;
-                } else {
-                    k20 k20Var2 = er0Var2.z0;
-                    if (k20Var2 != null) {
-                        AndroidUtilities.hideKeyboard(k20Var2.r);
-                    }
-                    AndroidUtilities.runOnUIThread(rcVar, 300L);
+            case 1:
+                fr0 fr0Var = this.b;
+                fr0Var.getClass();
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (m1Var = fr0Var.K0) != null && m1Var.isShowing()) {
+                    fr0Var.K0.d(true);
                     break;
                 }
+                break;
+            default:
+                fr0 fr0Var2 = this.b;
+                fr0Var2.getClass();
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (m1Var2 = fr0Var2.K0) != null && m1Var2.isShowing()) {
+                    fr0Var2.K0.d(true);
+                    break;
+                }
+                break;
         }
     }
 }

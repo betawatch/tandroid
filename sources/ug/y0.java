@@ -46,15 +46,15 @@ import org.telegram.ui.Cells.u3;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.f6;
-import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.kv;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.kh0;
 import org.telegram.ui.m71;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class y0 extends bb {
     public final ei.d X;
@@ -124,7 +124,7 @@ public final class y0 extends bb {
         ViewGroup viewGroup3 = this.containerView;
         int i12 = this.backgroundPaddingLeft;
         viewGroup3.addView(x0Var, z5.f(-2.0f, 55, i12, 0, i12, 0));
-        bd bdVar = new bd(getContext(), this.resourcesProvider, (im0) null);
+        bd bdVar = new bd(getContext(), this.resourcesProvider, (jm0) null);
         bdVar.setClickable(true);
         bdVar.setOrientation(1);
         bdVar.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
@@ -137,11 +137,11 @@ public final class y0 extends bb {
         int i13 = this.backgroundPaddingLeft;
         viewGroup4.addView(bdVar, z5.f(-2.0f, 87, i13, 0, i13, 0));
         vg.h hVar = this.o0;
-        im0 im0Var = this.d;
+        jm0 jm0Var = this.d;
         hVar.n = arrayList;
-        hVar.f = im0Var;
+        hVar.f = jm0Var;
         int i14 = this.backgroundPaddingLeft;
-        im0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(60.0f));
+        jm0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(60.0f));
         this.d.j(new kv(this, 20));
         this.d.setOnItemClickListener(new qg.h0(this, 23));
         s4.k kVar = new s4.k();
@@ -497,15 +497,15 @@ public final class y0 extends bb {
     }
 
     public final void Y(boolean z10) {
-        im0 im0Var = this.d;
+        jm0 jm0Var = this.d;
         if (!z10) {
-            im0Var.u0(0);
+            jm0Var.u0(0);
             return;
         }
         li.n nVar = new li.n(getContext(), 2, 0.6f);
         nVar.a = 1;
         nVar.p = AndroidUtilities.dp(38.0f);
-        im0Var.getLayoutManager().w0(nVar);
+        jm0Var.getLayoutManager().w0(nVar);
     }
 
     public final void Z() {
@@ -634,12 +634,12 @@ public final class y0 extends bb {
         b0(z10, z11);
         int i10 = 0;
         while (true) {
-            im0 im0Var = this.d;
-            if (i10 >= im0Var.getChildCount()) {
+            jm0 jm0Var = this.d;
+            if (i10 >= jm0Var.getChildCount()) {
                 a0(z10);
                 return;
             }
-            View childAt = im0Var.getChildAt(i10);
+            View childAt = jm0Var.getChildAt(i10);
             if (childAt instanceof yg.k) {
                 int R = RecyclerView.R(childAt) - 1;
                 if (R >= 0) {
@@ -706,7 +706,7 @@ public final class y0 extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
+    public final im0 x(jm0 jm0Var) {
         vg.h hVar = new vg.h(getContext(), this.resourcesProvider, true);
         this.o0 = hVar;
         return hVar;

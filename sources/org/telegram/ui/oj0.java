@@ -10,7 +10,7 @@ import android.text.TextPaint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class oj0 extends View {
     public final Paint a;
@@ -69,7 +69,7 @@ public final class oj0 extends View {
                 this.h = ofFloat;
                 ofFloat.addUpdateListener(new e3(this, 18));
                 this.h.addListener(new zb0(this, 3));
-                org.telegram.messenger.kk.l(2.0f, this.h);
+                org.telegram.messenger.mk.l(2.0f, this.h);
                 this.h.setDuration(200L);
                 this.h.start();
             }

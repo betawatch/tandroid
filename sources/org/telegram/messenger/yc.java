@@ -1,34 +1,26 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class yc implements Utilities.Callback2 {
+public final /* synthetic */ class yc implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Utilities.Callback2 d;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ Runnable[] c;
 
-    public /* synthetic */ yc(MessagesController messagesController, long j10, Utilities.Callback2 callback2, int i10) {
+    public /* synthetic */ yc(boolean[] zArr, Runnable[] runnableArr, int i10) {
         this.a = i10;
-        this.b = messagesController;
-        this.c = j10;
-        this.d = callback2;
+        this.b = zArr;
+        this.c = runnableArr;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$resolveCommunityAllJoinPendingRequests$249(this.c, this.d, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 1:
-                this.b.lambda$resolveCommunityJoinPendingRequest$248(this.c, this.d, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                MessagesController.lambda$ensureMessagesLoaded$464(this.b, this.c);
                 break;
             default:
-                this.b.lambda$toggleCommunityParticipantBanned$247(this.c, this.d, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                PasskeysController.lambda$login$12(this.b, this.c);
                 break;
         }
     }

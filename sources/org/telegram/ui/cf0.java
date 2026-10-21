@@ -37,7 +37,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cf0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -174,7 +174,7 @@ public final /* synthetic */ class cf0 implements View.OnClickListener {
                 PhotoViewer photoViewer2 = (PhotoViewer) this.c;
                 Activity activity = (Activity) this.b;
                 Drawable[] drawableArr = PhotoViewer.U8;
-                if (!photoViewer2.I1() && !photoViewer2.r) {
+                if (!photoViewer2.J1() && !photoViewer2.r) {
                     int i15 = photoViewer2.P4;
                     if (i15 >= 0 && i15 < photoViewer2.g7.size()) {
                         Object obj = photoViewer2.g7.get(photoViewer2.P4);
@@ -209,44 +209,44 @@ public final /* synthetic */ class cf0 implements View.OnClickListener {
                         }
                     }
                     if (photoViewer2.j1.getTag() != null) {
-                        photoViewer2.Y2(true);
-                        photoViewer2.p2(1);
+                        photoViewer2.a3(true);
+                        photoViewer2.r2(1);
                         break;
                     } else if (photoViewer2.k8) {
                         if (photoViewer2.m1 == null) {
                             bu0 bu0Var = photoViewer2.e0;
-                            org.telegram.ui.Components.u21 u21Var = new org.telegram.ui.Components.u21(activity);
-                            u21Var.d = new org.telegram.ui.Components.gr0(u21Var, 17);
-                            u21Var.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(3.0f), -871296751));
-                            u21Var.setTextColor(-1);
-                            u21Var.setTextSize(1, 14.0f);
-                            u21Var.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(7.0f));
-                            u21Var.setGravity(16);
-                            bu0Var.addView(u21Var, w7.z5.d(-2, -2.0f, 51, 5.0f, 0.0f, 5.0f, 3.0f));
-                            u21Var.setVisibility(8);
-                            photoViewer2.m1 = u21Var;
+                            org.telegram.ui.Components.v21 v21Var = new org.telegram.ui.Components.v21(activity);
+                            v21Var.d = new org.telegram.ui.Components.hr0(v21Var, 17);
+                            v21Var.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(3.0f), -871296751));
+                            v21Var.setTextColor(-1);
+                            v21Var.setTextSize(1, 14.0f);
+                            v21Var.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(7.0f));
+                            v21Var.setGravity(16);
+                            bu0Var.addView(v21Var, w7.z5.d(-2, -2.0f, 51, 5.0f, 0.0f, 5.0f, 3.0f));
+                            v21Var.setVisibility(8);
+                            photoViewer2.m1 = v21Var;
                         }
                         photoViewer2.m1.setText(LocaleController.getString("VideoQualityIsTooLow", R.string.VideoQualityIsTooLow));
-                        org.telegram.ui.Components.u21 u21Var2 = photoViewer2.m1;
-                        org.telegram.ui.Components.o71 o71Var = photoViewer2.j1;
-                        org.telegram.ui.Components.gr0 gr0Var = u21Var2.d;
-                        if (o71Var != null) {
-                            u21Var2.a = o71Var;
-                            u21Var2.a();
-                            u21Var2.c = true;
-                            AndroidUtilities.cancelRunOnUIThread(gr0Var);
-                            AndroidUtilities.runOnUIThread(gr0Var, 2000L);
-                            ViewPropertyAnimator viewPropertyAnimator = u21Var2.b;
+                        org.telegram.ui.Components.v21 v21Var2 = photoViewer2.m1;
+                        org.telegram.ui.Components.p71 p71Var = photoViewer2.j1;
+                        org.telegram.ui.Components.hr0 hr0Var = v21Var2.d;
+                        if (p71Var != null) {
+                            v21Var2.a = p71Var;
+                            v21Var2.a();
+                            v21Var2.c = true;
+                            AndroidUtilities.cancelRunOnUIThread(hr0Var);
+                            AndroidUtilities.runOnUIThread(hr0Var, 2000L);
+                            ViewPropertyAnimator viewPropertyAnimator = v21Var2.b;
                             if (viewPropertyAnimator != null) {
                                 viewPropertyAnimator.setListener(null);
-                                u21Var2.b.cancel();
-                                u21Var2.b = null;
+                                v21Var2.b.cancel();
+                                v21Var2.b = null;
                             }
-                            if (u21Var2.getVisibility() != 0) {
-                                u21Var2.setAlpha(0.0f);
-                                u21Var2.setVisibility(0);
-                                ViewPropertyAnimator listener = u21Var2.animate().setDuration(300L).alpha(1.0f).setListener(null);
-                                u21Var2.b = listener;
+                            if (v21Var2.getVisibility() != 0) {
+                                v21Var2.setAlpha(0.0f);
+                                v21Var2.setVisibility(0);
+                                ViewPropertyAnimator listener = v21Var2.animate().setDuration(300L).alpha(1.0f).setListener(null);
+                                v21Var2.b = listener;
                                 listener.start();
                                 break;
                             }
@@ -337,9 +337,9 @@ public final /* synthetic */ class cf0 implements View.OnClickListener {
                     if (sb2.length() != 0) {
                         StringBuilder u10 = a1.g.u(str);
                         u10.append(sb2.toString());
-                        org.telegram.ui.Components.fj0 fj0Var = new org.telegram.ui.Components.fj0(context3, LocaleController.getString(R.string.ShareQrCode), u10.toString(), LocaleController.getString(R.string.QRCodeLinkHelpProxy), true);
-                        fj0Var.h.setImageBitmap(SvgHelper.getBitmap(AndroidUtilities.readRes(R.raw.qr_dog), AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false));
-                        s11Var.showDialog(fj0Var);
+                        org.telegram.ui.Components.gj0 gj0Var = new org.telegram.ui.Components.gj0(context3, LocaleController.getString(R.string.ShareQrCode), u10.toString(), LocaleController.getString(R.string.QRCodeLinkHelpProxy), true);
+                        gj0Var.h.setImageBitmap(SvgHelper.getBitmap(AndroidUtilities.readRes(R.raw.qr_dog), AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false));
+                        s11Var.showDialog(gj0Var);
                         break;
                     }
                 } catch (Exception unused) {

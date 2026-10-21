@@ -1,15 +1,15 @@
 package yh;
 
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.js0;
+import org.telegram.ui.Components.ks0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t1 implements ne.d, Utilities.Callback2Return {
-    public final /* synthetic */ js0 a;
+    public final /* synthetic */ ks0 a;
 
-    public /* synthetic */ t1(js0 js0Var) {
-        this.a = js0Var;
+    public /* synthetic */ t1(ks0 ks0Var) {
+        this.a = ks0Var;
     }
 
     @Override // ne.d
@@ -19,12 +19,12 @@ public final /* synthetic */ class t1 implements ne.d, Utilities.Callback2Return
 
     @Override // org.telegram.messenger.Utilities.Callback2Return
     public Object run(Object obj, Object obj2) {
-        js0 js0Var = this.a;
-        js0Var.i();
+        ks0 ks0Var = this.a;
+        ks0Var.i();
         if (((Integer) obj).intValue() != -1) {
             return Boolean.FALSE;
         }
-        js0Var.h(null, new p1(js0Var, 0));
+        ks0Var.h(null, new p1(ks0Var, 0));
         return Boolean.TRUE;
     }
 

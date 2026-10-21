@@ -34,7 +34,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class mb implements org.telegram.ui.Cells.l1 {
     public final /* synthetic */ rb a;
@@ -141,7 +141,7 @@ public final class mb implements org.telegram.ui.Cells.l1 {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
             bufferedWriter.write(str);
             bufferedWriter.close();
-            vbVar.showDialog(new org.telegram.ui.Components.if0(vbVar, null, user, null, file, null, str2, str3, null));
+            vbVar.showDialog(new org.telegram.ui.Components.jf0(vbVar, null, user, null, file, null, str2, str3, null));
         } catch (Exception e) {
             FileLog.e(e);
         }
@@ -195,17 +195,17 @@ public final class mb implements org.telegram.ui.Cells.l1 {
             return;
         }
         MessageObject messageObject = u1Var.getMessageObject();
-        if (characterStyle instanceof org.telegram.ui.Components.j61) {
-            org.telegram.ui.Components.j61 j61Var = (org.telegram.ui.Components.j61) characterStyle;
-            AndroidUtilities.addToClipboard(j61Var.a.subSequence(j61Var.b, j61Var.c).toString());
+        if (characterStyle instanceof org.telegram.ui.Components.k61) {
+            org.telegram.ui.Components.k61 k61Var = (org.telegram.ui.Components.k61) characterStyle;
+            AndroidUtilities.addToClipboard(k61Var.a.subSequence(k61Var.b, k61Var.c).toString());
             if (AndroidUtilities.shouldShowClipboardToast()) {
                 Toast.makeText(vbVar.getParentActivity(), LocaleController.getString(R.string.TextCopied), 0).show();
                 return;
             }
             return;
         }
-        if (characterStyle instanceof org.telegram.ui.Components.n61) {
-            Long parseLong = Utilities.parseLong(((org.telegram.ui.Components.n61) characterStyle).getURL());
+        if (characterStyle instanceof org.telegram.ui.Components.o61) {
+            Long parseLong = Utilities.parseLong(((org.telegram.ui.Components.o61) characterStyle).getURL());
             long longValue = parseLong.longValue();
             if (longValue > 0) {
                 i13 = ((org.telegram.ui.ActionBar.n2) vbVar).currentAccount;
@@ -226,8 +226,8 @@ public final class mb implements org.telegram.ui.Cells.l1 {
             }
             return;
         }
-        if (characterStyle instanceof org.telegram.ui.Components.k61) {
-            String url = ((org.telegram.ui.Components.k61) characterStyle).getURL();
+        if (characterStyle instanceof org.telegram.ui.Components.l61) {
+            String url = ((org.telegram.ui.Components.l61) characterStyle).getURL();
             if (url.startsWith("@")) {
                 i10 = ((org.telegram.ui.ActionBar.n2) vbVar).currentAccount;
                 MessagesController.getInstance(i10).openByUserName(url.substring(1), vbVar, 0);
@@ -255,8 +255,8 @@ public final class mb implements org.telegram.ui.Cells.l1 {
             vbVar.showDialog(f3Var);
             return;
         }
-        if (characterStyle instanceof org.telegram.ui.Components.m61) {
-            String url3 = ((org.telegram.ui.Components.m61) characterStyle).getURL();
+        if (characterStyle instanceof org.telegram.ui.Components.n61) {
+            String url3 = ((org.telegram.ui.Components.n61) characterStyle).getURL();
             if (pf.d.e(Uri.parse(url3), false, null)) {
                 pf.d.n(vbVar.getParentActivity(), url3, true);
                 return;
@@ -481,7 +481,7 @@ public final class mb implements org.telegram.ui.Cells.l1 {
         if (vbVar.getParentActivity() == null) {
             return;
         }
-        vbVar.showDialog(org.telegram.ui.Components.er0.P0(rbVar.c, u1Var.getMessageObject(), null, ChatObject.isChannel(vbVar.f) && !vbVar.f.megagroup, null));
+        vbVar.showDialog(org.telegram.ui.Components.fr0.P0(rbVar.c, u1Var.getMessageObject(), null, ChatObject.isChannel(vbVar.f) && !vbVar.f.megagroup, null));
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -522,13 +522,13 @@ public final class mb implements org.telegram.ui.Cells.l1 {
         vb vbVar = this.a.n;
         MessageObject messageObject = u1Var.getMessageObject();
         if (messageObject.getInputStickerSet() != null) {
-            vbVar.showDialog(new org.telegram.ui.Components.py0(vbVar.getParentActivity(), vbVar, messageObject.getInputStickerSet(), null, null, null));
+            vbVar.showDialog(new org.telegram.ui.Components.qy0(vbVar.getParentActivity(), vbVar, messageObject.getInputStickerSet(), null, null, null));
             return;
         }
         File file2 = null;
         if (messageObject.isVideo() || (i10 = messageObject.type) == 1 || ((i10 == 0 && !messageObject.isWebpageDocument()) || messageObject.isGif())) {
-            PhotoViewer.t1().K2(null, vbVar, null);
-            PhotoViewer.t1().d2(messageObject, null, 0L, 0L, 0L, vbVar.B0);
+            PhotoViewer.u1().M2(null, vbVar, null);
+            PhotoViewer.u1().h2(messageObject, null, 0L, 0L, 0L, vbVar.B0);
             return;
         }
         int i11 = messageObject.type;
@@ -581,9 +581,9 @@ public final class mb implements org.telegram.ui.Cells.l1 {
                 if (a0Var != null) {
                     if (a0Var.N0() < vbVar.x.B() - 1) {
                         vbVar.g0 = vbVar.x.L0();
-                        org.telegram.ui.Components.sl0 sl0Var = (org.telegram.ui.Components.sl0) vbVar.v.K(vbVar.g0);
-                        if (sl0Var != null) {
-                            vbVar.h0 = sl0Var.a.getTop();
+                        org.telegram.ui.Components.tl0 tl0Var = (org.telegram.ui.Components.tl0) vbVar.v.K(vbVar.g0);
+                        if (tl0Var != null) {
+                            vbVar.h0 = tl0Var.a.getTop();
                         } else {
                             vbVar.g0 = -1;
                         }

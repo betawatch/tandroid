@@ -19,9 +19,9 @@ import java.util.Iterator;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.MessageObject;
 import org.telegram.ui.Cells.k7;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final class s0 {
     public boolean a;
@@ -57,7 +57,7 @@ public final class s0 {
     }
 
     public void b(int i10, Serializable serializable) {
-        ((Executor) this.b).execute(new x31(this, i10, serializable, 24));
+        ((Executor) this.b).execute(new y31(this, i10, serializable, 24));
     }
 
     public void c() {

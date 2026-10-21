@@ -12,9 +12,9 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.r51;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class c2 implements Runnable {
     public final /* synthetic */ e2 a;
@@ -66,12 +66,12 @@ public final class c2 implements Runnable {
         HashMap hashMap3 = e2Var.H;
         HashMap hashMap4 = e2Var.I;
         ArrayList arrayList = e2Var.F;
-        q51 q51Var = e2Var.e;
+        r51 r51Var = e2Var.e;
         int i14 = e2Var.c;
         if (TextUtils.isEmpty(e2Var.R)) {
             return;
         }
-        pq progressDrawable = q51Var.b.h.getProgressDrawable();
+        pq progressDrawable = r51Var.b.h.getProgressDrawable();
         progressDrawable.e = true;
         progressDrawable.b = System.currentTimeMillis();
         progressDrawable.invalidateSelf();
@@ -147,12 +147,12 @@ public final class c2 implements Runnable {
             i12 = 0;
         } else {
             String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
-            if (!Arrays.equals(q51Var.a.b(), currentKeyboardLanguage)) {
+            if (!Arrays.equals(r51Var.a.b(), currentKeyboardLanguage)) {
                 MediaDataController.getInstance(i10).fetchNewEmojiKeywords(currentKeyboardLanguage);
             }
-            q51Var.a.i(currentKeyboardLanguage);
+            r51Var.a.i(currentKeyboardLanguage);
             i12 = 0;
-            MediaDataController.getInstance(i10).getEmojiSuggestions(q51Var.a.b(), e2Var.R, false, new b2(this, i15, allStickers, 0), false);
+            MediaDataController.getInstance(i10).getEmojiSuggestions(r51Var.a.b(), e2Var.R, false, new b2(this, i15, allStickers, 0), false);
         }
         ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(i10).getStickerSets(i12);
         int size2 = stickerSets.size();
@@ -203,7 +203,7 @@ public final class c2 implements Runnable {
             }
         }
         if (!arrayList.isEmpty() || !hashMap5.isEmpty()) {
-            q51Var.b(true);
+            r51Var.b(true);
         }
         TLRPC.TL_messages_searchStickerSets tL_messages_searchStickerSets = new TLRPC.TL_messages_searchStickerSets();
         tL_messages_searchStickerSets.q = e2Var.R;

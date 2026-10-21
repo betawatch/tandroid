@@ -29,10 +29,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.ba0;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class j4 {
     public int A;
@@ -53,8 +53,8 @@ public final class j4 {
     public final yc n;
     public i4 o;
     public boolean p;
-    public e11 q;
-    public e11 r;
+    public f11 q;
+    public f11 r;
     public long s;
     public Bitmap w;
     public Paint x;
@@ -137,7 +137,7 @@ public final class j4 {
                 int round = Math.round(0 / 1000.0f);
                 if (!i4Var.x && i4Var.K != (max = Math.max(0, i4Var.J - round))) {
                     i4Var.K = max;
-                    i4Var.L = new e11(AndroidUtilities.formatLongDuration(max), 12.0f, null);
+                    i4Var.L = new f11(AndroidUtilities.formatLongDuration(max), 12.0f, null);
                 }
             }
             if (f19 > 0.0f) {
@@ -1168,16 +1168,16 @@ public final class j4 {
             j4Var.g = (int) ((h4Var4.d / 1000.0f) * j4Var.f);
             j4Var.h = (int) (h4Var4.g * h4Var4.i);
             if (j4Var.i) {
-                e11 e11Var = new e11(md.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
-                j4Var.q = e11Var;
-                if (e11Var.c > j4Var.g - AndroidUtilities.dp(30.0f)) {
-                    j4Var.q = new e11(md.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                f11 f11Var = new f11(md.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                j4Var.q = f11Var;
+                if (f11Var.c > j4Var.g - AndroidUtilities.dp(30.0f)) {
+                    j4Var.q = new f11(md.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
                 }
             }
             if (j4Var.r == null || j4Var.s != tL_messageMediaPaidMedia3.stars_amount) {
                 long j10 = tL_messageMediaPaidMedia3.stars_amount;
                 j4Var.s = j10;
-                j4Var.r = new e11(md.S0(LocaleController.formatPluralStringComma("PaidMediaPrice", (int) j10), 0.9f, null), 12.0f, AndroidUtilities.bold());
+                j4Var.r = new f11(md.S0(LocaleController.formatPluralStringComma("PaidMediaPrice", (int) j10), 0.9f, null), 12.0f, AndroidUtilities.bold());
             }
         }
     }
@@ -1328,10 +1328,10 @@ public final class j4 {
         if (this.i) {
             TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia = messageObject == null ? null : (TLRPC.TL_messageMediaPaidMedia) messageObject.messageOwner.media;
             if (tL_messageMediaPaidMedia != null) {
-                e11 e11Var = new e11(md.Y0(z16, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
-                this.q = e11Var;
-                if (e11Var.c > this.g - AndroidUtilities.dp(30.0f)) {
-                    this.q = new e11(md.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                f11 f11Var = new f11(md.Y0(z16, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                this.q = f11Var;
+                if (f11Var.c > this.g - AndroidUtilities.dp(30.0f)) {
+                    this.q = new f11(md.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
                 }
             }
         }

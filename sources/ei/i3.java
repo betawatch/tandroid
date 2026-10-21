@@ -1,12 +1,12 @@
 package ei;
 
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.am0;
 import org.telegram.ui.Components.xl0;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i3 implements Runnable {
     public final /* synthetic */ int a;
@@ -28,15 +28,15 @@ public final /* synthetic */ class i3 implements Runnable {
                 m3 m3Var = this.c;
                 int R = RecyclerView.R(m3Var);
                 if (R != -1) {
-                    wl0 wl0Var = z2Var.T0;
-                    if (wl0Var == null) {
-                        xl0 xl0Var = z2Var.U0;
-                        if (xl0Var != null) {
-                            xl0Var.d(0.0f, 0.0f, R, m3Var);
+                    xl0 xl0Var = z2Var.T0;
+                    if (xl0Var == null) {
+                        yl0 yl0Var = z2Var.U0;
+                        if (yl0Var != null) {
+                            yl0Var.d(0.0f, 0.0f, R, m3Var);
                             break;
                         }
                     } else {
-                        wl0Var.a(R, m3Var);
+                        xl0Var.a(R, m3Var);
                         break;
                     }
                 }
@@ -47,15 +47,15 @@ public final /* synthetic */ class i3 implements Runnable {
                 m3 m3Var2 = this.c;
                 int R2 = RecyclerView.R(m3Var2);
                 if (R2 != -1) {
-                    yl0 yl0Var = z2Var2.V0;
-                    if (yl0Var == null) {
-                        zl0 zl0Var = z2Var2.W0;
-                        if (zl0Var != null) {
-                            zl0Var.d(0.0f, 0.0f, R2, m3Var2);
+                    zl0 zl0Var = z2Var2.V0;
+                    if (zl0Var == null) {
+                        am0 am0Var = z2Var2.W0;
+                        if (am0Var != null) {
+                            am0Var.d(0.0f, 0.0f, R2, m3Var2);
                             break;
                         }
                     } else {
-                        yl0Var.a(R2, m3Var2);
+                        zl0Var.a(R2, m3Var2);
                         break;
                     }
                 }

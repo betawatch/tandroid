@@ -8,7 +8,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.je;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x implements Utilities.Callback {
     public final /* synthetic */ z a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class x implements Utilities.Callback {
         z zVar = this.a;
         zVar.dismiss();
         if (this.b == null) {
-            AndroidUtilities.runOnUIThread(new uf.c(6, zVar, this.e), 220L);
+            AndroidUtilities.runOnUIThread(new u2.j0(8, zVar, this.e), 220L);
             return;
         }
         n2 U = LaunchActivity.U();

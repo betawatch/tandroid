@@ -22,8 +22,8 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ca0;
-import org.telegram.ui.Components.er0;
-import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.fr0;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.WallpapersListActivity;
 import org.telegram.ui.bi1;
@@ -33,7 +33,7 @@ import org.telegram.ui.ph1;
 import org.telegram.ui.vh1;
 import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z3 implements Runnable {
     public final /* synthetic */ int a;
@@ -199,7 +199,7 @@ public final /* synthetic */ class z3 implements Runnable {
                     } else if (str3.equals("share_score")) {
                         messageObject.messageOwner.with_my_score = true;
                     }
-                    ci1Var.showDialog(er0.P0(ci1Var.getParentActivity(), messageObject, null, false, ci1Var.h));
+                    ci1Var.showDialog(fr0.P0(ci1Var.getParentActivity(), messageObject, null, false, ci1Var.h));
                     break;
                 }
                 break;
@@ -245,9 +245,9 @@ public final /* synthetic */ class z3 implements Runnable {
                 arrayList4.clear();
                 arrayList4.addAll((ArrayList) obj);
                 f1Var.h = false;
-                v61 v61Var = f1Var.a;
-                if (v61Var != null) {
-                    v61Var.W2.N(true);
+                w61 w61Var = f1Var.a;
+                if (w61Var != null) {
+                    w61Var.W2.N(true);
                     break;
                 }
                 break;

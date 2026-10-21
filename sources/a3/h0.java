@@ -17,7 +17,7 @@ import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.z01;
+import org.telegram.ui.Components.a11;
 import org.telegram.ui.Components.zo;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cy;
@@ -25,7 +25,7 @@ import org.telegram.ui.qn;
 import org.telegram.ui.re1;
 import si.s0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -145,7 +145,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 long j19 = this.c;
                 synchronized (s0Var.g) {
                     if (!o0Var.d && !o0Var.e) {
-                        ((z01) s0Var.e).a(o0Var.a, o0Var.b, j18, j19);
+                        ((a11) s0Var.e).a(o0Var.a, o0Var.b, j18, j19);
                         return;
                     }
                     return;

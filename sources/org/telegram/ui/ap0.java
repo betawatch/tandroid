@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ap0 extends LinearLayout {
     public final org.telegram.ui.Components.x90 a;
@@ -23,7 +23,7 @@ public final class ap0 extends LinearLayout {
         ip0 ip0Var = cp0Var.p0;
         setBackgroundColor(ip0Var.getThemedColor(org.telegram.ui.ActionBar.h6.d6));
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(getContext());
-        w9Var.setImageDrawable(new org.telegram.ui.Components.uj0(R.raw.utyan_draw, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f)));
+        w9Var.setImageDrawable(new org.telegram.ui.Components.vj0(R.raw.utyan_draw, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f)));
         addView(w9Var, w7.z5.t(120, 120, 1, 0, 6, 0, 0));
         Context context2 = getContext();
         int i10 = org.telegram.ui.ActionBar.h6.y6;

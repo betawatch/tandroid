@@ -15,11 +15,11 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class ne1 extends org.telegram.ui.Components.d91 implements d10 {
+public final class ne1 extends org.telegram.ui.Components.e91 implements d10 {
     public final FrameLayout T;
-    public final org.telegram.ui.Components.im0 U;
+    public final org.telegram.ui.Components.jm0 U;
     public final s4.b0 V;
     public final ke1 W;
     public k71 a0;
@@ -35,8 +35,8 @@ public final class ne1 extends org.telegram.ui.Components.d91 implements d10 {
     public int k0;
     public boolean l0;
     public boolean m0;
-    public final org.telegram.ui.Components.sx0 n0;
-    public final org.telegram.ui.Components.nl0 o0;
+    public final org.telegram.ui.Components.tx0 n0;
+    public final org.telegram.ui.Components.ol0 o0;
     public boolean p0;
     public final me1 q0;
     public final ko0 r0;
@@ -54,36 +54,36 @@ public final class ne1 extends org.telegram.ui.Components.d91 implements d10 {
         FrameLayout frameLayout = new FrameLayout(context);
         this.T = frameLayout;
         this.r0 = new ko0(this, 8);
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
-        this.U = im0Var;
+        org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, null);
+        this.U = jm0Var;
         ke1 ke1Var = new ke1(this);
         this.W = ke1Var;
-        im0Var.setAdapter(ke1Var);
+        jm0Var.setAdapter(ke1Var);
         s4.b0 b0Var = new s4.b0();
         this.V = b0Var;
-        im0Var.setLayoutManager(b0Var);
-        im0Var.setOnItemClickListener(new f11(this, 11));
-        im0Var.setOnScrollListener(new bd1(this, 1));
+        jm0Var.setLayoutManager(b0Var);
+        jm0Var.setOnItemClickListener(new f11(this, 11));
+        jm0Var.setOnScrollListener(new bd1(this, 1));
         org.telegram.ui.Components.b10 b10Var = new org.telegram.ui.Components.b10(context, null);
         b10Var.setViewType(7);
         b10Var.w = false;
         b10Var.setUseHeaderOffset(true);
-        org.telegram.ui.Components.sx0 sx0Var = new org.telegram.ui.Components.sx0(context, b10Var, 1, null);
-        this.n0 = sx0Var;
-        sx0Var.d.setText(LocaleController.getString(R.string.NoResult));
-        sx0Var.e.setVisibility(8);
-        sx0Var.setVisibility(8);
-        sx0Var.addView(b10Var, 0);
-        sx0Var.setAnimateLayoutChange(true);
-        im0Var.setEmptyView(sx0Var);
-        im0Var.W1 = true;
-        im0Var.X1 = 0;
-        frameLayout.addView(sx0Var);
-        frameLayout.addView(im0Var);
+        org.telegram.ui.Components.tx0 tx0Var = new org.telegram.ui.Components.tx0(context, b10Var, 1, null);
+        this.n0 = tx0Var;
+        tx0Var.d.setText(LocaleController.getString(R.string.NoResult));
+        tx0Var.e.setVisibility(8);
+        tx0Var.setVisibility(8);
+        tx0Var.addView(b10Var, 0);
+        tx0Var.setAnimateLayoutChange(true);
+        jm0Var.setEmptyView(tx0Var);
+        jm0Var.W1 = true;
+        jm0Var.X1 = 0;
+        frameLayout.addView(tx0Var);
+        frameLayout.addView(jm0Var);
         L();
-        org.telegram.ui.Components.nl0 nl0Var = new org.telegram.ui.Components.nl0(im0Var, true);
-        this.o0 = nl0Var;
-        im0Var.setItemsEnterAnimator(nl0Var);
+        org.telegram.ui.Components.ol0 ol0Var = new org.telegram.ui.Components.ol0(jm0Var, true);
+        this.o0 = ol0Var;
+        jm0Var.setItemsEnterAnimator(ol0Var);
         me1 me1Var = new me1(this);
         this.q0 = me1Var;
         setAdapter(me1Var);
@@ -121,11 +121,11 @@ public final class ne1 extends org.telegram.ui.Components.d91 implements d10 {
                 e10Var.h(-re1Var.a, 0L, 0L, 0L, hg.q0.a3[((je1) this.q0.a.get(i10)).b], false, str, z10);
                 return;
             }
-            if (view instanceof org.telegram.ui.Components.tn0) {
-                org.telegram.ui.Components.tn0 tn0Var = (org.telegram.ui.Components.tn0) view;
-                tn0Var.a.b(0, false);
-                tn0Var.K = str;
-                tn0Var.d(false);
+            if (view instanceof org.telegram.ui.Components.un0) {
+                org.telegram.ui.Components.un0 un0Var = (org.telegram.ui.Components.un0) view;
+                un0Var.a.b(0, false);
+                un0Var.K = str;
+                un0Var.d(false);
                 return;
             }
             return;

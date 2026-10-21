@@ -1,22 +1,112 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.DialogObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public interface fu0 {
-    void C();
+public final class fu0 extends im0 {
+    public final Context c;
+    public final ArrayList d = new ArrayList();
+    public boolean e;
+    public boolean f;
+    public boolean h;
+    public final /* synthetic */ uv0 n;
 
-    void R();
+    public fu0(uv0 uv0Var, Context context) {
+        this.n = uv0Var;
+        this.c = context;
+    }
 
-    boolean T();
+    public static void E(fu0 fu0Var, long j10) {
+        uv0 uv0Var = fu0Var.n;
+        if (fu0Var.e) {
+            return;
+        }
+        TLRPC.TL_messages_getCommonChats tL_messages_getCommonChats = new TLRPC.TL_messages_getCommonChats();
+        long j11 = uv0Var.j1;
+        org.telegram.ui.ActionBar.n2 n2Var = uv0Var.v1;
+        if (DialogObject.isEncryptedDialog(j11)) {
+            j11 = org.telegram.messenger.g0.l(n2Var.getMessagesController(), j11).user_id;
+        }
+        TLRPC.InputUser inputUser = n2Var.getMessagesController().getInputUser(j11);
+        tL_messages_getCommonChats.user_id = inputUser;
+        if (inputUser instanceof TLRPC.TL_inputUserEmpty) {
+            return;
+        }
+        tL_messages_getCommonChats.limit = 100;
+        tL_messages_getCommonChats.max_id = j10;
+        fu0Var.e = true;
+        fu0Var.l();
+        n2Var.getConnectionsManager().bindRequestToGuid(n2Var.getConnectionsManager().sendRequest(tL_messages_getCommonChats, new y1(fu0Var, 12)), n2Var.getClassGuid());
+    }
 
-    im0 f();
+    @Override // org.telegram.ui.Components.im0
+    public final boolean D(s4.b1 b1Var) {
+        return b1Var.b() != this.d.size();
+    }
 
-    TLRPC.Chat g();
+    @Override // s4.g0
+    public final int h() {
+        ArrayList arrayList = this.d;
+        if (arrayList.isEmpty() && !this.e) {
+            return 1;
+        }
+        int size = arrayList.size();
+        return (arrayList.isEmpty() || this.h) ? size : size + 1;
+    }
 
-    boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view);
+    @Override // s4.g0
+    public final int j(int i10) {
+        ArrayList arrayList = this.d;
+        if (!arrayList.isEmpty() || this.e) {
+            return i10 < arrayList.size() ? 14 : 16;
+        }
+        return 15;
+    }
 
-    boolean q();
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        if (b1Var.f == 14) {
+            View view = b1Var.a;
+            if (view instanceof org.telegram.ui.Cells.h6) {
+                org.telegram.ui.Cells.h6 h6Var = (org.telegram.ui.Cells.h6) view;
+                ArrayList arrayList = this.d;
+                h6Var.u((TLRPC.Chat) arrayList.get(i10), null, null, null, false, false);
+                boolean z10 = true;
+                if (i10 == arrayList.size() - 1 && this.h) {
+                    z10 = false;
+                }
+                h6Var.M = z10;
+            }
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        org.telegram.ui.Cells.h6 h6Var;
+        uv0 uv0Var = this.n;
+        org.telegram.ui.ActionBar.d6 d6Var = uv0Var.F1;
+        Context context = this.c;
+        if (i10 == 14) {
+            h6Var = new org.telegram.ui.Cells.h6(context, d6Var);
+        } else {
+            if (i10 == 15) {
+                hu0 M = uv0.M(6, uv0Var.j1, context, d6Var);
+                M.setLayoutParams(new s4.o0(-1, -1));
+                return new tl0(M);
+            }
+            b10 b10Var = new b10(context, d6Var);
+            b10Var.setIsSingleCell(true);
+            b10Var.w = false;
+            b10Var.setViewType(1);
+            h6Var = b10Var;
+        }
+        return com.google.android.gms.internal.play_billing.k3.l(h6Var, h6Var, -1, -2);
+    }
 }

@@ -47,7 +47,7 @@ import org.telegram.messenger.video.Mp4Movie;
 import org.webrtc.EglBase;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class f60 implements Runnable {
     public DispatchQueue B0;
@@ -434,7 +434,7 @@ public final class f60 implements Runnable {
 
     public static void g(boolean z10) {
         AudioManager audioManager = (AudioManager) ApplicationLoader.applicationContext.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
-        if (SharedConfig.recordViaSco && !we0.d("android.permission.BLUETOOTH_CONNECT")) {
+        if (SharedConfig.recordViaSco && !xe0.d("android.permission.BLUETOOTH_CONNECT")) {
             SharedConfig.recordViaSco = false;
             SharedConfig.saveConfig();
         }
@@ -697,11 +697,11 @@ public final class f60 implements Runnable {
     }
 
     public final void h(File file) {
-        b81 b81Var = new b81();
+        c81 c81Var = new c81();
         m60 m60Var = this.H0;
-        m60Var.T = b81Var;
-        b81Var.J = new k2.w0(this, 12);
-        b81Var.V(m60Var.q0);
+        m60Var.T = c81Var;
+        c81Var.J = new k2.w0(this, 12);
+        c81Var.V(m60Var.q0);
         m60Var.T.D(Uri.fromFile(file), "other");
         m60Var.T.C();
         m60Var.T.O(true);

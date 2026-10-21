@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class lg1 extends ViewGroup {
     public AnimatorSet a;
@@ -78,7 +78,7 @@ public final class lg1 extends ViewGroup {
         this.b = false;
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.a = animatorSet2;
-        animatorSet2.addListener(new org.telegram.ui.Components.ml0(16, this, v30Var));
+        animatorSet2.addListener(new org.telegram.ui.Components.nl0(16, this, v30Var));
         this.a.setDuration(150L);
         this.e = v30Var;
         ArrayList arrayList = this.c;
@@ -167,7 +167,7 @@ public final class lg1 extends ViewGroup {
             A = AndroidUtilities.dp(372.0f) / 3;
         } else {
             Point point = AndroidUtilities.displaySize;
-            A = org.telegram.messenger.kk.A(158.0f, Math.min(point.x, point.y), 3);
+            A = org.telegram.messenger.mk.A(158.0f, Math.min(point.x, point.y), 3);
         }
         if (dp - i14 < A) {
             dp2 += AndroidUtilities.dp(40.0f);

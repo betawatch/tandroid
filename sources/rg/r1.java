@@ -16,15 +16,15 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.uj0;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.vj0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.tf1;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class r1 extends LinearLayout {
-    public final xj0[] a;
+    public final yj0[] a;
     public q1 b;
     public final Paint c;
     public final int d;
@@ -38,7 +38,7 @@ public final class r1 extends LinearLayout {
     public r1(Context context, boolean z10) {
         super(context);
         List list = qg.m.a;
-        this.a = new xj0[list.size() + 2];
+        this.a = new yj0[list.size() + 2];
         Paint paint = new Paint(1);
         this.c = paint;
         this.f = 1;
@@ -57,14 +57,14 @@ public final class r1 extends LinearLayout {
             if (i10 >= list2.size() + 2) {
                 return;
             }
-            xj0[] xj0VarArr = this.a;
+            yj0[] yj0VarArr = this.a;
             Object[] objArr = i10 == 0;
             Object[] objArr2 = i10 == list2.size() + 1;
-            xj0 xj0Var = new xj0(getContext());
-            xj0Var.setPadding(AndroidUtilities.dp(objArr != false ? 0.0f : 8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(objArr2 != false ? 0.0f : 8.0f), AndroidUtilities.dp(8.0f));
-            xj0Var.setLayoutParams(z5.l(1.0f, 0, 40));
-            xj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-            xj0VarArr[i11] = xj0Var;
+            yj0 yj0Var = new yj0(getContext());
+            yj0Var.setPadding(AndroidUtilities.dp(objArr != false ? 0.0f : 8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(objArr2 != false ? 0.0f : 8.0f), AndroidUtilities.dp(8.0f));
+            yj0Var.setLayoutParams(z5.l(1.0f, 0, 40));
+            yj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+            yj0VarArr[i11] = yj0Var;
             if (i10 == 0) {
                 final int i12 = 0;
                 this.a[i11].setOnClickListener(new View.OnClickListener(this) { // from class: rg.p1
@@ -125,18 +125,18 @@ public final class r1 extends LinearLayout {
 
     public final void a(int i10) {
         if (i10 >= 0) {
-            xj0[] xj0VarArr = this.a;
-            if (i10 >= xj0VarArr.length) {
+            yj0[] yj0VarArr = this.a;
+            if (i10 >= yj0VarArr.length) {
                 return;
             }
             if (this.r == null || this.h != i10) {
-                xj0 xj0Var = xj0VarArr[i10];
-                if (xj0Var != null) {
-                    Drawable drawable = xj0Var.getDrawable();
-                    if (drawable instanceof uj0) {
-                        uj0 uj0Var = (uj0) drawable;
-                        uj0Var.M(0);
-                        uj0Var.start();
+                yj0 yj0Var = yj0VarArr[i10];
+                if (yj0Var != null) {
+                    Drawable drawable = yj0Var.getDrawable();
+                    if (drawable instanceof vj0) {
+                        vj0 vj0Var = (vj0) drawable;
+                        vj0Var.M(0);
+                        vj0Var.start();
                     }
                 }
                 ValueAnimator valueAnimator = this.r;
@@ -148,7 +148,7 @@ public final class r1 extends LinearLayout {
                 }
                 if (this.e) {
                     this.e = false;
-                    AndroidUtilities.updateImageViewImageAnimated(xj0VarArr[this.d + 1], R.drawable.msg_add);
+                    AndroidUtilities.updateImageViewImageAnimated(yj0VarArr[this.d + 1], R.drawable.msg_add);
                 }
                 this.h = i10;
                 this.n = 0.0f;
@@ -196,27 +196,27 @@ public final class r1 extends LinearLayout {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         int i10 = this.f;
-        xj0[] xj0VarArr = this.a;
-        xj0 xj0Var = xj0VarArr[i10];
+        yj0[] yj0VarArr = this.a;
+        yj0 yj0Var = yj0VarArr[i10];
         int i11 = this.h;
-        xj0 xj0Var2 = i11 != -1 ? xj0VarArr[i11] : null;
+        yj0 yj0Var2 = i11 != -1 ? yj0VarArr[i11] : null;
         float f7 = 0.0f;
-        float f10 = xj0Var2 != null ? this.n : 0.0f;
+        float f10 = yj0Var2 != null ? this.n : 0.0f;
         float f11 = 1.0f;
         if (f10 > 0.25f && f10 < 0.75f) {
             f11 = (f10 <= 0.25f || f10 >= 0.5f) ? org.telegram.messenger.g0.x(0.75f, f10, 0.25f, 1.0f) : (0.5f - f10) / 0.25f;
         }
-        float dp = (AndroidUtilities.dp(3.0f) * f11) + (Math.min((xj0Var.getWidth() - xj0Var.getPaddingLeft()) - xj0Var.getPaddingRight(), (xj0Var.getHeight() - xj0Var.getPaddingTop()) - xj0Var.getPaddingBottom()) / 2.0f) + AndroidUtilities.dp(3.0f);
-        float width = (xj0Var.getWidth() / 2.0f) + xj0Var.getX();
+        float dp = (AndroidUtilities.dp(3.0f) * f11) + (Math.min((yj0Var.getWidth() - yj0Var.getPaddingLeft()) - yj0Var.getPaddingRight(), (yj0Var.getHeight() - yj0Var.getPaddingTop()) - yj0Var.getPaddingBottom()) / 2.0f) + AndroidUtilities.dp(3.0f);
+        float width = (yj0Var.getWidth() / 2.0f) + yj0Var.getX();
         int i12 = this.f;
         int i13 = this.d;
         float dp2 = (i12 == i13 + 1 ? AndroidUtilities.dp(4.0f) : 0.0f) + width;
-        float width2 = xj0Var2 != null ? (xj0Var2.getWidth() / 2.0f) + xj0Var2.getX() : 0.0f;
+        float width2 = yj0Var2 != null ? (yj0Var2.getWidth() / 2.0f) + yj0Var2.getX() : 0.0f;
         int i14 = this.h;
         if (i14 != -1 && i14 == i13 + 1) {
             f7 = AndroidUtilities.dp(4.0f);
         }
-        canvas.drawCircle(AndroidUtilities.lerp(dp2, width2 + f7, f10), (xj0Var.getHeight() / 2.0f) + xj0Var.getY(), dp, this.c);
+        canvas.drawCircle(AndroidUtilities.lerp(dp2, width2 + f7, f10), (yj0Var.getHeight() / 2.0f) + yj0Var.getY(), dp, this.c);
     }
 
     public void setDelegate(q1 q1Var) {

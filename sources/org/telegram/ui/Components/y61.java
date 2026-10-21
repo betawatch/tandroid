@@ -2,19 +2,19 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class y61 extends wz {
-    public final /* synthetic */ b71 X;
+public final class y61 extends s4.b0 {
+    public final /* synthetic */ c71 I;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y61(b71 b71Var, int i10) {
+    public y61(c71 c71Var, int i10) {
         super(i10, false);
-        this.X = b71Var;
+        this.I = c71Var;
     }
 
     @Override // s4.b0
     public final int W0(s4.y0 y0Var) {
-        return this.X.Y2 ? AndroidUtilities.displaySize.y : super.W0(y0Var);
+        return this.I.Y2 ? AndroidUtilities.displaySize.y : super.W0(y0Var);
     }
 }

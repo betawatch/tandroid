@@ -11,7 +11,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ct0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final class ct0 extends AnimatorListenerAdapter {
         if (i10 == 0 || i10 == 4 || ((i10 == 2 || i10 == 5) && photoViewer.g7.size() > 1)) {
             photoViewer.N0.setVisibility(8);
             photoViewer.O0.setVisibility(8);
-            photoViewer.s3();
+            photoViewer.u3();
         }
         if (photoViewer.c2 == 11) {
             photoViewer.i6 = photoViewer.Y5;
@@ -57,7 +57,7 @@ public final class ct0 extends AnimatorListenerAdapter {
         }
         Bitmap bitmap = photoViewer.C4.getBitmap();
         if (bitmap != null || photoViewer.r1) {
-            photoViewer.C1.b(bitmap, photoViewer.C4.getOrientation(), photoViewer.c2 != 1, false, photoViewer.D1, photoViewer.r1 ? (org.telegram.ui.Components.q71) photoViewer.B2 : null, yt0Var.c);
+            photoViewer.C1.b(bitmap, photoViewer.C4.getOrientation(), photoViewer.c2 != 1, false, photoViewer.D1, photoViewer.r1 ? (org.telegram.ui.Components.r71) photoViewer.B2 : null, yt0Var.c);
             photoViewer.C1.a();
             int bitmapWidth = photoViewer.C4.getBitmapWidth();
             int bitmapHeight = photoViewer.C4.getBitmapHeight();
@@ -73,10 +73,10 @@ public final class ct0 extends AnimatorListenerAdapter {
             }
             float f7 = bitmapWidth;
             float f10 = bitmapHeight;
-            float min = Math.min(photoViewer.k1(photoViewer.u4) / f7, photoViewer.i1() / f10);
-            float min2 = Math.min(photoViewer.k1(1) / f7, photoViewer.h1(1, false) / f10);
+            float min = Math.min(photoViewer.l1(photoViewer.u4) / f7, photoViewer.j1() / f10);
+            float min2 = Math.min(photoViewer.l1(1) / f7, photoViewer.i1(1, false) / f10);
             if (photoViewer.c2 == 1) {
-                float min3 = Math.min(photoViewer.k1(1), photoViewer.h1(1, false));
+                float min3 = Math.min(photoViewer.l1(1), photoViewer.i1(1, false));
                 min2 = Math.max(min3 / f7, min3 / f10);
             }
             photoViewer.e6 = min2 / min;
@@ -88,7 +88,7 @@ public final class ct0 extends AnimatorListenerAdapter {
         }
         AnimatorSet animatorSet = new AnimatorSet();
         photoViewer.p6 = animatorSet;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer.U0, (Property<org.telegram.ui.Components.mg0, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(48.0f), 0.0f), ObjectAnimator.ofFloat(photoViewer, org.telegram.ui.Components.t6.g, 0.0f, 1.0f), ObjectAnimator.ofFloat(photoViewer.C1, (Property<org.telegram.ui.Components.nf0, Float>) View.ALPHA, 0.0f, 1.0f));
+        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer.U0, (Property<org.telegram.ui.Components.ng0, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(48.0f), 0.0f), ObjectAnimator.ofFloat(photoViewer, org.telegram.ui.Components.t6.g, 0.0f, 1.0f), ObjectAnimator.ofFloat(photoViewer.C1, (Property<org.telegram.ui.Components.of0, Float>) View.ALPHA, 0.0f, 1.0f));
         photoViewer.p6.setDuration(200L);
         photoViewer.p6.addListener(new zb0(this, 8));
         photoViewer.p6.start();

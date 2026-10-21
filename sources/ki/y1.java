@@ -7,12 +7,12 @@ import android.widget.Button;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.er0;
+import org.telegram.ui.Components.fr0;
 import org.telegram.ui.Components.vg;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.cy;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class y1 extends vg {
     public final /* synthetic */ int l0;
@@ -62,14 +62,14 @@ public final class y1 extends vg {
         Object obj = this.m0;
         switch (i10) {
             case 2:
-                return ((er0) obj).getThemedColor(h6.S5);
+                return ((fr0) obj).getThemedColor(h6.S5);
             case 3:
             default:
                 return super.getFillColor();
             case 4:
                 int i11 = h6.zf;
                 Drawable[] drawableArr = PhotoViewer.U8;
-                return ((PhotoViewer) obj).z1(i11);
+                return ((PhotoViewer) obj).A1(i11);
         }
     }
 

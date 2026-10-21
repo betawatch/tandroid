@@ -42,13 +42,13 @@ import org.telegram.ui.Cells.y7;
 import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.r5;
-import org.telegram.ui.Components.wo0;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.xo0;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.w41;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class a0 extends n2 implements NotificationCenter.NotificationCenterDelegate {
     public final LinkedHashMap E;
@@ -81,7 +81,7 @@ public final class a0 extends n2 implements NotificationCenter.NotificationCente
     public m1 v;
     public FrameLayout w;
     public ImageView x;
-    public wo0 y;
+    public xo0 y;
 
     public a0(long j10, TLRPC.ChatFull chatFull) {
         super(null);
@@ -360,9 +360,9 @@ public final class a0 extends n2 implements NotificationCenter.NotificationCente
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new s(this, 0));
         this.h = new ai.r(context);
-        wo0 wo0Var = new wo0(context, this.h, this.resourceProvider, true);
-        this.y = wo0Var;
-        wo0Var.setFillViewport(true);
+        xo0 xo0Var = new xo0(context, this.h, this.resourceProvider, true);
+        this.y = xo0Var;
+        xo0Var.setFillViewport(true);
         this.actionBar.setAdaptiveBackground(this.y);
         v vVar = new v(this, context);
         this.h.setOrientation(1);

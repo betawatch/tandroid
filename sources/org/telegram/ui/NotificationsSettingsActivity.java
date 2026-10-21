@@ -42,7 +42,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -65,7 +65,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 
     public boolean V;
     public boolean W;
     public boolean X;
-    public org.telegram.ui.Components.im0 a;
+    public org.telegram.ui.Components.jm0 a;
     private int accountsAllRow;
     public boolean b;
     private int badgeNumberMessagesRow;
@@ -407,7 +407,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 
                         size4 = longSparseArray.size();
                         while (i13 < size4) {
                         }
-                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.oc(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
+                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.qc(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
                     }
                     try {
                         MessagesStorage.getInstance(notificationsSettingsActivity.currentAccount).getEncryptedChatsInternal(TextUtils.join(",", arrayList20), arrayList5, arrayList18);
@@ -430,7 +430,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 
                         size4 = longSparseArray.size();
                         while (i13 < size4) {
                         }
-                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.oc(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
+                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.qc(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
                     }
                 }
                 if (arrayList18.isEmpty()) {
@@ -457,7 +457,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 
                         size4 = longSparseArray.size();
                         while (i13 < size4) {
                         }
-                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.oc(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
+                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.qc(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
                     }
                     try {
                         MessagesStorage.getInstance(notificationsSettingsActivity.currentAccount).getUsersInternal(arrayList18, arrayList4);
@@ -479,7 +479,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 
                         size4 = longSparseArray.size();
                         while (i13 < size4) {
                         }
-                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.oc(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
+                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.qc(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
                     }
                 }
                 if (arrayList19.isEmpty()) {
@@ -507,7 +507,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 
                         size4 = longSparseArray.size();
                         while (i13 < size4) {
                         }
-                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.oc(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
+                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.qc(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
                     }
                 }
             } catch (Exception e13) {
@@ -564,7 +564,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 
             arrayList4 = arrayList29;
             arrayList5 = arrayList30;
         }
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.oc(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
+        AndroidUtilities.runOnUIThread(new org.telegram.messenger.qc(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
     }
 
     public static /* synthetic */ void X(NotificationsSettingsActivity notificationsSettingsActivity, int i10, int i11) {
@@ -808,7 +808,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 
             notificationsSettingsActivity.presentFragment(new NotificationsCustomSettingsActivity(i15, arrayList, arrayList2, false));
         } else {
             boolean z16 = isGlobalNotificationsEnabled;
-            org.telegram.messenger.wi wiVar = new org.telegram.messenger.wi(notificationsSettingsActivity, i11, z16, i5Var, i10);
+            org.telegram.messenger.xi xiVar = new org.telegram.messenger.xi(notificationsSettingsActivity, i11, z16, i5Var, i10);
             z10 = z16;
             if (i10 == notificationsSettingsActivity.storiesRow) {
                 arrayList3 = notificationsSettingsActivity.h;
@@ -833,7 +833,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 
                 }
                 arrayList4 = null;
             } else if (i10 == notificationsSettingsActivity.reactionsRow) {
-                wiVar.run();
+                xiVar.run();
             } else {
                 arrayList3 = notificationsSettingsActivity.f;
                 if (arrayList3 != null && !arrayList3.isEmpty()) {
@@ -844,7 +844,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 
                 arrayList4 = null;
             }
             if (str == null) {
-                wiVar.run();
+                xiVar.run();
             } else {
                 AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(notificationsSettingsActivity.getParentActivity());
                 int size = arrayList3.size();
@@ -856,7 +856,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 
                 }
                 b2Var3.R = LocaleController.getString("NotificationsExceptions", R.string.NotificationsExceptions);
                 alertDialog$Builder3.i(LocaleController.getString("ViewExceptions", R.string.ViewExceptions), new e7(notificationsSettingsActivity, arrayList3, arrayList4, 16));
-                alertDialog$Builder3.h(LocaleController.getString("OK", R.string.OK), new ut(wiVar, 25));
+                alertDialog$Builder3.h(LocaleController.getString("OK", R.string.OK), new ut(xiVar, 25));
                 notificationsSettingsActivity.showDialog(b2Var3);
             }
         }
@@ -873,9 +873,9 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 
         ConnectionsManager.getInstance(notificationsSettingsActivity.currentAccount).sendRequest(new TL_account.resetNotifySettings(), new m(notificationsSettingsActivity, 15));
     }
 
-    public final void A0(org.telegram.ui.Components.bz0 bz0Var) {
+    public final void A0(org.telegram.ui.Components.cz0 cz0Var) {
         MediaDataController.getInstance(this.currentAccount).loadHints(true);
-        MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new ve0(this, new ArrayList(MediaDataController.getInstance(this.currentAccount).hints), bz0Var, 10));
+        MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new ve0(this, new ArrayList(MediaDataController.getInstance(this.currentAccount).hints), cz0Var, 10));
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -892,19 +892,19 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
-        this.a = im0Var;
-        im0Var.p1();
+        org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, null);
+        this.a = jm0Var;
+        jm0Var.p1();
         this.actionBar.setAdaptiveBackground(this.a);
         this.a.setItemAnimator(null);
         this.a.setLayoutAnimation(null);
         this.a.setLayoutManager(new hg.a0(i10, false, 13));
         this.a.setVerticalScrollBarEnabled(false);
         frameLayout.addView(this.a, w7.z5.c(-1.0f, -1));
-        org.telegram.ui.Components.im0 im0Var2 = this.a;
+        org.telegram.ui.Components.jm0 jm0Var2 = this.a;
         dk0 dk0Var = new dk0(this, context);
         this.c = dk0Var;
-        im0Var2.setAdapter(dk0Var);
+        jm0Var2.setAdapter(dk0Var);
         this.a.setOnItemClickListener(new bk0(this));
         return this.fragmentView;
     }

@@ -50,18 +50,18 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.l2;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.q8;
+import org.telegram.ui.Components.am0;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.mb0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xa;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.xp;
-import org.telegram.ui.Components.zl0;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
@@ -71,7 +71,7 @@ import w7.b6;
 import w7.z5;
 import yh.o1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class m1 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public static e1 J0;
@@ -166,7 +166,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
         ViewGroup viewGroup3 = this.containerView;
         int i15 = this.backgroundPaddingLeft;
         viewGroup3.addView(h1Var, z5.f(1.0f, 55, i15, 0, i15, 0));
-        bd bdVar = new bd(getContext(), d6Var, (im0) null);
+        bd bdVar = new bd(getContext(), d6Var, (jm0) null);
         this.d0 = bdVar;
         bdVar.setClickable(true);
         bdVar.setOrientation(1);
@@ -251,15 +251,15 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
         int i19 = this.backgroundPaddingLeft;
         viewGroup5.addView(frameLayout, z5.f(300.0f, 87, i19, 0, i19, AndroidUtilities.dp(68.0f)));
         vg.h hVar2 = this.p0;
-        im0 im0Var = this.d;
+        jm0 jm0Var = this.d;
         hVar2.n = arrayList;
-        hVar2.f = im0Var;
+        hVar2.f = jm0Var;
         int i20 = this.backgroundPaddingLeft;
-        im0Var.setPadding(i20, 0, i20, AndroidUtilities.dp(i11 != 1 ? 60.0f : 0.0f));
+        jm0Var.setPadding(i20, 0, i20, AndroidUtilities.dp(i11 != 1 ? 60.0f : 0.0f));
         this.d.j(new j1(this));
         this.d.setOnItemClickListener(new m4.s0(this, i11, d6Var, i10));
         if (i11 == 4) {
-            this.d.setOnItemLongClickListener((zl0) new i2.s(this, i11, 19));
+            this.d.setOnItemLongClickListener((am0) new i2.s(this, i11, 19));
         }
         s4.k kVar = new s4.k();
         kVar.n(350L);
@@ -1362,7 +1362,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
             r1 = r0
             r3 = r1
         L8:
-            org.telegram.ui.Components.im0 r4 = r9.d
+            org.telegram.ui.Components.jm0 r4 = r9.d
             int r5 = r4.getChildCount()
             if (r1 >= r5) goto L57
             android.view.View r4 = r4.getChildAt(r1)
@@ -1442,7 +1442,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
+    public final im0 x(jm0 jm0Var) {
         vg.h hVar = new vg.h(getContext(), this.resourcesProvider, false);
         this.p0 = hVar;
         hVar.s = true;

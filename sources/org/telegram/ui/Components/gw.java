@@ -19,7 +19,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class gw extends ViewGroup {
     public Boolean E;
@@ -32,7 +32,7 @@ public class gw extends ViewGroup {
     public boolean b;
     public final boolean c;
     public final w9 d;
-    public final uj0 e;
+    public final vj0 e;
     public final sg.c1 f;
     public final boolean h;
     public final boolean n;
@@ -51,12 +51,12 @@ public class gw extends ViewGroup {
         this.h = true;
         this.n = false;
         setBackground(org.telegram.ui.ActionBar.h6.N(kwVar.k(), 0, 0));
-        uj0 uj0Var = new uj0(i10, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), false, null);
-        this.e = uj0Var;
-        uj0Var.setBounds(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(27.0f), AndroidUtilities.dp(27.0f));
-        uj0Var.R(this);
-        uj0Var.J(true);
-        uj0Var.start();
+        vj0 vj0Var = new vj0(i10, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), false, null);
+        this.e = vj0Var;
+        vj0Var.setBounds(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(27.0f), AndroidUtilities.dp(27.0f));
+        vj0Var.R(this);
+        vj0Var.J(true);
+        vj0Var.start();
         d();
     }
 
@@ -72,9 +72,9 @@ public class gw extends ViewGroup {
             w9Var.setColorFilter(porterDuffColorFilter);
             w9Var.invalidate();
         }
-        uj0 uj0Var = this.e;
-        if (uj0Var != null) {
-            uj0Var.setColorFilter(porterDuffColorFilter);
+        vj0 vj0Var = this.e;
+        if (vj0Var != null) {
+            vj0Var.setColorFilter(porterDuffColorFilter);
             invalidate();
         }
     }
@@ -178,11 +178,11 @@ public class gw extends ViewGroup {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        uj0 uj0Var = this.e;
-        if (uj0Var == null || !this.y) {
+        vj0 vj0Var = this.e;
+        if (vj0Var == null || !this.y) {
             return;
         }
-        uj0Var.draw(canvas);
+        vj0Var.draw(canvas);
     }
 
     @Override // android.view.ViewGroup

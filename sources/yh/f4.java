@@ -34,16 +34,16 @@ import org.telegram.ui.Components.ao;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.iu;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.kv;
 import org.telegram.ui.jo0;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class f4 extends bb {
     public static final /* synthetic */ int k0 = 0;
@@ -208,7 +208,7 @@ public final class f4 extends bb {
 
     public static void R(f4 f4Var, e4 e4Var, int i10) {
         TL_stars.SavedStarGift savedStarGift;
-        g61 G = f4Var.i0.G(i10 - 1);
+        h61 G = f4Var.i0.G(i10 - 1);
         if (G == null) {
             return;
         }
@@ -368,7 +368,7 @@ public final class f4 extends bb {
                 return;
             }
             int currentTime = ConnectionsManager.getInstance(f4Var.currentAccount).getCurrentTime();
-            arrayList.add(g61.s(-1, LocaleController.getString(R.string.GiftCraftSelectYour)));
+            arrayList.add(h61.s(-1, LocaleController.getString(R.string.GiftCraftSelectYour)));
             ArrayList arrayList2 = y9Var.l;
             int size = arrayList2.size();
             int i10 = 0;
@@ -381,7 +381,7 @@ public final class f4 extends bb {
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 if (!f4Var.g0.contains(Long.valueOf(savedStarGift.gift.id))) {
                     boolean z11 = savedStarGift.can_craft_at <= currentTime;
-                    g61 a2 = f1.a(0, savedStarGift.gift, false, true, false, false, true);
+                    h61 a2 = f1.a(0, savedStarGift.gift, false, true, false, false, true);
                     a2.g = z11;
                     arrayList.add(a2);
                     i11++;
@@ -392,23 +392,23 @@ public final class f4 extends bb {
                 int i13 = i11 % 3;
                 int i14 = 6 - i13;
                 for (int i15 = 0; i15 < i14; i15++) {
-                    g61 o10 = g61.o((i15 - i13) + 1, 35);
+                    h61 o10 = h61.o((i15 - i13) + 1, 35);
                     o10.u = 1;
                     arrayList.add(o10);
                 }
             } else if (z10) {
-                arrayList.add(g61.g(LocaleController.getString(R.string.GiftCraftSelectYourEmpty)));
+                arrayList.add(h61.g(LocaleController.getString(R.string.GiftCraftSelectYourEmpty)));
             }
             if (s3Var.e > 0 || f4Var.j0) {
                 f4Var.j0 = true;
                 String string = LocaleController.getString(R.string.GiftCraftSelectResale);
-                g61 g61Var = new g61(42);
-                g61Var.d = -2;
-                g61Var.o = string;
-                arrayList.add(g61Var);
+                h61 h61Var = new h61(42);
+                h61Var.d = -2;
+                h61Var.o = string;
+                arrayList.add(h61Var);
                 HorizontalScrollView horizontalScrollView = f4Var.Z;
                 if (horizontalScrollView != null) {
-                    arrayList.add(g61.j(-3, horizontalScrollView));
+                    arrayList.add(h61.j(-3, horizontalScrollView));
                 }
                 ArrayList arrayList3 = s3Var.d;
                 int size2 = arrayList3.size();
@@ -418,22 +418,22 @@ public final class f4 extends bb {
                     arrayList.add(f1.a(0, (TL_stars.TL_starGiftUnique) obj2, false, true, false, true, true));
                 }
                 if (s3Var.t || !s3Var.u) {
-                    g61 o11 = g61.o(10, 35);
+                    h61 o11 = h61.o(10, 35);
                     o11.u = 1;
                     arrayList.add(o11);
-                    g61 o12 = g61.o(11, 35);
+                    h61 o12 = h61.o(11, 35);
                     o12.u = 1;
                     arrayList.add(o12);
-                    g61 o13 = g61.o(12, 35);
+                    h61 o13 = h61.o(12, 35);
                     o13.u = 1;
                     arrayList.add(o13);
-                    g61 o14 = g61.o(13, 35);
+                    h61 o14 = h61.o(13, 35);
                     o14.u = 1;
                     arrayList.add(o14);
-                    g61 o15 = g61.o(14, 35);
+                    h61 o15 = h61.o(14, 35);
                     o15.u = 1;
                     arrayList.add(o15);
-                    g61 o16 = g61.o(15, 35);
+                    h61 o16 = h61.o(15, 35);
                     o16.u = 1;
                     arrayList.add(o16);
                 }
@@ -532,16 +532,16 @@ public final class f4 extends bb {
 
     public final void a0() {
         int R;
-        g61 G;
+        h61 G;
         int i10 = 0;
         boolean z10 = false;
         boolean z11 = false;
         while (true) {
-            im0 im0Var = this.d;
-            if (i10 >= im0Var.getChildCount()) {
+            jm0 jm0Var = this.d;
+            if (i10 >= jm0Var.getChildCount()) {
                 break;
             }
-            View childAt = im0Var.getChildAt(i10);
+            View childAt = jm0Var.getChildAt(i10);
             if ((childAt instanceof b10) && (R = RecyclerView.R(childAt) - 1) >= 0 && (G = this.i0.G(R)) != null) {
                 if (G.d < 10) {
                     z10 = true;
@@ -561,8 +561,8 @@ public final class f4 extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
-        d4 d4Var = new d4(this, im0Var, getContext(), this.currentAccount, new t3(this, 0), this.resourcesProvider);
+    public final im0 x(jm0 jm0Var) {
+        d4 d4Var = new d4(this, jm0Var, getContext(), this.currentAccount, new t3(this, 0), this.resourcesProvider);
         this.i0 = d4Var;
         return d4Var;
     }

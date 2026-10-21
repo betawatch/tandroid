@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class iu0 extends FrameLayout {
     public final /* synthetic */ PhotoViewer a;
@@ -64,15 +64,15 @@ public final class iu0 extends FrameLayout {
         if (photoViewer.Q.x()) {
             photoViewer.Q.f(false);
         }
-        if (photoViewer.I1()) {
-            photoViewer.E0(true);
+        if (photoViewer.J1()) {
+            photoViewer.F0(true);
             return false;
         }
         if (et.q().E) {
             et.q().o();
             return false;
         }
-        PhotoViewer.t1().G0(true, false);
+        PhotoViewer.u1().H0(true, false);
         return true;
     }
 
@@ -95,7 +95,7 @@ public final class iu0 extends FrameLayout {
                 }
                 MessageObject messageObject = photoViewer.T4;
                 if (messageObject == null || !messageObject.isSponsored()) {
-                    photoViewer.s2();
+                    photoViewer.u2();
                 }
             }
             AndroidUtilities.cancelRunOnUIThread(photoViewer.x2);
@@ -187,11 +187,11 @@ public final class iu0 extends FrameLayout {
         photoViewer.T5 = true;
         if (z10) {
             if (!photoViewer.U5) {
-                float r22 = photoViewer.r2(true);
-                photoViewer.a6 = r22;
+                float t22 = photoViewer.t2(true);
+                photoViewer.a6 = t22;
                 photoViewer.X5 = 0.0f;
                 photoViewer.Y5 = 0.0f;
-                photoViewer.w3(r22);
+                photoViewer.y3(t22);
             }
             CheckBox checkBox = photoViewer.N0;
             if (checkBox != null) {
@@ -199,7 +199,7 @@ public final class iu0 extends FrameLayout {
             }
         }
         if (photoViewer.U5) {
-            photoViewer.N2();
+            photoViewer.P2();
             photoViewer.U5 = false;
         }
     }

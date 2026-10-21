@@ -12,9 +12,9 @@ import android.view.View;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class c01 extends View implements org.telegram.ui.Components.fi0 {
+public final class c01 extends View implements org.telegram.ui.Components.gi0 {
     public boolean E;
     public float F;
     public float G;
@@ -143,24 +143,24 @@ public final class c01 extends View implements org.telegram.ui.Components.fi0 {
         ofFloat2.addListener(new zb0(this, 20));
     }
 
-    @Override // org.telegram.ui.Components.fi0
+    @Override // org.telegram.ui.Components.gi0
     public final void a() {
         Arrays.fill(this.x, false);
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.fi0
+    @Override // org.telegram.ui.Components.gi0
     public final void b(boolean z10) {
         this.x[!z10 ? 1 : 0] = true;
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.fi0
+    @Override // org.telegram.ui.Components.gi0
     public final void c() {
         this.P.i5(false);
     }
 
-    @Override // org.telegram.ui.Components.fi0
+    @Override // org.telegram.ui.Components.gi0
     public final void d() {
         invalidate();
     }
@@ -277,7 +277,7 @@ public final class c01 extends View implements org.telegram.ui.Components.fi0 {
                 paint3.setAlpha((int) (this.G * 255.0f));
             }
             f10 = 180.0f;
-            int A = org.telegram.messenger.kk.A((realCount - 1) * 2, getMeasuredWidth() - AndroidUtilities.dp(10.0f), realCount);
+            int A = org.telegram.messenger.mk.A((realCount - 1) * 2, getMeasuredWidth() - AndroidUtilities.dp(10.0f), realCount);
             int dp = AndroidUtilities.dp(4.0f);
             z11 = ((org.telegram.ui.ActionBar.n2) profileActivity).inBubbleMode;
             int i15 = dp + (!z11 ? AndroidUtilities.statusBarHeight : 0);

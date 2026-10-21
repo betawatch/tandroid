@@ -7,7 +7,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class nb1 implements org.telegram.ui.Components.vq {
     public final /* synthetic */ kc1 a;
@@ -167,7 +167,7 @@ public final class nb1 implements org.telegram.ui.Components.vq {
         sb2.append("/addtheme/");
         sb2.append(f6Var.r.slug);
         String sb3 = sb2.toString();
-        kc1Var.showDialog(new org.telegram.ui.Components.er0(kc1Var.getParentActivity(), null, sb3, false, sb3, false, null));
+        kc1Var.showDialog(new org.telegram.ui.Components.fr0(kc1Var.getParentActivity(), null, sb3, false, sb3, false, null));
     }
 
     @Override // org.telegram.ui.Components.vq

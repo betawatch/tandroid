@@ -25,18 +25,19 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.w9;
 import qg.n;
 import s4.b1;
+import u2.j0;
 import wg.c0;
 import wg.d0;
 import wg.r;
 import wg.t;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public abstract class e extends hm0 {
+public abstract class e extends im0 {
     public final d6 c;
     public boolean d;
     public n2 e;
@@ -48,7 +49,7 @@ public abstract class e extends hm0 {
         this.c = d6Var;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(b1 b1Var) {
         return false;
     }
@@ -88,6 +89,7 @@ public abstract class e extends hm0 {
         int i11;
         char c10;
         String formatPluralString;
+        c0 c0Var;
         int i12 = b1Var.f;
         View view = b1Var.a;
         int i13 = 23;
@@ -190,18 +192,18 @@ public abstract class e extends hm0 {
                 return;
             }
         }
-        c0 c0Var = (c0) view;
+        c0 c0Var2 = (c0) view;
         final TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode4 = this.f;
         final l0 l0Var2 = new l0(this, i13);
-        w9 w9Var = c0Var.h;
-        FrameLayout frameLayout = c0Var.w;
-        w9 w9Var2 = c0Var.f;
-        TextView textView = c0Var.a;
-        TextView textView2 = c0Var.b;
-        d6 d6Var = c0Var.n;
+        w9 w9Var = c0Var2.h;
+        FrameLayout frameLayout = c0Var2.w;
+        w9 w9Var2 = c0Var2.f;
+        TextView textView = c0Var2.a;
+        TextView textView2 = c0Var2.b;
+        d6 d6Var = c0Var2.n;
         Date date2 = new Date(tL_payments_checkedGiftCode4.date * 1000);
-        c0Var.e.setText(LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(date2), LocaleController.getInstance().getFormatterDay().format(date2)));
-        TextView textView3 = c0Var.d;
+        c0Var2.e.setText(LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(date2), LocaleController.getInstance().getFormatterDay().format(date2)));
+        TextView textView3 = c0Var2.d;
         textView3.setTextColor(h6.w0(tL_payments_checkedGiftCode4.via_giveaway ? h6.m5 : h6.j5, d6Var));
         TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-DialogObject.getPeerDialogId(tL_payments_checkedGiftCode4.from_id)));
         boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
@@ -238,7 +240,7 @@ public abstract class e extends hm0 {
             c10 = 0;
             formatPluralString = LocaleController.formatPluralString("Months", i17, new Object[0]);
         }
-        TextView textView4 = c0Var.c;
+        TextView textView4 = c0Var2.c;
         int i18 = R.string.BoostingTelegramPremiumFor;
         String str3 = formatPluralString;
         Object[] objArr = new Object[i11];
@@ -249,10 +251,12 @@ public abstract class e extends hm0 {
             spannableStringBuilder2.append((CharSequence) "**");
             spannableStringBuilder2.append((CharSequence) chat.title);
             spannableStringBuilder2.append((CharSequence) "**");
-            textView.setText(Emoji.replaceEmoji(AndroidUtilities.replaceSingleTag(spannableStringBuilder2.toString(), h6.gc, 0, new uf.c(13, l0Var2, chat), d6Var), textView.getPaint().getFontMetricsInt(), false));
+            textView.setText(Emoji.replaceEmoji(AndroidUtilities.replaceSingleTag(spannableStringBuilder2.toString(), h6.gc, 0, new j0(15, l0Var2, chat), d6Var), textView.getPaint().getFontMetricsInt(), false));
             w9Var2.e(chat, new h9(chat));
             frameLayout.setOnClickListener(new n(10, l0Var2, chat));
+            c0Var = c0Var2;
         } else {
+            c0Var = c0Var2;
             final TLRPC.User user2 = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(tL_payments_checkedGiftCode4.from_id.user_id));
             final int i19 = 0;
             textView.setText(Emoji.replaceEmoji(UserObject.getFirstName(user2), textView.getPaint().getFontMetricsInt(), false));

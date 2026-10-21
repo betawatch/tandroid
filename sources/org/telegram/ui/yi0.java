@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class yi0 extends yg.h {
     public boolean J;
@@ -26,11 +26,11 @@ public final class yi0 extends yg.h {
             boolean isKeyboardVisible = bj0Var.isKeyboardVisible();
             this.J = isKeyboardVisible;
             if (isKeyboardVisible) {
-                org.telegram.ui.Components.im0 im0Var = bj0Var.d;
+                org.telegram.ui.Components.jm0 jm0Var = bj0Var.d;
                 li.n nVar = new li.n(bj0Var.getContext(), 2, 0.6f);
                 nVar.a = 1;
                 nVar.p = AndroidUtilities.dp(36.0f);
-                im0Var.getLayoutManager().w0(nVar);
+                jm0Var.getLayoutManager().w0(nVar);
             }
         }
     }

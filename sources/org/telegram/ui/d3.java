@@ -12,9 +12,9 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class d3 implements org.telegram.ui.Cells.y9, cj0, org.telegram.ui.Components.wz0 {
+public final class d3 implements org.telegram.ui.Cells.y9, cj0, org.telegram.ui.Components.xz0 {
     public int E = -1;
     public int F = -1;
     public int G = -1;
@@ -54,7 +54,7 @@ public final class d3 implements org.telegram.ui.Cells.y9, cj0, org.telegram.ui.
         return this.E;
     }
 
-    @Override // org.telegram.ui.Components.wz0
+    @Override // org.telegram.ui.Components.xz0
     public final void attach(View view) {
         this.L = view;
         StaticLayout staticLayout = this.d;
@@ -87,7 +87,7 @@ public final class d3 implements org.telegram.ui.Cells.y9, cj0, org.telegram.ui.
         return this.G;
     }
 
-    @Override // org.telegram.ui.Components.wz0
+    @Override // org.telegram.ui.Components.xz0
     public final void detach(View view) {
         if (view == null) {
             view = this.L;
@@ -96,7 +96,7 @@ public final class d3 implements org.telegram.ui.Cells.y9, cj0, org.telegram.ui.
         this.L = null;
     }
 
-    @Override // org.telegram.ui.Components.wz0
+    @Override // org.telegram.ui.Components.xz0
     public final void draw(Canvas canvas, View view) {
         float width;
         Object obj;
@@ -156,7 +156,7 @@ public final class d3 implements org.telegram.ui.Cells.y9, cj0, org.telegram.ui.
         this.c = false;
     }
 
-    @Override // org.telegram.ui.Components.wz0
+    @Override // org.telegram.ui.Components.xz0
     public final /* synthetic */ int getEmojiOnlyCount() {
         return 0;
     }
@@ -202,17 +202,17 @@ public final class d3 implements org.telegram.ui.Cells.y9, cj0, org.telegram.ui.
         return this.v;
     }
 
-    @Override // org.telegram.ui.Components.wz0
+    @Override // org.telegram.ui.Components.xz0
     public final void setRow(int i10) {
         this.w = i10;
     }
 
-    @Override // org.telegram.ui.Components.wz0
+    @Override // org.telegram.ui.Components.xz0
     public final void setX(int i10) {
         this.s = i10;
     }
 
-    @Override // org.telegram.ui.Components.wz0
+    @Override // org.telegram.ui.Components.xz0
     public final void setY(int i10) {
         this.v = i10;
     }

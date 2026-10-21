@@ -18,7 +18,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class bn extends li {
     public static final HashMap U = new HashMap();
@@ -223,10 +223,10 @@ public final class bn extends li {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = u1Var.getChildAt(0);
-        sl0 sl0Var = (sl0) u1Var.G(childAt);
+        tl0 tl0Var = (tl0) u1Var.G(childAt);
         int top = childAt.getTop();
         int dp = AndroidUtilities.dp(8.0f);
-        if (top < AndroidUtilities.dp(8.0f) || sl0Var == null || sl0Var.b() != 0) {
+        if (top < AndroidUtilities.dp(8.0f) || tl0Var == null || tl0Var.b() != 0) {
             top = dp;
         }
         u1Var.setTopGlowOffset(top);

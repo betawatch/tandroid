@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class po extends LinearLayout {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -53,17 +53,17 @@ public final class po extends LinearLayout {
             arrayList.add(textView2);
             addView(textView2, w7.z5.q(-2, -2, 49));
         } else {
-            xj0 xj0Var = new xj0(activity);
-            xj0Var.setAutoRepeat(true);
-            xj0Var.f(R.raw.utyan_saved_messages, 120, 120, null);
-            xj0Var.d();
-            addView(xj0Var, w7.z5.t(-2, -2, 49, 0, 2, 0, 0));
+            yj0 yj0Var = new yj0(activity);
+            yj0Var.setAutoRepeat(true);
+            yj0Var.f(R.raw.utyan_saved_messages, 120, 120, null);
+            yj0Var.d();
+            addView(yj0Var, w7.z5.t(-2, -2, 49, 0, 2, 0, 0));
         }
         TextView textView3 = new TextView(activity);
         if (i10 == 0) {
-            org.telegram.messenger.kk.j(15.0f, R.string.EncryptedDescriptionTitle, 1, textView3);
+            org.telegram.messenger.mk.j(15.0f, R.string.EncryptedDescriptionTitle, 1, textView3);
         } else if (i10 == 1) {
-            org.telegram.messenger.kk.j(15.0f, R.string.GroupEmptyTitle2, 1, textView3);
+            org.telegram.messenger.mk.j(15.0f, R.string.GroupEmptyTitle2, 1, textView3);
         } else {
             textView3.setText(LocaleController.getString(R.string.ChatYourSelfTitle));
             textView3.setTextSize(1, 16.0f);

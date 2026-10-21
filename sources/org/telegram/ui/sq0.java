@@ -7,7 +7,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.Components.ClippingImageView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sq0 implements Runnable {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class sq0 implements Runnable {
                 try {
                     if (photoViewer.g0.getParent() != null) {
                         ((WindowManager) photoViewer.y.getSystemService("window")).removeView(photoViewer.g0);
-                        photoViewer.W1();
+                        photoViewer.Y1();
                         break;
                     }
                 } catch (Exception e) {
@@ -50,8 +50,8 @@ public final /* synthetic */ class sq0 implements Runnable {
                 int i10 = 0;
                 photoViewer2.e0.setLayerType(0, null);
                 photoViewer2.n4 = 0;
-                photoViewer2.G1();
-                photoViewer2.Y1(this.c);
+                photoViewer2.H1();
+                photoViewer2.a2(this.c);
                 MediaController.getInstance().tryResumePausedAudio();
                 if (photoViewer2.v7 && !photoViewer2.w7 && (arrayList = photoViewer2.g7) != null) {
                     int size = arrayList.size();
@@ -73,7 +73,7 @@ public final /* synthetic */ class sq0 implements Runnable {
                     int i11 = 0;
                     bu0Var.setLayerType(0, null);
                     photoViewer3.n4 = 0;
-                    photoViewer3.Y1(this.c);
+                    photoViewer3.a2(this.c);
                     photoViewer3.e0.setScaleX(1.0f);
                     photoViewer3.e0.setScaleY(1.0f);
                     MediaController.getInstance().tryResumePausedAudio();

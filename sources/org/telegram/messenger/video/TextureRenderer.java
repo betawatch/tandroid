@@ -43,7 +43,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RLottieNative;
@@ -60,7 +60,7 @@ import qg.m0;
 import rg.o0;
 import rg.s0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public class TextureRenderer {
     private static final String FRAGMENT_EXTERNAL_MASK_SHADER = "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nvarying vec2 MTextureCoord;\nuniform samplerExternalOES sTexture;\nuniform sampler2D sMask;\nvoid main() {\n  gl_FragColor = texture2D(sTexture, vTextureCoord) * texture2D(sMask, MTextureCoord).a;\n}\n";
@@ -200,10 +200,10 @@ public class TextureRenderer {
                 FileLog.d("cropState px = " + cropState.cropPx + " py = " + cropState.cropPy + " cScale = " + cropState.cropScale + " cropRotate = " + cropState.cropRotate + " pw = " + cropState.cropPw + " ph = " + cropState.cropPh + " tw = " + cropState.transformWidth + " th = " + cropState.transformHeight + " tr = " + cropState.transformRotation + " mirror = " + cropState.mirrored);
             }
         }
-        FloatBuffer h = kk.h(ByteBuffer.allocateDirect(32));
+        FloatBuffer h = mk.h(ByteBuffer.allocateDirect(32));
         this.textureBuffer = h;
         h.put(fArr2).position(0);
-        FloatBuffer h10 = kk.h(ByteBuffer.allocateDirect(this.bitmapData.length * 4));
+        FloatBuffer h10 = mk.h(ByteBuffer.allocateDirect(this.bitmapData.length * 4));
         this.bitmapVerticesBuffer = h10;
         h10.put(this.bitmapData).position(0);
         Matrix.setIdentityM(this.mSTMatrix, 0);
@@ -236,12 +236,12 @@ public class TextureRenderer {
         } else {
             c10 = 6;
             if (num2 != null && num != null) {
-                FloatBuffer h11 = kk.h(ByteBuffer.allocateDirect(32));
+                FloatBuffer h11 = mk.h(ByteBuffer.allocateDirect(32));
                 this.gradientVerticesBuffer = h11;
                 h11.put(new float[]{-1.0f, -1.0f, 1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 1.0f}).position(0);
                 boolean z11 = this.isPhoto;
                 float[] fArr3 = {0.0f, z11 ? 1.0f : 0.0f, 1.0f, z11 ? 1.0f : 0.0f, 0.0f, z11 ? 0.0f : 1.0f, 1.0f, z11 ? 0.0f : 1.0f};
-                FloatBuffer h12 = kk.h(ByteBuffer.allocateDirect(32));
+                FloatBuffer h12 = mk.h(ByteBuffer.allocateDirect(32));
                 this.gradientTextureBuffer = h12;
                 h12.put(fArr3).position(0);
                 this.gradientTopColor = num.intValue();
@@ -304,7 +304,7 @@ public class TextureRenderer {
                             i22 = i11;
                         }
                         f10 = f13;
-                        FloatBuffer h13 = kk.h(ByteBuffer.allocateDirect(32));
+                        FloatBuffer h13 = mk.h(ByteBuffer.allocateDirect(32));
                         this.verticesBuffer = h13;
                         i17 = 0;
                         h13.put(fArr4).position(0);
@@ -409,10 +409,10 @@ public class TextureRenderer {
                                 i19 = 4;
                             }
                         }
-                        FloatBuffer h14 = kk.h(ByteBuffer.allocateDirect(fArr.length * 4));
+                        FloatBuffer h14 = mk.h(ByteBuffer.allocateDirect(fArr.length * 4));
                         this.renderTextureBuffer = h14;
                         h14.put(fArr).position(0);
-                        FloatBuffer h15 = kk.h(ByteBuffer.allocateDirect(i16));
+                        FloatBuffer h15 = mk.h(ByteBuffer.allocateDirect(i16));
                         this.maskTextureBuffer = h15;
                         h15.put(new float[]{0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f}).position(0);
                     }
@@ -448,10 +448,10 @@ public class TextureRenderer {
                         int i29 = i27 * 2;
                         fArr5[i29] = ((fArr5[i29] / i21) * 2.0f) - 1.0f;
                         int i30 = i29 + 1;
-                        fArr5[i30] = kk.x(fArr5[i30], i22, 2.0f, 1.0f);
+                        fArr5[i30] = mk.x(fArr5[i30], i22, 2.0f, 1.0f);
                         i27++;
                     }
-                    FloatBuffer h16 = kk.h(ByteBuffer.allocateDirect(32));
+                    FloatBuffer h16 = mk.h(ByteBuffer.allocateDirect(32));
                     this.verticesBuffer = h16;
                     h16.put(fArr5).position(0);
                     float[] fArr6 = new float[8];
@@ -492,7 +492,7 @@ public class TextureRenderer {
                         fArr6[5] = 1.0f - fArr6[5];
                         fArr6[7] = 1.0f - fArr6[7];
                     }
-                    FloatBuffer h17 = kk.h(ByteBuffer.allocateDirect(32));
+                    FloatBuffer h17 = mk.h(ByteBuffer.allocateDirect(32));
                     this.croppedTextureBuffer = h17;
                     i17 = 0;
                     h17.put(fArr6).position(0);
@@ -503,7 +503,7 @@ public class TextureRenderer {
                     i16 = 32;
                     i17 = 0;
                     f11 = 0.5f;
-                    FloatBuffer h18 = kk.h(ByteBuffer.allocateDirect(32));
+                    FloatBuffer h18 = mk.h(ByteBuffer.allocateDirect(32));
                     this.verticesBuffer = h18;
                     h18.put(new float[]{-1.0f, -1.0f, 1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 1.0f}).position(0);
                 }
@@ -515,10 +515,10 @@ public class TextureRenderer {
                     while (i20 < i19) {
                     }
                 }
-                FloatBuffer h142 = kk.h(ByteBuffer.allocateDirect(fArr.length * 4));
+                FloatBuffer h142 = mk.h(ByteBuffer.allocateDirect(fArr.length * 4));
                 this.renderTextureBuffer = h142;
                 h142.put(fArr).position(0);
-                FloatBuffer h152 = kk.h(ByteBuffer.allocateDirect(i16));
+                FloatBuffer h152 = mk.h(ByteBuffer.allocateDirect(i16));
                 this.maskTextureBuffer = h152;
                 h152.put(new float[]{0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f}).position(0);
             }
@@ -540,10 +540,10 @@ public class TextureRenderer {
         }
         if (cropState != null) {
         }
-        FloatBuffer h1422 = kk.h(ByteBuffer.allocateDirect(fArr.length * 4));
+        FloatBuffer h1422 = mk.h(ByteBuffer.allocateDirect(fArr.length * 4));
         this.renderTextureBuffer = h1422;
         h1422.put(fArr).position(0);
-        FloatBuffer h1522 = kk.h(ByteBuffer.allocateDirect(i16));
+        FloatBuffer h1522 = mk.h(ByteBuffer.allocateDirect(i16));
         this.maskTextureBuffer = h1522;
         h1522.put(new float[]{0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f}).position(0);
     }
@@ -839,7 +839,7 @@ public class TextureRenderer {
     }
 
     private FloatBuffer floats(float[] fArr) {
-        FloatBuffer h = kk.h(ByteBuffer.allocateDirect(fArr.length * 4));
+        FloatBuffer h = mk.h(ByteBuffer.allocateDirect(fArr.length * 4));
         h.put(fArr).position(0);
         return h;
     }
@@ -1051,7 +1051,7 @@ public class TextureRenderer {
             float f18 = s0Var.J;
             float f19 = s0Var.N;
             float f20 = f17 * 21.33f;
-            rectF.set((f16 * f17) + f15, k3.z(f19, f20, 2.0f, f18), kk.b(f16, 21.33f, f17, f15), g0.a(f20, f19, 2.0f, f18));
+            rectF.set((f16 * f17) + f15, k3.z(f19, f20, 2.0f, f18), mk.b(f16, 21.33f, f17, f15), g0.a(f20, f19, 2.0f, f18));
             float centerX = ((rectF.centerX() / mediaEntity.viewWidth) * mediaEntity.width) + mediaEntity.x;
             float f21 = mediaEntity.y;
             float centerY = rectF.centerY() / mediaEntity.viewHeight;
@@ -1747,7 +1747,7 @@ public class TextureRenderer {
                         this.blurInputTexCoordHandle = GLES20.glGetAttribLocation(this.blurShaderProgram, "inputTexCoord");
                         this.blurBlurImageHandle = GLES20.glGetUniformLocation(this.blurShaderProgram, "blurImage");
                         this.blurMaskImageHandle = GLES20.glGetUniformLocation(this.blurShaderProgram, "maskImage");
-                        FloatBuffer h11 = kk.h(ByteBuffer.allocateDirect(32));
+                        FloatBuffer h11 = mk.h(ByteBuffer.allocateDirect(32));
                         this.blurVerticesBuffer = h11;
                         h11.put(new float[]{-1.0f, 1.0f, 1.0f, 1.0f, -1.0f, -1.0f, 1.0f, -1.0f}).position(0);
                     }

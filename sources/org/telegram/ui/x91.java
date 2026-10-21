@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class x91 extends org.telegram.ui.ActionBar.f3 {
     public static x91 b;
@@ -27,10 +27,10 @@ public final class x91 extends org.telegram.ui.ActionBar.f3 {
             x91 x91Var = new x91(cyVar.getParentActivity(), false);
             Activity parentActivity = cyVar.getParentActivity();
             LinearLayout e = org.telegram.messenger.g0.e(parentActivity, 1);
-            org.telegram.ui.Components.tx0 tx0Var = new org.telegram.ui.Components.tx0(parentActivity, x91Var.currentAccount);
-            tx0Var.setStickerNum(7);
-            tx0Var.getImageReceiver().setAutoRepeat(1);
-            e.addView(tx0Var, w7.z5.t(144, 144, 1, 0, 16, 0, 0));
+            org.telegram.ui.Components.ux0 ux0Var = new org.telegram.ui.Components.ux0(parentActivity, x91Var.currentAccount);
+            ux0Var.setStickerNum(7);
+            ux0Var.getImageReceiver().setAutoRepeat(1);
+            e.addView(ux0Var, w7.z5.t(144, 144, 1, 0, 16, 0, 0));
             TextView textView = new TextView(parentActivity);
             textView.setGravity(8388611);
             int i10 = org.telegram.ui.ActionBar.h6.j5;

@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ph0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final org.telegram.ui.Components.uc0 n;
@@ -26,7 +26,7 @@ public final class ph0 extends FrameLayout implements NotificationCenter.Notific
     public final org.telegram.ui.ActionBar.j5 c;
     public final TextView d;
     public final org.telegram.ui.Components.h9 e;
-    public final org.telegram.ui.Components.fx0 f;
+    public final org.telegram.ui.Components.gx0 f;
     public TLObject h;
 
     static {
@@ -50,7 +50,7 @@ public final class ph0 extends FrameLayout implements NotificationCenter.Notific
         j5Var.setImportantForAccessibility(2);
         j5Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.E8, false));
         j5Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        this.f = new org.telegram.ui.Components.fx0(this);
+        this.f = new org.telegram.ui.Components.gx0(this);
         j5Var.setDrawablePadding(AndroidUtilities.dp(3.0f));
         TextView textView = new TextView(context);
         this.d = textView;
@@ -75,8 +75,8 @@ public final class ph0 extends FrameLayout implements NotificationCenter.Notific
         this.h = tLObject;
         int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z9, false);
         boolean z11 = tLObject instanceof TLRPC.User;
-        org.telegram.ui.Components.fx0 fx0Var = this.f;
-        org.telegram.ui.Components.p5 a2 = z11 ? fx0Var.a((TLRPC.User) tLObject, null, x02, false) : tLObject instanceof TLRPC.Chat ? fx0Var.a(null, (TLRPC.Chat) tLObject, x02, false) : fx0Var.a(null, null, x02, false);
+        org.telegram.ui.Components.gx0 gx0Var = this.f;
+        org.telegram.ui.Components.p5 a2 = z11 ? gx0Var.a((TLRPC.User) tLObject, null, x02, false) : tLObject instanceof TLRPC.Chat ? gx0Var.a(null, (TLRPC.Chat) tLObject, x02, false) : gx0Var.a(null, null, x02, false);
         org.telegram.ui.ActionBar.j5 j5Var = this.c;
         j5Var.i(a2);
         if (tLObject != null) {
@@ -109,8 +109,8 @@ public final class ph0 extends FrameLayout implements NotificationCenter.Notific
             this.h = user;
             int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z9, false);
             boolean z10 = user instanceof TLRPC.User;
-            org.telegram.ui.Components.fx0 fx0Var = this.f;
-            this.c.i(z10 ? fx0Var.a(user, null, x02, true) : fx0Var.a(null, null, x02, true));
+            org.telegram.ui.Components.gx0 gx0Var = this.f;
+            this.c.i(z10 ? gx0Var.a(user, null, x02, true) : gx0Var.a(null, null, x02, true));
         }
     }
 

@@ -2,55 +2,35 @@ package org.telegram.messenger;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pe implements Runnable {
-    public final /* synthetic */ int a;
+    public final /* synthetic */ int a = 0;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ ArrayList d;
 
-    public /* synthetic */ pe(MessagesStorage messagesStorage, long j10, ArrayList arrayList, int i10) {
-        this.a = i10;
+    public /* synthetic */ pe(MessagesStorage messagesStorage, ArrayList arrayList, boolean z10) {
         this.b = messagesStorage;
-        this.d = j10;
-        this.c = arrayList;
+        this.d = arrayList;
+        this.c = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$deleteUserChatHistory$86(this.c, this.d);
-                break;
-            case 1:
-                this.b.lambda$emptyMessagesMedia$99(this.c, this.d);
-                break;
-            case 2:
-                this.b.lambda$deleteSavedDialog$54(this.d, this.c);
-                break;
-            case 3:
-                this.b.lambda$updateChannelUsers$125(this.d, this.c);
-                break;
-            case 4:
-                this.b.lambda$markVoiceMessageContentAsRead$217(this.c, this.d);
-                break;
-            case 5:
-                this.b.lambda$markMessagesAsDeletedInternal$226(this.c, this.d);
-                break;
-            case 6:
-                this.b.lambda$removeTopics$58(this.c, this.d);
+                this.b.lambda$putEphemeralMessages$204(this.d, this.c);
                 break;
             default:
-                this.b.lambda$createTaskForSecretChat$117(this.d, this.c);
+                this.b.lambda$putContacts$146(this.c, this.d);
                 break;
         }
     }
 
-    public /* synthetic */ pe(MessagesStorage messagesStorage, ArrayList arrayList, long j10, int i10) {
-        this.a = i10;
+    public /* synthetic */ pe(MessagesStorage messagesStorage, boolean z10, ArrayList arrayList) {
         this.b = messagesStorage;
-        this.c = arrayList;
-        this.d = j10;
+        this.c = z10;
+        this.d = arrayList;
     }
 }

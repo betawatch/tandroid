@@ -10,9 +10,9 @@ import org.telegram.messenger.ProxyRotationController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class j11 extends org.telegram.ui.Components.hm0 {
+public final class j11 extends org.telegram.ui.Components.im0 {
     public final Context c;
     public final /* synthetic */ ProxyListActivity d;
 
@@ -22,7 +22,7 @@ public final class j11 extends org.telegram.ui.Components.hm0 {
         C(true);
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         int i10;
         int i11;
@@ -222,14 +222,14 @@ public final class j11 extends org.telegram.ui.Components.hm0 {
                 break;
             case 6:
                 if (i10 == proxyListActivity.w) {
-                    org.telegram.ui.Components.ow0 ow0Var = (org.telegram.ui.Components.ow0) view;
+                    org.telegram.ui.Components.pw0 pw0Var = (org.telegram.ui.Components.pw0) view;
                     ArrayList arrayList3 = new ArrayList(ProxyRotationController.ROTATION_TIMEOUTS);
                     String[] strArr = new String[arrayList3.size()];
                     for (int i14 = 0; i14 < arrayList3.size(); i14++) {
                         strArr[i14] = LocaleController.formatString(R.string.ProxyRotationTimeoutSeconds, arrayList3.get(i14));
                     }
-                    ow0Var.setCallback(new fk0(8));
-                    ow0Var.b(SharedConfig.proxyRotationTimeout, null, strArr);
+                    pw0Var.setCallback(new fk0(8));
+                    pw0Var.b(SharedConfig.proxyRotationTimeout, null, strArr);
                     break;
                 }
                 break;
@@ -290,7 +290,7 @@ public final class j11 extends org.telegram.ui.Components.hm0 {
             z6Var = new k11(this.d, context);
             z6Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
         } else {
-            z6Var = new org.telegram.ui.Components.ow0(context, null);
+            z6Var = new org.telegram.ui.Components.pw0(context, null);
             z6Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
         }
         return com.google.android.gms.internal.play_billing.k3.l(z6Var, z6Var, -1, -2);

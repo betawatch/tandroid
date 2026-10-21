@@ -20,13 +20,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.ca0;
-import org.telegram.ui.Components.d91;
-import org.telegram.ui.Components.k01;
+import org.telegram.ui.Components.e91;
+import org.telegram.ui.Components.l01;
 import org.telegram.ui.Components.xa;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b4 implements Utilities.Callback {
     public final /* synthetic */ LinearLayout a;
@@ -35,21 +35,21 @@ public final /* synthetic */ class b4 implements Utilities.Callback {
     public final /* synthetic */ int d;
     public final /* synthetic */ TextView e;
     public final /* synthetic */ k2[] f;
-    public final /* synthetic */ k01 g;
+    public final /* synthetic */ l01 g;
     public final /* synthetic */ Utilities.Callback3 h;
     public final /* synthetic */ Context i;
     public final /* synthetic */ TextView[] j;
     public final /* synthetic */ int k;
     public final /* synthetic */ SpannableString[] l;
 
-    public /* synthetic */ b4(LinearLayout linearLayout, q4 q4Var, org.telegram.ui.ActionBar.d6 d6Var, int i10, TextView textView, k2[] k2VarArr, k01 k01Var, Utilities.Callback3 callback3, Context context, TextView[] textViewArr, int i11, SpannableString[] spannableStringArr) {
+    public /* synthetic */ b4(LinearLayout linearLayout, q4 q4Var, org.telegram.ui.ActionBar.d6 d6Var, int i10, TextView textView, k2[] k2VarArr, l01 l01Var, Utilities.Callback3 callback3, Context context, TextView[] textViewArr, int i11, SpannableString[] spannableStringArr) {
         this.a = linearLayout;
         this.b = q4Var;
         this.c = d6Var;
         this.d = i10;
         this.e = textView;
         this.f = k2VarArr;
-        this.g = k01Var;
+        this.g = l01Var;
         this.h = callback3;
         this.i = context;
         this.j = textViewArr;
@@ -60,7 +60,7 @@ public final /* synthetic */ class b4 implements Utilities.Callback {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r3v37, types: [org.telegram.ui.Wallet.d4] */
     /* JADX WARN: Type inference failed for: r3v49 */
-    /* JADX WARN: Type inference failed for: r3v50, types: [org.telegram.ui.Components.j01[], org.telegram.ui.Components.zc[]] */
+    /* JADX WARN: Type inference failed for: r3v50, types: [org.telegram.ui.Components.k01[], org.telegram.ui.Components.zc[]] */
     /* JADX WARN: Type inference failed for: r3v57 */
     /* JADX WARN: Type inference failed for: r3v63 */
     @Override // org.telegram.messenger.Utilities.Callback
@@ -73,7 +73,7 @@ public final /* synthetic */ class b4 implements Utilities.Callback {
         k2 k2Var2;
         xa xaVar2;
         final k2[] k2VarArr;
-        k01 k01Var;
+        l01 l01Var;
         CharSequence charSequence;
         ?? r32;
         char c10;
@@ -88,7 +88,7 @@ public final /* synthetic */ class b4 implements Utilities.Callback {
         long abs2 = Math.abs(wallettransaction.fee);
         boolean z14 = wallettransaction.pending || wallettransaction.failed;
         LinearLayout linearLayout = this.a;
-        boolean z15 = ((linearLayout.getParent() instanceof View) && (linearLayout.getParent().getParent() instanceof d91) && ((d91) linearLayout.getParent().getParent()).getViewPages()[0] != linearLayout.getParent()) ? false : true;
+        boolean z15 = ((linearLayout.getParent() instanceof View) && (linearLayout.getParent().getParent() instanceof e91) && ((e91) linearLayout.getParent().getParent()).getViewPages()[0] != linearLayout.getParent()) ? false : true;
         boolean z16 = wallettransaction.key_change;
         org.telegram.ui.ActionBar.d6 d6Var = this.c;
         int i11 = this.d;
@@ -153,8 +153,8 @@ public final /* synthetic */ class b4 implements Utilities.Callback {
                 xaVar3.setTitle(m0.k("Grams", p5, R.string.Grams_other));
             }
         }
-        k01 k01Var2 = this.g;
-        k01Var2.removeAllViews();
+        l01 l01Var2 = this.g;
+        l01Var2.removeAllViews();
         final TL_wallet.WalletTransactionPeer walletTransactionPeer = wallettransaction.peer;
         boolean z18 = walletTransactionPeer instanceof TL_wallet.walletTransactionPeerUser;
         int i13 = 9;
@@ -166,28 +166,28 @@ public final /* synthetic */ class b4 implements Utilities.Callback {
                 k2VarArr = k2VarArr2;
             } else {
                 k2VarArr = k2VarArr2;
-                k01Var2.m(LocaleController.getString(z10 ? R.string.WalletSender : R.string.WalletRecipient), i11, wallettransactionpeeruser.user_id, new h(callback3, k2VarArr2, wallettransactionpeeruser, 9), LocaleController.getString(R.string.WalletSend), callback3 != null ? null : new z3(4, k2VarArr2, user));
+                l01Var2.m(LocaleController.getString(z10 ? R.string.WalletSender : R.string.WalletRecipient), i11, wallettransactionpeeruser.user_id, new h(callback3, k2VarArr2, wallettransactionpeeruser, 9), LocaleController.getString(R.string.WalletSend), callback3 != null ? null : new z3(4, k2VarArr2, user));
             }
-            k01Var = k01Var2;
+            l01Var = l01Var2;
             if (!TextUtils.isEmpty(wallettransactionpeeruser.domain)) {
-                k01Var = k01Var2;
+                l01Var = l01Var2;
                 if (!TextUtils.isEmpty(wallettransactionpeeruser.address)) {
-                    k01Var2.i(LocaleController.getString(R.string.WalletDomain), wallettransactionpeeruser.domain, new h(k2VarArr, user, wallettransactionpeeruser, 10));
-                    k01Var = k01Var2;
+                    l01Var2.i(LocaleController.getString(R.string.WalletDomain), wallettransactionpeeruser.domain, new h(k2VarArr, user, wallettransactionpeeruser, 10));
+                    l01Var = l01Var2;
                 }
             }
         } else {
             k2VarArr = k2VarArr2;
             if (walletTransactionPeer instanceof TL_wallet.walletTransactionPeerChannel) {
                 if (MessagesController.getInstance(i11).getChat(Long.valueOf(walletTransactionPeer.channel_id)) != null) {
-                    k01Var2.n(LocaleController.getString(z10 ? R.string.WalletSender : R.string.WalletRecipient), i11, -walletTransactionPeer.channel_id, new h(callback3, k2VarArr, walletTransactionPeer, 11));
+                    l01Var2.n(LocaleController.getString(z10 ? R.string.WalletSender : R.string.WalletRecipient), i11, -walletTransactionPeer.channel_id, new h(callback3, k2VarArr, walletTransactionPeer, 11));
                 }
-                k01Var = k01Var2;
+                l01Var = l01Var2;
                 if (!TextUtils.isEmpty(walletTransactionPeer.domain)) {
-                    k01Var = k01Var2;
+                    l01Var = l01Var2;
                     if (!TextUtils.isEmpty(walletTransactionPeer.address)) {
                         final int i14 = 0;
-                        k01Var2.i(LocaleController.getString(R.string.WalletDomain), walletTransactionPeer.domain, new Runnable() { // from class: org.telegram.ui.Wallet.d4
+                        l01Var2.i(LocaleController.getString(R.string.WalletDomain), walletTransactionPeer.domain, new Runnable() { // from class: org.telegram.ui.Wallet.d4
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i14) {
@@ -256,21 +256,21 @@ public final /* synthetic */ class b4 implements Utilities.Callback {
                                 }
                             }
                         });
-                        k01Var = k01Var2;
+                        l01Var = l01Var2;
                     }
                 }
             } else {
-                k01Var = k01Var2;
+                l01Var = l01Var2;
                 if (walletTransactionPeer instanceof TL_wallet.walletTransactionPeerAddress) {
                     final TL_wallet.walletTransactionPeerAddress wallettransactionpeeraddress = (TL_wallet.walletTransactionPeerAddress) walletTransactionPeer;
-                    k01Var = k01Var2;
+                    l01Var = l01Var2;
                     if (!TextUtils.isEmpty(wallettransactionpeeraddress.domain)) {
                         if (TextUtils.isEmpty(wallettransactionpeeraddress.address)) {
-                            k01Var2.i(LocaleController.getString(z10 ? R.string.WalletSender : R.string.WalletRecipient), wallettransactionpeeraddress.domain, new ah.j(23));
-                            k01Var = k01Var2;
+                            l01Var2.i(LocaleController.getString(z10 ? R.string.WalletSender : R.string.WalletRecipient), wallettransactionpeeraddress.domain, new ah.j(23));
+                            l01Var = l01Var2;
                         } else {
                             final int i15 = 0;
-                            k01Var2.h(LocaleController.getString(z10 ? R.string.WalletSender : R.string.WalletRecipient), wallettransactionpeeraddress.domain, new Runnable() { // from class: org.telegram.ui.Wallet.e4
+                            l01Var2.h(LocaleController.getString(z10 ? R.string.WalletSender : R.string.WalletRecipient), wallettransactionpeeraddress.domain, new Runnable() { // from class: org.telegram.ui.Wallet.e4
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     switch (i15) {
@@ -419,7 +419,7 @@ public final /* synthetic */ class b4 implements Utilities.Callback {
                                     }
                                 }
                             });
-                            k01Var = k01Var2;
+                            l01Var = l01Var2;
                         }
                     }
                 }
@@ -450,7 +450,7 @@ public final /* synthetic */ class b4 implements Utilities.Callback {
                 charSequence = spannableStringBuilder3;
             }
             final int i17 = 1;
-            k01Var.j(string, charSequence, 14, null, z20 ? LocaleController.getString(R.string.WalletSend) : null, new Runnable() { // from class: org.telegram.ui.Wallet.d4
+            l01Var.j(string, charSequence, 14, null, z20 ? LocaleController.getString(R.string.WalletSend) : null, new Runnable() { // from class: org.telegram.ui.Wallet.d4
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i17) {
@@ -546,7 +546,7 @@ public final /* synthetic */ class b4 implements Utilities.Callback {
                     }
                     textViewArr[0].setText(spannableStringArr[0]);
                 }
-                k01Var.f(textViewArr[c10], LocaleController.getString(R.string.WalletFee));
+                l01Var.f(textViewArr[c10], LocaleController.getString(R.string.WalletFee));
             }
         } else {
             SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder("x ");
@@ -557,10 +557,10 @@ public final /* synthetic */ class b4 implements Utilities.Callback {
             spannableStringBuilder4.setSpan(yqVar, 0, 1, 33);
             spannableStringBuilder4.append((CharSequence) LocaleController.getString(R.string.WalletFeePaidByTelegram));
             r32 = 0;
-            k01Var.e(LocaleController.getString(R.string.WalletFee), spannableStringBuilder4, "?", new xb(context, d6Var, i11, j10, 18), null);
+            l01Var.e(LocaleController.getString(R.string.WalletFee), spannableStringBuilder4, "?", new xb(context, d6Var, i11, j10, 18), null);
         }
         if (wallettransaction.date != 0) {
-            k01Var.c(LocaleController.getString(R.string.WalletDate), LocaleController.formatShortDateTime(wallettransaction.date), r32, r32);
+            l01Var.c(LocaleController.getString(R.string.WalletDate), LocaleController.formatShortDateTime(wallettransaction.date), r32, r32);
         }
     }
 }

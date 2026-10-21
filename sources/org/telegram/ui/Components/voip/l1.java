@@ -8,15 +8,15 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.pg1;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class l1 extends FrameLayout {
-    public final xj0 a;
-    public final xj0 b;
+    public final yj0 a;
+    public final yj0 b;
     public final org.telegram.ui.Cells.z c;
     public org.telegram.ui.Components.q2 d;
     public k1 e;
@@ -26,15 +26,15 @@ public final class l1 extends FrameLayout {
         super(context);
         this.f = 0;
         setWillNotDraw(false);
-        xj0 xj0Var = new xj0(context);
-        this.a = xj0Var;
-        xj0 xj0Var2 = new xj0(context);
-        this.b = xj0Var2;
-        xj0Var.f(R.raw.star_stroke, 37, 37, null);
-        xj0Var2.f(R.raw.star_fill, 37, 37, null);
-        xj0Var2.setAlpha(0.0f);
-        addView(xj0Var, z5.c(37.0f, 37));
-        addView(xj0Var2, z5.c(37.0f, 37));
+        yj0 yj0Var = new yj0(context);
+        this.a = yj0Var;
+        yj0 yj0Var2 = new yj0(context);
+        this.b = yj0Var2;
+        yj0Var.f(R.raw.star_stroke, 37, 37, null);
+        yj0Var2.f(R.raw.star_fill, 37, 37, null);
+        yj0Var2.setAlpha(0.0f);
+        addView(yj0Var, z5.c(37.0f, 37));
+        addView(yj0Var2, z5.c(37.0f, 37));
         org.telegram.ui.Cells.z i02 = h6.i0(AndroidUtilities.dp(37.0f), 0, i0.a.o(-1, 76));
         this.c = i02;
         i02.setCallback(this);
@@ -57,18 +57,18 @@ public final class l1 extends FrameLayout {
                         break;
                     }
                     l1 l1Var = l1VarArr[i11];
-                    xj0 xj0Var = l1Var.a;
-                    xj0 xj0Var2 = l1Var.b;
-                    xj0Var.animate().alpha(0.0f).scaleX(0.8f).scaleY(0.8f).setDuration(250L).start();
-                    xj0Var2.animate().alpha(1.0f).scaleX(0.8f).scaleY(0.8f).setDuration(250L).start();
+                    yj0 yj0Var = l1Var.a;
+                    yj0 yj0Var2 = l1Var.b;
+                    yj0Var.animate().alpha(0.0f).scaleX(0.8f).scaleY(0.8f).setDuration(250L).start();
+                    yj0Var2.animate().alpha(1.0f).scaleX(0.8f).scaleY(0.8f).setDuration(250L).start();
                     i11++;
                 }
                 for (int i12 = i10 + 1; i12 < l1VarArr.length; i12++) {
                     l1 l1Var2 = l1VarArr[i12];
-                    xj0 xj0Var3 = l1Var2.a;
-                    xj0 xj0Var4 = l1Var2.b;
-                    xj0Var3.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
-                    xj0Var4.animate().alpha(0.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+                    yj0 yj0Var3 = l1Var2.a;
+                    yj0 yj0Var4 = l1Var2.b;
+                    yj0Var3.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+                    yj0Var4.animate().alpha(0.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
                 }
             }
         } else if (action == 1) {
@@ -77,10 +77,10 @@ public final class l1 extends FrameLayout {
                 l1[] l1VarArr2 = ((m1) ((j5.b) k1Var3).b).c;
                 for (int i13 = 0; i13 <= this.f; i13++) {
                     l1 l1Var3 = l1VarArr2[i13];
-                    xj0 xj0Var5 = l1Var3.a;
-                    xj0 xj0Var6 = l1Var3.b;
-                    xj0Var5.animate().scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
-                    xj0Var6.animate().scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+                    yj0 yj0Var5 = l1Var3.a;
+                    yj0 yj0Var6 = l1Var3.b;
+                    yj0Var5.animate().scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+                    yj0Var6.animate().scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
                 }
             }
             if (this.d != null) {
@@ -95,20 +95,20 @@ public final class l1 extends FrameLayout {
                 m1 m1Var = (m1) q2Var.b;
                 Context context = (Context) q2Var.c;
                 if (i16 >= 4) {
-                    xj0 xj0Var7 = new xj0(context);
+                    yj0 yj0Var7 = new yj0(context);
                     int dp = AndroidUtilities.dp(133.0f);
-                    xj0Var7.f(R.raw.rate, 133, 133, null);
+                    yj0Var7.f(R.raw.rate, 133, 133, null);
                     int[] iArr2 = new int[2];
                     m1Var.getLocationOnScreen(iArr2);
                     int i17 = iArr2[0];
                     int i18 = iArr2[1];
-                    m1Var.addView(xj0Var7, z5.c(133.0f, 133));
+                    m1Var.addView(yj0Var7, z5.c(133.0f, 133));
                     float f7 = width - i17;
                     float f10 = dp / 2.0f;
-                    xj0Var7.setTranslationX(f7 - f10);
-                    xj0Var7.setTranslationY((height - i18) - f10);
-                    xj0Var7.setOnAnimationEndListener(new i1(m1Var, xj0Var7, 0));
-                    xj0Var7.d();
+                    yj0Var7.setTranslationX(f7 - f10);
+                    yj0Var7.setTranslationY((height - i18) - f10);
+                    yj0Var7.setOnAnimationEndListener(new i1(m1Var, yj0Var7, 0));
+                    yj0Var7.d();
                 }
                 pg1 pg1Var = m1Var.d;
                 if (pg1Var != null) {
@@ -120,10 +120,10 @@ public final class l1 extends FrameLayout {
             int length = l1VarArr3.length;
             while (i11 < length) {
                 l1 l1Var4 = l1VarArr3[i11];
-                xj0 xj0Var8 = l1Var4.a;
-                xj0 xj0Var9 = l1Var4.b;
-                xj0Var8.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
-                xj0Var9.animate().alpha(0.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+                yj0 yj0Var8 = l1Var4.a;
+                yj0 yj0Var9 = l1Var4.b;
+                yj0Var8.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+                yj0Var9.animate().alpha(0.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
                 i11++;
             }
         }

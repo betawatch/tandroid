@@ -3,20 +3,20 @@ package org.telegram.ui.Wallet;
 import android.text.TextUtils;
 import java.nio.charset.StandardCharsets;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.w61;
+import org.telegram.ui.Components.x61;
 import org.telegram.ui.na0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b8 implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ w61 b;
+    public final /* synthetic */ x61 b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ b8(w61 w61Var, Object obj, Object obj2, int i10) {
+    public /* synthetic */ b8(x61 x61Var, Object obj, Object obj2, int i10) {
         this.a = i10;
-        this.b = w61Var;
+        this.b = x61Var;
         this.d = obj;
         this.c = obj2;
     }

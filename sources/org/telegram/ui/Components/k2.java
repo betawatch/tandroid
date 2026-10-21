@@ -13,9 +13,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k2 implements kd0, org.telegram.ui.ActionBar.a2, e5, ImageReceiver.ImageReceiverDelegate, GenericProvider, p.a, hh.b, bw0, cw0, eh.d, r0.n {
+public final /* synthetic */ class k2 implements kd0, org.telegram.ui.ActionBar.a2, e5, ImageReceiver.ImageReceiverDelegate, GenericProvider, p.a, hh.b, cw0, dw0, eh.d, r0.n {
     public final /* synthetic */ int a;
 
     public /* synthetic */ k2(int i10) {
@@ -44,7 +44,7 @@ public final /* synthetic */ class k2 implements kd0, org.telegram.ui.ActionBar.
         return bitmap.getConfig() == Bitmap.Config.ALPHA_8 ? bitmap : bitmap.extractAlpha();
     }
 
-    @Override // org.telegram.ui.Components.cw0
+    @Override // org.telegram.ui.Components.dw0
     public void b(Object obj, float f7) {
         switch (this.a) {
             case 20:
@@ -59,15 +59,15 @@ public final /* synthetic */ class k2 implements kd0, org.telegram.ui.ActionBar.
             case 21:
             case 23:
             default:
-                zg0 zg0Var = (zg0) obj;
-                WindowManager.LayoutParams layoutParams = zg0Var.c;
-                zg0Var.K = f7;
+                ah0 ah0Var = (ah0) obj;
+                WindowManager.LayoutParams layoutParams = ah0Var.c;
+                ah0Var.K = f7;
                 layoutParams.x = (int) f7;
                 try {
-                    AndroidUtilities.updateViewLayout(zg0Var.b, zg0Var.d, layoutParams);
+                    AndroidUtilities.updateViewLayout(ah0Var.b, ah0Var.d, layoutParams);
                     break;
                 } catch (IllegalArgumentException unused) {
-                    zg0Var.M.c();
+                    ah0Var.M.c();
                 }
             case 22:
                 sd0 sd0Var2 = (sd0) obj;
@@ -92,15 +92,15 @@ public final /* synthetic */ class k2 implements kd0, org.telegram.ui.ActionBar.
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        uj0 lottieAnimation;
+        vj0 lottieAnimation;
         switch (this.a) {
             case 12:
                 Drawable drawable = imageReceiver.getDrawable();
-                if (drawable instanceof uj0) {
-                    uj0 uj0Var = (uj0) drawable;
-                    uj0Var.P(0);
-                    uj0Var.stop();
-                    uj0Var.T(0.0f, false);
+                if (drawable instanceof vj0) {
+                    vj0 vj0Var = (vj0) drawable;
+                    vj0Var.P(0);
+                    vj0Var.stop();
+                    vj0Var.T(0.0f, false);
                     break;
                 }
                 break;
@@ -116,7 +116,7 @@ public final /* synthetic */ class k2 implements kd0, org.telegram.ui.ActionBar.
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
         int i11 = this.a;
-        org.telegram.messenger.k5.a(this, i10, str, drawable);
+        org.telegram.messenger.m5.a(this, i10, str, drawable);
     }
 
     @Override // org.telegram.ui.Components.kd0
@@ -181,8 +181,8 @@ public final /* synthetic */ class k2 implements kd0, org.telegram.ui.ActionBar.
 
     @Override // eh.d
     public int f(org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
-        int[] iArr = le0.i0;
-        return 620756991;
+        Bitmap bitmap = zh.t.a;
+        return (((int) a1.g.B(zh.d1.b[3], 255.0f, 100.0f, 0.5f)) << 24) | 16777215;
     }
 
     @Override // org.telegram.ui.ActionBar.a2
@@ -200,7 +200,7 @@ public final /* synthetic */ class k2 implements kd0, org.telegram.ui.ActionBar.
         }
     }
 
-    @Override // org.telegram.ui.Components.bw0
+    @Override // org.telegram.ui.Components.cw0
     public float get(Object obj) {
         switch (this.a) {
             case 19:
@@ -208,7 +208,7 @@ public final /* synthetic */ class k2 implements kd0, org.telegram.ui.ActionBar.
             case 20:
             case 22:
             default:
-                return ((zg0) obj).K;
+                return ((ah0) obj).K;
             case 21:
                 return ((sd0) obj).n;
             case 23:
@@ -219,7 +219,7 @@ public final /* synthetic */ class k2 implements kd0, org.telegram.ui.ActionBar.
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
         int i10 = this.a;
-        org.telegram.messenger.k5.b(this, imageReceiver);
+        org.telegram.messenger.m5.b(this, imageReceiver);
     }
 
     @Override // org.telegram.messenger.GenericProvider

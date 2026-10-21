@@ -77,8 +77,8 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.go0;
 import org.telegram.ui.Components.gu;
+import org.telegram.ui.Components.ho0;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.voip.k1;
 import org.telegram.ui.Components.voip.t;
@@ -94,7 +94,7 @@ import p4.s0;
 import r9.r;
 import w7.i6;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements gu, o0, Utilities.Callback5, a2, vx, p5, j, e0, g1, e2.j, e1, k, ne.d, r9.d, Vector.TLDeserializer, GlGenericDrawer.TextureCallback, k1, a5.b {
     public final /* synthetic */ int a;
@@ -453,7 +453,7 @@ public final /* synthetic */ class b implements gu, o0, Utilities.Callback5, a2,
             return;
         }
         Utilities.stackBlurBitmap(bitmap, Math.max(7, Math.max(bitmap.getWidth(), bitmap.getHeight()) / 180));
-        AndroidUtilities.runOnUIThread(new go0(26, tVar, bitmap));
+        AndroidUtilities.runOnUIThread(new ho0(26, tVar, bitmap));
     }
 
     @Override // ne.d

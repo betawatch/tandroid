@@ -29,13 +29,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Components.qw0;
 import org.telegram.ui.Components.rw0;
 import org.telegram.ui.Components.sw0;
+import org.telegram.ui.Components.tw0;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.jq0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r2 implements Runnable {
     public final /* synthetic */ int a;
@@ -446,15 +446,15 @@ public final /* synthetic */ class r2 implements Runnable {
                 ((SendMessagesHelper) this.d).lambda$performSendMessageRequestMulti$68((TLObject) this.e, this.b, (SendMessagesHelper.DelayedMessage) this.f, (ArrayList) this.h, this.c);
                 return;
             case 3:
-                sw0 sw0Var = (sw0) this.d;
+                tw0 tw0Var = (tw0) this.d;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.e;
                 MessageObject messageObject = (MessageObject) this.f;
                 org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.h;
-                RLottieNative[] rLottieNativeArr = sw0Var.f1;
-                RLottieNative[] rLottieNativeArr2 = sw0Var.i1;
-                int[] iArr = sw0Var.e;
-                if (sw0Var.W0) {
-                    AndroidUtilities.runOnUIThread(new qw0(sw0Var, 0));
+                RLottieNative[] rLottieNativeArr = tw0Var.f1;
+                RLottieNative[] rLottieNativeArr2 = tw0Var.i1;
+                int[] iArr = tw0Var.e;
+                if (tw0Var.W0) {
+                    AndroidUtilities.runOnUIThread(new rw0(tw0Var, 0));
                     return;
                 }
                 boolean z12 = false;
@@ -464,23 +464,23 @@ public final /* synthetic */ class r2 implements Runnable {
                     int i25 = this.b;
                     if (i24 >= length) {
                         if (z12) {
-                            AndroidUtilities.runOnUIThread(new qw0(sw0Var, 1));
+                            AndroidUtilities.runOnUIThread(new rw0(tw0Var, 1));
                             return;
                         } else {
-                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.k0(sw0Var, this.c, i25, u1Var));
+                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.k0(tw0Var, this.c, i25, u1Var));
                             return;
                         }
                     }
                     if (i24 <= 2) {
                         if (rLottieNativeArr2[i24] == null) {
                             if (i24 == 0) {
-                                int i26 = sw0Var.b1;
+                                int i26 = tw0Var.b1;
                                 i21 = i26 == 1 ? 5 : i26 == 2 ? 6 : i26 == 3 ? 7 : i26 == 4 ? 4 : 3;
                             } else if (i24 == 1) {
-                                int i27 = sw0Var.c1;
+                                int i27 = tw0Var.c1;
                                 i21 = i27 == 1 ? 11 : i27 == 2 ? 12 : i27 == 3 ? 13 : i27 == 4 ? 10 : 9;
                             } else {
-                                int i28 = sw0Var.d1;
+                                int i28 = tw0Var.d1;
                                 i21 = i28 == 1 ? 17 : i28 == 2 ? 18 : i28 == 3 ? 19 : i28 == 4 ? 16 : 15;
                             }
                             TLRPC.Document document = tL_messages_stickerSet.documents.get(i21);
@@ -489,13 +489,13 @@ public final /* synthetic */ class r2 implements Runnable {
                                 RLottieNative b10 = RLottieNative.b(readRes, iArr, null, null);
                                 if (i24 <= 2) {
                                     rLottieNativeArr2[i24] = b10;
-                                    sw0Var.j1[i24] = iArr[0];
+                                    tw0Var.j1[i24] = iArr[0];
                                 } else {
                                     rLottieNativeArr[i24 == 3 ? (char) 0 : (char) 4] = b10;
-                                    sw0Var.g1[i24 == 3 ? (char) 0 : (char) 4] = iArr[0];
+                                    tw0Var.g1[i24 == 3 ? (char) 0 : (char) 4] = iArr[0];
                                 }
                             } else {
-                                AndroidUtilities.runOnUIThread(new rw0(document, i25, messageObject, u1Var, tL_messages_stickerSet, 0));
+                                AndroidUtilities.runOnUIThread(new sw0(document, i25, messageObject, u1Var, tL_messages_stickerSet, 0));
                                 z12 = true;
                             }
                         }

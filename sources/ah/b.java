@@ -31,11 +31,11 @@ import ei.y2;
 import gi.d3;
 import gi.f4;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.vj0;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.oz0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class b extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -258,9 +258,9 @@ public final class b extends AnimatorListenerAdapter {
             case 14:
                 super.onAnimationStart(animator);
                 m7 m7Var = (m7) this.b;
-                uj0 uj0Var = ((l7) m7Var.a.get(m7Var.d)).c;
-                uj0Var.L = 2;
-                uj0Var.start();
+                vj0 vj0Var = ((l7) m7Var.a.get(m7Var.d)).c;
+                vj0Var.L = 2;
+                vj0Var.start();
                 break;
             default:
                 super.onAnimationStart(animator);

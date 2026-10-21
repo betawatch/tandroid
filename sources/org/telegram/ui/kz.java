@@ -14,16 +14,16 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class kz extends org.telegram.ui.Components.hm0 {
+public final class kz extends org.telegram.ui.Components.im0 {
     public final /* synthetic */ lz c;
 
     public kz(lz lzVar) {
         this.c = lzVar;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         return b1Var.f == 4;
     }
@@ -221,17 +221,17 @@ public final class kz extends org.telegram.ui.Components.hm0 {
                 }
                 view2 = h10Var;
             }
-            return new org.telegram.ui.Components.sl0(view2);
+            return new org.telegram.ui.Components.tl0(view2);
         }
         Activity parentActivity = lzVar.getParentActivity();
         int i11 = R.raw.folder_share;
         bz bzVar = new bz(parentActivity);
-        org.telegram.ui.Components.xj0 xj0Var = new org.telegram.ui.Components.xj0(parentActivity);
-        xj0Var.f(i11, 90, 90, null);
-        xj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        xj0Var.d();
-        xj0Var.setImportantForAccessibility(2);
-        bzVar.addView(xj0Var, w7.z5.d(90, 90.0f, 49, 0.0f, 14.0f, 0.0f, 0.0f));
+        org.telegram.ui.Components.yj0 yj0Var = new org.telegram.ui.Components.yj0(parentActivity);
+        yj0Var.f(i11, 90, 90, null);
+        yj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        yj0Var.d();
+        yj0Var.setImportantForAccessibility(2);
+        bzVar.addView(yj0Var, w7.z5.d(90, 90.0f, 49, 0.0f, 14.0f, 0.0f, 0.0f));
         wh.n nVar = new wh.n(parentActivity);
         bzVar.a = nVar;
         nVar.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.B6, false));
@@ -241,6 +241,6 @@ public final class kz extends org.telegram.ui.Components.hm0 {
         bzVar.addView(nVar, w7.z5.d(-1, -2.0f, 49, 40.0f, 121.0f, 40.0f, 24.0f));
         view = bzVar;
         view2 = view;
-        return new org.telegram.ui.Components.sl0(view2);
+        return new org.telegram.ui.Components.tl0(view2);
     }
 }

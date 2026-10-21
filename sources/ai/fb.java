@@ -1,9 +1,9 @@
 package ai;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.u11;
+import org.telegram.ui.Components.v11;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class fb implements Runnable {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class fb implements Runnable {
                 this.c.run();
                 break;
             default:
-                u11.b(this.b);
+                v11.b(this.b);
                 Runnable runnable = this.c;
                 if (runnable != null) {
                     AndroidUtilities.runOnUIThread(runnable);

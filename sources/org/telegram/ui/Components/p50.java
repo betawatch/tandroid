@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.graphics.Paint;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class p50 extends Paint {
     public final /* synthetic */ int a;
@@ -25,9 +25,9 @@ public final class p50 extends Paint {
                 break;
             case 1:
                 super.setAlpha(i10);
-                um0 um0Var = (um0) this.b;
-                um0Var.a.setAlpha(Math.round(i10 * 0.2f));
-                um0Var.invalidate();
+                vm0 vm0Var = (vm0) this.b;
+                vm0Var.a.setAlpha(Math.round(i10 * 0.2f));
+                vm0Var.invalidate();
                 break;
             default:
                 super.setAlpha(i10);

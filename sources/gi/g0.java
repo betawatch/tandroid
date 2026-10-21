@@ -15,9 +15,9 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.dq;
 import org.telegram.ui.Components.f6;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.vj0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class g0 extends Drawable {
     public final ImageView a;
@@ -31,7 +31,7 @@ public final class g0 extends Drawable {
     public final f6 i;
     public final f6 j;
     public final f6 k;
-    public uj0 l;
+    public vj0 l;
 
     public g0(Context context, ImageView imageView) {
         Paint paint = new Paint(1);
@@ -56,7 +56,7 @@ public final class g0 extends Drawable {
     public final void draw(Canvas canvas) {
         float f7;
         float f10;
-        uj0 uj0Var;
+        vj0 vj0Var;
         Canvas canvas2 = canvas;
         Rect bounds = getBounds();
         int centerX = bounds.centerX();
@@ -116,12 +116,12 @@ public final class g0 extends Drawable {
             f7 = 0.0f;
             f10 = 255.0f;
         }
-        if (e <= f7 || (uj0Var = this.l) == null) {
+        if (e <= f7 || (vj0Var = this.l) == null) {
             return;
         }
-        int i11 = uj0Var.b / 2;
-        int i12 = uj0Var.c / 2;
-        uj0Var.setBounds(centerX - i11, centerY - i12, i11 + centerX, i12 + centerY);
+        int i11 = vj0Var.b / 2;
+        int i12 = vj0Var.c / 2;
+        vj0Var.setBounds(centerX - i11, centerY - i12, i11 + centerX, i12 + centerY);
         this.l.setAlpha((int) (e * f10));
         this.l.draw(canvas2);
     }

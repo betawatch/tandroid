@@ -13,7 +13,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class p01 extends FrameLayout {
     public final Matrix E;
@@ -146,19 +146,19 @@ public final class p01 extends FrameLayout {
             paint3.setColor(this.a);
             int a2 = this.h.a(this.e, false);
             int a10 = this.n.a(this.f, false);
-            org.telegram.ui.Components.yh0 yh0Var = profileActivity.a0;
-            if (yh0Var != null) {
+            org.telegram.ui.Components.zh0 zh0Var = profileActivity.a0;
+            if (zh0Var != null) {
                 int i11 = this.H;
                 boolean z10 = this.c;
-                if (yh0Var.S == null || yh0Var.Q != i11 || yh0Var.R != z10) {
-                    yh0Var.Q = i11;
-                    yh0Var.R = z10;
-                    yh0Var.g();
+                if (zh0Var.S == null || zh0Var.Q != i11 || zh0Var.R != z10) {
+                    zh0Var.Q = i11;
+                    zh0Var.R = z10;
+                    zh0Var.g();
                 }
             }
-            org.telegram.ui.Components.ri0 ri0Var = profileActivity.c0;
-            if (ri0Var != null) {
-                ri0Var.f(this.H, this.c);
+            org.telegram.ui.Components.si0 si0Var = profileActivity.c0;
+            if (si0Var != null) {
+                si0Var.f(this.H, this.c);
             }
             int width = getWidth() / 2;
             RadialGradient radialGradient = this.y;

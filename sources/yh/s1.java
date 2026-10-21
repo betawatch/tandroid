@@ -17,10 +17,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.js0;
+import org.telegram.ui.Components.ks0;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s1 implements Runnable {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class s1 implements Runnable {
         String str;
         int i10;
         String str2;
-        zh.q0 q0Var;
+        zh.r0 r0Var;
         int i11;
         int i12;
         int i13 = this.a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class s1 implements Runnable {
             case 0:
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj;
-                ((js0) obj3).H = -1;
+                ((ks0) obj3).H = -1;
                 if (tL_error != null) {
                     xc.a0(n2Var).f0(tL_error, false);
                     break;
@@ -70,13 +70,13 @@ public final /* synthetic */ class s1 implements Runnable {
             case 1:
                 l2 l2Var = (l2) obj3;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj2;
-                js0 js0Var = l2Var.a;
-                js0Var.e.k(l2Var.e.d, savedStarGift);
+                ks0 ks0Var = l2Var.a;
+                ks0Var.e.k(l2Var.e.d, savedStarGift);
                 ((i80) obj).u();
-                js0Var.n();
-                TL_stars.TL_starGiftCollection c10 = js0Var.e.c(l2Var.e.d);
+                ks0Var.n();
+                TL_stars.TL_starGiftCollection c10 = ks0Var.e.c(l2Var.e.d);
                 if (c10 != null) {
-                    xc.a0(js0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, l7.Y1(savedStarGift.gift), c10.title))).j();
+                    xc.a0(ks0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, l7.Y1(savedStarGift.gift), c10.title))).j();
                     break;
                 }
                 break;
@@ -176,11 +176,11 @@ public final /* synthetic */ class s1 implements Runnable {
                 }
                 break;
             case 4:
-                zh.m0 m0Var = (zh.m0) obj3;
+                zh.n0 n0Var = (zh.n0) obj3;
                 List list = (List) obj;
                 TLRPC.TL_shareThemeBackdrops tL_shareThemeBackdrops = ((zh.d) obj2).b;
                 ArrayList<TLRPC.TL_shareThemeBackdropOption> arrayList8 = tL_shareThemeBackdrops != null ? tL_shareThemeBackdrops.backdrops : null;
-                if (arrayList8 != null && arrayList8 != list && (c1Var = m0Var.d) != null && !m0Var.isFinished) {
+                if (arrayList8 != null && arrayList8 != list && (c1Var = n0Var.d) != null && !n0Var.isFinished) {
                     zh.a1 a1Var = c1Var.n;
                     if (a1Var != null && a1Var.a == 0 && (i12 = a1Var.f) >= 0) {
                         String[] strArr = zh.a.a;
@@ -221,23 +221,23 @@ public final /* synthetic */ class s1 implements Runnable {
                                             c1Var.n = zh.c1.t(i14);
                                             l2.f fVar = c1Var.c;
                                             if (fVar != null) {
-                                                ((zh.m0) fVar.b).W();
+                                                ((zh.n0) fVar.b).W();
                                             }
                                         }
                                         c1Var.invalidate();
                                     }
-                                    q0Var = m0Var.e;
-                                    if (q0Var != null && !q0Var.E) {
-                                        if (!q0Var.y) {
-                                            if (!q0Var.x) {
-                                                TLRPC.ShareTheme shareTheme = q0Var.H;
+                                    r0Var = n0Var.e;
+                                    if (r0Var != null && !r0Var.E) {
+                                        if (!r0Var.y) {
+                                            if (!r0Var.x) {
+                                                TLRPC.ShareTheme shareTheme = r0Var.H;
                                                 if ((shareTheme instanceof TLRPC.TL_shareThemeEmojiBackdrop) && (((TLRPC.TL_shareThemeEmojiBackdrop) shareTheme).flags & 1) != 0) {
-                                                    q0Var.a(shareTheme);
+                                                    r0Var.a(shareTheme);
                                                     break;
                                                 }
                                             }
                                         } else {
-                                            q0Var.i();
+                                            r0Var.i();
                                             break;
                                         }
                                     }
@@ -246,8 +246,8 @@ public final /* synthetic */ class s1 implements Runnable {
                             str2 = null;
                             if (zh.a.a(arrayList8)) {
                             }
-                            q0Var = m0Var.e;
-                            if (q0Var != null) {
+                            r0Var = n0Var.e;
+                            if (r0Var != null) {
                             }
                         }
                     }
@@ -258,8 +258,8 @@ public final /* synthetic */ class s1 implements Runnable {
                     str2 = null;
                     if (zh.a.a(arrayList8)) {
                     }
-                    q0Var = m0Var.e;
-                    if (q0Var != null) {
+                    r0Var = n0Var.e;
+                    if (r0Var != null) {
                     }
                 }
                 break;

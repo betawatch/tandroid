@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xa1 implements Runnable {
     public final /* synthetic */ int a;
@@ -112,11 +112,11 @@ public final /* synthetic */ class xa1 implements Runnable {
             case 2:
                 kc1Var.p1.c1(false);
                 boolean a2 = kc1Var.a.a();
-                org.telegram.ui.Components.uj0 uj0Var = kc1Var.N1;
-                uj0Var.P(a2 ? uj0Var.e[0] : 0);
-                org.telegram.ui.Components.uj0 uj0Var2 = kc1Var.N1;
-                if (uj0Var2 != null) {
-                    uj0Var2.start();
+                org.telegram.ui.Components.vj0 vj0Var = kc1Var.N1;
+                vj0Var.P(a2 ? vj0Var.e[0] : 0);
+                org.telegram.ui.Components.vj0 vj0Var2 = kc1Var.N1;
+                if (vj0Var2 != null) {
+                    vj0Var2.start();
                 }
                 kc1Var.b1(false);
                 kc1Var.V0();

@@ -33,9 +33,9 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class g implements v9, ru0, org.telegram.ui.web.z0, org.telegram.ui.Components.bp0, org.telegram.ui.Components.e5, org.telegram.ui.Components.jn0, l7, ci.w9, org.telegram.ui.Components.xl0, org.telegram.ui.Cells.l1, bc1, em, oe.a, org.telegram.ui.Components.zl0, org.telegram.ui.Cells.q7, org.telegram.ui.Components.vq, org.telegram.ui.Components.tq0, s4.d0, org.telegram.ui.Components.o8, org.telegram.ui.Components.r20, r0.n, nt, y01 {
+public final class g implements v9, ru0, org.telegram.ui.web.z0, org.telegram.ui.Components.cp0, org.telegram.ui.Components.e5, org.telegram.ui.Components.kn0, l7, ci.w9, org.telegram.ui.Components.yl0, org.telegram.ui.Cells.l1, bc1, em, oe.a, org.telegram.ui.Components.am0, org.telegram.ui.Cells.q7, org.telegram.ui.Components.vq, org.telegram.ui.Components.uq0, s4.d0, org.telegram.ui.Components.o8, org.telegram.ui.Components.r20, r0.n, nt, y01 {
     public final /* synthetic */ int a;
     public final Object b;
 
@@ -48,9 +48,9 @@ public final class g implements v9, ru0, org.telegram.ui.web.z0, org.telegram.ui
     public r0.k1 B0(View view, r0.k1 k1Var) {
         mi0 mi0Var = (mi0) this.b;
         i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
-        mi0Var.e = defaultWindowInsets;
-        mi0Var.G.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
-        mi0Var.F.requestLayout();
+        mi0Var.d = defaultWindowInsets;
+        mi0Var.F.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
+        mi0Var.E.requestLayout();
         return r0.k1.b;
     }
 
@@ -113,7 +113,7 @@ public final class g implements v9, ru0, org.telegram.ui.web.z0, org.telegram.ui
         return false;
     }
 
-    @Override // org.telegram.ui.Components.bp0
+    @Override // org.telegram.ui.Components.cp0
     public void L(float f7, boolean z10) {
         switch (this.a) {
             case 3:
@@ -171,9 +171,9 @@ public final class g implements v9, ru0, org.telegram.ui.web.z0, org.telegram.ui
                 break;
             case 5:
                 n5.d = f7;
-                org.telegram.ui.Components.kw0 kw0Var = ((n5) this.b).b;
-                kw0Var.M();
-                kw0Var.N();
+                org.telegram.ui.Components.lw0 lw0Var = ((n5) this.b).b;
+                lw0Var.M();
+                lw0Var.N();
                 break;
         }
     }
@@ -228,7 +228,7 @@ public final class g implements v9, ru0, org.telegram.ui.web.z0, org.telegram.ui
         return false;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ boolean P0(View view) {
         return false;
     }
@@ -356,7 +356,7 @@ public final class g implements v9, ru0, org.telegram.ui.web.z0, org.telegram.ui
         k8Var.b.post(t3Var);
     }
 
-    @Override // org.telegram.ui.Components.bp0
+    @Override // org.telegram.ui.Components.cp0
     public int Y() {
         switch (this.a) {
             case 3:
@@ -403,7 +403,7 @@ public final class g implements v9, ru0, org.telegram.ui.web.z0, org.telegram.ui
         ((bk) this.b).b.ia(str, false);
     }
 
-    @Override // org.telegram.ui.Components.jn0
+    @Override // org.telegram.ui.Components.kn0
     public /* synthetic */ boolean b1(int i10, View view) {
         switch (this.a) {
             case 6:
@@ -451,7 +451,7 @@ public final class g implements v9, ru0, org.telegram.ui.web.z0, org.telegram.ui
         ((a7) this.b).e.m0();
     }
 
-    @Override // org.telegram.ui.Components.zl0
+    @Override // org.telegram.ui.Components.am0
     public boolean d(float f7, float f10, int i10, View view) {
         e10 e10Var = (e10) this.b;
         if (view instanceof org.telegram.ui.Cells.i7) {
@@ -509,7 +509,7 @@ public final class g implements v9, ru0, org.telegram.ui.web.z0, org.telegram.ui
         return false;
     }
 
-    @Override // org.telegram.ui.Components.jn0
+    @Override // org.telegram.ui.Components.kn0
     public void f(int i10, boolean z10) {
         switch (this.a) {
             case 6:
@@ -549,14 +549,14 @@ public final class g implements v9, ru0, org.telegram.ui.web.z0, org.telegram.ui
         return null;
     }
 
-    @Override // org.telegram.ui.Components.tq0
+    @Override // org.telegram.ui.Components.uq0
     public void g0() {
         if (AndroidUtilities.shouldShowClipboardToast()) {
             ((q50) this.b).l1().k(0L, 33, null, null, null, null);
         }
     }
 
-    @Override // org.telegram.ui.Components.bp0
+    @Override // org.telegram.ui.Components.cp0
     public CharSequence getContentDescription() {
         switch (this.a) {
             case 3:
@@ -580,7 +580,7 @@ public final class g implements v9, ru0, org.telegram.ui.web.z0, org.telegram.ui
         }
     }
 
-    @Override // org.telegram.ui.Components.zl0
+    @Override // org.telegram.ui.Components.am0
     public void h() {
         ((e10) this.b).i0.finish();
     }
@@ -640,7 +640,7 @@ public final class g implements v9, ru0, org.telegram.ui.web.z0, org.telegram.ui
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.jn0
+    @Override // org.telegram.ui.Components.kn0
     public void k0(float f7) {
         switch (this.a) {
             case 6:
@@ -731,7 +731,7 @@ public final class g implements v9, ru0, org.telegram.ui.web.z0, org.telegram.ui
         }
     }
 
-    @Override // org.telegram.ui.Components.zl0
+    @Override // org.telegram.ui.Components.am0
     public void o(float f7) {
         ((e10) this.b).i0.e(f7);
     }
@@ -797,7 +797,7 @@ public final class g implements v9, ru0, org.telegram.ui.web.z0, org.telegram.ui
                 qnVar.x0.B0();
                 qnVar.z0.R = false;
                 View view = gjVar.v;
-                qnVar.sb(view);
+                qnVar.tb(view);
                 qnVar.j8(false, view != qnVar.j1, 0.3f);
                 qnVar.m9(false);
                 bl blVar = qnVar.z3;
@@ -1058,7 +1058,7 @@ public final class g implements v9, ru0, org.telegram.ui.web.z0, org.telegram.ui
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.bp0
+    @Override // org.telegram.ui.Components.cp0
     public void v() {
         switch (this.a) {
             case 5:
@@ -1082,7 +1082,7 @@ public final class g implements v9, ru0, org.telegram.ui.web.z0, org.telegram.ui
         return true;
     }
 
-    @Override // org.telegram.ui.Components.jn0
+    @Override // org.telegram.ui.Components.kn0
     public void x() {
         int i10 = this.a;
     }
@@ -1097,7 +1097,7 @@ public final class g implements v9, ru0, org.telegram.ui.web.z0, org.telegram.ui
         return false;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public void d(float f7, float f10, int i10, View view) {
         MessageObject messageObject;
         vb vbVar = (vb) this.b;
@@ -1198,7 +1198,7 @@ public final class g implements v9, ru0, org.telegram.ui.web.z0, org.telegram.ui
     public /* synthetic */ void G0(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Components.tq0
+    @Override // org.telegram.ui.Components.uq0
     public /* synthetic */ void H() {
     }
 
@@ -1401,7 +1401,7 @@ public final class g implements v9, ru0, org.telegram.ui.web.z0, org.telegram.ui
     public /* synthetic */ void R0(org.telegram.ui.Cells.u1 u1Var, CharacterStyle characterStyle, boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ void a0(View view, float f7, float f10) {
     }
 

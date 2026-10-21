@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o71 implements Utilities.Callback5, Utilities.Callback5Return, r0.n {
     public final /* synthetic */ x71 a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class o71 implements Utilities.Callback5, Utilities
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        return Boolean.valueOf(x71.U(this.a, (org.telegram.ui.Components.g61) obj, (View) obj2));
+        return Boolean.valueOf(x71.U(this.a, (org.telegram.ui.Components.h61) obj, (View) obj2));
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5
@@ -36,6 +36,6 @@ public final /* synthetic */ class o71 implements Utilities.Callback5, Utilities
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        x71.f0(this.a, (org.telegram.ui.Components.g61) obj);
+        x71.f0(this.a, (org.telegram.ui.Components.h61) obj);
     }
 }

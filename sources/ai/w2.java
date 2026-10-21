@@ -10,11 +10,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.uk0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w2 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final /* synthetic */ class w2 implements Utilities.Callback2 {
                 l7.o0((l7) obj6, (pf.c) obj5, (ug.m1) obj4, (u3) obj3, (TL_stars.starGiftDepositPayload) obj, (TLRPC.TL_error) obj2);
                 break;
             case 2:
-                g51 g51Var = (g51) obj5;
+                h51 h51Var = (h51) obj5;
                 String str = (String) obj4;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj3;
                 ((org.telegram.ui.ActionBar.b2) obj6).dismiss();
@@ -59,7 +59,7 @@ public final /* synthetic */ class w2 implements Utilities.Callback2 {
                     uk0.a().M(LocaleController.getString(R.string.BotAuthLoggedInFailTitle), TextUtils.isEmpty(str) ? LocaleController.getString(R.string.BotAuthLoggedInFailNoDomain) : AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.BotAuthLoggedInFail, str), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Gi, d6Var)), R.raw.error).j();
                     break;
                 } else {
-                    g51Var.run();
+                    h51Var.run();
                     break;
                 }
             default:

@@ -36,8 +36,8 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.i90;
-import org.telegram.ui.Components.ym0;
 import org.telegram.ui.Components.yq;
+import org.telegram.ui.Components.zm0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bf;
 import org.telegram.ui.cg0;
@@ -53,7 +53,7 @@ import org.telegram.ui.x40;
 import org.telegram.ui.yl0;
 import org.telegram.ui.zl0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v7 implements Runnable {
     public final /* synthetic */ int a;
@@ -188,7 +188,7 @@ public final /* synthetic */ class v7 implements Runnable {
                 org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) obj2;
                 String str = (String) obj3;
                 TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = (TLRPC.TL_messageEntityFormattedDate) obj;
-                ym0 ym0Var = (ym0) obj6;
+                zm0 zm0Var = (zm0) obj6;
                 qnVar.getClass();
                 ((i80) obj5).n0 = true;
                 if (!TextUtils.isEmpty(messageObject2.caption)) {
@@ -197,7 +197,7 @@ public final /* synthetic */ class v7 implements Runnable {
                     str = u1Var.getMessageObject().messageText.toString();
                 }
                 AndroidUtilities.createCalendarEvent(qnVar.getParentActivity(), tL_messageEntityFormattedDate.date * 1000, str.length() > 21 ? str.substring(0, 21) + "..." : str, str, (tL_messageEntityFormattedDate.long_time || tL_messageEntityFormattedDate.short_time) ? false : true);
-                ym0Var.dismiss();
+                zm0Var.dismiss();
                 break;
             case 5:
                 qn qnVar2 = (qn) obj7;

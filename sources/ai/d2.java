@@ -5,15 +5,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.vj0;
 import org.telegram.ui.Components.z00;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cy;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d2 implements Runnable {
     public final /* synthetic */ int a;
@@ -105,7 +105,7 @@ public final /* synthetic */ class d2 implements Runnable {
                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 TL_stars.TL_starGiftUnique f22 = l7Var.f2();
                 if (U != null && f22 != null) {
-                    cy cyVar = new cy(kk.d(4, "onlySelect", "dialogsType", true));
+                    cy cyVar = new cy(mk.d(4, "onlySelect", "dialogsType", true));
                     cyVar.C2 = new u2(l7Var, f22, cyVar, i11);
                     U.presentFragment(cyVar);
                     break;
@@ -127,8 +127,8 @@ public final /* synthetic */ class d2 implements Runnable {
                 ImageReceiver imageReceiver = (p6Var == null || (o6Var = p6Var.c) == null) ? null : ((r6) o6Var).d;
                 org.telegram.ui.Components.w9 w9Var = f7Var.d[0];
                 if (imageReceiver != null && w9Var != null && w9Var.getImageReceiver() != null) {
-                    uj0 lottieAnimation = imageReceiver.getLottieAnimation();
-                    uj0 lottieAnimation2 = w9Var.getImageReceiver().getLottieAnimation();
+                    vj0 lottieAnimation = imageReceiver.getLottieAnimation();
+                    vj0 lottieAnimation2 = w9Var.getImageReceiver().getLottieAnimation();
                     if (lottieAnimation2 != null && lottieAnimation != null) {
                         lottieAnimation2.T(lottieAnimation.t(), false);
                     } else if (lottieAnimation2 == null && lottieAnimation != null) {

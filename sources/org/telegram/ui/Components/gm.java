@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class gm extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final class gm extends AnimatorListenerAdapter {
                 break;
             default:
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = this.b;
-                x91 x91Var = chatAttachAlertPhotoLayout2.l0;
+                y91 y91Var = chatAttachAlertPhotoLayout2.l0;
                 chatAttachAlertPhotoLayout2.f1.unlock();
                 chatAttachAlertPhotoLayout2.i1 = false;
                 chatAttachAlertPhotoLayout2.b.getWindow().clearFlags(128);
@@ -64,9 +64,9 @@ public final class gm extends AnimatorListenerAdapter {
                 if (xVar != null) {
                     xVar.setVisibility(8);
                 }
-                if (x91Var != null) {
-                    x91Var.setVisibility(8);
-                    x91Var.setTag(null);
+                if (y91Var != null) {
+                    y91Var.setVisibility(8);
+                    y91Var.setTag(null);
                 }
                 em emVar3 = chatAttachAlertPhotoLayout2.r;
                 if (emVar3 != null) {

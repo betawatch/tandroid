@@ -7,7 +7,7 @@ import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class tf1 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -91,9 +91,9 @@ public final class tf1 extends AnimatorListenerAdapter {
                 h9Var.e.setVisibility(h9Var.w ? 0 : 4);
                 break;
             case 10:
-                org.telegram.ui.Components.gg0 gg0Var = (org.telegram.ui.Components.gg0) obj;
-                ((ci1) gg0Var.b).getClass();
-                ((ci1) gg0Var.b).c.setVisibility(4);
+                org.telegram.ui.Components.hg0 hg0Var = (org.telegram.ui.Components.hg0) obj;
+                ((ci1) hg0Var.b).getClass();
+                ((ci1) hg0Var.b).c.setVisibility(4);
                 break;
             case 11:
                 ((org.telegram.ui.web.a1) obj).s.setVisibility(8);

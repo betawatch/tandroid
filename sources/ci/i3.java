@@ -18,11 +18,11 @@ import android.view.ViewTreeObserver;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.ah0;
 import org.telegram.ui.Components.ba0;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.kg0;
-import org.telegram.ui.Components.l31;
-import org.telegram.ui.Components.zg0;
+import org.telegram.ui.Components.lg0;
+import org.telegram.ui.Components.m31;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.a50;
 import org.telegram.ui.b50;
@@ -30,7 +30,7 @@ import org.telegram.ui.l60;
 import org.telegram.ui.nc0;
 import org.telegram.ui.v10;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class i3 extends View {
     public final /* synthetic */ int a = 4;
@@ -51,8 +51,8 @@ public final class i3 extends View {
         org.telegram.ui.ActionBar.k kVar;
         switch (this.a) {
             case 3:
-                l31 l31Var = (l31) this.d;
-                org.telegram.ui.Components.p6 p6Var = l31Var.e;
+                m31 m31Var = (m31) this.d;
+                org.telegram.ui.Components.p6 p6Var = m31Var.e;
                 float i10 = p6Var.i();
                 if (i10 > 0.0f) {
                     float lerp = AndroidUtilities.lerp(0.6f, 1.0f, i10);
@@ -64,9 +64,9 @@ public final class i3 extends View {
                     float dp = AndroidUtilities.dp(8.33f);
                     float dp2 = AndroidUtilities.dp(8.33f);
                     org.telegram.ui.Components.j6 j6Var = (org.telegram.ui.Components.j6) this.b;
-                    j6Var.setColor(j6Var.b.a(org.telegram.ui.ActionBar.h6.w0(l31Var.I, j6Var.a), false));
-                    textColor = l31Var.getTextColor();
-                    j6Var.setColor(i0.a.f(l31Var.F, j6Var.getColor(), textColor));
+                    j6Var.setColor(j6Var.b.a(org.telegram.ui.ActionBar.h6.w0(m31Var.I, j6Var.a), false));
+                    textColor = m31Var.getTextColor();
+                    j6Var.setColor(i0.a.f(m31Var.F, j6Var.getColor(), textColor));
                     j6Var.setAlpha((int) (j6Var.getAlpha() * i10));
                     canvas.drawRoundRect(rectF, dp, dp2, j6Var);
                     p6Var.p(rectF);
@@ -174,7 +174,7 @@ public final class i3 extends View {
 
     @Override // android.view.View
     public void onDraw(Canvas canvas) {
-        kg0 kg0Var;
+        lg0 lg0Var;
         switch (this.a) {
             case 0:
                 ba0 ba0Var = (ba0) this.b;
@@ -213,14 +213,14 @@ public final class i3 extends View {
                 return;
             case 2:
                 super.onDraw(canvas);
-                zg0 zg0Var = (zg0) this.d;
-                if (!zg0Var.n || ((kg0Var = zg0Var.r) != null && kg0Var.x)) {
+                ah0 ah0Var = (ah0) this.d;
+                if (!ah0Var.n || ((lg0Var = ah0Var.r) != null && lg0Var.x)) {
                     int width = getWidth();
                     int dp = AndroidUtilities.dp(10.0f);
                     float f10 = (width - dp) - dp;
-                    int i11 = dp + ((int) (zg0Var.Z * f10));
+                    int i11 = dp + ((int) (ah0Var.Z * f10));
                     float height = getHeight() - AndroidUtilities.dp(8.0f);
-                    float f11 = zg0Var.a0;
+                    float f11 = ah0Var.a0;
                     if (f11 != 0.0f) {
                         float f12 = dp;
                         canvas.drawLine(f12, height, (f11 * f10) + f12, height, (Paint) this.c);
@@ -328,7 +328,7 @@ public final class i3 extends View {
     public void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 3:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) Math.max(AndroidUtilities.dp(16.66f), ((l31) this.d).e.d + AndroidUtilities.dp(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.66f), TLObject.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) Math.max(AndroidUtilities.dp(16.66f), ((m31) this.d).e.d + AndroidUtilities.dp(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.66f), TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i10, i11);
@@ -366,7 +366,7 @@ public final class i3 extends View {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 3:
-                return ((l31) this.d).e == drawable || super.verifyDrawable(drawable);
+                return ((m31) this.d).e == drawable || super.verifyDrawable(drawable);
             case 4:
                 return super.verifyDrawable(drawable) || drawable == ((org.telegram.ui.Components.p6) this.b);
             default:
@@ -391,9 +391,9 @@ public final class i3 extends View {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i3(zg0 zg0Var, Context context) {
+    public i3(ah0 ah0Var, Context context) {
         super(context);
-        this.d = zg0Var;
+        this.d = ah0Var;
         Paint paint = new Paint();
         this.b = paint;
         Paint paint2 = new Paint();
@@ -420,12 +420,12 @@ public final class i3 extends View {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i3(l31 l31Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public i3(m31 m31Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
-        this.d = l31Var;
+        this.d = m31Var;
         this.c = d6Var;
         this.b = new org.telegram.ui.Components.j6(this, d6Var);
-        l31Var.e.setCallback(this);
+        m31Var.e.setCallback(this);
     }
 
     public i3(Activity activity) {

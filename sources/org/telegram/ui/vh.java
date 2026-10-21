@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class vh implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -59,9 +59,9 @@ public final class vh implements ViewTreeObserver.OnPreDrawListener {
                     }
                     sp0Var.n.l();
                 }
-                org.telegram.ui.Components.im0 im0Var = ((sp0) this.b).h;
-                if (im0Var != null) {
-                    im0Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                org.telegram.ui.Components.jm0 jm0Var = ((sp0) this.b).h;
+                if (jm0Var != null) {
+                    jm0Var.getViewTreeObserver().removeOnPreDrawListener(this);
                     break;
                 }
                 break;
@@ -95,7 +95,7 @@ public final class vh implements ViewTreeObserver.OnPreDrawListener {
                                     default:
                                         PhotoViewer photoViewer3 = (PhotoViewer) this.b.b;
                                         if (photoViewer3.J3) {
-                                            photoViewer3.T0();
+                                            photoViewer3.U0();
                                             break;
                                         }
                                         break;
@@ -136,7 +136,7 @@ public final class vh implements ViewTreeObserver.OnPreDrawListener {
                             default:
                                 PhotoViewer photoViewer3 = (PhotoViewer) this.b.b;
                                 if (photoViewer3.J3) {
-                                    photoViewer3.T0();
+                                    photoViewer3.U0();
                                     break;
                                 }
                                 break;
@@ -168,9 +168,9 @@ public final class vh implements ViewTreeObserver.OnPreDrawListener {
                     }
                     wallpapersListActivity.C0();
                 }
-                org.telegram.ui.Components.im0 im0Var2 = ((WallpapersListActivity) this.b).H;
-                if (im0Var2 != null) {
-                    im0Var2.getViewTreeObserver().removeOnPreDrawListener(this);
+                org.telegram.ui.Components.jm0 jm0Var2 = ((WallpapersListActivity) this.b).H;
+                if (jm0Var2 != null) {
+                    jm0Var2.getViewTreeObserver().removeOnPreDrawListener(this);
                     break;
                 }
                 break;

@@ -1,52 +1,39 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaController b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b2 b;
+    public final /* synthetic */ boolean[] c;
 
-    public /* synthetic */ b6(MediaController mediaController, int i10) {
+    public /* synthetic */ b6(org.telegram.ui.ActionBar.b2 b2Var, boolean[] zArr, int i10) {
         this.a = i10;
-        this.b = mediaController;
+        this.b = b2Var;
+        this.c = zArr;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$toggleRecordingPause$30();
+                MediaController.lambda$saveFile$46(this.c, this.b);
                 break;
             case 1:
-                this.b.lambda$toggleRecordingPause$31();
+                MediaController.lambda$saveFile$50(this.b, this.c);
                 break;
             case 2:
-                this.b.lambda$toggleRecordingPause$32();
-                break;
-            case 3:
-                this.b.lambda$playMessage$20();
-                break;
-            case 4:
-                this.b.lambda$setTextureView$15();
-                break;
-            case 5:
-                this.b.lambda$stopRaiseToEarSensors$9();
-                break;
-            case 6:
-                this.b.lambda$new$2();
-                break;
-            case 7:
-                this.b.lambda$new$3();
-                break;
-            case 8:
-                this.b.lambda$new$4();
-                break;
-            case 9:
-                this.b.lambda$setCurrentVideoVisible$14();
+                MediaController.lambda$saveFile$53(this.c, this.b);
                 break;
             default:
-                this.b.lambda$startRaiseToEarSensors$8();
+                MediaController.lambda$saveFile$55(this.b, this.c);
                 break;
         }
+    }
+
+    public /* synthetic */ b6(boolean[] zArr, org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        this.a = i10;
+        this.c = zArr;
+        this.b = b2Var;
     }
 }

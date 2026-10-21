@@ -14,15 +14,15 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class m51 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public final FrameLayout a;
     public final ImageView b;
     public final ImageView c;
-    public final org.telegram.ui.Components.dh0 d;
+    public final org.telegram.ui.Components.eh0 d;
     public final View e;
-    public final org.telegram.ui.Components.vn0 f;
+    public final org.telegram.ui.Components.wn0 f;
     public final org.telegram.ui.Cells.b6 h;
     public l51 n;
     public float r;
@@ -58,12 +58,12 @@ public abstract class m51 extends FrameLayout implements org.telegram.ui.ActionB
         this.b = imageView;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
-        org.telegram.ui.Components.vn0 vn0Var = new org.telegram.ui.Components.vn0();
-        this.f = vn0Var;
-        vn0Var.c(0, false, false);
+        org.telegram.ui.Components.wn0 wn0Var = new org.telegram.ui.Components.wn0();
+        this.f = wn0Var;
+        wn0Var.c(0, false, false);
         int i13 = org.telegram.ui.ActionBar.h6.Je;
-        vn0Var.a(org.telegram.ui.ActionBar.h6.w0(i13, d6Var));
-        imageView.setImageDrawable(vn0Var);
+        wn0Var.a(org.telegram.ui.ActionBar.h6.w0(i13, d6Var));
+        imageView.setImageDrawable(wn0Var);
         final o41 o41Var = (o41) this;
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.i51
             @Override // android.view.View.OnClickListener
@@ -118,9 +118,9 @@ public abstract class m51 extends FrameLayout implements org.telegram.ui.ActionB
         final int i14 = 2;
         imageView.setImportantForAccessibility(2);
         frameLayout.addView(imageView, w7.z5.e(36, 36, 51));
-        org.telegram.ui.Components.dh0 dh0Var = new org.telegram.ui.Components.dh0(o41Var, context, z10);
-        this.d = dh0Var;
-        frameLayout.addView(dh0Var, w7.z5.d(-1, -1.0f, 119, 36.0f, 0.0f, 0.0f, 0.0f));
+        org.telegram.ui.Components.eh0 eh0Var = new org.telegram.ui.Components.eh0(o41Var, context, z10);
+        this.d = eh0Var;
+        frameLayout.addView(eh0Var, w7.z5.d(-1, -1.0f, 119, 36.0f, 0.0f, 0.0f, 0.0f));
         org.telegram.ui.Cells.b6 b6Var = new org.telegram.ui.Cells.b6(o41Var, context, d6Var, i11);
         this.h = b6Var;
         b6Var.addTextChangedListener(new o0(o41Var, 15));
@@ -139,7 +139,7 @@ public abstract class m51 extends FrameLayout implements org.telegram.ui.ActionB
         b6Var.setSingleLine(true);
         b6Var.setLines(1);
         b6Var.setTranslationY(AndroidUtilities.dp(-1.0f));
-        dh0Var.addView(b6Var, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, 32.0f, 0.0f));
+        eh0Var.addView(b6Var, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, 32.0f, 0.0f));
         if (z10) {
             View view = new View(context);
             this.e = view;
@@ -147,7 +147,7 @@ public abstract class m51 extends FrameLayout implements org.telegram.ui.ActionB
             mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(i12, d6Var), PorterDuff.Mode.MULTIPLY));
             view.setBackground(mutate);
             view.setAlpha(0.0f);
-            dh0Var.addView(view, w7.z5.e(18, -1, 3));
+            eh0Var.addView(view, w7.z5.e(18, -1, 3));
         }
         setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.i51
             @Override // android.view.View.OnClickListener
@@ -322,12 +322,12 @@ public abstract class m51 extends FrameLayout implements org.telegram.ui.ActionB
                                 m51Var.e(false);
                                 break;
                             default:
-                                org.telegram.ui.Components.mx0 mx0Var = (org.telegram.ui.Components.mx0) obj;
+                                org.telegram.ui.Components.nx0 nx0Var = (org.telegram.ui.Components.nx0) obj;
                                 m51 m51Var2 = this.b;
                                 x51 x51Var2 = m51Var2.y;
-                                if (m51Var2.n.getSelectedCategory() != mx0Var) {
-                                    x51Var2.v(mx0Var.a, false, false);
-                                    m51Var2.n.G1(mx0Var);
+                                if (m51Var2.n.getSelectedCategory() != nx0Var) {
+                                    x51Var2.v(nx0Var.a, false, false);
+                                    m51Var2.n.G1(nx0Var);
                                     break;
                                 } else {
                                     x51Var2.v(null, false, false);
@@ -356,12 +356,12 @@ public abstract class m51 extends FrameLayout implements org.telegram.ui.ActionB
                                 m51Var.e(false);
                                 break;
                             default:
-                                org.telegram.ui.Components.mx0 mx0Var = (org.telegram.ui.Components.mx0) obj;
+                                org.telegram.ui.Components.nx0 nx0Var = (org.telegram.ui.Components.nx0) obj;
                                 m51 m51Var2 = this.b;
                                 x51 x51Var2 = m51Var2.y;
-                                if (m51Var2.n.getSelectedCategory() != mx0Var) {
-                                    x51Var2.v(mx0Var.a, false, false);
-                                    m51Var2.n.G1(mx0Var);
+                                if (m51Var2.n.getSelectedCategory() != nx0Var) {
+                                    x51Var2.v(nx0Var.a, false, false);
+                                    m51Var2.n.G1(nx0Var);
                                     break;
                                 } else {
                                     x51Var2.v(null, false, false);
@@ -399,12 +399,12 @@ public abstract class m51 extends FrameLayout implements org.telegram.ui.ActionB
                             m51Var.e(false);
                             break;
                         default:
-                            org.telegram.ui.Components.mx0 mx0Var = (org.telegram.ui.Components.mx0) obj;
+                            org.telegram.ui.Components.nx0 nx0Var = (org.telegram.ui.Components.nx0) obj;
                             m51 m51Var2 = this.b;
                             x51 x51Var2 = m51Var2.y;
-                            if (m51Var2.n.getSelectedCategory() != mx0Var) {
-                                x51Var2.v(mx0Var.a, false, false);
-                                m51Var2.n.G1(mx0Var);
+                            if (m51Var2.n.getSelectedCategory() != nx0Var) {
+                                x51Var2.v(nx0Var.a, false, false);
+                                m51Var2.n.G1(nx0Var);
                                 break;
                             } else {
                                 x51Var2.v(null, false, false);
@@ -433,12 +433,12 @@ public abstract class m51 extends FrameLayout implements org.telegram.ui.ActionB
                             m51Var.e(false);
                             break;
                         default:
-                            org.telegram.ui.Components.mx0 mx0Var = (org.telegram.ui.Components.mx0) obj;
+                            org.telegram.ui.Components.nx0 nx0Var = (org.telegram.ui.Components.nx0) obj;
                             m51 m51Var2 = this.b;
                             x51 x51Var2 = m51Var2.y;
-                            if (m51Var2.n.getSelectedCategory() != mx0Var) {
-                                x51Var2.v(mx0Var.a, false, false);
-                                m51Var2.n.G1(mx0Var);
+                            if (m51Var2.n.getSelectedCategory() != nx0Var) {
+                                x51Var2.v(nx0Var.a, false, false);
+                                m51Var2.n.G1(nx0Var);
                                 break;
                             } else {
                                 x51Var2.v(null, false, false);
@@ -483,12 +483,12 @@ public abstract class m51 extends FrameLayout implements org.telegram.ui.ActionB
     public final void e(boolean z10) {
         l51 l51Var;
         l51 l51Var2;
-        org.telegram.ui.Components.vn0 vn0Var = this.f;
-        int i10 = vn0Var.k;
+        org.telegram.ui.Components.wn0 wn0Var = this.f;
+        int i10 = wn0Var.k;
         org.telegram.ui.Cells.b6 b6Var = this.h;
         if (i10 != 2 || ((b6Var.length() == 0 && ((l51Var2 = this.n) == null || l51Var2.getSelectedCategory() == null)) || z10)) {
             ?? r62 = (b6Var.length() > 0 || ((l51Var = this.n) != null && l51Var.m3 > 0.5f && (l51Var.h3 || l51Var.getSelectedCategory() != null))) ? 1 : 0;
-            vn0Var.b(r62);
+            wn0Var.b(r62);
             ImageView imageView = this.b;
             imageView.setClickable(r62);
             imageView.setContentDescription(r62 != 0 ? LocaleController.getString(R.string.AccDescrGoBack) : null);

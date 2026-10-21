@@ -4,7 +4,7 @@ import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class am implements Utilities.Callback {
     public final /* synthetic */ int a = 1;
@@ -35,16 +35,16 @@ public final /* synthetic */ class am implements Utilities.Callback {
                 ChatAttachAlertPhotoLayout.r1.clear();
                 ChatAttachAlertPhotoLayout.t1.clear();
                 hashMap.clear();
-                PhotoViewer.t1();
-                PhotoViewer.t1().G0(PhotoViewer.t1().P, false);
-                PhotoViewer.t1().u2 = true;
+                PhotoViewer.u1();
+                PhotoViewer.u1().H0(PhotoViewer.u1().P, false);
+                PhotoViewer.u1().u2 = true;
                 break;
             default:
                 fm fmVar = (fm) this.e;
                 Long l10 = (Long) obj;
-                PhotoViewer.t1();
-                PhotoViewer.t1().O = false;
-                PhotoViewer.t1().u2 = false;
+                PhotoViewer.u1();
+                PhotoViewer.u1().O = false;
+                PhotoViewer.u1().u2 = false;
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = fmVar.c;
                 ti tiVar2 = chatAttachAlertPhotoLayout.b;
                 tiVar2.v2 = true;
@@ -59,9 +59,9 @@ public final /* synthetic */ class am implements Utilities.Callback {
                 chatAttachAlertPhotoLayout.G.l();
                 chatAttachAlertPhotoLayout.v.l();
                 tiVar2.dismiss(true);
-                PhotoViewer.t1();
-                PhotoViewer.t1().G0(PhotoViewer.t1().P, false);
-                PhotoViewer.t1().u2 = true;
+                PhotoViewer.u1();
+                PhotoViewer.u1().H0(PhotoViewer.u1().P, false);
+                PhotoViewer.u1().u2 = true;
                 break;
         }
     }

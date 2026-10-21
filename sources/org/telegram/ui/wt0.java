@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class wt0 extends wh.n {
     public final org.telegram.ui.Cells.x9 U;
@@ -138,11 +138,11 @@ public final class wt0 extends wh.n {
             canvas.save();
             canvas.translate(getPaddingLeft(), getPaddingTop());
             for (int i11 = 0; i11 < this.V.size(); i11++) {
-                org.telegram.ui.Components.lj0 lj0Var = (org.telegram.ui.Components.lj0) this.V.get(i11);
+                org.telegram.ui.Components.mj0 mj0Var = (org.telegram.ui.Components.mj0) this.V.get(i11);
                 int width = (getWidth() - getPaddingLeft()) - getPaddingRight();
                 int dp3 = this.W ? AndroidUtilities.dp(32.0f) : 0;
                 getPaint();
-                lj0Var.a(canvas, width + dp3, -1);
+                mj0Var.a(canvas, width + dp3, -1);
             }
             canvas.restore();
         }
@@ -161,7 +161,7 @@ public final class wt0 extends wh.n {
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         org.telegram.ui.Components.a6.release(this, this.b0);
-        this.V = org.telegram.ui.Components.pj0.e(null, this.V);
+        this.V = org.telegram.ui.Components.qj0.e(null, this.V);
     }
 
     @Override // wh.n, android.widget.TextView, android.view.View
@@ -178,8 +178,8 @@ public final class wt0 extends wh.n {
         super.onDraw(canvas);
         if (this.a0 != getLayout()) {
             this.b0 = org.telegram.ui.Components.a6.update(0, this, this.b0, getLayout());
-            this.V = org.telegram.ui.Components.pj0.e(getLayout(), this.V);
-            boolean z10 = getLayout() != null && (getLayout().getText() instanceof Spanned) && ((org.telegram.ui.Components.oj0[]) ((Spanned) getLayout().getText()).getSpans(0, getLayout().getText().length(), org.telegram.ui.Components.oj0.class)).length > 0;
+            this.V = org.telegram.ui.Components.qj0.e(getLayout(), this.V);
+            boolean z10 = getLayout() != null && (getLayout().getText() instanceof Spanned) && ((org.telegram.ui.Components.pj0[]) ((Spanned) getLayout().getText()).getSpans(0, getLayout().getText().length(), org.telegram.ui.Components.pj0.class)).length > 0;
             this.W = z10;
             w7.f6.a(this, 16.0f, 8.0f, (z10 ? 32 : 0) + 16, 8.0f);
             this.a0 = getLayout();
@@ -190,7 +190,7 @@ public final class wt0 extends wh.n {
     public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
         super.onTextChanged(charSequence, i10, i11, i12);
         this.b0 = org.telegram.ui.Components.a6.update(0, this, this.b0, getLayout());
-        this.V = org.telegram.ui.Components.pj0.e(getLayout(), this.V);
+        this.V = org.telegram.ui.Components.qj0.e(getLayout(), this.V);
     }
 
     public void setLoading(boolean z10) {

@@ -16,9 +16,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hv implements org.telegram.ui.Components.ir0, org.telegram.ui.Components.xl0, org.telegram.ui.Components.yl0, v00, org.telegram.ui.ActionBar.a2, r0.n, org.telegram.ui.Components.kl0 {
+public final /* synthetic */ class hv implements org.telegram.ui.Components.jr0, org.telegram.ui.Components.yl0, org.telegram.ui.Components.zl0, v00, org.telegram.ui.ActionBar.a2, r0.n, org.telegram.ui.Components.ll0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ cy b;
 
@@ -58,25 +58,25 @@ public final /* synthetic */ class hv implements org.telegram.ui.Components.ir0,
         return r0.k1.b;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ boolean P0(View view) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.zl0
     public boolean a(int i10, View view) {
         cy.G0(this.b, i10);
         return false;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ void a0(View view, float f7, float f10) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public void b() {
         cy cyVar = this.b;
         cyVar.Q = true;
@@ -85,7 +85,7 @@ public final /* synthetic */ class hv implements org.telegram.ui.Components.ir0,
 
     /* JADX WARN: Removed duplicated region for block: B:51:0x0117 A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:55:0x00fa A[SYNTHETIC] */
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -94,7 +94,7 @@ public final /* synthetic */ class hv implements org.telegram.ui.Components.ir0,
         switch (this.a) {
             case 1:
                 cy cyVar = this.b;
-                org.telegram.ui.Components.g61 G = cyVar.C0.j0.G(i10);
+                org.telegram.ui.Components.h61 G = cyVar.C0.j0.G(i10);
                 Object obj = G != null ? G.G : null;
                 if (!(obj instanceof TLRPC.Chat)) {
                     if (obj instanceof MessageObject) {
@@ -115,17 +115,17 @@ public final /* synthetic */ class hv implements org.telegram.ui.Components.ir0,
                     Bundle bundle2 = new Bundle();
                     bundle2.putLong("chat_id", ((TLRPC.Chat) obj).id);
                     qn qnVar2 = new qn(bundle2);
-                    org.telegram.ui.Components.qo0 qo0Var = cyVar.C0.j0;
-                    qo0Var.getClass();
+                    org.telegram.ui.Components.ro0 ro0Var = cyVar.C0.j0;
+                    ro0Var.getClass();
                     ArrayList arrayList = new ArrayList();
                     while (true) {
                         i10++;
-                        if (i10 >= qo0Var.x.size()) {
+                        if (i10 >= ro0Var.x.size()) {
                             qnVar2.fb = arrayList;
                             cyVar.presentFragment(qnVar2);
                             break;
                         } else {
-                            org.telegram.ui.Components.g61 G2 = qo0Var.G(i10);
+                            org.telegram.ui.Components.h61 G2 = ro0Var.G(i10);
                             if (G2 != null) {
                                 Object obj2 = G2.G;
                                 if (obj2 instanceof TLRPC.Chat) {
@@ -144,7 +144,7 @@ public final /* synthetic */ class hv implements org.telegram.ui.Components.ir0,
                 break;
             case 2:
                 cy cyVar2 = this.b;
-                org.telegram.ui.Components.g61 G3 = cyVar2.C0.o0.G(i10);
+                org.telegram.ui.Components.h61 G3 = cyVar2.C0.o0.G(i10);
                 Object obj3 = G3 != null ? G3.G : null;
                 if (!(obj3 instanceof TLRPC.User)) {
                     if (obj3 instanceof MessageObject) {
@@ -189,11 +189,11 @@ public final /* synthetic */ class hv implements org.telegram.ui.Components.ir0,
                 } else {
                     TLRPC.TL_sponsoredPeer tL_sponsoredPeer = (TLRPC.TL_sponsoredPeer) J;
                     cyVar3.presentFragment(qn.W9(DialogObject.getPeerDialogId(tL_sponsoredPeer.peer)));
-                    org.telegram.ui.Components.oo0 oo0Var = cyVar3.C0.b0;
-                    oo0Var.getClass();
+                    org.telegram.ui.Components.po0 po0Var = cyVar3.C0.b0;
+                    po0Var.getClass();
                     TLRPC.TL_messages_clickSponsoredMessage tL_messages_clickSponsoredMessage = new TLRPC.TL_messages_clickSponsoredMessage();
                     tL_messages_clickSponsoredMessage.random_id = tL_sponsoredPeer.random_id;
-                    ConnectionsManager.getInstance(oo0Var.s0).sendRequest(tL_messages_clickSponsoredMessage, null);
+                    ConnectionsManager.getInstance(po0Var.s0).sendRequest(tL_messages_clickSponsoredMessage, null);
                     break;
                 }
         }

@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ck0 implements Runnable {
     public final /* synthetic */ int a;
@@ -195,7 +195,7 @@ public final /* synthetic */ class ck0 implements Runnable {
                 PhotoViewer photoViewer = (PhotoViewer) uVar.d;
                 long j10 = uVar.a;
                 Drawable[] drawableArr = PhotoViewer.U8;
-                photoViewer.t2(j10);
+                photoViewer.v2(j10);
                 if (photoViewer.c2 == 1) {
                     long j11 = uVar.a;
                     photoViewer.X7 = j11;
@@ -230,21 +230,21 @@ public final /* synthetic */ class ck0 implements Runnable {
                 }
                 break;
             case 18:
-                org.telegram.ui.Components.ml0 ml0Var = (org.telegram.ui.Components.ml0) ((zb0) obj).b;
-                PhotoViewer photoViewer3 = (PhotoViewer) ml0Var.c;
+                org.telegram.ui.Components.nl0 nl0Var = (org.telegram.ui.Components.nl0) ((zb0) obj).b;
+                PhotoViewer photoViewer3 = (PhotoViewer) nl0Var.c;
                 photoViewer3.H2 = false;
-                org.telegram.ui.Components.b81 b81Var = photoViewer3.F2;
-                if (b81Var != null) {
-                    b81Var.C();
+                org.telegram.ui.Components.c81 c81Var = photoViewer3.F2;
+                if (c81Var != null) {
+                    c81Var.C();
                 }
-                ((PhotoViewer) ml0Var.c).I2 = null;
+                ((PhotoViewer) nl0Var.c).I2 = null;
                 break;
             case 19:
                 PhotoViewer photoViewer4 = ((zr0) obj).a;
                 photoViewer4.H2 = false;
-                org.telegram.ui.Components.b81 b81Var2 = photoViewer4.F2;
-                if (b81Var2 != null) {
-                    b81Var2.C();
+                org.telegram.ui.Components.c81 c81Var2 = photoViewer4.F2;
+                if (c81Var2 != null) {
+                    c81Var2.C();
                 }
                 photoViewer4.I2 = null;
                 break;
@@ -257,7 +257,7 @@ public final /* synthetic */ class ck0 implements Runnable {
                     runnable.run();
                     photoViewer5.p4 = null;
                 }
-                photoViewer5.y2(true);
+                photoViewer5.A2(true);
                 break;
             case 21:
                 PhotoViewer photoViewer6 = ((os0) obj).b;
@@ -279,7 +279,7 @@ public final /* synthetic */ class ck0 implements Runnable {
                 premiumPreviewFragment.showDialog(new t21(premiumPreviewFragment.getParentActivity(), false, premiumPreviewFragment.getResourceProvider(), null));
                 break;
             case 25:
-                ((org.telegram.messenger.ek) obj).run(0);
+                ((org.telegram.messenger.gk) obj).run(0);
                 break;
             case 26:
                 AndroidUtilities.addToClipboard((String) obj);

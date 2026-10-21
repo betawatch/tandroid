@@ -6,16 +6,16 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class q4 extends org.telegram.ui.Components.hm0 {
+public final class q4 extends org.telegram.ui.Components.im0 {
     public final Context c;
 
     public q4(Context context) {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         int b10 = b1Var.b();
         if (b10 != 1) {
@@ -63,7 +63,7 @@ public final class q4 extends org.telegram.ui.Components.hm0 {
             }
             org.telegram.ui.Cells.ba baVar = (org.telegram.ui.Cells.ba) b1Var.a;
             baVar.setEnabled(z10);
-            baVar.c(LocaleController.getString(R.string.AudioRecorderNoiseSuppression), LocaleController.getString(((ri.i) ti.e.c.a()) == ri.i.b ? R.string.AudioRecorderNoiseSuppressionRNNoise : R.string.AudioRecorderNoiseSuppressionOff), false, false);
+            baVar.c(LocaleController.getString(R.string.AudioRecorderNoiseSuppression), LocaleController.getString(((ri.h) ti.e.c.a()) == ri.h.b ? R.string.AudioRecorderNoiseSuppressionRNNoise : R.string.AudioRecorderNoiseSuppressionOff), false, false);
         }
     }
 
@@ -83,6 +83,6 @@ public final class q4 extends org.telegram.ui.Components.hm0 {
             frameLayout = new org.telegram.ui.Cells.d9(context);
         }
         frameLayout.setLayoutParams(new s4.o0(-1, -2));
-        return new org.telegram.ui.Components.sl0(frameLayout);
+        return new org.telegram.ui.Components.tl0(frameLayout);
     }
 }

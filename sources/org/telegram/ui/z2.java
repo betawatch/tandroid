@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class z2 extends FrameLayout implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.m9 {
     public static final /* synthetic */ int V = 0;
@@ -436,7 +436,7 @@ public final class z2 extends FrameLayout implements DownloadController.FileDown
                     } else {
                         i15 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(i20 * 14);
                         this.x = i15;
-                        i14 = org.telegram.messenger.kk.y(18.0f, i15, i12);
+                        i14 = org.telegram.messenger.mk.y(18.0f, i15, i12);
                         dp = i14;
                     }
                     TLRPC.Document document = this.O;
@@ -571,7 +571,7 @@ public final class z2 extends FrameLayout implements DownloadController.FileDown
                         int i27 = i16;
                         TL_iv.pageBlockVideo pageblockvideo3 = this.L;
                         j4Var = j4Var2;
-                        d3 p5 = l4.p(this.a, this, null, pageblockvideo3.caption.credit, dp, 0, pageblockvideo3, (j4Var2 == null || !j4Var2.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.ex0.a(), 0, this.b);
+                        d3 p5 = l4.p(this.a, this, null, pageblockvideo3.caption.credit, dp, 0, pageblockvideo3, (j4Var2 == null || !j4Var2.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.fx0.a(), 0, this.b);
                         this.d = p5;
                         if (p5 != null) {
                             i16 = this.d.d.getHeight() + AndroidUtilities.dp(4.0f) + i27;

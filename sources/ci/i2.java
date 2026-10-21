@@ -11,12 +11,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.ev0;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.fv0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.cy;
 import org.telegram.ui.tw;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i2 implements Utilities.Callback4 {
     public final /* synthetic */ int a;
@@ -56,9 +56,9 @@ public final /* synthetic */ class i2 implements Utilities.Callback4 {
                         p4Var.a = false;
                         z9Var.setOnReadyListener(new l2(0, currentTimeMillis, runnable));
                         ((r9) q4Var.Q1).g(false);
-                        xj0 xj0Var = q4Var.z0;
-                        if (xj0Var != null) {
-                            xj0Var.setAnimation(q4Var.x1.u);
+                        yj0 yj0Var = q4Var.z0;
+                        if (yj0Var != null) {
+                            yj0Var.setAnimation(q4Var.x1.u);
                         }
                         if (q4Var.R2 > 0 && l4.longValue() > q4Var.R2 - 1400) {
                             l4 = 0L;
@@ -128,10 +128,10 @@ public final /* synthetic */ class i2 implements Utilities.Callback4 {
                 }
                 break;
             case 1:
-                ev0 ev0Var = (ev0) this.b;
+                fv0 fv0Var = (fv0) this.b;
                 org.telegram.ui.i4 i4Var = (org.telegram.ui.i4) this.c;
                 ArrayList arrayList2 = (ArrayList) obj;
-                int i11 = ev0Var.d;
+                int i11 = fv0Var.d;
                 MessagesController.getInstance(i11).putUsers((ArrayList) obj2, true);
                 MessagesController.getInstance(i11).putChats((ArrayList) obj3, true);
                 org.telegram.ui.Components.r5.h(i11).d((ArrayList) obj4);
@@ -140,10 +140,10 @@ public final /* synthetic */ class i2 implements Utilities.Callback4 {
                     if (messageObject.hasValidGroupId() && messageObject.messageOwner.reactions != null) {
                         messageObject.isPrimaryGroupMessage = true;
                     }
-                    messageObject.setQuery(ev0Var.w);
-                    ev0Var.n.add(messageObject);
+                    messageObject.setQuery(fv0Var.w);
+                    fv0Var.n.add(messageObject);
                 }
-                ev0Var.G(true);
+                fv0Var.G(true);
                 AndroidUtilities.runOnUIThread(i4Var, 540L);
                 break;
             default:

@@ -28,9 +28,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i implements org.telegram.ui.Components.wl0 {
+public final /* synthetic */ class i implements org.telegram.ui.Components.xl0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -50,9 +50,9 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.wl0 {
         if (view instanceof org.telegram.ui.Cells.v8) {
             org.telegram.ui.Cells.v8 v8Var = (org.telegram.ui.Cells.v8) view;
             boolean z11 = fv0Var.L;
-            org.telegram.ui.Components.hz0 hz0Var = fv0Var.Q;
-            if (hz0Var != null) {
-                hz0Var.f();
+            org.telegram.ui.Components.iz0 iz0Var = fv0Var.Q;
+            if (iz0Var != null) {
+                iz0Var.f();
             }
             if (fv0Var.I) {
                 int i11 = -fv0Var.O;
@@ -272,7 +272,7 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.wl0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.wl0
+    @Override // org.telegram.ui.Components.xl0
     public final void a(int i10, View view) {
         TLRPC.InputStickerSet tL_inputStickerSetShortName;
         TLRPC.Chat chat;
@@ -352,9 +352,9 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.wl0 {
                 }
                 TLRPC.InputStickerSet inputStickerSet = tL_inputStickerSetShortName;
                 inputStickerSet.access_hash = stickerSetCovered.set.access_hash;
-                org.telegram.ui.Components.py0 py0Var = new org.telegram.ui.Components.py0(pVar.getParentActivity(), pVar, inputStickerSet, null, null, null);
-                py0Var.c0 = new n(pVar, view, stickerSetCovered);
-                pVar.showDialog(py0Var);
+                org.telegram.ui.Components.qy0 qy0Var = new org.telegram.ui.Components.qy0(pVar.getParentActivity(), pVar, inputStickerSet, null, null, null);
+                qy0Var.c0 = new n(pVar, view, stickerSetCovered);
+                pVar.showDialog(qy0Var);
                 return;
             case 2:
                 r4 r4Var = (r4) this.b;
@@ -511,7 +511,7 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.wl0 {
                     reactionsWindow.d();
                 }
                 if (stickerSetCovered2 instanceof TLRPC.TL_stickerSetNoCovered) {
-                    org.telegram.ui.Components.uy0.c(null, etVar.c0, etVar.z.getContext(), new g5(atVar, 9));
+                    org.telegram.ui.Components.vy0.c(null, etVar.c0, etVar.z.getContext(), new g5(atVar, 9));
                     return;
                 }
                 ct ctVar = etVar.l;
@@ -664,7 +664,7 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.wl0 {
                         a02 = org.telegram.ui.Components.xc.a0(n00Var);
                         i11 = R.string.FilterInviteErrorExcluded;
                     }
-                    org.telegram.messenger.kk.q(i11, a02, null);
+                    org.telegram.messenger.mk.q(i11, a02, null);
                     return;
                 }
                 return;
@@ -974,13 +974,13 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.wl0 {
                     }
                     i15 = r10;
                 }
-                PhotoViewer.t1().K2(null, jq0Var, null);
-                PhotoViewer t12 = PhotoViewer.t1();
+                PhotoViewer.u1().M2(null, jq0Var, null);
+                PhotoViewer u12 = PhotoViewer.u1();
                 int i26 = jq0Var.H;
                 boolean z18 = jq0Var.I;
-                t12.h = i26;
-                t12.n = z18;
-                PhotoViewer.t1().g2(arrayList7, i10, i15, jq0Var.l0, jq0Var.x0, jq0Var.U);
+                u12.h = i26;
+                u12.n = z18;
+                PhotoViewer.u1().i2(arrayList7, i10, i15, jq0Var.l0, jq0Var.x0, jq0Var.U);
                 return;
             case 23:
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
@@ -988,14 +988,14 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.wl0 {
                 if (!arrayList9.isEmpty() && (i12 = photoViewer.P4) >= 0 && i12 < arrayList9.size()) {
                     Object obj = arrayList9.get(photoViewer.P4);
                     if (obj instanceof MediaController.MediaEditState) {
-                        ((MediaController.MediaEditState) obj).editedInfo = photoViewer.n1();
+                        ((MediaController.MediaEditState) obj).editedInfo = photoViewer.o1();
                     }
                 }
                 photoViewer.k5 = true;
                 int indexOf = arrayList9.indexOf(view.getTag());
                 if (indexOf >= 0) {
                     photoViewer.P4 = -1;
-                    photoViewer.B2(indexOf);
+                    photoViewer.D2(indexOf);
                 }
                 photoViewer.k5 = false;
                 return;

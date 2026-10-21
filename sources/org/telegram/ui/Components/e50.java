@@ -40,7 +40,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class e50 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.up0 {
     public String E;
@@ -413,7 +413,7 @@ public final class e50 implements NotificationCenter.NotificationCenterDelegate,
             }
             if (i10 == 13) {
                 this.a.getParentActivity().overridePendingTransition(R.anim.alpha_in, R.anim.alpha_out);
-                PhotoViewer.t1().K2(null, this.a, null);
+                PhotoViewer.u1().M2(null, this.a, null);
                 o(this.f, null, AndroidUtilities.getImageOrientation(this.f), false);
                 AndroidUtilities.addMediaToGallery(this.f);
                 this.f = null;
@@ -645,9 +645,9 @@ public final class e50 implements NotificationCenter.NotificationCenterDelegate,
         orientation.isVideo = z10;
         orientation.thumbPath = str2;
         arrayList.add(orientation);
-        PhotoViewer.t1().K2(null, this.a, null);
-        PhotoViewer.t1().g2(arrayList, 0, 1, false, new b50(this, arrayList), null);
-        PhotoViewer.t1().P = true;
+        PhotoViewer.u1().M2(null, this.a, null);
+        PhotoViewer.u1().i2(arrayList, 0, 1, false, new b50(this, arrayList), null);
+        PhotoViewer.u1().P = true;
     }
 
     public final void p(String str, String str2, boolean z10) {

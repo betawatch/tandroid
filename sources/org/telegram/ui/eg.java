@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eg implements q0.a {
     public final /* synthetic */ int a;
@@ -19,12 +19,12 @@ public final /* synthetic */ class eg implements q0.a {
                 qn qnVar = this.b;
                 qnVar.getClass();
                 if (num.intValue() != 0) {
-                    qnVar.Fc(true);
+                    qnVar.Gc(true);
                     qnVar.j(num.intValue(), 0, false, 0, true, 0);
                     break;
                 } else {
                     qnVar.l1 = 0;
-                    qnVar.Fc(true);
+                    qnVar.Gc(true);
                     qnVar.getMessagesController().markReactionsAsRead(qnVar.T5, qnVar.d());
                     break;
                 }
@@ -38,12 +38,12 @@ public final /* synthetic */ class eg implements q0.a {
                     if (i10 <= 0) {
                         qnVar2.getMessagesController().markPollVotesAsRead(qnVar2.T5, qnVar2.d());
                     }
-                    qnVar2.Ec(true);
+                    qnVar2.Fc(true);
                     qnVar2.j(num2.intValue(), 0, false, 0, true, 0);
                     break;
                 } else {
                     qnVar2.m1 = 0;
-                    qnVar2.Ec(true);
+                    qnVar2.Fc(true);
                     qnVar2.getMessagesController().markPollVotesAsRead(qnVar2.T5, qnVar2.d());
                     break;
                 }

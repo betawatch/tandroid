@@ -31,28 +31,28 @@ import org.telegram.ui.Components.NumberTextView;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.cp0;
-import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.dp0;
 import org.telegram.ui.Components.dr;
+import org.telegram.ui.Components.e61;
 import org.telegram.ui.Components.e8;
 import org.telegram.ui.Components.f90;
 import org.telegram.ui.Components.g90;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.iu;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.kb0;
-import org.telegram.ui.Components.pl0;
 import org.telegram.ui.Components.po;
+import org.telegram.ui.Components.ql0;
 import org.telegram.ui.Components.qu;
-import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.v30;
-import org.telegram.ui.Components.vm0;
+import org.telegram.ui.Components.vj0;
 import org.telegram.ui.Components.vz;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.wm0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class j6 {
     public final View a;
@@ -100,8 +100,8 @@ public final class j6 {
             ((View) obj).invalidate();
         }
         String str = this.g;
-        if (str != null && (obj instanceof xj0)) {
-            ((xj0) obj).h(i10, str);
+        if (str != null && (obj instanceof yj0)) {
+            ((yj0) obj).h(i10, str);
         }
         int i11 = this.k;
         if ((131072 & i11) != 0 && z10) {
@@ -168,12 +168,12 @@ public final class j6 {
             CharSequence text = textView.getText();
             if (text instanceof SpannedString) {
                 SpannedString spannedString = (SpannedString) text;
-                d61[] d61VarArr = (d61[]) spannedString.getSpans(0, spannedString.length(), d61.class);
-                if (d61VarArr == null || d61VarArr.length <= 0) {
+                e61[] e61VarArr = (e61[]) spannedString.getSpans(0, spannedString.length(), e61.class);
+                if (e61VarArr == null || e61VarArr.length <= 0) {
                     return;
                 }
-                for (d61 d61Var : d61VarArr) {
-                    d61Var.b = i10;
+                for (e61 e61Var : e61VarArr) {
+                    e61Var.b = i10;
                 }
                 return;
             }
@@ -300,12 +300,12 @@ public final class j6 {
             view.invalidate();
             return;
         }
-        if (obj instanceof cp0) {
+        if (obj instanceof dp0) {
             if ((i11 & 2048) != 0) {
-                ((cp0) obj).setOuterColor(i10);
+                ((dp0) obj).setOuterColor(i10);
                 return;
             } else {
-                ((cp0) obj).setInnerColor(i10);
+                ((dp0) obj).setInnerColor(i10);
                 return;
             }
         }
@@ -319,10 +319,10 @@ public final class j6 {
                         CharSequence text2 = textView2.getText();
                         if (text2 instanceof SpannedString) {
                             SpannedString spannedString2 = (SpannedString) text2;
-                            d61[] d61VarArr2 = (d61[]) spannedString2.getSpans(0, spannedString2.length(), d61.class);
-                            if (d61VarArr2 != null && d61VarArr2.length > 0) {
-                                for (d61 d61Var2 : d61VarArr2) {
-                                    d61Var2.b = i10;
+                            e61[] e61VarArr2 = (e61[]) spannedString2.getSpans(0, spannedString2.length(), e61.class);
+                            if (e61VarArr2 != null && e61VarArr2.length > 0) {
+                                for (e61 e61Var2 : e61VarArr2) {
+                                    e61Var2.b = i10;
                                 }
                             }
                         }
@@ -342,10 +342,10 @@ public final class j6 {
                             CharSequence text3 = textView3.getText();
                             if (text3 instanceof SpannedString) {
                                 SpannedString spannedString3 = (SpannedString) text3;
-                                d61[] d61VarArr3 = (d61[]) spannedString3.getSpans(0, spannedString3.length(), d61.class);
-                                if (d61VarArr3 != null && d61VarArr3.length > 0) {
-                                    for (d61 d61Var3 : d61VarArr3) {
-                                        d61Var3.b = i10;
+                                e61[] e61VarArr3 = (e61[]) spannedString3.getSpans(0, spannedString3.length(), e61.class);
+                                if (e61VarArr3 != null && e61VarArr3.length > 0) {
+                                    for (e61 e61Var3 : e61VarArr3) {
+                                        e61Var3.b = i10;
                                     }
                                 }
                             }
@@ -470,7 +470,7 @@ public final class j6 {
     }
 
     public final void e(int i10, boolean z10, boolean z11) {
-        pl0 pl0Var;
+        ql0 ql0Var;
         Drawable[] compoundDrawables;
         int i11 = this.f;
         if (z11) {
@@ -499,12 +499,12 @@ public final class j6 {
                 if (drawable != null) {
                     if (drawable instanceof g2) {
                         ((g2) drawable).a(i10);
-                    } else if (drawable instanceof vm0) {
-                        ((vm0) drawable).b(i10);
-                    } else if (drawable instanceof uj0) {
+                    } else if (drawable instanceof wm0) {
+                        ((wm0) drawable).b(i10);
+                    } else if (drawable instanceof vj0) {
                         String str = this.g;
                         if (str != null) {
-                            ((uj0) drawable).Q(i10, str);
+                            ((vj0) drawable).Q(i10, str);
                         }
                     } else if (drawable instanceof zq) {
                         if ((i13 & 32) != 0) {
@@ -612,8 +612,8 @@ public final class j6 {
             }
         } else if (view instanceof dr) {
             ((dr) view).b();
-        } else if ((view instanceof cp0) && (i13 & 2048) != 0) {
-            ((cp0) view).setOuterColor(i10);
+        } else if ((view instanceof dp0) && (i13 & 2048) != 0) {
+            ((dp0) view).setOuterColor(i10);
         }
         if ((i13 & 4) != 0 && ((i13 & 262144) == 0 || b(i11, view))) {
             if (view instanceof TextView) {
@@ -668,32 +668,32 @@ public final class j6 {
         if ((view instanceof z4.g) && (i13 & 32768) != 0) {
             AndroidUtilities.setViewPagerEdgeEffectColor((z4.g) view, i10);
         }
-        boolean z12 = view instanceof im0;
+        boolean z12 = view instanceof jm0;
         if (z12) {
-            im0 im0Var = (im0) view;
+            jm0 jm0Var = (jm0) view;
             if ((i13 & 4096) != 0) {
-                im0Var.setListSelectorColor(Integer.valueOf(i10));
+                jm0Var.setListSelectorColor(Integer.valueOf(i10));
             }
-            if ((33554432 & i13) != 0 && (pl0Var = im0Var.d1) != null) {
-                pl0Var.c();
+            if ((33554432 & i13) != 0 && (ql0Var = jm0Var.d1) != null) {
+                ql0Var.c();
             }
             if ((32768 & i13) != 0) {
-                im0Var.setGlowColor(i10);
+                jm0Var.setGlowColor(i10);
             }
             if ((524288 & i13) != 0) {
-                ArrayList<View> headers = im0Var.getHeaders();
+                ArrayList<View> headers = jm0Var.getHeaders();
                 if (headers != null) {
                     for (int i15 = 0; i15 < headers.size(); i15++) {
                         d(i10, headers.get(i15));
                     }
                 }
-                ArrayList<View> headersCache = im0Var.getHeadersCache();
+                ArrayList<View> headersCache = jm0Var.getHeadersCache();
                 if (headersCache != null) {
                     for (int i16 = 0; i16 < headersCache.size(); i16++) {
                         d(i10, headersCache.get(i16));
                     }
                 }
-                View pinnedHeader = im0Var.getPinnedHeader();
+                View pinnedHeader = jm0Var.getPinnedHeader();
                 if (pinnedHeader != null) {
                     d(i10, pinnedHeader);
                 }
@@ -707,19 +707,19 @@ public final class j6 {
         }
         if (clsArr != null) {
             if (z12) {
-                im0 im0Var2 = (im0) view;
-                im0Var2.getRecycledViewPool().a();
-                int hiddenChildCount = im0Var2.getHiddenChildCount();
+                jm0 jm0Var2 = (jm0) view;
+                jm0Var2.getRecycledViewPool().a();
+                int hiddenChildCount = jm0Var2.getHiddenChildCount();
                 for (int i17 = 0; i17 < hiddenChildCount; i17++) {
-                    d(i10, im0Var2.V(i17));
+                    d(i10, jm0Var2.V(i17));
                 }
-                int cachedChildCount = im0Var2.getCachedChildCount();
+                int cachedChildCount = jm0Var2.getCachedChildCount();
                 for (int i18 = 0; i18 < cachedChildCount; i18++) {
-                    d(i10, im0Var2.P(i18));
+                    d(i10, jm0Var2.P(i18));
                 }
-                int attachedScrapChildCount = im0Var2.getAttachedScrapChildCount();
+                int attachedScrapChildCount = jm0Var2.getAttachedScrapChildCount();
                 for (int i19 = 0; i19 < attachedScrapChildCount; i19++) {
-                    d(i10, im0Var2.O(i19));
+                    d(i10, jm0Var2.O(i19));
                 }
             }
             if (view instanceof ViewGroup) {
@@ -757,12 +757,12 @@ public final class j6 {
         }
     }
 
-    public j6(View view, Class[] clsArr, uj0[] uj0VarArr, String str, int i10) {
+    public j6(View view, Class[] clsArr, vj0[] vj0VarArr, String str, int i10) {
         this.b = -1;
         this.j = new boolean[1];
         this.f = i10;
         this.g = str;
-        this.d = uj0VarArr;
+        this.d = vj0VarArr;
         this.a = view;
         this.k = 0;
         this.e = clsArr;

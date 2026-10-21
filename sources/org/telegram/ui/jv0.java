@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_fragment;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jv0 implements Runnable {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class jv0 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         int i10;
-        org.telegram.messenger.o8 o8Var;
+        org.telegram.messenger.q8 q8Var;
         int i11;
         ArrayList arrayList;
         String str;
@@ -158,8 +158,8 @@ public final /* synthetic */ class jv0 implements Runnable {
                 break;
             case 14:
                 ProfileActivity profileActivity7 = (ProfileActivity) obj2;
-                if (!((boolean[]) obj)[0] && (o8Var = profileActivity7.z5) != null) {
-                    o8Var.run();
+                if (!((boolean[]) obj)[0] && (q8Var = profileActivity7.z5) != null) {
+                    q8Var.run();
                 }
                 profileActivity7.z5 = null;
                 break;
@@ -365,7 +365,7 @@ public final /* synthetic */ class jv0 implements Runnable {
                 break;
             case 26:
                 org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) obj2).c(LocaleController.getString(R.string.AdHidden)).j();
-                AndroidUtilities.runOnUIThread((org.telegram.ui.Components.go0) obj);
+                AndroidUtilities.runOnUIThread((org.telegram.ui.Components.ho0) obj);
                 break;
             case 27:
                 ((SecretMediaViewer) obj2).M = false;
@@ -387,9 +387,9 @@ public final /* synthetic */ class jv0 implements Runnable {
         }
     }
 
-    public /* synthetic */ jv0(org.telegram.ui.Components.er0 er0Var, a0.h hVar, int i10, int i11) {
+    public /* synthetic */ jv0(org.telegram.ui.Components.fr0 fr0Var, a0.h hVar, int i10, int i11) {
         this.a = i11;
-        this.b = er0Var;
+        this.b = fr0Var;
         this.c = hVar;
     }
 }

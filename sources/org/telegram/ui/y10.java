@@ -20,7 +20,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class y10 extends org.telegram.ui.ActionBar.n2 {
     public int E;
@@ -36,7 +36,7 @@ public abstract class y10 extends org.telegram.ui.ActionBar.n2 {
     public int O;
     public final u10 a;
     public final u10 b;
-    public org.telegram.ui.Components.im0 c;
+    public org.telegram.ui.Components.jm0 c;
     public Drawable d;
     public sg.x1 e;
     public boolean f;
@@ -82,7 +82,7 @@ public abstract class y10 extends org.telegram.ui.ActionBar.n2 {
             this.actionBar.setOccupyStatusBar(false);
         }
         this.actionBar.setAddToContainer(false);
-        this.c = new org.telegram.ui.Components.im0(context, null);
+        this.c = new org.telegram.ui.Components.jm0(context, null);
         if (this.G) {
             this.F = new org.telegram.ui.Components.yz(this.c, (AndroidUtilities.dp(68.0f) + this.I) - AndroidUtilities.dp(16.0f));
         } else {
@@ -95,14 +95,14 @@ public abstract class y10 extends org.telegram.ui.ActionBar.n2 {
         }
         s4.g0 n02 = n0();
         this.c.setAdapter(n02);
-        if (n02 instanceof org.telegram.ui.Components.t61) {
-            org.telegram.ui.Components.im0 im0Var = this.c;
+        if (n02 instanceof org.telegram.ui.Components.u61) {
+            org.telegram.ui.Components.jm0 jm0Var = this.c;
             t10 t10Var = new t10(this, 0);
             int dp = AndroidUtilities.dp(12.0f);
             float dp2 = AndroidUtilities.dp(16.0f);
-            org.telegram.ui.Components.im0 im0Var2 = this.c;
-            Objects.requireNonNull(im0Var2);
-            im0Var.r1(t10Var, dp, dp2, new ut(im0Var2, 10), true);
+            org.telegram.ui.Components.jm0 jm0Var2 = this.c;
+            Objects.requireNonNull(jm0Var2);
+            jm0Var.r1(t10Var, dp, dp2, new ut(jm0Var2, 10), true);
         } else {
             this.c.setSections(true);
         }
@@ -152,12 +152,12 @@ public abstract class y10 extends org.telegram.ui.ActionBar.n2 {
     }
 
     public final void l0() {
-        org.telegram.ui.Components.im0 im0Var = this.c;
-        if (im0Var == null || this.F == null || this.N < 0) {
+        org.telegram.ui.Components.jm0 jm0Var = this.c;
+        if (jm0Var == null || this.F == null || this.N < 0) {
             return;
         }
         int i10 = this.O;
-        im0Var.K(0);
+        jm0Var.K(0);
         this.F.h1(this.N, i10);
         this.N = -1;
     }
@@ -243,8 +243,8 @@ public abstract class y10 extends org.telegram.ui.ActionBar.n2 {
     public final void t0() {
         View view;
         int i10;
-        org.telegram.ui.Components.im0 im0Var = this.c;
-        if (im0Var == null || im0Var.getChildCount() <= 0) {
+        org.telegram.ui.Components.jm0 jm0Var = this.c;
+        if (jm0Var == null || jm0Var.getChildCount() <= 0) {
             return;
         }
         int i11 = 0;

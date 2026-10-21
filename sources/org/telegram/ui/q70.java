@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class q70 extends ViewGroup {
     public AnimatorSet a;
@@ -44,7 +44,7 @@ public final class q70 extends ViewGroup {
         this.b = false;
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.a = animatorSet2;
-        animatorSet2.addListener(new org.telegram.ui.Components.ml0(8, this, v30Var));
+        animatorSet2.addListener(new org.telegram.ui.Components.nl0(8, this, v30Var));
         this.a.setInterpolator(org.telegram.ui.Components.bs.h);
         this.a.setDuration(320L);
         this.e = v30Var;
@@ -129,7 +129,7 @@ public final class q70 extends ViewGroup {
             A = AndroidUtilities.dp(372.0f) / 3;
         } else {
             Point point = AndroidUtilities.displaySize;
-            A = org.telegram.messenger.kk.A(158.0f, Math.min(point.x, point.y), 3);
+            A = org.telegram.messenger.mk.A(158.0f, Math.min(point.x, point.y), 3);
         }
         int dp5 = i13 > 0 ? AndroidUtilities.dp(34.0f) + i13 : 0;
         r70 r70Var = this.h;
@@ -167,7 +167,7 @@ public final class q70 extends ViewGroup {
             float f12 = 0.0f;
             ViewPropertyAnimator scaleY = p70Var.c.animate().alpha(z12 ? 1.0f : 0.0f).scaleX(z12 ? 1.0f : 0.5f).scaleY(z12 ? 1.0f : 0.5f);
             org.telegram.ui.Components.bs bsVar = org.telegram.ui.Components.bs.h;
-            org.telegram.messenger.kk.t(scaleY, bsVar, 320L);
+            org.telegram.messenger.mk.t(scaleY, bsVar, 320L);
             ViewPropertyAnimator translationY = p70Var.d.animate().translationY(z11 ? ((p70Var.getHeight() - p70Var.getPaddingTop()) - p70Var.getPaddingBottom()) - AndroidUtilities.dp(44.0f) : b10);
             if (z11) {
                 f12 = AndroidUtilities.dp(-36.0f);

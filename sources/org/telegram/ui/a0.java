@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -84,10 +84,10 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                 }
                 break;
             case 2:
-                org.telegram.ui.Components.mk0 mk0Var = (org.telegram.ui.Components.mk0) obj3;
+                org.telegram.ui.Components.nk0 nk0Var = (org.telegram.ui.Components.nk0) obj3;
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) obj2;
                 int[] iArr = (int[]) obj;
-                if (mk0Var == null || mk0Var.w) {
+                if (nk0Var == null || nk0Var.w) {
                     actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(iArr[0]);
                     break;
                 }
@@ -140,7 +140,7 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                 MessageObject messageObject2 = (MessageObject) obj2;
                 PhotoViewer photoViewer = ((jr) obj3).c.a;
                 Drawable[] drawableArr = PhotoViewer.U8;
-                ArrayList arrayList = ((org.telegram.ui.Components.x71) obj).d;
+                ArrayList arrayList = ((org.telegram.ui.Components.y71) obj).d;
                 if (arrayList.isEmpty()) {
                     document = null;
                 } else {
@@ -150,21 +150,21 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                         if (i13 < size) {
                             Object obj4 = arrayList.get(i13);
                             i13++;
-                            org.telegram.ui.Components.z71 z71Var = (org.telegram.ui.Components.z71) obj4;
-                            if (z71Var.b()) {
-                                document = z71Var.g;
+                            org.telegram.ui.Components.a81 a81Var = (org.telegram.ui.Components.a81) obj4;
+                            if (a81Var.b()) {
+                                document = a81Var.g;
                             }
                         } else {
                             long j11 = Long.MAX_VALUE;
-                            org.telegram.ui.Components.z71 z71Var2 = null;
+                            org.telegram.ui.Components.a81 a81Var2 = null;
                             for (int i14 = 0; i14 < arrayList.size(); i14++) {
-                                org.telegram.ui.Components.z71 z71Var3 = (org.telegram.ui.Components.z71) arrayList.get(i14);
-                                if (z71Var3.k < j11 && org.telegram.ui.Components.b81.Y(z71Var3.m)) {
-                                    j11 = z71Var3.k;
-                                    z71Var2 = z71Var3;
+                                org.telegram.ui.Components.a81 a81Var3 = (org.telegram.ui.Components.a81) arrayList.get(i14);
+                                if (a81Var3.k < j11 && org.telegram.ui.Components.c81.Y(a81Var3.m)) {
+                                    j11 = a81Var3.k;
+                                    a81Var2 = a81Var3;
                                 }
                             }
-                            document = z71Var2 != null ? z71Var2.g : ((org.telegram.ui.Components.z71) arrayList.get(0)).g;
+                            document = a81Var2 != null ? a81Var2.g : ((org.telegram.ui.Components.a81) arrayList.get(0)).g;
                         }
                     }
                 }

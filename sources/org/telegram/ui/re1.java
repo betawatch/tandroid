@@ -55,7 +55,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.NumberTextView;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class re1 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.bh, mg0 {
     public static final HashSet n1 = new HashSet();
@@ -76,8 +76,8 @@ public class re1 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
     public TLRPC.ChatFull J;
     public boolean J0;
     public boolean K;
-    public org.telegram.ui.Components.nl0 K0;
-    public org.telegram.ui.Components.c71 L;
+    public org.telegram.ui.Components.ol0 K0;
+    public org.telegram.ui.Components.d71 L;
     public cy L0;
     public int M;
     public cy M0;
@@ -109,7 +109,7 @@ public class re1 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
     public boolean Z0;
     public final long a;
     public final HashSet a0;
-    public org.telegram.ui.Components.c91 a1;
+    public org.telegram.ui.Components.d91 a1;
     public final ArrayList b;
     public boolean b0;
     public View b1;
@@ -391,7 +391,7 @@ public class re1 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         }
         int i10 = 0;
         if (re1Var.a1 == null) {
-            org.telegram.ui.Components.c91 n10 = re1Var.r0.n(8, false);
+            org.telegram.ui.Components.d91 n10 = re1Var.r0.n(8, false);
             re1Var.a1 = n10;
             if (re1Var.M0 != null) {
                 n10.setBackgroundColor(re1Var.getThemedColor(org.telegram.ui.ActionBar.h6.d6));
@@ -421,7 +421,7 @@ public class re1 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
     }
 
     @Override // org.telegram.ui.Components.bh
-    public final org.telegram.ui.Components.kw0 A() {
+    public final org.telegram.ui.Components.lw0 A() {
         return this.d;
     }
 
@@ -1124,9 +1124,9 @@ public class re1 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         float f10 = 1.0f - f7;
         this.f.getTitleTextView().setAlpha(f10);
         this.f.getSubtitleTextView().setAlpha(f10);
-        org.telegram.ui.Components.c91 c91Var = this.a1;
-        if (c91Var != null) {
-            c91Var.setTranslationY((-AndroidUtilities.dp(16.0f)) * f10);
+        org.telegram.ui.Components.d91 d91Var = this.a1;
+        if (d91Var != null) {
+            d91Var.setTranslationY((-AndroidUtilities.dp(16.0f)) * f10);
             this.a1.setAlpha(f7);
         }
         this.r0.setTranslationY((-AndroidUtilities.dp(16.0f)) * f10);
@@ -1361,7 +1361,7 @@ public class re1 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         this.q0.e(1, R.drawable.msg_discussion, LocaleController.getString(R.string.TopicViewAsMessages));
         this.R = this.q0.e(2, R.drawable.msg_addcontact, LocaleController.getString(R.string.AddMember));
         org.telegram.ui.ActionBar.u0 u0Var = this.q0;
-        this.T = u0Var.d(14, 0, new org.telegram.ui.Components.uj0(R.raw.boosts, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f)), LocaleController.getString(R.string.BoostingBoostGroupMenu), true, false, u0Var.m0);
+        this.T = u0Var.d(14, 0, new org.telegram.ui.Components.vj0(R.raw.boosts, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f)), LocaleController.getString(R.string.BoostingBoostGroupMenu), true, false, u0Var.m0);
         int i14 = 3;
         this.Q = this.q0.e(3, R.drawable.msg_topic_create, LocaleController.getString(R.string.CreateTopic));
         this.U = this.q0.e(15, R.drawable.msg_report, LocaleController.getString(R.string.ReportChat));
@@ -1414,9 +1414,9 @@ public class re1 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         ce1 ce1Var4 = this.N;
         ce1Var4.W1 = true;
         ce1Var4.X1 = 0;
-        org.telegram.ui.Components.nl0 nl0Var = new org.telegram.ui.Components.nl0(ce1Var4, true);
-        this.K0 = nl0Var;
-        this.N.setItemsEnterAnimator(nl0Var);
+        org.telegram.ui.Components.ol0 ol0Var = new org.telegram.ui.Components.ol0(ce1Var4, true);
+        this.K0 = ol0Var;
+        this.N.setItemsEnterAnimator(ol0Var);
         this.N.setOnItemClickListener(new f11(this, 10));
         this.N.setOnItemLongClickListener(new qd1(this));
         this.N.setOnScrollListener(new ud1(this, i12));
@@ -1521,9 +1521,9 @@ public class re1 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         this.d.addView(this.n);
         this.N.setEmptyView(this.n);
         this.o0 = new j41(context, 6);
-        org.telegram.ui.Components.c71 c71Var = new org.telegram.ui.Components.c71(context);
-        this.L = c71Var;
-        this.o0.addView(c71Var);
+        org.telegram.ui.Components.d71 d71Var = new org.telegram.ui.Components.d71(context);
+        this.L = d71Var;
+        this.o0.addView(d71Var);
         this.d.addView(this.o0, w7.z5.e(-1, 51, 80));
         this.L.setOnClickListener(new wd1(this));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
@@ -1833,7 +1833,7 @@ public class re1 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
 
     @Override // org.telegram.ui.ActionBar.n2
     public final ArrayList getThemeDescriptions() {
-        org.telegram.ui.Components.im0 im0Var;
+        org.telegram.ui.Components.jm0 jm0Var;
         zx0 zx0Var = new zx0(8, this);
         ArrayList arrayList = new ArrayList();
         View view = this.fragmentView;
@@ -1845,8 +1845,8 @@ public class re1 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.actionBar, 128, null, null, null, null, org.telegram.ui.ActionBar.h6.A8));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.actionBar, 256, null, null, null, null, org.telegram.ui.ActionBar.h6.t8));
         ne1 ne1Var = this.r0;
-        if (ne1Var != null && (im0Var = ne1Var.U) != null) {
-            org.telegram.ui.Cells.u3.a(arrayList, im0Var);
+        if (ne1Var != null && (jm0Var = ne1Var.U) != null) {
+            org.telegram.ui.Cells.u3.a(arrayList, jm0Var);
         }
         return arrayList;
     }

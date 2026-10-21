@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class f2 extends FrameLayout implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.m9 {
     public boolean E;
@@ -319,7 +319,7 @@ public final class f2 extends FrameLayout implements DownloadController.FileDown
                     } else {
                         i15 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(i22 * 14);
                         this.s = i15;
-                        i14 = org.telegram.messenger.kk.y(18.0f, i15, i12);
+                        i14 = org.telegram.messenger.mk.y(18.0f, i15, i12);
                         dp = i14;
                     }
                     TLRPC.Photo photo = this.L;
@@ -447,7 +447,7 @@ public final class f2 extends FrameLayout implements DownloadController.FileDown
                         int i29 = i16;
                         TL_iv.pageBlockPhoto pageblockphoto3 = this.N;
                         j4Var = j4Var2;
-                        d3 p5 = l4.p(this.a, this, null, pageblockphoto3.caption.credit, dp, this.v + this.w, pageblockphoto3, (j4Var2 == null || !j4Var2.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.ex0.a(), 0, this.b);
+                        d3 p5 = l4.p(this.a, this, null, pageblockphoto3.caption.credit, dp, this.v + this.w, pageblockphoto3, (j4Var2 == null || !j4Var2.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.fx0.a(), 0, this.b);
                         this.d = p5;
                         i16 = p5 != null ? this.d.d.getHeight() + AndroidUtilities.dp(4.0f) + i29 : i29;
                     } else {

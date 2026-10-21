@@ -3,12 +3,12 @@ package org.telegram.ui.Cells;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ba0;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.cy;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
@@ -48,11 +48,11 @@ public final /* synthetic */ class g implements Runnable {
                 break;
             case 5:
                 h6 h6Var = (h6) this.b;
-                if (!(h6Var.getParent() instanceof im0)) {
+                if (!(h6Var.getParent() instanceof jm0)) {
                     h6Var.callOnClick();
                     break;
                 } else {
-                    ((im0) h6Var.getParent()).getOnItemClickListener().a(RecyclerView.R(h6Var), h6Var);
+                    ((jm0) h6Var.getParent()).getOnItemClickListener().a(RecyclerView.R(h6Var), h6Var);
                     break;
                 }
             case 6:

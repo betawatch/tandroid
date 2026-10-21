@@ -29,7 +29,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class s00 extends FrameLayout {
     public static final /* synthetic */ int A0 = 0;
@@ -519,7 +519,7 @@ public abstract class s00 extends FrameLayout {
         return this.j0.get(getTabsCount() - 1, 0);
     }
 
-    public im0 getListView() {
+    public jm0 getListView() {
         return this.F;
     }
 
@@ -531,7 +531,7 @@ public abstract class s00 extends FrameLayout {
         return this.T;
     }
 
-    public im0 getTabsContainer() {
+    public jm0 getTabsContainer() {
         return this.F;
     }
 

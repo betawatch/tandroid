@@ -16,9 +16,9 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mx0 implements org.telegram.ui.Components.cx0, org.telegram.ui.ActionBar.a2, MessagesStorage.BooleanCallback, r0.n, org.telegram.ui.Components.xh0, org.telegram.ui.Components.yl0, FlagSecureReason.FlagSecureCondition, ne.d, g60 {
+public final /* synthetic */ class mx0 implements org.telegram.ui.Components.dx0, org.telegram.ui.ActionBar.a2, MessagesStorage.BooleanCallback, r0.n, org.telegram.ui.Components.yh0, org.telegram.ui.Components.zl0, FlagSecureReason.FlagSecureCondition, ne.d, g60 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ProfileActivity b;
 
@@ -44,15 +44,15 @@ public final /* synthetic */ class mx0 implements org.telegram.ui.Components.cx0
         nz0 nz0Var = profileActivity.O;
         if (nz0Var != null) {
             nz0Var.setPagesPaddingBottom(profileActivity.p6 + profileActivity.n6);
-            org.telegram.ui.Components.js0 js0Var = profileActivity.O.V;
-            if (js0Var != null) {
-                js0Var.setButtonOffset(profileActivity.p6 + profileActivity.o6);
+            org.telegram.ui.Components.ks0 ks0Var = profileActivity.O.V;
+            if (ks0Var != null) {
+                ks0Var.setButtonOffset(profileActivity.p6 + profileActivity.o6);
             }
         }
         return r0.k1.b;
     }
 
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.zl0
     public boolean a(int i10, View view) {
         ProfileActivity profileActivity = this.b;
         m01 m01Var = profileActivity.e;

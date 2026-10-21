@@ -15,15 +15,15 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.yj0;
+import org.telegram.ui.Components.zj0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class m4 extends FrameLayout {
     public final k4 a;
     public final l4 b;
     public final TextView[] c;
-    public yj0 d;
+    public zj0 d;
     public final o4 e;
     public Paint f;
     public float h;
@@ -88,12 +88,12 @@ public final class m4 extends FrameLayout {
             }
             z11 = false;
         }
-        yj0 yj0Var = this.d;
+        zj0 zj0Var = this.d;
         k4 k4Var = this.a;
-        if (yj0Var == null) {
-            yj0 yj0Var2 = new yj0(k4Var);
-            this.d = yj0Var2;
-            yj0Var2.d(null, true, false);
+        if (zj0Var == null) {
+            zj0 zj0Var2 = new zj0(k4Var);
+            this.d = zj0Var2;
+            zj0Var2.d(null, true, false);
         }
         this.d.q = 0;
         ImageReceiver imageReceiver = k4Var.getImageReceiver();
@@ -107,9 +107,9 @@ public final class m4 extends FrameLayout {
             if (f7 != 1.0f) {
                 Paint t10 = d8.t(imageReceiver, false);
                 t10.setAlpha((int) (this.h * 255.0f));
-                yj0 yj0Var3 = this.d;
-                yj0Var3.t = t10;
-                yj0Var3.a(canvas);
+                zj0 zj0Var3 = this.d;
+                zj0Var3.t = t10;
+                zj0Var3.a(canvas);
             }
             if (this.f == null) {
                 Paint paint = new Paint(1);
@@ -120,9 +120,9 @@ public final class m4 extends FrameLayout {
                 this.f.setStrokeCap(Paint.Cap.ROUND);
             }
             this.f.setAlpha((int) (255.0f * f7 * this.h));
-            yj0 yj0Var4 = this.d;
-            yj0Var4.t = this.f;
-            yj0Var4.a(canvas);
+            zj0 zj0Var4 = this.d;
+            zj0Var4.t = this.f;
+            zj0Var4.a(canvas);
         }
     }
 

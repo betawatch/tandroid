@@ -1,33 +1,26 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class h6 implements RequestDelegate {
+public final /* synthetic */ class h6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
+    public final /* synthetic */ MediaController b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ h6(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10, int i11, int i12) {
-        this.a = i12;
-        this.d = notificationCenterDelegate;
-        this.b = i10;
-        this.c = i11;
+    public /* synthetic */ h6(MediaController mediaController, boolean z10, int i10) {
+        this.a = i10;
+        this.b = mediaController;
+        this.c = z10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaController) this.d).lambda$loadMoreMusic$12(this.b, this.c, tLObject, tL_error);
+                this.b.lambda$toggleRecordingPause$29(this.c);
                 break;
             default:
-                ((MessagesController) this.d).lambda$getDifference$358(this.b, this.c, tLObject, tL_error);
+                this.b.lambda$toggleRecordingPause$33(this.c);
                 break;
         }
     }

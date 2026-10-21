@@ -21,9 +21,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class ay extends hm0 {
+public final class ay extends im0 {
     public int E;
     public final /* synthetic */ tz F;
     public ArrayList h;
@@ -43,7 +43,7 @@ public final class ay extends hm0 {
         this.F = tzVar;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         int i10 = b1Var.f;
         return i10 == 0 || i10 == 4 || i10 == 3 || i10 == 6;
@@ -787,6 +787,6 @@ public final class ay extends hm0 {
             n8Var.setOnIconClickListener(new f0(this, 13));
             view = n8Var;
         }
-        return new sl0(view);
+        return new tl0(view);
     }
 }

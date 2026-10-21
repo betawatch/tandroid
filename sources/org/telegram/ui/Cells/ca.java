@@ -9,11 +9,11 @@ import org.telegram.ui.Components.i30;
 import org.telegram.ui.Components.m30;
 import org.telegram.ui.Components.o30;
 import org.telegram.ui.Components.t50;
-import org.telegram.ui.Components.t71;
-import org.telegram.ui.Components.v91;
+import org.telegram.ui.Components.u71;
 import org.telegram.ui.Components.vu;
+import org.telegram.ui.Components.w91;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ca implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -90,20 +90,20 @@ public final class ca implements ViewTreeObserver.OnPreDrawListener {
                 ((ei.g6) obj).invalidate();
                 break;
             default:
-                v91 v91Var = (v91) ((t50) obj).b;
-                v91Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
-                ImageView imageView = v91Var.e;
+                w91 w91Var = (w91) ((t50) obj).b;
+                w91Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
+                ImageView imageView = w91Var.e;
                 if (imageView != null) {
                     imageView.setVisibility(4);
-                    v91Var.e.setImageDrawable(null);
-                    Bitmap bitmap = v91Var.h;
+                    w91Var.e.setImageDrawable(null);
+                    Bitmap bitmap = w91Var.h;
                     if (bitmap != null) {
                         bitmap.recycle();
-                        v91Var.h = null;
+                        w91Var.h = null;
                     }
                 }
-                AndroidUtilities.runOnUIThread(new t71(this, i11));
-                v91Var.r = 0;
+                AndroidUtilities.runOnUIThread(new u71(this, i11));
+                w91Var.r = 0;
                 break;
         }
         return true;

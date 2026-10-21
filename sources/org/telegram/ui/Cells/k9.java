@@ -11,10 +11,10 @@ import org.telegram.messenger.LanguageDetector;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.s41;
+import org.telegram.ui.Components.t41;
 import org.telegram.ui.r21;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class k9 implements ActionMode.Callback {
     public String a = null;
@@ -41,7 +41,7 @@ public final class k9 implements ActionMode.Callback {
         if (aaVar.x()) {
             int itemId = menuItem.getItemId();
             if (itemId == 16908321) {
-                if (aaVar.x()) {
+                if (aaVar.x() && aaVar.b()) {
                     if (!aaVar.C()) {
                         CharSequence r10 = aaVar.r();
                         if (r10 != null) {
@@ -66,7 +66,7 @@ public final class k9 implements ActionMode.Callback {
                             String str = this.a;
                             g gVar2 = new g(this, 8);
                             org.telegram.ui.l4 l4Var = tVar.a;
-                            s41.L(l4Var.L, l4Var.M, str, language, r11, null, gVar2);
+                            t41.L(l4Var.L, l4Var.M, str, language, r11, null, gVar2);
                         }
                         aaVar.u();
                         return true;

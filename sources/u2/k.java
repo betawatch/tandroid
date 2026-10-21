@@ -3,13 +3,13 @@ package u2;
 import j$.util.Objects;
 import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArrayList;
-import org.telegram.messenger.hk;
+import org.telegram.messenger.jk;
 import org.telegram.ui.Components.ry;
 import org.telegram.ui.fa;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final class k implements k0, n2.l {
+public final class k implements l0, n2.l {
     public final Object a;
     public a5.a b;
     public n2.k c;
@@ -43,7 +43,7 @@ public final class k implements k0, n2.l {
         }
     }
 
-    @Override // u2.k0
+    @Override // u2.l0
     public final void d(int i10, g0 g0Var, c0 c0Var) {
         if (l(i10, g0Var)) {
             a5.a aVar = this.b;
@@ -54,7 +54,7 @@ public final class k implements k0, n2.l {
         }
     }
 
-    @Override // u2.k0
+    @Override // u2.l0
     public final void e(int i10, g0 g0Var, c0 c0Var) {
         if (l(i10, g0Var)) {
             a5.a aVar = this.b;
@@ -64,7 +64,7 @@ public final class k implements k0, n2.l {
         }
     }
 
-    @Override // u2.k0
+    @Override // u2.l0
     public final void f(int i10, g0 g0Var, u uVar, c0 c0Var) {
         if (l(i10, g0Var)) {
             a5.a aVar = this.b;
@@ -74,13 +74,13 @@ public final class k implements k0, n2.l {
         }
     }
 
-    @Override // u2.k0
+    @Override // u2.l0
     public final void g(int i10, g0 g0Var, u uVar, c0 c0Var, IOException iOException, boolean z10) {
         if (l(i10, g0Var)) {
             a5.a aVar = this.b;
             c0 m10 = m(c0Var, g0Var);
             aVar.getClass();
-            aVar.l(new hk(aVar, uVar, m10, iOException, z10));
+            aVar.l(new jk(aVar, uVar, m10, iOException, z10));
         }
     }
 
@@ -91,7 +91,7 @@ public final class k implements k0, n2.l {
         }
     }
 
-    @Override // u2.k0
+    @Override // u2.l0
     public final void i(int i10, g0 g0Var, u uVar, c0 c0Var, int i11) {
         if (l(i10, g0Var)) {
             a5.a aVar = this.b;
@@ -108,7 +108,7 @@ public final class k implements k0, n2.l {
         }
     }
 
-    @Override // u2.k0
+    @Override // u2.l0
     public final void k(int i10, g0 g0Var, u uVar, c0 c0Var) {
         if (l(i10, g0Var)) {
             a5.a aVar = this.b;

@@ -34,12 +34,12 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.s10;
 import v7.f7;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class w3 extends View {
     public float E;
@@ -73,7 +73,7 @@ public final class w3 extends View {
     public final RectF e0;
     public final org.telegram.ui.Components.f6 f;
     public final Path f0;
-    public e11 g0;
+    public f11 g0;
     public final OverScroller h;
     public boolean h0;
     public org.telegram.ui.Cells.z i0;
@@ -558,7 +558,7 @@ public final class w3 extends View {
         canvas.restore();
         canvas.restore();
         if (this.g0 == null) {
-            this.g0 = new e11(LocaleController.getString(R.string.BotCloseAllTabs), 14.0f, AndroidUtilities.bold());
+            this.g0 = new f11(LocaleController.getString(R.string.BotCloseAllTabs), 14.0f, AndroidUtilities.bold());
         }
         if (this.i0 == null || this.h0 != h6.I.q()) {
             boolean q6 = h6.I.q();

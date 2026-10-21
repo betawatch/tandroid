@@ -1,31 +1,30 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MessagesStorage;
-
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class qe implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage.IntCallback b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ MessagesStorage b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ String e;
 
-    public /* synthetic */ qe(MessagesStorage.IntCallback intCallback, int i10, int i11) {
-        this.a = i11;
-        this.b = intCallback;
-        this.c = i10;
+    public /* synthetic */ qe(MessagesStorage messagesStorage, long j10, long j11, String str, int i10) {
+        this.a = i10;
+        this.b = messagesStorage;
+        this.c = j10;
+        this.d = j11;
+        this.e = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.run(this.c);
-                break;
-            case 1:
-                this.b.run(this.c);
+                this.b.lambda$updateRanksInLastMessages$45(this.c, this.d, this.e);
                 break;
             default:
-                this.b.run(this.c);
+                this.b.lambda$updateRanksInLastMessages$46(this.c, this.d, this.e);
                 break;
         }
     }

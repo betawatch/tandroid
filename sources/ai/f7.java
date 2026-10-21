@@ -35,12 +35,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.vj0;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.qa1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public class f7 extends FrameLayout {
     public final int[] A0;
@@ -1102,8 +1102,8 @@ public class f7 extends FrameLayout {
             int i10 = 1 - this.u0;
             this.u0 = i10;
             org.telegram.ui.Components.w9[] w9VarArr = this.d;
-            uj0 lottieAnimation = w9VarArr[2 - i10].getImageReceiver().getLottieAnimation();
-            uj0 lottieAnimation2 = w9VarArr[this.u0 + 1].getImageReceiver().getLottieAnimation();
+            vj0 lottieAnimation = w9VarArr[2 - i10].getImageReceiver().getLottieAnimation();
+            vj0 lottieAnimation2 = w9VarArr[this.u0 + 1].getImageReceiver().getLottieAnimation();
             if (lottieAnimation2 != null && lottieAnimation != null) {
                 lottieAnimation2.T(lottieAnimation.t(), false);
             }

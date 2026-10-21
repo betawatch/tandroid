@@ -41,7 +41,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qy implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -147,7 +147,7 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                 return;
             case 4:
                 MessagesController messagesController = (MessagesController) obj4;
-                cs0 cs0Var = (cs0) obj3;
+                ds0 ds0Var = (ds0) obj3;
                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (!((Boolean) obj).booleanValue()) {
                     if (U != null) {
@@ -160,11 +160,11 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                     if (U != null) {
                         xc.a0(U).P(R.raw.chats_infotip, AndroidUtilities.replaceArrows(AndroidUtilities.premiumText(LocaleController.getString(R.string.SensitiveContentSettingsToast), new sd(i12, U)), true)).k(true);
                     }
-                    cs0Var.run(Boolean.TRUE);
+                    ds0Var.run(Boolean.TRUE);
                     return;
                 }
             case 5:
-                tv0.j((tv0) obj4, (TL_stories.StoryItem) obj3, (ci.b7) obj);
+                uv0.j((uv0) obj4, (TL_stories.StoryItem) obj3, (ci.b7) obj);
                 return;
             case 6:
                 org.telegram.ui.et etVar = (org.telegram.ui.et) obj4;
@@ -196,7 +196,7 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                 if (((Boolean) obj).booleanValue()) {
                     return;
                 }
-                cyVar.showDialog(new org.telegram.ui.pj0(activity, !we0.a(), new org.telegram.ui.qv(activity, 0)));
+                cyVar.showDialog(new org.telegram.ui.pj0(activity, !xe0.a(), new org.telegram.ui.qv(activity, 0)));
                 return;
             case 9:
                 org.telegram.ui.fp0 fp0Var = (org.telegram.ui.fp0) obj3;
@@ -455,8 +455,8 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                 SharedConfig.saveConfig();
                 themeActivity.N0 = true;
                 ((Dialog) atomicReference.get()).dismiss();
-                im0 im0Var = themeActivity.b;
-                if (im0Var == null || !im0Var.G || (K = im0Var.K(themeActivity.M)) == null) {
+                jm0 jm0Var = themeActivity.b;
+                if (jm0Var == null || !jm0Var.G || (K = jm0Var.K(themeActivity.M)) == null) {
                     return;
                 }
                 themeActivity.a.v(K, themeActivity.M);

@@ -31,9 +31,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public class v70 extends k71 implements NotificationCenter.NotificationCenterDelegate {
+public class v70 extends l71 implements NotificationCenter.NotificationCenterDelegate {
     public final a0.h T;
     public final u70 U;
     public final org.telegram.ui.ActionBar.v1 V;
@@ -251,7 +251,7 @@ public class v70 extends k71 implements NotificationCenter.NotificationCenterDel
             String format = String.format("%d", Integer.valueOf(hVar.m()));
             int indexOf = TextUtils.indexOf(spannableStringBuilder, format);
             if (indexOf >= 0) {
-                spannableStringBuilder.setSpan(new d61(AndroidUtilities.bold()), indexOf, format.length() + indexOf, 33);
+                spannableStringBuilder.setSpan(new e61(AndroidUtilities.bold()), indexOf, format.length() + indexOf, 33);
             }
             b2Var.T = spannableStringBuilder;
         } else {
@@ -296,12 +296,12 @@ public class v70 extends k71 implements NotificationCenter.NotificationCenterDel
         v70Var.dismiss();
     }
 
-    @Override // org.telegram.ui.Components.k71
-    public final i71 D(Context context) {
+    @Override // org.telegram.ui.Components.l71
+    public final j71 D(Context context) {
         return new m70(this, context);
     }
 
-    @Override // org.telegram.ui.Components.k71
+    @Override // org.telegram.ui.Components.l71
     public final void E(MotionEvent motionEvent, ei.e2 e2Var) {
         org.telegram.ui.ActionBar.n2 n2Var;
         if (motionEvent.getAction() == 0) {
@@ -330,7 +330,7 @@ public class v70 extends k71 implements NotificationCenter.NotificationCenterDel
         }
     }
 
-    @Override // org.telegram.ui.Components.k71
+    @Override // org.telegram.ui.Components.l71
     public final void G(String str) {
         r70 r70Var = this.W;
         if (r70Var.h != null) {
@@ -345,18 +345,18 @@ public class v70 extends k71 implements NotificationCenter.NotificationCenterDel
         if (TextUtils.isEmpty(str)) {
             s4.g0 adapter = r70Var.n.d.getAdapter();
             v70 v70Var = r70Var.n;
-            hm0 hm0Var = v70Var.f;
-            if (adapter != hm0Var) {
-                v70Var.d.setAdapter(hm0Var);
+            im0 im0Var = v70Var.f;
+            if (adapter != im0Var) {
+                v70Var.d.setAdapter(im0Var);
                 return;
             }
             return;
         }
         s4.g0 adapter2 = r70Var.n.d.getAdapter();
         v70 v70Var2 = r70Var.n;
-        hm0 hm0Var2 = v70Var2.e;
-        if (adapter2 != hm0Var2) {
-            v70Var2.d.setAdapter(hm0Var2);
+        im0 im0Var2 = v70Var2.e;
+        if (adapter2 != im0Var2) {
+            v70Var2.d.setAdapter(im0Var2);
         }
         r70Var.n.s.e(true, false);
         DispatchQueue dispatchQueue = Utilities.searchQueue;
@@ -553,7 +553,7 @@ public class v70 extends k71 implements NotificationCenter.NotificationCenterDel
         }
     }
 
-    @Override // org.telegram.ui.Components.k71, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.Components.l71, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
     public final void dismiss() {
         super.dismiss();
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.dialogsNeedReload);

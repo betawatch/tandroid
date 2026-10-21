@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pq0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class pq0 implements ValueAnimator.AnimatorUpdateLi
                 break;
             case 5:
                 Drawable[] drawableArr3 = PhotoViewer.U8;
-                photoViewer.s3();
+                photoViewer.u3();
                 break;
             case 6:
                 photoViewer.L1.u0(((Float) valueAnimator.getAnimatedValue()).floatValue());
@@ -80,7 +80,7 @@ public final /* synthetic */ class pq0 implements ValueAnimator.AnimatorUpdateLi
                 Drawable[] drawableArr5 = PhotoViewer.U8;
                 photoViewer.getClass();
                 photoViewer.m6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                photoViewer.G1();
+                photoViewer.H1();
                 break;
             case 11:
                 Drawable[] drawableArr6 = PhotoViewer.U8;

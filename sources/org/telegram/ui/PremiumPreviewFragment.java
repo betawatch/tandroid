@@ -45,7 +45,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -70,7 +70,7 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 impleme
     public int X;
     public int Y;
     public boolean Z;
-    public org.telegram.ui.Components.im0 a;
+    public org.telegram.ui.Components.jm0 a;
     public boolean a0;
     public final ArrayList b;
     public float b0;
@@ -791,18 +791,18 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 impleme
         bh.b bVar2 = this.w0;
         bVar2.f = jVar2;
         bVar2.g = cw0Var2;
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
-        this.a = im0Var;
-        im0Var.setClipToOutline(true);
+        org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, null);
+        this.a = jm0Var;
+        jm0Var.setClipToOutline(true);
         this.a.setOutlineProvider(new dh.b(this, 6));
         this.a.C0(new aw0(this, i11));
         this.a.setCaptureSectionsDecoratorAllowed(true);
         this.a.setSections(true);
         this.a.setClipToPadding(false);
-        org.telegram.ui.Components.im0 im0Var2 = this.a;
+        org.telegram.ui.Components.jm0 jm0Var2 = this.a;
         org.telegram.ui.Components.yz yzVar = new org.telegram.ui.Components.yz(this.a, (AndroidUtilities.dp(68.0f) + this.X) - AndroidUtilities.dp(16.0f));
         this.P = yzVar;
-        im0Var2.setLayoutManager(yzVar);
+        jm0Var2.setLayoutManager(yzVar);
         this.P.R = true;
         this.a.setAdapter(new gw0(this));
         this.a.j(new k3(this, 24));

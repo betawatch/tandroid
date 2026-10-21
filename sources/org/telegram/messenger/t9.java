@@ -1,55 +1,109 @@
 package org.telegram.messenger;
 
-import android.content.Context;
-import android.os.Bundle;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class t9 implements RequestDelegate {
+public final /* synthetic */ class t9 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ BaseController b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ MessagesController b;
 
-    public /* synthetic */ t9(BaseController baseController, Object obj, Object obj2, Object obj3, Object obj4, int i10) {
+    public /* synthetic */ t9(MessagesController messagesController, int i10) {
         this.a = i10;
-        this.b = baseController;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.f = obj4;
+        this.b = messagesController;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$checkCanOpenChat$455((org.telegram.ui.ActionBar.b2) this.c, (pf.c) this.d, (org.telegram.ui.ActionBar.n2) this.e, (Bundle) this.f, tLObject, tL_error);
+                this.b.requestIsUserContactBlocked();
                 break;
             case 1:
-                ((MessagesController) this.b).lambda$didReceivedNotification$50((TLRPC.TL_theme) this.c, (org.telegram.ui.ActionBar.g6) this.d, (TLRPC.TL_inputThemeSettings) this.e, (org.telegram.ui.ActionBar.f6) this.f, tLObject, tL_error);
+                this.b.lambda$new$508();
                 break;
             case 2:
-                ((SecretChatHelper) this.b).lambda$startSecretChat$28((Context) this.d, (org.telegram.ui.ActionBar.b2) this.c, (byte[]) this.e, (TLRPC.User) this.f, tLObject, tL_error);
+                this.b.lambda$registerForPush$322();
+                break;
+            case 3:
+                this.b.lambda$updateTimerProc$157();
+                break;
+            case 4:
+                this.b.lambda$updateTimerProc$160();
+                break;
+            case 5:
+                this.b.lambda$applyAppConfig$35();
+                break;
+            case 6:
+                this.b.lambda$applyAppConfig$36();
+                break;
+            case 7:
+                this.b.lambda$processUpdateArray$412();
+                break;
+            case 8:
+                this.b.lambda$processUpdateArray$413();
+                break;
+            case 9:
+                this.b.lambda$processUpdateArray$414();
+                break;
+            case 10:
+                this.b.lambda$loadRemoteFilters$26();
+                break;
+            case 11:
+                this.b.lambda$loadRemoteFilters$27();
+                break;
+            case 12:
+                this.b.lambda$loadRemoteFilters$28();
+                break;
+            case 13:
+                this.b.lambda$loadRemoteFilters$29();
+                break;
+            case 14:
+                this.b.lambda$migrateDialogs$214();
+                break;
+            case 15:
+                this.b.lambda$addWebBrowserException$515();
+                break;
+            case 16:
+                this.b.lambda$processUpdates$383();
+                break;
+            case 17:
+                this.b.lambda$migrateDialogs$212();
+                break;
+            case 18:
+                this.b.lambda$cleanup$51();
+                break;
+            case 19:
+                this.b.lambda$cleanup$52();
+                break;
+            case 20:
+                this.b.lambda$cleanup$53();
+                break;
+            case 21:
+                this.b.lambda$processLoadedDeleteTask$86();
+                break;
+            case 22:
+                this.b.lambda$didReceivedNotification$41();
+                break;
+            case 23:
+                this.b.lambda$removeWebBrowserException$517();
+                break;
+            case 24:
+                this.b.lambda$scheduleTranscriptionUpdate$37();
+                break;
+            case 25:
+                this.b.lambda$toggleChannelForum$284();
+                break;
+            case 26:
+                this.b.lambda$toggleChannelSignatures$282();
+                break;
+            case 27:
+                this.b.lambda$updateEmojiStatusUntil$477();
+                break;
+            case 28:
+                this.b.lambda$checkPromoInfoInternal$165();
                 break;
             default:
-                ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$59((TLRPC.InputMedia) this.c, (SendMessagesHelper.DelayedMessage) this.d, (String) this.e, (MessageObject) this.f, tLObject, tL_error);
+                this.b.lambda$markAllTopicsAsRead$5();
                 break;
         }
-    }
-
-    public /* synthetic */ t9(SecretChatHelper secretChatHelper, Context context, org.telegram.ui.ActionBar.b2 b2Var, byte[] bArr, TLRPC.User user) {
-        this.a = 2;
-        this.b = secretChatHelper;
-        this.d = context;
-        this.c = b2Var;
-        this.e = bArr;
-        this.f = user;
     }
 }

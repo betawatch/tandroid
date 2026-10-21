@@ -4,11 +4,11 @@ import ai.pa;
 import android.content.Context;
 import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.un0;
+import org.telegram.ui.Components.vn0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class e5 extends un0 {
+public final class e5 extends vn0 {
     public pa h;
     public final /* synthetic */ u5 n;
 
@@ -18,7 +18,7 @@ public final class e5 extends un0 {
         this.n = u5Var;
     }
 
-    @Override // org.telegram.ui.Components.un0
+    @Override // org.telegram.ui.Components.vn0
     public final void a(String str) {
         pa paVar = this.h;
         if (paVar != null) {

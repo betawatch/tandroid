@@ -44,7 +44,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Components.AnimatedFileNative;
 import org.telegram.ui.Components.CheckBox;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fn0 implements Runnable {
     public final /* synthetic */ int a;
@@ -255,7 +255,7 @@ public final /* synthetic */ class fn0 implements Runnable {
                 if (fs0Var != null) {
                     fs0Var.setImage(bitmap);
                 }
-                photoViewer2.e3(0);
+                photoViewer2.g3(0);
                 CheckBox checkBox = photoViewer2.N0;
                 if (!checkBox.x) {
                     checkBox.callOnClick();
@@ -395,7 +395,7 @@ public final /* synthetic */ class fn0 implements Runnable {
                 String str8 = (String) obj2;
                 String str9 = (String) obj;
                 if (AndroidUtilities.isContextSafe(profileActivity3.getParentActivity())) {
-                    org.telegram.ui.Components.s41.L(profileActivity3.getParentActivity(), profileActivity3, strArr[0], str8, str9, new t10(profileActivity3, i14), null);
+                    org.telegram.ui.Components.t41.L(profileActivity3.getParentActivity(), profileActivity3, strArr[0], str8, str9, new t10(profileActivity3, i14), null);
                     break;
                 }
                 break;
@@ -569,15 +569,15 @@ public final /* synthetic */ class fn0 implements Runnable {
                             if (qnVar != null) {
                                 qnVar.Pa();
                                 qnVar.Ta();
-                                qnVar.tb(arrayList3, chat2, tL_messageService.id, 1, 1, tL_forumTopic);
+                                qnVar.ub(arrayList3, chat2, tL_messageService.id, 1, 1, tL_forumTopic);
                                 qnVar.c = true;
                                 qnVar.v8();
-                                qnVar.Rc(true);
+                                qnVar.Sc(true);
                                 qnVar.a1.n(true);
-                                qnVar.Xc();
+                                qnVar.Yc();
                                 qnVar.R1.setCurrentTopic(qnVar.d());
-                                qnVar.Uc(true);
-                                qnVar.lc(true);
+                                qnVar.Vc(true);
+                                qnVar.mc(true);
                                 qnVar.j9(true);
                                 qnVar.D6(true, true);
                                 qnVar.Ia();
@@ -590,7 +590,7 @@ public final /* synthetic */ class fn0 implements Runnable {
                                 bundle.putInt("unread_count", 0);
                                 bundle.putBoolean("historyPreloaded", false);
                                 qn qnVar2 = new qn(bundle);
-                                qnVar2.tb(arrayList3, chat2, tL_messageService.id, 1, 1, tL_forumTopic);
+                                qnVar2.ub(arrayList3, chat2, tL_messageService.id, 1, 1, tL_forumTopic);
                                 qnVar2.c = true;
                                 nd1Var.getMessagesController().getTopicsController().onTopicCreated(nd1Var.a, tL_forumTopic, true);
                                 nd1Var.presentFragment(qnVar2);

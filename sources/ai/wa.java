@@ -18,12 +18,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.is0;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.js0;
 import org.telegram.ui.Components.ti;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.xa0;
+import org.telegram.ui.Components.xl0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ay;
 import org.telegram.ui.cy;
@@ -33,9 +33,9 @@ import org.telegram.ui.nx;
 import org.telegram.ui.qn;
 import org.telegram.ui.tw;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class wa implements wl0 {
+public final /* synthetic */ class wa implements xl0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -44,7 +44,7 @@ public final /* synthetic */ class wa implements wl0 {
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.wl0
+    @Override // org.telegram.ui.Components.xl0
     public final void a(int i10, View view) {
         TLRPC.Document document;
         TLRPC.BotInlineResult botInlineResult;
@@ -52,9 +52,9 @@ public final /* synthetic */ class wa implements wl0 {
         org.telegram.ui.Components.r5 r5Var;
         org.telegram.ui.ActionBar.k kVar;
         Object O;
-        g61 G;
+        h61 G;
         TLRPC.Document document2;
-        zh.j0 j0Var;
+        zh.k0 k0Var;
         switch (this.a) {
             case 0:
                 md.y0((md) this.b, i10);
@@ -73,16 +73,16 @@ public final /* synthetic */ class wa implements wl0 {
                 break;
             case 5:
                 di.r rVar = (di.r) this.b;
-                is0 is0Var = rVar.W;
-                org.telegram.ui.ActionBar.n2 n2Var = is0Var.a;
+                js0 js0Var = rVar.W;
+                org.telegram.ui.ActionBar.n2 n2Var = js0Var.a;
                 if (view instanceof org.telegram.ui.Cells.s7) {
                     MessageObject messageObject = ((org.telegram.ui.Cells.s7) view).getMessageObject();
-                    if (is0Var.G.C1) {
-                        if (is0Var.c(messageObject)) {
-                            is0Var.g(messageObject);
+                    if (js0Var.G.C1) {
+                        if (js0Var.c(messageObject)) {
+                            js0Var.g(messageObject);
                             break;
                         } else {
-                            is0Var.e(messageObject);
+                            js0Var.e(messageObject);
                             break;
                         }
                     } else {
@@ -177,9 +177,9 @@ public final /* synthetic */ class wa implements wl0 {
                 fi.g.y0((fi.g) this.b, i10);
                 break;
             case 11:
-                t61 t61Var = ((fi.f) this.b).b0;
-                if (t61Var != null) {
-                    t61Var.G(i10 - 1);
+                u61 u61Var = ((fi.f) this.b).b0;
+                if (u61Var != null) {
+                    u61Var.G(i10 - 1);
                     break;
                 }
                 break;
@@ -277,26 +277,26 @@ public final /* synthetic */ class wa implements wl0 {
                 }
                 break;
             case 15:
-                ig.k0 k0Var = (ig.k0) this.b;
-                g61 G2 = k0Var.d0.G(i10 - 1);
+                ig.k0 k0Var2 = (ig.k0) this.b;
+                h61 G2 = k0Var2.d0.G(i10 - 1);
                 if (G2 != null) {
-                    ig.a0 a0Var = k0Var.Z;
+                    ig.a0 a0Var = k0Var2.Z;
                     if (!a0Var.h(G2)) {
                         int i14 = G2.d;
                         int i15 = ig.k0.g0;
                         if (i14 == -1) {
-                            k0Var.e0 = true;
+                            k0Var2.e0 = true;
                             a0Var.h = true;
-                            k0Var.d0.N(true);
-                            k0Var.U(true);
+                            k0Var2.d0.N(true);
+                            k0Var2.U(true);
                             break;
                         } else {
                             int i16 = ig.k0.h0;
                             if (i14 == -2) {
-                                k0Var.e0 = false;
+                                k0Var2.e0 = false;
                                 a0Var.h = false;
-                                k0Var.d0.N(true);
-                                k0Var.U(true);
+                                k0Var2.d0.N(true);
+                                k0Var2.U(true);
                                 break;
                             }
                         }
@@ -366,8 +366,8 @@ public final /* synthetic */ class wa implements wl0 {
                 yh.k4 k4Var = (yh.k4) this.b;
                 ei.d dVar = k4Var.c0;
                 HashSet hashSet = k4Var.Z;
-                t61 t61Var2 = k4Var.e0;
-                if (t61Var2 != null && (G = t61Var2.G(i10 - 1)) != null) {
+                u61 u61Var2 = k4Var.e0;
+                if (u61Var2 != null && (G = u61Var2.G(i10 - 1)) != null) {
                     Object obj = G.G;
                     if (obj instanceof TL_stars.SavedStarGift) {
                         TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
@@ -389,14 +389,14 @@ public final /* synthetic */ class wa implements wl0 {
                 }
                 break;
             default:
-                zh.i0 i0Var2 = (zh.i0) this.b;
+                zh.j0 j0Var = (zh.j0) this.b;
                 if ((view instanceof zh.l) && (document2 = ((zh.l) view).e) != null) {
                     long j11 = document2.id;
                     if (j11 != 0) {
-                        zh.m0 m0Var3 = i0Var2.a;
-                        if (m0Var3.d != null) {
-                            if (m0Var3.getUserConfig().isPremium() || ((j0Var = m0Var3.h) != null && j0Var.H.contains(Long.valueOf(j11)))) {
-                                zh.c1 c1Var = m0Var3.d;
+                        zh.n0 n0Var = j0Var.a;
+                        if (n0Var.d != null) {
+                            if (n0Var.getUserConfig().isPremium() || ((k0Var = n0Var.h) != null && k0Var.H.contains(Long.valueOf(j11)))) {
+                                zh.c1 c1Var = n0Var.d;
                                 int i19 = c1Var.b;
                                 String o10 = a1.g.o(j11, "c:");
                                 HashMap hashMap = c1Var.J;
@@ -420,9 +420,9 @@ public final /* synthetic */ class wa implements wl0 {
                                 }
                                 c1Var.c();
                                 c1Var.i0();
-                                zh.j0 j0Var2 = m0Var3.h;
-                                if (j0Var2 != null) {
-                                    ArrayList a10 = j0Var2.a();
+                                zh.k0 k0Var3 = n0Var.h;
+                                if (k0Var3 != null) {
+                                    ArrayList a10 = k0Var3.a();
                                     a10.remove(Long.valueOf(j11));
                                     a10.add(0, Long.valueOf(j11));
                                     while (a10.size() > 21) {
@@ -435,12 +435,12 @@ public final /* synthetic */ class wa implements wl0 {
                                         }
                                         sb2.append(a10.get(i20));
                                     }
-                                    MessagesController.getMainSettings(j0Var2.a).edit().putString("qrAppliedEmoji", sb2.toString()).apply();
-                                    j0Var2.J = true;
+                                    MessagesController.getMainSettings(k0Var3.a).edit().putString("qrAppliedEmoji", sb2.toString()).apply();
+                                    k0Var3.J = true;
                                     break;
                                 }
                             } else {
-                                zh.c1 c1Var2 = m0Var3.d;
+                                zh.c1 c1Var2 = n0Var.d;
                                 c1Var2.getClass();
                                 c1Var2.d1(0, LocaleController.getString(R.string.QrPremiumEmojiToast), LocaleController.getString(R.string.QrPremiumSubscribe));
                                 c1Var2.i0();

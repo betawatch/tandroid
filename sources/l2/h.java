@@ -10,7 +10,6 @@ import b2.i0;
 import b2.j0;
 import b2.o0;
 import b2.p0;
-import e2.m0;
 import g2.b0;
 import g2.c0;
 import j$.util.Objects;
@@ -29,9 +28,9 @@ import u2.g0;
 import u2.u;
 import v7.n7;
 import v7.u6;
-import zh.l0;
+import zh.m0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final class h extends u2.a {
     public y2.l A;
@@ -102,7 +101,7 @@ public final class h extends u2.a {
         this.M = -9223372036854775807L;
         this.K = -9223372036854775807L;
         this.s = new t1(this, 3);
-        this.y = new l0(this);
+        this.y = new m0(this);
         final int i10 = 0;
         this.v = new Runnable(this) { // from class: l2.c
             public final /* synthetic */ h b;
@@ -251,7 +250,7 @@ public final class h extends u2.a {
         }
         this.z = this.i.createDataSource();
         this.A = new y2.l("DashMediaSource");
-        this.D = m0.q(null);
+        this.D = e2.m0.q(null);
         C();
     }
 
@@ -486,11 +485,11 @@ public final class h extends u2.a {
         int size = this.G.m.size() - 1;
         m2.h b11 = this.G.b(size);
         long d10 = this.G.d(size);
-        long S = m0.S(m0.C(this.K));
+        long S = e2.m0.S(e2.m0.C(this.K));
         long d11 = this.G.d(0);
         long j21 = b10.b;
         List list = b10.c;
-        long S2 = m0.S(j21);
+        long S2 = e2.m0.S(j21);
         boolean v = v(b10);
         int i18 = 0;
         while (true) {
@@ -517,7 +516,7 @@ public final class h extends u2.a {
         S2 = S2;
         long j22 = b11.b;
         List list3 = b11.c;
-        long S3 = m0.S(j22);
+        long S3 = e2.m0.S(j22);
         boolean v10 = v(b11);
         long j23 = Long.MAX_VALUE;
         int i20 = 0;
@@ -577,14 +576,14 @@ public final class h extends u2.a {
             if (z11) {
                 long j25 = hVar2.G.f;
                 if (j25 != -9223372036854775807L) {
-                    j13 = Math.max(j11, j12 - m0.S(j25));
+                    j13 = Math.max(j11, j12 - e2.m0.S(j25));
                     long j26 = j12 - j13;
                     cVar = hVar2.G;
                     if (cVar.d) {
                         u6.p(cVar.a != -9223372036854775807L);
-                        long S4 = (S - m0.S(hVar2.G.a)) - j13;
+                        long S4 = (S - e2.m0.S(hVar2.G.a)) - j13;
                         i0 i0Var2 = hVar2.i().c;
-                        long h02 = m0.h0(S4);
+                        long h02 = e2.m0.h0(S4);
                         j14 = -9223372036854775807L;
                         long j27 = i0Var2.c;
                         if (j27 != -9223372036854775807L) {
@@ -599,7 +598,7 @@ public final class h extends u2.a {
                             }
                             j17 = h02;
                         }
-                        long h03 = m0.h0(S4 - j26);
+                        long h03 = e2.m0.h0(S4 - j26);
                         if (h03 < j10 && j17 > j10) {
                             h03 = j10;
                         }
@@ -611,13 +610,13 @@ public final class h extends u2.a {
                         long j30 = h03;
                         long j31 = i0Var2.b;
                         if (j31 != -9223372036854775807L) {
-                            j30 = m0.j(j31, j30, h02);
+                            j30 = e2.m0.j(j31, j30, h02);
                         } else {
                             h0 h0Var2 = hVar2.G.j;
                             if (h0Var2 != null) {
                                 long j32 = h0Var2.b;
                                 if (j32 != -9223372036854775807L) {
-                                    j30 = m0.j(j32, j30, h02);
+                                    j30 = e2.m0.j(j32, j30, h02);
                                 }
                             }
                         }
@@ -645,7 +644,7 @@ public final class h extends u2.a {
                             j35 = j33;
                         }
                         if (j35 > j34) {
-                            j35 = m0.j(m0.h0(S4 - Math.min(j20, j26 / 2)), j33, j34);
+                            j35 = e2.m0.j(e2.m0.h0(S4 - Math.min(j20, j26 / 2)), j33, j34);
                         }
                         long j37 = j34;
                         float f11 = i0Var2.d;
@@ -673,8 +672,8 @@ public final class h extends u2.a {
                                 h0Var7.d = f11;
                                 h0Var7.e = f10;
                                 hVar2.B(new i0(h0Var7));
-                                long h04 = m0.h0(j13) + hVar2.G.a;
-                                long S5 = j18 - m0.S(hVar2.u().a);
+                                long h04 = e2.m0.h0(j13) + hVar2.G.a;
+                                long S5 = j18 - e2.m0.S(hVar2.u().a);
                                 long min = Math.min(j20, j26 / 2);
                                 j16 = S5 >= min ? min : S5;
                                 j15 = h04;
@@ -693,8 +692,8 @@ public final class h extends u2.a {
                         h0Var72.d = f11;
                         h0Var72.e = f10;
                         hVar2.B(new i0(h0Var72));
-                        long h042 = m0.h0(j13) + hVar2.G.a;
-                        long S52 = j18 - m0.S(hVar2.u().a);
+                        long h042 = e2.m0.h0(j13) + hVar2.G.a;
+                        long S52 = j18 - e2.m0.S(hVar2.u().a);
                         long min2 = Math.min(j20, j26 / 2);
                         if (S52 >= min2) {
                         }
@@ -707,7 +706,7 @@ public final class h extends u2.a {
                         hVar3 = hVar;
                         j16 = j10;
                     }
-                    long S6 = j13 - m0.S(hVar3.b);
+                    long S6 = j13 - e2.m0.S(hVar3.b);
                     m2.c cVar5 = hVar2.G;
                     hVar2.n(new e(cVar5.a, j15, hVar2.K, hVar2.N, S6, j26, j16, cVar5, hVar2.i(), hVar2.G.d ? hVar2.u() : null));
                     if (hVar2.h) {
@@ -717,16 +716,16 @@ public final class h extends u2.a {
                     if (z12) {
                         Handler handler = hVar2.D;
                         m2.c cVar6 = hVar2.G;
-                        long C = m0.C(hVar2.K);
+                        long C = e2.m0.C(hVar2.K);
                         int size2 = cVar6.m.size() - 1;
                         m2.h b12 = cVar6.b(size2);
                         long j38 = b12.b;
                         List list5 = b12.c;
-                        long S7 = m0.S(j38);
+                        long S7 = e2.m0.S(j38);
                         long d12 = cVar6.d(size2);
-                        long S8 = m0.S(C);
-                        long S9 = m0.S(cVar6.a);
-                        long S10 = m0.S(cVar6.e);
+                        long S8 = e2.m0.S(C);
+                        long S9 = e2.m0.S(cVar6.a);
+                        long S10 = e2.m0.S(cVar6.e);
                         if (S10 == j14 || S10 >= 5000000) {
                             S10 = 5000000;
                         }
@@ -776,7 +775,7 @@ public final class h extends u2.a {
             cVar = hVar2.G;
             if (cVar.d) {
             }
-            long S62 = j13 - m0.S(hVar3.b);
+            long S62 = j13 - e2.m0.S(hVar3.b);
             m2.c cVar52 = hVar2.G;
             hVar2.n(new e(cVar52.a, j15, hVar2.K, hVar2.N, S62, j262, j16, cVar52, hVar2.i(), hVar2.G.d ? hVar2.u() : null));
             if (hVar2.h) {
@@ -790,7 +789,7 @@ public final class h extends u2.a {
         cVar = hVar2.G;
         if (cVar.d) {
         }
-        long S622 = j13 - m0.S(hVar3.b);
+        long S622 = j13 - e2.m0.S(hVar3.b);
         m2.c cVar522 = hVar2.G;
         hVar2.n(new e(cVar522.a, j15, hVar2.K, hVar2.N, S622, j2622, j16, cVar522, hVar2.i(), hVar2.G.d ? hVar2.u() : null));
         if (hVar2.h) {

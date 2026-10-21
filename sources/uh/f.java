@@ -37,12 +37,12 @@ import org.telegram.ui.Cells.u3;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.h20;
-import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.k20;
 import org.telegram.ui.Components.kv;
 import org.telegram.ui.Components.o20;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.v30;
 import r0.a0;
 import s4.k;
@@ -50,7 +50,7 @@ import ug.t0;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class f extends bb implements ne.d {
     public static final /* synthetic */ int r0 = 0;
@@ -60,7 +60,7 @@ public final class f extends bb implements ne.d {
     public final ArrayList a0;
     public final ArrayList b0;
     public String c0;
-    public t61 d0;
+    public u61 d0;
     public final ei.d e0;
     public final n f0;
     public final o5 g0;
@@ -91,9 +91,9 @@ public final class f extends bb implements ne.d {
         this.w = false;
         this.m0 = MessagesController.getInstance(this.currentAccount).config.pollCountriesMax.get();
         AndroidUtilities.enableEdgeToEdge(getWindow());
-        im0 im0Var = this.d;
+        jm0 jm0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        im0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(68.0f) + AndroidUtilities.navigationBarHeight);
+        jm0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(68.0f) + AndroidUtilities.navigationBarHeight);
         this.d.setClipToPadding(false);
         this.d.j(new kv(this, 21));
         this.d.setOnItemClickListener(new c(context, d6Var, this));
@@ -208,23 +208,23 @@ public final class f extends bb implements ne.d {
         Rect rect = this.p0;
         boolean z10 = (rect.top == dp && rect.bottom == measuredHeight) ? false : true;
         rect.set(0, dp, this.containerView.getMeasuredWidth(), measuredHeight);
-        im0 im0Var = this.d;
-        im0Var.setClipBounds(rect);
+        jm0 jm0Var = this.d;
+        jm0Var.setClipBounds(rect);
         if (z10) {
-            im0Var.invalidate();
+            jm0Var.invalidate();
         }
     }
 
     public final void S() {
-        im0 im0Var;
+        jm0 jm0Var;
         float f7 = AndroidUtilities.displaySize.y;
         int i10 = 0;
         while (true) {
-            im0Var = this.d;
-            if (i10 >= im0Var.getChildCount()) {
+            jm0Var = this.d;
+            if (i10 >= jm0Var.getChildCount()) {
                 break;
             }
-            View childAt = im0Var.getChildAt(i10);
+            View childAt = jm0Var.getChildAt(i10);
             if (RecyclerView.R(childAt) >= 1 && childAt.getY() < f7) {
                 f7 = childAt.getY();
             }
@@ -234,7 +234,7 @@ public final class f extends bb implements ne.d {
         o5 o5Var = this.g0;
         if (o5Var.getTranslationY() != max) {
             o5Var.setTranslationY(max);
-            im0Var.invalidate();
+            jm0Var.invalidate();
         }
     }
 
@@ -279,11 +279,11 @@ public final class f extends bb implements ne.d {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
-        t61 t61Var = new t61(im0Var, getContext(), this.currentAccount, 0, true, new o(this, 19), this.resourcesProvider);
-        this.d0 = t61Var;
-        t61Var.r = false;
-        return t61Var;
+    public final im0 x(jm0 jm0Var) {
+        u61 u61Var = new u61(jm0Var, getContext(), this.currentAccount, 0, true, new o(this, 19), this.resourcesProvider);
+        this.d0 = u61Var;
+        u61Var.r = false;
+        return u61Var;
     }
 
     @Override // ne.d

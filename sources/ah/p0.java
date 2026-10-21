@@ -27,7 +27,7 @@ import org.telegram.ui.Cells.s7;
 import org.telegram.ui.Cells.t1;
 import org.telegram.ui.Cells.za;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.cl0;
+import org.telegram.ui.Components.dl0;
 import org.telegram.ui.e5;
 import org.telegram.ui.h5;
 import org.telegram.ui.jd;
@@ -36,7 +36,7 @@ import org.telegram.ui.pa;
 import org.telegram.ui.qn;
 import org.telegram.ui.x4;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class p0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -105,7 +105,7 @@ public final class p0 extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 t0 t0Var = (t0) this.c;
-                cl0 cl0Var = t0Var.n;
+                dl0 dl0Var = t0Var.n;
                 t0Var.k();
                 t0Var.l();
                 boolean z10 = this.b;
@@ -116,14 +116,14 @@ public final class p0 extends AnimatorListenerAdapter {
                     t0Var.k = true;
                     t0Var.a.invalidate();
                 }
-                cl0Var.setCustomEmojiEnterProgress(Utilities.clamp(t0Var.j, 1.0f, 0.0f));
+                dl0Var.setCustomEmojiEnterProgress(Utilities.clamp(t0Var.j, 1.0f, 0.0f));
                 if (!z10) {
-                    cl0Var.setImportantForAccessibility(0);
-                    cl0Var.setSkipDraw(false);
+                    dl0Var.setImportantForAccessibility(0);
+                    dl0Var.setSkipDraw(false);
                     t0Var.f();
                     Runtime.getRuntime().gc();
                     int i10 = t0Var.y;
-                    cl0Var.setCustomEmojiReactionsBackground((i10 == 4 || i10 == 5) ? false : true);
+                    dl0Var.setCustomEmojiReactionsBackground((i10 == 4 || i10 == 5) ? false : true);
                 }
                 t0Var.C = false;
                 break;

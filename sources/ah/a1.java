@@ -12,13 +12,13 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.al0;
+import org.telegram.ui.Components.bl0;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.vj0;
 import org.telegram.ui.nj;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class a1 extends FrameLayout {
     public final /* synthetic */ n2 a;
@@ -63,7 +63,7 @@ public final class a1 extends FrameLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:191:0x0540, code lost:
     
-        if (((int) org.telegram.messenger.kk.x(r23.x.b.getImageReceiver().getLottieAnimation().a0, r23.x.b.getImageReceiver().getLottieAnimation().e[0], r8, r8)) < r6.b) goto L262;
+        if (((int) org.telegram.messenger.mk.x(r23.x.b.getImageReceiver().getLottieAnimation().a0, r23.x.b.getImageReceiver().getLottieAnimation().e[0], r8, r8)) < r6.b) goto L262;
      */
     /* JADX WARN: Code restructure failed: missing block: B:234:0x03bc, code lost:
     
@@ -148,9 +148,9 @@ public final class a1 extends FrameLayout {
             invalidate();
             return;
         }
-        al0 al0Var = d1Var.t;
-        if (al0Var != null) {
-            al0Var.a.setAlpha(0.0f);
+        bl0 bl0Var = d1Var.t;
+        if (bl0Var != null) {
+            bl0Var.a.setAlpha(0.0f);
             this.x.t.c.setAlpha(0.0f);
         }
         n2 n2Var = this.a;
@@ -363,7 +363,7 @@ public final class a1 extends FrameLayout {
                     if (!this.x.x.isEmpty()) {
                         b1 b1Var3 = this.x.b;
                         if (b1Var3.G) {
-                            uj0 lottieAnimation = b1Var3.getImageReceiver().getLottieAnimation();
+                            vj0 lottieAnimation = b1Var3.getImageReceiver().getLottieAnimation();
                             int i15 = 0;
                             while (i15 < this.x.x.size()) {
                                 c1 c1Var = (c1) this.x.x.get(i15);

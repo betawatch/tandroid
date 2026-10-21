@@ -1,47 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class qp0 extends LinearLayout {
-    public final aw0 a;
-    public final TextView b;
-    public final TextView c;
+public final class qp0 implements rb {
+    public final /* synthetic */ qc a;
+    public final /* synthetic */ ef b;
 
-    public qp0(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context);
-        setLayoutParams(new s4.o0(-1, -2));
-        setOrientation(0);
-        setGravity(16);
-        int dp = AndroidUtilities.dp(14.0f);
-        int i10 = dp / 2;
-        setPadding(dp, i10, dp, i10);
-        aw0 aw0Var = new aw0(context);
-        this.a = aw0Var;
-        addView(aw0Var, w7.z5.c(40.0f, 40));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, w7.z5.m(1.0f, 0, -1, 12, 0, 0));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        int i11 = org.telegram.ui.ActionBar.h6.E8;
-        textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
-        textView.setTextSize(1, 16.0f);
-        textView.setTag(textView);
-        textView.setMaxLines(1);
-        linearLayout.addView(textView);
-        TextView textView2 = new TextView(context);
-        this.c = textView2;
-        textView2.setTextColor(i0.a.o(org.telegram.ui.ActionBar.h6.w0(i11, d6Var), 102));
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTag(textView2);
-        textView2.setMaxLines(1);
-        textView2.setEllipsize(TextUtils.TruncateAt.END);
-        linearLayout.addView(textView2);
+    public qp0(ef efVar, qc qcVar) {
+        this.b = efVar;
+        this.a = qcVar;
+    }
+
+    @Override // org.telegram.ui.Components.rb
+    public final void c() {
+        this.b.G.remove(this.a);
+    }
+
+    @Override // org.telegram.ui.Components.rb
+    public final void d() {
+        this.b.G.add(this.a);
+    }
+
+    @Override // org.telegram.ui.Components.rb
+    public final /* synthetic */ void a(qc qcVar) {
+    }
+
+    @Override // org.telegram.ui.Components.rb
+    public final /* synthetic */ void b() {
     }
 }

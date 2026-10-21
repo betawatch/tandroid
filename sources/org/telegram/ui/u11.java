@@ -11,11 +11,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class u11 extends org.telegram.ui.ActionBar.n2 {
     public t11 a;
-    public org.telegram.ui.Components.im0 b;
+    public org.telegram.ui.Components.jm0 b;
     public int c;
     public int d;
     public int e;
@@ -37,9 +37,9 @@ public final class u11 extends org.telegram.ui.ActionBar.n2 {
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
         FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
-        this.b = im0Var;
-        im0Var.p1();
+        org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, null);
+        this.b = jm0Var;
+        jm0Var.p1();
         this.b.setVerticalScrollBarEnabled(false);
         this.b.setLayoutManager(new s4.b0(1, false));
         frameLayout2.addView(this.b, w7.z5.e(-1, -1, 51));

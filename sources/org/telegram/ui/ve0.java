@@ -40,7 +40,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ve0 implements Runnable {
     public final /* synthetic */ int a;
@@ -788,7 +788,7 @@ public final /* synthetic */ class ve0 implements Runnable {
                 qq0 qq0Var = (qq0) this.d;
                 photoViewer2.C4.setImageBitmap(bitmap);
                 photoViewer2.t5.setUndoCutState(true);
-                photoViewer2.a3(true, true);
+                photoViewer2.c3(true, true);
                 AndroidUtilities.cancelRunOnUIThread(qq0Var);
                 AndroidUtilities.runOnUIThread(qq0Var, 800L);
                 break;
@@ -827,17 +827,17 @@ public final /* synthetic */ class ve0 implements Runnable {
                     if (photoViewer5.k8) {
                         PhotoViewer photoViewer6 = pt0Var.d;
                         photoViewer6.b8 = iArr[8];
-                        photoViewer6.D3();
+                        photoViewer6.F3();
                         if (pt0Var.d.Y7 > pt0Var.d.Z7 - 1) {
                             PhotoViewer photoViewer7 = pt0Var.d;
                             photoViewer7.Y7 = photoViewer7.Z7 - 1;
                         }
                         PhotoViewer photoViewer8 = pt0Var.d;
                         if (!photoViewer8.J4) {
-                            org.telegram.ui.Components.o71 o71Var = photoViewer8.j1;
+                            org.telegram.ui.Components.p71 p71Var = photoViewer8.j1;
                             boolean z13 = photoViewer8.Z7 > 1;
                             PhotoViewer photoViewer9 = pt0Var.d;
-                            o71Var.a(Math.min(photoViewer9.e8, pt0Var.d.f8), z13, photoViewer9.r);
+                            p71Var.a(Math.min(photoViewer9.e8, pt0Var.d.f8), z13, photoViewer9.r);
                         }
                         if (BuildVars.LOGS_ENABLED) {
                             StringBuilder sb2 = new StringBuilder("compressionsCount = ");
@@ -857,8 +857,8 @@ public final /* synthetic */ class ve0 implements Runnable {
                         }
                         pt0Var.d.Z7 = 0;
                     }
-                    pt0Var.d.B3();
-                    pt0Var.d.x3();
+                    pt0Var.d.D3();
+                    pt0Var.d.z3();
                     break;
                 }
                 break;
@@ -878,7 +878,7 @@ public final /* synthetic */ class ve0 implements Runnable {
                     gnVar.e = bArr5;
                     gnVar.f();
                 }
-                qnVar.Gb(messageObject, gnVar);
+                qnVar.Hb(messageObject, gnVar);
                 qv0Var.c(false);
                 break;
             case 23:
@@ -889,7 +889,7 @@ public final /* synthetic */ class ve0 implements Runnable {
                     org.telegram.ui.Components.xc.d0(tL_error7);
                     break;
                 } else if (!(tLObject6 instanceof TLRPC.TL_boolTrue)) {
-                    org.telegram.messenger.kk.q(R.string.UnknownError, org.telegram.ui.Components.xc.a0(premiumPreviewFragment), null);
+                    org.telegram.messenger.mk.q(R.string.UnknownError, org.telegram.ui.Components.xc.a0(premiumPreviewFragment), null);
                     break;
                 }
                 break;

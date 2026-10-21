@@ -34,24 +34,24 @@ import org.telegram.ui.Cells.f4;
 import org.telegram.ui.Cells.l4;
 import org.telegram.ui.Cells.z6;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.e61;
 import org.telegram.ui.Components.ea0;
-import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.un;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.yq;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class d0 extends hm0 {
+public final class d0 extends im0 {
     public final /* synthetic */ k0 c;
 
     public d0(k0 k0Var) {
         this.c = k0Var;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         k0 k0Var = this.c;
         int i10 = k0Var.h0;
@@ -211,7 +211,7 @@ public final class d0 extends hm0 {
                 if (indexOf >= 0) {
                     spannableStringBuilder = new SpannableStringBuilder(string);
                     SpannableString spannableString = new SpannableString(a1.g.n(g0Var.e.e, "", new StringBuilder()));
-                    spannableString.setSpan(new d61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
+                    spannableString.setSpan(new e61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
                     spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) spannableString);
                 }
                 j5Var.l(spannableStringBuilder, false);
@@ -224,7 +224,7 @@ public final class d0 extends hm0 {
                     if (indexOf2 >= 0) {
                         spannableStringBuilder2 = new SpannableStringBuilder(str);
                         SpannableString spannableString2 = new SpannableString(g0Var.e.c);
-                        spannableString2.setSpan(new d61(AndroidUtilities.bold()), 0, spannableString2.length(), 33);
+                        spannableString2.setSpan(new e61(AndroidUtilities.bold()), 0, spannableString2.length(), 33);
                         spannableStringBuilder2.replace(indexOf2, indexOf2 + 2, (CharSequence) spannableString2);
                     }
                     j5Var.l(spannableStringBuilder2, false);

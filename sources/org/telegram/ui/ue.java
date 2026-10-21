@@ -3,18 +3,18 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ue implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ qn b;
-    public final /* synthetic */ org.telegram.ui.Components.ym0 c;
+    public final /* synthetic */ org.telegram.ui.Components.zm0 c;
     public final /* synthetic */ String d;
 
-    public /* synthetic */ ue(qn qnVar, org.telegram.ui.Components.ym0 ym0Var, String str, int i10) {
+    public /* synthetic */ ue(qn qnVar, org.telegram.ui.Components.zm0 zm0Var, String str, int i10) {
         this.a = i10;
         this.b = qnVar;
-        this.c = ym0Var;
+        this.c = zm0Var;
         this.d = str;
     }
 
@@ -48,6 +48,6 @@ public final /* synthetic */ class ue implements Runnable {
                 i10 = R.string.CardNumberCopied;
                 break;
         }
-        org.telegram.messenger.kk.p(i10, a02);
+        org.telegram.messenger.mk.p(i10, a02);
     }
 }

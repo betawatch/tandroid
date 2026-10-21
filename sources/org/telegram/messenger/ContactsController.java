@@ -34,7 +34,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public class ContactsController extends BaseController {
     public static final int PRIVACY_RULES_TYPE_ADDED_BY_PHONE = 7;
@@ -108,7 +108,7 @@ public class ContactsController extends BaseController {
     private static final String[] projectionNames = {"lookup", "data2", "data3", "data5"};
     private static volatile ContactsController[] Instance = new ContactsController[4];
 
-    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
     public static class Contact {
         public int contact_id;
         public String first_name;
@@ -133,13 +133,13 @@ public class ContactsController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
     public class MyContentObserver extends ContentObserver {
         private Runnable checkRunnable;
 
         public MyContentObserver() {
             super(null);
-            this.checkRunnable = new y1(0);
+            this.checkRunnable = new z1(0);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -174,7 +174,7 @@ public class ContactsController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
     public class PhoneBookContact {
         String id;
         String lookup_key;
@@ -232,7 +232,7 @@ public class ContactsController extends BaseController {
         this.sectionsToReplace.put("Ý", "Y");
         this.sectionsToReplace.put("Ţ", "Y");
         if (i10 == 0) {
-            Utilities.globalQueue.postRunnable(new i1(this, 6));
+            Utilities.globalQueue.postRunnable(new j1(this, 6));
         }
     }
 
@@ -337,7 +337,7 @@ public class ContactsController extends BaseController {
         }
         for (int i12 = 0; i12 < arrayList3.size(); i12++) {
             Long l10 = arrayList3.get(i12);
-            Utilities.phoneBookQueue.postRunnable(new g3(24, this, l10));
+            Utilities.phoneBookQueue.postRunnable(new i3(24, this, l10));
             TLRPC.User user2 = concurrentHashMap != null ? concurrentHashMap.get(l10) : null;
             if (user2 == null) {
                 user2 = getMessagesController().getUser(l10);
@@ -361,7 +361,7 @@ public class ContactsController extends BaseController {
             getMessagesStorage().applyPhoneBookUpdates(sb2.toString(), sb3.toString());
         }
         if (z10) {
-            Utilities.stageQueue.postRunnable(new i1(this, 3));
+            Utilities.stageQueue.postRunnable(new j1(this, 3));
         } else {
             AndroidUtilities.runOnUIThread(new h0((BaseController) this, (ArrayList) arrayList2, (Object) arrayList3, 16));
         }
@@ -370,7 +370,7 @@ public class ContactsController extends BaseController {
     private void buildContactsSectionsArrays(boolean z10) {
         Collator localeCollator = getLocaleCollator();
         if (z10) {
-            Collections.sort(this.contacts, new n1(this, localeCollator, 0));
+            Collections.sort(this.contacts, new o1(this, localeCollator, 0));
         }
         HashMap<String, ArrayList<TLRPC.TL_contact>> hashMap = new HashMap<>();
         ArrayList<String> arrayList = new ArrayList<>();
@@ -396,7 +396,7 @@ public class ContactsController extends BaseController {
                 arrayList2.add(tL_contact);
             }
         }
-        Collections.sort(arrayList, new o1(localeCollator, 0));
+        Collections.sort(arrayList, new p1(localeCollator, 0));
         this.usersSectionsDict = hashMap;
         this.sortedUsersSectionsArray = arrayList;
     }
@@ -672,7 +672,7 @@ public class ContactsController extends BaseController {
         for (int i11 = 0; i11 < updates.users.size(); i11++) {
             TLRPC.User user2 = updates.users.get(i11);
             if (user2.id == user.id) {
-                Utilities.phoneBookQueue.postRunnable(new g3(21, this, user2));
+                Utilities.phoneBookQueue.postRunnable(new i3(21, this, user2));
                 TLRPC.TL_contact tL_contact = new TLRPC.TL_contact();
                 tL_contact.user_id = user2.id;
                 ArrayList<TLRPC.TL_contact> arrayList = new ArrayList<>();
@@ -814,7 +814,7 @@ public class ContactsController extends BaseController {
         if (tLObject != null) {
             TLRPC.TL_help_inviteText tL_help_inviteText = (TLRPC.TL_help_inviteText) tLObject;
             if (tL_help_inviteText.message.length() != 0) {
-                AndroidUtilities.runOnUIThread(new g3(23, this, tL_help_inviteText));
+                AndroidUtilities.runOnUIThread(new i3(23, this, tL_help_inviteText));
             }
         }
     }
@@ -890,7 +890,7 @@ public class ContactsController extends BaseController {
         this.loadingContacts = false;
         this.contactsBookLoaded = false;
         this.lastContactsVersions = "";
-        AndroidUtilities.runOnUIThread(new g3(22, this, runnable));
+        AndroidUtilities.runOnUIThread(new i3(22, this, runnable));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -938,7 +938,7 @@ public class ContactsController extends BaseController {
         }
         getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
         getMessagesStorage().deleteContacts(arrayList);
-        Utilities.phoneBookQueue.postRunnable(new s1(this, arrayList2, 0));
+        Utilities.phoneBookQueue.postRunnable(new t1(this, arrayList2, 0));
         for (int i10 = 0; i10 < arrayList2.size(); i10++) {
             TLRPC.User user = (TLRPC.User) arrayList2.get(i10);
             if (!TextUtils.isEmpty(user.phone)) {
@@ -949,7 +949,7 @@ public class ContactsController extends BaseController {
                 }
             }
         }
-        AndroidUtilities.runOnUIThread(new wj(this, arrayList2, z10, str, 4));
+        AndroidUtilities.runOnUIThread(new yj(this, arrayList2, z10, str, 4));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1014,7 +1014,7 @@ public class ContactsController extends BaseController {
             }
             getUserConfig().lastContactsSyncTime = (int) (System.currentTimeMillis() / 1000);
             getUserConfig().saveConfig(false);
-            AndroidUtilities.runOnUIThread(new i1(this, 0));
+            AndroidUtilities.runOnUIThread(new j1(this, 0));
             if (BuildVars.LOGS_ENABLED) {
                 FileLog.d("load contacts don't change");
             }
@@ -1034,7 +1034,7 @@ public class ContactsController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadGlobalPrivacySetting$61(TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new r1(0, this, tLObject, tL_error));
+        AndroidUtilities.runOnUIThread(new s1(0, this, tLObject, tL_error));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1050,7 +1050,7 @@ public class ContactsController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadPrivacySettings$63(TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new r1(1, this, tLObject, tL_error));
+        AndroidUtilities.runOnUIThread(new s1(1, this, tLObject, tL_error));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1196,10 +1196,10 @@ public class ContactsController extends BaseController {
         Collator localeCollator = getLocaleCollator();
         Iterator it = hashMap2.values().iterator();
         while (it.hasNext()) {
-            Collections.sort((ArrayList) it.next(), new o1(localeCollator, 1));
+            Collections.sort((ArrayList) it.next(), new p1(localeCollator, 1));
         }
-        Collections.sort(arrayList2, new o1(localeCollator, 2));
-        AndroidUtilities.runOnUIThread(new p1(arrayList2, hashMap, hashMap2, this));
+        Collections.sort(arrayList2, new p1(localeCollator, 2));
+        AndroidUtilities.runOnUIThread(new q1(arrayList2, hashMap, hashMap2, this));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1320,7 +1320,7 @@ public class ContactsController extends BaseController {
             this.delayedContactsUpdate.clear();
         }
         getMessagesStorage().putCachedPhoneBook(hashMap2, false, false);
-        AndroidUtilities.runOnUIThread(new p1(this, hashMap3, arrayList, hashMap4, 0));
+        AndroidUtilities.runOnUIThread(new q1(this, hashMap3, arrayList, hashMap4, 0));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1347,9 +1347,9 @@ public class ContactsController extends BaseController {
             applyContactsUpdates(this.delayedContactsUpdate, null, null, null);
             this.delayedContactsUpdate.clear();
         }
-        AndroidUtilities.runOnUIThread(new p1(this, hashMap3, arrayList, hashMap4, 3));
+        AndroidUtilities.runOnUIThread(new q1(this, hashMap3, arrayList, hashMap4, 3));
         if (zArr[0]) {
-            Utilities.globalQueue.postRunnable(new i1(this, 1), 300000L);
+            Utilities.globalQueue.postRunnable(new j1(this, 1), 300000L);
         }
     }
 
@@ -1423,7 +1423,7 @@ public class ContactsController extends BaseController {
             applyContactsUpdates(this.delayedContactsUpdate, null, null, null);
             this.delayedContactsUpdate.clear();
         }
-        AndroidUtilities.runOnUIThread(new p1(this, hashMap3, arrayList, hashMap4, 2));
+        AndroidUtilities.runOnUIThread(new q1(this, hashMap3, arrayList, hashMap4, 2));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1439,7 +1439,7 @@ public class ContactsController extends BaseController {
             applyContactsUpdates(this.delayedContactsUpdate, null, null, null);
             this.delayedContactsUpdate.clear();
         }
-        AndroidUtilities.runOnUIThread(new p1(this, hashMap3, arrayList, hashMap4, 4));
+        AndroidUtilities.runOnUIThread(new q1(this, hashMap3, arrayList, hashMap4, 4));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1818,7 +1818,7 @@ public class ContactsController extends BaseController {
             final HashMap hashMap18 = hashMap2;
             final HashMap hashMap19 = hashMap3;
             final int i25 = 2;
-            Utilities.stageQueue.postRunnable(new Runnable(this) { // from class: org.telegram.messenger.j1
+            Utilities.stageQueue.postRunnable(new Runnable(this) { // from class: org.telegram.messenger.k1
                 public final /* synthetic */ ContactsController b;
 
                 {
@@ -1852,7 +1852,7 @@ public class ContactsController extends BaseController {
             final HashMap hashMap21 = hashMap2;
             final HashMap hashMap22 = hashMap3;
             final int i26 = 1;
-            Utilities.stageQueue.postRunnable(new Runnable(this) { // from class: org.telegram.messenger.j1
+            Utilities.stageQueue.postRunnable(new Runnable(this) { // from class: org.telegram.messenger.k1
                 public final /* synthetic */ ContactsController b;
 
                 {
@@ -1893,7 +1893,7 @@ public class ContactsController extends BaseController {
                 FileLog.d(m10.toString());
             }
             if (i14 == 0) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.x1
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.y1
                     @Override // java.lang.Runnable
                     public final void run() {
                         ContactsController.this.lambda$performSyncPhoneBook$14(i14, hashMap, z12, z10);
@@ -1908,7 +1908,7 @@ public class ContactsController extends BaseController {
                 final ArrayList arrayList8 = arrayList;
                 final HashMap hashMap25 = hashMap2;
                 final HashMap hashMap26 = hashMap3;
-                Utilities.stageQueue.postRunnable(new Runnable(this) { // from class: org.telegram.messenger.j1
+                Utilities.stageQueue.postRunnable(new Runnable(this) { // from class: org.telegram.messenger.k1
                     public final /* synthetic */ ContactsController b;
 
                     {
@@ -1959,11 +1959,11 @@ public class ContactsController extends BaseController {
                 int i30 = ceil;
                 HashMap hashMap33 = hashMap29;
                 HashMap<String, Contact> hashMap34 = hashMap31;
-                k1 k1Var = new k1(contactsController, hashMap30, sparseArray, zArr, hashMap34, tL_contacts_importContacts, i30, hashMap4, z12, hashMap33, arrayList10, hashMap32);
+                l1 l1Var = new l1(contactsController, hashMap30, sparseArray, zArr, hashMap34, tL_contacts_importContacts, i30, hashMap4, z12, hashMap33, arrayList10, hashMap32);
                 hashMap29 = hashMap33;
                 arrayList9 = arrayList10;
                 hashMap28 = hashMap32;
-                connectionsManager.sendRequest(tL_contacts_importContacts, k1Var, 6);
+                connectionsManager.sendRequest(tL_contacts_importContacts, l1Var, 6);
                 i28++;
                 hashMap30 = hashMap30;
                 ceil = i30;
@@ -2054,7 +2054,7 @@ public class ContactsController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$processLoadedContacts$35(HashMap hashMap, HashMap hashMap2) {
-        Utilities.globalQueue.postRunnable(new u1(this, hashMap, hashMap2, 1));
+        Utilities.globalQueue.postRunnable(new v1(this, hashMap, hashMap2, 1));
         if (this.contactsSyncInProgress) {
             return;
         }
@@ -2078,7 +2078,7 @@ public class ContactsController extends BaseController {
         if (i10 == 1 && (arrayList4.isEmpty() || Math.abs((System.currentTimeMillis() / 1000) - getUserConfig().lastContactsSyncTime) >= 86400)) {
             loadContacts(false, getContactsHash(arrayList4));
             if (arrayList4.isEmpty()) {
-                AndroidUtilities.runOnUIThread(new i1(this, 2));
+                AndroidUtilities.runOnUIThread(new j1(this, 2));
                 return;
             }
         }
@@ -2102,7 +2102,7 @@ public class ContactsController extends BaseController {
             getMessagesStorage().putContacts(arrayList4, i10 != 2);
         }
         Collator localeCollator = getLocaleCollator();
-        Collections.sort(arrayList4, new n1(hVar2, localeCollator, 1));
+        Collections.sort(arrayList4, new o1(hVar2, localeCollator, 1));
         ConcurrentHashMap concurrentHashMap2 = new ConcurrentHashMap(20, 1.0f, 2);
         final HashMap hashMap3 = new HashMap();
         final HashMap hashMap4 = new HashMap();
@@ -2177,9 +2177,9 @@ public class ContactsController extends BaseController {
         }
         final ArrayList arrayList10 = arrayList6;
         final ConcurrentHashMap concurrentHashMap5 = concurrentHashMap2;
-        Collections.sort(arrayList5, new o1(localeCollator, 3));
-        Collections.sort(arrayList10, new o1(localeCollator, 4));
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.t1
+        Collections.sort(arrayList5, new p1(localeCollator, 3));
+        Collections.sort(arrayList10, new p1(localeCollator, 4));
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.u1
             @Override // java.lang.Runnable
             public final void run() {
                 ContactsController.this.lambda$processLoadedContacts$33(arrayList, concurrentHashMap5, hashMap3, hashMap4, arrayList5, arrayList10, i10, z10, z11);
@@ -2190,7 +2190,7 @@ public class ContactsController extends BaseController {
             this.delayedContactsUpdate.clear();
         }
         if (hashMap != null) {
-            AndroidUtilities.runOnUIThread(new u1(this, hashMap, hashMap2, 0));
+            AndroidUtilities.runOnUIThread(new v1(this, hashMap, hashMap2, 0));
         } else {
             this.contactsLoaded = true;
         }
@@ -2303,7 +2303,7 @@ public class ContactsController extends BaseController {
     }
 
     private void performWriteContactsToPhoneBook() {
-        Utilities.phoneBookQueue.postRunnable(new s1(this, new ArrayList(this.contacts), 1));
+        Utilities.phoneBookQueue.postRunnable(new t1(this, new ArrayList(this.contacts), 1));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2401,7 +2401,7 @@ public class ContactsController extends BaseController {
         getMessagesController().clearFullUsers();
         SharedPreferences.Editor edit = MessagesController.getMainSettings(this.currentAccount).edit();
         edit.putBoolean("needGetStatuses", true).commit();
-        getConnectionsManager().sendRequest(new TLRPC.TL_contacts_getStatuses(), new v1(0, this, edit));
+        getConnectionsManager().sendRequest(new TLRPC.TL_contacts_getStatuses(), new w1(0, this, edit));
     }
 
     private void saveContactsLoadTime() {
@@ -2436,7 +2436,7 @@ public class ContactsController extends BaseController {
                 }
             }
         }
-        Collections.sort(arrayList, new o1(getLocaleCollator(), 5));
+        Collections.sort(arrayList, new p1(getLocaleCollator(), 5));
         this.phoneBookContacts = arrayList;
     }
 
@@ -2478,11 +2478,11 @@ public class ContactsController extends BaseController {
 
     public void checkAppAccount() {
         this.systemAccount = null;
-        Utilities.globalQueue.postRunnable(new i1(this, 4));
+        Utilities.globalQueue.postRunnable(new j1(this, 4));
     }
 
     public void checkContacts() {
-        Utilities.globalQueue.postRunnable(new i1(this, 9));
+        Utilities.globalQueue.postRunnable(new j1(this, 9));
     }
 
     public void checkInviteText() {
@@ -2494,7 +2494,7 @@ public class ContactsController extends BaseController {
         }
         if (this.inviteLink == null || Math.abs((System.currentTimeMillis() / 1000) - i10) >= 86400) {
             this.updatingInviteLink = true;
-            getConnectionsManager().sendRequest(new TLRPC.TL_help_getInviteText(), new m1(this, 0), 2);
+            getConnectionsManager().sendRequest(new TLRPC.TL_help_getInviteText(), new n1(this, 0), 2);
         }
     }
 
@@ -2535,7 +2535,7 @@ public class ContactsController extends BaseController {
         this.giftsPrivacyRules = null;
         this.forwardsPrivacyRules = null;
         this.phonePrivacyRules = null;
-        Utilities.globalQueue.postRunnable(new i1(this, 5));
+        Utilities.globalQueue.postRunnable(new j1(this, 5));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:22:0x0240 A[Catch: Exception -> 0x0244, TryCatch #2 {Exception -> 0x0244, blocks: (B:22:0x0240, B:23:0x0246, B:20:0x01b0), top: B:19:0x01b0 }] */
@@ -2633,7 +2633,7 @@ public class ContactsController extends BaseController {
         for (int i10 = 0; i10 < size; i10++) {
             tL_contacts_deleteContacts.id.add(getMessagesController().getInputUser(this.contacts.get(i10).user_id));
         }
-        getConnectionsManager().sendRequest(tL_contacts_deleteContacts, new v1(1, this, runnable));
+        getConnectionsManager().sendRequest(tL_contacts_deleteContacts, new w1(1, this, runnable));
     }
 
     public void deleteConnectionServiceContact() {
@@ -2739,8 +2739,8 @@ public class ContactsController extends BaseController {
         icVar.setTimer();
         icVar.b.setText(LocaleController.formatPluralString("ContactsDeletedUndo", hashMap.size(), new Object[0]));
         org.telegram.ui.Components.oc ocVar = new org.telegram.ui.Components.oc(context, n2Var.getResourceProvider(), true, true);
-        ocVar.a = new g3(26, this, hashMap);
-        ocVar.b = new s1(this, arrayList, 2);
+        ocVar.a = new i3(26, this, hashMap);
+        ocVar.b = new t1(this, arrayList, 2);
         icVar.setButton(ocVar);
         org.telegram.ui.Components.qc.g(n2Var, icVar, 5000).j();
     }
@@ -2777,7 +2777,7 @@ public class ContactsController extends BaseController {
     }
 
     public void forceImportContacts() {
-        Utilities.globalQueue.postRunnable(new i1(this, 7));
+        Utilities.globalQueue.postRunnable(new j1(this, 7));
     }
 
     public HashMap<String, Contact> getContactsCopy(HashMap<String, Contact> hashMap) {
@@ -2904,7 +2904,7 @@ public class ContactsController extends BaseController {
     public void loadGlobalPrivacySetting() {
         if (this.loadingGlobalSettings == 0) {
             this.loadingGlobalSettings = 1;
-            getConnectionsManager().sendRequest(new TL_account.getGlobalPrivacySettings(), new m1(this, 1));
+            getConnectionsManager().sendRequest(new TL_account.getGlobalPrivacySettings(), new n1(this, 1));
         }
     }
 
@@ -2916,16 +2916,16 @@ public class ContactsController extends BaseController {
         if (str == null) {
             return;
         }
-        Utilities.phoneBookQueue.postRunnable(new w1(str, 0));
+        Utilities.phoneBookQueue.postRunnable(new x1(str, 0));
     }
 
     public void migratePhoneBookToV7(SparseArray<Contact> sparseArray) {
-        Utilities.globalQueue.postRunnable(new g3(25, this, sparseArray));
+        Utilities.globalQueue.postRunnable(new i3(25, this, sparseArray));
     }
 
     public void performSyncPhoneBook(final HashMap<String, Contact> hashMap, final boolean z10, final boolean z11, final boolean z12, final boolean z13, final boolean z14, final boolean z15) {
         if (z11 || this.contactsBookLoaded) {
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.l1
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.m1
                 @Override // java.lang.Runnable
                 public final void run() {
                     ContactsController.this.lambda$performSyncPhoneBook$25(hashMap, z12, z10, z11, z13, z14, z15);
@@ -2986,7 +2986,7 @@ public class ContactsController extends BaseController {
                     return;
                 }
                 this.loadingContacts = true;
-                Utilities.stageQueue.postRunnable(new i1(this, 8));
+                Utilities.stageQueue.postRunnable(new j1(this, 8));
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -3473,7 +3473,7 @@ public class ContactsController extends BaseController {
     }
 
     public void resetImportedContacts() {
-        getConnectionsManager().sendRequest(new TLRPC.TL_contacts_resetSaved(), new g5(2));
+        getConnectionsManager().sendRequest(new TLRPC.TL_contacts_resetSaved(), new i5(2));
     }
 
     public void setDeleteAccountTTL(int i10) {
@@ -3530,7 +3530,7 @@ public class ContactsController extends BaseController {
     }
 
     public void syncPhoneBookByAlert(HashMap<String, Contact> hashMap, boolean z10, boolean z11, boolean z12) {
-        Utilities.globalQueue.postRunnable(new q1(this, hashMap, z10, z11, z12));
+        Utilities.globalQueue.postRunnable(new r1(this, hashMap, z10, z11, z12));
     }
 
     private void mergePhonebookAndTelegramContacts(HashMap<String, ArrayList<Object>> hashMap, ArrayList<String> arrayList, HashMap<String, Contact> hashMap2, boolean z10) {
@@ -3557,7 +3557,7 @@ public class ContactsController extends BaseController {
             tL_contacts_addContact.flags |= 2;
             tL_contacts_addContact.note = tL_textWithEntities;
         }
-        getConnectionsManager().sendRequest(tL_contacts_addContact, new v1(2, this, user), 6);
+        getConnectionsManager().sendRequest(tL_contacts_addContact, new w1(2, this, user), 6);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x003d  */
@@ -3581,7 +3581,7 @@ public class ContactsController extends BaseController {
     public void loadPrivacySettings(boolean z10) {
         if (this.loadingDeleteInfo == 0) {
             this.loadingDeleteInfo = 1;
-            getConnectionsManager().sendRequest(new TL_account.getAccountTTL(), new m1(this, 2));
+            getConnectionsManager().sendRequest(new TL_account.getAccountTTL(), new n1(this, 2));
         }
         loadGlobalPrivacySetting();
         int i10 = 0;
@@ -3600,59 +3600,59 @@ public class ContactsController extends BaseController {
                 switch (i10) {
                     case 0:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyStatusTimestamp();
-                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new fa(this, i10, 3));
                         break;
                     case 1:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyChatInvite();
-                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new fa(this, i10, 3));
                         break;
                     case 2:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyPhoneCall();
-                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new fa(this, i10, 3));
                         break;
                     case 3:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyPhoneP2P();
-                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new fa(this, i10, 3));
                         break;
                     case 4:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyProfilePhoto();
-                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new fa(this, i10, 3));
                         break;
                     case 5:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyForwards();
-                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new fa(this, i10, 3));
                         break;
                     case 6:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyPhoneNumber();
-                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new fa(this, i10, 3));
                         break;
                     case 7:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyAddedByPhone();
-                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new fa(this, i10, 3));
                         break;
                     case 8:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyVoiceMessages();
-                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new fa(this, i10, 3));
                         break;
                     case 9:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyAbout();
-                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new fa(this, i10, 3));
                         break;
                     case 11:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyBirthday();
-                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new fa(this, i10, 3));
                         break;
                     case 12:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyStarGiftsAutoSave();
-                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new fa(this, i10, 3));
                         break;
                     case 13:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyNoPaidMessages();
-                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new fa(this, i10, 3));
                         break;
                     case 14:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeySavedMusic();
-                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new fa(this, i10, 3));
                         break;
                 }
                 i10++;

@@ -10,11 +10,11 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class va1 extends FrameLayout {
     public final org.telegram.ui.Cells.fa a;
-    public final org.telegram.ui.Components.cp0 b;
+    public final org.telegram.ui.Components.dp0 b;
     public final int c;
     public final int d;
     public final TextPaint e;
@@ -32,13 +32,13 @@ public final class va1 extends FrameLayout {
         TextPaint textPaint = new TextPaint(1);
         this.e = textPaint;
         textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-        org.telegram.ui.Components.cp0 cp0Var = new org.telegram.ui.Components.cp0(context);
-        this.b = cp0Var;
-        cp0Var.setReportChanges(true);
-        cp0Var.setSeparatorsCount(19);
-        cp0Var.setDelegate(new ko0(this, 5));
-        cp0Var.setImportantForAccessibility(2);
-        addView(cp0Var, w7.z5.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
+        org.telegram.ui.Components.dp0 dp0Var = new org.telegram.ui.Components.dp0(context);
+        this.b = dp0Var;
+        dp0Var.setReportChanges(true);
+        dp0Var.setSeparatorsCount(19);
+        dp0Var.setDelegate(new ko0(this, 5));
+        dp0Var.setImportantForAccessibility(2);
+        addView(dp0Var, w7.z5.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
         d5Var = ((org.telegram.ui.ActionBar.n2) themeActivity).parentLayout;
         org.telegram.ui.Cells.fa faVar = new org.telegram.ui.Cells.fa(context, d5Var, 0);
         this.a = faVar;

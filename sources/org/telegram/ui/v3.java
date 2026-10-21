@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -74,9 +74,9 @@ public final /* synthetic */ class v3 implements Utilities.Callback {
                 mi0 mi0Var = (mi0) obj2;
                 Integer num = (Integer) obj;
                 mi0Var.getClass();
-                boolean z10 = num.intValue() - mi0Var.e.d > AndroidUtilities.dp(20.0f);
-                mi0Var.b0 = z10;
-                mi0Var.d0.animate().translationY((z10 ? Math.min(mi0Var.c0, (mi0Var.F.getHeight() - num.intValue()) - mi0Var.d0.getMeasuredHeight()) : mi0Var.c0) - mi0Var.d0.getTop()).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.o1.w).start();
+                boolean z10 = num.intValue() - mi0Var.d.d > AndroidUtilities.dp(20.0f);
+                mi0Var.a0 = z10;
+                mi0Var.c0.animate().translationY((z10 ? Math.min(mi0Var.b0, (mi0Var.E.getHeight() - num.intValue()) - mi0Var.c0.getMeasuredHeight()) : mi0Var.b0) - mi0Var.c0.getTop()).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.o1.w).start();
                 break;
             case 12:
                 bj0 bj0Var = (bj0) obj2;
@@ -175,7 +175,7 @@ public final /* synthetic */ class v3 implements Utilities.Callback {
                 Boolean bool = (Boolean) obj;
                 ViewPropertyAnimator scaleY = x90VarArr[0].animate().alpha(bool.booleanValue() ? 0.0f : 1.0f).scaleX(bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 0.8f : 1.0f);
                 org.telegram.ui.Components.bs bsVar = org.telegram.ui.Components.bs.h;
-                org.telegram.messenger.kk.t(scaleY, bsVar, 600L);
+                org.telegram.messenger.mk.t(scaleY, bsVar, 600L);
                 x90VarArr[1].animate().alpha(bool.booleanValue() ? 1.0f : 0.0f).scaleX(!bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 1.0f : 0.8f).setInterpolator(bsVar).setDuration(600L).start();
                 break;
             case 21:

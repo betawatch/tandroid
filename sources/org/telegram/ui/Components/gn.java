@@ -11,9 +11,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gn implements wl0 {
+public final /* synthetic */ class gn implements xl0 {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 b;
     public final /* synthetic */ Object c;
@@ -27,7 +27,7 @@ public final /* synthetic */ class gn implements wl0 {
         this.e = context;
     }
 
-    @Override // org.telegram.ui.Components.wl0
+    @Override // org.telegram.ui.Components.xl0
     public final void a(int i10, View view) {
         boolean z10;
         boolean z11;
@@ -65,7 +65,7 @@ public final /* synthetic */ class gn implements wl0 {
                             break;
                         } else {
                             int i13 = iArr[i12];
-                            r21 a2 = r21.a(i13);
+                            s21 a2 = s21.a(i13);
                             int i14 = org.telegram.ui.ActionBar.h6.F8;
                             a2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(i14, foVar.a), PorterDuff.Mode.SRC_IN));
                             F.b(0, a2, LocaleController.formatPluralString("Hours", i13 / 3600, new Object[0]), i14, org.telegram.ui.ActionBar.h6.E8, new org.telegram.ui.i4(foVar, i13, view, 6));

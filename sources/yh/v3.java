@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.i80;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v3 implements Utilities.Callback5 {
     public final /* synthetic */ int a;
@@ -22,10 +22,10 @@ public final /* synthetic */ class v3 implements Utilities.Callback5 {
 
     @Override // org.telegram.messenger.Utilities.Callback5
     public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        g61 g61Var = (g61) obj;
+        h61 h61Var = (h61) obj;
         switch (this.a) {
             case 0:
-                long j10 = ((TL_stars.starGiftAttributeModel) g61Var.G).document.id;
+                long j10 = ((TL_stars.starGiftAttributeModel) h61Var.G).document.id;
                 s3 s3Var = this.b.c;
                 HashSet hashSet = s3Var.j;
                 HashSet hashSet2 = s3Var.j;
@@ -50,7 +50,7 @@ public final /* synthetic */ class v3 implements Utilities.Callback5 {
                 this.c.u();
                 break;
             case 1:
-                int i11 = ((TL_stars.starGiftAttributeBackdrop) g61Var.G).backdrop_id;
+                int i11 = ((TL_stars.starGiftAttributeBackdrop) h61Var.G).backdrop_id;
                 s3 s3Var2 = this.b.c;
                 HashSet hashSet3 = s3Var2.k;
                 HashSet hashSet4 = s3Var2.k;
@@ -75,7 +75,7 @@ public final /* synthetic */ class v3 implements Utilities.Callback5 {
                 this.c.u();
                 break;
             default:
-                long j12 = ((TL_stars.starGiftAttributePattern) g61Var.G).document.id;
+                long j12 = ((TL_stars.starGiftAttributePattern) h61Var.G).document.id;
                 s3 s3Var3 = this.b.c;
                 HashSet hashSet5 = s3Var3.l;
                 HashSet hashSet6 = s3Var3.l;

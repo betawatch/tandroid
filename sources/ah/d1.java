@@ -22,14 +22,14 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.al0;
-import org.telegram.ui.Components.cl0;
+import org.telegram.ui.Components.bl0;
+import org.telegram.ui.Components.dl0;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.r5;
 import org.telegram.ui.g51;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class d1 {
     public static d1 B;
@@ -55,7 +55,7 @@ public final class d1 {
     public float q;
     public float r;
     public boolean s;
-    public final al0 t;
+    public final bl0 t;
     public boolean u;
     public final View v;
     public boolean w;
@@ -96,19 +96,19 @@ public final class d1 {
     /* JADX WARN: Type inference failed for: r15v3, types: [boolean] */
     /* JADX WARN: Type inference failed for: r5v38, types: [org.telegram.messenger.ImageReceiver] */
     /* JADX WARN: Type inference failed for: r5v39, types: [org.telegram.messenger.ImageReceiver] */
-    /* JADX WARN: Type inference failed for: r5v46, types: [org.telegram.ui.Components.uj0] */
-    /* JADX WARN: Type inference failed for: r5v50, types: [org.telegram.ui.Components.uj0] */
+    /* JADX WARN: Type inference failed for: r5v46, types: [org.telegram.ui.Components.vj0] */
+    /* JADX WARN: Type inference failed for: r5v50, types: [org.telegram.ui.Components.vj0] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public d1(Context context, n2 n2Var, cl0 cl0Var, View view, View view2, float f7, float f10, i1 i1Var, int i10, int i11, boolean z10) {
+    public d1(Context context, n2 n2Var, dl0 dl0Var, View view, View view2, float f7, float f10, i1 i1Var, int i10, int i11, boolean z10) {
         MessageObject messageObject;
         Context context2;
         View view3;
         g1 g1Var;
         long j10;
         MessageObject messageObject2;
-        cl0 cl0Var2;
+        dl0 dl0Var2;
         int i12;
         View view4;
         n2 n2Var2;
@@ -164,10 +164,10 @@ public final class d1 {
             g1Var = l4;
             j10 = 0;
             messageObject2 = messageObject;
-            cl0Var2 = cl0Var;
+            dl0Var2 = dl0Var;
             view4 = view;
             n2Var2 = n2Var;
-            d1 d1Var = new d1(context, n2Var2, cl0Var2, view4, view3, f7, f10, i1Var, i10, 1, true);
+            d1 d1Var = new d1(context, n2Var2, dl0Var2, view4, view3, f7, f10, i1Var, i10, 1, true);
             context2 = context;
             i12 = i10;
             this.f = d1Var;
@@ -178,21 +178,21 @@ public final class d1 {
             g1Var = l4;
             j10 = 0;
             messageObject2 = messageObject;
-            cl0Var2 = cl0Var;
+            dl0Var2 = dl0Var;
             i12 = i10;
             view4 = view;
             n2Var2 = n2Var;
         }
         qn qnVar3 = n2Var2 instanceof qn ? (qn) n2Var2 : null;
-        if (cl0Var2 != null) {
-            ai.u1 u1Var = cl0Var2.b;
+        if (dl0Var2 != null) {
+            ai.u1 u1Var = dl0Var2.b;
             int i20 = 0;
             while (true) {
                 if (i20 >= u1Var.getChildCount()) {
                     break;
                 }
-                if ((u1Var.getChildAt(i20) instanceof al0) && ((al0) u1Var.getChildAt(i20)).e.equals(this.p)) {
-                    this.t = (al0) u1Var.getChildAt(i20);
+                if ((u1Var.getChildAt(i20) instanceof bl0) && ((bl0) u1Var.getChildAt(i20)).e.equals(this.p)) {
+                    this.t = (bl0) u1Var.getChildAt(i20);
                     break;
                 }
                 i20++;
@@ -292,11 +292,11 @@ public final class d1 {
                 }
                 qnVar = qnVar3;
                 i13 = i21;
-                al0 al0Var = this.t;
-                ?? r10 = (al0Var == null || !(f7 == f11 || f10 == f11)) ? i13 : 0;
+                bl0 bl0Var = this.t;
+                ?? r10 = (bl0Var == null || !(f7 == f11 || f10 == f11)) ? i13 : 0;
                 if (view3 != null) {
-                    if (al0Var != null) {
-                        al0Var.getLocationOnScreen(this.j);
+                    if (bl0Var != null) {
+                        bl0Var.getLocationOnScreen(this.j);
                         float x10 = this.j[0] + this.t.b.getX();
                         float y3 = this.j[i13] + this.t.b.getY();
                         f12 = this.t.getScaleX() * this.t.b.getWidth();
@@ -603,8 +603,8 @@ public final class d1 {
         qnVar = qnVar3;
         i13 = 1;
         f11 = 0.0f;
-        al0 al0Var2 = this.t;
-        if (al0Var2 == null) {
+        bl0 bl0Var2 = this.t;
+        if (bl0Var2 == null) {
         }
         if (view3 != null) {
         }
@@ -704,7 +704,7 @@ public final class d1 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void d(n2 n2Var, cl0 cl0Var, View view, View view2, float f7, float f10, i1 i1Var, int i10, int i11) {
+    public static void d(n2 n2Var, dl0 dl0Var, View view, View view2, float f7, float f10, i1 i1Var, int i10, int i11) {
         if (view == null || i1Var == null || n2Var == null || n2Var.getParentActivity() == null) {
             return;
         }
@@ -713,7 +713,7 @@ public final class d1 {
             if (i11 == 2 || i11 == 0) {
                 d(n2Var, null, view, view2, 0.0f, 0.0f, i1Var, i10, 1);
             }
-            d1 d1Var = new d1(n2Var.getParentActivity(), n2Var, cl0Var, view, view2, f7, f10, i1Var, i10, i11, false);
+            d1 d1Var = new d1(n2Var.getParentActivity(), n2Var, dl0Var, view, view2, f7, f10, i1Var, i10, i11, false);
             if (i11 == 1) {
                 C = d1Var;
             } else {

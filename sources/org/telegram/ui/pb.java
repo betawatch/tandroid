@@ -11,7 +11,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class pb implements org.telegram.ui.Cells.t0 {
     public final /* synthetic */ rb a;
@@ -94,12 +94,12 @@ public final class pb implements org.telegram.ui.Cells.t0 {
             vbVar.presentFragment(bdVar);
             return;
         }
-        PhotoViewer.t1().K2(null, vbVar, null);
+        PhotoViewer.u1().M2(null, vbVar, null);
         TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, 640);
         if (closestPhotoSizeWithSize == null) {
-            PhotoViewer.t1().d2(messageObject, null, 0L, 0L, 0L, vbVar.B0);
+            PhotoViewer.u1().h2(messageObject, null, 0L, 0L, 0L, vbVar.B0);
         } else {
-            PhotoViewer.t1().e2(closestPhotoSizeWithSize.location, ImageLocation.getForPhoto(closestPhotoSizeWithSize, messageObject.messageOwner.action.photo), vbVar.B0);
+            PhotoViewer.u1().f2(closestPhotoSizeWithSize.location, ImageLocation.getForPhoto(closestPhotoSizeWithSize, messageObject.messageOwner.action.photo), vbVar.B0);
         }
     }
 

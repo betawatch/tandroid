@@ -47,15 +47,15 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.d9;
 import org.telegram.ui.Cells.k0;
-import org.telegram.ui.Components.b91;
-import org.telegram.ui.Components.bp0;
-import org.telegram.ui.Components.d91;
-import org.telegram.ui.Components.er0;
+import org.telegram.ui.Components.c91;
+import org.telegram.ui.Components.cp0;
+import org.telegram.ui.Components.e91;
+import org.telegram.ui.Components.fr0;
 import org.telegram.ui.Components.m9;
 import org.telegram.ui.Components.s6;
-import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.uh0;
-import org.telegram.ui.Components.v81;
+import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.vh0;
+import org.telegram.ui.Components.w81;
 import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.gt0;
 import org.telegram.ui.pa1;
@@ -68,12 +68,11 @@ import s4.n0;
 import s4.o0;
 import tc.u;
 import y8.e0;
-import zh.m0;
-import zh.q0;
+import zh.r0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public class f implements l.i, i, bp0, ne.f, bh.h, b91, com.google.android.gms.common.api.internal.o, v1, h1, r, OnCompleteListener {
+public class f implements l.i, i, cp0, ne.f, bh.h, c91, com.google.android.gms.common.api.internal.o, v1, h1, r, OnCompleteListener {
     public final /* synthetic */ int a;
     public final Object b;
 
@@ -406,72 +405,72 @@ public class f implements l.i, i, bp0, ne.f, bh.h, b91, com.google.android.gms.c
 
     public void H(int i10) {
         TLRPC.TL_exportedNoPaidMessagesToken c10;
-        q0 q0Var = ((m0) this.b).e;
-        if (q0Var != null) {
-            int i11 = q0Var.a;
-            if (q0Var.d == i10) {
+        r0 r0Var = ((zh.n0) this.b).e;
+        if (r0Var != null) {
+            int i11 = r0Var.a;
+            if (r0Var.d == i10) {
                 return;
             }
-            if (q0Var.c.d && i10 == 2) {
+            if (r0Var.c.d && i10 == 2) {
                 i10 = 1;
             }
-            q0Var.d = i10;
-            MessagesController.getMainSettings(i11).edit().putBoolean("qrNoPaidPermanent", q0Var.d == 2).apply();
-            int i12 = q0Var.d;
+            r0Var.d = i10;
+            MessagesController.getMainSettings(i11).edit().putBoolean("qrNoPaidPermanent", r0Var.d == 2).apply();
+            int i12 = r0Var.d;
             if (i12 == 0) {
-                if (q0Var.n != 0) {
-                    ConnectionsManager.getInstance(i11).cancelRequest(q0Var.n, true);
-                    q0Var.n = 0;
+                if (r0Var.n != 0) {
+                    ConnectionsManager.getInstance(i11).cancelRequest(r0Var.n, true);
+                    r0Var.n = 0;
                     return;
                 }
                 return;
             }
-            if (i12 == 2 && (c10 = q0Var.c()) != null) {
-                q0Var.f = c10;
-                q0Var.b.setFreeLink(q0Var.d(c10));
+            if (i12 == 2 && (c10 = r0Var.c()) != null) {
+                r0Var.f = c10;
+                r0Var.b.setFreeLink(r0Var.d(c10));
             }
-            q0Var.l(false, q0Var.d == 1);
+            r0Var.l(false, r0Var.d == 1);
         }
     }
 
     public void I(float f7) {
-        d91 d91Var = (d91) this.b;
+        e91 e91Var = (e91) this.b;
         if (f7 == 1.0f) {
-            View[] viewArr = d91Var.e;
-            View[] viewArr2 = d91Var.e;
+            View[] viewArr = e91Var.e;
+            View[] viewArr2 = e91Var.e;
             if (viewArr[1] != null) {
-                d91Var.F();
-                d91Var.h.put(d91Var.f[1], viewArr2[1]);
-                d91Var.removeView(viewArr2[1]);
-                d91Var.E(viewArr2[0], 0.0f);
+                e91Var.F();
+                e91Var.h.put(e91Var.f[1], viewArr2[1]);
+                e91Var.removeView(viewArr2[1]);
+                e91Var.E(viewArr2[0], 0.0f);
                 viewArr2[1] = null;
             }
-            d91Var.z(d91Var.b);
+            e91Var.z(e91Var.b);
             return;
         }
-        View[] viewArr3 = d91Var.e;
-        View[] viewArr4 = d91Var.e;
+        View[] viewArr3 = e91Var.e;
+        View[] viewArr4 = e91Var.e;
         View view = viewArr3[1];
         if (view == null) {
             return;
         }
-        if (d91Var.y) {
-            d91Var.E(view, (1.0f - f7) * viewArr3[0].getMeasuredWidth());
-            d91Var.E(viewArr4[0], (-r1.getMeasuredWidth()) * f7);
+        if (e91Var.y) {
+            e91Var.E(view, (1.0f - f7) * viewArr3[0].getMeasuredWidth());
+            e91Var.E(viewArr4[0], (-r1.getMeasuredWidth()) * f7);
         } else {
-            d91Var.E(view, (1.0f - f7) * (-viewArr3[0].getMeasuredWidth()));
-            d91Var.E(viewArr4[0], r1.getMeasuredWidth() * f7);
+            e91Var.E(view, (1.0f - f7) * (-viewArr3[0].getMeasuredWidth()));
+            e91Var.E(viewArr4[0], r1.getMeasuredWidth() * f7);
         }
-        d91Var.w(false);
+        e91Var.w(false);
     }
 
     @Override // bh.h
     public void J(bh.a aVar) {
-        aVar.a(((er0) this.b).getThemedColor(h6.d6));
+        aVar.a(((fr0) this.b).getThemedColor(h6.d6));
         aVar.b(SharedConfig.chatBlurEnabled());
     }
 
-    @Override // org.telegram.ui.Components.bp0
+    @Override // org.telegram.ui.Components.cp0
     public void L(float f7, boolean z10) {
         int i10 = this.a;
         Object obj = this.b;
@@ -495,9 +494,9 @@ public class f implements l.i, i, bp0, ne.f, bh.h, b91, com.google.android.gms.c
                 h6.q = f7;
                 if (i11 != i12) {
                     ThemeActivity themeActivity = pa1Var.e.e;
-                    sl0 sl0Var = (sl0) themeActivity.b.K(themeActivity.f0);
-                    if (sl0Var != null) {
-                        ((d9) sl0Var.a).setText(LocaleController.formatString("AutoNightBrightnessInfo", R.string.AutoNightBrightnessInfo, Integer.valueOf((int) (h6.q * 100.0f))));
+                    tl0 tl0Var = (tl0) themeActivity.b.K(themeActivity.f0);
+                    if (tl0Var != null) {
+                        ((d9) tl0Var.a).setText(LocaleController.formatString("AutoNightBrightnessInfo", R.string.AutoNightBrightnessInfo, Integer.valueOf((int) (h6.q * 100.0f))));
                     }
                     h6.E(true);
                     break;
@@ -727,7 +726,7 @@ public class f implements l.i, i, bp0, ne.f, bh.h, b91, com.google.android.gms.c
         throw new IllegalStateException("Must call PhenotypeContext.setContext() first");
     }
 
-    @Override // org.telegram.ui.Components.bp0
+    @Override // org.telegram.ui.Components.cp0
     public /* synthetic */ int Y() {
         switch (this.a) {
         }
@@ -752,10 +751,10 @@ public class f implements l.i, i, bp0, ne.f, bh.h, b91, com.google.android.gms.c
 
     @Override // bh.h
     public void b(Canvas canvas) {
-        er0 er0Var = (er0) this.b;
-        canvas.drawColor(er0Var.getThemedColor(h6.d6));
+        fr0 fr0Var = (fr0) this.b;
+        canvas.drawColor(fr0Var.getThemedColor(h6.d6));
         if (SharedConfig.chatBlurEnabled()) {
-            er0Var.P0.b(canvas, -3);
+            fr0Var.P0.b(canvas, -3);
         }
     }
 
@@ -782,7 +781,7 @@ public class f implements l.i, i, bp0, ne.f, bh.h, b91, com.google.android.gms.c
         return currentBrush == null ? v0.e(i10).i : v0.e(i10).f(String.valueOf(qg.m.a.indexOf(currentBrush)), currentBrush.d());
     }
 
-    @Override // org.telegram.ui.Components.bp0
+    @Override // org.telegram.ui.Components.cp0
     public CharSequence getContentDescription() {
         switch (this.a) {
             case 5:
@@ -1139,7 +1138,7 @@ public class f implements l.i, i, bp0, ne.f, bh.h, b91, com.google.android.gms.c
         return 0L;
     }
 
-    @Override // org.telegram.ui.Components.bp0
+    @Override // org.telegram.ui.Components.cp0
     public void v() {
         int i10 = this.a;
     }
@@ -1160,11 +1159,11 @@ public class f implements l.i, i, bp0, ne.f, bh.h, b91, com.google.android.gms.c
     }
 
     public boolean z(int i10) {
-        v81 v81Var = ((d91) this.b).L;
-        if (v81Var == null) {
+        w81 w81Var = ((e91) this.b).L;
+        if (w81Var == null) {
             return false;
         }
-        return v81Var.c(i10);
+        return w81Var.c(i10);
     }
 
     public /* synthetic */ f(s6.g gVar, s6.a aVar) {
@@ -1180,7 +1179,7 @@ public class f implements l.i, i, bp0, ne.f, bh.h, b91, com.google.android.gms.c
                     this.b = new s0.d(this);
                     break;
                 } else {
-                    this.b = new uh0(this);
+                    this.b = new vh0(this);
                     break;
                 }
             default:

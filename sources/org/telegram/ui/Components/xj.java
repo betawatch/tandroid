@@ -21,7 +21,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class xj extends li implements NotificationCenter.NotificationCenterDelegate, ne.d {
     public final rj E;
@@ -106,12 +106,12 @@ public final class xj extends li implements NotificationCenter.NotificationCente
         }
         int i10 = 0;
         View childAt = u1Var.getChildAt(0);
-        sl0 sl0Var = (sl0) u1Var.G(childAt);
-        if (sl0Var == null) {
+        tl0 tl0Var = (tl0) u1Var.G(childAt);
+        if (tl0Var == null) {
             return -1000;
         }
         int paddingTop = u1Var.getPaddingTop();
-        if (sl0Var.b() == 0 && childAt.getTop() >= 0) {
+        if (tl0Var.b() == 0 && childAt.getTop() >= 0) {
             i10 = childAt.getTop();
         }
         return paddingTop - i10;
@@ -384,11 +384,11 @@ public final class xj extends li implements NotificationCenter.NotificationCente
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = u1Var.getChildAt(0);
-        sl0 sl0Var = (sl0) u1Var.G(childAt);
+        tl0 tl0Var = (tl0) u1Var.G(childAt);
         int top = (childAt.getTop() - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(8.0f);
-        int i10 = (top <= 0 || sl0Var == null || sl0Var.b() != 0) ? 0 : top;
+        int i10 = (top <= 0 || tl0Var == null || tl0Var.b() != 0) ? 0 : top;
         ne.b bVar = this.n;
-        if (top < 0 || sl0Var == null || sl0Var.b() != 0) {
+        if (top < 0 || tl0Var == null || tl0Var.b() != 0) {
             bVar.a(true, true);
             top = i10;
         } else {

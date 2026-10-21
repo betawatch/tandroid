@@ -5,9 +5,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class cm implements yv0 {
+public final class cm implements zv0 {
     public File a;
     public boolean b;
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
@@ -28,13 +28,13 @@ public final class cm implements yv0 {
         if (chatAttachAlertPhotoLayout.s0 || (omVar = chatAttachAlertPhotoLayout.P) == null || omVar.getCameraSession() == null) {
             return;
         }
-        if (shutterButton.getState() == zv0.b) {
+        if (shutterButton.getState() == aw0.b) {
             chatAttachAlertPhotoLayout.l0();
             CameraController.getInstance().stopVideoRecording(chatAttachAlertPhotoLayout.P.getCameraSession(), false);
-            shutterButton.a(zv0.a);
+            shutterButton.a(aw0.a);
         } else {
             if (!chatAttachAlertPhotoLayout.x0) {
-                org.telegram.messenger.kk.q(R.string.GlobalAttachPhotoRestricted, new xc(chatAttachAlertPhotoLayout.P, this.c), null);
+                org.telegram.messenger.mk.q(R.string.GlobalAttachPhotoRestricted, new xc(chatAttachAlertPhotoLayout.P, this.c), null);
                 return;
             }
             org.telegram.ui.ActionBar.n2 n2Var = tiVar.f0;

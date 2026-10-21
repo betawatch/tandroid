@@ -14,12 +14,12 @@ import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class bc implements Runnable {
     public final /* synthetic */ int a;
@@ -71,7 +71,7 @@ public final /* synthetic */ class bc implements Runnable {
                 wc wcVar = (wc) this.b;
                 wcVar.getClass();
                 try {
-                    im0 currentListView = ((fi.g) wcVar.M0).R.getCurrentListView();
+                    jm0 currentListView = ((fi.g) wcVar.M0).R.getCurrentListView();
                     if (currentListView == null || currentListView.getAdapter() == null) {
                         return;
                     }
@@ -175,9 +175,9 @@ public final /* synthetic */ class bc implements Runnable {
                 return;
             case 19:
                 ig.k0 k0Var = (ig.k0) this.b;
-                t61 t61Var = k0Var.d0;
-                if (t61Var != null) {
-                    t61Var.N(true);
+                u61 u61Var = k0Var.d0;
+                if (u61Var != null) {
+                    u61Var.N(true);
                 }
                 k0Var.U(true);
                 return;

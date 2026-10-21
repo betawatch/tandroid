@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class v1 {
     public long a;
@@ -157,7 +157,7 @@ public final class v1 {
             long j13 = this.o;
             float clamp2 = 1.0f - Utilities.clamp((j10 - j13) / Math.max(1L, this.a - j13), 1.0f, 0.0f);
             min2 *= (2.2f * clamp2 * clamp2) + 0.15f;
-            this.e = kk.x(f14, f11, AndroidUtilities.dp(5.0f), this.e);
+            this.e = mk.x(f14, f11, AndroidUtilities.dp(5.0f), this.e);
         }
         this.d = (this.j * min2) + this.d;
         this.e = (this.k * min2) + this.e;

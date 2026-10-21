@@ -9,7 +9,7 @@ import ci.p4;
 import java.util.ArrayList;
 import v7.u6;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public class l {
     public final Context a;
@@ -22,7 +22,7 @@ public class l {
     }
 
     public k2.t0 a(Context context) {
-        return new p4(context).a();
+        return new p4(context, 1).a();
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(14:(2:22|23)|24|25|26|(2:27|28)|(5:29|30|31|32|33)|(5:35|36|37|38|39)|41|42|87|(0)|90|91|92) */

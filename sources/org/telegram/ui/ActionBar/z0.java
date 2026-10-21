@@ -4,7 +4,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.c10;
 import org.telegram.ui.Components.ed;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class z0 extends c10 {
     public final /* synthetic */ a1 e;
@@ -15,7 +15,7 @@ public final class z0 extends c10 {
         this.e = a1Var;
     }
 
-    @Override // org.telegram.ui.Components.zo0
+    @Override // org.telegram.ui.Components.ap0
     public final CharSequence d() {
         StringBuilder sb2 = new StringBuilder();
         sb2.append(ed.a(this.e.getSpeed()));

@@ -4,19 +4,30 @@ import android.content.Context;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class p4 {
     public boolean a;
     public Object b;
-    public Object c = k2.b.f;
+    public Object c;
     public Object d;
     public Object e;
     public Object f;
     public Object g;
 
-    public p4(Context context) {
-        this.b = context;
+    public p4(Context context, int i10) {
+        switch (i10) {
+            case 2:
+                this.d = ri.h.a;
+                this.a = true;
+                this.g = ri.o.H;
+                this.b = context;
+                break;
+            default:
+                this.b = context;
+                this.c = k2.b.f;
+                break;
+        }
     }
 
     public k2.t0 a() {

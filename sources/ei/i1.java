@@ -2,11 +2,11 @@ package ei;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.ui.Components.v81;
+import org.telegram.ui.Components.w81;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class i1 extends v81 {
+public final class i1 extends w81 {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ Context b;
     public final /* synthetic */ n2 c;
@@ -17,7 +17,7 @@ public final class i1 extends v81 {
         this.b = context;
     }
 
-    @Override // org.telegram.ui.Components.v81
+    @Override // org.telegram.ui.Components.w81
     public final void b(View view, int i10, int i11) {
         w1 w1Var = (w1) view;
         if (this.a) {
@@ -26,19 +26,19 @@ public final class i1 extends v81 {
         w1Var.a(i10);
     }
 
-    @Override // org.telegram.ui.Components.v81
+    @Override // org.telegram.ui.Components.w81
     public final View d(int i10) {
         Context context = this.b;
         n2 n2Var = this.c;
         return i10 == 1 ? new v1(n2Var, context) : new b2(n2Var, context);
     }
 
-    @Override // org.telegram.ui.Components.v81
+    @Override // org.telegram.ui.Components.w81
     public final int e() {
         return this.a ? 1 : 3;
     }
 
-    @Override // org.telegram.ui.Components.v81
+    @Override // org.telegram.ui.Components.w81
     public final int h(int i10) {
         return (i10 == 0 || i10 == 1) ? 0 : 1;
     }

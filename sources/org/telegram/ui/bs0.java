@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class bs0 implements org.telegram.ui.Components.d40 {
     public final /* synthetic */ PhotoViewer a;
@@ -20,7 +20,7 @@ public final class bs0 implements org.telegram.ui.Components.d40 {
             photoViewer.j5 = null;
         }
         photoViewer.l5 = true;
-        photoViewer.B2(i10);
+        photoViewer.D2(i10);
         photoViewer.l5 = false;
     }
 }

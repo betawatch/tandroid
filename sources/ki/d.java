@@ -3,7 +3,7 @@ package ki;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.mi0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class d implements Runnable {
                 qVar.K(2147483646, true, 0, false, 0L);
                 mi0 mi0Var = qVar.O;
                 if (mi0Var != null) {
-                    mi0Var.h(false);
+                    mi0Var.g(false);
                     qVar.O = null;
                     break;
                 }
@@ -32,7 +32,7 @@ public final /* synthetic */ class d implements Runnable {
                 qVar2.K(0, false, 0, false, 0L);
                 mi0 mi0Var2 = qVar2.O;
                 if (mi0Var2 != null) {
-                    mi0Var2.h(true);
+                    mi0Var2.g(true);
                     qVar2.O = null;
                     break;
                 }

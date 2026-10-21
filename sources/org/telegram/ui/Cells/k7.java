@@ -18,43 +18,42 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.kk;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.FragmentContextView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 import org.telegram.ui.Components.ShutterButton;
 import org.telegram.ui.Components.an;
-import org.telegram.ui.Components.b91;
+import org.telegram.ui.Components.aw0;
 import org.telegram.ui.Components.bn;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.c91;
 import org.telegram.ui.Components.cm;
-import org.telegram.ui.Components.ej0;
+import org.telegram.ui.Components.d91;
 import org.telegram.ui.Components.f60;
 import org.telegram.ui.Components.fd;
+import org.telegram.ui.Components.fj0;
 import org.telegram.ui.Components.fo;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.jn0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.k70;
-import org.telegram.ui.Components.km0;
+import org.telegram.ui.Components.kn0;
 import org.telegram.ui.Components.l70;
-import org.telegram.ui.Components.le0;
+import org.telegram.ui.Components.lm0;
 import org.telegram.ui.Components.lu;
+import org.telegram.ui.Components.me0;
 import org.telegram.ui.Components.mk;
 import org.telegram.ui.Components.mm;
 import org.telegram.ui.Components.n00;
 import org.telegram.ui.Components.oc0;
-import org.telegram.ui.Components.pl0;
+import org.telegram.ui.Components.ql0;
 import org.telegram.ui.Components.qu;
 import org.telegram.ui.Components.s00;
-import org.telegram.ui.Components.sx0;
 import org.telegram.ui.Components.ti;
+import org.telegram.ui.Components.tx0;
 import org.telegram.ui.Components.tz;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.y60;
 import org.telegram.ui.Components.yt;
-import org.telegram.ui.Components.yv0;
 import org.telegram.ui.Components.zv0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bw;
@@ -62,7 +61,7 @@ import org.telegram.ui.h30;
 import org.telegram.ui.qn;
 import org.telegram.ui.si;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class k7 implements Runnable {
     public final /* synthetic */ int a;
@@ -318,65 +317,65 @@ public final class k7 implements Runnable {
                 }
                 break;
             case 16:
-                ((le0) obj).e();
+                ((me0) obj).e();
                 break;
             case 17:
-                ej0 ej0Var = (ej0) obj;
-                ej0Var.y = true;
-                ValueAnimator valueAnimator2 = ej0Var.z;
+                fj0 fj0Var = (fj0) obj;
+                fj0Var.y = true;
+                ValueAnimator valueAnimator2 = fj0Var.z;
                 if (valueAnimator2 != null) {
                     valueAnimator2.cancel();
                 }
-                ej0Var.x = 0.0f;
+                fj0Var.x = 0.0f;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ej0Var.z = ofFloat;
-                ofFloat.addUpdateListener(ej0Var.b0);
-                ej0Var.z.setInterpolator(new LinearInterpolator());
-                ej0Var.z.setDuration(150L);
-                ej0Var.z.start();
+                fj0Var.z = ofFloat;
+                ofFloat.addUpdateListener(fj0Var.b0);
+                fj0Var.z.setInterpolator(new LinearInterpolator());
+                fj0Var.z.setDuration(150L);
+                fj0Var.z.start();
                 break;
             case 18:
-                im0 im0Var = (im0) obj;
-                si siVar = im0Var.f2;
-                int[] iArr = im0Var.k2;
+                jm0 jm0Var = (jm0) obj;
+                si siVar = jm0Var.f2;
+                int[] iArr = jm0Var.k2;
                 qn qnVar = siVar.d;
                 iArr[0] = (int) qnVar.s9;
                 iArr[1] = qnVar.Ba;
-                if (im0Var.h2) {
+                if (jm0Var.h2) {
                     dp = -AndroidUtilities.dp(12.0f);
-                    im0Var.M0(0.0f, im0Var.k2[0]);
+                    jm0Var.M0(0.0f, jm0Var.k2[0]);
                 } else {
                     dp = AndroidUtilities.dp(12.0f);
-                    im0Var.M0(0.0f, im0Var.getMeasuredHeight() - im0Var.k2[1]);
+                    jm0Var.M0(0.0f, jm0Var.getMeasuredHeight() - jm0Var.k2[1]);
                 }
-                im0Var.f2.d.x0.scrollBy(0, dp);
-                if (im0Var.g2) {
-                    AndroidUtilities.runOnUIThread(im0Var.B2);
+                jm0Var.f2.d.x0.scrollBy(0, dp);
+                if (jm0Var.g2) {
+                    AndroidUtilities.runOnUIThread(jm0Var.B2);
                     break;
                 }
                 break;
             case 19:
-                pl0 pl0Var = (pl0) obj;
-                k7 k7Var3 = pl0Var.i0;
-                if (pl0Var.n) {
+                ql0 ql0Var = (ql0) obj;
+                k7 k7Var3 = ql0Var.i0;
+                if (ql0Var.n) {
                     AndroidUtilities.cancelRunOnUIThread(k7Var3);
                     AndroidUtilities.runOnUIThread(k7Var3, 4000L);
                     break;
                 } else {
-                    pl0Var.U = false;
-                    pl0Var.invalidate();
+                    ql0Var.U = false;
+                    ql0Var.invalidate();
                     break;
                 }
             case 20:
-                km0 km0Var = (km0) obj;
-                RecyclerView recyclerView = km0Var.a;
+                lm0 lm0Var = (lm0) obj;
+                RecyclerView recyclerView = lm0Var.a;
                 if (recyclerView != null) {
-                    if (km0Var.g) {
-                        recyclerView.scrollBy(0, -km0Var.i);
+                    if (lm0Var.g) {
+                        recyclerView.scrollBy(0, -lm0Var.i);
                         AndroidUtilities.runOnUIThread(this);
                         break;
-                    } else if (km0Var.h) {
-                        recyclerView.scrollBy(0, km0Var.i);
+                    } else if (lm0Var.h) {
+                        recyclerView.scrollBy(0, lm0Var.i);
                         AndroidUtilities.runOnUIThread(this);
                         break;
                     }
@@ -401,9 +400,9 @@ public final class k7 implements Runnable {
                     } else {
                         scrollSlidingTextTabStrip.H = false;
                         scrollSlidingTextTabStrip.setEnabled(true);
-                        jn0 jn0Var = scrollSlidingTextTabStrip.b;
-                        if (jn0Var != null) {
-                            jn0Var.k0(1.0f);
+                        kn0 kn0Var = scrollSlidingTextTabStrip.b;
+                        if (kn0Var != null) {
+                            kn0Var.k0(1.0f);
                             break;
                         }
                     }
@@ -411,9 +410,9 @@ public final class k7 implements Runnable {
                 break;
             case 22:
                 ShutterButton shutterButton = (ShutterButton) obj;
-                yv0 yv0Var = shutterButton.e;
-                if (yv0Var != null) {
-                    final cm cmVar = (cm) yv0Var;
+                zv0 zv0Var = shutterButton.e;
+                if (zv0Var != null) {
+                    final cm cmVar = (cm) zv0Var;
                     ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = cmVar.e;
                     ti tiVar = chatAttachAlertPhotoLayout.b;
                     mm mmVar = chatAttachAlertPhotoLayout.R;
@@ -480,7 +479,7 @@ public final class k7 implements Runnable {
                                             }
                                         }
                                     }, chatAttachAlertPhotoLayout.P);
-                                    chatAttachAlertPhotoLayout.k0.a(zv0.b);
+                                    chatAttachAlertPhotoLayout.k0.a(aw0.b);
                                     chatAttachAlertPhotoLayout.P.runHaptic();
                                     break;
                                 } else {
@@ -488,7 +487,7 @@ public final class k7 implements Runnable {
                                     n2Var.getParentActivity().requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 21);
                                 }
                             } else {
-                                kk.q(R.string.GlobalAttachVideoRestricted, new xc(chatAttachAlertPhotoLayout.P, cmVar.c), null);
+                                org.telegram.messenger.mk.q(R.string.GlobalAttachVideoRestricted, new xc(chatAttachAlertPhotoLayout.P, cmVar.c), null);
                             }
                         }
                     }
@@ -497,42 +496,42 @@ public final class k7 implements Runnable {
                 }
                 break;
             case 23:
-                sx0 sx0Var = (sx0) obj;
-                View view = sx0Var.s;
+                tx0 tx0Var = (tx0) obj;
+                View view = tx0Var.s;
                 if (view != null) {
                     if (view.getVisibility() != 0) {
-                        sx0Var.s.setVisibility(0);
-                        sx0Var.s.setAlpha(0.0f);
+                        tx0Var.s.setVisibility(0);
+                        tx0Var.s.setAlpha(0.0f);
                     }
-                    sx0Var.s.animate().setListener(null).cancel();
-                    sx0Var.s.animate().alpha(1.0f).setDuration(150L).start();
+                    tx0Var.s.animate().setListener(null).cancel();
+                    tx0Var.s.animate().alpha(1.0f).setDuration(150L).start();
                     break;
                 } else {
-                    sx0Var.c.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(150L).start();
+                    tx0Var.c.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(150L).start();
                     break;
                 }
             case 24:
-                c91 c91Var = (c91) obj;
-                if (c91Var.J) {
+                d91 d91Var = (d91) obj;
+                if (d91Var.J) {
                     long elapsedRealtime3 = SystemClock.elapsedRealtime();
                     if (elapsedRealtime3 > 17) {
                         elapsedRealtime3 = 17;
                     }
-                    float f13 = c91Var.f0 + (elapsedRealtime3 / 200.0f);
-                    c91Var.f0 = f13;
-                    c91Var.setAnimationIdicatorProgress(c91Var.a0.getInterpolation(f13));
-                    if (c91Var.f0 > 1.0f) {
-                        c91Var.f0 = 1.0f;
+                    float f13 = d91Var.f0 + (elapsedRealtime3 / 200.0f);
+                    d91Var.f0 = f13;
+                    d91Var.setAnimationIdicatorProgress(d91Var.a0.getInterpolation(f13));
+                    if (d91Var.f0 > 1.0f) {
+                        d91Var.f0 = 1.0f;
                     }
-                    if (c91Var.f0 < 1.0f) {
-                        AndroidUtilities.runOnUIThread(c91Var.i0);
+                    if (d91Var.f0 < 1.0f) {
+                        AndroidUtilities.runOnUIThread(d91Var.i0);
                         break;
                     } else {
-                        c91Var.J = false;
-                        c91Var.setEnabled(true);
-                        b91 b91Var = c91Var.y;
-                        if (b91Var != null) {
-                            ((l2.f) b91Var).I(1.0f);
+                        d91Var.J = false;
+                        d91Var.setEnabled(true);
+                        c91 c91Var = d91Var.y;
+                        if (c91Var != null) {
+                            ((l2.f) c91Var).I(1.0f);
                             break;
                         }
                     }

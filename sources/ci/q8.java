@@ -15,11 +15,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ba0;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.pm0;
+import org.telegram.ui.Components.qm0;
 import org.telegram.ui.Components.u90;
 import org.telegram.ui.Components.y90;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class q8 {
     public y90 a;
@@ -423,7 +423,7 @@ public final class q8 {
             p8 p8Var = new p8(this, 0);
             n8Var.r = r8Var;
             n8Var.s = p8Var;
-            new pm0(r8Var);
+            new qm0(r8Var);
             n8Var.j.setCallback(r8Var);
             n8Var.h.a = r8Var;
             n8Var.i.a = r8Var;
@@ -434,7 +434,7 @@ public final class q8 {
             p8 p8Var2 = new p8(this, 1);
             n8Var3.r = r8Var;
             n8Var3.s = p8Var2;
-            new pm0(r8Var);
+            new qm0(r8Var);
             n8Var3.j.setCallback(r8Var);
             n8Var3.h.a = r8Var;
             n8Var3.i.a = r8Var;

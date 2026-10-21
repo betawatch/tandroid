@@ -15,11 +15,11 @@ import b2.v1;
 import b2.y0;
 import b2.z0;
 import java.util.List;
-import org.telegram.ui.Components.b81;
+import org.telegram.ui.Components.c81;
 import org.telegram.ui.Components.l60;
 import si.s0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final class z implements d1 {
     public final /* synthetic */ int a;
@@ -75,18 +75,18 @@ public final class z implements d1 {
             case 1:
                 break;
             case 2:
-                ri.p pVar = (ri.p) this.b;
-                ri.g gVar = pVar.e;
-                ri.e eVar = pVar.E;
-                Handler handler = pVar.h;
-                if (pVar.u != z10) {
-                    pVar.u = z10;
-                    handler.removeCallbacks(eVar);
+                ri.o oVar = (ri.o) this.b;
+                ri.f fVar = oVar.f;
+                ri.d dVar = oVar.F;
+                Handler handler = oVar.i;
+                if (oVar.v != z10) {
+                    oVar.v = z10;
+                    handler.removeCallbacks(dVar);
                     if (z10) {
-                        handler.post(eVar);
+                        handler.post(dVar);
                     }
-                    gVar.onPreviewPlaybackChanged(z10);
-                    gVar.onStateChanged(pVar.e());
+                    fVar.onPreviewPlaybackChanged(z10);
+                    fVar.onStateChanged(oVar.e());
                     break;
                 }
                 break;
@@ -139,10 +139,10 @@ public final class z implements d1 {
             case 1:
                 break;
             case 2:
-                ri.p pVar = (ri.p) this.b;
-                if (i10 == 4 && pVar.m == ri.n.e && (i0Var = pVar.A) != null) {
-                    i0Var.Z0(5, pVar.r);
-                    pVar.A.e();
+                ri.o oVar = (ri.o) this.b;
+                if (i10 == 4 && oVar.n == ri.m.e && (i0Var = oVar.B) != null) {
+                    i0Var.Z0(5, oVar.s);
+                    oVar.B.e();
                     break;
                 }
                 break;
@@ -170,7 +170,7 @@ public final class z implements d1 {
             case 1:
                 break;
             case 2:
-                ((ri.p) this.b).g(y0Var);
+                ((ri.o) this.b).g(y0Var);
                 break;
             default:
                 s0 s0Var = (s0) this.b;
@@ -189,11 +189,11 @@ public final class z implements d1 {
     public final void onPlayerStateChanged(boolean z10, int i10) {
         switch (this.a) {
             case 1:
-                b81 b81Var = (b81) this.b;
-                if (!b81Var.H && i10 == 3) {
-                    b81Var.H = true;
-                    if (b81Var.G && b81Var.I) {
-                        b81Var.C();
+                c81 c81Var = (c81) this.b;
+                if (!c81Var.H && i10 == 3) {
+                    c81Var.H = true;
+                    if (c81Var.G && c81Var.I) {
+                        c81Var.C();
                         break;
                     }
                 }

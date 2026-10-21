@@ -47,15 +47,15 @@ import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.n4;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.a6;
-import org.telegram.ui.Components.cl0;
-import org.telegram.ui.Components.hw0;
+import org.telegram.ui.Components.dl0;
+import org.telegram.ui.Components.iw0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.qn;
 import v0.i;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -185,11 +185,11 @@ public final /* synthetic */ class f implements Runnable {
                 break;
             case 10:
                 t0 t0Var = (t0) obj2;
-                cl0 cl0Var = (cl0) obj;
+                dl0 dl0Var = (dl0) obj;
                 t0Var.l = true;
                 t0Var.a.invalidate();
-                cl0Var.b1 = false;
-                cl0Var.invalidate();
+                dl0Var.b1 = false;
+                dl0Var.invalidate();
                 t0Var.c(true);
                 break;
             case 11:
@@ -204,9 +204,9 @@ public final /* synthetic */ class f implements Runnable {
                 g1 g1Var = (g1) obj;
                 j1Var.getClass();
                 TLRPC.ReactionCount reactionCount = g1Var.a;
-                hw0 hw0Var = j1Var.z;
-                if (k3.s(hw0Var)) {
-                    ((n4) hw0Var).f(reactionCount, true, 0.0f, 0.0f);
+                iw0 iw0Var = j1Var.z;
+                if (k3.s(iw0Var)) {
+                    ((n4) iw0Var).f(reactionCount, true, 0.0f, 0.0f);
                 }
                 g1Var.Y.c(false);
                 j1Var.S = null;

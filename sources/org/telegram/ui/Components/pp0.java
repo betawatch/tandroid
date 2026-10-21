@@ -1,31 +1,43 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class pp0 implements rb {
-    public final /* synthetic */ qc a;
-    public final /* synthetic */ ef b;
+public final class pp0 extends FrameLayout {
+    public final /* synthetic */ ef a;
 
-    public pp0(ef efVar, qc qcVar) {
-        this.b = efVar;
-        this.a = qcVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pp0(ef efVar, Context context) {
+        super(context);
+        this.a = efVar;
     }
 
-    @Override // org.telegram.ui.Components.rb
-    public final void c() {
-        this.b.G.remove(this.a);
-    }
-
-    @Override // org.telegram.ui.Components.rb
-    public final void d() {
-        this.b.G.add(this.a);
-    }
-
-    @Override // org.telegram.ui.Components.rb
-    public final /* synthetic */ void a(qc qcVar) {
-    }
-
-    @Override // org.telegram.ui.Components.rb
-    public final /* synthetic */ void b() {
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        ef efVar = this.a;
+        View contentView = efVar.getContentView();
+        int[] iArr = new int[2];
+        contentView.getLocationInWindow(iArr);
+        iArr[0] = iArr[0] + efVar.E;
+        iArr[1] = iArr[1] + efVar.F;
+        getLocationInWindow(new int[2]);
+        if (motionEvent.getAction() != 0 || motionEvent.getX() > iArr[0]) {
+            if (motionEvent.getX() < contentView.getWidth() + iArr[0] && motionEvent.getY() > iArr[1]) {
+                if (motionEvent.getY() < contentView.getHeight() + iArr[1]) {
+                    motionEvent.offsetLocation(r2[0] - iArr[0], (AndroidUtilities.statusBarHeight + r2[1]) - iArr[1]);
+                    return contentView.dispatchTouchEvent(motionEvent);
+                }
+            }
+        }
+        if (!efVar.A && !efVar.D) {
+            efVar.D = true;
+            efVar.l(new o1.k[0]);
+        }
+        return true;
     }
 }

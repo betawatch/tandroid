@@ -1,9 +1,9 @@
 package org.telegram.ui.Wallet;
 
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.w61;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i3 implements NotificationCenter.NotificationCenterDelegate {
     public final /* synthetic */ int a;
@@ -16,7 +16,7 @@ public final /* synthetic */ class i3 implements NotificationCenter.Notification
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
-        v61 v61Var;
+        w61 w61Var;
         int i12 = this.a;
         Object obj = this.b;
         switch (i12) {
@@ -26,8 +26,8 @@ public final /* synthetic */ class i3 implements NotificationCenter.Notification
                 break;
             default:
                 r9 r9Var = (r9) obj;
-                if (!r9Var.n && (v61Var = r9Var.a) != null) {
-                    v61Var.W2.N(true);
+                if (!r9Var.n && (w61Var = r9Var.a) != null) {
+                    w61Var.W2.N(true);
                     break;
                 }
                 break;

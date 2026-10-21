@@ -7,9 +7,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u3 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class u3 implements Utilities.Callback2 {
                         Integer num = (Integer) s3Var.m.get(Long.valueOf(stargiftattributemodel.document.id));
                         int intValue = num == null ? 0 : num.intValue();
                         int i12 = m3.a;
-                        g61 J = g61.J(m3.class);
+                        h61 J = h61.J(m3.class);
                         J.G = stargiftattributemodel;
                         J.l = lowerCase;
                         J.z = intValue;
@@ -98,7 +98,7 @@ public final /* synthetic */ class u3 implements Utilities.Callback2 {
                     Integer num2 = (Integer) s3Var2.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                     int intValue2 = num2 == null ? 0 : num2.intValue();
                     int i14 = f3.a;
-                    g61 J2 = g61.J(f3.class);
+                    h61 J2 = h61.J(f3.class);
                     J2.G = stargiftattributebackdrop;
                     J2.l = lowerCase2;
                     J2.z = intValue2;
@@ -133,7 +133,7 @@ public final /* synthetic */ class u3 implements Utilities.Callback2 {
                         Integer num3 = (Integer) s3Var3.o.get(Long.valueOf(stargiftattributepattern.document.id));
                         ?? intValue3 = num3 == null ? z10 : num3.intValue();
                         int i16 = p3.a;
-                        g61 J3 = g61.J(p3.class);
+                        h61 J3 = h61.J(p3.class);
                         J3.G = stargiftattributepattern;
                         J3.l = lowerCase3;
                         J3.z = intValue3;

@@ -11,9 +11,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f11 implements org.telegram.ui.Components.wl0 {
+public final /* synthetic */ class f11 implements org.telegram.ui.Components.xl0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -22,7 +22,7 @@ public final /* synthetic */ class f11 implements org.telegram.ui.Components.wl0
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.wl0
+    @Override // org.telegram.ui.Components.xl0
     public final void a(int i10, View view) {
         float f7;
         s4.b1 K;
@@ -92,7 +92,7 @@ public final /* synthetic */ class f11 implements org.telegram.ui.Components.wl0
                 }
             case 4:
                 h61 h61Var = (h61) this.b;
-                org.telegram.ui.Components.g61 G = h61Var.i0.G(i10 - 1);
+                org.telegram.ui.Components.h61 G = h61Var.i0.G(i10 - 1);
                 if (G == null) {
                     return;
                 }
@@ -199,18 +199,18 @@ public final /* synthetic */ class f11 implements org.telegram.ui.Components.wl0
                         gd1Var.v = -1;
                         gd1Var.n.animate().setListener(null).cancel();
                         gd1Var.n.animate().translationY(i20).setDuration(200L).setListener(new cd1(gd1Var, i11)).start();
-                        org.telegram.ui.Components.im0 im0Var = gd1Var.s.getVisibility() == 0 ? gd1Var.b : gd1Var.a;
-                        im0Var.d1(false);
-                        int N0 = ((s4.b0) im0Var.getLayoutManager()).N0();
+                        org.telegram.ui.Components.jm0 jm0Var = gd1Var.s.getVisibility() == 0 ? gd1Var.b : gd1Var.a;
+                        jm0Var.d1(false);
+                        int N0 = ((s4.b0) jm0Var.getLayoutManager()).N0();
                         f7 = 12.0f;
-                        if ((N0 == im0Var.getAdapter().h() - 1 || (N0 == im0Var.getAdapter().h() - 2 && im0Var == gd1Var.a)) && (K = im0Var.K(N0)) != null) {
+                        if ((N0 == jm0Var.getAdapter().h() - 1 || (N0 == jm0Var.getAdapter().h() - 2 && jm0Var == gd1Var.a)) && (K = jm0Var.K(N0)) != null) {
                             int bottom = K.a.getBottom();
                             if (N0 == gd1Var.d.c - 2) {
                                 bottom += AndroidUtilities.dp(12.0f);
                             }
-                            if (im0Var.getMeasuredHeight() - bottom <= i20) {
-                                im0Var.setTranslationY(-(im0Var.getMeasuredHeight() - bottom));
-                                im0Var.animate().translationY(0.0f).setDuration(200L).start();
+                            if (jm0Var.getMeasuredHeight() - bottom <= i20) {
+                                jm0Var.setTranslationY(-(jm0Var.getMeasuredHeight() - bottom));
+                                jm0Var.animate().translationY(0.0f).setDuration(200L).start();
                             }
                         }
                         gd1Var.a.setPadding(0, 0, 0, 0);
@@ -233,10 +233,10 @@ public final /* synthetic */ class f11 implements org.telegram.ui.Components.wl0
                     if (hashSet.isEmpty()) {
                         return;
                     }
-                    org.telegram.ui.Components.im0 im0Var2 = gd1Var.s.getVisibility() == 0 ? gd1Var.b : gd1Var.a;
-                    int height = im0Var2.getHeight() - view.getBottom();
+                    org.telegram.ui.Components.jm0 jm0Var2 = gd1Var.s.getVisibility() == 0 ? gd1Var.b : gd1Var.a;
+                    int height = jm0Var2.getHeight() - view.getBottom();
                     if (height < i20) {
-                        im0Var2.v0(0, i20 - height, null);
+                        jm0Var2.v0(0, i20 - height, null);
                         return;
                     }
                     return;

@@ -2,14 +2,14 @@ package cc;
 
 import android.os.SystemClock;
 import m.s3;
-import ri.j;
-import ri.p;
+import ri.i;
+import ri.o;
 import z7.gb;
 import z7.ge;
 import z7.hb;
 import z7.wf;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements wf {
     public final /* synthetic */ long a;
@@ -36,9 +36,9 @@ public final /* synthetic */ class e implements wf {
         return new a5.a(s3Var, 0);
     }
 
-    public e(p pVar, j jVar, long j10) {
-        this.c = pVar;
-        this.b = jVar;
+    public e(long j10, i iVar, o oVar) {
+        this.c = oVar;
         this.a = j10;
+        this.b = iVar;
     }
 }

@@ -10,11 +10,11 @@ import org.telegram.messenger.CacheByChatsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class e6 extends org.telegram.ui.ActionBar.n2 {
     public c6 a;
-    public org.telegram.ui.Components.im0 b;
+    public org.telegram.ui.Components.jm0 b;
     public final ArrayList c;
     public ArrayList d;
     public int e;
@@ -69,16 +69,16 @@ public class e6 extends org.telegram.ui.ActionBar.n2 {
         i2.e.y(false, this.actionBar);
         this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 24));
         this.actionBar.setTitle(LocaleController.getString(R.string.NotificationsExceptions));
-        this.b = new org.telegram.ui.Components.im0(context, null);
+        this.b = new org.telegram.ui.Components.jm0(context, null);
         s4.k kVar = new s4.k();
         kVar.C = false;
         kVar.m = false;
         this.b.setItemAnimator(kVar);
         this.b.setLayoutManager(new s4.b0());
-        org.telegram.ui.Components.im0 im0Var = this.b;
+        org.telegram.ui.Components.jm0 jm0Var = this.b;
         c6 c6Var = new c6(this);
         this.a = c6Var;
-        im0Var.setAdapter(c6Var);
+        jm0Var.setAdapter(c6Var);
         this.b.setOnItemClickListener(new b1(this, 7));
         frameLayout.addView(this.b);
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));

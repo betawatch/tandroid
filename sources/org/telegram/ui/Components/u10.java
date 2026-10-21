@@ -7,7 +7,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u10 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -60,16 +60,16 @@ public final /* synthetic */ class u10 implements View.OnLongClickListener {
                 MessagesController.getGlobalNotificationsSettings().edit().putInt("speedhint", -15).apply();
                 return true;
             case 1:
-                le0 le0Var = (le0) obj;
-                le0Var.r.setText("");
-                ei.x8.a(le0Var.s, true);
-                Drawable drawable = le0Var.a;
+                me0 me0Var = (me0) obj;
+                me0Var.r.setText("");
+                ei.x8.a(me0Var.s, true);
+                Drawable drawable = me0Var.a;
                 if (drawable instanceof wc0) {
                     ((wc0) drawable).x();
                 }
                 return true;
             default:
-                return er0.o((er0) obj);
+                return fr0.o((fr0) obj);
         }
     }
 }

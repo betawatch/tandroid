@@ -1,50 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class wj0 extends Drawable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ xj0 c;
+public final class wj0 extends ImageReceiver {
+    public final /* synthetic */ yj0 a;
 
-    public wj0(xj0 xj0Var, int i10, int i11) {
-        this.c = xj0Var;
-        this.a = i10;
-        this.b = i11;
+    public wj0(yj0 yj0Var) {
+        this.a = yj0Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect rect = AndroidUtilities.rectTmp2;
-        int centerX = getBounds().centerX();
-        float f7 = this.a;
-        int dp = centerX - (AndroidUtilities.dp(f7) / 2);
-        int centerY = getBounds().centerY();
-        float f10 = this.b;
-        rect.set(dp, centerY - (AndroidUtilities.dp(f10) / 2), (AndroidUtilities.dp(f7) / 2) + getBounds().centerX(), (AndroidUtilities.dp(f10) / 2) + getBounds().centerY());
-        xj0 xj0Var = this.c;
-        xj0Var.c.setImageCoords(rect);
-        xj0Var.c.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.c.c.setAlpha(i10 / 255.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.c.c.setColorFilter(colorFilter);
+    @Override // org.telegram.messenger.ImageReceiver
+    public final boolean setImageBitmapByKey(Drawable drawable, String str, int i10, boolean z10, int i11) {
+        if (drawable != null) {
+            this.a.c();
+        }
+        return super.setImageBitmapByKey(drawable, str, i10, z10, i11);
     }
 }

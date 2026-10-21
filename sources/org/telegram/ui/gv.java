@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gv implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -43,20 +43,20 @@ public final /* synthetic */ class gv implements View.OnClickListener {
                         i10++;
                         ((MediaController.PhotoEntry) obj).caption = fieldText;
                     }
-                    PhotoViewer.t1().K2(null, cyVar, cyVar.getResourceProvider());
-                    PhotoViewer.t1().p7 = true;
-                    PhotoViewer.t1().q7 = fieldText;
+                    PhotoViewer.u1().M2(null, cyVar, cyVar.getResourceProvider());
+                    PhotoViewer.u1().p7 = true;
+                    PhotoViewer.u1().q7 = fieldText;
                     ArrayList arrayList3 = new ArrayList(cyVar.D2);
                     boolean[] zArr = new boolean[cyVar.D2.size()];
                     Arrays.fill(zArr, true);
-                    PhotoViewer.t1().g2(arrayList3, 0, 0, false, new ix(cyVar, zArr), null);
-                    PhotoViewer t12 = PhotoViewer.t1();
-                    t12.f4 = true;
-                    CheckBox checkBox = t12.N0;
+                    PhotoViewer.u1().i2(arrayList3, 0, 0, false, new ix(cyVar, zArr), null);
+                    PhotoViewer u12 = PhotoViewer.u1();
+                    u12.f4 = true;
+                    CheckBox checkBox = u12.N0;
                     if (checkBox != null) {
                         checkBox.setVisibility(8);
                     }
-                    PhotoViewer.CounterView counterView = t12.O0;
+                    PhotoViewer.CounterView counterView = u12.O0;
                     if (counterView != null) {
                         counterView.setVisibility(8);
                         break;

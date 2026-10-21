@@ -55,28 +55,28 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ah;
-import org.telegram.ui.Components.b81;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.cl0;
-import org.telegram.ui.Components.ew0;
-import org.telegram.ui.Components.jw0;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.c81;
+import org.telegram.ui.Components.dl0;
+import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.mw0;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.tz;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.vj0;
 import org.telegram.ui.Components.wh;
 import org.telegram.ui.Components.yg;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
+public abstract class f6 extends mw0 implements rg.q1, rg.h, rg.m1, kw0, rb {
     public final rg.f1 A0;
     public final qg.t1 A1;
     public final rg.j1 B0;
@@ -91,7 +91,7 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
     public final int F1;
     public boolean G0;
     public final t5 G1;
-    public ew0 H0;
+    public fw0 H0;
     public org.telegram.ui.ActionBar.m1 H1;
     public boolean I0;
     public d6 I1;
@@ -128,7 +128,7 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
     public int Y0;
     public boolean Y1;
     public int Z0;
-    public cl0 Z1;
+    public dl0 Z1;
     public float a1;
     public rg.b2 a2;
     public ValueAnimator b1;
@@ -238,14 +238,14 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
         return 2;
     }
 
-    private ew0 getPaintingSize() {
-        ew0 ew0Var = this.H0;
-        if (ew0Var != null) {
-            return ew0Var;
+    private fw0 getPaintingSize() {
+        fw0 fw0Var = this.H0;
+        if (fw0Var != null) {
+            return fw0Var;
         }
-        ew0 ew0Var2 = new ew0(1080.0f, 1920.0f);
-        this.H0 = ew0Var2;
-        return ew0Var2;
+        fw0 fw0Var2 = new fw0(1080.0f, 1920.0f);
+        this.H0 = fw0Var2;
+        return fw0Var2;
     }
 
     private void setCoverPause(boolean z10) {
@@ -258,7 +258,7 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
             View childAt = z5Var.getChildAt(i10);
             if (childAt instanceof rg.o2) {
                 ImageReceiver imageReceiver = ((rg.o2) childAt).x0;
-                uj0 lottieAnimation = imageReceiver.getLottieAnimation();
+                vj0 lottieAnimation = imageReceiver.getLottieAnimation();
                 org.telegram.ui.Components.e6 animation = imageReceiver.getAnimation();
                 boolean z11 = !z10;
                 imageReceiver.setAllowStartLottieAnimation(z11);
@@ -550,7 +550,7 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
         boolean z11;
         gc gcVar;
         gc gcVar2;
-        cl0 cl0Var;
+        dl0 dl0Var;
         int i10;
         boolean z12 = jVar instanceof rg.v2;
         int i11 = 2;
@@ -624,27 +624,27 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
                             return true;
                         }
                         rg.b2 b2Var2 = this.a2;
-                        if (b2Var2 != null && b2Var2 != b2Var && (cl0Var = this.Z1) != null) {
-                            cl0Var.animate().alpha(0.0f).setListener(new k5(cl0Var, 0));
+                        if (b2Var2 != null && b2Var2 != b2Var && (dl0Var = this.Z1) != null) {
+                            dl0Var.animate().alpha(0.0f).setListener(new k5(dl0Var, 0));
                             this.Z1 = null;
                             this.c2 = false;
                             this.b2 = 0.0f;
                         }
                         if (this.Z1 == null) {
-                            cl0 cl0Var2 = new cl0(2, this.F1, getContext(), LaunchActivity.R(), new ci.t2(6, new ci.b()));
-                            this.Z1 = cl0Var2;
-                            org.telegram.ui.Components.na naVar = new org.telegram.ui.Components.na(this.e2, cl0Var2, 0, false);
+                            dl0 dl0Var2 = new dl0(2, this.F1, getContext(), LaunchActivity.R(), new ci.t2(6, new ci.b()));
+                            this.Z1 = dl0Var2;
+                            org.telegram.ui.Components.na naVar = new org.telegram.ui.Components.na(this.e2, dl0Var2, 0, false);
                             this.Z1.setPadding(0, AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f));
                             this.M1.addView(this.Z1, w7.z5.d(-2, 96.0f, 53, 0.0f, 0.0f, 12.0f, 64.0f));
                             Paint paint = new Paint(1);
                             paint.setColor(i0.a.o(-16777216, 120));
-                            cl0 cl0Var3 = this.Z1;
+                            dl0 dl0Var3 = this.Z1;
                             com.google.android.gms.internal.cast.z5 z5Var = new com.google.android.gms.internal.cast.z5();
                             z5Var.e = this;
                             z5Var.a = naVar;
                             z5Var.d = paint;
                             z5Var.c = new Path();
-                            cl0Var3.setDelegate(z5Var);
+                            dl0Var3.setDelegate(z5Var);
                             this.Z1.p(null, null, true);
                         }
                         this.Z1.setFragment(LaunchActivity.R());
@@ -780,7 +780,7 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
         D0(t1Var, null, false);
     }
 
-    @Override // org.telegram.ui.Components.jw0
+    @Override // org.telegram.ui.Components.kw0
     public final void G(int i10, boolean z10) {
         boolean z11;
         if (i10 > AndroidUtilities.dp(50.0f) && this.r2 && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
@@ -1002,9 +1002,9 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
                         jb jbVar = vbVar.X0;
                         if (jbVar != null) {
                             jbVar.w = l02;
-                            b81 b81Var = jbVar.x;
-                            if (b81Var != null) {
-                                b81Var.V(l02.u0);
+                            c81 c81Var = jbVar.x;
+                            if (c81Var != null) {
+                                c81Var.V(l02.u0);
                             }
                         }
                         lb lbVar = vbVar.c1;
@@ -1478,7 +1478,7 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
         this.b1.start();
     }
 
-    @Override // org.telegram.ui.Components.lw0, org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.mw0, org.telegram.ui.Components.lw0
     public final int R() {
         return this.O1.l - this.M1.getBottomPadding2();
     }
@@ -1555,7 +1555,7 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
         setTextType((this.L0 + 1) % 4);
     }
 
-    @Override // org.telegram.ui.Components.kw0, org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.Components.lw0, org.telegram.ui.ActionBar.y5
     public final void d() {
         this.E1.setColor(-15132391);
     }
@@ -1719,7 +1719,7 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
         return this.A0;
     }
 
-    @Override // org.telegram.ui.Components.lw0, org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.mw0, org.telegram.ui.Components.lw0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
@@ -1902,7 +1902,7 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
 
     public final rg.y1 j0(String str, boolean z10) {
         float f7;
-        ew0 ew0Var;
+        fw0 fw0Var;
         this.l2 = true;
         try {
             BitmapFactory.Options options = new BitmapFactory.Options();
@@ -1916,23 +1916,23 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
         z5 z5Var = this.R0;
         if (f7 > 1.0f) {
             float floor = (float) Math.floor(Math.max(this.R1, z5Var.getMeasuredWidth()) * 0.5d);
-            ew0Var = new ew0(floor, floor / f7);
+            fw0Var = new fw0(floor, floor / f7);
         } else {
             float floor2 = (float) Math.floor(Math.max(this.S1, z5Var.getMeasuredHeight()) * 0.5d);
-            ew0Var = new ew0(f7 * floor2, floor2);
+            fw0Var = new fw0(f7 * floor2, floor2);
         }
-        ew0 ew0Var2 = ew0Var;
+        fw0 fw0Var2 = fw0Var;
         Pair<Integer, Integer> imageOrientation = AndroidUtilities.getImageOrientation(str);
         if ((((Integer) imageOrientation.first).intValue() / 90) % 2 == 1) {
-            float f10 = ew0Var2.a;
-            ew0Var2.a = ew0Var2.b;
-            ew0Var2.b = f10;
+            float f10 = fw0Var2.a;
+            fw0Var2.a = fw0Var2.b;
+            fw0Var2.b = f10;
         }
         Context context = getContext();
         PointF e02 = e0();
         int intValue = ((Integer) imageOrientation.first).intValue();
         ((Integer) imageOrientation.second).getClass();
-        rg.y1 y1Var = new rg.y1(context, e02, ew0Var2, str, intValue);
+        rg.y1 y1Var = new rg.y1(context, e02, fw0Var2, str, intValue);
         y1Var.setDelegate(this);
         z5Var.addView(y1Var);
         f0();
@@ -1941,7 +1941,7 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
 
     public final rg.b2 k0(boolean z10) {
         String str;
-        ew0 ew0Var = new ew0(AndroidUtilities.dp(106.0f), AndroidUtilities.dp(106.0f));
+        fw0 fw0Var = new fw0(AndroidUtilities.dp(106.0f), AndroidUtilities.dp(106.0f));
         PointF e02 = e0();
         z5 z5Var = this.R0;
         if (z5Var.getMeasuredHeight() > 0) {
@@ -1968,7 +1968,7 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
         org.telegram.ui.Components.f6 f6Var2 = new org.telegram.ui.Components.f6(b2Var);
         b2Var.x0 = f6Var2;
         b2Var.z0 = 1.0f;
-        b2Var.q0 = ew0Var;
+        b2Var.q0 = fw0Var;
         f6Var2.d(1.0f, true);
         f6Var.d(1.0f, true);
         List<TLRPC.TL_availableReaction> reactionsList = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsList();
@@ -2027,8 +2027,8 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
             measuredWidth = this.R1;
         }
         float floor = (float) Math.floor(0.43f * r1);
-        ew0 ew0Var = new ew0(floor, floor);
-        rg.c2 c2Var = new rg.c2(getContext(), new PointF((measuredWidth - (floor / 2.0f)) - AndroidUtilities.dp(16.0f), (ew0Var.b / 2.0f) + AndroidUtilities.dp(72.0f)), ew0Var, str);
+        fw0 fw0Var = new fw0(floor, floor);
+        rg.c2 c2Var = new rg.c2(getContext(), new PointF((measuredWidth - (floor / 2.0f)) - AndroidUtilities.dp(16.0f), (fw0Var.b / 2.0f) + AndroidUtilities.dp(72.0f)), fw0Var, str);
         c2Var.setDelegate(this);
         z5Var.addView(c2Var);
         f0();
@@ -2055,7 +2055,7 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
         e6 e6Var = new e6(e0(), f10, f7);
         Context context = getContext();
         float floor = (float) Math.floor(getPaintingSize().a * 0.5d);
-        s5 s5Var = new s5(this, context, e6Var.a, e6Var.c, e6Var.b, new ew0(floor, floor), document, obj);
+        s5 s5Var = new s5(this, context, e6Var.a, e6Var.c, e6Var.b, new fw0(floor, floor), document, obj);
         boolean isTextColorEmoji = MessageObject.isTextColorEmoji(document);
         ImageReceiver imageReceiver = s5Var.x0;
         if (isTextColorEmoji) {
@@ -2069,7 +2069,7 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
     }
 
     public final rg.v2 n0(boolean z10) {
-        ew0 paintingSize = getPaintingSize();
+        fw0 paintingSize = getPaintingSize();
         PointF P0 = P0(null);
         rg.v2 v2Var = new rg.v2(getContext(), P0, (int) (paintingSize.a / 9.0f), "", this.A1, this.L0);
         float f7 = paintingSize.a / 9.0f;
@@ -2166,16 +2166,16 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
         return w2Var;
     }
 
-    @Override // org.telegram.ui.Components.kw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
     }
 
-    @Override // org.telegram.ui.Components.kw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
-        cl0 cl0Var = this.Z1;
-        if (cl0Var != null) {
-            AndroidUtilities.removeFromParent(cl0Var);
+        dl0 dl0Var = this.Z1;
+        if (dl0Var != null) {
+            AndroidUtilities.removeFromParent(dl0Var);
             this.Z1 = null;
         }
         super.onDetachedFromWindow();
@@ -2445,7 +2445,7 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
                                     if (jVar instanceof rg.o2) {
                                         mediaEntity.type = (byte) 0;
                                         rg.o2 o2Var = (rg.o2) jVar;
-                                        ew0 baseSize = o2Var.getBaseSize();
+                                        fw0 baseSize = o2Var.getBaseSize();
                                         mediaEntity.width = baseSize.a;
                                         mediaEntity.height = baseSize.b;
                                         mediaEntity.document = o2Var.getSticker();
@@ -2471,7 +2471,7 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
                                     } else if (jVar instanceof rg.y1) {
                                         rg.y1 y1Var = (rg.y1) jVar;
                                         mediaEntity.type = (byte) 2;
-                                        ew0 baseSize2 = y1Var.getBaseSize();
+                                        fw0 baseSize2 = y1Var.getBaseSize();
                                         mediaEntity.width = baseSize2.a;
                                         mediaEntity.height = baseSize2.b;
                                         mediaEntity.text = y1Var.q(i18);
@@ -2584,16 +2584,16 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
                                                     mediaAreaCoordinates2.y = ((mediaEntity.height / 2.0f) + mediaEntity.y) * 100.0f;
                                                     if (z19) {
                                                         rg.s0 s0Var3 = ((rg.t0) jVar).q0;
-                                                        mediaAreaCoordinates2.w = kk.z(s0Var3.I * 2 * scaleX, z5Var.getMeasuredWidth(), f14, 100.0f);
-                                                        mediaEntity.mediaArea.coordinates.h = kk.z(s0Var3.J * 2 * scaleY, z5Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
+                                                        mediaAreaCoordinates2.w = mk.z(s0Var3.I * 2 * scaleX, z5Var.getMeasuredWidth(), f14, 100.0f);
+                                                        mediaEntity.mediaArea.coordinates.h = mk.z(s0Var3.J * 2 * scaleY, z5Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
                                                     } else if (jVar instanceof rg.w2) {
                                                         rg.s0 s0Var4 = ((rg.w2) jVar).q0;
-                                                        mediaAreaCoordinates2.w = kk.z(s0Var4.I * 2 * scaleX, z5Var.getMeasuredWidth(), f14, 100.0f);
-                                                        mediaEntity.mediaArea.coordinates.h = kk.z(s0Var4.J * 2 * scaleY, z5Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
+                                                        mediaAreaCoordinates2.w = mk.z(s0Var4.I * 2 * scaleX, z5Var.getMeasuredWidth(), f14, 100.0f);
+                                                        mediaEntity.mediaArea.coordinates.h = mk.z(s0Var4.J * 2 * scaleY, z5Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
                                                     } else if (jVar instanceof rg.q0) {
                                                         rg.o0 o0Var = ((rg.q0) jVar).q0;
-                                                        mediaAreaCoordinates2.w = kk.z(o0Var.f * 2 * scaleX, z5Var.getMeasuredWidth(), f14, 100.0f);
-                                                        mediaEntity.mediaArea.coordinates.h = kk.z(o0Var.h * 2 * scaleY, z5Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
+                                                        mediaAreaCoordinates2.w = mk.z(o0Var.f * 2 * scaleX, z5Var.getMeasuredWidth(), f14, 100.0f);
+                                                        mediaEntity.mediaArea.coordinates.h = mk.z(o0Var.h * 2 * scaleY, z5Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
                                                     } else if (jVar instanceof rg.b2) {
                                                         rg.b2 b2Var = (rg.b2) jVar;
                                                         float padding = ((b2Var.getPadding() * 2) * scaleX) / z5Var.getMeasuredWidth();
@@ -2623,8 +2623,8 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
                                             double r10 = e1Var2.r(rectF);
                                             rectF.offset(o5Var2.getX(), o5Var2.getY());
                                             rectF.offset(x0Var.getX(), x0Var.getY());
-                                            mediaEntity.mediaArea.coordinates.x = (((rectF.centerX() * scaleX) + kk.x(view.getWidth(), 2.0f, scaleX, (view.getWidth() / 2.0f) + x10)) / z5Var.getMeasuredWidth()) * 100.0f;
-                                            mediaEntity.mediaArea.coordinates.y = (((rectF.centerY() * scaleY) + kk.x(view.getHeight(), 2.0f, scaleY, (view.getHeight() / 2.0f) + y3)) / z5Var.getMeasuredHeight()) * 100.0f;
+                                            mediaEntity.mediaArea.coordinates.x = (((rectF.centerX() * scaleX) + mk.x(view.getWidth(), 2.0f, scaleX, (view.getWidth() / 2.0f) + x10)) / z5Var.getMeasuredWidth()) * 100.0f;
+                                            mediaEntity.mediaArea.coordinates.y = (((rectF.centerY() * scaleY) + mk.x(view.getHeight(), 2.0f, scaleY, (view.getHeight() / 2.0f) + y3)) / z5Var.getMeasuredHeight()) * 100.0f;
                                             mediaEntity.mediaArea.coordinates.w = ((rectF.width() * scaleX) / z5Var.getMeasuredWidth()) * 100.0f;
                                             mediaEntity.mediaArea.coordinates.h = ((rectF.height() * scaleY) / z5Var.getMeasuredHeight()) * 100.0f;
                                             mediaEntity.mediaArea.coordinates.rotation = ((-mediaEntity.rotation) / 3.141592653589793d) * 180.0d;
@@ -2693,7 +2693,7 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
                                                 mediaArea4.coordinates = new TL_stories.TL_mediaAreaCoordinates();
                                             } else if (jVar instanceof rg.c2) {
                                                 rg.c2 c2Var = (rg.c2) jVar;
-                                                ew0 baseSize3 = c2Var.getBaseSize();
+                                                fw0 baseSize3 = c2Var.getBaseSize();
                                                 mediaEntity.width = baseSize3.a;
                                                 mediaEntity.height = baseSize3.b;
                                                 mediaEntity.type = (byte) 5;
@@ -2832,7 +2832,7 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
                                                                 if (MessageObject.isAnimatedStickerDocument(document2, true) || w0(document2)) {
                                                                     boolean isAnimatedStickerDocument5 = MessageObject.isAnimatedStickerDocument(document2, true);
                                                                     mediaEntity2.subType = (byte) (mediaEntity2.subType | (isAnimatedStickerDocument5 ? (byte) 1 : (byte) 4));
-                                                                    uj0 lottieAnimation = imageReceiver4.getLottieAnimation();
+                                                                    vj0 lottieAnimation = imageReceiver4.getLottieAnimation();
                                                                     if (lottieAnimation != null && (isAnimatedStickerDocument5 || w0(document2))) {
                                                                         r20 = lottieAnimation.r();
                                                                     }
@@ -2853,8 +2853,8 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
                                                                 mediaEntity2.x = (childAt.getWidth() / 2.0f) + x11;
                                                                 mediaEntity2.y = (childAt.getHeight() / 2.0f) + y10;
                                                                 i12 = i15;
-                                                                float x12 = kk.x(childAt.getWidth(), 2.0f, scaleX2, centerX * scaleX2);
-                                                                float x13 = kk.x(childAt.getHeight(), 2.0f, scaleY3, centerY * scaleY3);
+                                                                float x12 = mk.x(childAt.getWidth(), 2.0f, scaleX2, centerX * scaleX2);
+                                                                float x13 = mk.x(childAt.getHeight(), 2.0f, scaleY3, centerY * scaleY3);
                                                                 o5Var = o5Var3;
                                                                 view = childAt;
                                                                 double d10 = mediaEntity2.x;
@@ -3162,7 +3162,7 @@ public abstract class f6 extends lw0 implements rg.q1, rg.h, rg.m1, jw0, rb {
             View childAt = z5Var.getChildAt(i10);
             if (childAt instanceof rg.o2) {
                 ImageReceiver imageReceiver = ((rg.o2) childAt).x0;
-                uj0 lottieAnimation = imageReceiver.getLottieAnimation();
+                vj0 lottieAnimation = imageReceiver.getLottieAnimation();
                 imageReceiver.getAnimation();
                 if (lottieAnimation != null) {
                     lottieAnimation.N(Math.round(((j10 % lottieAnimation.r()) / lottieAnimation.r()) * lottieAnimation.e[0]), true, false);

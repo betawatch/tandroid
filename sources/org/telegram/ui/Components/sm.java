@@ -19,9 +19,9 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class sm extends ql0 {
+public final class sm extends rl0 {
     public final Context c;
     public final boolean d;
     public boolean e;
@@ -38,20 +38,20 @@ public final class sm extends ql0 {
         this.d = z10;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ql0
-    public final boolean E(im0 im0Var) {
+    @Override // org.telegram.ui.Components.rl0
+    public final boolean E(jm0 jm0Var) {
         MediaController.AlbumEntry albumEntry;
         boolean isEmpty = ChatAttachAlertPhotoLayout.r1.isEmpty();
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.v;
         return !(isEmpty && ((albumEntry = chatAttachAlertPhotoLayout.T0) == null || albumEntry.photos.isEmpty())) && chatAttachAlertPhotoLayout.b.R && h() > 30;
     }
 
-    @Override // org.telegram.ui.Components.ql0
+    @Override // org.telegram.ui.Components.rl0
     public final String F(int i10) {
         ArrayList<MediaController.PhotoEntry> arrayList;
         MediaController.PhotoEntry M = M(i10);
@@ -82,16 +82,16 @@ public final class sm extends ql0 {
         return LocaleController.formatYearMont(j10, true);
     }
 
-    @Override // org.telegram.ui.Components.ql0
-    public final void G(im0 im0Var, float f7, int[] iArr) {
+    @Override // org.telegram.ui.Components.rl0
+    public final void G(jm0 jm0Var, float f7, int[] iArr) {
         int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-        int measuredHeight = im0Var.getChildAt(0).getMeasuredHeight();
+        int measuredHeight = jm0Var.getChildAt(0).getMeasuredHeight();
         float h = h();
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.v;
-        float ceil = (((int) (Math.ceil(h / chatAttachAlertPhotoLayout.M0) * measuredHeight)) - (im0Var.getMeasuredHeight() - currentActionBarHeight)) * f7;
+        float ceil = (((int) (Math.ceil(h / chatAttachAlertPhotoLayout.M0) * measuredHeight)) - (jm0Var.getMeasuredHeight() - currentActionBarHeight)) * f7;
         float f10 = measuredHeight;
         iArr[0] = ((int) (ceil / f10)) * chatAttachAlertPhotoLayout.M0;
-        int paddingTop = im0Var.getPaddingTop() + ((int) (ceil % f10)) + ((int) ((1.0f - f7) * currentActionBarHeight));
+        int paddingTop = jm0Var.getPaddingTop() + ((int) (ceil % f10)) + ((int) ((1.0f - f7) * currentActionBarHeight));
         iArr[1] = paddingTop;
         if (iArr[0] != 0 || paddingTop >= chatAttachAlertPhotoLayout.getListTopPadding()) {
             return;
@@ -99,34 +99,34 @@ public final class sm extends ql0 {
         iArr[1] = chatAttachAlertPhotoLayout.getListTopPadding() + currentActionBarHeight;
     }
 
-    @Override // org.telegram.ui.Components.ql0
-    public final float H(im0 im0Var) {
+    @Override // org.telegram.ui.Components.rl0
+    public final float H(jm0 jm0Var) {
         int i10 = this.v.M0;
         int ceil = (int) Math.ceil(this.n / i10);
-        if (im0Var.getChildCount() != 0) {
-            int measuredHeight = im0Var.getChildAt(0).getMeasuredHeight();
-            if (RecyclerView.R(im0Var.getChildAt(0)) >= 0) {
-                return Utilities.clamp((((r5 / i10) * measuredHeight) - r2.getTop()) / ((ceil * measuredHeight) - (im0Var.getMeasuredHeight() - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight())), 1.0f, 0.0f);
+        if (jm0Var.getChildCount() != 0) {
+            int measuredHeight = jm0Var.getChildAt(0).getMeasuredHeight();
+            if (RecyclerView.R(jm0Var.getChildAt(0)) >= 0) {
+                return Utilities.clamp((((r5 / i10) * measuredHeight) - r2.getTop()) / ((ceil * measuredHeight) - (jm0Var.getMeasuredHeight() - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight())), 1.0f, 0.0f);
             }
         }
         return 0.0f;
     }
 
-    @Override // org.telegram.ui.Components.ql0
-    public final void J(im0 im0Var) {
+    @Override // org.telegram.ui.Components.rl0
+    public final void J(jm0 jm0Var) {
         this.s = false;
-        int childCount = im0Var.getChildCount();
+        int childCount = jm0Var.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
-            im0Var.getChildAt(i10).invalidate();
+            jm0Var.getChildAt(i10).invalidate();
         }
     }
 
-    @Override // org.telegram.ui.Components.ql0
+    @Override // org.telegram.ui.Components.rl0
     public final void K() {
         this.s = true;
     }
 
-    public final sl0 L() {
+    public final tl0 L() {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.v;
         org.telegram.ui.Cells.s5 s5Var = new org.telegram.ui.Cells.s5(this.c, chatAttachAlertPhotoLayout.a);
         if (this == chatAttachAlertPhotoLayout.G) {
@@ -135,7 +135,7 @@ public final class sm extends ql0 {
         }
         s5Var.setFastScrollDelegate(new s(this, 22));
         s5Var.setDelegate(new q2(10, this, s5Var));
-        return new sl0(s5Var);
+        return new tl0(s5Var);
     }
 
     public final MediaController.PhotoEntry M(int i10) {
@@ -312,26 +312,26 @@ public final class sm extends ql0 {
             if (arrayList.isEmpty()) {
                 return L();
             }
-            sl0 sl0Var = (sl0) arrayList.get(0);
+            tl0 tl0Var = (tl0) arrayList.get(0);
             arrayList.remove(0);
-            return sl0Var;
+            return tl0Var;
         }
         Context context = this.c;
         if (i10 == 1) {
             org.telegram.ui.Cells.l5 l5Var = new org.telegram.ui.Cells.l5(context);
             l5Var.setFocusable(true);
             l5Var.a = AndroidUtilities.dp(0.0f);
-            return new sl0(l5Var);
+            return new tl0(l5Var);
         }
         if (i10 == 2) {
-            return new sl0(new ai.ic(this, context, 14));
+            return new tl0(new ai.ic(this, context, 14));
         }
         if (i10 == 4) {
             tiVar.getClass();
-            return new sl0(new rm(this, context));
+            return new tl0(new rm(this, context));
         }
         if (i10 == 5) {
-            return new sl0(new View(context));
+            return new tl0(new View(context));
         }
         if (i10 == 7) {
             p20 p20Var = new p20(context, tiVar.M1);
@@ -341,7 +341,7 @@ public final class sm extends ql0 {
             p20Var.b.setOnClickListener(new f0(new wl(chatAttachAlertPhotoLayout, 5), 17));
             p20Var.a.setOnClickListener(new f0(new wl(chatAttachAlertPhotoLayout, 6), 18));
             p20Var.c.setOnClickListener(new ca(15, p20Var, new z2(this, 2)));
-            return new sl0(p20Var);
+            return new tl0(p20Var);
         }
         if (i10 == 8) {
             FrameLayout frameLayout = new FrameLayout(context);
@@ -355,7 +355,7 @@ public final class sm extends ql0 {
             spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) LocaleController.getString(R.string.GalleryAccessAllowAccessCamera));
             dVar.g(spannableStringBuilder, false, true);
             frameLayout.addView(dVar, w7.z5.d(-2, 44.0f, 81, 10.0f, 0.0f, 10.0f, 12.0f));
-            return new sl0(frameLayout);
+            return new tl0(frameLayout);
         }
         org.telegram.ui.Cells.m5 m5Var = new org.telegram.ui.Cells.m5(context);
         ImageView imageView = new ImageView(context);
@@ -373,11 +373,11 @@ public final class sm extends ql0 {
         m5Var.addView(imageView2, w7.z5.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
         TextView textView = new TextView(context);
         m5Var.c = textView;
-        org.telegram.messenger.kk.o(org.telegram.ui.ActionBar.h6.ca, d6Var, textView, 1, 12.0f);
+        org.telegram.messenger.mk.o(org.telegram.ui.ActionBar.h6.ca, d6Var, textView, 1, 12.0f);
         textView.setGravity(17);
         m5Var.addView(textView, w7.z5.d(-2, -2.0f, 17, 5.0f, 13.0f, 5.0f, 0.0f));
         m5Var.d = AndroidUtilities.dp(80.0f);
-        return new sl0(m5Var);
+        return new tl0(m5Var);
     }
 
     @Override // s4.g0

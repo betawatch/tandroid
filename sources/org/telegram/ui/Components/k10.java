@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class k10 extends bb {
     public boolean A0;
@@ -156,11 +156,11 @@ public final class k10 extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final void G(kw0 kw0Var) {
-        im0 im0Var = this.d;
-        im0Var.setOverScrollMode(2);
-        im0Var.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.l0 != null ? 68.0f : 0.0f));
-        im0Var.setOnItemClickListener(new j(this, 8));
+    public final void G(lw0 lw0Var) {
+        jm0 jm0Var = this.d;
+        jm0Var.setOverScrollMode(2);
+        jm0Var.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.l0 != null ? 68.0f : 0.0f));
+        jm0Var.setOnItemClickListener(new j(this, 8));
     }
 
     public final void R(boolean z10) {
@@ -194,11 +194,11 @@ public final class k10 extends bb {
         h10Var.a(LocaleController.getString(z10 ? R.string.SelectAll : R.string.DeselectAll), new ai.y7(this, h10Var, z10, 21));
         R(true);
         while (true) {
-            im0 im0Var = this.d;
-            if (i10 >= im0Var.getChildCount()) {
+            jm0 jm0Var = this.d;
+            if (i10 >= jm0Var.getChildCount()) {
                 return;
             }
-            View childAt = im0Var.getChildAt(i10);
+            View childAt = jm0Var.getChildAt(i10);
             if (childAt instanceof org.telegram.ui.Cells.f4) {
                 Object tag = childAt.getTag();
                 if (tag instanceof Long) {
@@ -373,7 +373,7 @@ public final class k10 extends bb {
                 g10Var2.v = ofFloat;
                 ofFloat.addUpdateListener(new f10(g10Var2, 1));
                 g10Var2.v.addListener(new org.telegram.ui.nq(g10Var2, 28));
-                org.telegram.messenger.kk.l(2.0f, g10Var2.v);
+                org.telegram.messenger.mk.l(2.0f, g10Var2.v);
                 g10Var2.v.setDuration(200L);
                 g10Var2.v.start();
             }
@@ -425,7 +425,7 @@ public final class k10 extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
+    public final im0 x(jm0 jm0Var) {
         return new e10(this);
     }
 }

@@ -9,9 +9,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.vy0;
+import org.telegram.ui.Components.wy0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -60,7 +60,7 @@ public final /* synthetic */ class n3 implements Runnable {
         Iterator it;
         String message;
         Iterator it2;
-        vy0 r10;
+        wy0 r10;
         switch (this.a) {
             case 0:
                 l7.z0(this.b, this.c, (l7) this.e, this.d, (TLObject) this.h, (TLRPC.TL_error) this.f);

@@ -10,12 +10,12 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class h20 extends FrameLayout implements ne.d {
     public final ne.b a;
     public final ne.b b;
-    public final xj0 c;
+    public final yj0 c;
     public final RadialProgressView d;
     public final org.telegram.ui.ActionBar.d6 e;
     public ArrayList f;
@@ -86,17 +86,17 @@ public final class h20 extends FrameLayout implements ne.d {
     public final void g() {
         boolean z10 = this.h;
         RadialProgressView radialProgressView = this.d;
-        xj0 xj0Var = this.c;
+        yj0 yj0Var = this.c;
         org.telegram.ui.ActionBar.d6 d6Var = this.e;
         if (!z10) {
             int i10 = org.telegram.ui.ActionBar.h6.O9;
-            xj0Var.setColorFilter(org.telegram.ui.ActionBar.h6.w0(i10, d6Var), PorterDuff.Mode.SRC_IN);
+            yj0Var.setColorFilter(org.telegram.ui.ActionBar.h6.w0(i10, d6Var), PorterDuff.Mode.SRC_IN);
             radialProgressView.setProgressColor(org.telegram.ui.ActionBar.h6.w0(i10, d6Var));
             setBackground(org.telegram.ui.ActionBar.h6.i0(AndroidUtilities.dp(48.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Qh, d6Var)));
             return;
         }
         int i11 = org.telegram.ui.ActionBar.h6.v8;
-        xj0Var.setColorFilter(org.telegram.ui.ActionBar.h6.w0(i11, d6Var), PorterDuff.Mode.SRC_IN);
+        yj0Var.setColorFilter(org.telegram.ui.ActionBar.h6.w0(i11, d6Var), PorterDuff.Mode.SRC_IN);
         radialProgressView.setProgressColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
         this.n.a(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
         this.s.b();
@@ -174,10 +174,10 @@ public final class h20 extends FrameLayout implements ne.d {
         this.b = new ne.b(1, this, bsVar, 380L, false);
         this.e = d6Var;
         this.h = z10;
-        xj0 xj0Var = new xj0(context);
-        this.c = xj0Var;
-        xj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(xj0Var, w7.z5.c(-1.0f, -1));
+        yj0 yj0Var = new yj0(context);
+        this.c = yj0Var;
+        yj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(yj0Var, w7.z5.c(-1.0f, -1));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.d = radialProgressView;
         radialProgressView.setSize(AndroidUtilities.dp(18.0f));

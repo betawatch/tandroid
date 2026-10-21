@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.webrtc.EglRenderer;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x70 implements Runnable {
     public final /* synthetic */ int a;
@@ -167,7 +167,7 @@ public final /* synthetic */ class x70 implements Runnable {
                     photoViewer.getClass();
                     view.setVisibility(8);
                 }
-                photoViewer.s3();
+                photoViewer.u3();
                 return;
             case 7:
                 PhotoViewer photoViewer2 = (PhotoViewer) this.c;
@@ -192,25 +192,25 @@ public final /* synthetic */ class x70 implements Runnable {
                     }
                     return;
                 }
-                org.telegram.ui.Components.yh0 yh0Var = profileActivity.a0;
-                if (yh0Var != null) {
-                    org.telegram.ui.Components.vh0 j10 = org.telegram.ui.Components.yh0.j(7, yh0Var.a);
+                org.telegram.ui.Components.zh0 zh0Var = profileActivity.a0;
+                if (zh0Var != null) {
+                    org.telegram.ui.Components.wh0 j10 = org.telegram.ui.Components.zh0.j(7, zh0Var.a);
                     if (j10 == null || !j10.s) {
                         r72 = 0;
                     } else {
                         r72 = 0;
                         j10.s = false;
-                        yh0Var.invalidate();
+                        zh0Var.invalidate();
                     }
                     if (zArr[r72]) {
-                        org.telegram.ui.Components.yh0 yh0Var2 = profileActivity.a0;
-                        yh0Var2.I = true;
-                        yh0Var2.o(7, r72);
+                        org.telegram.ui.Components.zh0 zh0Var2 = profileActivity.a0;
+                        zh0Var2.I = true;
+                        zh0Var2.o(7, r72);
                         profileActivity.a0.o(9, true);
-                        org.telegram.ui.Components.yh0 yh0Var3 = profileActivity.a0;
-                        if (yh0Var3.I) {
-                            yh0Var3.I = r72;
-                            yh0Var3.d();
+                        org.telegram.ui.Components.zh0 zh0Var3 = profileActivity.a0;
+                        if (zh0Var3.I) {
+                            zh0Var3.I = r72;
+                            zh0Var3.d();
                             return;
                         }
                         return;
@@ -336,7 +336,7 @@ public final /* synthetic */ class x70 implements Runnable {
                     return;
                 }
             case 10:
-                h31.Q((h31) this.c, this.b, (org.telegram.ui.Components.go0) this.d);
+                h31.Q((h31) this.c, this.b, (org.telegram.ui.Components.ho0) this.d);
                 return;
             case 11:
                 TwoStepVerificationActivity.X((TwoStepVerificationActivity) this.c, this.b, (byte[]) this.d);

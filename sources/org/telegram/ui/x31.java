@@ -30,7 +30,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class x31 extends Dialog {
     public final org.telegram.ui.Components.rt E;
@@ -61,7 +61,7 @@ public final class x31 extends Dialog {
     public boolean b0;
     public final ah.v c;
     public org.telegram.ui.ActionBar.b2 c0;
-    public org.telegram.ui.Components.u11 d;
+    public org.telegram.ui.Components.v11 d;
     public ValueAnimator d0;
     public i0.b e;
     public ValueAnimator e0;
@@ -71,7 +71,7 @@ public final class x31 extends Dialog {
     public Matrix r;
     public float s;
     public float v;
-    public org.telegram.ui.Components.b81 w;
+    public org.telegram.ui.Components.c81 w;
     public ei.x3 x;
     public TextView y;
 
@@ -186,14 +186,14 @@ public final class x31 extends Dialog {
         if (x3Var != null) {
             x3Var.e(true);
         }
-        org.telegram.ui.Components.b81 b81Var = this.w;
-        if (b81Var != null) {
-            b81Var.B();
+        org.telegram.ui.Components.c81 c81Var = this.w;
+        if (c81Var != null) {
+            c81Var.B();
             this.w.H();
             this.w = null;
         }
         if (!this.S && (v31Var = this.N) != null && v31Var.getSeekBarWaveform() != null) {
-            org.telegram.ui.Components.fp0 seekBarWaveform = this.N.getSeekBarWaveform();
+            org.telegram.ui.Components.gp0 seekBarWaveform = this.N.getSeekBarWaveform();
             seekBarWaveform.L = this.s;
             org.telegram.ui.Cells.u1 u1Var = seekBarWaveform.n;
             if (u1Var != null) {
@@ -213,20 +213,20 @@ public final class x31 extends Dialog {
             }
             AndroidUtilities.runOnUIThread(i0Var);
             this.Y = null;
-            org.telegram.ui.Components.u11 u11Var = new org.telegram.ui.Components.u11(this.a, null);
-            this.d = u11Var;
-            m0Var.addView(u11Var, w7.z5.e(-1, -1, 119));
-            org.telegram.ui.Components.u11 u11Var2 = this.d;
+            org.telegram.ui.Components.v11 v11Var = new org.telegram.ui.Components.v11(this.a, null);
+            this.d = v11Var;
+            m0Var.addView(v11Var, w7.z5.e(-1, -1, 119));
+            org.telegram.ui.Components.v11 v11Var2 = this.d;
             v31 v31Var2 = this.N;
             s31 s31Var = new s31(this, 1);
-            org.telegram.ui.Components.s11 s11Var = u11Var2.a;
-            if (s11Var != null) {
-                s11Var.d(v31Var2, 1.5f, s31Var);
-                Choreographer.getInstance().postFrameCallback(u11Var2.b);
+            org.telegram.ui.Components.t11 t11Var = v11Var2.a;
+            if (t11Var != null) {
+                t11Var.d(v31Var2, 1.5f, s31Var);
+                Choreographer.getInstance().postFrameCallback(v11Var2.b);
             } else {
-                org.telegram.ui.Components.t11 t11Var = new org.telegram.ui.Components.t11(v31Var2, s31Var);
-                t11Var.g = 1.5f;
-                u11Var2.c.add(t11Var);
+                org.telegram.ui.Components.u11 u11Var = new org.telegram.ui.Components.u11(v31Var2, s31Var);
+                u11Var.g = 1.5f;
+                v11Var2.c.add(u11Var);
             }
             WindowManager.LayoutParams attributes = getWindow().getAttributes();
             attributes.flags |= 16;

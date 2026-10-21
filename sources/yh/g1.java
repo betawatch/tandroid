@@ -35,12 +35,12 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.Components.f6;
 import org.telegram.ui.Components.g80;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.uj0;
-import org.telegram.ui.Components.up0;
+import org.telegram.ui.Components.vj0;
+import org.telegram.ui.Components.vp0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.yq;
@@ -49,7 +49,7 @@ import org.telegram.ui.v10;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public class g1 extends FrameLayout {
     public static final int[] n0 = {-2781403, -3635939};
@@ -65,8 +65,8 @@ public class g1 extends FrameLayout {
     public fb N;
     public boolean O;
     public float P;
-    public e11 Q;
-    public e11 R;
+    public f11 Q;
+    public f11 R;
     public final Rect S;
     public boolean T;
     public boolean U;
@@ -76,7 +76,7 @@ public class g1 extends FrameLayout {
     public sg.k a0;
     public final d6 b;
     public TL_stars.StarGift b0;
-    public final up0 c;
+    public final vp0 c;
     public boolean c0;
     public final FrameLayout d;
     public boolean d0;
@@ -108,7 +108,7 @@ public class g1 extends FrameLayout {
         this.a = i10;
         this.b = d6Var;
         b6.b(this, 0.04f, 1.5f);
-        this.c = new up0(this);
+        this.c = new vp0(this);
         FrameLayout frameLayout = new FrameLayout(context);
         this.d = frameLayout;
         d1 d1Var = new d1(frameLayout, d6Var, true);
@@ -286,18 +286,18 @@ public class g1 extends FrameLayout {
         }
         if (uniqueStarGift != null) {
             if (this.Q == null) {
-                this.Q = new e11(uniqueStarGift.title, 20.0f, AndroidUtilities.bold());
+                this.Q = new f11(uniqueStarGift.title, 20.0f, AndroidUtilities.bold());
             }
             if (this.R == null) {
-                this.R = new e11(LocaleController.formatPluralStringComma("Gift2CollectionNumber", uniqueStarGift.num), 13.0f, null);
+                this.R = new f11(LocaleController.formatPluralStringComma("Gift2CollectionNumber", uniqueStarGift.num), 13.0f, null);
             }
-            e11 e11Var = this.Q;
-            e11Var.p = f7 - AndroidUtilities.dp(8.0f);
+            f11 f11Var = this.Q;
+            f11Var.p = f7 - AndroidUtilities.dp(8.0f);
             float f15 = f13 - f11;
-            e11Var.c((f7 - this.Q.l()) / 2.0f, ((f10 - AndroidUtilities.dp(40.0f)) - (this.Q.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), f11, -1, canvas);
-            e11 e11Var2 = this.R;
-            e11Var2.p = f7 - AndroidUtilities.dp(8.0f);
-            e11Var2.c((f7 - this.R.l()) / 2.0f, ((f10 - AndroidUtilities.dp(19.0f)) - (this.R.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), 0.6f * f11, -1, canvas);
+            f11Var.c((f7 - this.Q.l()) / 2.0f, ((f10 - AndroidUtilities.dp(40.0f)) - (this.Q.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), f11, -1, canvas);
+            f11 f11Var2 = this.R;
+            f11Var2.p = f7 - AndroidUtilities.dp(8.0f);
+            f11Var2.c((f7 - this.R.l()) / 2.0f, ((f10 - AndroidUtilities.dp(19.0f)) - (this.R.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), 0.6f * f11, -1, canvas);
             canvas2 = canvas;
         }
         rg.x1 x1Var = this.J;
@@ -718,7 +718,7 @@ public class g1 extends FrameLayout {
         w9Var.setLayoutParams(layoutParams);
         if (this.l0 == savedStarGift) {
             c1Var.setVisibility(0);
-            c1Var.animate().alpha(savedStarGift.unsaved ? 1.0f : 0.0f).scaleX(savedStarGift.unsaved ? 1.0f : 0.4f).scaleY(savedStarGift.unsaved ? 1.0f : 0.4f).setDuration(350L).setInterpolator(bs.h).withEndAction(new uf.c(17, this, savedStarGift)).start();
+            c1Var.animate().alpha(savedStarGift.unsaved ? 1.0f : 0.0f).scaleX(savedStarGift.unsaved ? 1.0f : 0.4f).scaleY(savedStarGift.unsaved ? 1.0f : 0.4f).setDuration(350L).setInterpolator(bs.h).withEndAction(new u2.j0(19, this, savedStarGift)).start();
         } else {
             c1Var.setAlpha(savedStarGift.unsaved ? 1.0f : 0.0f);
             c1Var.setScaleX(savedStarGift.unsaved ? 1.0f : 0.4f);
@@ -890,7 +890,7 @@ public class g1 extends FrameLayout {
             w9Var.getImageReceiver().setAllowStartLottieAnimation(f7 == 0.0f);
             if (f7 > 0.0f) {
                 w9Var.getImageReceiver().stopAnimation();
-                uj0 lottieAnimation = w9Var.getImageReceiver().getLottieAnimation();
+                vj0 lottieAnimation = w9Var.getImageReceiver().getLottieAnimation();
                 if (lottieAnimation != null) {
                     lottieAnimation.N(0, false, false);
                 }

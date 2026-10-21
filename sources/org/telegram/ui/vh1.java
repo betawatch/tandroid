@@ -15,9 +15,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class vh1 extends org.telegram.ui.Components.hm0 {
+public final class vh1 extends org.telegram.ui.Components.im0 {
     public final /* synthetic */ WallpapersListActivity E;
     public final Context c;
     public final ArrayList d = new ArrayList();
@@ -37,7 +37,7 @@ public final class vh1 extends org.telegram.ui.Components.hm0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         return b1Var.f != 2;
     }
@@ -177,7 +177,7 @@ public final class vh1 extends org.telegram.ui.Components.hm0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v1, types: [android.view.View, android.view.ViewGroup, androidx.recyclerview.widget.RecyclerView, org.telegram.ui.Components.im0, org.telegram.ui.sa1] */
+    /* JADX WARN: Type inference failed for: r2v1, types: [android.view.View, android.view.ViewGroup, androidx.recyclerview.widget.RecyclerView, org.telegram.ui.Components.jm0, org.telegram.ui.sa1] */
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         FrameLayout hjVar;
@@ -210,6 +210,6 @@ public final class vh1 extends org.telegram.ui.Components.hm0 {
         } else {
             hjVar.setLayoutParams(new s4.o0(-1, -2));
         }
-        return new org.telegram.ui.Components.sl0(hjVar);
+        return new org.telegram.ui.Components.tl0(hjVar);
     }
 }

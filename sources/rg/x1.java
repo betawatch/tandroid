@@ -14,9 +14,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.Components.ew0;
+import org.telegram.ui.Components.fw0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class x1 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -76,12 +76,12 @@ public final class x1 extends FrameLayout {
                 Rect rect = y1Var.E0;
                 Rect rect2 = y1Var.D0;
                 Paint paint = y1Var.F0;
-                ew0 ew0Var = y1Var.v0;
+                fw0 fw0Var = y1Var.v0;
                 Bitmap bitmap = y1Var.A0;
                 if (y1Var.z0 != null) {
                     canvas.save();
                     float e = y1Var.u0.e(y1Var.t0);
-                    canvas.scale(1.0f - (e * 2.0f), 1.0f, ew0Var.a / 2.0f, 0.0f);
+                    canvas.scale(1.0f - (e * 2.0f), 1.0f, fw0Var.a / 2.0f, 0.0f);
                     canvas.skew(0.0f, org.telegram.messenger.g0.z(1.0f, e, 4.0f * e, 0.25f));
                     float e7 = y1Var.y0.e(y1Var.x0);
                     if (!y1Var.x0) {
@@ -90,7 +90,7 @@ public final class x1 extends FrameLayout {
                         if (bitmap != null) {
                             canvas.translate(r6.getWidth() / 2.0f, r6.getHeight() / 2.0f);
                             canvas.rotate(y1Var.w0);
-                            float max = Math.max(ew0Var.a / bitmap.getWidth(), ew0Var.b / bitmap.getHeight());
+                            float max = Math.max(fw0Var.a / bitmap.getWidth(), fw0Var.b / bitmap.getHeight());
                             canvas.scale(max, max);
                             if (y1Var.G0 != null) {
                                 canvas.rotate(-y1Var.getOrientation());
@@ -130,13 +130,13 @@ public final class x1 extends FrameLayout {
             case 1:
                 o2 o2Var = (o2) this.b;
                 ImageReceiver imageReceiver = o2Var.x0;
-                ew0 ew0Var2 = o2Var.v0;
+                fw0 fw0Var2 = o2Var.v0;
                 if (o2Var.w0 != null) {
                     canvas.save();
                     float e10 = o2Var.u0.e(o2Var.t0);
-                    canvas.scale(1.0f - (e10 * 2.0f), 1.0f, ew0Var2.a / 2.0f, 0.0f);
+                    canvas.scale(1.0f - (e10 * 2.0f), 1.0f, fw0Var2.a / 2.0f, 0.0f);
                     canvas.skew(0.0f, org.telegram.messenger.g0.z(1.0f, e10, 4.0f * e10, 0.25f));
-                    imageReceiver.setImageCoords(0.0f, 0.0f, (int) ew0Var2.a, (int) ew0Var2.b);
+                    imageReceiver.setImageCoords(0.0f, 0.0f, (int) fw0Var2.a, (int) fw0Var2.b);
                     imageReceiver.draw(canvas);
                     canvas.restore();
                     break;

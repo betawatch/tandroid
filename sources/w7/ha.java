@@ -5,7 +5,7 @@ import java.io.Closeable;
 import java.util.HashMap;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public class ha implements Closeable {
     public static final HashMap f = new HashMap();

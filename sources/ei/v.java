@@ -15,13 +15,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.aw;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.et;
 import org.telegram.ui.s10;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class v extends im0 {
+public final class v extends jm0 {
     public final /* synthetic */ int V2 = 0;
     public final Object W2;
     public final /* synthetic */ KeyEvent.Callback X2;
@@ -33,7 +33,7 @@ public final class v extends im0 {
         this.W2 = new s10();
     }
 
-    @Override // org.telegram.ui.Components.im0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jm0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         int i10 = this.V2;
         KeyEvent.Callback callback = this.X2;
@@ -93,7 +93,7 @@ public final class v extends im0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.im0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jm0, android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.V2) {
             case 0:
@@ -105,7 +105,7 @@ public final class v extends im0 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j10) {
         switch (this.V2) {
             case 2:
@@ -136,7 +136,7 @@ public final class v extends im0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public void onDetachedFromWindow() {
         ViewGroup viewGroup;
         switch (this.V2) {
@@ -152,7 +152,7 @@ public final class v extends im0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         MotionEvent motionEvent2;
         org.telegram.ui.ActionBar.m1 m1Var;
@@ -183,7 +183,7 @@ public final class v extends im0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         switch (this.V2) {
             case 1:
@@ -200,7 +200,7 @@ public final class v extends im0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public void onMeasure(int i10, int i11) {
         switch (this.V2) {
             case 2:
@@ -214,7 +214,7 @@ public final class v extends im0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         org.telegram.ui.ActionBar.m1 m1Var;
         switch (this.V2) {

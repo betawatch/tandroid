@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -131,10 +131,10 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 ((i4) obj).run();
                 break;
             case 10:
-                org.telegram.ui.Components.xj0 xj0Var = ((j9) obj).d;
-                if (!xj0Var.b()) {
-                    xj0Var.setProgress(0.0f);
-                    xj0Var.d();
+                org.telegram.ui.Components.yj0 yj0Var = ((j9) obj).d;
+                if (!yj0Var.b()) {
+                    yj0Var.setProgress(0.0f);
+                    yj0Var.d();
                     break;
                 }
                 break;
@@ -199,7 +199,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 runnable.run();
                 break;
             case 18:
-                org.telegram.messenger.kk.n(3, (org.telegram.ui.ActionBar.n2) obj);
+                org.telegram.messenger.mk.n(3, (org.telegram.ui.ActionBar.n2) obj);
                 break;
             case 19:
                 final vu vuVar = (vu) obj;
@@ -265,10 +265,10 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 ((zz) obj).a.dismiss();
                 break;
             case 24:
-                org.telegram.ui.Components.xj0 xj0Var2 = ((d00) obj).a;
-                if (!xj0Var2.b()) {
-                    xj0Var2.setProgress(0.0f);
-                    xj0Var2.d();
+                org.telegram.ui.Components.yj0 yj0Var2 = ((d00) obj).a;
+                if (!yj0Var2.b()) {
+                    yj0Var2.setProgress(0.0f);
+                    yj0Var2.d();
                     break;
                 }
                 break;
@@ -288,10 +288,10 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 }
                 break;
             case 27:
-                org.telegram.ui.Components.xj0 xj0Var3 = ((i10) obj).a;
-                if (!xj0Var3.b()) {
-                    xj0Var3.setProgress(0.0f);
-                    xj0Var3.d();
+                org.telegram.ui.Components.yj0 yj0Var3 = ((i10) obj).a;
+                if (!yj0Var3.b()) {
+                    yj0Var3.setProgress(0.0f);
+                    yj0Var3.d();
                     break;
                 }
                 break;

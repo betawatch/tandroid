@@ -5,9 +5,9 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class qk extends org.telegram.ui.Components.fo0 {
+public final class qk extends org.telegram.ui.Components.go0 {
     public final /* synthetic */ qn I;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -16,7 +16,7 @@ public final class qk extends org.telegram.ui.Components.fo0 {
         this.I = qnVar;
     }
 
-    @Override // org.telegram.ui.Components.fo0
+    @Override // org.telegram.ui.Components.go0
     public final void b(boolean z10) {
         qn qnVar = this.I;
         qnVar.w7();
@@ -27,11 +27,11 @@ public final class qk extends org.telegram.ui.Components.fo0 {
         }
         if (z10) {
             qnVar.D9 = true;
-            qnVar.nc();
+            qnVar.oc();
         }
     }
 
-    @Override // org.telegram.ui.Components.fo0
+    @Override // org.telegram.ui.Components.go0
     public final boolean f(ah.i1 i1Var) {
         int i10;
         qn qnVar = this.I;
@@ -39,11 +39,11 @@ public final class qk extends org.telegram.ui.Components.fo0 {
         qnVar.r3 = i1Var != null;
         if (i1Var == null) {
             qnVar.getMediaDataController().clearFoundMessageObjects();
-            qnVar.ob(false);
-            qnVar.Jc(0, 0, -1);
+            qnVar.pb(false);
+            qnVar.Kc(0, 0, -1);
         }
-        qnVar.Mc();
-        qnVar.zc();
+        qnVar.Nc();
+        qnVar.Ac();
         qnVar.t3 = qnVar.j0.getSearchField().getText().toString();
         MediaDataController mediaDataController = qnVar.getMediaDataController();
         String str = qnVar.t3;
@@ -55,7 +55,7 @@ public final class qk extends org.telegram.ui.Components.fo0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.fo0
+    @Override // org.telegram.ui.Components.go0
     public final void h(boolean z10) {
         super.h(z10);
         qn qnVar = this.I;

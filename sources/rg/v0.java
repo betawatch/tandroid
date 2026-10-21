@@ -6,7 +6,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ft0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class v0 implements qg.e1 {
     public final /* synthetic */ w0 a;
@@ -33,7 +33,7 @@ public final class v0 implements qg.e1 {
         w0Var.w.setViewHidden(false);
         PhotoViewer photoViewer = ((ft0) w0Var).K;
         Drawable[] drawableArr = PhotoViewer.U8;
-        photoViewer.X2(true, true);
+        photoViewer.Z2(true, true);
     }
 
     @Override // qg.e1

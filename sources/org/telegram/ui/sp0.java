@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class sp0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public final boolean E;
@@ -55,7 +55,7 @@ public final class sp0 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public ArrayList d;
     public boolean e;
     public int f;
-    public org.telegram.ui.Components.im0 h;
+    public org.telegram.ui.Components.jm0 h;
     public qp0 n;
     public FrameLayout r;
     public TextView s;
@@ -243,19 +243,19 @@ public final class sp0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         mp0Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
         this.fragmentView = this.P;
         this.actionBar.setTitle(LocaleController.getString(R.string.Gallery));
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
-        this.h = im0Var;
-        im0Var.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(54.0f));
+        org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, null);
+        this.h = jm0Var;
+        jm0Var.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(54.0f));
         this.h.setClipToPadding(false);
         this.h.setHorizontalScrollBarEnabled(false);
         this.h.setVerticalScrollBarEnabled(false);
         this.h.setLayoutManager(new s4.b0(1, false));
         this.h.setDrawingCacheEnabled(false);
         this.P.addView(this.h, w7.z5.e(-1, -1, 51));
-        org.telegram.ui.Components.im0 im0Var2 = this.h;
+        org.telegram.ui.Components.jm0 jm0Var2 = this.h;
         qp0 qp0Var = new qp0(this, context);
         this.n = qp0Var;
-        im0Var2.setAdapter(qp0Var);
+        jm0Var2.setAdapter(qp0Var);
         this.h.setGlowColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
         TextView textView = new TextView(context);
         this.s = textView;
@@ -364,8 +364,8 @@ public final class sp0 extends org.telegram.ui.ActionBar.n2 implements Notificat
             if (frameLayout != null) {
                 frameLayout.setVisibility(8);
             }
-            org.telegram.ui.Components.im0 im0Var = this.h;
-            if (im0Var != null && im0Var.getEmptyView() == null) {
+            org.telegram.ui.Components.jm0 jm0Var = this.h;
+            if (jm0Var != null && jm0Var.getEmptyView() == null) {
                 this.h.setEmptyView(this.s);
             }
             qp0 qp0Var = this.n;
@@ -410,9 +410,9 @@ public final class sp0 extends org.telegram.ui.ActionBar.n2 implements Notificat
     @Override // org.telegram.ui.ActionBar.n2
     public final void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
-        org.telegram.ui.Components.im0 im0Var = this.h;
-        if (im0Var != null) {
-            im0Var.getViewTreeObserver().addOnPreDrawListener(new vh(this, 3));
+        org.telegram.ui.Components.jm0 jm0Var = this.h;
+        if (jm0Var != null) {
+            jm0Var.getViewTreeObserver().addOnPreDrawListener(new vh(this, 3));
         }
     }
 
@@ -453,9 +453,9 @@ public final class sp0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         if (quVar != null) {
             quVar.s();
         }
-        org.telegram.ui.Components.im0 im0Var = this.h;
-        if (im0Var != null) {
-            im0Var.getViewTreeObserver().addOnPreDrawListener(new vh(this, 3));
+        org.telegram.ui.Components.jm0 jm0Var = this.h;
+        if (jm0Var != null) {
+            jm0Var.getViewTreeObserver().addOnPreDrawListener(new vh(this, 3));
         }
     }
 }

@@ -17,11 +17,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class kh1 implements mh0 {
     public final org.telegram.ui.Cells.u1 a;
-    public final org.telegram.ui.Components.im0 b;
+    public final org.telegram.ui.Components.jm0 b;
     public final float c;
     public float d;
     public final Paint e = new Paint(1);
@@ -33,11 +33,11 @@ public final class kh1 implements mh0 {
     public float k;
     public float l;
 
-    public kh1(org.telegram.ui.Cells.u1 u1Var, fk fkVar, org.telegram.ui.Components.im0 im0Var, org.telegram.ui.Components.si siVar, org.telegram.ui.ActionBar.d6 d6Var) {
+    public kh1(org.telegram.ui.Cells.u1 u1Var, fk fkVar, org.telegram.ui.Components.jm0 jm0Var, org.telegram.ui.Components.si siVar, org.telegram.ui.ActionBar.d6 d6Var) {
         this.j = d6Var;
         this.a = u1Var;
         this.i = siVar;
-        this.b = im0Var;
+        this.b = jm0Var;
         u1Var.setEnterTransitionInProgress(true);
         ChatActivityEnterView.RecordCircle recordCircle = fkVar.getRecordCircle();
         this.g = recordCircle;
@@ -61,7 +61,7 @@ public final class kh1 implements mh0 {
         ofFloat.setDuration(220L);
         ofFloat.addListener(new jh1(this, u1Var, siVar));
         if (u1Var.getSeekBarWaveform() != null) {
-            org.telegram.ui.Components.fp0 seekBarWaveform = u1Var.getSeekBarWaveform();
+            org.telegram.ui.Components.gp0 seekBarWaveform = u1Var.getSeekBarWaveform();
             seekBarWaveform.v.d(0.0f, true);
             org.telegram.ui.Cells.u1 u1Var2 = seekBarWaveform.n;
             if (u1Var2 != null) {
@@ -84,13 +84,13 @@ public final class kh1 implements mh0 {
         org.telegram.ui.Cells.u1 u1Var = this.a;
         int i10 = u1Var.getMessageObject().stableId;
         int i11 = this.h;
-        org.telegram.ui.Components.im0 im0Var = this.b;
+        org.telegram.ui.Components.jm0 jm0Var = this.b;
         if (i10 != i11) {
             x10 = this.k;
             y3 = this.l;
         } else {
-            y3 = (im0Var.getY() + (u1Var.getY() + u1Var.getRadialProgress().a.centerY())) - siVar.getY();
-            x10 = (im0Var.getX() + (u1Var.getX() + u1Var.getRadialProgress().a.centerX())) - siVar.getX();
+            y3 = (jm0Var.getY() + (u1Var.getY() + u1Var.getRadialProgress().a.centerY())) - siVar.getY();
+            x10 = (jm0Var.getX() + (u1Var.getX() + u1Var.getRadialProgress().a.centerX())) - siVar.getX();
         }
         this.k = x10;
         this.l = y3;
@@ -101,9 +101,9 @@ public final class kh1 implements mh0 {
         final float f14 = (y3 * interpolation) + (y10 * f13);
         float height = u1Var.getRadialProgress().a.height() / 2.0f;
         float f15 = (height * interpolation) + (this.c * f13);
-        im0Var.getY();
+        jm0Var.getY();
         siVar.getY();
-        im0Var.getMeasuredHeight();
+        jm0Var.getMeasuredHeight();
         if (siVar.getMeasuredHeight() > 0) {
             siVar.getMeasuredHeight();
         }

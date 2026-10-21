@@ -37,7 +37,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ib0 {
     public static final Pattern k = Pattern.compile("^[a-z0-9_]{1,32}$");
@@ -890,7 +890,7 @@ public final class ib0 {
                 }
                 if ("qr-code".equalsIgnoreCase(str)) {
                     if ("scan".equalsIgnoreCase(str2) && (U = LaunchActivity.U()) != null) {
-                        zh.m0.Z(U);
+                        zh.n0.Z(U);
                         return z10;
                     }
                     if ("share".equalsIgnoreCase(str2)) {
@@ -901,7 +901,7 @@ public final class ib0 {
                     }
                     Bundle bundle2 = new Bundle();
                     bundle2.putLong("user_id", f().getClientUserId());
-                    t(new zh.m0(bundle2));
+                    t(new zh.n0(bundle2));
                     return true;
                 }
                 if (!"chat".equalsIgnoreCase(str) || !"browser".equalsIgnoreCase(str2)) {
@@ -947,7 +947,7 @@ public final class ib0 {
                                 }
                                 NotificationsSettingsActivity notificationsSettingsActivity = new NotificationsSettingsActivity();
                                 o();
-                                notificationsSettingsActivity.A0(new org.telegram.ui.Components.bz0(this, notificationsSettingsActivity, i12, str7, 6, false));
+                                notificationsSettingsActivity.A0(new org.telegram.ui.Components.cz0(this, notificationsSettingsActivity, i12, str7, 6, false));
                                 return true;
                             }
                             t(new NotificationsSettingsActivity());
@@ -1706,7 +1706,7 @@ public final class ib0 {
             if (!launchActivity.isFinishing() && !launchActivity.isDestroyed()) {
                 TL_wallet.tonConnectGetPending tonconnectgetpending = new TL_wallet.tonConnectGetPending();
                 tonconnectgetpending.dapp_client_id = str;
-                this.h = ConnectionsManager.getInstance(this.b).sendRequestTyped(tonconnectgetpending, new org.telegram.messenger.a(), new org.telegram.messenger.eh(this, str, str2, str3, i10, 2));
+                this.h = ConnectionsManager.getInstance(this.b).sendRequestTyped(tonconnectgetpending, new org.telegram.messenger.a(), new org.telegram.messenger.gh(this, str, str2, str3, i10, 2));
                 return;
             }
         }

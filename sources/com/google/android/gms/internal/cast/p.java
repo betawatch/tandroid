@@ -34,7 +34,7 @@ import z7.ib;
 import z7.xe;
 import z7.xf;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -335,7 +335,7 @@ public final /* synthetic */ class p implements Runnable {
             case 5:
                 Handler handler = (Handler) this.b;
                 if (((AtomicBoolean) this.e).compareAndSet(false, true)) {
-                    handler.removeCallbacks((uf.c) this.d);
+                    handler.removeCallbacks((u2.j0) this.d);
                     if (Looper.myLooper() == handler.getLooper()) {
                         ((tf.b) this.c).a(false);
                         return;
@@ -428,10 +428,10 @@ public final /* synthetic */ class p implements Runnable {
         this.e = new AtomicBoolean(false);
         this.b = handler;
         this.c = bVar;
-        uf.c cVar = new uf.c(0, this, bVar);
-        this.d = cVar;
+        u2.j0 j0Var = new u2.j0(2, this, bVar);
+        this.d = j0Var;
         if (j10 > 0) {
-            handler.postDelayed(cVar, j10);
+            handler.postDelayed(j0Var, j10);
         }
     }
 }

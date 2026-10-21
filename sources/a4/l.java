@@ -85,11 +85,11 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.m9;
 import org.telegram.ui.Cells.n9;
-import org.telegram.ui.Components.b81;
+import org.telegram.ui.Components.c81;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.oo0;
+import org.telegram.ui.Components.po0;
 import org.telegram.ui.Components.ti;
-import org.telegram.ui.Components.y71;
+import org.telegram.ui.Components.z71;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.nx;
 import org.telegram.ui.oz0;
@@ -102,9 +102,9 @@ import rg.c2;
 import t7.u;
 import v7.u6;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnSuccessListener, l1, o, y71, n, gb.n, z1, x, j0, u3 {
+public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnSuccessListener, l1, o, z71, n, gb.n, z1, x, j0, u3 {
     public final /* synthetic */ int a;
     public final Object b;
 
@@ -602,7 +602,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
 
     @Override // hg.z1
     public boolean O(int i10) {
-        return i10 == ((oo0) this.b).d0;
+        return i10 == ((po0) this.b).d0;
     }
 
     @Override // ki.u3
@@ -681,15 +681,15 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
 
     @Override // hg.z1
     public void S(ArrayList arrayList) {
-        oo0 oo0Var = (oo0) this.b;
+        po0 po0Var = (po0) this.b;
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            oo0Var.J.add(((y1) arrayList.get(i10)).a);
+            po0Var.J.add(((y1) arrayList.get(i10)).a);
         }
-        nx nxVar = oo0Var.U;
+        nx nxVar = po0Var.U;
         if (nxVar != null) {
-            nxVar.d(oo0Var.D0 > 0, false);
+            nxVar.d(po0Var.D0 > 0, false);
         }
-        oo0Var.l();
+        po0Var.l();
     }
 
     @Override // k2.x
@@ -936,22 +936,22 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
 
     @Override // hg.z1
     public void f(int i10) {
-        oo0 oo0Var = (oo0) this.b;
-        oo0Var.D0--;
-        oo0Var.e0 = i10;
-        if (oo0Var.f0 != i10) {
-            oo0Var.s.clear();
+        po0 po0Var = (po0) this.b;
+        po0Var.D0--;
+        po0Var.e0 = i10;
+        if (po0Var.f0 != i10) {
+            po0Var.s.clear();
         }
-        if (oo0Var.g0 != i10) {
-            oo0Var.I.clear();
+        if (po0Var.g0 != i10) {
+            po0Var.I.clear();
         }
-        oo0Var.N = true;
-        nx nxVar = oo0Var.U;
+        po0Var.N = true;
+        nx nxVar = po0Var.U;
         if (nxVar != null) {
-            nxVar.d(oo0Var.D0 > 0, true);
+            nxVar.d(po0Var.D0 > 0, true);
         }
-        oo0Var.l();
-        nx nxVar2 = oo0Var.U;
+        po0Var.l();
+        nx nxVar2 = po0Var.U;
         if (nxVar2 != null) {
             nxVar2.c();
         }
@@ -1132,7 +1132,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
         AndroidUtilities.runOnUIThread(runnable, 1000L);
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
@@ -1145,15 +1145,15 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
         }
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public void onStateChanged(boolean z10, int i10) {
         r6 r6Var = (r6) this.b;
         o6 o6Var = r6Var.M;
-        b81 b81Var = r6Var.x;
-        if (b81Var == null) {
+        c81 c81Var = r6Var.x;
+        if (c81Var == null) {
             return;
         }
-        if (b81Var.y()) {
+        if (c81Var.y()) {
             AndroidUtilities.runOnUIThread(o6Var);
         } else {
             AndroidUtilities.cancelRunOnUIThread(o6Var);
@@ -1266,12 +1266,12 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
         }
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
         c2 c2Var = ((r6) this.b).w;
         if (c2Var != null) {
@@ -1383,7 +1383,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public void onRenderedFirstFrame() {
     }
 
@@ -1450,15 +1450,15 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
     public /* synthetic */ void b(boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
@@ -1466,7 +1466,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
     public void o(h1 h1Var, boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.y71
-    public void onError(b81 b81Var, Exception exc) {
+    @Override // org.telegram.ui.Components.z71
+    public void onError(c81 c81Var, Exception exc) {
     }
 }

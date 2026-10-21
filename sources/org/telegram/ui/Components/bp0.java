@@ -1,13 +1,45 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+import android.content.Context;
+import android.text.TextUtils;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ProfileActivity;
+
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public interface bp0 {
-    void L(float f7, boolean z10);
+public final class bp0 extends e8 {
+    public final /* synthetic */ Context E;
+    public final /* synthetic */ Object F;
+    public final /* synthetic */ int y;
 
-    int Y();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ bp0(Object obj, Context context, Context context2, int i10) {
+        super(context);
+        this.y = i10;
+        this.F = obj;
+        this.E = context2;
+    }
 
-    CharSequence getContentDescription();
-
-    void v();
+    @Override // org.telegram.ui.Components.e8
+    public final TextView a() {
+        switch (this.y) {
+            case 0:
+                ma0 ma0Var = new ma0(this.E);
+                ma0Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Si, ((dp0) this.F).M));
+                ma0Var.setTextSize(1, 12.0f);
+                ma0Var.setEllipsize(TextUtils.TruncateAt.END);
+                ma0Var.setSingleLine(true);
+                ma0Var.setPadding(AndroidUtilities.dp(0.0f), 0, AndroidUtilities.dp(0.0f), AndroidUtilities.dp(0.0f));
+                return ma0Var;
+            default:
+                TextView textView = new TextView(this.E);
+                textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Pi, ((ProfileActivity) this.F).A0));
+                textView.setTextSize(0, AndroidUtilities.dp(13.5f));
+                textView.setSingleLine(true);
+                textView.setEllipsize(TextUtils.TruncateAt.END);
+                textView.setGravity(3);
+                return textView;
+        }
+    }
 }

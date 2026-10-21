@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class dt0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -36,9 +36,9 @@ public final class dt0 extends AnimatorListenerAdapter {
         photoViewer.e1.setVisibility(8);
         photoViewer.f1.setVisibility(8);
         photoViewer.g1.setVisibility(8);
-        org.telegram.ui.Components.nf0 nf0Var = photoViewer.C1;
-        if (nf0Var != null) {
-            nf0Var.setVisibility(4);
+        org.telegram.ui.Components.of0 of0Var = photoViewer.C1;
+        if (of0Var != null) {
+            of0Var.setVisibility(4);
         }
         photoViewer.o1.setVisibility(8);
         photoViewer.o1.setAlpha(0.0f);
@@ -53,7 +53,7 @@ public final class dt0 extends AnimatorListenerAdapter {
         if (i11 == 0 || i11 == 4 || ((i11 == 2 || i11 == 5) && photoViewer.g7.size() > 1)) {
             photoViewer.N0.setVisibility(8);
             photoViewer.O0.setVisibility(8);
-            photoViewer.s3();
+            photoViewer.u3();
         }
         Bitmap bitmap = photoViewer.C4.getBitmap();
         if (photoViewer.c2 == 11) {
@@ -66,14 +66,14 @@ public final class dt0 extends AnimatorListenerAdapter {
         if (bitmap != null) {
             float bitmapWidth = photoViewer.C4.getBitmapWidth();
             float bitmapHeight = photoViewer.C4.getBitmapHeight();
-            float min2 = Math.min(photoViewer.k1(2) / bitmapWidth, photoViewer.h1(2, false) / bitmapHeight);
+            float min2 = Math.min(photoViewer.l1(2) / bitmapWidth, photoViewer.i1(2, false) / bitmapHeight);
             if (photoViewer.c2 == 1) {
                 photoViewer.d6 = -AndroidUtilities.dp(36.0f);
-                min = photoViewer.l1(false);
+                min = photoViewer.m1(false);
             } else {
                 photoViewer.d6 = (-AndroidUtilities.dp(93.0f)) + (!photoViewer.s ? AndroidUtilities.statusBarHeight / 2 : 0);
                 MediaController.CropState cropState = photoViewer.X4.c;
-                min = (cropState == null || !((i10 = cropState.transformRotation) == 90 || i10 == 270)) ? Math.min(photoViewer.k1(photoViewer.u4) / bitmapWidth, photoViewer.i1() / bitmapHeight) : Math.min(photoViewer.k1(photoViewer.u4) / bitmapHeight, photoViewer.i1() / bitmapWidth);
+                min = (cropState == null || !((i10 = cropState.transformRotation) == 90 || i10 == 270)) ? Math.min(photoViewer.l1(photoViewer.u4) / bitmapWidth, photoViewer.j1() / bitmapHeight) : Math.min(photoViewer.l1(photoViewer.u4) / bitmapHeight, photoViewer.j1() / bitmapWidth);
             }
             photoViewer.e6 = min2 / min;
             Rect rect = photoViewer.s2;

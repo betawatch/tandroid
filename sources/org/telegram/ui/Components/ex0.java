@@ -1,70 +1,181 @@
 package org.telegram.ui.Components;
 
-import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public abstract class ex0 {
-    public static final Layout.Alignment[] a = Layout.Alignment.values();
+public final class ex0 extends View {
+    public final x9 a;
+    public final cx0 b;
+    public final f6 c;
+    public boolean d;
+    public dx0 e;
+    public boolean f;
+    public boolean h;
 
-    public static Layout.Alignment a() {
-        Layout.Alignment[] alignmentArr = a;
-        return alignmentArr.length >= 5 ? alignmentArr[4] : Layout.Alignment.ALIGN_OPPOSITE;
+    public ex0(Context context) {
+        super(context);
+        cx0 cx0Var = new cx0();
+        cx0Var.c = -16777216;
+        cx0Var.d = -1;
+        this.b = cx0Var;
+        f6 f6Var = new f6(new bx0(this, 0), 380L, bs.h);
+        this.c = f6Var;
+        x9 x9Var = new x9(context);
+        this.a = x9Var;
+        x9Var.setCallback(this);
+        this.d = false;
+        f6Var.d(0.0f, false);
+        a();
     }
 
-    public static StaticLayout b(CharSequence charSequence, TextPaint textPaint, int i10, float f7, int i11, int i12) {
-        return c(charSequence, textPaint, i10, Layout.Alignment.ALIGN_NORMAL, f7, TextUtils.TruncateAt.END, i11, i12, true);
+    public final void a() {
+        boolean z10 = this.h && this.f;
+        this.d = z10;
+        this.c.e(z10);
+        setEnabled(this.d);
+        setClickable(this.d);
+        invalidate();
     }
 
-    public static StaticLayout c(CharSequence charSequence, TextPaint textPaint, int i10, Layout.Alignment alignment, float f7, TextUtils.TruncateAt truncateAt, int i11, int i12, boolean z10) {
-        CharSequence charSequence2 = charSequence;
-        try {
-            if (i12 == 1) {
-                int indexOf = TextUtils.indexOf(charSequence2, "\n") - 1;
-                if (indexOf > 0) {
-                    charSequence2 = SpannableStringBuilder.valueOf(charSequence2.subSequence(0, indexOf)).append((CharSequence) "…");
-                }
-                CharSequence ellipsize = TextUtils.ellipsize(charSequence2, textPaint, i11, TextUtils.TruncateAt.END);
-                return new StaticLayout(ellipsize, 0, ellipsize.length(), textPaint, i10, alignment, 1.0f, f7, false);
+    public final void b(MessagesController.PeerColor peerColor) {
+        this.b.a(peerColor);
+        invalidate();
+    }
+
+    public float getVisibilityFactor() {
+        return this.c.c;
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.getClass();
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.getClass();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float e = this.c.e(this.d);
+        int A = org.telegram.messenger.mk.A(24.0f, getMeasuredWidth(), 2);
+        int measuredHeight = (getMeasuredHeight() - AndroidUtilities.dp(24.0f)) / 2;
+        canvas.save();
+        canvas.translate(A, measuredHeight);
+        canvas.scale(e, e, 0.0f, AndroidUtilities.dp(12.0f));
+        int dp = AndroidUtilities.dp(24.0f);
+        int dp2 = AndroidUtilities.dp(24.0f);
+        x9 x9Var = this.a;
+        x9Var.setBounds(0, 0, dp, dp2);
+        cx0 cx0Var = this.b;
+        int i10 = cx0Var.c;
+        if (x9Var.f != i10) {
+            x9Var.f = i10;
+            if (x9Var.c != null) {
+                x9Var.d.setColorFilter(i10, PorterDuff.Mode.MULTIPLY);
+                x9Var.invalidateSelf();
             }
-            StaticLayout build = StaticLayout.Builder.obtain(charSequence2, 0, charSequence2.length(), textPaint, i10).setAlignment(alignment).setLineSpacing(f7, 1.0f).setIncludePad(false).setEllipsize(null).setEllipsizedWidth(i11).setMaxLines(i12).setBreakStrategy(1).setHyphenationFrequency(0).build();
-            int i13 = 0;
-            while (true) {
-                if (i13 >= build.getLineCount()) {
-                    break;
-                }
-                if (build.getLineRight(i13) > i10) {
-                    build = StaticLayout.Builder.obtain(charSequence2, 0, charSequence2.length(), textPaint, i10).setAlignment(alignment).setLineSpacing(f7, 1.0f).setIncludePad(false).setEllipsize(null).setEllipsizedWidth(i11).setMaxLines(i12).setBreakStrategy(0).setHyphenationFrequency(0).build();
-                    break;
-                }
-                i13++;
-            }
-            if (build.getLineCount() <= i12) {
-                return build;
-            }
-            int i14 = i12 - 1;
-            float lineLeft = build.getLineLeft(i14);
-            float lineWidth = build.getLineWidth(i14);
-            int offsetForHorizontal = lineLeft != 0.0f ? build.getOffsetForHorizontal(i14, lineLeft) : build.getOffsetForHorizontal(i14, lineWidth);
-            if (lineWidth < i11 - AndroidUtilities.dp(10.0f)) {
-                offsetForHorizontal += 3;
-            }
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence2.subSequence(0, Math.max(0, offsetForHorizontal - 3)));
-            spannableStringBuilder.append((CharSequence) "…");
-            return StaticLayout.Builder.obtain(spannableStringBuilder, 0, spannableStringBuilder.length(), textPaint, i10).setAlignment(alignment).setLineSpacing(f7, 1.0f).setIncludePad(false).setEllipsize(((a6[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), a6.class)).length > 0 ? null : truncateAt).setEllipsizedWidth(i11).setMaxLines(i12).setBreakStrategy(z10 ? 1 : 0).setHyphenationFrequency(0).build();
-        } catch (Exception e) {
-            FileLog.e(e);
-            return null;
         }
+        int i11 = cx0Var.d;
+        if (x9Var.e != i11) {
+            x9Var.e = i11;
+            Drawable drawable = x9Var.c;
+            if (drawable != null) {
+                drawable.setColorFilter(i11, PorterDuff.Mode.MULTIPLY);
+                x9Var.invalidateSelf();
+            }
+        }
+        int i12 = cx0Var.c | (-16777216);
+        if (x9Var.h != i12) {
+            x9Var.h = i12;
+            x9Var.b.v(i12, false);
+            x9Var.invalidateSelf();
+        }
+        x9Var.draw(canvas);
+        canvas.restore();
     }
 
-    public static StaticLayout d(CharSequence charSequence, TextPaint textPaint, boolean z10, int i10, int i11) {
-        return StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i10).setAlignment(Layout.Alignment.ALIGN_CENTER).setLineSpacing(0.0f, 1.0f).setIncludePad(z10).setEllipsize(TextUtils.TruncateAt.END).setEllipsizedWidth(i10).setMaxLines(i11).setBreakStrategy(1).setHyphenationFrequency(0).build();
+    public void set(TL_stars.Tl_starsRating tl_starsRating) {
+        int b10;
+        this.f = tl_starsRating != null;
+        a();
+        if (tl_starsRating == null) {
+            return;
+        }
+        int i10 = tl_starsRating.level;
+        x9 x9Var = this.a;
+        if (x9Var.r != i10 || x9Var.c == null || x9Var.d == null) {
+            x9Var.b.t(i10 >= 0 ? Integer.toString(i10) : "!", true, true);
+            x9Var.r = i10;
+            if (i10 < 0) {
+                b10 = 18;
+            } else {
+                b10 = w7.r.b(i10 <= 10 ? i10 - 1 : (i10 / 10) + 8, 0, 17);
+            }
+            Context context = x9Var.a;
+            if (x9Var.n != b10 || x9Var.c == null || x9Var.d == null) {
+                int i11 = b10 * 2;
+                Drawable mutate = context.getResources().getDrawable(x9.s[i11]).mutate();
+                x9Var.c = mutate;
+                int i12 = x9Var.e;
+                PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+                mutate.setColorFilter(i12, mode);
+                Drawable mutate2 = context.getResources().getDrawable(x9.s[i11 + 1]).mutate();
+                x9Var.d = mutate2;
+                mutate2.setColorFilter(x9Var.f, mode);
+                x9Var.n = b10;
+                Drawable drawable = x9Var.c;
+                if (drawable != null) {
+                    drawable.setBounds(x9Var.getBounds());
+                }
+                Drawable drawable2 = x9Var.d;
+                if (drawable2 != null) {
+                    drawable2.setBounds(x9Var.getBounds());
+                }
+            }
+            x9Var.invalidateSelf();
+        }
+        StringBuilder sb2 = new StringBuilder();
+        org.telegram.ui.Cells.c1.n(R.string.AccDescrProfileRatingLevel, " ", sb2);
+        sb2.append(tl_starsRating.level);
+        setContentDescription(sb2.toString());
+        invalidate();
+    }
+
+    public void setDelegate(dx0 dx0Var) {
+        this.e = dx0Var;
+    }
+
+    public void setParentExpanded(float f7) {
+        cx0 cx0Var = this.b;
+        cx0Var.e = f7;
+        cx0Var.a(cx0Var.a);
+        invalidate();
+    }
+
+    public void setResourcesProvider(org.telegram.ui.ActionBar.d6 d6Var) {
+        this.b.b = d6Var;
+    }
+
+    public void setVisibility(boolean z10) {
+        this.h = z10;
+        a();
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return super.verifyDrawable(drawable) || drawable == this.a;
     }
 }

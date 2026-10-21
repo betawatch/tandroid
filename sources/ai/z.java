@@ -50,7 +50,7 @@ import org.telegram.ui.sq;
 import org.telegram.ui.tq;
 import org.telegram.ui.yb0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
@@ -361,7 +361,7 @@ public final /* synthetic */ class z implements Runnable {
                 if (fs0Var != null) {
                     fs0Var.setImage(bitmap);
                 }
-                photoViewer.e3(0);
+                photoViewer.g3(0);
                 CheckBox checkBox = photoViewer.N0;
                 if (checkBox.x) {
                     return;
@@ -435,7 +435,7 @@ public final /* synthetic */ class z implements Runnable {
                             spannableStringBuilder2.setSpan(new org.telegram.ui.Components.a6(document3, u0Var.getPaint().getFontMetricsInt()), spannableStringBuilder2.length() - 1, spannableStringBuilder2.length(), 33);
                         }
                         spannableStringBuilder2.append((CharSequence) " >");
-                        spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(spannableStringBuilder2, new yb0(o1Var, callback3, j24, 5)), true));
+                        spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(spannableStringBuilder2, new yb0(o1Var, callback3, j24, 4)), true));
                     } else {
                         spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(LocaleController.getString(R.string.Gift2StarsInfoLink), new ra(context, 12)), true));
                     }

@@ -9,10 +9,10 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.ah0;
+import org.telegram.ui.Components.bh0;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class xa extends f6 {
     public final /* synthetic */ vb A2;
@@ -139,7 +139,7 @@ public final class xa extends f6 {
             jbVar.x(6, z10);
             g6 g6Var = vbVar.j1;
             if (g6Var != null) {
-                ((ah0) g6Var.c).a(vbVar.X0.k(), true);
+                ((bh0) g6Var.c).a(vbVar.X0.k(), true);
             }
         }
         lb lbVar = vbVar.c1;

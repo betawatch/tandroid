@@ -12,7 +12,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import ug.r;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public class ChannelBoostsController {
     public static final int BOOSTS_FOR_LEVEL_1 = 1;
@@ -21,7 +21,7 @@ public class ChannelBoostsController {
     private final int currentAccount;
     private final MessagesController messagesController;
 
-    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
     public static class CanApplyBoost {
         public boolean alreadyActive;
         public int boostCount = 0;
@@ -197,7 +197,7 @@ public class ChannelBoostsController {
     public void getBoostsStats(long j10, Utilities.Callback<TL_stories.TL_premium_boostsStatus> callback) {
         TL_stories.TL_premium_getBoostsStatus tL_premium_getBoostsStatus = new TL_stories.TL_premium_getBoostsStatus();
         tL_premium_getBoostsStatus.peer = this.messagesController.getInputPeer(j10);
-        this.connectionsManager.sendRequest(tL_premium_getBoostsStatus, new u0(0, callback));
+        this.connectionsManager.sendRequest(tL_premium_getBoostsStatus, new v0(0, callback));
     }
 
     public void userCanBoostChannel(long j10, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, Utilities.Callback<CanApplyBoost> callback) {
@@ -205,8 +205,8 @@ public class ChannelBoostsController {
         canApplyBoost.currentPeer = this.messagesController.getPeer(j10);
         canApplyBoost.currentDialogId = j10;
         canApplyBoost.currentChat = this.messagesController.getChat(Long.valueOf(-j10));
-        j2 j2Var = new j2(canApplyBoost, tL_premium_boostsStatus, callback, 1);
+        k2 k2Var = new k2(canApplyBoost, tL_premium_boostsStatus, callback, 1);
         w wVar = new w(1, canApplyBoost, callback);
-        ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(new TL_stories.TL_premium_getMyBoosts(), new ai.j2(wVar, MessagesController.getInstance(UserConfig.selectedAccount), j2Var, 22));
+        ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(new TL_stories.TL_premium_getMyBoosts(), new ai.j2(wVar, MessagesController.getInstance(UserConfig.selectedAccount), k2Var, 22));
     }
 }

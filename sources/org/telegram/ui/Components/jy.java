@@ -22,11 +22,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class jy extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final /* synthetic */ tz E;
-    public final xj0 a;
+    public final yj0 a;
     public final org.telegram.ui.ActionBar.j5 b;
     public final TextView c;
     public final FrameLayout d;
@@ -45,12 +45,12 @@ public final class jy extends FrameLayout implements NotificationCenter.Notifica
     public jy(tz tzVar, Context context) {
         super(context);
         this.E = tzVar;
-        xj0 xj0Var = new xj0(context);
-        this.a = xj0Var;
-        xj0Var.f(R.raw.unlock_icon, 24, 24, null);
+        yj0 yj0Var = new yj0(context);
+        this.a = yj0Var;
+        yj0Var.f(R.raw.unlock_icon, 24, 24, null);
         int i10 = org.telegram.ui.ActionBar.h6.Te;
-        xj0Var.setColorFilter(tzVar.A(i10));
-        addView(xj0Var, w7.z5.i(20.0f, 20.0f, 8388611, 10.0f, 15.0f, 0.0f, 0.0f));
+        yj0Var.setColorFilter(tzVar.A(i10));
+        addView(yj0Var, w7.z5.i(20.0f, 20.0f, 8388611, 10.0f, 15.0f, 0.0f, 0.0f));
         org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
         this.b = j5Var;
         j5Var.setTextSize(15);
@@ -146,10 +146,10 @@ public final class jy extends FrameLayout implements NotificationCenter.Notifica
         TextView textView2 = this.f;
         textView2.setEnabled(z14);
         org.telegram.ui.ActionBar.j5 j5Var = this.b;
-        xj0 xj0Var = this.a;
+        yj0 yj0Var = this.a;
         if (!z10) {
-            xj0Var.setAlpha(i10 == 1 ? 1.0f : 0.0f);
-            xj0Var.setTranslationX(i10 == 1 ? 0.0f : -AndroidUtilities.dp(16.0f));
+            yj0Var.setAlpha(i10 == 1 ? 1.0f : 0.0f);
+            yj0Var.setTranslationX(i10 == 1 ? 0.0f : -AndroidUtilities.dp(16.0f));
             j5Var.setTranslationX(i10 == 1 ? AndroidUtilities.dp(16.0f) : 0.0f);
             q0Var.setAlpha(i10 == 1 ? 1.0f : 0.0f);
             q0Var.setScaleX(i10 == 1 ? 1.0f : 0.6f);
@@ -177,11 +177,11 @@ public final class jy extends FrameLayout implements NotificationCenter.Notifica
         float[] fArr = new float[1];
         fArr[c10] = f7;
         Property property = FrameLayout.TRANSLATION_X;
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(xj0Var, (Property<xj0, Float>) property, fArr);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(yj0Var, (Property<yj0, Float>) property, fArr);
         float[] fArr2 = new float[1];
         fArr2[c10] = i10 == 1 ? 1.0f : 0.0f;
         Property property2 = FrameLayout.ALPHA;
-        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(xj0Var, (Property<xj0, Float>) property2, fArr2);
+        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(yj0Var, (Property<yj0, Float>) property2, fArr2);
         float[] fArr3 = new float[1];
         fArr3[c10] = i10 == 1 ? AndroidUtilities.dp(16.0f) : 0.0f;
         ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(j5Var, (Property<org.telegram.ui.ActionBar.j5, Float>) property, fArr3);

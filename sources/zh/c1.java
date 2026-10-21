@@ -64,7 +64,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -72,18 +72,18 @@ import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.Cells.v6;
 import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.bz0;
+import org.telegram.ui.Components.cz0;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.ex0;
+import org.telegram.ui.Components.fx0;
 import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.p6;
 import org.telegram.ui.Components.q10;
 import org.telegram.ui.Components.r5;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.vj0;
 import org.telegram.ui.PremiumPreviewFragment;
 import yh.s1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class c1 extends View {
     public static int[] E9;
@@ -324,7 +324,7 @@ public final class c1 extends View {
     public int W7;
     public boolean W8;
     public final float[] X0;
-    public final uj0 X1;
+    public final vj0 X1;
     public float X2;
     public float X3;
     public Bitmap X4;
@@ -349,7 +349,7 @@ public final class c1 extends View {
     public final LinearGradient Z5;
     public final RectF Z6;
     public float Z7;
-    public uj0 Z8;
+    public vj0 Z8;
     public boolean a;
     public float a0;
     public final byte[] a1;
@@ -360,7 +360,7 @@ public final class c1 extends View {
     public final Matrix a6;
     public final Path a7;
     public final RectF a8;
-    public uj0 a9;
+    public vj0 a9;
     public final int b;
     public float b0;
     public final boolean[] b1;
@@ -371,7 +371,7 @@ public final class c1 extends View {
     public final Paint b6;
     public final Path b7;
     public final TextPaint b8;
-    public uj0 b9;
+    public vj0 b9;
     public final l2.f c;
     public float c0;
     public int c1;
@@ -485,7 +485,7 @@ public final class c1 extends View {
     public float m5;
     public float m6;
     public boolean m7;
-    public uj0 m8;
+    public vj0 m8;
     public final ViewConfiguration m9;
     public a1 n;
     public float n0;
@@ -1078,12 +1078,12 @@ public final class c1 extends View {
         this.J1 = w(R.drawable.msg_copy);
         this.K1 = w(R.drawable.menu_premium_main);
         this.g7 = new Drawable[]{w9, w10, w11};
-        uj0 uj0Var = new uj0(R.raw.plane_logo_plain, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null);
-        this.X1 = uj0Var;
-        uj0Var.R(this);
-        uj0Var.K(1);
-        uj0Var.setCallback(this);
-        uj0Var.start();
+        vj0 vj0Var = new vj0(R.raw.plane_logo_plain, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null);
+        this.X1 = vj0Var;
+        vj0Var.R(this);
+        vj0Var.K(1);
+        vj0Var.setCallback(this);
+        vj0Var.start();
         Paint paint8 = this.Y1;
         Paint.Style style = Paint.Style.STROKE;
         paint8.setStyle(style);
@@ -1914,7 +1914,7 @@ public final class c1 extends View {
                             i16 = i34;
                         }
                         int i35 = dp3;
-                        this.I5 = ex0.c(spannableStringBuilder, textPaint, i35, Layout.Alignment.ALIGN_CENTER, 0.0f, null, Math.min(AndroidUtilities.dp(10.0f) + i35, i14), i16, true);
+                        this.I5 = fx0.c(spannableStringBuilder, textPaint, i35, Layout.Alignment.ALIGN_CENTER, 0.0f, null, Math.min(AndroidUtilities.dp(10.0f) + i35, i14), i16, true);
                         staticLayout = this.I5;
                     } else {
                         i15++;
@@ -3125,11 +3125,11 @@ public final class c1 extends View {
 
     public final void B0() {
         l2.f fVar;
-        q0 q0Var;
-        if (this.e2 || (fVar = this.c) == null || (q0Var = ((m0) fVar.b).e) == null) {
+        r0 r0Var;
+        if (this.e2 || (fVar = this.c) == null || (r0Var = ((n0) fVar.b).e) == null) {
             return;
         }
-        q0Var.i();
+        r0Var.i();
     }
 
     public final void C(Canvas canvas, Path path, RectF rectF, float f7, float f10) {
@@ -5318,7 +5318,7 @@ public final class c1 extends View {
             return;
         }
         this.W4 = true;
-        Utilities.globalQueue.postRunnable(new r0(this, i0.a.o(i0.a.f(0.4f, N0(), -16777216), 16), 0));
+        Utilities.globalQueue.postRunnable(new s0(this, i0.a.o(i0.a.f(0.4f, N0(), -16777216), 16), 0));
     }
 
     public final void L(float f7, float f10, float f11, float f12, Canvas canvas, RectF rectF) {
@@ -5593,7 +5593,7 @@ public final class c1 extends View {
             int i26 = 0;
             while (i26 < i25) {
                 int i27 = i25;
-                float b10 = kk.b(i26, f38, dp4, f37 - AndroidUtilities.dp(72.0f));
+                float b10 = mk.b(i26, f38, dp4, f37 - AndroidUtilities.dp(72.0f));
                 Drawable drawable = c1Var2.g7[i26];
                 float lerp4 = AndroidUtilities.lerp(height, height - AndroidUtilities.dp(f39), clamp01);
                 float dp5 = AndroidUtilities.dp(i26 == 1 ? 24.5f : 22.0f);
@@ -5685,8 +5685,8 @@ public final class c1 extends View {
             while (i35 < a.b.length) {
                 int e12 = e1(i35);
                 float f47 = f11;
-                float b11 = kk.b(i35 % 6, f47, width, rectF2.left + AndroidUtilities.dp(4.0f));
-                float b13 = kk.b(i35 / 6, f47, width, dp6);
+                float b11 = mk.b(i35 % 6, f47, width, rectF2.left + AndroidUtilities.dp(4.0f));
+                float b13 = mk.b(i35 / 6, f47, width, dp6);
                 float f48 = b13 - c1Var.j1;
                 float f49 = f14;
                 if (f48 > i11 + width || f48 < f49 - width) {
@@ -5968,9 +5968,9 @@ public final class c1 extends View {
                     if (B < 1.0f) {
                         if (c1Var.m8 == null) {
                             int i40 = (int) dp9;
-                            uj0 uj0Var = new uj0(R.raw.qr_resistance_dog, i40, i40, true, null);
-                            c1Var.m8 = uj0Var;
-                            uj0Var.K(1);
+                            vj0 vj0Var = new vj0(R.raw.qr_resistance_dog, i40, i40, true, null);
+                            c1Var.m8 = vj0Var;
+                            vj0Var.K(1);
                             c1Var.m8.J(true);
                             c1Var.m8.R(c1Var);
                             c1Var.m8.setCallback(c1Var);
@@ -5987,9 +5987,9 @@ public final class c1 extends View {
                         c1Var.invalidate();
                     } else {
                         f26 = dp9;
-                        uj0 uj0Var2 = c1Var.m8;
-                        if (uj0Var2 != null) {
-                            uj0Var2.C(false);
+                        vj0 vj0Var2 = c1Var.m8;
+                        if (vj0Var2 != null) {
+                            vj0Var2.C(false);
                             c1Var.m8 = null;
                         }
                     }
@@ -6391,14 +6391,14 @@ public final class c1 extends View {
             bitmap.recycle();
             this.R2 = null;
         }
-        uj0 uj0Var = this.b9;
-        if (uj0Var != null) {
-            uj0Var.C(false);
+        vj0 vj0Var = this.b9;
+        if (vj0Var != null) {
+            vj0Var.C(false);
             this.b9 = null;
         }
-        uj0 uj0Var2 = this.m8;
-        if (uj0Var2 != null) {
-            uj0Var2.C(false);
+        vj0 vj0Var2 = this.m8;
+        if (vj0Var2 != null) {
+            vj0Var2.C(false);
             this.m8 = null;
         }
         r5 r5Var = this.l8;
@@ -6486,7 +6486,7 @@ public final class c1 extends View {
         float f13;
         if (this.X8 == 0) {
             canvas2 = canvas;
-            uj0 r12 = r1();
+            vj0 r12 = r1();
             int dp = AndroidUtilities.dp(27.0f);
             float f14 = dp / 2.0f;
             int i10 = (int) (f10 - f14);
@@ -6533,7 +6533,7 @@ public final class c1 extends View {
         } else {
             canvas2 = canvas;
             if (n()) {
-                uj0 p12 = p1();
+                vj0 p12 = p1();
                 int dp6 = AndroidUtilities.dp(28.0f);
                 float f18 = dp6 / 2.0f;
                 int i11 = (int) (f10 - f18);
@@ -6542,7 +6542,7 @@ public final class c1 extends View {
             } else {
                 int i12 = this.X8;
                 if (i12 == R.drawable.msg_download) {
-                    uj0 q12 = q1();
+                    vj0 q12 = q1();
                     int dp7 = AndroidUtilities.dp(28.0f);
                     float f19 = dp7 / 2.0f;
                     int i13 = (int) (f10 - f19);
@@ -6621,11 +6621,11 @@ public final class c1 extends View {
         boolean z11;
         boolean z12;
         boolean z13;
-        uj0 uj0Var;
+        vj0 vj0Var;
         String sb2;
         float f17;
         float dp2;
-        uj0 uj0Var2;
+        vj0 vj0Var2;
         float f18;
         String str;
         boolean z14 = this.h9 || (this.m1 != null && j10 < this.u1);
@@ -6649,15 +6649,15 @@ public final class c1 extends View {
             this.W8 = false;
             this.Y8 = currentAnimationTimeMillis;
             if (i11 == 0) {
-                uj0 r12 = r1();
+                vj0 r12 = r1();
                 r12.N(0, false, false);
                 r12.start();
             } else if (n()) {
-                uj0 p12 = p1();
+                vj0 p12 = p1();
                 p12.N(0, false, false);
                 p12.start();
             } else if (this.X8 == R.drawable.msg_download) {
-                uj0 q12 = q1();
+                vj0 q12 = q1();
                 q12.N(0, false, false);
                 q12.start();
             }
@@ -6809,9 +6809,9 @@ public final class c1 extends View {
             if (this.c9 == null) {
                 this.c9 = android.support.v4.media.session.x.d("toastContent");
             }
-            if ((this.X8 != 0 || (uj0Var2 = this.Z8) == null || uj0Var2.a0 >= uj0Var2.e[0] - 1) && (!n() || (uj0Var = this.a9) == null || uj0Var.a0 >= uj0Var.e[0] - 1)) {
-                uj0 uj0Var3 = this.b9;
-                if (uj0Var3 == null || this.X8 != R.drawable.msg_download) {
+            if ((this.X8 != 0 || (vj0Var2 = this.Z8) == null || vj0Var2.a0 >= vj0Var2.e[0] - 1) && (!n() || (vj0Var = this.a9) == null || vj0Var.a0 >= vj0Var.e[0] - 1)) {
+                vj0 vj0Var3 = this.b9;
+                if (vj0Var3 == null || this.X8 != R.drawable.msg_download) {
                     z11 = true;
                     z12 = false;
                 } else {
@@ -6945,13 +6945,13 @@ public final class c1 extends View {
                 Bitmap.Config config = Bitmap.Config.ARGB_8888;
                 Bitmap createBitmap = Bitmap.createBitmap(width, min, config);
                 if (this.R2 == null) {
-                    uj0 uj0Var = this.X1;
-                    if (uj0Var.b > 0) {
+                    vj0 vj0Var = this.X1;
+                    if (vj0Var.b > 0) {
                         try {
                             rLottieNative = RLottieNative.b(AndroidUtilities.readRes(R.raw.plane_logo_plain), null, null, null);
                             if (rLottieNative != null) {
                                 try {
-                                    Bitmap createBitmap2 = Bitmap.createBitmap(uj0Var.b, uj0Var.c, config);
+                                    Bitmap createBitmap2 = Bitmap.createBitmap(vj0Var.b, vj0Var.c, config);
                                     rLottieNative.c(Math.min(33, rLottieNative.a[0] - 1), createBitmap2, true);
                                     this.R2 = createBitmap2;
                                 } catch (Throwable th2) {
@@ -7035,7 +7035,7 @@ public final class c1 extends View {
         Bitmap bitmap;
         g3 g3Var = r5Var.k;
         if (g3Var != null) {
-            uj0 lottieAnimation = g3Var.getLottieAnimation();
+            vj0 lottieAnimation = g3Var.getLottieAnimation();
             if (lottieAnimation != null) {
                 if (!this.T2) {
                     lottieAnimation.V(0L);
@@ -7240,7 +7240,7 @@ public final class c1 extends View {
         if (this.h1 == 2 && this.x1) {
             ArrayList arrayList = this.v1;
             if (arrayList.size() <= 3) {
-                max = Math.min(max, arrayList.isEmpty() ? AndroidUtilities.dp(286.0f) : AndroidUtilities.dp(8.0f) + ((kk.B(10.0f, 2, getWidth()) - AndroidUtilities.dp(8.0f)) / 3.0f));
+                max = Math.min(max, arrayList.isEmpty() ? AndroidUtilities.dp(286.0f) : AndroidUtilities.dp(8.0f) + ((mk.B(10.0f, 2, getWidth()) - AndroidUtilities.dp(8.0f)) / 3.0f));
             }
         }
         long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
@@ -7379,7 +7379,7 @@ public final class c1 extends View {
     public final void d1(int i10, String str, String str2) {
         long currentTimeMillis = 0 - System.currentTimeMillis();
         if (currentTimeMillis > 0) {
-            postDelayed(new bz0(i10, 22, this, str, str2), currentTimeMillis);
+            postDelayed(new cz0(i10, 22, this, str, str2), currentTimeMillis);
             return;
         }
         this.n1 = i10;
@@ -7605,7 +7605,7 @@ public final class c1 extends View {
     public final void j1(e eVar) {
         f fVar = this.s0;
         if (fVar.q != 2 || fVar.o >= 1.0f) {
-            postDelayed(new uf.c(29, this, eVar), 40L);
+            postDelayed(new h0(1, this, eVar), 40L);
         } else {
             fVar.m = eVar;
             invalidate();
@@ -7909,7 +7909,7 @@ public final class c1 extends View {
             c1Var2.s = min2;
             if (f31 < 0.3f && min2 >= 0.3f && fVar2 != null) {
                 c1Var2.n.getClass();
-                ((m0) fVar2.b).W();
+                ((n0) fVar2.b).W();
             }
             if (c1Var2.s >= 1.0f) {
                 c1Var2.r = null;
@@ -8209,7 +8209,7 @@ public final class c1 extends View {
             RectF rectF4 = c1Var2.i7;
             rectF4.set(dp4, f49, dp5, f50);
             float B = org.telegram.messenger.g0.B(42.0f, width2, dp3);
-            float D = kk.D(42.0f, width2, dp3);
+            float D = mk.D(42.0f, width2, dp3);
             RectF rectF5 = c1Var2.j7;
             rectF5.set(B, f49, D, f50);
             float f51 = width2 / 2.0f;
@@ -8260,7 +8260,7 @@ public final class c1 extends View {
                 int i16 = 0;
                 while (i16 < 3) {
                     float f59 = clamp017;
-                    c1Var2.o0(canvas, c1Var2.g7[i16], kk.b(i16, 0.5f, width3, rectF6.left), height2, AndroidUtilities.dp(i16 == 1 ? 24.5f : 22.0f), f59);
+                    c1Var2.o0(canvas, c1Var2.g7[i16], mk.b(i16, 0.5f, width3, rectF6.left), height2, AndroidUtilities.dp(i16 == 1 ? 24.5f : 22.0f), f59);
                     i16++;
                     clamp017 = f59;
                     c1Var2 = c1Var2;
@@ -8343,7 +8343,7 @@ public final class c1 extends View {
                             c1Var.R(canvas, i11, j10);
                         }
                         if (fVar != null) {
-                            m0 m0Var = (m0) fVar.b;
+                            n0 n0Var = (n0) fVar.b;
                             boolean z18 = c1Var.f1 > 0.01f && c1Var.z7 > 0.004f && c1Var.h1 == 1;
                             float dp6 = ((1.0f - c1Var.z7) * AndroidUtilities.dp(f20)) + (c1Var.a1() - c1Var.b1()) + AndroidUtilities.dp(8.0f);
                             float f65 = c1Var.z7;
@@ -8359,7 +8359,7 @@ public final class c1 extends View {
                                 c1Var.H7 = z18;
                                 c1Var.F7 = dp6;
                                 c1Var.G7 = f65;
-                                m0Var.b0(dp6, f65, z18);
+                                n0Var.b0(dp6, f65, z18);
                                 AndroidUtilities.dp(f21);
                                 c1Var.getWidth();
                                 AndroidUtilities.dp(f21);
@@ -8369,28 +8369,28 @@ public final class c1 extends View {
                                 float f68 = ((RectF) r52).right;
                                 float f69 = ((RectF) r52).bottom;
                                 float min5 = Math.min(r52.height() / 2.0f, AndroidUtilities.lerp(AndroidUtilities.dp(f19), AndroidUtilities.dp(28.17f), Utilities.clamp01(c1Var.f1)));
-                                m0Var.n = f66;
-                                m0Var.r = f67;
-                                m0Var.s = f68;
-                                m0Var.v = f69;
-                                m0Var.w = min5;
-                                if (m0Var.h != null) {
-                                    float min6 = Math.min(r1.getHeight(), m0Var.v - (m0Var.h.getTranslationY() + m0Var.h.getTop()));
-                                    c cVar = m0Var.x;
+                                n0Var.n = f66;
+                                n0Var.r = f67;
+                                n0Var.s = f68;
+                                n0Var.v = f69;
+                                n0Var.w = min5;
+                                if (n0Var.h != null) {
+                                    float min6 = Math.min(r1.getHeight(), n0Var.v - (n0Var.h.getTranslationY() + n0Var.h.getTop()));
+                                    c cVar = n0Var.x;
                                     if (cVar != null) {
                                         cVar.G = min6;
                                     }
-                                    m0Var.K = min6;
+                                    n0Var.K = min6;
                                     if (cVar != null) {
-                                        cVar.U = m0Var.s - cVar.getLeft();
+                                        cVar.U = n0Var.s - cVar.getLeft();
                                     }
-                                    m mVar = m0Var.Z;
+                                    m mVar = n0Var.Z;
                                     if (mVar != null) {
                                         mVar.invalidate();
                                     }
-                                    m0Var.h.invalidateOutline();
+                                    n0Var.h.invalidateOutline();
                                 }
-                                c cVar2 = m0Var.x;
+                                c cVar2 = n0Var.x;
                                 if (cVar2 != null) {
                                     cVar2.invalidateOutline();
                                 }
@@ -8515,7 +8515,7 @@ public final class c1 extends View {
         float f10;
         a1 a1Var;
         boolean z12;
-        q0 q0Var;
+        r0 r0Var;
         VelocityTracker velocityTracker;
         RippleDrawable rippleDrawable;
         float x10 = motionEvent.getX();
@@ -8532,7 +8532,7 @@ public final class c1 extends View {
                     this.u1 = 0L;
                     invalidate();
                     if (fVar != null) {
-                        ((m0) fVar.b).presentFragment(new PremiumPreviewFragment(0, "qr_emoji"));
+                        ((n0) fVar.b).presentFragment(new PremiumPreviewFragment(0, "qr_emoji"));
                         return true;
                     }
                 }
@@ -8605,7 +8605,7 @@ public final class c1 extends View {
                                     return true;
                                 }
                                 if (fVar != null) {
-                                    ((m0) fVar.b).finishFragment();
+                                    ((n0) fVar.b).finishFragment();
                                     return true;
                                 }
                             } else if (!this.K0 || !m0(rectF4, x10, y3)) {
@@ -8674,7 +8674,7 @@ public final class c1 extends View {
                                                     } else if (rectF.contains(x10, y3)) {
                                                         i0();
                                                         if (fVar != null) {
-                                                            m0.V((m0) fVar.b);
+                                                            n0.V((n0) fVar.b);
                                                             return true;
                                                         }
                                                     }
@@ -8716,16 +8716,16 @@ public final class c1 extends View {
                                     }
                                     this.l1 = 0.0f;
                                     i0();
-                                    postDelayed(new r0(this, max, 2), 200L);
+                                    postDelayed(new s0(this, max, 2), 200L);
                                     return true;
                                 }
                                 if (this.r7 || !m0(rectF3, x10, y3)) {
                                     if (!this.r7 && m0(rectF2, x10, y3) && fVar != null) {
-                                        ((m0) fVar.b).c0();
+                                        ((n0) fVar.b).c0();
                                         return true;
                                     }
                                 } else if (fVar != null) {
-                                    ((m0) fVar.b).d0(getCurrentLink());
+                                    ((n0) fVar.b).d0(getCurrentLink());
                                     return true;
                                 }
                             } else if (this.K0) {
@@ -8768,7 +8768,7 @@ public final class c1 extends View {
                                 if (rectF7.contains(x10, y3)) {
                                     int max2 = Math.max(0, Math.min(2, (int) ((x10 - rectF7.left) / (rectF7.width() / 3.0f))));
                                     i0();
-                                    postDelayed(new r0(this, max2, 1), 200L);
+                                    postDelayed(new s0(this, max2, 1), 200L);
                                     return true;
                                 }
                             } else if (rectFArr[i16].contains(x10, y3)) {
@@ -8779,11 +8779,11 @@ public final class c1 extends View {
                                         this.z0 = System.currentTimeMillis() + 60000;
                                     }
                                     this.A2 = -1;
-                                    if (fVar == null || (q0Var = ((m0) fVar.b).e) == null) {
+                                    if (fVar == null || (r0Var = ((n0) fVar.b).e) == null) {
                                         z12 = true;
                                     } else {
                                         z12 = true;
-                                        q0Var.l(true, q0Var.d == 1);
+                                        r0Var.l(true, r0Var.d == 1);
                                     }
                                     u1(z12);
                                     if (this.w0) {
@@ -8824,13 +8824,13 @@ public final class c1 extends View {
                             return true;
                         }
                         if (fVar != null) {
-                            m0 m0Var = (m0) fVar.b;
-                            if (m0Var.getParentActivity() != null) {
-                                if (m0Var.getParentActivity().checkSelfPermission("android.permission.CAMERA") != 0) {
-                                    m0Var.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 34);
+                            n0 n0Var = (n0) fVar.b;
+                            if (n0Var.getParentActivity() != null) {
+                                if (n0Var.getParentActivity().checkSelfPermission("android.permission.CAMERA") != 0) {
+                                    n0Var.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 34);
                                     return true;
                                 }
-                                m0Var.a0();
+                                n0Var.a0();
                                 return true;
                             }
                         }
@@ -9095,11 +9095,11 @@ public final class c1 extends View {
         this.U0[i10] = (random.nextFloat() - 0.5f) * 1080.0f;
     }
 
-    public final uj0 p1() {
+    public final vj0 p1() {
         if (this.a9 == null) {
-            uj0 uj0Var = new uj0(R.raw.contact_check, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f));
-            this.a9 = uj0Var;
-            uj0Var.setColorFilter(new ColorMatrixColorFilter(new float[]{0.0f, 0.0f, 0.0f, 0.0f, 255.0f, 0.0f, 0.0f, 0.0f, 0.0f, 255.0f, 0.0f, 0.0f, 0.0f, 0.0f, 255.0f, 0.2126f, 0.7152f, 0.0722f, 1.0f, -255.0f}));
+            vj0 vj0Var = new vj0(R.raw.contact_check, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f));
+            this.a9 = vj0Var;
+            vj0Var.setColorFilter(new ColorMatrixColorFilter(new float[]{0.0f, 0.0f, 0.0f, 0.0f, 255.0f, 0.0f, 0.0f, 0.0f, 0.0f, 255.0f, 0.0f, 0.0f, 0.0f, 0.0f, 255.0f, 0.2126f, 0.7152f, 0.0722f, 1.0f, -255.0f}));
             this.a9.K(0);
             this.a9.R(this);
             this.a9.J(true);
@@ -9132,11 +9132,11 @@ public final class c1 extends View {
         this.U0[i10] = 0.0f;
     }
 
-    public final uj0 q1() {
+    public final vj0 q1() {
         if (this.b9 == null) {
-            uj0 uj0Var = new uj0(R.raw.ic_save_to_gallery, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f));
-            this.b9 = uj0Var;
-            uj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+            vj0 vj0Var = new vj0(R.raw.ic_save_to_gallery, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f));
+            this.b9 = vj0Var;
+            vj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
             this.b9.K(0);
             this.b9.R(this);
             this.b9.J(true);
@@ -9144,11 +9144,11 @@ public final class c1 extends View {
         return this.b9;
     }
 
-    public final uj0 r1() {
+    public final vj0 r1() {
         if (this.Z8 == null) {
-            uj0 uj0Var = new uj0(R.raw.star_premium_2, AndroidUtilities.dp(27.0f), AndroidUtilities.dp(27.0f));
-            this.Z8 = uj0Var;
-            uj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+            vj0 vj0Var = new vj0(R.raw.star_premium_2, AndroidUtilities.dp(27.0f), AndroidUtilities.dp(27.0f));
+            this.Z8 = vj0Var;
+            vj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
             this.Z8.K(0);
             this.Z8.R(this);
             this.Z8.J(true);
@@ -9198,7 +9198,7 @@ public final class c1 extends View {
         if (str == null) {
             this.u0 = null;
         } else {
-            Utilities.globalQueue.postRunnable(new t0(str, new s0(this, str, 1)));
+            Utilities.globalQueue.postRunnable(new h0(2, str, new t0(this, str, 1)));
         }
     }
 
@@ -9370,8 +9370,8 @@ public final class c1 extends View {
 
     @Override // android.view.View
     public final boolean verifyDrawable(Drawable drawable) {
-        uj0 uj0Var;
-        return (drawable instanceof RippleDrawable) || drawable == this.L0 || drawable == this.X1 || ((uj0Var = this.m8) != null && drawable == uj0Var) || super.verifyDrawable(drawable);
+        vj0 vj0Var;
+        return (drawable instanceof RippleDrawable) || drawable == this.L0 || drawable == this.X1 || ((vj0Var = this.m8) != null && drawable == vj0Var) || super.verifyDrawable(drawable);
     }
 
     public final Drawable w(int i10) {
@@ -10296,7 +10296,7 @@ public final class c1 extends View {
         int dp;
         int dp2;
         float f10;
-        float B = kk.B(10.0f, 2, getWidth()) - AndroidUtilities.dp(8.0f);
+        float B = mk.B(10.0f, 2, getWidth()) - AndroidUtilities.dp(8.0f);
         int i10 = this.h1;
         if (i10 != 0) {
             if (i10 == 1) {

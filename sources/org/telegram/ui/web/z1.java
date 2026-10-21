@@ -12,14 +12,14 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Cells.b6;
 import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.Wallet.l6;
 import org.telegram.ui.Wallet.m6;
 import org.telegram.ui.p91;
 import rg.v2;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z1 implements Runnable {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class z1 implements Runnable {
                 ((p4.g) this.b).n = -1;
                 return;
             case 3:
-                ((ll0) this.b).b();
+                ((ml0) this.b).b();
                 return;
             case 4:
                 ki.t1 t1Var = ((qg.s0) this.b).b.a;
@@ -170,9 +170,9 @@ public final /* synthetic */ class z1 implements Runnable {
                 k0Var.n.presentFragment(p91.d0(k0Var.t1(), true));
                 return;
             case 22:
-                xj0 xj0Var = ((sg.q0) this.b).y;
-                xj0Var.getAnimatedDrawable().N(0, true, false);
-                xj0Var.d();
+                yj0 yj0Var = ((sg.q0) this.b).y;
+                yj0Var.getAnimatedDrawable().N(0, true, false);
+                yj0Var.d();
                 return;
             case 23:
                 ((sg.w0) this.b).b.A();

@@ -33,24 +33,24 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.Components.iu;
-import org.telegram.ui.Components.kw0;
 import org.telegram.ui.Components.lu;
+import org.telegram.ui.Components.lw0;
 import org.telegram.ui.Components.mu;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.is0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public abstract class m extends FrameLayout {
     public final RectF A0;
     public final RectF B0;
     public boolean C0;
-    public e11 D0;
+    public f11 D0;
     public final LinearGradient E;
-    public e11 E0;
+    public f11 E0;
     public final Matrix F;
     public Path F0;
     public Bitmap G;
@@ -61,7 +61,7 @@ public abstract class m extends FrameLayout {
     public float[] I0;
     public final FrameLayout J;
     public final Path J0;
-    public final kw0 K;
+    public final lw0 K;
     public boolean K0;
     public final b4 L;
     public int L0;
@@ -123,7 +123,7 @@ public abstract class m extends FrameLayout {
     public boolean y0;
     public final RectF z0;
 
-    public m(Context context, FrameLayout frameLayout, kw0 kw0Var, FrameLayout frameLayout2, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.ja jaVar) {
+    public m(Context context, FrameLayout frameLayout, lw0 lw0Var, FrameLayout frameLayout2, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.ja jaVar) {
         super(context);
         bh.j jVar = new bh.j();
         this.c = jVar;
@@ -154,7 +154,7 @@ public abstract class m extends FrameLayout {
         this.M0 = new org.telegram.ui.Components.f6(this, 500L, bsVar);
         this.a = d6Var;
         this.J = frameLayout;
-        this.K = kw0Var;
+        this.K = lw0Var;
         this.b = frameLayout2;
         this.O = jaVar;
         this.R = new org.telegram.ui.Components.na(jaVar, this, 0, !g());
@@ -171,7 +171,7 @@ public abstract class m extends FrameLayout {
         jVar2.invalidateSelf();
         paint.setColor(TLObject.FLAG_31);
         this.L = new b4(frameLayout, false, new ai.r0(this, 11));
-        g gVar = new g(this, context, kw0Var, getEditTextStyle(), new ci.b(), d6Var, jaVar);
+        g gVar = new g(this, context, lw0Var, getEditTextStyle(), new ci.b(), d6Var, jaVar);
         this.f = gVar;
         gVar.S = true;
         gVar.getEditText().addTextChangedListener(new org.telegram.ui.Cells.h3());
@@ -449,10 +449,10 @@ public abstract class m extends FrameLayout {
             Path.Direction direction = Path.Direction.CW;
             path2.addRoundRect(rectF2, lerp4, lerp4, direction);
             canvas2.clipPath(mVar.F0);
-            e11 e11Var = mVar.D0;
-            if (e11Var != null) {
-                e11Var.p = (int) (rectF2.width() - AndroidUtilities.dp(40.0f));
-                e11Var.c(rectF2.left + AndroidUtilities.dp(20.0f), f21 + AndroidUtilities.dp(22.0f), 1.0f, -1, canvas2);
+            f11 f11Var = mVar.D0;
+            if (f11Var != null) {
+                f11Var.p = (int) (rectF2.width() - AndroidUtilities.dp(40.0f));
+                f11Var.c(rectF2.left + AndroidUtilities.dp(20.0f), f21 + AndroidUtilities.dp(22.0f), 1.0f, -1, canvas2);
             }
             Path path3 = mVar.H0;
             if (path3 == null) {
@@ -489,10 +489,10 @@ public abstract class m extends FrameLayout {
                 canvas2.restore();
                 canvas2.restore();
             }
-            e11 e11Var2 = mVar.E0;
-            if (e11Var2 != null) {
-                e11Var2.p = (int) (rectF2.width() - AndroidUtilities.dp(40.0f));
-                e11Var2.c(rectF2.left + AndroidUtilities.dp(20.0f), f21 + AndroidUtilities.dp(40.0f), 1.0f, -1, canvas2);
+            f11 f11Var2 = mVar.E0;
+            if (f11Var2 != null) {
+                f11Var2.p = (int) (rectF2.width() - AndroidUtilities.dp(40.0f));
+                f11Var2.c(rectF2.left + AndroidUtilities.dp(20.0f), f21 + AndroidUtilities.dp(40.0f), 1.0f, -1, canvas2);
             }
         }
         super.dispatchDraw(canvas);
@@ -859,11 +859,11 @@ public abstract class m extends FrameLayout {
         if (spannableStringBuilder == null) {
             charSequence2 = "";
         }
-        this.D0 = new e11(charSequence2, 14.0f, AndroidUtilities.bold());
+        this.D0 = new f11(charSequence2, 14.0f, AndroidUtilities.bold());
         if (charSequence == null) {
             charSequence = "";
         }
-        this.E0 = new e11(charSequence, 14.0f, null);
+        this.E0 = new f11(charSequence, 14.0f, null);
     }
 
     public void w() {
@@ -874,9 +874,9 @@ public abstract class m extends FrameLayout {
     }
 
     public void x(int i10) {
-        kw0 kw0Var = this.K;
-        if (kw0Var != null) {
-            kw0Var.S();
+        lw0 lw0Var = this.K;
+        if (lw0Var != null) {
+            lw0Var.S();
         }
         g gVar = this.f;
         if (gVar.e) {
@@ -884,7 +884,7 @@ public abstract class m extends FrameLayout {
         } else if (gVar.N) {
             i10 = Math.max(0, gVar.getKeyboardHeight() + a());
         }
-        int max = Math.max(0, i10 - (kw0Var == null ? 0 : kw0Var.getBottomPadding()));
+        int max = Math.max(0, i10 - (lw0Var == null ? 0 : lw0Var.getBottomPadding()));
         View view = (View) getParent();
         view.clearAnimation();
         if (!(this instanceof is0)) {

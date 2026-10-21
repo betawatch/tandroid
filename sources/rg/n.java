@@ -2,11 +2,11 @@ package rg;
 
 import ei.c5;
 import java.util.List;
-import org.telegram.ui.Components.u11;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.v11;
+import org.telegram.ui.Components.y31;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -22,10 +22,10 @@ public final /* synthetic */ class n implements Runnable {
         switch (this.a) {
             case 0:
                 m0 m0Var = this.b;
-                u11 u11Var = m0Var.a1;
-                if (u11Var != null) {
+                v11 v11Var = m0Var.a1;
+                if (v11Var != null) {
                     m0Var.a1 = null;
-                    m0Var.removeView(u11Var);
+                    m0Var.removeView(v11Var);
                     break;
                 }
                 break;
@@ -58,12 +58,12 @@ public final /* synthetic */ class n implements Runnable {
                         qg.l lVar = (qg.l) list.get(i10);
                         int m10 = z10 ? lVar.m() : lVar.e();
                         String n10 = lVar.n();
-                        x31 x31Var = new x31(m0Var3, lVar, m10, 25);
+                        y31 y31Var = new y31(m0Var3, lVar, m10, 25);
                         l0 l0Var = new l0(m0Var3, m0Var3.getContext());
                         l0Var.setIcon(m10);
                         l0Var.setText(n10);
                         l0Var.setSelected(false);
-                        l0Var.setOnClickListener(new hg.r0(x31Var, 17));
+                        l0Var.setOnClickListener(new hg.r0(y31Var, 17));
                         l0Var.setOnLongClickListener(new c5(m0Var3, 6));
                         m0Var3.S1.a(l0Var, z5.n(-1, 48));
                         i10++;

@@ -11,7 +11,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
@@ -19,7 +19,7 @@ import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.xp;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class u1 extends FrameLayout {
     public final h9 a;
@@ -56,7 +56,7 @@ public final class u1 extends FrameLayout {
         this.d = textView2;
         textView2.setLines(2);
         textView2.setEllipsize(truncateAt);
-        kk.o(h6.z6, d6Var, textView2, 1, 15.0f);
+        mk.o(h6.z6, d6Var, textView2, 1, 15.0f);
         boolean z11 = LocaleController.isRTL;
         addView(textView2, z5.d(-1, -2.0f, 7, z11 ? 40.0f : 78.0f, 32.0f, z11 ? 78.0f : 40.0f, 0.0f));
         xp xpVar = new xp(getContext(), 21, d6Var);

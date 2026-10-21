@@ -18,7 +18,7 @@ import org.telegram.ui.pc1;
 import org.telegram.ui.wc1;
 import org.telegram.ui.yc1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b60 implements Runnable {
     public final /* synthetic */ int a;
@@ -70,56 +70,56 @@ public final /* synthetic */ class b60 implements Runnable {
                     break;
                 }
             case 2:
-                ((tn0) obj).G.presentFragment(new PremiumPreviewFragment(0, z10 ? "upload_speed" : "download_speed"));
+                ((un0) obj).G.presentFragment(new PremiumPreviewFragment(0, z10 ? "upload_speed" : "download_speed"));
                 break;
             case 3:
-                tv0 tv0Var = (tv0) obj;
+                uv0 uv0Var = (uv0) obj;
                 if (!z10) {
-                    tv0Var.m0.setVisibility(8);
+                    uv0Var.m0.setVisibility(8);
                     break;
                 } else {
-                    tv0Var.getClass();
+                    uv0Var.getClass();
                     break;
                 }
             case 4:
-                js0 js0Var = (js0) obj;
+                ks0 ks0Var = (ks0) obj;
                 if (!z10) {
-                    js0Var.U.q0.setVisibility(0);
+                    ks0Var.U.q0.setVisibility(0);
                     break;
                 } else {
-                    js0Var.getClass();
+                    ks0Var.getClass();
                     break;
                 }
             case 5:
-                os0 os0Var = (os0) obj;
+                ps0 ps0Var = (ps0) obj;
                 if (!z10) {
-                    os0Var.H.q0.setVisibility(0);
+                    ps0Var.H.q0.setVisibility(0);
                     break;
                 } else {
-                    os0Var.getClass();
+                    ps0Var.getClass();
                     break;
                 }
             case 6:
-                kw0 kw0Var = (kw0) obj;
-                ArrayList arrayList = kw0Var.r;
-                jw0 jw0Var = kw0Var.n;
-                if (jw0Var != null) {
-                    jw0Var.G(kw0Var.f, z10);
+                lw0 lw0Var = (lw0) obj;
+                ArrayList arrayList = lw0Var.r;
+                kw0 kw0Var = lw0Var.n;
+                if (kw0Var != null) {
+                    kw0Var.G(lw0Var.f, z10);
                 }
                 while (i12 < arrayList.size()) {
-                    ((jw0) arrayList.get(i12)).G(kw0Var.f, z10);
+                    ((kw0) arrayList.get(i12)).G(lw0Var.f, z10);
                     i12++;
                 }
                 break;
             case 7:
-                lw0 lw0Var = (lw0) obj;
-                ArrayList arrayList2 = lw0Var.r;
-                jw0 jw0Var2 = lw0Var.n;
-                if (jw0Var2 != null) {
-                    jw0Var2.G(lw0Var.y0, z10);
+                mw0 mw0Var = (mw0) obj;
+                ArrayList arrayList2 = mw0Var.r;
+                kw0 kw0Var2 = mw0Var.n;
+                if (kw0Var2 != null) {
+                    kw0Var2.G(mw0Var.y0, z10);
                 }
                 while (i12 < arrayList2.size()) {
-                    ((jw0) arrayList2.get(i12)).G(lw0Var.y0, z10);
+                    ((kw0) arrayList2.get(i12)).G(mw0Var.y0, z10);
                     i12++;
                 }
                 break;
@@ -127,7 +127,7 @@ public final /* synthetic */ class b60 implements Runnable {
                 ((Utilities.Callback2) obj).run(null, Boolean.valueOf(z10));
                 break;
             case 9:
-                ((t61) obj).P(z10);
+                ((u61) obj).P(z10);
                 break;
             case 10:
                 org.telegram.ui.cy cyVar = (org.telegram.ui.cy) obj;

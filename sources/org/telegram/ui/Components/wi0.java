@@ -1,12 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.widget.FrameLayout;
+import java.util.Locale;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class wi0 extends FrameLayout {
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
+public final /* synthetic */ class wi0 implements kd0, md0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bj0 b;
+
+    public /* synthetic */ wi0(bj0 bj0Var, int i10) {
+        this.a = i10;
+        this.b = bj0Var;
+    }
+
+    @Override // org.telegram.ui.Components.kd0
+    public String e(int i10) {
+        int i11 = this.a;
+        bj0 bj0Var = this.b;
+        switch (i11) {
+            case 0:
+                return bj0Var.O ? LocaleController.formatString("MilesShort", R.string.MilesShort, Integer.valueOf(i10)) : LocaleController.formatString("KMetersShort", R.string.KMetersShort, Integer.valueOf(i10));
+            default:
+                if (!bj0Var.O) {
+                    if (i10 == 1) {
+                        return LocaleController.formatString("MetersShort", R.string.MetersShort, 50);
+                    }
+                    if (i10 > 1) {
+                        i10--;
+                    }
+                    return LocaleController.formatString("MetersShort", R.string.MetersShort, Integer.valueOf(i10 * 100));
+                }
+                if (i10 == 1) {
+                    return LocaleController.formatString("FootsShort", R.string.FootsShort, Integer.valueOf(MediaDataController.MAX_LINKS_COUNT));
+                }
+                if (i10 > 1) {
+                    i10--;
+                }
+                Locale locale = Locale.US;
+                return i2.e.j(i10, ".");
+        }
+    }
+
+    @Override // org.telegram.ui.Components.md0
+    public void q(od0 od0Var, int i10) {
+        bj0 bj0Var = this.b;
+        try {
+            bj0Var.performHapticFeedback(3, 2);
+        } catch (Exception unused) {
+        }
+        bj0Var.c(true);
     }
 }

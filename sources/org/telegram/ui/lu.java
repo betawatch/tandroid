@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class lu extends org.telegram.ui.ActionBar.n2 {
     public static final int[][] d = {new int[]{-14899731, -15431455}, new int[]{-11154873, -14175180}, new int[]{-11565578, -13276952}, new int[]{-1007845, -1996271}, new int[]{-765355, -2148011}, new int[]{-3903756, -6335009}, new int[]{-13451058, -14836538}};
@@ -16,8 +16,8 @@ public final class lu extends org.telegram.ui.ActionBar.n2 {
     public static final int[] f = {R.drawable.msg_filled_data_videos, R.drawable.msg_filled_data_files, R.drawable.msg_filled_data_photos, R.drawable.msg_filled_data_messages, R.drawable.msg_filled_data_music, R.drawable.msg_filled_data_voice, R.drawable.msg_filled_data_calls};
     public static final int[] h = {R.string.LocalVideoCache, R.string.LocalDocumentCache, R.string.LocalPhotoCache, R.string.MessagesSettings, R.string.LocalMusicCache, R.string.LocalAudioCache, R.string.CallsDataUsage};
     public static final int[] n = {2, 5, 4, 1, 7, 3, 0};
-    public org.telegram.ui.Components.d91 a;
-    public org.telegram.ui.Components.c91 b;
+    public org.telegram.ui.Components.e91 a;
+    public org.telegram.ui.Components.d91 b;
     public boolean c;
 
     public lu() {
@@ -40,10 +40,10 @@ public final class lu extends org.telegram.ui.ActionBar.n2 {
         this.actionBar.setActionBarMenuOnItemClick(new ea(this, 22));
         m0 m0Var = new m0(this, context, 6);
         m0Var.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.h6.a7));
-        org.telegram.ui.Components.d91 d91Var = new org.telegram.ui.Components.d91(context, null);
-        this.a = d91Var;
-        d91Var.setAdapter(new iu(this));
-        org.telegram.ui.Components.c91 n10 = this.a.n(8, true);
+        org.telegram.ui.Components.e91 e91Var = new org.telegram.ui.Components.e91(context, null);
+        this.a = e91Var;
+        e91Var.setAdapter(new iu(this));
+        org.telegram.ui.Components.d91 n10 = this.a.n(8, true);
         this.b = n10;
         n10.setBackgroundColor(getThemedColor(i10));
         m0Var.addView(this.b, w7.z5.e(-1, 48, 55));

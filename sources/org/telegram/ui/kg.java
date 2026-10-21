@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kg implements Runnable {
     public final /* synthetic */ int a;
@@ -90,7 +90,7 @@ public final /* synthetic */ class kg implements Runnable {
                 if (qnVar.L4 > 0 && qnVar.J4 != null) {
                     qnVar.getMessagesController().getTranslateController().checkTranslation((MessageObject) qnVar.J4.get(Integer.valueOf(qnVar.L4)), true);
                 }
-                qnVar.Yc();
+                qnVar.Zc();
                 break;
             case 2:
                 qnVar.xa();
@@ -100,7 +100,7 @@ public final /* synthetic */ class kg implements Runnable {
                 break;
             case 4:
                 qnVar.h9();
-                qnVar.Cc(0, true);
+                qnVar.Dc(0, true);
                 break;
             case 5:
                 qnVar.j8(false, true, 0.0f);
@@ -109,7 +109,7 @@ public final /* synthetic */ class kg implements Runnable {
                 qnVar.X9();
                 break;
             case 7:
-                qnVar.lc(false);
+                qnVar.mc(false);
                 break;
             case 8:
                 qnVar.v9(2);
@@ -147,7 +147,7 @@ public final /* synthetic */ class kg implements Runnable {
                 dm dmVar = qnVar.A0;
                 dmVar.L = false;
                 dmVar.O(true);
-                qnVar.Tb(false);
+                qnVar.Ub(false);
                 break;
             case 19:
                 qnVar.t9();
@@ -157,7 +157,7 @@ public final /* synthetic */ class kg implements Runnable {
                 break;
             case 20:
                 qnVar.ya = false;
-                qnVar.yc();
+                qnVar.zc();
                 break;
             case 21:
                 qnVar.ic = 0;
@@ -168,7 +168,7 @@ public final /* synthetic */ class kg implements Runnable {
                 qnVar.v9(5);
                 break;
             case 23:
-                qnVar.Cc(0, qnVar.P5 != 0 && SystemClock.elapsedRealtime() >= qnVar.P5 + 150);
+                qnVar.Dc(0, qnVar.P5 != 0 && SystemClock.elapsedRealtime() >= qnVar.P5 + 150);
                 break;
             case 24:
                 ik ikVar = qnVar.R2;

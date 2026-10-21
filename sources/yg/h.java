@@ -34,12 +34,12 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.f6;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.n41;
+import org.telegram.ui.Components.nl0;
+import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.v30;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class h extends ScrollView {
     public final Paint E;
@@ -140,7 +140,7 @@ public abstract class h extends ScrollView {
             n9Var.c = false;
             AnimatorSet animatorSet = new AnimatorSet();
             n9Var.b = animatorSet;
-            animatorSet.addListener(new ml0(23, n9Var, v30Var));
+            animatorSet.addListener(new nl0(23, n9Var, v30Var));
             ArrayList arrayList = n9Var.h;
             arrayList.clear();
             arrayList.add(v30Var);
@@ -212,7 +212,7 @@ public abstract class h extends ScrollView {
                     obj = user;
                     if (obj != null) {
                         v30 v30Var2 = new v30(getContext(), obj, null, true, this.a);
-                        v30Var2.setOnClickListener(new n41(this, hashSet, runnable, 3));
+                        v30Var2.setOnClickListener(new o41(this, hashSet, runnable, 3));
                         arrayList5.add(v30Var2);
                     }
                 } else {

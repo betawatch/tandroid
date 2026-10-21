@@ -15,9 +15,9 @@ import e9.n0;
 import e9.x1;
 import java.util.Arrays;
 import java.util.List;
-import u2.z0;
+import u2.a1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final class d implements o {
     public q a;
@@ -171,9 +171,9 @@ public final class d implements o {
                     iVar2.b.b(wVar);
                     iVar2.m = true;
                 }
-                z0 z0Var = (z0) iVar2.j.c;
-                if (z0Var != null) {
-                    iVar2.d = z0Var;
+                a1 a1Var = (a1) iVar2.j.c;
+                if (a1Var != null) {
+                    iVar2.d = a1Var;
                 } else {
                     if (pVar.getLength() != -1) {
                         f fVar = eVar.a;

@@ -16,12 +16,12 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.bw0;
 import org.telegram.ui.Components.cw0;
+import org.telegram.ui.Components.dw0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i1 implements bw0, cw0, org.telegram.ui.ActionBar.a2, Continuation, r9.d, i5.e, d9.k, GenericProvider, Utilities.Callback2Return, eh.d {
+public final /* synthetic */ class i1 implements cw0, dw0, org.telegram.ui.ActionBar.a2, Continuation, r9.d, i5.e, d9.k, GenericProvider, Utilities.Callback2Return, eh.d {
     public final /* synthetic */ int a;
 
     public /* synthetic */ i1(int i10) {
@@ -50,7 +50,7 @@ public final /* synthetic */ class i1 implements bw0, cw0, org.telegram.ui.Actio
         }
     }
 
-    @Override // org.telegram.ui.Components.cw0
+    @Override // org.telegram.ui.Components.dw0
     public void b(Object obj, float f7) {
         p1 p1Var = (p1) obj;
         switch (this.a) {
@@ -116,7 +116,7 @@ public final /* synthetic */ class i1 implements bw0, cw0, org.telegram.ui.Actio
         }
     }
 
-    @Override // org.telegram.ui.Components.bw0
+    @Override // org.telegram.ui.Components.cw0
     public float get(Object obj) {
         p1 p1Var = (p1) obj;
         switch (this.a) {

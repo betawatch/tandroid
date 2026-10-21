@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -164,16 +164,16 @@ public final /* synthetic */ class u implements View.OnLongClickListener {
                             }, false);
                             org.telegram.ui.ActionBar.e1 y11 = F2.y();
                             if (y11 != null) {
-                                org.telegram.ui.Components.xj0 xj0Var = y11.c;
+                                org.telegram.ui.Components.yj0 yj0Var = y11.c;
                                 y11.g(webPage.title, R.drawable.msg_instant, null);
                                 y11.setTextColor(x03);
                                 if (!TextUtils.isEmpty(webPage.site_name)) {
                                     y11.setSubtext(webPage.site_name);
                                 }
                                 y11.setSubtextColor(m12);
-                                xj0Var.getLayoutParams().width = AndroidUtilities.dp(24.0f);
-                                xj0Var.setScaleX(1.45f);
-                                xj0Var.setScaleY(1.45f);
+                                yj0Var.getLayoutParams().width = AndroidUtilities.dp(24.0f);
+                                yj0Var.setScaleX(1.45f);
+                                yj0Var.setScaleY(1.45f);
                                 y11.c(x03, x03);
                             }
                         }
@@ -181,7 +181,7 @@ public final /* synthetic */ class u implements View.OnLongClickListener {
                     F2.W(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(40.0f), l4Var.h0.getBackgroundColor()));
                     F2.P(x02);
                     if (F2.x() > 0) {
-                        l4Var.m(new org.telegram.messenger.e6(l4Var, F2, f7, 1));
+                        l4Var.m(new org.telegram.messenger.g6(l4Var, F2, f7, 1));
                         return true;
                     }
                 }

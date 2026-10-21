@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kh0 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class kh0 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        ri.n nVar;
+        ri.m mVar;
         switch (this.a) {
             case 0:
                 qn qnVar = ((di) this.c).e;
@@ -41,13 +41,13 @@ public final /* synthetic */ class kh0 implements Runnable {
                 e0Var.presentFragment(qn.W9(this.b));
                 break;
             case 3:
-                ri.p pVar = (ri.p) ((cc.e) this.c).c;
-                if (this.b == pVar.o && (nVar = pVar.m) != ri.n.r && nVar != ri.n.s && nVar != ri.n.n) {
+                ri.o oVar = (ri.o) ((cc.e) this.c).c;
+                if (this.b == oVar.p && (mVar = oVar.n) != ri.m.r && mVar != ri.m.s && mVar != ri.m.n) {
                     SystemClock.elapsedRealtime();
-                    pVar.w = false;
-                    pVar.r(ri.n.c);
-                    pVar.h.removeCallbacks(pVar.D);
-                    pVar.g.b("recording started: retainedDurationMs=" + ri.p.q(pVar.p));
+                    oVar.x = false;
+                    oVar.r(ri.m.c);
+                    oVar.i.removeCallbacks(oVar.E);
+                    oVar.h.b("recording started: retainedDurationMs=" + ri.o.q(oVar.q));
                     break;
                 }
                 break;

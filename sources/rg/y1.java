@@ -16,16 +16,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.el0;
-import org.telegram.ui.Components.ew0;
 import org.telegram.ui.Components.f6;
+import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.fw0;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class y1 extends j {
     public final Bitmap A0;
@@ -40,13 +40,13 @@ public final class y1 extends j {
     public final int s0;
     public boolean t0;
     public final f6 u0;
-    public final ew0 v0;
+    public final fw0 v0;
     public final int w0;
     public boolean x0;
     public final f6 y0;
     public final x1 z0;
 
-    public y1(Context context, PointF pointF, ew0 ew0Var, String str, int i10) {
+    public y1(Context context, PointF pointF, fw0 fw0Var, String str, int i10) {
         super(context, pointF);
         this.s0 = -1;
         this.t0 = false;
@@ -60,7 +60,7 @@ public final class y1 extends j {
         setRotation(0.0f);
         setScale(1.0f);
         this.r0 = str;
-        this.v0 = ew0Var;
+        this.v0 = fw0Var;
         x1 x1Var = new x1(this, context);
         this.z0 = x1Var;
         addView(x1Var, z5.c(-1.0f, -1));
@@ -91,7 +91,7 @@ public final class y1 extends j {
         return this.s0;
     }
 
-    public ew0 getBaseSize() {
+    public fw0 getBaseSize() {
         return this.v0;
     }
 
@@ -120,10 +120,10 @@ public final class y1 extends j {
     }
 
     @Override // rg.j
-    public el0 getSelectionBounds() {
+    public fl0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new el0();
+            return new fl0();
         }
         float scaleX = viewGroup.getScaleX();
         float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
@@ -132,15 +132,15 @@ public final class y1 extends j {
         getMeasuredHeight();
         getScale();
         AndroidUtilities.dp(64.0f);
-        float z10 = kk.z(dp, 2.0f, getPositionX(), scaleX);
-        return new el0(z10, kk.z(dp2, 2.0f, getPositionY(), scaleX), ((dp3 * scaleX) + z10) - z10, dp2 * scaleX);
+        float z10 = mk.z(dp, 2.0f, getPositionX(), scaleX);
+        return new fl0(z10, mk.z(dp2, 2.0f, getPositionY(), scaleX), ((dp3 * scaleX) + z10) - z10, dp2 * scaleX);
     }
 
     @Override // rg.j
     public final void k() {
-        ew0 ew0Var = this.v0;
-        float f7 = ew0Var.a / 2.0f;
-        float f10 = ew0Var.b / 2.0f;
+        fw0 fw0Var = this.v0;
+        float f7 = fw0Var.a / 2.0f;
+        float f10 = fw0Var.b / 2.0f;
         MediaController.CropState cropState = this.G0;
         if (cropState != null) {
             f7 *= cropState.cropPw;
@@ -163,9 +163,9 @@ public final class y1 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        ew0 ew0Var = this.v0;
-        float f7 = ew0Var.a;
-        float f10 = ew0Var.b;
+        fw0 fw0Var = this.v0;
+        float f7 = fw0Var.a;
+        float f10 = fw0Var.b;
         MediaController.CropState cropState = this.G0;
         if (cropState != null) {
             f7 *= cropState.cropPw;
@@ -220,7 +220,7 @@ public final class y1 extends j {
         }
     }
 
-    public y1(Context context, PointF pointF, ew0 ew0Var, TLObject tLObject) {
+    public y1(Context context, PointF pointF, fw0 fw0Var, TLObject tLObject) {
         super(context, pointF);
         this.s0 = -1;
         this.t0 = false;
@@ -234,7 +234,7 @@ public final class y1 extends j {
         setRotation(0.0f);
         setScale(1.0f);
         this.q0 = tLObject;
-        this.v0 = ew0Var;
+        this.v0 = fw0Var;
         x1 x1Var = new x1(this, context);
         this.z0 = x1Var;
         addView(x1Var, z5.c(-1.0f, -1));

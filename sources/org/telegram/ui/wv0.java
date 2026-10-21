@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wv0 implements org.telegram.ui.ActionBar.a2, Utilities.Callback5 {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class wv0 implements org.telegram.ui.ActionBar.a2, 
         ((Float) obj5).floatValue();
         xv0 xv0Var = this.b;
         xv0Var.getClass();
-        if (((org.telegram.ui.Components.g61) obj).d == 1) {
+        if (((org.telegram.ui.Components.h61) obj).d == 1) {
             org.telegram.ui.Cells.v8 v8Var = (org.telegram.ui.Cells.v8) view;
             boolean z10 = !v8Var.e.h;
             xv0Var.r = z10;

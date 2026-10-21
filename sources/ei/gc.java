@@ -31,11 +31,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.ln0;
+import org.telegram.ui.Components.mn0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class gc extends View {
     public final Paint A0;
@@ -79,7 +79,7 @@ public final class gc extends View {
     public float V;
     public final Paint V0;
     public boolean W;
-    public final ln0 W0;
+    public final mn0 W0;
     public boolean X0;
     public final ai.t0 Y0;
     public long Z0;
@@ -123,7 +123,7 @@ public final class gc extends View {
     public boolean o1;
     public final Path p0;
     public VelocityTracker p1;
-    public final e11 q0;
+    public final f11 q0;
     public boolean q1;
     public final ArrayList r;
     public final Drawable r0;
@@ -205,7 +205,7 @@ public final class gc extends View {
         this.U0 = new Matrix();
         Paint paint8 = new Paint(1);
         this.V0 = paint8;
-        this.W0 = new ln0(getContext(), null);
+        this.W0 = new mn0(getContext(), null);
         this.Z0 = -1L;
         this.a1 = -1L;
         this.b1 = new org.telegram.ui.Components.f6(0.0f, this, 0L, 340L, bsVar);
@@ -237,7 +237,7 @@ public final class gc extends View {
         paint3.setColor(-16777216);
         paint5.setColor(-1);
         paint4.setColor(637534208);
-        this.q0 = new e11(LocaleController.getString(R.string.StoryTimeline), 12.0f, AndroidUtilities.bold());
+        this.q0 = new f11(LocaleController.getString(R.string.StoryTimeline), 12.0f, AndroidUtilities.bold());
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.timeline).mutate();
         this.r0 = mutate;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
@@ -677,8 +677,8 @@ public final class gc extends View {
 
     @Override // android.view.View
     public final void computeScroll() {
-        ln0 ln0Var = this.W0;
-        if (!ln0Var.b()) {
+        mn0 mn0Var = this.W0;
+        if (!mn0Var.b()) {
             if (this.r1) {
                 this.r1 = false;
                 zb zbVar = this.a;
@@ -690,13 +690,13 @@ public final class gc extends View {
             }
             return;
         }
-        int i10 = ln0Var.j;
+        int i10 = mn0Var.j;
         long min = Math.min(getBaseDuration(), getMaxScrollDuration());
         if (this.q1) {
             this.f = (long) Math.max(0.0f, (((i10 - this.y1) - this.x1) / this.u1) * min);
         } else {
             if (!this.P) {
-                ln0Var.a();
+                mn0Var.a();
                 return;
             }
             int i11 = this.y1;
@@ -924,7 +924,7 @@ public final class gc extends View {
                     drawable.setBounds(centerX, org.telegram.ui.Cells.c1.f(2, centerY, drawable), drawable.getIntrinsicWidth() + centerX, org.telegram.ui.Cells.c1.A(2, centerY, drawable));
                     drawable.setAlpha(191);
                     drawable.draw(canvas);
-                    e11 e11Var = gcVar.q0;
+                    f11 f11Var = gcVar.q0;
                     float centerX2 = (rectF9.centerX() - h) + drawable.getIntrinsicWidth() + AndroidUtilities.dp(3.66f);
                     float f64 = centerY;
                     paint = paint4;
@@ -932,7 +932,7 @@ public final class gc extends View {
                     arrayList = arrayList21;
                     naVar = naVar2;
                     f7 = 0.4f;
-                    e11Var.c(centerX2, f64, 0.75f, -1, canvas);
+                    f11Var.c(centerX2, f64, 0.75f, -1, canvas);
                     canvas.restore();
                 }
             } else {
@@ -956,7 +956,7 @@ public final class gc extends View {
             drawable.setBounds(centerX3, org.telegram.ui.Cells.c1.f(2, centerY2, drawable), drawable.getIntrinsicWidth() + centerX3, org.telegram.ui.Cells.c1.A(2, centerY2, drawable));
             drawable.setAlpha(191);
             drawable.draw(canvas);
-            e11 e11Var2 = gcVar.q0;
+            f11 f11Var2 = gcVar.q0;
             float centerX22 = (rectF9.centerX() - h10) + drawable.getIntrinsicWidth() + AndroidUtilities.dp(3.66f);
             float f642 = centerY2;
             paint = paint4;
@@ -964,7 +964,7 @@ public final class gc extends View {
             arrayList = arrayList21;
             naVar = naVar2;
             f7 = 0.4f;
-            e11Var2.c(centerX22, f642, 0.75f, -1, canvas);
+            f11Var2.c(centerX22, f642, 0.75f, -1, canvas);
             canvas.restore();
         } else {
             rectF = rectF6;
@@ -2705,7 +2705,7 @@ public final class gc extends View {
             if (motionEvent.getAction() != 0 || motionEvent.getY() >= timelineHeight) {
                 long currentTimeMillis = System.currentTimeMillis();
                 int action = motionEvent.getAction();
-                ln0 ln0Var = this.W0;
+                mn0 mn0Var = this.W0;
                 ai.t0 t0Var = this.Y0;
                 if (action == 0) {
                     ai.v3 v3Var2 = this.d1;
@@ -2713,7 +2713,7 @@ public final class gc extends View {
                         AndroidUtilities.cancelRunOnUIThread(v3Var2);
                         this.d1 = null;
                     }
-                    ln0Var.a();
+                    mn0Var.a();
                     this.i1 = -1;
                     this.h1 = c(motionEvent);
                     this.j1 = -1;
@@ -3236,7 +3236,7 @@ public final class gc extends View {
                     }
                 } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
                     AndroidUtilities.cancelRunOnUIThread(t0Var);
-                    ln0Var.a();
+                    mn0Var.a();
                     if (motionEvent.getAction() == 1) {
                         if ((System.currentTimeMillis() - this.f1 > ViewConfiguration.getTapTimeout() || this.m1) && this.j0) {
                             int i21 = this.h1;

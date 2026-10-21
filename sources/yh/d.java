@@ -16,11 +16,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.p6;
 import org.telegram.ui.Components.q6;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.Components.yq;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class d extends FrameLayout {
     public final ei.d a;
@@ -51,7 +51,7 @@ public final class d extends FrameLayout {
         p6Var.F = true;
         p6Var.G = true;
         p6Var.H = false;
-        xj0 xj0Var = new xj0(context);
+        yj0 yj0Var = new yj0(context);
         q6 q6Var = new q6(context, false, false, false);
         this.b = q6Var;
         q6Var.setTextSize(AndroidUtilities.dp(14.0f));
@@ -62,11 +62,11 @@ public final class d extends FrameLayout {
         q6Var2.setTextSize(AndroidUtilities.dp(12.0f));
         TLRPC.Document document = auction.gift.sticker;
         if (document != null) {
-            xj0Var.g(44, 44, document);
+            yj0Var.g(44, 44, document);
         }
         addView(q6Var, z5.d(-1, 18.0f, 51, 64.0f, 15.0f, 15.0f, 0.0f));
         addView(q6Var2, z5.d(-1, 17.0f, 51, 64.0f, 34.0f, 15.0f, 0.0f));
-        addView(xj0Var, z5.d(44, 44.0f, 51, 14.0f, 11.0f, 0.0f, 0.0f));
+        addView(yj0Var, z5.d(44, 44.0f, 51, 14.0f, 11.0f, 0.0f, 0.0f));
         addView(dVar, z5.d(-1, 44.0f, 80, 15.0f, 0.0f, 15.0f, 15.0f));
         b(false);
     }

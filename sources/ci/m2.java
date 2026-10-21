@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.a10;
-import org.telegram.ui.Components.cl0;
+import org.telegram.ui.Components.dl0;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.lb;
 import org.telegram.ui.Components.xc;
@@ -21,7 +21,7 @@ import org.telegram.ui.lt;
 import org.telegram.ui.y81;
 import org.telegram.ui.z81;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m2 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -50,17 +50,17 @@ public final /* synthetic */ class m2 implements View.OnLongClickListener {
                 if (x3Var != null) {
                     x3Var.e(true);
                 }
-                cl0 cl0Var = q4Var.r3;
-                if (cl0Var == null) {
-                    cl0 cl0Var2 = new cl0(2, q4Var.C2, q4Var.getContext(), LaunchActivity.R(), new t2(4, q4Var.B0));
-                    q4Var.r3 = cl0Var2;
-                    cl0Var2.setPadding(0, 0, 0, AndroidUtilities.dp(22.0f));
+                dl0 dl0Var = q4Var.r3;
+                if (dl0Var == null) {
+                    dl0 dl0Var2 = new dl0(2, q4Var.C2, q4Var.getContext(), LaunchActivity.R(), new t2(4, q4Var.B0));
+                    q4Var.r3 = dl0Var2;
+                    dl0Var2.setPadding(0, 0, 0, AndroidUtilities.dp(22.0f));
                     q4Var.addView(q4Var.r3, q4Var.getChildCount() - 1, w7.z5.d(-2, 74.0f, 53, 0.0f, 0.0f, 12.0f, 64.0f));
                     q4Var.r3.setVisibility(8);
                     q4Var.r3.setDelegate(new q3(q4Var));
                     q4Var.r3.p(null, null, true);
                 } else {
-                    q4Var.bringChildToFront(cl0Var);
+                    q4Var.bringChildToFront(dl0Var);
                     q4Var.r3.n();
                 }
                 q4Var.r3.setFragment(LaunchActivity.R());

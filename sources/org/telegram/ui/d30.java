@@ -4,9 +4,9 @@ import android.graphics.Canvas;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class d30 extends org.telegram.ui.Components.im0 {
+public final class d30 extends org.telegram.ui.Components.jm0 {
     public final /* synthetic */ q50 V2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,7 +15,7 @@ public final class d30 extends org.telegram.ui.Components.im0 {
         this.V2 = q50Var;
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j10) {
         org.telegram.ui.Components.z20 z20Var = (org.telegram.ui.Components.z20) view;
         q50 q50Var = this.V2;

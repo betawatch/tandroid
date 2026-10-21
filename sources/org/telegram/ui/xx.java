@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class xx extends org.telegram.ui.Components.ia implements ci.p7 {
     public static final /* synthetic */ int t3 = 0;
@@ -42,7 +42,7 @@ public final class xx extends org.telegram.ui.Components.ia implements ci.p7 {
     public float g3;
     public final Paint h3;
     public final RectF i3;
-    public org.telegram.ui.Components.im0 j3;
+    public org.telegram.ui.Components.jm0 j3;
     public LongSparseArray k3;
     public Paint l3;
     public float m3;
@@ -107,7 +107,7 @@ public final class xx extends org.telegram.ui.Components.ia implements ci.p7 {
         }
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.jm0
     public final boolean F0(View view) {
         return !(view instanceof org.telegram.ui.Cells.l4) || view.isClickable();
     }
@@ -132,7 +132,7 @@ public final class xx extends org.telegram.ui.Components.ia implements ci.p7 {
     /* JADX WARN: Removed duplicated region for block: B:197:0x06c8  */
     /* JADX WARN: Removed duplicated region for block: B:200:0x06cf  */
     /* JADX WARN: Removed duplicated region for block: B:245:0x02c6  */
-    @Override // org.telegram.ui.Components.ia, org.telegram.ui.Components.im0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ia, org.telegram.ui.Components.jm0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -464,7 +464,7 @@ public final class xx extends org.telegram.ui.Components.ia implements ci.p7 {
             rectF4.set(measuredWidth, i25, f28, i25 + dp);
             float f29 = ud0Var.g;
             float f30 = 35.0f;
-            int z14 = (int) (f29 < 0.5f ? org.telegram.messenger.kk.z(f29, 0.5f, 1.0f, 35.0f) : ((f29 - 0.5f) * 35.0f) / 0.5f);
+            int z14 = (int) (f29 < 0.5f ? org.telegram.messenger.mk.z(f29, 0.5f, 1.0f, 35.0f) : ((f29 - 0.5f) * 35.0f) / 0.5f);
             float f31 = z14;
             float f32 = 360 - (z14 * 2);
             canvas.drawArc(rectF4, f31, f32, true, paint4);
@@ -606,7 +606,7 @@ public final class xx extends org.telegram.ui.Components.ia implements ci.p7 {
         this.q3.a(this);
     }
 
-    @Override // org.telegram.ui.Components.im0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jm0, android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         if (motionEvent.getAction() != 0 || motionEvent.getY() >= getPaddingTop() + this.s3.N) {
             return super.dispatchTouchEvent(motionEvent);
@@ -614,7 +614,7 @@ public final class xx extends org.telegram.ui.Components.ia implements ci.p7 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ia, org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.ia, org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j10) {
         if (getItemAnimator() != null && getItemAnimator().k() && (view instanceof org.telegram.ui.Cells.r2) && ((org.telegram.ui.Cells.r2) view).r) {
             return true;
@@ -643,7 +643,7 @@ public final class xx extends org.telegram.ui.Components.ia implements ci.p7 {
         super.onDraw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         org.telegram.ui.ActionBar.k kVar;
         if (this.V1) {
@@ -660,7 +660,7 @@ public final class xx extends org.telegram.ui.Components.ia implements ci.p7 {
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         this.f3 = getPaddingTop();
@@ -668,7 +668,7 @@ public final class xx extends org.telegram.ui.Components.ia implements ci.p7 {
         this.e3.getClass();
     }
 
-    @Override // org.telegram.ui.Components.ia, org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.ia, org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         org.telegram.ui.ActionBar.k kVar;
         ay[] ayVarArr;
@@ -745,7 +745,7 @@ public final class xx extends org.telegram.ui.Components.ia implements ci.p7 {
         animatorSet.isRunning();
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         s4.b1 b1Var;
         int i10;
@@ -874,10 +874,10 @@ public final class xx extends org.telegram.ui.Components.ia implements ci.p7 {
                             fArr[1] = 0.0f;
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
                             ofFloat.addUpdateListener(new e3(this, 10));
-                            ofFloat.setDuration(Math.max(100L, (long) org.telegram.messenger.kk.x(getViewOffset(), AndroidUtilities.dp(72.0f), 120.0f, 350.0f)));
+                            ofFloat.setDuration(Math.max(100L, (long) org.telegram.messenger.mk.x(getViewOffset(), AndroidUtilities.dp(72.0f), 120.0f, 350.0f)));
                             ofFloat.setInterpolator(org.telegram.ui.Components.bs.h);
                             setScrollEnabled(false);
-                            ofFloat.addListener(new org.telegram.ui.Components.o31(this, 25));
+                            ofFloat.addListener(new org.telegram.ui.Components.p31(this, 25));
                             ofFloat.start();
                         }
                     }
@@ -896,7 +896,7 @@ public final class xx extends org.telegram.ui.Components.ia implements ci.p7 {
         view.setAlpha(1.0f);
     }
 
-    @Override // org.telegram.ui.Components.ia, org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.ia, org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public final void requestLayout() {
         if (this.d3) {
             return;
@@ -904,7 +904,7 @@ public final class xx extends org.telegram.ui.Components.ia implements ci.p7 {
         super.requestLayout();
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView
     public void setAdapter(s4.g0 g0Var) {
         super.setAdapter(g0Var);
         this.c3 = true;
@@ -934,7 +934,7 @@ public final class xx extends org.telegram.ui.Components.ia implements ci.p7 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.jm0
     public final boolean v1() {
         return true;
     }
@@ -953,8 +953,8 @@ public final class xx extends org.telegram.ui.Components.ia implements ci.p7 {
     */
     public final void z1(uw uwVar, float f7, boolean z10) {
         cy cyVar;
-        org.telegram.ui.Components.im0 im0Var = uwVar == null ? this.j3 : this;
-        if (im0Var == null) {
+        org.telegram.ui.Components.jm0 jm0Var = uwVar == null ? this.j3 : this;
+        if (jm0Var == null) {
             this.j3 = uwVar;
             return;
         }
@@ -964,12 +964,12 @@ public final class xx extends org.telegram.ui.Components.ia implements ci.p7 {
         int i11 = Integer.MAX_VALUE;
         org.telegram.ui.Cells.r2 r2Var2 = null;
         while (true) {
-            int childCount = im0Var.getChildCount();
+            int childCount = jm0Var.getChildCount();
             cyVar = this.s3;
             if (i10 >= childCount) {
                 break;
             }
-            View childAt = im0Var.getChildAt(i10);
+            View childAt = jm0Var.getChildAt(i10);
             if (childAt instanceof org.telegram.ui.Cells.r2) {
                 org.telegram.ui.Cells.r2 r2Var3 = (org.telegram.ui.Cells.r2) childAt;
                 if (r2Var3.getDialogId() == cyVar.G3.getCurrentFragmetDialogId()) {
@@ -992,7 +992,7 @@ public final class xx extends org.telegram.ui.Components.ia implements ci.p7 {
             if (uwVar != null) {
                 uwVar.setPadding(getPaddingLeft(), this.W2, getPaddingLeft(), getPaddingBottom());
                 int F = ((hg.m) uwVar.getAdapter()).F(r2Var.getDialogId());
-                int top = (int) ((r2Var.getTop() - im0Var.getPaddingTop()) + f7);
+                int top = (int) ((r2Var.getTop() - jm0Var.getPaddingTop()) + f7);
                 if (F >= 0) {
                     ay ayVar = this.e3;
                     if (ayVar.s == 0 && ayVar.v == 2 && cyVar.X3()) {

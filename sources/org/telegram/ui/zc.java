@@ -13,7 +13,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class zc extends FrameLayout {
     public final int a;
@@ -97,8 +97,8 @@ public final class zc extends FrameLayout {
         }
         for (int i12 = 0; i12 < sa1Var.getChildCount(); i12++) {
             View childAt = sa1Var.getChildAt(i12);
-            if ((childAt instanceof org.telegram.ui.Components.q21) && (R = RecyclerView.R(childAt)) >= 0 && R < arrayList.size()) {
-                ((org.telegram.ui.Components.q21) childAt).g(((org.telegram.ui.Components.vp) arrayList.get(R)).d, true);
+            if ((childAt instanceof org.telegram.ui.Components.r21) && (R = RecyclerView.R(childAt)) >= 0 && R < arrayList.size()) {
+                ((org.telegram.ui.Components.r21) childAt).g(((org.telegram.ui.Components.vp) arrayList.get(R)).d, true);
             }
         }
     }

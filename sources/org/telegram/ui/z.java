@@ -40,7 +40,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -250,7 +250,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                         break;
                     }
                 } else if (qnVar2.getSendMessagesHelper().retrySendMessage(messageObject, false, l4.longValue())) {
-                    qnVar2.ad(false);
+                    qnVar2.bd(false);
                     if (qnVar2.R3 == 0) {
                         qnVar2.T9(false);
                         break;
@@ -350,7 +350,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                 alertDialog$Builder.a.G = 9;
                 alertDialog$Builder.h(LocaleController.getString(objArr != false ? R.string.MessageShowSensitiveContentMediaTextClosedButton : R.string.Cancel), null);
                 if (objArr == false) {
-                    alertDialog$Builder.k(LocaleController.getString(R.string.MessageShowSensitiveContentButton), new org.telegram.messenger.hk(cnVar2, u1Var, zArr, z10, contentsettings));
+                    alertDialog$Builder.k(LocaleController.getString(R.string.MessageShowSensitiveContentButton), new org.telegram.messenger.jk(cnVar2, u1Var, zArr, z10, contentsettings));
                 }
                 qnVar4.showDialog(alertDialog$Builder.a);
                 break;
@@ -387,7 +387,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                 } else {
                     org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                     if (R != null && (R instanceof qn)) {
-                        ((qn) R).ub();
+                        ((qn) R).vb();
                         break;
                     }
                 }
@@ -401,7 +401,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                 userArr[0] = user2;
                 if (user2 == null) {
                     ib0Var.c();
-                    org.telegram.messenger.kk.q(R.string.NoUsernameFound, ib0.d(), null);
+                    org.telegram.messenger.mk.q(R.string.NoUsernameFound, ib0.d(), null);
                     break;
                 } else {
                     i90Var.run();

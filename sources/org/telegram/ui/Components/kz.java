@@ -22,9 +22,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class kz extends hm0 {
+public final class kz extends im0 {
     public final Context c;
     public int d;
     public final SparseArray e = new SparseArray();
@@ -40,9 +40,9 @@ public final class kz extends hm0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
-        return b1Var.a instanceof im0;
+        return b1Var.a instanceof jm0;
     }
 
     public final int E(Object obj) {
@@ -371,7 +371,7 @@ public final class kz extends hm0 {
                 k3Var.setHeight(AndroidUtilities.dp(8.0f));
                 return;
             } else {
-                int B = org.telegram.messenger.kk.B(82.0f, (int) Math.ceil(arrayList.size() / this.d), tzVar.h.getHeight());
+                int B = org.telegram.messenger.mk.B(82.0f, (int) Math.ceil(arrayList.size() / this.d), tzVar.h.getHeight());
                 k3Var.setHeight(B > 0 ? B : 1);
                 return;
             }
@@ -664,6 +664,6 @@ public final class kz extends hm0 {
                 view = frameLayout;
                 break;
         }
-        return new sl0(view);
+        return new tl0(view);
     }
 }

@@ -1,22 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class wt0 extends er0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 c1;
+public final class wt0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e1 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e1 c;
+    public final /* synthetic */ yt0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wt0(Context context, String str, String str2, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.ActionBar.n2 n2Var) {
-        super(context, null, str, false, str2, false, d6Var);
-        this.c1 = n2Var;
+    public /* synthetic */ wt0(yt0 yt0Var, org.telegram.ui.ActionBar.e1 e1Var, org.telegram.ui.ActionBar.e1 e1Var2, int i10) {
+        this.a = i10;
+        this.d = yt0Var;
+        this.b = e1Var;
+        this.c = e1Var2;
     }
 
-    @Override // org.telegram.ui.Components.er0
-    public final void T0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        AndroidUtilities.runOnUIThread(new org.telegram.ui.i4(this.c1, hVar, i10, 20), 100L);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                uv0 uv0Var = this.d.d;
+                if (!uv0Var.H1) {
+                    org.telegram.ui.ActionBar.e1 e1Var = this.b;
+                    boolean z10 = e1Var.getCheckView().a.q;
+                    org.telegram.ui.ActionBar.e1 e1Var2 = this.c;
+                    if (!z10 && e1Var2.getCheckView().a.q) {
+                        float f7 = -uv0Var.s1;
+                        uv0Var.s1 = f7;
+                        AndroidUtilities.shakeViewSpring(e1Var2, f7);
+                        break;
+                    } else {
+                        e1Var2.setChecked(!e1Var2.getCheckView().a.q);
+                        if (e1Var2.getCheckView().a.q && e1Var.getCheckView().a.q) {
+                            uv0Var.t1[0].q = 0;
+                        } else {
+                            uv0Var.t1[0].q = 2;
+                        }
+                        uv0.t(uv0Var);
+                        break;
+                    }
+                }
+                break;
+            default:
+                uv0 uv0Var2 = this.d.d;
+                if (!uv0Var2.H1) {
+                    org.telegram.ui.ActionBar.e1 e1Var3 = this.b;
+                    boolean z11 = e1Var3.getCheckView().a.q;
+                    org.telegram.ui.ActionBar.e1 e1Var4 = this.c;
+                    if (!z11 && e1Var4.getCheckView().a.q) {
+                        float f10 = -uv0Var2.s1;
+                        uv0Var2.s1 = f10;
+                        AndroidUtilities.shakeViewSpring(e1Var4, f10);
+                        break;
+                    } else {
+                        e1Var4.setChecked(!e1Var4.getCheckView().a.q);
+                        if (e1Var3.getCheckView().a.q && e1Var4.getCheckView().a.q) {
+                            uv0Var2.t1[0].q = 0;
+                        } else {
+                            uv0Var2.t1[0].q = 1;
+                        }
+                        uv0.t(uv0Var2);
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

@@ -1,32 +1,24 @@
 package org.telegram.messenger;
 
-import java.util.concurrent.CountDownLatch;
-
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ FilePathDatabase b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ boolean[] d;
-    public final /* synthetic */ CountDownLatch e;
+    public final /* synthetic */ Throwable b;
 
-    public /* synthetic */ k3(FilePathDatabase filePathDatabase, String str, boolean[] zArr, CountDownLatch countDownLatch, int i10) {
+    public /* synthetic */ k3(int i10, Throwable th2) {
         this.a = i10;
-        this.b = filePathDatabase;
-        this.c = str;
-        this.d = zArr;
-        this.e = countDownLatch;
+        this.b = th2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$isLocallyCreated$8(this.c, this.d, this.e);
+                FileLog.lambda$e$5(this.b);
                 break;
             default:
-                this.b.lambda$hasAnotherRefOnFile$4(this.c, this.d, this.e);
+                FileLog.lambda$fatal$6(this.b);
                 break;
         }
     }

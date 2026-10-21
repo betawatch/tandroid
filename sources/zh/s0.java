@@ -1,57 +1,80 @@
 package zh;
 
-import android.text.TextUtils;
-import org.telegram.messenger.Utilities;
+import android.graphics.Bitmap;
+import android.graphics.BlurMaskFilter;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import com.google.android.gms.internal.play_billing.k3;
+import java.nio.ByteBuffer;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.cz0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s0 implements Utilities.Callback {
+public final /* synthetic */ class s0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ c1 b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ s0(c1 c1Var, String str, int i10) {
-        this.a = i10;
+    public /* synthetic */ s0(c1 c1Var, int i10, int i11) {
+        this.a = i11;
         this.b = c1Var;
-        this.c = str;
+        this.c = i10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        e eVar = (e) obj;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte[] bArr;
         switch (this.a) {
             case 0:
                 c1 c1Var = this.b;
-                if (TextUtils.equals(c1Var.d, this.c)) {
-                    boolean z10 = c1Var.t0 == null;
-                    c1Var.t0 = eVar;
-                    if (!c1Var.v0) {
-                        if (!z10) {
-                            c1Var.j1(eVar);
-                            break;
-                        } else {
-                            c1Var.s0.a(eVar);
-                            c1Var.invalidate();
-                            break;
+                int i10 = this.c;
+                synchronized (c1.class) {
+                    if (c1.O9 != null) {
+                        bArr = c1.O9;
+                    } else {
+                        float w9 = k3.w(AndroidUtilities.dp(24.0f), 0.57735f, 0.5f, 4.0f);
+                        float dp = AndroidUtilities.dp(30.0f) / 4.0f;
+                        int ceil = (int) Math.ceil(3.0f * w9);
+                        int ceil2 = ((int) Math.ceil(dp)) + ceil + 1;
+                        int i11 = (ceil2 * 2) + 2;
+                        Bitmap createBitmap = Bitmap.createBitmap(i11, i11, Bitmap.Config.ARGB_8888);
+                        Paint paint = new Paint(1);
+                        paint.setMaskFilter(new BlurMaskFilter(Math.max(0.1f, (w9 - 0.5f) / 0.57735f), BlurMaskFilter.Blur.NORMAL));
+                        float f7 = ceil;
+                        float f10 = i11 - ceil;
+                        new Canvas(createBitmap).drawRoundRect(f7, f7, f10, f10, dp, dp, paint);
+                        Bitmap extractAlpha = createBitmap.extractAlpha();
+                        createBitmap.recycle();
+                        int rowBytes = extractAlpha.getRowBytes();
+                        byte[] bArr2 = new byte[rowBytes * i11];
+                        byte[] bArr3 = new byte[i11 * i11];
+                        extractAlpha.copyPixelsToBuffer(ByteBuffer.wrap(bArr2));
+                        extractAlpha.recycle();
+                        for (int i12 = 0; i12 < i11; i12++) {
+                            System.arraycopy(bArr2, i12 * rowBytes, bArr3, i12 * i11, i11);
                         }
+                        c1.P9 = i11;
+                        c1.Q9 = ceil;
+                        c1.R9 = ceil2;
+                        c1.O9 = bArr3;
+                        bArr = bArr3;
                     }
                 }
-                break;
+                int i13 = c1.P9;
+                Bitmap createBitmap2 = Bitmap.createBitmap(i13, i13, Bitmap.Config.ARGB_8888);
+                int[] iArr = new int[i13 * i13];
+                c1.s(iArr, bArr, i10);
+                createBitmap2.setPixels(iArr, 0, i13, 0, 0, i13, i13);
+                createBitmap2.prepareToDraw();
+                AndroidUtilities.runOnUIThread(new cz0(c1Var, createBitmap2, iArr, i10, 23));
+                return;
+            case 1:
+                this.b.F0(this.c);
+                return;
             default:
-                c1 c1Var2 = this.b;
-                if (TextUtils.equals(c1Var2.e, this.c)) {
-                    c1Var2.u0 = eVar;
-                    if (c1Var2.v0 && c1Var2.w0 && c1Var2.A0) {
-                        c1Var2.A0 = false;
-                        c1Var2.z0 = System.currentTimeMillis() + 60000;
-                        c1Var2.A2 = -1;
-                    }
-                    if (c1Var2.v0) {
-                        c1Var2.j1(eVar);
-                        break;
-                    }
-                }
-                break;
+                this.b.F0(this.c);
+                return;
         }
     }
 }

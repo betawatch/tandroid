@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.ym0;
+import org.telegram.ui.Components.zm0;
 import org.telegram.ui.cn;
 import org.telegram.ui.k71;
 import org.telegram.ui.qe;
@@ -28,7 +28,7 @@ import org.telegram.ui.re;
 import org.telegram.ui.ri;
 import org.telegram.ui.ue;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x3 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -113,8 +113,8 @@ public final /* synthetic */ class x3 implements Utilities.Callback2 {
                     j10 = 0;
                 }
                 i80 I = i80.I(qnVar2, u1Var);
-                ym0 ym0Var = new ym0(qnVar2.getParentActivity(), qnVar2.ea);
-                I.p = new qe(ym0Var, 0);
+                zm0 zm0Var = new zm0(qnVar2.getParentActivity(), qnVar2.ea);
+                I.p = new qe(zm0Var, 0);
                 if (j10 != 0) {
                     z12 = z10;
                     bool = bool2;
@@ -125,7 +125,7 @@ public final /* synthetic */ class x3 implements Utilities.Callback2 {
                     bool = bool2;
                     z13 = false;
                 }
-                I.c(R.drawable.msg_copy, LocaleController.getString(R.string.ProfileCopyUsername), new ue(qnVar2, ym0Var, str3, 2), z13);
+                I.c(R.drawable.msg_copy, LocaleController.getString(R.string.ProfileCopyUsername), new ue(qnVar2, zm0Var, str3, 2), z13);
                 if (bool.booleanValue()) {
                     I.c(R.drawable.outline_gram_24, LocaleController.getString(R.string.BuyUsernameOnFragment), new re(qnVar2, str3, 13), z13);
                 }
@@ -135,9 +135,9 @@ public final /* synthetic */ class x3 implements Utilities.Callback2 {
                 } else {
                     I.p(13, AndroidUtilities.dp(200.0f), LocaleController.getString(R.string.NoUsernameFound2));
                 }
-                ym0Var.e(I);
-                ym0Var.f(u1Var, characterStyle, null, false);
-                qnVar2.showDialog(ym0Var);
+                zm0Var.e(I);
+                zm0Var.f(u1Var, characterStyle, null, false);
+                qnVar2.showDialog(zm0Var);
                 break;
             case 3:
                 qn qnVar3 = (qn) this.c;

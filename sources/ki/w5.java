@@ -12,9 +12,9 @@ import java.util.HashMap;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.n9;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class w5 implements g1 {
     public final /* synthetic */ c6 a;
@@ -201,7 +201,7 @@ public final class w5 implements g1 {
         a aVar = c6Var.x;
         w3 w3Var = ((e3) z5Var).a;
         ArrayList arrayList = w3Var.n4;
-        t61 t61Var = w3Var.W2;
+        u61 u61Var = w3Var.W2;
         ArrayList arrayList2 = w3Var.j3;
         int indexOf = arrayList2.indexOf(aVar);
         if (indexOf < 0) {
@@ -231,7 +231,7 @@ public final class w5 implements g1 {
                 ArrayList arrayList3 = aVar.k;
                 arrayList3.remove(arrayList3.size() - 1);
                 w3Var.t4();
-                t61Var.N(false);
+                u61Var.N(false);
                 h2 h2Var2 = w3Var.H3;
                 if (h2Var2 != null) {
                     h2Var2.h();
@@ -242,7 +242,7 @@ public final class w5 implements g1 {
             if (aVar.c > 0) {
                 w3Var.u2(indexOf);
                 w3Var.t4();
-                t61Var.N(false);
+                u61Var.N(false);
                 h2 h2Var3 = w3Var.H3;
                 if (h2Var3 != null) {
                     h2Var3.h();
@@ -283,7 +283,7 @@ public final class w5 implements g1 {
         arrayList2.add(i12, aVar2);
         w3Var.t4();
         if (z11) {
-            t61Var.N(false);
+            u61Var.N(false);
             h2 h2Var4 = w3Var.H3;
             if (h2Var4 != null) {
                 h2Var4.h();
@@ -296,17 +296,17 @@ public final class w5 implements g1 {
             text.delete(length, text.length());
             editText.h = false;
         }
-        t61Var.S();
+        u61Var.S();
         w3Var.q4(i12);
         int indexOf2 = arrayList.indexOf(aVar2);
         if (indexOf2 < 0) {
-            t61Var.l();
+            u61Var.l();
         } else {
             s4.l0 itemAnimator = w3Var.getItemAnimator();
             w3Var.setItemAnimator(null);
-            t61Var.o(indexOf2);
+            u61Var.o(indexOf2);
             if (aVar.d > 0 && (i10 = indexOf2 + 1) < arrayList.size()) {
-                t61Var.q(i10, (arrayList.size() - indexOf2) - 1);
+                u61Var.q(i10, (arrayList.size() - indexOf2) - 1);
             }
             w3Var.post(new y2(w3Var, itemAnimator, 0));
         }

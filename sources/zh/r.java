@@ -26,12 +26,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.kv;
-import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.ml0;
 import org.telegram.ui.Components.o5;
 import org.telegram.ui.Components.r5;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public abstract class r extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final long[] K = {5449505950283078474L, 5420315771991497307L, 5373141891321699086L, 5373026167722876724L, 5435957248314579621L, 5440354006335495210L, 5436040291507247633L, 5445284980978621387L, 5442983582882601962L, 5409008750893734809L, 5371017798065592581L, 5472030678633684592L, 5467583879948803288L, 5471952986970267163L, 5415696465945173620L, 5397915559037785261L, 5283020991981693429L, 5283051451889756068L, 5282816560128336499L, 5465449362807070392L, 5470012829983580233L};
@@ -43,11 +43,11 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
     public ArrayList I;
     public boolean J;
     public final int a;
-    public final i0 b;
+    public final j0 b;
     public final m c;
     public final s4.s d;
     public final k e;
-    public final ll0 f;
+    public final ml0 f;
     public final q h;
     public final ArrayList n;
     public int r;
@@ -57,10 +57,10 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
     public int x;
     public TLRPC.TL_messages_stickerSet y;
 
-    public r(Context context, int i10, i0 i0Var) {
+    public r(Context context, int i10, j0 j0Var) {
         super(context);
-        j0 j0Var = (j0) this;
-        k kVar = new k(j0Var);
+        k0 k0Var = (k0) this;
+        k kVar = new k(k0Var);
         this.e = kVar;
         this.n = new ArrayList();
         this.r = 7;
@@ -68,27 +68,27 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
         this.G = new HashSet();
         this.H = new HashSet();
         this.a = i10;
-        this.b = i0Var;
+        this.b = j0Var;
         this.w = UserConfig.getInstance(i10).isPremium();
         m mVar = new m(context, null);
         this.c = mVar;
         s4.s sVar = new s4.s(this.r);
         this.d = sVar;
-        sVar.O = new q1(j0Var, 9);
+        sVar.O = new q1(k0Var, 9);
         mVar.setLayoutManager(sVar);
-        ll0 ll0Var = new ll0(mVar, sVar);
-        this.f = ll0Var;
-        ll0Var.i = new k1(j0Var, 2);
+        ml0 ml0Var = new ml0(mVar, sVar);
+        this.f = ml0Var;
+        ml0Var.i = new k1(k0Var, 2);
         mVar.setAdapter(kVar);
         mVar.setSelectorDrawableColor(0);
-        mVar.setOnItemClickListener(new wa(i0Var, 25));
+        mVar.setOnItemClickListener(new wa(j0Var, 25));
         mVar.setItemAnimator(null);
         mVar.setOverScrollMode(2);
         mVar.setVerticalScrollBarEnabled(false);
         mVar.setClipToPadding(false);
-        mVar.j(new kv(j0Var, 26));
+        mVar.j(new kv(k0Var, 26));
         addView(mVar, z5.c(-1.0f, -1));
-        q qVar = new q(j0Var, context);
+        q qVar = new q(k0Var, context);
         this.h = qVar;
         addView(qVar, z5.e(-1, 36, 48));
         e();
@@ -266,7 +266,7 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
                     r5.h(i12).b(j12, new o5() { // from class: zh.h
                         @Override // org.telegram.ui.Components.o5
                         public final void a(TLRPC.Document document7) {
-                            AndroidUtilities.runOnUIThread(new uf.c(20, r.this, document7));
+                            AndroidUtilities.runOnUIThread(new u2.j0(22, r.this, document7));
                         }
                     });
                 }

@@ -24,7 +24,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class sa extends org.telegram.ui.ActionBar.n2 {
     public static final Paint H = new Paint(1);
@@ -34,7 +34,7 @@ public final class sa extends org.telegram.ui.ActionBar.n2 {
     public ra F;
     public org.telegram.ui.Cells.y1 G;
     public org.telegram.ui.ActionBar.u0 a;
-    public org.telegram.ui.Components.im0 b;
+    public org.telegram.ui.Components.jm0 b;
     public ja c;
     public boolean d;
     public int e;
@@ -212,16 +212,16 @@ public final class sa extends org.telegram.ui.ActionBar.n2 {
             }
         }
         this.fragmentView = new FrameLayout(context);
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
-        this.b = im0Var;
-        im0Var.p1();
+        org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, null);
+        this.b = jm0Var;
+        jm0Var.p1();
         this.actionBar.setAdaptiveBackground(this.b);
         this.fragmentView.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.h6.a7));
         this.b.setLayoutManager(new s4.b0());
-        org.telegram.ui.Components.im0 im0Var2 = this.b;
+        org.telegram.ui.Components.jm0 jm0Var2 = this.b;
         ja jaVar = new ja(this);
         this.c = jaVar;
-        im0Var2.setAdapter(jaVar);
+        jm0Var2.setAdapter(jaVar);
         this.b.setSelectorDrawableColor(getThemedColor(org.telegram.ui.ActionBar.h6.i6));
         new s4.y(new na(this)).d(this.b);
         ((FrameLayout) this.fragmentView).addView(this.b, w7.z5.c(-1.0f, -1));

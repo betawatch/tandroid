@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ed1 implements Runnable {
     public final /* synthetic */ int a;
@@ -95,10 +95,10 @@ public final /* synthetic */ class ed1 implements Runnable {
                         i14++;
                         i13 = 0;
                     }
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.bz0(fd1Var2, i11, arrayList3, arrayList4, 14));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.cz0(fd1Var2, i11, arrayList3, arrayList4, 14));
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.bz0(fd1Var2, i11, arrayList2, arrayList2, 14));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.cz0(fd1Var2, i11, arrayList2, arrayList2, 14));
                     break;
                 }
                 break;

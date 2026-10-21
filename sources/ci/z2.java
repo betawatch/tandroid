@@ -31,8 +31,8 @@ import org.telegram.ui.Components.fo;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.rl;
-import org.telegram.ui.Components.tv0;
 import org.telegram.ui.Components.ty;
+import org.telegram.ui.Components.uv0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bd;
@@ -42,7 +42,7 @@ import org.telegram.ui.md;
 import org.telegram.ui.qn;
 import org.telegram.ui.x51;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -232,7 +232,7 @@ public final /* synthetic */ class z2 implements Utilities.Callback {
                 }
                 break;
             case 10:
-                tv0.m((tv0) obj5, (HashSet) obj4, (TL_stories.StoryItem) obj3, (i80) obj2, (b7) obj);
+                uv0.m((uv0) obj5, (HashSet) obj4, (TL_stories.StoryItem) obj3, (i80) obj2, (b7) obj);
                 break;
             case 11:
                 cy cyVar = (cy) obj5;
@@ -398,7 +398,7 @@ public final /* synthetic */ class z2 implements Utilities.Callback {
                 }
                 o1Var.dismiss();
                 if (tL_error != null) {
-                    AndroidUtilities.runOnUIThread(new uf.c(16, a1Var3, tL_error));
+                    AndroidUtilities.runOnUIThread(new u2.j0(18, a1Var3, tL_error));
                     break;
                 } else {
                     o1Var.dismiss();

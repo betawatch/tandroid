@@ -31,9 +31,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class mf0 extends org.telegram.ui.Components.pw0 {
+public final class mf0 extends org.telegram.ui.Components.qw0 {
     public final ImageView a;
     public final ei.d b;
     public final ai.n0[] c;
@@ -108,7 +108,7 @@ public final class mf0 extends org.telegram.ui.Components.pw0 {
         n0Var3.a(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.SMSFee3Title), new jf0(this, 4)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)), LocaleController.getString(R.string.SMSFee3Text), R.drawable.menu_feature_hands);
         addView(n0VarArr[2], w7.z5.t(-1, -2, 55, 0, 0, 0, 6));
         addView(new Space(context), w7.z5.o(0, 0, 1.0f, 119));
-        ei.d f7 = org.telegram.messenger.kk.f(24, context, null, true);
+        ei.d f7 = org.telegram.messenger.mk.f(24, context, null, true);
         this.b = f7;
         f7.setLoading(true);
         addView(f7, w7.z5.t(-1, 48, 7, 0, 16, 0, 16));
@@ -240,7 +240,7 @@ public final class mf0 extends org.telegram.ui.Components.pw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void g() {
         int i10;
         if (this.s >= 0) {
@@ -252,7 +252,7 @@ public final class mf0 extends org.telegram.ui.Components.pw0 {
         this.b.setLoading(false);
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void m(Bundle bundle, boolean z10) {
         int i10;
         this.d = bundle;

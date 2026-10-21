@@ -26,9 +26,9 @@ import w2.d;
 import zh.a0;
 import zh.b0;
 import zh.c1;
-import zh.m0;
+import zh.n0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final class b implements d, Continuation, a0 {
     public final /* synthetic */ int a;
@@ -65,23 +65,23 @@ public final class b implements d, Continuation, a0 {
 
     @Override // zh.a0
     public void a(String str) {
-        m0 m0Var = (m0) this.b;
-        if (m0Var.getParentActivity() != null) {
-            pf.d.r(m0Var.getParentActivity(), str);
+        n0 n0Var = (n0) this.b;
+        if (n0Var.getParentActivity() != null) {
+            pf.d.r(n0Var.getParentActivity(), str);
         }
     }
 
     @Override // zh.a0
     public void b(b0 b0Var) {
-        m0 m0Var = (m0) this.b;
-        FrameLayout frameLayout = m0Var.f;
+        n0 n0Var = (n0) this.b;
+        FrameLayout frameLayout = n0Var.f;
         if (frameLayout != null) {
             frameLayout.removeView(b0Var);
         }
-        if (m0Var.F == b0Var) {
-            m0Var.F = null;
+        if (n0Var.F == b0Var) {
+            n0Var.F = null;
         }
-        c1 c1Var = m0Var.d;
+        c1 c1Var = n0Var.d;
         if (c1Var != null) {
             c1Var.setScanHidden(false);
         }

@@ -21,7 +21,7 @@ import org.telegram.ui.Cells.u5;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.r40;
 import org.telegram.ui.Components.r60;
-import org.telegram.ui.Components.ti0;
+import org.telegram.ui.Components.ui0;
 import org.telegram.ui.bd;
 import org.telegram.ui.bq;
 import org.telegram.ui.cc;
@@ -45,7 +45,7 @@ import org.telegram.ui.xl;
 import org.telegram.ui.z4;
 import org.telegram.ui.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final class a extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -143,9 +143,9 @@ public final class a extends AnimatorListenerAdapter {
             case 10:
                 org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) this.b;
                 Button button = wVar.n;
-                ti0 ti0Var = wVar.f;
-                if (button != ti0Var) {
-                    ti0Var.setVisibility(4);
+                ui0 ui0Var = wVar.f;
+                if (button != ui0Var) {
+                    ui0Var.setVisibility(4);
                     break;
                 } else {
                     wVar.e.setVisibility(4);

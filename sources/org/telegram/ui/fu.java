@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class fu extends pg.b {
     public final /* synthetic */ int d;
@@ -26,7 +26,7 @@ public final class fu extends pg.b {
         this.e = obj;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         switch (this.d) {
             case 0:
@@ -328,7 +328,7 @@ public final class fu extends pg.b {
                     unVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(i12, huVar.n2));
                     view = unVar;
                 }
-                return new org.telegram.ui.Components.sl0(view);
+                return new org.telegram.ui.Components.tl0(view);
             default:
                 qb0 qb0Var = (qb0) obj;
                 Context context3 = viewGroup.getContext();
@@ -343,7 +343,7 @@ public final class fu extends pg.b {
                 } else if (i10 == 5) {
                     view2 = new org.telegram.ui.Cells.q8(23, context3, null, false, true);
                 }
-                return new org.telegram.ui.Components.sl0(view2);
+                return new org.telegram.ui.Components.tl0(view2);
         }
     }
 }

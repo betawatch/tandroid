@@ -10,9 +10,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SaveToGallerySettingsHelper;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b31 implements org.telegram.ui.Components.xl0, org.telegram.ui.Components.zl0, vx {
+public final /* synthetic */ class b31 implements org.telegram.ui.Components.yl0, org.telegram.ui.Components.am0, vx {
     public final /* synthetic */ SaveToGallerySettingsActivity a;
 
     public /* synthetic */ b31(SaveToGallerySettingsActivity saveToGallerySettingsActivity) {
@@ -29,12 +29,12 @@ public final /* synthetic */ class b31 implements org.telegram.ui.Components.xl0
         return false;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ boolean P0(View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public void d(float f7, float f10, int i10, View view) {
         SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.a;
         ArrayList arrayList = saveToGallerySettingsActivity.s;
@@ -93,15 +93,15 @@ public final /* synthetic */ class b31 implements org.telegram.ui.Components.xl0
         return true;
     }
 
-    @Override // org.telegram.ui.Components.zl0
+    @Override // org.telegram.ui.Components.am0
     public /* synthetic */ void h() {
     }
 
-    @Override // org.telegram.ui.Components.zl0
+    @Override // org.telegram.ui.Components.am0
     public /* synthetic */ void o(float f7) {
     }
 
-    @Override // org.telegram.ui.Components.zl0
+    @Override // org.telegram.ui.Components.am0
     public boolean d(float f7, float f10, int i10, View view) {
         SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.a;
         ArrayList arrayList = saveToGallerySettingsActivity.s;
@@ -121,7 +121,7 @@ public final /* synthetic */ class b31 implements org.telegram.ui.Components.xl0
         return true;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ void a0(View view, float f7, float f10) {
     }
 }

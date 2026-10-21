@@ -28,7 +28,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
@@ -40,7 +40,7 @@ import org.telegram.ui.Components.e9;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.k8;
 import org.telegram.ui.Components.ma0;
-import org.telegram.ui.Components.tw0;
+import org.telegram.ui.Components.uw0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.a7;
@@ -65,7 +65,7 @@ import org.telegram.ui.td;
 import org.telegram.ui.yt;
 import org.telegram.ui.zd;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -124,10 +124,10 @@ public final /* synthetic */ class s1 implements View.OnClickListener {
                     org.telegram.ui.o3 o3Var = l4Var.u0[0];
                     if (!o3Var.f()) {
                         if (x3Var != null) {
-                            tw0 tw0Var = new tw0(activity);
-                            tw0Var.a = 1;
-                            tw0Var.s = -AndroidUtilities.dp(32.0f);
-                            o3Var.d.w0(tw0Var);
+                            uw0 uw0Var = new uw0(activity);
+                            uw0Var.a = 1;
+                            uw0Var.s = -AndroidUtilities.dp(32.0f);
+                            o3Var.d.w0(uw0Var);
                             break;
                         } else {
                             o3Var.b.x0(0);
@@ -321,7 +321,7 @@ public final /* synthetic */ class s1 implements View.OnClickListener {
                 l4Var2.setHeight(47);
                 l4Var2.setText(LocaleController.getString("ChatHistory", R.string.ChatHistory));
                 linearLayout.addView(l4Var2);
-                LinearLayout e10 = kk.e(context, 1);
+                LinearLayout e10 = mk.e(context, 1);
                 linearLayout.addView(e10, w7.z5.n(-1, -2));
                 org.telegram.ui.Cells.i6[] i6VarArr = new org.telegram.ui.Cells.i6[2];
                 int i17 = 0;

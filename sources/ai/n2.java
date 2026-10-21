@@ -9,13 +9,13 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.ev0;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.fv0;
+import org.telegram.ui.Components.y31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.di;
 import org.telegram.ui.vh1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class n2 implements RequestDelegate {
                 ((VoIPService) obj).lambda$startScreenCapture$60(i12, tLObject, tL_error);
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.i4((ev0) obj, tLObject, i12, i11));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.i4((fv0) obj, tLObject, i12, i11));
                 break;
             case 7:
                 LaunchActivity launchActivity = (LaunchActivity) obj;
@@ -73,7 +73,7 @@ public final /* synthetic */ class n2 implements RequestDelegate {
                 SharedConfig.lastUpdateCheckTime = System.currentTimeMillis();
                 SharedConfig.saveConfig();
                 if (tLObject instanceof TLRPC.TL_help_appUpdate) {
-                    AndroidUtilities.runOnUIThread(new x31(launchActivity, (TLRPC.TL_help_appUpdate) tLObject, i12, 4));
+                    AndroidUtilities.runOnUIThread(new y31(launchActivity, (TLRPC.TL_help_appUpdate) tLObject, i12, 4));
                     break;
                 } else if (tLObject instanceof TLRPC.TL_help_noAppUpdate) {
                     AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.rc(25));
@@ -84,10 +84,10 @@ public final /* synthetic */ class n2 implements RequestDelegate {
                 }
                 break;
             case 8:
-                AndroidUtilities.runOnUIThread(new x31((di) obj, tLObject, i12, 5));
+                AndroidUtilities.runOnUIThread(new y31((di) obj, tLObject, i12, 5));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new x31((vh1) obj, i12, tLObject, i11));
+                AndroidUtilities.runOnUIThread(new y31((vh1) obj, i12, tLObject, i11));
                 break;
         }
     }

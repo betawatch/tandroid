@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class wo extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public LinearLayout E;
@@ -576,10 +576,10 @@ public final class wo extends org.telegram.ui.ActionBar.n2 implements Notificati
         oo ooVar = new oo(this, context, this.h, this.resourceProvider);
         this.fragmentView = ooVar;
         ooVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
-        org.telegram.ui.Components.wo0 wo0Var = (org.telegram.ui.Components.wo0) this.fragmentView;
-        wo0Var.setFillViewport(true);
-        wo0Var.addView(this.h, new FrameLayout.LayoutParams(-1, -2));
-        this.actionBar.setAdaptiveBackground(wo0Var);
+        org.telegram.ui.Components.xo0 xo0Var = (org.telegram.ui.Components.xo0) this.fragmentView;
+        xo0Var.setFillViewport(true);
+        xo0Var.addView(this.h, new FrameLayout.LayoutParams(-1, -2));
+        this.actionBar.setAdaptiveBackground(xo0Var);
         this.h.setOrientation(1);
         boolean z10 = this.n0;
         if (z10) {

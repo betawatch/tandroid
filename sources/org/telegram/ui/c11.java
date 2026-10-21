@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c11 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class c11 implements ValueAnimator.AnimatorUpdateLi
                 secretMediaViewer2.a0.invalidate();
                 break;
             case 4:
-                ((SecretMediaViewer) ((org.telegram.ui.Components.cn0) this.b).b).a0.scrollTo(0, ((Integer) valueAnimator.getAnimatedValue()).intValue());
+                ((SecretMediaViewer) ((org.telegram.ui.Components.dn0) this.b).b).a0.scrollTo(0, ((Integer) valueAnimator.getAnimatedValue()).intValue());
                 break;
             case 5:
                 x31 x31Var = (x31) this.b;
@@ -64,9 +64,9 @@ public final /* synthetic */ class c11 implements ValueAnimator.AnimatorUpdateLi
                     view.setAlpha(floatValue);
                     break;
                 } else {
-                    org.telegram.ui.Components.dh0 dh0Var = m51Var.d;
-                    if (dh0Var != null) {
-                        dh0Var.invalidate();
+                    org.telegram.ui.Components.eh0 eh0Var = m51Var.d;
+                    if (eh0Var != null) {
+                        eh0Var.invalidate();
                         break;
                     }
                 }

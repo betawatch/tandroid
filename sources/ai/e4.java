@@ -23,12 +23,12 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.p20;
 import org.telegram.ui.Components.ri;
 import org.telegram.ui.Components.sm;
 import org.telegram.ui.Components.ti;
-import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.TwoStepVerificationActivity;
@@ -43,9 +43,9 @@ import org.telegram.ui.to;
 import org.telegram.ui.vm0;
 import org.telegram.ui.vo;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e4 implements hf1, Continuation, org.telegram.ui.ActionBar.a2, xl0, qs, androidx.car.app.utils.a {
+public final /* synthetic */ class e4 implements hf1, Continuation, org.telegram.ui.ActionBar.a2, yl0, qs, androidx.car.app.utils.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -58,7 +58,7 @@ public final /* synthetic */ class e4 implements hf1, Continuation, org.telegram
         this.b = z10;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ boolean P0(View view) {
         return false;
     }
@@ -83,7 +83,7 @@ public final /* synthetic */ class e4 implements hf1, Continuation, org.telegram
     
         if (r7.W != false) goto L91;
      */
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -167,13 +167,13 @@ public final /* synthetic */ class e4 implements hf1, Continuation, org.telegram
                     hashMap.clear();
                     return;
                 }
-                PhotoViewer.t1().K2(null, R, d6Var);
-                PhotoViewer.t1().L2(tiVar);
-                PhotoViewer t12 = PhotoViewer.t1();
+                PhotoViewer.u1().M2(null, R, d6Var);
+                PhotoViewer.u1().N2(tiVar);
+                PhotoViewer u12 = PhotoViewer.u1();
                 int i14 = tiVar.V1;
                 boolean z13 = tiVar.W1;
-                t12.h = i14;
-                t12.n = z13;
+                u12.h = i14;
+                u12.n = z13;
                 if (tiVar.F && tiVar.G) {
                     i13 = 11;
                     if (n2Var instanceof qn) {
@@ -222,7 +222,7 @@ public final /* synthetic */ class e4 implements hf1, Continuation, org.telegram
         switch (this.a) {
             case 2:
                 ig.a0 a0Var = (ig.a0) this.c;
-                (!this.b ? a0Var.k : a0Var.j).remove(Long.valueOf(((g61) this.d).x));
+                (!this.b ? a0Var.k : a0Var.j).remove(Long.valueOf(((h61) this.d).x));
                 a0Var.e.run();
                 break;
             case 3:
@@ -344,7 +344,7 @@ public final /* synthetic */ class e4 implements hf1, Continuation, org.telegram
         this.d = n2Var;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ void a0(View view, float f7, float f10) {
     }
 }

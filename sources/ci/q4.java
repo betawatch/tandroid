@@ -79,7 +79,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -88,21 +88,21 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.cl0;
+import org.telegram.ui.Components.dl0;
 import org.telegram.ui.Components.ed;
 import org.telegram.ui.Components.iu;
 import org.telegram.ui.Components.ke;
-import org.telegram.ui.Components.kw0;
 import org.telegram.ui.Components.lt;
+import org.telegram.ui.Components.lw0;
 import org.telegram.ui.Components.m60;
 import org.telegram.ui.Components.me;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.r40;
 import org.telegram.ui.Components.wa0;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.xj0;
 import org.telegram.ui.Components.yj0;
 import org.telegram.ui.Components.yq;
+import org.telegram.ui.Components.zj0;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
@@ -114,9 +114,9 @@ import org.telegram.ui.vu0;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public abstract class q4 extends kw0 implements NotificationCenter.NotificationCenterDelegate {
+public abstract class q4 extends lw0 implements NotificationCenter.NotificationCenterDelegate {
     public final ImageView A0;
     public int A1;
     public TextView A2;
@@ -241,7 +241,7 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
     public ValueAnimator e2;
     public float e3;
     public final ImageReceiver f1;
-    public cl0 f2;
+    public dl0 f2;
     public boolean f3;
     public final ImageReceiver g1;
     public LinearLayout g2;
@@ -278,7 +278,7 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
     public boolean q3;
     public int r1;
     public float r2;
-    public cl0 r3;
+    public dl0 r3;
     public org.telegram.ui.ActionBar.e1 s1;
     public float s2;
     public boolean s3;
@@ -303,7 +303,7 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
     public final t4 y1;
     public int y2;
     public int y3;
-    public final xj0 z0;
+    public final yj0 z0;
     public ArrayList z1;
     public final int z2;
     public d2 z3;
@@ -541,10 +541,10 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
         i4 i4Var = new i4(context, 0);
         this.y0 = i4Var;
         r3Var.addView(i4Var, w7.z5.d(40, 40.0f, 53, 2.0f, 15.0f, 42.0f, 0.0f));
-        xj0 xj0Var = new xj0(context);
-        this.z0 = xj0Var;
-        xj0Var.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
-        i4Var.addView(xj0Var);
+        yj0 yj0Var = new yj0(context);
+        this.z0 = yj0Var;
+        yj0Var.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
+        i4Var.addView(yj0Var);
         ImageView imageView5 = new ImageView(context);
         this.A0 = imageView5;
         imageView5.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
@@ -1271,7 +1271,7 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
         v0Var.f = textWithEntities;
         v0Var.g = jArr[0];
         final q0 q0Var = new q0(i13, context, true);
-        LinearLayout e = kk.e(context, 0);
+        LinearLayout e = mk.e(context, 0);
         final ah.x xVar = new ah.x(context, LocaleController.getString(R.string.LiveStoryHighlightFeaturePin), bVar);
         e.addView(xVar, w7.z5.p(-1, -1, 1.0f, 112, 0, 0, 5, 0));
         final ah.x xVar2 = new ah.x(context, LocaleController.getString(R.string.LiveStoryHighlightFeatureLength), bVar);
@@ -1358,7 +1358,7 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
         linearLayout.addView(b10, w7.z5.k(42.0f, 18.0f, 42.0f, 9.0f, -1, -2));
         TextView b11 = w7.d6.b(context, 14.0f, i22, false, bVar);
         b11.setGravity(17);
-        kk.r(R.string.LiveStoryHighlightText, new Object[]{shortName}, b11);
+        mk.r(R.string.LiveStoryHighlightText, new Object[]{shortName}, b11);
         linearLayout.addView(b11, w7.z5.k(42.0f, 0.0f, 42.0f, 0.0f, -1, -2));
         linearLayout.addView(q0Var, w7.z5.t(-2, -2, 17, 42, 22, 42, 20));
         linearLayout.addView(dVar, w7.z5.k(16.0f, 0.0f, 16.0f, 12.0f, -1, 48));
@@ -1667,7 +1667,7 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
     public final void T0(long j10, boolean z10) {
         if (this.K1 != z10) {
             this.K1 = z10;
-            xj0 xj0Var = this.z0;
+            yj0 yj0Var = this.z0;
             if (z10) {
                 if (this.J0.a && Build.VERSION.SDK_INT < 33) {
                     aa aaVar = ((r9) this.Q1).d;
@@ -1679,7 +1679,7 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
                 }
                 R0(j10);
                 g1();
-                xj0Var.setAnimation(this.x1.u);
+                yj0Var.setAnimation(this.x1.u);
                 this.K1 = true;
                 this.o1.a.getImageReceiver().setVisible(true, true);
                 o4 o4Var = this.O1;
@@ -1688,7 +1688,7 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
                 }
             } else {
                 p0();
-                xj0Var.a();
+                yj0Var.a();
                 this.l1 = null;
                 this.L2 = false;
                 this.O2.d(0.0f, true);
@@ -1838,7 +1838,7 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
     public final void Z0() {
         r3 r3Var = this.c1;
         org.telegram.ui.ActionBar.d6 d6Var = this.B0;
-        kk.q(R.string.UnsupportedAttachment, new xc(r3Var, d6Var), d6Var);
+        mk.q(R.string.UnsupportedAttachment, new xc(r3Var, d6Var), d6Var);
     }
 
     public final void a1() {
@@ -2041,7 +2041,7 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
         }
     }
 
-    @Override // org.telegram.ui.Components.kw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         ke keVar;
         Canvas canvas2;
@@ -2259,7 +2259,7 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
 
     /* JADX WARN: Code restructure failed: missing block: B:102:0x0947, code lost:
     
-        if (r4.g == (r1 == null && r1.translated && r1.translatedText != null && android.text.TextUtils.equals(r1.translatedLng, org.telegram.ui.Components.s41.C()))) goto L419;
+        if (r4.g == (r1 == null && r1.translated && r1.translatedText != null && android.text.TextUtils.equals(r1.translatedLng, org.telegram.ui.Components.t41.C()))) goto L419;
      */
     /* JADX WARN: Code restructure failed: missing block: B:133:0x09a7, code lost:
     
@@ -2790,9 +2790,9 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
                             this.Y0 = z17;
                             h7Var5 = o4Var.b;
                             if (h7Var5 != null) {
-                                yj0 yj0Var = m4Var.d;
-                                if (yj0Var != null) {
-                                    yj0Var.e(h7Var5.h, z17);
+                                zj0 zj0Var = m4Var.d;
+                                if (zj0Var != null) {
+                                    zj0Var.e(h7Var5.h, z17);
                                 }
                                 m4Var.a.invalidate();
                             } else if (!z62) {
@@ -3416,13 +3416,13 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
                                     this.e3 = o4Var.j() ? 1.0f : 0.5f;
                                     boolean j11 = o4Var.j();
                                     ImageView imageView4 = this.A0;
-                                    xj0 xj0Var = this.z0;
+                                    yj0 yj0Var = this.z0;
                                     if (j11) {
-                                        xj0Var.setVisibility(0);
+                                        yj0Var.setVisibility(0);
                                         imageView4.setVisibility(8);
                                         i4Var.setContentDescription(LocaleController.getString(!aa.D1 ? R.string.Mute : R.string.Unmute));
                                     } else {
-                                        xj0Var.setVisibility(8);
+                                        yj0Var.setVisibility(8);
                                         imageView4.setVisibility(0);
                                         i4Var.setContentDescription(LocaleController.getString(R.string.NoSound));
                                     }
@@ -4269,7 +4269,7 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
         }
     }
 
-    @Override // org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.lw0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
@@ -4904,7 +4904,7 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
         r0(false);
     }
 
-    @Override // org.telegram.ui.Components.kw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.a1 = true;
@@ -4938,7 +4938,7 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
         }
     }
 
-    @Override // org.telegram.ui.Components.kw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.a1 = false;
@@ -4982,7 +4982,7 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
         }
     }
 
-    @Override // org.telegram.ui.Components.kw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         this.x1.d.setBounds(0, 0, getMeasuredWidth(), AndroidUtilities.dp(72.0f));
@@ -5005,7 +5005,7 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
         boolean z10;
         float dp;
         FrameLayout.LayoutParams layoutParams;
-        cl0 cl0Var;
+        dl0 dl0Var;
         x2 x2Var;
         aa aaVar = this.J0;
         if (aaVar.b) {
@@ -5026,8 +5026,8 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
             this.y2 = 0;
         }
         int i13 = this.y2;
-        cl0 cl0Var2 = this.r3;
-        if (cl0Var2 == null || cl0Var2.getReactionsWindow() == null || this.r3.getReactionsWindow().q) {
+        dl0 dl0Var2 = this.r3;
+        if (dl0Var2 == null || dl0Var2.getReactionsWindow() == null || this.r3.getReactionsWindow().q) {
             v2 v2Var = this.b2;
             if (v2Var != null && (v2Var.r0() || this.b2.k3)) {
                 if (this.b2.getEmojiView().getMeasuredHeight() == 0) {
@@ -5065,12 +5065,12 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
                 this.i3 = false;
                 this.t2 = i13;
                 if (this.f2 == null) {
-                    cl0 cl0Var3 = new cl0(1, this.C2, getContext(), LaunchActivity.R(), new t2(i16, this.B0));
-                    this.f2 = cl0Var3;
-                    cl0Var3.setHint(LocaleController.getString(this.E1 ? R.string.StoryGroupReactionsHint : R.string.StoryReactionsHint));
-                    cl0 cl0Var4 = this.f2;
-                    cl0Var4.N0 = true;
-                    addView(cl0Var4, this.I0, w7.z5.d(-2, 72.0f, 49, 0.0f, 0.0f, 0.0f, 64.0f));
+                    dl0 dl0Var3 = new dl0(1, this.C2, getContext(), LaunchActivity.R(), new t2(i16, this.B0));
+                    this.f2 = dl0Var3;
+                    dl0Var3.setHint(LocaleController.getString(this.E1 ? R.string.StoryGroupReactionsHint : R.string.StoryReactionsHint));
+                    dl0 dl0Var4 = this.f2;
+                    dl0Var4.N0 = true;
+                    addView(dl0Var4, this.I0, w7.z5.d(-2, 72.0f, 49, 0.0f, 0.0f, 0.0f, 64.0f));
                     this.f2.setDelegate(new m3(this));
                     this.f2.p(null, null, true);
                 }
@@ -5092,8 +5092,8 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
             if (this.v2 && (x2Var = this.d3) != null) {
                 x2Var.setVisibility(0);
             }
-            if (!this.v2 && (cl0Var = this.f2) != null) {
-                cl0Var.n();
+            if (!this.v2 && (dl0Var = this.f2) != null) {
+                dl0Var.n();
             }
             m4Var.setEnabled(!this.v2);
             if (this.b2 != null) {
@@ -5432,8 +5432,8 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
             ((r9) this.Q1).h(alertDialog$Builder.a);
             return true;
         }
-        cl0 cl0Var = this.f2;
-        if (cl0Var != null && cl0Var.getReactionsWindow() != null && !this.f2.getReactionsWindow().q) {
+        dl0 dl0Var = this.f2;
+        if (dl0Var != null && dl0Var.getReactionsWindow() != null && !this.f2.getReactionsWindow().q) {
             this.f2.getReactionsWindow().d();
             return true;
         }
@@ -5471,14 +5471,14 @@ public abstract class q4 extends kw0 implements NotificationCenter.NotificationC
         this.C2 = i10;
         this.S1 = MessagesController.getInstance(i10).storiesController;
         this.k1.b = i10;
-        cl0 cl0Var = this.f2;
-        if (cl0Var != null) {
-            cl0Var.setCurrentAccount(i10);
+        dl0 dl0Var = this.f2;
+        if (dl0Var != null) {
+            dl0Var.setCurrentAccount(i10);
             this.f2.p(null, null, true);
         }
-        cl0 cl0Var2 = this.r3;
-        if (cl0Var2 != null) {
-            cl0Var2.setCurrentAccount(i10);
+        dl0 dl0Var2 = this.r3;
+        if (dl0Var2 != null) {
+            dl0Var2.setCurrentAccount(i10);
         }
     }
 

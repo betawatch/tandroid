@@ -24,7 +24,7 @@ import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class b2 extends FrameLayout implements org.telegram.ui.Cells.m9 {
     public final b70 a;
@@ -163,7 +163,7 @@ public final class b2 extends FrameLayout implements org.telegram.ui.Cells.m9 {
             if (pageblockmap.level > 0) {
                 i13 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(r0 * 14);
                 this.n = i13;
-                i14 = org.telegram.messenger.kk.y(18.0f, i13, size);
+                i14 = org.telegram.messenger.mk.y(18.0f, i13, size);
                 dp = i14;
             } else {
                 this.n = AndroidUtilities.dp(18.0f);
@@ -223,7 +223,7 @@ public final class b2 extends FrameLayout implements org.telegram.ui.Cells.m9 {
             }
             int i19 = i15;
             TL_iv.pageBlockMap pageblockmap5 = this.x;
-            d3 p5 = l4.p(this.a, this, null, pageblockmap5.caption.credit, dp, 0, pageblockmap5, (j4Var == null || !j4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.ex0.a(), 0, this.b);
+            d3 p5 = l4.p(this.a, this, null, pageblockmap5.caption.credit, dp, 0, pageblockmap5, (j4Var == null || !j4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.fx0.a(), 0, this.b);
             this.e = p5;
             if (p5 != null) {
                 i19 += this.e.d.getHeight() + AndroidUtilities.dp(4.0f);

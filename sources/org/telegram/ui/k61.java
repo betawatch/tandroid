@@ -11,7 +11,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class k61 extends org.telegram.ui.Components.bb implements NotificationCenter.NotificationCenterDelegate {
     public final org.telegram.ui.Components.wz X;
@@ -20,7 +20,7 @@ public final class k61 extends org.telegram.ui.Components.bb implements Notifica
     public final HashMap a0;
     public final int b0;
     public int c0;
-    public org.telegram.ui.Components.t61 d0;
+    public org.telegram.ui.Components.u61 d0;
 
     /* JADX WARN: Illegal instructions before constructor call */
     /*
@@ -60,9 +60,9 @@ public final class k61 extends org.telegram.ui.Components.bb implements Notifica
         org.telegram.ui.Components.wz wzVar = new org.telegram.ui.Components.wz(i10, false);
         this.X = wzVar;
         wzVar.O = new i61(this);
-        org.telegram.ui.Components.im0 im0Var = this.d;
+        org.telegram.ui.Components.jm0 jm0Var = this.d;
         int i12 = this.backgroundPaddingLeft;
-        im0Var.setPadding(i12, 0, i12, 0);
+        jm0Var.setPadding(i12, 0, i12, 0);
         this.d.setSelectorType(9);
         this.d.setSelectorDrawableColor(0);
         this.d.setLayoutManager(wzVar);
@@ -93,9 +93,9 @@ public final class k61 extends org.telegram.ui.Components.bb implements Notifica
     }
 
     public final boolean R(int i10, View view) {
-        org.telegram.ui.Components.g61 G;
-        org.telegram.ui.Components.t61 t61Var = this.d0;
-        if (t61Var == null || i10 == 0 || (G = t61Var.G(i10 - 1)) == null) {
+        org.telegram.ui.Components.h61 G;
+        org.telegram.ui.Components.u61 u61Var = this.d0;
+        if (u61Var == null || i10 == 0 || (G = u61Var.G(i10 - 1)) == null) {
             return false;
         }
         Object obj = G.G;
@@ -144,10 +144,10 @@ public final class k61 extends org.telegram.ui.Components.bb implements Notifica
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final org.telegram.ui.Components.hm0 x(org.telegram.ui.Components.im0 im0Var) {
-        org.telegram.ui.Components.t61 t61Var = new org.telegram.ui.Components.t61(im0Var, getContext(), this.currentAccount, 0, false, new g5(this, 25), this.resourcesProvider);
-        this.d0 = t61Var;
-        t61Var.r = false;
-        return t61Var;
+    public final org.telegram.ui.Components.im0 x(org.telegram.ui.Components.jm0 jm0Var) {
+        org.telegram.ui.Components.u61 u61Var = new org.telegram.ui.Components.u61(jm0Var, getContext(), this.currentAccount, 0, false, new g5(this, 25), this.resourcesProvider);
+        this.d0 = u61Var;
+        u61Var.r = false;
+        return u61Var;
     }
 }

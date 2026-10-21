@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class PasscodeActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -51,14 +51,14 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.n2 implements No
     public xk0 T;
     public eb0 U;
     public k71 V;
-    public org.telegram.ui.Components.xj0 a;
+    public org.telegram.ui.Components.yj0 a;
     private int autoLockRow;
     public bl0 b;
-    public org.telegram.ui.Components.im0 c;
+    public org.telegram.ui.Components.jm0 c;
     private int changePasscodeRow;
     public TextView d;
     private int disablePasscodeRow;
-    public org.telegram.ui.Components.o11 e;
+    public org.telegram.ui.Components.p11 e;
     public org.telegram.ui.Components.sd0 f;
     private int fingerprintRow;
     public EditTextBoldCursor h;
@@ -185,7 +185,7 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.n2 implements No
                 if (q0Var == null) {
                     y8Var.run(Boolean.FALSE);
                 } else {
-                    org.telegram.ui.Wallet.q0.h.execute(new org.telegram.messenger.o8(q0Var, q0Var.l(), z11, new org.telegram.ui.Wallet.l(y8Var, i11), 10));
+                    org.telegram.ui.Wallet.q0.h.execute(new org.telegram.messenger.q8(q0Var, q0Var.l(), z11, new org.telegram.ui.Wallet.l(y8Var, i11), 10));
                 }
             }
         }
@@ -245,19 +245,19 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.n2 implements No
             int i13 = org.telegram.ui.ActionBar.h6.a7;
             frameLayout2.setTag(Integer.valueOf(i13));
             frameLayout2.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, i13, false));
-            org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
-            this.c = im0Var;
-            im0Var.p1();
+            org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, null);
+            this.c = jm0Var;
+            jm0Var.p1();
             this.actionBar.setAdaptiveBackground(this.c);
             this.c.setLayoutManager(new hg.a0(i11, z10, 14));
             this.c.setVerticalScrollBarEnabled(false);
             this.c.setItemAnimator(null);
             this.c.setLayoutAnimation(null);
             frameLayout2.addView(this.c, w7.z5.c(-1.0f, -1));
-            org.telegram.ui.Components.im0 im0Var2 = this.c;
+            org.telegram.ui.Components.jm0 jm0Var2 = this.c;
             bl0 bl0Var = new bl0(this, context);
             this.b = bl0Var;
-            im0Var2.setAdapter(bl0Var);
+            jm0Var2.setAdapter(bl0Var);
             this.c.setOnItemClickListener(new i(this, 20));
         } else if (i12 == 1 || i12 == 2 || i12 == 3) {
             org.telegram.ui.ActionBar.k kVar = this.actionBar;
@@ -282,18 +282,18 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.n2 implements No
             linearLayout.setOrientation(1);
             linearLayout.setGravity(1);
             frameLayout2.addView(linearLayout, w7.z5.c(-1.0f, -1));
-            org.telegram.ui.Components.xj0 xj0Var = new org.telegram.ui.Components.xj0(context);
-            this.a = xj0Var;
-            xj0Var.setFocusable(false);
+            org.telegram.ui.Components.yj0 yj0Var = new org.telegram.ui.Components.yj0(context);
+            this.a = yj0Var;
+            yj0Var.setFocusable(false);
             this.a.f(R.raw.tsv_setup_intro, 120, 120, null);
             this.a.setAutoRepeat(false);
             this.a.d();
-            org.telegram.ui.Components.xj0 xj0Var2 = this.a;
+            org.telegram.ui.Components.yj0 yj0Var2 = this.a;
             if (!AndroidUtilities.isSmallScreen()) {
                 Point point = AndroidUtilities.displaySize;
                 if (point.x < point.y) {
                     i10 = 0;
-                    xj0Var2.setVisibility(i10);
+                    yj0Var2.setVisibility(i10);
                     linearLayout.addView(this.a, w7.z5.q(120, 120, 1));
                     TextView textView = new TextView(context);
                     this.d = textView;
@@ -310,9 +310,9 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.n2 implements No
                     this.d.setTextSize(1, 18.0f);
                     this.d.setGravity(1);
                     linearLayout.addView(this.d, w7.z5.t(-2, -2, 1, 0, 16, 0, 0));
-                    org.telegram.ui.Components.o11 o11Var = new org.telegram.ui.Components.o11(context);
-                    this.e = o11Var;
-                    o11Var.setFactory(new yf0(context, 1));
+                    org.telegram.ui.Components.p11 p11Var = new org.telegram.ui.Components.p11(context);
+                    this.e = p11Var;
+                    p11Var.setFactory(new yf0(context, 1));
                     this.e.setInAnimation(context, R.anim.alpha_in);
                     this.e.setOutAnimation(context, R.anim.alpha_out);
                     linearLayout.addView(this.e, w7.z5.t(-2, -2, 1, 20, 8, 20, 0));
@@ -402,20 +402,20 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.n2 implements No
                     m.g3.p(h20Var);
                     frameLayout2.addView(this.w, w7.z5.d(56, 56.0f, (!LocaleController.isRTL ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f));
                     this.w.setOnClickListener(new s50(this, 13));
-                    org.telegram.ui.Components.a41 a41Var = new org.telegram.ui.Components.a41(context);
-                    a41Var.setTransformType(1);
-                    a41Var.setProgress(0.0f);
-                    a41Var.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.O9, false));
-                    a41Var.setDrawBackground(false);
+                    org.telegram.ui.Components.b41 b41Var = new org.telegram.ui.Components.b41(context);
+                    b41Var.setTransformType(1);
+                    b41Var.setProgress(0.0f);
+                    b41Var.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.O9, false));
+                    b41Var.setDrawBackground(false);
                     this.w.setContentDescription(LocaleController.getString(R.string.Next));
-                    this.w.addView(a41Var, w7.z5.e(56, 56, 17));
+                    this.w.addView(b41Var, w7.z5.e(56, 56, 17));
                     org.telegram.ui.Components.h20 h20Var2 = this.w;
                     h20Var2.a(h20Var2);
                     o0();
                 }
             }
             i10 = 8;
-            xj0Var2.setVisibility(i10);
+            yj0Var2.setVisibility(i10);
             linearLayout.addView(this.a, w7.z5.q(120, 120, 1));
             TextView textView4 = new TextView(context);
             this.d = textView4;
@@ -427,9 +427,9 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.n2 implements No
             this.d.setTextSize(1, 18.0f);
             this.d.setGravity(1);
             linearLayout.addView(this.d, w7.z5.t(-2, -2, 1, 0, 16, 0, 0));
-            org.telegram.ui.Components.o11 o11Var2 = new org.telegram.ui.Components.o11(context);
-            this.e = o11Var2;
-            o11Var2.setFactory(new yf0(context, 1));
+            org.telegram.ui.Components.p11 p11Var2 = new org.telegram.ui.Components.p11(context);
+            this.e = p11Var2;
+            p11Var2.setFactory(new yf0(context, 1));
             this.e.setInAnimation(context, R.anim.alpha_in);
             this.e.setOutAnimation(context, R.anim.alpha_out);
             linearLayout.addView(this.e, w7.z5.t(-2, -2, 1, 20, 8, 20, 0));
@@ -508,13 +508,13 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.n2 implements No
             m.g3.p(h20Var3);
             frameLayout2.addView(this.w, w7.z5.d(56, 56.0f, (!LocaleController.isRTL ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f));
             this.w.setOnClickListener(new s50(this, 13));
-            org.telegram.ui.Components.a41 a41Var2 = new org.telegram.ui.Components.a41(context);
-            a41Var2.setTransformType(1);
-            a41Var2.setProgress(0.0f);
-            a41Var2.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.O9, false));
-            a41Var2.setDrawBackground(false);
+            org.telegram.ui.Components.b41 b41Var2 = new org.telegram.ui.Components.b41(context);
+            b41Var2.setTransformType(1);
+            b41Var2.setProgress(0.0f);
+            b41Var2.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.O9, false));
+            b41Var2.setDrawBackground(false);
             this.w.setContentDescription(LocaleController.getString(R.string.Next));
-            this.w.addView(a41Var2, w7.z5.e(56, 56, 17));
+            this.w.addView(b41Var2, w7.z5.e(56, 56, 17));
             org.telegram.ui.Components.h20 h20Var22 = this.w;
             h20Var22.a(h20Var22);
             o0();
@@ -833,17 +833,17 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.n2 implements No
         int i10;
         super.onConfigurationChanged(configuration);
         l0(f0(), false);
-        org.telegram.ui.Components.xj0 xj0Var = this.a;
-        if (xj0Var != null) {
+        org.telegram.ui.Components.yj0 yj0Var = this.a;
+        if (yj0Var != null) {
             if (!AndroidUtilities.isSmallScreen()) {
                 Point point = AndroidUtilities.displaySize;
                 if (point.x < point.y) {
                     i10 = 0;
-                    xj0Var.setVisibility(i10);
+                    yj0Var.setVisibility(i10);
                 }
             }
             i10 = 8;
-            xj0Var.setVisibility(i10);
+            yj0Var.setVisibility(i10);
         }
         id0 id0Var = this.n;
         if (id0Var == null || (trVarArr = id0Var.f) == null) {

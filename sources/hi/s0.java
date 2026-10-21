@@ -22,15 +22,15 @@ import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.c71;
 import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.oc;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class s0 implements ii.d {
     public final Context a;
@@ -80,8 +80,8 @@ public final class s0 implements ii.d {
         }
     }
 
-    public final void b(b71 b71Var) {
-        if (this.m || this.n || b71Var.V2.N0() + 10 <= b71Var.W2.x.size()) {
+    public final void b(c71 c71Var) {
+        if (this.m || this.n || c71Var.V2.N0() + 10 <= c71Var.W2.x.size()) {
             return;
         }
         d();
@@ -105,7 +105,7 @@ public final class s0 implements ii.d {
                     boolean z10 = !communityPeerRequest.visible;
                     boolean z11 = i10 < size + (-1);
                     int i11 = ii.f.a;
-                    g61 J = g61.J(ii.f.class);
+                    h61 J = h61.J(ii.f.class);
                     J.G = new ii.e(peerDialogId, user, z10);
                     J.H = this;
                     J.j = !z11;
@@ -117,7 +117,7 @@ public final class s0 implements ii.d {
         if (this.n) {
             return;
         }
-        arrayList.add(g61.n(29));
+        arrayList.add(h61.n(29));
     }
 
     public final void d() {

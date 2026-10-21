@@ -30,14 +30,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class s5 extends FrameLayout {
     public static final Rect a0 = new Rect();
@@ -241,7 +241,7 @@ public final class s5 extends FrameLayout {
                 o5Var.f("vthumb://" + this.G.imageId + ":" + this.G.path, null, org.telegram.ui.ActionBar.h6.R4);
             }
         }
-        boolean z16 = z11 && PhotoViewer.M1(this.G.path);
+        boolean z16 = z11 && PhotoViewer.O1(this.G.path);
         o5Var.getImageReceiver().setVisible(!z16, true);
         this.d.setAlpha(z16 ? 0.0f : 1.0f);
         p5Var.setAlpha(z16 ? 0.0f : 1.0f);
@@ -295,10 +295,10 @@ public final class s5 extends FrameLayout {
                             o5Var = o5Var2;
                             o5Var.setImageDrawable(drawable);
                         }
-                        boolean M1 = PhotoViewer.M1(searchImage.getPathToAttach());
-                        o5Var.getImageReceiver().setVisible(!M1, true);
-                        this.d.setAlpha(!M1 ? 0.0f : 1.0f);
-                        this.h.setAlpha(M1 ? 0.0f : 1.0f);
+                        boolean O1 = PhotoViewer.O1(searchImage.getPathToAttach());
+                        o5Var.getImageReceiver().setVisible(!O1, true);
+                        this.d.setAlpha(!O1 ? 0.0f : 1.0f);
+                        this.h.setAlpha(O1 ? 0.0f : 1.0f);
                         requestLayout();
                         setHasSpoiler(false);
                         setHighQuality(false);
@@ -313,10 +313,10 @@ public final class s5 extends FrameLayout {
             }
         }
         o5Var = o5Var2;
-        boolean M12 = PhotoViewer.M1(searchImage.getPathToAttach());
-        o5Var.getImageReceiver().setVisible(!M12, true);
-        this.d.setAlpha(!M12 ? 0.0f : 1.0f);
-        this.h.setAlpha(M12 ? 0.0f : 1.0f);
+        boolean O12 = PhotoViewer.O1(searchImage.getPathToAttach());
+        o5Var.getImageReceiver().setVisible(!O12, true);
+        this.d.setAlpha(!O12 ? 0.0f : 1.0f);
+        this.h.setAlpha(O12 ? 0.0f : 1.0f);
         requestLayout();
         setHasSpoiler(false);
         setHighQuality(false);
@@ -457,7 +457,7 @@ public final class s5 extends FrameLayout {
         MediaController.SearchImage searchImage;
         boolean z10 = this.d.a.q;
         o5 o5Var = this.a;
-        if (!z10 && this.b.getScaleX() == 1.0f && o5Var.getImageReceiver().hasNotThumb() && o5Var.getImageReceiver().getCurrentAlpha() == 1.0f && (((photoEntry = this.G) == null || !PhotoViewer.M1(photoEntry.path)) && ((searchImage = this.H) == null || !PhotoViewer.M1(searchImage.getPathToAttach())))) {
+        if (!z10 && this.b.getScaleX() == 1.0f && o5Var.getImageReceiver().hasNotThumb() && o5Var.getImageReceiver().getCurrentAlpha() == 1.0f && (((photoEntry = this.G) == null || !PhotoViewer.O1(photoEntry.path)) && ((searchImage = this.H) == null || !PhotoViewer.O1(searchImage.getPathToAttach())))) {
             return;
         }
         int w02 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.X9, this.K);
@@ -499,7 +499,7 @@ public final class s5 extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         if (this.x) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.y, TLObject.FLAG_30), kk.C(2.0f, this.y, TLObject.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.y, TLObject.FLAG_30), mk.C(2.0f, this.y, TLObject.FLAG_30));
             return;
         }
         if (this.E) {

@@ -15,9 +15,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class je {
     public int a;
@@ -33,14 +33,14 @@ public final class je {
     public final ImageReceiver k;
     public final org.telegram.ui.Components.h9 l;
     public final org.telegram.ui.Components.h9 m;
-    public e11 n;
-    public e11 o;
+    public f11 n;
+    public f11 o;
     public boolean p;
     public final org.telegram.ui.Components.yc q;
     public int r;
     public Drawable s;
     public Drawable t;
-    public e11 u;
+    public f11 u;
     public int v;
     public final /* synthetic */ ke w;
 
@@ -81,7 +81,7 @@ public final class je {
         imageReceiver.setCrossfadeWithOldImage(true);
         h9Var2.g(21);
         h9Var2.h(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.c8, leVar.b));
-        this.n = new e11(str, 12.0f, null);
+        this.n = new f11(str, 12.0f, null);
     }
 
     public final void a(Canvas canvas) {
@@ -155,11 +155,11 @@ public final class je {
             this.f.setLocalMatrix(matrix);
         }
         canvas.drawRoundRect(rectF, rectF.height() / f10, rectF.height() / f10, paint);
-        e11 e11Var = this.o;
-        e11Var.c(dp - (e11Var.c / f10), AndroidUtilities.dp(23.0f) + dp2, e, -1, canvas);
-        e11 e11Var2 = this.n;
-        e11Var2.p = width - AndroidUtilities.dp(4.0f);
-        e11Var2.c(dp - (this.n.l() / f10), AndroidUtilities.dp(42.0f) + dp2, e, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, keVar.r.b), canvas);
+        f11 f11Var = this.o;
+        f11Var.c(dp - (f11Var.c / f10), AndroidUtilities.dp(23.0f) + dp2, e, -1, canvas);
+        f11 f11Var2 = this.n;
+        f11Var2.p = width - AndroidUtilities.dp(4.0f);
+        f11Var2.c(dp - (this.n.l() / f10), AndroidUtilities.dp(42.0f) + dp2, e, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, keVar.r.b), canvas);
         if (this.v > 0) {
             int i14 = (int) dp;
             int i15 = (int) dp2;
@@ -169,8 +169,8 @@ public final class je {
             this.s.setAlpha(i13);
             this.t.draw(canvas);
             this.s.draw(canvas);
-            e11 e11Var3 = this.u;
-            e11Var3.c(dp - (e11Var3.c / f10), dp2 - AndroidUtilities.dp(27.0f), e, -1, canvas);
+            f11 f11Var3 = this.u;
+            f11Var3.c(dp - (f11Var3.c / f10), dp2 - AndroidUtilities.dp(27.0f), e, -1, canvas);
         }
         canvas.restore();
     }
@@ -205,7 +205,7 @@ public final class je {
                     }
                     str2 = str;
                 }
-                this.n = new e11(str2, 12.0f, null);
+                this.n = new f11(str2, 12.0f, null);
                 keVar.invalidate();
             }
         }

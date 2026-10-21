@@ -9,14 +9,14 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.kk0;
+import org.telegram.ui.Components.lk0;
 import org.telegram.ui.Components.md0;
-import org.telegram.ui.Components.mk0;
+import org.telegram.ui.Components.nk0;
 import org.telegram.ui.Components.od0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class j4 implements org.telegram.ui.ActionBar.a2, kk0, md0 {
+public final /* synthetic */ class j4 implements org.telegram.ui.ActionBar.a2, lk0, md0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -33,8 +33,8 @@ public final /* synthetic */ class j4 implements org.telegram.ui.ActionBar.a2, k
         this.f = callback;
     }
 
-    @Override // org.telegram.ui.Components.kk0
-    public void a(mk0 mk0Var, int i10) {
+    @Override // org.telegram.ui.Components.lk0
+    public void a(nk0 nk0Var, int i10) {
         SparseIntArray sparseIntArray = (SparseIntArray) this.c;
         z4.g gVar = (z4.g) this.d;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.e;

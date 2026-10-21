@@ -21,11 +21,11 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.bf;
-import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.jl0;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.kl0;
 import org.telegram.ui.Components.lg;
-import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.ml0;
 import org.telegram.ui.Components.n20;
 import org.telegram.ui.Components.o60;
 import org.telegram.ui.Components.pg;
@@ -40,7 +40,7 @@ import org.telegram.ui.lp;
 import org.telegram.ui.qn;
 import org.telegram.ui.xl;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class me extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -382,16 +382,16 @@ public final class me extends AnimatorListenerAdapter {
                 ((Runnable) obj).run();
                 return;
             case 25:
-                im0 im0Var = (im0) obj;
+                jm0 jm0Var = (jm0) obj;
                 tz tzVar = (tz) obj2;
                 if (animator.equals(tzVar.M0)) {
-                    im0Var.setTranslationY(0.0f);
-                    if (im0Var == tzVar.D0) {
-                        im0Var.setPadding(0, 0, 0, tzVar.p2);
-                    } else if (im0Var == tzVar.P) {
-                        im0Var.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), tzVar.p2);
-                    } else if (im0Var == tzVar.h0) {
-                        im0Var.setPadding(0, tzVar.b1, 0, tzVar.p2);
+                    jm0Var.setTranslationY(0.0f);
+                    if (jm0Var == tzVar.D0) {
+                        jm0Var.setPadding(0, 0, 0, tzVar.p2);
+                    } else if (jm0Var == tzVar.P) {
+                        jm0Var.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), tzVar.p2);
+                    } else if (jm0Var == tzVar.h0) {
+                        jm0Var.setPadding(0, tzVar.b1, 0, tzVar.p2);
                     }
                     tzVar.M0 = null;
                     return;
@@ -422,13 +422,13 @@ public final class me extends AnimatorListenerAdapter {
                 u70Var.a = false;
                 return;
             default:
-                il0 il0Var = (il0) obj2;
-                ll0 ll0Var = il0Var.e;
-                if (((ValueAnimator) ll0Var.g) == null) {
+                jl0 jl0Var = (jl0) obj2;
+                ml0 ml0Var = jl0Var.e;
+                if (((ValueAnimator) ml0Var.g) == null) {
                     return;
                 }
-                ((im0) ll0Var.e).V1 = false;
-                ArrayList arrayList2 = il0Var.b;
+                ((jm0) ml0Var.e).V1 = false;
+                ArrayList arrayList2 = jl0Var.b;
                 int size = arrayList2.size();
                 int i14 = 0;
                 while (i14 < size) {
@@ -439,27 +439,27 @@ public final class me extends AnimatorListenerAdapter {
                         ((org.telegram.ui.Cells.n4) view4).e(false, true);
                     }
                     view4.setTranslationY(0.0f);
-                    ((s4.b0) ll0Var.f).getClass();
+                    ((s4.b0) ml0Var.f).getClass();
                     s4.n0.x0(view4);
-                    ((im0) ll0Var.e).removeView(view4);
-                    w7.a6 a6Var = (w7.a6) ll0Var.i;
+                    ((jm0) ml0Var.e).removeView(view4);
+                    w7.a6 a6Var = (w7.a6) ml0Var.i;
                     if (a6Var != null) {
                         a6Var.d(view4);
                     }
                 }
-                ((im0) ll0Var.e).setScrollEnabled(true);
-                ((im0) ll0Var.e).setVerticalScrollBarEnabled(true);
+                ((jm0) ml0Var.e).setScrollEnabled(true);
+                ((jm0) ml0Var.e).setVerticalScrollBarEnabled(true);
                 if (BuildVars.DEBUG_PRIVATE_VERSION) {
-                    if (((im0) ll0Var.e).e.D() != ((im0) ll0Var.e).getChildCount()) {
+                    if (((jm0) ml0Var.e).e.D() != ((jm0) ml0Var.e).getChildCount()) {
                         throw new RuntimeException("views count in child helper must be quals views count in recycler view");
                     }
-                    if (((ArrayList) ((im0) ll0Var.e).e.d).size() != 0) {
+                    if (((ArrayList) ((jm0) ml0Var.e).e.d).size() != 0) {
                         throw new RuntimeException("hidden child count must be 0");
                     }
                 }
-                int childCount = ((im0) ll0Var.e).getChildCount();
+                int childCount = ((jm0) ml0Var.e).getChildCount();
                 for (int i15 = 0; i15 < childCount; i15++) {
-                    View childAt = ((im0) ll0Var.e).getChildAt(i15);
+                    View childAt = ((jm0) ml0Var.e).getChildAt(i15);
                     if (childAt instanceof org.telegram.ui.Cells.n4) {
                         ((org.telegram.ui.Cells.n4) childAt).e(false, false);
                     }
@@ -477,16 +477,16 @@ public final class me extends AnimatorListenerAdapter {
                     }
                     view5.setTranslationY(0.0f);
                 }
-                jl0 jl0Var = il0Var.d;
-                if (jl0Var != null) {
-                    jl0Var.E();
+                kl0 kl0Var = jl0Var.d;
+                if (kl0Var != null) {
+                    kl0Var.E();
                 }
-                w7.a6 a6Var2 = (w7.a6) ll0Var.i;
+                w7.a6 a6Var2 = (w7.a6) ml0Var.i;
                 if (a6Var2 != null) {
                     a6Var2.a();
                 }
-                ((SparseArray) ll0Var.j).clear();
-                ll0Var.g = null;
+                ((SparseArray) ml0Var.j).clear();
+                ml0Var.g = null;
                 return;
         }
     }

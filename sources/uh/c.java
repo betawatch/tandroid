@@ -10,12 +10,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.o20;
 import org.telegram.ui.Components.v30;
-import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.xl0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class c implements wl0 {
+public final class c implements xl0 {
     public final /* synthetic */ d6 a;
     public final /* synthetic */ Context b;
     public final /* synthetic */ f c;
@@ -26,7 +26,7 @@ public final class c implements wl0 {
         this.b = context;
     }
 
-    @Override // org.telegram.ui.Components.wl0
+    @Override // org.telegram.ui.Components.xl0
     public final void a(int i10, View view) {
         TLRPC.TL_help_country tL_help_country;
         f fVar = this.c;

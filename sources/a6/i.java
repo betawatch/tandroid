@@ -76,15 +76,15 @@ import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.ui.Components.b81;
+import org.telegram.ui.Components.c81;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.tq0;
-import org.telegram.ui.Components.xo0;
+import org.telegram.ui.Components.uq0;
+import org.telegram.ui.Components.yo0;
 import rg.c2;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final class i implements n0, r, tq0, a0, androidx.activity.result.b, p, OnCompleteListener, d9.k, SuccessContinuation, o, zb, f6.a, w, n, z1, je.a, xo0 {
+public final class i implements n0, r, uq0, a0, androidx.activity.result.b, p, OnCompleteListener, d9.k, SuccessContinuation, o, zb, f6.a, w, n, z1, je.a, yo0 {
     public static i c;
     public final /* synthetic */ int a;
     public Object b;
@@ -123,8 +123,8 @@ public final class i implements n0, r, tq0, a0, androidx.activity.result.b, p, O
         }
         a8Var.Z = f7;
         a8Var.j = true;
-        b81 b81Var = r6Var.e;
-        if (b81Var == null || b81Var.p() == -9223372036854775807L) {
+        c81 c81Var = r6Var.e;
+        if (c81Var == null || c81Var.p() == -9223372036854775807L) {
             return;
         }
         r6Var.m((long) (f7 * r6Var.e.p()));
@@ -201,7 +201,7 @@ public final class i implements n0, r, tq0, a0, androidx.activity.result.b, p, O
         return null;
     }
 
-    @Override // org.telegram.ui.Components.tq0
+    @Override // org.telegram.ui.Components.uq0
     public /* synthetic */ void H() {
         int i10 = this.a;
     }
@@ -389,7 +389,7 @@ public final class i implements n0, r, tq0, a0, androidx.activity.result.b, p, O
         return new j1(entry, l1Var);
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public void b(float f7) {
         z zVar = (z) this.b;
         MessageObject messageObject = zVar.P;
@@ -400,7 +400,7 @@ public final class i implements n0, r, tq0, a0, androidx.activity.result.b, p, O
         MediaController.getInstance().seekToProgress(zVar.P, f7);
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public void c(float f7) {
         MessageObject messageObject = ((z) this.b).P;
         if (messageObject == null) {
@@ -499,7 +499,7 @@ public final class i implements n0, r, tq0, a0, androidx.activity.result.b, p, O
         r6Var.c();
     }
 
-    @Override // org.telegram.ui.Components.tq0
+    @Override // org.telegram.ui.Components.uq0
     public void g0() {
         switch (this.a) {
             case 4:
@@ -1223,18 +1223,18 @@ public final class i implements n0, r, tq0, a0, androidx.activity.result.b, p, O
             r6Var.m(j10);
             return;
         }
-        b81 b81Var = r6Var.e;
-        if (b81Var != null) {
-            b81Var.L(j10, true);
+        c81 c81Var = r6Var.e;
+        if (c81Var != null) {
+            c81Var.L(j10, true);
             return;
         }
         if (r6Var.j()) {
             r6Var.E.m(j10, true);
             return;
         }
-        b81 b81Var2 = r6Var.y;
-        if (b81Var2 != null) {
-            b81Var2.L(j10, false);
+        c81 c81Var2 = r6Var.y;
+        if (c81Var2 != null) {
+            c81Var2.L(j10, false);
         }
     }
 

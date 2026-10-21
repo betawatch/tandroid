@@ -16,9 +16,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.e61;
 import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.fy0;
+import org.telegram.ui.Components.gy0;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.w9;
@@ -27,7 +27,7 @@ import org.telegram.ui.et;
 import org.telegram.ui.qn;
 import org.telegram.ui.vf1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -74,9 +74,9 @@ public final /* synthetic */ class r0 implements Runnable {
                 TLRPC.Document document = (TLRPC.Document) obj2;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
                 arrayList2.add(new MediaController.PhotoEntry(0, 0, 0L, ((File) obj5).getAbsolutePath(), 0, false, 0, 0, 0L));
-                PhotoViewer.t1().K2(n2Var.getParentActivity(), null, n2Var.getResourceProvider());
-                PhotoViewer.t1().g2(arrayList2, 0, 11, false, new fy0(), (qn) obj3);
-                PhotoViewer.t1().Y0(document, z10 ? document : null, false, null);
+                PhotoViewer.u1().M2(n2Var.getParentActivity(), null, n2Var.getResourceProvider());
+                PhotoViewer.u1().i2(arrayList2, 0, 11, false, new gy0(), (qn) obj3);
+                PhotoViewer.u1().Z0(document, z10 ? document : null, false, null);
                 et q6 = et.q();
                 if (!z10) {
                     tL_messages_stickerSet = null;
@@ -150,7 +150,7 @@ public final /* synthetic */ class r0 implements Runnable {
                             String formatString = kVar.a ? LocaleController.formatString("HasBeenAddedToChannel", R.string.HasBeenAddedToChannel, firstName) : LocaleController.formatString("HasBeenAddedToGroup", R.string.HasBeenAddedToGroup, firstName);
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(formatString);
                             int indexOf = formatString.indexOf(firstName);
-                            spannableStringBuilder.setSpan(new d61(AndroidUtilities.bold()), indexOf, firstName.length() + indexOf, 18);
+                            spannableStringBuilder.setSpan(new e61(AndroidUtilities.bold()), indexOf, firstName.length() + indexOf, 18);
                             ccVar.b.setText(spannableStringBuilder);
                             if (arrayList3.isEmpty()) {
                                 qc.g(n2Var2, ccVar, 2750).j();

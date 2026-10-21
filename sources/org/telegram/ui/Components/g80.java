@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class g80 extends View {
     public final Bitmap a;
@@ -72,9 +72,9 @@ public final class g80 extends View {
             ViewGroup viewGroup = i80Var.b;
             d dVar = new d(this, 17);
             if (viewGroup == null) {
-                ym0.d(dVar);
+                zm0.d(dVar);
             } else {
-                int i11 = ym0.O;
+                int i11 = zm0.O;
                 AndroidUtilities.makeGlobalBlurBitmap(new qy(i10, viewGroup, dVar), 15.0f);
             }
         }

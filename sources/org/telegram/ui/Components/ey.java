@@ -19,9 +19,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.CompoundEmoji;
 import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class ey extends im0 {
+public final class ey extends jm0 {
     public boolean V2;
     public final SparseArray W2;
     public final ArrayList X2;
@@ -46,7 +46,7 @@ public final class ey extends im0 {
         bs bsVar = bs.f;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.jm0
     public final void J0(Canvas canvas, RectF rectF, long j10) {
         SparseArray sparseArray;
         ArrayList arrayList;
@@ -184,7 +184,7 @@ public final class ey extends im0 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.im0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jm0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         SparseArray sparseArray;
         ArrayList arrayList;
@@ -302,7 +302,7 @@ public final class ey extends im0 {
         arrayList5.clear();
     }
 
-    @Override // org.telegram.ui.Components.im0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jm0, android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         boolean z10 = motionEvent.getActionMasked() == 5 || motionEvent.getActionMasked() == 0;
         boolean z11 = motionEvent.getActionMasked() == 6 || motionEvent.getActionMasked() == 1;
@@ -378,13 +378,13 @@ public final class ey extends im0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         z1();
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         ArrayList arrayList;
         super.onDetachedFromWindow();
@@ -412,7 +412,7 @@ public final class ey extends im0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         tz tzVar = this.d3;
         if (tzVar.f) {
@@ -421,7 +421,7 @@ public final class ey extends im0 {
         return super.onInterceptTouchEvent(motionEvent) || org.telegram.ui.et.q().r(motionEvent, this, tzVar.g2, this.n2);
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         tz tzVar = this.d3;
         if (tzVar.d0 && tzVar.c0) {
@@ -435,7 +435,7 @@ public final class ey extends im0 {
         z1();
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         this.V2 = true;
         int size = View.MeasureSpec.getSize(i10);
@@ -450,7 +450,7 @@ public final class ey extends im0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         tz tzVar = this.d3;
         int[] iArr = tzVar.D1;
@@ -525,7 +525,7 @@ public final class ey extends im0 {
         return super.onTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public final void requestLayout() {
         if (this.V2) {
             return;

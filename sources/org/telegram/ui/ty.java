@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ty extends LinearLayout {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -38,7 +38,7 @@ public final class ty extends LinearLayout {
         addView(frameLayout, w7.z5.o(-1, 226, 1.0f, 119));
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.c = w9Var;
-        w9Var.setImageDrawable(new org.telegram.ui.Components.uj0(R.raw.topics_tabs, AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));
+        w9Var.setImageDrawable(new org.telegram.ui.Components.vj0(R.raw.topics_tabs, AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));
         frameLayout.addView(w9Var, w7.z5.d(160, 160.0f, 49, 0.0f, 12.33f, 0.0f, 0.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         int i10 = org.telegram.ui.ActionBar.h6.z6;
@@ -63,7 +63,7 @@ public final class ty extends LinearLayout {
         addView(frameLayout4, w7.z5.o(-1, 226, 1.0f, 119));
         org.telegram.ui.Components.w9 w9Var2 = new org.telegram.ui.Components.w9(context);
         this.f = w9Var2;
-        w9Var2.setImageDrawable(new org.telegram.ui.Components.uj0(R.raw.topics_list, AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));
+        w9Var2.setImageDrawable(new org.telegram.ui.Components.vj0(R.raw.topics_list, AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));
         frameLayout4.addView(w9Var2, w7.z5.d(160, 160.0f, 49, 0.0f, 12.33f, 0.0f, 0.0f));
         FrameLayout frameLayout5 = new FrameLayout(context);
         TextView b12 = w7.d6.b(context, 14.0f, i10, true, null);
@@ -127,7 +127,7 @@ public final class ty extends LinearLayout {
         if (z10) {
             w9Var = w9Var2;
         }
-        org.telegram.ui.Components.uj0 lottieAnimation = w9Var.getImageReceiver().getLottieAnimation();
+        org.telegram.ui.Components.vj0 lottieAnimation = w9Var.getImageReceiver().getLottieAnimation();
         if (lottieAnimation != null) {
             if (lottieAnimation.t() > (z10 ? 0.85f : 0.8f)) {
                 lottieAnimation.T(0.0f, false);

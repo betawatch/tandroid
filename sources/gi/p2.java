@@ -8,15 +8,15 @@ import org.telegram.messenger.FileLog;
 import org.telegram.ui.Components.aq;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.e8;
-import org.telegram.ui.Components.ei0;
+import org.telegram.ui.Components.fi0;
 import org.telegram.ui.Components.jy;
 import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.nl0;
-import org.telegram.ui.Components.ot0;
+import org.telegram.ui.Components.ol0;
 import org.telegram.ui.Components.p6;
+import org.telegram.ui.Components.pt0;
 import org.telegram.ui.oq;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class p2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -102,21 +102,21 @@ public final class p2 extends AnimatorListenerAdapter {
                 }
                 break;
             case 9:
-                ei0 ei0Var = (ei0) this.c;
-                ei0Var.H = null;
-                ei0Var.P.d1.delete(this.b);
+                fi0 fi0Var = (fi0) this.c;
+                fi0Var.H = null;
+                fi0Var.P.d1.delete(this.b);
                 break;
             case 10:
                 oq oqVar = (oq) this.c;
-                ((nl0) oqVar.d).b.remove(this.b);
-                nl0 nl0Var = (nl0) oqVar.d;
-                nl0Var.d = true;
-                nl0Var.a.invalidate();
+                ((ol0) oqVar.d).b.remove(this.b);
+                ol0 ol0Var = (ol0) oqVar.d;
+                ol0Var.d = true;
+                ol0Var.a.invalidate();
                 break;
             case 11:
-                ot0 ot0Var = (ot0) this.c;
-                ot0Var.e.O1.remove(this.b);
-                ot0Var.a.invalidate();
+                pt0 pt0Var = (pt0) this.c;
+                pt0Var.e.O1.remove(this.b);
+                pt0Var.a.invalidate();
                 break;
             default:
                 org.telegram.ui.Components.voip.b1 b1Var = (org.telegram.ui.Components.voip.b1) this.c;

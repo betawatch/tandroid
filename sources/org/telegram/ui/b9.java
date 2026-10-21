@@ -5,7 +5,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class b9 implements org.telegram.ui.Components.ob {
     public final /* synthetic */ int a;
@@ -110,7 +110,7 @@ public final class b9 implements org.telegram.ui.Components.ob {
                 if (i10 == 1) {
                     return 0;
                 }
-                return Math.round(qnVar.S.getInputBubbleHeight() + AndroidUtilities.dp(16.0f) + qnVar.b9(org.telegram.ui.Components.m31.c) + qnVar.v.d());
+                return Math.round(qnVar.S.getInputBubbleHeight() + AndroidUtilities.dp(16.0f) + qnVar.b9(org.telegram.ui.Components.n31.c) + qnVar.v.d());
             case 3:
                 ContactsActivity contactsActivity = (ContactsActivity) this.b;
                 i11 = contactsActivity.q0;
@@ -158,9 +158,9 @@ public final class b9 implements org.telegram.ui.Components.ob {
                 if (h02 <= 0.0f) {
                     return dp;
                 }
-                org.telegram.ui.Components.js0 js0Var = profileActivity.O.V;
+                org.telegram.ui.Components.ks0 ks0Var = profileActivity.O.V;
                 View view = profileActivity.fragmentView;
-                FrameLayout frameLayout = js0Var.r;
+                FrameLayout frameLayout = ks0Var.r;
                 if (view != null && frameLayout != null && frameLayout.getVisibility() == 0 && frameLayout.getAlpha() > 0.0f) {
                     view.getLocationInWindow(new int[2]);
                     frameLayout.getLocationInWindow(new int[2]);

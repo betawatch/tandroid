@@ -7,7 +7,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p4 implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class p4 implements DialogInterface.OnClickListener
             case 0:
                 r4 r4Var = (r4) this.b;
                 r4Var.getClass();
-                ti.e.c.b(i10 == 0 ? ri.i.a : ri.i.b);
+                ti.e.c.b(i10 == 0 ? ri.h.a : ri.h.b);
                 r4Var.b.m(2);
                 break;
             case 1:

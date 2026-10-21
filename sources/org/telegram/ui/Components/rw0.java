@@ -1,45 +1,40 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rw0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ TLRPC.Document b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ MessageObject d;
-    public final /* synthetic */ org.telegram.ui.Cells.u1 e;
-    public final /* synthetic */ TLRPC.TL_messages_stickerSet f;
+    public final /* synthetic */ tw0 b;
 
-    public /* synthetic */ rw0(TLRPC.Document document, int i10, MessageObject messageObject, org.telegram.ui.Cells.u1 u1Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i11) {
-        this.a = i11;
-        this.b = document;
-        this.c = i10;
-        this.d = messageObject;
-        this.e = u1Var;
-        this.f = tL_messages_stickerSet;
+    public /* synthetic */ rw0(tw0 tw0Var, int i10) {
+        this.a = i10;
+        this.b = tw0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                TLRPC.Document document = this.b;
-                String attachFileName = FileLoader.getAttachFileName(document);
-                int i10 = this.c;
-                DownloadController.getInstance(i10).addLoadingFileObserver(attachFileName, this.d, this.e);
-                FileLoader.getInstance(i10).loadFile(document, this.f, 1, 1);
+                tw0 tw0Var = this.b;
+                tw0Var.V0 = false;
+                if (!tw0Var.Y0 && tw0Var.W0) {
+                    tw0Var.C(true);
+                    break;
+                }
+                break;
+            case 1:
+                this.b.V0 = false;
+                break;
+            case 2:
+                tw0 tw0Var2 = this.b;
+                tw0Var2.Y0 = false;
+                if (!tw0Var2.V0 && tw0Var2.W0) {
+                    tw0Var2.C(true);
+                    break;
+                }
                 break;
             default:
-                TLRPC.Document document2 = this.b;
-                String attachFileName2 = FileLoader.getAttachFileName(document2);
-                int i11 = this.c;
-                DownloadController.getInstance(i11).addLoadingFileObserver(attachFileName2, this.d, this.e);
-                FileLoader.getInstance(i11).loadFile(document2, this.f, 1, 1);
+                this.b.Y0 = false;
                 break;
         }
     }

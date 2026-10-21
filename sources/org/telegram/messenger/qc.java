@@ -1,59 +1,66 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
+import android.util.SparseIntArray;
+import java.util.ArrayList;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.ui.NotificationsSettingsActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class qc implements Utilities.Callback {
-    public final /* synthetic */ int a = 2;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
+public final /* synthetic */ class qc implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+    public final /* synthetic */ Cloneable c;
+    public final /* synthetic */ Cloneable d;
+    public final /* synthetic */ Cloneable e;
+    public final /* synthetic */ Cloneable f;
+    public final /* synthetic */ Cloneable h;
+    public final /* synthetic */ Cloneable n;
+    public final /* synthetic */ Cloneable r;
+    public final /* synthetic */ Object s;
+    public final /* synthetic */ Cloneable v;
 
-    public /* synthetic */ qc(MessagesController messagesController, TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers, int[] iArr, int i10, TLRPC.Chat chat, Runnable runnable) {
+    public /* synthetic */ qc(MessagesController messagesController, LongSparseIntArray longSparseIntArray, LongSparseIntArray longSparseIntArray2, SparseIntArray sparseIntArray, a0.h hVar, a0.h hVar2, a0.h hVar3, a0.h hVar4, a0.h hVar5, LongSparseIntArray longSparseIntArray3, int i10) {
+        this.a = i10;
         this.b = messagesController;
-        this.e = tL_messages_invitedUsers;
-        this.f = iArr;
-        this.d = i10;
-        this.g = chat;
-        this.c = runnable;
+        this.c = longSparseIntArray;
+        this.d = longSparseIntArray2;
+        this.e = sparseIntArray;
+        this.f = hVar;
+        this.h = hVar2;
+        this.n = hVar3;
+        this.r = hVar4;
+        this.s = hVar5;
+        this.v = longSparseIntArray3;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$openByUserName$458((pf.c) this.e, (org.telegram.ui.ActionBar.b2[]) this.f, (org.telegram.ui.ActionBar.n2) this.g, (boolean[]) this.c, this.d, (Long) obj);
+                ((MessagesController) this.b).lambda$processUpdateArray$420((LongSparseIntArray) this.c, (LongSparseIntArray) this.d, (SparseIntArray) this.e, (a0.h) this.f, (a0.h) this.h, (a0.h) this.n, (a0.h) this.r, (a0.h) this.s, (LongSparseIntArray) this.v);
                 break;
             case 1:
-                this.b.lambda$openApp$503((boolean[]) this.c, (TL_bots.BotInfo[]) this.e, (TLRPC.User) this.f, this.d, (f3) this.g, (TL_bots.BotInfo) obj);
+                ((MessagesController) this.b).lambda$processUpdateArray$419((LongSparseIntArray) this.c, (LongSparseIntArray) this.d, (SparseIntArray) this.e, (a0.h) this.f, (a0.h) this.h, (a0.h) this.n, (a0.h) this.r, (a0.h) this.s, (LongSparseIntArray) this.v);
                 break;
             default:
-                this.b.lambda$addUsersToChat$296((TLRPC.TL_messages_invitedUsers) this.e, (int[]) this.f, this.d, (TLRPC.Chat) this.g, (Runnable) this.c, (TLRPC.TL_messages_invitedUsers) obj);
+                NotificationsSettingsActivity.U((NotificationsSettingsActivity) this.b, (ArrayList) this.c, (ArrayList) this.d, (ArrayList) this.v, (ArrayList) this.e, (ArrayList) this.f, (ArrayList) this.h, (ArrayList) this.n, (ArrayList) this.r, (Runnable) this.s);
                 break;
         }
     }
 
-    public /* synthetic */ qc(MessagesController messagesController, pf.c cVar, org.telegram.ui.ActionBar.b2[] b2VarArr, org.telegram.ui.ActionBar.n2 n2Var, boolean[] zArr, int i10) {
-        this.b = messagesController;
-        this.e = cVar;
-        this.f = b2VarArr;
-        this.g = n2Var;
-        this.c = zArr;
-        this.d = i10;
-    }
-
-    public /* synthetic */ qc(MessagesController messagesController, boolean[] zArr, TL_bots.BotInfo[] botInfoArr, TLRPC.User user, int i10, f3 f3Var) {
-        this.b = messagesController;
-        this.c = zArr;
-        this.e = botInfoArr;
-        this.f = user;
-        this.d = i10;
-        this.g = f3Var;
+    public /* synthetic */ qc(NotificationsSettingsActivity notificationsSettingsActivity, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, ArrayList arrayList5, ArrayList arrayList6, ArrayList arrayList7, ArrayList arrayList8, Runnable runnable) {
+        this.a = 2;
+        this.b = notificationsSettingsActivity;
+        this.c = arrayList;
+        this.d = arrayList2;
+        this.v = arrayList3;
+        this.e = arrayList4;
+        this.f = arrayList5;
+        this.h = arrayList6;
+        this.n = arrayList7;
+        this.r = arrayList8;
+        this.s = runnable;
     }
 }

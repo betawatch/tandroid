@@ -79,7 +79,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -94,8 +94,8 @@ import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.ActionBar.n3;
 import org.telegram.ui.Cells.d9;
 import org.telegram.ui.Cells.l4;
-import org.telegram.ui.Components.by0;
-import org.telegram.ui.Components.bz0;
+import org.telegram.ui.Components.cy0;
+import org.telegram.ui.Components.cz0;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
@@ -110,7 +110,7 @@ import org.telegram.ui.tf1;
 import org.telegram.ui.w9;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public abstract class a1 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static boolean P0 = true;
@@ -148,7 +148,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
     public boolean S;
     public boolean T;
     public TLRPC.User U;
-    public by0 V;
+    public cy0 V;
     public Activity W;
     public x0 a;
     public boolean a0;
@@ -303,7 +303,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
         a1Var.getClass();
         for (String str : strArr) {
             if (a1Var.getContext().checkSelfPermission(str) != 0) {
-                a1Var.V = new by0(a1Var, aVar, strArr, 7);
+                a1Var.V = new cy0(a1Var, aVar, strArr, 7);
                 Activity activity = a1Var.W;
                 if (activity != null) {
                     activity.requestPermissions(strArr, 4000);
@@ -1473,7 +1473,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
                             x0 x0Var3 = x0Var2;
                             z7 z7Var3 = z7Var;
                             if (z21) {
-                                MessagesController.getInstance(a1Var3.M).unblockPeer(a1Var3.U.id, new bz0(i22, 17, a1Var3, x0Var3, z7Var3));
+                                MessagesController.getInstance(a1Var3.M).unblockPeer(a1Var3.U.id, new cz0(i22, 17, a1Var3, x0Var3, z7Var3));
                                 return;
                             }
                             SendMessagesHelper.getInstance(a1Var3.M).sendMessage(SendMessagesHelper.SendMessageParams.of(UserConfig.getInstance(a1Var3.M).getCurrentUser(), a1Var3.U.id, (MessageObject) null, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0, 0));
@@ -2567,8 +2567,8 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
                     int i10 = 1;
                     String[] strArr = new String[1];
                     boolean[] zArr = new boolean[1];
-                    f3 i11 = kk.i(1, context, resourceProvider, false);
-                    LinearLayout e = kk.e(context, 1);
+                    f3 i11 = mk.i(1, context, resourceProvider, false);
+                    LinearLayout e = mk.e(context, 1);
                     org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
                     ArrayList arrayList = h;
                     TLRPC.User user = MessagesController.getInstance(p1Var.a).getUser(Long.valueOf(p1Var.b));
@@ -2578,7 +2578,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
                     e.addView(w9Var, z5.t(80, 80, 49, 0, 21, 0, 13));
                     int i12 = h6.G6;
                     TextView b10 = w7.d6.b(context, 20.0f, i12, true, null);
-                    kk.m(R.string.BotRestoreStorageTitle, b10, 17);
+                    mk.m(R.string.BotRestoreStorageTitle, b10, 17);
                     e.addView(b10, z5.t(-1, -2, 7, 32, 0, 32, 10));
                     TextView b11 = w7.d6.b(context, 14.0f, i12, false, null);
                     b11.setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotRestoreStorageText, DialogObject.getDialogTitle(user))));
@@ -2953,7 +2953,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        by0 by0Var;
+        cy0 cy0Var;
         Uri[] uriArr;
         if (i10 == NotificationCenter.didSetNewTheme) {
             x0 x0Var = this.a;
@@ -2980,10 +2980,10 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
         if (i10 != NotificationCenter.onActivityResultReceived) {
             if (i10 == NotificationCenter.onRequestPermissionResultReceived) {
                 int intValue = ((Integer) objArr[0]).intValue();
-                if (intValue != 4000 || (by0Var = this.V) == null) {
+                if (intValue != 4000 || (cy0Var = this.V) == null) {
                     return;
                 }
-                by0Var.run();
+                cy0Var.run();
                 this.V = null;
                 return;
             }

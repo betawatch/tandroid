@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class jh0 extends org.telegram.ui.ActionBar.n2 {
     public final org.telegram.ui.Components.xa0 a;
@@ -37,17 +37,17 @@ public final class jh0 extends org.telegram.ui.ActionBar.n2 {
             org.telegram.ui.Components.b10 b10 = xa0Var.b();
             xa0Var.q = b10;
             xa0Var.m.addView(b10, -1, -1);
-            org.telegram.ui.Components.sx0 c10 = xa0Var.c();
+            org.telegram.ui.Components.tx0 c10 = xa0Var.c();
             xa0Var.o = c10;
             xa0Var.m.addView(c10, -1, -1);
-            org.telegram.ui.Components.sx0 a10 = xa0Var.a();
+            org.telegram.ui.Components.tx0 a10 = xa0Var.a();
             xa0Var.n = a10;
             xa0Var.m.addView(a10, w7.z5.c(-1.0f, -1));
             n2Var.getParentActivity();
             s4.b0 b0Var = new s4.b0();
-            org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(n2Var.getParentActivity(), null);
-            xa0Var.p = im0Var;
-            im0Var.setAdapter(xa0Var.f);
+            org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(n2Var.getParentActivity(), null);
+            xa0Var.p = jm0Var;
+            jm0Var.setAdapter(xa0Var.f);
             xa0Var.p.p1();
             xa0Var.p.setLayoutManager(b0Var);
             xa0Var.p.setOnItemClickListener(new ai.wa(xa0Var, 23));

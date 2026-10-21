@@ -36,11 +36,11 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.ax0;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.vj0;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.zw0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.t7;
 import org.telegram.ui.Wallet.v4;
@@ -51,7 +51,7 @@ import v7.y7;
 import v7.z7;
 import w7.d8;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -120,7 +120,7 @@ public final /* synthetic */ class d implements Runnable {
                 ai.w wVar = (ai.w) this.b;
                 wVar.getClass();
                 try {
-                    im0 currentListView = wVar.x0.F.getCurrentListView();
+                    jm0 currentListView = wVar.x0.F.getCurrentListView();
                     if (currentListView == null || currentListView.getAdapter() == null) {
                         return;
                     }
@@ -130,7 +130,7 @@ public final /* synthetic */ class d implements Runnable {
                     return;
                 }
             case 8:
-                new zw0(((ai.o0) this.b).getContext()).show();
+                new ax0(((ai.o0) this.b).getContext()).show();
                 return;
             case 9:
                 AndroidUtilities.showKeyboard(((b1) this.b).d0);
@@ -312,8 +312,8 @@ public final /* synthetic */ class d implements Runnable {
                     }
                     int i17 = 1 - f7Var.u0;
                     f7Var.u0 = i17;
-                    uj0 lottieAnimation = w9VarArr[2 - i17].getImageReceiver().getLottieAnimation();
-                    uj0 lottieAnimation2 = w9VarArr[f7Var.u0 + 1].getImageReceiver().getLottieAnimation();
+                    vj0 lottieAnimation = w9VarArr[2 - i17].getImageReceiver().getLottieAnimation();
+                    vj0 lottieAnimation2 = w9VarArr[f7Var.u0 + 1].getImageReceiver().getLottieAnimation();
                     if (lottieAnimation2 != null && lottieAnimation != null) {
                         lottieAnimation2.T(lottieAnimation.t(), false);
                     }
@@ -349,7 +349,7 @@ public final /* synthetic */ class d implements Runnable {
                 wc wcVar = (wc) this.b;
                 wcVar.getClass();
                 try {
-                    im0 currentListView2 = ((md) wcVar.M0).R.getCurrentListView();
+                    jm0 currentListView2 = ((md) wcVar.M0).R.getCurrentListView();
                     if (currentListView2 == null || currentListView2.getAdapter() == null) {
                         return;
                     }

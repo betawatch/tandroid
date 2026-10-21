@@ -11,12 +11,12 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class sd0 extends FrameLayout {
-    public static final dw0 I;
-    public static final dw0 J;
-    public static final dw0 K;
+    public static final ew0 I;
+    public static final ew0 J;
+    public static final ew0 K;
     public boolean E;
     public boolean F;
     public final org.telegram.ui.ActionBar.d6 G;
@@ -37,15 +37,15 @@ public class sd0 extends FrameLayout {
     public boolean y;
 
     static {
-        dw0 dw0Var = new dw0(new k2(19), new k2(20));
-        dw0Var.c = 100.0f;
-        I = dw0Var;
-        dw0 dw0Var2 = new dw0(new k2(21), new k2(22));
-        dw0Var2.c = 100.0f;
-        J = dw0Var2;
-        dw0 dw0Var3 = new dw0(new k2(23), new k2(24));
-        dw0Var3.c = 100.0f;
-        K = dw0Var3;
+        ew0 ew0Var = new ew0(new k2(19), new k2(20));
+        ew0Var.c = 100.0f;
+        I = ew0Var;
+        ew0 ew0Var2 = new ew0(new k2(21), new k2(22));
+        ew0Var2.c = 100.0f;
+        J = ew0Var2;
+        ew0 ew0Var3 = new ew0(new k2(23), new k2(24));
+        ew0Var3.c = 100.0f;
+        K = ew0Var3;
     }
 
     public sd0(Context context, org.telegram.ui.ActionBar.d6 d6Var) {

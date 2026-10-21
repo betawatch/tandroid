@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class xc {
     public final org.telegram.ui.ActionBar.n2 a;
@@ -974,12 +974,12 @@ public final class xc {
     public final qc s(TLRPC.Document document, String str, CharSequence charSequence) {
         nc ncVar = new nc(W(), this.c);
         boolean isTextColorEmoji = MessageObject.isTextColorEmoji(document);
-        xj0 xj0Var = ncVar.a;
+        yj0 yj0Var = ncVar.a;
         if (isTextColorEmoji) {
-            xj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Hi, false), PorterDuff.Mode.SRC_IN));
+            yj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Hi, false), PorterDuff.Mode.SRC_IN));
         }
-        xj0Var.setAutoRepeat(true);
-        xj0Var.g(36, 36, document);
+        yj0Var.setAutoRepeat(true);
+        yj0Var.g(36, 36, document);
         ncVar.b.setText(str);
         ncVar.c.setText(charSequence);
         return b(ncVar, charSequence.length() + str.length() < 20 ? 1500 : 2750);

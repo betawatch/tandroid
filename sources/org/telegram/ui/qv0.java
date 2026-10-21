@@ -21,7 +21,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class qv0 extends Dialog {
     public float E;
@@ -36,7 +36,7 @@ public final class qv0 extends Dialog {
     public float N;
     public boolean O;
     public byte[] P;
-    public org.telegram.ui.Components.cl0 Q;
+    public org.telegram.ui.Components.dl0 Q;
     public ViewGroup R;
     public float S;
     public ViewGroup T;
@@ -115,7 +115,7 @@ public final class qv0 extends Dialog {
         this.h = textView;
         textView.setTextSize(1, 13.0f);
         textView.setTextColor(mc0Var.getColor());
-        org.telegram.messenger.kk.m(R.string.PollMenuHint, textView, 17);
+        org.telegram.messenger.mk.m(R.string.PollMenuHint, textView, 17);
         nv0Var2.addView(textView, w7.z5.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 66.0f));
         ko0 ko0Var = new ko0(this, i10);
         WeakHashMap weakHashMap = r0.i0.a;
@@ -213,8 +213,8 @@ public final class qv0 extends Dialog {
 
     public final void c(boolean z10) {
         org.telegram.ui.Cells.u1 u1Var;
-        org.telegram.ui.Components.cl0 cl0Var;
-        if (z10 && (cl0Var = this.Q) != null && cl0Var.getReactionsWindow() != null && !this.Q.getReactionsWindow().q) {
+        org.telegram.ui.Components.dl0 dl0Var;
+        if (z10 && (dl0Var = this.Q) != null && dl0Var.getReactionsWindow() != null && !this.Q.getReactionsWindow().q) {
             this.Q.e();
             return;
         }
@@ -420,7 +420,7 @@ public final class qv0 extends Dialog {
     public final void show() {
         if (AndroidUtilities.isSafeToShow(getContext())) {
             super.show();
-            org.telegram.ui.Components.ym0.d(new g5(this, 15));
+            org.telegram.ui.Components.zm0.d(new g5(this, 15));
             this.O = true;
             b(true, null);
         }

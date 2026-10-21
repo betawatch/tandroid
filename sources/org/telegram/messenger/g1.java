@@ -1,43 +1,18 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.UnconfirmedAuthController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ResultCallback;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_payments;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g1 implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final /* synthetic */ class g1 implements Executor {
+    public final /* synthetic */ DispatchQueue a;
 
-    public /* synthetic */ g1(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public /* synthetic */ g1(DispatchQueue dispatchQueue) {
+        this.a = dispatchQueue;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                ((ChatThemeController) this.b).lambda$requestNextChatThemes$21((ResultCallback) this.c, (TL_account.ChatThemes) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 1:
-                ((GiftAuctionController) this.b).lambda$requestGiftAuctionInternal$4((Utilities.Callback2) this.c, (TL_payments.TL_StarGiftAuctionState) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 2:
-                ((MessagesController) this.b).lambda$fetchJoinedCommunities$250((Utilities.Callback) this.c, (TLRPC.messages_Chats) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 3:
-                PasskeysController.lambda$create$4((org.telegram.ui.ActionBar.b2) this.b, (Utilities.Callback2) this.c, (TL_account.Passkey) obj, (TLRPC.TL_error) obj2);
-                break;
-            default:
-                ((UnconfirmedAuthController.UnconfirmedAuth) this.b).lambda$confirm$0((Utilities.Callback) this.c, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
-                break;
-        }
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        this.a.postRunnable(runnable);
     }
 }

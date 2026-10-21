@@ -6,20 +6,20 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.bp0;
-import org.telegram.ui.Components.o31;
+import org.telegram.ui.Components.cp0;
+import org.telegram.ui.Components.p31;
 import org.telegram.ui.tt;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class b5 implements bp0 {
+public final class b5 implements cp0 {
     public final /* synthetic */ tt a;
 
     public b5(tt ttVar) {
         this.a = ttVar;
     }
 
-    @Override // org.telegram.ui.Components.bp0
+    @Override // org.telegram.ui.Components.cp0
     public final void L(float f7, boolean z10) {
         float d;
         int i10;
@@ -57,19 +57,19 @@ public final class b5 implements bp0 {
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 animatorSetArr[0] = animatorSet2;
                 animatorSet2.playTogether(arrayList);
-                animatorSetArr[0].addListener(new o31(ttVar, 20));
+                animatorSetArr[0].addListener(new p31(ttVar, 20));
                 animatorSetArr[0].setDuration(150L);
                 animatorSetArr[0].start();
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.bp0
+    @Override // org.telegram.ui.Components.cp0
     public final /* synthetic */ int Y() {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.bp0
+    @Override // org.telegram.ui.Components.cp0
     public final CharSequence getContentDescription() {
         StringBuilder sb2 = new StringBuilder();
         tt ttVar = this.a;
@@ -79,7 +79,7 @@ public final class b5 implements bp0 {
         return sb2.toString();
     }
 
-    @Override // org.telegram.ui.Components.bp0
+    @Override // org.telegram.ui.Components.cp0
     public final void v() {
     }
 }

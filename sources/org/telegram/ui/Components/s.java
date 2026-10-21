@@ -18,9 +18,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, xl0, kd0, ld0, md0, ne.f, ImageReceiver.ImageReceiverDelegate, e5, r0.n, vh.a, t0.e, yl0, CameraController.VideoTakeCallback, org.telegram.ui.Cells.q5, ci.w9, org.telegram.ui.ActionBar.q0, org.telegram.ui.ActionBar.k1, wh.k {
+public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, yl0, kd0, ld0, md0, ne.f, ImageReceiver.ImageReceiverDelegate, e5, r0.n, vh.a, t0.e, zl0, CameraController.VideoTakeCallback, org.telegram.ui.Cells.q5, ci.w9, org.telegram.ui.ActionBar.q0, org.telegram.ui.ActionBar.k1, wh.k {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -53,7 +53,7 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, xl
         h6Var.e();
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ boolean P0(View view) {
         return false;
     }
@@ -81,7 +81,7 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, xl
         t3Var.run();
     }
 
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.zl0
     public boolean a(int i10, View view) {
         Object O;
         nk nkVar = (nk) this.b;
@@ -96,7 +96,7 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, xl
         return nkVar.S(view, O);
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public void d(float f7, float f10, int i10, View view) {
         g0.Q((g0) this.b, view, i10, f7);
     }
@@ -125,7 +125,7 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, xl
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
         int i11 = this.a;
-        org.telegram.messenger.k5.a(this, i10, str, drawable);
+        org.telegram.messenger.m5.a(this, i10, str, drawable);
     }
 
     @Override // org.telegram.ui.Components.kd0
@@ -248,7 +248,7 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, xl
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
         int i10 = this.a;
-        org.telegram.messenger.k5.b(this, imageReceiver);
+        org.telegram.messenger.m5.b(this, imageReceiver);
     }
 
     @Override // org.telegram.messenger.camera.CameraController.VideoTakeCallback
@@ -340,7 +340,7 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, xl
     public /* synthetic */ void m() {
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ void a0(View view, float f7, float f10) {
     }
 }

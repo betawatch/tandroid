@@ -34,7 +34,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.w2;
+import org.telegram.messenger.x2;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -52,8 +52,8 @@ import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.d4;
 import org.telegram.ui.Components.d5;
-import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.od0;
 import org.telegram.ui.Components.ur;
 import org.telegram.ui.LaunchActivity;
@@ -62,7 +62,7 @@ import org.telegram.ui.e20;
 import org.telegram.ui.kd0;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class z extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final ArrayList X;
@@ -147,22 +147,22 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
         kVar.C = false;
         kVar.m = false;
         this.d.setItemAnimator(kVar);
-        im0 im0Var = this.d;
+        jm0 jm0Var = this.d;
         int i15 = this.backgroundPaddingLeft;
-        im0Var.setPadding(i15, 0, i15, AndroidUtilities.dp(68.0f));
+        jm0Var.setPadding(i15, 0, i15, AndroidUtilities.dp(68.0f));
         this.d.setOnScrollListener(new y());
         this.d.setOnItemClickListener(new y4(23, this, n2Var));
         TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j10));
         this.b0 = chat;
         vg.b bVar = this.g0;
         ArrayList arrayList = this.X;
-        im0 im0Var2 = this.d;
+        jm0 jm0Var2 = this.d;
         t tVar = new t(this);
         t tVar2 = new t(this);
         t tVar3 = new t(this);
         bVar.e = arrayList;
         bVar.v = chat;
-        bVar.f = im0Var2;
+        bVar.f = jm0Var2;
         bVar.h = tVar;
         bVar.n = tVar2;
         bVar.s = tVar3;
@@ -190,7 +190,7 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
         }
         if (zVar.Z()) {
             TL_stories.TL_prepaidStarsGiveaway tL_prepaidStarsGiveaway = prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway ? (TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway : null;
-            w2 w2Var = new w2(zVar, prepaidGiveaway, tL_prepaidStarsGiveaway, j10, tL_prepaidStarsGiveaway != null ? tL_prepaidStarsGiveaway.stars : 0L, 8);
+            x2 x2Var = new x2(zVar, prepaidGiveaway, tL_prepaidStarsGiveaway, j10, tL_prepaidStarsGiveaway != null ? tL_prepaidStarsGiveaway.stars : 0L, 8);
             n2 R = LaunchActivity.R();
             if (R == null) {
                 return;
@@ -200,7 +200,7 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
             b2 b2Var = alertDialog$Builder.a;
             b2Var.R = string;
             b2Var.T = AndroidUtilities.replaceTags(LocaleController.getString(R.string.BoostingStartGiveawayConfirmText));
-            alertDialog$Builder.k(LocaleController.getString(R.string.Start), new qg.h0(w2Var, 21));
+            alertDialog$Builder.k(LocaleController.getString(R.string.Start), new qg.h0(x2Var, 21));
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new sg.y(15));
             alertDialog$Builder.o();
             return;
@@ -575,10 +575,10 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
                 }
             } else {
                 wg.c cVar = (wg.c) view;
-                im0 im0Var = zVar.d;
+                jm0 jm0Var = zVar.d;
                 if (cVar.b()) {
-                    for (int i15 = 0; i15 < im0Var.getChildCount(); i15++) {
-                        View childAt = im0Var.getChildAt(i15);
+                    for (int i15 = 0; i15 < jm0Var.getChildCount(); i15++) {
+                        View childAt = jm0Var.getChildAt(i15);
                         if (childAt.getClass().isInstance(cVar)) {
                             ((wg.c) childAt).c(childAt == cVar, true);
                         }
@@ -1287,8 +1287,8 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        im0 im0Var;
-        if (i10 == NotificationCenter.starGiveawayOptionsLoaded && (im0Var = this.d) != null && im0Var.G) {
+        jm0 jm0Var;
+        if (i10 == NotificationCenter.starGiveawayOptionsLoaded && (jm0Var = this.d) != null && jm0Var.G) {
             b0(true, true);
         }
     }
@@ -1303,7 +1303,7 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
+    public final im0 x(jm0 jm0Var) {
         vg.b bVar = new vg.b(this.resourcesProvider);
         this.g0 = bVar;
         return bVar;

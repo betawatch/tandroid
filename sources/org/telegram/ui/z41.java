@@ -17,9 +17,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public abstract class z41 extends org.telegram.ui.Components.im0 {
+public abstract class z41 extends org.telegram.ui.Components.jm0 {
     public final SparseArray V2;
     public final ArrayList W2;
     public final ArrayList X2;
@@ -56,7 +56,7 @@ public abstract class z41 extends org.telegram.ui.Components.im0 {
     
         if (((org.telegram.ui.Components.r5) r1).c() != false) goto L10;
      */
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.jm0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -75,7 +75,7 @@ public abstract class z41 extends org.telegram.ui.Components.im0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.im0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jm0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         SparseArray sparseArray;
         ArrayList arrayList;
@@ -364,7 +364,7 @@ public abstract class z41 extends org.telegram.ui.Components.im0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.jm0
     public final void f1() {
         if (ah.x0.b(this)) {
             return;
@@ -381,7 +381,7 @@ public abstract class z41 extends org.telegram.ui.Components.im0 {
         super.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         x51 x51Var = this.c3;
@@ -390,7 +390,7 @@ public abstract class z41 extends org.telegram.ui.Components.im0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         x51 x51Var = this.c3;

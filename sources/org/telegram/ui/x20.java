@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class x20 implements View.OnClickListener {
     public final a6 a = new a6(this, 5);
@@ -33,7 +33,7 @@ public final class x20 implements View.OnClickListener {
         v20 v20Var = q50Var.x;
         ArrayList arrayList = q50Var.q0;
         org.telegram.ui.Components.voip.t2 t2Var = q50Var.w;
-        org.telegram.ui.Components.uj0 uj0Var = q50Var.K0;
+        org.telegram.ui.Components.vj0 vj0Var = q50Var.K0;
         AccountInstance accountInstance = q50Var.d;
         if (q50Var.a1 == null || q50Var.F1 == 3) {
             return;
@@ -173,7 +173,7 @@ public final class x20 implements View.OnClickListener {
                 }
                 LaunchActivity launchActivity = q50Var.i0;
                 if (launchActivity != null && launchActivity.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
-                    org.telegram.ui.Components.we0.c(R.raw.permission_request_microphone, R.string.VoipNeedMicPermissionWithHint, new String[]{"android.permission.RECORD_AUDIO"}, new String[]{"android.permission.RECORD_AUDIO"}, new ci.e(16));
+                    org.telegram.ui.Components.xe0.c(R.raw.permission_request_microphone, R.string.VoipNeedMicPermissionWithHint, new String[]{"android.permission.RECORD_AUDIO"}, new String[]{"android.permission.RECORD_AUDIO"}, new ci.e(16));
                     return;
                 }
                 q50Var.K1(1, true);
@@ -210,10 +210,10 @@ public final class x20 implements View.OnClickListener {
             i11 = i16;
             i16 = i17;
         }
-        uj0Var.P(i16);
-        uj0Var.S(i16 - 1, this.a);
-        v20Var.setAnimation(uj0Var);
-        uj0Var.M(i11);
+        vj0Var.P(i16);
+        vj0Var.S(i16 - 1, this.a);
+        v20Var.setAnimation(vj0Var);
+        vj0Var.M(i11);
         v20Var.d();
         if (q50Var.F1 == 2) {
             long peerId = MessageObject.getPeerId(((TLRPC.GroupCallParticipant) q50Var.a1.participants.f(MessageObject.getPeerId(q50Var.A0))).peer);

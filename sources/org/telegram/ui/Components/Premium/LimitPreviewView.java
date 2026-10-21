@@ -30,7 +30,7 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.dh0;
+import org.telegram.ui.Components.eh0;
 import org.telegram.ui.Components.q6;
 import org.telegram.ui.Components.su;
 import org.telegram.ui.Components.uz;
@@ -44,7 +44,7 @@ import sg.t;
 import w7.r;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class LimitPreviewView extends LinearLayout {
     public static final /* synthetic */ int l0 = 0;
@@ -78,8 +78,8 @@ public class LimitPreviewView extends LinearLayout {
     public final s e;
     public t e0;
     public boolean f;
-    public final dh0 f0;
-    public final dh0 g0;
+    public final eh0 f0;
+    public final eh0 g0;
     public float h;
     public boolean h0;
     public ValueAnimator i0;
@@ -969,8 +969,8 @@ public class LimitPreviewView extends LinearLayout {
             sVar.setPadding(AndroidUtilities.dp(19.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(19.0f), AndroidUtilities.dp(14.0f));
             addView(sVar, z5.o(-2, -2, 0.0f, 3));
         }
-        dh0 dh0Var = new dh0(this, context, true);
-        this.f0 = dh0Var;
+        eh0 eh0Var = new eh0(this, context, true);
+        this.f0 = eh0Var;
         q6 q6Var = new q6(context, false, false, false);
         this.N = q6Var;
         q6Var.setTextSize(AndroidUtilities.dp(14.0f));
@@ -986,14 +986,14 @@ public class LimitPreviewView extends LinearLayout {
         textView.setGravity(16);
         textView.setTextColor(h6.w0(i13, d6Var));
         if (LocaleController.isRTL) {
-            dh0Var.addView(q6Var, z5.d(-1, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
-            dh0Var.addView(textView, z5.d(-2, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
+            eh0Var.addView(q6Var, z5.d(-1, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
+            eh0Var.addView(textView, z5.d(-2, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
         } else {
-            dh0Var.addView(q6Var, z5.d(-1, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
-            dh0Var.addView(textView, z5.d(-2, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
+            eh0Var.addView(q6Var, z5.d(-1, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
+            eh0Var.addView(textView, z5.d(-2, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
         }
-        dh0 dh0Var2 = new dh0(this, context, false);
-        this.g0 = dh0Var2;
+        eh0 eh0Var2 = new eh0(this, context, false);
+        this.g0 = eh0Var2;
         TextView textView2 = new TextView(context);
         this.O = textView2;
         textView2.setTypeface(AndroidUtilities.bold());
@@ -1008,16 +1008,16 @@ public class LimitPreviewView extends LinearLayout {
         q6Var2.setGravity(21);
         q6Var2.setTextColor(-1);
         if (LocaleController.isRTL) {
-            dh0Var2.addView(textView2, z5.d(-1, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
-            dh0Var2.addView(q6Var2, z5.d(-2, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
+            eh0Var2.addView(textView2, z5.d(-1, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
+            eh0Var2.addView(q6Var2, z5.d(-2, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
         } else {
-            dh0Var2.addView(textView2, z5.d(-1, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
-            dh0Var2.addView(q6Var2, z5.d(-2, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
+            eh0Var2.addView(textView2, z5.d(-1, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
+            eh0Var2.addView(q6Var2, z5.d(-2, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
         }
         o5 o5Var = new o5(this, context, d6Var);
         this.I = o5Var;
-        o5Var.addView(dh0Var, z5.c(30.0f, -1));
-        o5Var.addView(dh0Var2, z5.c(30.0f, -1));
+        o5Var.addView(eh0Var, z5.c(30.0f, -1));
+        o5Var.addView(eh0Var2, z5.c(30.0f, -1));
         addView(o5Var, z5.p(-1, 30, 0.0f, 0, 14, i10 != 0 ? 12 : 0, 14, 0));
     }
 }

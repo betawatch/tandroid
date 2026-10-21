@@ -57,20 +57,20 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.dw0;
+import org.telegram.ui.Components.ew0;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.le0;
+import org.telegram.ui.Components.me0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ga1;
 import org.telegram.ui.qn;
 import org.telegram.ui.st0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class d3 extends Dialog implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.t3 {
     public static final HashSet W0 = new HashSet();
-    public static final dw0 X0;
+    public static final ew0 X0;
     public static int Y0;
     public boolean A0;
     public y0 B0;
@@ -144,7 +144,7 @@ public final class d3 extends Dialog implements NotificationCenter.NotificationC
     public final org.telegram.ui.ActionBar.n3 r;
     public boolean r0;
     public final z5 s;
-    public final le0 s0;
+    public final me0 s0;
     public final y1 t0;
     public int u0;
     public final u2 v;
@@ -158,9 +158,9 @@ public final class d3 extends Dialog implements NotificationCenter.NotificationC
     public Boolean z0;
 
     static {
-        dw0 dw0Var = new dw0(new fh.b(7), new fh.b(8));
-        dw0Var.c = 100.0f;
-        X0 = dw0Var;
+        ew0 ew0Var = new ew0(new fh.b(7), new fh.b(8));
+        ew0Var.c = 100.0f;
+        X0 = ew0Var;
         Y0 = 0;
     }
 
@@ -250,9 +250,9 @@ public final class d3 extends Dialog implements NotificationCenter.NotificationC
         u2Var.setScrollEndListener(new y1(this, 8));
         u2Var.setDelegate(new z1(this));
         u2Var.setIsKeyboardVisible(new z1(this));
-        le0 le0Var = new le0(context);
-        this.s0 = le0Var;
-        c3Var.addView(le0Var, w7.z5.c(-1.0f, -1));
+        me0 me0Var = new me0(context);
+        this.s0 = me0Var;
+        c3Var.addView(me0Var, w7.z5.c(-1.0f, -1));
         setContentView(c3Var, new ViewGroup.LayoutParams(-1, -1));
         E();
         LaunchActivity launchActivity = LaunchActivity.H1;

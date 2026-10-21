@@ -4,10 +4,10 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ay;
-import org.telegram.ui.Components.em0;
+import org.telegram.ui.Components.fm0;
 import org.telegram.ui.x51;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class g extends s4.o {
     public final /* synthetic */ int b;
@@ -57,7 +57,7 @@ public final class g extends s4.o {
             case 1:
                 return ((Integer) this.c.get(i10)).equals(((ay) this.d).n.get(i11));
             case 2:
-                return Objects.equals(this.c.get(i10), ((em0) this.d).n.get(i11));
+                return Objects.equals(this.c.get(i10), ((fm0) this.d).n.get(i11));
             case 3:
                 return ((Long) this.c.get(i10)).equals(((x51) this.d).v0.get(i11));
             default:
@@ -78,7 +78,7 @@ public final class g extends s4.o {
             case 1:
                 return ((ay) this.d).n.size();
             case 2:
-                return ((em0) this.d).n.size();
+                return ((fm0) this.d).n.size();
             case 3:
                 return ((x51) this.d).v0.size();
             default:

@@ -44,7 +44,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.a40;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.s31;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
@@ -60,7 +60,7 @@ import org.telegram.ui.q50;
 import org.telegram.ui.qn;
 import org.telegram.ui.xg0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c3 implements Runnable {
     public final /* synthetic */ int a;
@@ -805,25 +805,25 @@ public final /* synthetic */ class c3 implements Runnable {
                 new h1(context, i18, j22, messageSuggestionParams, qnVar2, d6Var, 0, new org.telegram.ui.ActionBar.j3(23, tiVar, qnVar2)).show();
                 return;
             case 17:
-                r31 r31Var = (r31) this.b;
+                s31 s31Var = (s31) this.b;
                 i80 i80Var = (i80) this.d;
                 long j23 = this.c;
                 TLRPC.Chat chat2 = (TLRPC.Chat) this.e;
                 i80Var.u();
-                TLRPC.User user3 = MessagesController.getInstance(r31Var.b).getUser(Long.valueOf(j23));
+                TLRPC.User user3 = MessagesController.getInstance(s31Var.b).getUser(Long.valueOf(j23));
                 if (user3 != null) {
-                    qn qnVar3 = r31Var.h;
-                    org.telegram.ui.Components.f5.q(qnVar3, -1, user3, chat2, true, new ci.d1(r31Var, j23, 6), qnVar3.getResourceProvider());
+                    qn qnVar3 = s31Var.h;
+                    org.telegram.ui.Components.f5.q(qnVar3, -1, user3, chat2, true, new ci.d1(s31Var, j23, 6), qnVar3.getResourceProvider());
                     return;
                 }
                 return;
             case 18:
-                r31 r31Var2 = (r31) this.b;
+                s31 s31Var2 = (s31) this.b;
                 HashSet hashSet = (HashSet) this.d;
                 ArrayList arrayList15 = (ArrayList) this.e;
                 long j24 = this.c;
-                r31Var2.e0.removeAll(hashSet);
-                r31Var2.o();
+                s31Var2.e0.removeAll(hashSet);
+                s31Var2.o();
                 int size = arrayList15.size();
                 int i19 = 0;
                 while (i19 < size) {
@@ -831,7 +831,7 @@ public final /* synthetic */ class c3 implements Runnable {
                     i19++;
                     long intValue = ((Integer) obj2).intValue();
                     if (j24 == intValue) {
-                        r31Var2.m(intValue, false);
+                        s31Var2.m(intValue, false);
                         return;
                     }
                 }
@@ -923,25 +923,25 @@ public final /* synthetic */ class c3 implements Runnable {
                 g();
                 return;
             default:
-                ri.p pVar = (ri.p) this.b;
-                ri.j jVar = (ri.j) this.d;
+                ri.o oVar = (ri.o) this.b;
+                ri.i iVar = (ri.i) this.d;
                 long j27 = this.c;
                 byte[] bArr = (byte[]) this.e;
-                if (pVar.m != ri.n.h) {
+                if (oVar.n != ri.m.h) {
                     return;
                 }
-                long length = jVar.b.length();
-                pVar.a(jVar, length);
-                synchronized (pVar.k) {
-                    if (jVar.d && !jVar.e) {
-                        jVar.e = true;
-                        pVar.j.execute(new ri.c(pVar, jVar, length, j27, 2));
-                        pVar.C = new ri.m(jVar.b, j27, bArr);
-                        pVar.r(ri.n.n);
-                        pVar.e.onCompleted(pVar.C);
-                        pVar.c();
-                        pVar.s();
-                        pVar.l("completed");
+                long length = iVar.b.length();
+                oVar.a(iVar, length);
+                synchronized (oVar.l) {
+                    if (iVar.d && !iVar.e) {
+                        iVar.e = true;
+                        oVar.k.execute(new ri.c(oVar, iVar, length, j27, 2));
+                        oVar.D = new ri.l(iVar.b, j27, bArr);
+                        oVar.r(ri.m.n);
+                        oVar.f.onCompleted(oVar.D);
+                        oVar.c();
+                        oVar.s();
+                        oVar.l("completed");
                     }
                 }
                 return;

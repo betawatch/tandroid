@@ -8,7 +8,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.dm;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public class ChatMessagesMetadataController {
     final qn chatActivity;
@@ -54,11 +54,11 @@ public class ChatMessagesMetadataController {
         ArrayList arrayList = new ArrayList();
         messageObject.forceUpdate = true;
         arrayList.add(messageObject);
-        this.chatActivity.getMessagesStorage().getStorageQueue().postRunnable(new g3(13, this, arrayList));
+        this.chatActivity.getMessagesStorage().getStorageQueue().postRunnable(new i3(13, this, arrayList));
         if (!isExpiredStory && messageObject.isExpiredStory() && messageObject.type == 24) {
-            this.chatActivity.xc(arrayList, true);
+            this.chatActivity.yc(arrayList, true);
         } else {
-            this.chatActivity.xc(arrayList, false);
+            this.chatActivity.yc(arrayList, false);
         }
     }
 
@@ -73,7 +73,7 @@ public class ChatMessagesMetadataController {
             TL_stories.StoryItem storyItem2 = storyItem;
             storyItem2.lastUpdateTime = System.currentTimeMillis();
             storyItem2.id = i10;
-            AndroidUtilities.runOnUIThread(new w0(this, messageObject, j10, storyItem2, 0));
+            AndroidUtilities.runOnUIThread(new x0(this, messageObject, j10, storyItem2, 0));
         }
     }
 
@@ -161,7 +161,7 @@ public class ChatMessagesMetadataController {
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             tL_messages_getExtendedMedia.id.add(Integer.valueOf(arrayList.get(i10).getId()));
         }
-        this.extendedMediaRequests.add(Integer.valueOf(this.chatActivity.getConnectionsManager().sendRequest(tL_messages_getExtendedMedia, new v0(this, 0))));
+        this.extendedMediaRequests.add(Integer.valueOf(this.chatActivity.getConnectionsManager().sendRequest(tL_messages_getExtendedMedia, new w0(this, 0))));
         if (this.extendedMediaRequests.size() > 10) {
             this.chatActivity.getConnectionsManager().cancelRequest(this.extendedMediaRequests.remove(0).intValue(), false);
         }
@@ -176,7 +176,7 @@ public class ChatMessagesMetadataController {
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             tL_messages_getMessagesReactions.id.add(Integer.valueOf(arrayList.get(i10).getId()));
         }
-        this.reactionsRequests.add(Integer.valueOf(this.chatActivity.getConnectionsManager().sendRequest(tL_messages_getMessagesReactions, new v0(this, 1))));
+        this.reactionsRequests.add(Integer.valueOf(this.chatActivity.getConnectionsManager().sendRequest(tL_messages_getMessagesReactions, new w0(this, 1))));
         if (this.reactionsRequests.size() > 5) {
             this.chatActivity.getConnectionsManager().cancelRequest(this.reactionsRequests.remove(0).intValue(), true);
         }

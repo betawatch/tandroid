@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class nc0 extends View {
     public final p6 a;
@@ -45,19 +45,19 @@ public final class nc0 extends View {
         this.h = max;
         p6Var.M = max;
         jc0 jc0Var = new jc0(0);
-        uj0 uj0Var = new uj0(i10, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
-        jc0Var.c = uj0Var;
-        uj0Var.R(this);
-        uj0Var.J(true);
-        uj0Var.h = true;
-        uj0Var.K(0);
-        uj0 uj0Var2 = new uj0(i11, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
-        jc0Var.d = uj0Var2;
-        uj0Var2.R(this);
-        uj0Var2.J(true);
-        uj0Var2.h = true;
-        uj0Var2.K(0);
-        jc0Var.e = uj0Var;
+        vj0 vj0Var = new vj0(i10, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
+        jc0Var.c = vj0Var;
+        vj0Var.R(this);
+        vj0Var.J(true);
+        vj0Var.h = true;
+        vj0Var.K(0);
+        vj0 vj0Var2 = new vj0(i11, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
+        jc0Var.d = vj0Var2;
+        vj0Var2.R(this);
+        vj0Var2.J(true);
+        vj0Var2.h = true;
+        vj0Var2.K(0);
+        jc0Var.e = vj0Var;
         this.b = jc0Var;
         jc0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.F8, d6Var), PorterDuff.Mode.SRC_IN));
     }
@@ -70,20 +70,20 @@ public final class nc0 extends View {
             p6 p6Var = this.a;
             p6Var.t(str, z12, true);
             jc0 jc0Var = this.b;
-            uj0 uj0Var = (uj0) jc0Var.d;
-            uj0 uj0Var2 = (uj0) jc0Var.c;
+            vj0 vj0Var = (vj0) jc0Var.d;
+            vj0 vj0Var2 = (vj0) jc0Var.c;
             jc0Var.b = z10;
             if (z11) {
-                jc0Var.e = z10 ? uj0Var2 : uj0Var;
-                uj0Var2.M(0);
-                uj0Var.M(0);
-                ((uj0) jc0Var.e).start();
+                jc0Var.e = z10 ? vj0Var2 : vj0Var;
+                vj0Var2.M(0);
+                vj0Var.M(0);
+                ((vj0) jc0Var.e).start();
             } else {
                 if (z10) {
-                    uj0Var = uj0Var2;
+                    vj0Var = vj0Var2;
                 }
-                jc0Var.e = uj0Var;
-                uj0Var.M(uj0Var.e[0] - 1);
+                jc0Var.e = vj0Var;
+                vj0Var.M(vj0Var.e[0] - 1);
             }
             this.c = false;
             setContentDescription(p6Var.i);
@@ -96,10 +96,10 @@ public final class nc0 extends View {
         p6 p6Var = this.a;
         jc0 jc0Var = this.b;
         if (z10) {
-            jc0Var.setBounds(getMeasuredWidth() - AndroidUtilities.dp(41.0f), org.telegram.messenger.kk.A(24.0f, getMeasuredHeight(), 2), getMeasuredWidth() - AndroidUtilities.dp(17.0f), (AndroidUtilities.dp(24.0f) + getMeasuredHeight()) / 2);
+            jc0Var.setBounds(getMeasuredWidth() - AndroidUtilities.dp(41.0f), org.telegram.messenger.mk.A(24.0f, getMeasuredHeight(), 2), getMeasuredWidth() - AndroidUtilities.dp(17.0f), (AndroidUtilities.dp(24.0f) + getMeasuredHeight()) / 2);
             p6Var.setBounds(0, 0, getMeasuredWidth() - AndroidUtilities.dp(59.0f), getMeasuredHeight());
         } else {
-            jc0Var.setBounds(AndroidUtilities.dp(17.0f), org.telegram.messenger.kk.A(24.0f, getMeasuredHeight(), 2), AndroidUtilities.dp(41.0f), (AndroidUtilities.dp(24.0f) + getMeasuredHeight()) / 2);
+            jc0Var.setBounds(AndroidUtilities.dp(17.0f), org.telegram.messenger.mk.A(24.0f, getMeasuredHeight(), 2), AndroidUtilities.dp(41.0f), (AndroidUtilities.dp(24.0f) + getMeasuredHeight()) / 2);
             p6Var.setBounds(AndroidUtilities.dp(59.0f), 0, getMeasuredWidth(), getMeasuredHeight());
         }
         p6Var.draw(canvas);

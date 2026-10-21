@@ -10,21 +10,21 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class xk implements org.telegram.ui.Components.bl0 {
+public final class xk implements org.telegram.ui.Components.cl0 {
     public final /* synthetic */ qn a;
 
     public xk(qn qnVar) {
         this.a = qnVar;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public final /* synthetic */ boolean i() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public final /* synthetic */ boolean m() {
         return false;
     }
@@ -33,7 +33,7 @@ public final class xk implements org.telegram.ui.Components.bl0 {
     
         if (r5 == null) goto L26;
      */
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -138,7 +138,7 @@ public final class xk implements org.telegram.ui.Components.bl0 {
             i13 = i14;
         }
         if (z13) {
-            qnVar.oc(z14);
+            qnVar.pc(z14);
         }
         qnVar.C7(true);
         if (i13 > 0) {
@@ -160,16 +160,16 @@ public final class xk implements org.telegram.ui.Components.bl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public final /* synthetic */ boolean w() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public final /* synthetic */ void v() {
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public final /* synthetic */ void q(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

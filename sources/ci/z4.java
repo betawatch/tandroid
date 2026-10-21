@@ -3,7 +3,7 @@ package ci;
 import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class z4 extends q5 {
     public final /* synthetic */ u5 X2;
@@ -14,7 +14,7 @@ public final class z4 extends q5 {
         this.X2 = u5Var;
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         this.X2.n = View.MeasureSpec.getSize(i11);
         super.onMeasure(i10, i11);

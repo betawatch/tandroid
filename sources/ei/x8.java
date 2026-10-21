@@ -14,13 +14,13 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.he0;
 import org.telegram.ui.Components.hf;
-import org.telegram.ui.Components.le0;
+import org.telegram.ui.Components.me0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class x8 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -32,9 +32,9 @@ public final class x8 extends FrameLayout {
     public Object h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x8(le0 le0Var, Context context) {
+    public x8(me0 me0Var, Context context) {
         super(context);
-        this.h = le0Var;
+        this.h = me0Var;
         this.b = new ArrayList(4);
         this.c = new ArrayList(4);
         this.d = new StringBuilder(4);
@@ -113,7 +113,7 @@ public final class x8 extends FrameLayout {
                 ((TextView) arrayList.get(i11)).setAlpha(0.0f);
             }
         }
-        le0.a((le0) x8Var.h);
+        me0.a((me0) x8Var.h);
     }
 
     public void b(String str) {
@@ -195,7 +195,7 @@ public final class x8 extends FrameLayout {
         ((AnimatorSet) this.e).playTogether(arrayList3);
         ((AnimatorSet) this.e).addListener(new he0(this, 0));
         ((AnimatorSet) this.e).start();
-        le0.a((le0) this.h);
+        me0.a((me0) this.h);
     }
 
     public int c(int i10) {
@@ -289,7 +289,7 @@ public final class x8 extends FrameLayout {
         this.b = d6Var;
         TextView textView = new TextView(context);
         this.d = textView;
-        kk.k(20.0f, 1, textView);
+        mk.k(20.0f, 1, textView);
         textView.setGravity(LocaleController.isRTL ? 5 : 3);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.j5, d6Var));
         boolean z10 = LocaleController.isRTL;

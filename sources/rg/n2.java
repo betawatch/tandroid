@@ -57,7 +57,7 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.f6;
-import org.telegram.ui.Components.u11;
+import org.telegram.ui.Components.v11;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.df0;
 import org.telegram.ui.m71;
@@ -67,7 +67,7 @@ import x7.fa;
 import x7.m7;
 import x7.o7;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class n2 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int r0 = 0;
@@ -85,7 +85,7 @@ public final class n2 extends FrameLayout implements NotificationCenter.Notifica
     public float P;
     public float Q;
     public float R;
-    public u11 S;
+    public v11 S;
     public int T;
     public int U;
     public boolean V;
@@ -2755,14 +2755,14 @@ public final class n2 extends FrameLayout implements NotificationCenter.Notifica
         return this.I;
     }
 
-    public u11 getThanosEffect() {
-        if (!u11.c()) {
+    public v11 getThanosEffect() {
+        if (!v11.c()) {
             return null;
         }
         if (this.S == null) {
-            u11 u11Var = new u11(getContext(), new e2(this, 1));
-            this.S = u11Var;
-            addView(u11Var, z5.c(-1.0f, -1));
+            v11 v11Var = new v11(getContext(), new e2(this, 1));
+            this.S = v11Var;
+            addView(v11Var, z5.c(-1.0f, -1));
         }
         return this.S;
     }

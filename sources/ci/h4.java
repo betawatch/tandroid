@@ -32,15 +32,15 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.hs;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.ph0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.s41;
+import org.telegram.ui.Components.qh0;
+import org.telegram.ui.Components.t41;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.ir;
 import org.telegram.ui.nr;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class h4 extends hs {
     public boolean c;
@@ -586,7 +586,7 @@ public final class h4 extends hs {
                             }
                             storyItem3 = o4Var.a;
                             if (storyItem3 != null) {
-                                if (storyItem3.translated && TextUtils.equals(storyItem3.translatedLng, s41.C())) {
+                                if (storyItem3.translated && TextUtils.equals(storyItem3.translatedLng, t41.C())) {
                                     org.telegram.ui.ActionBar.u0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_translate, LocaleController.getString(R.string.HideTranslation), false, h4Var.d).setOnClickListener(new w3(h4Var, 4));
                                 } else if (MessagesController.getInstance(q4Var.C2).getTranslateController().canTranslateStory(o4Var.a)) {
                                     actionBarPopupWindow$ActionBarPopupWindowLayout8 = actionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -780,7 +780,7 @@ public final class h4 extends hs {
             return;
         }
         Context context = q4Var.getContext();
-        ph0 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
+        qh0 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
         final n4.s sVar = new n4.s(this, actionBarPopupWindow$ActionBarPopupWindowLayout, false, 12);
         nr nrVar = new nr();
         org.telegram.ui.ActionBar.e1[] e1VarArr = new org.telegram.ui.ActionBar.e1[5];

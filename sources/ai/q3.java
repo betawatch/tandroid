@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.RequestDelegateTimestamp;
@@ -20,12 +20,12 @@ import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.ym0;
+import org.telegram.ui.Components.zm0;
 import org.telegram.ui.a00;
 import org.telegram.ui.qe;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q3 implements Runnable {
     public final /* synthetic */ int a;
@@ -129,13 +129,13 @@ public final /* synthetic */ class q3 implements Runnable {
                 break;
             case 5:
                 qn qnVar = (qn) obj5;
-                ym0 ym0Var = (ym0) obj2;
+                zm0 zm0Var = (zm0) obj2;
                 ((i80) obj4).n0 = true;
                 Activity parentActivity = qnVar.getParentActivity();
                 long j12 = ((TLRPC.TL_messageEntityFormattedDate) obj3).date;
                 long j13 = this.b;
-                y3 y3Var = new y3(qnVar, (ArrayList) obj, j13, ym0Var, 2);
-                qe qeVar = new qe(ym0Var, i11);
+                y3 y3Var = new y3(qnVar, (ArrayList) obj, j13, zm0Var, 2);
+                qe qeVar = new qe(zm0Var, i11);
                 Pattern pattern = org.telegram.ui.Components.f5.a;
                 org.telegram.ui.Components.f5.J(parentActivity, j13, j12, 0, true, y3Var, qeVar, new org.telegram.ui.Components.d5(null), null);
                 break;
@@ -152,7 +152,7 @@ public final /* synthetic */ class q3 implements Runnable {
                         n2Var.getMessagesController().putUsers(tL_chatlists_exportedInvites.users, false);
                         new a00(n2Var, dialogFilter, tL_chatlists_exportedInvites.invites).show();
                     } else if (tL_error == null || !"FILTER_ID_INVALID".equals(tL_error.text) || dialogFilter.isDefault()) {
-                        kk.q(R.string.UnknownError, org.telegram.ui.Components.xc.a0(n2Var), null);
+                        mk.q(R.string.UnknownError, org.telegram.ui.Components.xc.a0(n2Var), null);
                     } else {
                         new a00(n2Var, dialogFilter, null).show();
                     }

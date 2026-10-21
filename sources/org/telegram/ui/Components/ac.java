@@ -9,26 +9,26 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class ac implements bl0 {
+public final class ac implements cl0 {
     public final /* synthetic */ bc a;
 
     public ac(bc bcVar) {
         this.a = bcVar;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public final /* synthetic */ boolean i() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public final /* synthetic */ boolean m() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public final void o(View view, ah.i1 i1Var, boolean z10, boolean z11) {
         bc bcVar = this.a;
         org.telegram.ui.ActionBar.n2 n2Var = bcVar.f;
@@ -50,19 +50,19 @@ public final class ac implements bl0 {
         }
         bcVar.f();
         qc.e();
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.wi(this, i1Var, !z12, n2Var.getCurrentAccount(), i10), 300L);
+        AndroidUtilities.runOnUIThread(new org.telegram.messenger.xi(this, i1Var, !z12, n2Var.getCurrentAccount(), i10), 300L);
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public final /* synthetic */ boolean w() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public final /* synthetic */ void v() {
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public final /* synthetic */ void q(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

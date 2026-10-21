@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.v81;
+import org.telegram.ui.Components.w81;
 import org.telegram.ui.c31;
 import org.telegram.ui.j41;
 import org.telegram.ui.mg1;
@@ -15,9 +15,9 @@ import org.telegram.ui.o21;
 import org.telegram.ui.og1;
 import org.telegram.ui.s50;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class j5 extends v81 {
+public final class j5 extends w81 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -28,7 +28,7 @@ public final class j5 extends v81 {
         this.b = context;
     }
 
-    @Override // org.telegram.ui.Components.v81
+    @Override // org.telegram.ui.Components.w81
     public final void b(View view, int i10, int i11) {
         o5 o5Var;
         org.telegram.ui.ActionBar.n2 n2Var;
@@ -100,7 +100,7 @@ public final class j5 extends v81 {
         }
     }
 
-    @Override // org.telegram.ui.Components.v81
+    @Override // org.telegram.ui.Components.w81
     public final View d(int i10) {
         o5 o5Var;
         switch (this.a) {
@@ -150,7 +150,7 @@ public final class j5 extends v81 {
         }
     }
 
-    @Override // org.telegram.ui.Components.v81
+    @Override // org.telegram.ui.Components.w81
     public final int e() {
         switch (this.a) {
             case 0:
@@ -170,7 +170,7 @@ public final class j5 extends v81 {
         }
     }
 
-    @Override // org.telegram.ui.Components.v81
+    @Override // org.telegram.ui.Components.w81
     public int h(int i10) {
         switch (this.a) {
             case 0:

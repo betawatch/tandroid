@@ -20,15 +20,15 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.cl0;
+import org.telegram.ui.Components.dl0;
 import org.telegram.ui.Components.gw;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.rc0;
-import org.telegram.ui.Components.yw0;
+import org.telegram.ui.Components.zw0;
 import org.telegram.ui.g51;
 import org.telegram.ui.k41;
 import org.telegram.ui.qn;
@@ -37,7 +37,7 @@ import org.telegram.ui.u41;
 import org.telegram.ui.y41;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class t0 {
     public final int[] A;
@@ -57,7 +57,7 @@ public final class t0 {
     public boolean k;
     public boolean l;
     public final n0 m;
-    public final cl0 n;
+    public final dl0 n;
     public final List o;
     public rc0 p;
     public boolean q;
@@ -73,7 +73,7 @@ public final class t0 {
     public final RectF f = new RectF();
     public final RectF i = new RectF();
 
-    public t0(int i10, n2 n2Var, ArrayList arrayList, HashSet hashSet, cl0 cl0Var, d6 d6Var, boolean z10) {
+    public t0(int i10, n2 n2Var, ArrayList arrayList, HashSet hashSet, dl0 dl0Var, d6 d6Var, boolean z10) {
         new Path();
         this.A = new int[2];
         this.B = new AnimationNotificationsLocker();
@@ -85,7 +85,7 @@ public final class t0 {
         this.o = arrayList;
         this.r = n2Var;
         this.s = d6Var;
-        Context context = n2Var != null ? n2Var.getContext() : cl0Var.getContext();
+        Context context = n2Var != null ? n2Var.getContext() : dl0Var.getContext();
         v vVar = new v(this, context);
         this.c = vVar;
         vVar.setOnClickListener(new g0(this, i11));
@@ -95,12 +95,12 @@ public final class t0 {
         s0 s0Var = new s0(this, context);
         this.a = s0Var;
         boolean z12 = z11;
-        n0 n0Var = new n0(this, n2Var, context, cl0Var.getWindowType(), i10 != 1, d6Var, cl0Var, n2Var);
+        n0 n0Var = new n0(this, n2Var, context, dl0Var.getWindowType(), i10 != 1, d6Var, dl0Var, n2Var);
         this.m = n0Var;
         n0Var.setOutlineProvider(new o0(this));
         n0Var.setClipToOutline(true);
-        boolean z13 = cl0Var.f1;
-        boolean z14 = cl0Var.g1;
+        boolean z13 = dl0Var.f1;
+        boolean z14 = dl0Var.g1;
         if (n0Var.K1 != z13) {
             n0Var.K1 = z13;
             n0Var.L1 = z14;
@@ -113,7 +113,7 @@ public final class t0 {
                 k41Var.invalidate();
             }
         }
-        n0Var.setOnLongPressedListener(new ya.d(cl0Var, r11));
+        n0Var.setOnLongPressedListener(new ya.d(dl0Var, r11));
         n0Var.setOnRecentClearedListener(new sb.a(i12));
         n0Var.setRecentReactions(arrayList);
         n0Var.setSelectedReactions((HashSet<i1>) hashSet);
@@ -130,11 +130,11 @@ public final class t0 {
         float f7 = r11;
         vVar.addView(s0Var, z5.d(-1, -1.0f, i10 == 5 ? 85 : 48, f7, f7, f7, 16.0f));
         vVar.setClipChildren(false);
-        if (i10 == 1 || (cl0Var.getDelegate() != null && cl0Var.getDelegate().w())) {
-            n0Var.setBackgroundDelegate(new h0(i11, this, cl0Var));
+        if (i10 == 1 || (dl0Var.getDelegate() != null && dl0Var.getDelegate().w())) {
+            n0Var.setBackgroundDelegate(new h0(i11, this, dl0Var));
         }
         if (z12) {
-            ((ViewGroup) cl0Var.getParent()).addView(vVar);
+            ((ViewGroup) dl0Var.getParent()).addView(vVar);
         } else {
             WindowManager.LayoutParams b10 = b(false);
             WindowManager windowManager = AndroidUtilities.findActivity(context).getWindowManager();
@@ -142,11 +142,11 @@ public final class t0 {
             AndroidUtilities.setPreferredMaxRefreshRate(windowManager, vVar, b10);
             windowManager.addView(vVar, b10);
         }
-        this.n = cl0Var;
-        cl0Var.setOnSwitchedToLoopView(new i0(this, i11));
-        cl0Var.b1 = true;
-        cl0Var.invalidate();
-        AndroidUtilities.runOnUIThread(new a1.f(10, this, cl0Var), 50L);
+        this.n = dl0Var;
+        dl0Var.setOnSwitchedToLoopView(new i0(this, i11));
+        dl0Var.b1 = true;
+        dl0Var.invalidate();
+        AndroidUtilities.runOnUIThread(new a1.f(10, this, dl0Var), 50L);
         if (i10 != 5) {
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 7);
         }
@@ -154,7 +154,7 @@ public final class t0 {
 
     public static void a(t0 t0Var, boolean z10) {
         View view;
-        cl0 cl0Var = t0Var.n;
+        dl0 dl0Var = t0Var.n;
         n0 n0Var = t0Var.m;
         if (t0Var.E.isEmpty()) {
             t0Var.h(false);
@@ -169,7 +169,7 @@ public final class t0 {
                 u41Var.f1();
                 n0Var.f0.b();
                 n0Var.sendAccessibilityEvent(32);
-                cl0Var.setImportantForAccessibility(4);
+                dl0Var.setImportantForAccessibility(4);
                 int i10 = 0;
                 while (true) {
                     if (i10 >= u41Var.getChildCount()) {
@@ -188,30 +188,30 @@ public final class t0 {
                 } else {
                     n0Var.performAccessibilityAction(64, null);
                 }
-                if (cl0Var.getPullingLeftProgress() > 0.0f) {
-                    cl0Var.O0 = false;
-                    ValueAnimator valueAnimator = cl0Var.y0;
+                if (dl0Var.getPullingLeftProgress() > 0.0f) {
+                    dl0Var.O0 = false;
+                    ValueAnimator valueAnimator = dl0Var.y0;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                     }
-                    cl0Var.B0 = 0.0f;
-                    v vVar = cl0Var.S;
+                    dl0Var.B0 = 0.0f;
+                    v vVar = dl0Var.S;
                     if (vVar != null) {
                         vVar.invalidate();
                     }
-                    cl0Var.invalidate();
+                    dl0Var.invalidate();
                 } else {
-                    cl0Var.O0 = true;
-                    ValueAnimator valueAnimator2 = cl0Var.y0;
+                    dl0Var.O0 = true;
+                    ValueAnimator valueAnimator2 = dl0Var.y0;
                     if (valueAnimator2 != null) {
                         valueAnimator2.cancel();
                     }
-                    cl0Var.B0 = 0.0f;
-                    v vVar2 = cl0Var.S;
+                    dl0Var.B0 = 0.0f;
+                    v vVar2 = dl0Var.S;
                     if (vVar2 != null) {
                         vVar2.invalidate();
                     }
-                    cl0Var.invalidate();
+                    dl0Var.invalidate();
                 }
                 k41 k41Var = n0Var.i0;
                 for (int i11 = 0; i11 < arrayList.size(); i11++) {
@@ -283,17 +283,17 @@ public final class t0 {
         int[] iArr = this.A;
         s0 s0Var = this.a;
         RectF rectF = this.f;
-        cl0 cl0Var = this.n;
-        rectF.set(cl0Var.w);
-        this.e = cl0Var.y;
+        dl0 dl0Var = this.n;
+        rectF.set(dl0Var.w);
+        this.e = dl0Var.y;
         int[] iArr2 = new int[2];
         if (z10) {
-            cl0Var.getLocationOnScreen(iArr);
+            dl0Var.getLocationOnScreen(iArr);
         }
         vVar.getLocationOnScreen(iArr2);
         int i11 = 0;
-        float topOffset = cl0Var.getTopOffset() + ((((iArr[1] - iArr2[1]) - AndroidUtilities.dp(44.0f)) - AndroidUtilities.dp(52.0f)) - (n0Var.O0 ? AndroidUtilities.dp(26.0f) : 0));
-        if (cl0Var.F0) {
+        float topOffset = dl0Var.getTopOffset() + ((((iArr[1] - iArr2[1]) - AndroidUtilities.dp(44.0f)) - AndroidUtilities.dp(52.0f)) - (n0Var.O0 ? AndroidUtilities.dp(26.0f) : 0));
+        if (dl0Var.F0) {
             topOffset = (iArr[1] - iArr2[1]) - AndroidUtilities.dp(12.0f);
         }
         if (s0Var.getMeasuredHeight() + topOffset > vVar.getMeasuredHeight() - AndroidUtilities.dp(32.0f)) {
@@ -330,7 +330,7 @@ public final class t0 {
         float y3 = (iArr[r18] - iArr2[r18]) - s0Var.getY();
         this.h = y3;
         rectF.offset(x10, y3);
-        cl0Var.setCustomEmojiEnterProgress(this.j);
+        dl0Var.setCustomEmojiEnterProgress(this.j);
         if (z10) {
             this.w = (SharedConfig.getDevicePerformanceClass() < 2 || !LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS)) ? false : r18;
             this.k = false;
@@ -357,11 +357,11 @@ public final class t0 {
             valueAnimator = ValueAnimator.ofFloat(f7, z10 ? 1.0f : 0.0f);
         } else {
             float f10 = z10 ? 1.0f : 0.0f;
-            yw0 yw0Var = new yw0();
-            yw0Var.a = 0;
-            yw0Var.b = 0;
-            yw0Var.setFloatValues(new float[]{f7, f10});
-            valueAnimator = yw0Var;
+            zw0 zw0Var = new zw0();
+            zw0Var.a = 0;
+            zw0Var.b = 0;
+            zw0Var.setFloatValues(new float[]{f7, f10});
+            valueAnimator = zw0Var;
         }
         this.x = valueAnimator;
         valueAnimator.addUpdateListener(new k0(i11, this, z10));
@@ -374,7 +374,7 @@ public final class t0 {
             this.x.setInterpolator(bs.h);
         } else if (this.w) {
             this.x.setDuration(450L);
-            kk.l(0.5f, this.x);
+            mk.l(0.5f, this.x);
         } else {
             this.x.setDuration(350L);
             this.x.setInterpolator(bs.f);
@@ -382,7 +382,7 @@ public final class t0 {
         s0Var.invalidate();
         h(true);
         if (z10) {
-            cl0Var.setCustomEmojiReactionsBackground(false);
+            dl0Var.setCustomEmojiReactionsBackground(false);
             ValueAnimator valueAnimator3 = this.x;
             Objects.requireNonNull(valueAnimator3);
             a3.d dVar = new a3.d(valueAnimator3, i12);
@@ -394,8 +394,8 @@ public final class t0 {
             }
             x0.c = dVar;
         } else {
-            cl0Var.O0 = true;
-            cl0Var.invalidate();
+            dl0Var.O0 = true;
+            dl0Var.invalidate();
             this.x.setStartDelay(30L);
             this.x.start();
         }
@@ -416,18 +416,18 @@ public final class t0 {
         if (this.q) {
             return;
         }
-        cl0 cl0Var = this.n;
-        if (cl0Var != null) {
-            ValueAnimator valueAnimator = cl0Var.y0;
+        dl0 dl0Var = this.n;
+        if (dl0Var != null) {
+            ValueAnimator valueAnimator = dl0Var.y0;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
             }
-            cl0Var.B0 = 0.0f;
-            v vVar = cl0Var.S;
+            dl0Var.B0 = 0.0f;
+            v vVar = dl0Var.S;
             if (vVar != null) {
                 vVar.invalidate();
             }
-            cl0Var.invalidate();
+            dl0Var.invalidate();
         }
         qc.e();
         this.q = true;

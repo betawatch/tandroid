@@ -1,6 +1,6 @@
 package z9;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final class s0 extends q1 {
     public final long a;
@@ -9,7 +9,7 @@ public final class s0 extends q1 {
     public final long d;
     public final int e;
 
-    public s0(long j10, String str, String str2, long j11, int i10) {
+    public s0(String str, int i10, String str2, long j10, long j11) {
         this.a = j10;
         this.b = str;
         this.c = str2;

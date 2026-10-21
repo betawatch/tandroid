@@ -13,9 +13,9 @@ import org.telegram.messenger.EmojiData;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mw implements ni.c, yl0, en0, ne.d {
+public final /* synthetic */ class mw implements ni.c, zl0, fn0, ne.d {
     public final /* synthetic */ int a;
     public final /* synthetic */ tz b;
 
@@ -24,7 +24,7 @@ public final /* synthetic */ class mw implements ni.c, yl0, en0, ne.d {
         this.b = tzVar;
     }
 
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.zl0
     public boolean a(int i10, View view) {
         String str;
         int i11;
@@ -118,7 +118,7 @@ public final /* synthetic */ class mw implements ni.c, yl0, en0, ne.d {
                         i11 = AndroidUtilities.dp((r3 * 4) - (AndroidUtilities.isTablet() ? 5 : 1)) + (dvVar2.n[0] * i12);
                     }
                     if (iArr[0] - i11 < AndroidUtilities.dp(5.0f)) {
-                        i11 = org.telegram.messenger.kk.D(5.0f, iArr[0] - i11, i11);
+                        i11 = org.telegram.messenger.mk.D(5.0f, iArr[0] - i11, i11);
                     } else if ((iArr[0] - i11) + dp > AndroidUtilities.displaySize.x - AndroidUtilities.dp(5.0f)) {
                         i11 += ((iArr[0] - i11) + dp) - (AndroidUtilities.displaySize.x - AndroidUtilities.dp(5.0f));
                     }
@@ -137,7 +137,7 @@ public final /* synthetic */ class mw implements ni.c, yl0, en0, ne.d {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.en0
+    @Override // org.telegram.ui.Components.fn0
     public void b(int i10) {
         int i11;
         fz fzVar;
@@ -240,7 +240,7 @@ public final /* synthetic */ class mw implements ni.c, yl0, en0, ne.d {
                             break;
                         }
                     } else {
-                        tzVar2.t1.o(new c61(tzVar2.getContext(), new mx(tzVar2), tzVar2.x1, tzVar2.y1, tzVar2.z1, null, tzVar2.Z1));
+                        tzVar2.t1.o(new d61(tzVar2.getContext(), new mx(tzVar2), tzVar2.x1, tzVar2.y1, tzVar2.z1, null, tzVar2.Z1));
                         break;
                     }
                 }

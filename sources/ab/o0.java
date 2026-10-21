@@ -24,7 +24,7 @@ import org.telegram.ui.Components.t20;
 import org.telegram.ui.Components.u20;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final class o0 extends Handler {
     public final /* synthetic */ int a;
@@ -277,7 +277,7 @@ public final class o0 extends Handler {
                         s20Var.j = true;
                         return;
                     } else {
-                        ((PhotoViewer) q20Var).a2(s20Var.n);
+                        ((PhotoViewer) q20Var).c2(s20Var.n);
                         return;
                     }
                 }

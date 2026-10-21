@@ -17,7 +17,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.aa0;
 import org.telegram.ui.Components.ba0;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.dq;
 import org.telegram.ui.zd;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public class d extends FrameLayout implements aa0 {
     public boolean E;
@@ -98,7 +98,7 @@ public class d extends FrameLayout implements aa0 {
             this.Q = ofFloat;
             ofFloat.addUpdateListener(new b(this, 0));
             this.Q.addListener(new c(this, i12));
-            kk.l(2.0f, this.Q);
+            mk.l(2.0f, this.Q);
             this.Q.setDuration(200L);
             this.Q.start();
         }

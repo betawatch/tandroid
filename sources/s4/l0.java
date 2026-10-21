@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 import ki.t1;
 import m.g3;
-import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.hl0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public abstract class l0 {
     public k2.w0 a;
@@ -91,8 +91,8 @@ public abstract class l0 {
         ArrayList arrayList = this.b;
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
-            gl0 gl0Var = (gl0) arrayList.get(i10);
-            gl0Var.a.c(gl0Var.b, gl0Var.c, gl0Var.d, false);
+            hl0 hl0Var = (hl0) arrayList.get(i10);
+            hl0Var.a.c(hl0Var.b, hl0Var.c, hl0Var.d, false);
         }
         arrayList.clear();
     }

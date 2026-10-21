@@ -67,7 +67,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.f5;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.oy0;
+import org.telegram.ui.Components.py0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.jg0;
 import u2.g0;
@@ -93,7 +93,7 @@ import z9.x0;
 import z9.y0;
 import z9.z1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final class l implements d6 {
     public Object a;
@@ -652,7 +652,7 @@ public final class l implements d6 {
             ((ValueAnimator) arrayList3.get(i10)).cancel();
             if (z10) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ArrayList) this.d).get(i10)).floatValue(), 0.0f);
-                ofFloat.addUpdateListener(new oy0(this, i10, 0));
+                ofFloat.addUpdateListener(new py0(this, i10, 0));
                 ofFloat.setDuration(100L);
                 ofFloat.start();
             }
@@ -661,7 +661,7 @@ public final class l implements d6 {
             ((ValueAnimator) arrayList2.get(i11)).cancel();
             if (z10) {
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.e).get(i11)).floatValue(), 0.0f);
-                ofFloat2.addUpdateListener(new oy0(this, i11, 1));
+                ofFloat2.addUpdateListener(new py0(this, i11, 1));
                 ofFloat2.setDuration(100L);
                 ofFloat2.start();
             }
@@ -670,7 +670,7 @@ public final class l implements d6 {
             ((ValueAnimator) arrayList.get(i12)).cancel();
             if (z10) {
                 ValueAnimator ofFloat3 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.f).get(i12)).floatValue(), 0.0f);
-                ofFloat3.addUpdateListener(new oy0(this, i12, 2));
+                ofFloat3.addUpdateListener(new py0(this, i12, 2));
                 ofFloat3.setDuration(100L);
                 ofFloat3.start();
             }

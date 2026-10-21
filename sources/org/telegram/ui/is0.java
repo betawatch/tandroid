@@ -8,22 +8,22 @@ import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class is0 extends org.telegram.ui.Components.kd {
     public final Path t1;
     public final /* synthetic */ PhotoViewer u1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public is0(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, iu0 iu0Var, org.telegram.ui.Components.kw0 kw0Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.ja jaVar, qq0 qq0Var) {
-        super(contextThemeWrapper, iu0Var, kw0Var, frameLayout, d6Var, jaVar, qq0Var);
+    public is0(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, iu0 iu0Var, org.telegram.ui.Components.lw0 lw0Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.ja jaVar, qq0 qq0Var) {
+        super(contextThemeWrapper, iu0Var, lw0Var, frameLayout, d6Var, jaVar, qq0Var);
         this.u1 = photoViewer;
         this.t1 = new Path();
     }
 
     @Override // org.telegram.ui.Components.kd
     public final void A() {
-        PhotoViewer.W(this.u1);
+        PhotoViewer.X(this.u1);
     }
 
     @Override // org.telegram.ui.Components.kd
@@ -46,7 +46,7 @@ public final class is0 extends org.telegram.ui.Components.kd {
         PhotoViewer photoViewer = this.u1;
         org.telegram.ui.Components.qc qcVar = photoViewer.n7;
         if (qcVar == null || org.telegram.ui.Components.qc.w != qcVar) {
-            return photoViewer.T2(photoViewer.e0);
+            return photoViewer.V2(photoViewer.e0);
         }
         return false;
     }
@@ -69,7 +69,7 @@ public final class is0 extends org.telegram.ui.Components.kd {
         } else {
             canvas.translate(f10, f11);
         }
-        photoViewer.U0(canvas, naVar, org.telegram.ui.ActionBar.h6.m1(1.0f, z10 ? -8882056 : -14277082), org.telegram.ui.ActionBar.h6.m1(1.0f, z11 ? z10 ? 0 : 855638016 : 1140850688), false, !z10, !z10 && z11);
+        photoViewer.V0(canvas, naVar, org.telegram.ui.ActionBar.h6.m1(1.0f, z10 ? -8882056 : -14277082), org.telegram.ui.ActionBar.h6.m1(1.0f, z11 ? z10 ? 0 : 855638016 : 1140850688), false, !z10, !z10 && z11);
         canvas.restore();
     }
 
@@ -120,23 +120,23 @@ public final class is0 extends org.telegram.ui.Components.kd {
         super.x(i10 - photoViewer.s2.bottom);
         ViewPropertyAnimator animate = photoViewer.F.animate();
         if (photoViewer.J) {
-            org.telegram.ui.Components.kd f12 = photoViewer.f1();
+            org.telegram.ui.Components.kd g12 = photoViewer.g1();
             is0 is0Var = photoViewer.V1;
-            if (f12 != is0Var || !is0Var.L.c()) {
+            if (g12 != is0Var || !is0Var.L.c()) {
                 f7 = 1.0f;
                 animate.alpha(f7).start();
                 if (photoViewer.P0.getVisibility() != 0) {
                     if (photoViewer.J) {
-                        org.telegram.ui.Components.kd f13 = photoViewer.f1();
+                        org.telegram.ui.Components.kd g13 = photoViewer.g1();
                         is0 is0Var2 = photoViewer.V1;
-                        if (f13 != is0Var2 || !is0Var2.L.c()) {
+                        if (g13 != is0Var2 || !is0Var2.L.c()) {
                             z10 = true;
-                            photoViewer.o3(z10);
+                            photoViewer.q3(z10);
                             return;
                         }
                     }
                     z10 = false;
-                    photoViewer.o3(z10);
+                    photoViewer.q3(z10);
                     return;
                 }
                 return;

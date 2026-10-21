@@ -31,7 +31,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ic0 extends FrameLayout {
     public final nc0 E;
@@ -83,7 +83,7 @@ public final class ic0 extends FrameLayout {
     /* JADX WARN: Type inference failed for: r2v68, types: [android.view.View, org.telegram.ui.ActionBar.e1] */
     /* JADX WARN: Type inference failed for: r2v69, types: [android.view.View, org.telegram.ui.ActionBar.e1] */
     /* JADX WARN: Type inference failed for: r34v0, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout, java.lang.Object, org.telegram.ui.Components.ic0] */
-    /* JADX WARN: Type inference failed for: r3v3, types: [android.view.View, android.view.ViewGroup, org.telegram.ui.Components.kw0, org.telegram.ui.y8] */
+    /* JADX WARN: Type inference failed for: r3v3, types: [android.view.View, android.view.ViewGroup, org.telegram.ui.Components.lw0, org.telegram.ui.y8] */
     /* JADX WARN: Type inference failed for: r3v6, types: [bh.b] */
     /* JADX WARN: Type inference failed for: r9v8, types: [android.view.ViewGroup] */
     /*
@@ -325,7 +325,7 @@ public final class ic0 extends FrameLayout {
                                             alVar2.a(true);
                                             org.telegram.ui.qn qnVar2 = alVar2.H;
                                             qnVar2.l5 = null;
-                                            qnVar2.Fb(qnVar2.n5);
+                                            qnVar2.Gb(qnVar2.n5);
                                             break;
                                         }
                                     case 7:
@@ -528,7 +528,7 @@ public final class ic0 extends FrameLayout {
                                             alVar2.a(true);
                                             org.telegram.ui.qn qnVar2 = alVar2.H;
                                             qnVar2.l5 = null;
-                                            qnVar2.Fb(qnVar2.n5);
+                                            qnVar2.Gb(qnVar2.n5);
                                             break;
                                         }
                                     case 7:
@@ -726,7 +726,7 @@ public final class ic0 extends FrameLayout {
                                             alVar2.a(true);
                                             org.telegram.ui.qn qnVar2 = alVar2.H;
                                             qnVar2.l5 = null;
-                                            qnVar2.Fb(qnVar2.n5);
+                                            qnVar2.Gb(qnVar2.n5);
                                             break;
                                         }
                                     case 7:
@@ -922,7 +922,7 @@ public final class ic0 extends FrameLayout {
                                             alVar2.a(true);
                                             org.telegram.ui.qn qnVar2 = alVar2.H;
                                             qnVar2.l5 = null;
-                                            qnVar2.Fb(qnVar2.n5);
+                                            qnVar2.Gb(qnVar2.n5);
                                             break;
                                         }
                                     case 7:
@@ -1145,7 +1145,7 @@ public final class ic0 extends FrameLayout {
                                     alVar2.a(true);
                                     org.telegram.ui.qn qnVar2 = alVar2.H;
                                     qnVar2.l5 = null;
-                                    qnVar2.Fb(qnVar2.n5);
+                                    qnVar2.Gb(qnVar2.n5);
                                     break;
                                 }
                             case 7:
@@ -1349,7 +1349,7 @@ public final class ic0 extends FrameLayout {
                                     alVar2.a(true);
                                     org.telegram.ui.qn qnVar2 = alVar2.H;
                                     qnVar2.l5 = null;
-                                    qnVar2.Fb(qnVar2.n5);
+                                    qnVar2.Gb(qnVar2.n5);
                                     break;
                                 }
                             case 7:
@@ -1551,7 +1551,7 @@ public final class ic0 extends FrameLayout {
                                     alVar2.a(true);
                                     org.telegram.ui.qn qnVar2 = alVar2.H;
                                     qnVar2.l5 = null;
-                                    qnVar2.Fb(qnVar2.n5);
+                                    qnVar2.Gb(qnVar2.n5);
                                     break;
                                 }
                             case 7:
@@ -1650,7 +1650,7 @@ public final class ic0 extends FrameLayout {
                 r11 = 0;
                 messagePreviewParams2 = messagePreviewParams4;
             } else {
-                LinearLayout e7 = org.telegram.messenger.kk.e(context3, 1);
+                LinearLayout e7 = org.telegram.messenger.mk.e(context3, 1);
                 if (z13) {
                     drawable = null;
                     messagePreviewParams3 = messagePreviewParams4;
@@ -1781,7 +1781,7 @@ public final class ic0 extends FrameLayout {
                                         alVar2.a(true);
                                         org.telegram.ui.qn qnVar2 = alVar2.H;
                                         qnVar2.l5 = null;
-                                        qnVar2.Fb(qnVar2.n5);
+                                        qnVar2.Gb(qnVar2.n5);
                                         break;
                                     }
                                 case 7:
@@ -1985,7 +1985,7 @@ public final class ic0 extends FrameLayout {
                                         alVar2.a(true);
                                         org.telegram.ui.qn qnVar2 = alVar2.H;
                                         qnVar2.l5 = null;
-                                        qnVar2.Fb(qnVar2.n5);
+                                        qnVar2.Gb(qnVar2.n5);
                                         break;
                                     }
                                 case 7:
@@ -2196,7 +2196,7 @@ public final class ic0 extends FrameLayout {
                                     alVar2.a(true);
                                     org.telegram.ui.qn qnVar2 = alVar2.H;
                                     qnVar2.l5 = null;
-                                    qnVar2.Fb(qnVar2.n5);
+                                    qnVar2.Gb(qnVar2.n5);
                                     break;
                                 }
                             case 7:
@@ -2403,7 +2403,7 @@ public final class ic0 extends FrameLayout {
                                     alVar2.a(true);
                                     org.telegram.ui.qn qnVar2 = alVar2.H;
                                     qnVar2.l5 = null;
-                                    qnVar2.Fb(qnVar2.n5);
+                                    qnVar2.Gb(qnVar2.n5);
                                     break;
                                 }
                             case 7:
@@ -2603,7 +2603,7 @@ public final class ic0 extends FrameLayout {
                                     alVar2.a(true);
                                     org.telegram.ui.qn qnVar2 = alVar2.H;
                                     qnVar2.l5 = null;
-                                    qnVar2.Fb(qnVar2.n5);
+                                    qnVar2.Gb(qnVar2.n5);
                                     break;
                                 }
                             case 7:
@@ -2812,7 +2812,7 @@ public final class ic0 extends FrameLayout {
                                 alVar2.a(true);
                                 org.telegram.ui.qn qnVar2 = alVar2.H;
                                 qnVar2.l5 = null;
-                                qnVar2.Fb(qnVar2.n5);
+                                qnVar2.Gb(qnVar2.n5);
                                 break;
                             }
                         case 7:
@@ -3015,7 +3015,7 @@ public final class ic0 extends FrameLayout {
                                 alVar2.a(true);
                                 org.telegram.ui.qn qnVar2 = alVar2.H;
                                 qnVar2.l5 = null;
-                                qnVar2.Fb(qnVar2.n5);
+                                qnVar2.Gb(qnVar2.n5);
                                 break;
                             }
                         case 7:

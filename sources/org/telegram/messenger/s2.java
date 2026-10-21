@@ -1,32 +1,39 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s2 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ FileLoadOperation b;
-    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ s2(FileLoadOperation fileLoadOperation, boolean z10, int i10) {
+    public /* synthetic */ s2(FileLoadOperation fileLoadOperation, int i10) {
         this.a = i10;
         this.b = fileLoadOperation;
-        this.c = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$setIsPreloadVideoOperation$13(this.c);
+                this.b.lambda$clearOperation$27();
                 break;
             case 1:
-                this.b.lambda$onFinishLoadingFile$18(this.c);
+                this.b.lambda$onFinishLoadingFile$19();
                 break;
             case 2:
-                this.b.lambda$onFinishLoadingFile$20(this.c);
+                this.b.lambda$start$11();
+                break;
+            case 3:
+                this.b.lambda$pause$8();
+                break;
+            case 4:
+                this.b.lambda$cancelOnStage$15();
+                break;
+            case 5:
+                this.b.lambda$new$0();
                 break;
             default:
-                this.b.lambda$cancel$14(this.c);
+                this.b.lambda$new$7();
                 break;
         }
     }

@@ -34,16 +34,16 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.bl0;
 import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.cl0;
 import org.telegram.ui.Components.ed;
 import org.telegram.ui.Components.ja;
 import org.telegram.ui.Components.na;
 import org.telegram.ui.yh1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
+public final class z5 implements cl0, z3.d, ne.d, n5.b, r9.b {
     public Object a;
     public Object b;
     public Object c;
@@ -592,7 +592,7 @@ public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
         return bArr4;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public /* synthetic */ boolean i() {
         return true;
     }
@@ -608,10 +608,10 @@ public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
         if (((Integer) this.e) == null) {
             str = r4.c.u(str, " importance");
         }
-        if (str.isEmpty()) {
-            return new z9.s0(((Long) this.b).longValue(), (String) this.a, (String) this.c, ((Long) this.d).longValue(), ((Integer) this.e).intValue());
+        if (!str.isEmpty()) {
+            throw new IllegalStateException("Missing required properties:".concat(str));
         }
-        throw new IllegalStateException("Missing required properties:".concat(str));
+        return new z9.s0((String) this.a, ((Integer) this.e).intValue(), (String) this.c, ((Long) this.b).longValue(), ((Long) this.d).longValue());
     }
 
     @Override // z3.d
@@ -650,12 +650,12 @@ public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
         canvas.clipPath(path);
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public /* synthetic */ boolean m() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public void o(View view, ah.i1 i1Var, boolean z10, boolean z11) {
         ei.f6 f6Var = (ei.f6) this.e;
         rg.b2 b2Var = f6Var.a2;
@@ -670,7 +670,7 @@ public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
         return g(r9.r.a(cls));
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public void q(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
         Paint paint;
         ja jaVar;
@@ -823,7 +823,7 @@ public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
         return ((long[]) this.c).length;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public boolean w() {
         return true;
     }
@@ -908,7 +908,7 @@ public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
         this.b = n3Var;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public /* synthetic */ void v() {
     }
 

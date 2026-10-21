@@ -1,47 +1,62 @@
 package org.telegram.messenger;
 
 import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z4 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ z4(int i10, String str, long j10, long j11) {
-        this.a = 0;
-        this.d = i10;
-        this.e = str;
-        this.b = j10;
-        this.c = j11;
+    public /* synthetic */ z4(int i10, int i11, Object obj, TLObject tLObject, boolean z10) {
+        this.a = i11;
+        this.d = obj;
+        this.e = tLObject;
+        this.b = z10;
+        this.c = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ImageLoader.5.lambda$fileLoadProgressChanged$8(this.d, (String) this.e, this.b, this.c);
+                ((ImageLoader.5) this.d).lambda$fileDidFailedUpload$4(this.c, (String) this.e, this.b);
                 break;
             case 1:
-                ((MediaDataController) this.e).lambda$getMediaCounts$131(this.b, this.c, this.d);
+                ((LocaleController) this.d).lambda$loadRemoteLanguages$11((Vector) this.e, this.b, this.c);
                 break;
             case 2:
-                ((NotificationsController) this.e).lambda$deleteNotificationChannel$43(this.b, this.c, this.d);
+                ((MediaDataController) this.d).lambda$loadStickers$91(this.c, this.b, (Utilities.Callback) this.e);
+                break;
+            case 3:
+                ((MessagesStorage) this.d).lambda$loadUserInfo$129((TLRPC.User) this.e, this.b, this.c);
                 break;
             default:
-                ((TopicsController) this.e).lambda$updateMentionsUnread$21(this.b, this.c, this.d);
+                ((SendMessagesHelper) this.d).lambda$toggleTodo$36(this.c, this.b, (Runnable) this.e);
                 break;
         }
     }
 
-    public /* synthetic */ z4(BaseController baseController, long j10, long j11, int i10, int i11) {
+    public /* synthetic */ z4(BaseController baseController, int i10, boolean z10, Object obj, int i11) {
         this.a = i11;
-        this.e = baseController;
-        this.b = j10;
-        this.c = j11;
-        this.d = i10;
+        this.d = baseController;
+        this.c = i10;
+        this.b = z10;
+        this.e = obj;
+    }
+
+    public /* synthetic */ z4(ImageLoader.5 r22, int i10, String str, boolean z10) {
+        this.a = 0;
+        this.d = r22;
+        this.c = i10;
+        this.e = str;
+        this.b = z10;
     }
 }

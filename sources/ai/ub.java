@@ -37,8 +37,8 @@ import org.telegram.messenger.TelegramMediaSession;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
-import org.telegram.messenger.rg;
+import org.telegram.messenger.mk;
+import org.telegram.messenger.tg;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
@@ -53,9 +53,9 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.Components.k10;
 import org.telegram.ui.Components.ps;
-import org.telegram.ui.Components.qw0;
 import org.telegram.ui.Components.rw0;
 import org.telegram.ui.Components.sw0;
+import org.telegram.ui.Components.tw0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.SecretMediaViewer;
@@ -72,7 +72,7 @@ import org.telegram.ui.ri;
 import org.telegram.ui.xm;
 import org.telegram.ui.z70;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ub implements Runnable {
     public final /* synthetic */ int a;
@@ -393,7 +393,7 @@ public final /* synthetic */ class ub implements Runnable {
                 ((MessagesStorage) obj4).lambda$putSentFile$170((String) obj3, (TLObject) obj, i12, (String) obj2);
                 break;
             case 12:
-                ((NotificationCenter) obj4).lambda$listen$5((View) obj2, (View.OnAttachStateChangeListener) obj, (rg) obj3, i12);
+                ((NotificationCenter) obj4).lambda$listen$5((View) obj2, (View.OnAttachStateChangeListener) obj, (tg) obj3, i12);
                 break;
             case 13:
                 ((TelegramMediaSession) obj4).lambda$loadChats$4(i12, (ArrayList) obj2, (a0.h) obj, (a0.h) obj3);
@@ -560,14 +560,14 @@ public final /* synthetic */ class ub implements Runnable {
                 ps.Q((ps) obj4, (TLObject) obj, (TLRPC.InputPeer) obj2, i12, (int[]) obj3);
                 break;
             case 24:
-                sw0 sw0Var = (sw0) obj4;
+                tw0 tw0Var = (tw0) obj4;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) obj2;
                 MessageObject messageObject2 = (MessageObject) obj;
                 org.telegram.ui.Cells.u1 u1Var2 = (org.telegram.ui.Cells.u1) obj3;
-                int[] iArr2 = sw0Var.e;
-                RLottieNative[] rLottieNativeArr = sw0Var.f1;
-                if (sw0Var.W0) {
-                    AndroidUtilities.runOnUIThread(new qw0(sw0Var, 2));
+                int[] iArr2 = tw0Var.e;
+                RLottieNative[] rLottieNativeArr = tw0Var.f1;
+                if (tw0Var.W0) {
+                    AndroidUtilities.runOnUIThread(new rw0(tw0Var, 2));
                     break;
                 } else {
                     int i19 = 0;
@@ -578,10 +578,10 @@ public final /* synthetic */ class ub implements Runnable {
                         if (i19 >= length2) {
                             org.telegram.ui.Cells.u1 u1Var3 = u1Var2;
                             if (z21) {
-                                AndroidUtilities.runOnUIThread(new qw0(sw0Var, 3));
+                                AndroidUtilities.runOnUIThread(new rw0(tw0Var, 3));
                                 break;
                             } else {
-                                AndroidUtilities.runOnUIThread(new org.telegram.ui.i4(sw0Var, i20, u1Var3, 23));
+                                AndroidUtilities.runOnUIThread(new org.telegram.ui.i4(tw0Var, i20, u1Var3, 23));
                                 break;
                             }
                         } else {
@@ -593,13 +593,13 @@ public final /* synthetic */ class ub implements Runnable {
                                     if (TextUtils.isEmpty(readRes)) {
                                         tL_messages_stickerSet = tL_messages_stickerSet2;
                                         u1Var = u1Var2;
-                                        AndroidUtilities.runOnUIThread(new rw0(document, i20, messageObject2, u1Var2, tL_messages_stickerSet, 1));
+                                        AndroidUtilities.runOnUIThread(new sw0(document, i20, messageObject2, u1Var2, tL_messages_stickerSet, 1));
                                         z21 = true;
                                     } else {
                                         tL_messages_stickerSet = tL_messages_stickerSet2;
                                         u1Var = u1Var2;
                                         rLottieNativeArr[i19] = RLottieNative.b(readRes, iArr2, null, null);
-                                        sw0Var.g1[i19] = iArr2[0];
+                                        tw0Var.g1[i19] = iArr2[0];
                                     }
                                     i19++;
                                     u1Var2 = u1Var;
@@ -667,8 +667,8 @@ public final /* synthetic */ class ub implements Runnable {
                         }
                         if (SecretMediaViewer.g() && SecretMediaViewer.f().s) {
                             SecretMediaViewer.f().e(false, false);
-                        } else if (PhotoViewer.D1() && PhotoViewer.t1().R1()) {
-                            PhotoViewer.t1().G0(false, true);
+                        } else if (PhotoViewer.E1() && PhotoViewer.u1().T1()) {
+                            PhotoViewer.u1().H0(false, true);
                         } else if (org.telegram.ui.l4.I() && org.telegram.ui.l4.x().V) {
                             org.telegram.ui.l4.x().o(false, true);
                         }
@@ -823,7 +823,7 @@ public final /* synthetic */ class ub implements Runnable {
                     FileLog.e(e12);
                     return;
                 }
-                kk.q(i10, a02, null);
+                mk.q(i10, a02, null);
                 break;
             case 28:
                 ((ib0) obj4).v((String) obj3, i12 + 1, (String) obj2, (String) obj);

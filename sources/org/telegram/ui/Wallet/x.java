@@ -7,16 +7,16 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.eh;
+import org.telegram.messenger.gh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.by0;
-import org.telegram.ui.Components.js0;
+import org.telegram.ui.Components.cy0;
+import org.telegram.ui.Components.ks0;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class x implements Utilities.Callback {
                 }
             case 1:
                 ((f2) this.b).h = false;
-                ((eh) this.c).run(null, (String) obj);
+                ((gh) this.c).run(null, (String) obj);
                 break;
             case 2:
                 ((j0) this.b).close();
@@ -162,7 +162,7 @@ public final /* synthetic */ class x implements Utilities.Callback {
             case 14:
                 org.telegram.ui.web.h2 h2Var = (org.telegram.ui.web.h2) this.b;
                 h2Var.getClass();
-                AndroidUtilities.runOnUIThread(new by0(h2Var, (org.telegram.ui.web.g2) this.c, (Bitmap) obj, 11));
+                AndroidUtilities.runOnUIThread(new cy0(h2Var, (org.telegram.ui.web.g2) this.c, (Bitmap) obj, 11));
                 break;
             case 15:
                 yh.o1 o1Var = (yh.o1) this.b;
@@ -186,10 +186,10 @@ public final /* synthetic */ class x implements Utilities.Callback {
                 }
                 break;
             case 17:
-                js0 js0Var = (js0) this.b;
+                ks0 ks0Var = (ks0) this.b;
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) this.c;
                 String str7 = (String) obj;
-                ai.v9 v9Var = js0Var.e;
+                ai.v9 v9Var = ks0Var.e;
                 int i10 = tL_starGiftCollection.collection_id;
                 v9Var.getClass();
                 TL_stars.updateStarGiftCollection updatestargiftcollection = new TL_stars.updateStarGiftCollection();
@@ -200,7 +200,7 @@ public final /* synthetic */ class x implements Utilities.Callback {
                 updatestargiftcollection.title = str7;
                 ConnectionsManager.getInstance(i11).sendRequest(updatestargiftcollection, null);
                 tL_starGiftCollection.title = str7;
-                js0Var.f(true);
+                ks0Var.f(true);
                 break;
             case 18:
                 yh.x4 x4Var = (yh.x4) this.b;

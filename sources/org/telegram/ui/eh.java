@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eh implements Runnable {
     public final /* synthetic */ int a;
@@ -99,7 +99,7 @@ public final /* synthetic */ class eh implements Runnable {
                 }
                 break;
             case 6:
-                ((qn) obj2).X0.removeView((org.telegram.ui.Components.cl0) obj);
+                ((qn) obj2).X0.removeView((org.telegram.ui.Components.dl0) obj);
                 break;
             case 7:
                 MessageObject messageObject2 = (MessageObject) obj;
@@ -110,7 +110,7 @@ public final /* synthetic */ class eh implements Runnable {
                     messageObject4.messageOwner.reactions = messageObject2.messageOwner.reactions;
                     messageObject2 = messageObject4;
                 }
-                qnVar3.uc(messageObject2, true);
+                qnVar3.vc(messageObject2, true);
                 ah.d1.f();
                 break;
             case 8:

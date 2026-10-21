@@ -14,7 +14,7 @@ import android.view.MotionEvent;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class u9 extends TextView {
     public final /* synthetic */ int a = 0;
@@ -24,9 +24,9 @@ public final class u9 extends TextView {
     public final Object e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u9(org.telegram.ui.Components.fo0 fo0Var, Context context) {
+    public u9(org.telegram.ui.Components.go0 go0Var, Context context) {
         super(context);
-        this.e = fo0Var;
+        this.e = go0Var;
         this.c = new Path();
         this.d = new RectF();
         this.b = new Paint();
@@ -36,7 +36,7 @@ public final class u9 extends TextView {
     public void dispatchDraw(Canvas canvas) {
         switch (this.a) {
             case 1:
-                int m12 = org.telegram.ui.ActionBar.h6.m1(0.15f, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.o6, ((org.telegram.ui.Components.fo0) this.e).c));
+                int m12 = org.telegram.ui.ActionBar.h6.m1(0.15f, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.o6, ((org.telegram.ui.Components.go0) this.e).c));
                 Paint paint = this.b;
                 paint.setColor(m12);
                 RectF rectF = (RectF) this.d;
@@ -76,13 +76,13 @@ public final class u9 extends TextView {
     public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         switch (this.a) {
             case 1:
-                org.telegram.ui.Components.fo0 fo0Var = (org.telegram.ui.Components.fo0) this.e;
+                org.telegram.ui.Components.go0 go0Var = (org.telegram.ui.Components.go0) this.e;
                 super.onLayout(z10, i10, i11, i12, i13);
                 int width = getWidth();
                 int i14 = 0;
-                for (int i15 = 0; i15 < fo0Var.getChildCount(); i15++) {
-                    width = Math.min(width, fo0Var.getChildAt(i15).getLeft());
-                    i14 = Math.max(i14, fo0Var.getChildAt(i15).getRight());
+                for (int i15 = 0; i15 < go0Var.getChildCount(); i15++) {
+                    width = Math.min(width, go0Var.getChildAt(i15).getLeft());
+                    i14 = Math.max(i14, go0Var.getChildAt(i15).getRight());
                 }
                 setPivotX((width + i14) / 2.0f);
                 break;
@@ -99,14 +99,14 @@ public final class u9 extends TextView {
                 super.onMeasure(i10, i11);
                 if (getText() instanceof Spanned) {
                     Spanned spanned = (Spanned) getText();
-                    org.telegram.ui.Components.k61[] k61VarArr = (org.telegram.ui.Components.k61[]) spanned.getSpans(0, spanned.length(), org.telegram.ui.Components.k61.class);
-                    if (k61VarArr != null && k61VarArr.length > 0) {
+                    org.telegram.ui.Components.l61[] l61VarArr = (org.telegram.ui.Components.l61[]) spanned.getSpans(0, spanned.length(), org.telegram.ui.Components.l61.class);
+                    if (l61VarArr != null && l61VarArr.length > 0) {
                         org.telegram.ui.Components.r90 r90Var = new org.telegram.ui.Components.r90(0);
                         this.c = r90Var;
                         r90Var.n = false;
-                        for (int i12 = 0; i12 < k61VarArr.length; i12++) {
-                            int spanStart = spanned.getSpanStart(k61VarArr[i12]);
-                            int spanEnd = spanned.getSpanEnd(k61VarArr[i12]);
+                        for (int i12 = 0; i12 < l61VarArr.length; i12++) {
+                            int spanStart = spanned.getSpanStart(l61VarArr[i12]);
+                            int spanEnd = spanned.getSpanEnd(l61VarArr[i12]);
                             ((org.telegram.ui.Components.r90) this.c).d(getLayout(), spanStart, 0.0f);
                             int i13 = getText() != null ? getPaint().baselineShift : 0;
                             org.telegram.ui.Components.r90 r90Var2 = (org.telegram.ui.Components.r90) this.c;

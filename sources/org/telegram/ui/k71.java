@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k71 implements Runnable {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class k71 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Components.sl0 sl0Var;
+        org.telegram.ui.Components.tl0 tl0Var;
         int i10 = this.a;
         int i11 = 2;
         int i12 = 1;
@@ -79,9 +79,9 @@ public final /* synthetic */ class k71 implements Runnable {
                     org.telegram.ui.ActionBar.h6.w = String.format("(%.06f, %.06f)", Double.valueOf(org.telegram.ui.ActionBar.h6.x), Double.valueOf(org.telegram.ui.ActionBar.h6.y));
                 }
                 org.telegram.ui.ActionBar.h6.r1();
-                org.telegram.ui.Components.im0 im0Var = themeActivity2.b;
-                if (im0Var != null && (sl0Var = (org.telegram.ui.Components.sl0) im0Var.K(themeActivity2.Y)) != null) {
-                    View view2 = sl0Var.a;
+                org.telegram.ui.Components.jm0 jm0Var = themeActivity2.b;
+                if (jm0Var != null && (tl0Var = (org.telegram.ui.Components.tl0) jm0Var.K(themeActivity2.Y)) != null) {
+                    View view2 = tl0Var.a;
                     if (view2 instanceof org.telegram.ui.Cells.ba) {
                         ((org.telegram.ui.Cells.ba) view2).c(LocaleController.getString("AutoNightUpdateLocation", R.string.AutoNightUpdateLocation), org.telegram.ui.ActionBar.h6.w, false, false);
                         break;

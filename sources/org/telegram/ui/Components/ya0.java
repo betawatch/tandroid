@@ -9,14 +9,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public abstract class ya0 extends k71 {
+public abstract class ya0 extends l71 {
     public final int T;
     public final xa0 U;
     public final b10 V;
-    public final sx0 W;
-    public final sx0 X;
+    public final tx0 W;
+    public final tx0 X;
     public float Y;
     public boolean Z;
 
@@ -54,16 +54,16 @@ public abstract class ya0 extends k71 {
         b10 b10 = xa0Var.b();
         this.V = b10;
         this.containerView.addView(b10, indexOfChild, w7.z5.c(-1.0f, -1));
-        sx0 a2 = xa0Var.a();
+        tx0 a2 = xa0Var.a();
         this.W = a2;
         this.containerView.addView(a2, indexOfChild, w7.z5.c(-1.0f, -1));
-        sx0 c10 = xa0Var.c();
+        tx0 c10 = xa0Var.c();
         this.X = c10;
         this.containerView.addView(c10, indexOfChild, w7.z5.c(-1.0f, -1));
         xa0Var.e();
     }
 
-    @Override // org.telegram.ui.Components.k71
+    @Override // org.telegram.ui.Components.l71
     public final void E(MotionEvent motionEvent, ei.e2 e2Var) {
         org.telegram.ui.ActionBar.n2 n2Var;
         int action = motionEvent.getAction();
@@ -95,12 +95,12 @@ public abstract class ya0 extends k71 {
         }
     }
 
-    @Override // org.telegram.ui.Components.k71
+    @Override // org.telegram.ui.Components.l71
     public final void G(String str) {
         this.U.j(str);
     }
 
-    @Override // org.telegram.ui.Components.k71
+    @Override // org.telegram.ui.Components.l71
     public final void J(int i10) {
         super.J(i10);
         this.V.setTranslationY(this.c.getMeasuredHeight() + i10);
@@ -109,7 +109,7 @@ public abstract class ya0 extends k71 {
         this.X.setTranslationY(f7);
     }
 
-    @Override // org.telegram.ui.Components.k71
+    @Override // org.telegram.ui.Components.l71
     public final void M() {
         ai.u1 u1Var = this.d;
         if (u1Var.getChildCount() > 0) {

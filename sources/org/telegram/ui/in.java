@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class in extends org.telegram.ui.ActionBar.g5 {
     public float r;
@@ -39,7 +39,7 @@ public final class in extends org.telegram.ui.ActionBar.g5 {
                 View currentView = qnVar.q1.getCurrentView();
                 qn qnVar2 = currentView instanceof sn ? ((sn) currentView).a : qnVar;
                 if (!qnVar2.zc.f) {
-                    qnVar2.Pb(true);
+                    qnVar2.Qb(true);
                     return false;
                 }
                 int currentPosition = qnVar.p1.a.getCurrentPosition();
@@ -49,7 +49,7 @@ public final class in extends org.telegram.ui.ActionBar.g5 {
                     return false;
                 }
             } else if (qnVar.zc.f) {
-                qnVar.Pb(false);
+                qnVar.Qb(false);
                 return false;
             }
         }
@@ -96,8 +96,8 @@ public final class in extends org.telegram.ui.ActionBar.g5 {
         MessageObject messageObject;
         qn qnVar = this.s;
         qnVar.s3 = false;
-        qnVar.zc();
-        qnVar.Mc();
+        qnVar.Ac();
+        qnVar.Nc();
         ImageView imageView = qnVar.S2;
         if (imageView != null) {
             imageView.setVisibility(0);
@@ -236,19 +236,19 @@ public final class in extends org.telegram.ui.ActionBar.g5 {
             n1Var.l();
         }
         qnVar.Ma();
-        qnVar.lc(false);
-        qnVar.Cc(0, true);
-        qnVar.ad(false);
+        qnVar.mc(false);
+        qnVar.Dc(0, true);
+        qnVar.bd(false);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.r, 0.0f);
         ofFloat.addUpdateListener(new hn(this, 1));
         ofFloat.setInterpolator(org.telegram.ui.Components.bs.h);
         ofFloat.setDuration(320L);
         ofFloat.start();
         qnVar.zc.a(false, true);
-        qnVar.Lc();
-        qnVar.q3 = null;
         qnVar.Mc();
-        qnVar.zc();
+        qnVar.q3 = null;
+        qnVar.Nc();
+        qnVar.Ac();
         qk qkVar = qnVar.o1;
         if (qkVar != null) {
             qkVar.d.M(new xq(2));
@@ -259,7 +259,7 @@ public final class in extends org.telegram.ui.ActionBar.g5 {
         if (ckVar != null) {
             ckVar.b(false);
         }
-        qnVar.ob(false);
+        qnVar.pb(false);
     }
 
     @Override // org.telegram.ui.ActionBar.g5
@@ -268,8 +268,8 @@ public final class in extends org.telegram.ui.ActionBar.g5 {
         int i10;
         qn qnVar = this.s;
         qnVar.s3 = true;
-        qnVar.zc();
-        qnVar.Mc();
+        qnVar.Ac();
+        qnVar.Nc();
         if (((qnVar.d4 != 0 && qnVar.R3 != 3) || UserObject.isReplyUser(qnVar.f)) && !qnVar.dc) {
             qnVar.qa(null);
         }
@@ -318,9 +318,9 @@ public final class in extends org.telegram.ui.ActionBar.g5 {
             qkVar.h = 0L;
         }
         qnVar.q3 = null;
-        qnVar.Mc();
-        qnVar.zc();
-        qnVar.ob(false);
+        qnVar.Nc();
+        qnVar.Ac();
+        qnVar.pb(false);
     }
 
     @Override // org.telegram.ui.ActionBar.g5
@@ -332,7 +332,7 @@ public final class in extends org.telegram.ui.ActionBar.g5 {
         org.telegram.ui.ActionBar.d6 d6Var;
         qn qnVar = this.s;
         boolean z10 = false;
-        qnVar.Jc(0, 0, -1);
+        qnVar.Kc(0, 0, -1);
         String obj = e2Var != null ? e2Var.getText().toString() : qnVar.t3;
         qnVar.t3 = obj;
         if (TextUtils.isEmpty(obj) || !(qnVar.t3.startsWith("$") || qnVar.t3.startsWith("#"))) {
@@ -340,7 +340,7 @@ public final class in extends org.telegram.ui.ActionBar.g5 {
             ck ckVar = qnVar.p1;
             if (ckVar != null) {
                 ckVar.b(false);
-                qnVar.Lc();
+                qnVar.Mc();
             }
             ck ckVar2 = qnVar.p1;
             if (ckVar2 != null && ckVar2.a.getCurrentPosition() != 0) {
@@ -383,11 +383,11 @@ public final class in extends org.telegram.ui.ActionBar.g5 {
                 HashtagSearchController.getInstance(i12).clearSearchResults();
             }
             if (currentView instanceof sn) {
-                ((sn) currentView).a.Nc(qnVar.u3);
+                ((sn) currentView).a.Oc(qnVar.u3);
             }
-            qnVar.Lc();
+            qnVar.Mc();
             qnVar.d2.e(true, true);
-            qnVar.Pb(true);
+            qnVar.Qb(true);
             z10 = true;
         }
         ck ckVar3 = qnVar.p1;
@@ -407,7 +407,7 @@ public final class in extends org.telegram.ui.ActionBar.g5 {
         qn qnVar = this.s;
         ne.b bVar = qnVar.Bc;
         if (qnVar.u3 == null) {
-            qnVar.Pb(false);
+            qnVar.Qb(false);
         }
         qnVar.O7();
         if (qnVar.n3) {
@@ -427,9 +427,9 @@ public final class in extends org.telegram.ui.ActionBar.g5 {
                     h1Var.D(0);
                 }
                 if (z10) {
-                    qnVar.Pb(true);
+                    qnVar.Qb(true);
                 }
-                qnVar.lc(false);
+                qnVar.mc(false);
             }
         }
     }

@@ -10,17 +10,17 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.Components.bw0;
 import org.telegram.ui.Components.cw0;
-import org.telegram.ui.Components.nw0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.dw0;
+import org.telegram.ui.Components.ow0;
+import org.telegram.ui.Components.wl0;
 import org.telegram.ui.tr;
 import org.telegram.utils.code.highlight.PrismaHighlighter;
 import v7.q8;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v0 implements e2.j, g1, n2.m, d9.k, a2, nw0, Utilities.Callback2Return, ih.h, vl0, bw0, cw0 {
+public final /* synthetic */ class v0 implements e2.j, g1, n2.m, d9.k, a2, ow0, Utilities.Callback2Return, ih.h, wl0, cw0, dw0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ v0(int i10) {
@@ -87,7 +87,7 @@ public final /* synthetic */ class v0 implements e2.j, g1, n2.m, d9.k, a2, nw0, 
         return e9.n0.u(e9.s.x(qVar.Y.b, new sg.y(10)));
     }
 
-    @Override // org.telegram.ui.Components.cw0
+    @Override // org.telegram.ui.Components.dw0
     public void b(Object obj, float f7) {
         tr trVar = (tr) obj;
         switch (this.a) {
@@ -145,7 +145,7 @@ public final /* synthetic */ class v0 implements e2.j, g1, n2.m, d9.k, a2, nw0, 
         }
     }
 
-    @Override // org.telegram.ui.Components.bw0
+    @Override // org.telegram.ui.Components.cw0
     public float get(Object obj) {
         tr trVar = (tr) obj;
         switch (this.a) {
@@ -156,7 +156,7 @@ public final /* synthetic */ class v0 implements e2.j, g1, n2.m, d9.k, a2, nw0, 
         }
     }
 
-    @Override // org.telegram.ui.Components.nw0
+    @Override // org.telegram.ui.Components.ow0
     public void h(int i10) {
         if (i10 == 0) {
             SharedConfig.setKeepMedia(3);
@@ -194,7 +194,7 @@ public final /* synthetic */ class v0 implements e2.j, g1, n2.m, d9.k, a2, nw0, 
         }
     }
 
-    @Override // org.telegram.ui.Components.nw0
+    @Override // org.telegram.ui.Components.ow0
     public /* synthetic */ void m() {
     }
 

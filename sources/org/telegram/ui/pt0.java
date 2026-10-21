@@ -5,7 +5,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.camera.Size;
 import org.telegram.ui.Components.AnimatedFileNative;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class pt0 implements Runnable {
     public final /* synthetic */ String a;
@@ -59,16 +59,16 @@ public final class pt0 implements Runnable {
             PhotoViewer photoViewer5 = this.d;
             int i12 = this.c;
             if (i12 == -1) {
-                i12 = photoViewer5.v2();
+                i12 = photoViewer5.x2();
             }
             photoViewer5.Y7 = i12;
             PhotoViewer photoViewer6 = this.d;
             if (photoViewer6.g8 != 0 && photoViewer6.c2 != 1) {
-                Size p02 = photoViewer6.p0();
-                if (p02.getWidth() == photoViewer6.c8 && p02.getHeight() == photoViewer6.d8) {
-                    MediaController.extractRealEncoderBitrate(p02.getWidth(), p02.getHeight(), photoViewer6.h8, false);
+                Size q02 = photoViewer6.q0();
+                if (q02.getWidth() == photoViewer6.c8 && q02.getHeight() == photoViewer6.d8) {
+                    MediaController.extractRealEncoderBitrate(q02.getWidth(), q02.getHeight(), photoViewer6.h8, false);
                 } else {
-                    MediaController.extractRealEncoderBitrate(p02.getWidth(), p02.getHeight(), MediaController.makeVideoBitrate(photoViewer6.d8, photoViewer6.c8, photoViewer6.h8, p02.getHeight(), p02.getWidth()), false);
+                    MediaController.extractRealEncoderBitrate(q02.getWidth(), q02.getHeight(), MediaController.makeVideoBitrate(photoViewer6.d8, photoViewer6.c8, photoViewer6.h8, q02.getHeight(), q02.getWidth()), false);
                 }
             }
             this.d.l8 = MediaController.isH264Video(this.a);

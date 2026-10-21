@@ -15,11 +15,11 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.o31;
+import org.telegram.ui.Components.p31;
 import org.telegram.ui.Components.yr;
 import org.telegram.ui.q50;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class o extends q2 {
     public float g0;
@@ -88,7 +88,7 @@ public final class o extends q2 {
         ImageView imageView = tVar.x0;
         if (imageView != null && imageView.getParent() != null) {
             if (tVar.x0.getAlpha() == 1.0f) {
-                tVar.x0.animate().alpha(0.0f).setDuration(300L).setListener(new o31(this, 9)).start();
+                tVar.x0.animate().alpha(0.0f).setDuration(300L).setListener(new p31(this, 9)).start();
             } else if (tVar.x0.getParent() != null) {
                 oVar.removeView(tVar.x0);
             }

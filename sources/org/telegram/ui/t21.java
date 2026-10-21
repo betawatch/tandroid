@@ -19,11 +19,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class t21 extends org.telegram.ui.Components.bb {
     public final LinearLayout X;
-    public org.telegram.ui.Components.t61 Y;
+    public org.telegram.ui.Components.u61 Y;
 
     public t21(Context context, boolean z10, org.telegram.ui.ActionBar.d6 d6Var, Utilities.Callback callback) {
         super(context, null, false, false, d6Var);
@@ -41,13 +41,13 @@ public final class t21 extends org.telegram.ui.Components.bb {
         linearLayout.setPadding(AndroidUtilities.dp(6.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(6.0f) + this.backgroundPaddingLeft, 0);
         linearLayout.setOrientation(1);
         FrameLayout frameLayout = new FrameLayout(context);
-        org.telegram.ui.Components.xj0 xj0Var = new org.telegram.ui.Components.xj0(getContext());
+        org.telegram.ui.Components.yj0 yj0Var = new org.telegram.ui.Components.yj0(getContext());
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        xj0Var.setScaleType(scaleType);
-        xj0Var.setImageResource(R.drawable.large_ads_info);
-        xj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        xj0Var.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(80.0f), org.telegram.ui.ActionBar.h6.w0(i11, d6Var)));
-        frameLayout.addView(xj0Var, w7.z5.d(80, 80.0f, 1, 0.0f, 20.0f, 0.0f, 0.0f));
+        yj0Var.setScaleType(scaleType);
+        yj0Var.setImageResource(R.drawable.large_ads_info);
+        yj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        yj0Var.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(80.0f), org.telegram.ui.ActionBar.h6.w0(i11, d6Var)));
+        frameLayout.addView(yj0Var, w7.z5.d(80, 80.0f, 1, 0.0f, 20.0f, 0.0f, 0.0f));
         if (callback != null) {
             ImageView imageView = new ImageView(context);
             imageView.setImageDrawable(context.getDrawable(R.drawable.ic_ab_other));
@@ -66,7 +66,7 @@ public final class t21 extends org.telegram.ui.Components.bb {
         textView.setText(LocaleController.getString(R.string.AboutRevenueSharingAds));
         textView.setTypeface(AndroidUtilities.bold());
         int i13 = org.telegram.ui.ActionBar.h6.G6;
-        org.telegram.messenger.kk.o(i13, d6Var2, textView, 1, 20.0f);
+        org.telegram.messenger.mk.o(i13, d6Var2, textView, 1, 20.0f);
         textView.setGravity(1);
         TextView i14 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.z5.t(-2, -2, 1, 22, 14, 22, 0), context);
         i14.setText(LocaleController.getString(R.string.RevenueSharingAdsAlertSubtitle));
@@ -200,9 +200,9 @@ public final class t21 extends org.telegram.ui.Components.bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final org.telegram.ui.Components.hm0 x(org.telegram.ui.Components.im0 im0Var) {
-        org.telegram.ui.Components.t61 t61Var = new org.telegram.ui.Components.t61(im0Var, getContext(), this.currentAccount, 0, true, new g5(this, 20), this.resourcesProvider);
-        this.Y = t61Var;
-        return t61Var;
+    public final org.telegram.ui.Components.im0 x(org.telegram.ui.Components.jm0 jm0Var) {
+        org.telegram.ui.Components.u61 u61Var = new org.telegram.ui.Components.u61(jm0Var, getContext(), this.currentAccount, 0, true, new g5(this, 20), this.resourcesProvider);
+        this.Y = u61Var;
+        return u61Var;
     }
 }

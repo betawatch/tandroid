@@ -10,10 +10,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ot extends org.telegram.ui.ActionBar.n2 {
-    public org.telegram.ui.Components.im0 a;
+    public org.telegram.ui.Components.jm0 a;
     public org.telegram.ui.Components.vz b;
     public kt c;
     public mt d;
@@ -84,9 +84,9 @@ public final class ot extends org.telegram.ui.ActionBar.n2 {
         this.b.setShowAtCenter(true);
         this.b.setText(LocaleController.getString(R.string.NoResult));
         frameLayout.addView(this.b, w7.z5.c(-1.0f, -1));
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
-        this.a = im0Var;
-        im0Var.setSectionsType(3);
+        org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, null);
+        this.a = jm0Var;
+        jm0Var.setSectionsType(3);
         this.a.setEmptyView(this.b);
         this.a.setVerticalScrollBarEnabled(false);
         this.a.setFastScrollEnabled(0);

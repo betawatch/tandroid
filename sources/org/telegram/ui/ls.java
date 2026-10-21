@@ -6,7 +6,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ls extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ ContactsActivity a;
@@ -55,7 +55,7 @@ public final class ls extends org.telegram.ui.ActionBar.j {
             alertDialog$Builder.a.T = LocaleController.getString(R.string.DeleteContactsSubtitle);
         }
         alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new is(contactsActivity));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.Components.tg0(20));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.Components.ug0(20));
         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
         b2Var.show();
         b2Var.i();

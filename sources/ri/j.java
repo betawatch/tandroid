@@ -1,18 +1,30 @@
 package ri;
 
-import java.io.File;
-
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class j {
-    public final long a;
-    public final File b;
-    public long c;
-    public boolean d = true;
-    public boolean e;
+    public static final j a;
+    public static final j b;
+    public static final j c;
+    public static final /* synthetic */ j[] d;
 
-    public j(long j10, File file) {
-        this.a = j10;
-        this.b = file;
+    static {
+        j jVar = new j("REBUILT", 0);
+        a = jVar;
+        j jVar2 = new j("CANCELLED", 1);
+        b = jVar2;
+        j jVar3 = new j("ERROR", 2);
+        c = jVar3;
+        d = new j[]{jVar, jVar2, jVar3};
+    }
+
+    public static j valueOf(String str) {
+        return (j) Enum.valueOf(j.class, str);
+    }
+
+    public static j[] values() {
+        return (j[]) d.clone();
     }
 }

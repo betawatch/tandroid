@@ -13,26 +13,26 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.ah;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.vg;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.vj0;
 import org.telegram.ui.Components.yg;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.qa1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class b4 extends FrameLayout {
     public final ImageView E;
     public final y1 F;
     public final qa1 G;
     public final FrameLayout H;
-    public final xj0 I;
+    public final yj0 I;
     public final LinearLayout J;
     public int K;
     public final LinearLayout L;
@@ -560,19 +560,19 @@ public final class b4 extends FrameLayout {
         frameLayout6.setClipToPadding(false);
         frameLayout6.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         frameLayout2.addView(frameLayout6, w7.z5.e(80, 60, 81));
-        xj0 xj0Var = new xj0(context);
-        this.I = xj0Var;
-        xj0Var.f(R.raw.group_pip_delete_icon, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), null);
-        uj0 animatedDrawable = xj0Var.getAnimatedDrawable();
+        yj0 yj0Var = new yj0(context);
+        this.I = yj0Var;
+        yj0Var.f(R.raw.group_pip_delete_icon, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), null);
+        vj0 animatedDrawable = yj0Var.getAnimatedDrawable();
         if (animatedDrawable != null) {
             animatedDrawable.h = true;
             animatedDrawable.K(0);
             animatedDrawable.P(0);
         }
-        xj0Var.setScaleType(scaleType);
-        xj0Var.setColorFilter(new PorterDuffColorFilter(h6.w0(i13, d6Var), mode));
-        xj0Var.setBackground(new c2(h6.c0(AndroidUtilities.dp(22.0f), h6.w0(i11, d6Var))));
-        frameLayout6.addView(xj0Var, w7.z5.e(-1, -1, 119));
+        yj0Var.setScaleType(scaleType);
+        yj0Var.setColorFilter(new PorterDuffColorFilter(h6.w0(i13, d6Var), mode));
+        yj0Var.setBackground(new c2(h6.c0(AndroidUtilities.dp(22.0f), h6.w0(i11, d6Var))));
+        frameLayout6.addView(yj0Var, w7.z5.e(-1, -1, 119));
         FrameLayout frameLayout7 = new FrameLayout(context);
         frameLayout7.setBackground(new c2(h6.c0(AndroidUtilities.dp(22.0f), h6.w0(i11, d6Var))));
         qa1Var.addView(frameLayout7, w7.z5.c(44.0f, -2));
@@ -1222,16 +1222,16 @@ public final class b4 extends FrameLayout {
         }
         this.c0 = z10;
         float f7 = z10 ? 1.15f : 1.0f;
-        xj0 xj0Var = this.I;
+        yj0 yj0Var = this.I;
         if (z11) {
-            xj0Var.animate().scaleX(f7).scaleY(f7).setDuration(180L).setInterpolator(bs.h).start();
+            yj0Var.animate().scaleX(f7).scaleY(f7).setDuration(180L).setInterpolator(bs.h).start();
         } else {
-            xj0Var.animate().cancel();
-            xj0Var.setScaleX(f7);
-            xj0Var.setScaleY(f7);
+            yj0Var.animate().cancel();
+            yj0Var.setScaleX(f7);
+            yj0Var.setScaleY(f7);
         }
-        xj0Var.setColorFilter(new PorterDuffColorFilter(h6.w0(z10 ? h6.q7 : h6.G6, this.b), PorterDuff.Mode.SRC_IN));
-        uj0 animatedDrawable = xj0Var.getAnimatedDrawable();
+        yj0Var.setColorFilter(new PorterDuffColorFilter(h6.w0(z10 ? h6.q7 : h6.G6, this.b), PorterDuff.Mode.SRC_IN));
+        vj0 animatedDrawable = yj0Var.getAnimatedDrawable();
         if (animatedDrawable != null) {
             if (z10) {
                 if (animatedDrawable.a0 > 34) {
@@ -1451,7 +1451,7 @@ public final class b4 extends FrameLayout {
             return;
         }
         y1Var.setEnabled(z10);
-        kk.s(y1Var.animate(), z10 ? 1.0f : 0.5f, 150L);
+        mk.s(y1Var.animate(), z10 ? 1.0f : 0.5f, 150L);
     }
 
     public void setSendLoading(boolean z10) {

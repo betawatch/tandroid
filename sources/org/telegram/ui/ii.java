@@ -1,24 +1,24 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ii extends org.telegram.ui.ActionBar.m1 {
-    public final /* synthetic */ org.telegram.ui.Components.cl0 o;
+    public final /* synthetic */ org.telegram.ui.Components.dl0 o;
     public final /* synthetic */ qn p;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ii(qn qnVar, eb ebVar, org.telegram.ui.Components.cl0 cl0Var) {
+    public ii(qn qnVar, eb ebVar, org.telegram.ui.Components.dl0 dl0Var) {
         super(ebVar, -2, -2);
         this.p = qnVar;
-        this.o = cl0Var;
+        this.o = dl0Var;
     }
 
     @Override // org.telegram.ui.ActionBar.m1
     public final void d(boolean z10) {
         super.d(true);
-        org.telegram.ui.Components.cl0 cl0Var = this.o;
-        if (cl0Var != null) {
-            cl0Var.d();
+        org.telegram.ui.Components.dl0 dl0Var = this.o;
+        if (dl0Var != null) {
+            dl0Var.d();
         }
     }
 

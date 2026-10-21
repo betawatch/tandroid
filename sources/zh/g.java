@@ -9,7 +9,7 @@ import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.df0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -50,14 +50,14 @@ public final /* synthetic */ class g implements Utilities.Callback {
                 }
                 break;
             case 2:
-                q0 q0Var = (q0) this.b;
+                r0 r0Var = (r0) this.b;
                 TLRPC.TL_exportedContactToken tL_exportedContactToken = (TLRPC.TL_exportedContactToken) obj;
-                c1 c1Var = q0Var.b;
-                if (!q0Var.E && tL_exportedContactToken != null) {
-                    q0Var.r = tL_exportedContactToken;
-                    q0Var.s = 0L;
+                c1 c1Var = r0Var.b;
+                if (!r0Var.E && tL_exportedContactToken != null) {
+                    r0Var.r = tL_exportedContactToken;
+                    r0Var.s = 0L;
                     String str = tL_exportedContactToken.url;
-                    String str2 = q0Var.c.b;
+                    String str2 = r0Var.c.b;
                     if (!TextUtils.equals(c1Var.f, str2) || c1Var.h) {
                         c1Var.f = str2;
                         c1Var.h = false;
@@ -66,7 +66,7 @@ public final /* synthetic */ class g implements Utilities.Callback {
                     }
                     if (!TextUtils.equals(c1Var.d, str)) {
                         c1Var.d = str;
-                        Utilities.globalQueue.postRunnable(new t0(str, new s0(c1Var, str, 0)));
+                        Utilities.globalQueue.postRunnable(new h0(2, str, new t0(c1Var, str, 0)));
                     }
                     c1Var.setLinkExpires(tL_exportedContactToken.expires);
                     break;

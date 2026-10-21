@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public class FileLoader extends BaseController {
     public static final long DEFAULT_MAX_FILE_SIZE = 2097152000;
@@ -74,8 +74,9 @@ public class FileLoader extends BaseController {
     private static volatile DispatchQueue fileLoaderQueue = new DispatchQueue("fileUploadQueue");
     private static SparseArray<File> mediaDirs = null;
     private static final FileLoader[] Instance = new FileLoader[4];
+    private static final FileLoadOperationStream pendingPlayerStream = new f3();
 
-    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
     public class 1 implements FileUploadOperation.FileUploadOperationDelegate {
         final /* synthetic */ boolean val$encrypted;
         final /* synthetic */ String val$location;
@@ -152,16 +153,16 @@ public class FileLoader extends BaseController {
 
         @Override // org.telegram.messenger.FileUploadOperation.FileUploadOperationDelegate
         public void didFailedUploadingFile(FileUploadOperation fileUploadOperation) {
-            FileLoader.fileLoaderQueue.postRunnable(new e3(this, this.val$encrypted, this.val$location, this.val$small));
+            FileLoader.fileLoaderQueue.postRunnable(new g3(this, this.val$encrypted, this.val$location, this.val$small));
         }
 
         @Override // org.telegram.messenger.FileUploadOperation.FileUploadOperationDelegate
         public void didFinishUploadingFile(FileUploadOperation fileUploadOperation, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2) {
-            FileLoader.fileLoaderQueue.postRunnable(new f3(this, this.val$encrypted, this.val$location, this.val$small, inputFile, inputEncryptedFile, bArr, bArr2, fileUploadOperation));
+            FileLoader.fileLoaderQueue.postRunnable(new h3(this, this.val$encrypted, this.val$location, this.val$small, inputFile, inputEncryptedFile, bArr, bArr2, fileUploadOperation));
         }
     }
 
-    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
     public class 2 implements FileLoadOperation.FileLoadOperationDelegate {
         final /* synthetic */ TLRPC.Document val$document;
         final /* synthetic */ String val$fileName;
@@ -230,7 +231,7 @@ public class FileLoader extends BaseController {
 
         @Override // org.telegram.messenger.FileLoadOperation.FileLoadOperationDelegate
         public void didPreFinishLoading(FileLoadOperation fileLoadOperation, File file) {
-            FileLoader.fileLoaderQueue.postRunnable(new g3(0, fileLoadOperation, fileLoadOperation.getQueue()));
+            FileLoader.fileLoaderQueue.postRunnable(new i3(0, fileLoadOperation, fileLoadOperation.getQueue()));
         }
 
         @Override // org.telegram.messenger.FileLoadOperation.FileLoadOperationDelegate
@@ -249,7 +250,7 @@ public class FileLoader extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
     public interface FileLoaderDelegate {
         void fileDidFailedLoad(String str, int i10);
 
@@ -264,12 +265,12 @@ public class FileLoader extends BaseController {
         void fileUploadProgressChanged(FileUploadOperation fileUploadOperation, String str, long j10, long j11, boolean z10);
     }
 
-    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
     public interface FileResolver {
         File getFile();
     }
 
-    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
     public static class LoadOperationUIObject {
         Runnable loadInternalRunnable;
 
@@ -297,7 +298,7 @@ public class FileLoader extends BaseController {
         this.loadingVideos = new HashMap<>();
         this.delegate = null;
         this.parentObjectReferences = new ConcurrentHashMap<>();
-        this.dumpFilesQueueRunnable = new x2(this, 0);
+        this.dumpFilesQueueRunnable = new y2(this, 0);
         this.filePathDatabase = new FilePathDatabase(i10);
         int i11 = 0;
         while (true) {
@@ -817,13 +818,13 @@ public class FileLoader extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkCurrentDownloadsFiles$17(ArrayList arrayList) {
+    public /* synthetic */ void lambda$checkCurrentDownloadsFiles$19(ArrayList arrayList) {
         getDownloadController().recentDownloadingFiles.removeAll(arrayList);
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.onDownloadingFilesChanged, new Object[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkDownloadQueue$15(FileLoaderPriorityQueue fileLoaderPriorityQueue, FileLoadOperation fileLoadOperation) {
+    public /* synthetic */ void lambda$checkDownloadQueue$17(FileLoaderPriorityQueue fileLoaderPriorityQueue, FileLoadOperation fileLoadOperation) {
         if (fileLoaderPriorityQueue.remove(fileLoadOperation)) {
             this.loadOperationPaths.remove(fileLoadOperation.getFileName());
             fileLoaderPriorityQueue.checkLoadingOperations(fileLoadOperation.isStory);
@@ -841,7 +842,7 @@ public class FileLoader extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$deleteFiles$16(ArrayList arrayList, int i10) {
+    public static /* synthetic */ void lambda$deleteFiles$18(ArrayList arrayList, int i10) {
         for (int i11 = 0; i11 < arrayList.size(); i11++) {
             File file = (File) arrayList.get(i11);
             File file2 = new File(file.getAbsolutePath() + ".enc");
@@ -890,7 +891,7 @@ public class FileLoader extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadStreamFile$14(FileLoadOperation[] fileLoadOperationArr, TLRPC.Document document, ImageLocation imageLocation, Object obj, int i10, FileLoadOperationStream fileLoadOperationStream, long j10, boolean z10, int i11, CountDownLatch countDownLatch) {
+    public /* synthetic */ void lambda$loadStreamFile$16(FileLoadOperation[] fileLoadOperationArr, TLRPC.Document document, ImageLocation imageLocation, Object obj, int i10, FileLoadOperationStream fileLoadOperationStream, long j10, boolean z10, int i11, CountDownLatch countDownLatch) {
         String str = null;
         TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = (document != null || imageLocation == null) ? null : imageLocation.location;
         if (document == null && imageLocation != null) {
@@ -901,7 +902,7 @@ public class FileLoader extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$18() {
+    public /* synthetic */ void lambda$new$20() {
         int i10 = 0;
         while (true) {
             FileLoaderPriorityQueue[] fileLoaderPriorityQueueArr = this.smallFilesQueue;
@@ -946,13 +947,18 @@ public class FileLoader extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$uploadFile$19(NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr) {
+    public /* synthetic */ void lambda$startVideoStream$15(TLRPC.Document document, Object obj) {
+        loadFileInternal(document, null, null, null, null, obj, null, 0L, FileStreamLoadOperation.getStreamPrioriy(document), pendingPlayerStream, 0L, false, 0);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$uploadFile$21(NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr) {
         getNotificationCenter().removeObserver(notificationCenterDelegateArr[0], NotificationCenter.fileUploaded);
         getNotificationCenter().removeObserver(notificationCenterDelegateArr[0], NotificationCenter.fileUploadFailed);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$uploadFile$20(String str, Utilities.Callback callback, Runnable runnable, int i10, int i11, Object[] objArr) {
+    public static /* synthetic */ void lambda$uploadFile$22(String str, Utilities.Callback callback, Runnable runnable, int i10, int i11, Object[] objArr) {
         if (i10 == NotificationCenter.fileUploaded) {
             if (objArr[0] == str) {
                 callback.run((TLRPC.InputFile) objArr[1]);
@@ -1351,9 +1357,9 @@ public class FileLoader extends BaseController {
         if (runnable != null) {
             fileLoaderQueue.cancelRunnable(runnable);
         }
-        fileLoaderQueue.postRunnable(new z2(this, fileName, 1));
+        fileLoaderQueue.postRunnable(new a3(this, fileName, 1));
         if (z10) {
-            AndroidUtilities.runOnUIThread(new x2(this, 2));
+            AndroidUtilities.runOnUIThread(new y2(this, 2));
         }
     }
 
@@ -1361,7 +1367,7 @@ public class FileLoader extends BaseController {
         if (str == null) {
             return;
         }
-        fileLoaderQueue.postRunnable(new p6(this, z10, str, 1));
+        fileLoaderQueue.postRunnable(new r6(this, z10, str, 1));
     }
 
     public void cancelLoadAllFiles() {
@@ -1371,7 +1377,7 @@ public class FileLoader extends BaseController {
             if (runnable != null) {
                 fileLoaderQueue.cancelRunnable(runnable);
             }
-            fileLoaderQueue.postRunnable(new z2(this, str, 2));
+            fileLoaderQueue.postRunnable(new a3(this, str, 2));
         }
     }
 
@@ -1399,7 +1405,7 @@ public class FileLoader extends BaseController {
         } else if (webFile != null) {
             str2 = getAttachFileName(webFile);
         }
-        fileLoaderQueue.postRunnable(new t4(this, str2, i10, 3));
+        fileLoaderQueue.postRunnable(new v4(this, str2, i10, 3));
     }
 
     public void checkCurrentDownloadsFiles() {
@@ -1414,7 +1420,7 @@ public class FileLoader extends BaseController {
         if (arrayList.isEmpty()) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new i2(5, this, arrayList));
+        AndroidUtilities.runOnUIThread(new j2(5, this, arrayList));
     }
 
     public boolean checkLoadCaughtPremiumFloodWait(String str) {
@@ -1455,7 +1461,7 @@ public class FileLoader extends BaseController {
         if (arrayList == null || arrayList.isEmpty()) {
             return;
         }
-        fileLoaderQueue.postRunnable(new r6(arrayList, i10, 5));
+        fileLoaderQueue.postRunnable(new t6(arrayList, i10, 5));
     }
 
     public void dumpFilesQueue() {
@@ -1612,7 +1618,7 @@ public class FileLoader extends BaseController {
             return;
         }
         if (z11) {
-            AndroidUtilities.runOnUIThread(new y2(this, document, z10, 1));
+            AndroidUtilities.runOnUIThread(new z2(this, document, z10, 1));
         } else {
             lambda$removeLoadingVideo$1(document, z10);
         }
@@ -1634,7 +1640,7 @@ public class FileLoader extends BaseController {
             return;
         }
         if (z11) {
-            AndroidUtilities.runOnUIThread(new y2(this, document, z10, 0));
+            AndroidUtilities.runOnUIThread(new z2(this, document, z10, 0));
         } else {
             lambda$setLoadingVideo$0(document, z10);
         }
@@ -1685,13 +1691,17 @@ public class FileLoader extends BaseController {
         }
     }
 
+    public void startVideoStream(TLRPC.Document document, Object obj) {
+        fileLoaderQueue.postRunnable(new h0(this, document, obj, 23));
+    }
+
     public void uploadFile(String str, boolean z10, boolean z11, int i10) {
         uploadFile(str, z10, z11, 0L, i10, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void checkDownloadQueue(FileLoadOperation fileLoadOperation, FileLoaderPriorityQueue fileLoaderPriorityQueue, long j10) {
-        fileLoaderQueue.postRunnable(new h0(this, fileLoaderPriorityQueue, fileLoadOperation, 23), j10);
+        fileLoaderQueue.postRunnable(new h0(this, fileLoaderPriorityQueue, fileLoadOperation, 24), j10);
     }
 
     public static boolean copyFile(InputStream inputStream, File file, int i10) {
@@ -1746,10 +1756,10 @@ public class FileLoader extends BaseController {
     public FileLoadOperation loadStreamFile(final FileLoadOperationStream fileLoadOperationStream, final TLRPC.Document document, final ImageLocation imageLocation, final Object obj, final long j10, final boolean z10, final int i10, final int i11) {
         final CountDownLatch countDownLatch = new CountDownLatch(1);
         final FileLoadOperation[] fileLoadOperationArr = new FileLoadOperation[1];
-        fileLoaderQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.b3
+        fileLoaderQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.c3
             @Override // java.lang.Runnable
             public final void run() {
-                FileLoader.this.lambda$loadStreamFile$14(fileLoadOperationArr, document, imageLocation, obj, i10, fileLoadOperationStream, j10, z10, i11, countDownLatch);
+                FileLoader.this.lambda$loadStreamFile$16(fileLoadOperationArr, document, imageLocation, obj, i10, fileLoadOperationStream, j10, z10, i11, countDownLatch);
             }
         });
         awaitFileLoadOperation(countDownLatch, true);
@@ -1760,7 +1770,7 @@ public class FileLoader extends BaseController {
         if (str == null) {
             return;
         }
-        fileLoaderQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.d3
+        fileLoaderQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.e3
             @Override // java.lang.Runnable
             public final void run() {
                 FileLoader.this.lambda$uploadFile$5(z10, str, j10, i10, z12, z11);
@@ -2070,11 +2080,11 @@ public class FileLoader extends BaseController {
     }
 
     public void uploadFile(final String str, final Utilities.Callback<TLRPC.InputFile> callback) {
-        final i2 i2Var = new i2(4, this, r0);
-        NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr = {new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.messenger.a3
+        final j2 j2Var = new j2(4, this, r0);
+        NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr = {new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.messenger.b3
             @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
             public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
-                FileLoader.lambda$uploadFile$20(str, callback, i2Var, i10, i11, objArr);
+                FileLoader.lambda$uploadFile$22(str, callback, j2Var, i10, i11, objArr);
             }
         }};
         getNotificationCenter().addObserver(notificationCenterDelegateArr[0], NotificationCenter.fileUploaded);
@@ -2255,7 +2265,7 @@ public class FileLoader extends BaseController {
         String str2;
         String str3;
         String attachFileName;
-        c3 c3Var;
+        d3 d3Var;
         1 r13 = null;
         if (tL_fileLocationToBeDeprecated != null) {
             str2 = str;
@@ -2268,23 +2278,23 @@ public class FileLoader extends BaseController {
                 attachFileName = getAttachFileName(webFile);
             } else {
                 str3 = null;
-                c3Var = new c3(this, document, secureDocument, webFile, tL_fileLocationToBeDeprecated, imageLocation, obj, str2, j10, i10, i11);
+                d3Var = new d3(this, document, secureDocument, webFile, tL_fileLocationToBeDeprecated, imageLocation, obj, str2, j10, i10, i11);
                 if (i11 != 10 && !TextUtils.isEmpty(str3) && !str3.contains("-2147483648")) {
                     LoadOperationUIObject loadOperationUIObject = new LoadOperationUIObject(r13);
-                    loadOperationUIObject.loadInternalRunnable = c3Var;
+                    loadOperationUIObject.loadInternalRunnable = d3Var;
                     this.loadOperationPathsUI.put(str3, loadOperationUIObject);
                 }
-                fileLoaderQueue.postRunnable(c3Var);
+                fileLoaderQueue.postRunnable(d3Var);
             }
         }
         str3 = attachFileName;
-        c3Var = new c3(this, document, secureDocument, webFile, tL_fileLocationToBeDeprecated, imageLocation, obj, str2, j10, i10, i11);
+        d3Var = new d3(this, document, secureDocument, webFile, tL_fileLocationToBeDeprecated, imageLocation, obj, str2, j10, i10, i11);
         if (i11 != 10) {
             LoadOperationUIObject loadOperationUIObject2 = new LoadOperationUIObject(r13);
-            loadOperationUIObject2.loadInternalRunnable = c3Var;
+            loadOperationUIObject2.loadInternalRunnable = d3Var;
             this.loadOperationPathsUI.put(str3, loadOperationUIObject2);
         }
-        fileLoaderQueue.postRunnable(c3Var);
+        fileLoaderQueue.postRunnable(d3Var);
     }
 
     public void cancelLoadFile(TLRPC.FileLocation fileLocation, String str) {
@@ -2318,11 +2328,11 @@ public class FileLoader extends BaseController {
         if (runnable != null) {
             fileLoaderQueue.cancelRunnable(runnable);
         }
-        fileLoaderQueue.postRunnable(new z2(this, str2, 0));
+        fileLoaderQueue.postRunnable(new a3(this, str2, 0));
         if (!z11 || document == null) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new x2(this, 1));
+        AndroidUtilities.runOnUIThread(new y2(this, 1));
     }
 
     public static boolean isSamePhoto(TLRPC.FileLocation fileLocation, TLRPC.Photo photo) {
@@ -2339,5 +2349,9 @@ public class FileLoader extends BaseController {
             }
         }
         return false;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$static$14() {
     }
 }

@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class k3 extends s4.r0 {
     public final /* synthetic */ int a;
@@ -343,7 +343,7 @@ public final class k3 extends s4.r0 {
                 }
                 break;
             case 19:
-                ((mi0) obj).K.invalidate();
+                ((mi0) obj).J.invalidate();
                 break;
             case 20:
                 ui0 ui0Var = (ui0) obj;
@@ -360,9 +360,9 @@ public final class k3 extends s4.r0 {
                 if (i11 != 0 && (r40Var = fv0Var.h) != null) {
                     r40Var.b(true);
                 }
-                org.telegram.ui.Components.hz0 hz0Var = fv0Var.Q;
-                if (hz0Var != null && hz0Var.s) {
-                    org.telegram.ui.Components.fz0 delegate = hz0Var.getDelegate();
+                org.telegram.ui.Components.iz0 iz0Var = fv0Var.Q;
+                if (iz0Var != null && iz0Var.s) {
+                    org.telegram.ui.Components.gz0 delegate = iz0Var.getDelegate();
                     if (!(delegate instanceof org.telegram.ui.Cells.c6)) {
                         fv0Var.Q.f();
                         break;

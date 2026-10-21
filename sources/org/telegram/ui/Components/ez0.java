@@ -1,74 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.UserConfig;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class ez0 extends hm0 {
-    public final hz0 c;
-    public final /* synthetic */ hz0 d;
+public final class ez0 extends jm0 {
+    public boolean V2;
+    public boolean W2;
+    public final /* synthetic */ iz0 X2;
 
-    public ez0(hz0 hz0Var, hz0 hz0Var2) {
-        this.d = hz0Var;
-        this.c = hz0Var2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ez0(iz0 iz0Var, Context context) {
+        super(context, null);
+        this.X2 = iz0Var;
     }
 
-    @Override // org.telegram.ui.Components.hm0
-    public final boolean D(s4.b1 b1Var) {
-        return true;
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        ArrayList arrayList = this.c.w;
-        if (arrayList == null) {
-            return 0;
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void k0(int i10, int i11) {
+        boolean canScrollHorizontally = canScrollHorizontally(-1);
+        boolean canScrollHorizontally2 = canScrollHorizontally(1);
+        if (this.V2 == canScrollHorizontally && this.W2 == canScrollHorizontally2) {
+            return;
         }
-        return arrayList.size();
+        ah.x xVar = this.X2.d;
+        if (xVar != null) {
+            xVar.invalidate();
+        }
+        this.V2 = canScrollHorizontally;
+        this.W2 = canScrollHorizontally2;
     }
 
-    @Override // s4.g0
-    public final long i(int i10) {
-        if (this.c.w == null) {
-            return 0L;
-        }
-        return ((MediaDataController.KeywordResult) r0.get(i10)).emoji.hashCode();
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        gz0 gz0Var = (gz0) b1Var.a;
-        hz0 hz0Var = this.c;
-        ArrayList arrayList = hz0Var.w;
-        String str = arrayList == null ? null : ((MediaDataController.KeywordResult) arrayList.get(i10)).emoji;
-        int direction = hz0Var.getDirection();
-        gz0Var.a = str;
-        if (str == null || !str.startsWith("animated_")) {
-            gz0Var.setImageDrawable(Emoji.getEmojiBigDrawable(str));
-        } else {
-            try {
-                long parseLong = Long.parseLong(str.substring(9));
-                Drawable drawable = gz0Var.b;
-                if (!(drawable instanceof r5) || ((r5) drawable).i() != parseLong) {
-                    gz0Var.setImageDrawable(r5.n(UserConfig.selectedAccount, parseLong, null, gz0Var.f.d()));
-                }
-            } catch (Exception unused) {
-                gz0Var.setImageDrawable(null);
-            }
-        }
-        if (gz0Var.d != direction) {
-            gz0Var.d = direction;
-            gz0Var.requestLayout();
-        }
-    }
-
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        return new sl0(new gz0(this.d, this.c.getContext()));
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ct previewDelegate;
+        org.telegram.ui.et q6 = org.telegram.ui.et.q();
+        iz0 iz0Var = this.X2;
+        ez0 ez0Var = iz0Var.e;
+        previewDelegate = iz0Var.getPreviewDelegate();
+        return super.onInterceptTouchEvent(motionEvent) || q6.r(motionEvent, ez0Var, previewDelegate, this.n2);
     }
 }

@@ -12,9 +12,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class w30 extends hm0 {
+public final class w30 extends im0 {
     public final Context c;
     public final /* synthetic */ a40 d;
 
@@ -31,7 +31,7 @@ public final class w30 extends hm0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         View view = b1Var.a;
         if ((view instanceof org.telegram.ui.Cells.a5) && this.d.f0.contains(Long.valueOf(((org.telegram.ui.Cells.a5) view).getUserId()))) {
@@ -172,6 +172,6 @@ public final class w30 extends hm0 {
             a5Var2.setDividerColor(org.telegram.ui.ActionBar.h6.gg);
             a5Var = a5Var2;
         }
-        return new sl0(a5Var);
+        return new tl0(a5Var);
     }
 }

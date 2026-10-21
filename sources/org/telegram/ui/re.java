@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class re implements Runnable {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class re implements Runnable {
                 break;
             case 7:
                 AndroidUtilities.addToClipboard(this.c);
-                org.telegram.messenger.kk.p(R.string.PhoneCopied, org.telegram.ui.Components.xc.a0(this.b));
+                org.telegram.messenger.mk.p(R.string.PhoneCopied, org.telegram.ui.Components.xc.a0(this.b));
                 break;
             case 8:
                 qn.d1(this.b, this.c);
@@ -65,7 +65,7 @@ public final /* synthetic */ class re implements Runnable {
                 break;
             case 10:
                 AndroidUtilities.addToClipboard(this.c);
-                org.telegram.messenger.kk.p(R.string.PhoneCopied, org.telegram.ui.Components.xc.a0(this.b));
+                org.telegram.messenger.mk.p(R.string.PhoneCopied, org.telegram.ui.Components.xc.a0(this.b));
                 break;
             case 11:
                 qn qnVar2 = this.b;

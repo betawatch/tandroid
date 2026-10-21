@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class z implements Runnable {
     public final /* synthetic */ b0 a;
@@ -42,7 +42,7 @@ public final class z implements Runnable {
                 b0 b0Var2 = this.a;
                 xf.c f11 = b0.f(b0Var2.k0, b0Var2.i0, b0Var2.j0, b0Var2.O);
                 if (f11 != null) {
-                    AndroidUtilities.runOnUIThread(new uf.c(24, this, f11));
+                    AndroidUtilities.runOnUIThread(new u2.j0(26, this, f11));
                     return;
                 }
             } catch (Throwable th2) {

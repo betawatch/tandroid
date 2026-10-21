@@ -20,9 +20,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class j4 extends org.telegram.ui.Components.hm0 {
+public final class j4 extends org.telegram.ui.Components.im0 {
     public TLRPC.WebPage E;
     public TL_iv.pageBlockChannel F;
     public boolean G;
@@ -147,7 +147,7 @@ public final class j4 extends org.telegram.ui.Components.hm0 {
         return 100;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         int i10 = b1Var.f;
         return i10 == 23 || i10 == 24;
@@ -336,9 +336,9 @@ public final class j4 extends org.telegram.ui.Components.hm0 {
                                 u1Var4.loadDataWithBaseURL("https://telegram.org/embed", str2, "text/html", "UTF-8", null);
                                 v1Var.a.setVisibility(0);
                             }
-                            org.telegram.ui.Components.v91 v91Var = v1Var.b;
-                            if (v91Var != null) {
-                                v91Var.setVisibility(4);
+                            org.telegram.ui.Components.w91 w91Var = v1Var.b;
+                            if (w91Var != null) {
+                                w91Var.setVisibility(4);
                                 v1Var.b.g(null, null, null, null, false);
                             }
                         } else {
@@ -350,9 +350,9 @@ public final class j4 extends org.telegram.ui.Components.hm0 {
                                     v1Var.a.stopLoading();
                                     v1Var.a.loadUrl("about:blank");
                                 }
-                                org.telegram.ui.Components.v91 v91Var2 = v1Var.b;
-                                if (v91Var2 != null) {
-                                    v91Var2.setVisibility(0);
+                                org.telegram.ui.Components.w91 w91Var2 = v1Var.b;
+                                if (w91Var2 != null) {
+                                    w91Var2.setVisibility(0);
                                 }
                             } else {
                                 u1 u1Var6 = v1Var.a;
@@ -362,9 +362,9 @@ public final class j4 extends org.telegram.ui.Components.hm0 {
                                     hashMap.put("Referer", ApplicationLoader.applicationContext.getPackageName());
                                     v1Var.a.loadUrl(v1Var.v.url, hashMap);
                                 }
-                                org.telegram.ui.Components.v91 v91Var3 = v1Var.b;
-                                if (v91Var3 != null) {
-                                    v91Var3.setVisibility(4);
+                                org.telegram.ui.Components.w91 w91Var3 = v1Var.b;
+                                if (w91Var3 != null) {
+                                    w91Var3.setVisibility(4);
                                     v1Var.b.g(null, null, null, null, false);
                                 }
                             }
@@ -831,13 +831,13 @@ public final class j4 extends org.telegram.ui.Components.hm0 {
                     c1Var.L = messageObject.getDocument();
                 }
                 c1Var.h = z11;
-                org.telegram.ui.Components.yo0 yo0Var = c1Var.f;
+                org.telegram.ui.Components.zo0 zo0Var = c1Var.f;
                 int i51 = org.telegram.ui.ActionBar.h6.ud;
                 ((l4) b70Var).getClass();
                 int x02 = org.telegram.ui.ActionBar.h6.x0(null, i51, false);
                 int x03 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.vd, false);
                 int i52 = org.telegram.ui.ActionBar.h6.xd;
-                yo0Var.h(x02, x03, org.telegram.ui.ActionBar.h6.x0(null, i52, false), org.telegram.ui.ActionBar.h6.x0(null, i52, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.wd, false));
+                zo0Var.h(x02, x03, org.telegram.ui.ActionBar.h6.x0(null, i52, false), org.telegram.ui.ActionBar.h6.x0(null, i52, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.wd, false));
                 c1Var.a(false);
                 c1Var.requestLayout();
                 break;
@@ -1428,7 +1428,7 @@ public final class j4 extends org.telegram.ui.Components.hm0 {
         }
         view.setLayoutParams(new s4.o0(-1, -2));
         view.setFocusable(true);
-        return new org.telegram.ui.Components.sl0(view);
+        return new org.telegram.ui.Components.tl0(view);
     }
 
     @Override // s4.g0

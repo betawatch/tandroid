@@ -4,7 +4,7 @@ import android.view.MotionEvent;
 import org.telegram.messenger.video.VideoFramesRewinder;
 import org.telegram.messenger.video.VideoPlayerRewinder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class qs0 extends VideoPlayerRewinder {
     public final /* synthetic */ PhotoViewer a;
@@ -21,7 +21,7 @@ public final class qs0 extends VideoPlayerRewinder {
         PhotoViewer photoViewer = this.a;
         PhotoViewer.k(photoViewer, obtain);
         photoViewer.z1.f(false);
-        org.telegram.ui.Components.zg0.p0.Q.f(false);
+        org.telegram.ui.Components.ah0.p0.Q.f(false);
     }
 
     @Override // org.telegram.messenger.video.VideoPlayerRewinder
@@ -31,7 +31,7 @@ public final class qs0 extends VideoPlayerRewinder {
         photoViewer.z1.d(!z10);
         photoViewer.z1.f(true);
         photoViewer.e0.invalidate();
-        org.telegram.ui.Components.zg0.v(z10);
+        org.telegram.ui.Components.ah0.v(z10);
     }
 
     @Override // org.telegram.messenger.video.VideoPlayerRewinder
@@ -42,17 +42,17 @@ public final class qs0 extends VideoPlayerRewinder {
             photoViewer.q3.h(f7, false);
             photoViewer.r3.invalidate();
         }
-        org.telegram.ui.Components.zg0 zg0Var = org.telegram.ui.Components.zg0.p0;
-        zg0Var.Q.g(0L);
+        org.telegram.ui.Components.ah0 ah0Var = org.telegram.ui.Components.ah0.p0;
+        ah0Var.Q.g(0L);
         if (z10) {
-            zg0Var.Z = f7;
-            ci.i3 i3Var = zg0Var.b0;
+            ah0Var.Z = f7;
+            ci.i3 i3Var = ah0Var.b0;
             if (i3Var != null) {
                 i3Var.invalidate();
             }
-            org.telegram.ui.Components.yg0 yg0Var = zg0Var.h;
-            if (yg0Var != null) {
-                yg0Var.invalidate();
+            org.telegram.ui.Components.zg0 zg0Var = ah0Var.h;
+            if (zg0Var != null) {
+                zg0Var.invalidate();
             }
         }
     }

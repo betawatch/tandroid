@@ -30,10 +30,10 @@ import java.util.List;
 import java.util.PriorityQueue;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
-import u2.d1;
+import u2.e1;
 import v7.u6;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final class n extends r2.r {
     public static final int[] S1 = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
@@ -2535,9 +2535,9 @@ public final class n extends r2.r {
             if (k()) {
                 f7 = this.y;
             } else {
-                d1 d1Var = this.r;
-                d1Var.getClass();
-                f7 = d1Var.f();
+                e1 e1Var = this.r;
+                e1Var.getClass();
+                f7 = e1Var.f();
             }
             if (!f7) {
                 if (!(this.v0 >= 0)) {

@@ -53,13 +53,13 @@ import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 import org.telegram.ui.l4;
 import rg.r1;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -105,14 +105,14 @@ public final /* synthetic */ class o implements Runnable {
                 int i15 = 2;
                 if (starGift == null) {
                     FrameLayout frameLayout = new FrameLayout(e6Var.getContext());
-                    xj0 xj0Var = new xj0(e6Var.getContext());
-                    xj0Var.f(R.raw.gift_broken, 32, 32, null);
-                    frameLayout.addView(xj0Var, z5.e(32, 32, 17));
-                    xj0Var.setScaleX(0.5f);
-                    xj0Var.setScaleY(0.5f);
-                    xj0Var.setAlpha(0.0f);
-                    xj0Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).start();
-                    e6Var.l0 = xj0Var;
+                    yj0 yj0Var = new yj0(e6Var.getContext());
+                    yj0Var.f(R.raw.gift_broken, 32, 32, null);
+                    frameLayout.addView(yj0Var, z5.e(32, 32, 17));
+                    yj0Var.setScaleX(0.5f);
+                    yj0Var.setScaleY(0.5f);
+                    yj0Var.setAlpha(0.0f);
+                    yj0Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).start();
+                    e6Var.l0 = yj0Var;
                     frameLayout.setBackground(new u6(AndroidUtilities.dp(12.0f), h6.m1(0.075f, -1)));
                     x5Var.a[i14].setVisibility(8);
                     frameLayout.setRotation(180.0f);

@@ -34,10 +34,10 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.at;
 import org.telegram.ui.Components.ct;
 import org.telegram.ui.Components.fo;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.qy;
-import org.telegram.ui.Components.s41;
+import org.telegram.ui.Components.t41;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
@@ -51,7 +51,7 @@ import org.telegram.ui.qn;
 import org.telegram.ui.uk0;
 import org.telegram.ui.yv0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r5 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -271,13 +271,13 @@ public final /* synthetic */ class r5 implements Utilities.Callback2 {
                 w5Var.b();
                 return;
             case 1:
-                md.A0((md) this.b, (g61) this.c, (Boolean) obj, (String) obj2);
+                md.A0((md) this.b, (h61) this.c, (Boolean) obj, (String) obj2);
                 return;
             case 2:
-                cd.R((cd) this.b, (g61) this.c, (Boolean) obj, (String) obj2);
+                cd.R((cd) this.b, (h61) this.c, (Boolean) obj, (String) obj2);
                 return;
             case 3:
-                dd.R((dd) this.b, (g61) this.c, (Boolean) obj, (String) obj2);
+                dd.R((dd) this.b, (h61) this.c, (Boolean) obj, (String) obj2);
                 return;
             case 4:
                 ci.n2 n2Var = (ci.n2) this.b;
@@ -509,12 +509,12 @@ public final /* synthetic */ class r5 implements Utilities.Callback2 {
                 if (l4.longValue() > 0) {
                     e1Var.setText(LocaleController.getString(R.string.PaidMediaPriceButton));
                     e1Var.setSubtext(LocaleController.formatPluralString("Stars", (int) l4.longValue(), new Object[0]));
-                    tiVar.h0.s(l4.longValue());
+                    tiVar.h0.r(l4.longValue());
                     return;
                 } else {
                     e1Var.setText(LocaleController.getString(R.string.PaidMediaButton));
                     e1Var.setSubtext(null);
-                    tiVar.h0.s(0L);
+                    tiVar.h0.r(0L);
                     return;
                 }
             case 14:
@@ -571,9 +571,9 @@ public final /* synthetic */ class r5 implements Utilities.Callback2 {
                         }
                     }
                 }
-                im0 im0Var = atVar.d;
-                if (im0Var != null) {
-                    im0Var.u0(0);
+                jm0 jm0Var = atVar.d;
+                if (jm0Var != null) {
+                    jm0Var.u0(0);
                 }
                 atVar.N(true);
                 return;
@@ -664,7 +664,7 @@ public final /* synthetic */ class r5 implements Utilities.Callback2 {
                 ctVar.N(true);
                 return;
             case 17:
-                s41.n((s41) this.b, (TLRPC.TL_textWithEntities) this.c, (TLRPC.TL_textWithEntities) obj, (TLRPC.TL_error) obj2);
+                t41.n((t41) this.b, (TLRPC.TL_textWithEntities) this.c, (TLRPC.TL_textWithEntities) obj, (TLRPC.TL_error) obj2);
                 return;
             case 18:
                 q50.s((q50) this.b, (ChatObject.Call) this.c, (Boolean) obj, (HashSet) obj2);

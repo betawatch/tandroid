@@ -35,12 +35,12 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.c71;
 import org.telegram.ui.Components.iu;
 import org.telegram.ui.Components.oc;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.yb;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.qn;
@@ -51,7 +51,7 @@ import yh.g4;
 import yh.x3;
 import yh.x4;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -64,8 +64,8 @@ public final /* synthetic */ class l0 implements Utilities.Callback {
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
-        t61 t61Var;
-        t61 t61Var2;
+        u61 u61Var;
+        u61 u61Var2;
         int i10;
         TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway;
         switch (this.a) {
@@ -84,9 +84,9 @@ public final /* synthetic */ class l0 implements Utilities.Callback {
                 if (a0Var != null) {
                     a0Var.i(tL_connectedBot3 != null ? tL_connectedBot3.recipients : null);
                 }
-                b71 b71Var = t0Var.c;
-                if (b71Var != null && (t61Var = b71Var.W2) != null) {
-                    t61Var.N(true);
+                c71 c71Var = t0Var.c;
+                if (c71Var != null && (u61Var = c71Var.W2) != null) {
+                    u61Var.N(true);
                 }
                 t0Var.Y(true);
                 t0Var.T = true;
@@ -233,18 +233,18 @@ public final /* synthetic */ class l0 implements Utilities.Callback {
             case 10:
                 org.telegram.ui.web.f1 f1Var = (org.telegram.ui.web.f1) this.b;
                 f1Var.e = (ArrayList) obj;
-                v61 v61Var = f1Var.a;
-                if (v61Var.G) {
-                    v61Var.W2.N(true);
+                w61 w61Var = f1Var.a;
+                if (w61Var.G) {
+                    w61Var.W2.N(true);
                     break;
                 }
                 break;
             case 11:
                 org.telegram.ui.web.x1 x1Var2 = (org.telegram.ui.web.x1) this.b;
                 x1Var2.n = ((ArrayList) obj).size();
-                v61 v61Var2 = x1Var2.a;
-                if (v61Var2 != null && (t61Var2 = v61Var2.W2) != null && v61Var2.G) {
-                    t61Var2.N(true);
+                w61 w61Var2 = x1Var2.a;
+                if (w61Var2 != null && (u61Var2 = w61Var2.W2) != null && w61Var2.G) {
+                    u61Var2.N(true);
                     break;
                 }
                 break;

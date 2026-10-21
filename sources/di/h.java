@@ -3,12 +3,12 @@ package di;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.ui.Cells.t7;
-import org.telegram.ui.Components.b71;
-import org.telegram.ui.Components.ew0;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.fw0;
 import org.telegram.ui.Components.wz;
 import s4.y0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class h extends wz {
     public final /* synthetic */ int X = 0;
@@ -16,7 +16,7 @@ public final class h extends wz {
 
     public h() {
         super(100, false);
-        this.Y = new ew0();
+        this.Y = new fw0();
     }
 
     @Override // s4.n0
@@ -30,13 +30,13 @@ public final class h extends wz {
     }
 
     @Override // org.telegram.ui.Components.wz
-    public ew0 D1(int i10) {
+    public fw0 D1(int i10) {
         switch (this.X) {
             case 0:
-                ew0 ew0Var = (ew0) this.Y;
-                ew0Var.b = 100.0f;
-                ew0Var.a = 100.0f;
-                return ew0Var;
+                fw0 fw0Var = (fw0) this.Y;
+                fw0Var.b = 100.0f;
+                fw0Var.a = 100.0f;
+                return fw0Var;
             default:
                 return super.D1(i10);
         }
@@ -68,7 +68,7 @@ public final class h extends wz {
     public int W0(y0 y0Var) {
         switch (this.X) {
             case 1:
-                if (!((b71) this.Y).Y2) {
+                if (!((c71) this.Y).Y2) {
                     break;
                 } else {
                     break;
@@ -91,8 +91,8 @@ public final class h extends wz {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(b71 b71Var, int i10) {
+    public h(c71 c71Var, int i10) {
         super(i10, false);
-        this.Y = b71Var;
+        this.Y = c71Var;
     }
 }

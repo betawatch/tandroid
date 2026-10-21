@@ -1,6 +1,6 @@
 package u2;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final class e implements e0, d0 {
     public final e0 a;
@@ -34,12 +34,12 @@ public final class e implements e0, d0 {
         return this.d != -9223372036854775807L;
     }
 
-    @Override // u2.f1
+    @Override // u2.g1
     public final boolean c() {
         return this.a.c();
     }
 
-    @Override // u2.f1
+    @Override // u2.g1
     public final long d() {
         long d = this.a.d();
         if (d != Long.MIN_VALUE) {
@@ -51,8 +51,8 @@ public final class e implements e0, d0 {
         return Long.MIN_VALUE;
     }
 
-    @Override // u2.e1
-    public final void h(f1 f1Var) {
+    @Override // u2.f1
+    public final void h(g1 g1Var) {
         d0 d0Var = this.b;
         d0Var.getClass();
         d0Var.h(this);
@@ -118,7 +118,7 @@ public final class e implements e0, d0 {
         return -9223372036854775807L;
     }
 
-    @Override // u2.f1
+    @Override // u2.g1
     public final boolean p(i2.v0 v0Var) {
         return this.a.p(v0Var);
     }
@@ -128,18 +128,18 @@ public final class e implements e0, d0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final long q(x2.p[] pVarArr, boolean[] zArr, d1[] d1VarArr, boolean[] zArr2, long j10) {
+    public final long q(x2.p[] pVarArr, boolean[] zArr, e1[] e1VarArr, boolean[] zArr2, long j10) {
         long j11;
         int i10;
-        this.c = new d[d1VarArr.length];
-        d1[] d1VarArr2 = new d1[d1VarArr.length];
-        for (int i11 = 0; i11 < d1VarArr.length; i11++) {
+        this.c = new d[e1VarArr.length];
+        e1[] e1VarArr2 = new e1[e1VarArr.length];
+        for (int i11 = 0; i11 < e1VarArr.length; i11++) {
             d[] dVarArr = this.c;
-            d dVar = (d) d1VarArr[i11];
+            d dVar = (d) e1VarArr[i11];
             dVarArr[i11] = dVar;
-            d1VarArr2[i11] = dVar != null ? dVar.a : null;
+            e1VarArr2[i11] = dVar != null ? dVar.a : null;
         }
-        long q6 = this.a.q(pVarArr, zArr, d1VarArr2, zArr2, j10);
+        long q6 = this.a.q(pVarArr, zArr, e1VarArr2, zArr2, j10);
         long j12 = this.h;
         long max = Math.max(q6, j10);
         if (j12 != Long.MIN_VALUE) {
@@ -159,34 +159,34 @@ public final class e implements e0, d0 {
             }
             j11 = max;
             this.d = j11;
-            for (i10 = 0; i10 < d1VarArr.length; i10++) {
-                d1 d1Var = d1VarArr2[i10];
-                if (d1Var == null) {
+            for (i10 = 0; i10 < e1VarArr.length; i10++) {
+                e1 e1Var = e1VarArr2[i10];
+                if (e1Var == null) {
                     this.c[i10] = null;
                 } else {
                     d[] dVarArr2 = this.c;
                     d dVar2 = dVarArr2[i10];
-                    if (dVar2 == null || dVar2.a != d1Var) {
-                        dVarArr2[i10] = new d(this, d1Var);
+                    if (dVar2 == null || dVar2.a != e1Var) {
+                        dVarArr2[i10] = new d(this, e1Var);
                     }
                 }
-                d1VarArr[i10] = this.c[i10];
+                e1VarArr[i10] = this.c[i10];
             }
             return max;
         }
         j11 = -9223372036854775807L;
         this.d = j11;
-        while (i10 < d1VarArr.length) {
+        while (i10 < e1VarArr.length) {
         }
         return max;
     }
 
     @Override // u2.e0
-    public final r1 r() {
+    public final s1 r() {
         return this.a.r();
     }
 
-    @Override // u2.f1
+    @Override // u2.g1
     public final long s() {
         long s10 = this.a.s();
         if (s10 != Long.MIN_VALUE) {
@@ -214,7 +214,7 @@ public final class e implements e0, d0 {
         return this.a.t(j10, s1Var);
     }
 
-    @Override // u2.f1
+    @Override // u2.g1
     public final void u(long j10) {
         this.a.u(j10);
     }

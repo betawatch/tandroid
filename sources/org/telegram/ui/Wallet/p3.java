@@ -2,10 +2,10 @@ package org.telegram.ui.Wallet;
 
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p3 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,8 +60,8 @@ public final /* synthetic */ class p3 implements Runnable {
                         o5Var3.E0 = true;
                     }
                 }
-                v61 v61Var = o5Var3.a;
-                if (v61Var != null && v61Var.W2 != null) {
+                w61 w61Var = o5Var3.a;
+                if (w61Var != null && w61Var.W2 != null) {
                     o5Var3.R0(true);
                     break;
                 }

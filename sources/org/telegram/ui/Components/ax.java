@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ax extends pg.d {
     public boolean W2;
@@ -19,7 +19,7 @@ public final class ax extends pg.d {
         this.X2 = tzVar;
     }
 
-    @Override // pg.d, org.telegram.ui.Components.im0, android.view.ViewGroup, android.view.View
+    @Override // pg.d, org.telegram.ui.Components.jm0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         this.X2.m2.h++;
@@ -46,7 +46,7 @@ public final class ax extends pg.d {
         }
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         tz tzVar = this.X2;
         if (tzVar.f) {
@@ -58,7 +58,7 @@ public final class ax extends pg.d {
         return super.onInterceptTouchEvent(motionEvent) || q6.r(motionEvent, axVar, tzVar.g2, this.n2);
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         tz tzVar = this.X2;
         if (tzVar.I0 && tzVar.y0.h() > 0) {
@@ -71,7 +71,7 @@ public final class ax extends pg.d {
         tzVar.q(true);
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public final void requestLayout() {
         if (this.W2) {
             return;

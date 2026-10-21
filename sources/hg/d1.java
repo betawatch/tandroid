@@ -30,7 +30,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -44,12 +44,12 @@ import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.a90;
 import org.telegram.ui.Components.g30;
-import org.telegram.ui.Components.go0;
+import org.telegram.ui.Components.ho0;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.js0;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.ks0;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.y31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
@@ -76,7 +76,7 @@ import org.telegram.ui.w8;
 import org.telegram.ui.z70;
 import yh.n4;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d1 implements Runnable {
     public final /* synthetic */ int a;
@@ -282,7 +282,7 @@ public final /* synthetic */ class d1 implements Runnable {
                     if (!MediaDataController.getInstance(i14).isStickerPackInstalled(tL_messages_stickerSet.set.id)) {
                         MediaDataController.getInstance(i14).toggleStickerSet(null, tLObject5, 2, null, false, false);
                     }
-                    AndroidUtilities.runOnUIThread(new go0(i13, tLObject5, document), 250L);
+                    AndroidUtilities.runOnUIThread(new ho0(i13, tLObject5, document), 250L);
                     break;
                 } else if (tL_error2 != null) {
                     if (FileRefController.isFileRefError(tL_error2.text)) {
@@ -407,7 +407,7 @@ public final /* synthetic */ class d1 implements Runnable {
                     FileLog.e(sb2.toString());
                     n2 R = LaunchActivity.R();
                     if (R != null) {
-                        kk.q(R.string.NoUsernameFound, xc.a0(R), null);
+                        mk.q(R.string.NoUsernameFound, xc.a0(R), null);
                         break;
                     }
                 }
@@ -442,7 +442,7 @@ public final /* synthetic */ class d1 implements Runnable {
                         a02 = xc.a0((n2) i2.e.h(1, arrayList6));
                         i10 = R.string.PaymentInvoiceLinkInvalid;
                     }
-                    kk.q(i10, a02, d6Var);
+                    mk.q(i10, a02, d6Var);
                 } else if (!launchActivity4.isFinishing()) {
                     if (tLObject8 instanceof TLRPC.TL_payments_paymentFormStars) {
                         n4 n4Var = launchActivity4.Y0;
@@ -530,7 +530,7 @@ public final /* synthetic */ class d1 implements Runnable {
                     i80 H = i80.H(profileActivity, view);
                     H.W(profileActivity.a.V0(view, false));
                     H.w = false;
-                    H.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new x31(profileActivity, str9, i14, i13), false);
+                    H.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new y31(profileActivity, str9, i14, i13), false);
                     H.l(R.drawable.msg_translate, LocaleController.getString(R.string.TranslateMessage), new fn0(profileActivity, strArr, str10, str9, 12), zArr2[0]);
                     H.Z();
                     break;
@@ -596,7 +596,7 @@ public final /* synthetic */ class d1 implements Runnable {
                 a1.g.A(sb3, MessagesController.getInstance(i14).linkPrefix, "/", (String) obj5, "/c/");
                 sb3.append(((TL_stars.TL_starGiftCollection) obj4).collection_id);
                 String sb4 = sb3.toString();
-                new yh.w1((js0) obj6, (Context) obj3, sb4, sb4, (d6) obj2, (n2) obj).show();
+                new yh.w1((ks0) obj6, (Context) obj3, sb4, sb4, (d6) obj2, (n2) obj).show();
                 break;
         }
     }

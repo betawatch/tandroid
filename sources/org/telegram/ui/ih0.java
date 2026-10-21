@@ -18,7 +18,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ih0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -45,7 +45,7 @@ public final class ih0 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public Drawable Z;
     public hh0 a;
     public Drawable a0;
-    public org.telegram.ui.Components.im0 b;
+    public org.telegram.ui.Components.jm0 b;
     public boolean b0;
     public TLRPC.Chat c;
     public boolean c0;
@@ -57,7 +57,7 @@ public final class ih0 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public final int f0;
     public boolean g0;
     public final boolean h;
-    public org.telegram.ui.Components.nl0 h0;
+    public org.telegram.ui.Components.ol0 h0;
     public final ArrayList i0;
     public final ArrayList j0;
     public final HashMap k0;
@@ -164,9 +164,9 @@ public final class ih0 extends org.telegram.ui.ActionBar.n2 implements Notificat
             if (tL_messages_exportedChatInvites.invites.size() <= 0 || !ih0Var.g0) {
                 z11 = true;
             } else {
-                org.telegram.ui.Components.nl0 nl0Var = ih0Var.h0;
-                if (nl0Var != null && !ih0Var.isPaused) {
-                    nl0Var.b(i13 + 1);
+                org.telegram.ui.Components.ol0 ol0Var = ih0Var.h0;
+                if (ol0Var != null && !ih0Var.isPaused) {
+                    ol0Var.b(i13 + 1);
                 }
                 z11 = false;
             }
@@ -219,7 +219,7 @@ public final class ih0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static /* synthetic */ void V(ih0 ih0Var, TLRPC.TL_error tL_error, TLObject tLObject) {
-        org.telegram.ui.Components.nl0 nl0Var;
+        org.telegram.ui.Components.ol0 ol0Var;
         ArrayList arrayList = ih0Var.m0;
         ih0Var.W = false;
         if (tL_error == null) {
@@ -238,8 +238,8 @@ public final class ih0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         int i12 = ih0Var.X;
         ih0Var.e0 = true;
         ih0Var.b0 = false;
-        if (arrayList.size() > 0 && (nl0Var = ih0Var.h0) != null && !ih0Var.isPaused && ih0Var.g0) {
-            nl0Var.b(i12 + 1);
+        if (arrayList.size() > 0 && (ol0Var = ih0Var.h0) != null && !ih0Var.isPaused && ih0Var.g0) {
+            ol0Var.b(i12 + 1);
         }
         if (ih0Var.b0) {
         }
@@ -298,18 +298,18 @@ public final class ih0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         m0Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
         this.fragmentView.setTag(Integer.valueOf(i10));
         FrameLayout frameLayout = (FrameLayout) this.fragmentView;
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
-        this.b = im0Var;
-        im0Var.p1();
+        org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, null);
+        this.b = jm0Var;
+        jm0Var.p1();
         this.actionBar.setAdaptiveBackground(this.b);
         hg.a0 a0Var = new hg.a0(1, false, 12);
         this.b.setLayoutManager(a0Var);
-        org.telegram.ui.Components.im0 im0Var2 = this.b;
+        org.telegram.ui.Components.jm0 jm0Var2 = this.b;
         hh0 hh0Var = new hh0(this, context);
         this.a = hh0Var;
-        im0Var2.setAdapter(hh0Var);
+        jm0Var2.setAdapter(hh0Var);
         this.b.setOnScrollListener(new ki.m3(6, this, a0Var));
-        this.h0 = new org.telegram.ui.Components.nl0(this.b, false);
+        this.h0 = new org.telegram.ui.Components.ol0(this.b, false);
         s4.k kVar = new s4.k();
         kVar.n(420L);
         kVar.o(org.telegram.ui.Components.bs.h);

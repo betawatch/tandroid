@@ -51,7 +51,7 @@ import org.telegram.ui.Components.fo;
 import org.telegram.ui.Components.md0;
 import org.telegram.ui.Components.ml;
 import org.telegram.ui.Components.od0;
-import org.telegram.ui.Components.pl0;
+import org.telegram.ui.Components.ql0;
 import org.telegram.ui.Components.rl;
 import org.telegram.ui.Components.td0;
 import org.telegram.ui.Components.ti;
@@ -61,7 +61,7 @@ import org.telegram.ui.qn;
 import org.telegram.ui.re1;
 import org.telegram.ui.vx;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u2 implements vx, androidx.car.app.utils.b, MessagesStorage.StringCallback, ci.v9, SuccessContinuation, MediaDataController.KeywordResultCallback, org.telegram.ui.ActionBar.a2, do0, ml, m4.o0, j9.q, md0, org.telegram.ui.ActionBar.q0, org.telegram.ui.Components.e5 {
     public final /* synthetic */ int a;
@@ -402,7 +402,7 @@ public final /* synthetic */ class u2 implements vx, androidx.car.app.utils.b, M
     @Override // ci.v9
     public void i(Canvas canvas, RectF rectF, float f7) {
         org.telegram.ui.Cells.s7 s7Var = (org.telegram.ui.Cells.s7) this.b;
-        pl0 pl0Var = (pl0) this.c;
+        ql0 ql0Var = (ql0) this.c;
         int[] iArr = (int[]) this.d;
         s7Var.c(canvas, rectF, f7);
         s7Var.f(canvas, rectF, f7);
@@ -411,10 +411,10 @@ public final /* synthetic */ class u2 implements vx, androidx.car.app.utils.b, M
         } else {
             s7Var.e(canvas, rectF, f7);
         }
-        if (pl0Var != null && pl0Var.a0 && pl0Var.getVisibility() == 0) {
+        if (ql0Var != null && ql0Var.a0 && ql0Var.getVisibility() == 0) {
             canvas.saveLayerAlpha(0.0f, 0.0f, canvas.getWidth(), canvas.getHeight(), (int) (f7 * 255.0f), 31);
             canvas.translate(iArr[0], iArr[1]);
-            pl0Var.draw(canvas);
+            ql0Var.draw(canvas);
             canvas.restore();
         }
     }

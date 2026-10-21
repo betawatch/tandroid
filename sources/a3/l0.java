@@ -50,7 +50,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.j2;
+import org.telegram.messenger.k2;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
@@ -73,7 +73,7 @@ import v7.q8;
 import w7.z5;
 import yh.a2;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -525,7 +525,7 @@ public final /* synthetic */ class l0 implements Runnable {
             case 23:
                 t6 t6Var2 = (t6) this.b;
                 s6 s6Var = (s6) this.c;
-                j2 j2Var = (j2) this.d;
+                k2 k2Var = (k2) this.d;
                 ArrayList arrayList3 = t6Var2.i;
                 for (int i15 = 0; i15 < arrayList3.size(); i15++) {
                     MessageObject messageObject3 = (MessageObject) arrayList3.get(i15);
@@ -537,18 +537,18 @@ public final /* synthetic */ class l0 implements Runnable {
                             if (document5 == null) {
                                 continue;
                             } else if (document5.id == document4.id) {
-                                j2Var.run((s6) storyItem2);
+                                k2Var.run((s6) storyItem2);
                                 return;
                             }
                         }
                         TLRPC.Photo photo2 = messageMedia3.photo;
                         if (photo2 != null && (photo = messageMedia2.photo) != null && photo.id == photo2.id) {
-                            j2Var.run((s6) storyItem2);
+                            k2Var.run((s6) storyItem2);
                             return;
                         }
                     }
                 }
-                j2Var.run(null);
+                k2Var.run(null);
                 return;
             case 24:
                 t6 t6Var3 = (t6) this.b;

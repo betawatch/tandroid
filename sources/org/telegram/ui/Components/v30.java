@@ -27,7 +27,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class v30 extends View {
     public static final TextPaint J = new TextPaint(1);
@@ -288,7 +288,7 @@ public final class v30 extends View {
             imageReceiver.setImageCoords(!this.I ? 0.0f : AndroidUtilities.dp(4.0f), 0.0f, AndroidUtilities.dp(!z10 ? 28.0f : 32.0f), AndroidUtilities.dp(z10 ? 28.0f : 32.0f));
             if (AndroidUtilities.isTablet()) {
                 Point point = AndroidUtilities.displaySize;
-                A = org.telegram.messenger.kk.A((z10 ? 28 : 32) + 132, Math.min(point.x, point.y), 2);
+                A = org.telegram.messenger.mk.A((z10 ? 28 : 32) + 132, Math.min(point.x, point.y), 2);
             } else {
                 A = AndroidUtilities.dp(398 - (z10 ? 28 : 32)) / 2;
             }

@@ -21,10 +21,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.BubbleActivity;
-import org.telegram.ui.Components.ew0;
+import org.telegram.ui.Components.fw0;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class w0 extends FrameLayout {
     public float E;
@@ -45,7 +45,7 @@ public abstract class w0 extends FrameLayout {
     public final TextView s;
     public final TextView v;
     public final w1 w;
-    public ew0 x;
+    public fw0 x;
     public boolean y;
 
     public w0(Context context, int i10, Bitmap bitmap, Bitmap bitmap2, int i11, MediaController.CropState cropState) {
@@ -111,23 +111,23 @@ public abstract class w0 extends FrameLayout {
         frameLayout.addView(j10, z5.d(-2, 44.0f, 5, 0.0f, 0.0f, -8.0f, 0.0f));
     }
 
-    private ew0 getPaintingSize() {
-        ew0 ew0Var = this.x;
-        if (ew0Var != null) {
-            return ew0Var;
+    private fw0 getPaintingSize() {
+        fw0 fw0Var = this.x;
+        if (fw0Var != null) {
+            return fw0Var;
         }
         Bitmap bitmap = this.f;
-        ew0 ew0Var2 = new ew0(bitmap.getWidth(), bitmap.getHeight());
+        fw0 fw0Var2 = new fw0(bitmap.getWidth(), bitmap.getHeight());
         float f7 = 1280;
-        ew0Var2.a = f7;
+        fw0Var2.a = f7;
         float floor = (float) Math.floor((f7 * r0) / r1);
-        ew0Var2.b = floor;
+        fw0Var2.b = floor;
         if (floor > f7) {
-            ew0Var2.b = f7;
-            ew0Var2.a = (float) Math.floor((f7 * r1) / r0);
+            fw0Var2.b = f7;
+            fw0Var2.a = (float) Math.floor((f7 * r1) / r0);
         }
-        this.x = ew0Var2;
-        return ew0Var2;
+        this.x = fw0Var2;
+        return fw0Var2;
     }
 
     public final void a(MotionEvent motionEvent) {

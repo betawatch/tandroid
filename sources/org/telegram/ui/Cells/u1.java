@@ -110,7 +110,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -119,55 +119,55 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.RadialProgress2;
+import org.telegram.ui.Components.a41;
+import org.telegram.ui.Components.a81;
 import org.telegram.ui.Components.ba0;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.d61;
 import org.telegram.ui.Components.dd0;
-import org.telegram.ui.Components.e11;
-import org.telegram.ui.Components.ex0;
-import org.telegram.ui.Components.fp0;
+import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.f11;
+import org.telegram.ui.Components.fx0;
+import org.telegram.ui.Components.gp0;
 import org.telegram.ui.Components.h50;
-import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.i61;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.iw0;
-import org.telegram.ui.Components.iz0;
 import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.jw0;
 import org.telegram.ui.Components.jz0;
 import org.telegram.ui.Components.k61;
 import org.telegram.ui.Components.kb0;
-import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.kw0;
 import org.telegram.ui.Components.kz0;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.lz0;
 import org.telegram.ui.Components.m10;
-import org.telegram.ui.Components.m11;
 import org.telegram.ui.Components.n11;
 import org.telegram.ui.Components.na0;
-import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.o11;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.p10;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.pm0;
 import org.telegram.ui.Components.q10;
+import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.qm0;
 import org.telegram.ui.Components.r90;
-import org.telegram.ui.Components.s31;
-import org.telegram.ui.Components.s71;
-import org.telegram.ui.Components.sj0;
-import org.telegram.ui.Components.sw0;
-import org.telegram.ui.Components.t21;
-import org.telegram.ui.Components.tm0;
+import org.telegram.ui.Components.t31;
+import org.telegram.ui.Components.t71;
+import org.telegram.ui.Components.tj0;
+import org.telegram.ui.Components.tw0;
+import org.telegram.ui.Components.u21;
 import org.telegram.ui.Components.u90;
-import org.telegram.ui.Components.uj0;
-import org.telegram.ui.Components.vx0;
+import org.telegram.ui.Components.um0;
+import org.telegram.ui.Components.vj0;
 import org.telegram.ui.Components.wc0;
-import org.telegram.ui.Components.x21;
-import org.telegram.ui.Components.xo0;
+import org.telegram.ui.Components.wx0;
+import org.telegram.ui.Components.y21;
 import org.telegram.ui.Components.y90;
 import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.yo0;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.Components.yt;
-import org.telegram.ui.Components.z31;
-import org.telegram.ui.Components.z71;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.SecretMediaViewer;
 import org.telegram.ui.ej0;
@@ -177,9 +177,9 @@ import org.telegram.ui.qn;
 import org.telegram.ui.s10;
 import org.telegram.ui.vu0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, DownloadController.FileDownloadProgressListener, v9, NotificationCenter.NotificationCenterDelegate, ne.d, n4 {
+public class u1 extends a0 implements yo0, ImageReceiver.ImageReceiverDelegate, DownloadController.FileDownloadProgressListener, v9, NotificationCenter.NotificationCenterDelegate, ne.d, n4 {
     public static final float[] Fe = new float[8];
     public int A0;
     public boolean A1;
@@ -200,11 +200,11 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
     public int B1;
     public StaticLayout B2;
     public float B3;
-    public e11 B4;
+    public f11 B4;
     public ba0 B5;
     public boolean B6;
     public boolean B7;
-    public d61 B8;
+    public e61 B8;
     public CheckBoxBase B9;
     public boolean Ba;
     public float Bb;
@@ -215,11 +215,11 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
     public float C1;
     public StaticLayout C2;
     public SpannableStringBuilder C3;
-    public e11 C4;
+    public f11 C4;
     public ArrayList C5;
     public boolean C6;
     public boolean C7;
-    public d61 C8;
+    public e61 C8;
     public StaticLayout C9;
     public Path Ca;
     public float Cb;
@@ -230,7 +230,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
     public boolean D1;
     public float D2;
     public boolean D3;
-    public e11 D4;
+    public f11 D4;
     public CharacterStyle D5;
     public boolean D6;
     public boolean D7;
@@ -286,14 +286,14 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
     public float Ga;
     public Integer Gb;
     public yc Gc;
-    public s71 Gd;
+    public t71 Gd;
     public boolean H;
     public boolean H0;
     public int H1;
     public boolean H2;
     public Path H3;
     public boolean H4;
-    public final fp0 H5;
+    public final gp0 H5;
     public float H6;
     public final int H7;
     public float H8;
@@ -394,7 +394,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
     public final Path Nd;
     public final xg.a O;
     public final RadialProgress2 O0;
-    public e11 O1;
+    public f11 O1;
     public StaticLayout O2;
     public z O3;
     public int O4;
@@ -409,7 +409,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
     public boolean Od;
     public final xg.c P;
     public final RadialProgress2 P0;
-    public e11 P1;
+    public f11 P1;
     public float P2;
     public int P3;
     public int P4;
@@ -452,14 +452,14 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
     public final float[] Rb;
     public boolean Rc;
     public final b1 Rd;
-    public e11 S;
+    public f11 S;
     public final ci.g3 S0;
     public StaticLayout S1;
     public boolean S2;
-    public final tm0 S3;
+    public final um0 S3;
     public int S4;
     public int S5;
-    public t21 S6;
+    public u21 S6;
     public boolean S7;
     public h50 S8;
     public boolean S9;
@@ -544,7 +544,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
     public ei.l Y0;
     public int Y1;
     public RectF Y2;
-    public e11 Y3;
+    public f11 Y3;
     public boolean Y4;
     public final ArrayList Y5;
     public float Y6;
@@ -564,13 +564,13 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
     public int Z6;
     public boolean Z7;
     public StaticLayout Z8;
-    public pm0 Z9;
+    public qm0 Z9;
     public boolean Za;
     public TLRPC.Chat Zb;
     public final t1 Zc;
     public int Zd;
-    public e11 a0;
-    public uj0 a1;
+    public f11 a0;
+    public vj0 a1;
     public s10 a2;
     public boolean a3;
     public int a4;
@@ -579,7 +579,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
     public float a7;
     public boolean a8;
     public org.telegram.ui.Components.i6 a9;
-    public pm0 aa;
+    public qm0 aa;
     public boolean ab;
     public TLRPC.FileLocation ac;
     public boolean ad;
@@ -594,7 +594,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
     public float b7;
     public long b8;
     public boolean b9;
-    public pm0 ba;
+    public qm0 ba;
     public float bb;
     public String bc;
     public boolean bd;
@@ -609,7 +609,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
     public int c7;
     public boolean c8;
     public int c9;
-    public pm0 ca;
+    public qm0 ca;
     public float cb;
     public Object cc;
     public boolean cd;
@@ -624,22 +624,22 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
     public int d7;
     public boolean d8;
     public int d9;
-    public pm0 da;
+    public qm0 da;
     public StaticLayout db;
     public long dc;
     public final org.telegram.ui.Components.f6 dd;
     public float de;
-    public x21 e0;
-    public vx0 e1;
+    public y21 e0;
+    public wx0 e1;
     public int e2;
     public float e3;
-    public kj0 e4;
+    public lj0 e4;
     public TLRPC.PhotoSize e5;
     public int e6;
     public boolean e7;
     public boolean e8;
     public boolean e9;
-    public pm0 ea;
+    public qm0 ea;
     public int eb;
     public String ec;
     public FlagSecureReason ed;
@@ -660,7 +660,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
     public org.telegram.ui.Components.p5 fc;
     public boolean fd;
     public NotificationCenter.ObserversGroup fe;
-    public jz0 g0;
+    public kz0 g0;
     public float g1;
     public int g2;
     public int g3;
@@ -746,7 +746,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
     public boolean l7;
     public boolean l8;
     public boolean l9;
-    public e11 la;
+    public f11 la;
     public final float[] lb;
     public String lc;
     public ValueAnimator ld;
@@ -761,7 +761,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
     public float m7;
     public boolean m8;
     public final ImageReceiver m9;
-    public e11 ma;
+    public f11 ma;
     public float mb;
     public boolean mc;
     public int md;
@@ -873,7 +873,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
     public CharSequence tb;
     public org.telegram.ui.Components.w5 tc;
     public float td;
-    public kz0 te;
+    public lz0 te;
     public int u0;
     public boolean u1;
     public int u2;
@@ -1050,9 +1050,9 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         int i10;
         int i11;
         boolean z10;
-        m11 m11Var;
+        n11 n11Var;
         TLRPC.MessageEntity messageEntity;
-        if (!(characterStyle instanceof i61) || (m11Var = ((i61) characterStyle).a) == null || (messageEntity = m11Var.d) == null) {
+        if (!(characterStyle instanceof j61) || (n11Var = ((j61) characterStyle).a) == null || (messageEntity = n11Var.d) == null) {
             i10 = 0;
             i11 = 0;
             z10 = false;
@@ -1267,11 +1267,11 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                     if (this.y7.isOutOwner()) {
                         radialProgress2.g(org.telegram.ui.ActionBar.h6.Nb, org.telegram.ui.ActionBar.h6.Ob, org.telegram.ui.ActionBar.h6.Pa, org.telegram.ui.ActionBar.h6.Qa);
                     } else {
-                        pm0 pm0Var = this.aa;
-                        if (pm0Var == null || !this.h2) {
+                        qm0 qm0Var = this.aa;
+                        if (qm0Var == null || !this.h2) {
                             radialProgress2.g(org.telegram.ui.ActionBar.h6.ie, org.telegram.ui.ActionBar.h6.je, org.telegram.ui.ActionBar.h6.uc, org.telegram.ui.ActionBar.h6.vc);
                         } else {
-                            radialProgress2.setColors(pm0Var.h(), this.aa.h(), org.telegram.ui.ActionBar.h6.v(-1, org.telegram.ui.ActionBar.h6.m1(0.01f, this.aa.h())), org.telegram.ui.ActionBar.h6.v(-1, org.telegram.ui.ActionBar.h6.m1(0.05f, this.aa.h())));
+                            radialProgress2.setColors(qm0Var.h(), this.aa.h(), org.telegram.ui.ActionBar.h6.v(-1, org.telegram.ui.ActionBar.h6.m1(0.01f, this.aa.h())), org.telegram.ui.ActionBar.h6.v(-1, org.telegram.ui.ActionBar.h6.m1(0.05f, this.aa.h())));
                         }
                     }
                     int i12 = this.O4;
@@ -1286,11 +1286,11 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                         if (this.y7.isOutOwner()) {
                             radialProgress2.g(org.telegram.ui.ActionBar.h6.Nb, org.telegram.ui.ActionBar.h6.Ob, org.telegram.ui.ActionBar.h6.Pa, org.telegram.ui.ActionBar.h6.Qa);
                         } else {
-                            pm0 pm0Var2 = this.aa;
-                            if (pm0Var2 == null || !this.h2) {
+                            qm0 qm0Var2 = this.aa;
+                            if (qm0Var2 == null || !this.h2) {
                                 radialProgress2.g(org.telegram.ui.ActionBar.h6.ie, org.telegram.ui.ActionBar.h6.je, org.telegram.ui.ActionBar.h6.uc, org.telegram.ui.ActionBar.h6.vc);
                             } else {
-                                radialProgress2.setColors(pm0Var2.h(), this.aa.h(), org.telegram.ui.ActionBar.h6.v(-1, org.telegram.ui.ActionBar.h6.m1(0.01f, this.aa.h())), org.telegram.ui.ActionBar.h6.v(-1, org.telegram.ui.ActionBar.h6.m1(0.05f, this.aa.h())));
+                                radialProgress2.setColors(qm0Var2.h(), this.aa.h(), org.telegram.ui.ActionBar.h6.v(-1, org.telegram.ui.ActionBar.h6.m1(0.01f, this.aa.h())), org.telegram.ui.ActionBar.h6.v(-1, org.telegram.ui.ActionBar.h6.m1(0.05f, this.aa.h())));
                             }
                         }
                         int i13 = this.O4;
@@ -1889,7 +1889,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                 Typeface typeface = Typeface.DEFAULT;
                 fArr = fArr4;
                 str2 = "";
-                spannableStringBuilder8.setSpan(new d61(), length, spannableStringBuilder8.length(), 33);
+                spannableStringBuilder8.setSpan(new e61(), length, spannableStringBuilder8.length(), 33);
                 spannableStringBuilder8.setSpan(new m10(i27), 0, spannableStringBuilder8.length(), 33);
                 charSequence8 = TextUtils.ellipsize(spannableStringBuilder8, org.telegram.ui.ActionBar.h6.W2, this.Ua + i20, truncateAt);
                 str3 = "ViaBot";
@@ -1910,28 +1910,28 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                     if (this.bc.length() > 0) {
                         spannableStringBuilder5 = new SpannableStringBuilder();
                         spannableStringBuilder5.append(ellipsize3).append((CharSequence) " ").append((CharSequence) string).append((CharSequence) " ").append((CharSequence) str);
-                        d61 d61Var = new d61(Typeface.DEFAULT, K2);
-                        this.B8 = d61Var;
+                        e61 e61Var = new e61(Typeface.DEFAULT, K2);
+                        this.B8 = e61Var;
                         str3 = "ViaBot";
-                        spannableStringBuilder5.setSpan(d61Var, ellipsize3.length() + 1, string.length() + ellipsize3.length() + 1, 33);
+                        spannableStringBuilder5.setSpan(e61Var, ellipsize3.length() + 1, string.length() + ellipsize3.length() + 1, 33);
                         if (this.cc != null) {
                             this.z8 = AndroidUtilities.dp(28.0f) + this.z8;
                             spannableStringBuilder5.setSpan(new p2(AndroidUtilities.dp(28.0f)), ellipsize3.length(), ellipsize3.length() + 1, 33);
                         }
-                        d61 d61Var2 = new d61(AndroidUtilities.bold(), K2);
-                        this.C8 = d61Var2;
-                        spannableStringBuilder5.setSpan(d61Var2, string.length() + ellipsize3.length() + 2, spannableStringBuilder5.length(), 33);
+                        e61 e61Var2 = new e61(AndroidUtilities.bold(), K2);
+                        this.C8 = e61Var2;
+                        spannableStringBuilder5.setSpan(e61Var2, string.length() + ellipsize3.length() + 2, spannableStringBuilder5.length(), 33);
                     } else {
                         str3 = "ViaBot";
                         this.A8 = true;
                         SpannableStringBuilder spannableStringBuilder9 = new SpannableStringBuilder();
                         spannableStringBuilder9.append((CharSequence) string).append((CharSequence) " ").append((CharSequence) str);
-                        d61 d61Var3 = new d61(Typeface.DEFAULT, K2);
-                        this.B8 = d61Var3;
-                        spannableStringBuilder9.setSpan(d61Var3, 0, string.length() + 1, 33);
-                        d61 d61Var4 = new d61(AndroidUtilities.bold(), K2);
-                        this.C8 = d61Var4;
-                        spannableStringBuilder9.setSpan(d61Var4, string.length() + 1, spannableStringBuilder9.length(), 33);
+                        e61 e61Var3 = new e61(Typeface.DEFAULT, K2);
+                        this.B8 = e61Var3;
+                        spannableStringBuilder9.setSpan(e61Var3, 0, string.length() + 1, 33);
+                        e61 e61Var4 = new e61(AndroidUtilities.bold(), K2);
+                        this.C8 = e61Var4;
+                        spannableStringBuilder9.setSpan(e61Var4, string.length() + 1, spannableStringBuilder9.length(), 33);
                         spannableStringBuilder5 = spannableStringBuilder9;
                     }
                     charSequence8 = TextUtils.ellipsize(spannableStringBuilder5, org.telegram.ui.ActionBar.h6.W2, this.Ua + i20, truncateAt);
@@ -2108,7 +2108,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                         z12 = false;
                     }
                     SpannableStringBuilder spannableStringBuilder10 = new SpannableStringBuilder(a1.g.s(new StringBuilder(), z12 ? "A " : str2, removeDiacritics3));
-                    spannableStringBuilder10.setSpan(new d61(AndroidUtilities.bold()), 0, spannableStringBuilder10.length(), 33);
+                    spannableStringBuilder10.setSpan(new e61(AndroidUtilities.bold()), 0, spannableStringBuilder10.length(), 33);
                     if (z12) {
                         spannableStringBuilder10.setSpan(this.r1, 0, 1, 33);
                     }
@@ -2153,7 +2153,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                 spannableStringBuilder2 = new SpannableStringBuilder(removeDiacritics4 + " " + LocaleController.getString(str3, R.string.ViaBot) + " " + str);
                                 this.z8 = (int) Math.ceil((double) org.telegram.ui.ActionBar.h6.X2.measureText(removeDiacritics4));
                                 i11 = 33;
-                                spannableStringBuilder2.setSpan(new d61(AndroidUtilities.bold()), (spannableStringBuilder2.length() - str.length()) - 1, spannableStringBuilder2.length(), 33);
+                                spannableStringBuilder2.setSpan(new e61(AndroidUtilities.bold()), (spannableStringBuilder2.length() - str.length()) - 1, spannableStringBuilder2.length(), 33);
                             } else {
                                 i11 = 33;
                                 spannableStringBuilder2 = new SpannableStringBuilder(removeDiacritics4);
@@ -2169,7 +2169,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                 z11 = false;
                             } else {
                                 z11 = false;
-                                spannableStringBuilder2.setSpan(new d61(AndroidUtilities.bold()), 0, spannableStringBuilder2.length(), 33);
+                                spannableStringBuilder2.setSpan(new e61(AndroidUtilities.bold()), 0, spannableStringBuilder2.length(), 33);
                             }
                             str5 = A2;
                             charSequence2 = spannableStringBuilder2;
@@ -2193,7 +2193,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                     if (this.kc == null) {
                     }
                     z11 = false;
-                    spannableStringBuilder2.setSpan(new d61(AndroidUtilities.bold()), 0, spannableStringBuilder2.length(), 33);
+                    spannableStringBuilder2.setSpan(new e61(AndroidUtilities.bold()), 0, spannableStringBuilder2.length(), 33);
                     str5 = A22;
                     charSequence2 = spannableStringBuilder2;
                 }
@@ -2553,7 +2553,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                                 if (!(charSequence10 instanceof SpannableStringBuilder)) {
                                                                     charSequence10 = new SpannableStringBuilder(charSequence10);
                                                                 }
-                                                                CharSequence replaceEmoji2 = Emoji.replaceEmoji(AndroidUtilities.replaceNewLines(AndroidUtilities.removeSpans(AndroidUtilities.removeSpans(charSequence10, pj0.class), oj0.class)), textPaint2.getFontMetricsInt(), true);
+                                                                CharSequence replaceEmoji2 = Emoji.replaceEmoji(AndroidUtilities.replaceNewLines(AndroidUtilities.removeSpans(AndroidUtilities.removeSpans(charSequence10, qj0.class), pj0.class)), textPaint2.getFontMetricsInt(), true);
                                                                 TLRPC.Message message7 = messageObject.replyMessageObject.messageOwner;
                                                                 if (message7 != null) {
                                                                     replaceEmoji2 = MessageObject.replaceAnimatedEmoji(replaceEmoji2, message7.entities, textPaint2.getFontMetricsInt(), true);
@@ -2711,7 +2711,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                 int i30 = maxNameWidth3;
                                 ellipsize2 = removeDiacritics == null ? str2 : TextUtils.ellipsize(AndroidUtilities.replaceCharSequence(str4, removeDiacritics, charSequence3), org.telegram.ui.ActionBar.h6.Y2, i30, TextUtils.TruncateAt.END);
                                 if (this.ba == null) {
-                                    this.ba = new pm0(this);
+                                    this.ba = new qm0(this);
                                 }
                                 this.ba.a(this.y7, this.Yb, this.Zb, this.Id, 0);
                                 if (this.ba.w != j10) {
@@ -2742,9 +2742,9 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                 if (replaceEmoji != null) {
                                     SpannableStringBuilder spannableStringBuilder12 = new SpannableStringBuilder(replaceEmoji);
                                     boolean z32 = false;
-                                    for (n11 n11Var : (n11[]) spannableStringBuilder12.getSpans(0, spannableStringBuilder12.length(), n11.class)) {
-                                        if ((n11Var.b().a & 4) != 0) {
-                                            spannableStringBuilder12.removeSpan(n11Var);
+                                    for (o11 o11Var : (o11[]) spannableStringBuilder12.getSpans(0, spannableStringBuilder12.length(), o11.class)) {
+                                        if ((o11Var.b().a & 4) != 0) {
+                                            spannableStringBuilder12.removeSpan(o11Var);
                                             z32 = true;
                                         }
                                     }
@@ -2953,7 +2953,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                 i17 = 0;
                                             } else {
                                                 i17 = 0;
-                                                spannableStringBuilder3.setSpan(new d61(AndroidUtilities.bold()), 0, ellipsize5.length(), 33);
+                                                spannableStringBuilder3.setSpan(new e61(AndroidUtilities.bold()), 0, ellipsize5.length(), 33);
                                             }
                                             ellipsize = TextUtils.ellipsize(spannableStringBuilder3, textPaint7, maxNameWidth3, truncateAt5);
                                             this.H1 = ((int) Math.ceil(org.telegram.ui.ActionBar.h6.Y2.measureText(ellipsize5, i17, ellipsize5.length()))) / 2;
@@ -2979,7 +2979,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                     if (this.kc == null) {
                                     }
                                     i17 = 0;
-                                    spannableStringBuilder3.setSpan(new d61(AndroidUtilities.bold()), 0, ellipsize52.length(), 33);
+                                    spannableStringBuilder3.setSpan(new e61(AndroidUtilities.bold()), 0, ellipsize52.length(), 33);
                                     ellipsize = TextUtils.ellipsize(spannableStringBuilder3, textPaint7, maxNameWidth3, truncateAt52);
                                     this.H1 = ((int) Math.ceil(org.telegram.ui.ActionBar.h6.Y2.measureText(ellipsize52, i17, ellipsize52.length()))) / 2;
                                 }
@@ -3025,15 +3025,15 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                 } else {
                     this.ha = true;
                     if (this.la == null) {
-                        this.la = new e11(LocaleController.getString(R.string.SummaryTitle), 14.0f, AndroidUtilities.bold());
-                        this.ma = new e11(LocaleController.getString(R.string.SummarySubtitle), 14.0f);
+                        this.la = new f11(LocaleController.getString(R.string.SummaryTitle), 14.0f, AndroidUtilities.bold());
+                        this.ma = new f11(LocaleController.getString(R.string.SummarySubtitle), 14.0f);
                     }
-                    e11 e11Var = this.la;
-                    e11Var.n(3);
-                    e11Var.q(getMaxNameWidth() - AndroidUtilities.dp(25.0f));
-                    e11 e11Var2 = this.ma;
-                    e11Var2.n(3);
-                    e11Var2.q(getMaxNameWidth() - AndroidUtilities.dp(25.0f));
+                    f11 f11Var = this.la;
+                    f11Var.n(3);
+                    f11Var.q(getMaxNameWidth() - AndroidUtilities.dp(25.0f));
+                    f11 f11Var2 = this.ma;
+                    f11Var2.n(3);
+                    f11Var2.q(getMaxNameWidth() - AndroidUtilities.dp(25.0f));
                     this.Lc = (int) (this.ma.j() + this.la.j() + AndroidUtilities.dp(8.0f) + AndroidUtilities.dp(f13) + this.Lc);
                 }
                 requestLayout();
@@ -3116,7 +3116,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
             }
         }
         int i18 = i14;
-        return ex0.c(spannableStringBuilder, textPaint, i18, Layout.Alignment.ALIGN_NORMAL, AndroidUtilities.dp(1.0f), TextUtils.TruncateAt.END, i18, i13, true);
+        return fx0.c(spannableStringBuilder, textPaint, i18, Layout.Alignment.ALIGN_NORMAL, AndroidUtilities.dp(1.0f), TextUtils.TruncateAt.END, i18, i13, true);
     }
 
     public static boolean v3() {
@@ -3307,14 +3307,14 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
 
     public final float B2(boolean z10) {
         float f7;
-        kj0 kj0Var;
+        lj0 lj0Var;
         if (this.j1 || !this.g8) {
             f7 = 1.0f;
         } else {
             int i10 = this.h8;
             f7 = (i10 >= 300 ? 1.0f : i10 / 300.0f) * 1.0f;
         }
-        return (z10 || (kj0Var = this.e4) == null) ? f7 : (1.0f - kj0Var.k.d(1.0f, false)) * f7;
+        return (z10 || (lj0Var = this.e4) == null) ? f7 : (1.0f - lj0Var.k.d(1.0f, false)) * f7;
     }
 
     public final r90 B3() {
@@ -3346,7 +3346,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         boolean z10;
         CharacterStyle[] characterStyleArr;
         CharacterStyle[] characterStyleArr2;
-        pm0 pm0Var;
+        qm0 qm0Var;
         u90 u90Var = this.w5;
         if ((this.i4 instanceof Spannable) && this.h4 != null && this.v5 == -1 && !this.Td) {
             int i13 = 1;
@@ -3387,7 +3387,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                     characterStyleArr3 = (CharacterStyle[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, org.telegram.ui.Components.a6.class);
                                                     i11 = i10;
                                                 }
-                                                if (characterStyleArr3.length != 0 && ((!(characterStyleArr3[i10] instanceof h61) || h61.h) && !AndroidUtilities.isAccessibilityScreenReaderEnabled())) {
+                                                if (characterStyleArr3.length != 0 && ((!(characterStyleArr3[i10] instanceof i61) || i61.h) && !AndroidUtilities.isAccessibilityScreenReaderEnabled())) {
                                                     if (motionEvent.getAction() != 0) {
                                                         CharacterStyle characterStyle2 = characterStyleArr3[i10];
                                                         if (characterStyle2 instanceof org.telegram.ui.Components.a6) {
@@ -3406,8 +3406,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                                 y90 y90Var2 = new y90(characterStyleArr3[i10], this.Id, f13, textYOffset, 0);
                                                                 this.t5 = y90Var2;
                                                                 y90Var2.d(org.telegram.ui.ActionBar.h6.w0(this.y7.isOutOwner() ? org.telegram.ui.ActionBar.h6.Mb : org.telegram.ui.ActionBar.h6.Ld, this.Id));
-                                                                if (textLayoutBlock.quote && (pm0Var = this.Z9) != null) {
-                                                                    this.t5.d(org.telegram.ui.ActionBar.h6.m1(org.telegram.ui.ActionBar.h6.I.q() ? 0.13f : 0.1f, pm0Var.h()));
+                                                                if (textLayoutBlock.quote && (qm0Var = this.Z9) != null) {
+                                                                    this.t5.d(org.telegram.ui.ActionBar.h6.m1(org.telegram.ui.ActionBar.h6.I.q() ? 0.13f : 0.1f, qm0Var.h()));
                                                                 }
                                                                 this.w0 = i15;
                                                                 this.v0 = -1;
@@ -3428,7 +3428,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                                             MessageObject.TextLayoutBlock textLayoutBlock2 = this.h4.textLayoutBlocks.get(i21);
                                                                             if (i11 != 0) {
                                                                                 int i22 = textLayoutBlock2.charactersOffset;
-                                                                                characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(i22, i22, j61.class);
+                                                                                characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(i22, i22, k61.class);
                                                                             } else {
                                                                                 int i23 = textLayoutBlock2.charactersOffset;
                                                                                 characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(i23, i23, ClickableSpan.class);
@@ -3473,7 +3473,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                                             MessageObject.TextLayoutBlock textLayoutBlock3 = this.h4.textLayoutBlocks.get(i26);
                                                                             if (i11 != 0) {
                                                                                 int i27 = textLayoutBlock3.charactersEnd - 1;
-                                                                                characterStyleArr = (CharacterStyle[]) spannable.getSpans(i27, i27, j61.class);
+                                                                                characterStyleArr = (CharacterStyle[]) spannable.getSpans(i27, i27, k61.class);
                                                                             } else {
                                                                                 int i28 = textLayoutBlock3.charactersEnd - 1;
                                                                                 characterStyleArr = (CharacterStyle[]) spannable.getSpans(i28, i28, ClickableSpan.class);
@@ -3538,7 +3538,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                         } else {
                                             i10 = 0;
                                         }
-                                        characterStyleArr3 = (CharacterStyle[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, j61.class);
+                                        characterStyleArr3 = (CharacterStyle[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, k61.class);
                                         i11 = 1;
                                         if (characterStyleArr3 != null) {
                                         }
@@ -3680,16 +3680,16 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                             if (characterStyleArr != null) {
                                 if (characterStyleArr.length == 0) {
                                 }
-                                if (characterStyleArr.length != 0 && ((!(characterStyleArr[0] instanceof h61) || h61.h) && !AndroidUtilities.isAccessibilityScreenReaderEnabled())) {
+                                if (characterStyleArr.length != 0 && ((!(characterStyleArr[0] instanceof i61) || i61.h) && !AndroidUtilities.isAccessibilityScreenReaderEnabled())) {
                                     if (motionEvent.getAction() != 0) {
                                         y90 y90Var = this.V1;
                                         if (y90Var == null || y90Var.i != characterStyleArr[0]) {
                                             this.U1.k(y90Var, true);
                                             y90 y90Var2 = new y90(characterStyleArr[0], this.Id, f11, i13, 0);
                                             this.V1 = y90Var2;
-                                            pm0 pm0Var = this.da;
-                                            if (pm0Var != null) {
-                                                y90Var2.d(org.telegram.ui.ActionBar.h6.m1(0.1f, pm0Var.h()));
+                                            qm0 qm0Var = this.da;
+                                            if (qm0Var != null) {
+                                                y90Var2.d(org.telegram.ui.ActionBar.h6.m1(0.1f, qm0Var.h()));
                                             }
                                             try {
                                                 r90 b10 = this.V1.b();
@@ -3719,7 +3719,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                     }
                                 }
                             }
-                            characterStyleArr = (CharacterStyle[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, j61.class);
+                            characterStyleArr = (CharacterStyle[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, k61.class);
                             if (characterStyleArr.length != 0) {
                                 if (motionEvent.getAction() != 0) {
                                 }
@@ -4232,13 +4232,13 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                 int i37 = dp10 - dp9;
                                 Bitmap bitmap = richUnsupportedBlock3.tornBitmap;
                                 if (bitmap == null || bitmap.getWidth() < i37) {
-                                    s31 s31Var = new s31();
-                                    richUnsupportedBlock3.tornParams = s31Var;
+                                    t31 t31Var = new t31();
+                                    richUnsupportedBlock3.tornParams = t31Var;
                                     int id2 = (u1Var3.y7.getId() * 100) + richUnsupportedBlock3.index;
                                     i20 = i36;
                                     i23 = i33;
                                     int ceil = (int) Math.ceil(AndroidUtilities.density * 1.9f);
-                                    int a2 = w7.e6.a(s31Var) * 2;
+                                    int a2 = w7.e6.a(t31Var) * 2;
                                     float max = Math.max(1.0f, AndroidUtilities.density * 2.5f);
                                     float f17 = AndroidUtilities.density * 1.9f;
                                     float f18 = i37;
@@ -4316,7 +4316,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                             RectF rectF = AndroidUtilities.rectTmp;
                             float dp11 = AndroidUtilities.dp(3.33f) + org.telegram.messenger.g0.C(7.0f, richUnsupportedBlock.padding.left, dp9);
                             Rect rect = richUnsupportedBlock.padding;
-                            rectF.set(dp11, f12 + rect.top, kk.y(7.0f, rect.right, dp10) - AndroidUtilities.dp(3.33f), height - richUnsupportedBlock.padding.bottom);
+                            rectF.set(dp11, f12 + rect.top, mk.y(7.0f, rect.right, dp10) - AndroidUtilities.dp(3.33f), height - richUnsupportedBlock.padding.bottom);
                             j2(canvas3, rectF, AndroidUtilities.dp(18.0f));
                             i36 = i20 + 1;
                             i33 = i21;
@@ -4403,7 +4403,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                         if (lineLeft <= f7 && lineLeft + this.K2.getLineWidth(lineForVertical) >= f7) {
                             Spannable spannable = (Spannable) this.y7.linkDescription;
                             ClickableSpan[] clickableSpanArr = (ClickableSpan[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
-                            if (clickableSpanArr.length != 0 && ((!(clickableSpanArr[0] instanceof h61) || h61.h) && !AndroidUtilities.isAccessibilityScreenReaderEnabled())) {
+                            if (clickableSpanArr.length != 0 && ((!(clickableSpanArr[0] instanceof i61) || i61.h) && !AndroidUtilities.isAccessibilityScreenReaderEnabled())) {
                                 y90 y90Var = this.t5;
                                 if (y90Var == null || y90Var.i != clickableSpanArr[0]) {
                                     u90Var.k(y90Var, true);
@@ -4714,7 +4714,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                 if (g3Var != null) {
                     g3Var.setFileLoadingPriority(0);
                 }
-                if (messageObject == null || messageObject.mediaExists || messageObject.putInDownloadsStore || DownloadController.getInstance(i14).isDownloading(messageObject.messageOwner.id) || PhotoViewer.t1().R1()) {
+                if (messageObject == null || messageObject.mediaExists || messageObject.putInDownloadsStore || DownloadController.getInstance(i14).isDownloading(messageObject.messageOwner.id) || PhotoViewer.u1().T1()) {
                     return;
                 }
                 TLRPC.Document document = messageObject.getDocument();
@@ -4760,12 +4760,12 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                 m4(false, false, false);
             }
             if (messageObject2.hasVideoQualities()) {
-                z71 z71Var = messageObject2.highestQuality;
-                if (z71Var != null && !z71Var.c()) {
+                a81 a81Var = messageObject2.highestQuality;
+                if (a81Var != null && !a81Var.c()) {
                     FileLoader.getInstance(i14).loadFile(messageObject2.highestQuality.h, messageObject2, 1, 0);
                 }
-                z71 z71Var2 = messageObject2.thumbQuality;
-                if (z71Var2 == null || z71Var2.c()) {
+                a81 a81Var2 = messageObject2.thumbQuality;
+                if (a81Var2 == null || a81Var2.c()) {
                     return;
                 }
                 FileLoader.getInstance(i14).loadFile(messageObject2.thumbQuality.h, messageObject2, 1, 0);
@@ -4980,7 +4980,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         float f7;
         u1 u1Var = this;
         ArrayList arrayList2 = arrayList;
-        if (kw0.v0) {
+        if (lw0.v0) {
             return;
         }
         int widthForButtons = u1Var.getWidthForButtons();
@@ -5644,7 +5644,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                     if (lineLeft + this.K2.getLineWidth(lineForVertical) >= f7) {
                                         Spannable spannable = (Spannable) (this.y7.isSponsored() ? this.y7.messageText : this.y7.linkDescription);
                                         ClickableSpan[] clickableSpanArr = (ClickableSpan[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
-                                        if (clickableSpanArr.length != 0 && ((!(clickableSpanArr[0] instanceof h61) || h61.h) && !AndroidUtilities.isAccessibilityScreenReaderEnabled())) {
+                                        if (clickableSpanArr.length != 0 && ((!(clickableSpanArr[0] instanceof i61) || i61.h) && !AndroidUtilities.isAccessibilityScreenReaderEnabled())) {
                                             y90 y90Var = this.t5;
                                             if (y90Var == null || y90Var.i != clickableSpanArr[0]) {
                                                 u90Var.k(y90Var, true);
@@ -5915,7 +5915,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         MessageObject messageObject;
         org.telegram.ui.Components.w5 w5Var = this.pc;
         t1 t1Var = this.Zc;
-        if (w5Var != null && !(canvas instanceof iw0) && (this.c4 != null || t1Var.b1 != null)) {
+        if (w5Var != null && !(canvas instanceof jw0) && (this.c4 != null || t1Var.b1 != null)) {
             w5Var.a();
         }
         if (t1Var.a1) {
@@ -5929,7 +5929,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                 messageObject = this.y7;
                 if (messageObject == null && messageObject.messageOwner != null && messageObject.isVoiceTranscriptionOpen()) {
                     MessageObject messageObject2 = this.y7;
-                    if (messageObject2.messageOwner.voiceTranscriptionFinal || !z31.k(messageObject2)) {
+                    if (messageObject2.messageOwner.voiceTranscriptionFinal || !a41.k(messageObject2)) {
                         return;
                     }
                     invalidate();
@@ -6586,8 +6586,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         u1 u1Var;
         if (this.y7.isDice()) {
             Drawable drawable = this.S0.getDrawable();
-            if (drawable instanceof sj0) {
-                final sj0 sj0Var = (sj0) drawable;
+            if (drawable instanceof tj0) {
+                final tj0 tj0Var = (tj0) drawable;
                 String diceEmoji = this.y7.getDiceEmoji();
                 TLRPC.TL_messages_stickerSet stickerSetByEmojiOrName = MediaDataController.getInstance(this.I7).getStickerSetByEmojiOrName(diceEmoji);
                 if (stickerSetByEmojiOrName == null) {
@@ -6599,91 +6599,91 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                     if (diceValue < 0 || diceValue > 64) {
                         u1Var = this;
                     } else {
-                        sw0 sw0Var = (sw0) sj0Var;
-                        if (sw0Var.U0 != null || sw0Var.V0) {
+                        tw0 tw0Var = (tw0) tj0Var;
+                        if (tw0Var.U0 != null || tw0Var.V0) {
                             u1Var = this;
                         } else {
                             int i10 = diceValue - 1;
-                            int X = sw0.X(i10 & 3);
-                            int X2 = sw0.X((i10 >> 2) & 3);
-                            int X3 = sw0.X(i10 >> 4);
+                            int X = tw0.X(i10 & 3);
+                            int X2 = tw0.X((i10 >> 2) & 3);
+                            int X3 = tw0.X(i10 >> 4);
                             if (X == 4 && X2 == 4 && X3 == 4) {
                                 X = 5;
                                 X3 = 5;
                                 X2 = 5;
                             }
-                            sw0Var.b1 = X;
-                            sw0Var.c1 = X2;
-                            sw0Var.d1 = X3;
+                            tw0Var.b1 = X;
+                            tw0Var.c1 = X2;
+                            tw0Var.d1 = X3;
                             MessageObject messageObject = getMessageObject();
                             int i11 = getMessageObject().currentAccount;
-                            sw0Var.V0 = true;
+                            tw0Var.V0 = true;
                             u1Var = this;
-                            Utilities.globalQueue.postRunnable(new ki.r2(sw0Var, stickerSetByEmojiOrName, i11, messageObject, u1Var, z10, 3));
+                            Utilities.globalQueue.postRunnable(new ki.r2(tw0Var, stickerSetByEmojiOrName, i11, messageObject, u1Var, z10, 3));
                         }
                         if (u1Var.y7.isOut()) {
-                            sj0Var.S(ConnectionsManager.DEFAULT_DATACENTER_ID, u1Var.gd);
+                            tj0Var.S(ConnectionsManager.DEFAULT_DATACENTER_ID, u1Var.gd);
                         }
                         u1Var.y7.wasUnread = false;
                     }
-                    if (sj0Var.m0 == null && !sj0Var.Y0 && stickerSetByEmojiOrName.documents.size() > 0) {
-                        sw0 sw0Var2 = (sw0) sj0Var;
-                        if (sw0Var2.m0 == null && !sw0Var2.Y0) {
-                            sw0Var2.Y0 = true;
-                            Utilities.globalQueue.postRunnable(new ub(sw0Var2, stickerSetByEmojiOrName, getMessageObject().currentAccount, getMessageObject(), u1Var, 24));
+                    if (tj0Var.m0 == null && !tj0Var.Y0 && stickerSetByEmojiOrName.documents.size() > 0) {
+                        tw0 tw0Var2 = (tw0) tj0Var;
+                        if (tw0Var2.m0 == null && !tw0Var2.Y0) {
+                            tw0Var2.Y0 = true;
+                            Utilities.globalQueue.postRunnable(new ub(tw0Var2, stickerSetByEmojiOrName, getMessageObject().currentAccount, getMessageObject(), u1Var, 24));
                             return true;
                         }
                     }
                 } else {
-                    if (sj0Var.m0 == null && !sj0Var.Y0 && stickerSetByEmojiOrName.documents.size() > 0) {
+                    if (tj0Var.m0 == null && !tj0Var.Y0 && stickerSetByEmojiOrName.documents.size() > 0) {
                         TLRPC.Document document = stickerSetByEmojiOrName.documents.get(0);
                         File pathToAttach = FileLoader.getInstance(this.I7).getPathToAttach(document, true);
-                        if (sj0Var.m0 == null && !sj0Var.Y0) {
+                        if (tj0Var.m0 == null && !tj0Var.Y0) {
                             final String readRes = AndroidUtilities.readRes(pathToAttach);
                             if (TextUtils.isEmpty(readRes)) {
                                 DownloadController.getInstance(this.I7).addLoadingFileObserver(FileLoader.getAttachFileName(document), this.y7, this);
                                 FileLoader.getInstance(this.I7).loadFile(document, stickerSetByEmojiOrName, 1, 1);
                             } else {
-                                sj0Var.Y0 = true;
+                                tj0Var.Y0 = true;
                                 final int i12 = 1;
-                                Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.qj0
+                                Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.rj0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i12) {
                                             case 0:
-                                                final sj0 sj0Var2 = sj0Var;
+                                                final tj0 tj0Var2 = tj0Var;
                                                 String str = readRes;
-                                                if (!sj0Var2.W0) {
-                                                    sj0Var2.U0 = RLottieNative.b(str, null, null, null);
-                                                    int i13 = sj0Var2.U0 != null ? sj0Var2.U0.a[0] : 0;
-                                                    if (sj0Var2.U0 != null) {
-                                                        int i14 = sj0Var2.U0.a[1];
+                                                if (!tj0Var2.W0) {
+                                                    tj0Var2.U0 = RLottieNative.b(str, null, null, null);
+                                                    int i13 = tj0Var2.U0 != null ? tj0Var2.U0.a[0] : 0;
+                                                    if (tj0Var2.U0 != null) {
+                                                        int i14 = tj0Var2.U0.a[1];
                                                     }
-                                                    AndroidUtilities.runOnUIThread(new e2(sj0Var2, i13, 10));
+                                                    AndroidUtilities.runOnUIThread(new e2(tj0Var2, i13, 10));
                                                     break;
                                                 } else {
                                                     final int i15 = 1;
-                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.rj0
+                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.sj0
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
                                                             switch (i15) {
                                                                 case 0:
-                                                                    sj0 sj0Var3 = sj0Var2;
-                                                                    sj0Var3.Y0 = false;
-                                                                    if (!sj0Var3.V0 && sj0Var3.W0) {
-                                                                        sj0Var3.C(true);
+                                                                    tj0 tj0Var3 = tj0Var2;
+                                                                    tj0Var3.Y0 = false;
+                                                                    if (!tj0Var3.V0 && tj0Var3.W0) {
+                                                                        tj0Var3.C(true);
                                                                         break;
                                                                     } else {
-                                                                        sj0Var3.l();
-                                                                        sj0Var3.I();
-                                                                        sj0Var3.x();
+                                                                        tj0Var3.l();
+                                                                        tj0Var3.I();
+                                                                        tj0Var3.x();
                                                                         break;
                                                                     }
                                                                 default:
-                                                                    sj0 sj0Var4 = sj0Var2;
-                                                                    sj0Var4.V0 = false;
-                                                                    if (!sj0Var4.Y0 && sj0Var4.W0) {
-                                                                        sj0Var4.C(true);
+                                                                    tj0 tj0Var4 = tj0Var2;
+                                                                    tj0Var4.V0 = false;
+                                                                    if (!tj0Var4.Y0 && tj0Var4.W0) {
+                                                                        tj0Var4.C(true);
                                                                         break;
                                                                     }
                                                                     break;
@@ -6693,30 +6693,30 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                     break;
                                                 }
                                             default:
-                                                final sj0 sj0Var3 = sj0Var;
-                                                sj0Var3.m0 = RLottieNative.b(readRes, sj0Var3.e, null, null);
+                                                final tj0 tj0Var3 = tj0Var;
+                                                tj0Var3.m0 = RLottieNative.b(readRes, tj0Var3.e, null, null);
                                                 final int i16 = 0;
-                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.rj0
+                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.sj0
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
                                                         switch (i16) {
                                                             case 0:
-                                                                sj0 sj0Var32 = sj0Var3;
-                                                                sj0Var32.Y0 = false;
-                                                                if (!sj0Var32.V0 && sj0Var32.W0) {
-                                                                    sj0Var32.C(true);
+                                                                tj0 tj0Var32 = tj0Var3;
+                                                                tj0Var32.Y0 = false;
+                                                                if (!tj0Var32.V0 && tj0Var32.W0) {
+                                                                    tj0Var32.C(true);
                                                                     break;
                                                                 } else {
-                                                                    sj0Var32.l();
-                                                                    sj0Var32.I();
-                                                                    sj0Var32.x();
+                                                                    tj0Var32.l();
+                                                                    tj0Var32.I();
+                                                                    tj0Var32.x();
                                                                     break;
                                                                 }
                                                             default:
-                                                                sj0 sj0Var4 = sj0Var3;
-                                                                sj0Var4.V0 = false;
-                                                                if (!sj0Var4.Y0 && sj0Var4.W0) {
-                                                                    sj0Var4.C(true);
+                                                                tj0 tj0Var4 = tj0Var3;
+                                                                tj0Var4.V0 = false;
+                                                                if (!tj0Var4.Y0 && tj0Var4.W0) {
+                                                                    tj0Var4.C(true);
                                                                     break;
                                                                 }
                                                                 break;
@@ -6733,61 +6733,61 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                     }
                     if (diceValue >= 0 && diceValue < stickerSetByEmojiOrName.documents.size()) {
                         if (!z10 && this.y7.isOut() && (diceFrameSuccess = MessagesController.getInstance(this.I7).diceSuccess.get(diceEmoji)) != null && diceFrameSuccess.num == diceValue) {
-                            sj0Var.S(diceFrameSuccess.frame, this.gd);
+                            tj0Var.S(diceFrameSuccess.frame, this.gd);
                         }
                         TLRPC.Document document2 = stickerSetByEmojiOrName.documents.get(Math.max(diceValue, 0));
                         File pathToAttach2 = FileLoader.getInstance(this.I7).getPathToAttach(document2, true);
-                        if (sj0Var.U0 == null && !sj0Var.V0) {
+                        if (tj0Var.U0 == null && !tj0Var.V0) {
                             final String readRes2 = AndroidUtilities.readRes(pathToAttach2);
                             if (TextUtils.isEmpty(readRes2)) {
                                 DownloadController.getInstance(this.I7).addLoadingFileObserver(FileLoader.getAttachFileName(document2), this.y7, this);
                                 FileLoader.getInstance(this.I7).loadFile(document2, stickerSetByEmojiOrName, 1, 1);
                                 this.y7.wasUnread = false;
                             } else {
-                                if (z10 && sj0Var.Q == null && sj0Var.R == null && sj0Var.P == null) {
-                                    sj0Var.J = 2;
-                                    sj0Var.X0 = true;
+                                if (z10 && tj0Var.Q == null && tj0Var.R == null && tj0Var.P == null) {
+                                    tj0Var.J = 2;
+                                    tj0Var.X0 = true;
                                 }
-                                sj0Var.V0 = true;
+                                tj0Var.V0 = true;
                                 final int i13 = 0;
-                                Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.qj0
+                                Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.rj0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i13) {
                                             case 0:
-                                                final sj0 sj0Var2 = sj0Var;
+                                                final tj0 tj0Var2 = tj0Var;
                                                 String str = readRes2;
-                                                if (!sj0Var2.W0) {
-                                                    sj0Var2.U0 = RLottieNative.b(str, null, null, null);
-                                                    int i132 = sj0Var2.U0 != null ? sj0Var2.U0.a[0] : 0;
-                                                    if (sj0Var2.U0 != null) {
-                                                        int i14 = sj0Var2.U0.a[1];
+                                                if (!tj0Var2.W0) {
+                                                    tj0Var2.U0 = RLottieNative.b(str, null, null, null);
+                                                    int i132 = tj0Var2.U0 != null ? tj0Var2.U0.a[0] : 0;
+                                                    if (tj0Var2.U0 != null) {
+                                                        int i14 = tj0Var2.U0.a[1];
                                                     }
-                                                    AndroidUtilities.runOnUIThread(new e2(sj0Var2, i132, 10));
+                                                    AndroidUtilities.runOnUIThread(new e2(tj0Var2, i132, 10));
                                                     break;
                                                 } else {
                                                     final int i15 = 1;
-                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.rj0
+                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.sj0
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
                                                             switch (i15) {
                                                                 case 0:
-                                                                    sj0 sj0Var32 = sj0Var2;
-                                                                    sj0Var32.Y0 = false;
-                                                                    if (!sj0Var32.V0 && sj0Var32.W0) {
-                                                                        sj0Var32.C(true);
+                                                                    tj0 tj0Var32 = tj0Var2;
+                                                                    tj0Var32.Y0 = false;
+                                                                    if (!tj0Var32.V0 && tj0Var32.W0) {
+                                                                        tj0Var32.C(true);
                                                                         break;
                                                                     } else {
-                                                                        sj0Var32.l();
-                                                                        sj0Var32.I();
-                                                                        sj0Var32.x();
+                                                                        tj0Var32.l();
+                                                                        tj0Var32.I();
+                                                                        tj0Var32.x();
                                                                         break;
                                                                     }
                                                                 default:
-                                                                    sj0 sj0Var4 = sj0Var2;
-                                                                    sj0Var4.V0 = false;
-                                                                    if (!sj0Var4.Y0 && sj0Var4.W0) {
-                                                                        sj0Var4.C(true);
+                                                                    tj0 tj0Var4 = tj0Var2;
+                                                                    tj0Var4.V0 = false;
+                                                                    if (!tj0Var4.Y0 && tj0Var4.W0) {
+                                                                        tj0Var4.C(true);
                                                                         break;
                                                                     }
                                                                     break;
@@ -6797,30 +6797,30 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                     break;
                                                 }
                                             default:
-                                                final sj0 sj0Var3 = sj0Var;
-                                                sj0Var3.m0 = RLottieNative.b(readRes2, sj0Var3.e, null, null);
+                                                final tj0 tj0Var3 = tj0Var;
+                                                tj0Var3.m0 = RLottieNative.b(readRes2, tj0Var3.e, null, null);
                                                 final int i16 = 0;
-                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.rj0
+                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.sj0
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
                                                         switch (i16) {
                                                             case 0:
-                                                                sj0 sj0Var32 = sj0Var3;
-                                                                sj0Var32.Y0 = false;
-                                                                if (!sj0Var32.V0 && sj0Var32.W0) {
-                                                                    sj0Var32.C(true);
+                                                                tj0 tj0Var32 = tj0Var3;
+                                                                tj0Var32.Y0 = false;
+                                                                if (!tj0Var32.V0 && tj0Var32.W0) {
+                                                                    tj0Var32.C(true);
                                                                     break;
                                                                 } else {
-                                                                    sj0Var32.l();
-                                                                    sj0Var32.I();
-                                                                    sj0Var32.x();
+                                                                    tj0Var32.l();
+                                                                    tj0Var32.I();
+                                                                    tj0Var32.x();
                                                                     break;
                                                                 }
                                                             default:
-                                                                sj0 sj0Var4 = sj0Var3;
-                                                                sj0Var4.V0 = false;
-                                                                if (!sj0Var4.Y0 && sj0Var4.W0) {
-                                                                    sj0Var4.C(true);
+                                                                tj0 tj0Var4 = tj0Var3;
+                                                                tj0Var4.V0 = false;
+                                                                if (!tj0Var4.Y0 && tj0Var4.W0) {
+                                                                    tj0Var4.C(true);
                                                                     break;
                                                                 }
                                                                 break;
@@ -7033,7 +7033,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                 f10 = f25;
                 i10 = i19;
                 f11 = 18.0f;
-                dp2 = kk.D(9.0f, i21, extraTextX2);
+                dp2 = mk.D(9.0f, i21, extraTextX2);
             }
             TLRPC.Chat chat = this.Zb;
             if (chat != null && chat.signature_profiles) {
@@ -7088,7 +7088,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
             }
             f13 = 6.0f;
             int dp6 = dp2 - AndroidUtilities.dp(14.0f);
-            int D = kk.D(i12, this.M8, 1);
+            int D = mk.D(i12, this.M8, 1);
             rect = this.k9;
             rect.set(dp4 - AndroidUtilities.dp(f13), (int) dp5, dp6, D);
             drawableArr = this.v3;
@@ -7579,7 +7579,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         f12 = f10;
         f13 = 0.0f;
         int dp62 = dp2 - AndroidUtilities.dp(14.0f);
-        int D2 = kk.D(i12, this.M8, 1);
+        int D2 = mk.D(i12, this.M8, 1);
         rect = this.k9;
         rect.set(dp4 - AndroidUtilities.dp(f13), (int) dp5, dp62, D2);
         drawableArr = this.v3;
@@ -7957,7 +7957,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         boolean z10;
         yc ycVar;
         if (this.ca == null) {
-            this.ca = new pm0(this);
+            this.ca = new qm0(this);
         }
         int a2 = this.ca.a(this.y7, this.Yb, this.Zb, this.Id, 4);
         if (this.vc == null) {
@@ -8329,13 +8329,13 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                 int i21 = ((!u1Var.g8 || u1Var.f8) && u1Var.L != null) ? 2 : 0;
                 ci.g3 g3Var4 = u1Var.S0;
                 g3Var4.setPressed(i21);
-                if (!PhotoViewer.N1(u1Var.y7)) {
+                if (!PhotoViewer.P1(u1Var.y7)) {
                     SecretMediaViewer f41 = SecretMediaViewer.f();
                     MessageObject messageObject10 = u1Var.y7;
                     if ((!f41.s || f41.M || messageObject10 == null || (messageObject8 = f41.h0) == null || messageObject8.getId() != messageObject10.getId()) && !ci.aa.x(u1Var.y7)) {
                         z12 = true;
                         g3Var4.setVisible(z12, false);
-                        if (!PhotoViewer.N1(u1Var.y7)) {
+                        if (!PhotoViewer.P1(u1Var.y7)) {
                             SecretMediaViewer f42 = SecretMediaViewer.f();
                             MessageObject messageObject11 = u1Var.y7;
                             if ((!f42.s || f42.M || messageObject11 == null || (messageObject7 = f42.h0) == null || messageObject7.getId() != messageObject11.getId()) && !ci.aa.x(u1Var.y7)) {
@@ -8454,8 +8454,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                 u1Var.Jc.p2().Y(u1Var.y7, richMessageLayout2, canvas3);
                                             }
                                             canvas3.translate(-u1Var.n0, -u1Var.r0);
-                                            kj0 kj0Var = u1Var.e4;
-                                            if (kj0Var == null || kj0Var.e || kj0Var.f || u1Var.t8 == null) {
+                                            lj0 lj0Var = u1Var.e4;
+                                            if (lj0Var == null || lj0Var.e || lj0Var.f || u1Var.t8 == null) {
                                                 canvas2 = canvas3;
                                                 na0Var2 = na0Var4;
                                                 f11 = f14;
@@ -8498,7 +8498,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                             na0Var3 = na0Var;
                                             u1Var.u3(false);
                                             if (!u1Var.x && (messageObject = u1Var.y7) != null && !messageObject.preview && (!t1Var.e3 || (l1Var = u1Var.Jc) == null || l1Var.e())) {
-                                                if (!(canvas2 instanceof iw0) && u1Var.pc != null && (((arrayList = u1Var.y7.textLayoutBlocks) != null && !arrayList.isEmpty()) || ((arrayList2 = t1Var.H0) != null && !arrayList2.isEmpty()))) {
+                                                if (!(canvas2 instanceof jw0) && u1Var.pc != null && (((arrayList = u1Var.y7.textLayoutBlocks) != null && !arrayList.isEmpty()) || ((arrayList2 = t1Var.H0) != null && !arrayList2.isEmpty()))) {
                                                     u1Var.pc.a();
                                                 }
                                                 V1(canvas);
@@ -8786,15 +8786,15 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                             radialProgress24.p(u1Var.K2((u1Var.f3() || u1Var.P4 != 0) ? org.telegram.ui.ActionBar.h6.rb : org.telegram.ui.ActionBar.h6.qb));
                                             f1Var2 = f1Var3;
                                         } else {
-                                            pm0 pm0Var = u1Var.aa;
-                                            if (pm0Var == null || !u1Var.h2) {
+                                            qm0 qm0Var = u1Var.aa;
+                                            if (qm0Var == null || !u1Var.h2) {
                                                 f1Var2 = f1Var3;
                                                 org.telegram.ui.ActionBar.h6.O2.setColor(u1Var.K2(org.telegram.ui.ActionBar.h6.rd));
                                                 org.telegram.ui.ActionBar.h6.P2.setColor(u1Var.K2(u1Var.f3() ? org.telegram.ui.ActionBar.h6.qd : org.telegram.ui.ActionBar.h6.pd));
                                                 org.telegram.ui.ActionBar.h6.N2.setColor(u1Var.K2(u1Var.f3() ? org.telegram.ui.ActionBar.h6.td : org.telegram.ui.ActionBar.h6.sd));
                                                 radialProgress24.p(u1Var.K2((u1Var.f3() || u1Var.P4 != 0) ? org.telegram.ui.ActionBar.h6.jd : org.telegram.ui.ActionBar.h6.id));
                                             } else {
-                                                org.telegram.ui.ActionBar.h6.O2.setColor(pm0Var.h());
+                                                org.telegram.ui.ActionBar.h6.O2.setColor(qm0Var.h());
                                                 org.telegram.ui.ActionBar.h6.P2.setColor(org.telegram.ui.ActionBar.h6.c(u1Var.K2(u1Var.f3() ? org.telegram.ui.ActionBar.h6.qd : org.telegram.ui.ActionBar.h6.pd), u1Var.aa.h()));
                                                 org.telegram.ui.ActionBar.h6.N2.setColor(org.telegram.ui.ActionBar.h6.c(u1Var.K2(u1Var.f3() ? org.telegram.ui.ActionBar.h6.td : org.telegram.ui.ActionBar.h6.sd), u1Var.aa.h()));
                                                 radialProgress24.p(org.telegram.ui.ActionBar.h6.c(u1Var.K2((u1Var.f3() || u1Var.P4 != 0) ? org.telegram.ui.ActionBar.h6.jd : org.telegram.ui.ActionBar.h6.id), u1Var.aa.h()));
@@ -9126,8 +9126,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                                     } else {
                                                                         RadialProgress2 radialProgress210 = radialProgress23;
                                                                         RadialProgress2 radialProgress211 = radialProgress22;
-                                                                        pm0 pm0Var2 = u1Var.aa;
-                                                                        if (pm0Var2 == null || !u1Var.h2) {
+                                                                        qm0 qm0Var2 = u1Var.aa;
+                                                                        if (qm0Var2 == null || !u1Var.h2) {
                                                                             f33 = imageWidth2;
                                                                             int i41 = org.telegram.ui.ActionBar.h6.ie;
                                                                             int i42 = org.telegram.ui.ActionBar.h6.je;
@@ -9139,7 +9139,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                                             radialProgress210.p(u1Var.K2(u1Var.f3() ? org.telegram.ui.ActionBar.h6.Cd : org.telegram.ui.ActionBar.h6.Bd));
                                                                         } else {
                                                                             f33 = imageWidth2;
-                                                                            radialProgress211.setColors(pm0Var2.h(), u1Var.aa.h(), org.telegram.ui.ActionBar.h6.v(-1, org.telegram.ui.ActionBar.h6.m1(0.01f, u1Var.aa.h())), org.telegram.ui.ActionBar.h6.v(-1, org.telegram.ui.ActionBar.h6.m1(0.05f, u1Var.aa.h())));
+                                                                            radialProgress211.setColors(qm0Var2.h(), u1Var.aa.h(), org.telegram.ui.ActionBar.h6.v(-1, org.telegram.ui.ActionBar.h6.m1(0.01f, u1Var.aa.h())), org.telegram.ui.ActionBar.h6.v(-1, org.telegram.ui.ActionBar.h6.m1(0.05f, u1Var.aa.h())));
                                                                             radialProgress211.p(org.telegram.ui.ActionBar.h6.v(-1, org.telegram.ui.ActionBar.h6.m1(0.01f, u1Var.aa.h())));
                                                                             radialProgress210.setColors(u1Var.aa.h(), u1Var.aa.h(), org.telegram.ui.ActionBar.h6.v(-1, org.telegram.ui.ActionBar.h6.m1(0.01f, u1Var.aa.h())), org.telegram.ui.ActionBar.h6.v(-1, org.telegram.ui.ActionBar.h6.m1(0.05f, u1Var.aa.h())));
                                                                             radialProgress210.p(org.telegram.ui.ActionBar.h6.v(-1, org.telegram.ui.ActionBar.h6.m1(0.01f, u1Var.aa.h())));
@@ -9360,7 +9360,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                 }
                                             }
                                             boolean z25 = u1Var.x;
-                                            fp0 fp0Var = u1Var.H5;
+                                            gp0 gp0Var = u1Var.H5;
                                             if (!z25 && u1Var.K1 == 3) {
                                                 org.telegram.ui.ActionBar.f5 f5Var2 = u1Var.f3() ? u1Var.u8 : u1Var.t8;
                                                 na0Var2.B = f5Var2;
@@ -9374,7 +9374,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                     }
                                                     radialProgress24.I *= u1Var.Bb;
                                                 }
-                                                u1Var.q2(canvas4, fp0Var == null ? 1.0f : 1.0f - fp0Var.L, new ka(5, u1Var, canvas4));
+                                                u1Var.q2(canvas4, gp0Var == null ? 1.0f : 1.0f - gp0Var.L, new ka(5, u1Var, canvas4));
                                             }
                                             int i49 = u1Var.J5;
                                             int i50 = u1Var.S5;
@@ -9398,8 +9398,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                             if (u1Var.K1 != i11 || !u1Var.h2) {
                                                 if (u1Var.F5) {
                                                     canvas4.translate(AndroidUtilities.dp(13.0f) + i49, u1Var.K5 + f64);
-                                                    fp0Var.e(u1Var.qd ? bs.i.getInterpolation(u1Var.getVideoTranscriptionProgress()) : 1.0f);
-                                                    fp0Var.c(canvas4, u1Var);
+                                                    gp0Var.e(u1Var.qd ? bs.i.getInterpolation(u1Var.getVideoTranscriptionProgress()) : 1.0f);
+                                                    gp0Var.c(canvas4, u1Var);
                                                 } else {
                                                     canvas4.translate(i49, u1Var.K5 + f64);
                                                     f1 f1Var4 = f1Var;
@@ -9426,13 +9426,13 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                 canvas4.save();
                                                 int dp13 = (AndroidUtilities.dp(u1Var.F ? 6.0f : 0.0f) + (u1Var.getCurrentBackgroundRight() - u1Var.getCurrentBackgroundLeft())) - AndroidUtilities.dp((u1Var.h2 ? 10 : 0) + 128);
                                                 if (u1Var.M5 == null) {
-                                                    j1 j1Var = new j1(u1Var, u1Var, fp0Var);
+                                                    j1 j1Var = new j1(u1Var, u1Var, gp0Var);
                                                     u1Var.M5 = j1Var;
                                                     MessageObject messageObject14 = u1Var.y7;
                                                     TLRPC.Message message = messageObject14.messageOwner;
-                                                    j1Var.t(message != null && message.voiceTranscriptionOpen && message.voiceTranscriptionFinal && z31.l(messageObject14), false);
-                                                    u1Var.M5.r(z31.k(u1Var.y7), false);
-                                                    u1Var.M5.s(z31.v(u1Var.y7), false);
+                                                    j1Var.t(message != null && message.voiceTranscriptionOpen && message.voiceTranscriptionFinal && a41.l(messageObject14), false);
+                                                    u1Var.M5.r(a41.k(u1Var.y7), false);
+                                                    u1Var.M5.s(a41.v(u1Var.y7), false);
                                                 }
                                                 if (u1Var.ua != 0) {
                                                     u1Var.N5 = AndroidUtilities.lerp(org.telegram.messenger.g0.C(21.0f, i49, dp13), u1Var.Ga, 1.0f - u1Var.getVideoTranscriptionProgress());
@@ -9656,7 +9656,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                 }
                 z12 = false;
                 g3Var4.setVisible(z12, false);
-                if (!PhotoViewer.N1(u1Var.y7)) {
+                if (!PhotoViewer.P1(u1Var.y7)) {
                 }
                 z13 = false;
                 u1Var.T0.setVisible(z13, false);
@@ -9730,11 +9730,11 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         }
         ci.g3 g3Var42 = u1Var.S0;
         g3Var42.setPressed(i21);
-        if (!PhotoViewer.N1(u1Var.y7)) {
+        if (!PhotoViewer.P1(u1Var.y7)) {
         }
         z12 = false;
         g3Var42.setVisible(z12, false);
-        if (!PhotoViewer.N1(u1Var.y7)) {
+        if (!PhotoViewer.P1(u1Var.y7)) {
         }
         z13 = false;
         u1Var.T0.setVisible(z13, false);
@@ -9804,9 +9804,9 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
             this.e4 = null;
             return;
         }
-        kj0 kj0Var = this.e4;
-        if (kj0Var == null || !kj0Var.f || !Arrays.equals(kj0Var.g, bArr)) {
-            this.e4 = new kj0(this, messageObject.getId(), bArr);
+        lj0 lj0Var = this.e4;
+        if (lj0Var == null || !lj0Var.f || !Arrays.equals(lj0Var.g, bArr)) {
+            this.e4 = new lj0(this, messageObject.getId(), bArr);
         }
         this.y0 = true;
     }
@@ -10020,7 +10020,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                         if (lineLeft <= f13 && lineLeft + s1Var3.p.getLineWidth(lineForVertical) >= f13) {
                                             Spannable spannable = (Spannable) s1Var3.p.getText();
                                             ClickableSpan[] clickableSpanArr = (ClickableSpan[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
-                                            if (clickableSpanArr.length != 0 && ((!(clickableSpanArr[i10] instanceof h61) || h61.h) && !AndroidUtilities.isAccessibilityScreenReaderEnabled())) {
+                                            if (clickableSpanArr.length != 0 && ((!(clickableSpanArr[i10] instanceof i61) || i61.h) && !AndroidUtilities.isAccessibilityScreenReaderEnabled())) {
                                                 y90 y90Var2 = this.t5;
                                                 float f14 = y90Var2 != null ? f11 : f11;
                                                 u90Var.k(y90Var2, true);
@@ -10150,7 +10150,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                 AndroidUtilities.lerp(1.0f - f12, f12, t1Var.K1);
             }
             if (this.da == null) {
-                this.da = new pm0(this);
+                this.da = new qm0(this);
             }
             int o10 = this.da.o(this.Id);
             canvas.save();
@@ -10163,9 +10163,9 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
             canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
             this.da.c(canvas, rectF, 5.0f, 5.0f, 5.0f, f10, false, false);
             this.da.e(canvas, rectF, f10);
-            e11 e11Var = this.O1;
-            if (e11Var != null) {
-                e11Var.c(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(12.0f), f10, o10, canvas);
+            f11 f11Var = this.O1;
+            if (f11Var != null) {
+                f11Var.c(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(12.0f), f10, o10, canvas);
                 if (this.P1 != null) {
                     rectF.set((int) (AndroidUtilities.dp(10.0f) + this.O1.c + AndroidUtilities.dp(4.0f)), AndroidUtilities.dp(4.33f), AndroidUtilities.dp(10.0f) + r2 + this.P1.c, AndroidUtilities.dp(21.66f));
                     yc ycVar2 = this.Q1;
@@ -10472,7 +10472,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
             }
             float f17 = f16;
             if (this.da == null) {
-                this.da = new pm0(this);
+                this.da = new qm0(this);
             }
             int o10 = this.da.o(this.Id);
             canvas2.save();
@@ -10632,9 +10632,9 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
             this.e4 = null;
             return;
         }
-        kj0 kj0Var = this.e4;
-        if (kj0Var == null || !kj0Var.e || kj0Var.c != (-i10)) {
-            this.e4 = new kj0(this, messageObject.getId(), i10);
+        lj0 lj0Var = this.e4;
+        if (lj0Var == null || !lj0Var.e || lj0Var.c != (-i10)) {
+            this.e4 = new lj0(this, messageObject.getId(), i10);
         }
         this.y0 = true;
     }
@@ -11198,7 +11198,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         int i29;
         int i30;
         MessageObject messageObject;
-        pm0 pm0Var;
+        qm0 qm0Var;
         float f32;
         float f33;
         float f34;
@@ -11269,12 +11269,12 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                         }
                         i16 = i37;
                         if (this.aa == null) {
-                            this.aa = new pm0(this);
+                            this.aa = new qm0(this);
                         }
                         org.telegram.ui.ActionBar.h6.Y2.setColor(this.aa.a(this.y7, this.Yb, this.Zb, this.Id, 3));
-                        pm0 pm0Var2 = this.aa;
+                        qm0 qm0Var2 = this.aa;
                         int i38 = this.b3;
-                        pm0Var2.n((i38 != 23 || i38 == 24 || i38 == 28) ? 0.5f : 1.0f);
+                        qm0Var2.n((i38 != 23 || i38 == 24 || i38 == 28) ? 0.5f : 1.0f);
                         boolean z19 = (this.y7.isSponsored() || this.v1) ? false : true;
                         z10 = !(!z19 || !this.R2 || (i36 = this.b3) == 26 || i36 == 9 || i36 == 2 || i36 == 13 || i36 == 11 || i36 == 25 || i36 == 1 || i36 == 29 || i36 == 18 || i36 == 22) || (this.b3 == 6 && this.d3 != 0);
                         z11 = z19 && (!this.R2 || (i35 = this.b3) == 9 || i35 == 2 || i35 == 11 || i35 == 25 || i35 == 13 || i35 == 1 || i35 == 29 || i35 == 18 || i35 == 22 || i35 == 32 || this.v1 || i35 == 26);
@@ -11308,7 +11308,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                             rectF4.set(f11, i13 - AndroidUtilities.dp(6.0f), i14 + i15, i13 + i16 + (this.R2 ? AndroidUtilities.dp(42.0f) : 0));
                             this.aa.p(z12);
                             float floor = (float) Math.floor(SharedConfig.bubbleRadius / (this.y7.isSponsored() ? f42 : 3.0f));
-                            pm0 pm0Var3 = this.aa;
+                            qm0 qm0Var3 = this.aa;
                             if (z10) {
                                 float f43 = 1.0f - (t1Var.s1 ? this.v1 ? t1Var.K1 : 1.0f - t1Var.K1 : this.v1 ? 1.0f : 0.0f);
                                 float imageHeight = g3Var3.getImageHeight() + AndroidUtilities.dp(f12);
@@ -11325,7 +11325,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                 f40 = floor;
                                 f41 = 0.0f;
                             }
-                            pm0Var3.j(f41);
+                            qm0Var3.j(f41);
                             z14 = z12;
                             i17 = i16;
                             z15 = z10;
@@ -11334,7 +11334,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                             i19 = i14;
                             f15 = f11;
                             float f44 = f40;
-                            pm0Var3.b(f44, f40, f40, f7, canvas, rectF4);
+                            qm0Var3.b(f44, f40, f40, f7, canvas, rectF4);
                             int g10 = this.aa.g();
                             z zVar = this.Hc;
                             if (zVar == null) {
@@ -11695,10 +11695,10 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                         }
                                         if (t1Var == null && t1Var.g) {
                                             f21 = 6.0f;
-                                            b10 = kk.b(t1Var.p0, AndroidUtilities.dp(6.0f), f35, i31);
+                                            b10 = mk.b(t1Var.p0, AndroidUtilities.dp(6.0f), f35, i31);
                                         } else {
                                             f21 = 6.0f;
-                                            b10 = kk.b(g3Var3.getImageHeight(), AndroidUtilities.dp(6.0f), f35, i31);
+                                            b10 = mk.b(g3Var3.getImageHeight(), AndroidUtilities.dp(6.0f), f35, i31);
                                         }
                                         i21 = (int) b10;
                                         if (this.y7.isOutOwner()) {
@@ -11776,8 +11776,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                 this.Jc.p2().X(this.y7.isOutOwner(), this.K2, canvas2);
                                             }
                                             TextPaint paint3 = this.K2.getPaint();
-                                            if (z17 && (messageObject = this.y7) != null && !messageObject.isOutOwner() && (pm0Var = this.aa) != null) {
-                                                paint3.linkColor = pm0Var.h();
+                                            if (z17 && (messageObject = this.y7) != null && !messageObject.isOutOwner() && (qm0Var = this.aa) != null) {
+                                                paint3.linkColor = qm0Var.h();
                                             }
                                             int alpha5 = paint3.getAlpha();
                                             paint3.setAlpha((int) (alpha5 * f13));
@@ -12177,7 +12177,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                 if (t1Var == null) {
                                 }
                                 f21 = 6.0f;
-                                b10 = kk.b(g3Var3.getImageHeight(), AndroidUtilities.dp(6.0f), f35, i31);
+                                b10 = mk.b(g3Var3.getImageHeight(), AndroidUtilities.dp(6.0f), f35, i31);
                                 i21 = (int) b10;
                                 if (this.y7.isOutOwner()) {
                                 }
@@ -12297,9 +12297,9 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
             if (this.aa == null) {
             }
             org.telegram.ui.ActionBar.h6.Y2.setColor(this.aa.a(this.y7, this.Yb, this.Zb, this.Id, 3));
-            pm0 pm0Var22 = this.aa;
+            qm0 qm0Var22 = this.aa;
             int i382 = this.b3;
-            pm0Var22.n((i382 != 23 || i382 == 24 || i382 == 28) ? 0.5f : 1.0f);
+            qm0Var22.n((i382 != 23 || i382 == 24 || i382 == 28) ? 0.5f : 1.0f);
             boolean z192 = (this.y7.isSponsored() || this.v1) ? false : true;
             if (!z192) {
             }
@@ -12535,11 +12535,11 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                         this.y0 = z10;
                         int i21 = i12 + i11;
                         if (z10 && this.K == null && this.A7 == null) {
-                            kj0 kj0Var = this.e4;
-                            boolean z17 = (kj0Var == null || kj0Var.k.c < 1.0f) ? z16 : false;
-                            if (kj0Var != null && !kj0Var.e && !kj0Var.f && kj0Var.b == messageObject2.getId()) {
-                                kj0 kj0Var2 = this.e4;
-                                if (kj0Var2.c == i12) {
+                            lj0 lj0Var = this.e4;
+                            boolean z17 = (lj0Var == null || lj0Var.k.c < 1.0f) ? z16 : false;
+                            if (lj0Var != null && !lj0Var.e && !lj0Var.f && lj0Var.b == messageObject2.getId()) {
+                                lj0 lj0Var2 = this.e4;
+                                if (lj0Var2.c == i12) {
                                 }
                             }
                             if (this.c4 != null) {
@@ -12547,12 +12547,12 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                 int i22 = i12;
                                 int id2 = messageObject2.getId();
                                 MessageObject.TextLayoutBlocks textLayoutBlocks = this.c4;
-                                this.e4 = new kj0(this, parent, id2, textLayoutBlocks.textLayoutBlocks, i22, i21, textLayoutBlocks.textXOffset);
+                                this.e4 = new lj0(this, parent, id2, textLayoutBlocks.textLayoutBlocks, i22, i21, textLayoutBlocks.textXOffset);
                             } else {
-                                this.e4 = new kj0(this, getParent(), messageObject2.getId(), messageObject2.textLayoutBlocks, i12, i21, messageObject2.textXOffset);
+                                this.e4 = new lj0(this, getParent(), messageObject2.getId(), messageObject2.textLayoutBlocks, i12, i21, messageObject2.textXOffset);
                             }
-                            kj0 kj0Var3 = this.e4;
-                            if (kj0Var3 != null && !kj0Var3.m.isEmpty()) {
+                            lj0 lj0Var3 = this.e4;
+                            if (lj0Var3 != null && !lj0Var3.m.isEmpty()) {
                                 if (z11) {
                                     MessageObject primaryMessageObject = getPrimaryMessageObject();
                                     if (primaryMessageObject != null) {
@@ -12612,17 +12612,17 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
             int[] findQuote = RichQuote.findQuote(messageObject2, str2, i10);
             if (findQuote != null) {
                 this.y0 = true;
-                kj0 kj0Var4 = this.e4;
-                if (kj0Var4 != null && !kj0Var4.e && !kj0Var4.f && kj0Var4.b == messageObject2.getId()) {
-                    kj0 kj0Var5 = this.e4;
-                    if (kj0Var5.c == findQuote[0]) {
+                lj0 lj0Var4 = this.e4;
+                if (lj0Var4 != null && !lj0Var4.e && !lj0Var4.f && lj0Var4.b == messageObject2.getId()) {
+                    lj0 lj0Var5 = this.e4;
+                    if (lj0Var5.c == findQuote[0]) {
                     }
                 }
-                kj0 kj0Var6 = this.e4;
-                kj0 kj0Var7 = new kj0(this, getParent(), messageObject2.getId(), messageObject2.richLayout, findQuote[0], findQuote[1]);
-                this.e4 = kj0Var7;
-                if (kj0Var6 != null && kj0Var6.b == kj0Var7.b && !kj0Var6.e && !kj0Var6.f) {
-                    kj0Var7.k.d(kj0Var6.k.c, true);
+                lj0 lj0Var6 = this.e4;
+                lj0 lj0Var7 = new lj0(this, getParent(), messageObject2.getId(), messageObject2.richLayout, findQuote[0], findQuote[1]);
+                this.e4 = lj0Var7;
+                if (lj0Var6 != null && lj0Var6.b == lj0Var7.b && !lj0Var6.e && !lj0Var6.f) {
+                    lj0Var7.k.d(lj0Var6.k.c, true);
                 }
                 invalidate();
                 return true;
@@ -12844,7 +12844,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                 }
             }
         }
-        if (getParent() instanceof im0) {
+        if (getParent() instanceof jm0) {
             ViewGroup viewGroup2 = (ViewGroup) getParent();
             for (int i30 = 0; i30 < viewGroup2.getChildCount(); i30++) {
                 View childAt2 = viewGroup2.getChildAt(i30);
@@ -12950,7 +12950,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         int i15;
         int color;
         int i16;
-        kj0 kj0Var;
+        lj0 lj0Var;
         int i17;
         ArrayList arrayList3;
         int i18;
@@ -12971,7 +12971,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         float f18;
         int i27;
         float f19;
-        e11 e11Var;
+        f11 f11Var;
         l1 l1Var;
         int i28;
         boolean z19;
@@ -13102,7 +13102,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                 }
                                 i11 = i34;
                                 f14 = 6.0f;
-                                backgroundDrawableRight = kk.y((this.o8 ? 48 : 0) + 8, getExtraTextX(), (this.k8 || !this.y7.isOutOwner()) ? this.v8 + i39 : (this.v8 + i39) - AndroidUtilities.dp(6.0f));
+                                backgroundDrawableRight = mk.y((this.o8 ? 48 : 0) + 8, getExtraTextX(), (this.k8 || !this.y7.isOutOwner()) ? this.v8 + i39 : (this.v8 + i39) - AndroidUtilities.dp(6.0f));
                                 float extraTextX = (backgroundDrawableRight - (getExtraTextX() + AndroidUtilities.dp(10 + ((this.y7.isOutOwner() || this.k8 || this.J) ? 0 : 6)))) - f7;
                                 if (f12 != 1.0f) {
                                     f15 = 10.0f;
@@ -13124,8 +13124,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                         if (!ChatObject.isChannelAndNotMegaGroup(this.y7.getChatId(), i35)) {
                                             color = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.sb, this.Id);
                                             i16 = color;
-                                            kj0Var = this.e4;
-                                            if (kj0Var != null || kj0Var.e || kj0Var.f || this.K != null || (f5Var = this.t8) == null) {
+                                            lj0Var = this.e4;
+                                            if (lj0Var != null || lj0Var.e || lj0Var.f || this.K != null || (f5Var = this.t8) == null) {
                                                 i17 = i12;
                                                 arrayList3 = arrayList2;
                                             } else {
@@ -13158,7 +13158,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                 int dp2 = (int) (r32.maxRight + ((float) AndroidUtilities.dp(24.0f)) > 0.7f * extraTextX ? extraTextX : r32.maxRight + AndroidUtilities.dp(24.0f));
                                                 if (r32.quote) {
                                                     if (this.Z9 == null) {
-                                                        this.Z9 = new pm0(this);
+                                                        this.Z9 = new qm0(this);
                                                     }
                                                     i21 = i18;
                                                     this.Z9.a(this.y7, this.Yb, this.Zb, this.Id, 1);
@@ -13270,7 +13270,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                     textPaint6.linkColor = w04;
                                                     if (r32.code) {
                                                         if (this.Z9 == null) {
-                                                            this.Z9 = new pm0(this);
+                                                            this.Z9 = new qm0(this);
                                                         }
                                                         this.Z9.a(this.y7, this.Yb, this.Zb, this.Id, 2);
                                                         if (this.y7.isOutOwner() && (org.telegram.ui.ActionBar.h6.I.q() || org.telegram.ui.ActionBar.h6.W)) {
@@ -13312,10 +13312,10 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                                 canvas2 = canvas3;
                                                             }
                                                             canvas2.translate(AndroidUtilities.dp(f15), 0.0f);
-                                                            e11Var = textLayoutBlock.languageLayout;
-                                                            if (e11Var != null) {
-                                                                e11Var.p = (int) (f16 - AndroidUtilities.dp(12.0f));
-                                                                e11Var.c(0.0f, (-AndroidUtilities.dp(f14)) - (textLayoutBlock.languageHeight / 2.0f), f12, this.Z9.B, canvas2);
+                                                            f11Var = textLayoutBlock.languageLayout;
+                                                            if (f11Var != null) {
+                                                                f11Var.p = (int) (f16 - AndroidUtilities.dp(12.0f));
+                                                                f11Var.c(0.0f, (-AndroidUtilities.dp(f14)) - (textLayoutBlock.languageHeight / 2.0f), f12, this.Z9.B, canvas2);
                                                             }
                                                         }
                                                         f18 = min;
@@ -13328,8 +13328,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                         if (r32.hasCodeCopyButton) {
                                                         }
                                                         canvas2.translate(AndroidUtilities.dp(f15), 0.0f);
-                                                        e11Var = textLayoutBlock.languageLayout;
-                                                        if (e11Var != null) {
+                                                        f11Var = textLayoutBlock.languageLayout;
+                                                        if (f11Var != null) {
                                                         }
                                                     } else {
                                                         canvas2 = canvas;
@@ -13547,8 +13547,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                     }
                                     color = org.telegram.ui.ActionBar.h6.o2.getColor();
                                     i16 = color;
-                                    kj0Var = this.e4;
-                                    if (kj0Var != null) {
+                                    lj0Var = this.e4;
+                                    if (lj0Var != null) {
                                     }
                                     i17 = i12;
                                     arrayList3 = arrayList2;
@@ -13690,8 +13690,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                 }
                                 color = org.telegram.ui.ActionBar.h6.o2.getColor();
                                 i16 = color;
-                                kj0Var = this.e4;
-                                if (kj0Var != null) {
+                                lj0Var = this.e4;
+                                if (lj0Var != null) {
                                 }
                                 i17 = i12;
                                 arrayList3 = arrayList2;
@@ -13718,8 +13718,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                         }
                         color = org.telegram.ui.ActionBar.h6.o2.getColor();
                         i16 = color;
-                        kj0Var = this.e4;
-                        if (kj0Var != null) {
+                        lj0Var = this.e4;
+                        if (lj0Var != null) {
                         }
                         i17 = i12;
                         arrayList3 = arrayList2;
@@ -13857,13 +13857,13 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
             return;
         }
         Drawable drawable = this.S0.getDrawable();
-        if (drawable instanceof sj0) {
-            sj0 sj0Var = (sj0) drawable;
-            if ((sj0Var.m0 != null || sj0Var.Y0) && !this.Q && (i10 = sj0Var.J) != 1 && i10 == 2) {
-                if (!sj0Var.X0) {
-                    float t10 = sj0Var.t();
-                    if (sj0Var.U0 != null) {
-                        t10 = sj0Var.a0 / sj0Var.a1;
+        if (drawable instanceof tj0) {
+            tj0 tj0Var = (tj0) drawable;
+            if ((tj0Var.m0 != null || tj0Var.Y0) && !this.Q && (i10 = tj0Var.J) != 1 && i10 == 2) {
+                if (!tj0Var.X0) {
+                    float t10 = tj0Var.t();
+                    if (tj0Var.U0 != null) {
+                        t10 = tj0Var.a0 / tj0Var.a1;
                     }
                     if (t10 <= 0.95f) {
                         return;
@@ -14141,7 +14141,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         int i19;
         float f22;
         int m12;
-        e11 e11Var;
+        f11 f11Var;
         MessageObject.GroupedMessagePosition groupedMessagePosition;
         float f23;
         float f24;
@@ -14263,13 +14263,13 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                     }
                     if (this.B8 != null || this.C8 != null) {
                         int alpha4 = (((int) (Color.alpha(K2(r8)) * f43)) << 24) | (K2(org.telegram.ui.ActionBar.h6.Rc) & 16777215);
-                        d61 d61Var = this.B8;
-                        if (d61Var != null) {
-                            d61Var.b = alpha4;
+                        e61 e61Var = this.B8;
+                        if (e61Var != null) {
+                            e61Var.b = alpha4;
                         }
-                        d61 d61Var2 = this.C8;
-                        if (d61Var2 != null) {
-                            d61Var2.b = alpha4;
+                        e61 e61Var2 = this.C8;
+                        if (e61Var2 != null) {
+                            e61Var2.b = alpha4;
                         }
                     }
                     this.Wa -= this.Va;
@@ -14319,13 +14319,13 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                     this.Xa = AndroidUtilities.dp(this.I ? 9.0f : 10.0f);
                     if (this.B8 != null || this.C8 != null) {
                         int K22 = K2(this.y7.isOutOwner() ? org.telegram.ui.ActionBar.h6.Za : org.telegram.ui.ActionBar.h6.Qc);
-                        d61 d61Var3 = this.B8;
-                        if (d61Var3 != null) {
-                            d61Var3.b = K22;
+                        e61 e61Var3 = this.B8;
+                        if (e61Var3 != null) {
+                            e61Var3.b = K22;
                         }
-                        d61 d61Var4 = this.C8;
-                        if (d61Var4 != null) {
-                            d61Var4.b = K22;
+                        e61 e61Var4 = this.C8;
+                        if (e61Var4 != null) {
+                            e61Var4.b = K22;
                         }
                     }
                 }
@@ -14697,7 +14697,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                         } else {
                             rectF2 = rectF;
                             int i39 = (int) f38;
-                            rectF2.set(i39 - AndroidUtilities.dp(7.0f), this.jb - AndroidUtilities.dp(6.0f), kk.D(7.0f, i39, dp16), AndroidUtilities.dp(6.0f) + this.jb + this.kb);
+                            rectF2.set(i39 - AndroidUtilities.dp(7.0f), this.jb - AndroidUtilities.dp(6.0f), mk.D(7.0f, i39, dp16), AndroidUtilities.dp(6.0f) + this.jb + this.kb);
                             i15 = -1;
                             z11 = true;
                         }
@@ -15122,7 +15122,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                 }
                 float d = this.T9.d((this.R9 || z24) ? 1.0f : 0.0f, false);
                 if (this.ba == null) {
-                    this.ba = new pm0(this);
+                    this.ba = new qm0(this);
                 }
                 i16 = 10;
                 org.telegram.ui.ActionBar.h6.Y2.setColor(this.ba.a(this.y7, this.Yb, this.Zb, this.Id, 0));
@@ -15148,7 +15148,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                         int i41 = (int) f56;
                         f23 = f56;
                         i24 = o11;
-                        rectF2.set(i41 - AndroidUtilities.dp(f18), f58 - AndroidUtilities.dp(3.0f), kk.D(4.0f, i41, Math.max(this.J9, this.L9)), AndroidUtilities.dp(3.0f) + f58 + this.I9);
+                        rectF2.set(i41 - AndroidUtilities.dp(f18), f58 - AndroidUtilities.dp(3.0f), mk.D(4.0f, i41, Math.max(this.J9, this.L9)), AndroidUtilities.dp(3.0f) + f58 + this.I9);
                         canvas2.scale(a12, a12, Utilities.clamp(this.xc, rectF2.right, rectF2.left), Utilities.clamp(this.yc, rectF2.bottom, rectF2.top));
                         p0();
                         int alpha12 = M2("paintChatActionBackground").getAlpha();
@@ -15551,7 +15551,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                             canvas2.save();
                             canvas2.scale(lerp4, lerp4, rectF11.centerX(), rectF11.centerY());
                             if (u1Var.ea == null) {
-                                u1Var.ea = new pm0(u1Var);
+                                u1Var.ea = new qm0(u1Var);
                             }
                             int a14 = u1Var.ea.a(u1Var.y7, u1Var.Yb, u1Var.Zb, u1Var.Id, 0);
                             m12 = org.telegram.ui.ActionBar.h6.m1(0.15f, a14);
@@ -15576,10 +15576,10 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                             u1Var.ea.e(canvas, rectF11, f76);
                             float f77 = f73;
                             u1Var.la.c(AndroidUtilities.dp(10.0f) + u1Var.na, AndroidUtilities.dp(f22) + u1Var.oa, f77, a14, canvas);
-                            e11Var = u1Var.ma;
-                            if (e11Var == null) {
+                            f11Var = u1Var.ma;
+                            if (f11Var == null) {
                                 canvas2 = canvas;
-                                e11Var.c(AndroidUtilities.dp(10.0f) + u1Var.na, u1Var.oa + u1Var.la.j(), f77, a14, canvas2);
+                                f11Var.c(AndroidUtilities.dp(10.0f) + u1Var.na, u1Var.oa + u1Var.la.j(), f77, a14, canvas2);
                             } else {
                                 canvas2 = canvas;
                             }
@@ -15623,8 +15623,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                     u1Var.ea.e(canvas, rectF112, f762);
                     float f772 = f73;
                     u1Var.la.c(AndroidUtilities.dp(10.0f) + u1Var.na, AndroidUtilities.dp(f22) + u1Var.oa, f772, a142, canvas);
-                    e11Var = u1Var.ma;
-                    if (e11Var == null) {
+                    f11Var = u1Var.ma;
+                    if (f11Var == null) {
                     }
                     canvas2.restore();
                 }
@@ -15760,7 +15760,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         boolean z29;
         MessageObject messageObject2 = messageObject;
         if (this.S6 == null) {
-            this.S6 = new t21();
+            this.S6 = new u21();
         }
         this.u6 = false;
         s1(0);
@@ -16664,7 +16664,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                 s1Var10.y.p(userOrChat);
                                 imageReceiver4 = s1Var10.z;
                                 imageReceiver4.setForUserOrChat(userOrChat, s1Var10.y);
-                                s1Var10.q = new e11(DialogObject.getName(userOrChat), 12.0f);
+                                s1Var10.q = new f11(DialogObject.getName(userOrChat), 12.0f);
                                 break;
                             }
                             i70 = i71;
@@ -16805,7 +16805,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         boolean z10;
         CharacterStyle[] characterStyleArr;
         CharacterStyle[] characterStyleArr2;
-        pm0 pm0Var;
+        qm0 qm0Var;
         CharacterStyle characterStyle;
         org.telegram.ui.Components.a6 a6Var;
         l1 l1Var;
@@ -16876,7 +16876,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                     characterStyleArr3 = (CharacterStyle[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, org.telegram.ui.Components.a6.class);
                                     i14 = i13;
                                 }
-                                if (characterStyleArr3.length != 0 && ((!(characterStyleArr3[i13] instanceof h61) || h61.h) && !AndroidUtilities.isAccessibilityScreenReaderEnabled())) {
+                                if (characterStyleArr3.length != 0 && ((!(characterStyleArr3[i13] instanceof i61) || i61.h) && !AndroidUtilities.isAccessibilityScreenReaderEnabled())) {
                                     if (motionEvent.getAction() != 0) {
                                         try {
                                             CharacterStyle characterStyle2 = characterStyleArr3[i13];
@@ -16896,8 +16896,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                     y90 y90Var2 = new y90(characterStyleArr3[i13], this.Id, f7, textYOffset, 0);
                                                     this.t5 = y90Var2;
                                                     y90Var2.d(org.telegram.ui.ActionBar.h6.w0(this.y7.isOutOwner() ? org.telegram.ui.ActionBar.h6.Mb : org.telegram.ui.ActionBar.h6.Ld, this.Id));
-                                                    if (textLayoutBlock.quote && (pm0Var = this.Z9) != null) {
-                                                        this.t5.d(org.telegram.ui.ActionBar.h6.m1(org.telegram.ui.ActionBar.h6.I.q() ? 0.13f : 0.1f, pm0Var.h()));
+                                                    if (textLayoutBlock.quote && (qm0Var = this.Z9) != null) {
+                                                        this.t5.d(org.telegram.ui.ActionBar.h6.m1(org.telegram.ui.ActionBar.h6.I.q() ? 0.13f : 0.1f, qm0Var.h()));
                                                     }
                                                     this.v0 = i22;
                                                     this.w0 = -1;
@@ -16918,7 +16918,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                                 MessageObject.TextLayoutBlock textLayoutBlock2 = this.y7.textLayoutBlocks.get(i27);
                                                                 if (i14 != 0) {
                                                                     int i28 = textLayoutBlock2.charactersOffset;
-                                                                    characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(i28, i28, j61.class);
+                                                                    characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(i28, i28, k61.class);
                                                                 } else {
                                                                     int i29 = textLayoutBlock2.charactersOffset;
                                                                     characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(i29, i29, cls);
@@ -16962,7 +16962,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                                 MessageObject.TextLayoutBlock textLayoutBlock3 = this.y7.textLayoutBlocks.get(i31);
                                                                 if (i14 != 0) {
                                                                     int i33 = textLayoutBlock3.charactersEnd - 1;
-                                                                    characterStyleArr = (CharacterStyle[]) spannable.getSpans(i33, i33, j61.class);
+                                                                    characterStyleArr = (CharacterStyle[]) spannable.getSpans(i33, i33, k61.class);
                                                                 } else {
                                                                     int i34 = textLayoutBlock3.charactersEnd - 1;
                                                                     characterStyleArr = (CharacterStyle[]) spannable.getSpans(i34, i34, cls);
@@ -17053,7 +17053,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                         } else {
                             i13 = 0;
                         }
-                        characterStyleArr3 = (CharacterStyle[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, j61.class);
+                        characterStyleArr3 = (CharacterStyle[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, k61.class);
                         i14 = 1;
                         if (characterStyleArr3 != null) {
                         }
@@ -17376,15 +17376,15 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                     q0(getX() + (this.I8 / 2.0f), this.Sc + dp3, getMeasuredWidth(), this.Tc);
                     getParentWidth();
                     this.g0.getClass();
-                    jz0 jz0Var = this.g0;
+                    kz0 kz0Var = this.g0;
                     int parentWidth = getParentWidth();
                     float f25 = this.I8;
-                    int i17 = (parentWidth - jz0Var.h) / 2;
+                    int i17 = (parentWidth - kz0Var.h) / 2;
                     RectF rectF = AndroidUtilities.rectTmp;
-                    rectF.set(i17, 0.0f, r13 + i17, jz0Var.g);
+                    rectF.set(i17, 0.0f, r13 + i17, kz0Var.g);
                     canvas2.save();
                     canvas2.translate(f25 / 2.0f, dp3);
-                    org.telegram.ui.ActionBar.d6 d6Var = jz0Var.a;
+                    org.telegram.ui.ActionBar.d6 d6Var = kz0Var.a;
                     Paint U0 = org.telegram.ui.ActionBar.h6.U0("paintChatActionBackground", d6Var);
                     int alpha9 = U0.getAlpha();
                     U0.setAlpha((int) (alpha9 * alpha8 * f11));
@@ -17398,27 +17398,27 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                         U02.setAlpha(alpha10);
                     }
                     int dp4 = AndroidUtilities.dp(14.0f);
-                    if (jz0Var.b != null) {
+                    if (kz0Var.b != null) {
                         canvas2.save();
-                        canvas2.translate(jz0Var.d + i17, dp4);
-                        jz0Var.b.draw(canvas2);
+                        canvas2.translate(kz0Var.d + i17, dp4);
+                        kz0Var.b.draw(canvas2);
                         canvas2.restore();
-                        dp4 = org.telegram.messenger.g0.C(12.0f, jz0Var.b.getHeight(), dp4);
+                        dp4 = org.telegram.messenger.g0.C(12.0f, kz0Var.b.getHeight(), dp4);
                     }
-                    ArrayList arrayList2 = jz0Var.c;
+                    ArrayList arrayList2 = kz0Var.c;
                     int size = arrayList2.size();
                     int i18 = 0;
                     while (i18 < size) {
                         Object obj = arrayList2.get(i18);
                         i18++;
-                        iz0 iz0Var = (iz0) obj;
-                        e11 e11Var = iz0Var.a;
-                        e11 e11Var2 = iz0Var.a;
+                        jz0 jz0Var = (jz0) obj;
+                        f11 f11Var = jz0Var.a;
+                        f11 f11Var2 = jz0Var.a;
                         float f26 = f24;
                         float f27 = dp4;
-                        e11Var.f(canvas2, jz0Var.e + i17, (((int) e11Var.j()) / 2.0f) + f27, 0.85f);
-                        iz0Var.b.e(canvas2, jz0Var.f + i17, (((int) e11Var2.j()) / 2.0f) + f27);
-                        dp4 = org.telegram.messenger.g0.C(7.0f, (int) e11Var2.j(), dp4);
+                        f11Var.f(canvas2, kz0Var.e + i17, (((int) f11Var.j()) / 2.0f) + f27, 0.85f);
+                        jz0Var.b.e(canvas2, kz0Var.f + i17, (((int) f11Var2.j()) / 2.0f) + f27);
+                        dp4 = org.telegram.messenger.g0.C(7.0f, (int) f11Var2.j(), dp4);
                         f24 = f26;
                         f11 = f11;
                     }
@@ -17619,13 +17619,13 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                 canvas2.drawRoundRect(rectF3, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), org.telegram.ui.ActionBar.h6.h2);
                             }
                             if (this.te == null) {
-                                this.te = new kz0(this);
+                                this.te = new lz0(this);
                             }
                             MessageObject messageObject6 = getMessageObject();
                             boolean z12 = (messageObject6 == null || (message = messageObject6.messageOwner) == null || !message.summarizedOpen) ? false : z10;
-                            kz0 kz0Var = this.te;
-                            kz0Var.a = z12;
-                            a0.p(kz0Var, (this.Ia + AndroidUtilities.dp(16.0f)) - (this.te.c.getIntrinsicWidth() / 2.0f), (this.Ja + AndroidUtilities.dp(16.0f)) - (this.te.c.getIntrinsicHeight() / 2.0f));
+                            lz0 lz0Var = this.te;
+                            lz0Var.a = z12;
+                            a0.p(lz0Var, (this.Ia + AndroidUtilities.dp(16.0f)) - (this.te.c.getIntrinsicWidth() / 2.0f), (this.Ja + AndroidUtilities.dp(16.0f)) - (this.te.c.getIntrinsicHeight() / 2.0f));
                             this.te.draw(canvas2);
                             return;
                         }
@@ -18243,7 +18243,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         boolean z17;
         float f27;
         float f28;
-        kj0 kj0Var;
+        lj0 lj0Var;
         org.telegram.ui.ActionBar.f5 f5Var;
         th.d dVar;
         org.telegram.ui.Components.p6 p6Var;
@@ -18884,7 +18884,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                     int dp11 = (int) (f61 - AndroidUtilities.dp(22.0f));
                                     if (f15 > AndroidUtilities.dp(8.0f)) {
                                         if (this.Z9 == null) {
-                                            this.Z9 = new pm0(this);
+                                            this.Z9 = new qm0(this);
                                         }
                                         RectF rectF6 = AndroidUtilities.rectTmp;
                                         i19 = i53;
@@ -18914,13 +18914,13 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                 this.c6.d(this.y7.isOut());
                                                 rh.g gVar3 = this.c6;
                                                 K2(this.y7.isOut() ? org.telegram.ui.ActionBar.h6.Nb : org.telegram.ui.ActionBar.h6.ie);
-                                                e11 e11Var = gVar3.r;
-                                                if (e11Var != null) {
-                                                    e11Var.o(i50);
+                                                f11 f11Var = gVar3.r;
+                                                if (f11Var != null) {
+                                                    f11Var.o(i50);
                                                 }
-                                                e11 e11Var2 = gVar3.s;
-                                                if (e11Var2 != null) {
-                                                    e11Var2.o(i51);
+                                                f11 f11Var2 = gVar3.s;
+                                                if (f11Var2 != null) {
+                                                    f11Var2.o(i51);
                                                 }
                                                 this.c6.draw(canvas7);
                                             }
@@ -19011,15 +19011,15 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                 u1Var.b6.d(u1Var.y7.isOut());
                                                 rh.g gVar4 = u1Var.b6;
                                                 u1Var.K2(u1Var.y7.isOut() ? org.telegram.ui.ActionBar.h6.Nb : org.telegram.ui.ActionBar.h6.ie);
-                                                e11 e11Var3 = gVar4.r;
+                                                f11 f11Var3 = gVar4.r;
                                                 i25 = i22;
-                                                if (e11Var3 != null) {
-                                                    e11Var3.o(i25);
+                                                if (f11Var3 != null) {
+                                                    f11Var3.o(i25);
                                                 }
-                                                e11 e11Var4 = gVar4.s;
-                                                if (e11Var4 != null) {
+                                                f11 f11Var4 = gVar4.s;
+                                                if (f11Var4 != null) {
                                                     i26 = i23;
-                                                    e11Var4.o(i26);
+                                                    f11Var4.o(i26);
                                                 } else {
                                                     i26 = i23;
                                                 }
@@ -19314,9 +19314,9 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                         if (isTodo && z36 && s1Var.q != null && (checkBoxBase = u1Var.R8[i59]) != null) {
                                                             float progress2 = checkBoxBase.getProgress();
                                                             if (progress2 > 0.0f) {
-                                                                e11 e11Var5 = s1Var.q;
-                                                                e11Var5.g(f22 - AndroidUtilities.dp(8.0f));
-                                                                e11Var5.c(0.0f, (s1Var.q.j() / 2.0f) + (s1Var.p.getHeight() - AndroidUtilities.dp(6.0f)), progress2, i60, canvas);
+                                                                f11 f11Var5 = s1Var.q;
+                                                                f11Var5.g(f22 - AndroidUtilities.dp(8.0f));
+                                                                f11Var5.c(0.0f, (s1Var.q.j() / 2.0f) + (s1Var.p.getHeight() - AndroidUtilities.dp(6.0f)), progress2, i60, canvas);
                                                                 canvas4 = canvas;
                                                                 org.telegram.ui.ActionBar.h6.P2.setAlpha(alpha5);
                                                                 if (!isTodo || ((!u1Var.m6 || (!u1Var.r6 && u1Var.q6)) && !u1Var.t6 && !u1Var.u6 && ((!u1Var.s6 || (u1Var.q6 && !u1Var.r6)) && (!u1Var.D6 || z37)))) {
@@ -19774,8 +19774,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                     if (f27 >= f28) {
                                                         u1Var.S0(true);
                                                     }
-                                                    kj0Var = u1Var.e4;
-                                                    if (kj0Var != null || (!(kj0Var.e || kj0Var.f) || (f5Var = u1Var.t8) == null)) {
+                                                    lj0Var = u1Var.e4;
+                                                    if (lj0Var != null || (!(lj0Var.e || lj0Var.f) || (f5Var = u1Var.t8) == null)) {
                                                         canvas2 = canvas3;
                                                     } else {
                                                         canvas3.save();
@@ -19865,8 +19865,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                             canvas3.restore();
                                             if (f27 >= f28) {
                                             }
-                                            kj0Var = u1Var.e4;
-                                            if (kj0Var != null) {
+                                            lj0Var = u1Var.e4;
+                                            if (lj0Var != null) {
                                             }
                                             canvas2 = canvas3;
                                         } else {
@@ -19973,8 +19973,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                     canvas3.restore();
                                     if (f27 >= f28) {
                                     }
-                                    kj0Var = u1Var.e4;
-                                    if (kj0Var != null) {
+                                    lj0Var = u1Var.e4;
+                                    if (lj0Var != null) {
                                     }
                                     canvas2 = canvas3;
                                 } else {
@@ -20258,7 +20258,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                         float max3 = (Math.max(0L, (u1Var2.y7.messageOwner.destroyTime * 1000) - (System.currentTimeMillis() + (ConnectionsManager.getInstance(i10).getTimeDifference() * MediaDataController.MAX_STYLE_RUNS_COUNT))) / (u1Var2.y7.messageOwner.ttl * 1000.0f)) * (-360.0f);
                         canvas2.drawArc(u1Var2.b5, -90.0f, max3, false, org.telegram.ui.ActionBar.h6.T1);
                         if (u1Var2.S6 == null) {
-                            u1Var2.S6 = new t21();
+                            u1Var2.S6 = new u21();
                         }
                         u1Var2.S6.a(max3, u1Var2.n5, canvas, org.telegram.ui.ActionBar.h6.T1, u1Var2.b5);
                         canvas6 = canvas;
@@ -20373,12 +20373,12 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                     } else {
                                         u1Var2.invalidate();
                                     }
-                                    tm0 tm0Var = u1Var2.S3;
+                                    um0 um0Var = u1Var2.S3;
                                     if (z39) {
                                         if (!isPlayingMessage2 || MediaController.getInstance().isMessagePaused()) {
-                                            tm0Var.b();
+                                            um0Var.b();
                                         } else {
-                                            tm0Var.a();
+                                            um0Var.a();
                                         }
                                     }
                                     if (u1Var2.vd < 1.0f) {
@@ -20393,18 +20393,18 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                         canvas6.restore();
                                     }
                                     if (u1Var2.vd > 0.0f) {
-                                        a0.p(tm0Var, u1Var2.R5 + dp4 + AndroidUtilities.dp(6.0f), AndroidUtilities.dp(2.3f) + dp5);
+                                        a0.p(um0Var, u1Var2.R5 + dp4 + AndroidUtilities.dp(6.0f), AndroidUtilities.dp(2.3f) + dp5);
                                         canvas6.save();
                                         float f97 = u1Var2.vd;
-                                        canvas6.scale(f97, f97, tm0Var.getBounds().centerX(), tm0Var.getBounds().centerY());
+                                        canvas6.scale(f97, f97, um0Var.getBounds().centerX(), um0Var.getBounds().centerY());
                                         if (u1Var2.h2) {
-                                            tm0Var.k = 0.0f;
+                                            um0Var.k = 0.0f;
                                         } else {
-                                            tm0Var.l = org.telegram.ui.ActionBar.h6.T2.getColor();
-                                            tm0Var.k = u1Var2.getVideoTranscriptionProgress();
+                                            um0Var.l = org.telegram.ui.ActionBar.h6.T2.getColor();
+                                            um0Var.k = u1Var2.getVideoTranscriptionProgress();
                                         }
-                                        tm0Var.setAlpha((int) ((1.0f - u1Var2.getVideoTranscriptionProgress()) * u1Var2.vd * 255.0f));
-                                        tm0Var.draw(canvas6);
+                                        um0Var.setAlpha((int) ((1.0f - u1Var2.getVideoTranscriptionProgress()) * u1Var2.vd * 255.0f));
+                                        um0Var.draw(canvas6);
                                         canvas6.restore();
                                     }
                                     imageX = dp4 + AndroidUtilities.dp(4.0f);
@@ -20423,7 +20423,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                     }
                                 }
                             }
-                            tm0 tm0Var2 = u1Var2.S3;
+                            um0 um0Var2 = u1Var2.S3;
                             if (z39) {
                             }
                             if (u1Var2.vd < 1.0f) {
@@ -20458,25 +20458,25 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.g0.g(R.string.MessageSensitiveContent, new StringBuilder("x ")));
                         spannableStringBuilder.setSpan(new yq(R.drawable.filled_sensitive), 0, 1, 33);
                         f38 = f10;
-                        u1Var2.B4 = new e11(spannableStringBuilder, f38, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+                        u1Var2.B4 = new f11(spannableStringBuilder, f38, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                     } else {
                         f38 = f10;
                     }
-                    e11 e11Var6 = u1Var2.B4;
+                    f11 f11Var6 = u1Var2.B4;
                     int i71 = 13;
-                    if (g3Var.getImageWidth() < e11Var6.h() + (AndroidUtilities.dp(13) * 2)) {
+                    if (g3Var.getImageWidth() < f11Var6.h() + (AndroidUtilities.dp(13) * 2)) {
                         if (u1Var2.C4 == null) {
                             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(org.telegram.messenger.g0.g(R.string.MessageSensitiveContentShort, new StringBuilder("x ")));
                             spannableStringBuilder2.setSpan(new yq(R.drawable.filled_sensitive), 0, 1, 33);
-                            u1Var2.C4 = new e11(spannableStringBuilder2, f38, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+                            u1Var2.C4 = new f11(spannableStringBuilder2, f38, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                         }
-                        e11Var6 = u1Var2.C4;
+                        f11Var6 = u1Var2.C4;
                     }
-                    if (g3Var.getImageWidth() < e11Var6.h() + (AndroidUtilities.dp(26) * 2)) {
+                    if (g3Var.getImageWidth() < f11Var6.h() + (AndroidUtilities.dp(26) * 2)) {
                         if (u1Var2.D4 == null) {
-                            u1Var2.D4 = new e11(new SpannableStringBuilder(LocaleController.getString(R.string.MessageSensitiveContentShort)), f7, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+                            u1Var2.D4 = new f11(new SpannableStringBuilder(LocaleController.getString(R.string.MessageSensitiveContentShort)), f7, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                         }
-                        e11Var6 = u1Var2.D4;
+                        f11Var6 = u1Var2.D4;
                         i41 = 28;
                         i71 = 10;
                     } else {
@@ -20484,7 +20484,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                     }
                     float imageWidth3 = (g3Var.getImageWidth() / 2.0f) + g3Var.getImageX();
                     float imageHeight3 = (g3Var.getImageHeight() / 2.0f) + g3Var.getImageY();
-                    float h = e11Var6.h() + AndroidUtilities.dp(i71 * 2);
+                    float h = f11Var6.h() + AndroidUtilities.dp(i71 * 2);
                     float dp46 = AndroidUtilities.dp(i41) / 2.0f;
                     float lerp3 = AndroidUtilities.lerp(0.8f, 1.0f, 1.0f - u1Var2.Bb);
                     RectF rectF10 = AndroidUtilities.rectTmp;
@@ -20508,7 +20508,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                     u1Var2.M2(str3).setAlpha(alpha13);
                     canvas6.save();
                     canvas6.scale(lerp3, lerp3, imageWidth3, imageHeight3);
-                    e11Var6.c(AndroidUtilities.dp(i71) + (imageWidth3 - f101), imageHeight3, 1.0f - u1Var2.Bb, -1, canvas6);
+                    f11Var6.c(AndroidUtilities.dp(i71) + (imageWidth3 - f101), imageHeight3, 1.0f - u1Var2.Bb, -1, canvas6);
                     canvas.restore();
                     return;
                 }
@@ -20752,7 +20752,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                 }
                 if (j1Var.A && (zVar = j1Var.q) != null) {
                     zVar.setHotspot(x10, z22);
-                    j1Var.q.setState(z31.N);
+                    j1Var.q.setState(a41.N);
                     j1Var.r.invalidate();
                 }
                 return true;
@@ -20814,7 +20814,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         g3Var.setSkipUpdateFrame(z11);
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public final void b(float f7) {
         MessageObject messageObject = this.y7;
         if (messageObject == null) {
@@ -21059,7 +21059,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         }
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public final void c(float f7) {
         MessageObject messageObject = this.y7;
         if (messageObject == null) {
@@ -21219,14 +21219,14 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
             f1 f1Var = this.G5;
             if (i12 == 3 || i12 == 7) {
                 boolean isOutOwner = this.y7.isOutOwner();
-                fp0 fp0Var = this.H5;
+                gp0 gp0Var = this.H5;
                 if (isOutOwner) {
                     int w04 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Ab, this.Id);
                     int w05 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Cb, this.Id);
                     int w06 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Bb, this.Id);
-                    fp0Var.p = w04;
-                    fp0Var.q = w05;
-                    fp0Var.r = w06;
+                    gp0Var.p = w04;
+                    gp0Var.q = w05;
+                    gp0Var.r = w06;
                     int w07 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.wb, this.Id);
                     int w08 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.xb, this.Id);
                     int i13 = org.telegram.ui.ActionBar.h6.zb;
@@ -21235,9 +21235,9 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                     int w09 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.yd, this.Id);
                     int w010 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Ad, this.Id);
                     int w011 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.zd, this.Id);
-                    fp0Var.p = w09;
-                    fp0Var.q = w010;
-                    fp0Var.r = w011;
+                    gp0Var.p = w09;
+                    gp0Var.q = w010;
+                    gp0Var.r = w011;
                     int w012 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.ud, this.Id);
                     int w013 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.vd, this.Id);
                     int i14 = org.telegram.ui.ActionBar.h6.xd;
@@ -21246,9 +21246,9 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                     int c10 = org.telegram.ui.ActionBar.h6.c(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.yd, this.Id), this.aa.h());
                     int c11 = org.telegram.ui.ActionBar.h6.c(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Ad, this.Id), this.aa.h());
                     int c12 = org.telegram.ui.ActionBar.h6.c(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.zd, this.Id), this.aa.h());
-                    fp0Var.p = c10;
-                    fp0Var.q = c11;
-                    fp0Var.r = c12;
+                    gp0Var.p = c10;
+                    gp0Var.q = c11;
+                    gp0Var.r = c12;
                     int c13 = org.telegram.ui.ActionBar.h6.c(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.ud, this.Id), this.aa.h());
                     int c14 = org.telegram.ui.ActionBar.h6.c(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.vd, this.Id), this.aa.h());
                     int i15 = org.telegram.ui.ActionBar.h6.xd;
@@ -21457,7 +21457,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public final /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.k5.a(this, i10, str, drawable);
+        org.telegram.messenger.m5.a(this, i10, str, drawable);
     }
 
     @Override // org.telegram.ui.Cells.n4
@@ -21691,7 +21691,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         float f11;
         float f12;
         int i10;
-        s71 s71Var;
+        t71 t71Var;
         float f13;
         float f14;
         float f15;
@@ -21775,9 +21775,9 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                         } else {
                             i10 = -1;
                         }
-                        s71Var = this.Gd;
-                        if (s71Var != null && s71Var.j) {
-                            s71Var.setBounds((int) g3Var.getImageX(), (int) g3Var.getImageY(), (int) (g3Var.getImageWidth() + g3Var.getImageX()), (int) (g3Var.getImageHeight() + g3Var.getImageY()));
+                        t71Var = this.Gd;
+                        if (t71Var != null && t71Var.j) {
+                            t71Var.setBounds((int) g3Var.getImageX(), (int) g3Var.getImageY(), (int) (g3Var.getImageWidth() + g3Var.getImageX()), (int) (g3Var.getImageHeight() + g3Var.getImageY()));
                             this.Gd.draw(canvas);
                         }
                         int alpha2 = org.telegram.ui.ActionBar.h6.k2.getAlpha();
@@ -21866,9 +21866,9 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                 int alpha3 = org.telegram.ui.ActionBar.h6.k2.getAlpha();
                 org.telegram.ui.ActionBar.h6.k2.setAlpha((int) (this.sd * (!this.h2 ? 1.0f - getVideoTranscriptionProgress() : 1.0f) * alpha3));
                 i10 = alpha3;
-                s71Var = this.Gd;
-                if (s71Var != null) {
-                    s71Var.setBounds((int) g3Var.getImageX(), (int) g3Var.getImageY(), (int) (g3Var.getImageWidth() + g3Var.getImageX()), (int) (g3Var.getImageHeight() + g3Var.getImageY()));
+                t71Var = this.Gd;
+                if (t71Var != null) {
+                    t71Var.setBounds((int) g3Var.getImageX(), (int) g3Var.getImageY(), (int) (g3Var.getImageWidth() + g3Var.getImageX()), (int) (g3Var.getImageHeight() + g3Var.getImageY()));
                     this.Gd.draw(canvas);
                 }
                 int alpha22 = org.telegram.ui.ActionBar.h6.k2.getAlpha();
@@ -21924,8 +21924,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         int alpha32 = org.telegram.ui.ActionBar.h6.k2.getAlpha();
         org.telegram.ui.ActionBar.h6.k2.setAlpha((int) (this.sd * (!this.h2 ? 1.0f - getVideoTranscriptionProgress() : 1.0f) * alpha32));
         i10 = alpha32;
-        s71Var = this.Gd;
-        if (s71Var != null) {
+        t71Var = this.Gd;
+        if (t71Var != null) {
         }
         int alpha222 = org.telegram.ui.ActionBar.h6.k2.getAlpha();
         float strokeWidth22 = org.telegram.ui.ActionBar.h6.k2.getStrokeWidth();
@@ -22694,7 +22694,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         return this.Id;
     }
 
-    public fp0 getSeekBarWaveform() {
+    public gp0 getSeekBarWaveform() {
         return this.H5;
     }
 
@@ -23145,7 +23145,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                     }
                     return;
                 }
-                if (kw0.v0) {
+                if (lw0.v0) {
                     return;
                 }
                 float f12 = this.Ga;
@@ -23303,7 +23303,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                 TLObject userOrChat = MessagesController.getInstance(i11).getUserOrChat(sendAsPeerId);
                 s1Var.y.p(userOrChat);
                 s1Var.z.setForUserOrChat(userOrChat, s1Var.y);
-                s1Var.q = new e11(DialogObject.getName(userOrChat), 12.0f, null);
+                s1Var.q = new f11(DialogObject.getName(userOrChat), 12.0f, null);
             }
             this.R8[i10].f(-1, !s1Var.i, true);
             if (this.v4 != null) {
@@ -23375,7 +23375,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
             this.s0 = AndroidUtilities.dp(60.0f) + this.s0;
             if (z13 != this.W2) {
                 this.W2 = 0;
-                int A = kk.A(75.0f, this.J8, i10);
+                int A = mk.A(75.0f, this.J8, i10);
                 float dpf2 = (this.J8 - AndroidUtilities.dpf2(37.0f)) / i10;
                 ArrayList arrayList = this.X2;
                 if (arrayList == null) {
@@ -23715,7 +23715,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                 if (this.g1 > (g3Var.getImageWidth() / 4.0f) + g3Var.getCenterX() || this.g1 < g3Var.getCenterX() - (g3Var.getImageWidth() / 4.0f)) {
                     boolean z11 = this.g1 > g3Var.getCenterX();
                     if (this.Hd == null) {
-                        this.Gd = new s71(true);
+                        this.Gd = new t71(true);
                         this.Hd = new h1(this, 0);
                         getParent().requestDisallowInterceptTouchEvent(true);
                     }
@@ -23798,14 +23798,14 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         y90 y90Var = this.V1;
         if (y90Var != null) {
             CharacterStyle characterStyle = y90Var.i;
-            if (characterStyle instanceof j61) {
+            if (characterStyle instanceof k61) {
                 this.je = true;
                 this.Jc.R0(this, characterStyle, true);
                 return true;
             }
-            if (characterStyle instanceof k61) {
-                k61 k61Var = (k61) characterStyle;
-                if (qn.z9(k61Var.getURL()) || k61Var.getURL().startsWith("/")) {
+            if (characterStyle instanceof l61) {
+                l61 l61Var = (l61) characterStyle;
+                if (qn.z9(l61Var.getURL()) || l61Var.getURL().startsWith("/")) {
                     this.je = true;
                     this.Jc.R0(this, this.V1.i, true);
                     return true;
@@ -23819,14 +23819,14 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         y90 y90Var2 = this.t5;
         if (y90Var2 != null) {
             CharacterStyle characterStyle2 = y90Var2.i;
-            if (characterStyle2 instanceof j61) {
+            if (characterStyle2 instanceof k61) {
                 this.je = true;
                 this.Jc.R0(this, characterStyle2, true);
                 return true;
             }
-            if (characterStyle2 instanceof k61) {
-                k61 k61Var2 = (k61) characterStyle2;
-                if (qn.z9(k61Var2.getURL()) || k61Var2.getURL().startsWith("/") || k61Var2.getURL().startsWith("tel:")) {
+            if (characterStyle2 instanceof l61) {
+                l61 l61Var2 = (l61) characterStyle2;
+                if (qn.z9(l61Var2.getURL()) || l61Var2.getURL().startsWith("/") || l61Var2.getURL().startsWith("tel:")) {
                     this.je = true;
                     this.Jc.R0(this, this.t5.i, true);
                     return true;
@@ -24057,7 +24057,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                     if (documentFileName.length() == 0) {
                         documentFileName = LocaleController.getString("AttachDocument", R.string.AttachDocument);
                     }
-                    StaticLayout c10 = ex0.c(documentFileName, org.telegram.ui.ActionBar.h6.G2, i17, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.MIDDLE, i17, 2, false);
+                    StaticLayout c10 = fx0.c(documentFileName, org.telegram.ui.ActionBar.h6.G2, i17, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.MIDDLE, i17, 2, false);
                     this.T3 = c10;
                     this.V3 = TLObject.FLAG_31;
                     if (c10 == null || c10.getLineCount() <= 0) {
@@ -24277,7 +24277,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
             getIconForCurrentState();
             return;
         }
-        boolean z17 = (!z11 || (!PhotoViewer.N1(this.y7) && this.M0)) ? z11 : false;
+        boolean z17 = (!z11 || (!PhotoViewer.P1(this.y7) && this.M0)) ? z11 : false;
         this.Q0 = false;
         MessageObject messageObject3 = this.y7;
         int i20 = messageObject3.type;
@@ -25885,9 +25885,9 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         if (checkBoxBase2 != null) {
             checkBoxBase2.l = true;
         }
-        x21 x21Var = u1Var.e0;
-        if (x21Var != null) {
-            x21Var.a();
+        y21 y21Var = u1Var.e0;
+        if (y21Var != null) {
+            y21Var.a();
         }
         CheckBoxBase checkBoxBase3 = u1Var.B9;
         if (checkBoxBase3 != null) {
@@ -26000,10 +26000,10 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                 ((n0) arrayList4.get(i15)).a();
             }
         }
-        vx0 vx0Var = u1Var.e1;
-        if (vx0Var != null) {
-            for (int i16 = 0; i16 < vx0Var.b; i16++) {
-                vx0Var.c[i16].a(this);
+        wx0 wx0Var = u1Var.e1;
+        if (wx0Var != null) {
+            for (int i16 = 0; i16 < wx0Var.b; i16++) {
+                wx0Var.c[i16].a(this);
             }
         }
     }
@@ -26089,18 +26089,18 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
             j4Var.e();
         }
         this.m9.onDetachedFromWindow();
-        x21 x21Var = this.e0;
-        if (x21Var != null) {
-            x21Var.b();
+        y21 y21Var = this.e0;
+        if (y21Var != null) {
+            y21Var.b();
         }
         F0();
         if (this.G4 && this.E4 != null && this.F4 != null) {
             ImageLoader.getInstance().removeTestWebFile(this.E4);
             this.G4 = false;
         }
-        vx0 vx0Var = this.e1;
-        if (vx0Var != null) {
-            vx0Var.a(this);
+        wx0 wx0Var = this.e1;
+        if (wx0Var != null) {
+            wx0Var.a(this);
         }
         DownloadController.getInstance(this.I7).removeLoadingFileObserver(this);
         if (getDelegate() != null && getDelegate().p2() != null) {
@@ -27039,9 +27039,9 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                             }
                         }
                         this.E1 = 2;
-                        z71 z71Var = messageObject.cachedQuality;
-                        if (z71Var != null) {
-                            ImageLocation forVideoPath = ImageLocation.getForVideoPath(z71Var.d.getPath());
+                        a81 a81Var = messageObject.cachedQuality;
+                        if (a81Var != null) {
+                            ImageLocation forVideoPath = ImageLocation.getForVideoPath(a81Var.d.getPath());
                             ImageLocation forObject2 = ImageLocation.getForObject(this.e5, this.d5);
                             TLRPC.PhotoSize photoSize2 = this.e5;
                             g3Var.setImage(forVideoPath, ImageLoader.AUTOPLAY_FILTER, forObject2, ((photoSize2 instanceof TLRPC.TL_photoStrippedSize) || (photoSize2 != null && "s".equals(photoSize2.type))) ? this.i5 : this.h5, ImageLocation.getForObject(this.f5, this.d5), this.i5, this.g5, this.L1.size, null, this.y7, 0);
@@ -27051,7 +27051,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                             TLRPC.PhotoSize photoSize3 = this.e5;
                             g3Var.setImage(forDocument2, ImageLoader.AUTOPLAY_FILTER, forObject3, ((photoSize3 instanceof TLRPC.TL_photoStrippedSize) || (photoSize3 != null && "s".equals(photoSize3.type))) ? this.i5 : this.h5, ImageLocation.getForObject(this.f5, this.d5), this.i5, this.g5, this.L1.size, null, this.y7, 0);
                         }
-                        if (PhotoViewer.K1(this.y7)) {
+                        if (PhotoViewer.M1(this.y7)) {
                             g3Var.setAllowStartAnimation(false);
                         } else {
                             g3Var.setAllowStartAnimation(true);
@@ -27061,9 +27061,9 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                     }
                 }
                 if (this.K1 == 2) {
-                    z71 z71Var2 = this.y7.cachedQuality;
-                    if (z71Var2 != null) {
-                        ImageLocation forVideoPath2 = ImageLocation.getForVideoPath(z71Var2.d.getPath());
+                    a81 a81Var2 = this.y7.cachedQuality;
+                    if (a81Var2 != null) {
+                        ImageLocation forVideoPath2 = ImageLocation.getForVideoPath(a81Var2.d.getPath());
                         ImageLocation forObject4 = ImageLocation.getForObject(this.e5, this.d5);
                         TLRPC.PhotoSize photoSize4 = this.e5;
                         g3Var.setImage(forVideoPath2, ImageLoader.AUTOPLAY_FILTER, forObject4, ((photoSize4 instanceof TLRPC.TL_photoStrippedSize) || (photoSize4 != null && "s".equals(photoSize4.type))) ? this.i5 : this.h5, ImageLocation.getForObject(this.f5, this.d5), this.i5, this.g5, this.L1.size, null, this.y7, 0);
@@ -27135,7 +27135,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         TLRPC.Chat chat;
         int i10;
         j4 j4Var;
-        x21 x21Var;
+        y21 y21Var;
         RectF rectF;
         l1 l1Var2;
         z zVar;
@@ -27375,8 +27375,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                     if (!U0) {
                         U0 = Y0(motionEvent);
                     }
-                    if (!U0 && (x21Var = this.e0) != null) {
-                        U0 = x21Var.d(motionEvent, true);
+                    if (!U0 && (y21Var = this.e0) != null) {
+                        U0 = y21Var.d(motionEvent, true);
                     }
                     if (!U0) {
                         U0 = N0(motionEvent);
@@ -28288,9 +28288,9 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
             float f12 = 0.7f * f11;
             canvas2.scale(f12, f12, rectF2.centerX(), AndroidUtilities.lerp(rectF2.top, rectF2.bottom, 0.5f));
             if (this.a1 == null) {
-                uj0 uj0Var = new uj0(R.raw.fire_once, AndroidUtilities.dp(32.0f), AndroidUtilities.dp(32.0f), true, null);
-                this.a1 = uj0Var;
-                uj0Var.R(this);
+                vj0 vj0Var = new vj0(R.raw.fire_once, AndroidUtilities.dp(32.0f), AndroidUtilities.dp(32.0f), true, null);
+                this.a1 = vj0Var;
+                vj0Var.R(this);
                 this.a1.J(true);
                 this.a1.K(1);
                 this.a1.start();
@@ -28332,17 +28332,17 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
             RectF rectF4 = this.c5;
             rectF4.set(rectF2);
             rectF4.inset(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
-            fp0 fp0Var = this.H5;
-            canvas.drawArc(rectF4, -90.0f, (1.0f - fp0Var.K) * (-360.0f), false, this.d1);
+            gp0 gp0Var = this.H5;
+            canvas.drawArc(rectF4, -90.0f, (1.0f - gp0Var.K) * (-360.0f), false, this.d1);
             if (this.S6 == null) {
-                this.S6 = new t21();
+                this.S6 = new u21();
             }
-            this.S6.a((1.0f - fp0Var.K) * (-360.0f), f11, canvas, this.d1, rectF4);
+            this.S6.a((1.0f - gp0Var.K) * (-360.0f), f11, canvas, this.d1, rectF4);
             canvas2 = canvas;
         } else {
-            uj0 uj0Var2 = this.a1;
-            if (uj0Var2 != null) {
-                uj0Var2.C(true);
+            vj0 vj0Var2 = this.a1;
+            if (vj0Var2 != null) {
+                vj0Var2.C(true);
                 this.a1 = null;
                 if (this.S6 != null) {
                     this.S6 = null;
@@ -28421,7 +28421,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
             if (f1Var != null) {
                 f1Var.a();
             }
-            if (this.u4 == null || !(PhotoViewer.K1(this.y7) || MediaController.getInstance().isGoingToShowMessageObject(this.y7))) {
+            if (this.u4 == null || !(PhotoViewer.M1(this.y7) || MediaController.getInstance().isGoingToShowMessageObject(this.y7))) {
                 org.telegram.ui.Components.e6 animation = this.S0.getAnimation();
                 if (animation != null) {
                     MessageObject messageObject2 = this.y7;
@@ -28460,7 +28460,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
             return;
         }
         boolean z12 = this.qd;
-        fp0 fp0Var = this.H5;
+        gp0 gp0Var = this.H5;
         if (z12) {
             if (!this.F5) {
                 if (!f1Var.e) {
@@ -28468,8 +28468,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                     f1Var.q = this.y7.bufferedProgress;
                 }
                 f1Var.a();
-            } else if (!fp0Var.f) {
-                fp0Var.g(this.y7.audioProgress, true);
+            } else if (!gp0Var.f) {
+                gp0Var.g(this.y7.audioProgress, true);
             }
             TLRPC.Document document = this.y7.getDocument();
             if (document != null) {
@@ -28507,8 +28507,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         }
         if (this.L1 != null) {
             if (this.F5) {
-                if (!fp0Var.f) {
-                    fp0Var.g(this.y7.audioProgress, true);
+                if (!gp0Var.f) {
+                    gp0Var.g(this.y7.audioProgress, true);
                 }
                 z10 = true;
             } else {
@@ -28796,18 +28796,18 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
 
     public final void s1(int i10) {
         int w02;
-        pm0 pm0Var;
-        pm0 pm0Var2;
+        qm0 qm0Var;
+        qm0 qm0Var2;
         if (this.y7.isUnsupported()) {
             w02 = org.telegram.ui.ActionBar.h6.w0(this.y7.isOutOwner() ? org.telegram.ui.ActionBar.h6.Xa : org.telegram.ui.ActionBar.h6.Kc, this.Id);
         } else if (i10 == 0 && this.k7) {
             w02 = org.telegram.ui.ActionBar.h6.w0(this.y7.isOutOwner() ? org.telegram.ui.ActionBar.h6.Ra : org.telegram.ui.ActionBar.h6.xc, this.Id);
-        } else if (i10 == 0 && (pm0Var2 = this.aa) != null) {
-            w02 = pm0Var2.h();
-        } else if (i10 != 0 || (pm0Var = this.ca) == null) {
+        } else if (i10 == 0 && (qm0Var2 = this.aa) != null) {
+            w02 = qm0Var2.h();
+        } else if (i10 != 0 || (qm0Var = this.ca) == null) {
             w02 = org.telegram.ui.ActionBar.h6.w0(this.y7.isOutOwner() ? org.telegram.ui.ActionBar.h6.Xa : org.telegram.ui.ActionBar.h6.Kc, this.Id);
         } else {
-            w02 = pm0Var.h();
+            w02 = qm0Var.h();
         }
         Drawable[] drawableArr = this.v3;
         Drawable drawable = drawableArr[i10];
@@ -29194,9 +29194,9 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         if (radialProgress22 != null) {
             radialProgress22.F = d6Var;
         }
-        tm0 tm0Var = this.S3;
-        if (tm0Var != null) {
-            tm0Var.n = d6Var;
+        um0 um0Var = this.S3;
+        if (um0Var != null) {
+            um0Var.n = d6Var;
         }
     }
 
@@ -29329,8 +29329,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
             CharSequence factCheckText = primaryMessageObject.getFactCheckText();
             if (!factCheck.need_check && factCheckText != null) {
                 this.f2 = AndroidUtilities.dp(4.66f) + this.f2;
-                this.O1 = new e11(LocaleController.getString(R.string.FactCheck), 14.0f, AndroidUtilities.bold());
-                this.P1 = new e11(LocaleController.getString(R.string.FactCheckWhat), 11.0f, null);
+                this.O1 = new f11(LocaleController.getString(R.string.FactCheck), 14.0f, AndroidUtilities.bold());
+                this.P1 = new f11(LocaleController.getString(R.string.FactCheckWhat), 11.0f, null);
                 this.f2 = AndroidUtilities.dp(17.33f) + this.f2;
                 this.g2 = (int) (AndroidUtilities.dp(20.0f) + this.O1.c + this.P1.c + AndroidUtilities.dp(18.0f));
                 try {
@@ -29343,8 +29343,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                 Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
                 float dp = AndroidUtilities.dp(1.0f);
                 TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-                this.S1 = ex0.c(factCheckText, textPaint, i10, alignment, dp, truncateAt, i10, 99999, true);
-                this.T1 = ex0.c(LocaleController.formatString(R.string.FactCheckFooter, str), org.telegram.ui.ActionBar.h6.c3, i10, alignment, AndroidUtilities.dp(1.0f), truncateAt, i10, 99999, true);
+                this.S1 = fx0.c(factCheckText, textPaint, i10, alignment, dp, truncateAt, i10, 99999, true);
+                this.T1 = fx0.c(LocaleController.formatString(R.string.FactCheckFooter, str), org.telegram.ui.ActionBar.h6.c3, i10, alignment, AndroidUtilities.dp(1.0f), truncateAt, i10, 99999, true);
                 this.b2 = this.S1.getWidth();
                 int i12 = 0;
                 for (int i13 = 0; i13 < this.S1.getLineCount(); i13++) {
@@ -29764,7 +29764,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         MessageObject messageObject2 = this.y7;
         int i11 = dp6 - messageObject2.textWidth;
         if (!this.K8) {
-            i11 = kk.y((messageObject2.isOutOwner() ? 20 : 0) + 4, this.pb, i11);
+            i11 = mk.y((messageObject2.isOutOwner() ? 20 : 0) + 4, this.pb, i11);
         }
         if (i11 > 0) {
             this.n0 = (i11 - getExtraTimeX()) + this.n0;
@@ -29824,59 +29824,59 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         int x10 = (int) motionEvent.getX();
         int z22 = (int) z2(motionEvent);
         boolean z11 = this.F5;
-        fp0 fp0Var = this.H5;
+        gp0 gp0Var = this.H5;
         if (z11) {
             int action = motionEvent.getAction();
             float x11 = (motionEvent.getX() - this.J5) - AndroidUtilities.dp(13.0f);
             float z23 = z2(motionEvent) - this.K5;
-            if (fp0Var.k.p3()) {
+            if (gp0Var.k.p3()) {
                 if (action == 0) {
-                    if (0.0f <= x11 && x11 <= fp0Var.g && z23 >= 0.0f && z23 <= fp0Var.h) {
-                        fp0Var.d = x11;
-                        fp0Var.f = true;
-                        fp0Var.b = (int) (x11 - fp0Var.a);
-                        fp0Var.e = false;
-                        fp0Var.k.requestDisallowInterceptTouchEvent(true);
+                    if (0.0f <= x11 && x11 <= gp0Var.g && z23 >= 0.0f && z23 <= gp0Var.h) {
+                        gp0Var.d = x11;
+                        gp0Var.f = true;
+                        gp0Var.b = (int) (x11 - gp0Var.a);
+                        gp0Var.e = false;
+                        gp0Var.k.requestDisallowInterceptTouchEvent(true);
                         f7 = true;
                     }
                 } else if (action == 1 || action == 3) {
-                    if (fp0Var.f) {
-                        if (action == 1 && (u1Var = fp0Var.k) != null) {
-                            u1Var.b(fp0Var.a / fp0Var.g);
+                    if (gp0Var.f) {
+                        if (action == 1 && (u1Var = gp0Var.k) != null) {
+                            u1Var.b(gp0Var.a / gp0Var.g);
                         }
-                        fp0Var.f = false;
-                        fp0Var.k.requestDisallowInterceptTouchEvent(false);
+                        gp0Var.f = false;
+                        gp0Var.k.requestDisallowInterceptTouchEvent(false);
                         f7 = true;
                     }
-                } else if (action == 2 && fp0Var.f) {
-                    if (fp0Var.e) {
-                        int i12 = (int) (x11 - fp0Var.b);
-                        fp0Var.a = i12;
+                } else if (action == 2 && gp0Var.f) {
+                    if (gp0Var.e) {
+                        int i12 = (int) (x11 - gp0Var.b);
+                        gp0Var.a = i12;
                         if (i12 < 0) {
-                            fp0Var.a = 0;
+                            gp0Var.a = 0;
                         } else {
-                            int i13 = fp0Var.g;
+                            int i13 = gp0Var.g;
                             if (i12 > i13) {
-                                fp0Var.a = i13;
+                                gp0Var.a = i13;
                             }
                         }
-                        fp0Var.c = fp0Var.a / fp0Var.g;
+                        gp0Var.c = gp0Var.a / gp0Var.g;
                     }
-                    float f10 = fp0Var.d;
+                    float f10 = gp0Var.d;
                     if (f10 != -1.0f && Math.abs(x11 - f10) > AndroidUtilities.getPixelsInCM(0.2f, true)) {
-                        u1 u1Var2 = fp0Var.n;
+                        u1 u1Var2 = gp0Var.n;
                         if (u1Var2 != null && u1Var2.getParent() != null) {
-                            fp0Var.n.getParent().requestDisallowInterceptTouchEvent(true);
+                            gp0Var.n.getParent().requestDisallowInterceptTouchEvent(true);
                         }
-                        fp0Var.e = true;
-                        fp0Var.d = -1.0f;
+                        gp0Var.e = true;
+                        gp0Var.d = -1.0f;
                     }
                     f7 = true;
                 }
                 if (!f7) {
                     if (!this.F5 && motionEvent.getAction() == 0) {
                         getParent().requestDisallowInterceptTouchEvent(true);
-                    } else if (this.F5 && !fp0Var.e && motionEvent.getAction() == 1) {
+                    } else if (this.F5 && !gp0Var.e && motionEvent.getAction() == 1) {
                         v1(false);
                     }
                     this.f1 = true;
@@ -29954,7 +29954,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                 }
                 return f7;
             }
-            fp0Var.c = 1.0f;
+            gp0Var.c = 1.0f;
             f7 = false;
             if (!f7) {
             }
@@ -30252,14 +30252,14 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         t1 t1Var = this.Zc;
         boolean z10 = t1Var.w0;
         f1 f1Var = this.G5;
-        fp0 fp0Var = this.H5;
+        gp0 gp0Var = this.H5;
         if (!z10 || ((i10 = this.K1) != 3 && i10 != 7)) {
-            if (fp0Var != null) {
+            if (gp0Var != null) {
                 if (t1Var.n1) {
-                    fp0Var.h(((this.J8 + i11) - ((int) (AndroidUtilities.dp(34.0f) * getUseTranscribeButtonProgress()))) - AndroidUtilities.dp(this.h2 ? 10.0f : 0.0f), AndroidUtilities.dp(30.0f), ((this.J8 + i11) + (!this.L5 ? -AndroidUtilities.dp(34.0f) : 0)) - AndroidUtilities.dp(this.h2 ? 10.0f : 0.0f), this.J8 + i11 + (this.L5 ? -AndroidUtilities.dp(34.0f) : 0));
+                    gp0Var.h(((this.J8 + i11) - ((int) (AndroidUtilities.dp(34.0f) * getUseTranscribeButtonProgress()))) - AndroidUtilities.dp(this.h2 ? 10.0f : 0.0f), AndroidUtilities.dp(30.0f), ((this.J8 + i11) + (!this.L5 ? -AndroidUtilities.dp(34.0f) : 0)) - AndroidUtilities.dp(this.h2 ? 10.0f : 0.0f), this.J8 + i11 + (this.L5 ? -AndroidUtilities.dp(34.0f) : 0));
                 } else {
                     int dp = ((this.J8 + i11) - ((int) (AndroidUtilities.dp(34.0f) * getUseTranscribeButtonProgress()))) - AndroidUtilities.dp(this.h2 ? 10.0f : 0.0f);
-                    fp0Var.h(dp, AndroidUtilities.dp(30.0f), dp, dp);
+                    gp0Var.h(dp, AndroidUtilities.dp(30.0f), dp, dp);
                 }
             }
             if (f1Var != null) {
@@ -30279,11 +30279,11 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         if (t1Var.k0 == 0.0f && t1Var.l0 == 0.0f) {
             i13 = i14;
         }
-        if (fp0Var != null) {
+        if (gp0Var != null) {
             if (t1Var.n1) {
-                fp0Var.h(((i14 + i11) - ((int) (AndroidUtilities.dp(34.0f) * getUseTranscribeButtonProgress()))) - AndroidUtilities.dp(this.h2 ? 10.0f : 0.0f), AndroidUtilities.dp(30.0f), i12 + i11 + (!this.L5 ? -AndroidUtilities.dp(34.0f) : 0), i13 + i11 + (this.L5 ? -AndroidUtilities.dp(34.0f) : 0));
+                gp0Var.h(((i14 + i11) - ((int) (AndroidUtilities.dp(34.0f) * getUseTranscribeButtonProgress()))) - AndroidUtilities.dp(this.h2 ? 10.0f : 0.0f), AndroidUtilities.dp(30.0f), i12 + i11 + (!this.L5 ? -AndroidUtilities.dp(34.0f) : 0), i13 + i11 + (this.L5 ? -AndroidUtilities.dp(34.0f) : 0));
             } else {
-                fp0Var.h(((i14 + i11) - ((int) (AndroidUtilities.dp(34.0f) * getUseTranscribeButtonProgress()))) - AndroidUtilities.dp(this.h2 ? 10.0f : 0.0f), AndroidUtilities.dp(30.0f), (i12 + i11) - ((int) (AndroidUtilities.dp(34.0f) * getUseTranscribeButtonProgress())), (i13 + i11) - ((int) (AndroidUtilities.dp(34.0f) * getUseTranscribeButtonProgress())));
+                gp0Var.h(((i14 + i11) - ((int) (AndroidUtilities.dp(34.0f) * getUseTranscribeButtonProgress()))) - AndroidUtilities.dp(this.h2 ? 10.0f : 0.0f), AndroidUtilities.dp(30.0f), (i12 + i11) - ((int) (AndroidUtilities.dp(34.0f) * getUseTranscribeButtonProgress())), (i13 + i11) - ((int) (AndroidUtilities.dp(34.0f) * getUseTranscribeButtonProgress())));
             }
         }
         if (f1Var != null) {
@@ -30522,7 +30522,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         int i14;
         CharacterStyle[] characterStyleArr;
         CharacterStyle[] characterStyleArr2;
-        pm0 pm0Var;
+        qm0 qm0Var;
         l1 l1Var;
         boolean z10;
         int i15;
@@ -30588,7 +30588,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                         characterStyleArr3 = (CharacterStyle[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, org.telegram.ui.Components.a6.class);
                                         i13 = i12;
                                     }
-                                    if (characterStyleArr3.length != 0 && ((!(characterStyleArr3[i12] instanceof h61) || h61.h) && !AndroidUtilities.isAccessibilityScreenReaderEnabled())) {
+                                    if (characterStyleArr3.length != 0 && ((!(characterStyleArr3[i12] instanceof i61) || i61.h) && !AndroidUtilities.isAccessibilityScreenReaderEnabled())) {
                                         if (motionEvent.getAction() != 0) {
                                             CharacterStyle characterStyle2 = characterStyleArr3[i12];
                                             if (characterStyle2 instanceof org.telegram.ui.Components.a6) {
@@ -30607,8 +30607,8 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                     y90 y90Var2 = new y90(characterStyleArr3[i12], this.Id, f13, textYOffset, 0);
                                                     this.t5 = y90Var2;
                                                     y90Var2.d(org.telegram.ui.ActionBar.h6.w0(this.y7.isOutOwner() ? org.telegram.ui.ActionBar.h6.Mb : org.telegram.ui.ActionBar.h6.Ld, this.Id));
-                                                    if (textLayoutBlock.quote && (pm0Var = this.Z9) != null) {
-                                                        this.t5.d(org.telegram.ui.ActionBar.h6.m1(org.telegram.ui.ActionBar.h6.I.q() ? 0.13f : 0.1f, pm0Var.h()));
+                                                    if (textLayoutBlock.quote && (qm0Var = this.Z9) != null) {
+                                                        this.t5.d(org.telegram.ui.ActionBar.h6.m1(org.telegram.ui.ActionBar.h6.I.q() ? 0.13f : 0.1f, qm0Var.h()));
                                                     }
                                                     this.v0 = i18;
                                                     this.w0 = -1;
@@ -30629,7 +30629,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                                 MessageObject.TextLayoutBlock textLayoutBlock2 = this.c4.textLayoutBlocks.get(i23);
                                                                 if (i13 != 0) {
                                                                     int i24 = textLayoutBlock2.charactersOffset;
-                                                                    characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(i24, i24, j61.class);
+                                                                    characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(i24, i24, k61.class);
                                                                 } else {
                                                                     int i25 = textLayoutBlock2.charactersOffset;
                                                                     characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(i25, i25, cls);
@@ -30675,7 +30675,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                                                                 MessageObject.TextLayoutBlock textLayoutBlock3 = this.c4.textLayoutBlocks.get(i27);
                                                                 if (i13 != 0) {
                                                                     int i29 = textLayoutBlock3.charactersEnd - 1;
-                                                                    characterStyleArr = (CharacterStyle[]) spannable.getSpans(i29, i29, j61.class);
+                                                                    characterStyleArr = (CharacterStyle[]) spannable.getSpans(i29, i29, k61.class);
                                                                 } else {
                                                                     int i30 = textLayoutBlock3.charactersEnd - 1;
                                                                     characterStyleArr = (CharacterStyle[]) spannable.getSpans(i30, i30, cls);
@@ -30744,7 +30744,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                             } else {
                                 i12 = 0;
                             }
-                            characterStyleArr3 = (CharacterStyle[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, j61.class);
+                            characterStyleArr3 = (CharacterStyle[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, k61.class);
                             i13 = 1;
                             if (characterStyleArr3 != null) {
                             }
@@ -31745,7 +31745,7 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                     }
                     i19 = (int) (Math.ceil(((r6.pw + r6.leftSpanOffset) / 1000.0f) * minTabletSide) + i19);
                 }
-                backgroundDrawableRight = kk.y((this.o8 ? 48 : 0) + 8, getExtraTextX(), (this.k8 || !this.y7.isOutOwner()) ? this.v8 + i19 : (this.v8 + i19) - AndroidUtilities.dp(6.0f));
+                backgroundDrawableRight = mk.y((this.o8 ? 48 : 0) + 8, getExtraTextX(), (this.k8 || !this.y7.isOutOwner()) ? this.v8 + i19 : (this.v8 + i19) - AndroidUtilities.dp(6.0f));
                 float extraTextX = (backgroundDrawableRight - (getExtraTextX() + AndroidUtilities.dp(10 + ((this.y7.isOutOwner() || this.k8 || this.J) ? 0 : 6)))) - f7;
                 i11 = i10;
                 while (i11 <= i17 && i11 < arrayList2.size()) {
@@ -31872,12 +31872,12 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                 byte[] waveform = messageObject.getWaveform();
                 boolean z10 = false;
                 this.F5 = waveform != null;
-                fp0 fp0Var = this.H5;
-                if (fp0Var != null) {
-                    fp0Var.l = waveform;
-                    fp0Var.G = fp0Var.b((int) (fp0Var.g / AndroidUtilities.dpf2(3.0f)));
-                    if (!fp0Var.k.p3()) {
-                        fp0Var.c = 1.0f;
+                gp0 gp0Var = this.H5;
+                if (gp0Var != null) {
+                    gp0Var.l = waveform;
+                    gp0Var.G = gp0Var.b((int) (gp0Var.g / AndroidUtilities.dpf2(3.0f)));
+                    if (!gp0Var.k.p3()) {
+                        gp0Var.c = 1.0f;
                     }
                 }
                 MessageObject messageObject2 = this.y7;
@@ -31885,11 +31885,11 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
                     MessageObject messageObject3 = this.y7;
                     if (!messageObject3.isRepostPreview && (!messageObject3.isOutOwner() || this.y7.isSent())) {
                         int i11 = this.I7;
-                        if (!UserConfig.getInstance(i11).isPremium() && !z31.j(this.y7)) {
+                        if (!UserConfig.getInstance(i11).isPremium() && !a41.j(this.y7)) {
                             if (MessagesController.getInstance(i11).transcribeAudioTrialWeeklyNumber > 0 && this.y7.getDuration() <= MessagesController.getInstance(i11).transcribeAudioTrialDurationMax) {
                                 TLRPC.Message message2 = this.y7.messageOwner;
                                 if (message2 == null || (TextUtils.isEmpty(message2.voiceTranscription) && !this.y7.messageOwner.voiceTranscriptionFinal)) {
-                                    z31.e(this.y7);
+                                    a41.e(this.y7);
                                 }
                             } else if (MessagesController.getInstance(i11).transcribeAudioTrialWeeklyNumber <= 0) {
                                 if (!MessagesController.getInstance(i11).premiumFeaturesBlocked()) {
@@ -32045,47 +32045,47 @@ public class u1 extends a0 implements xo0, ImageReceiver.ImageReceiverDelegate, 
         f1 f1Var = new f1(this, this);
         this.G5 = f1Var;
         f1Var.h = this;
-        fp0 fp0Var = new fp0();
-        fp0Var.a = 0;
-        fp0Var.b = 0;
-        fp0Var.e = false;
-        fp0Var.f = false;
-        fp0Var.s = 1.0f;
-        fp0Var.t = 1.0f;
+        gp0 gp0Var = new gp0();
+        gp0Var.a = 0;
+        gp0Var.b = 0;
+        gp0Var.e = false;
+        gp0Var.f = false;
+        gp0Var.s = 1.0f;
+        gp0Var.t = 1.0f;
         org.telegram.ui.Components.f6 f6Var = new org.telegram.ui.Components.f6(125L, 600L, bsVar);
-        fp0Var.v = f6Var;
-        fp0Var.w = 1.0f;
+        gp0Var.v = f6Var;
+        gp0Var.w = 1.0f;
         org.telegram.ui.Components.f6 f6Var2 = new org.telegram.ui.Components.f6(150L, bs.f);
-        fp0Var.B = f6Var2;
-        fp0Var.J = false;
-        if (fp0.N == null) {
-            fp0.N = new Paint(1);
-            fp0.O = new Paint(1);
-            Paint paint = fp0.N;
+        gp0Var.B = f6Var2;
+        gp0Var.J = false;
+        if (gp0.N == null) {
+            gp0.N = new Paint(1);
+            gp0.O = new Paint(1);
+            Paint paint = gp0.N;
             Paint.Style style = Paint.Style.FILL;
             paint.setStyle(style);
-            fp0.O.setStyle(style);
+            gp0.O.setStyle(style);
         }
-        this.H5 = fp0Var;
-        fp0Var.k = this;
-        fp0Var.n = this;
+        this.H5 = gp0Var;
+        gp0Var.k = this;
+        gp0Var.n = this;
         f6Var2.a = this;
         f6Var.a = this;
         this.I5 = new g1(this);
-        tm0 tm0Var = new tm0();
-        tm0Var.a = 0L;
-        tm0Var.b = false;
-        tm0Var.c = new Paint(1);
-        tm0Var.d = 0.47f;
-        tm0Var.e = 0.0f;
-        tm0Var.f = 0.32f;
-        tm0Var.g = 1;
-        tm0Var.h = 1;
-        tm0Var.i = 1;
-        tm0Var.m = 255;
-        tm0Var.n = d6Var;
-        tm0Var.j = this;
-        this.S3 = tm0Var;
+        um0 um0Var = new um0();
+        um0Var.a = 0L;
+        um0Var.b = false;
+        um0Var.c = new Paint(1);
+        um0Var.d = 0.47f;
+        um0Var.e = 0.0f;
+        um0Var.f = 0.32f;
+        um0Var.g = 1;
+        um0Var.h = 1;
+        um0Var.i = 1;
+        um0Var.m = 255;
+        um0Var.n = d6Var;
+        um0Var.j = this;
+        this.S3 = um0Var;
         setImportantForAccessibility(1);
     }
 

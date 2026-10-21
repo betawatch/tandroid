@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class sx extends org.telegram.ui.ActionBar.g5 {
     public final /* synthetic */ cy r;
@@ -71,8 +71,8 @@ public final class sx extends org.telegram.ui.ActionBar.g5 {
     @Override // org.telegram.ui.ActionBar.g5
     public final void n() {
         org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.Components.oo0 oo0Var;
-        org.telegram.ui.Components.oo0 oo0Var2;
+        org.telegram.ui.Components.po0 po0Var;
+        org.telegram.ui.Components.po0 po0Var2;
         cy cyVar = this.r;
         cyVar.j2 = true;
         org.telegram.ui.ActionBar.u0 u0Var = cyVar.D1;
@@ -117,10 +117,10 @@ public final class sx extends org.telegram.ui.ActionBar.g5 {
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
         cyVar.j3();
         lx lxVar2 = cyVar.C0;
-        if (lxVar2 != null && (oo0Var2 = lxVar2.b0) != null) {
-            oo0Var2.c = hg.e0.d;
+        if (lxVar2 != null && (po0Var2 = lxVar2.b0) != null) {
+            po0Var2.c = hg.e0.d;
         }
-        if ((lxVar2 != null && (oo0Var = lxVar2.b0) != null && oo0Var.N()) || cyVar.getMessagesController().getTotalDialogsCount() > 10 || cyVar.t3 || cyVar.K) {
+        if ((lxVar2 != null && (po0Var = lxVar2.b0) != null && po0Var.N()) || cyVar.getMessagesController().getTotalDialogsCount() > 10 || cyVar.t3 || cyVar.K) {
             cyVar.k2 = true;
             if (!cyVar.q3) {
                 cyVar.M4(true, false, true, false);
@@ -134,11 +134,11 @@ public final class sx extends org.telegram.ui.ActionBar.g5 {
     @Override // org.telegram.ui.ActionBar.g5
     public final void q(EditText editText) {
         lx lxVar;
-        org.telegram.ui.Components.oo0 oo0Var;
+        org.telegram.ui.Components.po0 po0Var;
         String obj = editText.getText().toString();
         boolean isEmpty = obj.isEmpty();
         cy cyVar = this.r;
-        if (!isEmpty || (((lxVar = cyVar.C0) != null && (oo0Var = lxVar.b0) != null && oo0Var.N()) || cyVar.t3 || cyVar.K)) {
+        if (!isEmpty || (((lxVar = cyVar.C0) != null && (po0Var = lxVar.b0) != null && po0Var.N()) || cyVar.t3 || cyVar.K)) {
             cyVar.k2 = true;
             if (!cyVar.q3) {
                 cyVar.M4(true, false, true, false);

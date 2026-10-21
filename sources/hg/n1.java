@@ -19,12 +19,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Cells.r2;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.im0;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class n1 extends hm0 implements NotificationCenter.NotificationCenterDelegate {
+public final class n1 extends im0 implements NotificationCenter.NotificationCenterDelegate {
     public final Context c;
     public final qn f;
     public int h;
@@ -47,7 +47,7 @@ public final class n1 extends hm0 implements NotificationCenter.NotificationCent
         this.w = z10;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         int i10 = b1Var.f;
         return i10 == 0 || i10 == 2;

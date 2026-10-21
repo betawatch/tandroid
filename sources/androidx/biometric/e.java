@@ -80,15 +80,15 @@ import m.s3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.a00;
-import org.telegram.ui.Components.b81;
+import org.telegram.ui.Components.c81;
 import org.telegram.ui.Components.e00;
-import org.telegram.ui.Components.q71;
-import org.telegram.ui.Components.y71;
+import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.z71;
 import v7.u6;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final class e implements com.google.android.gms.common.api.internal.r, y71, z3.d, j4.a0, OnCompleteListener, n5.b {
+public final class e implements com.google.android.gms.common.api.internal.r, z71, z3.d, j4.a0, OnCompleteListener, n5.b {
     public static e e;
     public final /* synthetic */ int a;
     public Object b;
@@ -579,53 +579,53 @@ public final class e implements com.google.android.gms.common.api.internal.r, y7
         scheduledFuture.cancel(false);
     }
 
-    @Override // org.telegram.ui.Components.y71
-    public void onError(b81 b81Var, Exception exc) {
+    @Override // org.telegram.ui.Components.z71
+    public void onError(c81 c81Var, Exception exc) {
         t9 t9Var = ((r6) this.d).N;
         if (t9Var != null) {
             t9Var.run();
         }
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public void onStateChanged(boolean z10, int i10) {
         r6 r6Var = (r6) this.d;
         o6 o6Var = r6Var.K;
-        b81 b81Var = r6Var.e;
-        if (b81Var == null) {
+        c81 c81Var = r6Var.e;
+        if (c81Var == null) {
             return;
         }
-        if (b81Var.y()) {
+        if (c81Var.y()) {
             AndroidUtilities.runOnUIThread(o6Var);
         } else {
             AndroidUtilities.cancelRunOnUIThread(o6Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         ((r6) this.d).i();
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
         r6 r6Var = (r6) this.d;
         a8 a8Var = (a8) this.b;
         if (a8Var != null) {
             z7 q6 = r6Var.e.q(a8Var.d1);
             a8Var.d1 = q6;
-            q71 q71Var = r6Var.n;
-            if (q71Var != null) {
-                q71Var.setHDRInfo(q6);
+            r71 r71Var = r6Var.n;
+            if (r71Var != null) {
+                r71Var.setHDRInfo(q6);
             }
         }
         int i13 = (int) (i10 * f7);
@@ -638,13 +638,13 @@ public final class e implements com.google.android.gms.common.api.internal.r, y7
             a8Var.A();
         }
         r6Var.b();
-        q71 q71Var2 = r6Var.n;
-        if (q71Var2 != null) {
+        r71 r71Var2 = r6Var.n;
+        if (r71Var2 != null) {
             int i15 = r6Var.f;
             int i16 = r6Var.h;
-            q71Var2.d = i15;
-            q71Var2.e = i16;
-            e00 e00Var = q71Var2.b;
+            r71Var2.d = i15;
+            r71Var2.e = i16;
+            e00 e00Var = r71Var2.b;
             if (e00Var == null) {
                 return;
             }
@@ -879,7 +879,7 @@ public final class e implements com.google.android.gms.common.api.internal.r, y7
         this.d = obj3;
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public void onRenderedFirstFrame() {
         a8 a8Var = (a8) this.b;
         Runnable[] runnableArr = (Runnable[]) this.c;
@@ -898,10 +898,10 @@ public final class e implements com.google.android.gms.common.api.internal.r, y7
         }
         Runnable runnable = runnableArr[0];
         if (runnable == null) {
-            q71 q71Var = r6Var.n;
-            if (q71Var != null) {
+            r71 r71Var = r6Var.n;
+            if (r71Var != null) {
                 if (q6Var == null || !q6Var.g) {
-                    q71Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new p6(0, this, a8Var)).start();
+                    r71Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new p6(0, this, a8Var)).start();
                     return;
                 }
                 return;
@@ -978,11 +978,11 @@ public final class e implements com.google.android.gms.common.api.internal.r, y7
         this.c = bVar;
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 

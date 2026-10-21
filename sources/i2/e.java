@@ -18,11 +18,11 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.xc;
 import v7.u6;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class e {
     public static Object A(int i10, ArrayList arrayList) {
@@ -30,7 +30,7 @@ public abstract /* synthetic */ class e {
     }
 
     public static void B(int i10, ArrayList arrayList) {
-        arrayList.add(g61.B(LocaleController.getString(i10)));
+        arrayList.add(h61.B(LocaleController.getString(i10)));
     }
 
     public static int C(int i10, int i11, int i12, int i13) {
@@ -445,7 +445,7 @@ public abstract /* synthetic */ class e {
     }
 
     public static void p(int i10, ArrayList arrayList) {
-        arrayList.add(g61.t(LocaleController.getString(i10)));
+        arrayList.add(h61.t(LocaleController.getString(i10)));
     }
 
     public static void q(int i10, HashMap hashMap, String str, int i11, String str2) {

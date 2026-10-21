@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -55,7 +55,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.n2 implem
     public gx0 a;
     public SessionsActivity a0;
     private int autoDeleteMesages;
-    public org.telegram.ui.Components.im0 b;
+    public org.telegram.ui.Components.jm0 b;
     public SessionsActivity b0;
     private int bioRow;
     private int birthdayRow;
@@ -229,12 +229,12 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.n2 implem
                 int indexOf = privacySettingsActivity.d.login_email_pattern.indexOf(42);
                 int lastIndexOf = privacySettingsActivity.d.login_email_pattern.lastIndexOf(42);
                 if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                    org.telegram.ui.Components.m11 m11Var = new org.telegram.ui.Components.m11();
-                    m11Var.a |= 256;
-                    m11Var.b = indexOf;
+                    org.telegram.ui.Components.n11 n11Var = new org.telegram.ui.Components.n11();
+                    n11Var.a |= 256;
+                    n11Var.b = indexOf;
                     int i13 = lastIndexOf + 1;
-                    m11Var.c = i13;
-                    valueOf.setSpan(new org.telegram.ui.Components.n11(m11Var, 0), indexOf, i13, 0);
+                    n11Var.c = i13;
+                    valueOf.setSpan(new org.telegram.ui.Components.o11(n11Var, 0), indexOf, i13, 0);
                 }
                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(context);
                 alertDialog$Builder2.a.R = valueOf;
@@ -638,9 +638,9 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.n2 implem
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
-        this.b = im0Var;
-        im0Var.p1();
+        org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, null);
+        this.b = jm0Var;
+        jm0Var.p1();
         this.actionBar.setAdaptiveBackground(this.b);
         this.b.setLayoutManager(new hg.a0(i10, false, 16));
         this.b.setVerticalScrollBarEnabled(false);

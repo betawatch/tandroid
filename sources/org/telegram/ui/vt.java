@@ -8,9 +8,9 @@ import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class vt extends org.telegram.ui.Components.hm0 {
+public final class vt extends org.telegram.ui.Components.im0 {
     public final Context c;
     public final /* synthetic */ DataAutoDownloadActivity d;
 
@@ -19,7 +19,7 @@ public final class vt extends org.telegram.ui.Components.hm0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         int i10;
         int i11;
@@ -136,7 +136,7 @@ public final class vt extends org.telegram.ui.Components.hm0 {
             }
         }
         if (i23 == 3) {
-            dataAutoDownloadActivity.m0((org.telegram.ui.Components.ow0) view);
+            dataAutoDownloadActivity.m0((org.telegram.ui.Components.pw0) view);
             return;
         }
         int i25 = -1;
@@ -278,9 +278,9 @@ public final class vt extends org.telegram.ui.Components.hm0 {
         } else if (i10 != 3) {
             view = i10 != 4 ? new org.telegram.ui.Cells.d9(context) : new org.telegram.ui.Cells.i5(context);
         } else {
-            org.telegram.ui.Components.ow0 ow0Var = new org.telegram.ui.Components.ow0(context, null);
-            ow0Var.setCallback(new ut(this, 0));
-            view = ow0Var;
+            org.telegram.ui.Components.pw0 pw0Var = new org.telegram.ui.Components.pw0(context, null);
+            pw0Var.setCallback(new ut(this, 0));
+            view = pw0Var;
         }
         return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
     }

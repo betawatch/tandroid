@@ -9,10 +9,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Cells.n6;
 import org.telegram.ui.Cells.y7;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.ph0;
+import org.telegram.ui.Components.qh0;
 import org.telegram.ui.Components.y9;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class y0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -68,16 +68,16 @@ public final class y0 extends AnimatorListenerAdapter {
                 y9Var.invalidateSelf();
                 break;
             case 5:
-                ph0 ph0Var = (ph0) obj;
-                ph0Var.H.unlock();
-                ph0Var.b = f7;
+                qh0 qh0Var = (qh0) obj;
+                qh0Var.H.unlock();
+                qh0Var.b = f7;
                 if (f7 <= 0.0f) {
-                    ph0Var.G = -1;
+                    qh0Var.G = -1;
                 }
-                ph0Var.c(true);
-                ph0Var.f = false;
-                if (ph0Var.O != null && Math.abs(f7 - 1.0f) < 0.01f) {
-                    ph0Var.O.run();
+                qh0Var.c(true);
+                qh0Var.f = false;
+                if (qh0Var.O != null && Math.abs(f7 - 1.0f) < 0.01f) {
+                    qh0Var.O.run();
                     break;
                 }
                 break;
@@ -121,9 +121,9 @@ public final class y0 extends AnimatorListenerAdapter {
     public void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 5:
-                ph0 ph0Var = (ph0) this.c;
-                ph0Var.f = true;
-                ph0Var.c = this.b;
+                qh0 qh0Var = (qh0) this.c;
+                qh0Var.f = true;
+                qh0Var.c = this.b;
                 break;
             default:
                 super.onAnimationStart(animator);

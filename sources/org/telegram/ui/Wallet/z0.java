@@ -4,10 +4,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.bz0;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.cz0;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class z0 {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final class z0 {
         sb2.append(xVar == null ? "none" : Integer.valueOf(xVar.b()));
         sb2.append(", clientCloseCode=");
         sb2.append(xVar2 != null ? Integer.valueOf(xVar2.b()) : "none");
-        AndroidUtilities.runOnUIThread(new bz0(this.c, uVar, this.a, sb2.toString(), 15, false));
+        AndroidUtilities.runOnUIThread(new cz0(this.c, uVar, this.a, sb2.toString(), 15, false));
     }
 
     public final void b(tc.u uVar, String str) {
@@ -40,9 +40,9 @@ public final class z0 {
         sb2.append(str);
         FileLog.d(sb2.toString());
         try {
-            AndroidUtilities.runOnUIThread(new bz0(this, uVar, i10, new JSONObject(str), 16));
+            AndroidUtilities.runOnUIThread(new cz0(this, uVar, i10, new JSONObject(str), 16));
         } catch (JSONException unused) {
-            AndroidUtilities.runOnUIThread(new x31(this, uVar, i10, 16));
+            AndroidUtilities.runOnUIThread(new y31(this, uVar, i10, 16));
         }
     }
 }

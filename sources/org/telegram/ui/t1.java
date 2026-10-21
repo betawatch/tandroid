@@ -22,7 +22,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t1 implements Runnable {
     public final /* synthetic */ int a;
@@ -182,7 +182,7 @@ public final /* synthetic */ class t1 implements Runnable {
                 org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.b;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.c;
                 AndroidUtilities.addToClipboard(strArr[0]);
-                org.telegram.messenger.kk.p(R.string.LinkCopied, new org.telegram.ui.Components.xc(f3Var.topBulletinContainer, d6Var));
+                org.telegram.messenger.mk.p(R.string.LinkCopied, new org.telegram.ui.Components.xc(f3Var.topBulletinContainer, d6Var));
                 return;
             case 8:
                 sa.X((sa) this.d, (org.telegram.ui.ActionBar.b2) this.b, (TLRPC.User) this.c);
@@ -247,10 +247,10 @@ public final /* synthetic */ class t1 implements Runnable {
                 return;
             case 17:
                 qn qnVar3 = (qn) this.d;
-                org.telegram.ui.Components.ym0 ym0Var = (org.telegram.ui.Components.ym0) this.b;
+                org.telegram.ui.Components.zm0 zm0Var = (org.telegram.ui.Components.zm0) this.b;
                 TLRPC.User user = (TLRPC.User) this.c;
                 qnVar3.getClass();
-                ym0Var.dismiss();
+                zm0Var.dismiss();
                 qnVar3.presentFragment(ProfileActivity.m4(user.id));
                 return;
             case 18:

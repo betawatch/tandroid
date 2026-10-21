@@ -30,8 +30,8 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.c4;
-import org.telegram.ui.Components.hz0;
-import org.telegram.ui.Components.is0;
+import org.telegram.ui.Components.iz0;
+import org.telegram.ui.Components.js0;
 import org.telegram.ui.Components.k10;
 import org.telegram.ui.Components.k40;
 import org.telegram.ui.Components.kw;
@@ -42,7 +42,7 @@ import org.telegram.ui.Components.wp;
 import org.telegram.ui.hm;
 import org.telegram.ui.io;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -107,12 +107,12 @@ public final /* synthetic */ class t implements Runnable {
                 break;
             case 4:
                 di.r rVar = (di.r) obj;
-                is0 is0Var = rVar.W;
+                js0 js0Var = rVar.W;
                 if (!z10) {
-                    is0Var.b(rVar.a.E);
+                    js0Var.b(rVar.a.E);
                     break;
                 } else {
-                    new di.u(is0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new ai.r0(is0Var, 10)).show();
+                    new di.u(js0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new ai.r0(js0Var, 10)).show();
                     break;
                 }
             case 5:
@@ -218,9 +218,9 @@ public final /* synthetic */ class t implements Runnable {
                 pf.d.r((Context) obj, LocaleController.getString(z10 ? R.string.BotMonetizationInfoTONLink : R.string.MonetizationInfoTONLink));
                 break;
             case 24:
-                hz0 hz0Var = ((hm) obj).c.d1;
-                if (hz0Var != null && z10) {
-                    hz0Var.setVisibility(8);
+                iz0 iz0Var = ((hm) obj).c.d1;
+                if (iz0Var != null && z10) {
+                    iz0Var.setVisibility(8);
                     break;
                 }
                 break;

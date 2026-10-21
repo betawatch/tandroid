@@ -5,12 +5,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.lw0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class w extends kw0 implements r0.m {
+public final class w extends lw0 implements r0.m {
     public final b2.u0 w0;
     public final /* synthetic */ x x0;
 
@@ -35,7 +35,7 @@ public final class w extends kw0 implements r0.m {
             boolean z11 = false;
             if (i11 >= 0) {
                 if (z10) {
-                    im0 currentListView = xVar.F.getCurrentListView();
+                    jm0 currentListView = xVar.F.getCurrentListView();
                     iArr[1] = i11;
                     if (top > 0) {
                         iArr[1] = 0;
@@ -47,7 +47,7 @@ public final class w extends kw0 implements r0.m {
                     return;
                 }
                 if (i11 > 0) {
-                    im0 currentListView2 = xVar.F.getCurrentListView();
+                    jm0 currentListView2 = xVar.F.getCurrentListView();
                     if (xVar.e.getHeight() - bottom < 0 || currentListView2 == null || currentListView2.canScrollVertically(1)) {
                         return;
                     }
@@ -60,7 +60,7 @@ public final class w extends kw0 implements r0.m {
             kVar2 = ((org.telegram.ui.ActionBar.n2) xVar).actionBar;
             kVar2.setCastShadows(xVar.e.getHeight() - bottom < 0);
             if (xVar.e.getHeight() - bottom >= 0) {
-                im0 currentListView3 = xVar.F.getCurrentListView();
+                jm0 currentListView3 = xVar.F.getCurrentListView();
                 int L0 = ((s4.b0) currentListView3.getLayoutManager()).L0();
                 if (L0 != -1) {
                     s4.b1 K = currentListView3.K(L0);
@@ -89,7 +89,7 @@ public final class w extends kw0 implements r0.m {
         x xVar = this.x0;
         try {
             if (viewGroup == xVar.e && xVar.F.isAttachedToWindow()) {
-                im0 currentListView = xVar.F.getCurrentListView();
+                jm0 currentListView = xVar.F.getCurrentListView();
                 int bottom = ((View) xVar.F.getParent()).getBottom();
                 kVar = ((org.telegram.ui.ActionBar.n2) xVar).actionBar;
                 kVar.setCastShadows(xVar.e.getHeight() - bottom < 0);

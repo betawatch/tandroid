@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e3 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -187,12 +187,12 @@ public final /* synthetic */ class e3 implements ValueAnimator.AnimatorUpdateLis
                 photoViewer2.T1.invalidate();
                 break;
             case 22:
-                ((PhotoViewer) ((org.telegram.ui.Components.cn0) this.b).b).T1.scrollTo(0, ((Integer) valueAnimator.getAnimatedValue()).intValue());
+                ((PhotoViewer) ((org.telegram.ui.Components.dn0) this.b).b).T1.scrollTo(0, ((Integer) valueAnimator.getAnimatedValue()).intValue());
                 break;
             case 23:
                 PhotoViewer photoViewer3 = ((lt0) this.b).r;
                 photoViewer3.m6 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                photoViewer3.G1();
+                photoViewer3.H1();
                 break;
             case 24:
                 au0 au0Var = (au0) this.b;

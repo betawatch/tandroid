@@ -18,9 +18,9 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class lc0 extends org.telegram.ui.Components.kw0 implements r0.m {
+public final class lc0 extends org.telegram.ui.Components.lw0 implements r0.m {
     public final /* synthetic */ int w0 = 1;
     public final b2.u0 x0;
     public boolean y0;
@@ -38,8 +38,8 @@ public final class lc0 extends org.telegram.ui.Components.kw0 implements r0.m {
         dc0 dc0Var;
         org.telegram.ui.ActionBar.k kVar;
         int i13;
-        org.telegram.ui.Components.im0 currentListView;
-        org.telegram.ui.Components.b71 t02;
+        org.telegram.ui.Components.jm0 currentListView;
+        org.telegram.ui.Components.c71 t02;
         org.telegram.ui.Wallet.k5 k5Var;
         switch (this.w0) {
             case 0:
@@ -51,7 +51,7 @@ public final class lc0 extends org.telegram.ui.Components.kw0 implements r0.m {
                     boolean z11 = false;
                     if (i11 >= 0) {
                         if (z10) {
-                            org.telegram.ui.Components.im0 currentListView2 = nc0Var.K0.getCurrentListView();
+                            org.telegram.ui.Components.jm0 currentListView2 = nc0Var.K0.getCurrentListView();
                             iArr[1] = i11;
                             if (top > 0) {
                                 iArr[1] = 0;
@@ -107,7 +107,7 @@ public final class lc0 extends org.telegram.ui.Components.kw0 implements r0.m {
         }
     }
 
-    @Override // org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.lw0
     public void L(Canvas canvas, ArrayList arrayList) {
         switch (this.w0) {
             case 0:
@@ -152,21 +152,21 @@ public final class lc0 extends org.telegram.ui.Components.kw0 implements r0.m {
     }
 
     /* JADX WARN: Finally extract failed */
-    public int d0(org.telegram.ui.Components.b71 b71Var, int i10) {
+    public int d0(org.telegram.ui.Components.c71 c71Var, int i10) {
         int[] iArr = {0};
         org.telegram.ui.Components.kv kvVar = new org.telegram.ui.Components.kv(iArr, 15);
         this.y0 = true;
-        b71Var.j(kvVar);
+        c71Var.j(kvVar);
         try {
-            b71Var.scrollBy(0, i10);
-            ArrayList arrayList = b71Var.w0;
+            c71Var.scrollBy(0, i10);
+            ArrayList arrayList = c71Var.w0;
             if (arrayList != null) {
                 arrayList.remove(kvVar);
             }
             this.y0 = false;
             return iArr[0];
         } catch (Throwable th2) {
-            ArrayList arrayList2 = b71Var.w0;
+            ArrayList arrayList2 = c71Var.w0;
             if (arrayList2 != null) {
                 arrayList2.remove(kvVar);
             }
@@ -454,9 +454,9 @@ public final class lc0 extends org.telegram.ui.Components.kw0 implements r0.m {
                 boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
                 if (motionEvent.getActionMasked() == 1 && (k5Var = o5Var.p0) != null) {
                     org.telegram.ui.Wallet.n nVar = k5Var.i;
-                    org.telegram.ui.Components.v61 v61Var = k5Var.c;
-                    if (v61Var != null) {
-                        v61Var.removeCallbacks(nVar);
+                    org.telegram.ui.Components.w61 w61Var = k5Var.c;
+                    if (w61Var != null) {
+                        w61Var.removeCallbacks(nVar);
                         k5Var.c.post(nVar);
                     }
                 }
@@ -504,13 +504,13 @@ public final class lc0 extends org.telegram.ui.Components.kw0 implements r0.m {
     @Override // r0.m
     public final void i(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
         dc0 dc0Var;
-        org.telegram.ui.Components.b71 t02;
+        org.telegram.ui.Components.c71 t02;
         switch (this.w0) {
             case 0:
                 nc0 nc0Var = (nc0) this.z0;
                 try {
                     if (viewGroup == nc0Var.U && (dc0Var = nc0Var.K0) != null && dc0Var.isAttachedToWindow()) {
-                        org.telegram.ui.Components.im0 currentListView = nc0Var.K0.getCurrentListView();
+                        org.telegram.ui.Components.jm0 currentListView = nc0Var.K0.getCurrentListView();
                         int top = nc0Var.K0.getTop();
                         if (currentListView != null && top == 0) {
                             iArr[1] = i13;
@@ -557,9 +557,9 @@ public final class lc0 extends org.telegram.ui.Components.kw0 implements r0.m {
                 org.telegram.ui.Wallet.k5 k5Var = ((org.telegram.ui.Wallet.o5) this.z0).p0;
                 if (k5Var != null) {
                     org.telegram.ui.Wallet.n nVar = k5Var.i;
-                    org.telegram.ui.Components.v61 v61Var = k5Var.c;
-                    if (v61Var != null) {
-                        v61Var.removeCallbacks(nVar);
+                    org.telegram.ui.Components.w61 w61Var = k5Var.c;
+                    if (w61Var != null) {
+                        w61Var.removeCallbacks(nVar);
                         k5Var.c.post(nVar);
                         break;
                     }
@@ -568,7 +568,7 @@ public final class lc0 extends org.telegram.ui.Components.kw0 implements r0.m {
         }
     }
 
-    @Override // org.telegram.ui.Components.kw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         switch (this.w0) {
             case 0:

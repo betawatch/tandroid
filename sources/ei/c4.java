@@ -8,10 +8,10 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
-import org.telegram.ui.Components.uj0;
+import org.telegram.messenger.mk;
+import org.telegram.ui.Components.vj0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class c4 extends FrameLayout {
     public static final /* synthetic */ int d = 0;
@@ -21,7 +21,7 @@ public final class c4 extends FrameLayout {
 
     public c4(Context context) {
         super(context);
-        LinearLayout e = kk.e(context, 1);
+        LinearLayout e = mk.e(context, 1);
         addView(e, w7.z5.e(-2, -2, 17));
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.a = w9Var;
@@ -46,7 +46,7 @@ public final class c4 extends FrameLayout {
         if (i10 != 0 || this.c) {
             return;
         }
-        this.a.setImageDrawable(new uj0(R.raw.utyan_empty2, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
+        this.a.setImageDrawable(new vj0(R.raw.utyan_empty2, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
         this.c = true;
     }
 }

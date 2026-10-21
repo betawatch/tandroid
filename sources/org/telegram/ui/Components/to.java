@@ -29,7 +29,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class to extends LinearLayout {
     public static final /* synthetic */ int L = 0;
@@ -50,7 +50,7 @@ public abstract class to extends LinearLayout {
     public w9 n;
     public final org.telegram.ui.ActionBar.d6 r;
     public boolean s;
-    public xj0 v;
+    public yj0 v;
     public TextView w;
     public di.n x;
     public boolean y;
@@ -185,9 +185,9 @@ public abstract class to extends LinearLayout {
         this.E = z11;
         if (z10) {
             if (this.v == null) {
-                xj0 xj0Var = new xj0(getContext());
-                this.v = xj0Var;
-                xj0Var.setScaleType(ImageView.ScaleType.CENTER);
+                yj0 yj0Var = new yj0(getContext());
+                this.v = yj0Var;
+                yj0Var.setScaleType(ImageView.ScaleType.CENTER);
                 this.v.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                 this.v.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(78.0f), 469762048));
                 if (z11) {

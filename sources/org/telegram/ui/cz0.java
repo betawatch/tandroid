@@ -5,7 +5,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class cz0 extends zt0 {
     public final /* synthetic */ ProfileActivity a;
@@ -36,7 +36,7 @@ public final class cz0 extends zt0 {
         long j10;
         sy0 sy0Var;
         sy0 sy0Var2;
-        org.telegram.ui.Components.ji0 ji0Var;
+        org.telegram.ui.Components.ki0 ki0Var;
         TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated;
         TLRPC.User user;
         TLRPC.UserProfilePhoto userProfilePhoto;
@@ -71,8 +71,8 @@ public final class cz0 extends zt0 {
                 }
                 ry0 ry0Var = profileActivity.f0;
                 if (i11 >= 0 && (sy0Var = profileActivity.o0) != null && sy0Var.getVisibility() == 0) {
-                    if (i11 != profileActivity.o0.getRealPosition() && (ji0Var = (sy0Var2 = profileActivity.o0).D0) != null) {
-                        sy0Var2.x(ji0Var.j() + i11, false);
+                    if (i11 != profileActivity.o0.getRealPosition() && (ki0Var = (sy0Var2 = profileActivity.o0).D0) != null) {
+                        sy0Var2.x(ki0Var.j() + i11, false);
                     }
                     ?? currentItemView = profileActivity.o0.getCurrentItemView();
                     if (currentItemView != 0) {

@@ -1,74 +1,27 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class vc implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ vc(MessagesController messagesController, ArrayList arrayList, long j10, TLRPC.updates_ChannelDifference updates_channeldifference, TLRPC.Chat chat, a0.h hVar, int i10, long j11) {
-        this.a = 1;
+    public /* synthetic */ vc(int i10, MessagesController messagesController, boolean z10) {
+        this.a = i10;
         this.b = messagesController;
-        this.f = arrayList;
-        this.c = j10;
-        this.h = updates_channeldifference;
-        this.n = chat;
-        this.r = hVar;
-        this.d = i10;
-        this.e = j11;
+        this.c = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$ensureMessagesLoaded$463((boolean[]) this.f, (MessagesStorage) this.h, this.c, (Runnable[]) this.n, this.e, this.d, (MessagesController.MessagesLoadedCallback) this.r);
-                break;
-            case 1:
-                ((MessagesController) this.b).lambda$getChannelDifference$346((ArrayList) this.f, this.c, (TLRPC.updates_ChannelDifference) this.h, (TLRPC.Chat) this.n, (a0.h) this.r, this.d, this.e);
-                break;
-            case 2:
-                ((WearReplyReceiver) this.b).lambda$onReceive$0((AccountInstance) this.f, (TLRPC.User) this.h, (CharSequence) this.n, this.c, this.e, this.d, (int[]) this.r);
+                this.b.lambda$checkPromoInfo$163(this.c);
                 break;
             default:
-                ((WearReplyReceiver) this.b).lambda$onReceive$2((AccountInstance) this.f, (TLRPC.Chat) this.h, (CharSequence) this.n, this.c, this.e, this.d, (int[]) this.r);
+                this.b.lambda$removeFolderTemporarily$483(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ vc(MessagesController messagesController, boolean[] zArr, MessagesStorage messagesStorage, long j10, Runnable[] runnableArr, long j11, int i10, MessagesController.MessagesLoadedCallback messagesLoadedCallback) {
-        this.a = 0;
-        this.b = messagesController;
-        this.f = zArr;
-        this.h = messagesStorage;
-        this.c = j10;
-        this.n = runnableArr;
-        this.e = j11;
-        this.d = i10;
-        this.r = messagesLoadedCallback;
-    }
-
-    public /* synthetic */ vc(WearReplyReceiver wearReplyReceiver, AccountInstance accountInstance, TLObject tLObject, CharSequence charSequence, long j10, long j11, int i10, int[] iArr, int i11) {
-        this.a = i11;
-        this.b = wearReplyReceiver;
-        this.f = accountInstance;
-        this.h = tLObject;
-        this.n = charSequence;
-        this.c = j10;
-        this.e = j11;
-        this.d = i10;
-        this.r = iArr;
     }
 }

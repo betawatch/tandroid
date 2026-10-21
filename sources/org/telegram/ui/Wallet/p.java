@@ -9,10 +9,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.w61;
+import org.telegram.ui.Components.x61;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -145,9 +145,9 @@ public final /* synthetic */ class p implements Utilities.Callback {
         }
     }
 
-    public /* synthetic */ p(w61 w61Var, m0 m0Var, Object obj, int i10) {
+    public /* synthetic */ p(x61 x61Var, m0 m0Var, Object obj, int i10) {
         this.a = i10;
-        this.c = w61Var;
+        this.c = x61Var;
         this.b = m0Var;
         this.d = obj;
     }

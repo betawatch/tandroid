@@ -15,7 +15,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
@@ -23,16 +23,16 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class x extends bb {
     public final int X;
     public final Utilities.Callback Y;
-    public t61 Z;
+    public u61 Z;
     public final FrameLayout a0;
     public final FrameLayout b0;
     public final RichMessageLayout.PreviewView c0;
@@ -132,7 +132,7 @@ public final class x extends bb {
         g3Var.addTextChangedListener(new w(this));
         frameLayout3.addView(i3Var, w7.z5.c(-2.0f, -1));
         frameLayout3.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-        ei.d f7 = kk.f(24, context, d6Var, true);
+        ei.d f7 = mk.f(24, context, d6Var, true);
         this.f0 = f7;
         f7.g(LocaleController.getString(R.string.ArticleAIGenerate), false, true);
         final int i15 = 1;
@@ -189,9 +189,9 @@ public final class x extends bb {
         kVar.o(bs.h);
         kVar.n(350L);
         this.d.setItemAnimator(kVar);
-        im0 im0Var = this.d;
+        jm0 jm0Var = this.d;
         int i16 = this.backgroundPaddingLeft;
-        im0Var.setPadding(i16, 0, i16, AndroidUtilities.dp(72.0f));
+        jm0Var.setPadding(i16, 0, i16, AndroidUtilities.dp(72.0f));
         this.d.setClipToPadding(false);
         this.Z.N(false);
         Q();
@@ -229,9 +229,9 @@ public final class x extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
-        t61 t61Var = new t61(im0Var, getContext(), this.X, 0, true, new hg.o(this, 14), this.resourcesProvider);
-        this.Z = t61Var;
-        return t61Var;
+    public final im0 x(jm0 jm0Var) {
+        u61 u61Var = new u61(jm0Var, getContext(), this.X, 0, true, new hg.o(this, 14), this.resourcesProvider);
+        this.Z = u61Var;
+        return u61Var;
     }
 }

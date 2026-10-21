@@ -8,7 +8,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class fl implements em {
     public final /* synthetic */ qn a;
@@ -34,7 +34,7 @@ public final class fl implements em {
             if (messageObject == null) {
                 messageObject = (MessageObject) qnVar.o6[0].get(qnVar.L4);
             }
-            qnVar.gc(messageObject);
+            qnVar.hc(messageObject);
             return;
         }
         ArrayList arrayList = new ArrayList(qnVar.H4);
@@ -48,7 +48,7 @@ public final class fl implements em {
             } else {
                 notificationsSettings.edit().putInt("pin_" + qnVar.T5, ((Integer) qnVar.H4.get(0)).intValue()).commit();
             }
-            qnVar.Cc(0, true);
+            qnVar.Dc(0, true);
         } else {
             qnVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didLoadPinnedMessages, Long.valueOf(qnVar.T5), arrayList, Boolean.FALSE, null, null, 0, 0, Boolean.TRUE);
         }
@@ -63,7 +63,7 @@ public final class fl implements em {
         qn qnVar2 = this.a;
         int L8 = z12 ? qnVar2.L8() : qnVar.L8();
         ArrayList arrayList3 = new ArrayList(qnVar.h4 ? qnVar2.H4 : qnVar.H4);
-        org.telegram.messenger.w7 w7Var = new org.telegram.messenger.w7(this, z11, arrayList, arrayList2, L8, i11);
+        org.telegram.messenger.y7 y7Var = new org.telegram.messenger.y7(this, z11, arrayList, arrayList2, L8, i11);
         org.telegram.messenger.voip.k0 k0Var = new org.telegram.messenger.voip.k0(this, z11, arrayList3, i11);
         on onVar = qnVar.ea;
         if (qnVar.getParentActivity() == null) {
@@ -82,7 +82,7 @@ public final class fl implements em {
                 nbVar = ybVar;
             }
             org.telegram.ui.Components.oc ocVar = new org.telegram.ui.Components.oc(qnVar.getParentActivity(), onVar, true);
-            ocVar.a = w7Var;
+            ocVar.a = y7Var;
             ocVar.b = k0Var;
             nbVar.setButton(ocVar);
             qcVar = org.telegram.ui.Components.qc.g(qnVar, nbVar, 5000);

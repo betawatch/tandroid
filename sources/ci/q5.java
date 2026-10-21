@@ -3,12 +3,12 @@ package ci;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public abstract class q5 extends im0 implements p7 {
+public abstract class q5 extends jm0 implements p7 {
     public final /* synthetic */ int V2;
     public final /* synthetic */ NotificationCenter.NotificationCenterDelegate W2;
 

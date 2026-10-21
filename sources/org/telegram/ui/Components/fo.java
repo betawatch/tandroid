@@ -37,9 +37,9 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class fo extends li implements jw0, NotificationCenter.NotificationCenterDelegate {
+public final class fo extends li implements kw0, NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int m1 = 0;
     public int A0;
     public int B0;
@@ -391,8 +391,8 @@ public final class fo extends li implements jw0, NotificationCenter.Notification
         if (b10 instanceof sh.d) {
             ArrayList arrayList = new ArrayList(1);
             arrayList.add(((sh.d) b10).b);
-            PhotoViewer.t1().K2(parentActivity, null, null);
-            PhotoViewer.t1().g2(arrayList, 0, 14, false, new jn(foVar, i10), null);
+            PhotoViewer.u1().M2(parentActivity, null, null);
+            PhotoViewer.u1().i2(arrayList, 0, 14, false, new jn(foVar, i10), null);
             return;
         }
         if (b10 instanceof sh.h) {
@@ -553,7 +553,7 @@ public final class fo extends li implements jw0, NotificationCenter.Notification
         this.w.h1(0, 0);
     }
 
-    @Override // org.telegram.ui.Components.jw0
+    @Override // org.telegram.ui.Components.kw0
     public final void G(int i10, boolean z10) {
         boolean z11;
         if (this.I) {
@@ -1005,10 +1005,10 @@ public final class fo extends li implements jw0, NotificationCenter.Notification
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View F = sa1Var.F(childAt);
-        sl0 sl0Var = (sl0) (F == null ? null : sa1Var.T(F));
+        tl0 tl0Var = (tl0) (F == null ? null : sa1Var.T(F));
         int y3 = (((int) childAt.getY()) - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(20.0f);
-        int i10 = (y3 <= 0 || sl0Var == null || sl0Var.b() != 1) ? 0 : y3;
-        if (y3 < 0 || sl0Var == null || sl0Var.b() != 1) {
+        int i10 = (y3 <= 0 || tl0Var == null || tl0Var.b() != 1) ? 0 : y3;
+        if (y3 < 0 || tl0Var == null || tl0Var.b() != 1) {
             y3 = i10;
         }
         return AndroidUtilities.dp(25.0f) + y3;
@@ -1246,29 +1246,29 @@ public final class fo extends li implements jw0, NotificationCenter.Notification
         F.t = false;
         F.c(R.drawable.msg_replace, LocaleController.getString(R.string.ReplaceAttachedPollMedia), new dn(this, i10, 1), false);
         F.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new dn(this, i10, 2), true);
-        ym0 ym0Var = new ym0(getContext(), this.a);
-        F.p = new org.telegram.ui.qe(ym0Var, 1);
+        zm0 zm0Var = new zm0(getContext(), this.a);
+        F.p = new org.telegram.ui.qe(zm0Var, 1);
         F.S = AndroidUtilities.dp(185.0f);
         F.Y();
-        ym0Var.e(F);
-        Drawable drawable = (Drawable) callbackReturn.run(ym0Var.s);
-        dh.d c10 = ym0Var.n.c(null, null, false);
-        c10.o(fh.c.k(ym0Var.b));
+        zm0Var.e(F);
+        Drawable drawable = (Drawable) callbackReturn.run(zm0Var.s);
+        dh.d c10 = zm0Var.n.c(null, null, false);
+        c10.o(fh.c.k(zm0Var.b));
         c10.p(AndroidUtilities.dp(8.0f));
         c10.j.e = true;
         c10.q(AndroidUtilities.dp(16.0f));
-        ym0Var.F = c10;
-        ym0Var.E = drawable;
+        zm0Var.F = c10;
+        zm0Var.E = drawable;
         Point point = AndroidUtilities.displaySize;
         int i13 = (point.x - i11) / 2;
         int i14 = (point.y - i12) / 2;
         int i15 = i11 + i13;
         int i16 = i12 + i14;
         c10.setBounds(i13 - AndroidUtilities.dp(8.0f), i14 - AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f) + i15, AndroidUtilities.dp(8.0f) + i16);
-        ym0Var.E.setBounds(i13, i14, i15, i16);
-        ((FrameLayout.LayoutParams) ym0Var.x.getLayoutParams()).gravity = 1;
-        ym0Var.L = true;
-        ym0Var.show();
+        zm0Var.E.setBounds(i13, i14, i15, i16);
+        ((FrameLayout.LayoutParams) zm0Var.x.getLayoutParams()).gravity = 1;
+        zm0Var.L = true;
+        zm0Var.show();
     }
 
     public final void k0() {

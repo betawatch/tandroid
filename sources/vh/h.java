@@ -32,8 +32,9 @@ import org.telegram.ui.Cells.s8;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.yb;
 import qg.h0;
+import u2.j0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class h extends Drawable implements Animator.AnimatorListener {
     public static final RectF b0 = new RectF();
@@ -55,7 +56,7 @@ public final class h extends Drawable implements Animator.AnimatorListener {
     public float X;
     public float Y;
     public final i a;
-    public final uf.c b;
+    public final j0 b;
     public final LinearGradient f;
     public final d[] w;
     public final Drawable x;
@@ -79,8 +80,8 @@ public final class h extends Drawable implements Animator.AnimatorListener {
     public final ObjectAnimator Z = ObjectAnimator.ofFloat(this, e0, 1.0f).setDuration(560L);
     public final ObjectAnimator a0 = ObjectAnimator.ofFloat(this, f0, 1.0f).setDuration(240L);
 
-    public h(i iVar, u1 u1Var, ArrayList arrayList, uf.c cVar) {
-        this.b = cVar;
+    public h(i iVar, u1 u1Var, ArrayList arrayList, j0 j0Var) {
+        this.b = j0Var;
         this.a = iVar;
         this.y = u1Var;
         this.E = u1Var.getMessageObject();
@@ -583,13 +584,13 @@ public final class h extends Drawable implements Animator.AnimatorListener {
     @Override // android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         ObjectAnimator objectAnimator = this.Z;
-        uf.c cVar = this.b;
+        j0 j0Var = this.b;
         if (animator == objectAnimator) {
             this.y.setHideSideButtonByQuickShare(false);
             this.M = true;
             invalidateSelf();
             if (this.N) {
-                cVar.run();
+                j0Var.run();
                 return;
             }
             return;
@@ -602,7 +603,7 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                 ybVar.a.setVisibility(0);
             }
             if (this.M) {
-                cVar.run();
+                j0Var.run();
             }
         }
     }

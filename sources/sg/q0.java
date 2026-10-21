@@ -13,7 +13,7 @@ import ci.v4;
 import ei.i6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.aa0;
@@ -23,13 +23,13 @@ import org.telegram.ui.Components.f6;
 import org.telegram.ui.Components.fr;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.q6;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.l40;
 import org.telegram.ui.tf1;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class q0 extends FrameLayout implements aa0 {
     public boolean E;
@@ -56,7 +56,7 @@ public class q0 extends FrameLayout implements aa0 {
     public final Path v;
     public final org.telegram.ui.Components.voip.h w;
     public boolean x;
-    public final xj0 y;
+    public final yj0 y;
 
     public q0(Context context, d6 d6Var, boolean z10) {
         this(AndroidUtilities.dp(8.0f), context, d6Var, z10);
@@ -206,7 +206,7 @@ public class q0 extends FrameLayout implements aa0 {
         invalidate();
     }
 
-    public xj0 getIconView() {
+    public yj0 getIconView() {
         return this.y;
     }
 
@@ -236,13 +236,13 @@ public class q0 extends FrameLayout implements aa0 {
     }
 
     public void setIcon(int i10) {
-        xj0 xj0Var = this.y;
-        xj0Var.f(i10, 24, 24, null);
+        yj0 yj0Var = this.y;
+        yj0Var.f(i10, 24, 24, null);
         org.telegram.ui.Components.voip.h hVar = this.w;
         hVar.g = 2.0f;
         hVar.p = new org.telegram.ui.web.z1(this, 22);
         invalidate();
-        xj0Var.setVisibility(0);
+        yj0Var.setVisibility(0);
     }
 
     @Override // org.telegram.ui.Components.aa0
@@ -280,7 +280,7 @@ public class q0 extends FrameLayout implements aa0 {
         hVar.n = 1.2f;
         hVar.k = false;
         hVar.m = 4.0f;
-        LinearLayout e = kk.e(context, 0);
+        LinearLayout e = mk.e(context, 0);
         p0 p0Var = new p0(this, context, 0);
         this.d = p0Var;
         p0Var.b(0.35f, 350L, bs.h);
@@ -288,17 +288,17 @@ public class q0 extends FrameLayout implements aa0 {
         p0Var.setTextColor(-1);
         p0Var.setTextSize(AndroidUtilities.dp(14.0f));
         p0Var.setTypeface(AndroidUtilities.bold());
-        xj0 xj0Var = new xj0(context);
-        this.y = xj0Var;
-        xj0Var.setColorFilter(-1);
-        xj0Var.setVisibility(8);
+        yj0 yj0Var = new yj0(context);
+        this.y = yj0Var;
+        yj0Var.setColorFilter(-1);
+        yj0Var.setVisibility(8);
         rg.x1 x1Var = new rg.x1(this, context, 3);
         this.r = x1Var;
         x1Var.addView(e, z5.e(-2, -2, 17));
         int o10 = i0.a.o(-1, 120);
         x1Var.setBackground(h6.j0(i10, i10, i10, i10, 0, o10, o10));
         e.addView(p0Var, z5.q(-2, -2, 16));
-        e.addView(xj0Var, z5.p(24, 24, 0.0f, 16, 4, 0, 0, 0));
+        e.addView(yj0Var, z5.p(24, 24, 0.0f, 16, 4, 0, 0, 0));
         addView(x1Var);
         setOutlineProvider(zf.j0.b);
         setClipToOutline(true);

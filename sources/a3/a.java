@@ -6,10 +6,10 @@ import android.os.Trace;
 import android.view.Surface;
 import androidx.media3.decoder.VideoDecoderOutputBuffer;
 import b2.a2;
-import u2.d1;
+import u2.e1;
 import v7.u6;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public abstract class a extends i2.b {
     public final long I;
@@ -522,9 +522,9 @@ public abstract class a extends i2.b {
             if (k()) {
                 f7 = this.y;
             } else {
-                d1 d1Var = this.r;
-                d1Var.getClass();
-                f7 = d1Var.f();
+                e1 e1Var = this.r;
+                e1Var.getClass();
+                f7 = e1Var.f();
             }
             if (f7 || this.R != null) {
                 if (this.a0 != 3) {

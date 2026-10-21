@@ -8,14 +8,14 @@ import android.widget.Scroller;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.b71;
-import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.w61;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class k5 extends s4.p0 {
     public RecyclerView a;
-    public v61 c;
+    public w61 c;
     public boolean d;
     public boolean e;
     public boolean f;
@@ -49,7 +49,7 @@ public final class k5 extends s4.p0 {
                     o5 o5Var = this.j;
                     if (o5Var.u0()) {
                         int i13 = i11 > 0 ? 1 : -1;
-                        b71 t02 = o5Var.t0();
+                        c71 t02 = o5Var.t0();
                         if (this.c.canScrollVertically(i13) && (i13 >= 0 || t02 == null || !t02.canScrollVertically(-1))) {
                             i12 = i13 > 0 ? layoutManager.B() - 1 : 0;
                             if (i12 != -1) {
@@ -68,14 +68,14 @@ public final class k5 extends s4.p0 {
         return false;
     }
 
-    public final void b(v61 v61Var) {
-        v61 v61Var2 = this.c;
-        if (v61Var2 != null) {
-            v61Var2.removeCallbacks(this.i);
+    public final void b(w61 w61Var) {
+        w61 w61Var2 = this.c;
+        if (w61Var2 != null) {
+            w61Var2.removeCallbacks(this.i);
         }
-        this.c = v61Var;
+        this.c = w61Var;
         RecyclerView recyclerView = this.a;
-        if (recyclerView == v61Var) {
+        if (recyclerView == w61Var) {
             return;
         }
         ei.e9 e9Var = this.b;
@@ -86,9 +86,9 @@ public final class k5 extends s4.p0 {
             }
             this.a.setOnFlingListener(null);
         }
-        this.a = v61Var;
-        if (v61Var != null) {
-            if (v61Var.getOnFlingListener() != null) {
+        this.a = w61Var;
+        if (w61Var != null) {
+            if (w61Var.getOnFlingListener() != null) {
                 throw new IllegalStateException("An instance of OnFlingListener already set.");
             }
             this.a.j(e9Var);
@@ -102,19 +102,19 @@ public final class k5 extends s4.p0 {
         this.e = false;
         this.f = false;
         this.d = false;
-        v61 v61Var = this.c;
-        if (v61Var != null) {
-            v61Var.removeCallbacks(this.i);
+        w61 w61Var = this.c;
+        if (w61Var != null) {
+            w61Var.removeCallbacks(this.i);
         }
     }
 
     public final View d(s4.n0 n0Var) {
-        v61 v61Var;
-        if (this.e || (v61Var = this.c) == null || v61Var.getScrollState() != 0) {
+        w61 w61Var;
+        if (this.e || (w61Var = this.c) == null || w61Var.getScrollState() != 0) {
             return null;
         }
         o5 o5Var = this.j;
-        b71 t02 = o5Var.t0();
+        c71 t02 = o5Var.t0();
         if ((t02 != null && t02.getScrollState() != 0) || !this.d) {
             return null;
         }

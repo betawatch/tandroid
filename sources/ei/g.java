@@ -17,12 +17,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.iu;
 import org.telegram.ui.Components.kd;
-import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.lw0;
 import org.telegram.ui.Components.mu;
 import org.telegram.ui.Components.qu;
 import org.telegram.ui.Components.tz;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class g extends qu {
     public org.telegram.ui.Components.na V;
@@ -32,8 +32,8 @@ public final class g extends qu {
     public final /* synthetic */ m c0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(m mVar, Context context, kw0 kw0Var, int i10, ci.b bVar, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.ja jaVar) {
-        super(context, kw0Var, null, i10, true, bVar);
+    public g(m mVar, Context context, lw0 lw0Var, int i10, ci.b bVar, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.ja jaVar) {
+        super(context, lw0Var, null, i10, true, bVar);
         this.c0 = mVar;
         this.a0 = d6Var;
         this.b0 = jaVar;

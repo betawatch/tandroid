@@ -4,12 +4,12 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.d91;
-import org.telegram.ui.Components.t81;
+import org.telegram.ui.Components.e91;
 import org.telegram.ui.Components.u70;
+import org.telegram.ui.Components.u81;
 import org.telegram.ui.pg1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class v4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -90,17 +90,17 @@ public final class v4 implements ValueAnimator.AnimatorUpdateListener {
                 }
                 break;
             case 9:
-                d91 d91Var = (d91) this.b;
-                View[] viewArr = d91Var.e;
-                if (d91Var.x) {
+                e91 e91Var = (e91) this.b;
+                View[] viewArr = e91Var.e;
+                if (e91Var.x) {
                     float abs = 1.0f - (Math.abs(viewArr[0].getTranslationX()) / viewArr[0].getMeasuredWidth());
-                    d91Var.c = abs;
-                    t81 t81Var = d91Var.M;
-                    if (t81Var != null) {
-                        t81Var.e(abs, d91Var.d, d91Var.b);
+                    e91Var.c = abs;
+                    u81 u81Var = e91Var.M;
+                    if (u81Var != null) {
+                        u81Var.e(abs, e91Var.d, e91Var.b);
                     }
                 }
-                d91Var.w(false);
+                e91Var.w(false);
                 break;
             case 10:
                 org.telegram.ui.Components.voip.s1 s1Var = (org.telegram.ui.Components.voip.s1) this.b;

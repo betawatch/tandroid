@@ -32,7 +32,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -44,7 +44,7 @@ import org.telegram.ui.Components.yq;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class le extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public long E;
@@ -271,7 +271,7 @@ public final class le extends org.telegram.ui.ActionBar.f3 implements Notificati
         this.h.addView(linearLayout3, w7.z5.d(-1, -2.0f, 55, 0.0f, z11 ? 0.0f : z10 ? 179.0f : 45.0f, 0.0f, 15.0f));
         TLRPC.Chat chat2 = MessagesController.getInstance(i10).getChat(Long.valueOf(-j10));
         TextView textView = new TextView(context);
-        kk.o(i18, d6Var, textView, 1, 14.0f);
+        mk.o(i18, d6Var, textView, 1, 14.0f);
         textView.setGravity(17);
         textView.setSingleLine(false);
         textView.setMaxLines(3);
@@ -340,7 +340,7 @@ public final class le extends org.telegram.ui.ActionBar.f3 implements Notificati
             this.f.addView(b10, w7.z5.t(-1, -2, 7, 32, 6, 32, 9));
             TextView b11 = w7.d6.b(context, 14.0f, i20, false, d6Var);
             b11.setGravity(17);
-            kk.r(z10 ? R.string.LiveStoryReactText : z12 ? R.string.LiveStoryReactAdminText : R.string.LiveStoryReactAdminEmptyText, new Object[]{DialogObject.getName(j10)}, b11);
+            mk.r(z10 ? R.string.LiveStoryReactText : z12 ? R.string.LiveStoryReactAdminText : R.string.LiveStoryReactAdminEmptyText, new Object[]{DialogObject.getName(j10)}, b11);
             this.f.addView(b11, w7.z5.t(-1, -2, 7, 32, 0, 32, 20));
         }
         if (z11) {
@@ -365,7 +365,7 @@ public final class le extends org.telegram.ui.ActionBar.f3 implements Notificati
         }
         xpVar.setDrawBackgroundAsArc(10);
         TextView textView2 = new TextView(context);
-        kk.o(i18, d6Var, textView2, 1, 14.0f);
+        mk.o(i18, d6Var, textView2, 1, 14.0f);
         textView2.setText(LocaleController.getString(R.string.StarsReactionShowMeInTopSenders));
         LinearLayout linearLayout4 = new LinearLayout(context);
         linearLayout4.setOrientation(0);

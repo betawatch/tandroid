@@ -6,11 +6,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.uj;
+import org.telegram.messenger.wj;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.i80;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class h4 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ org.telegram.ui.ActionBar.u0 a;
@@ -82,16 +82,16 @@ public final class h4 extends org.telegram.ui.ActionBar.j {
             e1Var = null;
             e1Var2 = null;
         }
-        uj ujVar = new uj(this, e1Var3, h, h10, h11, h12, canUserDoAction, e1Var, e1Var2, 4);
-        ujVar.run();
-        e1Var3.setOnClickListener(new qg.n(15, this, ujVar));
-        p2.j(h, y9Var, ujVar, 1);
-        p2.j(h10, y9Var, ujVar, 2);
-        p2.j(h11, y9Var, ujVar, 4);
-        p2.j(h12, y9Var, ujVar, 8);
+        wj wjVar = new wj(this, e1Var3, h, h10, h11, h12, canUserDoAction, e1Var, e1Var2, 4);
+        wjVar.run();
+        e1Var3.setOnClickListener(new qg.n(15, this, wjVar));
+        p2.j(h, y9Var, wjVar, 1);
+        p2.j(h10, y9Var, wjVar, 2);
+        p2.j(h11, y9Var, wjVar, 4);
+        p2.j(h12, y9Var, wjVar, 8);
         if (canUserDoAction) {
-            p2.j(e1Var, y9Var, ujVar, 256);
-            p2.j(e1Var2, y9Var, ujVar, 512);
+            p2.j(e1Var, y9Var, wjVar, 256);
+            p2.j(e1Var2, y9Var, wjVar, 512);
         }
         F.Y = true;
         F.J = false;

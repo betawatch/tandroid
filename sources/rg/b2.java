@@ -11,15 +11,15 @@ import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.el0;
-import org.telegram.ui.Components.ew0;
 import org.telegram.ui.Components.f6;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.nl0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class b2 extends j {
-    public ew0 q0;
+    public fw0 q0;
     public g9 r0;
     public g9 s0;
     public ah.y0 t0;
@@ -39,7 +39,7 @@ public final class b2 extends j {
 
     @Override // rg.j, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        ew0 ew0Var = this.q0;
+        fw0 fw0Var = this.q0;
         int padding = getPadding();
         float d = this.x0.d(1.0f, false);
         if (d == 1.0f) {
@@ -51,12 +51,12 @@ public final class b2 extends j {
         g9 g9Var = this.s0;
         if (g9Var != null) {
             g9Var.e = (int) ((1.0f - d) * 255.0f);
-            g9Var.setBounds(padding, padding, ((int) ew0Var.a) - padding, ((int) ew0Var.b) - padding);
+            g9Var.setBounds(padding, padding, ((int) fw0Var.a) - padding, ((int) fw0Var.b) - padding);
             this.s0.draw(canvas);
         }
         g9 g9Var2 = this.r0;
         g9Var2.e = (int) (d * 255.0f);
-        g9Var2.setBounds(padding, padding, ((int) ew0Var.a) - padding, ((int) ew0Var.b) - padding);
+        g9Var2.setBounds(padding, padding, ((int) fw0Var.a) - padding, ((int) fw0Var.b) - padding);
         this.r0.draw(canvas);
         Rect rect = AndroidUtilities.rectTmp2;
         float width = (this.r0.getBounds().width() * 0.61f) / 2.0f;
@@ -104,23 +104,23 @@ public final class b2 extends j {
     }
 
     @Override // rg.j
-    public el0 getSelectionBounds() {
+    public fl0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new el0();
+            return new fl0();
         }
         float scaleX = viewGroup.getScaleX();
         float scale = (getScale() + 0.4f) * getMeasuredWidth();
         float f7 = scale / 2.0f;
         float f10 = scale * scaleX;
-        return new el0((getPositionX() - f7) * scaleX, (getPositionY() - f7) * scaleX, f10, f10);
+        return new fl0((getPositionX() - f7) * scaleX, (getPositionY() - f7) * scaleX, f10, f10);
     }
 
     @Override // rg.j
     public final void k() {
-        ew0 ew0Var = this.q0;
-        float f7 = ew0Var.a / 2.0f;
-        float f10 = ew0Var.b / 2.0f;
+        fw0 fw0Var = this.q0;
+        float f7 = fw0Var.a / 2.0f;
+        float f10 = fw0Var.b / 2.0f;
         setX(getPositionX() - f7);
         setY(getPositionY() - f10);
         m();
@@ -142,8 +142,8 @@ public final class b2 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        ew0 ew0Var = this.q0;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) ew0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) ew0Var.b, TLObject.FLAG_30));
+        fw0 fw0Var = this.q0;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) fw0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) fw0Var.b, TLObject.FLAG_30));
     }
 
     public final void q(boolean z10) {
@@ -173,7 +173,7 @@ public final class b2 extends j {
         boolean[] zArr = {false};
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.addUpdateListener(new ah.l0(28, this, zArr));
-        ofFloat.addListener(new ml0(20, this, zArr));
+        ofFloat.addListener(new nl0(20, this, zArr));
         ofFloat.setInterpolator(bs.g);
         ofFloat.setDuration(350L);
         ofFloat.start();

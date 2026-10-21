@@ -23,11 +23,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.fy;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.tl0;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.x51;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class a2 extends s4.g0 {
     public final TLRPC.TL_inputStickerSetShortName E;
@@ -540,6 +540,6 @@ public final class a2 extends s4.g0 {
         } else {
             n8Var = new n1(b2Var.getContext(), b2Var.b);
         }
-        return new sl0(n8Var);
+        return new tl0(n8Var);
     }
 }

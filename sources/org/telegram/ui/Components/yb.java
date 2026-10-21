@@ -9,19 +9,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class yb extends nb {
-    public final xj0 a;
+    public final yj0 a;
     public TextView b;
     public int c;
 
     public yb(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context, d6Var);
-        xj0 xj0Var = new xj0(context);
-        this.a = xj0Var;
-        xj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(xj0Var, w7.z5.h(56.0f, 48.0f, 8388627));
+        yj0 yj0Var = new yj0(context);
+        this.a = yj0Var;
+        yj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(yj0Var, w7.z5.h(56.0f, 48.0f, 8388627));
         xb xbVar = new xb(context, 0, null);
         xbVar.setDisablePaddingsOffset(true);
         this.b = xbVar;
@@ -38,10 +38,10 @@ public class yb extends nb {
     }
 
     public final void c(int i10, int i11, int i12, String... strArr) {
-        xj0 xj0Var = this.a;
-        xj0Var.f(i10, i11, i12, null);
+        yj0 yj0Var = this.a;
+        yj0Var.f(i10, i11, i12, null);
         for (String str : strArr) {
-            xj0Var.h(this.c, str);
+            yj0Var.h(this.c, str);
         }
     }
 
@@ -50,11 +50,11 @@ public class yb extends nb {
     }
 
     public final void e(TLRPC.Document document, String... strArr) {
-        xj0 xj0Var = this.a;
-        xj0Var.setAutoRepeat(true);
-        xj0Var.g(36, 36, document);
+        yj0 yj0Var = this.a;
+        yj0Var.setAutoRepeat(true);
+        yj0Var.g(36, 36, document);
         for (String str : strArr) {
-            xj0Var.h(this.c, str);
+            yj0Var.h(this.c, str);
         }
     }
 

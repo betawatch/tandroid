@@ -4,22 +4,22 @@ import android.content.Context;
 import android.view.ViewGroup;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class d4 extends t61 {
+public final class d4 extends u61 {
     public final /* synthetic */ f4 N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d4(f4 f4Var, im0 im0Var, Context context, int i10, t3 t3Var, d6 d6Var) {
-        super(im0Var, context, i10, 0, false, t3Var, d6Var);
+    public d4(f4 f4Var, jm0 jm0Var, Context context, int i10, t3 t3Var, d6 d6Var) {
+        super(jm0Var, context, i10, 0, false, t3Var, d6Var);
         this.N = f4Var;
     }
 
-    @Override // org.telegram.ui.Components.t61, s4.g0
+    @Override // org.telegram.ui.Components.u61, s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         d6 d6Var;
         d6 d6Var2;
@@ -28,7 +28,7 @@ public final class d4 extends t61 {
             Context context = f4Var.getContext();
             int i11 = h6.L6;
             d6Var2 = ((org.telegram.ui.ActionBar.f3) f4Var).resourcesProvider;
-            return new sl0(new org.telegram.ui.Cells.l4(context, i11, 13, 12, 4, false, false, d6Var2));
+            return new tl0(new org.telegram.ui.Cells.l4(context, i11, 13, 12, 4, false, false, d6Var2));
         }
         if (i10 != 42) {
             return super.x(viewGroup, i10);
@@ -36,6 +36,6 @@ public final class d4 extends t61 {
         Context context2 = f4Var.getContext();
         int i12 = h6.L6;
         d6Var = ((org.telegram.ui.ActionBar.f3) f4Var).resourcesProvider;
-        return new sl0(new org.telegram.ui.Cells.l4(context2, i12, 13, 12, 4, false, true, d6Var));
+        return new tl0(new org.telegram.ui.Cells.l4(context2, i12, 13, 12, 4, false, true, d6Var));
     }
 }

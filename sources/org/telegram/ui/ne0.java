@@ -25,15 +25,15 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class ne0 extends org.telegram.ui.Components.pw0 implements org.telegram.ui.Components.d50 {
+public final class ne0 extends org.telegram.ui.Components.qw0 implements org.telegram.ui.Components.d50 {
     public String E;
     public String F;
     public Bundle G;
     public boolean H;
-    public final org.telegram.ui.Components.uj0 I;
-    public final org.telegram.ui.Components.uj0 J;
+    public final org.telegram.ui.Components.vj0 I;
+    public final org.telegram.ui.Components.vj0 J;
     public boolean K;
     public final org.telegram.ui.Components.e50 L;
     public TLRPC.FileLocation M;
@@ -99,12 +99,12 @@ public final class ne0 extends org.telegram.ui.Components.pw0 implements org.tel
                     case 0:
                         ne0 ne0Var = this.b;
                         jd jdVar = ne0Var.n;
-                        org.telegram.ui.Components.uj0 uj0Var = ne0Var.I;
+                        org.telegram.ui.Components.vj0 vj0Var = ne0Var.I;
                         ne0Var.L.n(ne0Var.M != null, new zc0(ne0Var, 1), new w5(ne0Var, 8), 0);
                         ne0Var.K = false;
-                        jdVar.setAnimation(uj0Var);
-                        uj0Var.M(0);
-                        uj0Var.P(43);
+                        jdVar.setAnimation(vj0Var);
+                        vj0Var.M(0);
+                        vj0Var.P(43);
                         jdVar.d();
                         break;
                     default:
@@ -117,13 +117,13 @@ public final class ne0 extends org.telegram.ui.Components.pw0 implements org.tel
                 }
             }
         });
-        org.telegram.ui.Components.uj0 uj0Var = new org.telegram.ui.Components.uj0(R.raw.camera, AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f), false, null);
-        this.I = uj0Var;
-        this.J = new org.telegram.ui.Components.uj0(R.raw.camera_wait, AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f), false, null);
+        org.telegram.ui.Components.vj0 vj0Var = new org.telegram.ui.Components.vj0(R.raw.camera, AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f), false, null);
+        this.I = vj0Var;
+        this.J = new org.telegram.ui.Components.vj0(R.raw.camera_wait, AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f), false, null);
         jd jdVar = new jd(this, context, 3);
         this.n = jdVar;
         jdVar.setScaleType(ImageView.ScaleType.CENTER);
-        jdVar.setAnimation(uj0Var);
+        jdVar.setAnimation(vj0Var);
         jdVar.setEnabled(false);
         jdVar.setClickable(false);
         frameLayout.addView(jdVar, w7.z5.c(-1.0f, -1));
@@ -337,12 +337,12 @@ public final class ne0 extends org.telegram.ui.Components.pw0 implements org.tel
                     case 0:
                         ne0 ne0Var = this.b;
                         jd jdVar2 = ne0Var.n;
-                        org.telegram.ui.Components.uj0 uj0Var2 = ne0Var.I;
+                        org.telegram.ui.Components.vj0 vj0Var2 = ne0Var.I;
                         ne0Var.L.n(ne0Var.M != null, new zc0(ne0Var, 1), new w5(ne0Var, 8), 0);
                         ne0Var.K = false;
-                        jdVar2.setAnimation(uj0Var2);
-                        uj0Var2.M(0);
-                        uj0Var2.P(43);
+                        jdVar2.setAnimation(vj0Var2);
+                        vj0Var2.M(0);
+                        vj0Var2.P(43);
                         jdVar2.d();
                         break;
                     default:
@@ -382,12 +382,12 @@ public final class ne0 extends org.telegram.ui.Components.pw0 implements org.tel
         AndroidUtilities.runOnUIThread(new jq(this, photoSize2, photoSize, 29));
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final boolean b() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final boolean c(boolean z10) {
         dg0 dg0Var = this.O;
         if (z10) {
@@ -405,7 +405,7 @@ public final class ne0 extends org.telegram.ui.Components.pw0 implements org.tel
         return false;
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void d() {
         this.H = false;
     }
@@ -420,7 +420,7 @@ public final class ne0 extends org.telegram.ui.Components.pw0 implements org.tel
         return null;
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public String getHeaderName() {
         return LocaleController.getString("YourName", R.string.YourName);
     }
@@ -430,7 +430,7 @@ public final class ne0 extends org.telegram.ui.Components.pw0 implements org.tel
         return null;
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void h(String str) {
         int i10;
         if (this.H) {
@@ -458,7 +458,7 @@ public final class ne0 extends org.telegram.ui.Components.pw0 implements org.tel
         ConnectionsManager.getInstance(i10).sendRequest(tL_auth_signUp, new m(this, 11), 10);
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void j() {
         TextView textView = this.x;
         if (textView != null) {
@@ -478,7 +478,7 @@ public final class ne0 extends org.telegram.ui.Components.pw0 implements org.tel
         AndroidUtilities.runOnUIThread(new zc0(this, 3), dg0.t0);
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void k(Bundle bundle) {
         byte[] decode;
         Bundle bundle2 = bundle.getBundle("registerview_params");
@@ -506,7 +506,7 @@ public final class ne0 extends org.telegram.ui.Components.pw0 implements org.tel
         }
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void l(Bundle bundle) {
         String obj = this.c.getText().toString();
         if (obj.length() != 0) {
@@ -530,7 +530,7 @@ public final class ne0 extends org.telegram.ui.Components.pw0 implements org.tel
         }
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void m(Bundle bundle, boolean z10) {
         if (bundle == null) {
             return;
@@ -542,7 +542,7 @@ public final class ne0 extends org.telegram.ui.Components.pw0 implements org.tel
         this.G = bundle;
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void n() {
         this.f.invalidateSelf();
         int i10 = org.telegram.ui.ActionBar.h6.G6;

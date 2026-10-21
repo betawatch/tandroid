@@ -19,12 +19,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.UserInfoActivity;
 import org.telegram.ui.bb0;
 import org.telegram.ui.ib0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m8 implements Runnable {
     public final /* synthetic */ int a;
@@ -177,7 +177,7 @@ public final /* synthetic */ class m8 implements Runnable {
                 org.telegram.ui.Wallet.s1 s1Var2 = (org.telegram.ui.Wallet.s1) this.h;
                 f2Var3.getClass();
                 try {
-                    AndroidUtilities.runOnUIThread(new g51(f2Var3, str10, bArr2, tonconnectsession2, org.telegram.ui.Wallet.f2.q(j0Var2, tonconnectsession2, str10, bArr2, jSONArray, tL_urlAuthResultRequest.domain, null, null, f2Var3.f.getCurrentTime()), s1Var2, j0Var2, jSONArray, tL_urlAuthResultRequest));
+                    AndroidUtilities.runOnUIThread(new h51(f2Var3, str10, bArr2, tonconnectsession2, org.telegram.ui.Wallet.f2.q(j0Var2, tonconnectsession2, str10, bArr2, jSONArray, tL_urlAuthResultRequest.domain, null, null, f2Var3.f.getCurrentTime()), s1Var2, j0Var2, jSONArray, tL_urlAuthResultRequest));
                     break;
                 } catch (Exception e7) {
                     s1Var2.run(null, org.telegram.ui.Wallet.f2.h("prepare OAuth identity", e7));

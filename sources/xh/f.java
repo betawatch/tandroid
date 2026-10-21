@@ -14,22 +14,22 @@ import org.telegram.ui.ActionBar.j5;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.f5;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.hm0;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.tl0;
 import org.telegram.ui.fq0;
 import s4.b1;
 import sg.k1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class f extends hm0 {
+public final class f extends im0 {
     public final /* synthetic */ k c;
 
     public f(k kVar) {
         this.c = kVar;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(b1 b1Var) {
         return b1Var.f == 0;
     }
@@ -153,6 +153,6 @@ public final class f extends hm0 {
             fq0Var.setTag(-33024);
             view = fq0Var;
         }
-        return new sl0(view);
+        return new tl0(view);
     }
 }

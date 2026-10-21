@@ -2,21 +2,21 @@ package ai;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class t1 extends t61 {
+public final class t1 extends u61 {
     public final /* synthetic */ a2 N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t1(a2 a2Var, im0 im0Var, Context context, int i10, q qVar, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(im0Var, context, i10, 0, true, qVar, d6Var);
+    public t1(a2 a2Var, jm0 jm0Var, Context context, int i10, q qVar, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(jm0Var, context, i10, 0, true, qVar, d6Var);
         this.N = a2Var;
     }
 
-    @Override // org.telegram.ui.Components.t61, s4.g0
+    @Override // org.telegram.ui.Components.u61, s4.g0
     public final void v(s4.b1 b1Var, int i10) {
         super.v(b1Var, i10);
         View view = b1Var.a;

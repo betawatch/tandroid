@@ -1,1129 +1,338 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Path;
-import android.graphics.PointF;
-import android.graphics.RectF;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
 import android.util.SparseArray;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewConfiguration;
 import java.util.ArrayList;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public class ki0 extends gq implements NotificationCenter.NotificationCenterDelegate {
-    public boolean A0;
-    public boolean B0;
-    public final im0 C0;
-    public final ji0 D0;
-    public long E0;
-    public TLRPC.ChatFull F0;
-    public final fi0 G0;
-    public boolean H0;
-    public boolean I0;
-    public final boolean J0;
-    public ImageLocation K0;
-    public final int L0;
-    public final Path M0;
-    public final RectF N0;
-    public final float[] O0;
-    public ImageLocation P0;
-    public ImageLocation Q0;
-    public m71 R0;
-    public MessagesController.DialogPhotos S0;
-    public final ArrayList T0;
-    public final ArrayList U0;
-    public final ArrayList V0;
-    public final ArrayList W0;
-    public final ArrayList X0;
-    public final ArrayList Y0;
-    public final ArrayList Z0;
-    public final ArrayList a1;
-    public final ArrayList b1;
-    public int c1;
-    public final SparseArray d1;
-    public boolean e1;
-    public boolean f1;
-    public boolean g1;
-    public org.telegram.ui.vu0 h1;
-    public boolean i1;
-    public int j1;
-    public int k1;
-    public int l1;
-    public int m1;
-    public int n1;
-    public int o1;
-    public bi0 p1;
-    public ImageLocation q1;
-    public ImageLocation r1;
-    public final PointF x0;
-    public final int y0;
-    public final org.telegram.ui.ActionBar.k z0;
+public final class ki0 extends fq {
+    public final ArrayList c = new ArrayList();
+    public final ArrayList d = new ArrayList();
+    public final Context e;
+    public final Paint f;
+    public w9 g;
+    public final /* synthetic */ li0 h;
 
-    public ki0(Context context, org.telegram.ui.ActionBar.k kVar, im0 im0Var, org.telegram.ui.w4 w4Var) {
-        super(context);
-        this.x0 = new PointF();
-        this.A0 = true;
-        this.B0 = true;
-        int i10 = UserConfig.selectedAccount;
-        this.L0 = i10;
-        this.M0 = new Path();
-        this.N0 = new RectF();
-        this.O0 = new float[8];
-        this.T0 = new ArrayList();
-        this.U0 = new ArrayList();
-        this.V0 = new ArrayList();
-        this.W0 = new ArrayList();
-        this.X0 = new ArrayList();
-        this.Y0 = new ArrayList();
-        this.Z0 = new ArrayList();
-        this.a1 = new ArrayList();
-        this.b1 = new ArrayList();
-        this.d1 = new SparseArray();
-        this.e1 = true;
-        this.j1 = -1;
-        this.k1 = -1;
-        setOffscreenPageLimit(2);
-        this.p1 = null;
-        this.J0 = false;
-        this.C0 = im0Var;
-        ConnectionsManager.generateClassGuid();
-        this.z0 = kVar;
-        this.y0 = ViewConfiguration.get(context).getScaledTouchSlop();
-        this.G0 = w4Var;
-        b(new ci0(this));
-        ji0 ji0Var = new ji0(this, getContext(), null);
-        this.D0 = ji0Var;
-        setAdapter((fq) ji0Var);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.dialogPhotosLoaded);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileLoaded);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileLoadProgressChanged);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.reloadDialogPhotos);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.dialogPhotosUpdate);
-        this.S0 = null;
+    public ki0(li0 li0Var, Context context, org.telegram.ui.oz0 oz0Var) {
+        this.h = li0Var;
+        this.e = context;
+        this.g = oz0Var;
+        Paint paint = new Paint(1);
+        this.f = paint;
+        paint.setColor(-16777216);
     }
 
-    public final void A(ImageLocation imageLocation, ImageLocation imageLocation2) {
-        this.P0 = imageLocation;
-        this.U0.add(0, null);
-        this.T0.add(0, null);
-        this.X0.add(0, imageLocation);
-        this.Y0.add(0, imageLocation2);
-        this.Z0.add(0, null);
-        this.W0.add(0, null);
-        this.V0.add(0, null);
-        this.a1.add(0, -1);
-        this.b1.add(0, Float.valueOf(0.0f));
-        this.D0.g();
-        L();
-        this.q1 = imageLocation;
-        this.r1 = imageLocation2;
-    }
-
-    public final void B(float f7, int i10) {
-        int i11 = this.j1;
-        float f10 = 0.0f;
-        if (i11 >= 0 || this.k1 >= 0) {
-            if (i11 < 0) {
-                i11 = this.k1;
-            }
-            int k10 = this.D0.k(i10);
-            if (this.i1) {
-                k10--;
-            }
-            float f11 = k10 == i11 ? 1.0f - f7 : (getRealCount() <= 0 || (k10 + (-1)) % getRealCount() != i11) ? (getRealCount() <= 0 || (k10 + 1) % getRealCount() != i11) ? 0.0f : (1.0f - f7) + 1.0f : (1.0f - f7) - 1.0f;
-            if (f11 > 1.0f) {
-                f11 = 2.0f - f11;
-            }
-            f10 = Utilities.clamp(f11, 1.0f, 0.0f);
+    @Override // z4.a
+    public final void a(z4.g gVar, Object obj) {
+        hi0 hi0Var = (hi0) obj;
+        View view = hi0Var.b;
+        if (view != null) {
+            gVar.removeView(view);
         }
-        setCustomAvatarProgress(f10);
-    }
-
-    public final ImageLocation C(ImageLocation imageLocation, ImageLocation imageLocation2) {
-        TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated;
-        if (imageLocation == null) {
-            return null;
-        }
-        int i10 = 0;
-        while (i10 < 2) {
-            ArrayList arrayList = i10 == 0 ? this.Y0 : this.X0;
-            int size = arrayList.size();
-            for (int i11 = 0; i11 < size; i11++) {
-                ImageLocation imageLocation3 = (ImageLocation) arrayList.get(i11);
-                if (imageLocation3 != null && (tL_fileLocationToBeDeprecated = imageLocation3.location) != null) {
-                    int i12 = imageLocation3.dc_id;
-                    if (i12 == imageLocation.dc_id) {
-                        int i13 = tL_fileLocationToBeDeprecated.local_id;
-                        TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated2 = imageLocation.location;
-                        if (i13 == tL_fileLocationToBeDeprecated2.local_id && tL_fileLocationToBeDeprecated.volume_id == tL_fileLocationToBeDeprecated2.volume_id) {
-                            return (ImageLocation) this.W0.get(i11);
-                        }
-                    }
-                    if (i12 == imageLocation2.dc_id) {
-                        int i14 = tL_fileLocationToBeDeprecated.local_id;
-                        TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated3 = imageLocation2.location;
-                        if (i14 == tL_fileLocationToBeDeprecated3.local_id && tL_fileLocationToBeDeprecated.volume_id == tL_fileLocationToBeDeprecated3.volume_id) {
-                            return (ImageLocation) this.W0.get(i11);
-                        }
-                    } else {
-                        continue;
-                    }
-                }
-            }
-            i10++;
-        }
-        return null;
-    }
-
-    public final ImageLocation D(int i10) {
-        if (i10 < 0) {
-            return null;
-        }
-        ArrayList arrayList = this.X0;
-        if (i10 >= arrayList.size()) {
-            return null;
-        }
-        ImageLocation imageLocation = (ImageLocation) this.W0.get(i10);
-        return imageLocation != null ? imageLocation : (ImageLocation) arrayList.get(i10);
-    }
-
-    public final View E(int i10) {
-        ji0 ji0Var = this.D0;
-        if (ji0Var == null) {
-            return null;
-        }
-        ArrayList arrayList = ji0Var.c;
-        if (arrayList.size() <= i10 || i10 < 0) {
-            return null;
-        }
-        gi0 gi0Var = (gi0) arrayList.get(i10);
-        hi0 hi0Var = gi0Var.b;
-        return hi0Var == null ? gi0Var.c : hi0Var;
-    }
-
-    public final TLRPC.Photo F(int i10) {
-        if (i10 < 0) {
-            return null;
-        }
-        ArrayList arrayList = this.V0;
-        if (i10 >= arrayList.size()) {
-            return null;
-        }
-        return (TLRPC.Photo) arrayList.get(i10);
-    }
-
-    public final ImageLocation G(int i10) {
-        if (i10 < 0) {
-            return null;
-        }
-        ArrayList arrayList = this.X0;
-        if (i10 >= arrayList.size()) {
-            return null;
-        }
-        return (ImageLocation) arrayList.get(i10);
-    }
-
-    public final boolean H(m71 m71Var, ImageLocation imageLocation, ImageLocation imageLocation2, boolean z10) {
-        MessagesController.DialogPhotos dialogPhotos;
-        MessagesController.DialogPhotos dialogPhotos2;
-        if (imageLocation != null && imageLocation2 != null && this.c1 == 0) {
-            ImageLocation imageLocation3 = this.P0;
-            ArrayList arrayList = this.X0;
-            if (imageLocation3 == null || imageLocation3.location.local_id != imageLocation.location.local_id) {
-                boolean isEmpty = arrayList.isEmpty();
-                ji0 ji0Var = this.D0;
-                if (!isEmpty) {
-                    this.P0 = imageLocation;
-                    if (z10 && (dialogPhotos2 = this.S0) != null) {
-                        dialogPhotos2.reset();
-                        this.S0.loadAfter(getCurrentItem() - (ji0Var != null ? ji0Var.j() : 0), true);
-                    }
-                    return true;
-                }
-                if (z10 && (dialogPhotos = this.S0) != null) {
-                    dialogPhotos.reset();
-                    this.S0.loadAfter(getCurrentItem() - (ji0Var != null ? ji0Var.j() : 0), true);
-                }
-            }
-            if (arrayList.isEmpty()) {
-                this.P0 = imageLocation;
-                this.Q0 = imageLocation2;
-                this.R0 = m71Var;
-                this.U0.add(null);
-                this.T0.add(null);
-                arrayList.add(imageLocation);
-                this.Y0.add(imageLocation2);
-                this.Z0.add(m71Var);
-                this.W0.add(null);
-                this.V0.add(null);
-                this.a1.add(-1);
-                this.b1.add(null);
-                getAdapter().g();
-                L();
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final boolean I() {
-        int realPosition = getRealPosition();
-        if (this.i1) {
-            if (realPosition == 0) {
-                return false;
-            }
-            realPosition--;
-        }
-        if (realPosition < 0) {
-            return false;
-        }
-        ArrayList arrayList = this.W0;
-        return realPosition < arrayList.size() && arrayList.get(realPosition) != null;
-    }
-
-    public final boolean J() {
-        w9 currentItemView;
-        if (this.W0.get(this.i1 ? getRealPosition() - 1 : getRealPosition()) == null || (currentItemView = getCurrentItemView()) == null) {
-            return false;
-        }
-        e6 animation = currentItemView.getImageReceiver().getAnimation();
-        return animation == null || !animation.s();
-    }
-
-    public final void K() {
-        this.p1 = null;
-        int i10 = this.L0;
-        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.dialogPhotosLoaded);
-        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.fileLoaded);
-        NotificationCenter notificationCenter = NotificationCenter.getInstance(i10);
-        int i11 = NotificationCenter.fileLoadProgressChanged;
-        notificationCenter.removeObserver(this, i11);
-        NotificationCenter.getInstance(i10).removeObserver(this, i11);
-        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.reloadDialogPhotos);
-        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.dialogPhotosUpdate);
-        int childCount = getChildCount();
-        for (int i12 = 0; i12 < childCount; i12++) {
-            View childAt = getChildAt(i12);
-            if (childAt instanceof w9) {
-                w9 w9Var = (w9) childAt;
-                if (w9Var.getImageReceiver().hasStaticThumb()) {
-                    Drawable drawable = w9Var.getImageReceiver().getDrawable();
-                    if (drawable instanceof e6) {
-                        ((e6) drawable).w(w9Var);
-                    }
-                }
-            }
-        }
-    }
-
-    public final void L() {
-        x(this.D0.j(), false);
-    }
-
-    public final void M(long j10, boolean z10) {
-        if (this.E0 == j10 && !z10) {
-            L();
+        if (hi0Var.a) {
             return;
         }
-        this.f1 = true;
-        this.T0.clear();
-        this.U0.clear();
-        this.V0.clear();
-        this.W0.clear();
-        this.X0.clear();
-        this.Y0.clear();
-        this.a1.clear();
-        this.b1.clear();
-        this.D0.g();
-        x(0, false);
-        this.o1 = 0;
-        this.K0 = null;
-        this.P0 = null;
-        this.E0 = j10;
-        MessagesController.DialogPhotos dialogPhotos = MessagesController.getInstance(this.L0).getDialogPhotos(j10);
-        this.S0 = dialogPhotos;
-        dialogPhotos.loadCache();
-    }
-
-    public final void N(int i10, int i11) {
-        this.m1 = i10;
-        this.n1 = i11;
-        ji0 ji0Var = this.D0;
-        if (ji0Var != null) {
-            for (int i12 = 0; i12 < ji0Var.c.size(); i12++) {
-                if (((gi0) ji0Var.c.get(i12)).c != null) {
-                    ei0 ei0Var = ((gi0) ji0Var.c.get(i12)).c;
-                    int i13 = this.m1;
-                    int i14 = this.n1;
-                    ei0Var.r(i13, i13, i14, i14);
-                }
+        fi0 fi0Var = hi0Var.c;
+        if (fi0Var.getImageReceiver().hasStaticThumb()) {
+            Drawable drawable = fi0Var.getImageReceiver().getDrawable();
+            if (drawable instanceof e6) {
+                ((e6) drawable).w(fi0Var);
             }
         }
+        fi0Var.setRoundRadius(0);
+        gVar.removeView(fi0Var);
+        fi0Var.getImageReceiver().cancelLoadImage();
     }
 
-    public final void O(ImageLocation imageLocation, float f7) {
-        if (imageLocation == null) {
-            return;
+    @Override // z4.a
+    public final int b() {
+        return this.c.size();
+    }
+
+    @Override // z4.a
+    public final int c(Object obj) {
+        int indexOf = this.c.indexOf((hi0) obj);
+        if (indexOf == -1) {
+            return -2;
         }
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.X0;
-            if (i10 >= arrayList.size()) {
-                break;
-            }
-            if (arrayList.get(i10) == imageLocation) {
-                this.b1.set(i10, Float.valueOf(f7));
-                SparseArray sparseArray = this.d1;
-                if (sparseArray.get(i10) != null) {
-                    ((RadialProgress2) sparseArray.get(i10)).o(f7, true);
-                }
-            } else {
-                i10++;
-            }
-        }
-        for (int i11 = 0; i11 < getChildCount(); i11++) {
-            getChildAt(i11).invalidate();
-        }
+        return indexOf;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        MessagesController.DialogPhotos dialogPhotos;
-        TLRPC.User user;
-        ArrayList arrayList;
-        ImageLocation imageLocation;
-        int i12;
-        boolean z10;
-        ki0 ki0Var;
-        boolean z11;
-        int i13;
-        ArrayList arrayList2;
-        ImageLocation imageLocation2;
-        Integer num;
-        ArrayList<TLRPC.PhotoSize> arrayList3;
-        TLRPC.PhotoSize photoSize;
-        ArrayList arrayList4;
-        Integer num2;
-        TLRPC.User user2;
-        boolean z12;
-        TLRPC.User user3;
-        Object obj;
-        boolean z13;
-        TLRPC.Photo photo;
-        ki0 ki0Var2 = this;
-        Integer num3 = -1;
-        int i14 = NotificationCenter.dialogPhotosUpdate;
-        ArrayList arrayList5 = ki0Var2.U0;
-        ArrayList arrayList6 = ki0Var2.T0;
-        if (i10 != i14) {
-            int i15 = NotificationCenter.fileLoaded;
-            SparseArray sparseArray = ki0Var2.d1;
-            if (i10 == i15) {
-                String str = (String) objArr[0];
-                for (int i16 = 0; i16 < arrayList5.size(); i16++) {
-                    String str2 = (String) arrayList6.get(i16);
-                    if (str2 == null) {
-                        str2 = (String) arrayList5.get(i16);
-                    }
-                    if (str2 != null && TextUtils.equals(str, str2)) {
-                        RadialProgress2 radialProgress2 = (RadialProgress2) sparseArray.get(i16);
-                        if (radialProgress2 != null) {
-                            radialProgress2.o(1.0f, true);
-                        }
-                        ki0Var2.invalidate();
-                    }
-                }
-                return;
-            }
-            if (i10 != NotificationCenter.fileLoadProgressChanged) {
-                if (i10 == NotificationCenter.reloadDialogPhotos && ki0Var2.c1 == 0 && (dialogPhotos = ki0Var2.S0) != null) {
-                    dialogPhotos.reset();
-                    MessagesController.DialogPhotos dialogPhotos2 = ki0Var2.S0;
-                    int currentItem = ki0Var2.getCurrentItem();
-                    ji0 ji0Var = ki0Var2.D0;
-                    dialogPhotos2.loadAfter(currentItem - (ji0Var != null ? ji0Var.j() : 0), true);
-                    return;
-                }
-                return;
-            }
-            String str3 = (String) objArr[0];
-            for (int i17 = 0; i17 < arrayList5.size(); i17++) {
-                String str4 = (String) arrayList6.get(i17);
-                if (str4 == null) {
-                    str4 = (String) arrayList5.get(i17);
-                }
-                if (str4 != null && TextUtils.equals(str3, str4)) {
-                    RadialProgress2 radialProgress22 = (RadialProgress2) sparseArray.get(i17);
-                    if (radialProgress22 != null) {
-                        radialProgress22.o(Math.min(1.0f, ((Long) objArr[1]).longValue() / ((Long) objArr[2]).longValue()), true);
-                    }
-                    ki0Var2.invalidate();
-                }
-            }
-            return;
-        }
-        MessagesController.DialogPhotos dialogPhotos3 = (MessagesController.DialogPhotos) objArr[0];
-        if (ki0Var2.S0 == dialogPhotos3) {
-            ArrayList arrayList7 = new ArrayList(dialogPhotos3.photos);
-            if (!arrayList7.isEmpty() || !dialogPhotos3.fromCache) {
-                ki0Var2.j1 = -1;
-                ki0Var2.k1 = -1;
-                int i18 = ki0Var2.L0;
-                TLRPC.User user4 = MessagesController.getInstance(i18).getUser(Long.valueOf(ki0Var2.E0));
-                TLRPC.UserFull userFull = MessagesController.getInstance(i18).getUserFull(ki0Var2.E0);
-                if (userFull != null && (photo = userFull.personal_photo) != null) {
-                    arrayList7.add(0, photo);
-                    ki0Var2.j1 = 0;
-                }
-                if (user4 != null && user4.self && UserObject.hasFallbackPhoto(userFull)) {
-                    arrayList7.add(userFull.fallback_photo);
-                    ki0Var2.k1 = arrayList7.size() - 1;
-                }
-                arrayList5.clear();
-                arrayList6.clear();
-                ArrayList arrayList8 = ki0Var2.X0;
-                arrayList8.clear();
-                ArrayList arrayList9 = ki0Var2.W0;
-                arrayList9.clear();
-                ArrayList arrayList10 = ki0Var2.Y0;
-                arrayList10.clear();
-                ArrayList arrayList11 = ki0Var2.Z0;
-                arrayList11.clear();
-                ArrayList arrayList12 = ki0Var2.V0;
-                arrayList12.clear();
-                ArrayList arrayList13 = ki0Var2.a1;
-                arrayList13.clear();
-                ArrayList arrayList14 = ki0Var2.b1;
-                arrayList14.clear();
-                if (DialogObject.isChatDialog(ki0Var2.E0)) {
-                    TLRPC.Chat chat = MessagesController.getInstance(i18).getChat(Long.valueOf(-ki0Var2.E0));
-                    imageLocation = ImageLocation.getForUserOrChat(i18, chat, 0);
-                    arrayList = arrayList8;
-                    if (imageLocation != null) {
-                        arrayList.add(imageLocation);
-                        user = user4;
-                        arrayList10.add(ImageLocation.getForUserOrChat(i18, chat, 1));
-                        arrayList11.add(null);
-                        arrayList5.add(null);
-                        TLRPC.ChatFull chatFull = ki0Var2.F0;
-                        if (chatFull == null || !FileLoader.isSamePhoto((TLRPC.FileLocation) imageLocation.location, chatFull.chat_photo)) {
-                            z13 = false;
-                            arrayList12.add(null);
-                            arrayList6.add(null);
-                            arrayList9.add(null);
-                        } else {
-                            arrayList12.add(ki0Var2.F0.chat_photo);
-                            if (ki0Var2.F0.chat_photo.video_sizes.isEmpty()) {
-                                z13 = false;
-                                arrayList9.add(null);
-                                arrayList6.add(null);
-                            } else {
-                                TLRPC.VideoSize closestVideoSizeWithSize = FileLoader.getClosestVideoSizeWithSize(ki0Var2.F0.chat_photo.video_sizes, MediaDataController.MAX_STYLE_RUNS_COUNT);
-                                arrayList9.add(ImageLocation.getForPhoto(closestVideoSizeWithSize, ki0Var2.F0.chat_photo));
-                                arrayList6.add(FileLoader.getAttachFileName(closestVideoSizeWithSize));
-                                z13 = false;
-                            }
-                        }
-                        arrayList13.add(num3);
-                        arrayList14.add(z13);
-                    } else {
-                        user = user4;
-                    }
-                } else {
-                    user = user4;
-                    arrayList = arrayList8;
-                    imageLocation = null;
-                }
-                int i19 = 0;
-                while (true) {
-                    int size = arrayList7.size();
-                    i12 = i18;
-                    z10 = ki0Var2.J0;
-                    if (i19 >= size) {
-                        break;
-                    }
-                    TLRPC.Photo photo2 = (TLRPC.Photo) arrayList7.get(i19);
-                    if (photo2 == null || (photo2 instanceof TLRPC.TL_photoEmpty) || (arrayList3 = photo2.sizes) == null) {
-                        i13 = i19;
-                        arrayList2 = arrayList7;
-                        imageLocation2 = imageLocation;
-                        num = num3;
-                        arrayList12.add(null);
-                        arrayList.add(null);
-                        arrayList10.add(null);
-                        arrayList11.add(null);
-                        arrayList5.add(null);
-                        arrayList9.add(null);
-                        arrayList6.add(null);
-                        arrayList13.add(num);
-                        arrayList14.add(null);
-                    } else {
-                        i13 = i19;
-                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(arrayList3, 50);
-                        int size2 = photo2.sizes.size();
-                        int i20 = 0;
-                        while (true) {
-                            if (i20 >= size2) {
-                                photoSize = closestPhotoSizeWithSize;
-                                break;
-                            }
-                            int i21 = size2;
-                            TLRPC.PhotoSize photoSize2 = photo2.sizes.get(i20);
-                            int i22 = i20;
-                            if (photoSize2 instanceof TLRPC.TL_photoStrippedSize) {
-                                photoSize = photoSize2;
-                                break;
-                            } else {
-                                i20 = i22 + 1;
-                                size2 = i21;
-                            }
-                        }
-                        if (imageLocation != null) {
-                            int size3 = photo2.sizes.size();
-                            arrayList2 = arrayList7;
-                            int i23 = 0;
-                            while (i23 < size3) {
-                                int i24 = size3;
-                                TLRPC.FileLocation fileLocation = photo2.sizes.get(i23).location;
-                                int i25 = i23;
-                                if (fileLocation != null) {
-                                    int i26 = fileLocation.local_id;
-                                    arrayList4 = arrayList14;
-                                    TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = imageLocation.location;
-                                    imageLocation2 = imageLocation;
-                                    if (i26 == tL_fileLocationToBeDeprecated.local_id) {
-                                        num2 = num3;
-                                        if (fileLocation.volume_id == tL_fileLocationToBeDeprecated.volume_id) {
-                                            arrayList12.set(0, photo2);
-                                            if (!photo2.video_sizes.isEmpty()) {
-                                                arrayList9.set(0, ImageLocation.getForPhoto(FileLoader.getClosestVideoSizeWithSize(photo2.video_sizes, MediaDataController.MAX_STYLE_RUNS_COUNT), photo2));
-                                            }
-                                            num = num2;
-                                            arrayList14 = arrayList4;
-                                        } else {
-                                            num3 = num2;
-                                            arrayList14 = arrayList4;
-                                            imageLocation = imageLocation2;
-                                            i23 = i25 + 1;
-                                            size3 = i24;
-                                        }
-                                    }
-                                } else {
-                                    arrayList4 = arrayList14;
-                                    imageLocation2 = imageLocation;
-                                }
-                                num2 = num3;
-                                num3 = num2;
-                                arrayList14 = arrayList4;
-                                imageLocation = imageLocation2;
-                                i23 = i25 + 1;
-                                size3 = i24;
-                            }
-                            num2 = num3;
-                            arrayList4 = arrayList14;
-                            imageLocation2 = imageLocation;
-                        } else {
-                            arrayList2 = arrayList7;
-                            arrayList4 = arrayList14;
-                            imageLocation2 = imageLocation;
-                            num2 = num3;
-                        }
-                        TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, 640);
-                        if (closestPhotoSizeWithSize2 != null) {
-                            int i27 = photo2.dc_id;
-                            if (i27 != 0) {
-                                TLRPC.FileLocation fileLocation2 = closestPhotoSizeWithSize2.location;
-                                fileLocation2.dc_id = i27;
-                                fileLocation2.file_reference = photo2.file_reference;
-                            }
-                            ImageLocation forPhoto = ImageLocation.getForPhoto(closestPhotoSizeWithSize2, photo2);
-                            if (forPhoto != null) {
-                                ImageLocation imageLocation3 = ki0Var2.P0;
-                                num = num2;
-                                if (imageLocation3 == null) {
-                                    arrayList14 = arrayList4;
-                                    user2 = user;
-                                } else if (imageLocation3.photoId != forPhoto.photoId || z10 || ki0Var2.E0 == UserConfig.getInstance(i12).getClientUserId()) {
-                                    user2 = user;
-                                    arrayList14 = arrayList4;
-                                } else {
-                                    arrayList5.add(null);
-                                    arrayList.add(ki0Var2.P0);
-                                    ImageLocation imageLocation4 = ki0Var2.Q0;
-                                    if (imageLocation4 == null) {
-                                        imageLocation4 = ImageLocation.getForPhoto(photoSize, photo2);
-                                    }
-                                    arrayList10.add(imageLocation4);
-                                    if (photo2.video_sizes.isEmpty()) {
-                                        user3 = user;
-                                        obj = null;
-                                        arrayList11.add(ki0Var2.R0);
-                                        arrayList9.add(null);
-                                        arrayList6.add(null);
-                                    } else {
-                                        TLRPC.VideoSize closestVideoSizeWithSize2 = FileLoader.getClosestVideoSizeWithSize(photo2.video_sizes, MediaDataController.MAX_STYLE_RUNS_COUNT);
-                                        TLRPC.VideoSize vectorMarkupVideoSize = FileLoader.getVectorMarkupVideoSize(photo2);
-                                        if (vectorMarkupVideoSize != null) {
-                                            user3 = user;
-                                            arrayList11.add(new m71(vectorMarkupVideoSize, user != null && user3.premium, 2));
-                                            obj = null;
-                                            arrayList9.add(null);
-                                            arrayList6.add(null);
-                                        } else {
-                                            user3 = user;
-                                            obj = null;
-                                            arrayList11.add(null);
-                                            arrayList9.add(ImageLocation.getForPhoto(closestVideoSizeWithSize2, photo2));
-                                            arrayList6.add(FileLoader.getAttachFileName(closestVideoSizeWithSize2));
-                                        }
-                                    }
-                                    arrayList12.add(obj);
-                                    arrayList13.add(num);
-                                    arrayList14 = arrayList4;
-                                    arrayList14.add(obj);
-                                    user = user3;
-                                }
-                                arrayList.add(forPhoto);
-                                arrayList5.add(FileLoader.getAttachFileName(photoSize instanceof TLRPC.TL_photoStrippedSize ? closestPhotoSizeWithSize2 : photoSize));
-                                arrayList10.add(ImageLocation.getForPhoto(photoSize, photo2));
-                                if (photo2.video_sizes.isEmpty()) {
-                                    user = user2;
-                                    z12 = false;
-                                    arrayList9.add(null);
-                                    arrayList6.add(null);
-                                    arrayList11.add(null);
-                                } else {
-                                    TLRPC.VideoSize closestVideoSizeWithSize3 = FileLoader.getClosestVideoSizeWithSize(photo2.video_sizes, MediaDataController.MAX_STYLE_RUNS_COUNT);
-                                    TLRPC.VideoSize vectorMarkupVideoSize2 = FileLoader.getVectorMarkupVideoSize(photo2);
-                                    if (vectorMarkupVideoSize2 != null) {
-                                        user = user2;
-                                        arrayList11.add(new m71(vectorMarkupVideoSize2, user2 != null && user2.premium, 2));
-                                        z12 = false;
-                                        arrayList9.add(null);
-                                        arrayList6.add(null);
-                                    } else {
-                                        user = user2;
-                                        z12 = false;
-                                        arrayList11.add(null);
-                                        arrayList9.add(ImageLocation.getForPhoto(closestVideoSizeWithSize3, photo2));
-                                        arrayList6.add(FileLoader.getAttachFileName(closestVideoSizeWithSize3));
-                                    }
-                                }
-                                arrayList12.add(photo2);
-                                arrayList13.add(Integer.valueOf(closestPhotoSizeWithSize2.size));
-                                arrayList14.add(z12);
-                            }
-                        }
-                        num = num2;
-                        arrayList14 = arrayList4;
-                    }
-                    i19 = i13 + 1;
-                    ki0Var2 = this;
-                    num3 = num;
-                    i18 = i12;
-                    arrayList7 = arrayList2;
-                    imageLocation = imageLocation2;
-                }
-                int size4 = arrayList10.size();
-                if (size4 > 1) {
-                    int i28 = 0;
-                    while (true) {
-                        if (i28 >= (size4 > 2 ? 2 : 1)) {
-                            break;
-                        }
-                        FileLoader.getInstance(i12).loadFile((ImageLocation) arrayList10.get(i28 == 0 ? 1 : size4 - 1), null, null, 0, 1);
-                        i28++;
-                    }
-                }
-                getAdapter().g();
-                if (z10) {
-                    ki0Var = this;
-                    if (!ki0Var.H0 || ki0Var.f1) {
-                        ki0Var.L();
-                    }
-                } else {
-                    ki0Var = this;
-                    if (!ki0Var.H0 || ki0Var.f1) {
-                        ki0Var.L();
-                        ki0Var.getAdapter().g();
-                        ki0Var.B(0.0f, ki0Var.getRealPosition());
-                    }
-                }
-                if (ki0Var.k1 >= 0 || ki0Var.j1 >= 0) {
-                    z11 = false;
-                } else {
-                    z11 = false;
-                    ki0Var.B(0.0f, 0);
-                }
-                ki0Var.f1 = z11;
-                fi0 fi0Var = ki0Var.G0;
-                if (fi0Var != null) {
-                    fi0Var.c();
-                }
-                ImageLocation imageLocation5 = ki0Var.q1;
-                if (imageLocation5 != null) {
-                    ki0Var.A(imageLocation5, ki0Var.r1);
-                }
-            }
-        }
+    @Override // z4.a
+    public final CharSequence d(int i10) {
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(k(i10) + 1);
+        sb2.append("/");
+        MessagesController.DialogPhotos dialogPhotos = this.h.S0;
+        sb2.append(dialogPhotos == null ? 0 : dialogPhotos.getCount());
+        return sb2.toString();
     }
 
-    public bi0 getBlurDrawer() {
-        return this.p1;
-    }
-
-    public float getCurrentItemProgress() {
-        e6 animation;
-        w9 currentItemView = getCurrentItemView();
-        if (currentItemView == null || (animation = currentItemView.getImageReceiver().getAnimation()) == null) {
-            return 0.0f;
-        }
-        return animation.n();
-    }
-
-    public w9 getCurrentItemView() {
-        ji0 ji0Var = this.D0;
-        if (ji0Var == null || ji0Var.c.isEmpty()) {
-            return null;
-        }
-        return ((gi0) ji0Var.c.get(getCurrentItem())).c;
-    }
-
-    public long getDialogId() {
-        return this.E0;
-    }
-
-    public int getRealCount() {
-        int size = this.V0.size();
-        return this.i1 ? size + 1 : size;
-    }
-
-    public int getRealPosition() {
-        return this.D0.k(getCurrentItem());
-    }
-
-    @Override // z4.g, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (this.C0.getScrollState() != 0) {
-            return false;
-        }
-        if (getParent() != null && getParent().getParent() != null) {
-            getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // z4.g, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        bi0 bi0Var = this.p1;
-        if (bi0Var != null) {
-            bi0Var.setTranslationY(getHeight() - this.p1.getMeasuredHeight());
-        }
-    }
-
-    @Override // z4.g, android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        bi0 bi0Var = this.p1;
-        if (bi0Var != null) {
-            bi0Var.G = true;
-            bi0Var.postInvalidateOnAnimation();
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:99:0x016f, code lost:
-    
-        if (r0 > r5) goto L88;
-     */
-    @Override // z4.g, android.view.View
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0259  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x026a  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x016f  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x01a1  */
+    @Override // z4.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int i10;
-        ji0 ji0Var = this.D0;
-        if (ji0Var != null) {
-            im0 im0Var = this.C0;
-            if (im0Var.getScrollState() != 0 && !this.A0 && this.B0) {
-                this.B0 = false;
-                MotionEvent obtain = MotionEvent.obtain(motionEvent);
-                obtain.setAction(3);
-                super.onTouchEvent(obtain);
-                obtain.recycle();
-                return false;
+    public final Object e(z4.g gVar, int i10) {
+        int i11;
+        SparseArray sparseArray;
+        boolean z10;
+        boolean z11;
+        String str;
+        Bitmap bitmap;
+        hi0 hi0Var = (hi0) this.c.get(i10);
+        int k10 = k(i10);
+        li0 li0Var = this.h;
+        boolean z12 = li0Var.i1;
+        SparseArray sparseArray2 = li0Var.d1;
+        ArrayList arrayList = li0Var.b1;
+        ArrayList arrayList2 = li0Var.a1;
+        ArrayList arrayList3 = li0Var.X0;
+        ArrayList arrayList4 = li0Var.Y0;
+        ArrayList arrayList5 = li0Var.Z0;
+        ArrayList arrayList6 = li0Var.W0;
+        Context context = this.e;
+        if (z12 && k10 == 0) {
+            hi0Var.a = true;
+            if (hi0Var.b == null) {
+                hi0Var.b = new ii0(context);
             }
-            int action = motionEvent.getAction();
-            org.telegram.ui.vu0 vu0Var = this.h1;
-            fi0 fi0Var = this.G0;
-            if (vu0Var != null && getCurrentItemView() != null) {
-                if (action != 0 && this.I0) {
-                    org.telegram.ui.vu0 vu0Var2 = this.h1;
-                    if (!vu0Var2.n) {
-                        vu0Var2.a(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0), this, getCurrentItemView().getImageReceiver(), null, 0);
+            if (hi0Var.b.getParent() == null) {
+                gVar.addView(hi0Var.b);
+            }
+            return hi0Var;
+        }
+        hi0Var.a = false;
+        ii0 ii0Var = hi0Var.b;
+        if (ii0Var != null && ii0Var.getParent() != null) {
+            gVar.removeView(hi0Var.b);
+        }
+        if (hi0Var.c == null) {
+            fi0 fi0Var = new fi0(li0Var, context, i10, this.f);
+            hi0Var.c = fi0Var;
+            this.d.set(i10, fi0Var);
+        }
+        if (hi0Var.c.getParent() == null) {
+            gVar.addView(hi0Var.c);
+        }
+        hi0Var.c.getImageReceiver().setAllowDecodeSingleFrame(true);
+        int i12 = li0Var.i1 ? k10 - 1 : k10;
+        if (i12 != 0) {
+            i11 = k10;
+            sparseArray = sparseArray2;
+            if (i12 >= 0 && i12 < arrayList6.size()) {
+                ImageLocation imageLocation = (ImageLocation) arrayList6.get(i12);
+                hi0Var.c.L = imageLocation != null;
+                z10 = arrayList5.get(i12) == null;
+                ImageLocation imageLocation2 = (ImageLocation) arrayList4.get(i12);
+                hi0Var.c.o((n71) arrayList5.get(i12), imageLocation, null, (ImageLocation) arrayList3.get(i12), (ImageLocation) arrayList4.get(i12), (imageLocation2 == null || !(imageLocation2.photoSize instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i12)).intValue(), "avatar_" + li0Var.E0);
+                if ((i12 >= 0 || i12 >= arrayList.size() || arrayList.get(i12) == null) ? z10 : true) {
+                }
+                hi0Var.c.getImageReceiver().setDelegate(new ji0(this));
+                hi0Var.c.getImageReceiver().setCrossfadeAlpha((byte) 2);
+                fi0 fi0Var2 = hi0Var.c;
+                int i13 = li0Var.m1;
+                int i14 = li0Var.n1;
+                fi0Var2.r(i13, i13, i14, i14);
+                hi0Var.c.setTag(Integer.valueOf(i11));
+                return hi0Var;
+            }
+            z10 = false;
+            if ((i12 >= 0 || i12 >= arrayList.size() || arrayList.get(i12) == null) ? z10 : true) {
+            }
+            hi0Var.c.getImageReceiver().setDelegate(new ji0(this));
+            hi0Var.c.getImageReceiver().setCrossfadeAlpha((byte) 2);
+            fi0 fi0Var22 = hi0Var.c;
+            int i132 = li0Var.m1;
+            int i142 = li0Var.n1;
+            fi0Var22.r(i132, i132, i142, i142);
+            hi0Var.c.setTag(Integer.valueOf(i11));
+            return hi0Var;
+        }
+        w9 w9Var = this.g;
+        Drawable drawable = w9Var == null ? null : w9Var.getImageReceiver().getDrawable();
+        if (drawable instanceof e6) {
+            e6 e6Var = (e6) drawable;
+            if (e6Var.s()) {
+                hi0Var.c.setImageDrawable(drawable);
+                e6Var.f(hi0Var.c);
+                e6Var.R = true;
+                i11 = k10;
+                sparseArray = sparseArray2;
+                z10 = false;
+                if ((i12 >= 0 || i12 >= arrayList.size() || arrayList.get(i12) == null) ? z10 : true) {
+                    SparseArray sparseArray3 = sparseArray;
+                    hi0Var.c.H = (RadialProgress2) sparseArray3.get(i12);
+                    fi0 fi0Var3 = hi0Var.c;
+                    if (fi0Var3.H == null) {
+                        fi0Var3.H = new RadialProgress2(fi0Var3, null);
+                        RadialProgress2 radialProgress2 = hi0Var.c.H;
+                        radialProgress2.E = 0.0f;
+                        radialProgress2.setIcon(10, false, false);
+                        hi0Var.c.H.setColors(1107296256, 1107296256, -1, -1);
+                        sparseArray3.append(i12, hi0Var.c.H);
+                    }
+                    if (li0Var.g1) {
+                        li0Var.invalidate();
+                    } else {
+                        li0Var.postInvalidateOnAnimation();
                     }
                 }
-                if (this.h1.a(motionEvent, this, getCurrentItemView().getImageReceiver(), null, 0)) {
-                    if (!this.I0) {
-                        this.I0 = true;
-                        if (fi0Var != null) {
-                            fi0Var.a();
-                        }
-                    }
-                    return true;
-                }
-            }
-            PointF pointF = this.x0;
-            if (action == 0) {
-                this.A0 = true;
-                this.B0 = true;
-                this.H0 = true;
-                pointF.set(motionEvent.getX(), motionEvent.getY());
-                if (ji0Var.c.size() > 1 && fi0Var != null) {
-                    fi0Var.b(motionEvent.getX() < ((float) getWidth()) / 3.0f);
-                }
-                this.I0 = false;
-            } else if (action == 1) {
-                if (!this.I0) {
-                    int realCount = getRealCount();
-                    int currentItem = getCurrentItem();
-                    if (realCount > 1) {
-                        if (motionEvent.getX() > getWidth() / 3.0f) {
-                            i10 = ji0Var.j();
-                            int i11 = currentItem + 1;
-                            if (i11 < realCount + i10) {
-                                i10 = i11;
-                            }
-                        } else {
-                            int i12 = (-1) + currentItem;
-                            i10 = i12 < ji0Var.j() ? (realCount + r0) - 1 : i12;
-                        }
-                        if (fi0Var != null) {
-                            fi0Var.a();
-                        }
-                        x(i10, false);
-                    }
-                }
-            } else if (action == 2) {
-                float x10 = motionEvent.getX() - pointF.x;
-                float y3 = motionEvent.getY() - pointF.y;
-                float abs = Math.abs(y3);
-                float f7 = this.y0;
-                boolean z10 = abs >= f7 || Math.abs(x10) >= f7;
-                if (z10) {
-                    this.I0 = true;
-                    if (fi0Var != null) {
-                        fi0Var.a();
-                    }
-                }
-                boolean z11 = this.B0;
-                if (z11 && this.A0) {
-                    if (z10) {
-                        if (Math.abs(y3) > Math.abs(x10)) {
-                            this.B0 = false;
-                            MotionEvent obtain2 = MotionEvent.obtain(motionEvent);
-                            obtain2.setAction(3);
-                            super.onTouchEvent(obtain2);
-                            obtain2.recycle();
-                        } else {
-                            this.A0 = false;
-                            MotionEvent obtain3 = MotionEvent.obtain(motionEvent);
-                            obtain3.setAction(3);
-                            im0Var.onTouchEvent(obtain3);
-                            obtain3.recycle();
-                        }
-                    }
-                } else if (z11) {
-                    if (!canScrollHorizontally(-1)) {
-                    }
-                }
-            }
-            boolean onTouchEvent = this.A0 ? im0Var.onTouchEvent(motionEvent) : false;
-            if (this.B0) {
-                try {
-                    onTouchEvent |= super.onTouchEvent(motionEvent);
-                } catch (Exception e) {
-                    FileLog.e(e);
-                }
-            }
-            if (action == 1 || action == 3) {
-                this.A0 = false;
-                this.B0 = false;
-            }
-            return onTouchEvent;
-        }
-        return false;
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f7) {
-        super.setAlpha(f7);
-        bi0 bi0Var = this.p1;
-        if (bi0Var != null) {
-            bi0Var.setAlpha(f7);
-        }
-    }
-
-    public void setAnimatedFileMaybe(e6 e6Var) {
-        ji0 ji0Var;
-        if (e6Var == null || (ji0Var = this.D0) == null) {
-            return;
-        }
-        int childCount = getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = getChildAt(i10);
-            if ((childAt instanceof w9) && ji0Var.k(ji0Var.d.indexOf(childAt)) == 0) {
-                w9 w9Var = (w9) childAt;
-                e6 animation = w9Var.getImageReceiver().getAnimation();
-                if (animation != e6Var) {
-                    if (animation != null) {
-                        animation.w(w9Var);
-                    }
-                    w9Var.setImageDrawable(e6Var);
-                    e6Var.f(this);
-                    e6Var.R = true;
-                }
+                hi0Var.c.getImageReceiver().setDelegate(new ji0(this));
+                hi0Var.c.getImageReceiver().setCrossfadeAlpha((byte) 2);
+                fi0 fi0Var222 = hi0Var.c;
+                int i1322 = li0Var.m1;
+                int i1422 = li0Var.n1;
+                fi0Var222.r(i1322, i1322, i1422, i1422);
+                hi0Var.c.setTag(Integer.valueOf(i11));
+                return hi0Var;
             }
         }
-    }
-
-    public void setChatInfo(TLRPC.ChatFull chatFull) {
-        this.F0 = chatFull;
-        ArrayList arrayList = this.V0;
-        if (arrayList.isEmpty() || arrayList.get(0) != null || this.F0 == null) {
-            return;
-        }
-        ArrayList arrayList2 = this.X0;
-        if (arrayList2.get(0) == null || !FileLoader.isSamePhoto((TLRPC.FileLocation) ((ImageLocation) arrayList2.get(0)).location, this.F0.chat_photo)) {
-            return;
-        }
-        arrayList.set(0, this.F0.chat_photo);
-        boolean isEmpty = this.F0.chat_photo.video_sizes.isEmpty();
-        ArrayList arrayList3 = this.T0;
-        ArrayList arrayList4 = this.W0;
-        if (isEmpty) {
-            arrayList4.set(0, null);
-            arrayList3.add(0, null);
-        } else {
-            TLRPC.VideoSize closestVideoSizeWithSize = FileLoader.getClosestVideoSizeWithSize(this.F0.chat_photo.video_sizes, MediaDataController.MAX_STYLE_RUNS_COUNT);
-            arrayList4.set(0, ImageLocation.getForPhoto(closestVideoSizeWithSize, this.F0.chat_photo));
-            arrayList3.set(0, FileLoader.getAttachFileName(closestVideoSizeWithSize));
-            fi0 fi0Var = this.G0;
-            if (fi0Var != null) {
-                fi0Var.c();
+        if (i12 >= 0 && i12 < arrayList6.size()) {
+            ImageLocation imageLocation3 = (ImageLocation) arrayList6.get(i12);
+            hi0Var.c.L = imageLocation3 != null;
+            boolean z13 = arrayList5.get(i12) == null;
+            if (!li0Var.J0 || imageLocation3 == null) {
+                z11 = z13;
+            } else {
+                z11 = z13;
+                if (imageLocation3.imageType == 2) {
+                    str = "avatar";
+                    ImageLocation imageLocation4 = (ImageLocation) arrayList4.get(i12);
+                    w9 w9Var2 = this.g;
+                    i11 = k10;
+                    bitmap = (w9Var2 == null && li0Var.e1) ? w9Var2.getImageReceiver().getBitmap() : null;
+                    StringBuilder sb2 = new StringBuilder("avatar_");
+                    sparseArray = sparseArray2;
+                    sb2.append(li0Var.E0);
+                    String sb3 = sb2.toString();
+                    if (bitmap == null && arrayList5.get(i12) == null) {
+                        fi0 fi0Var4 = hi0Var.c;
+                        ImageLocation imageLocation5 = (ImageLocation) arrayList6.get(i12);
+                        ImageLocation imageLocation6 = (ImageLocation) arrayList3.get(i12);
+                        int intValue = ((Integer) arrayList2.get(i12)).intValue();
+                        fi0Var4.getClass();
+                        fi0Var4.a.setImage(imageLocation5, str, imageLocation6, null, null, null, new BitmapDrawable((Resources) null, bitmap), intValue, null, sb3, 1);
+                        fi0Var4.d();
+                    } else if (li0Var.K0 == null) {
+                        hi0Var.c.o((n71) arrayList5.get(i12), (ImageLocation) arrayList6.get(i12), str, (ImageLocation) arrayList3.get(i12), li0Var.K0, null, ((Integer) arrayList2.get(i12)).intValue(), sb3);
+                    } else {
+                        hi0Var.c.o((n71) arrayList5.get(i12), imageLocation3, null, (ImageLocation) arrayList3.get(i12), (ImageLocation) arrayList4.get(i12), (imageLocation4 == null || !(imageLocation4.photoSize instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i12)).intValue(), sb3);
+                    }
+                    z10 = z11;
+                    if ((i12 >= 0 || i12 >= arrayList.size() || arrayList.get(i12) == null) ? z10 : true) {
+                    }
+                    hi0Var.c.getImageReceiver().setDelegate(new ji0(this));
+                    hi0Var.c.getImageReceiver().setCrossfadeAlpha((byte) 2);
+                    fi0 fi0Var2222 = hi0Var.c;
+                    int i13222 = li0Var.m1;
+                    int i14222 = li0Var.n1;
+                    fi0Var2222.r(i13222, i13222, i14222, i14222);
+                    hi0Var.c.setTag(Integer.valueOf(i11));
+                    return hi0Var;
+                }
             }
+            str = null;
+            ImageLocation imageLocation42 = (ImageLocation) arrayList4.get(i12);
+            w9 w9Var22 = this.g;
+            i11 = k10;
+            if (w9Var22 == null) {
+            }
+            StringBuilder sb22 = new StringBuilder("avatar_");
+            sparseArray = sparseArray2;
+            sb22.append(li0Var.E0);
+            String sb32 = sb22.toString();
+            if (bitmap == null) {
+            }
+            if (li0Var.K0 == null) {
+            }
+            z10 = z11;
+            if ((i12 >= 0 || i12 >= arrayList.size() || arrayList.get(i12) == null) ? z10 : true) {
+            }
+            hi0Var.c.getImageReceiver().setDelegate(new ji0(this));
+            hi0Var.c.getImageReceiver().setCrossfadeAlpha((byte) 2);
+            fi0 fi0Var22222 = hi0Var.c;
+            int i132222 = li0Var.m1;
+            int i142222 = li0Var.n1;
+            fi0Var22222.r(i132222, i132222, i142222, i142222);
+            hi0Var.c.setTag(Integer.valueOf(i11));
+            return hi0Var;
         }
-        this.b1.set(0, null);
-        this.D0.g();
-    }
-
-    public void setCreateThumbFromParent(boolean z10) {
-        this.e1 = z10;
-    }
-
-    public void setData(long j10) {
-        M(j10, false);
-    }
-
-    public void setHasActiveVideo(boolean z10) {
-        this.i1 = z10;
-    }
-
-    public void setImagesLayerNum(int i10) {
-        this.l1 = i10;
-    }
-
-    public void setInvalidateWithParent(boolean z10) {
-        this.g1 = z10;
-    }
-
-    public void setParentAvatarImage(w9 w9Var) {
-        ji0 ji0Var = this.D0;
-        if (ji0Var != null) {
-            ji0Var.g = w9Var;
+        i11 = k10;
+        sparseArray = sparseArray2;
+        z10 = false;
+        if ((i12 >= 0 || i12 >= arrayList.size() || arrayList.get(i12) == null) ? z10 : true) {
         }
+        hi0Var.c.getImageReceiver().setDelegate(new ji0(this));
+        hi0Var.c.getImageReceiver().setCrossfadeAlpha((byte) 2);
+        fi0 fi0Var222222 = hi0Var.c;
+        int i1322222 = li0Var.m1;
+        int i1422222 = li0Var.n1;
+        fi0Var222222.r(i1322222, i1322222, i1422222, i1422222);
+        hi0Var.c.setTag(Integer.valueOf(i11));
+        return hi0Var;
     }
 
-    public void setPinchToZoomHelper(org.telegram.ui.vu0 vu0Var) {
-        this.h1 = vu0Var;
+    @Override // z4.a
+    public final boolean f(View view, Object obj) {
+        hi0 hi0Var = (hi0) obj;
+        return hi0Var.a ? view == hi0Var.b : view == hi0Var.c;
     }
 
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        super.setVisibility(i10);
-        bi0 bi0Var = this.p1;
-        if (bi0Var != null) {
-            bi0Var.setVisibility(i10);
+    @Override // z4.a
+    public final void g() {
+        ArrayList arrayList;
+        int i10 = 0;
+        while (true) {
+            arrayList = this.d;
+            if (i10 >= arrayList.size()) {
+                break;
+            }
+            if (arrayList.get(i10) != null) {
+                ((w9) arrayList.get(i10)).getImageReceiver().cancelLoadImage();
+            }
+            i10++;
         }
-    }
-
-    public void setCustomAvatarProgress(float f7) {
-    }
-
-    public ki0(Context context, long j10, org.telegram.ui.ActionBar.k kVar, im0 im0Var, org.telegram.ui.oz0 oz0Var, fi0 fi0Var, bi0 bi0Var) {
-        super(context);
-        this.x0 = new PointF();
-        this.A0 = true;
-        this.B0 = true;
-        int i10 = UserConfig.selectedAccount;
-        this.L0 = i10;
-        this.M0 = new Path();
-        this.N0 = new RectF();
-        this.O0 = new float[8];
-        this.T0 = new ArrayList();
-        this.U0 = new ArrayList();
-        this.V0 = new ArrayList();
-        this.W0 = new ArrayList();
-        this.X0 = new ArrayList();
-        this.Y0 = new ArrayList();
-        this.Z0 = new ArrayList();
-        this.a1 = new ArrayList();
-        this.b1 = new ArrayList();
-        this.d1 = new SparseArray();
-        this.e1 = true;
-        this.j1 = -1;
-        this.k1 = -1;
-        this.p1 = bi0Var;
-        setPadding(0, 0, 0, bi0Var == null ? 0 : bi0Var.n);
-        if (bi0Var != null) {
-            bi0Var.setView(this);
+        ArrayList arrayList2 = this.c;
+        arrayList2.clear();
+        arrayList.clear();
+        li0 li0Var = this.h;
+        int size = li0Var.X0.size();
+        if (li0Var.i1) {
+            size++;
         }
-        setVisibility(8);
-        setOverScrollMode(2);
-        setOffscreenPageLimit(2);
-        this.J0 = true;
-        this.E0 = j10;
-        this.C0 = im0Var;
-        this.z0 = kVar;
-        ji0 ji0Var = new ji0(this, getContext(), oz0Var);
-        this.D0 = ji0Var;
-        setAdapter((fq) ji0Var);
-        this.y0 = ViewConfiguration.get(context).getScaledTouchSlop();
-        this.G0 = fi0Var;
-        b(new di0((org.telegram.ui.sy0) this));
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.dialogPhotosLoaded);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileLoaded);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileLoadProgressChanged);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.reloadDialogPhotos);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.dialogPhotosUpdate);
-        MessagesController.DialogPhotos dialogPhotos = MessagesController.getInstance(i10).getDialogPhotos(j10);
-        this.S0 = dialogPhotos;
-        dialogPhotos.loadCache();
+        MessagesController.DialogPhotos dialogPhotos = li0Var.S0;
+        int j10 = (j() * 2) + Math.max(dialogPhotos == null ? 0 : dialogPhotos.getCount(), size);
+        for (int i11 = 0; i11 < j10; i11++) {
+            arrayList2.add(new hi0());
+            arrayList.add(null);
+        }
+        super.g();
+    }
+
+    @Override // org.telegram.ui.Components.fq
+    public final int j() {
+        li0 li0Var = this.h;
+        int size = li0Var.X0.size();
+        if (li0Var.i1) {
+            size++;
+        }
+        if (size >= 2) {
+            return li0Var.getOffscreenPageLimit();
+        }
+        return 0;
     }
 }

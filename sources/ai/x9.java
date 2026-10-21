@@ -41,11 +41,11 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.a90;
 import org.telegram.ui.Components.c90;
 import org.telegram.ui.Components.d90;
-import org.telegram.ui.Components.ey0;
+import org.telegram.ui.Components.fy0;
 import org.telegram.ui.Components.hk;
 import org.telegram.ui.Components.mk;
-import org.telegram.ui.Components.py0;
 import org.telegram.ui.Components.q90;
+import org.telegram.ui.Components.qy0;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.ah;
 import org.telegram.ui.ck0;
@@ -66,7 +66,7 @@ import org.telegram.ui.vf1;
 import org.telegram.ui.vm0;
 import org.telegram.ui.wo;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x9 implements Runnable {
     public final /* synthetic */ int a;
@@ -598,20 +598,20 @@ public final /* synthetic */ class x9 implements Runnable {
                 a90.v((a90) this.c, (TLRPC.TL_error) this.d, this.b, (TLRPC.TL_messages_importChatInvite) this.e);
                 return;
             case 19:
-                ey0 ey0Var = (ey0) this.c;
+                fy0 fy0Var = (fy0) this.c;
                 TLObject tLObject4 = (TLObject) this.e;
                 boolean z26 = this.b;
                 org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) this.d;
-                py0 py0Var = ey0Var.a;
+                qy0 qy0Var = fy0Var.a;
                 if (tLObject4 instanceof TLRPC.TL_messages_stickerSet) {
                     TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject4;
                     MediaDataController.getInstance(UserConfig.selectedAccount).putStickerSet(tL_messages_stickerSet);
                     if (z26) {
                         MediaDataController.getInstance(UserConfig.selectedAccount).toggleStickerSet(null, tLObject4, 0, null, false, false);
                     } else {
-                        py0Var.S = tL_messages_stickerSet;
-                        py0Var.u0();
-                        py0Var.C0();
+                        qy0Var.S = tL_messages_stickerSet;
+                        qy0Var.u0();
+                        qy0Var.C0();
                     }
                 }
                 b2Var.dismiss();
@@ -796,9 +796,9 @@ public final /* synthetic */ class x9 implements Runnable {
         this.e = obj3;
     }
 
-    public /* synthetic */ x9(ey0 ey0Var, TLObject tLObject, boolean z10, org.telegram.ui.ActionBar.b2 b2Var) {
+    public /* synthetic */ x9(fy0 fy0Var, TLObject tLObject, boolean z10, org.telegram.ui.ActionBar.b2 b2Var) {
         this.a = 19;
-        this.c = ey0Var;
+        this.c = fy0Var;
         this.e = tLObject;
         this.b = z10;
         this.d = b2Var;

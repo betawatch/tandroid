@@ -27,7 +27,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -39,14 +39,14 @@ import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.ca0;
-import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.kw0;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.nl0;
 import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.w90;
 import org.telegram.ui.Components.x90;
-import org.telegram.ui.Components.xn0;
+import org.telegram.ui.Components.yn0;
 import org.telegram.ui.Components.z00;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ow0;
@@ -54,7 +54,7 @@ import org.telegram.ui.qa1;
 import org.telegram.ui.yv0;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class m1 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public View A0;
@@ -147,7 +147,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final void G(kw0 kw0Var) {
+    public final void G(lw0 lw0Var) {
         this.Y = UserConfig.selectedAccount;
         q0 q0Var = new q0(getContext(), this.resourcesProvider, false);
         q0Var.a(PremiumPreviewFragment.o0(this.Y, null), new hg.r0(this, 21), false);
@@ -162,7 +162,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
         }
         this.L0.addView(q0Var, z5.d(-1, 48.0f, 16, 16.0f, 0.0f, 16.0f, 0.0f));
         this.L0.setBackgroundColor(getThemedColor(h6.h5));
-        kw0Var.addView(this.L0, z5.e(-1, 68, 80));
+        lw0Var.addView(this.L0, z5.e(-1, 68, 80));
     }
 
     public void X(qa1 qa1Var) {
@@ -255,7 +255,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
                                 this.O0[1].setVisibility(0);
                                 ViewPropertyAnimator alpha = this.O0[1].animate().alpha(1.0f);
                                 bs bsVar = bs.f;
-                                kk.t(alpha, bsVar, 200L);
+                                mk.t(alpha, bsVar, 200L);
                                 this.O0[0].animate().alpha(0.0f).setInterpolator(bsVar).setDuration(200L).withEndAction(new e1(this, i10)).start();
                                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                                 ofFloat.addUpdateListener(new g1(this, i11));
@@ -475,7 +475,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
             zdVar.m(100L);
         }
         this.I0.addUpdateListener(new g1(this, i10));
-        this.I0.addListener(new ml0(22, this, drawable));
+        this.I0.addListener(new nl0(22, this, drawable));
         this.I0.setDuration(600L);
         this.I0.setInterpolator(bs.h);
         this.I0.start();
@@ -511,7 +511,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
+    public final im0 x(jm0 jm0Var) {
         return new l1(this);
     }
 
@@ -543,7 +543,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
         a1Var.c = 0.0f;
         c0();
         this.d.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), 0);
-        this.d.setOnItemClickListener(new xn0(this, i10, n2Var, 1));
+        this.d.setOnItemClickListener(new yn0(this, i10, n2Var, 1));
         MediaDataController.getInstance(i10).preloadPremiumPreviewStickers();
         PremiumPreviewFragment.r0("profile");
         z00 z00Var = new z00(getContext());

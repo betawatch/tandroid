@@ -50,7 +50,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class x51 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static String[] a2;
@@ -170,7 +170,7 @@ public abstract class x51 extends FrameLayout implements NotificationCenter.Noti
     public final l41 r0;
     public g51 r1;
     public int s;
-    public final org.telegram.ui.Components.ll0 s0;
+    public final org.telegram.ui.Components.ml0 s0;
     public Rect s1;
     public final View t0;
     public final OvershootInterpolator t1;
@@ -300,13 +300,13 @@ public abstract class x51 extends FrameLayout implements NotificationCenter.Noti
     }
 
     public static void a(x51 x51Var, int i10, int i11) {
-        org.telegram.ui.Components.ll0 ll0Var = x51Var.s0;
+        org.telegram.ui.Components.ml0 ml0Var = x51Var.s0;
         l41 l41Var = x51Var.r0;
         View m10 = l41Var.m(i10);
         int L0 = l41Var.L0();
         if ((m10 == null && Math.abs(i10 - L0) > 72.0f) || !SharedConfig.animationsEnabled()) {
-            ll0Var.b = l41Var.L0() < i10 ? 0 : 1;
-            ll0Var.c(i10, i11, false, false);
+            ml0Var.b = l41Var.L0() < i10 ? 0 : 1;
+            ml0Var.c(i10, i11, false, false);
         } else {
             ei.l1 l1Var = new ei.l1(x51Var, x51Var.h0.getContext(), 4);
             l1Var.a = i10;
@@ -428,7 +428,7 @@ public abstract class x51 extends FrameLayout implements NotificationCenter.Noti
         MediaDataController.getInstance(i10).getStickerSet((TLRPC.InputStickerSet) new TLRPC.TL_inputStickerSetEmojiDefaultStatuses(), false);
         MediaDataController.getInstance(i10).getDefaultEmojiStatuses();
         MediaDataController.getInstance(i10).checkDefaultTopicIcons();
-        org.telegram.ui.Components.qx0.v3.fetch(i10, 1, new ci.g(i10, 1));
+        org.telegram.ui.Components.rx0.v3.fetch(i10, 1, new ci.g(i10, 1));
     }
 
     public final void A(Long l4) {
@@ -1577,7 +1577,7 @@ public abstract class x51 extends FrameLayout implements NotificationCenter.Noti
         boolean canScrollVertically = (this.F1 ? this.i0 : this.h0).canScrollVertically(1);
         if (canScrollVertically != this.v1) {
             this.v1 = canScrollVertically;
-            org.telegram.messenger.kk.s(this.o0.animate(), canScrollVertically ? 1.0f : 0.0f, 200L);
+            org.telegram.messenger.mk.s(this.o0.animate(), canScrollVertically ? 1.0f : 0.0f, 200L);
         }
     }
 
@@ -1737,7 +1737,7 @@ public abstract class x51 extends FrameLayout implements NotificationCenter.Noti
                     x51Var.q1 = 1.0f - ((float) Math.pow(floatValue, 10.0d));
                     AndroidUtilities.lerp(rect, x51Var.o1, floatValue, x51Var.s1);
                     float scaleX = g51Var.getScaleX() * Math.max(1.0f, x51Var.t1.getInterpolation(w7.r.a((3.0f * floatValue) - 2.0f, 0.0f, 1.0f)));
-                    x51Var.s1.set((int) org.telegram.messenger.kk.x(x51Var.s1.width(), 2.0f, scaleX, r0.centerX()), (int) org.telegram.messenger.kk.x(x51Var.s1.height(), 2.0f, scaleX, x51Var.s1.centerY()), (int) a1.g.d(x51Var.s1.width(), 2.0f, scaleX, x51Var.s1.centerX()), (int) a1.g.d(x51Var.s1.height(), 2.0f, scaleX, x51Var.s1.centerY()));
+                    x51Var.s1.set((int) org.telegram.messenger.mk.x(x51Var.s1.width(), 2.0f, scaleX, r0.centerX()), (int) org.telegram.messenger.mk.x(x51Var.s1.height(), 2.0f, scaleX, x51Var.s1.centerY()), (int) a1.g.d(x51Var.s1.width(), 2.0f, scaleX, x51Var.s1.centerX()), (int) a1.g.d(x51Var.s1.height(), 2.0f, scaleX, x51Var.s1.centerY()));
                     x51Var.invalidate();
                     if (floatValue > 0.85f) {
                         boolean[] zArr2 = zArr;
@@ -2176,7 +2176,7 @@ public abstract class x51 extends FrameLayout implements NotificationCenter.Noti
         this.E1.setDuration(320L);
         this.E1.setInterpolator(org.telegram.ui.Components.bs.h);
         this.E1.start();
-        org.telegram.messenger.kk.t(((View) u41Var.getParent()).animate().translationY((this.F1 && z11) ? -AndroidUtilities.dp(36.0f) : 0.0f).setUpdateListener(new y31(this, 1)), org.telegram.ui.Components.bs.f, 160L);
+        org.telegram.messenger.mk.t(((View) u41Var.getParent()).animate().translationY((this.F1 && z11) ? -AndroidUtilities.dp(36.0f) : 0.0f).setUpdateListener(new y31(this, 1)), org.telegram.ui.Components.bs.f, 160L);
         if (this.F1 && z11) {
             k41Var.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(54.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(38.0f));
         } else {
@@ -2503,16 +2503,16 @@ public abstract class x51 extends FrameLayout implements NotificationCenter.Noti
                 k41Var.setVisibility(8);
                 j41Var3.addView(k41Var, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 0.0f));
                 this.a0.addView(j41Var3, w7.z5.d(-1, -1.0f, 48, 0.0f, (i17 != 8 || i17 == 13 || i17 == 14) ? 0.0f : (f10 / AndroidUtilities.density) + 36.0f, 0.0f, 0.0f));
-                org.telegram.ui.Components.ll0 ll0Var = new org.telegram.ui.Components.ll0(u41Var, l41Var);
-                this.s0 = ll0Var;
-                ll0Var.i = new ei.k1(this, 1);
-                ll0Var.h = new a41(this);
+                org.telegram.ui.Components.ml0 ml0Var = new org.telegram.ui.Components.ml0(u41Var, l41Var);
+                this.s0 = ml0Var;
+                ml0Var.i = new ei.k1(this, 1);
+                ml0Var.h = new a41(this);
                 n41 n41Var = new n41(this, i17, context, d6Var, num);
                 u41Var.n1(n41Var, (long) (ViewConfiguration.getLongPressTimeout() * 0.25f));
                 k41Var.n1(n41Var, (long) (ViewConfiguration.getLongPressTimeout() * 0.25f));
-                org.telegram.ui.Components.nn0 nn0Var = new org.telegram.ui.Components.nn0(this, i10, 2);
-                u41Var.setOnItemClickListener(nn0Var);
-                k41Var.setOnItemClickListener(nn0Var);
+                org.telegram.ui.Components.on0 on0Var = new org.telegram.ui.Components.on0(this, i10, 2);
+                u41Var.setOnItemClickListener(on0Var);
+                k41Var.setOnItemClickListener(on0Var);
                 o41 o41Var = new o41(this, context, z11);
                 this.f0 = o41Var;
                 o41Var.setTranslationY(-AndroidUtilities.dp(52.0f));
@@ -2679,16 +2679,16 @@ public abstract class x51 extends FrameLayout implements NotificationCenter.Noti
         k41Var.setVisibility(8);
         j41Var32.addView(k41Var, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 0.0f));
         this.a0.addView(j41Var32, w7.z5.d(-1, -1.0f, 48, 0.0f, (i17 != 8 || i17 == 13 || i17 == 14) ? 0.0f : (f102 / AndroidUtilities.density) + 36.0f, 0.0f, 0.0f));
-        org.telegram.ui.Components.ll0 ll0Var2 = new org.telegram.ui.Components.ll0(u41Var2, l41Var3);
-        this.s0 = ll0Var2;
-        ll0Var2.i = new ei.k1(this, 1);
-        ll0Var2.h = new a41(this);
+        org.telegram.ui.Components.ml0 ml0Var2 = new org.telegram.ui.Components.ml0(u41Var2, l41Var3);
+        this.s0 = ml0Var2;
+        ml0Var2.i = new ei.k1(this, 1);
+        ml0Var2.h = new a41(this);
         n41 n41Var2 = new n41(this, i17, context, d6Var, num);
         u41Var2.n1(n41Var2, (long) (ViewConfiguration.getLongPressTimeout() * 0.25f));
         k41Var.n1(n41Var2, (long) (ViewConfiguration.getLongPressTimeout() * 0.25f));
-        org.telegram.ui.Components.nn0 nn0Var2 = new org.telegram.ui.Components.nn0(this, i10, 2);
-        u41Var2.setOnItemClickListener(nn0Var2);
-        k41Var.setOnItemClickListener(nn0Var2);
+        org.telegram.ui.Components.on0 on0Var2 = new org.telegram.ui.Components.on0(this, i10, 2);
+        u41Var2.setOnItemClickListener(on0Var2);
+        k41Var.setOnItemClickListener(on0Var2);
         o41 o41Var2 = new o41(this, context, z11);
         this.f0 = o41Var2;
         o41Var2.setTranslationY(-AndroidUtilities.dp(52.0f));

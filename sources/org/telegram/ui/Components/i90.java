@@ -45,7 +45,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i90 implements Runnable {
     public final /* synthetic */ int a;
@@ -137,7 +137,7 @@ public final /* synthetic */ class i90 implements Runnable {
                 }
             case 3:
                 org.telegram.ui.cy cyVar = (org.telegram.ui.cy) obj3;
-                cyVar.showDialog(new org.telegram.ui.h31((Context) obj2, cyVar.getResourceProvider(), new go0(1, (oo0) obj4, cyVar)));
+                cyVar.showDialog(new org.telegram.ui.h31((Context) obj2, cyVar.getResourceProvider(), new ho0(1, (po0) obj4, cyVar)));
                 ((i80) obj).u();
                 break;
             case 4:
@@ -146,7 +146,7 @@ public final /* synthetic */ class i90 implements Runnable {
                 i80 i80Var = (i80) obj;
                 byte[] bArr = tL_sponsoredPeer.random_id;
                 org.telegram.ui.ActionBar.d6 resourceProvider = cyVar2.getResourceProvider();
-                go0 go0Var = new go0(0, (oo0) obj4, tL_sponsoredPeer);
+                ho0 ho0Var = new ho0(0, (po0) obj4, tL_sponsoredPeer);
                 int i26 = org.telegram.ui.o21.v;
                 int currentAccount = cyVar2.getCurrentAccount();
                 Activity parentActivity = cyVar2.getParentActivity();
@@ -154,21 +154,21 @@ public final /* synthetic */ class i90 implements Runnable {
                     TLRPC.TL_messages_reportSponsoredMessage tL_messages_reportSponsoredMessage = new TLRPC.TL_messages_reportSponsoredMessage();
                     tL_messages_reportSponsoredMessage.random_id = bArr;
                     tL_messages_reportSponsoredMessage.option = new byte[0];
-                    ConnectionsManager.getInstance(currentAccount).sendRequest(tL_messages_reportSponsoredMessage, new org.telegram.messenger.fi(parentActivity, resourceProvider, bArr, cyVar2, go0Var, currentAccount));
+                    ConnectionsManager.getInstance(currentAccount).sendRequest(tL_messages_reportSponsoredMessage, new org.telegram.messenger.hi(parentActivity, resourceProvider, bArr, cyVar2, ho0Var, currentAccount));
                 }
                 i80Var.u();
                 break;
             case 5:
-                er0.n((er0) obj4, (AtomicReference) obj3, (kq0) obj2, (TLRPC.Dialog) obj);
+                fr0.n((fr0) obj4, (AtomicReference) obj3, (lq0) obj2, (TLRPC.Dialog) obj);
                 break;
             case 6:
-                py0.F((py0) obj4, (TLRPC.TL_error) obj2, (TLObject) obj, (MediaDataController) obj3);
+                qy0.F((qy0) obj4, (TLRPC.TL_error) obj2, (TLObject) obj, (MediaDataController) obj3);
                 break;
             case 7:
-                py0.p((org.telegram.ui.xr0) obj4, (TLRPC.TL_error) obj2, (TLObject) obj, (TLRPC.TL_messages_getAttachedStickers) obj3);
+                qy0.p((org.telegram.ui.xr0) obj4, (TLRPC.TL_error) obj2, (TLObject) obj, (TLRPC.TL_messages_getAttachedStickers) obj3);
                 break;
             case 8:
-                d11 d11Var = (d11) obj4;
+                e11 e11Var = (e11) obj4;
                 TLObject tLObject2 = (TLObject) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
                 try {
@@ -177,7 +177,7 @@ public final /* synthetic */ class i90 implements Runnable {
                     FileLog.e(e);
                 }
                 if (tLObject2 instanceof TLRPC.TL_boolTrue) {
-                    MessagesController.getInstance(d11Var.d).performLogout(0);
+                    MessagesController.getInstance(e11Var.d).performLogout(0);
                     break;
                 } else if (tL_error3 == null || tL_error3.code != -1000) {
                     String string = LocaleController.getString(R.string.ErrorOccurred);
@@ -186,7 +186,7 @@ public final /* synthetic */ class i90 implements Runnable {
                         i27.append(tL_error3.text);
                         string = i27.toString();
                     }
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(d11Var.getContext());
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(e11Var.getContext());
                     String string2 = LocaleController.getString(R.string.AppName);
                     org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                     b2Var.R = string2;
@@ -196,12 +196,12 @@ public final /* synthetic */ class i90 implements Runnable {
                 }
                 break;
             case 9:
-                r31 r31Var = (r31) obj4;
+                s31 s31Var = (s31) obj4;
                 ((i80) obj3).u();
-                ((MessagesController) obj2).getTopicsController().pinTopic(-r31Var.c, ((TLRPC.TL_forumTopic) obj).id, !r11.pinned, r31Var.h);
+                ((MessagesController) obj2).getTopicsController().pinTopic(-s31Var.c, ((TLRPC.TL_forumTopic) obj).id, !r11.pinned, s31Var.h);
                 break;
             case 10:
-                s41.o((s41) obj4, (TLRPC.TL_error) obj2, (TLObject) obj, (TLRPC.TL_textWithEntities) obj3);
+                t41.o((t41) obj4, (TLRPC.TL_error) obj2, (TLObject) obj, (TLRPC.TL_textWithEntities) obj3);
                 break;
             case 11:
                 org.telegram.ui.q50 q50Var = (org.telegram.ui.q50) obj4;

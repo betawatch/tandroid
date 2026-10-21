@@ -1,32 +1,49 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+import java.util.ArrayList;
+import org.telegram.messenger.support.LongSparseIntArray;
+
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ long c;
     public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ BaseController h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ m8(MediaDataController mediaDataController, boolean z10, int i10, int i11) {
-        this.a = i11;
-        this.b = mediaDataController;
-        this.c = z10;
+    public /* synthetic */ m8(MediaDataController mediaDataController, boolean z10, ArrayList arrayList, int i10, long j10, int i11, Runnable runnable) {
+        this.h = mediaDataController;
+        this.f = z10;
+        this.b = arrayList;
         this.d = i10;
+        this.c = j10;
+        this.e = i11;
+        this.n = runnable;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadRecents$49(this.c, this.d);
-                break;
-            case 1:
-                this.b.lambda$processLoadedFeaturedStickers$62(this.c, this.d);
+                ((MediaDataController) this.h).lambda$processLoadedStickers$107(this.f, this.b, this.d, this.c, this.e, (Runnable) this.n);
                 break;
             default:
-                this.b.lambda$loadFeaturedStickers$56(this.c, this.d);
+                ((NotificationsController) this.h).lambda$processReadMessages$22((LongSparseIntArray) this.n, this.b, this.c, this.d, this.e, this.f);
                 break;
         }
+    }
+
+    public /* synthetic */ m8(NotificationsController notificationsController, LongSparseIntArray longSparseIntArray, ArrayList arrayList, long j10, int i10, int i11, boolean z10) {
+        this.h = notificationsController;
+        this.n = longSparseIntArray;
+        this.b = arrayList;
+        this.c = j10;
+        this.d = i10;
+        this.e = i11;
+        this.f = z10;
     }
 }

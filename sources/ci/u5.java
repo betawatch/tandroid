@@ -28,12 +28,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.nl0;
-import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.ol0;
+import org.telegram.ui.Components.om0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.yz;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public abstract class u5 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public t5 E;
@@ -41,7 +41,7 @@ public abstract class u5 extends FrameLayout implements NotificationCenter.Notif
     public d7 G;
     public int H;
     public boolean I;
-    public final nl0 J;
+    public final ol0 J;
     public final aa K;
     public final e5 L;
     public final f5 M;
@@ -91,7 +91,7 @@ public abstract class u5 extends FrameLayout implements NotificationCenter.Notif
         z4 z4Var = new z4(this, context, bVar);
         this.r = z4Var;
         z4Var.setClipToPadding(false);
-        this.J = new nl0(z4Var, true);
+        this.J = new ol0(z4Var, true);
         yz yzVar = new yz(z4Var, 0);
         this.x = yzVar;
         z4Var.setLayoutManager(yzVar);
@@ -398,14 +398,14 @@ public abstract class u5 extends FrameLayout implements NotificationCenter.Notif
             }
         }
         boolean z12 = f5Var.a;
-        nm0 nm0Var = j5Var.v;
+        om0 om0Var = j5Var.v;
         if (z12) {
             t5 t5Var = this.E;
             i10 = (t5Var == null || !t5Var.f) ? R.drawable.menu_views_reactions3 : R.drawable.menu_views_reposts3;
         } else {
             i10 = R.drawable.menu_views_recent3;
         }
-        nm0Var.a(i10, z10);
+        om0Var.a(i10, z10);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:121:0x01e3  */

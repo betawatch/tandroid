@@ -6,7 +6,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qy0 implements Runnable {
     public final /* synthetic */ int a;
@@ -90,7 +90,7 @@ public final /* synthetic */ class qy0 implements Runnable {
                 pf.d.r(h31Var.getContext(), LocaleController.getString(R.string.PromoteUrl));
                 break;
             case 12:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) ((org.telegram.ui.Components.ml0) obj).c;
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) ((org.telegram.ui.Components.nl0) obj).c;
                 Runnable runnable = secretMediaViewer.o0;
                 if (runnable != null) {
                     runnable.run();
@@ -110,9 +110,9 @@ public final /* synthetic */ class qy0 implements Runnable {
                 AndroidUtilities.updateViewShow(((m51) obj).c, true);
                 break;
             case 16:
-                org.telegram.ui.Components.t61 t61Var = ((h61) obj).i0;
-                if (t61Var != null) {
-                    t61Var.N(true);
+                org.telegram.ui.Components.u61 u61Var = ((h61) obj).i0;
+                if (u61Var != null) {
+                    u61Var.N(true);
                     break;
                 }
                 break;

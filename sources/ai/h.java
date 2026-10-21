@@ -18,10 +18,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.by0;
+import org.telegram.ui.Components.cy0;
 import org.telegram.ui.jg0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -37,9 +37,9 @@ public final /* synthetic */ class h implements RequestDelegate {
         final Comparator jg0Var;
         final Comparator jg0Var2;
         int i10 = this.a;
-        int i11 = 26;
-        int i12 = 6;
-        int i13 = 7;
+        int i11 = 25;
+        int i12 = 26;
+        int i13 = 6;
         int i14 = 9;
         int i15 = 28;
         int i16 = 23;
@@ -59,7 +59,7 @@ public final /* synthetic */ class h implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new a1.f(14, (i0) obj, tLObject));
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new a1.f(i11, tLObject, (r0) obj));
+                AndroidUtilities.runOnUIThread(new a1.f(i12, tLObject, (r0) obj));
                 break;
             case 4:
                 AndroidUtilities.runOnUIThread(new a1.f(i15, (y9) obj, tLObject));
@@ -92,7 +92,7 @@ public final /* synthetic */ class h implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ei.p6((ei.a8) obj, tLObject));
                 break;
             case 12:
-                AndroidUtilities.runOnUIThread(new ei.p6(i13, (ei.j8) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new ei.p6(7, (ei.j8) obj, tLObject));
                 break;
             case 13:
                 AndroidUtilities.runOnUIThread(new ei.p6(20, (gi.f4) obj, tL_error));
@@ -107,7 +107,7 @@ public final /* synthetic */ class h implements RequestDelegate {
             case 15:
                 hg.h0 h0Var = (hg.h0) obj;
                 h0Var.getClass();
-                AndroidUtilities.runOnUIThread(new ei.p6(25, h0Var, tLObject));
+                AndroidUtilities.runOnUIThread(new ei.p6(i11, h0Var, tLObject));
                 break;
             case 16:
                 AndroidUtilities.runOnUIThread(new ei.z1((ig.c) obj, tL_error, tLObject, i16));
@@ -131,7 +131,7 @@ public final /* synthetic */ class h implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new hi.t(20, (ki.x) obj, tLObject));
                 break;
             case 23:
-                AndroidUtilities.runOnUIThread(new hi.t(25, (ki.a5) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new hi.t(i11, (ki.a5) obj, tLObject));
                 break;
             case 24:
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.z3(i15, (org.telegram.ui.web.f2) obj, tLObject));
@@ -162,7 +162,7 @@ public final /* synthetic */ class h implements RequestDelegate {
                     if (Build.VERSION.SDK_INT >= 24) {
                         Collator collator = Collator.getInstance(LocaleController.getInstance().getCurrentLocale() != null ? LocaleController.getInstance().getCurrentLocale() : Locale.getDefault());
                         Objects.requireNonNull(collator);
-                        jg0Var = new u5(collator, i12);
+                        jg0Var = new u5(collator, i13);
                     } else {
                         jg0Var = new jg0(16);
                     }
@@ -183,7 +183,7 @@ public final /* synthetic */ class h implements RequestDelegate {
                             }
                         });
                     }
-                    AndroidUtilities.runOnUIThread(new by0(w0Var, hashMap, arrayList, i16));
+                    AndroidUtilities.runOnUIThread(new cy0(w0Var, hashMap, arrayList, i16));
                     break;
                 }
                 break;
@@ -219,7 +219,7 @@ public final /* synthetic */ class h implements RequestDelegate {
                     if (Build.VERSION.SDK_INT >= 24) {
                         Collator collator2 = Collator.getInstance(LocaleController.getInstance().getCurrentLocale() != null ? LocaleController.getInstance().getCurrentLocale() : Locale.getDefault());
                         Objects.requireNonNull(collator2);
-                        jg0Var2 = new u5(collator2, i12);
+                        jg0Var2 = new u5(collator2, i13);
                     } else {
                         jg0Var2 = new jg0(16);
                     }
@@ -240,18 +240,18 @@ public final /* synthetic */ class h implements RequestDelegate {
                             }
                         });
                     }
-                    AndroidUtilities.runOnUIThread(new by0(l0Var, hashMap2, arrayList2, i11));
+                    AndroidUtilities.runOnUIThread(new cy0(l0Var, hashMap2, arrayList2, i12));
                     break;
                 }
                 break;
             case 27:
-                AndroidUtilities.runOnUIThread(new uf.c(i13, (ug.m1) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new u2.j0(i14, (ug.m1) obj, tLObject));
                 break;
             case 28:
-                AndroidUtilities.runOnUIThread(new uf.c(i14, (wf.c) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new u2.j0(11, (wf.c) obj, tLObject));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new by0((wf.d) obj, tLObject, tL_error, 27));
+                AndroidUtilities.runOnUIThread(new cy0((wf.d) obj, tLObject, tL_error, 27));
                 break;
         }
     }

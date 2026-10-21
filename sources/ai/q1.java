@@ -2,16 +2,16 @@ package ai;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.ij;
-import org.telegram.ui.Components.py0;
+import org.telegram.ui.Components.qy0;
 import org.telegram.ui.Components.tz;
 import org.telegram.ui.Components.wz;
 import org.telegram.ui.Components.yy;
 import org.telegram.ui.Components.zy;
 import org.telegram.ui.cp0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class q1 extends g.o {
     public final /* synthetic */ int c;
@@ -34,7 +34,7 @@ public final class q1 extends g.o {
                 if (t1Var == null || i10 == 0) {
                     return wzVar.J;
                 }
-                g61 G = t1Var.G(i10 - 1);
+                h61 G = t1Var.G(i10 - 1);
                 return (G == null || (i11 = G.u) == -1) ? wzVar.J : i11;
             case 1:
                 ei.u1 u1Var = (ei.u1) this.d;
@@ -80,11 +80,11 @@ public final class q1 extends g.o {
                 zyVar.B1();
                 return zyVar.R.get(i10);
             case 6:
-                py0 py0Var = (py0) this.d;
-                if ((py0Var.W == null || !(py0Var.d.e.get(i10) instanceof Integer)) && i10 != py0Var.d.h) {
+                qy0 qy0Var = (qy0) this.d;
+                if ((qy0Var.W == null || !(qy0Var.d.e.get(i10) instanceof Integer)) && i10 != qy0Var.d.h) {
                     return 1;
                 }
-                return py0Var.d.d;
+                return qy0Var.d.d;
             case 7:
                 cp0 cp0Var = (cp0) this.d;
                 if (i10 < cp0Var.b0 || i10 >= cp0Var.c0) {
@@ -92,15 +92,15 @@ public final class q1 extends g.o {
                 }
                 return 1;
             case 8:
-                g61 G2 = ((yh.f4) this.d).i0.G(i10 - 1);
+                h61 G2 = ((yh.f4) this.d).i0.G(i10 - 1);
                 if (G2 == null || (i12 = G2.u) == -1) {
                     return 3;
                 }
                 return i12;
             default:
-                zh.j0 j0Var = (zh.j0) this.d;
-                if (j0Var.e.j(i10) == 0) {
-                    return j0Var.r;
+                zh.k0 k0Var = (zh.k0) this.d;
+                if (k0Var.e.j(i10) == 0) {
+                    return k0Var.r;
                 }
                 return 1;
         }

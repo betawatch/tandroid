@@ -34,10 +34,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class e6 extends FrameLayout {
     public final org.telegram.ui.Components.z5 E;
@@ -45,7 +45,7 @@ public final class e6 extends FrameLayout {
     public final LinearLayout G;
     public final org.telegram.ui.Components.q6 H;
     public final org.telegram.ui.Components.q6 I;
-    public final xj0 J;
+    public final yj0 J;
     public final TextView K;
     public final TextView L;
     public final TextView M;
@@ -77,7 +77,7 @@ public final class e6 extends FrameLayout {
     public boolean i0;
     public boolean j0;
     public Runnable k0;
-    public xj0 l0;
+    public yj0 l0;
     public SpannableStringBuilder m0;
     public final c6[] n;
     public final wh.n r;
@@ -284,11 +284,11 @@ public final class e6 extends FrameLayout {
         LinearLayout linearLayout6 = new LinearLayout(context);
         linearLayout6.setOrientation(0);
         linearLayout6.setGravity(17);
-        xj0 xj0Var = new xj0(context);
-        this.J = xj0Var;
-        xj0Var.setAutoRepeat(true);
-        xj0Var.f(R.raw.gift_crafting, 30, 30, null);
-        linearLayout6.addView(xj0Var, w7.z5.t(30, 30, 17, 0, 0, 4, 0));
+        yj0 yj0Var = new yj0(context);
+        this.J = yj0Var;
+        yj0Var.setAutoRepeat(true);
+        yj0Var.f(R.raw.gift_crafting, 30, 30, null);
+        linearLayout6.addView(yj0Var, w7.z5.t(30, 30, 17, 0, 0, 4, 0));
         TextView textView2 = new TextView(context);
         textView2.setTextSize(1, 20.0f);
         textView2.setTextColor(-1);

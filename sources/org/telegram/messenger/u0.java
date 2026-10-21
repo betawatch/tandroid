@@ -1,29 +1,27 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import com.google.android.gms.tasks.OnFailureListener;
+import org.telegram.messenger.CaptchaController;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class u0 implements RequestDelegate {
+public final /* synthetic */ class u0 implements OnFailureListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ CaptchaController.Request b;
 
-    public /* synthetic */ u0(int i10, Utilities.Callback callback) {
+    public /* synthetic */ u0(CaptchaController.Request request, int i10) {
         this.a = i10;
-        this.b = callback;
+        this.b = request;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public final void onFailure(Exception exc) {
         switch (this.a) {
             case 0:
-                ChannelBoostsController.lambda$getBoostsStats$1(this.b, tLObject, tL_error);
+                CaptchaController.lambda$request$3(this.b, exc);
                 break;
             default:
-                MessagesController.lambda$getChannelParticipant$475(this.b, tLObject, tL_error);
+                CaptchaController.lambda$request$1(this.b, exc);
                 break;
         }
     }

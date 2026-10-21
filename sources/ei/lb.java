@@ -14,19 +14,19 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.el0;
-import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.lw0;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class lb extends r {
     public final Path R1;
     public final /* synthetic */ vb S1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lb(vb vbVar, Activity activity, FrameLayout frameLayout, kw0 kw0Var, FrameLayout frameLayout2, ci.b bVar, org.telegram.ui.Components.ja jaVar) {
-        super(activity, frameLayout, kw0Var, frameLayout2, bVar, jaVar);
+    public lb(vb vbVar, Activity activity, FrameLayout frameLayout, lw0 lw0Var, FrameLayout frameLayout2, ci.b bVar, org.telegram.ui.Components.ja jaVar) {
+        super(activity, frameLayout, lw0Var, frameLayout2, bVar, jaVar);
         this.S1 = vbVar;
         this.R1 = new Path();
     }
@@ -108,7 +108,7 @@ public final class lb extends r {
                 for (int i10 = 0; i10 < vbVar.v1.R0.getChildCount(); i10++) {
                     View childAt = vbVar.v1.R0.getChildAt(i10);
                     if (childAt instanceof rg.j) {
-                        el0 selectionBounds = ((rg.j) childAt).getSelectionBounds();
+                        fl0 selectionBounds = ((rg.j) childAt).getSelectionBounds();
                         RectF rectF = AndroidUtilities.rectTmp;
                         float f11 = selectionBounds.a;
                         float f12 = selectionBounds.b;

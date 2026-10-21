@@ -4,9 +4,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.a90;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class tc implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class tc implements Utilities.Callback2 {
     public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                vc.R((vc) this.c, (g61) this.d, this.b, (Boolean) obj, (String) obj2);
+                vc.R((vc) this.c, (h61) this.d, this.b, (Boolean) obj, (String) obj2);
                 break;
             case 1:
                 a90.n((a90) this.c, this.b, (TLRPC.TL_messages_importChatInvite) this.d, (TLRPC.ChatInviteJoinResult) obj, (TLRPC.TL_error) obj2);

@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class pe1 extends org.telegram.ui.Components.ia {
     public static final /* synthetic */ int f3 = 0;
@@ -65,7 +65,7 @@ public abstract class pe1 extends org.telegram.ui.Components.ia {
         }
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.jm0
     public final boolean F0(View view) {
         return !(view instanceof org.telegram.ui.Cells.l4) || view.isClickable();
     }
@@ -78,7 +78,7 @@ public abstract class pe1 extends org.telegram.ui.Components.ia {
         view.setAlpha(1.0f);
     }
 
-    @Override // org.telegram.ui.Components.ia, org.telegram.ui.Components.im0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ia, org.telegram.ui.Components.jm0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         re1 re1Var = this.e3;
         if (re1Var.b1 != null) {
@@ -91,7 +91,7 @@ public abstract class pe1 extends org.telegram.ui.Components.ia {
         z1();
     }
 
-    @Override // org.telegram.ui.Components.ia, org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.ia, org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j10) {
         z1();
         if (this.e3.b1 == view) {
@@ -117,7 +117,7 @@ public abstract class pe1 extends org.telegram.ui.Components.ia {
         super.onDraw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         org.telegram.ui.ActionBar.k kVar;
         if (!this.V1) {
@@ -140,7 +140,7 @@ public abstract class pe1 extends org.telegram.ui.Components.ia {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         HashSet hashSet = re1.n1;
@@ -150,7 +150,7 @@ public abstract class pe1 extends org.telegram.ui.Components.ia {
         re1Var.getClass();
     }
 
-    @Override // org.telegram.ui.Components.ia, org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.ia, org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         org.telegram.ui.ActionBar.k kVar;
         if (this.b3) {
@@ -169,7 +169,7 @@ public abstract class pe1 extends org.telegram.ui.Components.ia {
         super.onMeasure(i10, i11);
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         s4.b0 b0Var;
         int L0;
@@ -219,7 +219,7 @@ public abstract class pe1 extends org.telegram.ui.Components.ia {
                     if (f7 != 0.0f) {
                         ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
                         ofFloat.addUpdateListener(new c11(this, 17));
-                        ofFloat.setDuration(Math.max(100L, (long) org.telegram.messenger.kk.x(this.d3, AndroidUtilities.dp(72.0f), 120.0f, 350.0f)));
+                        ofFloat.setDuration(Math.max(100L, (long) org.telegram.messenger.mk.x(this.d3, AndroidUtilities.dp(72.0f), 120.0f, 350.0f)));
                         ofFloat.setInterpolator(org.telegram.ui.Components.bs.h);
                         setScrollEnabled(false);
                         ofFloat.addListener(new zb0(this, 29));
@@ -240,7 +240,7 @@ public abstract class pe1 extends org.telegram.ui.Components.ia {
         view.setAlpha(1.0f);
     }
 
-    @Override // org.telegram.ui.Components.ia, org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.ia, org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public final void requestLayout() {
         if (this.c3) {
             return;
@@ -248,7 +248,7 @@ public abstract class pe1 extends org.telegram.ui.Components.ia {
         super.requestLayout();
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView
     public final void setAdapter(s4.g0 g0Var) {
         super.setAdapter(g0Var);
         this.b3 = true;

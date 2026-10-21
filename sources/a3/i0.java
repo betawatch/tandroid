@@ -53,9 +53,9 @@ import org.telegram.ui.Components.bg;
 import org.telegram.ui.Components.bn;
 import org.telegram.ui.Components.dh;
 import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.qx0;
+import org.telegram.ui.Components.rx0;
 import org.telegram.ui.Components.ti;
-import org.telegram.ui.Components.tv0;
+import org.telegram.ui.Components.uv0;
 import org.telegram.ui.Components.vm;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.ym;
@@ -70,7 +70,7 @@ import org.telegram.ui.q50;
 import org.telegram.ui.qn;
 import org.telegram.ui.ut;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a;
@@ -419,13 +419,13 @@ public final /* synthetic */ class i0 implements Runnable {
                 }
                 break;
             case 23:
-                z80.bd((z80) obj2, j10, (TLRPC.Chat) obj);
+                z80.cd((z80) obj2, j10, (TLRPC.Chat) obj);
                 break;
             case 24:
-                ((tv0) obj2).v1.presentFragment(qn.V9(((MessageObject) obj).getId(), j10));
+                ((uv0) obj2).v1.presentFragment(qn.V9(((MessageObject) obj).getId(), j10));
                 break;
             case 25:
-                qx0.y1((qx0) obj2, (TLRPC.TL_messages_emojiGroups) obj, j10);
+                rx0.y1((rx0) obj2, (TLRPC.TL_messages_emojiGroups) obj, j10);
                 break;
             case 26:
                 cy cyVar2 = (cy) obj2;

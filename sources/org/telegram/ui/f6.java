@@ -12,16 +12,16 @@ import org.telegram.messenger.CacheByChatsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f6 implements t70, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.xl0 {
+public final /* synthetic */ class f6 implements t70, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.yl0 {
     public final /* synthetic */ c7 a;
 
     public /* synthetic */ f6(c7 c7Var) {
         this.a = c7Var;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ boolean P0(View view) {
         return false;
     }
@@ -31,7 +31,7 @@ public final /* synthetic */ class f6 implements t70, org.telegram.ui.ActionBar.
         AndroidUtilities.updateVisibleRows(this.a.b);
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public void d(float f7, float f10, int i10, View view) {
         c7 c7Var = this.a;
         ArrayList arrayList = c7Var.a0;
@@ -180,7 +180,7 @@ public final /* synthetic */ class f6 implements t70, org.telegram.ui.ActionBar.
         c7Var.v0();
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ void a0(View view, float f7, float f10) {
     }
 }

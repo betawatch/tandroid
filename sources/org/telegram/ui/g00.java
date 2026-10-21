@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class g00 extends FrameLayout {
     public final org.telegram.ui.ActionBar.n2 a;
@@ -121,9 +121,9 @@ public abstract class g00 extends FrameLayout {
         if (this.x == null) {
             return;
         }
-        org.telegram.ui.Components.fj0 fj0Var = new org.telegram.ui.Components.fj0(getContext(), LocaleController.getString(R.string.InviteByQRCode), this.x, LocaleController.getString(R.string.QRCodeLinkHelpFolder), false);
-        fj0Var.n(R.raw.qr_code_logo);
-        fj0Var.show();
+        org.telegram.ui.Components.gj0 gj0Var = new org.telegram.ui.Components.gj0(getContext(), LocaleController.getString(R.string.InviteByQRCode), this.x, LocaleController.getString(R.string.QRCodeLinkHelpFolder), false);
+        gj0Var.n(R.raw.qr_code_logo);
+        gj0Var.show();
     }
 
     public final void e(TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite, boolean z10) {

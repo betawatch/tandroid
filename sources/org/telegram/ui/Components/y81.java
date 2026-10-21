@@ -1,16 +1,43 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
-/* loaded from: classes3.dex */
-public final class y81 extends s4.k {
-    public final /* synthetic */ c91 F;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-    public y81(c91 c91Var) {
-        this.F = c91Var;
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* loaded from: classes3.dex */
+public final class y81 extends s4.c0 {
+    public final /* synthetic */ hg.i0 r;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y81(hg.i0 i0Var, Context context) {
+        super(context);
+        this.r = i0Var;
     }
 
-    @Override // s4.k
-    public final void P(s4.b1 b1Var) {
-        this.F.invalidate();
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0033, code lost:
+    
+        if ((org.telegram.messenger.AndroidUtilities.dp(21.0f) + r6.getRight()) > ((org.telegram.ui.Components.d91) r5.r.J).getMeasuredWidth()) goto L13;
+     */
+    @Override // s4.c0, s4.x0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void g(View view, s4.w0 w0Var) {
+        int j10 = j(o(), view);
+        if (j10 > 0 || (j10 == 0 && view.getLeft() - AndroidUtilities.dp(21.0f) < 0)) {
+            j10 += AndroidUtilities.dp(60.0f);
+        } else {
+            if (j10 >= 0) {
+                if (j10 == 0) {
+                }
+            }
+            j10 -= AndroidUtilities.dp(60.0f);
+        }
+        int k10 = k(p(), view);
+        int max = Math.max(180, m((int) Math.sqrt((k10 * k10) + (j10 * j10))));
+        if (max > 0) {
+            w0Var.b(-j10, -k10, max, this.j);
+        }
     }
 }

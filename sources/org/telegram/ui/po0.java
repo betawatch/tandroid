@@ -4,19 +4,19 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class po0 extends org.telegram.ui.Components.f61 {
+public final class po0 extends org.telegram.ui.Components.g61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        org.telegram.ui.Components.f61.setup(new po0());
+        org.telegram.ui.Components.g61.setup(new po0());
     }
 
-    @Override // org.telegram.ui.Components.f61
-    public final void bindView(View view, org.telegram.ui.Components.g61 g61Var, boolean z10, org.telegram.ui.Components.t61 t61Var, org.telegram.ui.Components.b71 b71Var) {
+    @Override // org.telegram.ui.Components.g61
+    public final void bindView(View view, org.telegram.ui.Components.h61 h61Var, boolean z10, org.telegram.ui.Components.u61 u61Var, org.telegram.ui.Components.c71 c71Var) {
         qo0 qo0Var = (qo0) view;
-        TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) g61Var.G;
+        TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) h61Var.G;
         yh.h1 h1Var = qo0Var.h;
         yh.d1 d1Var = qo0Var.e;
         qo0Var.a = savedStarGift.gift.id;
@@ -32,11 +32,11 @@ public final class po0 extends org.telegram.ui.Components.f61 {
             h1Var.b = h;
             h1Var.a.f(9, h, false);
         }
-        qo0Var.b(g61Var.e, false);
+        qo0Var.b(h61Var.e, false);
     }
 
-    @Override // org.telegram.ui.Components.f61
-    public final View createView(Context context, org.telegram.ui.Components.im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+    @Override // org.telegram.ui.Components.g61
+    public final View createView(Context context, org.telegram.ui.Components.jm0 jm0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
         return new qo0(context, d6Var, true);
     }
 }

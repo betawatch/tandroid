@@ -1,23 +1,34 @@
 package zh;
 
-import java.io.IOException;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class l0 implements y2.m {
-    public final /* synthetic */ Object a;
+public final class l0 extends ViewOutlineProvider {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n0 b;
 
-    public /* synthetic */ l0(Object obj) {
-        this.a = obj;
+    public /* synthetic */ l0(n0 n0Var, int i10) {
+        this.a = i10;
+        this.b = n0Var;
     }
 
-    @Override // y2.m
-    public void a() {
-        l2.h hVar = (l2.h) this.a;
-        hVar.A.a();
-        IOException iOException = hVar.C;
-        if (iOException != null) {
-            throw iOException;
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        switch (this.a) {
+            case 0:
+                float translationY = view.getTranslationY() + view.getTop();
+                float translationX = view.getTranslationX() + view.getLeft();
+                n0 n0Var = this.b;
+                outline.setRoundRect(Math.round(n0Var.n - translationX), Math.round(n0Var.r - translationY), Math.round(n0Var.s - translationX), Math.round(n0Var.v - translationY), n0Var.w);
+                break;
+            default:
+                int height = view.getHeight();
+                n0 n0Var2 = this.b;
+                outline.setRoundRect(n0Var2.a0, n0Var2.b0, view.getWidth() - n0Var2.a0, view.getHeight() - n0Var2.c0, ((height - r4) - n0Var2.c0) / 2.0f);
+                break;
         }
     }
 }

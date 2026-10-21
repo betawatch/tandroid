@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Components.lg;
-import org.telegram.ui.Components.te0;
+import org.telegram.ui.Components.ue0;
 import org.telegram.ui.WallpapersListActivity;
 import org.telegram.ui.bo;
 import org.telegram.ui.cn;
@@ -16,7 +16,7 @@ import org.telegram.ui.io;
 import org.telegram.ui.jq0;
 import org.telegram.ui.x70;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -81,7 +81,7 @@ public final /* synthetic */ class o3 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ai.x9(obj, (Object) tL_error, (Object) tLObject, this.b, 13));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new lg((te0) obj, tL_error, tLObject, z10));
+                AndroidUtilities.runOnUIThread(new lg((ue0) obj, tL_error, tLObject, z10));
                 break;
             case 8:
                 AndroidUtilities.runOnUIThread(new ai.x9(obj, (Object) tL_error, (Object) tLObject, this.b, 22));

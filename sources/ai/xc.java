@@ -9,25 +9,25 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.c71;
 import org.telegram.ui.Components.ca0;
-import org.telegram.ui.Components.f61;
 import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class xc extends f61 {
+public final class xc extends g61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        f61.setup(new xc());
+        g61.setup(new xc());
     }
 
-    public static g61 a(int i10, int i11, TL_stars.TL_starsTopupOption tL_starsTopupOption) {
-        g61 J = g61.J(xc.class);
+    public static h61 a(int i10, int i11, TL_stars.TL_starsTopupOption tL_starsTopupOption) {
+        h61 J = h61.J(xc.class);
         J.d = i10;
         J.z = i11;
         long j10 = tL_starsTopupOption.stars;
@@ -38,12 +38,12 @@ public final class xc extends f61 {
         return J;
     }
 
-    @Override // org.telegram.ui.Components.f61
-    public final void bindView(View view, g61 g61Var, boolean z10, t61 t61Var, b71 b71Var) {
+    @Override // org.telegram.ui.Components.g61
+    public final void bindView(View view, h61 h61Var, boolean z10, u61 u61Var, c71 c71Var) {
         yc ycVar = (yc) view;
-        int i10 = g61Var.z;
-        CharSequence charSequence = g61Var.l;
-        CharSequence charSequence2 = g61Var.m;
+        int i10 = h61Var.z;
+        CharSequence charSequence = h61Var.l;
+        CharSequence charSequence2 = h61Var.m;
         org.telegram.ui.Components.q6 q6Var = ycVar.e;
         TextView textView = ycVar.d;
         boolean equals = TextUtils.equals(textView.getText(), charSequence);
@@ -71,18 +71,18 @@ public final class xc extends f61 {
         ycVar.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.f61
-    public final boolean contentsEquals(g61 g61Var, g61 g61Var2) {
-        return g61Var.z == g61Var2.z && g61Var.d == g61Var2.d && TextUtils.equals(g61Var.m, g61Var2.m);
+    @Override // org.telegram.ui.Components.g61
+    public final boolean contentsEquals(h61 h61Var, h61 h61Var2) {
+        return h61Var.z == h61Var2.z && h61Var.d == h61Var2.d && TextUtils.equals(h61Var.m, h61Var2.m);
     }
 
-    @Override // org.telegram.ui.Components.f61
-    public final View createView(Context context, im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+    @Override // org.telegram.ui.Components.g61
+    public final View createView(Context context, jm0 jm0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
         return new yc(context, d6Var);
     }
 
-    @Override // org.telegram.ui.Components.f61
-    public final boolean equals(g61 g61Var, g61 g61Var2) {
-        return g61Var.d == g61Var2.d;
+    @Override // org.telegram.ui.Components.g61
+    public final boolean equals(h61 h61Var, h61 h61Var2) {
+        return h61Var.d == h61Var2.d;
     }
 }

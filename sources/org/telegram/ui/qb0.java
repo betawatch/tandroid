@@ -15,11 +15,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class qb0 extends org.telegram.ui.ActionBar.n2 {
     public FrameLayout a;
-    public org.telegram.ui.Components.im0 b;
+    public org.telegram.ui.Components.jm0 b;
     public s4.b0 c;
     public fu d;
     public org.telegram.ui.Components.qc e;
@@ -108,7 +108,7 @@ public final class qb0 extends org.telegram.ui.ActionBar.n2 {
                 arrayList2.add(kb0.b(262144, LocaleController.getString("LiteOptionsLiquidGlass")));
             }
             arrayList2.add(kb0.b(32768, LocaleController.getString("LiteOptionsScale")));
-            if (org.telegram.ui.Components.u11.c()) {
+            if (org.telegram.ui.Components.v11.c()) {
                 arrayList2.add(kb0.b(65536, LocaleController.getString("LiteOptionsThanos")));
             }
         }
@@ -148,7 +148,7 @@ public final class qb0 extends org.telegram.ui.ActionBar.n2 {
                                     pb0Var.c(kb0Var, true);
                                     int U = qb0Var.U(i12);
                                     imageView.clearAnimation();
-                                    org.telegram.messenger.kk.t(imageView.animate().rotation((U < 0 || !qb0Var.n[U]) ? 0.0f : 180.0f), org.telegram.ui.Components.bs.h, 240L);
+                                    org.telegram.messenger.mk.t(imageView.animate().rotation((U < 0 || !qb0Var.n[U]) ? 0.0f : 180.0f), org.telegram.ui.Components.bs.h, 240L);
                                 }
                                 pb0Var.f.c(LiteMode.isEnabled(i12), true);
                             } else {
@@ -182,18 +182,18 @@ public final class qb0 extends org.telegram.ui.ActionBar.n2 {
         FrameLayout frameLayout = new FrameLayout(context);
         this.a = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
-        this.b = im0Var;
-        im0Var.p1();
+        org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, null);
+        this.b = jm0Var;
+        jm0Var.p1();
         this.actionBar.setAdaptiveBackground(this.b);
-        org.telegram.ui.Components.im0 im0Var2 = this.b;
+        org.telegram.ui.Components.jm0 jm0Var2 = this.b;
         s4.b0 b0Var = new s4.b0();
         this.c = b0Var;
-        im0Var2.setLayoutManager(b0Var);
-        org.telegram.ui.Components.im0 im0Var3 = this.b;
+        jm0Var2.setLayoutManager(b0Var);
+        org.telegram.ui.Components.jm0 jm0Var3 = this.b;
         fu fuVar = new fu(this, 1);
         this.d = fuVar;
-        im0Var3.setAdapter(fuVar);
+        jm0Var3.setAdapter(fuVar);
         s4.k kVar = new s4.k();
         kVar.n(350L);
         kVar.o(org.telegram.ui.Components.bs.h);

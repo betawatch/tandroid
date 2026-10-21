@@ -18,14 +18,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.m11;
 import org.telegram.ui.Components.n11;
+import org.telegram.ui.Components.o11;
 import org.telegram.ui.Components.qy;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.g01;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -593,9 +593,9 @@ public final /* synthetic */ class q implements Utilities.Callback2 {
                 }
                 nVar.setPadding(AndroidUtilities.dp(19.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(15.0f), AndroidUtilities.dp(8.0f));
                 SpannableString spannableString = new SpannableString(str16);
-                m11 m11Var = new m11();
-                m11Var.a |= 256;
-                spannableString.setSpan(new n11(m11Var, 0), 0, spannableString.length(), 33);
+                n11 n11Var = new n11();
+                n11Var.a |= 256;
+                spannableString.setSpan(new o11(n11Var, 0), 0, spannableString.length(), 33);
                 nVar.setText(spannableString);
                 nVar.setTextIsSelectable(true);
                 nVar.setOnClickListener(null);

@@ -18,7 +18,7 @@ import org.telegram.ui.Components.vg;
 import org.telegram.ui.mi0;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c5 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -102,7 +102,7 @@ public final /* synthetic */ class c5 implements View.OnLongClickListener {
                                 qn qnVar = n2Var instanceof qn ? (qn) n2Var : null;
                                 mi0 mi0Var = qVar.O;
                                 if (mi0Var != null) {
-                                    mi0Var.h(false);
+                                    mi0Var.g(false);
                                     qVar.O = null;
                                 }
                                 mi0 mi0Var2 = new mi0(qVar.getContext(), d6Var);
@@ -135,18 +135,18 @@ public final /* synthetic */ class c5 implements View.OnLongClickListener {
                                 messageObject2.isOutOwnerCached = Boolean.TRUE;
                                 messageObject2.generateLayout(null);
                                 messageObject2.notime = true;
-                                qVar.O.q(org.telegram.messenger.g0.k(messageObject2));
+                                qVar.O.p(org.telegram.messenger.g0.k(messageObject2));
                                 vg sendButton = b4Var.getSendButton();
                                 sendButton.setScaleX(1.0f);
                                 sendButton.setScaleY(1.0f);
-                                vg r10 = qVar.O.r(sendButton, true, new hg.r0(qVar, 8));
-                                if (r10 != null) {
-                                    r10.setBackground(new ki.c2(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var))));
+                                vg q6 = qVar.O.q(sendButton, true, new hg.r0(qVar, 8));
+                                if (q6 != null) {
+                                    q6.setBackground(new ki.c2(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var))));
                                     mi0 mi0Var3 = qVar.O;
                                     int dp = AndroidUtilities.dp(44.0f);
                                     z10 = true;
-                                    mi0Var3.m0 = true;
-                                    mi0Var3.Y = dp;
+                                    mi0Var3.l0 = true;
+                                    mi0Var3.X = dp;
                                 } else {
                                     z10 = true;
                                 }
@@ -162,7 +162,7 @@ public final /* synthetic */ class c5 implements View.OnLongClickListener {
                                     F2.c(R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new ki.d(qVar, 1), false);
                                 }
                                 F2.Y();
-                                qVar.O.p(F2);
+                                qVar.O.o(F2);
                                 qVar.O.show();
                                 try {
                                     view.performHapticFeedback(3, 2);

@@ -9,7 +9,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gq implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -45,32 +45,32 @@ public final /* synthetic */ class gq implements Utilities.Callback2 {
                 }
                 break;
             default:
-                zh.q0 q0Var = (zh.q0) this.c;
+                zh.r0 r0Var = (zh.r0) this.c;
                 int[] iArr = (int[]) this.d;
                 TLRPC.TL_exportedNoPaidMessagesToken tL_exportedNoPaidMessagesToken = (TLRPC.TL_exportedNoPaidMessagesToken) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                int i10 = q0Var.a;
-                zh.c1 c1Var = q0Var.b;
-                if (q0Var.n == iArr[0] && !q0Var.E) {
-                    q0Var.n = 0;
+                int i10 = r0Var.a;
+                zh.c1 c1Var = r0Var.b;
+                if (r0Var.n == iArr[0] && !r0Var.E) {
+                    r0Var.n = 0;
                     boolean z10 = this.b;
                     if (tL_exportedNoPaidMessagesToken != null) {
-                        int i11 = q0Var.d;
+                        int i11 = r0Var.d;
                         if (i11 != 0) {
                             if (z10 == (i11 == 1)) {
                                 if (tL_exportedNoPaidMessagesToken.expires == 0) {
                                     MessagesController.getMainSettings(i10).edit().putString("qrNoPaidToken", tL_exportedNoPaidMessagesToken.token).putString("qrNoPaidUrl", tL_exportedNoPaidMessagesToken.url).apply();
                                 }
-                                q0Var.f = tL_exportedNoPaidMessagesToken;
-                                q0Var.h = SystemClock.elapsedRealtime();
-                                c1Var.setFreeLink(q0Var.d(tL_exportedNoPaidMessagesToken));
+                                r0Var.f = tL_exportedNoPaidMessagesToken;
+                                r0Var.h = SystemClock.elapsedRealtime();
+                                c1Var.setFreeLink(r0Var.d(tL_exportedNoPaidMessagesToken));
                                 break;
                             }
                         }
                     } else {
                         String str = tL_error2 != null ? tL_error2.text : null;
                         FileLog.e("QrShare: exportNoPaidMessagesToken " + str);
-                        TLRPC.TL_exportedNoPaidMessagesToken tL_exportedNoPaidMessagesToken2 = q0Var.f;
+                        TLRPC.TL_exportedNoPaidMessagesToken tL_exportedNoPaidMessagesToken2 = r0Var.f;
                         if (tL_exportedNoPaidMessagesToken2 != null) {
                             if ((tL_exportedNoPaidMessagesToken2.expires != 0) == z10) {
                                 if (str != null) {
@@ -80,7 +80,7 @@ public final /* synthetic */ class gq implements Utilities.Callback2 {
                                 }
                             }
                         }
-                        q0Var.d = 0;
+                        r0Var.d = 0;
                         MessagesController.getMainSettings(i10).edit().putBoolean("qrNoPaidPermanent", false).apply();
                         if (!c1Var.v0) {
                             if (str != null) {

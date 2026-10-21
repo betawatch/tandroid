@@ -14,9 +14,9 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class hq0 extends org.telegram.ui.Components.hm0 {
+public final class hq0 extends org.telegram.ui.Components.im0 {
     public final Context c;
     public final /* synthetic */ jq0 d;
 
@@ -25,7 +25,7 @@ public final class hq0 extends org.telegram.ui.Components.hm0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         jq0 jq0Var = this.d;
         if (jq0Var.J == null) {
@@ -69,7 +69,7 @@ public final class hq0 extends org.telegram.ui.Components.hm0 {
 
     @Override // s4.g0
     public final void v(s4.b1 b1Var, int i10) {
-        boolean M1;
+        boolean O1;
         jq0 jq0Var = this.d;
         MediaController.AlbumEntry albumEntry = jq0Var.J;
         ArrayList arrayList = jq0Var.n;
@@ -87,16 +87,16 @@ public final class hq0 extends org.telegram.ui.Components.hm0 {
                 MediaController.PhotoEntry photoEntry = albumEntry.photos.get(i10);
                 s5Var.d(photoEntry, arrayList2.size() > 1, true, false, false);
                 s5Var.b(jq0Var.e ? arrayList2.indexOf(Integer.valueOf(photoEntry.imageId)) : -1, hashMap.containsKey(Integer.valueOf(photoEntry.imageId)), false);
-                M1 = PhotoViewer.M1(photoEntry.path);
+                O1 = PhotoViewer.O1(photoEntry.path);
             } else {
                 MediaController.SearchImage searchImage = (MediaController.SearchImage) jq0Var.f.get(i10);
                 s5Var.e(searchImage);
                 s5Var.getVideoInfoContainer().setVisibility(4);
                 s5Var.b(jq0Var.e ? arrayList2.indexOf(searchImage.id) : -1, hashMap.containsKey(searchImage.id), false);
-                M1 = PhotoViewer.M1(searchImage.getPathToAttach());
+                O1 = PhotoViewer.O1(searchImage.getPathToAttach());
             }
-            imageView.getImageReceiver().setVisible(!M1, true);
-            s5Var.getCheckBox().setVisibility((jq0Var.T != 0 || M1) ? 8 : 0);
+            imageView.getImageReceiver().setVisible(!O1, true);
+            s5Var.getCheckBox().setVisibility((jq0Var.T != 0 || O1) ? 8 : 0);
             return;
         }
         if (i11 == 1) {
@@ -160,13 +160,13 @@ public final class hq0 extends org.telegram.ui.Components.hm0 {
                     viewGroup2 = q8Var;
                 }
             }
-            return new org.telegram.ui.Components.sl0(viewGroup3);
+            return new org.telegram.ui.Components.tl0(viewGroup3);
         }
         org.telegram.ui.Cells.s5 s5Var = new org.telegram.ui.Cells.s5(context, null);
         s5Var.setDelegate(new gq0(this));
         s5Var.getCheckFrame().setVisibility(jq0Var.T != 0 ? 8 : 0);
         viewGroup2 = s5Var;
         viewGroup3 = viewGroup2;
-        return new org.telegram.ui.Components.sl0(viewGroup3);
+        return new org.telegram.ui.Components.tl0(viewGroup3);
     }
 }

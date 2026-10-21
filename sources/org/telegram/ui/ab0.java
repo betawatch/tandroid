@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ab0 extends org.telegram.ui.ActionBar.n2 {
     public org.telegram.ui.Cells.l4 E;
@@ -34,7 +34,7 @@ public final class ab0 extends org.telegram.ui.ActionBar.n2 {
     public org.telegram.ui.Cells.d9 G;
     public FrameLayout H;
     public org.telegram.ui.Cells.ba I;
-    public org.telegram.ui.Components.wo0 J;
+    public org.telegram.ui.Components.xo0 J;
     public wa0 K;
     public org.telegram.ui.Cells.d9 L;
     public TextView M;
@@ -50,8 +50,8 @@ public final class ab0 extends org.telegram.ui.ActionBar.n2 {
     public int W;
     public final int a;
     public final long b;
-    public org.telegram.ui.Components.ow0 c;
-    public org.telegram.ui.Components.ow0 d;
+    public org.telegram.ui.Components.pw0 c;
+    public org.telegram.ui.Components.pw0 d;
     public TLRPC.TL_chatInviteExported e;
     public xa0 f;
     public org.telegram.ui.Cells.d9 h;
@@ -691,9 +691,9 @@ public final class ab0 extends org.telegram.ui.ActionBar.n2 {
         w7.b6.a(this.M);
         this.actionBar.addView(this.M, w7.z5.d(-2, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / AndroidUtilities.density, 8388693, 0.0f, 0.0f, 12.0f, 0.0f));
         va0 va0Var = new va0(this, context);
-        org.telegram.ui.Components.wo0 wo0Var = new org.telegram.ui.Components.wo0(context, va0Var, this.resourceProvider, true);
-        this.J = wo0Var;
-        this.actionBar.setAdaptiveBackground(wo0Var);
+        org.telegram.ui.Components.xo0 xo0Var = new org.telegram.ui.Components.xo0(context, va0Var, this.resourceProvider, true);
+        this.J = xo0Var;
+        this.actionBar.setAdaptiveBackground(xo0Var);
         y8 y8Var = new y8(this, context, 4);
         this.fragmentView = y8Var;
         LayoutTransition layoutTransition = new LayoutTransition();
@@ -713,16 +713,16 @@ public final class ab0 extends org.telegram.ui.ActionBar.n2 {
         this.x = l4Var;
         l4Var.setText(LocaleController.getString(R.string.LimitByPeriod));
         va0Var.addView(this.x);
-        org.telegram.ui.Components.ow0 ow0Var = new org.telegram.ui.Components.ow0(context, null);
-        this.d = ow0Var;
-        va0Var.addView(ow0Var);
+        org.telegram.ui.Components.pw0 pw0Var = new org.telegram.ui.Components.pw0(context, null);
+        this.d = pw0Var;
+        va0Var.addView(pw0Var);
         TextView textView2 = new TextView(context);
         this.w = textView2;
         textView2.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
         this.w.setGravity(16);
         this.w.setTextSize(1, 16.0f);
         this.w.setHint(LocaleController.getString(R.string.TimeLimitHint));
-        this.w.setOnClickListener(new org.telegram.ui.Components.h51(24, this, context));
+        this.w.setOnClickListener(new org.telegram.ui.Components.i51(24, this, context));
         this.d.setCallback(new qa0(this, 2));
         ArrayList arrayList = this.P;
         arrayList.clear();
@@ -744,9 +744,9 @@ public final class ab0 extends org.telegram.ui.ActionBar.n2 {
         this.E = l4Var2;
         l4Var2.setText(LocaleController.getString(R.string.LimitNumberOfUses));
         va0Var.addView(this.E);
-        org.telegram.ui.Components.ow0 ow0Var2 = new org.telegram.ui.Components.ow0(context, null);
-        this.c = ow0Var2;
-        ow0Var2.setCallback(new qa0(this, i12));
+        org.telegram.ui.Components.pw0 pw0Var2 = new org.telegram.ui.Components.pw0(context, null);
+        this.c = pw0Var2;
+        pw0Var2.setCallback(new qa0(this, i12));
         X();
         va0Var.addView(this.c);
         wa0 wa0Var = new wa0(context, 0);
@@ -796,7 +796,7 @@ public final class ab0 extends org.telegram.ui.ActionBar.n2 {
                     this.n.setCheckBoxIcon(R.drawable.permission_locked);
                     this.n.setEnabled(false);
                 }
-                this.n.setOnClickListener(new org.telegram.ui.Components.h51(25, this, new Runnable[1]));
+                this.n.setOnClickListener(new org.telegram.ui.Components.i51(25, this, new Runnable[1]));
                 va0Var.addView(this.n, w7.z5.n(-1, 48));
                 TextView textView3 = new TextView(context);
                 this.s = textView3;

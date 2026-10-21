@@ -15,7 +15,7 @@ import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class oc0 extends FrameLayout {
     public final ArrayList E;
@@ -157,7 +157,7 @@ public abstract class oc0 extends FrameLayout {
                             qnVar.l5 = gnVar3;
                             gnVar3.f = false;
                             if (qnVar.ob == 2) {
-                                qnVar.Gb(qnVar.n5, gnVar3);
+                                qnVar.Hb(qnVar.n5, gnVar3);
                             }
                         }
                     }
@@ -170,7 +170,7 @@ public abstract class oc0 extends FrameLayout {
                     gnVar4.c = messagePreviewParams2.quoteEnd;
                     gnVar4.f();
                     if (qnVar.ob == 2) {
-                        qnVar.Gb(qnVar.n5, qnVar.l5);
+                        qnVar.Hb(qnVar.n5, qnVar.l5);
                     }
                 } else {
                     ArrayList<MessageObject> arrayList = new ArrayList<>();

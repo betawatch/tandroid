@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class is implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.kl0, org.telegram.ui.Components.yl0, r0.n {
+public final /* synthetic */ class is implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.ll0, org.telegram.ui.Components.zl0, r0.n {
     public final /* synthetic */ ContactsActivity a;
 
     public /* synthetic */ is(ContactsActivity contactsActivity) {
@@ -25,7 +25,7 @@ public final /* synthetic */ class is implements org.telegram.ui.ActionBar.a2, o
         return r0.k1.b;
     }
 
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.zl0
     public boolean a(int i10, View view) {
         ContactsActivity contactsActivity = this.a;
         s4.g0 adapter = contactsActivity.f.getAdapter();
@@ -56,7 +56,7 @@ public final /* synthetic */ class is implements org.telegram.ui.ActionBar.a2, o
         return true;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public void b() {
         this.a.g0();
     }

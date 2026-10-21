@@ -25,9 +25,9 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class rm0 extends org.telegram.ui.Components.pw0 implements NotificationCenter.NotificationCenterDelegate {
+public final class rm0 extends org.telegram.ui.Components.qw0 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int R = 0;
     public int E;
     public double F;
@@ -186,12 +186,12 @@ public final class rm0 extends org.telegram.ui.Components.pw0 implements Notific
         }
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final boolean b() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final boolean c(boolean z10) {
         int i10;
         vm0 vm0Var = this.Q;
@@ -223,7 +223,7 @@ public final class rm0 extends org.telegram.ui.Components.pw0 implements Notific
         return true;
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void d() {
         this.J = false;
     }
@@ -250,7 +250,7 @@ public final class rm0 extends org.telegram.ui.Components.pw0 implements Notific
         }
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void f() {
         int i10 = this.L;
         if (i10 == 2) {
@@ -265,7 +265,7 @@ public final class rm0 extends org.telegram.ui.Components.pw0 implements Notific
         r();
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void h(String str) {
         int i10;
         if (this.J) {
@@ -298,7 +298,7 @@ public final class rm0 extends org.telegram.ui.Components.pw0 implements Notific
         ConnectionsManager.getInstance(i10).sendRequest(verifyphone, new x40(15, this, verifyphone), 2);
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void j() {
         LinearLayout linearLayout = this.c;
         if (linearLayout == null || linearLayout.getVisibility() != 0) {
@@ -315,7 +315,7 @@ public final class rm0 extends org.telegram.ui.Components.pw0 implements Notific
         }
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void m(Bundle bundle, boolean z10) {
         int i10;
         int i11;
@@ -416,7 +416,7 @@ public final class rm0 extends org.telegram.ui.Components.pw0 implements Notific
         if (this.a == null) {
             return;
         }
-        String g10 = org.telegram.messenger.kk.g(new StringBuilder("+"), this.a, jf.b.c());
+        String g10 = org.telegram.messenger.mk.g(new StringBuilder("+"), this.a, jf.b.c());
         if (i12 == 2) {
             charSequence = AndroidUtilities.replaceTags(LocaleController.formatString("SentSmsCode", R.string.SentSmsCode, LocaleController.addNbsp(g10)));
         } else if (i12 == 3) {

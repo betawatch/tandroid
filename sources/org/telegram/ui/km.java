@@ -4,13 +4,14 @@ import android.animation.Animator;
 import android.os.Bundle;
 import android.util.SparseArray;
 import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.messenger.RichQuote;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class km extends org.telegram.ui.Cells.o9 {
     public qn w0;
@@ -42,7 +43,7 @@ public final class km extends org.telegram.ui.Cells.o9 {
                         this.w0.C7(false);
                     }
                 }
-                this.w0.Gb(messageObject, c10);
+                this.w0.Hb(messageObject, c10);
                 fk fkVar2 = this.w0.Y;
                 if (fkVar2 != null) {
                     fkVar2.F0();
@@ -56,7 +57,7 @@ public final class km extends org.telegram.ui.Cells.o9 {
             qnVar2.f5 = new MessagePreviewParams(qnVar2.h != null, qnVar2.D9(), ChatObject.isMonoForum(this.w0.e));
             qn qnVar3 = this.w0;
             qnVar3.f5.updateReply(qnVar3.n5, qnVar3.D8(messageObject.getGroupId()), this.w0.a(), this.w0.l5);
-            Bundle d = org.telegram.messenger.kk.d(3, "onlySelect", "dialogsType", true);
+            Bundle d = org.telegram.messenger.mk.d(3, "onlySelect", "dialogsType", true);
             d.putBoolean("quote", true);
             d.putInt("messagesCount", 1);
             d.putBoolean("canSelectTopics", true);
@@ -74,7 +75,7 @@ public final class km extends org.telegram.ui.Cells.o9 {
         if ((qnVar2 != null && qnVar2.a() == UserObject.VERIFY) || (qnVar = this.w0) == null) {
             return true;
         }
-        if (qnVar.a() < 0 && this.w0.getMessagesController().isPeerNoForwards(this.w0.a())) {
+        if (!DialogObject.isEncryptedDialog(qnVar.a()) && this.w0.D9()) {
             return false;
         }
         org.telegram.ui.Cells.v9 v9Var = this.W;

@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class zb0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final class zb0 extends AnimatorListenerAdapter {
                 ((ne0) this.b).s = null;
                 break;
             case 7:
-                ((PhotoViewer) ((org.telegram.ui.Components.ml0) this.b).c).A2 = null;
+                ((PhotoViewer) ((org.telegram.ui.Components.nl0) this.b).c).A2 = null;
                 break;
             default:
                 super.onAnimationCancel(animator);
@@ -104,7 +104,7 @@ public final class zb0 extends AnimatorListenerAdapter {
                 oq0Var.h.setEnabled(true);
                 break;
             case 7:
-                PhotoViewer photoViewer = (PhotoViewer) ((org.telegram.ui.Components.ml0) obj).c;
+                PhotoViewer photoViewer = (PhotoViewer) ((org.telegram.ui.Components.nl0) obj).c;
                 if (photoViewer.A2 != null) {
                     ck0 ck0Var = new ck0(this, 18);
                     photoViewer.I2 = ck0Var;
@@ -124,7 +124,7 @@ public final class zb0 extends AnimatorListenerAdapter {
                 photoViewer2.C1.b.J = true;
                 photoViewer2.p6 = null;
                 photoViewer2.u4 = ct0Var.a;
-                photoViewer2.f1().L.b(photoViewer2.u4 != 0);
+                photoViewer2.g1().L.b(photoViewer2.u4 != 0);
                 ei.b4 b4Var = photoViewer2.K1;
                 if (b4Var != null) {
                     b4Var.b(photoViewer2.u4 != 3);
@@ -137,7 +137,7 @@ public final class zb0 extends AnimatorListenerAdapter {
                 photoViewer2.a6 = 1.0f;
                 photoViewer2.c6 = 0.0f;
                 photoViewer2.d6 = 0.0f;
-                photoViewer2.w3(1.0f);
+                photoViewer2.y3(1.0f);
                 photoViewer2.t2 = true;
                 photoViewer2.e0.invalidate();
                 break;
@@ -147,7 +147,7 @@ public final class zb0 extends AnimatorListenerAdapter {
                 photoViewer3.I1.i0.setVisibility(0);
                 photoViewer3.p6 = null;
                 photoViewer3.u4 = dt0Var.a;
-                photoViewer3.f1().L.b(photoViewer3.u4 != 0);
+                photoViewer3.g1().L.b(photoViewer3.u4 != 0);
                 ei.b4 b4Var2 = photoViewer3.K1;
                 if (b4Var2 != null) {
                     b4Var2.b(photoViewer3.u4 != 3);
@@ -160,7 +160,7 @@ public final class zb0 extends AnimatorListenerAdapter {
                 photoViewer3.a6 = 1.0f;
                 photoViewer3.c6 = 0.0f;
                 photoViewer3.d6 = 0.0f;
-                photoViewer3.w3(1.0f);
+                photoViewer3.y3(1.0f);
                 photoViewer3.t2 = true;
                 photoViewer3.e0.invalidate();
                 break;
@@ -217,7 +217,7 @@ public final class zb0 extends AnimatorListenerAdapter {
                 super.onAnimationEnd(animator);
                 break;
             case 19:
-                ((ProfileActivity) ((org.telegram.ui.Components.ml0) obj).c).F5 = null;
+                ((ProfileActivity) ((org.telegram.ui.Components.nl0) obj).c).F5 = null;
                 break;
             case 20:
                 c01 c01Var = (c01) obj;

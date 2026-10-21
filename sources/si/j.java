@@ -34,7 +34,7 @@ import org.telegram.ui.Components.b60;
 import org.telegram.ui.Components.t50;
 import org.telegram.ui.x70;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class j {
     public CameraCaptureSession A;
@@ -863,13 +863,13 @@ public final class j {
         if (handler == null || handlerThread == null) {
             return;
         }
-        handler.post(new p2.b(22, this, handlerThread));
+        handler.post(new p2.b(24, this, handlerThread));
     }
 
     public final void N(Exception exc) {
         this.j.a("camera error", exc);
         w0 w0Var = this.k;
-        ((s0) w0Var.b).i.post(new p2.b(25, w0Var, exc));
+        ((s0) w0Var.b).i.post(new p2.b(27, w0Var, exc));
     }
 
     public final void O() {
@@ -1527,7 +1527,7 @@ public final class j {
         this.Q = false;
         this.N = 0.0f;
         w0 w0Var = this.k;
-        ((s0) w0Var.b).i.post(new p2.b(24, w0Var, l0Var));
+        ((s0) w0Var.b).i.post(new p2.b(26, w0Var, l0Var));
         this.H0 = SystemClock.elapsedRealtimeNanos();
         this.D0 = false;
         this.j.b("camera device switch started: from=" + this.G + ", to=" + l0Var);
@@ -2027,7 +2027,7 @@ public final class j {
             nVar3.b(sb2.toString());
             Handler handler = new Handler(tVar2.t.getLooper());
             tVar2.u = handler;
-            handler.post(new p2.b(23, tVar2, countDownLatch));
+            handler.post(new p2.b(25, tVar2, countDownLatch));
             try {
                 countDownLatch.await();
                 if (tVar2.w0 != null) {

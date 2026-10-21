@@ -13,7 +13,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class cw extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ cy a;
@@ -47,7 +47,7 @@ public final class cw extends org.telegram.ui.ActionBar.j {
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralString("RemoveDocumentsMessage", hashMap.size(), new Object[0]))).append((CharSequence) "\n\n").append((CharSequence) LocaleController.getString(R.string.RemoveDocumentsAlertMessage));
                 alertDialog$Builder.a.T = spannableStringBuilder;
-                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.Components.tg0(4));
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.Components.ug0(4));
                 alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.Components.q2(19, lxVar, arrayList4));
                 TextView textView = (TextView) alertDialog$Builder.o().d(-1);
                 if (textView != null) {
@@ -70,7 +70,7 @@ public final class cw extends org.telegram.ui.ActionBar.j {
                 return;
             } else {
                 if (i10 == 201) {
-                    cy cyVar3 = new cy(org.telegram.messenger.kk.d(3, "onlySelect", "dialogsType", true));
+                    cy cyVar3 = new cy(org.telegram.messenger.mk.d(3, "onlySelect", "dialogsType", true));
                     cyVar3.C2 = new org.telegram.ui.Components.tv(lxVar, 18);
                     cyVar2.presentFragment(cyVar3);
                     return;

@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g01 implements Runnable {
     public final /* synthetic */ int a;
@@ -208,7 +208,7 @@ public final /* synthetic */ class g01 implements Runnable {
                 org.telegram.messenger.w wVar = (org.telegram.messenger.w) this.c;
                 TLObject tLObject3 = (TLObject) this.d;
                 MessagesController messagesController2 = (MessagesController) this.e;
-                org.telegram.messenger.j2 j2Var = (org.telegram.messenger.j2) this.f;
+                org.telegram.messenger.k2 k2Var = (org.telegram.messenger.k2) this.f;
                 if (tL_error3 != null) {
                     wVar.run(tL_error3);
                     return;
@@ -217,7 +217,7 @@ public final /* synthetic */ class g01 implements Runnable {
                         TL_stories.TL_premium_myBoosts tL_premium_myBoosts2 = (TL_stories.TL_premium_myBoosts) tLObject3;
                         messagesController2.putUsers(tL_premium_myBoosts2.users, false);
                         messagesController2.putChats(tL_premium_myBoosts2.chats, false);
-                        j2Var.run(tL_premium_myBoosts2);
+                        k2Var.run(tL_premium_myBoosts2);
                         return;
                     }
                     return;

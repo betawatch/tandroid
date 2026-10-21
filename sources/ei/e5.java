@@ -12,11 +12,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.eh;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e5 implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -189,17 +189,17 @@ public final /* synthetic */ class e5 implements Utilities.CallbackReturn {
                 MessageObject messageObject = ((sh.g) this.d).b;
                 return sh.c.d((View) obj, str, str2, messageObject.getDocument(), messageObject);
             default:
-                im0 im0Var = (im0) this.b;
+                jm0 jm0Var = (jm0) this.b;
                 Utilities.CallbackReturn callbackReturn = (Utilities.CallbackReturn) this.c;
                 SparseIntArray sparseIntArray = (SparseIntArray) this.d;
                 View view = (View) obj;
                 try {
-                    if (view.getParent() != im0Var) {
+                    if (view.getParent() != jm0Var) {
                         return Boolean.FALSE;
                     }
                     Boolean bool = (Boolean) callbackReturn.run(view);
                     boolean booleanValue = bool.booleanValue();
-                    s4.b1 T = im0Var.T(view);
+                    s4.b1 T = jm0Var.T(view);
                     if (T != null) {
                         sparseIntArray.put(T.f, booleanValue ? 1 : 0);
                     }

@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j31 implements Runnable {
     public final /* synthetic */ int a;
@@ -65,9 +65,9 @@ public final /* synthetic */ class j31 implements Runnable {
                         p5 = 0;
                     }
                     if (p5 > 0) {
-                        org.telegram.ui.Components.d81 d81Var = secretMediaViewer.Q;
-                        if (!d81Var.f) {
-                            d81Var.h(n10 / p5, false);
+                        org.telegram.ui.Components.e81 e81Var = secretMediaViewer.Q;
+                        if (!e81Var.f) {
+                            e81Var.h(n10 / p5, false);
                             secretMediaViewer.R.invalidate();
                         }
                     }

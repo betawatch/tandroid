@@ -68,7 +68,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class eo0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public static final List g1 = Arrays.asList("http", "https");
@@ -2003,9 +2003,9 @@ public final class eo0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                     this.n.setEnabled(false);
                     this.n.getContentView().setVisibility(4);
                     AndroidUtilities.checkAndroidTheme(context, true);
-                    org.telegram.ui.Components.o91 o91Var = new org.telegram.ui.Components.o91(this, context);
-                    this.w = o91Var;
-                    o91Var.getSettings().setJavaScriptEnabled(true);
+                    org.telegram.ui.Components.p91 p91Var = new org.telegram.ui.Components.p91(this, context);
+                    this.w = p91Var;
+                    p91Var.getSettings().setJavaScriptEnabled(true);
                     this.w.getSettings().setDomStorageEnabled(true);
                     this.w.getSettings().setSupportZoom(true);
                     this.w.getSettings().setBuiltInZoomControls(true);
@@ -2934,7 +2934,7 @@ public final class eo0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                                 spannableStringBuilder = spannableStringBuilder2;
                                 if (indexOf != -1 && lastIndexOf != -1) {
                                     SpannableString spannableString = new SpannableString(string2.substring(indexOf + 1, lastIndexOf));
-                                    spannableString.setSpan(new org.telegram.ui.Components.k61(this.C0.invoice.terms_url), 0, spannableString.length(), 33);
+                                    spannableString.setSpan(new org.telegram.ui.Components.l61(this.C0.invoice.terms_url), 0, spannableString.length(), 33);
                                     int i65 = lastIndexOf + 1;
                                     spannableStringBuilder2.replace(indexOf, i65, (CharSequence) spannableString);
                                     string2.substring(0, indexOf);
@@ -2949,7 +2949,7 @@ public final class eo0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                                 int lastIndexOf2 = string3.lastIndexOf(42);
                                 if (indexOf2 != -1 && lastIndexOf2 != -1) {
                                     SpannableString spannableString2 = new SpannableString(string3.substring(indexOf2 + 1, lastIndexOf2));
-                                    spannableString2.setSpan(new org.telegram.ui.Components.k61(this.C0.invoice.terms_url), 0, spannableString2.length(), 33);
+                                    spannableString2.setSpan(new org.telegram.ui.Components.l61(this.C0.invoice.terms_url), 0, spannableString2.length(), 33);
                                     int i66 = lastIndexOf2 + 1;
                                     spannableStringBuilder3.replace(indexOf2, i66, (CharSequence) spannableString2);
                                     string3 = string3.substring(0, indexOf2) + ((Object) spannableString2) + string3.substring(i66);
@@ -2958,7 +2958,7 @@ public final class eo0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                                 spannableStringBuilder = spannableStringBuilder3;
                                 if (indexOf3 != -1) {
                                     spannableStringBuilder3.replace(indexOf3, indexOf3 + 4, (CharSequence) this.p0);
-                                    spannableStringBuilder3.setSpan(new org.telegram.ui.Components.d61(AndroidUtilities.bold()), indexOf3, this.p0.length() + indexOf3, 33);
+                                    spannableStringBuilder3.setSpan(new org.telegram.ui.Components.e61(AndroidUtilities.bold()), indexOf3, this.p0.length() + indexOf3, 33);
                                     spannableStringBuilder = spannableStringBuilder3;
                                 }
                             }
@@ -3559,7 +3559,7 @@ public final class eo0 extends org.telegram.ui.ActionBar.n2 implements Notificat
     @Override // org.telegram.ui.ActionBar.n2
     public final void onActivityResultFragment(int i10, int i11, Intent intent) {
         if (i10 == 991) {
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.x31(this, i11, intent, 7));
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.y31(this, i11, intent, 7));
         }
     }
 

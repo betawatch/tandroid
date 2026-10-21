@@ -17,9 +17,9 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class ty extends hm0 {
+public final class ty extends im0 {
     public boolean E;
     public final /* synthetic */ tz F;
     public final my c;
@@ -58,7 +58,7 @@ public final class ty extends hm0 {
         MediaDataController.getInstance(tzVar.c1).searchStickers(true, str, str2, new ci.z2((Object) tyVar, str2, arrayList, (Object) runnable, 9), z10);
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         int i10 = b1Var.f;
         return i10 == 0 || i10 == 4;
@@ -336,7 +336,7 @@ public final class ty extends hm0 {
         } else if (i10 != 5) {
             ah.x xVar = new ah.x(this, tzVar.getContext(), 16);
             TextView textView = new TextView(tzVar.getContext());
-            org.telegram.messenger.kk.j(16.0f, R.string.NoEmojiFound, 1, textView);
+            org.telegram.messenger.mk.j(16.0f, R.string.NoEmojiFound, 1, textView);
             int i11 = org.telegram.ui.ActionBar.h6.Le;
             textView.setTextColor(tzVar.A(i11));
             xVar.addView(textView, w7.z5.d(-2, -2.0f, 49, 0.0f, 10.0f, 0.0f, 0.0f));
@@ -353,6 +353,6 @@ public final class ty extends hm0 {
             view4.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(68.0f)));
             view = view4;
         }
-        return new sl0(view);
+        return new tl0(view);
     }
 }

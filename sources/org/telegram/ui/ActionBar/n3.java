@@ -29,12 +29,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.fk;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class n3 extends FrameLayout {
     public static final HashMap K = new HashMap();
@@ -499,7 +499,7 @@ public final class n3 extends FrameLayout {
                 if (replaceEmoji == null) {
                     k3Var.v = null;
                 } else {
-                    k3Var.v = new e11(replaceEmoji, 17.0f, AndroidUtilities.bold());
+                    k3Var.v = new f11(replaceEmoji, 17.0f, AndroidUtilities.bold());
                 }
             }
             charSequence = replaceEmoji;

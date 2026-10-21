@@ -8,7 +8,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class t7 extends j7 {
     public final /* synthetic */ v7 n;
@@ -99,6 +99,6 @@ public final class t7 extends j7 {
         s7 s7Var = new s7(this, viewGroup.getContext(), n7Var);
         s7Var.setCheckForButtonPress(true);
         n7Var.b.addView(s7Var);
-        return new org.telegram.ui.Components.sl0(n7Var);
+        return new org.telegram.ui.Components.tl0(n7Var);
     }
 }

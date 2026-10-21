@@ -16,10 +16,10 @@ import android.view.Surface;
 import com.google.android.gms.internal.play_billing.k3;
 import java.util.concurrent.CountDownLatch;
 import k2.w0;
-import org.telegram.ui.Components.by0;
+import org.telegram.ui.Components.cy0;
 import org.webrtc.EglBase;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class t {
     public EGLSurface B;
@@ -262,7 +262,7 @@ public final class t {
             c cVar = this.s;
             if (cVar != null) {
                 w0 w0Var = cVar.a;
-                ((s0) w0Var.b).i.post(new p2.b(25, w0Var, e));
+                ((s0) w0Var.b).i.post(new p2.b(27, w0Var, e));
             }
         }
     }
@@ -379,7 +379,7 @@ public final class t {
                 c cVar = this.s;
                 if (cVar != null) {
                     w0 w0Var = cVar.a;
-                    ((s0) w0Var.b).i.post(new p2.b(25, w0Var, e));
+                    ((s0) w0Var.b).i.post(new p2.b(27, w0Var, e));
                 }
             }
         } catch (RuntimeException e7) {
@@ -701,7 +701,7 @@ public final class t {
             return;
         }
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        handler.post(new by0(this, handlerThread, countDownLatch, 20));
+        handler.post(new cy0(this, handlerThread, countDownLatch, 20));
         try {
             countDownLatch.await();
         } catch (InterruptedException unused) {

@@ -9,7 +9,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class z80 extends org.telegram.ui.qn {
     public boolean Rc;
@@ -26,7 +26,7 @@ public final class z80 extends org.telegram.ui.qn {
         this.Rc = false;
     }
 
-    public static void bd(z80 z80Var, long j10, TLRPC.Chat chat) {
+    public static void cd(z80 z80Var, long j10, TLRPC.Chat chat) {
         org.telegram.ui.ActionBar.d6 d6Var;
         if (AndroidUtilities.isContextSafe(z80Var.getParentActivity())) {
             Activity parentActivity = z80Var.getParentActivity();
@@ -36,7 +36,7 @@ public final class z80 extends org.telegram.ui.qn {
             boolean z10 = chat.admin_rights != null;
             boolean z11 = chat.creator;
             d6Var = ((org.telegram.ui.ActionBar.f3) z80Var.Uc).resourcesProvider;
-            w01.c(parentActivity, i10, j11, currentUser, null, z10, z11, d6Var);
+            x01.c(parentActivity, i10, j11, currentUser, null, z10, z11, d6Var);
         }
     }
 

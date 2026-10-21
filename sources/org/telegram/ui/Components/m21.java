@@ -1,64 +1,76 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import android.text.TextWatcher;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class m21 extends FrameLayout {
-    public final ImageView a;
-    public final k21 b;
-    public final /* synthetic */ ThemeEditorView.EditorAlert c;
+public final class m21 implements TextWatcher {
+    public final /* synthetic */ n21 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m21(ThemeEditorView.EditorAlert editorAlert, Context context) {
-        super(context);
-        this.c = editorAlert;
-        View view = new View(context);
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(18.0f), -854795));
-        addView(view, w7.z5.d(-1, 36.0f, 51, 14.0f, 11.0f, 14.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        imageView.setImageResource(R.drawable.smiles_inputsearch);
-        imageView.setColorFilter(new PorterDuffColorFilter(-6182737, PorterDuff.Mode.MULTIPLY));
-        addView(imageView, w7.z5.d(36, 36.0f, 51, 16.0f, 11.0f, 0.0f, 0.0f));
-        ImageView imageView2 = new ImageView(context);
-        this.a = imageView2;
-        imageView2.setScaleType(scaleType);
-        j21 j21Var = new j21();
-        imageView2.setImageDrawable(j21Var);
-        j21Var.f = AndroidUtilities.dp(7.0f);
-        imageView2.setScaleX(0.1f);
-        imageView2.setScaleY(0.1f);
-        imageView2.setAlpha(0.0f);
-        addView(imageView2, w7.z5.d(36, 36.0f, 53, 14.0f, 11.0f, 14.0f, 0.0f));
-        imageView2.setOnClickListener(new u80(this, 20));
-        k21 k21Var = new k21(this, context);
-        this.b = k21Var;
-        k21Var.setTextSize(1, 16.0f);
-        k21Var.setHintTextColor(-6774617);
-        k21Var.setTextColor(-14540254);
-        k21Var.setBackgroundDrawable(null);
-        k21Var.setPadding(0, 0, 0, 0);
-        k21Var.setMaxLines(1);
-        k21Var.setLines(1);
-        k21Var.setSingleLine(true);
-        k21Var.setImeOptions(268435459);
-        k21Var.setHint(LocaleController.getString(R.string.Search));
-        k21Var.setCursorColor(-11491093);
-        k21Var.setCursorSize(AndroidUtilities.dp(20.0f));
-        k21Var.setCursorWidth(1.5f);
-        addView(k21Var, w7.z5.d(-1, 40.0f, 51, 54.0f, 9.0f, 46.0f, 0.0f));
-        k21Var.addTextChangedListener(new l21(this));
-        k21Var.setOnEditorActionListener(new e1(this, 10));
+    public m21(n21 n21Var) {
+        this.a = n21Var;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean z10 = this.a.b.length() > 0;
+        if (z10 != (this.a.a.getAlpha() != 0.0f)) {
+            this.a.a.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(150L).scaleX(z10 ? 1.0f : 0.1f).scaleY(z10 ? 1.0f : 0.1f).start();
+        }
+        String obj = this.a.b.getText().toString();
+        if (obj.length() != 0) {
+            vz vzVar = this.a.c.e;
+            if (vzVar != null) {
+                vzVar.setText(LocaleController.getString(R.string.NoResult));
+            }
+        } else {
+            s4.g0 adapter = this.a.c.c.getAdapter();
+            ThemeEditorView.EditorAlert editorAlert = this.a.c;
+            if (adapter != editorAlert.n) {
+                int K = ThemeEditorView.EditorAlert.K(editorAlert);
+                this.a.c.e.setText(LocaleController.getString(R.string.NoChats));
+                this.a.c.e.c();
+                ThemeEditorView.EditorAlert editorAlert2 = this.a.c;
+                editorAlert2.c.setAdapter(editorAlert2.n);
+                this.a.c.n.l();
+                if (K > 0) {
+                    this.a.c.h.h1(0, -K);
+                }
+            }
+        }
+        j21 j21Var = this.a.c.r;
+        if (j21Var == null || obj.equals(j21Var.n)) {
+            return;
+        }
+        j21Var.n = obj;
+        if (j21Var.h != null) {
+            Utilities.searchQueue.cancelRunnable(j21Var.h);
+            j21Var.h = null;
+        }
+        if (obj.length() != 0) {
+            int i10 = j21Var.d + 1;
+            j21Var.d = i10;
+            j21Var.h = new org.telegram.ui.i4(j21Var, obj, i10, 28);
+            Utilities.searchQueue.postRunnable(j21Var.h, 300L);
+            return;
+        }
+        j21Var.e.clear();
+        ThemeEditorView.EditorAlert editorAlert3 = j21Var.r;
+        editorAlert3.F = ThemeEditorView.EditorAlert.K(editorAlert3);
+        j21Var.d = -1;
+        j21Var.l();
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

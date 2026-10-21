@@ -17,11 +17,11 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.vj0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class q7 extends View {
     public ValueAnimator E;
@@ -150,17 +150,17 @@ public final class q7 extends View {
             if (arrayList.size() <= 4) {
                 break;
             } else {
-                ((uj0) arrayList.remove(0)).C(true);
+                ((vj0) arrayList.remove(0)).C(true);
             }
         }
         Random random = Utilities.fastRandom;
         int[] iArr = this.K;
-        uj0 uj0Var = new uj0(iArr[random.nextInt(iArr.length)], AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
-        uj0Var.R(this);
-        uj0Var.J(true);
-        uj0Var.K(0);
-        uj0Var.start();
-        arrayList.add(uj0Var);
+        vj0 vj0Var = new vj0(iArr[random.nextInt(iArr.length)], AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
+        vj0Var.R(this);
+        vj0Var.J(true);
+        vj0Var.K(0);
+        vj0Var.start();
+        arrayList.add(vj0Var);
         invalidate();
         ah.g1 m10 = reactionsLayoutInBubble.m("stars");
         if (m10 != null) {
@@ -325,15 +325,15 @@ public final class q7 extends View {
                     if (i13 >= arrayList.size()) {
                         break;
                     }
-                    uj0 uj0Var = (uj0) arrayList.get(i13);
-                    if (uj0Var.a0 >= uj0Var.e[i10]) {
+                    vj0 vj0Var = (vj0) arrayList.get(i13);
+                    if (vj0Var.a0 >= vj0Var.e[i10]) {
                         arrayList.remove(i13);
                         i13--;
                     } else {
                         float f15 = dp / 2.0f;
-                        uj0Var.setBounds((int) (((AndroidUtilities.dp(15.0f) * lerp) + rectF.left) - f15), (int) (rectF.centerY() - f15), (int) r4.c.c(AndroidUtilities.dp(15.0f), lerp, rectF.left, f15), (int) (rectF.centerY() + f15));
-                        uj0Var.setAlpha((int) (this.y * f10));
-                        uj0Var.draw(canvas);
+                        vj0Var.setBounds((int) (((AndroidUtilities.dp(15.0f) * lerp) + rectF.left) - f15), (int) (rectF.centerY() - f15), (int) r4.c.c(AndroidUtilities.dp(15.0f), lerp, rectF.left, f15), (int) (rectF.centerY() + f15));
+                        vj0Var.setAlpha((int) (this.y * f10));
+                        vj0Var.draw(canvas);
                     }
                     i13++;
                 }

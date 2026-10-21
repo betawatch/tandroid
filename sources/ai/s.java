@@ -2,10 +2,10 @@ package ai;
 
 import android.content.Context;
 import android.view.MotionEvent;
-import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.c71;
 import org.telegram.ui.Components.sd0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class s extends sd0 {
     public final /* synthetic */ int L;
@@ -37,15 +37,15 @@ public final class s extends sd0 {
                 break;
             default:
                 org.telegram.ui.ie ieVar = (org.telegram.ui.ie) this.M;
-                b71 b71Var = ieVar.a1;
+                c71 c71Var = ieVar.a1;
                 t tVar2 = ieVar.Y0;
                 if (tVar2 != null && !tVar2.isFocusable()) {
                     tVar2.setFocusable(true);
                     tVar2.setFocusableInTouchMode(true);
-                    int y13 = b71Var.y1(3);
-                    if (y13 >= 0 && y13 < b71Var.W2.x.size()) {
-                        b71Var.B0();
-                        b71Var.x0(y13);
+                    int y13 = c71Var.y1(3);
+                    if (y13 >= 0 && y13 < c71Var.W2.x.size()) {
+                        c71Var.B0();
+                        c71Var.x0(y13);
                     }
                     tVar2.requestFocus();
                 }

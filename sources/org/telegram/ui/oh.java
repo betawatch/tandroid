@@ -5,7 +5,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oh implements Utilities.Callback0Return {
     public final /* synthetic */ int a;
@@ -30,13 +30,13 @@ public final /* synthetic */ class oh implements Utilities.Callback0Return {
             case 0:
                 return qn.p0((qn) this.b, (Context) this.c);
             case 1:
-                org.telegram.ui.Components.t61 t61Var = (org.telegram.ui.Components.t61) this.b;
-                Object obj = ((org.telegram.ui.Components.g61) this.c).G;
-                org.telegram.ui.Components.im0 im0Var = t61Var.d;
+                org.telegram.ui.Components.u61 u61Var = (org.telegram.ui.Components.u61) this.b;
+                Object obj = ((org.telegram.ui.Components.h61) this.c).G;
+                org.telegram.ui.Components.jm0 jm0Var = u61Var.d;
                 int i10 = 0;
                 while (true) {
-                    if (i10 < t61Var.x.size()) {
-                        org.telegram.ui.Components.g61 G = t61Var.G(i10);
+                    if (i10 < u61Var.x.size()) {
+                        org.telegram.ui.Components.h61 G = u61Var.G(i10);
                         if (G == null || G.G != obj) {
                             i10++;
                         }
@@ -45,8 +45,8 @@ public final /* synthetic */ class oh implements Utilities.Callback0Return {
                     }
                 }
                 if (i10 != -1) {
-                    for (int i11 = 0; i11 < im0Var.getChildCount(); i11++) {
-                        childAt = im0Var.getChildAt(i11);
+                    for (int i11 = 0; i11 < jm0Var.getChildCount(); i11++) {
+                        childAt = jm0Var.getChildAt(i11);
                         int R = RecyclerView.R(childAt);
                         if (R != -1 && R == i10) {
                             if (childAt instanceof n91) {

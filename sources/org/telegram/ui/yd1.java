@@ -14,9 +14,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class yd1 extends org.telegram.ui.Components.kw0 {
+public final class yd1 extends org.telegram.ui.Components.lw0 {
     public boolean w0;
     public final Paint x0;
     public final /* synthetic */ re1 y0;
@@ -29,7 +29,7 @@ public final class yd1 extends org.telegram.ui.Components.kw0 {
         this.x0 = new Paint();
     }
 
-    @Override // org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.lw0
     public final void J(Canvas canvas, float f7, Rect rect, Paint paint, boolean z10) {
         if (Build.VERSION.SDK_INT >= 29 && SharedConfig.chatBlurEnabled()) {
             re1 re1Var = this.y0;
@@ -49,7 +49,7 @@ public final class yd1 extends org.telegram.ui.Components.kw0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.lw0
     public final void L(Canvas canvas, ArrayList arrayList) {
         int i10 = 0;
         while (true) {
@@ -61,8 +61,8 @@ public final class yd1 extends org.telegram.ui.Components.kw0 {
             if (childAt.getY() < AndroidUtilities.dp(100.0f) && childAt.getVisibility() == 0) {
                 int save = canvas.save();
                 canvas.translate(childAt.getX() + re1Var.N.getX(), childAt.getY() + re1Var.N.getY() + getY());
-                if (arrayList != null && (childAt instanceof org.telegram.ui.Components.hw0)) {
-                    arrayList.add((org.telegram.ui.Components.hw0) childAt);
+                if (arrayList != null && (childAt instanceof org.telegram.ui.Components.iw0)) {
+                    arrayList.add((org.telegram.ui.Components.iw0) childAt);
                 }
                 childAt.draw(canvas);
                 canvas.restoreToCount(save);
@@ -71,7 +71,7 @@ public final class yd1 extends org.telegram.ui.Components.kw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.kw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         re1 re1Var = this.y0;
@@ -122,8 +122,8 @@ public final class yd1 extends org.telegram.ui.Components.kw0 {
             float y3 = kVar2.getY();
             kVar3 = ((org.telegram.ui.ActionBar.n2) re1Var).actionBar;
             float height = kVar3.getHeight();
-            org.telegram.ui.Components.c91 c91Var = re1Var.a1;
-            int measuredHeight = (int) (y3 + ((int) ((((c91Var == null || c91Var.getVisibility() == 8) ? 0.0f : re1Var.a1.getMeasuredHeight()) * re1Var.W) + height)));
+            org.telegram.ui.Components.d91 d91Var = re1Var.a1;
+            int measuredHeight = (int) (y3 + ((int) ((((d91Var == null || d91Var.getVisibility() == 8) ? 0.0f : re1Var.a1.getMeasuredHeight()) * re1Var.W) + height)));
             ((ActionBarLayout) re1Var.getParentLayout()).p(canvas, (int) ((1.0f - re1Var.W) * 255.0f), measuredHeight);
             float f7 = re1Var.W;
             if (f7 > 0.0f) {
@@ -144,7 +144,7 @@ public final class yd1 extends org.telegram.ui.Components.kw0 {
 
     /* JADX WARN: Removed duplicated region for block: B:15:0x0068  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0095  */
-    @Override // org.telegram.ui.Components.kw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

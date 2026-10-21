@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class px implements org.telegram.ui.Components.d50 {
     public final /* synthetic */ cy a;
@@ -57,7 +57,7 @@ public final class px implements org.telegram.ui.Components.d50 {
         if (z10) {
             w9Var.setImageBitmap(cyVar.b4.r);
         } else {
-            w9Var.setImageBitmap(PhotoViewer.t1().C4.getBitmap());
+            w9Var.setImageBitmap(PhotoViewer.u1().C4.getBitmap());
         }
         Activity parentActivity2 = cyVar.getParentActivity();
         d6Var2 = ((org.telegram.ui.ActionBar.n2) cyVar).resourceProvider;

@@ -1,28 +1,41 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+import android.os.SystemClock;
+import org.telegram.messenger.SharedConfig;
+
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class nh implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ SharedConfig.ProxyInfo b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ nh(int i10, long j10, String str, String str2) {
+    public /* synthetic */ nh(SharedConfig.ProxyInfo proxyInfo, long j10, int i10) {
         this.a = i10;
-        this.b = str;
-        this.c = str2;
-        this.d = j10;
+        this.b = proxyInfo;
+        this.c = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i10 = this.a;
+        long j10 = this.c;
+        SharedConfig.ProxyInfo proxyInfo = this.b;
+        switch (i10) {
             case 0:
-                PushListenerController.lambda$processRemoteMessage$6(this.b, this.c, this.d);
+                ProxyRotationController.lambda$new$0(proxyInfo, j10);
                 break;
             default:
-                PushListenerController.lambda$processRemoteMessage$7(this.b, this.c, this.d);
+                proxyInfo.availableCheckTime = SystemClock.elapsedRealtime();
+                proxyInfo.checking = false;
+                if (j10 == -1) {
+                    proxyInfo.available = false;
+                    proxyInfo.ping = 0L;
+                } else {
+                    proxyInfo.ping = j10;
+                    proxyInfo.available = true;
+                }
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.proxyCheckDone, proxyInfo);
                 break;
         }
     }

@@ -46,10 +46,10 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.vj0;
 import org.telegram.ui.cg;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class t7 extends View {
     public static final /* synthetic */ int G1 = 0;
@@ -117,7 +117,7 @@ public final class t7 extends View {
     public final Paint d0;
     public boolean d1;
     public final SharedPreferences e;
-    public final uj0 e0;
+    public final vj0 e0;
     public boolean e1;
     public final LinkedHashMap f;
     public boolean f0;
@@ -240,9 +240,9 @@ public final class t7 extends View {
         int i12 = 0;
         boolean z10 = cardVar != null;
         this.b = z10;
-        uj0 uj0Var = new uj0(R.raw.wallet_gift_trash, AndroidUtilities.dp(42.0f), AndroidUtilities.dp(42.0f), true, null);
-        this.e0 = uj0Var;
-        uj0Var.R(this);
+        vj0 vj0Var = new vj0(R.raw.wallet_gift_trash, AndroidUtilities.dp(42.0f), AndroidUtilities.dp(42.0f), true, null);
+        this.e0 = vj0Var;
+        vj0Var.R(this);
         this.c = x5Var;
         this.d = eVar;
         paint3.setShader(linearGradient);
@@ -1547,21 +1547,21 @@ public final class t7 extends View {
                 float dp4 = AndroidUtilities.dp(21.0f);
                 int round = Math.round(t7Var.c0.a);
                 f11 = 2.0f;
-                uj0 uj0Var = t7Var.e0;
-                uj0Var.N(round, false, false);
+                vj0 vj0Var = t7Var.e0;
+                vj0Var.N(round, false, false);
                 float f20 = dp3 - dp4;
                 i10 = 0;
                 f12 = 0.6f;
                 float f21 = -dp4;
                 float f22 = dp3 + dp4;
-                uj0Var.setBounds((int) f20, (int) f21, (int) f22, (int) dp4);
+                vj0Var.setBounds((int) f20, (int) f21, (int) f22, (int) dp4);
                 PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i0.a.f(clamp01, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, n2Var.getResourceProvider()), -1), PorterDuff.Mode.SRC_IN);
                 Paint paint3 = t7Var.d0;
                 paint3.setColorFilter(porterDuffColorFilter);
                 paint3.setAlpha((int) (Utilities.clamp01(f16) * 255.0f));
                 canvas2 = canvas;
                 int saveLayer = canvas2.saveLayer(f20, f21, f22, dp4, paint3);
-                uj0Var.draw(canvas2);
+                vj0Var.draw(canvas2);
                 canvas2.restoreToCount(saveLayer);
                 if (clamp01 > 0.02f) {
                     paint2.setColor(-1);

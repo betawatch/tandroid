@@ -13,7 +13,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
@@ -21,7 +21,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.ba0;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class j1 extends LinearLayout {
     public final d6 a;
@@ -54,7 +54,7 @@ public final class j1 extends LinearLayout {
         TextView textView2 = new TextView(context);
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
         textView2.setTextColor(h6.w0(h6.z6, d6Var));
-        kk.j(13.0f, R.string.BusinessProfileLocation, 1, textView2);
+        mk.j(13.0f, R.string.BusinessProfileLocation, 1, textView2);
         boolean z11 = LocaleController.isRTL;
         addView(textView2, z5.t(-1, -2, 55, z11 ? 70 : 18, 0, z11 ? 18 : 70, 8));
         setWillNotDraw(false);

@@ -25,14 +25,14 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.ai0;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.ym0;
 import org.telegram.ui.Components.yq;
-import org.telegram.ui.Components.zh0;
+import org.telegram.ui.Components.zm0;
 import org.telegram.ui.cf0;
 import org.telegram.ui.s10;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class z2 extends Dialog {
     public static final /* synthetic */ int W = 0;
@@ -55,7 +55,7 @@ public final class z2 extends Dialog {
     public Runnable U;
     public final int[] V;
     public final org.telegram.ui.ActionBar.n2 a;
-    public final zh0 b;
+    public final ai0 b;
     public final boolean c;
     public final boolean d;
     public final boolean e;
@@ -69,7 +69,7 @@ public final class z2 extends Dialog {
     public final Paint x;
     public final RectF y;
 
-    public z2(org.telegram.ui.ActionBar.n2 n2Var, zh0 zh0Var, TLRPC.User user, TL_wallet.card cardVar) {
+    public z2(org.telegram.ui.ActionBar.n2 n2Var, ai0 ai0Var, TLRPC.User user, TL_wallet.card cardVar) {
         super(n2Var.getParentActivity(), R.style.TransparentDialog);
         RectF rectF = new RectF();
         this.f = rectF;
@@ -83,15 +83,15 @@ public final class z2 extends Dialog {
         this.N = new RectF();
         this.V = new int[2];
         this.a = n2Var;
-        this.b = zh0Var;
+        this.b = ai0Var;
         int i10 = 1;
         boolean z10 = user != null && user.id == UserConfig.getInstance(n2Var.getCurrentAccount()).getClientUserId();
         this.e = z10;
         boolean z11 = (user == null || z10 || !MessagesController.getInstance(n2Var.getCurrentAccount()).config.walletAvailable.get()) ? false : true;
         this.c = z11;
         this.d = (user == null || z10 || z11) ? false : true;
-        zh0Var.getLocationOnScreen(new int[2]);
-        rectF.set(zh0Var.v);
+        ai0Var.getLocationOnScreen(new int[2]);
+        rectF.set(ai0Var.v);
         rectF.offset(r12[0], r12[1]);
         AndroidUtilities.enableEdgeToEdge(getWindow());
         x2 x2Var = new x2(this, getContext());
@@ -348,7 +348,7 @@ public final class z2 extends Dialog {
     @Override // android.app.Dialog
     public final void show() {
         if (AndroidUtilities.isSafeToShow(getContext())) {
-            ym0.d(new d(this, 6));
+            zm0.d(new d(this, 6));
             super.show();
             WeakHashMap weakHashMap = r0.i0.a;
             r0.y.c(this.h);

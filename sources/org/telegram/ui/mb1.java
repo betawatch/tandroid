@@ -5,28 +5,28 @@ import android.widget.Scroller;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class mb1 implements org.telegram.ui.Components.bp0, org.telegram.ui.Components.r20 {
+public final class mb1 implements org.telegram.ui.Components.cp0, org.telegram.ui.Components.r20 {
     public final /* synthetic */ kc1 a;
 
     public /* synthetic */ mb1(kc1 kc1Var) {
         this.a = kc1Var;
     }
 
-    @Override // org.telegram.ui.Components.bp0
+    @Override // org.telegram.ui.Components.cp0
     public void L(float f7, boolean z10) {
         kc1 kc1Var = this.a;
         kc1Var.l1 = f7;
         kc1Var.k1();
     }
 
-    @Override // org.telegram.ui.Components.bp0
+    @Override // org.telegram.ui.Components.cp0
     public /* synthetic */ int Y() {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.bp0
+    @Override // org.telegram.ui.Components.cp0
     public /* synthetic */ CharSequence getContentDescription() {
         return null;
     }
@@ -80,7 +80,7 @@ public final class mb1 implements org.telegram.ui.Components.bp0, org.telegram.u
     public void onLongPress(MotionEvent motionEvent) {
     }
 
-    @Override // org.telegram.ui.Components.bp0
+    @Override // org.telegram.ui.Components.cp0
     public void v() {
     }
 }

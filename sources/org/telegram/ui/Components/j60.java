@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.widget.FrameLayout;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class j60 extends o60 {
     public ImageReceiver a;
@@ -23,7 +23,7 @@ public final class j60 extends o60 {
     public final void dispatchDraw(Canvas canvas) {
         l60 l60Var = this.c;
         FrameLayout frameLayout = l60Var.x;
-        um0 um0Var = l60Var.w;
+        vm0 vm0Var = l60Var.w;
         i60 i60Var = l60Var.y;
         super.dispatchDraw(canvas);
         if (this.a == null) {
@@ -35,7 +35,7 @@ public final class j60 extends o60 {
             invalidate();
         }
         canvas.save();
-        canvas.translate(i60Var.getLeft() + frameLayout.getLeft() + um0Var.getLeft(), i60Var.getTop() + frameLayout.getTop() + um0Var.getTop());
+        canvas.translate(i60Var.getLeft() + frameLayout.getLeft() + vm0Var.getLeft(), i60Var.getTop() + frameLayout.getTop() + vm0Var.getTop());
         if (this.a.getImageWidth() != i60Var.getWidth()) {
             float width = i60Var.getWidth() / this.a.getImageWidth();
             canvas.scale(width, width);

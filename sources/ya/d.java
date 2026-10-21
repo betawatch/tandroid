@@ -82,21 +82,21 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.n9;
-import org.telegram.ui.Components.b81;
+import org.telegram.ui.Components.c81;
 import org.telegram.ui.Components.e5;
 import org.telegram.ui.Components.fb0;
 import org.telegram.ui.Components.gh;
 import org.telegram.ui.Components.ri;
-import org.telegram.ui.Components.y71;
+import org.telegram.ui.Components.z71;
 import org.telegram.ui.mi0;
 import org.telegram.ui.qn;
 import org.telegram.ui.ru0;
 import org.telegram.ui.v51;
 import v7.f7;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final class d implements r, v51, a0, androidx.activity.result.b, ru0, j0, u0, OnCompleteListener, fb0, y71, f6.a, w, n, eb.n, r0, ri, e5, g1 {
+public final class d implements r, v51, a0, androidx.activity.result.b, ru0, j0, u0, OnCompleteListener, fb0, z71, f6.a, w, n, eb.n, r0, ri, e5, g1 {
     public static volatile d c;
     public final /* synthetic */ int a;
     public Object b;
@@ -126,7 +126,7 @@ public final class d implements r, v51, a0, androidx.activity.result.b, ru0, j0,
                 q qVar = (q) this.b;
                 mi0 mi0Var = qVar.O;
                 if (mi0Var != null) {
-                    mi0Var.i();
+                    mi0Var.h();
                     qVar.O = null;
                     break;
                 }
@@ -913,28 +913,28 @@ public final class d implements r, v51, a0, androidx.activity.result.b, ru0, j0,
         d6.c.h((d6.c) ((d6.j) this.b).c, "launchApplication", task);
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public void onStateChanged(boolean z10, int i10) {
         r6 r6Var = (r6) this.b;
         o6 o6Var = r6Var.L;
         AndroidUtilities.cancelRunOnUIThread(o6Var);
-        b81 b81Var = r6Var.y;
-        if (b81Var == null || !b81Var.y()) {
+        c81 c81Var = r6Var.y;
+        if (c81Var == null || !c81Var.y()) {
             return;
         }
         AndroidUtilities.runOnUIThread(o6Var);
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         ((r6) this.b).i();
     }
@@ -1017,7 +1017,7 @@ public final class d implements r, v51, a0, androidx.activity.result.b, ru0, j0,
         this.b = strArr;
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public void onRenderedFirstFrame() {
     }
 
@@ -1068,11 +1068,11 @@ public final class d implements r, v51, a0, androidx.activity.result.b, ru0, j0,
     public /* synthetic */ void k(h1 h1Var) {
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
@@ -1080,8 +1080,8 @@ public final class d implements r, v51, a0, androidx.activity.result.b, ru0, j0,
     public void w(int i10) {
     }
 
-    @Override // org.telegram.ui.Components.y71
-    public void onError(b81 b81Var, Exception exc) {
+    @Override // org.telegram.ui.Components.z71
+    public void onError(c81 c81Var, Exception exc) {
     }
 
     @Override // org.telegram.ui.Components.fb0
@@ -1096,7 +1096,7 @@ public final class d implements r, v51, a0, androidx.activity.result.b, ru0, j0,
     public void q(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.y71
+    @Override // org.telegram.ui.Components.z71
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
     }
 

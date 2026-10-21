@@ -31,7 +31,7 @@ import org.telegram.ui.Components.o10;
 import org.telegram.ui.IUpdateLayout;
 import org.telegram.ui.oa0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public class ApplicationLoader extends Application {
     public static volatile Context applicationContext = null;
@@ -55,7 +55,7 @@ public class ApplicationLoader extends Application {
     private static volatile ConnectivityManager.NetworkCallback networkCallback;
     private static PushListenerController.IPushListenerServiceProvider pushProvider;
     public static long startTime;
-    private final Runnable debugEverySecondChecks = new y1(3);
+    private final Runnable debugEverySecondChecks = new z1(3);
 
     public static void appCenterLog(Throwable th2) {
         applicationLoaderInstance.appCenterLogInternal(th2);
@@ -158,7 +158,7 @@ public class ApplicationLoader extends Application {
     }
 
     private void initPushServices() {
-        AndroidUtilities.runOnUIThread(new y1(7), 1000L);
+        AndroidUtilities.runOnUIThread(new z1(7), 1000L);
     }
 
     public static boolean isAndroidTestEnvironment() {
@@ -315,7 +315,7 @@ public class ApplicationLoader extends Application {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$new$1() {
-        AndroidUtilities.runOnUIThread(new y1(4));
+        AndroidUtilities.runOnUIThread(new z1(4));
     }
 
     public static void logDualCamera(boolean z10, boolean z11) {
@@ -534,12 +534,12 @@ public class ApplicationLoader extends Application {
                     }
                 }
             };
-            new ANRDetector(new y1(5));
+            new ANRDetector(new z1(5));
             if (BuildVars.LOGS_ENABLED) {
                 FileLog.d("load libs time = " + (SystemClock.elapsedRealtime() - startTime));
             }
             applicationHandler = new Handler(applicationContext.getMainLooper());
-            AndroidUtilities.runOnUIThread(new y1(6));
+            AndroidUtilities.runOnUIThread(new z1(6));
             oa0[] values = oa0.values();
             int length = values.length;
             while (true) {

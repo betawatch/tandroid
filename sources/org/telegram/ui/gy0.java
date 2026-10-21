@@ -5,7 +5,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class gy0 implements org.telegram.ui.ActionBar.r0, ru0, org.telegram.ui.Components.o8 {
     public final /* synthetic */ ProfileActivity a;
@@ -46,7 +46,7 @@ public final class gy0 implements org.telegram.ui.ActionBar.r0, ru0, org.telegra
 
     @Override // org.telegram.ui.ActionBar.r0
     public void f() {
-        org.telegram.ui.Components.ym0.d(new g5(this.a, 18));
+        org.telegram.ui.Components.zm0.d(new g5(this.a, 18));
     }
 
     @Override // org.telegram.ui.ru0
@@ -62,12 +62,12 @@ public final class gy0 implements org.telegram.ui.ActionBar.r0, ru0, org.telegra
 
     @Override // org.telegram.ui.ru0
     public void z(MessageObject messageObject) {
-        org.telegram.ui.Components.bi0 bi0Var = this.a.n0;
-        if (bi0Var == null || !bi0Var.a) {
+        org.telegram.ui.Components.ci0 ci0Var = this.a.n0;
+        if (ci0Var == null || !ci0Var.a) {
             return;
         }
-        bi0Var.O.d(0.0f, true);
-        bi0Var.invalidate();
+        ci0Var.O.d(0.0f, true);
+        ci0Var.invalidate();
     }
 
     @Override // org.telegram.ui.ActionBar.r0

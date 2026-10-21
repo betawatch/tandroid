@@ -29,9 +29,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class md0 extends org.telegram.ui.Components.pw0 {
+public final class md0 extends org.telegram.ui.Components.qw0 {
     public boolean E;
     public GoogleSignInAccount F;
     public int G;
@@ -62,7 +62,7 @@ public final class md0 extends org.telegram.ui.Components.pw0 {
     public final kd0 r;
     public final TextView s;
     public final org.telegram.ui.Components.ea0 v;
-    public final org.telegram.ui.Components.xj0 w;
+    public final org.telegram.ui.Components.yj0 w;
     public boolean x;
     public Bundle y;
 
@@ -87,16 +87,16 @@ public final class md0 extends org.telegram.ui.Components.pw0 {
         final int i11 = 1;
         setOrientation(1);
         FrameLayout frameLayout = new FrameLayout(context);
-        org.telegram.ui.Components.xj0 xj0Var = new org.telegram.ui.Components.xj0(context);
-        this.w = xj0Var;
+        org.telegram.ui.Components.yj0 yj0Var = new org.telegram.ui.Components.yj0(context);
+        this.w = yj0Var;
         if (!z10 || dg0Var.F == 3) {
-            xj0Var.f(R.raw.email_check_inbox, 120, 120, null);
+            yj0Var.f(R.raw.email_check_inbox, 120, 120, null);
         } else {
-            xj0Var.f(R.raw.email_setup_heart, 120, 120, null);
+            yj0Var.f(R.raw.email_setup_heart, 120, 120, null);
         }
         final int i12 = 0;
-        xj0Var.setAutoRepeat(false);
-        frameLayout.addView(xj0Var, w7.z5.e(120, 120, 1));
+        yj0Var.setAutoRepeat(false);
+        frameLayout.addView(yj0Var, w7.z5.e(120, 120, 1));
         if (!AndroidUtilities.isSmallScreen()) {
             Point point = AndroidUtilities.displaySize;
             if (point.x <= point.y || AndroidUtilities.isTablet()) {
@@ -198,7 +198,7 @@ public final class md0 extends org.telegram.ui.Components.pw0 {
                 vdVar.setTextSize(1, 14.0f);
                 vdVar.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
                 vdVar.setMaxLines(2);
-                vdVar.setOnClickListener(new org.telegram.ui.Components.h51(28, this, context));
+                vdVar.setOnClickListener(new org.telegram.ui.Components.i51(28, this, context));
                 frameLayout2.addView(vdVar);
                 kd0 kd0Var = new kd0(context, i12);
                 this.r = kd0Var;
@@ -460,7 +460,7 @@ public final class md0 extends org.telegram.ui.Components.pw0 {
         vdVar2.setTextSize(1, 14.0f);
         vdVar2.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
         vdVar2.setMaxLines(2);
-        vdVar2.setOnClickListener(new org.telegram.ui.Components.h51(28, this, context));
+        vdVar2.setOnClickListener(new org.telegram.ui.Components.i51(28, this, context));
         frameLayout22.addView(vdVar2);
         kd0 kd0Var2 = new kd0(context, i12);
         this.r = kd0Var2;
@@ -618,20 +618,20 @@ public final class md0 extends org.telegram.ui.Components.pw0 {
         addView(frameLayout42, w7.z5.l(1.0f, -1, 0));
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void g() {
         if (this.H != 0) {
             AndroidUtilities.cancelRunOnUIThread(this.U);
         }
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public String getHeaderName() {
         return LocaleController.getString(R.string.VerificationCode);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void h(String str) {
         TLRPC.TL_auth_signIn tL_auth_signIn;
         int i10;
@@ -711,7 +711,7 @@ public final class md0 extends org.telegram.ui.Components.pw0 {
         ConnectionsManager.getInstance(i10).sendRequest(tL_auth_signIn, new bd0(this, code, 0), 10);
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void j() {
         if (this.x) {
             this.x = false;
@@ -720,7 +720,7 @@ public final class md0 extends org.telegram.ui.Components.pw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void k(Bundle bundle) {
         Bundle bundle2 = bundle.getBundle("emailcode_params");
         this.y = bundle2;
@@ -733,7 +733,7 @@ public final class md0 extends org.telegram.ui.Components.pw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void l(Bundle bundle) {
         String code = this.a.getCode();
         if (code != null && code.length() != 0) {
@@ -745,7 +745,7 @@ public final class md0 extends org.telegram.ui.Components.pw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void m(Bundle bundle, boolean z10) {
         if (bundle == null) {
             return;
@@ -794,12 +794,12 @@ public final class md0 extends org.telegram.ui.Components.pw0 {
             int indexOf = string.indexOf(42);
             int lastIndexOf = string.lastIndexOf(42);
             if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                org.telegram.ui.Components.m11 m11Var = new org.telegram.ui.Components.m11();
-                m11Var.a |= 256;
-                m11Var.b = indexOf;
+                org.telegram.ui.Components.n11 n11Var = new org.telegram.ui.Components.n11();
+                n11Var.a |= 256;
+                n11Var.b = indexOf;
                 int i13 = lastIndexOf + 1;
-                m11Var.c = i13;
-                spannableStringBuilder.setSpan(new org.telegram.ui.Components.n11(m11Var, 0), indexOf, i13, 0);
+                n11Var.c = i13;
+                spannableStringBuilder.setSpan(new org.telegram.ui.Components.o11(n11Var, 0), indexOf, i13, 0);
             }
             nVar.setText(AndroidUtilities.formatSpannable(LocaleController.getString(R.string.CheckYourEmailSubtitle), spannableStringBuilder));
         }
@@ -818,7 +818,7 @@ public final class md0 extends org.telegram.ui.Components.pw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void n() {
         this.b.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false));
         int i10 = org.telegram.ui.ActionBar.h6.D6;

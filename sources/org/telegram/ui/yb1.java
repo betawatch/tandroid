@@ -10,7 +10,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class yb1 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ kc1 a;
@@ -136,8 +136,8 @@ public final class yb1 extends org.telegram.ui.ActionBar.j {
                 photoEntry.thumbPath = null;
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(photoEntry);
-                PhotoViewer.t1().K2(kc1Var.getParentActivity(), null, null);
-                PhotoViewer.t1().g2(arrayList, 0, 3, false, new xb1(this, photoEntry), null);
+                PhotoViewer.u1().M2(kc1Var.getParentActivity(), null, null);
+                PhotoViewer.u1().i2(arrayList, 0, 3, false, new xb1(this, photoEntry), null);
                 return;
             }
             return;
@@ -154,12 +154,12 @@ public final class yb1 extends org.telegram.ui.ActionBar.j {
                 return;
             }
             kc1Var.p1.c1(true);
-            org.telegram.ui.Components.uj0 uj0Var = kc1Var.N1;
-            uj0Var.h = true;
+            org.telegram.ui.Components.vj0 vj0Var = kc1Var.N1;
+            vj0Var.h = true;
             if (a2) {
-                uj0Var.P(0);
+                vj0Var.P(0);
             } else {
-                uj0Var.P(36);
+                vj0Var.P(36);
             }
             kc1Var.N1.start();
             if (kc1Var.M1) {

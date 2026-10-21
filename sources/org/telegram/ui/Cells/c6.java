@@ -19,20 +19,20 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ah;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.fz0;
+import org.telegram.ui.Components.gz0;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.yg;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public class c6 extends FrameLayout implements fz0, ne.d {
+public class c6 extends FrameLayout implements gz0, ne.d {
     public Integer E;
     public final ne.b a;
     public final ne.b b;
@@ -180,7 +180,7 @@ public class c6 extends FrameLayout implements fz0, ne.d {
         }
     }
 
-    @Override // org.telegram.ui.Components.fz0
+    @Override // org.telegram.ui.Components.gz0
     public final void a(ai.u uVar) {
         this.d.addTextChangedListener(uVar);
     }
@@ -245,12 +245,12 @@ public class c6 extends FrameLayout implements fz0, ne.d {
         return this.r;
     }
 
-    @Override // org.telegram.ui.Components.fz0
+    @Override // org.telegram.ui.Components.gz0
     public EditTextBoldCursor getEditField() {
         return this.d;
     }
 
-    @Override // org.telegram.ui.Components.fz0
+    @Override // org.telegram.ui.Components.gz0
     public Editable getEditText() {
         return this.d.getText();
     }
@@ -259,7 +259,7 @@ public class c6 extends FrameLayout implements fz0, ne.d {
         return this.y;
     }
 
-    @Override // org.telegram.ui.Components.fz0
+    @Override // org.telegram.ui.Components.gz0
     public CharSequence getFieldText() {
         b6 b6Var = this.d;
         if (b6Var.length() > 0) {
@@ -268,7 +268,7 @@ public class c6 extends FrameLayout implements fz0, ne.d {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.fz0
+    @Override // org.telegram.ui.Components.gz0
     public org.telegram.ui.ActionBar.n2 getParentFragment() {
         return null;
     }
@@ -419,7 +419,7 @@ public class c6 extends FrameLayout implements fz0, ne.d {
             }
             i12++;
         }
-        b6Var.measure(kk.c(this.E != null ? r9.intValue() : this.n == null ? 42 : imageView == null ? 70 : ahVar != null ? 144 : 122, (size - getPaddingLeft()) - getPaddingRight(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+        b6Var.measure(mk.c(this.E != null ? r9.intValue() : this.n == null ? 42 : imageView == null ? 70 : ahVar != null ? 144 : 122, (size - getPaddingLeft()) - getPaddingRight(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
         int measuredHeight = b6Var.getMeasuredHeight();
         setMeasuredDimension(size, Math.max(AndroidUtilities.dp(50.0f), b6Var.getMeasuredHeight()) + (this.v ? 1 : 0));
         org.telegram.ui.ActionBar.j5 j5Var2 = this.n;
@@ -469,7 +469,7 @@ public class c6 extends FrameLayout implements fz0, ne.d {
         this.b.a(z10, true);
     }
 
-    @Override // org.telegram.ui.Components.fz0
+    @Override // org.telegram.ui.Components.gz0
     public void setFieldText(CharSequence charSequence) {
         this.d.setText(charSequence);
     }

@@ -24,15 +24,15 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ek;
+import org.telegram.messenger.gk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.ew0;
+import org.telegram.ui.Components.fw0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.x51;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j6 implements Runnable {
     public final /* synthetic */ int a;
@@ -422,7 +422,7 @@ public final /* synthetic */ class j6 implements Runnable {
                                     break;
                             }
                         }
-                    }, new z2(x51Var, strArr, str, linkedHashSet, 12), new ek(x51Var, fullyConsistsOfEmojis, linkedHashSet, str, reactionsMap, arrayList4), new z2((Object) x51Var, str, arrayList6, (Object) hashMap, 13), new org.telegram.ui.z(x51Var, str, arrayList7, 12), callback2);
+                    }, new z2(x51Var, strArr, str, linkedHashSet, 12), new gk(x51Var, fullyConsistsOfEmojis, linkedHashSet, str, reactionsMap, arrayList4), new z2((Object) x51Var, str, arrayList6, (Object) hashMap, 13), new org.telegram.ui.z(x51Var, str, arrayList7, 12), callback2);
                     break;
                 }
             case 5:
@@ -437,8 +437,8 @@ public final /* synthetic */ class j6 implements Runnable {
                 Bitmap[] bitmapArr = (Bitmap[]) obj2;
                 CountDownLatch countDownLatch = (CountDownLatch) obj;
                 qg.t0 t0Var = ((qg.d1) obj3).y.c;
-                ew0 ew0Var = t0Var.g;
-                mi.q h = t0Var.h(new RectF(0.0f, 0.0f, ew0Var.a, ew0Var.b), false, z11, z10);
+                fw0 fw0Var = t0Var.g;
+                mi.q h = t0Var.h(new RectF(0.0f, 0.0f, fw0Var.a, fw0Var.b), false, z11, z10);
                 if (h != null) {
                     bitmapArr[0] = (Bitmap) h.b;
                 }

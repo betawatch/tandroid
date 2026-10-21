@@ -1,18 +1,33 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class co0 {
-    public ah.i1 a;
-    public int b;
-    public String c;
-    public int d;
+public final class co0 extends s4.o {
+    public final /* synthetic */ go0 b;
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof co0)) {
-            return false;
-        }
-        co0 co0Var = (co0) obj;
-        return this.b == co0Var.b && this.a.h == co0Var.a.h && this.d == co0Var.d;
+    public co0(go0 go0Var) {
+        this.b = go0Var;
+    }
+
+    @Override // s4.o
+    public final boolean a(int i10, int i11) {
+        go0 go0Var = this.b;
+        return ((do0) go0Var.n.get(i10)).equals(go0Var.r.get(i11));
+    }
+
+    @Override // s4.o
+    public final boolean b(int i10, int i11) {
+        go0 go0Var = this.b;
+        return ((do0) go0Var.n.get(i10)).a.h == ((do0) go0Var.r.get(i11)).a.h;
+    }
+
+    @Override // s4.o
+    public final int d() {
+        return this.b.r.size();
+    }
+
+    @Override // s4.o
+    public final int e() {
+        return this.b.n.size();
     }
 }

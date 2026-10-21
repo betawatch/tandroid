@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class td implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -67,7 +67,7 @@ public final /* synthetic */ class td implements View.OnClickListener {
                 }
             case 1:
                 mf mfVar = chatActivityEnterView.L0;
-                if (mfVar == null || mfVar.q0) {
+                if (mfVar == null || mfVar.p0) {
                     AnimatorSet animatorSet = chatActivityEnterView.t2;
                     if ((animatorSet == null || !animatorSet.isRunning()) && chatActivityEnterView.f0 == null) {
                         chatActivityEnterView.Q0();
@@ -155,9 +155,9 @@ public final /* synthetic */ class td implements View.OnClickListener {
             case 6:
                 AnimatorSet animatorSet2 = chatActivityEnterView.t2;
                 if (animatorSet2 == null || !animatorSet2.isRunning()) {
-                    dl0 dl0Var = chatActivityEnterView.h1;
-                    if (dl0Var != null) {
-                        dl0Var.setPlaying(false);
+                    el0 el0Var = chatActivityEnterView.h1;
+                    if (el0Var != null) {
+                        el0Var.setPlaying(false);
                     }
                     if (chatActivityEnterView.e3 != null) {
                         CameraController.getInstance().cancelOnInitRunnable(chatActivityEnterView.H3);
@@ -496,9 +496,9 @@ public final /* synthetic */ class td implements View.OnClickListener {
                             }
                             ef efVar3 = chatActivityEnterView4.q0;
                             View view2 = efVar3.u;
-                            im0 im0Var = efVar3.v;
+                            jm0 jm0Var = efVar3.v;
                             TLRPC.Peer peer3 = efVar3.r;
-                            lp0 lp0Var = efVar3.o;
+                            mp0 mp0Var = efVar3.o;
                             ah.x xVar = efVar3.t;
                             int i18 = 1;
                             ArrayList arrayList2 = efVar3.z;
@@ -512,8 +512,8 @@ public final /* synthetic */ class td implements View.OnClickListener {
                             arrayList2.clear();
                             xVar.setPivotX(AndroidUtilities.dp(8.0f));
                             xVar.setPivotY(xVar.getMeasuredHeight() - AndroidUtilities.dp(8.0f));
-                            lp0Var.setPivotX(0.0f);
-                            lp0Var.setPivotY(0.0f);
+                            mp0Var.setPivotX(0.0f);
+                            mp0Var.setPivotY(0.0f);
                             ArrayList<TLRPC.TL_sendAsPeer> arrayList3 = efVar3.s.peers;
                             if (peer3 != null) {
                                 int dp = AndroidUtilities.dp(54.0f);
@@ -535,8 +535,8 @@ public final /* synthetic */ class td implements View.OnClickListener {
                                             }
                                         }
                                     }
-                                    efVar3.w.h1(i20, (size2 - ((arrayList4.size() - 2) * i21)) + AndroidUtilities.dp(7.0f) + ((i20 == arrayList4.size() + (-1) || im0Var.getMeasuredHeight() >= size2) ? 0 : im0Var.getMeasuredHeight() % i21));
-                                    if (im0Var.computeVerticalScrollOffset() > 0) {
+                                    efVar3.w.h1(i20, (size2 - ((arrayList4.size() - 2) * i21)) + AndroidUtilities.dp(7.0f) + ((i20 == arrayList4.size() + (-1) || jm0Var.getMeasuredHeight() >= size2) ? 0 : jm0Var.getMeasuredHeight() % i21));
+                                    if (jm0Var.computeVerticalScrollOffset() > 0) {
                                         view2.animate().cancel();
                                         view2.animate().alpha(1.0f).setDuration(150L).start();
                                     }
@@ -544,21 +544,21 @@ public final /* synthetic */ class td implements View.OnClickListener {
                             }
                             xVar.setScaleX(0.25f);
                             xVar.setScaleY(0.25f);
-                            lp0Var.setAlpha(0.25f);
+                            mp0Var.setAlpha(0.25f);
                             o1.k kVar = new o1.k(xVar, o1.h.o);
                             kVar.u = org.telegram.ui.Cells.c1.l(1.0f, 750.0f, 1.0f);
-                            kVar.b(new ip0(efVar3, 2));
+                            kVar.b(new jp0(efVar3, 2));
                             o1.k kVar2 = new o1.k(xVar, o1.h.p);
                             kVar2.u = org.telegram.ui.Cells.c1.l(1.0f, 750.0f, 1.0f);
-                            kVar2.b(new ip0(efVar3, 3));
+                            kVar2.b(new jp0(efVar3, 3));
                             o1.c cVar = o1.h.t;
                             o1.k kVar3 = new o1.k(xVar, cVar);
                             kVar3.u = org.telegram.ui.Cells.c1.l(1.0f, 750.0f, 1.0f);
-                            o1.k kVar4 = new o1.k(lp0Var, cVar);
+                            o1.k kVar4 = new o1.k(mp0Var, cVar);
                             kVar4.u = org.telegram.ui.Cells.c1.l(1.0f, 750.0f, 1.0f);
                             for (o1.k kVar5 : Arrays.asList(kVar, kVar2, kVar3, kVar4)) {
                                 arrayList2.add(kVar5);
-                                kVar5.a(new jp0(efVar3, kVar5, i18));
+                                kVar5.a(new kp0(efVar3, kVar5, i18));
                                 kVar5.h();
                                 i18 = 1;
                             }

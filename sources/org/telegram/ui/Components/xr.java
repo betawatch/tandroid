@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class xr extends bb {
     public final boolean X;
@@ -27,7 +27,7 @@ public final class xr extends bb {
     public String b0;
     public String c0;
     public SpannableStringBuilder d0;
-    public t61 e0;
+    public u61 e0;
     public final boolean f0;
     public wr g0;
 
@@ -65,25 +65,25 @@ public final class xr extends bb {
         kVar.o(bs.h);
         kVar.n(350L);
         bbVar.d.setItemAnimator(kVar);
-        im0 im0Var = bbVar.d;
+        jm0 jm0Var = bbVar.d;
         int i12 = bbVar.backgroundPaddingLeft;
         if (bbVar.f0) {
             i11 = AndroidUtilities.dp(z10 ? 124.0f : 72.0f);
         } else {
             i11 = 0;
         }
-        im0Var.setPadding(i12, 0, i12, i11);
+        jm0Var.setPadding(i12, 0, i12, i11);
         bbVar.fixNavigationBar();
         bbVar.O();
         bbVar.b0 = groupcallstreamrtmpurl.url;
         bbVar.c0 = groupcallstreamrtmpurl.key;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(bbVar.c0);
         bbVar.d0 = spannableStringBuilder;
-        m11 m11Var = new m11();
-        m11Var.a |= 256;
-        m11Var.b = 0;
-        m11Var.c = spannableStringBuilder.length();
-        bbVar.d0.setSpan(new n11(m11Var, 0), 0, bbVar.d0.length(), 0);
+        n11 n11Var = new n11();
+        n11Var.a |= 256;
+        n11Var.b = 0;
+        n11Var.c = spannableStringBuilder.length();
+        bbVar.d0.setSpan(new o11(n11Var, 0), 0, bbVar.d0.length(), 0);
         bbVar.e0.N(false);
     }
 
@@ -110,11 +110,11 @@ public final class xr extends bb {
             org.telegram.ui.ActionBar.d6 d6Var = xrVar.resourcesProvider;
             wr wrVar = new wr(context);
             wrVar.setOrientation(1);
-            xj0 xj0Var = new xj0(context);
-            xj0Var.setAutoRepeat(true);
-            xj0Var.f(R.raw.utyan_streaming, 112, 112, null);
-            xj0Var.d();
-            wrVar.addView(xj0Var, w7.z5.t(112, 112, 49, 0, 24, 0, 0));
+            yj0 yj0Var = new yj0(context);
+            yj0Var.setAutoRepeat(true);
+            yj0Var.f(R.raw.utyan_streaming, 112, 112, null);
+            yj0Var.d();
+            wrVar.addView(yj0Var, w7.z5.t(112, 112, 49, 0, 24, 0, 0));
             TextView textView = new TextView(context);
             textView.setTypeface(AndroidUtilities.bold());
             textView.setText(LocaleController.formatString(R.string.Streaming, new Object[0]));
@@ -130,13 +130,13 @@ public final class xr extends bb {
             wrVar.addView(textView2, w7.z5.t(-2, -2, 1, 28, 0, 28, 17));
             xrVar.g0 = wrVar;
         }
-        arrayList.add(g61.k(xrVar.g0));
-        arrayList.add(g61.B(null));
+        arrayList.add(h61.k(xrVar.g0));
+        arrayList.add(h61.B(null));
         i2.e.p(R.string.VoipChatStreamSettings, arrayList);
         String str2 = xrVar.b0;
         String string = LocaleController.getString(R.string.VoipChatStreamServerUrl);
         int i10 = vr.a;
-        g61 J = g61.J(vr.class);
+        h61 J = h61.J(vr.class);
         J.l = str2;
         J.n = string;
         J.j = false;
@@ -144,7 +144,7 @@ public final class xr extends bb {
         arrayList.add(J);
         SpannableStringBuilder spannableStringBuilder = xrVar.d0;
         String string2 = LocaleController.getString(R.string.VoipChatStreamKey);
-        g61 J2 = g61.J(vr.class);
+        h61 J2 = h61.J(vr.class);
         J2.l = spannableStringBuilder;
         J2.n = string2;
         J2.j = true;
@@ -153,7 +153,7 @@ public final class xr extends bb {
         if (xrVar.f0) {
             str = LocaleController.getString(xrVar.X ? R.string.VoipChatStreamWithAnotherAppDescriptionStory : R.string.VoipChatStreamWithAnotherAppDescription);
         }
-        arrayList.add(g61.B(str));
+        arrayList.add(h61.B(str));
     }
 
     public static void T(xr xrVar, Context context, ei.d dVar, long j10) {
@@ -183,10 +183,10 @@ public final class xr extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
-        t61 t61Var = new t61(im0Var, getContext(), this.currentAccount, 0, true, new d(this, 7), this.resourcesProvider);
-        this.e0 = t61Var;
-        return t61Var;
+    public final im0 x(jm0 jm0Var) {
+        u61 u61Var = new u61(jm0Var, getContext(), this.currentAccount, 0, true, new d(this, 7), this.resourcesProvider);
+        this.e0 = u61Var;
+        return u61Var;
     }
 
     public xr(org.telegram.ui.ActionBar.n2 n2Var, TLRPC.Peer peer, long j10, boolean z10, p80 p80Var) {
@@ -220,9 +220,9 @@ public final class xr extends bb {
             dVar.setOnClickListener(new ur(this, context, dVar, j10, 0));
             this.containerView.addView(dVar, w7.z5.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 12.0f));
         }
-        im0 im0Var = this.d;
+        jm0 jm0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        im0Var.setPadding(i10, 0, i10, AndroidUtilities.dp((isCreator ? 52 : 0) + 72));
+        jm0Var.setPadding(i10, 0, i10, AndroidUtilities.dp((isCreator ? 52 : 0) + 72));
         s4.k kVar = new s4.k();
         kVar.m = false;
         kVar.C = false;

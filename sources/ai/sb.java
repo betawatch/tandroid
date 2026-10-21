@@ -12,7 +12,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.kh0;
+import org.telegram.ui.Components.lh0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.b60;
 import org.telegram.ui.fs;
@@ -20,7 +20,7 @@ import org.telegram.ui.jq;
 import org.telegram.ui.ti;
 import org.telegram.ui.z70;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class sb implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final /* synthetic */ class sb implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new hg.d1(tL_error, tLObject, (ArrayList) obj4, this.d, (AtomicInteger) obj2, (ArrayList) obj, (jq) obj3));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new vb((kh0) obj4, (Integer[]) obj2, this.d, tLObject, (ArrayList) obj, (TLRPC.PollAnswerVoters) obj3));
+                AndroidUtilities.runOnUIThread(new vb((lh0) obj4, (Integer[]) obj2, this.d, tLObject, (ArrayList) obj, (TLRPC.PollAnswerVoters) obj3));
                 break;
             case 8:
                 AndroidUtilities.runOnUIThread(new hg.d1((org.telegram.ui.ActionBar.b2) obj4, tLObject, this.d, (TLRPC.Document) obj2, tL_error, this.e, (TLRPC.TL_stickers_addStickerToSet) obj3));

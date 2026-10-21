@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class zo {
     public final org.telegram.ui.ActionBar.e1 a;
@@ -33,7 +33,7 @@ public final class zo {
     public final TextView n;
     public int o;
 
-    public zo(Context context, int i10, ph0 ph0Var, boolean z10, final yo yoVar, org.telegram.ui.ActionBar.d6 d6Var) {
+    public zo(Context context, int i10, qh0 qh0Var, boolean z10, final yo yoVar, org.telegram.ui.ActionBar.d6 d6Var) {
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout;
         int i11;
         Integer num;
@@ -43,13 +43,13 @@ public final class zo {
         xoVar.U = new Path();
         this.f = xoVar;
         xoVar.setFitItems(true);
-        if (ph0Var != null) {
+        if (qh0Var != null) {
             i11 = 1;
             num = 1;
             actionBarPopupWindow$ActionBarPopupWindowLayout = xoVar;
             org.telegram.ui.ActionBar.e1 c10 = org.telegram.ui.ActionBar.u0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), false, d6Var);
             this.a = c10;
-            c10.setOnClickListener(new m8(ph0Var, 1));
+            c10.setOnClickListener(new m8(qh0Var, 1));
         } else {
             actionBarPopupWindow$ActionBarPopupWindowLayout = xoVar;
             i11 = 1;
@@ -436,7 +436,7 @@ public final class zo {
         if (i12 != 0) {
             this.l = i12;
             e1Var3.setVisibility(0);
-            e1Var3.getImageView().setImageDrawable(r21.a(i12));
+            e1Var3.getImageView().setImageDrawable(s21.a(i12));
             e1Var3.setText(b(i12));
         } else {
             e1Var3.setVisibility(8);
@@ -445,7 +445,7 @@ public final class zo {
         if (i11 != 0) {
             this.k = i11;
             e1Var4.setVisibility(0);
-            e1Var4.getImageView().setImageDrawable(r21.a(i11));
+            e1Var4.getImageView().setImageDrawable(s21.a(i11));
             e1Var4.setText(b(i11));
         } else {
             e1Var4.setVisibility(8);

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class j1 extends s4.g0 {
     public final /* synthetic */ m1 c;
@@ -53,6 +53,6 @@ public final class j1 extends s4.g0 {
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         m1 m1Var = this.c;
-        return new org.telegram.ui.Components.sl0(i10 != 0 ? new z2(m1Var.getContext(), m1Var.x, m1Var.w, 2) : new f2(m1Var.getContext(), m1Var.x, m1Var.w, 2));
+        return new org.telegram.ui.Components.tl0(i10 != 0 ? new z2(m1Var.getContext(), m1Var.x, m1Var.w, 2) : new f2(m1Var.getContext(), m1Var.x, m1Var.w, 2));
     }
 }

@@ -1,19 +1,53 @@
 package org.telegram.ui.Components;
 
+import android.net.Uri;
 import android.text.TextPaint;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.style.URLSpan;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class l61 extends k61 {
+public class l61 extends URLSpan {
+    public final boolean a;
+    public final n11 b;
+    public TLObject c;
+    public String d;
+
     public l61(String str) {
-        super(str != null ? str.replace((char) 8238, ' ') : str, (m11) null);
+        this(str, (n11) null);
     }
 
-    @Override // org.telegram.ui.Components.k61, android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public void onClick(View view) {
+        String url = getURL();
+        if (!url.startsWith("@")) {
+            pf.d.r(view.getContext(), url);
+            return;
+        }
+        pf.d.o(view.getContext(), Uri.parse("https://t.me/" + url.substring(1)), true, true);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public void updateDrawState(TextPaint textPaint) {
+        int i10 = textPaint.linkColor;
+        int color = textPaint.getColor();
         super.updateDrawState(textPaint);
-        textPaint.setTypeface(AndroidUtilities.bold());
-        textPaint.setUnderlineText(false);
+        n11 n11Var = this.b;
+        if (n11Var != null) {
+            n11Var.a(textPaint);
+        }
+        textPaint.setUnderlineText(i10 == color && !this.a);
+    }
+
+    public l61(String str, int i10) {
+        this(str, (n11) null);
+        this.a = true;
+    }
+
+    public l61(String str, n11 n11Var) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = false;
+        this.b = n11Var;
     }
 }

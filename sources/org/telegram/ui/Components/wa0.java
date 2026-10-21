@@ -30,9 +30,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b, NotificationCenter.NotificationCenterDelegate {
+public final class wa0 extends org.telegram.ui.ActionBar.n2 implements nv0, ng.b, NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.ActionBar.g2 E;
     public q6 F;
     public org.telegram.ui.ActionBar.u0 G;
@@ -57,7 +57,7 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
     public final float[] Z;
     public int a;
     public final boolean[] a0;
-    public lv0 b;
+    public mv0 b;
     public final ValueAnimator[] b0;
     public TLRPC.ChatFull c;
     public TLRPC.UserFull d;
@@ -72,7 +72,7 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
     public final q6[] x;
     public ra0 y;
 
-    public wa0(Bundle bundle, lv0 lv0Var) {
+    public wa0(Bundle bundle, mv0 mv0Var) {
         super(bundle);
         this.v = new FrameLayout[2];
         this.w = new org.telegram.ui.ActionBar.j5[2];
@@ -84,7 +84,7 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
         this.Z = new float[2];
         this.a0 = new boolean[]{true, true};
         this.b0 = new ValueAnimator[2];
-        this.b = lv0Var;
+        this.b = mv0Var;
     }
 
     @Override // ng.b
@@ -94,12 +94,12 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
         return Arrays.asList(new ng.a((parentActivity.getSharedPreferences("shapedetector_conf", 0).getBoolean("learning", false) ? "Disable" : "Enable").concat(" shape detector learning debug"), new hq(this, 27)));
     }
 
-    @Override // org.telegram.ui.Components.mv0
+    @Override // org.telegram.ui.Components.nv0
     public final void M() {
-        lv0 lv0Var;
+        mv0 mv0Var;
         ta0 ta0Var = this.V;
-        if (ta0Var != null && (lv0Var = this.b) != null) {
-            ta0Var.setNewMediaCounts(lv0Var.c);
+        if (ta0Var != null && (mv0Var = this.b) != null) {
+            ta0Var.setNewMediaCounts(mv0Var.c);
         }
         a0();
     }
@@ -181,7 +181,7 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
     */
     public final void a0() {
         boolean z10;
-        mu0 mu0Var;
+        nu0 nu0Var;
         ta0 ta0Var = this.V;
         if (ta0Var != null) {
             q6[] q6VarArr = this.x;
@@ -262,9 +262,9 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
                 org.telegram.ui.ActionBar.e1 e1Var3 = this.P;
                 if (e1Var3 != null) {
                     ta0 ta0Var2 = this.V;
-                    mu0[] mu0VarArr = ta0Var2.k0;
-                    if (mu0VarArr != null && (mu0Var = mu0VarArr[0]) != null) {
-                        boolean q02 = tv0.q0(mu0Var.F);
+                    nu0[] nu0VarArr = ta0Var2.k0;
+                    if (nu0VarArr != null && (nu0Var = nu0VarArr[0]) != null) {
+                        boolean q02 = uv0.q0(nu0Var.F);
                         int i12 = ta0Var2.m1[q02 ? 1 : 0];
                         if (i12 != ta0Var2.X(q02 ? 1 : 0, i12, true)) {
                             z10 = true;
@@ -452,14 +452,14 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
                                 ta0 ta0Var2 = wa0Var.V;
                                 boolean z13 = wa0Var.L;
                                 boolean z14 = wa0Var.M;
-                                bu0 bu0Var = ta0Var2.c0;
-                                if (bu0Var != null && (a7Var2 = bu0Var.s) != null) {
+                                cu0 cu0Var = ta0Var2.c0;
+                                if (cu0Var != null && (a7Var2 = cu0Var.s) != null) {
                                     a7Var2.n = z13;
                                     a7Var2.o = z14;
                                     a7Var2.d(true);
                                 }
-                                hs0 hs0Var = ta0Var2.e0;
-                                if (hs0Var != null && (a7Var = hs0Var.s) != null) {
+                                is0 is0Var = ta0Var2.e0;
+                                if (is0Var != null && (a7Var = is0Var.s) != null) {
                                     a7Var.n = z13;
                                     a7Var.o = z14;
                                     a7Var.d(true);
@@ -484,14 +484,14 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
                                 ta0 ta0Var3 = wa0Var.V;
                                 boolean z17 = wa0Var.L;
                                 boolean z18 = wa0Var.M;
-                                bu0 bu0Var2 = ta0Var3.c0;
-                                if (bu0Var2 != null && (a7Var4 = bu0Var2.s) != null) {
+                                cu0 cu0Var2 = ta0Var3.c0;
+                                if (cu0Var2 != null && (a7Var4 = cu0Var2.s) != null) {
                                     a7Var4.n = z17;
                                     a7Var4.o = z18;
                                     a7Var4.d(true);
                                 }
-                                hs0 hs0Var2 = ta0Var3.e0;
-                                if (hs0Var2 != null && (a7Var3 = hs0Var2.s) != null) {
+                                is0 is0Var2 = ta0Var3.e0;
+                                if (is0Var2 != null && (a7Var3 = is0Var2.s) != null) {
                                     a7Var3.n = z17;
                                     a7Var3.o = z18;
                                     a7Var3.d(true);
@@ -608,14 +608,14 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
                                 ta0 ta0Var2 = wa0Var.V;
                                 boolean z13 = wa0Var.L;
                                 boolean z14 = wa0Var.M;
-                                bu0 bu0Var = ta0Var2.c0;
-                                if (bu0Var != null && (a7Var2 = bu0Var.s) != null) {
+                                cu0 cu0Var = ta0Var2.c0;
+                                if (cu0Var != null && (a7Var2 = cu0Var.s) != null) {
                                     a7Var2.n = z13;
                                     a7Var2.o = z14;
                                     a7Var2.d(true);
                                 }
-                                hs0 hs0Var = ta0Var2.e0;
-                                if (hs0Var != null && (a7Var = hs0Var.s) != null) {
+                                is0 is0Var = ta0Var2.e0;
+                                if (is0Var != null && (a7Var = is0Var.s) != null) {
                                     a7Var.n = z13;
                                     a7Var.o = z14;
                                     a7Var.d(true);
@@ -640,14 +640,14 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
                                 ta0 ta0Var3 = wa0Var.V;
                                 boolean z17 = wa0Var.L;
                                 boolean z18 = wa0Var.M;
-                                bu0 bu0Var2 = ta0Var3.c0;
-                                if (bu0Var2 != null && (a7Var4 = bu0Var2.s) != null) {
+                                cu0 cu0Var2 = ta0Var3.c0;
+                                if (cu0Var2 != null && (a7Var4 = cu0Var2.s) != null) {
                                     a7Var4.n = z17;
                                     a7Var4.o = z18;
                                     a7Var4.d(true);
                                 }
-                                hs0 hs0Var2 = ta0Var3.e0;
-                                if (hs0Var2 != null && (a7Var3 = hs0Var2.s) != null) {
+                                is0 is0Var2 = ta0Var3.e0;
+                                if (is0Var2 != null && (a7Var3 = is0Var2.s) != null) {
                                     a7Var3.n = z17;
                                     a7Var3.o = z18;
                                     a7Var3.d(true);
@@ -761,14 +761,14 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
                                 ta0 ta0Var2 = wa0Var.V;
                                 boolean z13 = wa0Var.L;
                                 boolean z14 = wa0Var.M;
-                                bu0 bu0Var = ta0Var2.c0;
-                                if (bu0Var != null && (a7Var2 = bu0Var.s) != null) {
+                                cu0 cu0Var = ta0Var2.c0;
+                                if (cu0Var != null && (a7Var2 = cu0Var.s) != null) {
                                     a7Var2.n = z13;
                                     a7Var2.o = z14;
                                     a7Var2.d(true);
                                 }
-                                hs0 hs0Var = ta0Var2.e0;
-                                if (hs0Var != null && (a7Var = hs0Var.s) != null) {
+                                is0 is0Var = ta0Var2.e0;
+                                if (is0Var != null && (a7Var = is0Var.s) != null) {
                                     a7Var.n = z13;
                                     a7Var.o = z14;
                                     a7Var.d(true);
@@ -793,14 +793,14 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
                                 ta0 ta0Var3 = wa0Var.V;
                                 boolean z17 = wa0Var.L;
                                 boolean z18 = wa0Var.M;
-                                bu0 bu0Var2 = ta0Var3.c0;
-                                if (bu0Var2 != null && (a7Var4 = bu0Var2.s) != null) {
+                                cu0 cu0Var2 = ta0Var3.c0;
+                                if (cu0Var2 != null && (a7Var4 = cu0Var2.s) != null) {
                                     a7Var4.n = z17;
                                     a7Var4.o = z18;
                                     a7Var4.d(true);
                                 }
-                                hs0 hs0Var2 = ta0Var3.e0;
-                                if (hs0Var2 != null && (a7Var3 = hs0Var2.s) != null) {
+                                is0 is0Var2 = ta0Var3.e0;
+                                if (is0Var2 != null && (a7Var3 = is0Var2.s) != null) {
                                     a7Var3.n = z17;
                                     a7Var3.o = z18;
                                     a7Var3.d(true);
@@ -921,14 +921,14 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
                                 ta0 ta0Var2 = wa0Var.V;
                                 boolean z13 = wa0Var.L;
                                 boolean z14 = wa0Var.M;
-                                bu0 bu0Var = ta0Var2.c0;
-                                if (bu0Var != null && (a7Var2 = bu0Var.s) != null) {
+                                cu0 cu0Var = ta0Var2.c0;
+                                if (cu0Var != null && (a7Var2 = cu0Var.s) != null) {
                                     a7Var2.n = z13;
                                     a7Var2.o = z14;
                                     a7Var2.d(true);
                                 }
-                                hs0 hs0Var = ta0Var2.e0;
-                                if (hs0Var != null && (a7Var = hs0Var.s) != null) {
+                                is0 is0Var = ta0Var2.e0;
+                                if (is0Var != null && (a7Var = is0Var.s) != null) {
                                     a7Var.n = z13;
                                     a7Var.o = z14;
                                     a7Var.d(true);
@@ -953,14 +953,14 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
                                 ta0 ta0Var3 = wa0Var.V;
                                 boolean z17 = wa0Var.L;
                                 boolean z18 = wa0Var.M;
-                                bu0 bu0Var2 = ta0Var3.c0;
-                                if (bu0Var2 != null && (a7Var4 = bu0Var2.s) != null) {
+                                cu0 cu0Var2 = ta0Var3.c0;
+                                if (cu0Var2 != null && (a7Var4 = cu0Var2.s) != null) {
                                     a7Var4.n = z17;
                                     a7Var4.o = z18;
                                     a7Var4.d(true);
                                 }
-                                hs0 hs0Var2 = ta0Var3.e0;
-                                if (hs0Var2 != null && (a7Var3 = hs0Var2.s) != null) {
+                                is0 is0Var2 = ta0Var3.e0;
+                                if (is0Var2 != null && (a7Var3 = is0Var2.s) != null) {
                                     a7Var3.n = z17;
                                     a7Var3.o = z18;
                                     a7Var3.d(true);
@@ -1076,14 +1076,14 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
                                 ta0 ta0Var2 = wa0Var.V;
                                 boolean z13 = wa0Var.L;
                                 boolean z14 = wa0Var.M;
-                                bu0 bu0Var = ta0Var2.c0;
-                                if (bu0Var != null && (a7Var2 = bu0Var.s) != null) {
+                                cu0 cu0Var = ta0Var2.c0;
+                                if (cu0Var != null && (a7Var2 = cu0Var.s) != null) {
                                     a7Var2.n = z13;
                                     a7Var2.o = z14;
                                     a7Var2.d(true);
                                 }
-                                hs0 hs0Var = ta0Var2.e0;
-                                if (hs0Var != null && (a7Var = hs0Var.s) != null) {
+                                is0 is0Var = ta0Var2.e0;
+                                if (is0Var != null && (a7Var = is0Var.s) != null) {
                                     a7Var.n = z13;
                                     a7Var.o = z14;
                                     a7Var.d(true);
@@ -1108,14 +1108,14 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
                                 ta0 ta0Var3 = wa0Var.V;
                                 boolean z17 = wa0Var.L;
                                 boolean z18 = wa0Var.M;
-                                bu0 bu0Var2 = ta0Var3.c0;
-                                if (bu0Var2 != null && (a7Var4 = bu0Var2.s) != null) {
+                                cu0 cu0Var2 = ta0Var3.c0;
+                                if (cu0Var2 != null && (a7Var4 = cu0Var2.s) != null) {
                                     a7Var4.n = z17;
                                     a7Var4.o = z18;
                                     a7Var4.d(true);
                                 }
-                                hs0 hs0Var2 = ta0Var3.e0;
-                                if (hs0Var2 != null && (a7Var3 = hs0Var2.s) != null) {
+                                is0 is0Var2 = ta0Var3.e0;
+                                if (is0Var2 != null && (a7Var3 = is0Var2.s) != null) {
                                     a7Var3.n = z17;
                                     a7Var3.o = z18;
                                     a7Var3.d(true);
@@ -1303,14 +1303,14 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
                                 ta0 ta0Var2 = wa0Var.V;
                                 boolean z13 = wa0Var.L;
                                 boolean z14 = wa0Var.M;
-                                bu0 bu0Var = ta0Var2.c0;
-                                if (bu0Var != null && (a7Var2 = bu0Var.s) != null) {
+                                cu0 cu0Var = ta0Var2.c0;
+                                if (cu0Var != null && (a7Var2 = cu0Var.s) != null) {
                                     a7Var2.n = z13;
                                     a7Var2.o = z14;
                                     a7Var2.d(true);
                                 }
-                                hs0 hs0Var = ta0Var2.e0;
-                                if (hs0Var != null && (a7Var = hs0Var.s) != null) {
+                                is0 is0Var = ta0Var2.e0;
+                                if (is0Var != null && (a7Var = is0Var.s) != null) {
                                     a7Var.n = z13;
                                     a7Var.o = z14;
                                     a7Var.d(true);
@@ -1335,14 +1335,14 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
                                 ta0 ta0Var3 = wa0Var.V;
                                 boolean z17 = wa0Var.L;
                                 boolean z18 = wa0Var.M;
-                                bu0 bu0Var2 = ta0Var3.c0;
-                                if (bu0Var2 != null && (a7Var4 = bu0Var2.s) != null) {
+                                cu0 cu0Var2 = ta0Var3.c0;
+                                if (cu0Var2 != null && (a7Var4 = cu0Var2.s) != null) {
                                     a7Var4.n = z17;
                                     a7Var4.o = z18;
                                     a7Var4.d(true);
                                 }
-                                hs0 hs0Var2 = ta0Var3.e0;
-                                if (hs0Var2 != null && (a7Var3 = hs0Var2.s) != null) {
+                                is0 is0Var2 = ta0Var3.e0;
+                                if (is0Var2 != null && (a7Var3 = is0Var2.s) != null) {
                                     a7Var3.n = z17;
                                     a7Var3.o = z18;
                                     a7Var3.d(true);
@@ -1530,9 +1530,9 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
                             this.V.A(!r0.u0(r0.k0[0].F), false);
                             this.V.getSearchOptionsItem().setVisibility(0);
                         }
-                        mu0[] mu0VarArr = this.V.k0;
-                        i12 = mu0VarArr[r10].F;
-                        if ((i12 != 0 || tv0.q0(i12) || mu0VarArr[r10].F == i11) && this.a != 1) {
+                        nu0[] nu0VarArr = this.V.k0;
+                        i12 = nu0VarArr[r10].F;
+                        if ((i12 != 0 || uv0.q0(i12) || nu0VarArr[r10].F == i11) && this.a != 1) {
                             this.V.r0.setVisibility(r10);
                         } else {
                             this.V.r0.setVisibility(4);
@@ -1568,8 +1568,8 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
                 if (this.V.getSearchOptionsItem() != null) {
                 }
                 r10 = 0;
-                mu0[] mu0VarArr2 = this.V.k0;
-                i12 = mu0VarArr2[r10].F;
+                nu0[] nu0VarArr2 = this.V.k0;
+                i12 = nu0VarArr2[r10].F;
                 if (i12 != 0) {
                 }
                 this.V.r0.setVisibility(r10);
@@ -1601,8 +1601,8 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
         if (this.V.getSearchOptionsItem() != null) {
         }
         r10 = 0;
-        mu0[] mu0VarArr22 = this.V.k0;
-        i12 = mu0VarArr22[r10].F;
+        nu0[] nu0VarArr22 = this.V.k0;
+        i12 = nu0VarArr22[r10].F;
         if (i12 != 0) {
         }
         this.V.r0.setVisibility(r10);
@@ -1710,7 +1710,7 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements mv0, ng.b
             }
         }
         if (this.b == null) {
-            this.b = new lv0(this);
+            this.b = new mv0(this);
         }
         this.b.x.add(this);
         return super.onFragmentCreate();

@@ -64,12 +64,12 @@ import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.o9;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.a6;
-import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.ah0;
+import org.telegram.ui.Components.s71;
 import org.telegram.ui.Components.t20;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.u20;
-import org.telegram.ui.Components.ym0;
-import org.telegram.ui.Components.zg0;
+import org.telegram.ui.Components.zm0;
 import org.telegram.ui.n9;
 import org.telegram.ui.v9;
 import org.telegram.ui.vu0;
@@ -80,18 +80,18 @@ import rg.n2;
 import rg.v1;
 import s4.d0;
 import s4.g0;
-import u2.e1;
 import u2.f1;
-import u2.r1;
+import u2.g1;
+import u2.s1;
 import v1.c;
 import v7.h5;
 import v7.i8;
 import v8.e;
 import x9.w;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final class b implements OnCompleteListener, l, d, o0.a, e1, l1, h, r71, n, v9, r4.d, o, v1, d0, n5.b, s0, r {
+public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, s71, n, v9, r4.d, o, v1, d0, n5.b, s0, r {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -102,9 +102,9 @@ public final class b implements OnCompleteListener, l, d, o0.a, e1, l1, h, r71, 
     @Override // r0.n
     public k1 B0(View view, k1 k1Var) {
         i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
-        ym0 ym0Var = (ym0) this.b;
-        ym0Var.v.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
-        ym0Var.s.requestLayout();
+        zm0 zm0Var = (zm0) this.b;
+        zm0Var.v.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
+        zm0Var.s.requestLayout();
         return k1.b;
     }
 
@@ -382,7 +382,7 @@ public final class b implements OnCompleteListener, l, d, o0.a, e1, l1, h, r71, 
                 i12++;
             }
         }
-        kVar.I = new r1(p1VarArr);
+        kVar.I = new s1(p1VarArr);
         kVar.G.a(kVar);
     }
 
@@ -420,8 +420,8 @@ public final class b implements OnCompleteListener, l, d, o0.a, e1, l1, h, r71, 
         throw new NullPointerException("Cannot return null from a non-@Nullable @Provides method");
     }
 
-    @Override // u2.e1
-    public void h(f1 f1Var) {
+    @Override // u2.f1
+    public void h(g1 g1Var) {
         k kVar = (k) this.b;
         kVar.G.h(kVar);
     }
@@ -431,9 +431,9 @@ public final class b implements OnCompleteListener, l, d, o0.a, e1, l1, h, r71, 
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.s71
     public void invalidate() {
-        ((zg0) this.b).h.invalidate();
+        ((ah0) this.b).h.invalidate();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:121:0x0254  */

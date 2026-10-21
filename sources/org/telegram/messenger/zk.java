@@ -1,31 +1,27 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.LanguageDetector;
-
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class zk implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback {
-    public final /* synthetic */ TranslateController a;
-    public final /* synthetic */ MessageObject b;
+public final /* synthetic */ class zk implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TranslateController b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
 
-    public /* synthetic */ zk(TranslateController translateController, MessageObject messageObject, long j10, int i10) {
-        this.a = translateController;
-        this.b = messageObject;
+    public /* synthetic */ zk(TranslateController translateController, long j10, int i10) {
+        this.a = i10;
+        this.b = translateController;
         this.c = j10;
-        this.d = i10;
     }
 
-    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
-    public void run(Exception exc) {
-        this.a.lambda$checkLanguage$15(this.b, this.c, this.d, exc);
-    }
-
-    @Override // org.telegram.messenger.LanguageDetector.StringCallback
-    public void run(String str) {
-        long j10 = this.c;
-        int i10 = this.d;
-        this.a.lambda$checkLanguage$13(this.b, j10, i10, str);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.lambda$checkDialogTranslatable$17(this.c);
+                break;
+            default:
+                this.b.lambda$checkDialogMessageSure$11(this.c);
+                break;
+        }
     }
 }

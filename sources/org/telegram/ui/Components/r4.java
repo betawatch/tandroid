@@ -10,9 +10,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class r4 extends rm0 {
+public final class r4 extends sm0 {
     public final /* synthetic */ a3 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -26,12 +26,12 @@ public final class r4 extends rm0 {
         setCustomView(scrollView);
         FrameLayout frameLayout = new FrameLayout(context);
         scrollView.addView(frameLayout, w7.z5.x(-1, -2, 51));
-        xj0 xj0Var = new xj0(context);
-        xj0Var.f(R.raw.report_police, 120, 120, null);
-        xj0Var.d();
-        frameLayout.addView(xj0Var, w7.z5.d(160, 160.0f, 49, 17.0f, 14.0f, 17.0f, 0.0f));
+        yj0 yj0Var = new yj0(context);
+        yj0Var.f(R.raw.report_police, 120, 120, null);
+        yj0Var.d();
+        frameLayout.addView(yj0Var, w7.z5.d(160, 160.0f, 49, 17.0f, 14.0f, 17.0f, 0.0f));
         TextView textView = new TextView(context);
-        org.telegram.messenger.kk.k(24.0f, 1, textView);
+        org.telegram.messenger.mk.k(24.0f, 1, textView);
         textView.setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.j5));
         if (i10 == 0) {
             textView.setText(LocaleController.getString(R.string.ReportTitleSpam));
@@ -73,13 +73,13 @@ public final class r4 extends rm0 {
         editTextBoldCursor.setCursorWidth(1.5f);
         editTextBoldCursor.setOnEditorActionListener(new e1(this, 5));
         frameLayout.addView(editTextBoldCursor, w7.z5.d(-1, 36.0f, 51, 17.0f, 305.0f, 17.0f, 0.0f));
-        qm0 qm0Var = new qm0(context);
+        rm0 rm0Var = new rm0(context);
         View view = new View(context);
-        qm0Var.a = view;
+        rm0Var.a = view;
         view.setBackground(org.telegram.ui.ActionBar.x5.f(new float[]{8.0f}, org.telegram.ui.ActionBar.h6.Oh));
-        qm0Var.addView(view, w7.z5.d(-1, -1.0f, 0, 16.0f, 16.0f, 16.0f, 16.0f));
+        rm0Var.addView(view, w7.z5.d(-1, -1.0f, 0, 16.0f, 16.0f, 16.0f, 16.0f));
         TextView textView2 = new TextView(context);
-        qm0Var.b = textView2;
+        rm0Var.b = textView2;
         textView2.setLines(1);
         textView2.setSingleLine(true);
         textView2.setGravity(1);
@@ -88,13 +88,13 @@ public final class r4 extends rm0 {
         textView2.setTextColor(bVar.w(org.telegram.ui.ActionBar.h6.Sh));
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(AndroidUtilities.bold());
-        qm0Var.addView(textView2, w7.z5.e(-2, -2, 17));
-        this.b = qm0Var;
-        qm0Var.setBackground(null);
-        qm0Var.setText(LocaleController.getString(R.string.ReportSend));
-        w7.b6.a(qm0Var);
+        rm0Var.addView(textView2, w7.z5.e(-2, -2, 17));
+        this.b = rm0Var;
+        rm0Var.setBackground(null);
+        rm0Var.setText(LocaleController.getString(R.string.ReportSend));
+        w7.b6.a(rm0Var);
         view.setOnClickListener(new ai.n1(this, i10, 14));
-        frameLayout.addView(qm0Var, w7.z5.d(-1, 50.0f, 51, 0.0f, 357.0f, 0.0f, 0.0f));
+        frameLayout.addView(rm0Var, w7.z5.d(-1, 50.0f, 51, 0.0f, 357.0f, 0.0f, 0.0f));
         this.smoothKeyboardAnimationEnabled = true;
     }
 }

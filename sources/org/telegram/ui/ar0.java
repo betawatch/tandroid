@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ar0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -58,23 +58,23 @@ public final /* synthetic */ class ar0 implements Runnable {
                     photoViewer.U6 = VelocityTracker.obtain();
                 }
                 photoViewer.B7 = 3;
-                photoViewer.p3(false, false);
-                photoViewer.j3(true, false);
+                photoViewer.r3(false, false);
+                photoViewer.l3(true, false);
                 qn qnVar = photoViewer.l4;
                 if (qnVar == null || qnVar.Y == null || !qnVar.C9()) {
-                    photoViewer.S1();
+                    photoViewer.U1();
                 } else {
                     photoViewer.l4.Y.N();
                 }
                 photoViewer.L0.setAlpha(255);
                 photoViewer.e0.setAlpha(1.0f);
-                photoViewer.Z1(null, null, null, null, null, null, Collections.singletonList(orientation), 0, null);
+                photoViewer.b2(null, null, null, null, null, null, Collections.singletonList(orientation), 0, null);
                 photoViewer.P0.setTranslationY(AndroidUtilities.dp(photoViewer.r1 ? 154.0f : 96.0f));
                 photoViewer.S0.setTranslationY(AndroidUtilities.dp(photoViewer.r1 ? 154.0f : 96.0f));
                 photoViewer.F.setTranslationY(-r1.getHeight());
                 photoViewer.Q1.setTranslationY(AndroidUtilities.dp(photoViewer.r1 ? 154.0f : 96.0f));
-                photoViewer.K0();
-                photoViewer.g3();
+                photoViewer.L0();
+                photoViewer.i3();
                 photoViewer.B7 = 0;
                 break;
             default:

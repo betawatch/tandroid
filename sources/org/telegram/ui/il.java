@@ -9,9 +9,9 @@ import android.text.TextPaint;
 import android.view.animation.OvershootInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class il extends org.telegram.ui.Components.l11 {
+public final class il extends org.telegram.ui.Components.m11 {
     public final /* synthetic */ qn K;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -24,7 +24,7 @@ public final class il extends org.telegram.ui.Components.l11 {
         this.c = paint;
         this.d = AndroidUtilities.dp(24.0f);
         this.e = new OvershootInterpolator();
-        this.H = new org.telegram.ui.Components.gr0(this, 14);
+        this.H = new org.telegram.ui.Components.hr0(this, 14);
         this.J = new Path();
         int w02 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Hi, d6Var);
         int alpha = Color.alpha(w02);
@@ -41,13 +41,13 @@ public final class il extends org.telegram.ui.Components.l11 {
         setTranslationY((qnVar.Y.getTop() - qnVar.X0.getMeasuredHeight()) - ((1.0f - getPrepareProgress()) * (r2 + i10)));
     }
 
-    @Override // org.telegram.ui.Components.l11, android.view.View
+    @Override // org.telegram.ui.Components.m11, android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         d();
     }
 
-    @Override // org.telegram.ui.Components.l11, android.view.View
+    @Override // org.telegram.ui.Components.m11, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
         d();

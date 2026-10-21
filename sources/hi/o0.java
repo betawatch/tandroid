@@ -3,7 +3,7 @@ package hi;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -25,13 +25,13 @@ public final /* synthetic */ class o0 implements Runnable {
                 qn qnVar = this.b;
                 if (i10 != 2) {
                     qnVar.Z9();
-                    qnVar.cc();
+                    qnVar.dc();
                 }
                 t0.f(xc.a0(qnVar), i10, this.c);
                 break;
             default:
                 boolean z10 = this.c;
-                this.b.Cc(this.d, z10);
+                this.b.Dc(this.d, z10);
                 break;
         }
     }

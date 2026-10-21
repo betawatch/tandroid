@@ -5,13 +5,13 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.b71;
-import org.telegram.ui.Components.k51;
-import org.telegram.ui.Components.v81;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.l51;
+import org.telegram.ui.Components.w81;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class k4 extends v81 {
+public final class k4 extends w81 {
     public final /* synthetic */ Context a;
     public final /* synthetic */ o5 b;
 
@@ -20,21 +20,21 @@ public final class k4 extends v81 {
         this.a = context;
     }
 
-    @Override // org.telegram.ui.Components.v81
+    @Override // org.telegram.ui.Components.w81
     public final void b(View view, int i10, int i11) {
-        o5.S0((b71) view, false);
+        o5.S0((c71) view, false);
     }
 
-    @Override // org.telegram.ui.Components.v81
+    @Override // org.telegram.ui.Components.w81
     public final View d(int i10) {
         int i11;
         int i12;
         org.telegram.ui.ActionBar.d6 d6Var;
         o5 o5Var = this.b;
-        b71[] b71VarArr = o5Var.q0;
-        b71 b71Var = b71VarArr[i10];
-        if (b71Var != null) {
-            return b71Var;
+        c71[] c71VarArr = o5Var.q0;
+        c71 c71Var = c71VarArr[i10];
+        if (c71Var != null) {
+            return c71Var;
         }
         i11 = ((org.telegram.ui.ActionBar.n2) o5Var).currentAccount;
         i12 = ((org.telegram.ui.ActionBar.n2) o5Var).classGuid;
@@ -56,22 +56,22 @@ public final class k4 extends v81 {
             j4Var.setSelectorDrawableColor(0);
         }
         j4Var.W2.r = false;
-        j4Var.j(new k51(this, i10));
-        b71VarArr[i10] = j4Var;
+        j4Var.j(new l51(this, i10));
+        c71VarArr[i10] = j4Var;
         return j4Var;
     }
 
-    @Override // org.telegram.ui.Components.v81
+    @Override // org.telegram.ui.Components.w81
     public final int e() {
         return this.b.e0 ? 2 : 1;
     }
 
-    @Override // org.telegram.ui.Components.v81
+    @Override // org.telegram.ui.Components.w81
     public final CharSequence g(int i10) {
         return LocaleController.getString(i10 == 0 ? R.string.WalletTransactions : R.string.WalletCollectibles);
     }
 
-    @Override // org.telegram.ui.Components.v81
+    @Override // org.telegram.ui.Components.w81
     public final int h(int i10) {
         return i10;
     }

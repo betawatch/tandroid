@@ -19,14 +19,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.ti0;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.ui0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class r3 extends FrameLayout {
     public int E;
@@ -37,7 +37,7 @@ public final class r3 extends FrameLayout {
     public final boolean a;
     public final TextView b;
     public final TextView c;
-    public final ti0 d;
+    public final ui0 d;
     public final TextView e;
     public TLRPC.StickerSetCovered f;
     public AnimatorSet h;
@@ -64,16 +64,16 @@ public final class r3 extends FrameLayout {
         addView(textView, z10 ? w7.z5.i(-2.0f, -2.0f, 8388659, i10, 8.0f, 40.0f, 0.0f) : w7.z5.d(-2, -2.0f, 51, i10, 8.0f, 40.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.c = textView2;
-        kk.o(org.telegram.ui.ActionBar.h6.We, d6Var, textView2, 1, 13.0f);
+        mk.o(org.telegram.ui.ActionBar.h6.We, d6Var, textView2, 1, 13.0f);
         textView2.setEllipsize(truncateAt);
         textView2.setSingleLine(true);
         addView(textView2, z10 ? w7.z5.i(-2.0f, -2.0f, 8388659, i10, 30.0f, 100.0f, 0.0f) : w7.z5.d(-2, -2.0f, 51, i10, 30.0f, 100.0f, 0.0f));
         if (z11) {
-            ti0 ti0Var = new ti0(context);
-            this.d = ti0Var;
-            ti0Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Sh, d6Var));
-            ti0Var.setText(LocaleController.getString(R.string.Add));
-            addView(ti0Var, z10 ? w7.z5.i(-2.0f, 28.0f, 8388661, 0.0f, 16.0f, 14.0f, 0.0f) : w7.z5.d(-2, 28.0f, 53, 0.0f, 16.0f, 14.0f, 0.0f));
+            ui0 ui0Var = new ui0(context);
+            this.d = ui0Var;
+            ui0Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Sh, d6Var));
+            ui0Var.setText(LocaleController.getString(R.string.Add));
+            addView(ui0Var, z10 ? w7.z5.i(-2.0f, 28.0f, 8388661, 0.0f, 16.0f, 14.0f, 0.0f) : w7.z5.d(-2, 28.0f, 53, 0.0f, 16.0f, 14.0f, 0.0f));
             TextView textView3 = new TextView(context);
             this.e = textView3;
             textView3.setGravity(17);
@@ -85,14 +85,14 @@ public final class r3 extends FrameLayout {
         d();
     }
 
-    public static void a(ArrayList arrayList, im0 im0Var, org.telegram.ui.ActionBar.i6 i6Var) {
-        arrayList.add(new org.telegram.ui.ActionBar.j6(im0Var, 4, new Class[]{r3.class}, new String[]{"nameTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.h6.Se));
+    public static void a(ArrayList arrayList, jm0 jm0Var, org.telegram.ui.ActionBar.i6 i6Var) {
+        arrayList.add(new org.telegram.ui.ActionBar.j6(jm0Var, 4, new Class[]{r3.class}, new String[]{"nameTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.h6.Se));
         int i10 = org.telegram.ui.ActionBar.h6.We;
-        arrayList.add(new org.telegram.ui.ActionBar.j6(im0Var, 4, new Class[]{r3.class}, new String[]{"infoTextView"}, null, null, -1, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.j6(im0Var, 4, new Class[]{r3.class}, new String[]{"addButton"}, null, null, -1, null, org.telegram.ui.ActionBar.h6.Sh));
-        arrayList.add(new org.telegram.ui.ActionBar.j6(im0Var, 4, new Class[]{r3.class}, new String[]{"delButton"}, null, null, -1, null, org.telegram.ui.ActionBar.h6.Rh));
-        arrayList.add(new org.telegram.ui.ActionBar.j6(im0Var, 0, new Class[]{r3.class}, null, null, null, org.telegram.ui.ActionBar.h6.Th));
-        arrayList.add(new org.telegram.ui.ActionBar.j6(im0Var, 0, new Class[]{r3.class}, org.telegram.ui.ActionBar.h6.k0, null, null, org.telegram.ui.ActionBar.h6.d7));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(jm0Var, 4, new Class[]{r3.class}, new String[]{"infoTextView"}, null, null, -1, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(jm0Var, 4, new Class[]{r3.class}, new String[]{"addButton"}, null, null, -1, null, org.telegram.ui.ActionBar.h6.Sh));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(jm0Var, 4, new Class[]{r3.class}, new String[]{"delButton"}, null, null, -1, null, org.telegram.ui.ActionBar.h6.Rh));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(jm0Var, 0, new Class[]{r3.class}, null, null, null, org.telegram.ui.ActionBar.h6.Th));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(jm0Var, 0, new Class[]{r3.class}, org.telegram.ui.ActionBar.h6.k0, null, null, org.telegram.ui.ActionBar.h6.d7));
         arrayList.add(new org.telegram.ui.ActionBar.j6(null, 0, null, null, null, i6Var, org.telegram.ui.ActionBar.h6.Nh));
         arrayList.add(new org.telegram.ui.ActionBar.j6(null, 0, null, null, null, i6Var, org.telegram.ui.ActionBar.h6.Oh));
         arrayList.add(new org.telegram.ui.ActionBar.j6(null, 0, null, null, null, i6Var, org.telegram.ui.ActionBar.h6.Qh));
@@ -135,12 +135,12 @@ public final class r3 extends FrameLayout {
         this.v = z10;
         if (this.a) {
             boolean z14 = this.s;
-            ti0 ti0Var = this.d;
+            ui0 ui0Var = this.d;
             if (!z14) {
-                ti0Var.setVisibility(8);
+                ui0Var.setVisibility(8);
                 return;
             }
-            ti0Var.setVisibility(0);
+            ui0Var.setVisibility(0);
             boolean z15 = z12 || MediaDataController.getInstance(this.w).isStickerPackInstalled(stickerSetCovered.set.id);
             this.r = z15;
             TextView textView2 = this.e;
@@ -150,16 +150,16 @@ public final class r3 extends FrameLayout {
                     textView2.setAlpha(1.0f);
                     textView2.setScaleX(1.0f);
                     textView2.setScaleY(1.0f);
-                    ti0Var.setVisibility(4);
-                    ti0Var.setAlpha(0.0f);
-                    ti0Var.setScaleX(0.0f);
-                    ti0Var.setScaleY(0.0f);
+                    ui0Var.setVisibility(4);
+                    ui0Var.setAlpha(0.0f);
+                    ui0Var.setScaleX(0.0f);
+                    ui0Var.setScaleY(0.0f);
                     return;
                 }
-                ti0Var.setVisibility(0);
-                ti0Var.setAlpha(1.0f);
-                ti0Var.setScaleX(1.0f);
-                ti0Var.setScaleY(1.0f);
+                ui0Var.setVisibility(0);
+                ui0Var.setAlpha(1.0f);
+                ui0Var.setScaleX(1.0f);
+                ui0Var.setScaleY(1.0f);
                 textView2.setVisibility(4);
                 textView2.setAlpha(0.0f);
                 textView2.setScaleX(0.0f);
@@ -169,7 +169,7 @@ public final class r3 extends FrameLayout {
             if (z15) {
                 textView2.setVisibility(0);
             } else {
-                ti0Var.setVisibility(0);
+                ui0Var.setVisibility(0);
             }
             AnimatorSet animatorSet2 = new AnimatorSet();
             this.h = animatorSet2;
@@ -183,7 +183,7 @@ public final class r3 extends FrameLayout {
             ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property2, fArr2);
             float[] fArr3 = {this.r ? 1.0f : 0.0f};
             Property property3 = View.SCALE_Y;
-            animatorSet3.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property3, fArr3), ObjectAnimator.ofFloat(ti0Var, (Property<ti0, Float>) property, this.r ? 0.0f : 1.0f), ObjectAnimator.ofFloat(ti0Var, (Property<ti0, Float>) property2, this.r ? 0.0f : 1.0f), ObjectAnimator.ofFloat(ti0Var, (Property<ti0, Float>) property3, this.r ? 0.0f : 1.0f));
+            animatorSet3.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property3, fArr3), ObjectAnimator.ofFloat(ui0Var, (Property<ui0, Float>) property, this.r ? 0.0f : 1.0f), ObjectAnimator.ofFloat(ui0Var, (Property<ui0, Float>) property2, this.r ? 0.0f : 1.0f), ObjectAnimator.ofFloat(ui0Var, (Property<ui0, Float>) property3, this.r ? 0.0f : 1.0f));
             this.h.addListener(new q3(this));
             this.h.setInterpolator(new OvershootInterpolator(1.02f));
             this.h.start();
@@ -195,11 +195,11 @@ public final class r3 extends FrameLayout {
             int i10 = org.telegram.ui.ActionBar.h6.Nh;
             org.telegram.ui.ActionBar.d6 d6Var = this.I;
             int w02 = org.telegram.ui.ActionBar.h6.w0(i10, d6Var);
-            ti0 ti0Var = this.d;
-            ti0Var.setProgressColor(w02);
+            ui0 ui0Var = this.d;
+            ui0Var.setProgressColor(w02);
             int w03 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var);
             org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Qh, d6Var);
-            ti0Var.setBackground(org.telegram.ui.ActionBar.x5.e(new float[]{14.0f}, w03));
+            ui0Var.setBackground(org.telegram.ui.ActionBar.x5.e(new float[]{14.0f}, w03));
         }
         e();
         f();

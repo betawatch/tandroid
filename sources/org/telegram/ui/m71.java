@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m71 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -130,7 +130,7 @@ public final /* synthetic */ class m71 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new fn0((rg.n2) this.b, tLObject, (rg.l2) this.c, tL_error, 29));
                 break;
             case 9:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.by0(tLObject, (MessagesController) this.b, (ug.w0) this.c, 24));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.cy0(tLObject, (MessagesController) this.b, (ug.w0) this.c, 24));
                 break;
             case 10:
                 MessagesController messagesController = (MessagesController) this.b;
@@ -145,12 +145,12 @@ public final /* synthetic */ class m71 implements RequestDelegate {
                             arrayList.add(user);
                         }
                     }
-                    AndroidUtilities.runOnUIThread(new uf.c(3, qyVar, arrayList));
+                    AndroidUtilities.runOnUIThread(new u2.j0(5, qyVar, arrayList));
                     break;
                 }
                 break;
             case 11:
-                AndroidUtilities.runOnUIThread(new yh.s1((org.telegram.ui.Components.js0) this.b, tL_error, (org.telegram.ui.ActionBar.n2) this.c, 0));
+                AndroidUtilities.runOnUIThread(new yh.s1((org.telegram.ui.Components.ks0) this.b, tL_error, (org.telegram.ui.ActionBar.n2) this.c, 0));
                 break;
             default:
                 AndroidUtilities.runOnUIThread(new yh.s1((yh.s3) this.b, tLObject, (TL_stars.getResaleStarGifts) this.c, 3));

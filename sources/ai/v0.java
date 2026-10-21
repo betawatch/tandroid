@@ -28,32 +28,32 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.aw;
-import org.telegram.ui.Components.dg0;
+import org.telegram.ui.Components.eg0;
 import org.telegram.ui.Components.ei;
 import org.telegram.ui.Components.hq;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.ic0;
 import org.telegram.ui.Components.iu;
 import org.telegram.ui.Components.jb0;
-import org.telegram.ui.Components.kw0;
 import org.telegram.ui.Components.li;
 import org.telegram.ui.Components.lu;
+import org.telegram.ui.Components.lw0;
 import org.telegram.ui.Components.mf;
 import org.telegram.ui.Components.nc0;
 import org.telegram.ui.Components.oc0;
 import org.telegram.ui.Components.q90;
 import org.telegram.ui.Components.qu;
 import org.telegram.ui.Components.rc0;
-import org.telegram.ui.Components.te0;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.tv;
+import org.telegram.ui.Components.ue0;
 import org.telegram.ui.Components.vr;
 import org.telegram.ui.Components.w20;
 import org.telegram.ui.Components.xr;
 import org.telegram.ui.l60;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -408,9 +408,9 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 int i16 = tiVar.M1;
                 ei eiVar = tiVar.L0;
                 mf mfVar2 = tiVar.h0;
-                long k10 = mfVar2 != null ? mfVar2.k() : 0L;
-                tiVar.Q0 = k10;
-                eiVar.setEffect(k10);
+                long j10 = mfVar2 != null ? mfVar2.j() : 0L;
+                tiVar.Q0 = j10;
+                eiVar.setEffect(j10);
                 tiVar.forceKeyboardOnDismiss();
                 if (tiVar.K - tiVar.L < 0) {
                     AndroidUtilities.shakeView(tiVar.s);
@@ -424,7 +424,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                     }
                     mf mfVar3 = tiVar.h0;
                     if (mfVar3 != null) {
-                        mfVar3.h(false);
+                        mfVar3.g(false);
                         tiVar.h0 = null;
                         break;
                     }
@@ -432,7 +432,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                     if (tiVar.K1 == null && (n2Var2 instanceof qn)) {
                         qn qnVar = (qn) n2Var2;
                         if (qnVar.c()) {
-                            org.telegram.ui.Components.f5.L(tiVar.getContext(), qnVar.a(), new ci.d1(tiVar, k10, 4), d6Var2);
+                            org.telegram.ui.Components.f5.L(tiVar.getContext(), qnVar.a(), new ci.d1(tiVar, j10, 4), d6Var2);
                             z10 = false;
                             tiVar.K1(z10, z10);
                             break;
@@ -443,9 +443,9 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                     if (liVar == tiVar.j0 || liVar == tiVar.q0) {
                         z11 = true;
                         mfVar = null;
-                        J1 = tiVar.J1(0, true, 0, tiVar.u1(), k10);
+                        J1 = tiVar.J1(0, true, 0, tiVar.u1(), j10);
                     } else {
-                        if (!liVar.K(0, true, 0, tiVar.u1(), k10)) {
+                        if (!liVar.K(0, true, 0, tiVar.u1(), j10)) {
                             tiVar.D2 = true;
                             tiVar.dismiss();
                         }
@@ -455,7 +455,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                     }
                     mf mfVar4 = tiVar.h0;
                     if (mfVar4 != null) {
-                        mfVar4.h(J1 ^ z11);
+                        mfVar4.g(J1 ^ z11);
                         tiVar.h0 = mfVar;
                     }
                     tiVar.K1(z10, z10);
@@ -470,12 +470,12 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 boolean z12 = tiVar2.c0;
                 message.invert_media = z12;
                 nc0Var2.a(!z12, true);
-                tiVar2.h0.f(messageObject);
+                tiVar2.h0.e(messageObject);
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = tiVar2.j0;
                 if (chatAttachAlertPhotoLayout != null && (nc0Var = chatAttachAlertPhotoLayout.d1) != null) {
                     nc0Var.a(!tiVar2.c0, true);
                 }
-                tiVar2.h0.n(!tiVar2.c0);
+                tiVar2.h0.m(!tiVar2.c0);
                 break;
             case 21:
                 xr xrVar = (xr) this.b;
@@ -512,7 +512,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 break;
             case 24:
                 qu quVar = (qu) this.b;
-                kw0 kw0Var = (kw0) this.c;
+                lw0 lw0Var = (lw0) this.c;
                 org.telegram.ui.ActionBar.d6 d6Var3 = (org.telegram.ui.ActionBar.d6) this.d;
                 lu luVar = quVar.a;
                 ig.k kVar = quVar.b;
@@ -540,7 +540,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                             }
                         } else {
                             luVar.hideActionMode();
-                            i80 i80Var5 = new i80(kw0Var, d6Var3, kVar, false, false, true);
+                            i80 i80Var5 = new i80(lw0Var, d6Var3, kVar, false, false, true);
                             i80Var5.X = AndroidUtilities.dp(280.0f);
                             luVar.extendActionMode(null, new jb0(i80Var5, new org.telegram.ui.Components.z2(luVar, 4), luVar.getOnPremiumMenuLockClickListener()));
                             i80Var5.U = true;
@@ -605,19 +605,19 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 ic0Var.l(true);
                 break;
             case 28:
-                te0.o((te0) this.b, (TLRPC.ChatFull) this.c, (l60) this.d);
+                ue0.o((ue0) this.b, (TLRPC.ChatFull) this.c, (l60) this.d);
                 break;
             default:
-                dg0 dg0Var = (dg0) this.b;
+                eg0 eg0Var = (eg0) this.b;
                 Context context5 = (Context) this.c;
                 org.telegram.ui.ActionBar.d6 d6Var4 = (org.telegram.ui.ActionBar.d6) this.d;
-                if (dg0Var.h == null) {
-                    ei.u3 u3Var = new ei.u3(context5, d6Var4, LocaleController.getString(R.string.VideoChooseCover), dg0Var.f);
-                    dg0Var.h = u3Var;
-                    u3Var.setOnDismissListener(new rc0(dg0Var, 8));
-                    dg0Var.h.f = dg0Var.n;
+                if (eg0Var.h == null) {
+                    ei.u3 u3Var = new ei.u3(context5, d6Var4, LocaleController.getString(R.string.VideoChooseCover), eg0Var.f);
+                    eg0Var.h = u3Var;
+                    u3Var.setOnDismissListener(new rc0(eg0Var, 8));
+                    eg0Var.h.f = eg0Var.n;
                 }
-                dg0Var.h.show();
+                eg0Var.h.show();
                 break;
         }
     }

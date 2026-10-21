@@ -14,10 +14,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.vj0;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class t0 extends View {
     public boolean E;
@@ -40,7 +40,7 @@ public final class t0 extends View {
     public final Paint e;
     public final Paint f;
     public final yc h;
-    public uj0 n;
+    public vj0 n;
     public final StaticLayout r;
     public final float s;
     public final float v;
@@ -63,14 +63,14 @@ public final class t0 extends View {
     }
 
     public final void b(int i10, int i11, CharSequence charSequence) {
-        uj0 uj0Var = this.n;
-        if (uj0Var != null) {
-            uj0Var.setCallback(null);
+        vj0 vj0Var = this.n;
+        if (vj0Var != null) {
+            vj0Var.setCallback(null);
             this.n.C(true);
         }
-        uj0 uj0Var2 = new uj0(i10, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f));
-        this.n = uj0Var2;
-        uj0Var2.setCallback(this);
+        vj0 vj0Var2 = new vj0(i10, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f));
+        this.n = vj0Var2;
+        vj0Var2.setCallback(this);
         this.n.start();
         StaticLayout staticLayout = new StaticLayout(charSequence, this.c, AndroidUtilities.displaySize.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         this.w = staticLayout;
@@ -173,9 +173,9 @@ public final class t0 extends View {
         }
         if (d10 > 0.0f) {
             float f13 = d10 * d;
-            uj0 uj0Var = this.n;
-            if (uj0Var != null) {
-                uj0Var.setAlpha((int) (f13 * f10));
+            vj0 vj0Var = this.n;
+            if (vj0Var != null) {
+                vj0Var.setAlpha((int) (f13 * f10));
                 this.n.setBounds((int) (rectF.left + AndroidUtilities.dp(9.0f)), (int) (rectF.top + AndroidUtilities.dp(6.0f)), (int) (rectF.left + AndroidUtilities.dp(45.0f)), (int) (rectF.top + AndroidUtilities.dp(f7)));
                 this.n.draw(canvas2);
             }

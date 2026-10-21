@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a;
@@ -49,8 +49,8 @@ public final /* synthetic */ class i0 implements Runnable {
         org.telegram.ui.Components.xc a02;
         int i11;
         int i12;
-        org.telegram.ui.Components.t61 t61Var;
-        org.telegram.ui.Components.u11 u11Var;
+        org.telegram.ui.Components.u61 u61Var;
+        org.telegram.ui.Components.v11 v11Var;
         int i13 = this.a;
         int i14 = -1;
         boolean z10 = false;
@@ -133,9 +133,9 @@ public final /* synthetic */ class i0 implements Runnable {
                 c7.Y((c7) obj2, (org.telegram.ui.ActionBar.b2) obj);
                 break;
             case 6:
-                org.telegram.ui.Components.fj0 fj0Var = new org.telegram.ui.Components.fj0((Context) obj2, LocaleController.getString(R.string.InviteByQRCode), ((String[]) obj)[0], LocaleController.getString(R.string.QRCodeLinkGroupCall), false);
-                fj0Var.n(R.raw.qr_code_logo);
-                fj0Var.show();
+                org.telegram.ui.Components.gj0 gj0Var = new org.telegram.ui.Components.gj0((Context) obj2, LocaleController.getString(R.string.InviteByQRCode), ((String[]) obj)[0], LocaleController.getString(R.string.QRCodeLinkGroupCall), false);
+                gj0Var.n(R.raw.qr_code_logo);
+                gj0Var.show();
                 break;
             case 7:
                 ((z8) obj2).b.j0(((TLRPC.Message) i2.e.h(1, ((i9) obj).c)).id, 100);
@@ -356,9 +356,9 @@ public final /* synthetic */ class i0 implements Runnable {
                 if (tL_premium_boostsStatus2 != null) {
                     ieVar.B0 = tL_premium_boostsStatus2.level;
                 }
-                org.telegram.ui.Components.b71 b71Var = ieVar.a1;
-                if (b71Var != null && (t61Var = b71Var.W2) != null) {
-                    t61Var.N(true);
+                org.telegram.ui.Components.c71 c71Var = ieVar.a1;
+                if (c71Var != null && (u61Var = c71Var.W2) != null) {
+                    u61Var.N(true);
                     break;
                 }
                 break;
@@ -367,13 +367,13 @@ public final /* synthetic */ class i0 implements Runnable {
                 break;
             case 22:
                 qn qnVar = (qn) obj2;
-                org.telegram.ui.Components.u11[] u11VarArr = (org.telegram.ui.Components.u11[]) obj;
-                if (!qnVar.kb && (u11Var = u11VarArr[0]) != null) {
-                    u11VarArr[0] = null;
-                    if (qnVar.v0 == u11Var) {
+                org.telegram.ui.Components.v11[] v11VarArr = (org.telegram.ui.Components.v11[]) obj;
+                if (!qnVar.kb && (v11Var = v11VarArr[0]) != null) {
+                    v11VarArr[0] = null;
+                    if (qnVar.v0 == v11Var) {
                         qnVar.v0 = null;
                     }
-                    AndroidUtilities.removeFromParent(u11Var);
+                    AndroidUtilities.removeFromParent(v11Var);
                     break;
                 }
                 break;

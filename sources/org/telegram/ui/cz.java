@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cz implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class cz implements View.OnClickListener {
                 String str = jzVar.s;
                 if (str != null) {
                     AndroidUtilities.addToClipboard(str);
-                    org.telegram.messenger.kk.p(R.string.LinkCopied, org.telegram.ui.Components.xc.a0(jzVar.r));
+                    org.telegram.messenger.mk.p(R.string.LinkCopied, org.telegram.ui.Components.xc.a0(jzVar.r));
                     break;
                 }
                 break;
@@ -100,7 +100,7 @@ public final /* synthetic */ class cz implements View.OnClickListener {
                 String str2 = jzVar3.s;
                 if (str2 != null) {
                     AndroidUtilities.addToClipboard(str2);
-                    org.telegram.messenger.kk.p(R.string.LinkCopied, org.telegram.ui.Components.xc.a0(jzVar3.r));
+                    org.telegram.messenger.mk.p(R.string.LinkCopied, org.telegram.ui.Components.xc.a0(jzVar3.r));
                     break;
                 }
                 break;
@@ -177,9 +177,9 @@ public final /* synthetic */ class cz implements View.OnClickListener {
                     m1Var3.d(true);
                 }
                 if (jzVar6.s != null) {
-                    org.telegram.ui.Components.fj0 fj0Var = new org.telegram.ui.Components.fj0(jzVar6.getContext(), LocaleController.getString(R.string.InviteByQRCode), jzVar6.s, LocaleController.getString(R.string.QRCodeLinkHelpFolder), false);
-                    fj0Var.n(R.raw.qr_code_logo);
-                    fj0Var.show();
+                    org.telegram.ui.Components.gj0 gj0Var = new org.telegram.ui.Components.gj0(jzVar6.getContext(), LocaleController.getString(R.string.InviteByQRCode), jzVar6.s, LocaleController.getString(R.string.QRCodeLinkHelpFolder), false);
+                    gj0Var.n(R.raw.qr_code_logo);
+                    gj0Var.show();
                     break;
                 }
                 break;

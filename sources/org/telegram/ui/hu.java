@@ -18,9 +18,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.StatsController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class hu extends org.telegram.ui.Components.im0 {
+public final class hu extends org.telegram.ui.Components.jm0 {
     public static final /* synthetic */ int n3 = 0;
     public boolean V2;
     public int W2;
@@ -202,7 +202,7 @@ public final class hu extends org.telegram.ui.Components.im0 {
                     format = String.format("%d%%", objArr2);
                 }
                 SpannableString spannableString = new SpannableString(format);
-                spannableString.setSpan(new org.telegram.ui.Components.d61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
+                spannableString.setSpan(new org.telegram.ui.Components.e61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
                 spannableString.setSpan(new RelativeSizeSpan(0.8f), 0, spannableString.length(), 33);
                 bu buVar = new bu();
                 i12 = i13;
@@ -382,7 +382,7 @@ public final class hu extends org.telegram.ui.Components.im0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
     }

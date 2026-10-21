@@ -21,14 +21,14 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.cl0;
-import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.dl0;
+import org.telegram.ui.Components.lw0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.yj0;
+import org.telegram.ui.Components.zj0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class o9 extends kw0 {
+public final class o9 extends lw0 {
     public final Path A0;
     public final RectF B0;
     public final RectF C0;
@@ -66,7 +66,7 @@ public final class o9 extends kw0 {
     /* JADX WARN: Type inference failed for: r17v0 */
     /* JADX WARN: Type inference failed for: r17v1 */
     /* JADX WARN: Type inference failed for: r17v6 */
-    @Override // org.telegram.ui.Components.kw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -105,7 +105,7 @@ public final class o9 extends kw0 {
         y7 y7Var3;
         int i12;
         q4 t10;
-        yj0 yj0Var;
+        zj0 zj0Var;
         boolean z11;
         float f23;
         aa aaVar = this.I0;
@@ -464,13 +464,13 @@ public final class o9 extends kw0 {
                             aaVar.d = false;
                             aa.x1 = true;
                             aaVar.b0 = aaVar.W;
-                            if (x9Var.d != null && (t10 = aaVar.t()) != null && (yj0Var = t10.o1.d) != null) {
-                                yj0 yj0Var2 = x9Var.d;
-                                yj0Var.c = yj0Var2.c;
-                                yj0Var.f = yj0Var2.f;
-                                yj0Var.b = yj0Var2.b;
-                                yj0Var.a = System.currentTimeMillis();
-                                yj0Var.c();
+                            if (x9Var.d != null && (t10 = aaVar.t()) != null && (zj0Var = t10.o1.d) != null) {
+                                zj0 zj0Var2 = x9Var.d;
+                                zj0Var.c = zj0Var2.c;
+                                zj0Var.f = zj0Var2.f;
+                                zj0Var.b = zj0Var2.b;
+                                zj0Var.a = System.currentTimeMillis();
+                                zj0Var.c();
                             }
                             aaVar.E = true;
                             float[] fArr3 = new float[i11];
@@ -587,7 +587,7 @@ public final class o9 extends kw0 {
         boolean z11;
         q9 q9Var;
         int i10;
-        cl0 cl0Var;
+        dl0 dl0Var;
         aa aaVar = this.I0;
         float[] fArr = aaVar.o0;
         q4 currentPeerView = aaVar.n0.getCurrentPeerView();
@@ -605,7 +605,7 @@ public final class o9 extends kw0 {
         }
         float f7 = 0.0f;
         int i11 = 0;
-        if (aaVar.p1 && currentPeerView != null && (cl0Var = currentPeerView.r3) != null) {
+        if (aaVar.p1 && currentPeerView != null && (dl0Var = currentPeerView.r3) != null) {
             float f10 = 0.0f;
             for (View view = currentPeerView; view != null && (view.getParent() instanceof View); view = (View) view.getParent()) {
                 f7 += view.getX();
@@ -617,14 +617,14 @@ public final class o9 extends kw0 {
                 return true;
             }
             Rect rect = AndroidUtilities.rectTmp2;
-            cl0Var.getHitRect(rect);
+            dl0Var.getHitRect(rect);
             rect.offset((int) f7, (int) f10);
             if (motionEvent.getAction() == 0 && !rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
                 currentPeerView.b1(false);
                 return true;
             }
             motionEvent.offsetLocation(-rect.left, -rect.top);
-            cl0Var.dispatchTouchEvent(motionEvent);
+            dl0Var.dispatchTouchEvent(motionEvent);
             return true;
         }
         if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
@@ -745,7 +745,7 @@ public final class o9 extends kw0 {
         return super.drawChild(canvas, view, j10);
     }
 
-    @Override // org.telegram.ui.Components.kw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         aa aaVar = this.I0;
@@ -761,7 +761,7 @@ public final class o9 extends kw0 {
         NotificationCenter.getInstance(aaVar.h).addObserver(aaVar, NotificationCenter.storyDeleted);
     }
 
-    @Override // org.telegram.ui.Components.kw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         qc.h(this);

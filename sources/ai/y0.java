@@ -48,11 +48,11 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y0 implements Runnable {
     public final /* synthetic */ int a;
@@ -578,7 +578,7 @@ public final /* synthetic */ class y0 implements Runnable {
                     org.telegram.ui.Components.xc.a0(n2Var).f0(tL_error, false);
                 }
                 if ((n2Var instanceof qn) && tL_error == null) {
-                    ((qn) n2Var).cc();
+                    ((qn) n2Var).dc();
                 }
                 cVar.b();
                 b2Var.dismiss();
@@ -617,9 +617,9 @@ public final /* synthetic */ class y0 implements Runnable {
                     AndroidUtilities.runOnUIThread(runnable);
                     return;
                 }
-                xj0 xj0Var = e6Var.l0;
-                if (xj0Var != null) {
-                    xj0Var.d();
+                yj0 yj0Var = e6Var.l0;
+                if (yj0Var != null) {
+                    yj0Var.d();
                     AndroidUtilities.runOnUIThread(new ah.j(2), 750L);
                 }
                 e6Var.Q.animate().alpha(0.0f).start();

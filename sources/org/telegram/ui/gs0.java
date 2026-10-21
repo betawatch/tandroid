@@ -16,7 +16,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class gs0 implements Runnable {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final class gs0 implements Runnable {
                                     PhotoViewer photoViewer2 = PhotoViewer.b9;
                                     PhotoViewer photoViewer3 = this.b;
                                     if (photoViewer2 != photoViewer3) {
-                                        photoViewer3.j3(false, true);
+                                        photoViewer3.l3(false, true);
                                         break;
                                     }
                                 }
@@ -59,7 +59,7 @@ public final class gs0 implements Runnable {
                 PhotoViewer photoViewer4 = this.b;
                 if (photoViewer4.F2 != null || ((ot0Var = photoViewer4.f0) != null && ot0Var.x)) {
                     if (!photoViewer4.r1) {
-                        float o12 = photoViewer4.o1() / this.b.A1();
+                        float p12 = photoViewer4.p1() / this.b.B1();
                         if (this.b.h5) {
                             f7 = 1.0f;
                         } else {
@@ -74,7 +74,7 @@ public final class gs0 implements Runnable {
                                     PhotoViewer photoViewer6 = this.b;
                                     float f10 = photoViewer6.a3;
                                     if (f10 == 0.0f) {
-                                        f10 = o12;
+                                        f10 = p12;
                                     }
                                     f7 = fileLoader.getBufferedProgressFromPosition(f10, photoViewer6.c5[0]);
                                 } else {
@@ -91,40 +91,40 @@ public final class gs0 implements Runnable {
                             if (photoViewer8.a3 == 0.0f) {
                                 org.telegram.ui.Cells.h1 h1Var = photoViewer8.a4;
                                 if (h1Var.rewindCount == 0 || (!h1Var.rewindByBackSeek && !photoViewer8.c4.rewindByBackSeek)) {
-                                    photoViewer8.q3.h(o12, false);
+                                    photoViewer8.q3.h(p12, false);
                                 }
                             }
                             if (f7 != -1.0f) {
                                 this.b.q3.f(f7);
-                                org.telegram.ui.Components.zg0 zg0Var = org.telegram.ui.Components.zg0.p0;
-                                if (f7 > zg0Var.a0) {
-                                    zg0Var.a0 = f7;
-                                    ci.i3 i3Var = zg0Var.b0;
+                                org.telegram.ui.Components.ah0 ah0Var = org.telegram.ui.Components.ah0.p0;
+                                if (f7 > ah0Var.a0) {
+                                    ah0Var.a0 = f7;
+                                    ci.i3 i3Var = ah0Var.b0;
                                     if (i3Var != null) {
                                         i3Var.invalidate();
                                     }
                                 }
                             }
-                        } else if (o12 >= this.b.S7.getRightProgress()) {
+                        } else if (p12 >= this.b.S7.getRightProgress()) {
                             PhotoViewer photoViewer9 = this.b;
                             photoViewer9.H2 = false;
-                            photoViewer9.h2();
+                            photoViewer9.j2();
                             this.b.q3.h(0.0f, false);
-                            this.b.t2((int) (r1.S7.getLeftProgress() * this.b.A1()));
+                            this.b.v2((int) (r1.S7.getLeftProgress() * this.b.B1()));
                             this.b.e0.invalidate();
                         } else {
-                            float leftProgress = o12 - this.b.S7.getLeftProgress();
+                            float leftProgress = p12 - this.b.S7.getLeftProgress();
                             if (leftProgress < 0.0f) {
                                 leftProgress = 0.0f;
                             }
-                            o12 = leftProgress / (this.b.S7.getRightProgress() - this.b.S7.getLeftProgress());
-                            if (o12 > 1.0f) {
-                                o12 = 1.0f;
+                            p12 = leftProgress / (this.b.S7.getRightProgress() - this.b.S7.getLeftProgress());
+                            if (p12 > 1.0f) {
+                                p12 = 1.0f;
                             }
-                            this.b.q3.h(o12, false);
+                            this.b.q3.h(p12, false);
                         }
                         this.b.r3.invalidate();
-                        if (this.b.b3 != null && o12 >= 0.0f) {
+                        if (this.b.b3 != null && p12 >= 0.0f) {
                             long elapsedRealtime2 = SystemClock.elapsedRealtime();
                             PhotoViewer photoViewer10 = this.b;
                             if (elapsedRealtime2 - photoViewer10.d3 >= 1000) {
@@ -132,38 +132,38 @@ public final class gs0 implements Runnable {
                                 photoViewer10.d3 = SystemClock.elapsedRealtime();
                                 MessageObject messageObject = this.b.T4;
                                 if (messageObject != null) {
-                                    messageObject.cachedSavedTimestamp = Float.valueOf(o12);
+                                    messageObject.cachedSavedTimestamp = Float.valueOf(p12);
                                 }
-                                Utilities.globalQueue.postRunnable(new c0(str, o12, 4));
+                                Utilities.globalQueue.postRunnable(new c0(str, p12, 4));
                             }
                         }
-                        this.b.C3();
+                        this.b.E3();
                     } else if (!photoViewer4.S7.r) {
-                        float o13 = photoViewer4.o1() / this.b.A1();
+                        float p13 = photoViewer4.p1() / this.b.B1();
                         PhotoViewer photoViewer11 = this.b;
                         if (photoViewer11.B8 || (photoViewer11.u4 == 0 && photoViewer11.R7.getVisibility() != 0)) {
                             PhotoViewer photoViewer12 = this.b;
                             if (photoViewer12.c2 != 1) {
-                                photoViewer12.S7.setProgress(o13);
+                                photoViewer12.S7.setProgress(p13);
                             }
-                        } else if (o13 >= this.b.S7.getRightProgress()) {
+                        } else if (p13 >= this.b.S7.getRightProgress()) {
                             es0 es0Var = this.b.S7;
                             es0Var.setProgress(es0Var.getLeftProgress());
-                            this.b.F2.K((int) (r0.S7.getLeftProgress() * this.b.A1()));
+                            this.b.F2.K((int) (r0.S7.getLeftProgress() * this.b.B1()));
                             PhotoViewer photoViewer13 = this.b;
                             photoViewer13.H2 = false;
-                            photoViewer13.u0();
+                            photoViewer13.v0();
                             PhotoViewer photoViewer14 = this.b;
                             if (photoViewer14.r || photoViewer14.c2 == 1 || photoViewer14.u4 != 0 || photoViewer14.o6 > 0) {
-                                photoViewer14.j2();
+                                photoViewer14.l2();
                             } else {
-                                photoViewer14.h2();
+                                photoViewer14.j2();
                             }
                             this.b.e0.invalidate();
                         } else {
-                            this.b.S7.setProgress(o13);
+                            this.b.S7.setProgress(p13);
                         }
-                        this.b.C3();
+                        this.b.E3();
                     }
                 }
                 au0 au0Var = this.b.E2;
@@ -178,7 +178,7 @@ public final class gs0 implements Runnable {
                 break;
             default:
                 PhotoViewer photoViewer16 = this.b;
-                if (!org.telegram.ui.Components.zg0.p0.P) {
+                if (!org.telegram.ui.Components.ah0.p0.P) {
                     photoViewer16.L3 = false;
                     Bitmap bitmap = photoViewer16.C3;
                     if (bitmap != null) {
@@ -235,8 +235,8 @@ public final class gs0 implements Runnable {
                     }
                     photoViewer16.J3 = true;
                     photoViewer16.w3 = (TextureView) vVar.c;
-                    if (org.telegram.ui.Components.zg0.x(false, photoViewer16.y, null, vVar, photoViewer16.U, photoViewer16.V, photoViewer16.K3)) {
-                        org.telegram.ui.Components.zg0.w(photoViewer16);
+                    if (org.telegram.ui.Components.ah0.x(false, photoViewer16.y, null, vVar, photoViewer16.U, photoViewer16.V, photoViewer16.K3)) {
+                        org.telegram.ui.Components.ah0.w(photoViewer16);
                     }
                     photoViewer16.K3 = true;
                     if (!photoViewer16.D2) {
@@ -257,12 +257,12 @@ public final class gs0 implements Runnable {
                         photoViewer16.F2.V(null);
                         photoViewer16.F2.C();
                         photoViewer16.F2.V(photoViewer16.w3);
-                        photoViewer16.x0(true);
+                        photoViewer16.y0(true);
                         photoViewer16.w3.setVisibility(0);
                         break;
                     }
                 } else {
-                    org.telegram.ui.Components.zg0.j(false);
+                    org.telegram.ui.Components.ah0.j(false);
                     AndroidUtilities.runOnUIThread(this, 250L);
                     break;
                 }

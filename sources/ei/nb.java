@@ -12,10 +12,10 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.cg0;
+import org.telegram.ui.Components.dg0;
 import org.telegram.ui.Components.g80;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class nb extends FrameLayout {
     public float a;
@@ -104,9 +104,9 @@ public final class nb extends FrameLayout {
             iVar.layout(0, 0, vbVar.S, vbVar.T);
             vbVar.c1.y();
         }
-        cg0 cg0Var = vbVar.B1;
-        if (cg0Var != null) {
-            cg0Var.layout(0, 0, cg0Var.getMeasuredWidth(), vbVar.B1.getMeasuredHeight());
+        dg0 dg0Var = vbVar.B1;
+        if (dg0Var != null) {
+            dg0Var.layout(0, 0, dg0Var.getMeasuredWidth(), vbVar.B1.getMeasuredHeight());
         }
         xa xaVar = vbVar.v1;
         if (xaVar != null) {
@@ -142,9 +142,9 @@ public final class nb extends FrameLayout {
         if (iVar != null) {
             a(iVar, vbVar.S, vbVar.T);
         }
-        cg0 cg0Var = vbVar.B1;
-        if (cg0Var != null) {
-            a(cg0Var, size, size2);
+        dg0 dg0Var = vbVar.B1;
+        if (dg0Var != null) {
+            a(dg0Var, size, size2);
         }
         xa xaVar = vbVar.v1;
         if (xaVar != null) {

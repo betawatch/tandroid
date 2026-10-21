@@ -24,7 +24,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fi;
+import org.telegram.messenger.hi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -32,7 +32,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.kh0;
+import org.telegram.ui.Components.lh0;
 import org.telegram.ui.Components.qy;
 import org.telegram.ui.Components.t60;
 import org.telegram.ui.b60;
@@ -46,7 +46,7 @@ import org.telegram.ui.rk0;
 import org.telegram.ui.ti;
 import org.telegram.ui.uk0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class vb implements Runnable {
     public final /* synthetic */ int a;
@@ -242,7 +242,7 @@ public final /* synthetic */ class vb implements Runnable {
                     TLRPC.GroupCall groupCall2 = groupcall.call;
                     tL_inputGroupCall2.id = groupCall2.id;
                     tL_inputGroupCall2.access_hash = groupCall2.access_hash;
-                    ConnectionsManager.getInstance(i14).sendRequest(exportgroupcallinvite, new fi(b2Var, context, i14, exportgroupcallinvite, d6Var2, b60Var));
+                    ConnectionsManager.getInstance(i14).sendRequest(exportgroupcallinvite, new hi(b2Var, context, i14, exportgroupcallinvite, d6Var2, b60Var));
                     break;
                 } else {
                     b2Var.dismiss();
@@ -257,7 +257,7 @@ public final /* synthetic */ class vb implements Runnable {
                 org.telegram.ui.Components.v9.a((org.telegram.ui.Components.v9) this.d, (Runnable[]) this.b, (Bitmap) this.e, (t60) this.f, this.c, (w7.w5[]) this.h);
                 break;
             case 10:
-                kh0.n((kh0) this.d, (Integer[]) this.e, this.c, (TLObject) this.b, (ArrayList) this.f, (TLRPC.PollAnswerVoters) this.h);
+                lh0.n((lh0) this.d, (Integer[]) this.e, this.c, (TLObject) this.b, (ArrayList) this.f, (TLRPC.PollAnswerVoters) this.h);
                 break;
             case 11:
                 fs.Y((fs) this.d, (TLRPC.FileLocation) this.e, (TLRPC.InputFile) this.f, (TLObject) this.b, (TLRPC.FileLocation) this.h, this.c);
@@ -309,7 +309,7 @@ public final /* synthetic */ class vb implements Runnable {
                         tL_inputStorePaymentPremiumSubscription2.upgrade = true;
                     }
                     tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentPremiumSubscription2;
-                    ConnectionsManager.getInstance(i16).sendRequest(tL_payments_canPurchaseStore, new fi(i16, 5, n2Var2, pw0Var, gVar, tL_payments_canPurchaseStore, tL_inputStorePaymentPremiumSubscription2));
+                    ConnectionsManager.getInstance(i16).sendRequest(tL_payments_canPurchaseStore, new hi(i16, 5, n2Var2, pw0Var, gVar, tL_payments_canPurchaseStore, tL_inputStorePaymentPremiumSubscription2));
                     break;
                 }
                 break;
@@ -438,9 +438,9 @@ public final /* synthetic */ class vb implements Runnable {
         this.c = i10;
     }
 
-    public /* synthetic */ vb(kh0 kh0Var, Integer[] numArr, int i10, TLObject tLObject, ArrayList arrayList, TLRPC.PollAnswerVoters pollAnswerVoters) {
+    public /* synthetic */ vb(lh0 lh0Var, Integer[] numArr, int i10, TLObject tLObject, ArrayList arrayList, TLRPC.PollAnswerVoters pollAnswerVoters) {
         this.a = 10;
-        this.d = kh0Var;
+        this.d = lh0Var;
         this.e = numArr;
         this.c = i10;
         this.b = tLObject;

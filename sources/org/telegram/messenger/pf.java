@@ -1,205 +1,100 @@
 package org.telegram.messenger;
 
-import android.text.TextUtils;
+import android.graphics.Bitmap;
+import android.os.Build;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.io.Serializable;
 import java.util.ArrayList;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pf implements Runnable {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ int b;
-    public final /* synthetic */ MessagesStorage c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ int f;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Serializable f;
     public final /* synthetic */ Object h;
+    public final /* synthetic */ Cloneable n;
+    public final /* synthetic */ Object r;
+    public final /* synthetic */ Object s;
 
-    public /* synthetic */ pf(int i10, int i11, long j10, long j11, MessagesStorage messagesStorage, TLRPC.InputChannel inputChannel) {
-        this.c = messagesStorage;
-        this.d = j10;
+    public /* synthetic */ pf(MessagesStorage messagesStorage, int i10, ArrayList arrayList, int i11, a0.h hVar, a0.h hVar2, ArrayList arrayList2, ArrayList arrayList3, CountDownLatch countDownLatch) {
+        this.e = messagesStorage;
         this.b = i10;
-        this.h = inputChannel;
-        this.f = i11;
-        this.e = j11;
+        this.d = arrayList;
+        this.c = i11;
+        this.n = hVar;
+        this.r = hVar2;
+        this.f = arrayList2;
+        this.h = arrayList3;
+        this.s = countDownLatch;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00e3  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00f7  */
     @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void run() {
-        SQLiteCursor sQLiteCursor;
-        int i10;
-        boolean z10;
-        SQLiteCursor queryFinalized;
-        long j10;
-        boolean z11;
-        int i11 = this.a;
-        Object obj = this.h;
-        switch (i11) {
+        switch (this.a) {
             case 0:
-                this.c.lambda$loadPendingTasks$22(this.d, this.b, (TLRPC.InputChannel) obj, this.f, this.e);
+                ((MessagesStorage) this.e).lambda$getWidgetDialogs$169(this.b, this.d, this.c, (a0.h) this.n, (a0.h) this.r, (ArrayList) this.f, (ArrayList) this.h, (CountDownLatch) this.s);
                 return;
             default:
-                final org.telegram.ui.Cells.f6 f6Var = (org.telegram.ui.Cells.f6) obj;
-                long j11 = this.e;
-                final ArrayList arrayList = new ArrayList();
-                ArrayList<TLRPC.User> arrayList2 = new ArrayList<>();
-                ArrayList<TLRPC.Chat> arrayList3 = new ArrayList<>();
-                boolean z12 = true;
-                int i12 = this.b;
-                final MessagesStorage messagesStorage = this.c;
-                final long j12 = this.d;
-                if (i12 <= 0) {
-                    try {
-                        try {
-                            i10 = i12;
-                            z10 = false;
-                        } catch (Exception e) {
-                            e = e;
-                            i10 = i12;
-                        }
-                        try {
-                            queryFinalized = messagesStorage.getDatabase().queryFinalized("SELECT data, mid FROM messages_v2 WHERE uid = ? ORDER BY mid DESC LIMIT 10", Long.valueOf(-j12));
-                        } catch (Exception e7) {
-                            e = e7;
-                            sQLiteCursor = null;
-                            try {
-                                FileLog.e(e);
-                                if (sQLiteCursor != null) {
-                                    sQLiteCursor.dispose();
-                                }
-                                final int i13 = this.f;
-                                final int i14 = i10;
-                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.e6
-                                    @Override // java.lang.Runnable
-                                    public final void run() {
-                                        f6.b(f6.this, i13, arrayList, j12, i14, messagesStorage);
-                                    }
-                                });
-                                return;
-                            } catch (Throwable th2) {
-                                th = th2;
-                                if (sQLiteCursor != null) {
-                                    sQLiteCursor.dispose();
-                                }
-                                throw th;
-                            }
-                        }
-                    } catch (Throwable th3) {
-                        th = th3;
-                        sQLiteCursor = null;
-                        if (sQLiteCursor != null) {
-                        }
-                        throw th;
-                    }
-                } else {
-                    i10 = i12;
-                    z10 = false;
-                    try {
-                        queryFinalized = messagesStorage.getDatabase().queryFinalized("SELECT data, mid FROM messages_v2 WHERE uid = ? AND mid <= ? ORDER BY mid DESC LIMIT 10", Long.valueOf(-j12), Integer.valueOf(i10));
-                    } catch (Exception e10) {
-                        e = e10;
-                        sQLiteCursor = null;
-                        FileLog.e(e);
-                        if (sQLiteCursor != null) {
-                        }
-                        final int i132 = this.f;
-                        final int i142 = i10;
-                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.e6
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                f6.b(f6.this, i132, arrayList, j12, i142, messagesStorage);
-                            }
-                        });
-                        return;
-                    } catch (Throwable th4) {
-                        th = th4;
-                        sQLiteCursor = null;
-                        if (sQLiteCursor != null) {
-                        }
-                        throw th;
-                    }
-                }
-                try {
-                    ArrayList<Long> arrayList4 = new ArrayList<>();
-                    ArrayList arrayList5 = new ArrayList();
-                    while (queryFinalized.next()) {
-                        boolean z13 = z10;
-                        NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(z13 ? 1 : 0);
-                        if (byteBufferValue != null) {
-                            TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(z13), z13);
-                            TLdeserialize.readAttachPath(byteBufferValue, j11);
-                            byteBufferValue.reuse();
-                            z11 = true;
-                            TLdeserialize.id = queryFinalized.intValue(1);
-                            j10 = j11;
-                            TLdeserialize.dialog_id = -j12;
-                            MessagesStorage.addUsersAndChatsFromMessage(TLdeserialize, arrayList4, arrayList5, null);
-                            arrayList.add(TLdeserialize);
-                        } else {
-                            j10 = j11;
-                            z11 = z12;
-                        }
-                        z12 = z11;
-                        j11 = j10;
-                        z10 = false;
-                    }
-                    queryFinalized.dispose();
-                    if (!arrayList.isEmpty()) {
-                        if (!arrayList4.isEmpty()) {
-                            messagesStorage.getUsersInternal(arrayList4, arrayList2);
-                        }
-                        if (!arrayList5.isEmpty()) {
-                            messagesStorage.getChatsInternal(TextUtils.join(",", arrayList5), arrayList3);
-                        }
-                    }
-                    queryFinalized.dispose();
-                } catch (Exception e11) {
-                    e = e11;
-                    sQLiteCursor = queryFinalized;
-                    FileLog.e(e);
-                    if (sQLiteCursor != null) {
-                    }
-                    final int i1322 = this.f;
-                    final int i1422 = i10;
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.e6
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            f6.b(f6.this, i1322, arrayList, j12, i1422, messagesStorage);
-                        }
-                    });
+                zf.e eVar = (zf.e) this.e;
+                AtomicBoolean atomicBoolean = (AtomicBoolean) this.f;
+                Bitmap[] bitmapArr = (Bitmap[]) this.h;
+                int i10 = this.b;
+                zf.z[] zVarArr = (zf.z[]) this.n;
+                int i11 = this.c;
+                RandomAccessFile randomAccessFile = (RandomAccessFile) this.r;
+                ArrayList arrayList = this.d;
+                CountDownLatch[] countDownLatchArr = (CountDownLatch[]) this.s;
+                if (eVar.o.get() || atomicBoolean.get()) {
                     return;
-                } catch (Throwable th5) {
-                    th = th5;
-                    sQLiteCursor = queryFinalized;
-                    if (sQLiteCursor != null) {
-                    }
-                    throw th;
                 }
-                final int i13222 = this.f;
-                final int i14222 = i10;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.e6
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        f6.b(f6.this, i13222, arrayList, j12, i14222, messagesStorage);
+                Bitmap.CompressFormat compressFormat = Bitmap.CompressFormat.WEBP;
+                if (Build.VERSION.SDK_INT <= 28) {
+                    compressFormat = Bitmap.CompressFormat.PNG;
+                }
+                bitmapArr[i10].compress(compressFormat, eVar.l, zVarArr[i10]);
+                int i12 = zVarArr[i10].b;
+                try {
+                    synchronized (eVar.h) {
+                        zf.d dVar = new zf.d(i11);
+                        dVar.c = (int) randomAccessFile.length();
+                        arrayList.add(dVar);
+                        randomAccessFile.write(zVarArr[i10].a, 0, i12);
+                        dVar.b = i12;
+                        zVarArr[i10].b();
                     }
-                });
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    try {
+                        randomAccessFile.close();
+                    } catch (Exception unused) {
+                    } catch (Throwable th2) {
+                        atomicBoolean.set(true);
+                        throw th2;
+                    }
+                    atomicBoolean.set(true);
+                }
+                countDownLatchArr[i10].countDown();
                 return;
         }
     }
 
-    public /* synthetic */ pf(org.telegram.ui.Cells.f6 f6Var, int i10, MessagesStorage messagesStorage, long j10, long j11, int i11) {
-        this.h = f6Var;
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ pf(zf.e eVar, AtomicBoolean atomicBoolean, Bitmap[] bitmapArr, int i10, zf.z[] zVarArr, int i11, RandomAccessFile randomAccessFile, ArrayList arrayList, CountDownLatch[] countDownLatchArr) {
+        this.e = eVar;
+        this.f = atomicBoolean;
+        this.h = bitmapArr;
         this.b = i10;
-        this.c = messagesStorage;
-        this.d = j10;
-        this.e = j11;
-        this.f = i11;
+        this.n = zVarArr;
+        this.c = i11;
+        this.r = randomAccessFile;
+        this.d = arrayList;
+        this.s = countDownLatchArr;
     }
 }

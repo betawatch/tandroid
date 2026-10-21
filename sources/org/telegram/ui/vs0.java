@@ -4,7 +4,7 @@ import android.R;
 import android.net.Uri;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vs0 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,8 +30,8 @@ public final /* synthetic */ class vs0 implements Runnable {
                 PhotoViewer photoViewer = this.b.b;
                 au0 au0Var = photoViewer.E2;
                 if (au0Var != null) {
-                    org.telegram.ui.Components.b81 b81Var = photoViewer.F2;
-                    if (au0Var.e != b81Var) {
+                    org.telegram.ui.Components.c81 c81Var = photoViewer.F2;
+                    if (au0Var.e != c81Var) {
                         au0Var.c = false;
                         au0Var.d = false;
                         if (au0Var.b) {
@@ -40,8 +40,8 @@ public final /* synthetic */ class vs0 implements Runnable {
                         }
                         au0Var.setImageResource(R.color.transparent);
                     }
-                    if (b81Var != null) {
-                        i2.i0 i0Var = b81Var.d;
+                    if (c81Var != null) {
+                        i2.i0 i0Var = c81Var.d;
                         if (i0Var != null) {
                             try {
                                 i0Var.F1();
@@ -55,16 +55,16 @@ public final /* synthetic */ class vs0 implements Runnable {
                             } catch (Exception unused) {
                             }
                         }
-                        long p5 = b81Var.p() - b81Var.n();
+                        long p5 = c81Var.p() - c81Var.n();
                         if (!au0Var.c && !au0Var.d && !au0Var.b && p5 < 5250.0f) {
-                            Uri uri = b81Var.F;
+                            Uri uri = c81Var.F;
                             int i11 = au0Var.a + 1;
                             au0Var.a = i11;
-                            Utilities.globalQueue.postRunnable(new org.telegram.ui.Components.x31(au0Var, uri, i11, 8));
+                            Utilities.globalQueue.postRunnable(new org.telegram.ui.Components.y31(au0Var, uri, i11, 8));
                             au0Var.b = true;
                         }
                     }
-                    au0Var.e = b81Var;
+                    au0Var.e = c81Var;
                     break;
                 }
                 break;

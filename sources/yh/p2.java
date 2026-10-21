@@ -30,7 +30,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -38,13 +38,13 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.ya;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.c91;
 import org.telegram.ui.Components.d80;
+import org.telegram.ui.Components.d91;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.js0;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.ks0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.rr0;
+import org.telegram.ui.Components.sr0;
 import org.telegram.ui.Components.ub;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.yq;
@@ -53,7 +53,7 @@ import org.telegram.ui.ProfileActivity;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public abstract class p2 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final HashMap T = new HashMap();
@@ -79,7 +79,7 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
     public final v9 e;
     public final d6 f;
     public final u1 h;
-    public final c91 n;
+    public final d91 n;
     public final FrameLayout r;
     public final SpannableStringBuilder s;
     public final SpannableStringBuilder v;
@@ -98,9 +98,9 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
         int i11;
         String str;
         this.H = -1;
-        js0 js0Var = (js0) this;
-        this.N = new q1(js0Var, 2);
-        this.O = new ne.b(0, new t1(js0Var), bs.h, 380L, true);
+        ks0 ks0Var = (ks0) this;
+        this.N = new q1(ks0Var, 2);
+        this.O = new ne.b(0, new t1(ks0Var), bs.h, 380L, true);
         this.Q = AndroidUtilities.displaySize.y;
         this.a = n2Var;
         this.b = i10;
@@ -133,19 +133,19 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
         }
         G.a();
         this.f = d6Var;
-        u1 u1Var = new u1(js0Var, context, n2Var);
+        u1 u1Var = new u1(ks0Var, context, n2Var);
         this.h = u1Var;
         u1Var.setAllowDisallowInterceptTouch(true);
-        u1Var.setAdapter(new v1(js0Var, i10, d6Var));
+        u1Var.setAdapter(new v1(ks0Var, i10, d6Var));
         addView(u1Var, z5.e(-1, -1, 119));
-        c91 n10 = u1Var.n(10, true);
+        d91 n10 = u1Var.n(10, true);
         this.n = n10;
         n10.g(h6.Gh, h6.G6, h6.Eh, h6.Hh, h6.s8);
         n10.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
         n10.setClipToPadding(false);
         n10.r = 12;
-        n10.setPreTabClick(new t1(js0Var));
-        n10.setOnTabLongClick(new j6(js0Var, i10, n2Var, context, d6Var));
+        n10.setPreTabClick(new t1(ks0Var));
+        n10.setOnTabLongClick(new j6(ks0Var, i10, n2Var, context, d6Var));
         addView(n10, z5.e(-1, 42, 48));
         gh.c cVar = new gh.c();
         int i13 = h6.d6;
@@ -180,12 +180,12 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
         linearLayout.addView(xpVar, z5.t(26, 26, 16, 0, 0, 0, 0));
         TextView textView = new TextView(context);
         this.E = textView;
-        kk.o(h6.j5, d6Var, textView, 1, 14.0f);
+        mk.o(h6.j5, d6Var, textView, 1, 14.0f);
         textView.setText(LocaleController.getString(R.string.Gift2ChannelNotify));
         linearLayout.addView(textView, z5.t(-2, -2, 16, 9, 0, 0, 0));
         i4Var.addView(linearLayout, z5.d(-2, 38.0f, 17, 0.0f, 6.0f, 0.0f, 6.0f));
         b6.b(linearLayout, 0.025f, 1.5f);
-        linearLayout.setOnClickListener(new ha(js0Var, n2Var, i10, 22));
+        linearLayout.setOnClickListener(new ha(ks0Var, n2Var, i10, 22));
         Boolean bool = G.h;
         if (bool != null) {
             xpVar.a(bool.booleanValue(), false);
@@ -212,7 +212,7 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
                 dVar.g(spannableStringBuilder, false, true);
                 dVar.setStateListAnimator(null);
                 i4Var.addView(dVar, z5.e(-2, -1, 17));
-                i4Var.setOnClickListener(new rr0(js0Var, z10, i10, i12));
+                i4Var.setOnClickListener(new sr0(ks0Var, z10, i10, i12));
                 dVar.setVisibility(!d() ? 8 : 0);
                 linearLayout.setVisibility(d() ? 0 : 8);
                 this.x = 60;
@@ -240,7 +240,7 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
         dVar2.g(spannableStringBuilder3, false, true);
         dVar2.setStateListAnimator(null);
         i4Var.addView(dVar2, z5.e(-2, -1, 17));
-        i4Var.setOnClickListener(new rr0(js0Var, z10, i10, i12));
+        i4Var.setOnClickListener(new sr0(ks0Var, z10, i10, i12));
         dVar2.setVisibility(!d() ? 8 : 0);
         linearLayout.setVisibility(d() ? 0 : 8);
         this.x = 60;
@@ -372,7 +372,7 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
         return currentPage != null ? currentPage.e : this.d;
     }
 
-    public im0 getCurrentListView() {
+    public jm0 getCurrentListView() {
         l2 currentPage = getCurrentPage();
         if (currentPage != null) {
             return currentPage.f;
@@ -448,9 +448,9 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
     }
 
     public float getTabsVisibility() {
-        c91 c91Var = this.n;
-        if (c91Var != null) {
-            return c91Var.getAlpha();
+        d91 d91Var = this.n;
+        if (d91Var != null) {
+            return d91Var.getAlpha();
         }
         return 0.0f;
     }
@@ -570,7 +570,7 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
         int dp = AndroidUtilities.dp(19.0f);
         int i10 = h6.Oh;
         d6 d6Var = this.f;
-        dVar.setBackground(h6.c0(dp, ((js0) this).U.X0(h6.w0(i10, d6Var))));
+        dVar.setBackground(h6.c0(dp, ((ks0) this).U.X0(h6.w0(i10, d6Var))));
         View[] viewPages = this.h.getViewPages();
         if (viewPages != null) {
             for (View view : viewPages) {
@@ -609,16 +609,16 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
 
     public final void o() {
         float f7;
-        c91 c91Var = this.n;
-        if (c91Var == null) {
+        d91 d91Var = this.n;
+        if (d91Var == null) {
             return;
         }
         float min = Math.min(this.K, getTabsHeight() - AndroidUtilities.dp(42.0f));
         float clamp01 = Utilities.clamp01(AndroidUtilities.ilerp(min - this.K, -AndroidUtilities.dp(42.0f), 0.0f));
         float lerp = AndroidUtilities.lerp(0.9f, 1.0f, clamp01);
-        c91Var.setTranslationY(min);
-        c91Var.setScaleX(lerp);
-        c91Var.setScaleY(lerp);
+        d91Var.setTranslationY(min);
+        d91Var.setScaleX(lerp);
+        d91Var.setScaleY(lerp);
         u1 u1Var = this.h;
         if (u1Var.getViewPages() != null) {
             f7 = 0.0f;
@@ -630,7 +630,7 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
         } else {
             f7 = 0.0f;
         }
-        c91Var.setAlpha(w7.r.a(f7, 0.0f, 1.0f) * clamp01);
+        d91Var.setAlpha(w7.r.a(f7, 0.0f, 1.0f) * clamp01);
     }
 
     @Override // android.view.ViewGroup, android.view.View

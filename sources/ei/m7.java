@@ -5,9 +5,9 @@ import android.graphics.RectF;
 import android.view.View;
 import android.view.ViewGroup;
 import j$.util.Objects;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m7 implements ch.a {
     public final /* synthetic */ int a;
@@ -31,8 +31,8 @@ public final /* synthetic */ class m7 implements ch.a {
         switch (this.a) {
             case 0:
                 s7 s7Var = (s7) this.b;
-                im0 im0Var = s7Var.d;
-                hh.d.b(im0Var, canvas, rectF, im0Var, s7Var.getContainerView(), 255);
+                jm0 jm0Var = s7Var.d;
+                hh.d.b(jm0Var, canvas, rectF, jm0Var, s7Var.getContainerView(), 255);
                 break;
             default:
                 yh.p2 p2Var = (yh.p2) this.b;

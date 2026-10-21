@@ -23,9 +23,9 @@ import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.function.Consumer;
-import org.telegram.ui.Components.tx0;
+import org.telegram.ui.Components.ux0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public class FilesMigrationService extends Service {
     public static FilesMigrationBottomSheet filesMigrationBottomSheet = null;
@@ -36,7 +36,7 @@ public class FilesMigrationService extends Service {
     private int movedFilesCount;
     private int totalFilesCount;
 
-    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
     public class 1 extends Thread {
         public 1() {
         }
@@ -51,7 +51,7 @@ public class FilesMigrationService extends Service {
         @Override // java.lang.Thread, java.lang.Runnable
         public void run() {
             FilesMigrationService.this.migrateOldFolder();
-            AndroidUtilities.runOnUIThread(new h1(this, 2));
+            AndroidUtilities.runOnUIThread(new i1(this, 2));
         }
     }
 
@@ -136,7 +136,7 @@ public class FilesMigrationService extends Service {
                 try {
                     convert = Stream.VivifiedWrapper.convert(Files.list(file.toPath()));
                     try {
-                        convert.forEach(new Consumer() { // from class: org.telegram.messenger.y3
+                        convert.forEach(new Consumer() { // from class: org.telegram.messenger.a4
                             @Override // java.util.function.Consumer
                             /* renamed from: accept */
                             public final void x(Object obj) {
@@ -168,7 +168,7 @@ public class FilesMigrationService extends Service {
 
     private void updateProgress() {
         if (System.currentTimeMillis() - this.lastUpdateTime > 20 || this.movedFilesCount >= this.totalFilesCount - 1) {
-            AndroidUtilities.runOnUIThread(new r6(this, this.movedFilesCount, 6));
+            AndroidUtilities.runOnUIThread(new t6(this, this.movedFilesCount, 6));
         }
     }
 
@@ -216,7 +216,7 @@ public class FilesMigrationService extends Service {
         return super.onStartCommand(intent, i10, i11);
     }
 
-    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
     public static class FilesMigrationBottomSheet extends org.telegram.ui.ActionBar.f3 {
         org.telegram.ui.ActionBar.n2 fragment;
 
@@ -226,10 +226,10 @@ public class FilesMigrationService extends Service {
             setCanceledOnTouchOutside(false);
             Activity parentActivity = n2Var.getParentActivity();
             LinearLayout e = g0.e(parentActivity, 1);
-            tx0 tx0Var = new tx0(parentActivity, this.currentAccount);
-            tx0Var.setStickerNum(7);
-            tx0Var.getImageReceiver().setAutoRepeat(1);
-            e.addView(tx0Var, w7.z5.t(144, 144, 1, 0, 16, 0, 0));
+            ux0 ux0Var = new ux0(parentActivity, this.currentAccount);
+            ux0Var.setStickerNum(7);
+            ux0Var.getImageReceiver().setAutoRepeat(1);
+            e.addView(ux0Var, w7.z5.t(144, 144, 1, 0, 16, 0, 0));
             TextView textView = new TextView(parentActivity);
             textView.setGravity(8388611);
             int i10 = org.telegram.ui.ActionBar.h6.j5;
@@ -251,7 +251,7 @@ public class FilesMigrationService extends Service {
             textView3.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Sh, false));
             textView3.setBackground(org.telegram.ui.ActionBar.x5.f(new float[]{6.0f}, org.telegram.ui.ActionBar.h6.Oh));
             e.addView(textView3, w7.z5.d(-1, 48.0f, 0, 16.0f, 15.0f, 16.0f, 16.0f));
-            textView3.setOnClickListener(new z3(this, 0));
+            textView3.setOnClickListener(new b4(this, 0));
             ScrollView scrollView = new ScrollView(parentActivity);
             scrollView.addView(e);
             setCustomView(scrollView);

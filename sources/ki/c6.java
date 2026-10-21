@@ -36,11 +36,11 @@ import org.telegram.ui.Cells.m9;
 import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Cells.y9;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.gj0;
 import org.telegram.ui.Components.gu;
-import org.telegram.ui.Components.pm0;
+import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.qm0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y5, m9 {
     public static final /* synthetic */ int V = 0;
@@ -49,9 +49,9 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
     public k2 G;
     public String H;
     public int I;
-    public pm0 J;
+    public qm0 J;
     public Drawable K;
-    public gj0 L;
+    public hj0 L;
     public final RectF M;
     public boolean N;
     public int O;
@@ -858,9 +858,9 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
         if (drawable != null) {
             drawable.setColorFilter(new PorterDuffColorFilter(h6.w0(h6.Oh, d6Var), PorterDuff.Mode.SRC_IN));
         }
-        pm0 pm0Var = this.J;
-        if (pm0Var != null) {
-            w7.i.a(pm0Var, d6Var);
+        qm0 qm0Var = this.J;
+        if (qm0Var != null) {
+            w7.i.a(qm0Var, d6Var);
         }
     }
 
@@ -883,9 +883,9 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
                 canvas2 = canvas;
                 if (aVar != null && (aVar.b instanceof TL_iv.pageBlockPullquote)) {
                     if (this.J == null) {
-                        pm0 pm0Var = new pm0(this);
-                        this.J = pm0Var;
-                        pm0Var.a(null, null, null, this.a, 1);
+                        qm0 qm0Var = new qm0(this);
+                        this.J = qm0Var;
+                        qm0Var.a(null, null, null, this.a, 1);
                         w7.i.a(this.J, d6Var);
                     }
                     if (this.K == null) {
@@ -947,9 +947,9 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
                 }
             } else {
                 if (this.J == null) {
-                    pm0 pm0Var2 = new pm0(this);
-                    this.J = pm0Var2;
-                    pm0Var2.a(null, null, null, this.a, 1);
+                    qm0 qm0Var2 = new qm0(this);
+                    this.J = qm0Var2;
+                    qm0Var2.a(null, null, null, this.a, 1);
                     w7.i.a(this.J, d6Var);
                 }
                 RectF rectF2 = AndroidUtilities.rectTmp;
@@ -1023,7 +1023,7 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
         super.dispatchDraw(canvas);
         if (o()) {
             if (this.L == null) {
-                this.L = new gj0(this);
+                this.L = new hj0(this);
             }
             TL_iv.pageBlockBlockquote pageblockblockquote = (TL_iv.pageBlockBlockquote) this.x.b;
             int w02 = h6.w0(h6.Oh, d6Var);
@@ -1325,7 +1325,7 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
             h1 h1Var = this.h;
             if (h1Var.getVisibility() == 0 && (layout = h1Var.getLayout()) != null && layout.getLineCount() > 0) {
                 if (this.L == null) {
-                    this.L = new gj0(this);
+                    this.L = new hj0(this);
                 }
                 int lineCount = layout.getLineCount() - 1;
                 int measuredHeight = this.b.getMeasuredHeight() + getPaddingTop();
@@ -1434,9 +1434,9 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
         if (super.verifyDrawable(drawable)) {
             return true;
         }
-        gj0 gj0Var = this.L;
-        if (gj0Var != null) {
-            return drawable == gj0Var.b || drawable == gj0Var.e;
+        hj0 hj0Var = this.L;
+        if (hj0Var != null) {
+            return drawable == hj0Var.b || drawable == hj0Var.e;
         }
         return false;
     }

@@ -16,7 +16,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class pf extends ng {
     public boolean e;
@@ -98,14 +98,14 @@ public final class pf extends ng {
                                     }
                                     int max = Math.max(0, chatActivityEnterView.E0.getSelectionStart());
                                     int min = Math.min(chatActivityEnterView.E0.getText().length(), chatActivityEnterView.E0.getSelectionEnd());
-                                    oj0[] oj0VarArr = (oj0[]) chatActivityEnterView.E0.getText().getSpans(max, min, oj0.class);
-                                    if (oj0VarArr == null || oj0VarArr.length <= 0) {
-                                        pj0.a(spannableStringBuilder);
+                                    pj0[] pj0VarArr = (pj0[]) chatActivityEnterView.E0.getText().getSpans(max, min, pj0.class);
+                                    if (pj0VarArr == null || pj0VarArr.length <= 0) {
+                                        qj0.a(spannableStringBuilder);
                                     } else {
-                                        oj0[] oj0VarArr2 = (oj0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), oj0.class);
-                                        for (int i11 = 0; i11 < oj0VarArr2.length; i11++) {
-                                            spannableStringBuilder.removeSpan(oj0VarArr2[i11]);
-                                            spannableStringBuilder.removeSpan(oj0VarArr2[i11].a);
+                                        pj0[] pj0VarArr2 = (pj0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), pj0.class);
+                                        for (int i11 = 0; i11 < pj0VarArr2.length; i11++) {
+                                            spannableStringBuilder.removeSpan(pj0VarArr2[i11]);
+                                            spannableStringBuilder.removeSpan(pj0VarArr2[i11].a);
                                         }
                                     }
                                     pf pfVar = chatActivityEnterView.E0;

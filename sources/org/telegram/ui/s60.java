@@ -30,7 +30,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class s60 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.d50 {
     public TLRPC.FileLocation E;
@@ -46,7 +46,7 @@ public final class s60 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public String O;
     public final int P;
     public final boolean Q;
-    public org.telegram.ui.Components.uj0 R;
+    public org.telegram.ui.Components.vj0 R;
     public final boolean S;
     public String T;
     public final Location U;
@@ -55,7 +55,7 @@ public final class s60 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public org.telegram.ui.Components.yz X;
     public r60 Y;
     public q60 a;
-    public org.telegram.ui.Components.im0 b;
+    public org.telegram.ui.Components.jm0 b;
     public org.telegram.ui.Components.qu c;
     public ci.k4 d;
     public ei.g6 e;
@@ -255,7 +255,7 @@ public final class s60 extends org.telegram.ui.ActionBar.n2 implements Notificat
                 }
             }
         });
-        this.R = new org.telegram.ui.Components.uj0(R.raw.camera, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null);
+        this.R = new org.telegram.ui.Components.vj0(R.raw.camera, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null);
         jd jdVar = new jd(this, context, 2);
         this.f = jdVar;
         jdVar.setScaleType(ImageView.ScaleType.CENTER);
@@ -319,14 +319,14 @@ public final class s60 extends org.telegram.ui.ActionBar.n2 implements Notificat
         org.telegram.ui.Components.qu quVar5 = this.c;
         boolean z14 = LocaleController.isRTL;
         frameLayout6.addView(quVar5, w7.z5.d(-1, -2.0f, 16, z14 ? 5.0f : 96.0f, 0.0f, z14 ? 96.0f : 5.0f, 0.0f));
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
-        this.b = im0Var;
-        im0Var.p1();
+        org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, null);
+        this.b = jm0Var;
+        jm0Var.p1();
         this.X = new org.telegram.ui.Components.yz(this.b, 1);
-        org.telegram.ui.Components.im0 im0Var2 = this.b;
+        org.telegram.ui.Components.jm0 jm0Var2 = this.b;
         q60 q60Var = new q60(this, context);
         this.a = q60Var;
-        im0Var2.setAdapter(q60Var);
+        jm0Var2.setAdapter(q60Var);
         this.b.setLayoutManager(this.X);
         this.b.setVerticalScrollBarEnabled(false);
         this.b.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);

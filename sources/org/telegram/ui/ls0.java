@@ -20,7 +20,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ls0 implements ct {
     public final /* synthetic */ String a;
@@ -88,7 +88,7 @@ public final class ls0 implements ct {
         PhotoViewer photoViewer = this.h;
         photoViewer.w7 = true;
         R();
-        photoViewer.p5.p(this.a, this.b, str, null, true, 0L, null, null, photoViewer.v1(), this.c.thumbPath, null, null);
+        photoViewer.p5.p(this.a, this.b, str, null, true, 0L, null, null, photoViewer.w1(), this.c.thumbPath, null, null);
     }
 
     @Override // org.telegram.ui.ct
@@ -135,7 +135,7 @@ public final class ls0 implements ct {
         }
         Drawable[] drawableArr = PhotoViewer.U8;
         PhotoViewer photoViewer = this.h;
-        photoEntry.thumbPath = FileLoader.getInstance(photoViewer.T).getPathToAttach(ImageLoader.scaleAndSaveImage(createBitmap, photoViewer.g1(), 512.0f, 512.0f, 83, false, 101, 101), true).toString();
+        photoEntry.thumbPath = FileLoader.getInstance(photoViewer.T).getPathToAttach(ImageLoader.scaleAndSaveImage(createBitmap, photoViewer.h1(), 512.0f, 512.0f, 83, false, 101, 101), true).toString();
     }
 
     @Override // org.telegram.ui.ct
@@ -193,7 +193,7 @@ public final class ls0 implements ct {
         PhotoViewer photoViewer = this.h;
         photoViewer.w7 = true;
         R();
-        photoViewer.p5.p(this.a, this.b, str, null, false, 0L, null, null, photoViewer.v1(), this.c.thumbPath, null, photoViewer.x7);
+        photoViewer.p5.p(this.a, this.b, str, null, false, 0L, null, null, photoViewer.w1(), this.c.thumbPath, null, photoViewer.x7);
     }
 
     @Override // org.telegram.ui.ct
@@ -206,7 +206,7 @@ public final class ls0 implements ct {
         PhotoViewer photoViewer = this.h;
         photoViewer.w7 = true;
         R();
-        photoViewer.p5.p(this.a, this.b, str, charSequence, false, 0L, null, null, photoViewer.v1(), this.c.thumbPath, qyVar, null);
+        photoViewer.p5.p(this.a, this.b, str, charSequence, false, 0L, null, null, photoViewer.w1(), this.c.thumbPath, qyVar, null);
     }
 
     @Override // org.telegram.ui.ct
@@ -219,7 +219,7 @@ public final class ls0 implements ct {
         PhotoViewer photoViewer = this.h;
         photoViewer.w7 = true;
         R();
-        photoViewer.p5.p(this.a, this.b, str, null, false, 0L, stickerSet, photoViewer.t7, photoViewer.v1(), this.c.thumbPath, null, null);
+        photoViewer.p5.p(this.a, this.b, str, null, false, 0L, stickerSet, photoViewer.t7, photoViewer.w1(), this.c.thumbPath, null, null);
     }
 
     @Override // org.telegram.ui.ct
@@ -247,7 +247,7 @@ public final class ls0 implements ct {
             }
             photoViewer.w7 = true;
             R();
-            photoViewer.p5.p(this.a, this.b, str, null, false, photoViewer.l4.a(), null, null, photoViewer.v1(), photoEntry.thumbPath, null, null);
+            photoViewer.p5.p(this.a, this.b, str, null, false, photoViewer.l4.a(), null, null, photoViewer.w1(), photoEntry.thumbPath, null, null);
             return;
         }
         photoViewer.w7 = true;

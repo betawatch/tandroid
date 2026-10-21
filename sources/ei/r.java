@@ -24,16 +24,16 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.kw0;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.vj0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public abstract class r extends m {
     public static final int[] Q1 = {21600, 43200, 86400, 172800};
-    public e11 A1;
+    public f11 A1;
     public Utilities.Callback B1;
     public Utilities.Callback C1;
     public p D1;
@@ -80,12 +80,12 @@ public abstract class r extends m {
     public final RectF u1;
     public final RectF v1;
     public final Path w1;
-    public e11 x1;
+    public f11 x1;
     public Path y1;
     public Paint z1;
 
-    public r(Context context, FrameLayout frameLayout, kw0 kw0Var, FrameLayout frameLayout2, ci.b bVar, org.telegram.ui.Components.ja jaVar) {
-        super(context, frameLayout, kw0Var, frameLayout2, bVar, jaVar);
+    public r(Context context, FrameLayout frameLayout, lw0 lw0Var, FrameLayout frameLayout2, ci.b bVar, org.telegram.ui.Components.ja jaVar) {
+        super(context, frameLayout, lw0Var, frameLayout2, bVar, jaVar);
         this.W0 = true;
         this.X0 = 0;
         lb lbVar = (lb) this;
@@ -283,10 +283,10 @@ public abstract class r extends m {
                         imageView.setVisibility(4);
                         this.T0.setVisibility(4);
                         qVar.g = true;
-                        uj0 uj0Var = qVar.h;
-                        uj0Var.T(0.0f, true);
+                        vj0 vj0Var = qVar.h;
+                        vj0Var.T(0.0f, true);
                         if (qVar.f) {
-                            uj0Var.start();
+                            vj0Var.start();
                         }
                         p pVar2 = this.D1;
                         if (pVar2 != null) {
@@ -338,9 +338,9 @@ public abstract class r extends m {
             this.L1 = false;
             this.M1 = false;
             qVar.g = false;
-            uj0 uj0Var2 = qVar.h;
-            uj0Var2.stop();
-            uj0Var2.T(0.0f, true);
+            vj0 vj0Var2 = qVar.h;
+            vj0Var2.stop();
+            vj0Var2.T(0.0f, true);
             this.O1 = true;
             this.e1 = System.currentTimeMillis();
             this.K0 = true;
@@ -448,7 +448,7 @@ public abstract class r extends m {
             }
             if (f11 > 0.0f) {
                 if (this.x1 == null) {
-                    this.x1 = new e11(LocaleController.getString(R.string.SlideToCancel2), 15.0f, null);
+                    this.x1 = new f11(LocaleController.getString(R.string.SlideToCancel2), 15.0f, null);
                 }
                 if (this.y1 == null) {
                     Path path = new Path();
@@ -478,7 +478,7 @@ public abstract class r extends m {
             }
             if (e7 > 0.0f) {
                 if (this.A1 == null) {
-                    this.A1 = new e11(LocaleController.getString(R.string.CancelRound), f12, AndroidUtilities.bold());
+                    this.A1 = new f11(LocaleController.getString(R.string.CancelRound), f12, AndroidUtilities.bold());
                 }
                 this.A1.p = (int) ((rectF.width() - AndroidUtilities.dp(116.0f)) - p6Var.c());
                 float width = ((rectF.width() / 4.0f) * f13) + (rectF.centerX() - (this.A1.l() / 2.0f));
@@ -680,12 +680,12 @@ public abstract class r extends m {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         q qVar = this.a1;
-        uj0 uj0Var = qVar.h;
+        vj0 vj0Var = qVar.h;
         qVar.f = true;
         if (qVar.g) {
-            uj0Var.start();
+            vj0Var.start();
         }
-        uj0Var.R(qVar.i);
+        vj0Var.R(qVar.i);
     }
 
     @Override // ei.m, android.view.ViewGroup, android.view.View
@@ -693,9 +693,9 @@ public abstract class r extends m {
         super.onDetachedFromWindow();
         q qVar = this.a1;
         qVar.f = false;
-        uj0 uj0Var = qVar.h;
-        uj0Var.stop();
-        uj0Var.R(null);
+        vj0 vj0Var = qVar.h;
+        vj0Var.stop();
+        vj0Var.R(null);
     }
 
     public void setAmplitude(double d) {

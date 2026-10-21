@@ -12,14 +12,14 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class ge0 extends org.telegram.ui.Components.pw0 {
+public final class ge0 extends org.telegram.ui.Components.qw0 {
     public final id0 a;
     public final TextView b;
     public final TextView c;
     public final wh.n d;
-    public final org.telegram.ui.Components.xj0 e;
+    public final org.telegram.ui.Components.yj0 e;
     public Bundle f;
     public String h;
     public boolean n;
@@ -42,11 +42,11 @@ public final class ge0 extends org.telegram.ui.Components.pw0 {
         this.x = new ee0(this, 1);
         setOrientation(1);
         FrameLayout frameLayout = new FrameLayout(context);
-        org.telegram.ui.Components.xj0 xj0Var = new org.telegram.ui.Components.xj0(context);
-        this.e = xj0Var;
-        xj0Var.f(R.raw.tsv_setup_mail, 120, 120, null);
-        xj0Var.setAutoRepeat(false);
-        frameLayout.addView(xj0Var, w7.z5.e(120, 120, 1));
+        org.telegram.ui.Components.yj0 yj0Var = new org.telegram.ui.Components.yj0(context);
+        this.e = yj0Var;
+        yj0Var.f(R.raw.tsv_setup_mail, 120, 120, null);
+        yj0Var.setAutoRepeat(false);
+        frameLayout.addView(yj0Var, w7.z5.e(120, 120, 1));
         if (!AndroidUtilities.isSmallScreen()) {
             Point point = AndroidUtilities.displaySize;
             if (point.x <= point.y || AndroidUtilities.isTablet()) {
@@ -127,17 +127,17 @@ public final class ge0 extends org.telegram.ui.Components.pw0 {
         m.g3.p(nVar2);
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final boolean a() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final boolean b() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final boolean c(boolean z10) {
         this.y.k1(true, true);
         this.f = null;
@@ -145,17 +145,17 @@ public final class ge0 extends org.telegram.ui.Components.pw0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void d() {
         this.n = false;
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public String getHeaderName() {
         return LocaleController.getString("LoginPassword", R.string.LoginPassword);
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void h(String str) {
         int i10;
         if (this.n) {
@@ -180,12 +180,12 @@ public final class ge0 extends org.telegram.ui.Components.pw0 {
         ConnectionsManager.getInstance(i10).sendRequest(tL_auth_checkRecoveryPassword, new x40(9, this, code), 10);
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void j() {
         AndroidUtilities.runOnUIThread(new ee0(this, 0), dg0.t0);
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void k(Bundle bundle) {
         Bundle bundle2 = bundle.getBundle("recoveryview_params");
         this.f = bundle2;
@@ -198,7 +198,7 @@ public final class ge0 extends org.telegram.ui.Components.pw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void l(Bundle bundle) {
         String code = this.a.getCode();
         if (code != null && code.length() != 0) {
@@ -210,7 +210,7 @@ public final class ge0 extends org.telegram.ui.Components.pw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void m(Bundle bundle, boolean z10) {
         if (bundle == null) {
             return;
@@ -227,19 +227,19 @@ public final class ge0 extends org.telegram.ui.Components.pw0 {
         int indexOf = string.indexOf(42);
         int lastIndexOf = string.lastIndexOf(42);
         if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-            org.telegram.ui.Components.m11 m11Var = new org.telegram.ui.Components.m11();
-            m11Var.a |= 256;
-            m11Var.b = indexOf;
+            org.telegram.ui.Components.n11 n11Var = new org.telegram.ui.Components.n11();
+            n11Var.a |= 256;
+            n11Var.b = indexOf;
             int i10 = lastIndexOf + 1;
-            m11Var.c = i10;
-            valueOf.setSpan(new org.telegram.ui.Components.n11(m11Var, 0), indexOf, i10, 0);
+            n11Var.c = i10;
+            valueOf.setSpan(new org.telegram.ui.Components.o11(n11Var, 0), indexOf, i10, 0);
         }
         this.d.setText(AndroidUtilities.formatSpannable(LocaleController.getString(R.string.RestoreEmailNoAccess), valueOf));
         dg0.T0(this.y, id0Var);
         id0Var.requestFocus();
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.qw0
     public final void n() {
         this.b.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false));
         this.c.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.D6, false));

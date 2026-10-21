@@ -1,39 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class vs0 extends s4.m0 {
-    public final /* synthetic */ ps0 a;
+public final class vs0 extends s4.s {
+    public final /* synthetic */ uv0 Q;
 
-    public vs0(ps0 ps0Var) {
-        this.a = ps0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vs0(uv0 uv0Var) {
+        super(3);
+        this.Q = uv0Var;
     }
 
-    @Override // s4.m0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
-        if (!(view instanceof org.telegram.ui.Cells.s7)) {
-            rect.left = 0;
-            rect.top = 0;
-            rect.bottom = 0;
-            rect.right = 0;
-            return;
+    @Override // s4.s, s4.b0, s4.n0
+    public final int o0(int i10, qf.e eVar, s4.y0 y0Var) {
+        if (this.Q.o1) {
+            i10 = 0;
         }
-        org.telegram.ui.Cells.s7 s7Var = (org.telegram.ui.Cells.s7) view;
-        ps0 ps0Var = this.a;
-        ps0Var.r.getClass();
-        int R = RecyclerView.R(s7Var);
-        int i10 = ps0Var.s.J;
-        s7Var.a0 = R < i10;
-        int i11 = R % i10;
-        s7Var.V = i11 == 0;
-        s7Var.W = i11 == i10 - 1;
-        rect.left = 0;
-        rect.top = 0;
-        rect.bottom = 0;
-        rect.right = 0;
+        return super.o0(i10, eVar, y0Var);
+    }
+
+    @Override // s4.s, s4.b0, s4.n0
+    public final boolean y0() {
+        return false;
     }
 }

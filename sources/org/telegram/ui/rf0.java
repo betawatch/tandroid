@@ -13,7 +13,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class rf0 extends FrameLayout {
     public static final /* synthetic */ int E = 0;
@@ -22,7 +22,7 @@ public final class rf0 extends FrameLayout {
     public final View c;
     public final View d;
     public final View e;
-    public final org.telegram.ui.Components.a41 f;
+    public final org.telegram.ui.Components.b41 f;
     public final org.telegram.ui.Components.h20 h;
     public final TextView n;
     public final TextView r;
@@ -48,14 +48,14 @@ public final class rf0 extends FrameLayout {
         view3.setBackgroundColor(TLObject.FLAG_30);
         view3.setAlpha(0.0f);
         addView(view3, w7.z5.c(-1.0f, -1));
-        org.telegram.ui.Components.a41 a41Var = new org.telegram.ui.Components.a41(getContext());
-        this.f = a41Var;
-        a41Var.setTransformType(1);
-        a41Var.setDrawBackground(false);
+        org.telegram.ui.Components.b41 b41Var = new org.telegram.ui.Components.b41(getContext());
+        this.f = b41Var;
+        b41Var.setTransformType(1);
+        b41Var.setDrawBackground(false);
         org.telegram.ui.Components.h20 h20Var = new org.telegram.ui.Components.h20(context, null, false);
         this.h = h20Var;
-        h20Var.addView(a41Var, w7.z5.e(56, 56, 17));
-        h20Var.a(a41Var);
+        h20Var.addView(b41Var, w7.z5.e(56, 56, 17));
+        h20Var.a(b41Var);
         final int i10 = 0;
         h20Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.pf0
             @Override // android.view.View.OnClickListener
@@ -147,9 +147,9 @@ public final class rf0 extends FrameLayout {
 
     public final void b() {
         int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.O9, false);
-        org.telegram.ui.Components.a41 a41Var = this.f;
-        a41Var.setColor(x02);
-        a41Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.P9, false));
+        org.telegram.ui.Components.b41 b41Var = this.f;
+        b41Var.setColor(x02);
+        b41Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.P9, false));
         this.w.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(12.0f), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.h5, false)));
         this.n.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.q5, false));
         this.r.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, false));

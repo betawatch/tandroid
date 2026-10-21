@@ -16,9 +16,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class qi extends hm0 {
+public final class qi extends im0 {
     public int E;
     public int F;
     public int G;
@@ -44,7 +44,7 @@ public final class qi extends hm0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         return false;
     }
@@ -418,7 +418,7 @@ public final class qi extends hm0 {
         miVar.setImportantForAccessibility(1);
         miVar.setFocusable(true);
         miVar.setLayoutParams(new s4.o0(-2, -1));
-        return new sl0(miVar);
+        return new tl0(miVar);
     }
 
     @Override // s4.g0

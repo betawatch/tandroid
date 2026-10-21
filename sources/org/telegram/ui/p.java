@@ -12,7 +12,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class p extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -24,7 +24,7 @@ public final class p extends org.telegram.ui.ActionBar.n2 implements Notificatio
     public o b;
     public org.telegram.ui.Components.vz c;
     public s4.b0 d;
-    public org.telegram.ui.Components.im0 e;
+    public org.telegram.ui.Components.jm0 e;
     public final HashSet f;
     public final ArrayList h;
     public boolean n;
@@ -167,14 +167,14 @@ public final class p extends org.telegram.ui.ActionBar.n2 implements Notificatio
         } else {
             this.c.c();
         }
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
-        this.e = im0Var;
-        im0Var.setFocusable(true);
+        org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, null);
+        this.e = jm0Var;
+        jm0Var.setFocusable(true);
         this.e.setEmptyView(this.c);
-        org.telegram.ui.Components.im0 im0Var2 = this.e;
+        org.telegram.ui.Components.jm0 jm0Var2 = this.e;
         s4.b0 b0Var = new s4.b0(1, false);
         this.d = b0Var;
-        im0Var2.setLayoutManager(b0Var);
+        jm0Var2.setLayoutManager(b0Var);
         this.e.p1();
         this.actionBar.setAdaptiveBackground(this.e);
         frameLayout.addView(this.e, w7.z5.c(-1.0f, -1));
@@ -187,24 +187,24 @@ public final class p extends org.telegram.ui.ActionBar.n2 implements Notificatio
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        org.telegram.ui.Components.im0 im0Var;
+        org.telegram.ui.Components.jm0 jm0Var;
         org.telegram.ui.Cells.w wVar;
         TLRPC.StickerSetCovered stickersSet;
         ArrayList arrayList;
         if (i10 != NotificationCenter.needAddArchivedStickers) {
-            if (i10 != NotificationCenter.stickersDidLoad || (im0Var = this.e) == null) {
+            if (i10 != NotificationCenter.stickersDidLoad || (jm0Var = this.e) == null) {
                 return;
             }
-            int childCount = im0Var.getChildCount();
+            int childCount = jm0Var.getChildCount();
             for (int i12 = 0; i12 < childCount; i12++) {
                 View childAt = this.e.getChildAt(i12);
                 if ((childAt instanceof org.telegram.ui.Cells.w) && (stickersSet = (wVar = (org.telegram.ui.Cells.w) childAt).getStickersSet()) != null) {
                     boolean isStickerPackInstalled = MediaDataController.getInstance(this.currentAccount).isStickerPackInstalled(stickersSet.set.id);
                     if (isStickerPackInstalled) {
                         this.a.l(stickersSet.set.id);
-                        org.telegram.ui.Components.ti0 ti0Var = wVar.f;
-                        if (ti0Var != null) {
-                            ti0Var.a(false, true);
+                        org.telegram.ui.Components.ui0 ui0Var = wVar.f;
+                        if (ui0Var != null) {
+                            ui0Var.a(false, true);
                         }
                     }
                     wVar.a(isStickerPackInstalled, true, false);

@@ -6,7 +6,7 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class m90 implements PopupWindow.OnDismissListener {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final class m90 implements PopupWindow.OnDismissListener {
                 ((org.telegram.ui.jz) this.e).x = null;
                 ei.g6 g6Var2 = (ei.g6) this.c;
                 g6Var2.animate().cancel();
-                g6Var2.animate().alpha(0.0f).setDuration(150L).setListener(new o31(this, 26));
+                g6Var2.animate().alpha(0.0f).setDuration(150L).setListener(new p31(this, 26));
                 break;
         }
     }

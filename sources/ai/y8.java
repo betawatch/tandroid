@@ -26,16 +26,16 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.a91;
 import org.telegram.ui.Components.b91;
 import org.telegram.ui.Components.c91;
+import org.telegram.ui.Components.d91;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.jz0;
 import org.telegram.ui.qn;
 import org.telegram.ui.x70;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y8 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final /* synthetic */ class y8 implements Utilities.Callback {
     */
     public final void run(Object obj) {
         int[] iArr;
-        b91 b91Var;
+        c91 c91Var;
         ei.p6 p6Var = null;
         r4 = false;
         boolean z10 = false;
@@ -239,13 +239,13 @@ public final /* synthetic */ class y8 implements Utilities.Callback {
                 }
                 break;
             case 6:
-                c91 c91Var = (c91) this.c;
+                d91 d91Var = (d91) this.c;
                 boolean z16 = this.b;
                 View view3 = (View) obj;
-                c91Var.v.getClass();
+                d91Var.v.getClass();
                 int R = RecyclerView.R(view3);
-                if (view3 instanceof a91) {
-                    ((a91) view3).setReordering(z16 && (b91Var = c91Var.y) != null && ((l2.f) b91Var).z(R));
+                if (view3 instanceof b91) {
+                    ((b91) view3).setReordering(z16 && (c91Var = d91Var.y) != null && ((l2.f) c91Var).z(R));
                     break;
                 }
                 break;

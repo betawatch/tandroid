@@ -5,7 +5,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class se0 implements Runnable {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class se0 implements Runnable {
         hf0 hf0Var = this.b;
         switch (i10) {
             case 0:
-                org.telegram.ui.Components.xj0 xj0Var = hf0Var.G;
+                org.telegram.ui.Components.yj0 yj0Var = hf0Var.G;
                 qr qrVar = hf0Var.f;
                 int i13 = hf0Var.f0;
                 if (i13 != 3 && (trVarArr = qrVar.f) != null) {
@@ -38,13 +38,13 @@ public final /* synthetic */ class se0 implements Runnable {
                         }
                     }
                 }
-                org.telegram.ui.Components.uj0 uj0Var = hf0Var.a;
-                if (uj0Var != null) {
-                    uj0Var.start();
+                org.telegram.ui.Components.vj0 vj0Var = hf0Var.a;
+                if (vj0Var != null) {
+                    vj0Var.start();
                 }
                 if (i13 == 15) {
-                    xj0Var.getAnimatedDrawable().N(0, false, false);
-                    xj0Var.getAnimatedDrawable().start();
+                    yj0Var.getAnimatedDrawable().N(0, false, false);
+                    yj0Var.getAnimatedDrawable().start();
                     break;
                 }
                 break;
@@ -69,13 +69,13 @@ public final /* synthetic */ class se0 implements Runnable {
                 AndroidUtilities.runOnUIThread(new se0(hf0Var, 4));
                 break;
             case 4:
-                org.telegram.ui.Components.xj0 xj0Var2 = hf0Var.s;
-                xj0Var2.setAutoRepeat(true);
-                org.telegram.ui.Components.uj0 uj0Var2 = hf0Var.O;
-                uj0Var2.N(0, false, false);
-                uj0Var2.K(1);
-                xj0Var2.setAnimation(uj0Var2);
-                xj0Var2.d();
+                org.telegram.ui.Components.yj0 yj0Var2 = hf0Var.s;
+                yj0Var2.setAutoRepeat(true);
+                org.telegram.ui.Components.vj0 vj0Var2 = hf0Var.O;
+                vj0Var2.N(0, false, false);
+                vj0Var2.K(1);
+                yj0Var2.setAnimation(vj0Var2);
+                yj0Var2.d();
                 break;
             case 5:
                 try {
@@ -86,19 +86,19 @@ public final /* synthetic */ class se0 implements Runnable {
                 String string = LocaleController.getString(R.string.YourPasswordSuccess);
                 org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                 b2Var.R = string;
-                b2Var.T = LocaleController.formatString(R.string.ChangePhoneNumberSuccessWithPhone, org.telegram.messenger.kk.g(new StringBuilder("+"), hf0Var.d, jf.b.c()));
+                b2Var.T = LocaleController.formatString(R.string.ChangePhoneNumberSuccessWithPhone, org.telegram.messenger.mk.g(new StringBuilder("+"), hf0Var.d, jf.b.c()));
                 alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
                 b2Var.setOnDismissListener(new bf0(hf0Var, i11));
                 alertDialog$Builder.o();
                 break;
             case 6:
-                org.telegram.ui.Components.uj0 uj0Var3 = hf0Var.P;
-                uj0Var3.t0 = new se0(hf0Var, 8);
-                org.telegram.ui.Components.xj0 xj0Var3 = hf0Var.s;
-                xj0Var3.setAutoRepeat(false);
-                uj0Var3.N(0, false, false);
-                xj0Var3.setAnimation(uj0Var3);
-                xj0Var3.d();
+                org.telegram.ui.Components.vj0 vj0Var3 = hf0Var.P;
+                vj0Var3.t0 = new se0(hf0Var, 8);
+                org.telegram.ui.Components.yj0 yj0Var3 = hf0Var.s;
+                yj0Var3.setAutoRepeat(false);
+                vj0Var3.N(0, false, false);
+                yj0Var3.setAnimation(vj0Var3);
+                yj0Var3.d();
                 break;
             case 7:
                 hf0Var.postDelayed(new se0(hf0Var, 9), 150L);
@@ -120,9 +120,9 @@ public final /* synthetic */ class se0 implements Runnable {
                     }
                 }
             default:
-                org.telegram.ui.Components.xj0 xj0Var4 = hf0Var.s;
-                xj0Var4.setAutoRepeat(false);
-                xj0Var4.setAnimation(hf0Var.a);
+                org.telegram.ui.Components.yj0 yj0Var4 = hf0Var.s;
+                yj0Var4.setAutoRepeat(false);
+                yj0Var4.setAnimation(hf0Var.a);
                 break;
         }
     }

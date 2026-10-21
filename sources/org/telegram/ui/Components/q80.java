@@ -11,9 +11,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class q80 extends hm0 {
+public final class q80 extends im0 {
     public final Context c;
     public final /* synthetic */ r80 d;
 
@@ -22,7 +22,7 @@ public final class q80 extends hm0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         return true;
     }
@@ -72,7 +72,7 @@ public final class q80 extends hm0 {
         } else {
             f4Var = new org.telegram.ui.Cells.f4(2, 0, this.c, null, false, r80Var.s == 2);
         }
-        return new sl0(f4Var);
+        return new tl0(f4Var);
     }
 
     @Override // s4.g0

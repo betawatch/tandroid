@@ -15,10 +15,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.tf1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class m6 extends FrameLayout {
     public float E;
@@ -53,7 +53,7 @@ public final class m6 extends FrameLayout {
     public tg.g f;
     public long f0;
     public float g0;
-    public xj0 h;
+    public yj0 h;
     public float h0;
     public float i0;
     public final i6 j0;
@@ -368,13 +368,13 @@ public final class m6 extends FrameLayout {
     }
 
     public final void g() {
-        xj0 xj0Var = new xj0(getContext());
-        this.h = xj0Var;
-        xj0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        xj0 xj0Var2 = this.h;
+        yj0 yj0Var = new yj0(getContext());
+        this.h = yj0Var;
+        yj0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        yj0 yj0Var2 = this.h;
         int i10 = R.raw.wallet_diamond_blue;
         int i11 = this.b;
-        xj0Var2.f(i10, i11, i11, null);
+        yj0Var2.f(i10, i11, i11, null);
         this.h.getAnimatedDrawable().K(0);
         this.c = this.h;
         setOnClickListener(new t2(this, 4));
@@ -494,15 +494,15 @@ public final class m6 extends FrameLayout {
         int i10 = this.k0 + 1;
         this.k0 = i10;
         if (this.f == null) {
-            xj0 xj0Var = this.h;
-            if (xj0Var != null) {
+            yj0 yj0Var = this.h;
+            if (yj0Var != null) {
                 if (!z10) {
-                    this.w = xj0Var.b();
+                    this.w = yj0Var.b();
                     this.h.i();
                     return;
                 } else {
                     if (!this.v || this.w) {
-                        xj0Var.d();
+                        yj0Var.d();
                     }
                     this.v = true;
                     return;
@@ -538,9 +538,9 @@ public final class m6 extends FrameLayout {
             gVar.f = this.T + this.L;
             return;
         }
-        xj0 xj0Var = this.h;
-        if (xj0Var != null) {
-            xj0Var.setRotationY(this.T + this.L);
+        yj0 yj0Var = this.h;
+        if (yj0Var != null) {
+            yj0Var.setRotationY(this.T + this.L);
         }
     }
 
@@ -698,9 +698,9 @@ public final class m6 extends FrameLayout {
         this.b0 = f7;
         i();
         setEnabled(false);
-        xj0 xj0Var = this.h;
-        if (xj0Var != null) {
-            xj0Var.getAnimatedDrawable().K(1);
+        yj0 yj0Var = this.h;
+        if (yj0Var != null) {
+            yj0Var.getAnimatedDrawable().K(1);
         }
     }
 
@@ -711,9 +711,9 @@ public final class m6 extends FrameLayout {
             gVar.g = f7 + this.M;
             return;
         }
-        xj0 xj0Var = this.h;
-        if (xj0Var != null) {
-            xj0Var.setRotation(f7 + this.M);
+        yj0 yj0Var = this.h;
+        if (yj0Var != null) {
+            yj0Var.setRotation(f7 + this.M);
         }
     }
 
@@ -749,9 +749,9 @@ public final class m6 extends FrameLayout {
             gVar.g = this.K + this.M;
             return;
         }
-        xj0 xj0Var = this.h;
-        if (xj0Var != null) {
-            xj0Var.setRotation(this.K + this.M);
+        yj0 yj0Var = this.h;
+        if (yj0Var != null) {
+            yj0Var.setRotation(this.K + this.M);
         }
     }
 

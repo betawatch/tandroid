@@ -18,9 +18,9 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.xa;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.m6;
@@ -29,24 +29,24 @@ import org.telegram.ui.qn;
 import s4.k;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class f extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final ag.a X;
     public final uc Y;
     public final FrameLayout Z;
     public Runnable a0;
-    public t61 b0;
+    public u61 b0;
 
     public f(Context context, d6 d6Var, ag.a aVar, boolean z10, Runnable runnable) {
         super(context, null, false, false, d6Var);
         this.v = 0.2f;
         this.a0 = runnable;
         fixNavigationBar();
-        im0 im0Var = this.d;
+        jm0 jm0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
         final int i11 = 0;
-        im0Var.setPadding(i10, 0, i10, 0);
+        jm0Var.setPadding(i10, 0, i10, 0);
         this.d.setOnItemClickListener(new wa(this, 11));
         k kVar = new k();
         kVar.m = false;
@@ -111,9 +111,9 @@ public final class f extends bb implements NotificationCenter.NotificationCenter
                 }
             });
         }
-        t61 t61Var = this.b0;
-        if (t61Var != null) {
-            t61Var.N(false);
+        u61 u61Var = this.b0;
+        if (u61Var != null) {
+            u61Var.N(false);
         }
     }
 
@@ -130,9 +130,9 @@ public final class f extends bb implements NotificationCenter.NotificationCenter
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         Runnable runnable;
         if (i10 == NotificationCenter.starOptionsLoaded || i10 == NotificationCenter.starBalanceUpdated) {
-            t61 t61Var = this.b0;
-            if (t61Var != null) {
-                t61Var.N(true);
+            u61 u61Var = this.b0;
+            if (u61Var != null) {
+                u61Var.N(true);
             }
             ag.a s10 = ga.y(this.currentAccount, true).s();
             TextView textView = (TextView) this.Y.c;
@@ -193,9 +193,9 @@ public final class f extends bb implements NotificationCenter.NotificationCenter
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
-        t61 t61Var = new t61(this.d, getContext(), this.currentAccount, 0, true, new q(this, 22), this.resourcesProvider);
-        this.b0 = t61Var;
-        return t61Var;
+    public final im0 x(jm0 jm0Var) {
+        u61 u61Var = new u61(this.d, getContext(), this.currentAccount, 0, true, new q(this, 22), this.resourcesProvider);
+        this.b0 = u61Var;
+        return u61Var;
     }
 }

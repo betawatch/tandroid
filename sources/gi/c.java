@@ -13,12 +13,12 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Cells.d9;
 import org.telegram.ui.Cells.z6;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Wallet.o5;
 import org.telegram.ui.Wallet.r9;
 import org.telegram.ui.i10;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final /* synthetic */ class c implements Utilities.CallbackReturn {
                 View view = (View) obj;
                 return Boolean.valueOf(((view instanceof d9) || (view instanceof z6) || (view instanceof i10) || (view instanceof org.telegram.ui.Cells.u3) || (view instanceof org.telegram.ui.Cells.b2) || Objects.equals(view.getTag(), -33024)) ? false : true);
             case 6:
-                return Boolean.valueOf(t61.K(((Integer) obj).intValue()));
+                return Boolean.valueOf(u61.K(((Integer) obj).intValue()));
             case 7:
                 TL_wallet.disableBackup disablebackup = new TL_wallet.disableBackup();
                 disablebackup.password = (TLRPC.InputCheckPasswordSRP) obj;

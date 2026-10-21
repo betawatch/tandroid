@@ -47,7 +47,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.bz0;
+import org.telegram.ui.Components.cz0;
 import org.telegram.ui.Components.su;
 import org.telegram.ui.Wallet.a1;
 import org.telegram.ui.Wallet.z0;
@@ -60,7 +60,7 @@ import tc.v;
 import v7.u6;
 import w7.a0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final class b implements c3.q {
     public static b e;
@@ -289,7 +289,7 @@ public final class b implements c3.q {
             try {
                 try {
                     tc.u uVar = (tc.u) this.b;
-                    AndroidUtilities.runOnUIThread(new bz0(z0Var.c, uVar, z0Var.a, "websocket error: " + a1.a(vVar), 15, false));
+                    AndroidUtilities.runOnUIThread(new cz0(z0Var.c, uVar, z0Var.a, "websocket error: " + a1.a(vVar), 15, false));
                 } catch (Throwable unused) {
                 }
             } catch (Throwable unused2) {

@@ -40,7 +40,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
@@ -48,19 +48,19 @@ import org.telegram.ui.ActionBar.j5;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.z9;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.cl0;
+import org.telegram.ui.Components.dl0;
 import org.telegram.ui.Components.fd;
 import org.telegram.ui.Components.gz;
-import org.telegram.ui.Components.le0;
-import org.telegram.ui.Components.ln0;
+import org.telegram.ui.Components.me0;
+import org.telegram.ui.Components.mn0;
 import org.telegram.ui.Components.p6;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.Components.voip.k2;
 import org.telegram.ui.Components.wc0;
 import org.telegram.ui.Components.wp;
-import org.telegram.ui.Components.ym0;
 import org.telegram.ui.Components.zd0;
+import org.telegram.ui.Components.zm0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SecretMediaViewer;
 import org.telegram.ui.Wallet.a5;
@@ -85,7 +85,7 @@ import org.telegram.ui.x31;
 import org.telegram.ui.x51;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class v extends FrameLayout {
     public final /* synthetic */ int a;
@@ -100,21 +100,21 @@ public final class v extends FrameLayout {
     }
 
     public void b(Canvas canvas) {
-        le0 le0Var = (le0) this.c;
-        Drawable drawable = le0Var.a;
+        me0 me0Var = (me0) this.c;
+        Drawable drawable = me0Var.a;
         if (drawable == null) {
             super.onDraw(canvas);
         } else if ((drawable instanceof wc0) || (drawable instanceof ColorDrawable) || (drawable instanceof GradientDrawable)) {
             drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-            le0Var.a.draw(canvas);
+            me0Var.a.draw(canvas);
         } else {
-            float max = Math.max(getMeasuredWidth() / le0Var.a.getIntrinsicWidth(), (getMeasuredHeight() + le0Var.G) / le0Var.a.getIntrinsicHeight());
-            int ceil = (int) Math.ceil(le0Var.a.getIntrinsicWidth() * max);
-            int ceil2 = (int) Math.ceil(le0Var.a.getIntrinsicHeight() * max);
+            float max = Math.max(getMeasuredWidth() / me0Var.a.getIntrinsicWidth(), (getMeasuredHeight() + me0Var.G) / me0Var.a.getIntrinsicHeight());
+            int ceil = (int) Math.ceil(me0Var.a.getIntrinsicWidth() * max);
+            int ceil2 = (int) Math.ceil(me0Var.a.getIntrinsicHeight() * max);
             int measuredWidth = (getMeasuredWidth() - ceil) / 2;
-            int measuredHeight = ((getMeasuredHeight() - ceil2) + le0Var.G) / 2;
-            le0Var.a.setBounds(measuredWidth, measuredHeight, ceil + measuredWidth, ceil2 + measuredHeight);
-            le0Var.a.draw(canvas);
+            int measuredHeight = ((getMeasuredHeight() - ceil2) + me0Var.G) / 2;
+            me0Var.a.setBounds(measuredWidth, measuredHeight, ceil + measuredWidth, ceil2 + measuredHeight);
+            me0Var.a.draw(canvas);
         }
         canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), (Paint) this.b);
     }
@@ -252,14 +252,14 @@ public final class v extends FrameLayout {
                 break;
             case 16:
                 Paint paint5 = (Paint) this.b;
-                cl0 cl0Var = (cl0) this.c;
-                int i13 = cl0Var.M0;
-                paint5.setColor((i13 == 1 || i13 == 2 || i13 == 4) ? i0.a.o(-1, 30) : i0.a.f(0.7f, h6.w0(h6.F8, cl0Var.k0), h6.w0(h6.h5, cl0Var.k0)));
+                dl0 dl0Var = (dl0) this.c;
+                int i13 = dl0Var.M0;
+                paint5.setColor((i13 == 1 || i13 == 2 || i13 == 4) ? i0.a.o(-1, 30) : i0.a.f(0.7f, h6.w0(h6.F8, dl0Var.k0), h6.w0(h6.h5, dl0Var.k0)));
                 float measuredHeight = getMeasuredHeight() / 2.0f;
                 float measuredWidth2 = getMeasuredWidth() / 2.0f;
                 View childAt = getChildAt(0);
                 float measuredWidth3 = (getMeasuredWidth() - AndroidUtilities.dpf2(6.0f)) / 2.0f;
-                float g10 = cl0Var.g();
+                float g10 = dl0Var.g();
                 RectF rectF3 = AndroidUtilities.rectTmp;
                 rectF3.set(measuredWidth2 - measuredWidth3, (measuredHeight - measuredWidth3) - g10, measuredWidth2 + measuredWidth3, measuredHeight + measuredWidth3 + g10);
                 canvas.save();
@@ -716,14 +716,14 @@ public final class v extends FrameLayout {
         switch (this.a) {
             case 15:
                 b(canvas);
-                le0 le0Var = (le0) this.c;
-                if (le0Var.J != null && le0Var.K != null && getMeasuredWidth() > 0 && getMeasuredHeight() > 0) {
-                    le0Var.J.eraseColor(0);
-                    le0Var.K.save();
-                    le0Var.K.scale(le0Var.J.getWidth() / getMeasuredWidth(), le0Var.J.getHeight() / getMeasuredHeight());
-                    b(le0Var.K);
-                    le0Var.K.restore();
-                    le0Var.I.d();
+                me0 me0Var = (me0) this.c;
+                if (me0Var.J != null && me0Var.K != null && getMeasuredWidth() > 0 && getMeasuredHeight() > 0) {
+                    me0Var.J.eraseColor(0);
+                    me0Var.K.save();
+                    me0Var.K.scale(me0Var.J.getWidth() / getMeasuredWidth(), me0Var.J.getHeight() / getMeasuredHeight());
+                    b(me0Var.K);
+                    me0Var.K.restore();
+                    me0Var.I.d();
                     break;
                 }
                 break;
@@ -747,7 +747,7 @@ public final class v extends FrameLayout {
                     if (etVar.K && etVar.v == null && etVar.w != null && !etVar.e0) {
                         etVar.e0 = true;
                         imageReceiver2.setVisible(false, false);
-                        ym0.d(new g5(etVar, 8));
+                        zm0.d(new g5(etVar, 8));
                     }
                     if (etVar.v != null) {
                         boolean z10 = etVar.K;
@@ -962,7 +962,7 @@ public final class v extends FrameLayout {
                 super.onLayout(z10, i10, i11, i12, i13);
                 int i14 = (i13 - i11) / 4;
                 int i15 = i14 * 3;
-                int A = kk.A(275.0f, i15, 2);
+                int A = mk.A(275.0f, i15, 2);
                 j70 j70Var = (j70) this.c;
                 FrameLayout frameLayout = j70Var.r;
                 frameLayout.layout(0, A, frameLayout.getMeasuredWidth(), j70Var.r.getMeasuredHeight() + A);
@@ -990,7 +990,7 @@ public final class v extends FrameLayout {
                 }
                 break;
             case 21:
-                int dp4 = AndroidUtilities.dp(25.0f) + AndroidUtilities.dp(150.0f) + kk.A(275.0f, ((i13 - i11) / 4) * 3, 2);
+                int dp4 = AndroidUtilities.dp(25.0f) + AndroidUtilities.dp(150.0f) + mk.A(275.0f, ((i13 - i11) / 4) * 3, 2);
                 int dp5 = AndroidUtilities.dp(18.0f);
                 TextView textView2 = (TextView) this.b;
                 textView2.layout(dp5, dp4, textView2.getMeasuredWidth() + dp5, textView2.getMeasuredHeight() + dp4);
@@ -1128,7 +1128,7 @@ public final class v extends FrameLayout {
                 break;
             case 7:
                 super.onMeasure(i10, i11);
-                super.onMeasure(i10, kk.C(8.0f, ((LinearLayout) this.b).getMeasuredHeight(), TLObject.FLAG_30));
+                super.onMeasure(i10, mk.C(8.0f, ((LinearLayout) this.b).getMeasuredHeight(), TLObject.FLAG_30));
                 break;
             case 12:
                 super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
@@ -1168,13 +1168,13 @@ public final class v extends FrameLayout {
                 yVar.c(0, AndroidUtilities.dp(24.0f) + getPaddingBottom());
                 break;
             case 15:
-                le0 le0Var = (le0) this.c;
-                gh.b bVar = le0Var.H;
+                me0 me0Var = (me0) this.c;
+                gh.b bVar = me0Var.H;
                 super.onSizeChanged(i10, i11, i12, i13);
                 if (i10 > 0 && i11 > 0) {
-                    le0Var.J = Bitmap.createBitmap(54, Math.max(1, Math.round((i11 * 54) / i10)), Bitmap.Config.ARGB_8888);
-                    le0Var.K = new Canvas(le0Var.J);
-                    bVar.a(le0Var.J);
+                    me0Var.J = Bitmap.createBitmap(54, Math.max(1, Math.round((i11 * 54) / i10)), Bitmap.Config.ARGB_8888);
+                    me0Var.K = new Canvas(me0Var.J);
+                    bVar.a(me0Var.J);
                     bVar.c(i10, i11);
                     break;
                 }
@@ -1258,9 +1258,9 @@ public final class v extends FrameLayout {
                         secretMediaViewer.d(false);
                     } else if (motionEvent.getActionMasked() == 0 || motionEvent.getActionMasked() == 5) {
                         secretMediaViewer.f1 = false;
-                        ln0 ln0Var = secretMediaViewer.g1;
-                        if (!ln0Var.q) {
-                            ln0Var.a();
+                        mn0 mn0Var = secretMediaViewer.g1;
+                        if (!mn0Var.q) {
+                            mn0Var.a();
                         }
                         if (!secretMediaViewer.p0) {
                             if (motionEvent.getPointerCount() == 2) {
@@ -1287,11 +1287,11 @@ public final class v extends FrameLayout {
                             if (motionEvent.getPointerCount() == 2 && !secretMediaViewer.p0 && secretMediaViewer.Z0) {
                                 secretMediaViewer.f1 = true;
                                 secretMediaViewer.y0 = (((float) Math.hypot(motionEvent.getX(1) - motionEvent.getX(0), motionEvent.getY(1) - motionEvent.getY(0))) / secretMediaViewer.N0) * secretMediaViewer.O0;
-                                secretMediaViewer.w0 = kk.x(secretMediaViewer.y0, secretMediaViewer.O0, (secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2)) - secretMediaViewer.R0, secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2));
+                                secretMediaViewer.w0 = mk.x(secretMediaViewer.y0, secretMediaViewer.O0, (secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2)) - secretMediaViewer.R0, secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2));
                                 float height = secretMediaViewer.Q0 - (secretMediaViewer.e.getHeight() / 2);
                                 float height2 = (secretMediaViewer.Q0 - (secretMediaViewer.e.getHeight() / 2)) - secretMediaViewer.S0;
                                 float f11 = secretMediaViewer.y0;
-                                secretMediaViewer.x0 = kk.x(f11, secretMediaViewer.O0, height2, height);
+                                secretMediaViewer.x0 = mk.x(f11, secretMediaViewer.O0, height2, height);
                                 secretMediaViewer.n(f11);
                                 secretMediaViewer.e.invalidate();
                             } else if (motionEvent.getPointerCount() == 1) {
@@ -1375,8 +1375,8 @@ public final class v extends FrameLayout {
                                     secretMediaViewer.n(1.0f);
                                     secretMediaViewer.c(1.0f, 0.0f, 0.0f, true);
                                 } else if (f17 > 3.0f) {
-                                    float x11 = kk.x(3.0f, secretMediaViewer.O0, (secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2)) - secretMediaViewer.R0, secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2));
-                                    float x12 = kk.x(3.0f, secretMediaViewer.O0, (secretMediaViewer.Q0 - (secretMediaViewer.e.getHeight() / 2)) - secretMediaViewer.S0, secretMediaViewer.Q0 - (secretMediaViewer.e.getHeight() / 2));
+                                    float x11 = mk.x(3.0f, secretMediaViewer.O0, (secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2)) - secretMediaViewer.R0, secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2));
+                                    float x12 = mk.x(3.0f, secretMediaViewer.O0, (secretMediaViewer.Q0 - (secretMediaViewer.e.getHeight() / 2)) - secretMediaViewer.S0, secretMediaViewer.Q0 - (secretMediaViewer.e.getHeight() / 2));
                                     secretMediaViewer.n(3.0f);
                                     float f18 = secretMediaViewer.V0;
                                     if (x11 >= f18) {
@@ -1582,10 +1582,10 @@ public final class v extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v(le0 le0Var, Context context) {
+    public v(me0 me0Var, Context context) {
         super(context);
         this.a = 15;
-        this.c = le0Var;
+        this.c = me0Var;
         this.b = new Paint();
     }
 
@@ -1687,10 +1687,10 @@ public final class v extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v(cl0 cl0Var, Context context) {
+    public v(dl0 dl0Var, Context context) {
         super(context);
         this.a = 16;
-        this.c = cl0Var;
+        this.c = dl0Var;
         this.b = new Paint(1);
     }
 

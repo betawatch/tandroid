@@ -1,37 +1,55 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.os.Bundle;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v9 implements Utilities.Callback2 {
+public final /* synthetic */ class v9 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ Utilities.Callback2 c;
+    public final /* synthetic */ BaseController b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ v9(MessagesController messagesController, Utilities.Callback2 callback2, int i10) {
+    public /* synthetic */ v9(BaseController baseController, Object obj, Object obj2, Object obj3, Object obj4, int i10) {
         this.a = i10;
-        this.b = messagesController;
-        this.c = callback2;
+        this.b = baseController;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.f = obj4;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$toggleChatNoForwards$277(this.c, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                ((MessagesController) this.b).lambda$checkCanOpenChat$455((org.telegram.ui.ActionBar.b2) this.c, (pf.c) this.d, (org.telegram.ui.ActionBar.n2) this.e, (Bundle) this.f, tLObject, tL_error);
                 break;
             case 1:
-                this.b.lambda$fetchCommunityPendingJoinRequests$245(this.c, (TL_communities.PeerLinkRequests) obj, (TLRPC.TL_error) obj2);
+                ((MessagesController) this.b).lambda$didReceivedNotification$50((TLRPC.TL_theme) this.c, (org.telegram.ui.ActionBar.g6) this.d, (TLRPC.TL_inputThemeSettings) this.e, (org.telegram.ui.ActionBar.f6) this.f, tLObject, tL_error);
                 break;
             case 2:
-                this.b.lambda$fetchCommunityJoinedChats$246(this.c, (TL_communities.ParticipantJoinedChats) obj, (TLRPC.TL_error) obj2);
+                ((SecretChatHelper) this.b).lambda$startSecretChat$28((Context) this.d, (org.telegram.ui.ActionBar.b2) this.c, (byte[]) this.e, (TLRPC.User) this.f, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$fetchChatsToAddToCommunity$251(this.c, (TLRPC.messages_Chats) obj, (TLRPC.TL_error) obj2);
+                ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$59((TLRPC.InputMedia) this.c, (SendMessagesHelper.DelayedMessage) this.d, (String) this.e, (MessageObject) this.f, tLObject, tL_error);
                 break;
         }
+    }
+
+    public /* synthetic */ v9(SecretChatHelper secretChatHelper, Context context, org.telegram.ui.ActionBar.b2 b2Var, byte[] bArr, TLRPC.User user) {
+        this.a = 2;
+        this.b = secretChatHelper;
+        this.d = context;
+        this.c = b2Var;
+        this.e = bArr;
+        this.f = user;
     }
 }

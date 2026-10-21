@@ -12,7 +12,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class t80 extends org.telegram.ui.ActionBar.f3 {
     public boolean b;
@@ -29,7 +29,7 @@ public abstract class t80 extends org.telegram.ui.ActionBar.f3 {
         linearLayout.addView(w9Var, w7.z5.t(90, 90, 49, 0, 29, 0, 0));
         w9Var.e(chat, new h9(chat));
         TextView textView = new TextView(context);
-        org.telegram.messenger.kk.k(18.0f, 1, textView);
+        org.telegram.messenger.mk.k(18.0f, 1, textView);
         com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.h6.j5, null, false, textView, 1);
         TextView i10 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.z5.t(-2, -2, 49, 17, 24, 17, 0), context);
         i10.setTextSize(1, 14.0f);

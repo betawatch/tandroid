@@ -10,11 +10,11 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class xe1 extends org.telegram.ui.ActionBar.n2 {
     public ve1 a;
-    public org.telegram.ui.Components.im0 b;
+    public org.telegram.ui.Components.jm0 b;
     public long c;
     public ArrayList d;
     public HashSet e;
@@ -72,16 +72,16 @@ public final class xe1 extends org.telegram.ui.ActionBar.n2 {
         i2.e.y(false, this.actionBar);
         this.actionBar.setActionBarMenuOnItemClick(new y21(this, 9));
         this.actionBar.setTitle(LocaleController.getString(R.string.NotificationsExceptions));
-        this.b = new org.telegram.ui.Components.im0(context, null);
+        this.b = new org.telegram.ui.Components.jm0(context, null);
         s4.k kVar = new s4.k();
         kVar.C = false;
         kVar.m = false;
         this.b.setItemAnimator(kVar);
         this.b.setLayoutManager(new s4.b0());
-        org.telegram.ui.Components.im0 im0Var = this.b;
+        org.telegram.ui.Components.jm0 jm0Var = this.b;
         ve1 ve1Var = new ve1(this);
         this.a = ve1Var;
-        im0Var.setAdapter(ve1Var);
+        jm0Var.setAdapter(ve1Var);
         this.b.setOnItemClickListener(new ue1(this));
         frameLayout.addView(this.b);
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));

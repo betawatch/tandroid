@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.e1;
 import org.telegram.ui.ActionBar.m1;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
-import org.telegram.ui.Components.jn0;
+import org.telegram.ui.Components.kn0;
 import org.telegram.ui.dy0;
 import org.telegram.ui.f0;
 import org.telegram.ui.jm;
@@ -24,7 +24,7 @@ import org.telegram.ui.kf;
 import org.telegram.ui.pe;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
     public final boolean onLongClick(View view) {
         kf kfVar;
         boolean z10;
-        jn0 jn0Var;
+        kn0 kn0Var;
         switch (this.a) {
             case 0:
                 b bVar = ((h) this.c).n;
@@ -102,7 +102,7 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
                 return false;
             default:
                 ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = (ScrollSlidingTextTabStrip) this.c;
-                return (scrollSlidingTextTabStrip.n0 || (jn0Var = scrollSlidingTextTabStrip.b) == null || !jn0Var.b1(this.b, view)) ? false : true;
+                return (scrollSlidingTextTabStrip.n0 || (kn0Var = scrollSlidingTextTabStrip.b) == null || !kn0Var.b1(this.b, view)) ? false : true;
         }
     }
 }

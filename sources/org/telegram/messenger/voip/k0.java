@@ -24,9 +24,9 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.at;
 import org.telegram.ui.Components.ct;
-import org.telegram.ui.Components.sw0;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.tw0;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.y31;
 import org.telegram.ui.fl;
 import org.telegram.ui.q50;
 import org.telegram.ui.qn;
@@ -34,7 +34,7 @@ import org.telegram.ui.vm0;
 import org.telegram.ui.xg0;
 import org.telegram.ui.zl0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k0 implements Runnable {
     public final /* synthetic */ int a;
@@ -112,23 +112,23 @@ public final /* synthetic */ class k0 implements Runnable {
                 }
                 break;
             case 5:
-                sw0 sw0Var = (sw0) this.d;
+                tw0 tw0Var = (tw0) this.d;
                 boolean z13 = this.c;
                 int i16 = this.b;
                 u1 u1Var = (u1) this.e;
-                if (z13 && sw0Var.Q == null && sw0Var.R == null && sw0Var.P == null) {
-                    sw0Var.J = 2;
-                    sw0Var.X0 = true;
+                if (z13 && tw0Var.Q == null && tw0Var.R == null && tw0Var.P == null) {
+                    tw0Var.J = 2;
+                    tw0Var.X0 = true;
                 }
-                sw0Var.V0 = false;
-                if (sw0Var.Y0 || !sw0Var.W0) {
-                    sw0Var.U0 = sw0Var.i1[0];
+                tw0Var.V0 = false;
+                if (tw0Var.Y0 || !tw0Var.W0) {
+                    tw0Var.U0 = tw0Var.i1[0];
                     DownloadController.getInstance(i16).removeLoadingFileObserver(u1Var);
-                    sw0Var.I();
-                    sw0Var.x();
+                    tw0Var.I();
+                    tw0Var.x();
                     break;
                 } else {
-                    sw0Var.C(true);
+                    tw0Var.C(true);
                     break;
                 }
                 break;
@@ -214,7 +214,7 @@ public final /* synthetic */ class k0 implements Runnable {
                             randomAccessFile.close();
                             SecureDocument secureDocument = new SecureDocument((SecureDocumentKey) j12.e, tL_secureFile, r10, (byte[]) j12.d, (byte[]) j12.b);
                             secureDocument.type = i19;
-                            AndroidUtilities.runOnUIThread(new x31(vm0Var, secureDocument, i19, 6));
+                            AndroidUtilities.runOnUIThread(new y31(vm0Var, secureDocument, i19, 6));
                             if (z15) {
                                 try {
                                     recognize = MrzRecognizer.recognize(loadBitmap, vm0Var.F.type instanceof TLRPC.TL_secureValueTypeDriverLicense);
@@ -234,7 +234,7 @@ public final /* synthetic */ class k0 implements Runnable {
                         randomAccessFile.close();
                         SecureDocument secureDocument2 = new SecureDocument((SecureDocumentKey) j122.e, tL_secureFile, r10, (byte[]) j122.d, (byte[]) j122.b);
                         secureDocument2.type = i19;
-                        AndroidUtilities.runOnUIThread(new x31(vm0Var, secureDocument2, i19, 6));
+                        AndroidUtilities.runOnUIThread(new y31(vm0Var, secureDocument2, i19, 6));
                         if (z15 && !z17) {
                             recognize = MrzRecognizer.recognize(loadBitmap, vm0Var.F.type instanceof TLRPC.TL_secureValueTypeDriverLicense);
                             if (recognize == null) {
@@ -269,17 +269,17 @@ public final /* synthetic */ class k0 implements Runnable {
         this.b = i10;
     }
 
-    public /* synthetic */ k0(sw0 sw0Var, boolean z10, int i10, u1 u1Var) {
+    public /* synthetic */ k0(tw0 tw0Var, boolean z10, int i10, u1 u1Var) {
         this.a = 5;
-        this.d = sw0Var;
+        this.d = tw0Var;
         this.c = z10;
         this.b = i10;
         this.e = u1Var;
     }
 
-    public /* synthetic */ k0(t61 t61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i11) {
+    public /* synthetic */ k0(u61 u61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i11) {
         this.a = i11;
-        this.d = t61Var;
+        this.d = u61Var;
         this.b = i10;
         this.e = tL_messages_searchGlobal;
         this.c = z10;

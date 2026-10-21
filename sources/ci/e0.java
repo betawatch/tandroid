@@ -33,12 +33,12 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.gr0;
+import org.telegram.ui.Components.hr0;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.i90;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s41;
-import org.telegram.ui.Components.uy0;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.t41;
+import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.at;
@@ -55,7 +55,7 @@ import org.telegram.ui.rk;
 import org.telegram.ui.sa1;
 import org.telegram.ui.st0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -241,8 +241,8 @@ public final /* synthetic */ class e0 implements View.OnClickListener {
                 org.telegram.ui.h7 h7Var = (org.telegram.ui.h7) this.b;
                 org.telegram.ui.p7 p7Var = (org.telegram.ui.p7) this.c;
                 org.telegram.ui.i7 i7Var = (org.telegram.ui.i7) this.d;
-                im0 im0Var = (im0) this.e;
-                org.telegram.ui.v7.a(h7Var.d, p7Var, (org.telegram.ui.r7) i7Var, im0Var);
+                jm0 jm0Var = (jm0) this.e;
+                org.telegram.ui.v7.a(h7Var.d, p7Var, (org.telegram.ui.r7) i7Var, jm0Var);
                 org.telegram.ui.ActionBar.m1 m1Var = h7Var.a;
                 if (m1Var != null) {
                     m1Var.d(true);
@@ -282,7 +282,7 @@ public final /* synthetic */ class e0 implements View.OnClickListener {
                 String str4 = (String) this.d;
                 CharSequence charSequence2 = (CharSequence) this.e;
                 Runnable[] runnableArr2 = (Runnable[]) this.f;
-                s41.L(qnVar2.getParentActivity(), qnVar2, str3, str4, charSequence2, null, null);
+                t41.L(qnVar2.getParentActivity(), qnVar2, str3, str4, charSequence2, null, null);
                 Runnable runnable = runnableArr2[0];
                 if (runnable != null) {
                     runnable.run();
@@ -411,7 +411,7 @@ public final /* synthetic */ class e0 implements View.OnClickListener {
                 int intValue = ((Integer) view.getTag()).intValue();
                 m1Var3.dismiss();
                 if (((Integer) arrayList2.get(intValue)).intValue() == 1) {
-                    uy0.a(tL_messages_stickerSet, n2Var4, d6Var3);
+                    vy0.a(tL_messages_stickerSet, n2Var4, d6Var3);
                     break;
                 } else {
                     ((qn) n2Var4).da();
@@ -439,12 +439,12 @@ public final /* synthetic */ class e0 implements View.OnClickListener {
                 translateController.checkRestrictedLanguagesUpdate();
                 translateController.setHideTranslateDialog(rkVar.b, true);
                 SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(rkVar.r[0] ? LocaleController.formatString(R.string.AddedToDoNotTranslate, str6) : LocaleController.formatString(R.string.AddedToDoNotTranslateOther, str6));
-                String[] strArr2 = s41.R;
+                String[] strArr2 = t41.R;
                 if (replaceTags != null && replaceTags.length() > 0) {
                     replaceTags.replace(0, 1, (CharSequence) replaceTags.toString().substring(0, 1).toUpperCase());
                     spannableStringBuilder = replaceTags;
                 }
-                xc.a0(rkVar.c).J(R.raw.msg_translate, spannableStringBuilder, LocaleController.getString(R.string.Settings), new gr0(rkVar, 24)).j();
+                xc.a0(rkVar.c).J(R.raw.msg_translate, spannableStringBuilder, LocaleController.getString(R.string.Settings), new hr0(rkVar, 24)).j();
                 m1Var4.d(true);
                 break;
             case 13:

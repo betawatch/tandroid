@@ -41,7 +41,7 @@ import org.telegram.ui.t21;
 import org.telegram.ui.u01;
 import org.telegram.ui.z01;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -173,9 +173,9 @@ public final /* synthetic */ class c4 implements View.OnClickListener {
                 }
                 nc0Var.a(!chatActivityEnterView.R4, true);
                 if (!arrayList2.isEmpty()) {
-                    mi0Var.f((MessageObject) arrayList2.get(0));
+                    mi0Var.e((MessageObject) arrayList2.get(0));
                 }
-                mi0Var.n(!chatActivityEnterView.R4);
+                mi0Var.m(!chatActivityEnterView.R4);
                 break;
             case 11:
                 ChatActivityEnterView chatActivityEnterView2 = (ChatActivityEnterView) obj4;
@@ -198,7 +198,7 @@ public final /* synthetic */ class c4 implements View.OnClickListener {
                     messageObject3.messageOwner.invert_media = chatActivityEnterView2.R4;
                 }
                 chatActivityEnterView2.b0();
-                mi0Var2.h(true);
+                mi0Var2.g(true);
                 chatActivityEnterView2.R4 = false;
                 break;
             case 12:

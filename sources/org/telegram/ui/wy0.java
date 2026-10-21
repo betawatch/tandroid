@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class wy0 extends vu0 {
     public final /* synthetic */ ProfileActivity T;
@@ -37,8 +37,8 @@ public final class wy0 extends vu0 {
             kVar3 = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
             kVar3.draw(canvas);
             canvas.restore();
-            org.telegram.ui.Components.xj0 xj0Var = profileActivity.v;
-            if (xj0Var != null && xj0Var.getVisibility() == 0 && profileActivity.v.getAlpha() > 0.0f) {
+            org.telegram.ui.Components.yj0 yj0Var = profileActivity.v;
+            if (yj0Var != null && yj0Var.getVisibility() == 0 && profileActivity.v.getAlpha() > 0.0f) {
                 canvas.save();
                 float f14 = (f7 * 0.5f) + 0.5f;
                 canvas.scale(f14, f14, (profileActivity.v.getMeasuredWidth() / 2.0f) + profileActivity.v.getX(), (profileActivity.v.getMeasuredHeight() / 2.0f) + profileActivity.v.getY());
@@ -58,9 +58,9 @@ public final class wy0 extends vu0 {
         for (int i10 = 0; i10 < profileActivity.o0.getChildCount(); i10++) {
             profileActivity.o0.getChildAt(i10).invalidate();
         }
-        org.telegram.ui.Components.xj0 xj0Var = profileActivity.v;
-        if (xj0Var != null) {
-            xj0Var.invalidate();
+        org.telegram.ui.Components.yj0 yj0Var = profileActivity.v;
+        if (yj0Var != null) {
+            yj0Var.invalidate();
         }
     }
 

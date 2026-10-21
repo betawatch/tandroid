@@ -25,12 +25,12 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.wz;
 import org.telegram.ui.ks;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class a2 extends org.telegram.ui.Components.bb {
     public static final /* synthetic */ int D0 = 0;
@@ -79,10 +79,10 @@ public final class a2 extends org.telegram.ui.Components.bb {
         arrayList2.add(rectF);
         this.X = i10;
         this.w0 = z10;
-        im0 im0Var = this.d;
+        jm0 jm0Var = this.d;
         org.telegram.ui.ActionBar.d3 d3Var = this.container;
-        Objects.requireNonNull(im0Var);
-        this.r0 = new bh.l(im0Var, d3Var, new ks(im0Var, 0));
+        Objects.requireNonNull(jm0Var);
+        this.r0 = new bh.l(jm0Var, d3Var, new ks(jm0Var, 0));
         ArrayList c10 = ag.d.c(arrayList, TL_stars.starGiftAttributeBackdrop.class);
         this.a0 = c10;
         a aVar = new a(c10);
@@ -442,10 +442,10 @@ public final class a2 extends org.telegram.ui.Components.bb {
     public final void V() {
         y1 y1Var;
         v1 v1Var;
-        im0 im0Var = this.d;
-        int childCount = im0Var.getChildCount();
+        jm0 jm0Var = this.d;
+        int childCount = jm0Var.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = im0Var.getChildAt(i10);
+            View childAt = jm0Var.getChildAt(i10);
             if ((childAt instanceof y1) && (v1Var = (y1Var = (y1) childAt).v) != null) {
                 boolean S = S(v1Var);
                 y1Var.c.f(S, true);
@@ -496,7 +496,7 @@ public final class a2 extends org.telegram.ui.Components.bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
+    public final im0 x(jm0 jm0Var) {
         t1 t1Var = new t1(this, this.d, getContext(), this.X, new q(this, 3), this.resourcesProvider);
         this.k0 = t1Var;
         t1Var.r = false;
@@ -504,7 +504,7 @@ public final class a2 extends org.telegram.ui.Components.bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final im0 y(Context context) {
+    public final jm0 y(Context context) {
         return new u1(this, context, this.resourcesProvider, 0);
     }
 }

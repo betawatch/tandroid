@@ -13,14 +13,14 @@ import com.google.android.gms.internal.cast.z5;
 import ei.o8;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.kw0;
-import org.telegram.ui.Components.le0;
+import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.me0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class c3 extends kw0 implements org.telegram.ui.ActionBar.u3 {
+public final class c3 extends lw0 implements org.telegram.ui.ActionBar.u3 {
     public final /* synthetic */ d3 A0;
     public final Paint w0;
     public boolean x0;
@@ -39,18 +39,18 @@ public final class c3 extends kw0 implements org.telegram.ui.ActionBar.u3 {
         this.z0 = new Path();
     }
 
-    @Override // org.telegram.ui.Components.kw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         boolean z10;
         Paint paint;
         d3 d3Var = this.A0;
-        le0 le0Var = d3Var.s0;
+        me0 me0Var = d3Var.s0;
         Rect rect = d3Var.h;
         Rect rect2 = d3Var.f;
         if (this.x0) {
             return;
         }
-        int visibility = le0Var.getVisibility();
+        int visibility = me0Var.getVisibility();
         Paint paint2 = this.w0;
         if (visibility != 0) {
             float f7 = d3Var.f0;
@@ -87,7 +87,7 @@ public final class c3 extends kw0 implements org.telegram.ui.ActionBar.u3 {
         if (z10) {
             canvas.restore();
         }
-        if (le0Var.getVisibility() != 0) {
+        if (me0Var.getVisibility() != 0) {
             paint2.setColor(h6.m1(d3Var.N0, d3Var.R));
             int i11 = rect2.left;
             if (i11 > 0) {
@@ -171,7 +171,7 @@ public final class c3 extends kw0 implements org.telegram.ui.ActionBar.u3 {
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.lw0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
@@ -188,13 +188,13 @@ public final class c3 extends kw0 implements org.telegram.ui.ActionBar.u3 {
         return rectF;
     }
 
-    @Override // org.telegram.ui.Components.kw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         qc.a(this, new o8(3));
     }
 
-    @Override // org.telegram.ui.Components.kw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         qc.h(this);

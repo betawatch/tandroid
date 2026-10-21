@@ -40,15 +40,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.f90;
-import org.telegram.ui.Components.m11;
 import org.telegram.ui.Components.n11;
+import org.telegram.ui.Components.o11;
 import org.telegram.ui.Components.r90;
 import org.telegram.ui.Components.u90;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.y90;
 import org.telegram.ui.e10;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class m7 extends FrameLayout {
     public final ArrayList E;
@@ -669,12 +669,12 @@ public final class m7 extends FrameLayout {
                                                             spannableStringBuilder3 = spannableStringBuilder5;
                                                             arrayList2 = arrayList7;
                                                         } else {
-                                                            m11 m11Var = new m11();
+                                                            n11 n11Var = new n11();
                                                             spannableStringBuilder3 = spannableStringBuilder5;
                                                             try {
-                                                                m11Var.a |= 256;
+                                                                n11Var.a |= 256;
                                                                 arrayList2 = arrayList7;
-                                                                valueOf.setSpan(new n11(m11Var, 0), Math.max(i26, i32), Math.min(i27, i33) + i28, 33);
+                                                                valueOf.setSpan(new o11(n11Var, 0), Math.max(i26, i32), Math.min(i27, i33) + i28, 33);
                                                             } catch (Exception e7) {
                                                                 e = e7;
                                                                 str2 = str7;

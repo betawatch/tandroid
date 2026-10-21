@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class td0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -69,12 +69,12 @@ public final /* synthetic */ class td0 implements RequestDelegate {
                                         int indexOf = str.indexOf(42);
                                         int lastIndexOf = str.lastIndexOf(42);
                                         if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                                            org.telegram.ui.Components.m11 m11Var = new org.telegram.ui.Components.m11();
-                                            m11Var.a |= 256;
-                                            m11Var.b = indexOf;
+                                            org.telegram.ui.Components.n11 n11Var = new org.telegram.ui.Components.n11();
+                                            n11Var.a |= 256;
+                                            n11Var.b = indexOf;
                                             int i14 = lastIndexOf + 1;
-                                            m11Var.c = i14;
-                                            valueOf.setSpan(new org.telegram.ui.Components.n11(m11Var, 0), indexOf, i14, 0);
+                                            n11Var.c = i14;
+                                            valueOf.setSpan(new org.telegram.ui.Components.o11(n11Var, 0), indexOf, i14, 0);
                                         }
                                         SpannableStringBuilder formatSpannable = AndroidUtilities.formatSpannable(LocaleController.getString(R.string.RestoreEmailSent), valueOf);
                                         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
@@ -166,12 +166,12 @@ public final /* synthetic */ class td0 implements RequestDelegate {
                                         int indexOf = str.indexOf(42);
                                         int lastIndexOf = str.lastIndexOf(42);
                                         if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                                            org.telegram.ui.Components.m11 m11Var = new org.telegram.ui.Components.m11();
-                                            m11Var.a |= 256;
-                                            m11Var.b = indexOf;
+                                            org.telegram.ui.Components.n11 n11Var = new org.telegram.ui.Components.n11();
+                                            n11Var.a |= 256;
+                                            n11Var.b = indexOf;
                                             int i14 = lastIndexOf + 1;
-                                            m11Var.c = i14;
-                                            valueOf.setSpan(new org.telegram.ui.Components.n11(m11Var, 0), indexOf, i14, 0);
+                                            n11Var.c = i14;
+                                            valueOf.setSpan(new org.telegram.ui.Components.o11(n11Var, 0), indexOf, i14, 0);
                                         }
                                         SpannableStringBuilder formatSpannable = AndroidUtilities.formatSpannable(LocaleController.getString(R.string.RestoreEmailSent), valueOf);
                                         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
@@ -263,12 +263,12 @@ public final /* synthetic */ class td0 implements RequestDelegate {
                                         int indexOf = str.indexOf(42);
                                         int lastIndexOf = str.lastIndexOf(42);
                                         if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                                            org.telegram.ui.Components.m11 m11Var = new org.telegram.ui.Components.m11();
-                                            m11Var.a |= 256;
-                                            m11Var.b = indexOf;
+                                            org.telegram.ui.Components.n11 n11Var = new org.telegram.ui.Components.n11();
+                                            n11Var.a |= 256;
+                                            n11Var.b = indexOf;
                                             int i14 = lastIndexOf + 1;
-                                            m11Var.c = i14;
-                                            valueOf.setSpan(new org.telegram.ui.Components.n11(m11Var, 0), indexOf, i14, 0);
+                                            n11Var.c = i14;
+                                            valueOf.setSpan(new org.telegram.ui.Components.o11(n11Var, 0), indexOf, i14, 0);
                                         }
                                         SpannableStringBuilder formatSpannable = AndroidUtilities.formatSpannable(LocaleController.getString(R.string.RestoreEmailSent), valueOf);
                                         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;

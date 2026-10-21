@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.app.Activity;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qv implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -20,8 +20,8 @@ public final /* synthetic */ class qv implements Utilities.Callback {
         switch (this.a) {
             case 0:
                 if (bool.booleanValue()) {
-                    if (!org.telegram.ui.Components.we0.a()) {
-                        org.telegram.ui.Components.we0.f();
+                    if (!org.telegram.ui.Components.xe0.a()) {
+                        org.telegram.ui.Components.xe0.f();
                         break;
                     } else {
                         this.b.requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 1);
@@ -31,8 +31,8 @@ public final /* synthetic */ class qv implements Utilities.Callback {
                 break;
             default:
                 if (bool.booleanValue()) {
-                    if (!org.telegram.ui.Components.we0.a()) {
-                        org.telegram.ui.Components.we0.f();
+                    if (!org.telegram.ui.Components.xe0.a()) {
+                        org.telegram.ui.Components.xe0.f();
                         break;
                     } else {
                         this.b.requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 1);

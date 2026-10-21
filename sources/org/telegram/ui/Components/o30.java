@@ -22,12 +22,12 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class o30 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, VoIPService.StateListener {
     public final int E;
-    public final xj0 F;
-    public final uj0 G;
+    public final yj0 F;
+    public final vj0 G;
     public long H;
     public final boolean I;
     public final Random J;
@@ -75,14 +75,14 @@ public final class o30 extends FrameLayout implements NotificationCenter.Notific
         this.c.a = AndroidUtilities.dp(32.0f);
         this.b.b();
         this.c.b();
-        uj0 uj0Var = new uj0(R.raw.voice_outlined, AndroidUtilities.dp(22.0f), AndroidUtilities.dp(30.0f), true, null);
-        this.G = uj0Var;
+        vj0 vj0Var = new vj0(R.raw.voice_outlined, AndroidUtilities.dp(22.0f), AndroidUtilities.dp(30.0f), true, null);
+        this.G = vj0Var;
         setWillNotDraw(false);
-        xj0 xj0Var = new xj0(context);
-        this.F = xj0Var;
-        xj0Var.setAnimation(uj0Var);
-        xj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(xj0Var);
+        yj0 yj0Var = new yj0(context);
+        this.F = yj0Var;
+        yj0Var.setAnimation(vj0Var);
+        yj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(yj0Var);
         this.w = new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(350.0f), 0.0f, new int[]{-2801343, -561538, 0}, new float[]{0.0f, 0.4f, 1.0f}, Shader.TileMode.CLAMP);
         if (z10) {
             setState(0);
@@ -145,9 +145,9 @@ public final class o30 extends FrameLayout implements NotificationCenter.Notific
             VoIPService.getSharedInstance().registerStateListener(this);
         }
         int i10 = z10 ? 13 : 24;
-        uj0 uj0Var = this.G;
-        uj0Var.P(i10);
-        uj0Var.N(uj0Var.f - 1, false, true);
+        vj0 vj0Var = this.G;
+        vj0Var.P(i10);
+        vj0Var.N(vj0Var.f - 1, false, true);
         a();
     }
 
@@ -155,12 +155,12 @@ public final class o30 extends FrameLayout implements NotificationCenter.Notific
     public final void onAudioSettingsChanged() {
         boolean z10 = VoIPService.getSharedInstance() != null && VoIPService.getSharedInstance().isMicMute();
         int i10 = z10 ? 13 : 24;
-        uj0 uj0Var = this.G;
-        if (uj0Var.P(i10)) {
+        vj0 vj0Var = this.G;
+        if (vj0Var.P(i10)) {
             if (z10) {
-                uj0Var.M(0);
+                vj0Var.M(0);
             } else {
-                uj0Var.M(12);
+                vj0Var.M(12);
             }
         }
         this.F.d();
@@ -243,9 +243,9 @@ public final class o30 extends FrameLayout implements NotificationCenter.Notific
                 }
                 float interpolation = bs.f.getInterpolation(this.N) * 0.1f;
                 float f16 = interpolation + 1.0f;
-                xj0 xj0Var = this.F;
-                xj0Var.setScaleY(f16);
-                xj0Var.setScaleX(f16);
+                yj0 yj0Var = this.F;
+                yj0Var.setScaleY(f16);
+                yj0Var.setScaleX(f16);
                 z10 = this.I;
                 if (z10) {
                     long currentTimeMillis = System.currentTimeMillis();
@@ -518,9 +518,9 @@ public final class o30 extends FrameLayout implements NotificationCenter.Notific
         }
         float interpolation3 = bs.f.getInterpolation(this.N) * 0.1f;
         float f162 = interpolation3 + 1.0f;
-        xj0 xj0Var2 = this.F;
-        xj0Var2.setScaleY(f162);
-        xj0Var2.setScaleX(f162);
+        yj0 yj0Var2 = this.F;
+        yj0Var2.setScaleY(f162);
+        yj0Var2.setScaleX(f162);
         z10 = this.I;
         if (z10) {
         }

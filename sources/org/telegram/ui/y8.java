@@ -17,9 +17,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class y8 extends org.telegram.ui.Components.kw0 {
+public final class y8 extends org.telegram.ui.Components.lw0 {
     public final /* synthetic */ int w0;
     public final /* synthetic */ Object x0;
 
@@ -30,7 +30,7 @@ public final class y8 extends org.telegram.ui.Components.kw0 {
         this.x0 = obj;
     }
 
-    @Override // org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.lw0
     public void J(Canvas canvas, float f7, Rect rect, Paint paint, boolean z10) {
         switch (this.w0) {
             case 0:
@@ -103,7 +103,7 @@ public final class y8 extends org.telegram.ui.Components.kw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.lw0
     public boolean P() {
         switch (this.w0) {
             case 2:
@@ -113,7 +113,7 @@ public final class y8 extends org.telegram.ui.Components.kw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.lw0
     public boolean Q() {
         switch (this.w0) {
             case 2:
@@ -123,7 +123,7 @@ public final class y8 extends org.telegram.ui.Components.kw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.kw0, org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.Components.lw0, org.telegram.ui.ActionBar.y5
     public void d() {
         switch (this.w0) {
             case 7:
@@ -132,7 +132,7 @@ public final class y8 extends org.telegram.ui.Components.kw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.kw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         switch (this.w0) {
             case 0:
@@ -270,7 +270,7 @@ public final class y8 extends org.telegram.ui.Components.kw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.lw0
     public Drawable getNewDrawable() {
         switch (this.w0) {
             case 1:
@@ -283,11 +283,11 @@ public final class y8 extends org.telegram.ui.Components.kw0 {
         return super.getNewDrawable();
     }
 
-    @Override // org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.lw0
     public org.telegram.ui.ActionBar.d6 getResourceProvider() {
         switch (this.w0) {
             case 2:
-                return ((org.telegram.ui.Components.w01) this.x0).c;
+                return ((org.telegram.ui.Components.x01) this.x0).c;
             default:
                 return super.getResourceProvider();
         }
@@ -297,7 +297,7 @@ public final class y8 extends org.telegram.ui.Components.kw0 {
     /* JADX WARN: Removed duplicated region for block: B:28:0x0090  */
     /* JADX WARN: Removed duplicated region for block: B:35:0x0099  */
     /* JADX WARN: Removed duplicated region for block: B:40:0x007c  */
-    @Override // org.telegram.ui.Components.kw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -442,7 +442,7 @@ public final class y8 extends org.telegram.ui.Components.kw0 {
                 break;
             case 2:
                 super.onMeasure(i10, i11);
-                setMeasuredDimension(View.MeasureSpec.getSize(i10), ((org.telegram.ui.Components.w01) this.x0).d.getMeasuredHeight() + AndroidUtilities.dp(24.0f));
+                setMeasuredDimension(View.MeasureSpec.getSize(i10), ((org.telegram.ui.Components.x01) this.x0).d.getMeasuredHeight() + AndroidUtilities.dp(24.0f));
                 break;
             case 3:
                 ContactsActivity contactsActivity = (ContactsActivity) this.x0;
@@ -480,7 +480,7 @@ public final class y8 extends org.telegram.ui.Components.kw0 {
                     marginLayoutParams6.bottomMargin = AndroidUtilities.dp(14.0f) + dp;
                 } else {
                     super.onMeasure(i10, i11);
-                    marginLayoutParams6.bottomMargin = org.telegram.messenger.kk.D(10.0f, org.telegram.ui.Components.qc.w.e.getMeasuredHeight() + AndroidUtilities.dp(14.0f), dp);
+                    marginLayoutParams6.bottomMargin = org.telegram.messenger.mk.D(10.0f, org.telegram.ui.Components.qc.w.e.getMeasuredHeight() + AndroidUtilities.dp(14.0f), dp);
                 }
                 int i13 = AndroidUtilities.isTablet() ? 0 : AndroidUtilities.statusBarHeight;
                 ((ViewGroup.MarginLayoutParams) dg0Var.U.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i13;

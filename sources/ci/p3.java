@@ -16,15 +16,15 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.g80;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.m60;
 import org.telegram.ui.Components.n50;
 import org.telegram.ui.Components.tz;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.g01;
 import org.telegram.ui.x51;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class p3 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -93,9 +93,9 @@ public final class p3 extends AnimatorListenerAdapter {
                 ((ActionBarPopupWindow$ActionBarPopupWindowLayout) this.d).x.remove((AnimatorSet) this.b);
                 View view = (View) this.c;
                 if (view instanceof org.telegram.ui.ActionBar.e1) {
-                    xj0 xj0Var = ((org.telegram.ui.ActionBar.e1) view).c;
-                    if (xj0Var.getAnimatedDrawable() != null) {
-                        xj0Var.getAnimatedDrawable().start();
+                    yj0 yj0Var = ((org.telegram.ui.ActionBar.e1) view).c;
+                    if (yj0Var.getAnimatedDrawable() != null) {
+                        yj0Var.getAnimatedDrawable().start();
                         break;
                     }
                 }
@@ -135,18 +135,18 @@ public final class p3 extends AnimatorListenerAdapter {
                 }
                 break;
             case 5:
-                im0 im0Var = (im0) this.c;
+                jm0 jm0Var = (jm0) this.c;
                 s4.s sVar = (s4.s) this.b;
                 tz tzVar = (tz) this.d;
                 if (animator.equals(tzVar.M0)) {
                     int L0 = sVar.L0();
-                    im0Var.setTranslationY(0.0f);
-                    if (im0Var == tzVar.D0) {
-                        im0Var.setPadding(0, AndroidUtilities.dp(36.0f), 0, AndroidUtilities.dp(44.0f) + tzVar.p2);
-                    } else if (im0Var == tzVar.h0) {
-                        im0Var.setPadding(0, tzVar.b1, 0, AndroidUtilities.dp(44.0f) + tzVar.p2);
-                    } else if (im0Var == tzVar.P) {
-                        im0Var.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(36.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(44.0f) + tzVar.p2);
+                    jm0Var.setTranslationY(0.0f);
+                    if (jm0Var == tzVar.D0) {
+                        jm0Var.setPadding(0, AndroidUtilities.dp(36.0f), 0, AndroidUtilities.dp(44.0f) + tzVar.p2);
+                    } else if (jm0Var == tzVar.h0) {
+                        jm0Var.setPadding(0, tzVar.b1, 0, AndroidUtilities.dp(44.0f) + tzVar.p2);
+                    } else if (jm0Var == tzVar.P) {
+                        jm0Var.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(36.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(44.0f) + tzVar.p2);
                     }
                     if (L0 != -1) {
                         sVar.h1(L0, 0);

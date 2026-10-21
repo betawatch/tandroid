@@ -44,12 +44,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.g90;
 import org.telegram.ui.Components.ru;
-import org.telegram.ui.Components.uj0;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.vj0;
 import org.telegram.ui.Components.y6;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.f80;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int c1 = 0;
@@ -120,7 +120,7 @@ public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.
     public boolean h0;
     public boolean i0;
     public boolean j0;
-    public xj0 k0;
+    public yj0 k0;
     public CharSequence l0;
     public a2 m0;
     public ru n;
@@ -408,11 +408,11 @@ public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.
             }
         } else {
             f7 = 16.0f;
-            xj0 xj0Var = new xj0(getContext());
-            this.k0 = xj0Var;
+            yj0 yj0Var = new yj0(getContext());
+            this.k0 = yj0Var;
             Drawable drawable2 = this.b0;
             if (drawable2 != null) {
-                xj0Var.setImageDrawable(drawable2);
+                yj0Var.setImageDrawable(drawable2);
                 Drawable drawable3 = this.b0;
                 if (drawable3 instanceof y6) {
                     y6 y6Var = (y6) drawable3;
@@ -422,15 +422,15 @@ public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.
             } else {
                 int i14 = this.U;
                 if (i14 != 0) {
-                    xj0Var.setImageResource(i14);
+                    yj0Var.setImageResource(i14);
                 } else {
-                    xj0Var.setAutoRepeat(this.S0);
-                    xj0 xj0Var2 = this.k0;
+                    yj0Var.setAutoRepeat(this.S0);
+                    yj0 yj0Var2 = this.k0;
                     int i15 = this.X;
                     int i16 = this.Y;
-                    xj0Var2.f(i15, i16, i16, null);
+                    yj0Var2.f(i15, i16, i16, null);
                     if (this.Z != null) {
-                        uj0 animatedDrawable = this.k0.getAnimatedDrawable();
+                        vj0 animatedDrawable = this.k0.getAnimatedDrawable();
                         for (Map.Entry entry : this.Z.entrySet()) {
                             String str = (String) entry.getKey();
                             Integer num = (Integer) entry.getValue();

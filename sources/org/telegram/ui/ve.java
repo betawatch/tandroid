@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ve implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -50,12 +50,12 @@ public final /* synthetic */ class ve implements View.OnClickListener {
                 break;
             case 2:
                 if (qnVar.K3 != null) {
-                    qnVar.Pb(!qnVar.zc.f);
+                    qnVar.Qb(!qnVar.zc.f);
                     break;
                 }
                 break;
             case 3:
-                qnVar.ob(!qnVar.A0.N);
+                qnVar.pb(!qnVar.A0.N);
                 break;
             case 4:
                 xj xjVar = qnVar.I1;
@@ -103,19 +103,19 @@ public final /* synthetic */ class ve implements View.OnClickListener {
                 break;
             case 8:
                 if (AndroidUtilities.addToClipboard(qnVar.d5.sponsoredInfo)) {
-                    org.telegram.messenger.kk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(qnVar.getParentActivity()), qnVar.ea));
+                    org.telegram.messenger.mk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(qnVar.getParentActivity()), qnVar.ea));
                     break;
                 }
                 break;
             case 9:
                 if (AndroidUtilities.addToClipboard(qnVar.d5.sponsoredAdditionalInfo)) {
-                    org.telegram.messenger.kk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(qnVar.getParentActivity()), qnVar.ea));
+                    org.telegram.messenger.mk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(qnVar.getParentActivity()), qnVar.ea));
                     break;
                 }
                 break;
             case 10:
                 if (qnVar.X0 != null && qnVar.getParentActivity() != null) {
-                    org.telegram.ui.ActionBar.f3 i15 = org.telegram.messenger.kk.i(1, qnVar.X0.getContext(), null, false);
+                    org.telegram.ui.ActionBar.f3 i15 = org.telegram.messenger.mk.i(1, qnVar.X0.getContext(), null, false);
                     Activity parentActivity = qnVar.getParentActivity();
                     on onVar = qnVar.ea;
                     final c81 c81Var = new c81(parentActivity);
@@ -250,9 +250,9 @@ public final /* synthetic */ class ve implements View.OnClickListener {
                     tL_forumTopic.closed = false;
                     topicsController.toggleCloseTopic(j10, i18, false);
                 }
-                qnVar.Vc();
-                qnVar.lc(false);
-                qnVar.Uc(true);
+                qnVar.Wc();
+                qnVar.mc(false);
+                qnVar.Vc(true);
                 break;
             case 16:
                 long j11 = qnVar.T5;
@@ -261,8 +261,8 @@ public final /* synthetic */ class ve implements View.OnClickListener {
                 }
                 qnVar.Yb = false;
                 qnVar.getMessagesController().hidePeerSettingsBar(j11, qnVar.f, qnVar.e);
-                qnVar.Uc(true);
-                qnVar.sc(true);
+                qnVar.Vc(true);
+                qnVar.tc(true);
                 break;
             case 17:
                 qn qnVar4 = this.b;
@@ -284,7 +284,7 @@ public final /* synthetic */ class ve implements View.OnClickListener {
                             i13 = -i13;
                         }
                         qnVar4.j(i19, 0, true, 0, true, i13);
-                        qnVar4.yc();
+                        qnVar4.zc();
                         break;
                     }
                 } else {
@@ -327,11 +327,11 @@ public final /* synthetic */ class ve implements View.OnClickListener {
                 }
                 qnVar.h9();
                 if (messageObject != null && ((i10 = messageObject.messageOwner.id) > 0 || (i10 < 0 && qnVar.h != null))) {
-                    qnVar.Fb(messageObject);
+                    qnVar.Gb(messageObject);
                 }
-                qnVar.Cc(0, true);
-                qnVar.ad(false);
-                qnVar.Pc();
+                qnVar.Dc(0, true);
+                qnVar.bd(false);
+                qnVar.Qc();
                 break;
             case 26:
                 qn.c1(qnVar);

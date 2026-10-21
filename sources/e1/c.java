@@ -79,14 +79,14 @@ import org.telegram.ui.Cells.i5;
 import org.telegram.ui.Cells.q8;
 import org.telegram.ui.Cells.v8;
 import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.kl0;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.zl0;
 import qg.v1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, yl0, Utilities.Callback5, v1, CameraController.VideoTakeCallback, g, o, w {
+public final /* synthetic */ class c implements OnSuccessListener, l1, a2, ll0, zl0, Utilities.Callback5, v1, CameraController.VideoTakeCallback, g, o, w {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -95,7 +95,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.zl0
     public boolean a(int i10, View view) {
         q3 q3Var = (q3) this.b;
         ArrayList arrayList = q3Var.b0;
@@ -139,7 +139,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
         return true;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ll0
     public void b() {
         ((o1) this.b).invalidate();
     }
@@ -431,12 +431,12 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
         switch (this.a) {
             case 5:
                 ma maVar = (ma) this.b;
-                g61 g61Var = (g61) obj;
+                h61 h61Var = (h61) obj;
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                int i11 = g61Var.d;
-                a8 a8Var = (a8) g61Var.G;
+                int i11 = h61Var.d;
+                a8 a8Var = (a8) h61Var.G;
                 maVar.c(false, true);
                 vb vbVar = maVar.O;
                 if (a8Var != vbVar.K1 && !vbVar.X1) {
@@ -464,16 +464,16 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                ((s4) this.b).V((g61) obj);
+                ((s4) this.b).V((h61) obj);
                 break;
             case 20:
                 f1 f1Var = (f1) this.b;
-                g61 g61Var2 = (g61) obj;
+                h61 h61Var2 = (h61) obj;
                 View view = (View) obj2;
                 ((Integer) obj3).getClass();
                 float floatValue = ((Float) obj4).floatValue();
                 ((Float) obj5).getClass();
-                int i12 = g61Var2.d;
+                int i12 = h61Var2.d;
                 if (i12 == -1) {
                     boolean z10 = !f1Var.e;
                     f1Var.e = z10;
@@ -487,9 +487,9 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                     d2Var.c = new o2(24, f1Var, view);
                     f1Var.presentFragment(d2Var);
                     break;
-                } else if (g61Var2.a == 5 && i12 >= 0 && i12 < f1Var.h.length) {
+                } else if (h61Var2.a == 5 && i12 >= 0 && i12 < f1Var.h.length) {
                     if (!LocaleController.isRTL ? floatValue < view.getMeasuredWidth() - AndroidUtilities.dp(76.0f) : floatValue > AndroidUtilities.dp(76.0f)) {
-                        int i13 = (g61Var2.d + 6) % 7;
+                        int i13 = (h61Var2.d + 6) % 7;
                         int i14 = 0;
                         for (int i15 = 0; i15 < f1Var.h[i13].size(); i15++) {
                             if (((e1) f1Var.h[i13].get(i15)).b > i14) {
@@ -497,7 +497,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                             }
                         }
                         int max = Math.max(0, i14 - 1439);
-                        int i16 = (g61Var2.d + 1) % 7;
+                        int i16 = (h61Var2.d + 1) % 7;
                         int i17 = 1440;
                         for (int i18 = 0; i18 < f1Var.h[i16].size(); i18++) {
                             if (((e1) f1Var.h[i16].get(i18)).a < i17) {
@@ -505,8 +505,8 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                             }
                         }
                         int i19 = i17 + 1439;
-                        CharSequence charSequence = g61Var2.l;
-                        ArrayList arrayList = f1Var.h[g61Var2.d];
+                        CharSequence charSequence = h61Var2.l;
+                        ArrayList arrayList = f1Var.h[h61Var2.d];
                         int i20 = 0;
                         for (int i21 = 0; i21 < 7; i21++) {
                             ArrayList arrayList2 = f1Var.h[i21];
@@ -516,19 +516,19 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                         }
                         h1 h1Var = new h1(charSequence, arrayList, max, i19, 28 - i20);
                         h1Var.f = new bc(f1Var, 22);
-                        h1Var.h = new t(6, f1Var, g61Var2);
+                        h1Var.h = new t(6, f1Var, h61Var2);
                         f1Var.presentFragment(h1Var);
                         break;
                     } else {
-                        if (f1Var.h[g61Var2.d].isEmpty()) {
+                        if (f1Var.h[h61Var2.d].isEmpty()) {
                             ((i5) view).setChecked(true);
-                            f1Var.h[g61Var2.d].add(new e1(0, 1439));
-                            f1Var.X(g61Var2.d);
+                            f1Var.h[h61Var2.d].add(new e1(0, 1439));
+                            f1Var.X(h61Var2.d);
                         } else {
-                            f1Var.h[g61Var2.d].clear();
+                            f1Var.h[h61Var2.d].clear();
                             ((i5) view).setChecked(false);
                         }
-                        ((i5) view).setValue(f1.a0(f1Var.h[g61Var2.d]));
+                        ((i5) view).setValue(f1.a0(f1Var.h[h61Var2.d]));
                         f1Var.Y(true);
                         break;
                     }
@@ -536,7 +536,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                 break;
             case 21:
                 final h1 h1Var2 = (h1) this.b;
-                g61 g61Var3 = (g61) obj;
+                h61 h61Var3 = (h61) obj;
                 final View view2 = (View) obj2;
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
@@ -544,7 +544,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                 int i22 = h1Var2.c;
                 int i23 = h1Var2.d;
                 ArrayList arrayList3 = h1Var2.b;
-                int i24 = g61Var3.d;
+                int i24 = h61Var3.d;
                 if (i24 == -1) {
                     h1Var2.r = !h1Var2.r;
                     arrayList3.clear();
@@ -553,7 +553,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                     }
                     v8 v8Var = (v8) view2;
                     boolean z11 = h1Var2.r;
-                    g61Var3.e = z11;
+                    h61Var3.e = z11;
                     v8Var.setChecked(z11);
                     boolean z12 = h1Var2.r;
                     v8Var.b(h6.x0(null, z12 ? h6.f6 : h6.e6, false), z12);
@@ -581,13 +581,13 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                     }
                     h1Var2.n.W2.N(true);
                     break;
-                } else if (g61Var3.a == 3 && (i10 = i24 / 3) >= 0 && i10 < arrayList3.size()) {
+                } else if (h61Var3.a == 3 && (i10 = i24 / 3) >= 0 && i10 < arrayList3.size()) {
                     int i26 = i10 - 1;
                     e1 e1Var = i26 >= 0 ? (e1) arrayList3.get(i26) : null;
                     final e1 e1Var2 = (e1) arrayList3.get(i10);
                     int i27 = i10 + 1;
                     e1 e1Var3 = i27 < arrayList3.size() ? (e1) arrayList3.get(i27) : null;
-                    int i28 = g61Var3.d % 3;
+                    int i28 = h61Var3.d % 3;
                     if (i28 == 0) {
                         Activity parentActivity = h1Var2.getParentActivity();
                         String string = LocaleController.getString(R.string.BusinessHoursDayOpenHourPicker);
@@ -705,7 +705,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                d2.U((d2) this.b, (g61) obj, (View) obj2);
+                d2.U((d2) this.b, (h61) obj, (View) obj2);
                 break;
         }
     }

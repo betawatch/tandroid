@@ -17,12 +17,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.nc0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class j8 extends org.telegram.ui.Components.bb implements NotificationCenter.NotificationCenterDelegate {
     public f8 X;
@@ -102,9 +102,9 @@ public final class j8 extends org.telegram.ui.Components.bb implements Notificat
         e8Var.o(bs.h);
         e8Var.n(350L);
         this.d.setItemAnimator(e8Var);
-        im0 im0Var = this.d;
+        jm0 jm0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        im0Var.setPadding(i10, 0, i10, 0);
+        jm0Var.setPadding(i10, 0, i10, 0);
         this.d.setOnItemClickListener(new ci.g0(this, context, r6Var, 2));
         f8 f8Var = this.X;
         if (f8Var != null) {
@@ -116,7 +116,7 @@ public final class j8 extends org.telegram.ui.Components.bb implements Notificat
         TLRPC.WebPage webPage;
         org.telegram.ui.Cells.i3 i3Var = j8Var.Z;
         org.telegram.ui.Cells.i3 i3Var2 = j8Var.Y;
-        g61 G = j8Var.X.G(i10 - 1);
+        h61 G = j8Var.X.G(i10 - 1);
         if (G == null) {
             return;
         }
@@ -338,7 +338,7 @@ public final class j8 extends org.telegram.ui.Components.bb implements Notificat
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
+    public final im0 x(jm0 jm0Var) {
         f8 f8Var = new f8(this.d, getContext(), this.currentAccount, 0, true, new ai.q(this, 18), this.resourcesProvider);
         this.X = f8Var;
         return f8Var;

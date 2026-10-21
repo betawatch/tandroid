@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.HashtagSearchController;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.b71;
-import org.telegram.ui.Components.js0;
-import org.telegram.ui.Components.th0;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.ks0;
+import org.telegram.ui.Components.uh0;
 import org.telegram.ui.Components.xa0;
 import org.telegram.ui.av;
 import org.telegram.ui.ce;
@@ -22,7 +22,7 @@ import org.telegram.ui.oq0;
 import org.telegram.ui.qn;
 import org.telegram.ui.zu;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class m3 extends s4.r0 {
     public final /* synthetic */ int a;
@@ -125,10 +125,10 @@ public final class m3 extends s4.r0 {
                 }
                 break;
             case 1:
-                b71 b71Var = ((ce) this.c).a;
-                if (b71Var.canScrollVertically(1)) {
-                    for (int i14 = 0; i14 < b71Var.getChildCount(); i14++) {
-                        if (!(b71Var.getChildAt(i14) instanceof b10)) {
+                c71 c71Var = ((ce) this.c).a;
+                if (c71Var.canScrollVertically(1)) {
+                    for (int i14 = 0; i14 < c71Var.getChildCount(); i14++) {
+                        if (!(c71Var.getChildAt(i14) instanceof b10)) {
                         }
                     }
                     break;
@@ -172,18 +172,18 @@ public final class m3 extends s4.r0 {
                 break;
             case 3:
                 cy cyVar = (cy) this.b;
-                th0 th0Var = (th0) this.c;
-                b71 b71Var2 = th0Var.c;
-                if (!(TextUtils.isEmpty(th0Var.w) ? th0Var.e : th0Var.n).isEmpty()) {
-                    if (b71Var2.canScrollVertically(1)) {
-                        for (int i17 = 0; i17 < b71Var2.getChildCount(); i17++) {
-                            if (!(b71Var2.getChildAt(i17) instanceof b10)) {
+                uh0 uh0Var = (uh0) this.c;
+                c71 c71Var2 = uh0Var.c;
+                if (!(TextUtils.isEmpty(uh0Var.w) ? uh0Var.e : uh0Var.n).isEmpty()) {
+                    if (c71Var2.canScrollVertically(1)) {
+                        for (int i17 = 0; i17 < c71Var2.getChildCount(); i17++) {
+                            if (!(c71Var2.getChildAt(i17) instanceof b10)) {
                             }
                         }
                     }
-                    th0Var.a(false);
+                    uh0Var.a(false);
                 }
-                if (b71Var2.I1 && !th0Var.Q && cyVar.getParentActivity() != null) {
+                if (c71Var2.I1 && !uh0Var.Q && cyVar.getParentActivity() != null) {
                     AndroidUtilities.hideKeyboard(cyVar.getParentActivity().getCurrentFocus());
                     break;
                 }
@@ -256,12 +256,12 @@ public final class m3 extends s4.r0 {
                     }
                     l2Var.e.a();
                 }
-                ((js0) this.b).o();
+                ((ks0) this.b).o();
                 break;
             default:
                 zh.q qVar = (zh.q) this.b;
                 float translationY3 = qVar.getTranslationY();
-                float f11 = ((zh.m0) this.c).d0;
+                float f11 = ((zh.n0) this.c).d0;
                 if (translationY3 != f11) {
                     qVar.setTranslationY(f11);
                     qVar.invalidate();

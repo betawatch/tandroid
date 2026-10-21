@@ -5,21 +5,21 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c21 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
     public final /* synthetic */ Context c;
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 d;
-    public final /* synthetic */ org.telegram.ui.Components.go0 e;
+    public final /* synthetic */ org.telegram.ui.Components.ho0 e;
 
-    public /* synthetic */ c21(org.telegram.ui.ActionBar.n2 n2Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.go0 go0Var, int i10) {
+    public /* synthetic */ c21(org.telegram.ui.ActionBar.n2 n2Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.ho0 ho0Var, int i10) {
         this.a = i10;
         this.b = n2Var;
         this.c = context;
         this.d = d6Var;
-        this.e = go0Var;
+        this.e = ho0Var;
     }
 
     @Override // java.lang.Runnable

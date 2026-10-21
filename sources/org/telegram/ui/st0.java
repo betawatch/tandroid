@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class st0 implements Runnable {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class st0 implements Runnable {
                 iu0 iu0Var = (iu0) this.b;
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) iu0Var.a.N0.getLayoutParams();
                 ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
-                int A = org.telegram.messenger.kk.A(34.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                int A = org.telegram.messenger.mk.A(34.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
                 PhotoViewer photoViewer = iu0Var.a;
                 int i15 = A + (!photoViewer.s ? AndroidUtilities.statusBarHeight : 0);
                 if (i15 != layoutParams.topMargin) {
@@ -65,7 +65,7 @@ public final /* synthetic */ class st0 implements Runnable {
                     photoViewer.N0.setLayoutParams(layoutParams);
                 }
                 FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) iu0Var.a.O0.getLayoutParams();
-                int A2 = org.telegram.messenger.kk.A(40.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                int A2 = org.telegram.messenger.mk.A(40.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
                 PhotoViewer photoViewer2 = iu0Var.a;
                 int i16 = A2 + (!photoViewer2.s ? AndroidUtilities.statusBarHeight : 0);
                 if (layoutParams2.topMargin != i16) {
@@ -190,7 +190,7 @@ public final /* synthetic */ class st0 implements Runnable {
                 h5 h5Var = (h5) this.b;
                 if (!h5Var.w) {
                     h5Var.w = true;
-                    org.telegram.ui.Components.ym0.d(new g5(h5Var, i13));
+                    org.telegram.ui.Components.zm0.d(new g5(h5Var, i13));
                     break;
                 }
                 break;
@@ -219,7 +219,7 @@ public final /* synthetic */ class st0 implements Runnable {
                 }
                 try {
                     StatFs statFs = new StatFs(file.getPath());
-                    AndroidUtilities.runOnUIThread(new org.telegram.messenger.n0(statFs.getBlockCountLong(), statFs.getBlockSizeLong(), statFs.getAvailableBlocksLong(), g5Var));
+                    AndroidUtilities.runOnUIThread(new org.telegram.messenger.o0(statFs.getBlockCountLong(), statFs.getBlockSizeLong(), statFs.getAvailableBlocksLong(), g5Var));
                     break;
                 } catch (Exception e) {
                     FileLog.e(e);

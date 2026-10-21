@@ -12,17 +12,17 @@ import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.cd;
-import org.telegram.ui.Components.fm0;
-import org.telegram.ui.Components.hh0;
+import org.telegram.ui.Components.gm0;
+import org.telegram.ui.Components.ih0;
 import org.telegram.ui.Components.n9;
-import org.telegram.ui.Components.ru0;
-import org.telegram.ui.Components.sq0;
+import org.telegram.ui.Components.su0;
+import org.telegram.ui.Components.tq0;
 import org.telegram.ui.gu;
 import org.telegram.ui.hr;
 import org.telegram.ui.v6;
 import org.telegram.ui.x6;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i4 implements Comparator {
     public final /* synthetic */ int a;
@@ -175,14 +175,14 @@ public final /* synthetic */ class i4 implements Comparator {
                 id3 = ((Integer) obj).intValue();
                 break;
             case 19:
-                float f11 = ((hh0) obj).a;
-                float f12 = ((hh0) obj2).a;
+                float f11 = ((ih0) obj).a;
+                float f12 = ((ih0) obj2).a;
                 if (f11 > f12) {
                     return -1;
                 }
                 return f11 < f12 ? 1 : 0;
             case 20:
-                return Float.compare(((fm0) obj).a, ((fm0) obj2).a);
+                return Float.compare(((gm0) obj).a, ((gm0) obj2).a);
             case 21:
                 Pair pair = (Pair) obj;
                 Pair pair2 = (Pair) obj2;
@@ -198,15 +198,15 @@ public final /* synthetic */ class i4 implements Comparator {
                 }
                 return ((Float) pair4.first).floatValue() > ((Float) pair3.first).floatValue() ? -1 : 0;
             case 23:
-                int i16 = ((sq0) obj).c;
-                int i17 = ((sq0) obj2).c;
+                int i16 = ((tq0) obj).c;
+                int i17 = ((tq0) obj2).c;
                 if (i16 < i17) {
                     return 1;
                 }
                 return i16 > i17 ? -1 : 0;
             case 24:
-                id2 = ((ru0) obj2).c;
-                id3 = ((ru0) obj).c;
+                id2 = ((su0) obj2).c;
+                id3 = ((su0) obj).c;
                 break;
             case 25:
                 Pair pair5 = (Pair) obj;

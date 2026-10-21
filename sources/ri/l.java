@@ -2,16 +2,16 @@ package ri;
 
 import java.io.File;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public interface l {
-    void onBytesAvailable(long j10, File file, long j11, long j12);
+public final class l {
+    public final File a;
+    public final long b;
+    public final byte[] c;
 
-    void onOutputCompleted(long j10, File file, long j11, long j12);
-
-    void onOutputError(long j10, Exception exc);
-
-    void onOutputInvalidated(long j10, k kVar);
-
-    void onOutputStarted(long j10, File file);
+    public l(File file, long j10, byte[] bArr) {
+        this.a = file;
+        this.b = j10;
+        this.c = bArr == null ? null : (byte[]) bArr.clone();
+    }
 }

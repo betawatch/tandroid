@@ -56,7 +56,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.bd;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.bs;
@@ -73,7 +73,7 @@ import org.telegram.ui.on;
 import org.telegram.ui.py;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class ActionBarLayout extends FrameLayout implements d5, ng.b {
     public static Drawable p1;
@@ -874,9 +874,9 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
         this.a0 = z13;
         this.v0 = System.currentTimeMillis();
         this.W = true;
-        bd bdVar = new bd(this, z13, actionBarPopupWindow$ActionBarPopupWindowLayout, z10, n2Var, n2Var2);
+        dd ddVar = new dd(this, z13, actionBarPopupWindow$ActionBarPopupWindowLayout, z10, n2Var, n2Var2);
         n2 n2Var3 = n2Var;
-        this.z0 = bdVar;
+        this.z0 = ddVar;
         boolean needDelayOpenAnimation = n2Var2.needDelayOpenAnimation();
         boolean z16 = !needDelayOpenAnimation;
         if (!needDelayOpenAnimation) {

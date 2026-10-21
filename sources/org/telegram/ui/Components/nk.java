@@ -43,7 +43,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class nk extends li {
     public static final /* synthetic */ int g0 = 0;
@@ -228,14 +228,14 @@ public final class nk extends li {
         this.y = new mk(this, context);
         ckVar2.setOnScrollListener(new ah.d0(this, 24));
         final int i12 = 0;
-        ckVar2.setOnItemClickListener(new wl0(this) { // from class: org.telegram.ui.Components.yj
+        ckVar2.setOnItemClickListener(new xl0(this) { // from class: org.telegram.ui.Components.yj
             public final /* synthetic */ nk b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.wl0
+            @Override // org.telegram.ui.Components.xl0
             public final void a(int i13, View view) {
                 switch (i12) {
                     case 0:
@@ -269,14 +269,14 @@ public final class nk extends li {
         hg.q0 q0Var = new hg.q0(context, d6Var);
         this.H = q0Var;
         final int i13 = 1;
-        q0Var.setOnItemClickListener(new wl0(this) { // from class: org.telegram.ui.Components.yj
+        q0Var.setOnItemClickListener(new xl0(this) { // from class: org.telegram.ui.Components.yj
             public final /* synthetic */ nk b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.wl0
+            @Override // org.telegram.ui.Components.xl0
             public final void a(int i132, View view) {
                 switch (i13) {
                     case 0:
@@ -1013,12 +1013,12 @@ public final class nk extends li {
         }
         int i10 = 0;
         View childAt = ckVar.getChildAt(0);
-        sl0 sl0Var = (sl0) ckVar.G(childAt);
+        tl0 tl0Var = (tl0) ckVar.G(childAt);
         int y3 = ((((int) childAt.getY()) - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(4.0f)) - AndroidUtilities.dp(8.0f);
-        if (y3 > 0 && sl0Var != null && sl0Var.b() == 0) {
+        if (y3 > 0 && tl0Var != null && tl0Var.b() == 0) {
             i10 = y3;
         }
-        if (y3 < 0 || sl0Var == null || sl0Var.b() != 0) {
+        if (y3 < 0 || tl0Var == null || tl0Var.b() != 0) {
             y3 = i10;
         }
         return AndroidUtilities.dp(13.0f) + y3;

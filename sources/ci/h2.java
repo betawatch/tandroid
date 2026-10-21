@@ -22,15 +22,15 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.ah0;
 import org.telegram.ui.Components.cv;
-import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.fl0;
 import org.telegram.ui.Components.mf;
 import org.telegram.ui.Components.rd;
 import org.telegram.ui.Components.th;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.uu;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.zg0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ab0;
@@ -46,7 +46,7 @@ import org.telegram.ui.ot0;
 import org.telegram.ui.qa1;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -132,7 +132,7 @@ public final /* synthetic */ class h2 implements View.OnClickListener {
                 chatActivityEnterView.M0 = System.currentTimeMillis();
                 boolean Q0 = chatActivityEnterView.Q0();
                 if (!z15 && (mfVar = chatActivityEnterView.L0) != null) {
-                    mfVar.h(!Q0);
+                    mfVar.g(!Q0);
                     chatActivityEnterView.L0 = null;
                     break;
                 } else {
@@ -173,9 +173,9 @@ public final /* synthetic */ class h2 implements View.OnClickListener {
                     break;
                 }
             case 6:
-                zg0 zg0Var = (zg0) this.c;
+                ah0 ah0Var = (ah0) this.c;
                 boolean z18 = this.b;
-                zg0Var.getClass();
+                ah0Var.getClass();
                 List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = ((ActivityManager) view.getContext().getSystemService("activity")).getRunningAppProcesses();
                 boolean z19 = runningAppProcesses == null || runningAppProcesses.isEmpty() || runningAppProcesses.get(0).importance == 100;
                 if (!z18 && (!z19 || !LaunchActivity.F1)) {
@@ -186,15 +186,15 @@ public final /* synthetic */ class h2 implements View.OnClickListener {
                     context.startActivity(intent);
                     break;
                 } else {
-                    cv cvVar = zg0Var.U;
+                    cv cvVar = ah0Var.U;
                     if (cvVar != null) {
                         cvVar.I();
                         break;
                     } else {
-                        PhotoViewer photoViewer = zg0Var.V;
+                        PhotoViewer photoViewer = ah0Var.V;
                         if (photoViewer != null && photoViewer.J3) {
                             if (PhotoViewer.a9 != null) {
-                                PhotoViewer.a9.G0(false, true);
+                                PhotoViewer.a9.H0(false, true);
                             }
                             ot0 ot0Var = photoViewer.f0;
                             if (ot0Var != null && ot0Var.f != null) {
@@ -211,7 +211,7 @@ public final /* synthetic */ class h2 implements View.OnClickListener {
                                     viewGroup.removeView(ot0Var.f);
                                 }
                                 ot0Var.addView(ot0Var.f, 0, w7.z5.e(-1, -1, 51));
-                                zg0.j(false);
+                                ah0.j(false);
                             }
                             PhotoViewer.a9 = PhotoViewer.b9;
                             PhotoViewer.b9 = null;
@@ -242,7 +242,7 @@ public final /* synthetic */ class h2 implements View.OnClickListener {
                                 photoViewer.m6 = 0.0f;
                             } else if (view2 != null) {
                                 photoViewer.B3 = true;
-                                el0 o10 = zg0.o(photoViewer.y2.getAspectRatio(), false);
+                                fl0 o10 = ah0.o(photoViewer.y2.getAspectRatio(), false);
                                 float f7 = o10.c / photoViewer.x3.getLayoutParams().width;
                                 photoViewer.x3.setScaleX(f7);
                                 photoViewer.x3.setScaleY(f7);
@@ -271,7 +271,7 @@ public final /* synthetic */ class h2 implements View.OnClickListener {
                                     photoViewer.E2.setClipToOutline(true);
                                 }
                             } else {
-                                zg0.j(true);
+                                ah0.j(true);
                             }
                             try {
                                 photoViewer.e = true;

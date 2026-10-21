@@ -11,11 +11,11 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class go extends li {
     public final vz n;
-    public final im0 r;
+    public final jm0 r;
     public final int s;
     public final org.telegram.ui.z7 v;
     public int w;
@@ -41,18 +41,18 @@ public final class go extends li {
             vzVar.setText(ChatObject.getRestrictedErrorText(m12, 22));
         }
         vzVar.c();
-        im0 im0Var = new im0(context, d6Var);
-        this.r = im0Var;
-        im0Var.setSectionsType(2);
-        im0Var.setVerticalScrollBarEnabled(false);
-        im0Var.setLayoutManager(new s4.b0());
-        im0Var.setClipToPadding(false);
+        jm0 jm0Var = new jm0(context, d6Var);
+        this.r = jm0Var;
+        jm0Var.setSectionsType(2);
+        jm0Var.setVerticalScrollBarEnabled(false);
+        jm0Var.setLayoutManager(new s4.b0());
+        jm0Var.setClipToPadding(false);
         org.telegram.ui.z7 z7Var = new org.telegram.ui.z7(this, 4);
         this.v = z7Var;
-        im0Var.setAdapter(z7Var);
-        im0Var.setPadding(0, 0, 0, AndroidUtilities.dp(48.0f));
-        im0Var.setOnScrollListener(new ah.d0(this, 28));
-        addView(im0Var, w7.z5.c(-1.0f, -1));
+        jm0Var.setAdapter(z7Var);
+        jm0Var.setPadding(0, 0, 0, AndroidUtilities.dp(48.0f));
+        jm0Var.setOnScrollListener(new ah.d0(this, 28));
+        addView(jm0Var, w7.z5.c(-1.0f, -1));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x0038  */
@@ -65,7 +65,7 @@ public final class go extends li {
     public final void B(int i10, int i11) {
         int i12;
         int i13;
-        im0 im0Var;
+        jm0 jm0Var;
         int max = Math.max(0, i11 - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight());
         if (this.w != max) {
             this.w = max;
@@ -77,9 +77,9 @@ public final class go extends li {
                 i12 = (int) (i11 / 3.5f);
                 int dp = i12 - AndroidUtilities.dp(52.0f);
                 i13 = dp >= 0 ? dp : 0;
-                im0Var = this.r;
-                if (im0Var.getPaddingTop() == i13) {
-                    im0Var.setPadding(AndroidUtilities.dp(6.0f), i13, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(48.0f));
+                jm0Var = this.r;
+                if (jm0Var.getPaddingTop() == i13) {
+                    jm0Var.setPadding(AndroidUtilities.dp(6.0f), i13, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(48.0f));
                     return;
                 }
                 return;
@@ -89,25 +89,25 @@ public final class go extends li {
         int dp2 = i12 - AndroidUtilities.dp(52.0f);
         if (dp2 >= 0) {
         }
-        im0Var = this.r;
-        if (im0Var.getPaddingTop() == i13) {
+        jm0Var = this.r;
+        if (jm0Var.getPaddingTop() == i13) {
         }
     }
 
     @Override // org.telegram.ui.Components.li
     public int getCurrentItemTop() {
-        im0 im0Var = this.r;
-        if (im0Var.getChildCount() <= 0) {
+        jm0 jm0Var = this.r;
+        if (jm0Var.getChildCount() <= 0) {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         int i10 = 0;
-        View childAt = im0Var.getChildAt(0);
-        sl0 sl0Var = (sl0) im0Var.G(childAt);
+        View childAt = jm0Var.getChildAt(0);
+        tl0 tl0Var = (tl0) jm0Var.G(childAt);
         int top = childAt.getTop() - AndroidUtilities.dp(8.0f);
-        if (top > 0 && sl0Var != null && sl0Var.b() == 0) {
+        if (top > 0 && tl0Var != null && tl0Var.b() == 0) {
             i10 = top;
         }
-        if (top < 0 || sl0Var == null || sl0Var.b() != 0) {
+        if (top < 0 || tl0Var == null || tl0Var.b() != 0) {
             top = i10;
         }
         int measuredHeight = (getMeasuredHeight() - top) - AndroidUtilities.dp(50.0f);

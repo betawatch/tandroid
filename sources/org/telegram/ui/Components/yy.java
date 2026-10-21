@@ -16,9 +16,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class yy extends hm0 {
+public final class yy extends im0 {
     public yt E;
     public boolean F;
     public int G;
@@ -48,7 +48,7 @@ public final class yy extends hm0 {
         this.e = z10 ? null : new az(tzVar, context);
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         return b1Var.f == 0;
     }
@@ -351,7 +351,7 @@ public final class yy extends hm0 {
                     int i14 = 0;
                     for (int i15 = 0; i15 < size; i15++) {
                         TLRPC.Document document = (TLRPC.Document) tzVar.i1.get(i15);
-                        ew0 C1 = wz.C1(zyVar.F1(document, document.attributes));
+                        fw0 C1 = wz.C1(zyVar.F1(document, document.attributes));
                         int min = Math.min(i11, (int) Math.floor((((C1.a / C1.b) * dp) / measuredWidth) * i11));
                         if (i12 < min) {
                             this.H += i13;
@@ -420,6 +420,6 @@ public final class yy extends hm0 {
             f2Var.setCanPreviewGif(true);
             view = f2Var;
         }
-        return new sl0(view);
+        return new tl0(view);
     }
 }

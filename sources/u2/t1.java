@@ -1,77 +1,24 @@
 package u2;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+import e9.x1;
+
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public abstract class t1 extends m {
-    public final a k;
+public final class t1 extends b2.w0 {
+    public final e9.n0 c;
 
-    public t1(a aVar) {
-        this.k = aVar;
+    public t1(String str, x1 x1Var) {
+        super(str, null, false, 1);
+        this.c = e9.n0.u(x1Var);
     }
 
-    public abstract void A(b2.o1 o1Var);
-
-    public final void B() {
-        y(null, this.k);
-    }
-
-    public void C() {
-        B();
-    }
-
-    @Override // u2.a
-    public boolean a(b2.o0 o0Var) {
-        return this.k.a(o0Var);
-    }
-
-    @Override // u2.a
-    public b2.o1 h() {
-        return this.k.h();
-    }
-
-    @Override // u2.a
-    public final b2.o0 i() {
-        return this.k.i();
-    }
-
-    @Override // u2.a
-    public boolean j() {
-        return this.k.j();
-    }
-
-    @Override // u2.a
-    public final void m(g2.c0 c0Var) {
-        this.j = c0Var;
-        this.i = e2.m0.q(null);
-        C();
-    }
-
-    @Override // u2.a
-    public void t(b2.o0 o0Var) {
-        this.k.t(o0Var);
-    }
-
-    @Override // u2.m
-    public final g0 u(Object obj, g0 g0Var) {
-        return z(g0Var);
-    }
-
-    @Override // u2.m
-    public final long v(Object obj, long j10) {
-        return j10;
-    }
-
-    @Override // u2.m
-    public final int w(int i10, Object obj) {
-        return i10;
-    }
-
-    @Override // u2.m
-    public final void x(Object obj, a aVar, b2.o1 o1Var) {
-        A(o1Var);
-    }
-
-    public g0 z(g0 g0Var) {
-        return g0Var;
+    @Override // b2.w0, java.lang.Throwable
+    public final String getMessage() {
+        String message = super.getMessage();
+        e9.n0 n0Var = this.c;
+        if (n0Var.isEmpty()) {
+            return message;
+        }
+        return message + "\nsniff failures: " + n0Var;
     }
 }

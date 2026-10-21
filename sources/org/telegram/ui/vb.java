@@ -69,7 +69,7 @@ import org.telegram.ui.Components.PipRoundVideoView;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class vb extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public static int Q0 = 10;
@@ -149,7 +149,7 @@ public final class vb extends org.telegram.ui.ActionBar.n2 implements Notificati
     public a0.h w0;
     public hg.a0 x;
     public final AnimationNotificationsLocker x0;
-    public org.telegram.ui.Components.ll0 y;
+    public org.telegram.ui.Components.ml0 y;
     public final HashMap y0;
     public HashMap z0;
 
@@ -464,7 +464,7 @@ public final class vb extends org.telegram.ui.ActionBar.n2 implements Notificati
                 spannableStringBuilder.append(messageObject.messageText);
             }
             AndroidUtilities.addToClipboard(spannableStringBuilder);
-            org.telegram.messenger.kk.p(R.string.MessageCopied, org.telegram.ui.Components.xc.a0(vbVar));
+            org.telegram.messenger.mk.p(R.string.MessageCopied, org.telegram.ui.Components.xc.a0(vbVar));
         } else if (intValue == 4) {
             String str = messageObject.messageOwner.attachPath;
             if (str != null && str.length() > 0 && !r4.c.t(str)) {
@@ -502,9 +502,9 @@ public final class vb extends org.telegram.ui.ActionBar.n2 implements Notificati
                         if (a0Var.N0() < vbVar.x.B() - 1) {
                             int L0 = vbVar.x.L0();
                             vbVar.g0 = L0;
-                            org.telegram.ui.Components.sl0 sl0Var = (org.telegram.ui.Components.sl0) vbVar.v.K(L0);
-                            if (sl0Var != null) {
-                                vbVar.h0 = sl0Var.a.getTop();
+                            org.telegram.ui.Components.tl0 tl0Var = (org.telegram.ui.Components.tl0) vbVar.v.K(L0);
+                            if (tl0Var != null) {
+                                vbVar.h0 = tl0Var.a.getTop();
                             } else {
                                 vbVar.g0 = -1;
                             }
@@ -570,7 +570,7 @@ public final class vb extends org.telegram.ui.ActionBar.n2 implements Notificati
         } else if (intValue != 7) {
             switch (intValue) {
                 case 9:
-                    vbVar.showDialog(new org.telegram.ui.Components.py0(vbVar.getParentActivity(), vbVar, vbVar.Y.getInputStickerSet(), null, null, null));
+                    vbVar.showDialog(new org.telegram.ui.Components.qy0(vbVar.getParentActivity(), vbVar, vbVar.Y.getInputStickerSet(), null, null, null));
                     break;
                 case 10:
                     if ((Build.VERSION.SDK_INT > 28 && !BuildVars.NO_SCOPED_STORAGE) || vbVar.getParentActivity().checkSelfPermission("android.permission.WRITE_EXTERNAL_STORAGE") == 0) {
@@ -608,7 +608,7 @@ public final class vb extends org.telegram.ui.ActionBar.n2 implements Notificati
                             break;
                         case 16:
                             AndroidUtilities.addToClipboard(messageObject.messageOwner.media.phone_number);
-                            org.telegram.messenger.kk.p(R.string.PhoneCopied, org.telegram.ui.Components.xc.a0(vbVar));
+                            org.telegram.messenger.mk.p(R.string.PhoneCopied, org.telegram.ui.Components.xc.a0(vbVar));
                             break;
                         case 17:
                             try {
@@ -1193,7 +1193,7 @@ public final class vb extends org.telegram.ui.ActionBar.n2 implements Notificati
                                 }
                                 TLRPC.InputStickerSet inputStickerSet3 = inputStickerSet2;
                                 if (inputStickerSet3 != null) {
-                                    showDialog(new org.telegram.ui.Components.py0(getParentActivity(), this, inputStickerSet3, null, null, null));
+                                    showDialog(new org.telegram.ui.Components.qy0(getParentActivity(), this, inputStickerSet3, null, null, null));
                                     return true;
                                 }
                                 arrayList = arrayList3;
@@ -1762,12 +1762,12 @@ public final class vb extends org.telegram.ui.ActionBar.n2 implements Notificati
                             ub ubVar = this.L0;
                             ubVar.a = messageObject;
                             ubVar.e = max;
-                            org.telegram.ui.Components.ll0 ll0Var = this.y;
-                            ll0Var.b = i10;
+                            org.telegram.ui.Components.ml0 ml0Var = this.y;
+                            ml0Var.b = i10;
                             ubVar.b = indexOf2;
                             ubVar.d = max;
                             ubVar.c = false;
-                            ll0Var.c(indexOf2, max, false, false);
+                            ml0Var.c(indexOf2, max, false, false);
                             return;
                         }
                         return;
@@ -2034,10 +2034,10 @@ public final class vb extends org.telegram.ui.ActionBar.n2 implements Notificati
         a0Var.j1(1);
         this.x.l1(true);
         this.v.setLayoutManager(this.x);
-        org.telegram.ui.Components.ll0 ll0Var = new org.telegram.ui.Components.ll0(this.v, this.x);
-        this.y = ll0Var;
-        ll0Var.h = new za(this);
-        ll0Var.i = this.L0;
+        org.telegram.ui.Components.ml0 ml0Var = new org.telegram.ui.Components.ml0(this.v, this.x);
+        this.y = ml0Var;
+        ml0Var.h = new za(this);
+        ml0Var.i = this.L0;
         this.X.addView(this.v, w7.z5.c(-1.0f, -1));
         this.v.setOnScrollListener(new k3(this));
         this.glassEngine.a(this.v);
@@ -2729,9 +2729,9 @@ public final class vb extends org.telegram.ui.ActionBar.n2 implements Notificati
         super.onPause();
         sb sbVar = this.X;
         if (sbVar != null) {
-            org.telegram.ui.Components.g91 g91Var = sbVar.v;
-            if (g91Var != null) {
-                g91Var.c(false);
+            org.telegram.ui.Components.h91 h91Var = sbVar.v;
+            if (h91Var != null) {
+                h91Var.c(false);
             }
             sbVar.F = true;
         }
@@ -2765,9 +2765,9 @@ public final class vb extends org.telegram.ui.ActionBar.n2 implements Notificati
         System.currentTimeMillis();
         sb sbVar = this.X;
         if (sbVar != null) {
-            org.telegram.ui.Components.g91 g91Var = sbVar.v;
-            if (g91Var != null) {
-                g91Var.c(true);
+            org.telegram.ui.Components.h91 h91Var = sbVar.v;
+            if (h91Var != null) {
+                h91Var.c(true);
             }
             sbVar.F = false;
         }

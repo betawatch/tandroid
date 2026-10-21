@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class zb1 extends org.telegram.ui.Components.w9 {
     public Drawable G;
@@ -91,11 +91,11 @@ public final class zb1 extends org.telegram.ui.Components.w9 {
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
         kc1 kc1Var = this.K;
-        org.telegram.ui.Components.g91 g91Var = kc1Var.v1;
+        org.telegram.ui.Components.h91 h91Var = kc1Var.v1;
         int measuredWidth = getMeasuredWidth();
         int measuredHeight = getMeasuredHeight();
-        g91Var.getClass();
-        float a2 = org.telegram.ui.Components.g91.a(measuredWidth, measuredHeight);
+        h91Var.getClass();
+        float a2 = org.telegram.ui.Components.h91.a(measuredWidth, measuredHeight);
         kc1Var.y1 = a2;
         if (kc1Var.E1) {
             setScaleX(a2);

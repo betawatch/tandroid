@@ -43,7 +43,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class nj extends ci.q5 {
     public int X2;
@@ -207,7 +207,7 @@ public final class nj extends ci.q5 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.jm0
     public final boolean F0(View view) {
         return (view.getVisibility() == 4 || view.getVisibility() == 8) ? false : true;
     }
@@ -220,7 +220,7 @@ public final class nj extends ci.q5 {
         return super.createAccessibilityNodeInfo();
     }
 
-    @Override // org.telegram.ui.Components.im0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jm0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         qn qnVar = this.x3;
         qnVar.u8 = null;
@@ -344,7 +344,7 @@ public final class nj extends ci.q5 {
             if (linearGradient4 != null) {
                 linearGradient4.setLocalMatrix(matrix);
             }
-            int height = ((getHeight() - qnVar.Ba) - ((int) (qnVar.b9(org.telegram.ui.Components.m31.c) + qnVar.v.d()))) - AndroidUtilities.dp(57.0f);
+            int height = ((getHeight() - qnVar.Ba) - ((int) (qnVar.b9(org.telegram.ui.Components.n31.c) + qnVar.v.d()))) - AndroidUtilities.dp(57.0f);
             int i21 = ConnectionsManager.DEFAULT_DATACENTER_ID;
             for (int i22 = 0; i22 < getChildCount(); i22++) {
                 int top = getChildAt(i22).getTop();
@@ -597,7 +597,7 @@ public final class nj extends ci.q5 {
     /* JADX WARN: Type inference failed for: r11v16 */
     /* JADX WARN: Type inference failed for: r11v18, types: [org.telegram.ui.Cells.n4] */
     /* JADX WARN: Type inference failed for: r11v41 */
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -641,7 +641,7 @@ public final class nj extends ci.q5 {
             u1Var = null;
             z10 = false;
         }
-        if ((!org.telegram.ui.Components.kw0.v0 && ((view.getY() > getMeasuredHeight() || view.getY() + view.getMeasuredHeight() < 0.0f) && !z10)) || view.getVisibility() == 4 || view.getVisibility() == 8) {
+        if ((!org.telegram.ui.Components.lw0.v0 && ((view.getY() > getMeasuredHeight() || view.getY() + view.getMeasuredHeight() < 0.0f) && !z10)) || view.getVisibility() == 4 || view.getVisibility() == 8) {
             z16 = true;
         }
         if (z17) {
@@ -1189,7 +1189,7 @@ public final class nj extends ci.q5 {
         return z13;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.jm0
     public final void h1(View view, float f7, float f10, boolean z10) {
         MessageObject.GroupedMessages currentMessagesGroup;
         super.h1(view, f7, f10, z10);
@@ -1278,7 +1278,7 @@ public final class nj extends ci.q5 {
                 qn.W1(qnVar, interpolation);
                 MessageObject T1 = qn.T1(qnVar);
                 if (T1 != null && (T1.isRoundVideo() || T1.isVideo())) {
-                    qnVar.Qc(false, false);
+                    qnVar.Rc(false, false);
                 }
                 float f24 = this.h3;
                 if (f24 == 1.0f || f24 == 0.0f) {
@@ -1594,7 +1594,7 @@ public final class nj extends ci.q5 {
                             lpVar3.x = measureText;
                             int min = Math.min(measureText, lpVar3.c - AndroidUtilities.dp(60.0f));
                             lpVar3.x = min;
-                            lpVar3.s = org.telegram.ui.Components.ex0.c(string, textPaint, min, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, min, 1, true);
+                            lpVar3.s = org.telegram.ui.Components.fx0.c(string, textPaint, min, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, min, 1, true);
                             if (!lpVar3.V) {
                                 string2 = LocaleController.getString(R.string.SwipeToGoNextRecommendedChannel);
                                 string3 = LocaleController.getString(R.string.ReleaseToGoNextRecommendedChannel);
@@ -1637,7 +1637,7 @@ public final class nj extends ci.q5 {
                     lpVar3.x = measureText4;
                     int min2 = Math.min(measureText4, lpVar3.c - AndroidUtilities.dp(60.0f));
                     lpVar3.x = min2;
-                    lpVar3.s = org.telegram.ui.Components.ex0.c(string, textPaint, min2, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, min2, 1, true);
+                    lpVar3.s = org.telegram.ui.Components.fx0.c(string, textPaint, min2, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, min2, 1, true);
                     if (!lpVar3.V) {
                     }
                     int measureText22 = (int) textPaint2.measureText(string2);
@@ -1657,7 +1657,7 @@ public final class nj extends ci.q5 {
                     }
                 }
                 float min3 = Math.min(1.0f, qnVar.N9 / AndroidUtilities.dp(110.0f));
-                canvas2.translate(qnVar.H9() ? AndroidUtilities.lerp(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(71.0f), qnVar.V8()) : 0.0f, -(qnVar.b9(org.telegram.ui.Components.m31.c) + qnVar.S.getInputBubbleHeight() + qnVar.v.d() + AndroidUtilities.dp(10.0f)));
+                canvas2.translate(qnVar.H9() ? AndroidUtilities.lerp(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(71.0f), qnVar.V8()) : 0.0f, -(qnVar.b9(org.telegram.ui.Components.n31.c) + qnVar.S.getInputBubbleHeight() + qnVar.v.d() + AndroidUtilities.dp(10.0f)));
                 qnVar.P9.a(canvas2, qnVar.x0, min3, 1.0f - qnVar.U9);
                 canvas2.restore();
                 if (qnVar.T9 != null) {
@@ -1692,7 +1692,7 @@ public final class nj extends ci.q5 {
         }
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         vh.i iVar;
         org.telegram.ui.ActionBar.k kVar;
@@ -1714,7 +1714,7 @@ public final class nj extends ci.q5 {
         return onInterceptTouchEvent;
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         int i14 = this.X2;
@@ -1746,7 +1746,7 @@ public final class nj extends ci.q5 {
         qnVar.I9();
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         org.telegram.ui.ActionBar.k kVar;
         lp lpVar;
@@ -2043,7 +2043,7 @@ public final class nj extends ci.q5 {
         }
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public final void requestLayout() {
         if (this.v3) {
             return;
@@ -2058,7 +2058,7 @@ public final class nj extends ci.q5 {
         super.requestLayout();
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView
     public final void setItemAnimator(s4.l0 l0Var) {
         if (this.V1) {
             return;
@@ -2066,7 +2066,7 @@ public final class nj extends ci.q5 {
         super.setItemAnimator(l0Var);
     }
 
-    @Override // org.telegram.ui.Components.im0, android.view.View
+    @Override // org.telegram.ui.Components.jm0, android.view.View
     public final void setTranslationY(float f7) {
         if (f7 != getTranslationY()) {
             super.setTranslationY(f7);
@@ -2681,7 +2681,7 @@ public final class nj extends ci.q5 {
                 qn.W1(qnVar, f10);
                 MessageObject T12 = qn.T1(qnVar);
                 if (T12 != null && (T12.isRoundVideo() || T12.isVideo())) {
-                    qnVar.Qc(false, false);
+                    qnVar.Rc(false, false);
                 }
                 View view = qnVar.d9;
                 if (view instanceof org.telegram.ui.Cells.u1) {
@@ -2708,13 +2708,13 @@ public final class nj extends ci.q5 {
                     boolean I62 = qnVar.I6(T13);
                     jk jkVar = qnVar.O0;
                     if ((jkVar == null || jkVar.getVisibility() != 0 || ((qnVar.I0 && I62) || T13.wasJustSent)) && ((chat = qnVar.e) == null || ((!ChatObject.isNotInChat(chat) || qnVar.K9()) && ((!ChatObject.isChannel(qnVar.e) || ChatObject.canPost(qnVar.e) || qnVar.e.megagroup) && ChatObject.canSendMessages(qnVar.e))))) {
-                        qnVar.Fb(qn.T1(qnVar));
+                        qnVar.Gb(qn.T1(qnVar));
                     } else {
                         if (T13.getGroupId() != 0 && (D8 = qnVar.D8(T13.getGroupId())) != null && (messageObject = D8.captionMessage) != null) {
                             T13 = messageObject;
                         }
                         qnVar.n5 = T13;
-                        Bundle d = org.telegram.messenger.kk.d(3, "onlySelect", "dialogsType", true);
+                        Bundle d = org.telegram.messenger.mk.d(3, "onlySelect", "dialogsType", true);
                         d.putBoolean("quote", true);
                         d.putBoolean("reply_to", true);
                         long peerDialogId = DialogObject.getPeerDialogId(T13.getFromPeer());

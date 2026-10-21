@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.e11;
 import org.telegram.ui.Components.ex;
 import org.telegram.ui.Components.s00;
 import org.telegram.ui.ck0;
@@ -19,7 +19,7 @@ import org.telegram.ui.sa;
 import org.telegram.ui.u61;
 import org.telegram.ui.vo;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e6 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -79,7 +79,7 @@ public final /* synthetic */ class e6 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ah.j(23));
                 break;
             case 16:
-                int i13 = d11.e;
+                int i13 = e11.e;
                 break;
             case 17:
                 int i14 = hf0.t0;

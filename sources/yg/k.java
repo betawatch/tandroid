@@ -22,13 +22,13 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.j5;
-import org.telegram.ui.Components.fx0;
+import org.telegram.ui.Components.gx0;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.xp;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class k extends wg.c {
     public boolean E;
@@ -37,7 +37,7 @@ public final class k extends wg.c {
     public TLRPC.User H;
     public TLRPC.Chat I;
     public TL_stories.TL_myBoost J;
-    public final fx0 K;
+    public final gx0 K;
     public final boolean[] s;
     public final xp v;
     public final ImageView w;
@@ -48,7 +48,7 @@ public final class k extends wg.c {
         super(context, d6Var);
         this.s = new boolean[1];
         this.G = true;
-        this.K = new fx0(this);
+        this.K = new gx0(this);
         this.d.setTypeface(AndroidUtilities.bold());
         this.f.setVisibility(8);
         if (z11) {
@@ -354,7 +354,7 @@ public final class k extends wg.c {
         }
         int x02 = h6.x0(null, h6.z9, false);
         boolean s10 = k3.s(user);
-        fx0 fx0Var = this.K;
-        l4Var.i(s10 ? fx0Var.a(user, null, x02, false) : fx0Var.a(null, null, x02, false));
+        gx0 gx0Var = this.K;
+        l4Var.i(s10 ? gx0Var.a(user, null, x02, false) : gx0Var.a(null, null, x02, false));
     }
 }

@@ -16,15 +16,15 @@ import org.telegram.ui.Components.ab;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.wz;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class k4 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final int X;
@@ -34,7 +34,7 @@ public final class k4 extends bb implements NotificationCenter.NotificationCente
     public final FrameLayout b0;
     public final ei.d c0;
     public i80 d0;
-    public t61 e0;
+    public u61 e0;
     public i0.b f0;
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -127,10 +127,10 @@ public final class k4 extends bb implements NotificationCenter.NotificationCente
     }
 
     public final boolean U() {
-        im0 im0Var = this.d;
-        if (im0Var != null && im0Var.G) {
-            for (int i10 = 0; i10 < im0Var.getChildCount(); i10++) {
-                if (im0Var.getChildAt(i10) instanceof b10) {
+        jm0 jm0Var = this.d;
+        if (jm0Var != null && jm0Var.G) {
+            for (int i10 = 0; i10 < jm0Var.getChildCount(); i10++) {
+                if (jm0Var.getChildAt(i10) instanceof b10) {
                     return true;
                 }
             }
@@ -140,11 +140,11 @@ public final class k4 extends bb implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        t61 t61Var;
-        if (i10 != NotificationCenter.starUserGiftsLoaded || (t61Var = this.e0) == null) {
+        u61 u61Var;
+        if (i10 != NotificationCenter.starUserGiftsLoaded || (u61Var = this.e0) == null) {
             return;
         }
-        t61Var.N(true);
+        u61Var.N(true);
         if (U()) {
             this.Y.a();
         }
@@ -164,10 +164,10 @@ public final class k4 extends bb implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
-        t61 t61Var = new t61(im0Var, getContext(), this.currentAccount, 0, false, new t3(this, 1), this.resourcesProvider);
-        this.e0 = t61Var;
-        t61Var.r = false;
-        return t61Var;
+    public final im0 x(jm0 jm0Var) {
+        u61 u61Var = new u61(jm0Var, getContext(), this.currentAccount, 0, false, new t3(this, 1), this.resourcesProvider);
+        this.e0 = u61Var;
+        u61Var.r = false;
+        return u61Var;
     }
 }

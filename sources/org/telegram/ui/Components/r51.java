@@ -1,45 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class r51 extends un0 {
-    public final /* synthetic */ c61 h;
+public final class r51 {
+    public final /* synthetic */ a61 a;
+    public final /* synthetic */ d61 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r51(c61 c61Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, 14.0f, d6Var);
-        this.h = c61Var;
+    public r51(d61 d61Var, a61 a61Var) {
+        this.b = d61Var;
+        this.a = a61Var;
     }
 
-    @Override // org.telegram.ui.Components.un0
-    public final void a(String str) {
-        hg.e2 e2Var = this.h.v;
-        hg.c2 c2Var = e2Var.S;
-        int i10 = e2Var.c;
-        if (e2Var.N != 0) {
-            ConnectionsManager.getInstance(i10).cancelRequest(e2Var.N, true);
-            e2Var.N = 0;
+    public final int a() {
+        return this.b.s.v;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0029  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(boolean z10) {
+        d61 d61Var = this.b;
+        t51 t51Var = d61Var.n;
+        if (z10) {
+            s4.g0 adapter = t51Var.getAdapter();
+            hg.e2 e2Var = d61Var.v;
+            if (adapter != e2Var) {
+                t51Var.setAdapter(e2Var);
+                if (t51Var.getAdapter().h() <= 0) {
+                    d61Var.r.i1(0, AndroidUtilities.dp(58.0f) + (-t51Var.getPaddingTop()) + d61Var.E, false);
+                    return;
+                }
+                return;
+            }
         }
-        if (e2Var.O != 0) {
-            ConnectionsManager.getInstance(i10).cancelRequest(e2Var.O, true);
-            e2Var.O = 0;
+        if (z10) {
+            return;
         }
-        if (TextUtils.isEmpty(str)) {
-            e2Var.R = null;
-            e2Var.F.clear();
-            e2Var.I.clear();
-            e2Var.E.clear();
-            e2Var.e.b(false);
-            e2Var.l();
-        } else {
-            e2Var.R = str.toLowerCase();
+        s4.g0 adapter2 = t51Var.getAdapter();
+        c61 c61Var = d61Var.s;
+        if (adapter2 == c61Var) {
+            return;
         }
-        AndroidUtilities.cancelRunOnUIThread(c2Var);
-        AndroidUtilities.runOnUIThread(c2Var, 300L);
+        t51Var.setAdapter(c61Var);
+        if (t51Var.getAdapter().h() <= 0) {
+        }
     }
 }

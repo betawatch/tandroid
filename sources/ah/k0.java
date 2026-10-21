@@ -13,7 +13,7 @@ import org.telegram.ui.Cells.v9;
 import org.telegram.ui.Cells.z9;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.e9;
-import org.telegram.ui.Components.fp0;
+import org.telegram.ui.Components.gp0;
 import org.telegram.ui.Components.m60;
 import org.telegram.ui.Components.ob0;
 import org.telegram.ui.Components.voip.t2;
@@ -23,7 +23,7 @@ import org.telegram.ui.mi0;
 import org.telegram.ui.v31;
 import org.telegram.ui.x31;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -151,14 +151,14 @@ public final /* synthetic */ class k0 implements ValueAnimator.AnimatorUpdateLis
             case 10:
                 mi0 mi0Var = (mi0) this.c;
                 float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                mi0Var.E = floatValue4;
-                mi0Var.H.setAlpha(floatValue4);
-                mi0Var.K.setAlpha(mi0Var.E);
-                if (!this.b && (viewGroup = mi0Var.Z) != null) {
-                    viewGroup.setAlpha(mi0Var.E);
+                mi0Var.y = floatValue4;
+                mi0Var.G.setAlpha(floatValue4);
+                mi0Var.J.setAlpha(mi0Var.y);
+                if (!this.b && (viewGroup = mi0Var.Y) != null) {
+                    viewGroup.setAlpha(mi0Var.y);
                 }
+                mi0Var.E.invalidate();
                 mi0Var.F.invalidate();
-                mi0Var.G.invalidate();
                 break;
             case 11:
                 x31 x31Var = (x31) this.c;
@@ -174,7 +174,7 @@ public final /* synthetic */ class k0 implements ValueAnimator.AnimatorUpdateLis
                     textView.setAlpha(x31Var.s);
                 }
                 if (!x31Var.S && (v31Var = x31Var.N) != null && v31Var.getSeekBarWaveform() != null) {
-                    fp0 seekBarWaveform = x31Var.N.getSeekBarWaveform();
+                    gp0 seekBarWaveform = x31Var.N.getSeekBarWaveform();
                     seekBarWaveform.L = (this.b ? bs.g : bs.i).getInterpolation(Utilities.clamp(x31Var.s * 1.25f, 1.0f, 0.0f));
                     u1 u1Var2 = seekBarWaveform.n;
                     if (u1Var2 != null) {

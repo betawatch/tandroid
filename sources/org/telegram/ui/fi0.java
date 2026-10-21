@@ -10,9 +10,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class fi0 extends org.telegram.ui.Components.im0 {
+public final class fi0 extends org.telegram.ui.Components.jm0 {
     public final ArrayList V2;
     public final org.telegram.ui.Components.f6 W2;
     public final org.telegram.ui.Components.f6 X2;
@@ -37,7 +37,7 @@ public final class fi0 extends org.telegram.ui.Components.im0 {
     /* JADX WARN: Type inference failed for: r9v10, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r9v35 */
     /* JADX WARN: Type inference failed for: r9v45 */
-    @Override // org.telegram.ui.Components.im0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jm0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -60,9 +60,9 @@ public final class fi0 extends org.telegram.ui.Components.im0 {
         MessageObject.GroupedMessages currentMessagesGroup3;
         MessageObject.GroupedMessages currentMessagesGroup4;
         mi0 mi0Var3 = this.Z2;
-        ei0 ei0Var = mi0Var3.G;
+        ei0 ei0Var = mi0Var3.F;
         int measuredHeight = ei0Var.getMeasuredHeight();
-        fi0 fi0Var3 = mi0Var3.K;
+        fi0 fi0Var3 = mi0Var3.J;
         int childCount = fi0Var3.getChildCount();
         boolean z10 = false;
         for (int i12 = 0; i12 < childCount; i12++) {
@@ -259,7 +259,7 @@ public final class fi0 extends org.telegram.ui.Components.im0 {
                     i11 = i10;
                     f7 = f17;
                     mi0Var = mi0Var4;
-                    mi0Var.j(canvas, boundsLeft, y11, boundsRight, y12);
+                    mi0Var.i(canvas, boundsLeft, y11, boundsRight, y12);
                 } else {
                     i11 = i10;
                     f7 = f17;
@@ -355,7 +355,7 @@ public final class fi0 extends org.telegram.ui.Components.im0 {
                     if (f22 > AndroidUtilities.dp(20.0f) + fi0Var4.getMeasuredHeight()) {
                         f22 = AndroidUtilities.dp(20.0f) + fi0Var4.getMeasuredHeight();
                     }
-                    mi0Var5.j(canvas, f19, f20, f21, f22);
+                    mi0Var5.i(canvas, f19, f20, f21, f22);
                     groupedMessages4.transitionParams.cell = null;
                 }
             } else {
@@ -378,11 +378,11 @@ public final class fi0 extends org.telegram.ui.Components.im0 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j10) {
         org.telegram.ui.Cells.u1 u1Var;
         mi0 mi0Var = this.Z2;
-        if (mi0Var.w && ((view == (u1Var = mi0Var.Q) && u1Var != null && u1Var.getCurrentPosition() == null) || view == mi0Var.X)) {
+        if (mi0Var.v && ((view == (u1Var = mi0Var.P) && u1Var != null && u1Var.getCurrentPosition() == null) || view == mi0Var.W)) {
             return false;
         }
         if (!(view instanceof org.telegram.ui.Cells.u1)) {
@@ -425,7 +425,7 @@ public final class fi0 extends org.telegram.ui.Components.im0 {
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         for (int i14 = 0; i14 < getChildCount(); i14++) {
             View childAt = getChildAt(i14);
@@ -439,14 +439,14 @@ public final class fi0 extends org.telegram.ui.Components.im0 {
         super.onLayout(z10, i10, i11, i12, i13);
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         mi0 mi0Var = this.Z2;
-        int dp = AndroidUtilities.dp(mi0Var.N.isEmpty() ? -6.0f : 48.0f);
-        ViewGroup viewGroup = mi0Var.Z;
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(0, ((AndroidUtilities.displaySize.y - (dp + (viewGroup == null ? 0 : viewGroup.getMeasuredHeight()))) - AndroidUtilities.dp(8.0f)) - mi0Var.e.b), TLObject.FLAG_31));
-        int max = Math.max(AndroidUtilities.dp(12.0f) + (mi0Var.m0 ? mi0Var.Y : mi0Var.W.l()), -((AndroidUtilities.dp(7.0f) + mi0Var.o0[0]) - getMeasuredWidth()));
-        float max2 = Math.max(1, getMeasuredWidth() - max) / Math.max(1, ((getMeasuredWidth() - max) - AndroidUtilities.dp(8.0f)) + Math.max(0, mi0Var.O - ((getMeasuredWidth() - max) - AndroidUtilities.dp((mi0Var.P.i() ? 0 : 40) + 8))));
+        int dp = AndroidUtilities.dp(mi0Var.M.isEmpty() ? -6.0f : 48.0f);
+        ViewGroup viewGroup = mi0Var.Y;
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(0, ((AndroidUtilities.displaySize.y - (dp + (viewGroup == null ? 0 : viewGroup.getMeasuredHeight()))) - AndroidUtilities.dp(8.0f)) - mi0Var.d.b), TLObject.FLAG_31));
+        int max = Math.max(AndroidUtilities.dp(12.0f) + (mi0Var.l0 ? mi0Var.X : mi0Var.V.l()), -((AndroidUtilities.dp(7.0f) + mi0Var.n0[0]) - getMeasuredWidth()));
+        float max2 = Math.max(1, getMeasuredWidth() - max) / Math.max(1, ((getMeasuredWidth() - max) - AndroidUtilities.dp(8.0f)) + Math.max(0, mi0Var.N - ((getMeasuredWidth() - max) - AndroidUtilities.dp((mi0Var.O.i() ? 0 : 40) + 8))));
         setPivotX(getMeasuredWidth());
         setPivotY(getMeasuredHeight());
         setScaleX(max2);

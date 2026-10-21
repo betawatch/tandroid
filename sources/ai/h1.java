@@ -21,14 +21,14 @@ import org.telegram.messenger.MessageSuggestionParams;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.sd0;
 import org.telegram.ui.Components.u40;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class h1 extends org.telegram.ui.ActionBar.f3 {
     public final ag.a E;
@@ -116,7 +116,7 @@ public final class h1 extends org.telegram.ui.ActionBar.f3 {
         fixNavigationBar(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, d6Var));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        LinearLayout e = kk.e(context, 0);
+        LinearLayout e = mk.e(context, 0);
         linearLayout.addView(e, w7.z5.t(-1, 56, 55, 0, 0, 0, 0));
         TextView textView = new TextView(context);
         int i13 = org.telegram.ui.ActionBar.h6.G6;
@@ -150,7 +150,7 @@ public final class h1 extends org.telegram.ui.ActionBar.f3 {
         } else {
             this.e = null;
         }
-        LinearLayout e7 = kk.e(context, 1);
+        LinearLayout e7 = mk.e(context, 1);
         linearLayout.addView(e7, w7.z5.l(1.0f, -1, -2));
         sd0 sd0Var = new sd0(context, null);
         this.f = sd0Var;
@@ -303,7 +303,7 @@ public final class h1 extends org.telegram.ui.ActionBar.f3 {
             if (cVar != null) {
                 cVar.setEnabled(z11);
                 cVar.setClickable(z11);
-                kk.s(cVar.animate().scaleX(z11 ? 1.0f : 0.6f).scaleY(z11 ? 1.0f : 0.6f), z11 ? 1.0f : 0.0f, 180L);
+                mk.s(cVar.animate().scaleX(z11 ? 1.0f : 0.6f).scaleY(z11 ? 1.0f : 0.6f), z11 ? 1.0f : 0.0f, 180L);
             }
         }
     }
@@ -315,7 +315,7 @@ public final class h1 extends org.telegram.ui.ActionBar.f3 {
             dVar.setEnabled(z11);
             dVar.setClickable(z11);
             if (z10) {
-                kk.s(dVar.animate(), z11 ? 1.0f : 0.6f, 180L);
+                mk.s(dVar.animate(), z11 ? 1.0f : 0.6f, 180L);
             } else {
                 dVar.setAlpha(z11 ? 1.0f : 0.6f);
             }

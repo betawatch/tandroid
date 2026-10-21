@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class gd1 extends org.telegram.ui.ActionBar.n2 {
     public float E;
@@ -26,8 +26,8 @@ public final class gd1 extends org.telegram.ui.ActionBar.n2 {
     public final a6 I;
     public final f11 J;
     public final pp0 K;
-    public org.telegram.ui.Components.im0 a;
-    public org.telegram.ui.Components.im0 b;
+    public org.telegram.ui.Components.jm0 a;
+    public org.telegram.ui.Components.jm0 b;
     public TextView c;
     public dd1 d;
     public fd1 e;
@@ -67,27 +67,27 @@ public final class gd1 extends org.telegram.ui.ActionBar.n2 {
         a2.setSearchFieldHint(LocaleController.getString(R.string.Search));
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
-        this.a = im0Var;
-        im0Var.setLayoutManager(new s4.b0());
-        org.telegram.ui.Components.im0 im0Var2 = this.a;
+        org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, null);
+        this.a = jm0Var;
+        jm0Var.setLayoutManager(new s4.b0());
+        org.telegram.ui.Components.jm0 jm0Var2 = this.a;
         dd1 dd1Var = new dd1(this);
         this.d = dd1Var;
-        im0Var2.setAdapter(dd1Var);
+        jm0Var2.setAdapter(dd1Var);
         this.a.setClipToPadding(false);
-        org.telegram.ui.Components.im0 im0Var3 = this.a;
+        org.telegram.ui.Components.jm0 jm0Var3 = this.a;
         f11 f11Var = this.J;
-        im0Var3.setOnItemClickListener(f11Var);
-        org.telegram.ui.Components.im0 im0Var4 = this.a;
+        jm0Var3.setOnItemClickListener(f11Var);
+        org.telegram.ui.Components.jm0 jm0Var4 = this.a;
         pp0 pp0Var = this.K;
-        im0Var4.setOnItemLongClickListener(pp0Var);
-        org.telegram.ui.Components.im0 im0Var5 = new org.telegram.ui.Components.im0(context, null);
-        this.b = im0Var5;
-        im0Var5.setLayoutManager(new s4.b0());
-        org.telegram.ui.Components.im0 im0Var6 = this.b;
+        jm0Var4.setOnItemLongClickListener(pp0Var);
+        org.telegram.ui.Components.jm0 jm0Var5 = new org.telegram.ui.Components.jm0(context, null);
+        this.b = jm0Var5;
+        jm0Var5.setLayoutManager(new s4.b0());
+        org.telegram.ui.Components.jm0 jm0Var6 = this.b;
         fd1 fd1Var = new fd1(this);
         this.e = fd1Var;
-        im0Var6.setAdapter(fd1Var);
+        jm0Var6.setAdapter(fd1Var);
         this.b.setOnItemClickListener(f11Var);
         this.b.setOnItemLongClickListener(pp0Var);
         this.b.setOnScrollListener(new bd1(this, 0));

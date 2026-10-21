@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t5 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -43,9 +43,9 @@ public final /* synthetic */ class t5 implements ValueAnimator.AnimatorUpdateLis
                 int i11 = ChatActivityEnterView.n5;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 float y3 = com.google.android.gms.internal.play_billing.k3.y(f11, f12, floatValue2, f12);
-                sp0 sp0Var = chatActivityEnterView.p0;
-                if (sp0Var != null) {
-                    sp0Var.setAlpha(((f7 - f10) * floatValue2) + f10);
+                tp0 tp0Var = chatActivityEnterView.p0;
+                if (tp0Var != null) {
+                    tp0Var.setAlpha(((f7 - f10) * floatValue2) + f10);
                     chatActivityEnterView.p0.setTranslationX(y3);
                 }
                 chatActivityEnterView.Q0.setTranslationX(y3);

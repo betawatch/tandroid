@@ -3,16 +3,16 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class eq0 implements org.telegram.ui.Components.jm0 {
+public final class eq0 implements org.telegram.ui.Components.km0 {
     public final /* synthetic */ jq0 a;
 
     public eq0(jq0 jq0Var) {
         this.a = jq0Var;
     }
 
-    @Override // org.telegram.ui.Components.jm0
+    @Override // org.telegram.ui.Components.km0
     public final void a(boolean z10) {
         org.telegram.ui.ActionBar.d5 d5Var;
         jq0 jq0Var = this.a;
@@ -24,12 +24,12 @@ public final class eq0 implements org.telegram.ui.Components.jm0 {
         jq0Var.K.d1(true);
     }
 
-    @Override // org.telegram.ui.Components.jm0
+    @Override // org.telegram.ui.Components.km0
     public final boolean b(int i10) {
         return this.a.L.j(i10) == 0;
     }
 
-    @Override // org.telegram.ui.Components.jm0
+    @Override // org.telegram.ui.Components.km0
     public final void c(View view, boolean z10) {
         if (z10 == this.a.X && (view instanceof org.telegram.ui.Cells.s5)) {
             org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
@@ -37,7 +37,7 @@ public final class eq0 implements org.telegram.ui.Components.jm0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.jm0
+    @Override // org.telegram.ui.Components.km0
     public final boolean d(int i10) {
         jq0 jq0Var = this.a;
         MediaController.AlbumEntry albumEntry = jq0Var.J;

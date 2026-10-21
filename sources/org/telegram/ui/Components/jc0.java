@@ -11,7 +11,7 @@ import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class jc0 extends Drawable {
     public final /* synthetic */ int a;
@@ -42,23 +42,23 @@ public final class jc0 extends Drawable {
     public final void draw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                uj0 uj0Var = (uj0) this.d;
-                uj0 uj0Var2 = (uj0) this.c;
+                vj0 vj0Var = (vj0) this.d;
+                vj0 vj0Var2 = (vj0) this.c;
                 Rect rect = AndroidUtilities.rectTmp2;
                 rect.set(getBounds().centerX() - AndroidUtilities.dp(12.0f), getBounds().centerY() - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + getBounds().centerX(), AndroidUtilities.dp(12.0f) + getBounds().centerY());
-                if (((uj0) this.e).A()) {
-                    uj0 uj0Var3 = (uj0) this.e;
+                if (((vj0) this.e).A()) {
+                    vj0 vj0Var3 = (vj0) this.e;
                     boolean z10 = this.b;
-                    if (uj0Var3 != (z10 ? uj0Var2 : uj0Var)) {
+                    if (vj0Var3 != (z10 ? vj0Var2 : vj0Var)) {
                         if (z10) {
-                            uj0Var = uj0Var2;
+                            vj0Var = vj0Var2;
                         }
-                        this.e = uj0Var;
-                        uj0Var.M(uj0Var.e[0] - 1);
+                        this.e = vj0Var;
+                        vj0Var.M(vj0Var.e[0] - 1);
                     }
                 }
-                ((uj0) this.e).setBounds(rect);
-                ((uj0) this.e).draw(canvas);
+                ((vj0) this.e).setBounds(rect);
+                ((vj0) this.e).draw(canvas);
                 break;
             default:
                 Paint paint = (Paint) this.d;
@@ -114,8 +114,8 @@ public final class jc0 extends Drawable {
     public final void setAlpha(int i10) {
         switch (this.a) {
             case 0:
-                ((uj0) this.c).setAlpha(i10);
-                ((uj0) this.d).setAlpha(i10);
+                ((vj0) this.c).setAlpha(i10);
+                ((vj0) this.d).setAlpha(i10);
                 break;
         }
     }
@@ -124,8 +124,8 @@ public final class jc0 extends Drawable {
     public final void setColorFilter(ColorFilter colorFilter) {
         switch (this.a) {
             case 0:
-                ((uj0) this.c).setColorFilter(colorFilter);
-                ((uj0) this.d).setColorFilter(colorFilter);
+                ((vj0) this.c).setColorFilter(colorFilter);
+                ((vj0) this.d).setColorFilter(colorFilter);
                 break;
         }
     }

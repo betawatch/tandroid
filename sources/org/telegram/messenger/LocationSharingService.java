@@ -11,7 +11,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public class LocationSharingService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private e0.q builder;
@@ -52,7 +52,7 @@ public class LocationSharingService extends Service implements NotificationCente
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onCreate$1() {
         this.handler.postDelayed(this.runnable, 1000L);
-        Utilities.stageQueue.postRunnable(new y1(14));
+        Utilities.stageQueue.postRunnable(new z1(14));
     }
 
     private void updateNotification(boolean z10) {
@@ -92,7 +92,7 @@ public class LocationSharingService extends Service implements NotificationCente
         if (i10 != NotificationCenter.liveLocationsChanged || (handler = this.handler) == null) {
             return;
         }
-        handler.post(new x5(this, 1));
+        handler.post(new z5(this, 1));
     }
 
     @Override // android.app.Service
@@ -105,9 +105,9 @@ public class LocationSharingService extends Service implements NotificationCente
         super.onCreate();
         Handler handler = new Handler();
         this.handler = handler;
-        x5 x5Var = new x5(this, 0);
-        this.runnable = x5Var;
-        handler.postDelayed(x5Var, 1000L);
+        z5 z5Var = new z5(this, 0);
+        this.runnable = z5Var;
+        handler.postDelayed(z5Var, 1000L);
     }
 
     @Override // android.app.Service

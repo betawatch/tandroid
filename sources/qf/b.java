@@ -97,7 +97,7 @@ import p4.z;
 import v7.i8;
 import v7.r8;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public class b implements h, OnCompleteListener, com.google.android.gms.internal.clearcut.h, ee.b, f6.a, fa.a, g2.g, n, a0, Continuation, g1, e2.d {
     public static volatile b d;
@@ -874,12 +874,12 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
             n6.l.e("Must be called from the main thread.");
             CastDevice castDevice = cVar.k;
             String str = castDevice != null ? castDevice.d : null;
-            PhotoViewer t12 = PhotoViewer.t1();
+            PhotoViewer u12 = PhotoViewer.u1();
             d.i();
-            if (t12.E == null || t12.e0 == null || !t12.R1()) {
+            if (u12.E == null || u12.e0 == null || !u12.T1()) {
                 return;
             }
-            new xc(t12.e0, new ci.b()).Q(R.raw.forward, 36, !TextUtils.isEmpty(str) ? LocaleController.formatString(R.string.ChromecastStartedTo, str) : LocaleController.getString(R.string.ChromecastStarted)).j();
+            new xc(u12.e0, new ci.b()).Q(R.raw.forward, 36, !TextUtils.isEmpty(str) ? LocaleController.formatString(R.string.ChromecastStartedTo, str) : LocaleController.getString(R.string.ChromecastStarted)).j();
         }
     }
 
@@ -1363,13 +1363,13 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         this.c = new float[]{0.0f, 0.5f, 1.0f};
     }
 
+    @Override // j4.a0
+    public void b(e2.k0 k0Var, c3.q qVar, j4.f0 f0Var) {
+    }
+
     public b(a3.f fVar) {
         this.a = 1;
         this.c = fVar;
-    }
-
-    @Override // j4.a0
-    public void b(e2.k0 k0Var, c3.q qVar, j4.f0 f0Var) {
     }
 
     public b(x1 x1Var, int[] iArr) {

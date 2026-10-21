@@ -17,16 +17,16 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.ah;
-import org.telegram.ui.Components.uj0;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.vj0;
+import org.telegram.ui.Components.yj0;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class o1 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final List w = Arrays.asList(new l1(0, 1, 20, 0), new l1(0, 2, 20, 40), new l1(1, 0, 0, 20), new l1(1, 2, 60, 40), new l1(2, 0, 40, 20), new l1(2, 1, 40, 60));
     public int a;
-    public final xj0 b;
+    public final yj0 b;
     public final ImageView c;
     public final ImageView d;
     public final View e;
@@ -74,17 +74,17 @@ public final class o1 extends FrameLayout implements NotificationCenter.Notifica
             }
         });
         addView(view, z5.d(24, 24.0f, 48, 0.0f, 0.0f, 16.0f, 0.0f));
-        xj0 xj0Var = new xj0(context);
-        this.b = xj0Var;
-        xj0Var.f(R.raw.photo_text_allign, 24, 24, null);
-        uj0 animatedDrawable = xj0Var.getAnimatedDrawable();
+        yj0 yj0Var = new yj0(context);
+        this.b = yj0Var;
+        yj0Var.f(R.raw.photo_text_allign, 24, 24, null);
+        vj0 animatedDrawable = yj0Var.getAnimatedDrawable();
         animatedDrawable.h = true;
         animatedDrawable.P(20);
         animatedDrawable.M(20);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        xj0Var.setColorFilter(new PorterDuffColorFilter(-1, mode));
+        yj0Var.setColorFilter(new PorterDuffColorFilter(-1, mode));
         final int i11 = 1;
-        xj0Var.setOnClickListener(new View.OnClickListener(this) { // from class: rg.k1
+        yj0Var.setOnClickListener(new View.OnClickListener(this) { // from class: rg.k1
             public final /* synthetic */ o1 b;
 
             {
@@ -113,8 +113,8 @@ public final class o1 extends FrameLayout implements NotificationCenter.Notifica
                 }
             }
         });
-        xj0Var.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
-        addView(xj0Var, z5.d(28, 28.0f, 16, 0.0f, 0.0f, 16.0f, 0.0f));
+        yj0Var.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
+        addView(yj0Var, z5.d(28, 28.0f, 16, 0.0f, 0.0f, 16.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setImageResource(R.drawable.msg_text_outlined);
@@ -252,9 +252,9 @@ public final class o1 extends FrameLayout implements NotificationCenter.Notifica
         int i11 = this.a;
         this.a = i10;
         List list = w;
-        xj0 xj0Var = this.b;
+        yj0 yj0Var = this.b;
         if (i11 == i10) {
-            uj0 animatedDrawable = xj0Var.getAnimatedDrawable();
+            vj0 animatedDrawable = yj0Var.getAnimatedDrawable();
             l1 l1Var = (l1) list.get(0);
             Iterator it = list.iterator();
             while (true) {
@@ -287,7 +287,7 @@ public final class o1 extends FrameLayout implements NotificationCenter.Notifica
                 break;
             }
         }
-        uj0 animatedDrawable2 = xj0Var.getAnimatedDrawable();
+        vj0 animatedDrawable2 = yj0Var.getAnimatedDrawable();
         animatedDrawable2.M(l1Var3.c);
         animatedDrawable2.P(l1Var3.d);
         animatedDrawable2.start();

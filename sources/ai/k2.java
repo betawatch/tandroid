@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.g30;
-import org.telegram.ui.Components.py0;
+import org.telegram.ui.Components.qy0;
 import org.telegram.ui.PrivacyControlActivity;
 import org.telegram.ui.ck0;
 import org.telegram.ui.dg0;
@@ -29,7 +29,7 @@ import org.telegram.ui.vm0;
 import org.telegram.ui.wh1;
 import org.telegram.ui.xr0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -120,7 +120,7 @@ public final /* synthetic */ class k2 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new t0(obj4, tL_error, obj, obj3, (TLObject) obj2, 28));
                 break;
             case 12:
-                py0.q((xr0) obj4, this.c, (TLRPC.TL_messages_getAttachedStickers) obj3, (org.telegram.ui.vc) obj2, tLObject, tL_error);
+                qy0.q((xr0) obj4, this.c, (TLRPC.TL_messages_getAttachedStickers) obj3, (org.telegram.ui.vc) obj2, tLObject, tL_error);
                 break;
             case 13:
                 AndroidUtilities.runOnUIThread(new g30((dg0) obj4, tL_error, (String) obj, (String) obj3, (String) obj2, 13));

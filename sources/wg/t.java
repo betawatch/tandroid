@@ -11,11 +11,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.m11;
 import org.telegram.ui.Components.n11;
+import org.telegram.ui.Components.o11;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class t extends FrameLayout {
     public final wh.n a;
@@ -102,13 +102,13 @@ public final class t extends FrameLayout {
         int dp4 = AndroidUtilities.dp(18.0f);
         wh.n nVar = this.a;
         nVar.setPadding(dp, dp2, dp3, dp4);
-        m11 m11Var = new m11();
-        m11Var.a |= 256;
+        n11 n11Var = new n11();
+        n11Var.a |= 256;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("t.me/giftcode/" + this.c);
         if (this.c == null) {
             spannableStringBuilder.append((CharSequence) "1234567891011123654897566536223");
         }
-        spannableStringBuilder.setSpan(new n11(m11Var, 0), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new o11(n11Var, 0), 0, spannableStringBuilder.length(), 33);
         nVar.setText(spannableStringBuilder);
         this.b.setOnClickListener(new a7(5, runnable));
     }

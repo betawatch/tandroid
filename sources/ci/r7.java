@@ -15,15 +15,15 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.va;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.pl0;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.ql0;
 import org.telegram.ui.Components.yz;
 import org.telegram.ui.sz0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class r7 implements w9 {
-    public final im0 a;
+    public final jm0 a;
     public final sz0 b;
     public final int[] c;
     public final boolean d;
@@ -34,15 +34,15 @@ public final class r7 implements w9 {
     public boolean r;
     public int s;
 
-    public r7(im0 im0Var, boolean z10) {
+    public r7(jm0 jm0Var, boolean z10) {
         this.c = new int[2];
-        this.a = im0Var;
+        this.a = jm0Var;
         this.d = z10;
         this.b = null;
     }
 
-    public static r7 a(im0 im0Var) {
-        return new r7(im0Var, false);
+    public static r7 a(jm0 jm0Var) {
+        return new r7(jm0Var, false);
     }
 
     @Override // ci.w9
@@ -52,9 +52,9 @@ public final class r7 implements w9 {
         x9Var.b = null;
         x9Var.c = null;
         x9Var.e = null;
-        im0 im0Var = this.a;
-        r rVar = (im0Var == null || !(im0Var.getParent() instanceof r)) ? null : (r) im0Var.getParent();
-        ViewGroup viewGroup = (rVar == null || rVar.g()) ? im0Var : rVar.r;
+        jm0 jm0Var = this.a;
+        r rVar = (jm0Var == null || !(jm0Var.getParent() instanceof r)) ? null : (r) jm0Var.getParent();
+        ViewGroup viewGroup = (rVar == null || rVar.g()) ? jm0Var : rVar.r;
         ViewGroup viewGroup2 = this.b;
         if (viewGroup2 != null) {
             viewGroup = viewGroup2;
@@ -129,11 +129,11 @@ public final class r7 implements w9 {
                         c(x9Var);
                         return true;
                     }
-                } else if ((childAt instanceof org.telegram.ui.Cells.s7) && im0Var != null) {
+                } else if ((childAt instanceof org.telegram.ui.Cells.s7) && jm0Var != null) {
                     org.telegram.ui.Cells.s7 s7Var = (org.telegram.ui.Cells.s7) childAt;
                     MessageObject messageObject = s7Var.getMessageObject();
                     if ((s7Var.getStyle() == 1 && i11 == 0) || (messageObject != null && messageObject.isStory() && messageObject.getId() == i11 && messageObject.storyItem.dialogId == j10)) {
-                        pl0 fastScroll = im0Var.getFastScroll();
+                        ql0 fastScroll = jm0Var.getFastScroll();
                         int[] iArr = new int[2];
                         if (fastScroll != null) {
                             fastScroll.getLocationInWindow(iArr);
@@ -242,9 +242,9 @@ public final class r7 implements w9 {
     @Override // ci.w9
     public final void X0(long j10, int i10, t3 t3Var) {
         ArrayList arrayList;
-        im0 im0Var = this.a;
-        if (im0Var != null && (im0Var.getParent() instanceof r)) {
-            r rVar = (r) im0Var.getParent();
+        jm0 jm0Var = this.a;
+        if (jm0Var != null && (jm0Var.getParent() instanceof r)) {
+            r rVar = (r) jm0Var.getParent();
             if (rVar.k(j10)) {
                 rVar.b0.add(t3Var);
                 return;
@@ -254,7 +254,7 @@ public final class r7 implements w9 {
             }
         }
         int i11 = 0;
-        if (im0Var == null || !(im0Var.getParent() instanceof u5)) {
+        if (jm0Var == null || !(jm0Var.getParent() instanceof u5)) {
             if (this.d) {
                 i7 storiesController = MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController();
                 ArrayList arrayList2 = storiesController.h;
@@ -265,7 +265,7 @@ public final class r7 implements w9 {
             t3Var.run();
             return;
         }
-        u5 u5Var = (u5) im0Var.getParent();
+        u5 u5Var = (u5) jm0Var.getParent();
         yz yzVar = u5Var.x;
         p5 p5Var = u5Var.w;
         if (p5Var != null && (arrayList = p5Var.c) != null && yzVar != null) {
@@ -293,7 +293,7 @@ public final class r7 implements w9 {
                 int N0 = yzVar.N0();
                 if (i11 < L0 || i11 > N0) {
                     yzVar.h1(i11, AndroidUtilities.dp(60.0f));
-                    im0Var.post(t3Var);
+                    jm0Var.post(t3Var);
                     return;
                 }
             }

@@ -69,10 +69,10 @@ import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.hk;
+import org.telegram.messenger.jk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.ry;
 import org.telegram.ui.fa;
 import org.telegram.ui.web.m;
@@ -102,7 +102,7 @@ import z7.xe;
 import z7.y;
 import zf.z;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public class a implements i, t {
     public final /* synthetic */ int a;
@@ -661,8 +661,8 @@ public class a implements i, t {
     public void l(e2.j jVar) {
         Iterator it = ((CopyOnWriteArrayList) this.d).iterator();
         while (it.hasNext()) {
-            j0 j0Var = (j0) it.next();
-            m0.W(j0Var.a, new p2.b(28, jVar, j0Var.b));
+            u2.k0 k0Var = (u2.k0) it.next();
+            m0.W(k0Var.a, new j0(0, jVar, k0Var.b));
         }
     }
 
@@ -747,7 +747,7 @@ public class a implements i, t {
     }
 
     public void s(u2.u uVar, int i10, int i11, b2.w wVar, int i12, Object obj, long j10, long j11, IOException iOException, boolean z10) {
-        l(new hk(this, uVar, new c0(i10, i11, wVar, i12, obj, m0.h0(j10), m0.h0(j11)), iOException, z10));
+        l(new jk(this, uVar, new c0(i10, i11, wVar, i12, obj, m0.h0(j10), m0.h0(j11)), iOException, z10));
     }
 
     public void t(u2.u uVar, int i10, IOException iOException, boolean z10) {
@@ -923,9 +923,9 @@ public class a implements i, t {
         this.b = i10;
     }
 
-    public a(im0 im0Var) {
+    public a(jm0 jm0Var) {
         this.a = 16;
-        this.d = im0Var;
+        this.d = jm0Var;
     }
 
     public a(ByteBuffer byteBuffer, int i10, RectF rectF) {

@@ -4,18 +4,18 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class lk implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessageObject b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ ViewGroup d;
-    public final /* synthetic */ hm0 e;
+    public final /* synthetic */ im0 e;
 
-    public /* synthetic */ lk(hm0 hm0Var, ViewGroup viewGroup, MessageObject messageObject, boolean z10, int i10) {
+    public /* synthetic */ lk(im0 im0Var, ViewGroup viewGroup, MessageObject messageObject, boolean z10, int i10) {
         this.a = i10;
-        this.e = hm0Var;
+        this.e = im0Var;
         this.d = viewGroup;
         this.b = messageObject;
         this.c = z10;

@@ -1,41 +1,30 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.ImageLoader;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l5 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LocaleController b;
-    public final /* synthetic */ LocaleController.LocaleInfo c;
-    public final /* synthetic */ TLObject d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ Runnable f;
+    public final /* synthetic */ ImageLoader.HttpImageTask b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ l5(LocaleController localeController, LocaleController.LocaleInfo localeInfo, TLObject tLObject, int i10, Runnable runnable, int i11) {
-        this.a = i11;
-        this.b = localeController;
-        this.c = localeInfo;
-        this.d = tLObject;
-        this.e = i10;
-        this.f = runnable;
+    public /* synthetic */ l5(ImageLoader.HttpImageTask httpImageTask, long j10, long j11, int i10) {
+        this.a = i10;
+        this.b = httpImageTask;
+        this.c = j10;
+        this.d = j11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$applyRemoteLanguage$16(this.c, this.d, this.e, this.f);
-                break;
-            case 1:
-                this.b.lambda$applyRemoteLanguage$20(this.c, this.d, this.e, this.f);
-                break;
-            case 2:
-                this.b.lambda$applyRemoteLanguage$18(this.c, this.d, this.e, this.f);
+                this.b.lambda$reportProgress$0(this.c, this.d);
                 break;
             default:
-                this.b.lambda$applyRemoteLanguage$14(this.c, this.d, this.e, this.f);
+                this.b.lambda$reportProgress$1(this.c, this.d);
                 break;
         }
     }

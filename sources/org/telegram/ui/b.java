@@ -15,7 +15,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class b {
     public static boolean a;
@@ -58,20 +58,20 @@ public abstract class b {
             return;
         }
         int i11 = 1;
-        org.telegram.ui.ActionBar.f3 i12 = org.telegram.messenger.kk.i(1, context, d6Var, false);
+        org.telegram.ui.ActionBar.f3 i12 = org.telegram.messenger.mk.i(1, context, d6Var, false);
         ah.o oVar = new ah.o(i10, context, r5, 26);
-        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
+        LinearLayout e = org.telegram.messenger.mk.e(context, 1);
         e.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
         e.setClipChildren(false);
         e.setClipToPadding(false);
-        org.telegram.ui.Components.xj0 xj0Var = new org.telegram.ui.Components.xj0(context);
-        xj0Var.f(R.raw.media_forbidden, AndroidUtilities.dp(115.0f), AndroidUtilities.dp(115.0f), null);
-        xj0Var.d();
-        e.addView(xj0Var, w7.z5.t(115, 115, 17, 0, 0, 0, 9));
+        org.telegram.ui.Components.yj0 yj0Var = new org.telegram.ui.Components.yj0(context);
+        yj0Var.f(R.raw.media_forbidden, AndroidUtilities.dp(115.0f), AndroidUtilities.dp(115.0f), null);
+        yj0Var.d();
+        e.addView(yj0Var, w7.z5.t(115, 115, 17, 0, 0, 0, 9));
         TextView textView = new TextView(context);
-        org.telegram.messenger.kk.k(20.0f, 1, textView);
+        org.telegram.messenger.mk.k(20.0f, 1, textView);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var));
-        org.telegram.messenger.kk.m(R.string.AccountFrozenTitle, textView, 17);
+        org.telegram.messenger.mk.m(R.string.AccountFrozenTitle, textView, 17);
         e.addView(textView, w7.z5.t(-1, -2, 17, 0, 0, 0, 23));
         ai.n0 n0Var = new ai.n0(context, 1, d6Var);
         n0Var.a(LocaleController.getString(R.string.AccountFrozen1Title), LocaleController.getString(R.string.AccountFrozen1Text), R.drawable.msg_block2);

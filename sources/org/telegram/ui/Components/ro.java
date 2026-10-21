@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ro implements ImageReceiver.ImageReceiverDelegate {
     public boolean a;
@@ -17,17 +17,17 @@ public final class ro implements ImageReceiver.ImageReceiverDelegate {
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public final void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        uj0 uj0Var;
+        vj0 vj0Var;
         zf.e eVar;
         if (this.a) {
             return;
         }
         if ((i10 == 0 || i10 == 3) && drawable != null) {
             this.a = true;
-            boolean z10 = drawable instanceof uj0;
+            boolean z10 = drawable instanceof vj0;
             ig.g gVar = this.b;
-            if (z10 && (eVar = (uj0Var = (uj0) drawable).B0) != null && eVar.g()) {
-                uj0Var.A0 = new ee(20, this, gVar);
+            if (z10 && (eVar = (vj0Var = (vj0) drawable).B0) != null && eVar.g()) {
+                vj0Var.A0 = new ee(20, this, gVar);
             } else {
                 to.a(this.c);
                 gVar.run();
@@ -37,7 +37,7 @@ public final class ro implements ImageReceiver.ImageReceiverDelegate {
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public final /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.k5.b(this, imageReceiver);
+        org.telegram.messenger.m5.b(this, imageReceiver);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate

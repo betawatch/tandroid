@@ -10,9 +10,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.iu;
-import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.lw0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class f3 extends FrameLayout {
     public boolean a;
@@ -28,7 +28,7 @@ public abstract class f3 extends FrameLayout {
     public final org.telegram.ui.Components.p6 v;
     public boolean w;
 
-    public f3(Context context, kw0 kw0Var, String str, boolean z10, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+    public f3(Context context, lw0 lw0Var, String str, boolean z10, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.e = -1;
         this.n = true;
@@ -38,7 +38,7 @@ public abstract class f3 extends FrameLayout {
         p6Var.w(AndroidUtilities.dp(15.33f));
         p6Var.b = 5;
         this.c = i10;
-        d3 d3Var = new d3(this, context, kw0Var, d6Var, z10);
+        d3 d3Var = new d3(this, context, lw0Var, d6Var, z10);
         this.b = d3Var;
         iu editText = d3Var.getEditText();
         editText.setDelegate(new mi.q(this, editText, false, 9));

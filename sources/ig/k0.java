@@ -26,15 +26,15 @@ import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class k0 extends bb {
     public static final int g0 = -1;
@@ -45,7 +45,7 @@ public final class k0 extends bb {
     public final LinearLayout a0;
     public final ei.d b0;
     public final ei.d c0;
-    public t61 d0;
+    public u61 d0;
     public boolean e0;
     public Boolean f0;
 
@@ -96,9 +96,9 @@ public final class k0 extends bb {
         int i10 = h6.a7;
         setBackgroundColor(getThemedColor(i10));
         fixNavigationBar(getThemedColor(i10));
-        im0 im0Var = this.d;
+        jm0 jm0Var = this.d;
         int i11 = this.backgroundPaddingLeft;
-        im0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(72.0f));
+        jm0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(72.0f));
         this.d.p1();
         this.d.setOnItemClickListener(new wa(this, 15));
         FrameLayout frameLayout = new FrameLayout(activity);
@@ -130,9 +130,9 @@ public final class k0 extends bb {
         kVar.o(bs.h);
         kVar.n(350L);
         this.d.setItemAnimator(kVar);
-        t61 t61Var = this.d0;
-        if (t61Var != null) {
-            t61Var.N(false);
+        u61 u61Var = this.d0;
+        if (u61Var != null) {
+            u61Var.N(false);
         }
     }
 
@@ -306,10 +306,10 @@ public final class k0 extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
-        t61 t61Var = new t61(im0Var, getContext(), this.currentAccount, 0, true, new hg.o(this, 4), this.resourcesProvider);
-        this.d0 = t61Var;
-        t61Var.r = false;
-        return t61Var;
+    public final im0 x(jm0 jm0Var) {
+        u61 u61Var = new u61(jm0Var, getContext(), this.currentAccount, 0, true, new hg.o(this, 4), this.resourcesProvider);
+        this.d0 = u61Var;
+        u61Var.r = false;
+        return u61Var;
     }
 }

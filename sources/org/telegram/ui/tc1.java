@@ -11,22 +11,22 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class tc1 implements View.OnClickListener {
     public final /* synthetic */ qh0 a;
     public final /* synthetic */ qn b;
-    public final /* synthetic */ org.telegram.ui.Components.im0 c;
+    public final /* synthetic */ org.telegram.ui.Components.jm0 c;
     public final /* synthetic */ LinearLayout d;
     public final /* synthetic */ org.telegram.ui.Components.i80 e;
     public final /* synthetic */ org.telegram.ui.Components.i80 f;
     public final /* synthetic */ yc1 h;
 
-    public tc1(yc1 yc1Var, qh0 qh0Var, qn qnVar, org.telegram.ui.Components.im0 im0Var, LinearLayout linearLayout, org.telegram.ui.Components.i80 i80Var, org.telegram.ui.Components.i80 i80Var2) {
+    public tc1(yc1 yc1Var, qh0 qh0Var, qn qnVar, org.telegram.ui.Components.jm0 jm0Var, LinearLayout linearLayout, org.telegram.ui.Components.i80 i80Var, org.telegram.ui.Components.i80 i80Var2) {
         this.h = yc1Var;
         this.a = qh0Var;
         this.b = qnVar;
-        this.c = im0Var;
+        this.c = jm0Var;
         this.d = linearLayout;
         this.e = i80Var;
         this.f = i80Var2;
@@ -65,10 +65,10 @@ public final class tc1 implements View.OnClickListener {
             t10.j();
             SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
         }
-        org.telegram.ui.Components.im0 im0Var = this.c;
-        im0Var.requestLayout();
+        org.telegram.ui.Components.jm0 jm0Var = this.c;
+        jm0Var.requestLayout();
         this.d.requestLayout();
-        im0Var.getAdapter().l();
+        jm0Var.getAdapter().l();
         this.e.K(this.f);
     }
 }

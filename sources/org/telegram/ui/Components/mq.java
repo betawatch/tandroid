@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class mq extends org.telegram.ui.ActionBar.f3 {
     public final Drawable b;
@@ -69,14 +69,14 @@ public final class mq extends org.telegram.ui.ActionBar.f3 {
         setCustomView(jqVar);
         UserConfig.getInstance(this.currentAccount).getClientUserId();
         int i13 = MessagesController.getInstance(this.currentAccount).revokeTimeLimit;
-        xj0 xj0Var = new xj0(activity);
-        xj0Var.setAutoRepeat(false);
-        xj0Var.f(R.raw.utyan_private, 120, 120, null);
-        xj0Var.setPadding(0, AndroidUtilities.dp(20.0f), 0, 0);
-        xj0Var.d();
-        jqVar.addView(xj0Var, w7.z5.t(160, 160, 49, 17, 0, 17, 0));
+        yj0 yj0Var = new yj0(activity);
+        yj0Var.setAutoRepeat(false);
+        yj0Var.f(R.raw.utyan_private, 120, 120, null);
+        yj0Var.setPadding(0, AndroidUtilities.dp(20.0f), 0, 0);
+        yj0Var.d();
+        jqVar.addView(yj0Var, w7.z5.t(160, 160, 49, 17, 0, 17, 0));
         TextView textView = new TextView(activity);
-        org.telegram.messenger.kk.k(24.0f, 1, textView);
+        org.telegram.messenger.mk.k(24.0f, 1, textView);
         textView.setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.j5));
         textView.setText(LocaleController.getString(R.string.AutoDeleteAlertTitle));
         jqVar.addView(textView, w7.z5.t(-2, -2, 49, 17, 18, 17, 0));
@@ -90,10 +90,10 @@ public final class mq extends org.telegram.ui.ActionBar.f3 {
             textView2.setText(LocaleController.getString(R.string.AutoDeleteAlertChannelInfo));
         }
         jqVar.addView(textView2, w7.z5.t(-2, -2, 49, 30, 22, 30, 20));
-        ow0 ow0Var = new ow0(activity, null);
-        ow0Var.setCallback(new kq(this, iqVar));
-        ow0Var.b(this.n, null, LocaleController.getString(R.string.AutoDeleteNever), LocaleController.getString(R.string.AutoDelete24Hours), LocaleController.getString(R.string.AutoDelete7Days), LocaleController.getString(R.string.AutoDelete1Month));
-        jqVar.addView(ow0Var, w7.z5.k(0.0f, 8.0f, 0.0f, 0.0f, -1, -2));
+        pw0 pw0Var = new pw0(activity, null);
+        pw0Var.setCallback(new kq(this, iqVar));
+        pw0Var.b(this.n, null, LocaleController.getString(R.string.AutoDeleteNever), LocaleController.getString(R.string.AutoDelete24Hours), LocaleController.getString(R.string.AutoDelete7Days), LocaleController.getString(R.string.AutoDelete1Month));
+        jqVar.addView(pw0Var, w7.z5.k(0.0f, 8.0f, 0.0f, 0.0f, -1, -2));
         FrameLayout frameLayout = new FrameLayout(activity);
         zq zqVar = new zq(new ColorDrawable(getThemedColor(org.telegram.ui.ActionBar.h6.a7)), org.telegram.ui.ActionBar.h6.W0(activity, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.h6.b7));
         zqVar.w = true;

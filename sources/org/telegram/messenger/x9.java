@@ -1,48 +1,37 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_communities;
+
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class x9 implements Runnable {
+public final /* synthetic */ class x9 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
+    public final /* synthetic */ Utilities.Callback2 c;
 
-    public /* synthetic */ x9(int i10, long j10, long j11, MessagesController messagesController) {
-        this.a = 2;
+    public /* synthetic */ x9(MessagesController messagesController, Utilities.Callback2 callback2, int i10) {
+        this.a = i10;
         this.b = messagesController;
-        this.d = j10;
-        this.e = j11;
-        this.c = i10;
+        this.c = callback2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                long j10 = this.d;
-                long j11 = this.e;
-                this.b.lambda$sendTyping$170(this.c, j10, j11);
+                this.b.lambda$toggleChatNoForwards$277(this.c, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                long j12 = this.d;
-                long j13 = this.e;
-                this.b.lambda$sendTyping$172(this.c, j12, j13);
+                this.b.lambda$fetchCommunityPendingJoinRequests$245(this.c, (TL_communities.PeerLinkRequests) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 2:
+                this.b.lambda$fetchCommunityJoinedChats$246(this.c, (TL_communities.ParticipantJoinedChats) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                long j14 = this.e;
-                int i10 = this.c;
-                this.b.lambda$checkDeletingTask$83(this.d, j14, i10);
+                this.b.lambda$fetchChatsToAddToCommunity$251(this.c, (TLRPC.messages_Chats) obj, (TLRPC.TL_error) obj2);
                 break;
         }
-    }
-
-    public /* synthetic */ x9(MessagesController messagesController, int i10, long j10, long j11, int i11) {
-        this.a = i11;
-        this.b = messagesController;
-        this.c = i10;
-        this.d = j10;
-        this.e = j11;
     }
 }

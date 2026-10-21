@@ -1,130 +1,95 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.drawable.Drawable;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ai0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bi0 b;
+public final class ai0 extends si0 {
+    public final Drawable T;
+    public final Drawable U;
+    public final f11 V;
+    public f11 W;
+    public final Paint a0;
+    public final Path b0;
+    public float c0;
+    public final DecimalFormat d0;
 
-    public /* synthetic */ ai0(bi0 bi0Var, int i10) {
-        this.a = i10;
-        this.b = bi0Var;
+    public ai0(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a0 = paint;
+        Path path = new Path();
+        this.b0 = path;
+        this.d0 = new DecimalFormat("#,##0.#########", new DecimalFormatSymbols(Locale.US));
+        this.T = context.getResources().getDrawable(R.drawable.profile_balance_gram).mutate();
+        this.U = context.getResources().getDrawable(R.drawable.profile_balance_gram_color).mutate();
+        this.V = new f11(LocaleController.getString(R.string.StarsBalance) + ":", 11.0f, null);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeWidth(AndroidUtilities.dpf2(1.16f));
+        path.moveTo(0.0f, -AndroidUtilities.dpf2(3.33f));
+        path.lineTo(AndroidUtilities.dpf2(3.16f), 0.0f);
+        path.lineTo(0.0f, AndroidUtilities.dpf2(3.33f));
+        setBalance(0L);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x007a, code lost:
-    
-        if (r3.getHeight() != r5.b.getHeight()) goto L30;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int i10;
-        pi0[] pi0VarArr;
-        switch (this.a) {
-            case 0:
-                bi0 bi0Var = this.b;
-                synchronized (bi0Var.b) {
-                    pi0[] pi0VarArr2 = bi0Var.c;
-                    pi0 pi0Var = pi0VarArr2[0];
-                    pi0[] pi0VarArr3 = bi0Var.d;
-                    i10 = 2;
-                    pi0VarArr = new pi0[]{pi0Var, pi0VarArr3[0], pi0VarArr2[1], pi0VarArr3[1], pi0VarArr2[2], pi0VarArr3[2]};
-                }
-                boolean z10 = false;
-                for (int i11 = 0; i11 < 6; i11 += 2) {
-                    pi0 pi0Var2 = pi0VarArr[i11];
-                    pi0 pi0Var3 = pi0VarArr[i11 + 1];
-                    if (pi0Var2 != null && !pi0Var2.c && pi0Var2.f) {
-                        pi0Var2.e = true;
-                        if (pi0Var3 != null) {
-                            Bitmap bitmap = pi0Var3.b;
-                            if (!pi0Var3.d) {
-                                if (bitmap.getWidth() == pi0Var2.b.getWidth()) {
-                                    break;
-                                }
-                            }
-                        }
-                        if (pi0Var3 != null) {
-                            pi0Var3.a();
-                        }
-                        pi0Var3 = new pi0();
-                        Bitmap createBitmap = Bitmap.createBitmap(pi0Var2.b.getWidth(), pi0Var2.b.getHeight(), Bitmap.Config.ARGB_8888);
-                        pi0Var3.b = createBitmap;
-                        pi0Var3.a = new Canvas(createBitmap);
-                        synchronized (bi0Var.b) {
-                            pi0[] pi0VarArr4 = bi0Var.d;
-                            int i12 = 0;
-                            while (true) {
-                                pi0[] pi0VarArr5 = bi0Var.c;
-                                if (i12 >= pi0VarArr5.length) {
-                                    i12 = 0;
-                                } else if (pi0VarArr5[i12] != pi0Var2) {
-                                    i12++;
-                                }
-                            }
-                            pi0VarArr4[i12] = pi0Var3;
-                        }
-                        Bitmap bitmap2 = pi0Var2.b;
-                        Utilities.stackBlurBitmap(bitmap2, Math.max(10, bitmap2.getWidth() / 180));
-                        synchronized (bi0Var.b) {
-                            if (!pi0Var3.d) {
-                                pi0Var3.f = false;
-                                pi0Var3.b.eraseColor(0);
-                            }
-                            pi0Var3.a.drawBitmap(bitmap2, 0.0f, 0.0f, (Paint) null);
-                            pi0Var3.f = true;
-                            Bitmap bitmap3 = pi0Var3.b;
-                            int i13 = 0;
-                            while (true) {
-                                pi0[] pi0VarArr6 = bi0Var.c;
-                                if (i13 >= pi0VarArr6.length) {
-                                    i13 = 0;
-                                } else if (pi0VarArr6[i13] != pi0Var2) {
-                                    i13++;
-                                }
-                            }
-                            bi0Var.b(bitmap3, i13);
-                        }
-                        if (!pi0Var2.d) {
-                            pi0Var2.f = false;
-                            pi0Var2.b.eraseColor(0);
-                        }
-                        pi0Var2.e = false;
-                        if (!pi0Var2.d && pi0Var2.c) {
-                            pi0Var2.d = true;
-                            pi0Var2.b.recycle();
-                        }
-                        z10 = true;
-                    }
-                }
-                if (z10 && bi0Var.e && bi0Var.h != null) {
-                    bi0Var.postInvalidateOnAnimation();
-                }
-                if (bi0Var.e && (bi0Var.F || bi0Var.H)) {
-                    AndroidUtilities.runOnUIThread(new ai0(bi0Var, i10));
-                    return;
-                } else {
-                    bi0Var.e = false;
-                    return;
-                }
-            case 1:
-                bi0 bi0Var2 = this.b;
-                bi0Var2.H = true;
-                bi0Var2.postInvalidateOnAnimation();
-                return;
-            default:
-                bi0 bi0Var3 = this.b;
-                bi0Var3.d();
-                qi0.a.postRunnable(bi0Var3.s);
-                return;
+    @Override // org.telegram.ui.Components.si0
+    public final void b(Canvas canvas, float f7) {
+        float height = getHeight() / 2.0f;
+        canvas.translate(0.0f, (-AndroidUtilities.dp(20.0f)) * this.c0);
+        float f10 = f7 * 0.85f;
+        this.V.c(0.0f, height, f10, this.F, canvas);
+        canvas.translate(this.V.l() + AndroidUtilities.dp(4.0f), 0.0f);
+        Drawable drawable = (this.G || this.H >= 0.8f) ? this.U : this.T;
+        int dp = AndroidUtilities.dp(13.0f);
+        int i10 = ((int) height) - (dp / 2);
+        drawable.setBounds(0, i10, dp, i10 + dp);
+        drawable.setAlpha((int) (255.0f * f7));
+        drawable.draw(canvas);
+        canvas.translate(AndroidUtilities.dp(2.0f) + dp, 0.0f);
+        this.W.c(0.0f, height, f7, this.F, canvas);
+        canvas.translate(AndroidUtilities.dpf2(4.8f) + this.W.l(), height);
+        int m12 = org.telegram.ui.ActionBar.h6.m1(f10, this.F);
+        Paint paint = this.a0;
+        paint.setColor(m12);
+        canvas.drawPath(this.b0, paint);
+    }
+
+    @Override // org.telegram.ui.Components.si0
+    public final float e(float f7) {
+        f11 f11Var = this.V;
+        f11Var.p = -1.0f;
+        this.W.p = -1.0f;
+        float max = Math.max(0.0f, f7 - AndroidUtilities.dp(43.0f));
+        f11Var.p = Math.max(0.0f, max - this.W.l());
+        this.W.p = Math.max(0.0f, max - f11Var.l());
+        return this.W.l() + f11Var.l() + AndroidUtilities.dp(27.0f);
+    }
+
+    public void setBalance(long j10) {
+        String format = this.d0.format(new BigDecimal(org.telegram.ui.Wallet.m0.o(j10, false)));
+        this.W = new f11(format, 11.0f, AndroidUtilities.bold());
+        setContentDescription(LocaleController.getString(R.string.StarsBalance) + ": " + format);
+        invalidate();
+    }
+
+    public void setEjectProgress(float f7) {
+        if (this.c0 == f7) {
+            return;
         }
+        this.c0 = f7;
+        invalidate();
     }
 }

@@ -4,9 +4,9 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public abstract class gd0 extends kw0 implements r0.m, View.OnLayoutChangeListener {
+public abstract class gd0 extends lw0 implements r0.m, View.OnLayoutChangeListener {
     public int A0;
     public int B0;
     public boolean C0;
@@ -41,7 +41,7 @@ public abstract class gd0 extends kw0 implements r0.m, View.OnLayoutChangeListen
             this.z0.onNestedScroll(viewGroup, 0, 0, i10, i11);
             return;
         }
-        im0 listView = ((org.telegram.ui.v7) this.y0).getListView();
+        jm0 listView = ((org.telegram.ui.v7) this.y0).getListView();
         int L0 = ((s4.b0) listView.getLayoutManager()).L0();
         if (L0 != -1) {
             s4.b1 K = listView.K(L0);
@@ -86,7 +86,7 @@ public abstract class gd0 extends kw0 implements r0.m, View.OnLayoutChangeListen
         }
     }
 
-    @Override // org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.lw0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
@@ -96,7 +96,7 @@ public abstract class gd0 extends kw0 implements r0.m, View.OnLayoutChangeListen
         if (viewGroup != this.x0 || (fd0Var = this.y0) == null || ((org.telegram.ui.v7) fd0Var).getListView() == null) {
             return;
         }
-        im0 listView = ((org.telegram.ui.v7) this.y0).getListView();
+        jm0 listView = ((org.telegram.ui.v7) this.y0).getListView();
         if (this.y0.getTop() == this.A0) {
             iArr[1] = i13;
             listView.scrollBy(0, i13);
@@ -111,7 +111,7 @@ public abstract class gd0 extends kw0 implements r0.m, View.OnLayoutChangeListen
         }
     }
 
-    @Override // org.telegram.ui.Components.kw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.C0 = true;
@@ -121,7 +121,7 @@ public abstract class gd0 extends kw0 implements r0.m, View.OnLayoutChangeListen
         }
     }
 
-    @Override // org.telegram.ui.Components.kw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.C0 = false;

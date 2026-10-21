@@ -6,14 +6,14 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.c71;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class j0 extends h0 {
     public final /* synthetic */ k0 h;
@@ -32,12 +32,12 @@ public final class j0 extends h0 {
         s sVar = new s(k0Var, i11);
         u uVar = new u(k0Var, i11);
         d6Var = ((f3) k0Var).resourcesProvider;
-        b71 b71Var = new b71(context, i10, 0, false, sVar, uVar, null, d6Var);
-        this.d = b71Var;
-        b71Var.p1();
-        b71 b71Var2 = this.d;
-        b71Var2.W2.r = false;
-        b71Var2.setClipToPadding(false);
+        c71 c71Var = new c71(context, i10, 0, false, sVar, uVar, null, d6Var);
+        this.d = c71Var;
+        c71Var.p1();
+        c71 c71Var2 = this.d;
+        c71Var2.W2.r = false;
+        c71Var2.setClipToPadding(false);
         this.d.setPadding(0, 0, 0, AndroidUtilities.dp(60.0f) + AndroidUtilities.navigationBarHeight);
         this.d.j(new ah.d0(this, 12));
         this.c.addView(this.d, 0, z5.c(-1.0f, -1));
@@ -55,7 +55,7 @@ public final class j0 extends h0 {
         this.a.getTitleTextView().setTranslationX(-AndroidUtilities.dp(18.0f));
         this.a.setActionBarMenuOnItemClick(new ah.s(this, 10));
         this.c.addView(this.a, z5.e(-1, 56, 48));
-        LinearLayout e = kk.e(context, 0);
+        LinearLayout e = mk.e(context, 0);
         e.setPadding(AndroidUtilities.dp(7.0f), 0, AndroidUtilities.dp(7.0f), AndroidUtilities.dp(12.0f));
         d6Var3 = ((f3) k0Var).resourcesProvider;
         ei.d dVar = new ei.d(context, d6Var3, true);

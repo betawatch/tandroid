@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.fp0;
-import org.telegram.ui.Components.pw0;
-import org.telegram.ui.Components.ym0;
+import org.telegram.ui.Components.gp0;
+import org.telegram.ui.Components.qw0;
+import org.telegram.ui.Components.zm0;
 import org.telegram.ui.dg0;
 import org.telegram.ui.io;
 import org.telegram.ui.k30;
@@ -27,7 +27,7 @@ import org.telegram.ui.x31;
 import org.telegram.ui.yc1;
 import rg.t2;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class q0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -109,7 +109,7 @@ public final class q0 extends AnimatorListenerAdapter {
                 if (u1Var != null) {
                     u1Var.invalidate();
                 }
-                qnVar.sb(null);
+                qnVar.tb(null);
                 qnVar.M8 = null;
                 qnVar.X0.invalidate();
                 qnVar.x0.invalidate();
@@ -122,14 +122,14 @@ public final class q0 extends AnimatorListenerAdapter {
                 }
                 return;
             case 6:
-                ym0 ym0Var = (ym0) this.d;
+                zm0 zm0Var = (zm0) this.d;
                 float f7 = this.b ? 1.0f : 0.0f;
-                ym0Var.r = f7;
-                ym0Var.y.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, f7));
-                ym0Var.y.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, ym0Var.r));
-                ym0Var.y.setAlpha(ym0Var.r);
-                ym0Var.s.invalidate();
-                ym0Var.v.invalidate();
+                zm0Var.r = f7;
+                zm0Var.y.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, f7));
+                zm0Var.y.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, zm0Var.r));
+                zm0Var.y.setAlpha(zm0Var.r);
+                zm0Var.s.invalidate();
+                zm0Var.v.invalidate();
                 Runnable runnable2 = (Runnable) this.c;
                 if (runnable2 != null) {
                     AndroidUtilities.runOnUIThread(runnable2);
@@ -195,14 +195,14 @@ public final class q0 extends AnimatorListenerAdapter {
                 q50Var.Q.invalidate();
                 return;
             case 9:
-                pw0 pw0Var = (pw0) this.c;
+                qw0 qw0Var = (qw0) this.c;
                 dg0 dg0Var = (dg0) this.d;
                 if (dg0Var.J == 0 && this.b) {
                     dg0Var.v1(true, true);
                 }
-                pw0Var.setVisibility(8);
-                pw0Var.g();
-                pw0Var.setX(0.0f);
+                qw0Var.setVisibility(8);
+                qw0Var.g();
+                qw0Var.setX(0.0f);
                 return;
             case 10:
                 qv0 qv0Var = (qv0) this.d;
@@ -230,7 +230,7 @@ public final class q0 extends AnimatorListenerAdapter {
                     x31Var.N.invalidate();
                 }
                 if (!x31Var.S && (v31Var = x31Var.N) != null && v31Var.getSeekBarWaveform() != null) {
-                    fp0 seekBarWaveform = x31Var.N.getSeekBarWaveform();
+                    gp0 seekBarWaveform = x31Var.N.getSeekBarWaveform();
                     seekBarWaveform.L = x31Var.s;
                     u1 u1Var2 = seekBarWaveform.n;
                     if (u1Var2 != null) {
@@ -281,9 +281,9 @@ public final class q0 extends AnimatorListenerAdapter {
                 ((Runnable) this.c).run();
                 return;
             default:
-                zh.m0 m0Var = (zh.m0) this.d;
-                m0Var.g0();
-                m0Var.d.setReveal(this.b ? 1.0f : 0.0f);
+                zh.n0 n0Var = (zh.n0) this.d;
+                n0Var.g0();
+                n0Var.d.setReveal(this.b ? 1.0f : 0.0f);
                 ((Runnable) this.c).run();
                 return;
         }

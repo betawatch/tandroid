@@ -8,9 +8,9 @@ import android.graphics.drawable.Drawable;
 import androidx.appcompat.widget.ActionBarContainer;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class w3 extends Drawable {
     public final /* synthetic */ int a;
@@ -71,7 +71,7 @@ public final class w3 extends Drawable {
                 imageReceiver.draw(canvas);
                 break;
             case 5:
-                ((e11) this.b).c(getBounds().centerX() - (((e11) this.b).c / 2.0f), getBounds().centerY(), 1.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), canvas);
+                ((f11) this.b).c(getBounds().centerX() - (((f11) this.b).c / 2.0f), getBounds().centerY(), 1.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), canvas);
                 break;
             case 6:
                 canvas.save();
@@ -224,7 +224,7 @@ public final class w3 extends Drawable {
 
     public w3(String str) {
         this.a = 5;
-        this.b = new e11(str.substring(0, !str.isEmpty() ? 1 : 0), 14.0f, AndroidUtilities.bold());
+        this.b = new f11(str.substring(0, !str.isEmpty() ? 1 : 0), 14.0f, AndroidUtilities.bold());
     }
 
     private final void a(int i10) {

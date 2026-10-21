@@ -17,10 +17,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
-import org.telegram.ui.Components.uj0;
+import org.telegram.messenger.mk;
+import org.telegram.ui.Components.vj0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class m7 extends FrameLayout {
     public final ArrayList a;
@@ -48,7 +48,7 @@ public final class m7 extends FrameLayout {
         TextView textView = new TextView(context);
         textView.setTextColor(-1);
         textView.setTypeface(AndroidUtilities.bold());
-        kk.j(20.0f, R.string.StoriesIntroHeader, 1, textView);
+        mk.j(20.0f, R.string.StoriesIntroHeader, 1, textView);
         linearLayout.addView(textView, w7.z5.n(-2, -2));
         TextView textView2 = new TextView(context);
         textView2.setTextColor(-1761607681);
@@ -95,7 +95,7 @@ public final class m7 extends FrameLayout {
         TextView textView3 = new TextView(context);
         textView3.setTextColor(-1);
         textView3.setTypeface(AndroidUtilities.bold());
-        kk.j(14.0f, R.string.StoriesIntroDismiss, 1, textView3);
+        mk.j(14.0f, R.string.StoriesIntroDismiss, 1, textView3);
         linearLayout.addView(textView3, w7.z5.k(0.0f, 73.0f, 0.0f, 0.0f, -2, -2));
         addView(linearLayout, w7.z5.e(-1, -2, 17));
         BitmapDrawable bitmapDrawable = new BitmapDrawable(getContext().getResources(), AndroidUtilities.makeBlurBitmap(o9Var, 12.0f, 10));
@@ -134,16 +134,16 @@ public final class m7 extends FrameLayout {
         ArrayList arrayList = this.a;
         if (i10 != -1) {
             l7 l7Var = (l7) arrayList.get(i10);
-            uj0 uj0Var = l7Var.c;
-            uj0Var.M(0);
-            uj0Var.stop();
+            vj0 vj0Var = l7Var.c;
+            vj0Var.M(0);
+            vj0Var.stop();
             l7Var.n = 0.0f;
             l7Var.invalidate();
         }
         l7 l7Var2 = (l7) arrayList.get(this.d);
-        uj0 uj0Var2 = l7Var2.c;
-        uj0Var2.M(0);
-        uj0Var2.stop();
+        vj0 vj0Var2 = l7Var2.c;
+        vj0Var2.M(0);
+        vj0Var2.stop();
         l7Var2.n = 0.0f;
         l7Var2.invalidate();
         c();

@@ -16,11 +16,11 @@ import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.bz0;
-import org.telegram.ui.Components.ew0;
+import org.telegram.ui.Components.cz0;
+import org.telegram.ui.Components.fw0;
 import v7.f7;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class e0 {
     public static final bs B = new bs(0.0d, 0.5d, 0.0d, 1.0d);
@@ -271,13 +271,13 @@ public final class e0 {
                                             sb2.append(i1Var != null ? " (template#" + i21 + " shape#" + i23 + ")" : "");
                                             Log.i("shapedetector", sb2.toString());
                                         }
-                                        AndroidUtilities.runOnUIThread(new bz0(n1Var3, i1Var, i21, f10, 18));
+                                        AndroidUtilities.runOnUIThread(new cz0(n1Var3, i1Var, i21, f10, 18));
                                         n1Var3.j.set(false);
                                     }
                                     i1Var = null;
                                     if (BuildVars.LOGS_ENABLED) {
                                     }
-                                    AndroidUtilities.runOnUIThread(new bz0(n1Var3, i1Var, i21, f10, 18));
+                                    AndroidUtilities.runOnUIThread(new cz0(n1Var3, i1Var, i21, f10, 18));
                                     n1Var3.j.set(false);
                                 }
                             } finally {
@@ -555,13 +555,13 @@ public final class e0 {
                                             sb2.append(i1Var != null ? " (template#" + i21 + " shape#" + i23 + ")" : "");
                                             Log.i("shapedetector", sb2.toString());
                                         }
-                                        AndroidUtilities.runOnUIThread(new bz0(n1Var3, i1Var, i21, f10, 18));
+                                        AndroidUtilities.runOnUIThread(new cz0(n1Var3, i1Var, i21, f10, 18));
                                         n1Var3.j.set(false);
                                     }
                                     i1Var = null;
                                     if (BuildVars.LOGS_ENABLED) {
                                     }
-                                    AndroidUtilities.runOnUIThread(new bz0(n1Var3, i1Var, i21, f10, 18));
+                                    AndroidUtilities.runOnUIThread(new cz0(n1Var3, i1Var, i21, f10, 18));
                                     n1Var3.j.set(false);
                                 }
                             } finally {
@@ -653,15 +653,15 @@ public final class e0 {
             if (z10 && (e1Var = f1Var.a) != null) {
                 e1Var.f();
             }
-            ew0 ew0Var = f1Var.getPainting().g;
+            fw0 fw0Var = f1Var.getPainting().g;
             x0 x0Var = this.g;
             float a2 = f7.a((float) x0Var.a, (float) x0Var.b, 0.0f, 0.0f);
             x0 x0Var2 = this.g;
-            float max = Math.max(a2, f7.a((float) x0Var2.a, (float) x0Var2.b, ew0Var.a, 0.0f));
+            float max = Math.max(a2, f7.a((float) x0Var2.a, (float) x0Var2.b, fw0Var.a, 0.0f));
             x0 x0Var3 = this.g;
-            float a10 = f7.a((float) x0Var3.a, (float) x0Var3.b, 0.0f, ew0Var.b);
+            float a10 = f7.a((float) x0Var3.a, (float) x0Var3.b, 0.0f, fw0Var.b);
             x0 x0Var4 = this.g;
-            final float max2 = Math.max(max, Math.max(a10, f7.a((float) x0Var4.a, (float) x0Var4.b, ew0Var.a, ew0Var.b))) / 0.84f;
+            final float max2 = Math.max(max, Math.max(a10, f7.a((float) x0Var4.a, (float) x0Var4.b, fw0Var.a, fw0Var.b))) / 0.84f;
             ValueAnimator valueAnimator = this.r;
             if (valueAnimator != null) {
                 valueAnimator.cancel();

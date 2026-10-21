@@ -1,9 +1,9 @@
 package org.telegram.ui.Cells;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class h9 implements Runnable {
     public final /* synthetic */ int a;
@@ -41,12 +41,12 @@ public final class h9 implements Runnable {
                             m10 = i10 + p5;
                         }
                     }
-                    im0 im0Var = aaVar.E;
-                    if (im0Var != null) {
+                    jm0 jm0Var = aaVar.E;
+                    if (jm0Var != null) {
                         if (!aaVar.O) {
                             m10 = -m10;
                         }
-                        im0Var.scrollBy(0, m10);
+                        jm0Var.scrollBy(0, m10);
                     }
                     AndroidUtilities.runOnUIThread(this);
                     break;

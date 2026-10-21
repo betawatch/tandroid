@@ -1,17 +1,17 @@
 package ti;
 
-import ri.i;
+import ri.h;
 import si.l0;
 import si.m0;
 import si.n0;
 import si.q0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public abstract class e {
     public static final a a = new a("experimental_settings_allowed");
     public static final a b = new a("audio_recorder_v2_enabled");
-    public static final b c = new b("audio_recorder_noise_suppression", i.a);
+    public static final b c = new b("audio_recorder_noise_suppression", h.a);
     public static final a d = new a("round_video_camera2_enabled");
     public static final b e = new b("round_video_output_resolution", q0.b);
     public static final b f = new b("round_video_camera_resolution", m0.a);

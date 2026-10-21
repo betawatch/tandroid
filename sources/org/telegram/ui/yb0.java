@@ -1,14 +1,13 @@
 package org.telegram.ui;
 
 import android.os.Bundle;
-import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yb0 implements Runnable {
     public final /* synthetic */ int a;
@@ -98,33 +97,27 @@ public final /* synthetic */ class yb0 implements Runnable {
                 eVar.D();
                 return;
             case 3:
-                ri.p pVar = (ri.p) this.c;
-                long j13 = this.b;
-                File file = (File) this.d;
-                if (pVar.m != ri.n.f) {
-                    return;
-                }
-                pVar.p = j13;
-                pVar.r = 0L;
-                pVar.s = ri.p.q(j13);
-                pVar.d();
-                pVar.t(file);
-                return;
-            case 4:
                 cc.e eVar2 = (cc.e) this.c;
-                long j14 = this.b;
+                long j13 = this.b;
                 Exception exc = (Exception) this.d;
-                ri.p pVar2 = (ri.p) eVar2.c;
-                if (j14 != pVar2.o) {
+                ri.o oVar = (ri.o) eVar2.c;
+                if (j13 != oVar.p) {
                     return;
                 }
-                pVar2.n = null;
-                pVar2.g(exc);
+                oVar.o = null;
+                ri.m mVar = oVar.n;
+                if (mVar != ri.m.s && mVar != ri.m.r) {
+                    oVar.g(exc);
+                    return;
+                }
+                oVar.h.a("capture error after session end", exc);
+                oVar.c();
+                oVar.s();
                 return;
             default:
                 yh.o1 o1Var = (yh.o1) this.c;
                 Utilities.Callback callback = (Utilities.Callback) this.d;
-                long j15 = this.b;
+                long j14 = this.b;
                 o1Var.getClass();
                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U == null) {
@@ -135,7 +128,7 @@ public final /* synthetic */ class yb0 implements Runnable {
                     callback.run(Boolean.FALSE);
                 }
                 Bundle bundle2 = new Bundle();
-                bundle2.putLong("user_id", j15);
+                bundle2.putLong("user_id", j14);
                 bundle2.putBoolean("open_gifts", true);
                 U.presentFragment(new ProfileActivity(bundle2, null));
                 return;

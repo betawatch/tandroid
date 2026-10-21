@@ -40,21 +40,21 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.ko;
-import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.lw0;
 import org.telegram.ui.Components.oo;
-import org.telegram.ui.Components.vw0;
 import org.telegram.ui.Components.w00;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.wo0;
+import org.telegram.ui.Components.ww0;
 import org.telegram.ui.Components.x00;
+import org.telegram.ui.Components.xo0;
 import org.telegram.ui.qy0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class k extends FrameLayout implements ne.d, y5 {
     public CharSequence A0;
@@ -72,7 +72,7 @@ public class k extends FrameLayout implements ne.d, y5 {
     public boolean I;
     public final d6 I0;
     public boolean J;
-    public kw0 J0;
+    public lw0 J0;
     public boolean K;
     public boolean K0;
     public boolean L;
@@ -89,7 +89,7 @@ public class k extends FrameLayout implements ne.d, y5 {
     public boolean Q0;
     public boolean R;
     public oo R0;
-    public vw0 S;
+    public ww0 S;
     public boolean S0;
     public x00 T;
     public Runnable T0;
@@ -204,8 +204,8 @@ public class k extends FrameLayout implements ne.d, y5 {
         return null;
     }
 
-    public final void A(im0 im0Var, boolean z10) {
-        z(im0Var, z10, h6.a7, h6.s8);
+    public final void A(jm0 jm0Var, boolean z10) {
+        z(jm0Var, z10, h6.a7, h6.s8);
     }
 
     public final void B(int i10, boolean z10) {
@@ -408,7 +408,7 @@ public class k extends FrameLayout implements ne.d, y5 {
                 this.r.setVisibility(0);
                 this.r.setAlpha(0.0f);
             }
-            kk.s(this.r.animate(), z10 ? 0.0f : 1.0f, 220L);
+            mk.s(this.r.animate(), z10 ? 0.0f : 1.0f, 220L);
         }
         j5 j5Var = j5VarArr[1];
         if (j5Var != null) {
@@ -846,11 +846,11 @@ public class k extends FrameLayout implements ne.d, y5 {
             Paint paint = this.L0;
             paint.setColor(i18);
             if (this.n1) {
-                kw0 kw0Var = this.J0;
+                lw0 lw0Var = this.J0;
                 float y3 = getY();
                 float f10 = f7 - this.s1;
-                kw0Var.getClass();
-                kw0Var.K(canvas, y3, this.M0, paint, true, AndroidUtilities.lerp(255, Color.alpha(h6.w0((kw0.F() && SharedConfig.getDevicePerformanceClass() == i10) ? h6.xf : h6.yf, kw0Var.getResourceProvider())), f10));
+                lw0Var.getClass();
+                lw0Var.K(canvas, y3, this.M0, paint, true, AndroidUtilities.lerp(255, Color.alpha(h6.w0((lw0.F() && SharedConfig.getDevicePerformanceClass() == i10) ? h6.xf : h6.yf, lw0Var.getResourceProvider())), f10));
             } else {
                 this.J0.J(canvas, getY(), this.M0, paint, true);
             }
@@ -941,14 +941,14 @@ public class k extends FrameLayout implements ne.d, y5 {
                 }
                 if (h6.G1) {
                     if (this.S == null) {
-                        this.S = new vw0(0);
+                        this.S = new ww0(0);
                     }
                 } else if (!this.V && this.S != null) {
                     this.S = null;
                 }
-                vw0 vw0Var = this.S;
-                if (vw0Var != null) {
-                    vw0Var.b(canvas, this);
+                ww0 ww0Var = this.S;
+                if (ww0Var != null) {
+                    ww0Var.b(canvas, this);
                 } else {
                     x00 x00Var = this.T;
                     if (x00Var != null) {
@@ -1373,11 +1373,11 @@ public class k extends FrameLayout implements ne.d, y5 {
         Drawable z02;
         if (this.R && !this.i0 && !LocaleController.isRTL && motionEvent.getAction() == 0 && (z02 = h6.z0()) != null && z02.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
             this.V = true;
-            vw0 vw0Var = this.S;
+            ww0 ww0Var = this.S;
             j5[] j5VarArr = this.n;
-            if (vw0Var == null) {
+            if (ww0Var == null) {
                 this.T = null;
-                this.S = new vw0(0);
+                this.S = new ww0(0);
                 j5VarArr[0].invalidate();
                 invalidate();
             } else {
@@ -1585,7 +1585,7 @@ public class k extends FrameLayout implements ne.d, y5 {
                 } else if (AndroidUtilities.isTablet()) {
                     f7 = 74.0f;
                 }
-                makeMeasureSpec = kk.c(f7, size, TLObject.FLAG_30);
+                makeMeasureSpec = mk.c(f7, size, TLObject.FLAG_30);
                 if (!kVar.y) {
                     kVar.E.r(0.0f);
                 }
@@ -1973,10 +1973,10 @@ public class k extends FrameLayout implements ne.d, y5 {
         }
     }
 
-    public void setDrawBlurBackground(kw0 kw0Var) {
+    public void setDrawBlurBackground(lw0 lw0Var) {
         this.K0 = true;
-        this.J0 = kw0Var;
-        kw0Var.T.add(this);
+        this.J0 = lw0Var;
+        lw0Var.T.add(this);
         setBackground(null);
     }
 
@@ -2346,20 +2346,20 @@ public class k extends FrameLayout implements ne.d, y5 {
         b();
     }
 
-    public void setAdaptiveBackground(wo0 wo0Var) {
+    public void setAdaptiveBackground(xo0 xo0Var) {
         int i10 = h6.a7;
         int i11 = h6.s8;
         this.p1 = i10;
         this.q1 = i11;
         b();
-        m4.z zVar = new m4.z(22, this, wo0Var);
-        wo0Var.f.add(zVar);
+        m4.z zVar = new m4.z(22, this, xo0Var);
+        xo0Var.f.add(zVar);
         if (this.n1) {
             zVar.run();
             return;
         }
         this.n1 = true;
-        boolean canScrollVertically = wo0Var.canScrollVertically(-1);
+        boolean canScrollVertically = xo0Var.canScrollVertically(-1);
         this.r1 = !canScrollVertically;
         this.s1 = !canScrollVertically ? 1.0f : 0.0f;
         b();

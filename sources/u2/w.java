@@ -3,7 +3,7 @@ package u2;
 import org.telegram.tgnet.ConnectionsManager;
 import v7.u6;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final class w extends i2.a {
     public final b2.o1 h;
@@ -12,7 +12,7 @@ public final class w extends i2.a {
     public final int k;
 
     public w(b2.o1 o1Var, int i10) {
-        super(new h1(i10));
+        super(new i1(i10));
         this.h = o1Var;
         int h = o1Var.h();
         this.i = h;

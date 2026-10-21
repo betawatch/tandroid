@@ -45,9 +45,9 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class b01 extends org.telegram.ui.Components.hm0 {
+public final class b01 extends org.telegram.ui.Components.im0 {
     public final Context c;
     public final HashMap d = new HashMap();
     public final /* synthetic */ ProfileActivity e;
@@ -66,7 +66,7 @@ public final class b01 extends org.telegram.ui.Components.hm0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         ProfileActivity profileActivity = this.e;
         if (profileActivity.g3 != -1) {
@@ -572,7 +572,7 @@ public final class b01 extends org.telegram.ui.Components.hm0 {
                         } else {
                             formatString = LocaleController.formatString(isToday ? R.string.ProfileBirthdayTodayValue : R.string.ProfileBirthdayValue, Z);
                         }
-                        b9Var.c(Emoji.replaceWithRestrictedEmoji(formatString, b9Var.a, new org.telegram.ui.Components.x31(this, b1Var, i10, 12)), LocaleController.getString(isToday ? R.string.ProfileBirthdayToday : R.string.ProfileBirthday), (!profileActivity.r1 && profileActivity.P3 == -1 && profileActivity.Q3 == -1) ? false : true);
+                        b9Var.c(Emoji.replaceWithRestrictedEmoji(formatString, b9Var.a, new org.telegram.ui.Components.y31(this, b1Var, i10, 12)), LocaleController.getString(isToday ? R.string.ProfileBirthdayToday : R.string.ProfileBirthday), (!profileActivity.r1 && profileActivity.P3 == -1 && profileActivity.Q3 == -1) ? false : true);
                         if (!profileActivity.t1 && isToday && !profileActivity.getMessagesController().premiumPurchaseBlocked()) {
                             i28 = 1;
                             z10 = false;
@@ -589,13 +589,13 @@ public final class b01 extends org.telegram.ui.Components.hm0 {
                         j19 = profileActivity.f1;
                         TLRPC.User user3 = messagesController2.getUser(Long.valueOf(j19));
                         if (user3 != null && !TextUtils.isEmpty(profileActivity.f5)) {
-                            string2 = org.telegram.messenger.kk.g(new StringBuilder("+"), profileActivity.f5, jf.b.c());
+                            string2 = org.telegram.messenger.mk.g(new StringBuilder("+"), profileActivity.f5, jf.b.c());
                             str9 = profileActivity.f5;
                         } else if (user3 == null || TextUtils.isEmpty(user3.phone)) {
                             string2 = LocaleController.getString(R.string.PhoneHidden);
                             str9 = null;
                         } else {
-                            String g10 = org.telegram.messenger.kk.g(new StringBuilder("+"), user3.phone, jf.b.c());
+                            String g10 = org.telegram.messenger.mk.g(new StringBuilder("+"), user3.phone, jf.b.c());
                             str9 = user3.phone;
                             string2 = g10;
                         }
@@ -759,7 +759,7 @@ public final class b01 extends org.telegram.ui.Components.hm0 {
                                     if (i10 == i22) {
                                         i25 = ((org.telegram.ui.ActionBar.n2) profileActivity).currentAccount;
                                         TLRPC.User currentUser = UserConfig.getInstance(i25).getCurrentUser();
-                                        b9Var.c((currentUser == null || (str2 = currentUser.phone) == null || str2.length() == 0) ? LocaleController.getString(R.string.NumberUnknown) : org.telegram.messenger.kk.g(new StringBuilder("+"), currentUser.phone, jf.b.c()), LocaleController.getString(R.string.TapToChangePhone), true);
+                                        b9Var.c((currentUser == null || (str2 = currentUser.phone) == null || str2.length() == 0) ? LocaleController.getString(R.string.NumberUnknown) : org.telegram.messenger.mk.g(new StringBuilder("+"), currentUser.phone, jf.b.c()), LocaleController.getString(R.string.TapToChangePhone), true);
                                         b9Var.setContentDescriptionValueFirst(false);
                                     } else {
                                         i23 = profileActivity.W2;
@@ -1534,7 +1534,7 @@ public final class b01 extends org.telegram.ui.Components.hm0 {
                                     i131 = ((org.telegram.ui.ActionBar.n2) profileActivity2).currentAccount;
                                     long a2 = profileActivity2.a();
                                     d6Var2 = ((org.telegram.ui.ActionBar.n2) profileActivity2).resourceProvider;
-                                    org.telegram.ui.Components.w01.b(parentActivity, i131, a2, user5, str22, z35, z36, z21, d6Var2);
+                                    org.telegram.ui.Components.x01.b(parentActivity, i131, a2, user5, str22, z35, z36, z21, d6Var2);
                                 }
                             });
                             vaVar.f(user5, i10 != profileActivity.w4 - 1);
@@ -1555,7 +1555,7 @@ public final class b01 extends org.telegram.ui.Components.hm0 {
                             i131 = ((org.telegram.ui.ActionBar.n2) profileActivity2).currentAccount;
                             long a2 = profileActivity2.a();
                             d6Var2 = ((org.telegram.ui.ActionBar.n2) profileActivity2).resourceProvider;
-                            org.telegram.ui.Components.w01.b(parentActivity, i131, a2, user5, str222, z352, z362, z21, d6Var2);
+                            org.telegram.ui.Components.x01.b(parentActivity, i131, a2, user5, str222, z352, z362, z21, d6Var2);
                         }
                     });
                     vaVar.f(user5, i10 != profileActivity.w4 - 1);
@@ -1961,7 +1961,7 @@ public final class b01 extends org.telegram.ui.Components.hm0 {
         if (i10 != 13) {
             vaVar.setLayoutParams(new s4.o0(-1, -2));
         }
-        return new org.telegram.ui.Components.sl0(vaVar);
+        return new org.telegram.ui.Components.tl0(vaVar);
     }
 
     @Override // s4.g0

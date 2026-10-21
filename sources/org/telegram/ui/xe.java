@@ -7,7 +7,7 @@ import org.telegram.messenger.MessageSuggestionParams;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xe implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -28,10 +28,10 @@ public final /* synthetic */ class xe implements Utilities.Callback {
                 qn qnVar2 = this.b;
                 qnVar2.g5 = messageSuggestionParams;
                 qnVar2.p5.messageOwner.suggested_post = messageSuggestionParams.toTl();
-                qnVar2.Cb(true, null, qnVar2.p5, null, null, true, 0, null, false, 0L, null, true);
+                qnVar2.Db(true, null, qnVar2.p5, null, null, true, 0, null, false, 0L, null, true);
                 break;
             case 1:
-                qnVar.zb(true, false);
+                qnVar.Ab(true, false);
                 if (((Boolean) obj).booleanValue()) {
                     qnVar.finishFragment();
                     break;
@@ -44,7 +44,7 @@ public final /* synthetic */ class xe implements Utilities.Callback {
                 qnVar.E1 = (ChannelBoostsController.CanApplyBoost) obj;
                 break;
             case 4:
-                qnVar.Hb((MessageSuggestionParams) obj);
+                qnVar.Ib((MessageSuggestionParams) obj);
                 break;
             case 5:
                 TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
@@ -112,9 +112,9 @@ public final /* synthetic */ class xe implements Utilities.Callback {
                 break;
             case 7:
                 Long l4 = (Long) obj;
-                org.telegram.ui.Components.r31 r31Var = qnVar.R1;
-                if (r31Var != null) {
-                    r31Var.m(l4.longValue(), true);
+                org.telegram.ui.Components.s31 s31Var = qnVar.R1;
+                if (s31Var != null) {
+                    s31Var.m(l4.longValue(), true);
                     break;
                 }
                 break;

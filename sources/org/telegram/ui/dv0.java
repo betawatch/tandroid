@@ -12,9 +12,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class dv0 extends org.telegram.ui.Components.hm0 {
+public final class dv0 extends org.telegram.ui.Components.im0 {
     public final Context c;
     public final /* synthetic */ fv0 d;
 
@@ -23,7 +23,7 @@ public final class dv0 extends org.telegram.ui.Components.hm0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         int i10;
         int b10 = b1Var.b();
@@ -283,9 +283,9 @@ public final class dv0 extends org.telegram.ui.Components.hm0 {
             if (textView.isFocused()) {
                 fv0 fv0Var = this.d;
                 if (fv0Var.c0) {
-                    org.telegram.ui.Components.hz0 hz0Var = fv0Var.Q;
-                    if (hz0Var != null) {
-                        hz0Var.f();
+                    org.telegram.ui.Components.iz0 iz0Var = fv0Var.Q;
+                    if (iz0Var != null) {
+                        iz0Var.f();
                     }
                     fv0Var.k0(true);
                 }

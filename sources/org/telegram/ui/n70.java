@@ -10,9 +10,9 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class n70 extends org.telegram.ui.Components.hm0 {
+public final class n70 extends org.telegram.ui.Components.im0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public ArrayList e = new ArrayList();
@@ -33,7 +33,7 @@ public final class n70 extends org.telegram.ui.Components.hm0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         return b1Var.f != 2;
     }
@@ -124,6 +124,6 @@ public final class n70 extends org.telegram.ui.Components.hm0 {
         } else {
             view = i10 == 2 ? new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c1) null) : new org.telegram.ui.Cells.o4(context, true);
         }
-        return new org.telegram.ui.Components.sl0(view);
+        return new org.telegram.ui.Components.tl0(view);
     }
 }

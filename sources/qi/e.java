@@ -58,7 +58,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.o10;
-import org.telegram.ui.Components.v91;
+import org.telegram.ui.Components.w91;
 import org.telegram.ui.web.j1;
 import org.telegram.ui.web.k1;
 import v7.u6;
@@ -66,7 +66,7 @@ import z3.m;
 import z9.w0;
 import z9.x0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class e implements m, n5.b {
     public static volatile e e;
@@ -795,7 +795,7 @@ public final class e implements m, n5.b {
             return;
         }
         if (trim.charAt(0) == '(') {
-            Matcher matcher = v91.z0.matcher(trim);
+            Matcher matcher = w91.z0.matcher(trim);
             int i11 = 0;
             while (true) {
                 if (!matcher.find()) {
@@ -952,11 +952,11 @@ public final class e implements m, n5.b {
         }
         zArr[0] = false;
         String trim = str.trim();
-        Matcher matcher = v91.x0.matcher(trim);
+        Matcher matcher = w91.x0.matcher(trim);
         if (matcher.find()) {
             trim = trim.substring(matcher.group(0).length());
         } else {
-            Matcher matcher2 = v91.y0.matcher(trim);
+            Matcher matcher2 = w91.y0.matcher(trim);
             if (matcher2.find()) {
                 trim = trim.substring(matcher2.group(0).length());
                 zArr[0] = true;

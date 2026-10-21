@@ -1,27 +1,32 @@
 package org.telegram.messenger;
 
-import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.recaptcha.RecaptchaTasksClient;
 import org.telegram.messenger.CaptchaController;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class t0 implements OnFailureListener {
+public final /* synthetic */ class t0 implements OnSuccessListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ CaptchaController.Request b;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ CaptchaController.Request d;
 
-    public /* synthetic */ t0(CaptchaController.Request request, int i10) {
+    public /* synthetic */ t0(String str, String str2, CaptchaController.Request request, int i10) {
         this.a = i10;
-        this.b = request;
+        this.b = str;
+        this.c = str2;
+        this.d = request;
     }
 
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public final void onFailure(Exception exc) {
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public final void onSuccess(Object obj) {
         switch (this.a) {
             case 0:
-                CaptchaController.lambda$request$3(this.b, exc);
+                CaptchaController.lambda$request$2(this.b, this.c, this.d, (RecaptchaTasksClient) obj);
                 break;
             default:
-                CaptchaController.lambda$request$1(this.b, exc);
+                CaptchaController.lambda$request$0(this.b, this.c, this.d, (String) obj);
                 break;
         }
     }

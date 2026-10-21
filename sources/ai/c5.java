@@ -5,11 +5,11 @@ import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.gh;
 import org.telegram.ui.Components.hi;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.li;
 import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class c5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final class c5 extends AnimatorListenerAdapter {
                 break;
             default:
                 a5.a aVar = (a5.a) this.d;
-                ((im0) aVar.d).scrollBy(0, this.b - ((int[]) this.c)[0]);
+                ((jm0) aVar.d).scrollBy(0, this.b - ((int[]) this.c)[0]);
                 aVar.c = null;
                 break;
         }

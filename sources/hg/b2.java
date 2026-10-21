@@ -30,11 +30,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.ao0;
 import org.telegram.ui.Components.od0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.ub;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.zn0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.SessionsActivity;
@@ -46,7 +46,7 @@ import org.telegram.ui.qn;
 import org.telegram.ui.t40;
 import v7.u6;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b2 implements MediaDataController.KeywordResultCallback, e2.o, org.telegram.ui.ActionBar.a2, m4.o0, e2.j, NativeInstance.PayloadCallback, Utilities.Callback3Return, t5.b {
     public final /* synthetic */ int a;
@@ -248,15 +248,15 @@ public final /* synthetic */ class b2 implements MediaDataController.KeywordResu
                 }
                 break;
             case 9:
-                zn0 zn0Var = (zn0) this.c;
+                ao0 ao0Var = (ao0) this.c;
                 TLRPC.Reaction reaction = (TLRPC.Reaction) this.d;
-                String obj2 = zn0Var.getText().toString();
+                String obj2 = ao0Var.getText().toString();
                 if (obj2.length() <= 12) {
                     MessagesController.getInstance(this.b).renameSavedReactionTag(ah.i1.d(reaction), obj2);
                     b2Var.dismiss();
                     break;
                 } else {
-                    AndroidUtilities.shakeView(zn0Var);
+                    AndroidUtilities.shakeView(ao0Var);
                     break;
                 }
             case 11:

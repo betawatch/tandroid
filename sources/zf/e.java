@@ -26,11 +26,11 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.nf;
-import org.telegram.ui.Components.uj0;
+import org.telegram.messenger.pf;
+import org.telegram.ui.Components.vj0;
 import org.telegram.ui.df0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final class e {
     public static int A;
@@ -153,7 +153,7 @@ public final class e {
         A = i10;
         if (i10 <= 0) {
             A = 0;
-            uj0.T0.postRunnable(new df0(24));
+            vj0.T0.postRunnable(new df0(24));
         }
     }
 
@@ -349,7 +349,7 @@ public final class e {
                 this.k = true;
             } else {
                 countDownLatchArr[i11] = new CountDownLatch(1);
-                z.execute(new nf(this, atomicBoolean2, bitmapArr, i11, zVarArr2, i12, randomAccessFile22, arrayList2, countDownLatchArr));
+                z.execute(new pf(this, atomicBoolean2, bitmapArr, i11, zVarArr2, i12, randomAccessFile22, arrayList2, countDownLatchArr));
                 i11++;
                 i12++;
                 if (i11 >= y) {

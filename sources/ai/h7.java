@@ -13,10 +13,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.k01;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.l01;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class h7 extends org.telegram.ui.Components.ua {
     public final ArrayList a0;
@@ -48,7 +48,7 @@ public final class h7 extends org.telegram.ui.Components.ua {
         b11.setText(LocaleController.getString(R.string.Gift2UpgradeCostsText));
         this.X.addView(b11, w7.z5.t(-1, -2, 17, 32, 10, 32, 10));
         int currentTime = ConnectionsManager.getInstance(this.currentAccount).getCurrentTime();
-        k01 k01Var = new k01(context, d6Var);
+        l01 l01Var = new l01(context, d6Var);
         int i12 = 0;
         boolean z10 = false;
         while (true) {
@@ -59,7 +59,7 @@ public final class h7 extends org.telegram.ui.Components.ua {
             if (currentTime <= ((TL_stars.StarGiftUpgradePrice) arrayList.get(i12)).date || ((i10 = i12 + 1) < arrayList.size() && currentTime <= ((TL_stars.StarGiftUpgradePrice) arrayList.get(i10)).date)) {
                 f10 = f13;
                 Date date = new Date(r13.date * 1000);
-                k01Var.c(LocaleController.getInstance().getFormatterDay().format(date) + ", " + LocaleController.getInstance().getFormatterDayMonth().format(date), md.Y0(false, org.telegram.messenger.g0.h((int) r13.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
+                l01Var.c(LocaleController.getInstance().getFormatterDay().format(date) + ", " + LocaleController.getInstance().getFormatterDayMonth().format(date), md.Y0(false, org.telegram.messenger.g0.h((int) r13.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
                 z10 = true;
             } else {
                 f10 = f13;
@@ -77,11 +77,11 @@ public final class h7 extends org.telegram.ui.Components.ua {
                 i13++;
                 TL_stars.StarGiftUpgradePrice starGiftUpgradePrice = (TL_stars.StarGiftUpgradePrice) obj;
                 Date date2 = new Date(starGiftUpgradePrice.date * 1000);
-                k01Var.c(LocaleController.getInstance().getFormatterDay().format(date2) + ", " + LocaleController.getInstance().getFormatterDayMonth().format(date2), md.Y0(false, org.telegram.messenger.g0.h((int) starGiftUpgradePrice.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
+                l01Var.c(LocaleController.getInstance().getFormatterDay().format(date2) + ", " + LocaleController.getInstance().getFormatterDayMonth().format(date2), md.Y0(false, org.telegram.messenger.g0.h((int) starGiftUpgradePrice.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
             }
         }
         float f15 = f14 + f7;
-        this.X.addView(k01Var, w7.z5.r(-1, -2, 7, f15, 16.0f, f15, 15.0f));
+        this.X.addView(l01Var, w7.z5.r(-1, -2, 7, f15, 16.0f, f15, 15.0f));
         TextView b12 = w7.d6.b(context, 12.0f, org.telegram.ui.ActionBar.h6.y6, false, null);
         b12.setGravity(17);
         b12.setText(LocaleController.getString(R.string.Gift2UpgradeCostsFooter));
@@ -98,8 +98,8 @@ public final class h7 extends org.telegram.ui.Components.ua {
         float f17 = f16 + 16.0f;
         this.Y.addView(dVar, w7.z5.d(-1, 48.0f, 119, f17, 16.0f, f17, 16.0f));
         this.containerView.addView(this.Y, w7.z5.e(-1, -2, 87));
-        im0 im0Var = this.d;
-        im0Var.setPadding(im0Var.getPaddingLeft(), im0Var.getPaddingTop(), im0Var.getPaddingRight(), AndroidUtilities.dp(80.0f) + im0Var.getPaddingBottom());
+        jm0 jm0Var = this.d;
+        jm0Var.setPadding(jm0Var.getPaddingLeft(), jm0Var.getPaddingTop(), jm0Var.getPaddingRight(), AndroidUtilities.dp(80.0f) + jm0Var.getPaddingBottom());
         this.Z.g(l7.I2(LocaleController.getString(R.string.Understood)), false, true);
         this.Z.setOnClickListener(new ah.g0(this, 8));
     }

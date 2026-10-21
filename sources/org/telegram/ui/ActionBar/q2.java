@@ -3,13 +3,13 @@ package org.telegram.ui.ActionBar;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.nl0;
+import org.telegram.ui.Components.ol0;
 import org.telegram.ui.Components.qu;
 import org.telegram.ui.Components.tz;
 import org.telegram.ui.Components.wa0;
 import org.telegram.ui.oq;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -83,10 +83,10 @@ public final /* synthetic */ class q2 implements ValueAnimator.AnimatorUpdateLis
                 oq oqVar = (oq) this.c;
                 oqVar.getClass();
                 Float f11 = (Float) valueAnimator.getAnimatedValue();
-                nl0 nl0Var = (nl0) oqVar.d;
-                nl0Var.b.put(this.b, f11);
-                nl0Var.d = true;
-                nl0Var.a.invalidate();
+                ol0 ol0Var = (ol0) oqVar.d;
+                ol0Var.b.put(this.b, f11);
+                ol0Var.d = true;
+                ol0Var.a.invalidate();
                 break;
             default:
                 wh.g gVar = (wh.g) this.c;

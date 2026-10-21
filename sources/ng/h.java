@@ -9,13 +9,13 @@ import android.widget.FrameLayout;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.cp0;
+import org.telegram.ui.Components.dp0;
 import org.telegram.ui.Components.s6;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout {
-    public cp0 a;
+    public dp0 a;
     public float b;
     public float c;
     public float d;
@@ -51,10 +51,10 @@ public final class h extends FrameLayout {
         super.onMeasure(i10, i11);
         int size = View.MeasureSpec.getSize(i10);
         if (this.n != size) {
-            cp0 cp0Var = this.a;
+            dp0 dp0Var = this.a;
             float floatValue = ((Float) this.e.get(null)).floatValue();
             float f7 = this.b;
-            cp0Var.setProgress((floatValue - f7) / (this.c - f7));
+            dp0Var.setProgress((floatValue - f7) / (this.c - f7));
             this.n = size;
         }
     }

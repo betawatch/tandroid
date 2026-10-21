@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f71 implements Runnable {
     public final /* synthetic */ int a;
@@ -87,7 +87,7 @@ public final /* synthetic */ class f71 implements Runnable {
                     gnVar.d = i12;
                     gnVar.f();
                 }
-                qnVar.Gb(messageObject, gnVar);
+                qnVar.Hb(messageObject, gnVar);
                 yc1Var.c(false);
                 break;
             case 4:

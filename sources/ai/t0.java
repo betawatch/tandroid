@@ -39,8 +39,8 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.d91;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.e91;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.xr;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
@@ -54,7 +54,7 @@ import org.telegram.ui.qn;
 import org.telegram.ui.tw;
 import org.telegram.ui.wo;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t0 implements Runnable {
     public final /* synthetic */ int a;
@@ -826,11 +826,11 @@ public final /* synthetic */ class t0 implements Runnable {
                 bVar.e.a = false;
                 tL_documentAttributeAudio.title = str4;
                 tL_documentAttributeAudio.performer = str5;
-                d91 d91Var = v7Var.h;
-                for (int i32 = 0; i32 < d91Var.getViewPages().length; i32++) {
-                    im0 im0Var = (im0) d91Var.getViewPages()[i32];
-                    if (im0Var != null && ((org.telegram.ui.i7) im0Var.getAdapter()).d == 3) {
-                        org.telegram.ui.i7 i7Var = (org.telegram.ui.i7) im0Var.getAdapter();
+                e91 e91Var = v7Var.h;
+                for (int i32 = 0; i32 < e91Var.getViewPages().length; i32++) {
+                    jm0 jm0Var = (jm0) e91Var.getViewPages()[i32];
+                    if (jm0Var != null && ((org.telegram.ui.i7) jm0Var.getAdapter()).d == 3) {
+                        org.telegram.ui.i7 i7Var = (org.telegram.ui.i7) jm0Var.getAdapter();
                         int i33 = 0;
                         while (true) {
                             if (i33 >= i7Var.e.size()) {

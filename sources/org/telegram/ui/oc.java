@@ -11,11 +11,11 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class oc extends FrameLayout {
     public org.telegram.ui.ActionBar.j5 a;
-    public org.telegram.ui.Components.e11 b;
+    public org.telegram.ui.Components.f11 b;
     public org.telegram.ui.Components.p5 c;
     public org.telegram.ui.ActionBar.d6 d;
     public boolean e;
@@ -55,7 +55,7 @@ public final class oc extends FrameLayout {
         if (j10 == 0) {
             p5Var.g(null, z11);
             if (this.b == null) {
-                this.b = new org.telegram.ui.Components.e11(LocaleController.getString(R.string.ChannelReplyIconOff), 16.0f, null);
+                this.b = new org.telegram.ui.Components.f11(LocaleController.getString(R.string.ChannelReplyIconOff), 16.0f, null);
             }
         } else {
             p5Var.j(j10, z11);
@@ -69,7 +69,7 @@ public final class oc extends FrameLayout {
         if (document == null) {
             p5Var.g(null, false);
             if (this.b == null) {
-                this.b = new org.telegram.ui.Components.e11(LocaleController.getString(R.string.ChannelReplyIconOff), 16.0f, null);
+                this.b = new org.telegram.ui.Components.f11(LocaleController.getString(R.string.ChannelReplyIconOff), 16.0f, null);
             }
         } else {
             p5Var.i(document, false);
@@ -86,10 +86,10 @@ public final class oc extends FrameLayout {
         f();
         org.telegram.ui.Components.p5 p5Var = this.c;
         p5Var.k(Integer.valueOf(this.f));
-        org.telegram.ui.Components.e11 e11Var = this.b;
-        if (e11Var != null) {
+        org.telegram.ui.Components.f11 f11Var = this.b;
+        if (f11Var != null) {
             canvas2 = canvas;
-            e11Var.c((getMeasuredWidth() - this.b.l()) - AndroidUtilities.dp(19.0f), getMeasuredHeight() / 2.0f, 1.0f, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.q6, d6Var), canvas2);
+            f11Var.c((getMeasuredWidth() - this.b.l()) - AndroidUtilities.dp(19.0f), getMeasuredHeight() / 2.0f, 1.0f, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.q6, d6Var), canvas2);
         } else {
             canvas2 = canvas;
             p5Var.draw(canvas2);

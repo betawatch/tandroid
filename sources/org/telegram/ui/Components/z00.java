@@ -19,7 +19,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class z00 extends View {
     public static final int[] E;
@@ -305,7 +305,7 @@ public class z00 extends View {
                     arrayList.add(a(true));
                 }
             }
-            float x10 = org.telegram.messenger.kk.x(i10, 16.0f, 0.15f, this.e);
+            float x10 = org.telegram.messenger.mk.x(i10, 16.0f, 0.15f, this.e);
             this.e = x10;
             if (x10 < 0.2f) {
                 this.e = 0.2f;

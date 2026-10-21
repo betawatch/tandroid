@@ -37,19 +37,19 @@ import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.r21;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.s21;
+import org.telegram.ui.Components.vj0;
 import org.telegram.ui.Components.x90;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.mh;
 import org.telegram.ui.oh;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class u0 extends FrameLayout {
     public final TextView E;
@@ -104,7 +104,7 @@ public class u0 extends FrameLayout {
     public HashMap u0;
     public AnimatorSet v;
     public View w;
-    public final xj0 x;
+    public final yj0 x;
     public int y;
 
     public u0(Context context, int i10, int i11, boolean z10) {
@@ -246,13 +246,13 @@ public class u0 extends FrameLayout {
             return;
         }
         findViewWithTag.setAlpha(0.0f);
-        kk.t(findViewWithTag.animate().alpha(1.0f), bs.f, 150L);
+        mk.t(findViewWithTag.animate().alpha(1.0f), bs.f, 150L);
         findViewWithTag.setVisibility(0);
     }
 
     public final boolean L(boolean z10) {
         y yVar;
-        xj0 iconView;
+        yj0 iconView;
         Animator g10;
         k();
         g5 g5Var = this.H;
@@ -550,7 +550,7 @@ public class u0 extends FrameLayout {
                         }
                     }
                 });
-                actionBarPopupWindow$ActionBarPopupWindowLayout.measure(kk.c(40.0f, AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
+                actionBarPopupWindow$ActionBarPopupWindowLayout.measure(mk.c(40.0f, AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
                 if (frameLayout != null && frameLayout.getLayoutParams() != null && this.b.getSwipeBack() != null && (childAt = this.b.getSwipeBack().getChildAt(0)) != null && childAt.getMeasuredWidth() > 0) {
                     frameLayout.getLayoutParams().width = AndroidUtilities.dp(16.0f) + childAt.getMeasuredWidth();
                 }
@@ -789,11 +789,11 @@ public class u0 extends FrameLayout {
     }
 
     public View getContentView() {
-        xj0 xj0Var = this.x;
-        return xj0Var != null ? xj0Var : this.E;
+        yj0 yj0Var = this.x;
+        return yj0Var != null ? yj0Var : this.E;
     }
 
-    public xj0 getIconView() {
+    public yj0 getIconView() {
         return this.x;
     }
 
@@ -845,10 +845,10 @@ public class u0 extends FrameLayout {
         kVar.setBackgroundDrawable(h6.L0(false));
     }
 
-    public final e1 i(int i10, r21 r21Var, String str, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+    public final e1 i(int i10, s21 s21Var, String str, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
         o();
         e1 e1Var = new e1(0, getContext(), this.m0, false, false);
-        e1Var.g(str, i10, r21Var);
+        e1Var.g(str, i10, s21Var);
         e1Var.setMinimumWidth(AndroidUtilities.dp(196.0f));
         e1Var.setRightIcon(R.drawable.msg_arrowright);
         this.b.addView(e1Var);
@@ -1349,22 +1349,22 @@ public class u0 extends FrameLayout {
     }
 
     public void setIcon(Drawable drawable) {
-        xj0 xj0Var = this.x;
-        if (xj0Var == null) {
+        yj0 yj0Var = this.x;
+        if (yj0Var == null) {
             return;
         }
-        if (drawable instanceof uj0) {
-            xj0Var.setAnimation((uj0) drawable);
+        if (drawable instanceof vj0) {
+            yj0Var.setAnimation((vj0) drawable);
         } else {
-            xj0Var.setImageDrawable(drawable);
+            yj0Var.setImageDrawable(drawable);
         }
         this.y = 0;
     }
 
     public void setIconColor(int i10) {
-        xj0 xj0Var = this.x;
-        if (xj0Var != null) {
-            xj0Var.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN));
+        yj0 yj0Var = this.x;
+        if (yj0Var != null) {
+            yj0Var.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN));
         }
         TextView textView = this.E;
         if (textView != null) {
@@ -1547,11 +1547,11 @@ public class u0 extends FrameLayout {
         return s0Var;
     }
 
-    public final void v(uj0 uj0Var, String str) {
+    public final void v(vj0 vj0Var, String str) {
         s0 s0Var = new s0(0);
         s0Var.b = 29;
         s0Var.c = 0;
-        s0Var.d = uj0Var;
+        s0Var.d = vj0Var;
         s0Var.e = str;
         s0Var.f = true;
         A(s0Var);
@@ -1670,22 +1670,22 @@ public class u0 extends FrameLayout {
             addView(textView, w7.z5.c(-1.0f, -2));
             return;
         }
-        xj0 xj0Var = new xj0(context);
-        this.x = xj0Var;
-        xj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        xj0Var.setImportantForAccessibility(2);
-        addView(xj0Var, w7.z5.c(-1.0f, -1));
+        yj0 yj0Var = new yj0(context);
+        this.x = yj0Var;
+        yj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        yj0Var.setImportantForAccessibility(2);
+        addView(yj0Var, w7.z5.c(-1.0f, -1));
         if (i11 != 0) {
-            xj0Var.setColorFilter(new PorterDuffColorFilter(i11, PorterDuff.Mode.SRC_IN));
+            yj0Var.setColorFilter(new PorterDuffColorFilter(i11, PorterDuff.Mode.SRC_IN));
         }
     }
 
     public void setIcon(int i10) {
-        xj0 xj0Var = this.x;
-        if (xj0Var == null) {
+        yj0 yj0Var = this.x;
+        if (yj0Var == null) {
             return;
         }
         this.y = i10;
-        xj0Var.setImageResource(i10);
+        yj0Var.setImageResource(i10);
     }
 }

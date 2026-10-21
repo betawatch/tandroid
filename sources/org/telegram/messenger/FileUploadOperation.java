@@ -14,7 +14,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public class FileUploadOperation {
     private static final int initialRequestsCount = 8;
@@ -68,7 +68,7 @@ public class FileUploadOperation {
     private SparseArray<UploadCachedResult> cachedResults = new SparseArray<>();
     private boolean[] recalculatedEstimatedSize = {false, false};
 
-    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
     public interface FileUploadOperationDelegate {
         void didChangedUploadProgress(FileUploadOperation fileUploadOperation, long j10, long j11);
 
@@ -77,7 +77,7 @@ public class FileUploadOperation {
         void didFinishUploadingFile(FileUploadOperation fileUploadOperation, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2);
     }
 
-    /* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
     public static class UploadCachedResult {
         private long bytesOffset;
         private byte[] iv;
@@ -277,7 +277,7 @@ public class FileUploadOperation {
             this.freeRequestIvs.add(bArr2);
         }
         this.requestTokens.delete(i12);
-        AndroidUtilities.runOnUIThread(new w3(this, iArr, 0));
+        AndroidUtilities.runOnUIThread(new y3(this, iArr, 0));
         if (!(tLObject instanceof TLRPC.TL_boolTrue)) {
             this.state = 4;
             this.delegate.didFailedUploadingFile(this);
@@ -396,7 +396,7 @@ public class FileUploadOperation {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$startUploadRequest$8() {
-        Utilities.stageQueue.postRunnable(new v3(this, 2));
+        Utilities.stageQueue.postRunnable(new x3(this, 2));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -755,7 +755,7 @@ public class FileUploadOperation {
                 final int[] iArr = new int[1];
                 final byte[] bArr7 = bArr2;
                 final int i29 = read;
-                iArr[0] = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_upload_saveFilePart3, new RequestDelegate() { // from class: org.telegram.messenger.x3
+                iArr[0] = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_upload_saveFilePart3, new RequestDelegate() { // from class: org.telegram.messenger.z3
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                         FileUploadOperation.this.lambda$startUploadRequest$6(i27, iArr, objectSize, bArr7, i26, i29, i25, j15, tLObject, tL_error);
@@ -774,7 +774,7 @@ public class FileUploadOperation {
                     i2.e.x(sb3, this.currentFileId);
                 }
                 this.requestTokens.put(i26, iArr[0]);
-                AndroidUtilities.runOnUIThread(new w3(this, iArr, 1));
+                AndroidUtilities.runOnUIThread(new y3(this, iArr, 1));
             }
         } catch (Exception e7) {
             FileLog.e(e7);
@@ -803,7 +803,7 @@ public class FileUploadOperation {
             return;
         }
         this.state = 2;
-        Utilities.stageQueue.postRunnable(new v3(this, 1));
+        Utilities.stageQueue.postRunnable(new x3(this, 1));
         AutoDeleteMediaTask.unlockFile(this.uploadingFilePath);
         this.delegate.didFailedUploadingFile(this);
         cleanup();
@@ -822,7 +822,7 @@ public class FileUploadOperation {
             return;
         }
         Utilities.stageQueue.postRunnable(new ah.t(14, this, z10));
-        AndroidUtilities.runOnUIThread(new v3(this, 3));
+        AndroidUtilities.runOnUIThread(new x3(this, 3));
     }
 
     public void setDelegate(FileUploadOperationDelegate fileUploadOperationDelegate) {
@@ -839,6 +839,6 @@ public class FileUploadOperation {
         }
         this.state = 1;
         AutoDeleteMediaTask.lockFile(this.uploadingFilePath);
-        Utilities.stageQueue.postRunnable(new v3(this, 0));
+        Utilities.stageQueue.postRunnable(new x3(this, 0));
     }
 }

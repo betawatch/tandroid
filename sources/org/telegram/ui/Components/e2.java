@@ -29,7 +29,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.hh1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e2 implements Runnable {
     public final /* synthetic */ int a;
@@ -115,9 +115,9 @@ public final /* synthetic */ class e2 implements Runnable {
                     }
                     x3Var.setTranslationY(((-Math.min(AndroidUtilities.dp(34.0f), kdVar.getEditTextHeight())) - AndroidUtilities.dp(14.0f)) * (kdVar instanceof org.telegram.ui.is0 ? -1.0f : 1.0f));
                     x3Var.s(replaceTags);
-                    uj0 uj0Var = new uj0(i15 > 0 ? R.raw.fire_on : R.raw.fire_off, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f));
-                    uj0Var.start();
-                    x3Var.j(uj0Var);
+                    vj0 vj0Var = new vj0(i15 > 0 ? R.raw.fire_on : R.raw.fire_off, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f));
+                    vj0Var.start();
+                    x3Var.j(vj0Var);
                     x3Var.u();
                     kdVar.o1 = false;
                     AndroidUtilities.cancelRunOnUIThread(kdVar.p1);
@@ -188,8 +188,8 @@ public final /* synthetic */ class e2 implements Runnable {
                 ((jb0) obj).b.run(Integer.valueOf(i15));
                 break;
             case 9:
-                jg0 jg0Var = (jg0) obj;
-                org.telegram.ui.ot0 ot0Var = jg0Var.a;
+                kg0 kg0Var = (kg0) obj;
+                org.telegram.ui.ot0 ot0Var = kg0Var.a;
                 TextView textView = ot0Var.e;
                 ai.ic icVar = ot0Var.h;
                 RadialProgressView radialProgressView = ot0Var.n;
@@ -204,11 +204,11 @@ public final /* synthetic */ class e2 implements Runnable {
                 }
                 if (radialProgressView.getAlpha() == 1.0f) {
                     radialProgressView.animate().cancel();
-                    radialProgressView.animate().alpha(0.0f).setDuration(150L).setListener(new ig0(jg0Var, i14));
+                    radialProgressView.animate().alpha(0.0f).setDuration(150L).setListener(new jg0(kg0Var, i14));
                 }
                 if (icVar.getAlpha() == 1.0f) {
                     icVar.animate().cancel();
-                    icVar.animate().alpha(0.0f).setDuration(150L).setListener(new ig0(jg0Var, 1));
+                    icVar.animate().alpha(0.0f).setDuration(150L).setListener(new jg0(kg0Var, 1));
                 }
                 if (i15 != 2) {
                     if (i15 != 5) {
@@ -222,7 +222,7 @@ public final /* synthetic */ class e2 implements Runnable {
                         textView2.setText(LocaleController.getString(R.string.YouTubeVideoErrorNotAvailableInApp));
                         textView.setText(LocaleController.getString(R.string.YouTubeVideoErrorOpenExternal));
                         textView.setVisibility(0);
-                        textView.setOnClickListener(new u80(jg0Var, 6));
+                        textView.setOnClickListener(new u80(kg0Var, 6));
                         break;
                     } else {
                         textView2.setText(LocaleController.getString(R.string.YouTubeVideoErrorHTML));
@@ -234,53 +234,53 @@ public final /* synthetic */ class e2 implements Runnable {
                 }
                 break;
             case 10:
-                sj0 sj0Var = (sj0) obj;
-                sj0Var.V0 = false;
-                if (sj0Var.W0) {
-                    sj0Var.C(true);
+                tj0 tj0Var = (tj0) obj;
+                tj0Var.V0 = false;
+                if (tj0Var.W0) {
+                    tj0Var.C(true);
                     break;
                 } else {
-                    sj0Var.a1 = i15;
-                    sj0Var.I();
-                    sj0Var.x();
+                    tj0Var.a1 = i15;
+                    tj0Var.I();
+                    tj0Var.x();
                     break;
                 }
             case 11:
-                ((tv0) obj).f1(i15);
+                ((uv0) obj).f1(i15);
                 break;
             case 12:
-                ((qx0) obj).k0(i15, 0);
+                ((rx0) obj).k0(i15, 0);
                 break;
             case 13:
-                d51 d51Var = (d51) obj;
-                d51Var.V();
-                d51Var.g0 = i15;
-                s41.J(d51Var.f0);
-                d51Var.W();
+                e51 e51Var = (e51) obj;
+                e51Var.V();
+                e51Var.g0 = i15;
+                t41.J(e51Var.f0);
+                e51Var.W();
                 break;
             case 14:
-                ((c91) obj).v.x0(i15);
+                ((d91) obj).v.x0(i15);
                 break;
             case 15:
-                v91 v91Var = (v91) obj;
-                b81 b81Var = v91Var.a;
+                w91 w91Var = (w91) obj;
+                c81 c81Var = w91Var.a;
                 if (i15 == -1) {
-                    if (b81Var.y()) {
-                        b81Var.B();
-                        v91Var.n();
+                    if (c81Var.y()) {
+                        c81Var.B();
+                        w91Var.n();
                     }
-                    v91Var.J = false;
+                    w91Var.J = false;
                     break;
                 } else if (i15 == 1) {
-                    if (v91Var.K) {
-                        v91Var.K = false;
-                        b81Var.C();
+                    if (w91Var.K) {
+                        w91Var.K = false;
+                        c81Var.C();
                         break;
                     }
-                } else if (i15 != -3 && i15 == -2 && b81Var.y()) {
-                    v91Var.K = true;
-                    b81Var.B();
-                    v91Var.n();
+                } else if (i15 != -3 && i15 == -2 && c81Var.y()) {
+                    w91Var.K = true;
+                    c81Var.B();
+                    w91Var.n();
                     break;
                 }
                 break;

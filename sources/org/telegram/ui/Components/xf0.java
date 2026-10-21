@@ -1,80 +1,46 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Matrix;
-import android.graphics.SurfaceTexture;
 import android.view.TextureView;
+import android.view.View;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class xf0 implements TextureView.SurfaceTextureListener {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ ja b;
-    public final /* synthetic */ cg0 c;
+public final class xf0 extends TextureView {
+    public final /* synthetic */ dg0 a;
 
-    public xf0(cg0 cg0Var, boolean z10, ja jaVar) {
-        this.c = cg0Var;
-        this.a = z10;
-        this.b = jaVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xf0(dg0 dg0Var, Context context) {
+        super(context);
+        this.a = dg0Var;
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
-        cg0 cg0Var = this.c;
-        TextureView textureView = cg0Var.i0;
-        if (cg0Var.l0 != null || surfaceTexture == null) {
-            return;
-        }
-        e00 e00Var = new e00(surfaceTexture, cg0Var.C0, cg0Var.H0, cg0Var.w0, this.a, this.b, i10, i11);
-        cg0Var.l0 = e00Var;
-        if (!this.a) {
-            e00Var.i(cg0Var.J0, cg0Var.K0);
-            e00 e00Var2 = cg0Var.l0;
-            Matrix transform = textureView.getTransform(null);
-            int width = textureView.getWidth();
-            int height = textureView.getHeight();
-            pa paVar = e00Var2.I;
-            if (paVar != null) {
-                Matrix matrix = paVar.v;
-                transform.invert(matrix);
-                float f7 = width;
-                float f10 = height;
-                matrix.preScale(f7, f10);
-                matrix.postScale(1.0f / f7, 1.0f / f10);
-                paVar.c(matrix);
-                e00Var2.d(false, false, false);
-            }
-        }
-        cg0Var.l0.f(cg0Var);
-        e00 e00Var3 = cg0Var.l0;
-        e00Var3.getClass();
-        e00Var3.postRunnable(new a00(e00Var3, i10, i11, 1));
-        cg0Var.l0.d(true, true, false);
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        View.MeasureSpec.getSize(i10);
+        super.onMeasure(i10, i11);
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        cg0 cg0Var = this.c;
-        e00 e00Var = cg0Var.l0;
-        if (e00Var == null) {
-            return true;
-        }
-        e00Var.postRunnable(new b00(e00Var, 0));
-        cg0Var.l0 = null;
-        return true;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
-        cg0 cg0Var = this.c;
-        e00 e00Var = cg0Var.l0;
+    @Override // android.view.TextureView
+    public final void setTransform(Matrix matrix) {
+        super.setTransform(matrix);
+        e00 e00Var = this.a.l0;
         if (e00Var != null) {
-            e00Var.postRunnable(new a00(e00Var, i10, i11, 1));
-            cg0Var.l0.d(false, true, false);
-            cg0Var.l0.postRunnable(new rc0(this, 6));
+            int width = getWidth();
+            int height = getHeight();
+            pa paVar = e00Var.I;
+            if (paVar == null) {
+                return;
+            }
+            Matrix matrix2 = paVar.v;
+            matrix.invert(matrix2);
+            float f7 = width;
+            float f10 = height;
+            matrix2.preScale(f7, f10);
+            matrix2.postScale(1.0f / f7, 1.0f / f10);
+            paVar.c(matrix2);
+            e00Var.d(false, false, false);
         }
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 }

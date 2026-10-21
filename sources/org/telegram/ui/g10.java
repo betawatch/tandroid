@@ -9,9 +9,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class g10 extends org.telegram.ui.Components.im0 {
+public final class g10 extends org.telegram.ui.Components.jm0 {
     public final /* synthetic */ int V2;
     public final /* synthetic */ Object W2;
 
@@ -22,7 +22,7 @@ public final class g10 extends org.telegram.ui.Components.im0 {
         this.W2 = n2Var;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.jm0
     public Integer W0(int i10) {
         int i11;
         switch (this.V2) {
@@ -35,7 +35,7 @@ public final class g10 extends org.telegram.ui.Components.im0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.im0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jm0, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         org.telegram.ui.ActionBar.k kVar;
         switch (this.V2) {
@@ -106,7 +106,7 @@ public final class g10 extends org.telegram.ui.Components.im0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         switch (this.V2) {
             case 0:

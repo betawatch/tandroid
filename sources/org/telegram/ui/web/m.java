@@ -40,11 +40,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Cells.b6;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.js0;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.ks0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cy;
 import org.telegram.ui.do0;
@@ -55,9 +55,9 @@ import yh.e4;
 import yh.f4;
 import yh.o2;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class m implements org.telegram.ui.ActionBar.a2, r2.v, t5.b, qa.a, OnFailureListener, s5.e, c3.r, e2.j, do0, vx, androidx.car.app.utils.b, r9.d, n5, Utilities.Callback5, xl0, CameraView.CameraViewDelegate {
+public final /* synthetic */ class m implements org.telegram.ui.ActionBar.a2, r2.v, t5.b, qa.a, OnFailureListener, s5.e, c3.r, e2.j, do0, vx, androidx.car.app.utils.b, r9.d, n5, Utilities.Callback5, yl0, CameraView.CameraViewDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -82,7 +82,7 @@ public final /* synthetic */ class m implements org.telegram.ui.ActionBar.a2, r2
         return false;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ boolean P0(View view) {
         return false;
     }
@@ -91,12 +91,12 @@ public final /* synthetic */ class m implements org.telegram.ui.ActionBar.a2, r2
     public void a(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, boolean z10) {
         yh.l2 l2Var = (yh.l2) this.b;
         TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
-        js0 js0Var = l2Var.a;
+        ks0 ks0Var = l2Var.a;
         l2Var.e.l.remove(savedStarGift);
         l2Var.f(true);
         int i10 = l2Var.b;
         if (j10 == UserConfig.getInstance(i10).getClientUserId()) {
-            xc a02 = xc.a0(js0Var.a);
+            xc a02 = xc.a0(ks0Var.a);
             TLRPC.Document document = tL_starGiftUnique.getDocument();
             String string = LocaleController.getString(R.string.BoughtResoldGiftTitle);
             int i11 = R.string.BoughtResoldGiftText;
@@ -107,7 +107,7 @@ public final /* synthetic */ class m implements org.telegram.ui.ActionBar.a2, r2
             O.r = false;
             O.j();
         } else {
-            qc O2 = xc.a0(js0Var.a).O(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(i10, j10)));
+            qc O2 = xc.a0(ks0Var.a).O(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(i10, j10)));
             O2.r = false;
             O2.j();
         }
@@ -120,7 +120,7 @@ public final /* synthetic */ class m implements org.telegram.ui.ActionBar.a2, r2
     @Override // e2.j
     public void accept(Object obj) {
         a5.a aVar = (a5.a) this.b;
-        ((u2.k0) obj).e(aVar.b, (u2.g0) aVar.c, (u2.c0) this.c);
+        ((u2.l0) obj).e(aVar.b, (u2.g0) aVar.c, (u2.c0) this.c);
     }
 
     @Override // s5.e
@@ -228,7 +228,7 @@ public final /* synthetic */ class m implements org.telegram.ui.ActionBar.a2, r2
         iStartCarApp.startCarApp(intent);
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public void d(float f7, float f10, int i10, View view) {
         f4.R((f4) this.b, (e4) this.c, i10);
     }
@@ -418,7 +418,7 @@ public final /* synthetic */ class m implements org.telegram.ui.ActionBar.a2, r2
         ei.d dVar = (ei.d) this.c;
         View view = (View) obj2;
         o2Var.getClass();
-        long j10 = ((TL_stars.SavedStarGift) ((g61) obj).G).gift.id;
+        long j10 = ((TL_stars.SavedStarGift) ((h61) obj).G).gift.id;
         if (o2Var.b == j10) {
             o2Var.b = 0L;
         } else {
@@ -469,7 +469,7 @@ public final /* synthetic */ class m implements org.telegram.ui.ActionBar.a2, r2
         return true;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ void a0(View view, float f7, float f10) {
     }
 }

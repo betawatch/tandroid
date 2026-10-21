@@ -18,8 +18,8 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.y31;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.q40;
 import org.telegram.ui.q50;
@@ -27,7 +27,7 @@ import org.telegram.ui.re1;
 import org.telegram.ui.sj0;
 import org.telegram.ui.vb;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d6 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -150,7 +150,7 @@ public final /* synthetic */ class d6 implements View.OnClickListener {
                     org.telegram.ui.Wallet.u3 u3Var = new org.telegram.ui.Wallet.u3(dVar2, f3Var2, d6Var, 0);
                     int i13 = this.b;
                     org.telegram.ui.Wallet.m0 w9 = org.telegram.ui.Wallet.m0.w(i13);
-                    w9.j0(new x31(i13, u3Var, w9));
+                    w9.j0(new y31(i13, u3Var, w9));
                     break;
                 }
                 break;

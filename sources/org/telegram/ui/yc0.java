@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yc0 implements o1.g {
     public final /* synthetic */ int a;
@@ -56,11 +56,11 @@ public final /* synthetic */ class yc0 implements o1.g {
             case 3:
                 qu0 qu0Var = (qu0) obj;
                 int dp = qu0Var.e > qu0Var.f ? AndroidUtilities.dp(48.0f) : 0;
-                org.telegram.ui.Components.d81 d81Var = qu0Var.s.q3;
+                org.telegram.ui.Components.e81 e81Var = qu0Var.s.q3;
                 int measuredHeight = qu0Var.getMeasuredHeight();
-                d81Var.h = (int) (((qu0Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - f7) - dp);
-                d81Var.i = measuredHeight;
-                View view2 = d81Var.v;
+                e81Var.h = (int) (((qu0Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - f7) - dp);
+                e81Var.i = measuredHeight;
+                View view2 = e81Var.v;
                 if (view2 != null) {
                     view2.invalidate();
                     break;
@@ -73,11 +73,11 @@ public final /* synthetic */ class yc0 implements o1.g {
                 break;
             default:
                 r31 r31Var = (r31) obj;
-                org.telegram.ui.Components.d81 d81Var2 = r31Var.r.Q;
+                org.telegram.ui.Components.e81 e81Var2 = r31Var.r.Q;
                 int measuredHeight2 = r31Var.getMeasuredHeight();
-                d81Var2.h = (int) (((r31Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - f7) - 0);
-                d81Var2.i = measuredHeight2;
-                View view3 = d81Var2.v;
+                e81Var2.h = (int) (((r31Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - f7) - 0);
+                e81Var2.i = measuredHeight2;
+                View view3 = e81Var2.v;
                 if (view3 != null) {
                     view3.invalidate();
                     break;

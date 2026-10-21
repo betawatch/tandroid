@@ -13,9 +13,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class ot0 extends org.telegram.ui.Components.kg0 {
+public final class ot0 extends org.telegram.ui.Components.lg0 {
     public final Rect M;
     public final /* synthetic */ PhotoViewer N;
 
@@ -35,7 +35,7 @@ public final class ot0 extends org.telegram.ui.Components.kg0 {
         wuVar.getSettings().setMediaPlaybackRequiresUserGesture(false);
         wuVar.getSettings().setMixedContentMode(0);
         CookieManager.getInstance().setAcceptThirdPartyCookies(wuVar, true);
-        wuVar.setWebViewClient(new org.telegram.ui.Components.gg0(this, 0));
+        wuVar.setWebViewClient(new org.telegram.ui.Components.hg0(this, 0));
         addView(wuVar, w7.z5.e(-1, -1, 51));
         LinearLayout linearLayout = new LinearLayout(context);
         this.c = linearLayout;

@@ -2,7 +2,7 @@ package i2;
 
 import v7.u6;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final class q1 {
     public final b a;
@@ -67,14 +67,14 @@ public final class q1 {
     }
 
     public final b d(x0 x0Var) {
-        u2.d1 d1Var;
-        if (x0Var != null && (d1Var = x0Var.c[this.b]) != null) {
+        u2.e1 e1Var;
+        if (x0Var != null && (e1Var = x0Var.c[this.b]) != null) {
             b bVar = this.a;
-            if (bVar.r == d1Var) {
+            if (bVar.r == e1Var) {
                 return bVar;
             }
             b bVar2 = this.c;
-            if (bVar2 != null && bVar2.r == d1Var) {
+            if (bVar2 != null && bVar2.r == e1Var) {
                 return bVar2;
             }
         }
@@ -90,13 +90,13 @@ public final class q1 {
     */
     public final boolean e(x0 x0Var, b bVar) {
         if (bVar != null) {
-            u2.d1[] d1VarArr = x0Var.c;
+            u2.e1[] e1VarArr = x0Var.c;
             int i10 = this.b;
-            u2.d1 d1Var = d1VarArr[i10];
-            u2.d1 d1Var2 = bVar.r;
-            if (d1Var2 != null) {
-                if (d1Var2 == d1Var) {
-                    if (d1Var != null && !bVar.k()) {
+            u2.e1 e1Var = e1VarArr[i10];
+            u2.e1 e1Var2 = bVar.r;
+            if (e1Var2 != null) {
+                if (e1Var2 == e1Var) {
+                    if (e1Var != null && !bVar.k()) {
                         x0 x0Var2 = x0Var.m;
                         if (x0Var.g.h) {
                             if (x0Var2 != null) {
@@ -167,10 +167,10 @@ public final class q1 {
         if (bVar == this.c && this.d == 3) {
             return 1;
         }
-        u2.d1 d1Var = bVar.r;
-        u2.d1[] d1VarArr = x0Var.c;
+        u2.e1 e1Var = bVar.r;
+        u2.e1[] e1VarArr = x0Var.c;
         int i11 = this.b;
-        Object[] objArr = d1Var != d1VarArr[i11];
+        Object[] objArr = e1Var != e1VarArr[i11];
         boolean b10 = tVar.b(i11);
         if (!b10 || objArr != false) {
             if (!bVar.y) {
@@ -181,9 +181,9 @@ public final class q1 {
                     pVar.getClass();
                     wVarArr[i12] = pVar.f(i12);
                 }
-                u2.d1 d1Var2 = x0Var.c[i11];
-                d1Var2.getClass();
-                bVar.y(wVarArr, d1Var2, x0Var.e(), x0Var.p, x0Var.g.a);
+                u2.e1 e1Var2 = x0Var.c[i11];
+                e1Var2.getClass();
+                bVar.y(wVarArr, e1Var2, x0Var.e(), x0Var.p, x0Var.g.a);
                 return 3;
             }
             if (!bVar.l()) {

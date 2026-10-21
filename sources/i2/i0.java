@@ -29,7 +29,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 import v7.u6;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final class i0 extends ai.c1 implements r {
     public final bi.a A;
@@ -46,7 +46,7 @@ public final class i0 extends ai.c1 implements r {
     public boolean L;
     public final r1 M;
     public s1 N;
-    public u2.i1 O;
+    public u2.j1 O;
     public b2.b1 P;
     public b2.r0 Q;
     public b2.r0 R;
@@ -94,7 +94,7 @@ public final class i0 extends ai.c1 implements r {
     public final u2.f0 r;
     public long r0;
     public final j2.f s;
-    public org.telegram.messenger.f1 s0;
+    public org.telegram.messenger.g1 s0;
     public final Looper t;
     public final ArrayList t0;
     public final y2.c u;
@@ -184,7 +184,7 @@ public final class i0 extends ai.c1 implements r {
             CopyOnWriteArraySet copyOnWriteArraySet = new CopyOnWriteArraySet();
             c1Var.n = copyOnWriteArraySet;
             c1Var.p = new ArrayList();
-            c1Var.O = new u2.g1();
+            c1Var.O = new u2.h1();
             b[] bVarArr2 = c1Var.g;
             x2.t tVar = new x2.t(new p1[bVarArr2.length], new x2.p[bVarArr2.length], v1.b, null);
             c1Var.b = tVar;
@@ -1355,7 +1355,7 @@ public final class i0 extends ai.c1 implements r {
                 e0 e0Var = (e0) arrayList.get(i13);
                 b2.o1 o1Var = e0Var.c;
                 b2.o0 o0Var = (b2.o0) list.get(i13 - i10);
-                e0Var.c = o1Var instanceof u2.q1 ? new u2.q1(((u2.q1) o1Var).e, o0Var) : new u2.q1(o1Var, o0Var);
+                e0Var.c = o1Var instanceof u2.r1 ? new u2.r1(((u2.r1) o1Var).e, o0Var) : new u2.r1(o1Var, o0Var);
             }
             D1(this.p0.j(new o1(arrayList, this.O)), 0, false, 4, -9223372036854775807L, -1, false);
             return;
@@ -1639,9 +1639,9 @@ public final class i0 extends ai.c1 implements r {
                 this.O = this.O.f(i10, arrayList2.size());
                 o1 o1Var2 = new o1(arrayList3, this.O);
                 j1 o12 = o1(j1Var, o1Var2, l1(o1Var, o1Var2, k1(j1Var), i1(j1Var)));
-                u2.i1 i1Var = this.O;
+                u2.j1 j1Var2 = this.O;
                 e2.i0 i0Var = this.l.n;
-                m0 m0Var = new m0(arrayList2, i1Var, -1, -9223372036854775807L);
+                m0 m0Var = new m0(arrayList2, j1Var2, -1, -9223372036854775807L);
                 i0Var.getClass();
                 e2.h0 c10 = e2.i0.c();
                 c10.a = i0Var.a.obtainMessage(18, i10, 0, m0Var);
@@ -2000,7 +2000,7 @@ public final class i0 extends ai.c1 implements r {
         if (o1Var.p()) {
             u2.g0 g0Var = j1.u;
             long S = e2.m0.S(this.r0);
-            j1 c10 = j10.d(g0Var, S, S, S, 0L, u2.r1.d, this.b, x1.e).c(g0Var);
+            j1 c10 = j10.d(g0Var, S, S, S, 0L, u2.s1.d, this.b, x1.e).c(g0Var);
             c10.q = c10.s;
             return c10;
         }
@@ -2019,7 +2019,7 @@ public final class i0 extends ai.c1 implements r {
         if (!equals || longValue < S2) {
             u2.g0 g0Var3 = g0Var2;
             u6.p(!g0Var3.b());
-            u2.r1 r1Var = !equals ? u2.r1.d : j10.h;
+            u2.s1 s1Var = !equals ? u2.s1.d : j10.h;
             x2.t tVar = !equals ? this.b : j10.i;
             if (equals) {
                 list = j10.j;
@@ -2027,7 +2027,7 @@ public final class i0 extends ai.c1 implements r {
                 e9.l0 l0Var = e9.n0.b;
                 list = x1.e;
             }
-            j1 c11 = j10.d(g0Var3, longValue, longValue, longValue, 0L, r1Var, tVar, list).c(g0Var3);
+            j1 c11 = j10.d(g0Var3, longValue, longValue, longValue, 0L, s1Var, tVar, list).c(g0Var3);
             c11.q = longValue;
             return c11;
         }
@@ -2109,9 +2109,9 @@ public final class i0 extends ai.c1 implements r {
             return;
         }
         this.Z = new e2.y(i10, i11);
-        org.telegram.messenger.f1 f1Var = this.s0;
-        if (f1Var != null) {
-            f1Var.execute(new hg.n(this, i10, i11, 1));
+        org.telegram.messenger.g1 g1Var = this.s0;
+        if (g1Var != null) {
+            g1Var.execute(new hg.n(this, i10, i11, 1));
             return;
         }
         this.m.e(24, new eh.c(i10, i11, 1));
@@ -2142,11 +2142,11 @@ public final class i0 extends ai.c1 implements r {
                 o12 = n1(o12, 4);
             }
         }
-        u2.i1 i1Var = this.O;
+        u2.j1 j1Var2 = this.O;
         e2.i0 i0Var = this.l.n;
         i0Var.getClass();
         e2.h0 c10 = e2.i0.c();
-        c10.a = i0Var.a.obtainMessage(20, i10, i11, i1Var);
+        c10.a = i0Var.a.obtainMessage(20, i10, i11, j1Var2);
         c10.b();
         return o12;
     }
@@ -2206,10 +2206,10 @@ public final class i0 extends ai.c1 implements r {
         o1 o1Var = new o1(arrayList, this.O);
         j1 j1Var = this.p0;
         j1 o12 = o1(j1Var, o1Var, l1(y02, o1Var, k1(j1Var), i1(this.p0)));
-        u2.i1 i1Var = this.O;
+        u2.j1 j1Var2 = this.O;
         r0 r0Var = this.l;
         r0Var.getClass();
-        r0Var.n.b(19, new n0(i10, min, min2, i1Var)).b();
+        r0Var.n.b(19, new n0(i10, min, min2, j1Var2)).b();
         D1(o12, 0, false, 5, -9223372036854775807L, -1, false);
     }
 

@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class ProxyListActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public NumberTextView E;
@@ -30,7 +30,7 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.n2 implements N
     public final ArrayList G;
     public boolean H;
     public j11 a;
-    public org.telegram.ui.Components.im0 b;
+    public org.telegram.ui.Components.jm0 b;
     public int c;
     public boolean d;
     public int e;
@@ -81,9 +81,9 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.n2 implements N
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(i11, new Object[0]);
             NotificationCenter.getGlobalInstance().addObserver(proxyListActivity, i11);
             for (int i12 = proxyListActivity.n; i12 < proxyListActivity.r; i12++) {
-                org.telegram.ui.Components.sl0 sl0Var = (org.telegram.ui.Components.sl0) proxyListActivity.b.K(i12);
-                if (sl0Var != null) {
-                    ((k11) sl0Var.a).b();
+                org.telegram.ui.Components.tl0 tl0Var = (org.telegram.ui.Components.tl0) proxyListActivity.b.K(i12);
+                if (tl0Var != null) {
+                    ((k11) tl0Var.a).b();
                 }
             }
             return;
@@ -130,17 +130,17 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.n2 implements N
         edit3.commit();
         SharedConfig.currentProxy = proxyInfo;
         for (int i13 = proxyListActivity.n; i13 < proxyListActivity.r; i13++) {
-            org.telegram.ui.Components.sl0 sl0Var2 = (org.telegram.ui.Components.sl0) proxyListActivity.b.K(i13);
-            if (sl0Var2 != null) {
-                k11 k11Var = (k11) sl0Var2.a;
+            org.telegram.ui.Components.tl0 tl0Var2 = (org.telegram.ui.Components.tl0) proxyListActivity.b.K(i13);
+            if (tl0Var2 != null) {
+                k11 k11Var = (k11) tl0Var2.a;
                 k11Var.setChecked(k11Var.d == proxyInfo);
                 k11Var.b();
             }
         }
         proxyListActivity.b0(false);
-        org.telegram.ui.Components.sl0 sl0Var3 = (org.telegram.ui.Components.sl0) proxyListActivity.b.K(proxyListActivity.useProxyRow);
-        if (sl0Var3 != null) {
-            ((org.telegram.ui.Cells.v8) sl0Var3.a).setChecked(true);
+        org.telegram.ui.Components.tl0 tl0Var3 = (org.telegram.ui.Components.tl0) proxyListActivity.b.K(proxyListActivity.useProxyRow);
+        if (tl0Var3 != null) {
+            ((org.telegram.ui.Cells.v8) tl0Var3.a).setChecked(true);
         }
         ConnectionsManager.setProxySettings(proxyListActivity.d, SharedConfig.currentProxy.settings);
     }
@@ -294,9 +294,9 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.n2 implements N
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
         FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
-        this.b = im0Var;
-        im0Var.p1();
+        org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, null);
+        this.b = jm0Var;
+        jm0Var.p1();
         this.actionBar.setAdaptiveBackground(this.b);
         ((s4.k) this.b.getItemAnimator()).C = false;
         ((s4.k) this.b.getItemAnimator()).o = org.telegram.ui.Components.bs.f;
@@ -322,9 +322,9 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.n2 implements N
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        org.telegram.ui.Components.sl0 sl0Var;
+        org.telegram.ui.Components.tl0 tl0Var;
         SharedConfig.ProxyInfo proxyInfo;
-        org.telegram.ui.Components.sl0 sl0Var2;
+        org.telegram.ui.Components.tl0 tl0Var2;
         boolean z10 = false;
         if (i10 == NotificationCenter.proxyChangedByRotation) {
             this.b.M(new j3(this, 7));
@@ -345,8 +345,8 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.n2 implements N
                     return;
                 }
                 int indexOf = arrayList.indexOf(proxyInfo);
-                if (indexOf >= 0 && (sl0Var2 = (org.telegram.ui.Components.sl0) this.b.K(indexOf + this.n)) != null) {
-                    ((k11) sl0Var2.a).b();
+                if (indexOf >= 0 && (tl0Var2 = (org.telegram.ui.Components.tl0) this.b.K(indexOf + this.n)) != null) {
+                    ((k11) tl0Var2.a).b();
                 }
                 if (this.c == 3) {
                     b0(true);
@@ -360,8 +360,8 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.n2 implements N
             return;
         }
         int indexOf2 = arrayList.indexOf((SharedConfig.ProxyInfo) objArr[0]);
-        if (indexOf2 >= 0 && (sl0Var = (org.telegram.ui.Components.sl0) this.b.K(indexOf2 + this.n)) != null) {
-            ((k11) sl0Var.a).b();
+        if (indexOf2 >= 0 && (tl0Var = (org.telegram.ui.Components.tl0) this.b.K(indexOf2 + this.n)) != null) {
+            ((k11) tl0Var.a).b();
         }
         if (!this.H) {
             int size = arrayList.size();

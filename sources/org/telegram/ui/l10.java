@@ -22,7 +22,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class l10 extends pg.b {
     public final Context d;
@@ -33,7 +33,7 @@ public final class l10 extends pg.b {
         this.d = context;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         int i10 = b1Var.f;
         return (i10 == 3 || i10 == 0 || i10 == 5 || i10 == 1) ? false : true;
@@ -319,7 +319,7 @@ public final class l10 extends pg.b {
                         m10 m10Var = new m10(context);
                         TextView textView = new TextView(context);
                         m10Var.a = textView;
-                        org.telegram.messenger.kk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
+                        org.telegram.messenger.mk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
                         textView.setMaxLines(1);
                         textView.setSingleLine(true);
                         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -328,22 +328,22 @@ public final class l10 extends pg.b {
                         m10Var.addView(textView, w7.z5.d(-2, -2.0f, LocaleController.isRTL ? 5 : 3, 22.0f, 10.0f, 22.0f, 0.0f));
                         TextView textView2 = new TextView(context);
                         m10Var.b = textView2;
-                        org.telegram.messenger.kk.u(textView2, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false), 1, 13.0f, 1);
+                        org.telegram.messenger.mk.u(textView2, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false), 1, 13.0f, 1);
                         textView2.setMaxLines(1);
                         textView2.setSingleLine(true);
                         textView2.setEllipsize(truncateAt);
                         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
                         m10Var.addView(textView2, w7.z5.d(-2, -2.0f, LocaleController.isRTL ? 5 : 3, 22.0f, 35.0f, 22.0f, 0.0f));
-                        org.telegram.ui.Components.ti0 ti0Var = new org.telegram.ui.Components.ti0(context);
-                        m10Var.c = ti0Var;
-                        ti0Var.setText(LocaleController.getString(R.string.Add));
-                        ti0Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Sh, false));
-                        ti0Var.setProgressColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Nh, false));
+                        org.telegram.ui.Components.ui0 ui0Var = new org.telegram.ui.Components.ui0(context);
+                        m10Var.c = ui0Var;
+                        ui0Var.setText(LocaleController.getString(R.string.Add));
+                        ui0Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Sh, false));
+                        ui0Var.setProgressColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Nh, false));
                         int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Oh, false);
                         org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Qh, false);
-                        ti0Var.setBackground(org.telegram.ui.ActionBar.x5.e(new float[]{14.0f}, x02));
-                        m10Var.addView(ti0Var, w7.z5.i(-2.0f, 28.0f, 8388661, 0.0f, 18.0f, 14.0f, 0.0f));
-                        m10Var.setAddOnClickListener(new org.telegram.ui.Components.h51(i12, this, m10Var));
+                        ui0Var.setBackground(org.telegram.ui.ActionBar.x5.e(new float[]{14.0f}, x02));
+                        m10Var.addView(ui0Var, w7.z5.i(-2.0f, 28.0f, 8388661, 0.0f, 18.0f, 14.0f, 0.0f));
+                        m10Var.setAddOnClickListener(new org.telegram.ui.Components.i51(i12, this, m10Var));
                         frameLayout = m10Var;
                     } else {
                         frameLayout = new org.telegram.ui.Cells.v8(context);
@@ -362,14 +362,14 @@ public final class l10 extends pg.b {
             int i14 = R.raw.filters;
             SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.CreateNewFilterInfo, new Object[0]));
             i10 i10Var = new i10(context);
-            org.telegram.ui.Components.xj0 xj0Var = new org.telegram.ui.Components.xj0(context);
-            i10Var.a = xj0Var;
-            xj0Var.f(i14, 90, 90, null);
-            xj0Var.setScaleType(ImageView.ScaleType.CENTER);
-            xj0Var.d();
-            xj0Var.setImportantForAccessibility(2);
-            i10Var.addView(xj0Var, w7.z5.d(90, 90.0f, 49, 0.0f, 14.0f, 0.0f, 0.0f));
-            xj0Var.setOnClickListener(new a(i10Var, 27));
+            org.telegram.ui.Components.yj0 yj0Var = new org.telegram.ui.Components.yj0(context);
+            i10Var.a = yj0Var;
+            yj0Var.f(i14, 90, 90, null);
+            yj0Var.setScaleType(ImageView.ScaleType.CENTER);
+            yj0Var.d();
+            yj0Var.setImportantForAccessibility(2);
+            i10Var.addView(yj0Var, w7.z5.d(90, 90.0f, 49, 0.0f, 14.0f, 0.0f, 0.0f));
+            yj0Var.setOnClickListener(new a(i10Var, 27));
             TextView textView3 = new TextView(context);
             textView3.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.B6, false));
             textView3.setTextSize(1, 14.0f);
@@ -378,6 +378,6 @@ public final class l10 extends pg.b {
             i10Var.addView(textView3, w7.z5.d(-1, -2.0f, 49, 40.0f, 121.0f, 40.0f, 24.0f));
             frameLayout = i10Var;
         }
-        return new org.telegram.ui.Components.sl0(frameLayout);
+        return new org.telegram.ui.Components.tl0(frameLayout);
     }
 }

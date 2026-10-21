@@ -17,7 +17,7 @@ import org.telegram.ui.Components.tj;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -245,33 +245,33 @@ public final /* synthetic */ class h0 implements Runnable {
                 if (!tiVar.F || tiVar.G) {
                     i11 = i14;
                 } else {
-                    PhotoViewer.t1().K2(null, n2Var, null);
-                    PhotoViewer t12 = PhotoViewer.t1();
-                    t12.h = 0;
-                    t12.n = false;
+                    PhotoViewer.u1().M2(null, n2Var, null);
+                    PhotoViewer u12 = PhotoViewer.u1();
+                    u12.h = 0;
+                    u12.n = false;
                     i11 = 3;
                 }
                 if (tiVar.H) {
                     i11 = 13;
                 }
-                PhotoViewer.t1().g2(arrayList6, this.c, i11, false, chatAttachAlertPhotoLayout.h1, tiVar.H ? null : qnVar);
-                PhotoViewer.t1().x2(tiVar.Q);
+                PhotoViewer.u1().i2(arrayList6, this.c, i11, false, chatAttachAlertPhotoLayout.h1, tiVar.H ? null : qnVar);
+                PhotoViewer.u1().z2(tiVar.Q);
                 if (tiVar.F && !tiVar.G) {
-                    PhotoViewer.t1().O = false;
+                    PhotoViewer.u1().O = false;
                 } else if (tiVar.T0 != 0) {
-                    PhotoViewer.t1().O = true;
-                    PhotoViewer.t1().P = tiVar.U0 != null;
+                    PhotoViewer.u1().O = true;
+                    PhotoViewer.u1().P = tiVar.U0 != null;
                 }
                 if (tiVar.G) {
-                    PhotoViewer.t1().Y0(null, null, false, tiVar.J);
+                    PhotoViewer.u1().Z0(null, null, false, tiVar.J);
                 }
                 if (ChatAttachAlertPhotoLayout.T()) {
-                    PhotoViewer t13 = PhotoViewer.t1();
+                    PhotoViewer u13 = PhotoViewer.u1();
                     Editable text = tiVar.o1().getText();
-                    t13.p7 = true;
-                    t13.q7 = text;
-                    t13.A2(null, text, false, false);
-                    t13.t3(null);
+                    u13.p7 = true;
+                    u13.q7 = text;
+                    u13.C2(null, text, false, false);
+                    u13.v3(null);
                     break;
                 }
                 break;

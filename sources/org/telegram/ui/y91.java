@@ -9,13 +9,13 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class y91 extends View {
     public ImageReceiver a;
     public ImageReceiver b;
     public View c;
-    public org.telegram.ui.Components.nf0 d;
+    public org.telegram.ui.Components.of0 d;
     public Path e;
     public Drawable f;
 
@@ -46,9 +46,9 @@ public final class y91 extends View {
             canvas.scale(f7, f7, 0.0f, 0.0f);
             canvas.translate(left, top);
             canvas.translate((dp2 - AndroidUtilities.dp(30.0f)) / f7, (measuredHeight - AndroidUtilities.dp(30.0f)) / f7);
-            PhotoViewer.t1().g4 = true;
+            PhotoViewer.u1().g4 = true;
             this.c.draw(canvas);
-            PhotoViewer.t1().g4 = false;
+            PhotoViewer.u1().g4 = false;
             canvas.restore();
         }
         super.draw(canvas);

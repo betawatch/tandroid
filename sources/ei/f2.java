@@ -4,10 +4,10 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.gz;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.un0;
+import org.telegram.ui.Components.vn0;
 import org.telegram.ui.o41;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class f2 extends pq {
     public final /* synthetic */ int h;
@@ -28,7 +28,7 @@ public final class f2 extends pq {
             case 2:
                 return org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Je, ((gz) this.i).G.Z1);
             case 3:
-                return org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Q5, ((un0) this.i).f);
+                return org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Q5, ((vn0) this.i).f);
             default:
                 return org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Je, ((o41) this.i).y.Z0);
         }

@@ -18,7 +18,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.t4;
-import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.i51;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.hc0;
 import org.telegram.ui.jc0;
@@ -27,7 +27,7 @@ import org.telegram.ui.mc0;
 import org.telegram.ui.nc0;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements o0, IMapsProvider.OnMarkerClickListener {
     public final /* synthetic */ float a;
@@ -99,7 +99,7 @@ public final /* synthetic */ class l0 implements o0, IMapsProvider.OnMarkerClick
                 nc0Var2.o0.getBackground().setColorFilter(new PorterDuffColorFilter(nc0Var2.getThemedColor(h6.h5), PorterDuff.Mode.MULTIPLY));
                 frameLayout.addView(nc0Var2.o0, z5.c(71.0f, -2));
                 nc0Var2.o0.setAlpha(0.0f);
-                nc0Var2.o0.setOnClickListener(new h51(27, kc0Var, mc0Var));
+                nc0Var2.o0.setOnClickListener(new i51(27, kc0Var, mc0Var));
                 TextView textView = new TextView(context);
                 textView.setTextSize(1, 16.0f);
                 textView.setMaxLines(1);

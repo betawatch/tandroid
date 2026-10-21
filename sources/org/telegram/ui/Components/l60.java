@@ -37,7 +37,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class l60 extends r60 {
     public int A0;
@@ -65,15 +65,15 @@ public final class l60 extends r60 {
     public si.q0 Q;
     public si.r0 R;
     public si.k0 S;
-    public z01 T;
+    public a11 T;
     public VideoEditedInfo U;
     public k60 V;
     public AnimatorSet W;
     public ValueAnimator a0;
     public ValueAnimator b0;
-    public final uj0 c0;
-    public uj0 d0;
-    public uj0 e0;
+    public final vj0 c0;
+    public vj0 d0;
+    public vj0 e0;
     public final y50 f;
     public boolean f0;
     public boolean g0;
@@ -97,7 +97,7 @@ public final class l60 extends r60 {
     public long u0;
     public final j60 v;
     public float v0;
-    public final um0 w;
+    public final vm0 w;
     public float w0;
     public final FrameLayout x;
     public float x0;
@@ -130,8 +130,8 @@ public final class l60 extends r60 {
         addView(s2Var.b, w7.z5.e(-1, -1, 119));
         j60 j60Var = new j60(this, activity);
         this.v = j60Var;
-        um0 um0Var = new um0(activity);
-        this.w = um0Var;
+        vm0 vm0Var = new vm0(activity);
+        this.w = vm0Var;
         FrameLayout frameLayout = new FrameLayout(activity);
         this.x = frameLayout;
         i60 i60Var = new i60(this, activity, 0);
@@ -149,8 +149,8 @@ public final class l60 extends r60 {
         elVar.setOutlineProvider(new ci.o1(12));
         elVar.setClipToOutline(true);
         frameLayout.addView(elVar, w7.z5.e(-1, -1, 119));
-        um0Var.addView(frameLayout, w7.z5.d(-1, -1.0f, 119, 14.0f, 14.0f, 14.0f, 14.0f));
-        j60Var.addView(um0Var, w7.z5.e(-1, -1, 119));
+        vm0Var.addView(frameLayout, w7.z5.d(-1, -1.0f, 119, 14.0f, 14.0f, 14.0f, 14.0f));
+        j60Var.addView(vm0Var, w7.z5.e(-1, -1, 119));
         int i10 = AndroidUtilities.roundPlayingMessageSize;
         addView(j60Var, new FrameLayout.LayoutParams(i10, i10, 17));
         addView(s2Var.c, w7.z5.e(-1, -1, 119));
@@ -206,7 +206,7 @@ public final class l60 extends r60 {
                                         if (!jVar.V || handler == null) {
                                             z10 = false;
                                         } else {
-                                            handler.post(new p2.b(21, jVar, l0Var2));
+                                            handler.post(new p2.b(23, jVar, l0Var2));
                                             z10 = true;
                                         }
                                         s0Var.w = z10;
@@ -290,7 +290,7 @@ public final class l60 extends r60 {
                                         if (!jVar.V || handler == null) {
                                             z10 = false;
                                         } else {
-                                            handler.post(new p2.b(21, jVar, l0Var2));
+                                            handler.post(new p2.b(23, jVar, l0Var2));
                                             z10 = true;
                                         }
                                         s0Var.w = z10;
@@ -331,11 +331,11 @@ public final class l60 extends r60 {
         });
         int dp = AndroidUtilities.dp(24.0f);
         this.O = dp;
-        uj0 uj0Var = new uj0(R.raw.roundcamera_flip, dp, dp);
-        this.c0 = uj0Var;
-        uj0Var.setCallback(q2Var);
-        uj0Var.M(uj0Var.e[0] - 1);
-        q2Var.setImageDrawable(uj0Var);
+        vj0 vj0Var = new vj0(R.raw.roundcamera_flip, dp, dp);
+        this.c0 = vj0Var;
+        vj0Var.setCallback(q2Var);
+        vj0Var.M(vj0Var.e[0] - 1);
+        q2Var.setImageDrawable(vj0Var);
         z();
         if (d6Var != null && !d6Var.a()) {
             q2Var.setInvert(0.6f);
@@ -487,9 +487,9 @@ public final class l60 extends r60 {
         }
         u(z10 ? 0 : 6);
         this.P.a();
-        z01 z01Var = this.T;
-        if (z01Var != null) {
-            z01Var.d(true);
+        a11 a11Var = this.T;
+        if (a11Var != null) {
+            a11Var.d(true);
         }
         this.T = null;
         MediaController.getInstance().requestRecordAudioFocus(false);
@@ -567,9 +567,9 @@ public final class l60 extends r60 {
             }
             this.P = null;
         }
-        z01 z01Var = this.T;
-        if (z01Var != null) {
-            z01Var.d(true ^ this.j0);
+        a11 a11Var = this.T;
+        if (a11Var != null) {
+            a11Var.d(true ^ this.j0);
             this.T = null;
         }
         setScreenFlashEnabled(false);
@@ -732,7 +732,7 @@ public final class l60 extends r60 {
             elVar.setAlpha(1.0f);
             elVar.invalidate();
         }
-        this.T = new z01(this.h, this.r);
+        this.T = new a11(this.h, this.r);
         this.Q = (si.q0) ti.e.e.a();
         si.j0 j0Var = new si.j0(getContext(), this.y);
         j0Var.c = new File(ApplicationLoader.getFilesDirFixed(), "cache");
@@ -746,8 +746,8 @@ public final class l60 extends r60 {
         j0Var.i = aVar.d;
         l2.f fVar = this.J0;
         j0Var.j = fVar;
-        z01 z01Var = this.T;
-        j0Var.k = z01Var;
+        a11 a11Var = this.T;
+        j0Var.k = a11Var;
         j0Var.l = new tv(this, 6);
         if (j0Var.d == null) {
             throw new IllegalStateException("Initial camera is required");
@@ -767,7 +767,7 @@ public final class l60 extends r60 {
         if (fVar == null) {
             throw new IllegalStateException("Session listener is required");
         }
-        if (z01Var == null) {
+        if (a11Var == null) {
             throw new IllegalStateException("Output listener is required");
         }
         this.P = new si.s0(j0Var);
@@ -931,13 +931,13 @@ public final class l60 extends r60 {
         }
     }
 
-    public final VideoEditedInfo r(File file, long j10, y01 y01Var) {
+    public final VideoEditedInfo r(File file, long j10, z01 z01Var) {
         si.n0 n0Var;
         VideoEditedInfo videoEditedInfo = new VideoEditedInfo();
         videoEditedInfo.startTime = -1L;
         videoEditedInfo.endTime = -1L;
         videoEditedInfo.estimatedDuration = j10;
-        videoEditedInfo.estimatedSize = Math.max(1L, y01Var == null ? file.length() : y01Var.a);
+        videoEditedInfo.estimatedSize = Math.max(1L, z01Var == null ? file.length() : z01Var.a);
         videoEditedInfo.roundVideo = true;
         si.s0 s0Var = this.P;
         videoEditedInfo.framerate = (s0Var == null || (n0Var = s0Var.s) == null) ? 30 : n0Var.a;
@@ -948,11 +948,11 @@ public final class l60 extends r60 {
         videoEditedInfo.originalHeight = i10;
         videoEditedInfo.resultHeight = i10;
         videoEditedInfo.originalPath = file.getAbsolutePath();
-        if (y01Var != null) {
-            videoEditedInfo.file = y01Var.b;
-            videoEditedInfo.encryptedFile = y01Var.c;
-            videoEditedInfo.key = y01Var.d;
-            videoEditedInfo.iv = y01Var.e;
+        if (z01Var != null) {
+            videoEditedInfo.file = z01Var.b;
+            videoEditedInfo.encryptedFile = z01Var.c;
+            videoEditedInfo.key = z01Var.d;
+            videoEditedInfo.iv = z01Var.e;
         }
         return videoEditedInfo;
     }
@@ -1143,17 +1143,17 @@ public final class l60 extends r60 {
         ei.q2 q2Var = this.H;
         if (r0Var == null || !r0Var.f) {
             if (this.d0 == null) {
-                uj0 uj0Var = new uj0(R.raw.roundcamera_flash_on, i10, i10);
-                this.d0 = uj0Var;
-                uj0Var.setCallback(q2Var);
+                vj0 vj0Var = new vj0(R.raw.roundcamera_flash_on, i10, i10);
+                this.d0 = vj0Var;
+                vj0Var.setCallback(q2Var);
             }
             q2Var.setImageDrawable(this.d0);
             return;
         }
         if (this.e0 == null) {
-            uj0 uj0Var2 = new uj0(R.raw.roundcamera_flash_off, i10, i10);
-            this.e0 = uj0Var2;
-            uj0Var2.setCallback(q2Var);
+            vj0 vj0Var2 = new vj0(R.raw.roundcamera_flash_off, i10, i10);
+            this.e0 = vj0Var2;
+            vj0Var2.setCallback(q2Var);
         }
         q2Var.setImageDrawable(this.e0);
     }

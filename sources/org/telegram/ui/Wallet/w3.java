@@ -5,9 +5,9 @@ import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.c71;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -37,12 +37,12 @@ public final /* synthetic */ class w3 implements Utilities.Callback {
                 String lowerCase = ((String) obj).trim().toLowerCase(Locale.ROOT);
                 o5 o5Var2 = this.b;
                 o5Var2.j0 = lowerCase;
-                b71[] b71VarArr = o5Var2.q0;
-                b71 b71Var = b71VarArr[1];
-                if (b71Var != null) {
-                    o5.S0(b71Var, true);
-                    b71VarArr[1].u0(0);
-                    b71VarArr[1].post(new p3(o5Var2, 6));
+                c71[] c71VarArr = o5Var2.q0;
+                c71 c71Var = c71VarArr[1];
+                if (c71Var != null) {
+                    o5.S0(c71Var, true);
+                    c71VarArr[1].u0(0);
+                    c71VarArr[1].post(new p3(o5Var2, 6));
                     break;
                 }
                 break;

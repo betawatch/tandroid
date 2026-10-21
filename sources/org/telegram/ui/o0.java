@@ -11,7 +11,7 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class o0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -447,9 +447,9 @@ public final class o0 implements TextWatcher {
                 if (!str10.equals(nd1Var.n)) {
                     org.telegram.ui.Components.f90 f90Var = new org.telegram.ui.Components.f90(1, null);
                     f90Var.a(nd1Var.n);
-                    org.telegram.ui.Components.nm0 nm0Var = nd1Var.v;
-                    if (nm0Var != null) {
-                        nm0Var.b(f90Var, true);
+                    org.telegram.ui.Components.om0 om0Var = nd1Var.v;
+                    if (om0Var != null) {
+                        om0Var.b(f90Var, true);
                         break;
                     }
                 }
@@ -481,7 +481,7 @@ public final class o0 implements TextWatcher {
                 if (orVar.x) {
                     orVar.F.setDuration(220L);
                 } else {
-                    org.telegram.messenger.kk.l(1.5f, orVar.F);
+                    org.telegram.messenger.mk.l(1.5f, orVar.F);
                     orVar.F.setDuration(350L);
                 }
                 orVar.F.start();

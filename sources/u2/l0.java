@@ -1,146 +1,19 @@
 package u2;
 
-import java.util.List;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final class l0 implements x2.p {
-    public final x2.p a;
-    public final b2.p1 b;
+public interface l0 {
+    void d(int i10, g0 g0Var, c0 c0Var);
 
-    public l0(x2.p pVar, b2.p1 p1Var) {
-        this.a = pVar;
-        this.b = p1Var;
-    }
+    void e(int i10, g0 g0Var, c0 c0Var);
 
-    @Override // x2.p
-    public final boolean a(int i10, long j10) {
-        return this.a.a(i10, j10);
-    }
+    void f(int i10, g0 g0Var, u uVar, c0 c0Var);
 
-    @Override // x2.p
-    public final b2.p1 b() {
-        return this.b;
-    }
+    void g(int i10, g0 g0Var, u uVar, c0 c0Var, IOException iOException, boolean z10);
 
-    @Override // x2.p
-    public final int c() {
-        return this.a.c();
-    }
+    void i(int i10, g0 g0Var, u uVar, c0 c0Var, int i11);
 
-    @Override // x2.p
-    public final boolean d(long j10, v2.f fVar, List list) {
-        return this.a.d(j10, fVar, list);
-    }
-
-    @Override // x2.p
-    public final void e(boolean z10) {
-        this.a.e(z10);
-    }
-
-    public final boolean equals(Object obj) {
-        if (v(obj) && (obj instanceof l0)) {
-            return this.b.equals(((l0) obj).b);
-        }
-        return false;
-    }
-
-    @Override // x2.p
-    public final b2.w f(int i10) {
-        return this.b.d[this.a.h(i10)];
-    }
-
-    @Override // x2.p
-    public final void g() {
-        this.a.g();
-    }
-
-    @Override // x2.p
-    public final int h(int i10) {
-        return this.a.h(i10);
-    }
-
-    public final int hashCode() {
-        return this.b.hashCode() + (this.a.hashCode() * 31);
-    }
-
-    @Override // x2.p
-    public final int i(long j10, List list) {
-        return this.a.i(j10, list);
-    }
-
-    @Override // x2.p
-    public final void j() {
-        this.a.j();
-    }
-
-    @Override // x2.p
-    public final void k(long j10, long j11, long j12, List list, v2.m[] mVarArr) {
-        this.a.k(j10, j11, j12, list, mVarArr);
-    }
-
-    @Override // x2.p
-    public final int l() {
-        return this.a.l();
-    }
-
-    @Override // x2.p
-    public final int length() {
-        return this.a.length();
-    }
-
-    @Override // x2.p
-    public final b2.w m() {
-        return this.b.d[this.a.l()];
-    }
-
-    @Override // x2.p
-    public final int n() {
-        return this.a.n();
-    }
-
-    @Override // x2.p
-    public final boolean o(int i10, long j10) {
-        return this.a.o(i10, j10);
-    }
-
-    @Override // x2.p
-    public final void p(float f7) {
-        this.a.p(f7);
-    }
-
-    @Override // x2.p
-    public final Object q() {
-        return this.a.q();
-    }
-
-    @Override // x2.p
-    public final void r() {
-        this.a.r();
-    }
-
-    @Override // x2.p
-    public final int s(b2.w wVar) {
-        return this.a.u(this.b.a(wVar));
-    }
-
-    @Override // x2.p
-    public final void t() {
-        this.a.t();
-    }
-
-    @Override // x2.p
-    public final int u(int i10) {
-        return this.a.u(i10);
-    }
-
-    public final boolean v(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof l0) {
-            return this.a.equals(((l0) obj).a);
-        }
-        return false;
-    }
+    void k(int i10, g0 g0Var, u uVar, c0 c0Var);
 }

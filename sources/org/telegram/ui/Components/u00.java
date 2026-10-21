@@ -15,9 +15,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class u00 extends hm0 {
+public final class u00 extends im0 {
     public final Context c;
     public final /* synthetic */ v00 d;
 
@@ -26,7 +26,7 @@ public final class u00 extends hm0 {
         this.c = activity;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         return true;
     }
@@ -101,6 +101,6 @@ public final class u00 extends hm0 {
         org.telegram.ui.ActionBar.y2 y2Var = new org.telegram.ui.ActionBar.y2(this.c, 0, null);
         y2Var.setBackground(null);
         y2Var.setLayoutParams(new s4.o0(-1, -2));
-        return new sl0(y2Var);
+        return new tl0(y2Var);
     }
 }

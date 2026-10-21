@@ -5,7 +5,7 @@ import java.util.HashMap;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class fi implements oj {
     public final /* synthetic */ ti a;
@@ -32,6 +32,6 @@ public final class fi implements oj {
 
     @Override // org.telegram.ui.Components.oj
     public final void c(ArrayList arrayList, String str, boolean z10, int i10, long j10, boolean z11) {
-        ((org.telegram.ui.qn) this.a.f0).hb(arrayList, str, z10, i10, j10, z11);
+        ((org.telegram.ui.qn) this.a.f0).ib(arrayList, str, z10, i10, j10, z11);
     }
 }

@@ -2,16 +2,16 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class ec0 implements wl0 {
+public final class ec0 implements xl0 {
     public final /* synthetic */ ic0 a;
 
     public ec0(ic0 ic0Var) {
         this.a = ic0Var;
     }
 
-    @Override // org.telegram.ui.Components.wl0
+    @Override // org.telegram.ui.Components.xl0
     public final void a(int i10, View view) {
         ic0 ic0Var = this.a;
         if (ic0Var.a != 1 || ic0Var.r.previewMessages.size() <= 1) {

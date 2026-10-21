@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class op extends s4.g0 {
     public final /* synthetic */ Context c;
@@ -92,13 +92,13 @@ public final class op extends s4.g0 {
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         Context context = this.c;
         if (i10 == 0) {
-            return new org.telegram.ui.Components.sl0(new org.telegram.ui.Cells.d9(context));
+            return new org.telegram.ui.Components.tl0(new org.telegram.ui.Cells.d9(context));
         }
         if (i10 == 1) {
-            return new org.telegram.ui.Components.sl0(new org.telegram.ui.Cells.l4(context, 23));
+            return new org.telegram.ui.Components.tl0(new org.telegram.ui.Cells.l4(context, 23));
         }
         if (i10 != 3) {
-            return new org.telegram.ui.Components.sl0(new org.telegram.ui.Cells.y(context, false, false));
+            return new org.telegram.ui.Components.tl0(new org.telegram.ui.Cells.y(context, false, false));
         }
         FrameLayout frameLayout = new FrameLayout(context);
         pp ppVar = this.d;
@@ -107,6 +107,6 @@ public final class op extends s4.g0 {
         }
         frameLayout.addView(ppVar.s);
         frameLayout.setLayoutParams(new s4.o0(-1, -2));
-        return new org.telegram.ui.Components.sl0(frameLayout);
+        return new org.telegram.ui.Components.tl0(frameLayout);
     }
 }

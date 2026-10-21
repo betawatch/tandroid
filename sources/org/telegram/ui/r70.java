@@ -21,7 +21,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class r70 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, View.OnClickListener, ne.d, qh.d {
     public boolean E;
@@ -42,9 +42,9 @@ public final class r70 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public p70 d;
     public org.telegram.ui.ActionBar.v1 e;
     public q70 f;
-    public org.telegram.ui.Components.im0 h;
+    public org.telegram.ui.Components.jm0 h;
     public s4.b0 n;
-    public org.telegram.ui.Components.sx0 r;
+    public org.telegram.ui.Components.tx0 r;
     public n70 s;
     public boolean v;
     public ArrayList w;
@@ -107,7 +107,7 @@ public final class r70 extends org.telegram.ui.ActionBar.n2 implements Notificat
                 q70Var.b = false;
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 q70Var.a = animatorSet2;
-                animatorSet2.addListener(new org.telegram.ui.Components.o31(q70Var, 29));
+                animatorSet2.addListener(new org.telegram.ui.Components.p31(q70Var, 29));
                 q70Var.a.setInterpolator(org.telegram.ui.Components.bs.h);
                 q70Var.a.setDuration(320L);
                 q70Var.d = v30Var2;
@@ -232,9 +232,9 @@ public final class r70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         org.telegram.ui.Components.b10 b10Var = new org.telegram.ui.Components.b10(context, null);
         b10Var.setViewType(6);
         b10Var.w = false;
-        org.telegram.ui.Components.sx0 sx0Var = new org.telegram.ui.Components.sx0(context, b10Var, 0, null);
-        this.r = sx0Var;
-        sx0Var.addView(b10Var, 0);
+        org.telegram.ui.Components.tx0 tx0Var = new org.telegram.ui.Components.tx0(context, b10Var, 0, null);
+        this.r = tx0Var;
+        tx0Var.addView(b10Var, 0);
         this.r.setAnimateLayoutChange(true);
         this.r.d.setText(LocaleController.getString(R.string.NoContacts));
         this.r.e.setText("");
@@ -244,9 +244,9 @@ public final class r70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         m0Var.addView(this.r);
         this.n = new s4.b0(1, false);
         this.s = new n70(this, context);
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
-        this.h = im0Var;
-        im0Var.setSections(true);
+        org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, null);
+        this.h = jm0Var;
+        jm0Var.setSections(true);
         this.h.setEmptyView(this.r);
         this.h.setAdapter(this.s);
         this.h.setLayoutManager(this.n);
@@ -266,9 +266,9 @@ public final class r70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.c.setContentDescription(LocaleController.getString(R.string.Next));
         this.c.setOnClickListener(new s50(this, 4));
         this.actionBar.setBackgroundColor(getThemedColor(i10));
-        org.telegram.ui.Components.im0 im0Var2 = this.h;
-        Objects.requireNonNull(im0Var2);
-        this.N = new bh.l(im0Var2, m0Var, new ks(im0Var2, 0));
+        org.telegram.ui.Components.jm0 jm0Var2 = this.h;
+        Objects.requireNonNull(jm0Var2);
+        this.N = new bh.l(jm0Var2, m0Var, new ks(jm0Var2, 0));
         this.h.C0(new k70(this, 0));
         n70 n70Var = this.s;
         if (n70Var != null && !this.E) {
@@ -288,9 +288,9 @@ public final class r70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         ArrayList arrayList = new ArrayList(ContactsController.getInstance(this.currentAccount).phoneBookContacts);
         this.w = arrayList;
         Collections.sort(arrayList, new org.telegram.ui.ActionBar.i4(29));
-        org.telegram.ui.Components.sx0 sx0Var = this.r;
-        if (sx0Var != null) {
-            sx0Var.e(false, true);
+        org.telegram.ui.Components.tx0 tx0Var = this.r;
+        if (tx0Var != null) {
+            tx0Var.e(false, true);
         }
         n70 n70Var = this.s;
         if (n70Var != null) {
@@ -300,14 +300,14 @@ public final class r70 extends org.telegram.ui.ActionBar.n2 implements Notificat
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        org.telegram.ui.Components.sx0 sx0Var;
+        org.telegram.ui.Components.tx0 tx0Var;
         if (i10 == NotificationCenter.contactsImported) {
             d0();
         } else {
-            if (i10 != NotificationCenter.contactsDidLoad || (sx0Var = this.r) == null) {
+            if (i10 != NotificationCenter.contactsDidLoad || (tx0Var = this.r) == null) {
                 return;
             }
-            sx0Var.e(false, true);
+            tx0Var.e(false, true);
         }
     }
 

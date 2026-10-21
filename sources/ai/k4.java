@@ -6,10 +6,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.tv0;
+import org.telegram.ui.Components.uv0;
 import org.telegram.ui.eh;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k4 implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -45,7 +45,7 @@ public final /* synthetic */ class k4 implements Utilities.Callback {
                 AndroidUtilities.runOnUIThread(new eh(26, (org.telegram.ui.Components.qc) obj2, (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) ? LocaleController.getString(R.string.AddEmojiNotFound) : i11 == 1 ? AndroidUtilities.replaceTags(LocaleController.formatString("TopicContainsEmojiPackSingle", R.string.TopicContainsEmojiPackSingle, stickerSet.title)) : i11 == 2 ? AndroidUtilities.replaceTags(LocaleController.formatString("StoryContainsEmojiPackSingle", R.string.StoryContainsEmojiPackSingle, stickerSet.title)) : AndroidUtilities.replaceTags(LocaleController.formatString("MessageContainsEmojiPackSingle", R.string.MessageContainsEmojiPackSingle, stickerSet.title))), Math.max(1L, 750 - (System.currentTimeMillis() - j10)));
                 break;
             default:
-                ((tv0) obj2).getStoriesController().b(i11, j10, (ArrayList) obj);
+                ((uv0) obj2).getStoriesController().b(i11, j10, (ArrayList) obj);
                 break;
         }
     }
@@ -56,8 +56,8 @@ public final /* synthetic */ class k4 implements Utilities.Callback {
         this.c = j10;
     }
 
-    public /* synthetic */ k4(tv0 tv0Var, long j10, int i10) {
-        this.d = tv0Var;
+    public /* synthetic */ k4(uv0 uv0Var, long j10, int i10) {
+        this.d = uv0Var;
         this.c = j10;
         this.b = i10;
     }

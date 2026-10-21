@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.content.Intent;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class da1 implements org.telegram.ui.Components.tl0, org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class da1 implements org.telegram.ui.Components.ul0, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ThemeActivity b;
 
@@ -35,7 +35,7 @@ public final /* synthetic */ class da1 implements org.telegram.ui.Components.tl0
         }
     }
 
-    @Override // org.telegram.ui.Components.tl0
+    @Override // org.telegram.ui.Components.ul0
     public int run() {
         int i10;
         i10 = this.b.sensitiveContentRow;

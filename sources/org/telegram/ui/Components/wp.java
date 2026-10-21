@@ -41,12 +41,12 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.WallpapersListActivity;
 import org.telegram.ui.kc1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class wp extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int i0 = 0;
     public final TextView E;
-    public final uj0 F;
+    public final vj0 F;
     public final pp G;
     public final qp H;
     public final View I;
@@ -85,7 +85,7 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
     public final org.telegram.ui.ActionBar.c4 r;
     public final boolean s;
     public final org.telegram.ui.qn v;
-    public final im0 w;
+    public final jm0 w;
     public final s4.b0 x;
     public final b10 y;
 
@@ -142,43 +142,43 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
         int i12 = org.telegram.ui.ActionBar.h6.Oh;
         int themedColor = getThemedColor(i12);
         int dp2 = AndroidUtilities.dp(28.0f);
-        uj0 uj0Var = new uj0(R.raw.sun_outline, dp2, dp2, false, null);
-        this.F = uj0Var;
+        vj0 vj0Var = new vj0(R.raw.sun_outline, dp2, dp2, false, null);
+        this.F = vj0Var;
         this.N = !org.telegram.ui.ActionBar.h6.I.q();
         C(org.telegram.ui.ActionBar.h6.I.q(), false);
-        uj0Var.J(true);
-        uj0Var.h = true;
-        uj0Var.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
+        vj0Var.J(true);
+        vj0Var.h = true;
+        vj0Var.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
         pp ppVar = new pp(this, getContext());
         this.G = ppVar;
-        ppVar.setAnimation(uj0Var);
+        ppVar.setAnimation(vj0Var);
         ppVar.setScaleType(ImageView.ScaleType.CENTER);
         ppVar.setOnClickListener(new fp(this, 2));
         frameLayout.addView(ppVar, w7.z5.d(44, 44.0f, 8388661, 0.0f, -2.0f, 7.0f, 0.0f));
         this.H = new qp(getContext());
-        im0 im0Var = new im0(getContext(), null);
-        this.w = im0Var;
-        im0Var.setAdapter(upVar);
-        im0Var.setDrawSelection(false);
-        im0Var.setClipChildren(false);
-        im0Var.setClipToPadding(false);
-        im0Var.setHasFixedSize(true);
-        im0Var.setItemAnimator(null);
-        im0Var.setNestedScrollingEnabled(false);
+        jm0 jm0Var = new jm0(getContext(), null);
+        this.w = jm0Var;
+        jm0Var.setAdapter(upVar);
+        jm0Var.setDrawSelection(false);
+        jm0Var.setClipChildren(false);
+        jm0Var.setClipToPadding(false);
+        jm0Var.setHasFixedSize(true);
+        jm0Var.setItemAnimator(null);
+        jm0Var.setNestedScrollingEnabled(false);
         getContext();
         s4.b0 b0Var = new s4.b0(0, false);
         this.x = b0Var;
-        im0Var.setLayoutManager(b0Var);
-        im0Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
+        jm0Var.setLayoutManager(b0Var);
+        jm0Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
         int i13 = 3;
-        im0Var.setOnItemClickListener(new j(this, i13));
-        im0Var.setOnScrollListener(new ah.d0(this, 29));
+        jm0Var.setOnItemClickListener(new j(this, i13));
+        jm0Var.setOnScrollListener(new ah.d0(this, 29));
         b10 b10Var = new b10(getContext(), this.resourcesProvider);
         this.y = b10Var;
         b10Var.setViewType(14);
         b10Var.setVisibility(0);
         frameLayout.addView(b10Var, w7.z5.d(-1, 104.0f, 8388611, 0.0f, 44.0f, 0.0f, 0.0f));
-        frameLayout.addView(im0Var, w7.z5.d(-1, 104.0f, 8388611, 0.0f, 44.0f, 0.0f, 0.0f));
+        frameLayout.addView(jm0Var, w7.z5.d(-1, 104.0f, 8388611, 0.0f, 44.0f, 0.0f, 0.0f));
         View view = new View(getContext());
         this.I = view;
         int dp3 = AndroidUtilities.dp(6.0f);
@@ -277,8 +277,8 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
     }
 
     public static void p(wp wpVar, View view, int i10) {
-        gr0 gr0Var;
-        im0 im0Var = wpVar.w;
+        hr0 hr0Var;
+        jm0 jm0Var = wpVar.w;
         up upVar = wpVar.h;
         if (upVar.d.get(i10) == wpVar.M || wpVar.R != null) {
             return;
@@ -287,15 +287,15 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
         wpVar.A();
         upVar.E(i10);
         wpVar.containerView.postDelayed(new hf(wpVar, i10, 1), 100L);
-        for (int i11 = 0; i11 < im0Var.getChildCount(); i11++) {
-            q21 q21Var = (q21) im0Var.getChildAt(i11);
-            if (q21Var != view && (gr0Var = q21Var.J) != null) {
-                AndroidUtilities.cancelRunOnUIThread(gr0Var);
-                q21Var.J.run();
+        for (int i11 = 0; i11 < jm0Var.getChildCount(); i11++) {
+            r21 r21Var = (r21) jm0Var.getChildAt(i11);
+            if (r21Var != view && (hr0Var = r21Var.J) != null) {
+                AndroidUtilities.cancelRunOnUIThread(hr0Var);
+                r21Var.J.run();
             }
         }
         if (!((vp) upVar.d.get(i10)).a.a) {
-            ((q21) view).d();
+            ((r21) view).d();
         }
         wpVar.F(true);
     }
@@ -334,7 +334,7 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
         ArrayList arrayList = upVar.d;
         org.telegram.ui.ActionBar.c4 c4Var = this.W;
         s4.b0 b0Var = this.x;
-        im0 im0Var = this.w;
+        jm0 jm0Var = this.w;
         if (c4Var != null) {
             int i10 = 0;
             while (true) {
@@ -357,7 +357,7 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
                 }
                 int min = Math.min(i10, upVar.d.size() - 1);
                 if (z10) {
-                    im0Var.x0(min);
+                    jm0Var.x0(min);
                 } else {
                     b0Var.h1(min, 0);
                 }
@@ -366,7 +366,7 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
             this.M = (vp) arrayList.get(0);
             upVar.E(0);
             if (z10) {
-                im0Var.x0(0);
+                jm0Var.x0(0);
             } else {
                 b0Var.h1(0, 0);
             }
@@ -380,18 +380,18 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
         }
         this.N = z10;
         pp ppVar = this.G;
-        uj0 uj0Var = this.F;
+        vj0 vj0Var = this.F;
         if (z11) {
-            uj0Var.P(z10 ? uj0Var.e[0] : 0);
+            vj0Var.P(z10 ? vj0Var.e[0] : 0);
             if (ppVar != null) {
                 ppVar.d();
                 return;
             }
             return;
         }
-        int i10 = z10 ? uj0Var.e[0] - 1 : 0;
-        uj0Var.N(i10, false, true);
-        uj0Var.P(i10);
+        int i10 = z10 ? vj0Var.e[0] - 1 : 0;
+        vj0Var.N(i10, false, true);
+        vj0Var.P(i10);
         if (ppVar != null) {
             ppVar.invalidate();
         }
@@ -660,7 +660,7 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
         int i10 = 0;
         arrayList.add(new org.telegram.ui.ActionBar.j6(null, 32, null, null, new Drawable[]{this.shadowDrawable}, tpVar, org.telegram.ui.ActionBar.h6.h5));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.E, 4, null, null, null, null, org.telegram.ui.ActionBar.h6.j5));
-        arrayList.add(new org.telegram.ui.ActionBar.j6(this.w, 16, new Class[]{q21.class}, null, null, null, org.telegram.ui.ActionBar.h6.i5));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(this.w, 16, new Class[]{r21.class}, null, null, null, org.telegram.ui.ActionBar.h6.i5));
         int i11 = org.telegram.ui.ActionBar.h6.Oh;
         View view = this.I;
         arrayList.add(new org.telegram.ui.ActionBar.j6(view, 32, null, null, null, null, i11));
@@ -786,16 +786,16 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
                     i10 = qnVar.i();
                     if (i10 != null && !i10.self) {
                         z12 = c4Var.a;
-                        ux0 ux0Var = new ux0(getContext(), null, 1, -1, c4Var.e(), qnVar.getResourceProvider());
-                        ux0Var.c.setVisibility(8);
-                        TextView textView = ux0Var.b;
+                        vx0 vx0Var = new vx0(getContext(), null, 1, -1, c4Var.e(), qnVar.getResourceProvider());
+                        vx0Var.c.setVisibility(8);
+                        TextView textView = vx0Var.b;
                         if (z12) {
                             textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("ThemeAlsoAppliedForHint", R.string.ThemeAlsoAppliedForHint, i10.first_name)));
                         } else {
                             textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("ThemeAlsoDisabledForHint", R.string.ThemeAlsoDisabledForHint, i10.first_name)));
                         }
                         textView.setTypeface(null);
-                        qcVar = qc.g(qnVar, ux0Var, 2750);
+                        qcVar = qc.g(qnVar, vx0Var, 2750);
                     }
                 }
             }
@@ -814,13 +814,13 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
             i10 = qnVar.i();
             if (i10 != null) {
                 z12 = c4Var.a;
-                ux0 ux0Var2 = new ux0(getContext(), null, 1, -1, c4Var.e(), qnVar.getResourceProvider());
-                ux0Var2.c.setVisibility(8);
-                TextView textView2 = ux0Var2.b;
+                vx0 vx0Var2 = new vx0(getContext(), null, 1, -1, c4Var.e(), qnVar.getResourceProvider());
+                vx0Var2.c.setVisibility(8);
+                TextView textView2 = vx0Var2.b;
                 if (z12) {
                 }
                 textView2.setTypeface(null);
-                qcVar = qc.g(qnVar, ux0Var2, 2750);
+                qcVar = qc.g(qnVar, vx0Var2, 2750);
             }
         }
         dismiss();

@@ -7,9 +7,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class a30 extends hm0 {
+public final class a30 extends im0 {
     public ChatObject.Call c;
     public final int d;
     public ArrayList h;
@@ -25,7 +25,7 @@ public final class a30 extends hm0 {
         this.r = q50Var;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         return false;
     }
@@ -48,7 +48,7 @@ public final class a30 extends hm0 {
         }
     }
 
-    public final void G(im0 im0Var, boolean z10) {
+    public final void G(jm0 jm0Var, boolean z10) {
         if (this.c == null) {
             return;
         }
@@ -81,7 +81,7 @@ public final class a30 extends hm0 {
             arrayList.addAll(call4.visibleVideoParticipants);
         }
         s4.o.c(new y20(this, arrayList4, arrayList3), true).c(this);
-        AndroidUtilities.updateVisibleRows(im0Var);
+        AndroidUtilities.updateVisibleRows(jm0Var);
     }
 
     @Override // s4.g0
@@ -131,6 +131,6 @@ public final class a30 extends hm0 {
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        return new sl0(new z20(this, viewGroup.getContext()));
+        return new tl0(new z20(this, viewGroup.getContext()));
     }
 }

@@ -30,7 +30,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ca implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -238,7 +238,7 @@ public final /* synthetic */ class ca implements View.OnClickListener {
                 break;
             case 9:
                 ((ps) obj2).B0 = !r12.B0;
-                ((t61) obj).N(true);
+                ((u61) obj).N(true);
                 break;
             case 10:
                 ((nt) obj2).dismiss();
@@ -373,13 +373,13 @@ public final /* synthetic */ class ca implements View.OnClickListener {
                 r80.n((r80) obj2, (p80) obj);
                 break;
             case 20:
-                if0.n((if0) obj2, (org.telegram.ui.ActionBar.d6) obj);
+                jf0.n((jf0) obj2, (org.telegram.ui.ActionBar.d6) obj);
                 break;
             case 21:
-                aj0 aj0Var = (aj0) obj2;
+                bj0 bj0Var = (bj0) obj2;
                 org.telegram.ui.xu xuVar = (org.telegram.ui.xu) obj;
-                if (aj0Var.J.getTag() == null) {
-                    int max = (int) Math.max(1.0f, aj0Var.getValue());
+                if (bj0Var.J.getTag() == null) {
+                    int max = (int) Math.max(1.0f, bj0Var.getValue());
                     org.telegram.ui.nc0 nc0Var = (org.telegram.ui.nc0) xuVar.c;
                     TLRPC.User user = (TLRPC.User) xuVar.b;
                     if (nc0Var.getLocationController().getSharingLocationInfo(nc0Var.e0) == null) {
@@ -399,21 +399,21 @@ public final /* synthetic */ class ca implements View.OnClickListener {
                         r9 = 1;
                     }
                     if (r9 != 0) {
-                        aj0Var.a();
+                        bj0Var.a();
                         break;
                     }
                 }
                 break;
             case 22:
-                fj0 fj0Var = (fj0) obj2;
+                gj0 gj0Var = (gj0) obj2;
                 Context context = (Context) obj;
-                Uri bitmapShareUri = AndroidUtilities.getBitmapShareUri(fj0Var.b, "qr_tmp.png", Bitmap.CompressFormat.PNG);
+                Uri bitmapShareUri = AndroidUtilities.getBitmapShareUri(gj0Var.b, "qr_tmp.png", Bitmap.CompressFormat.PNG);
                 if (bitmapShareUri != null) {
                     Intent intent = new Intent("android.intent.action.SEND");
                     intent.setType("image/*");
                     intent.putExtra("android.intent.extra.STREAM", bitmapShareUri);
                     try {
-                        AndroidUtilities.findActivity(context).startActivityForResult(Intent.createChooser(intent, fj0Var.getTitleView().getText()), 500);
+                        AndroidUtilities.findActivity(context).startActivityForResult(Intent.createChooser(intent, gj0Var.getTitleView().getText()), 500);
                         break;
                     } catch (ActivityNotFoundException e) {
                         e.printStackTrace();
@@ -432,11 +432,11 @@ public final /* synthetic */ class ca implements View.OnClickListener {
             case 24:
                 ai.y9 y9Var = (ai.y9) obj2;
                 y9Var.e = !y9Var.e;
-                ((org.telegram.messenger.uj) obj).run();
+                ((org.telegram.messenger.wj) obj).run();
                 y9Var.j(true);
                 break;
             case 25:
-                org.telegram.ui.et.q().v(((ly0) obj2).r.m0);
+                org.telegram.ui.et.q().v(((my0) obj2).r.m0);
                 org.telegram.ui.et.q().y((org.telegram.ui.Cells.e8) obj);
                 break;
             case 26:
@@ -453,15 +453,15 @@ public final /* synthetic */ class ca implements View.OnClickListener {
                 }
                 break;
             case 28:
-                d51 d51Var = (d51) obj2;
-                d51Var.k0 = false;
-                d51Var.K();
-                ((t61) obj).N(true);
-                d51Var.u();
+                e51 e51Var = (e51) obj2;
+                e51Var.k0 = false;
+                e51Var.K();
+                ((u61) obj).N(true);
+                e51Var.u();
                 break;
             default:
                 View.OnClickListener onClickListener = (View.OnClickListener) obj;
-                ImageView imageView = ((y41) obj2).s;
+                ImageView imageView = ((z41) obj2).s;
                 imageView.animate().rotation(imageView.getRotation() + 180.0f).setDuration(380L).setInterpolator(bs.h).start();
                 if (onClickListener != null) {
                     onClickListener.onClick(view);

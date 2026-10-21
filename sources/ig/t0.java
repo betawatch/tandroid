@@ -19,7 +19,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -29,15 +29,15 @@ import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.u8;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.as;
-import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.c71;
 import org.telegram.ui.Components.dq;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class t0 extends n2 {
     public static final int U = -1;
@@ -79,7 +79,7 @@ public final class t0 extends n2 {
     public boolean T;
     public as a;
     public org.telegram.ui.ActionBar.u0 b;
-    public b71 c;
+    public c71 c;
     public hg.a2 d;
     public FrameLayout e;
     public EditTextBoldCursor f;
@@ -114,7 +114,7 @@ public final class t0 extends n2 {
         }
         if (tLObject instanceof TLRPC.TL_boolFalse) {
             t0Var.a.a(0.0f);
-            kk.q(R.string.UnknownError, xc.a0(t0Var), null);
+            mk.q(R.string.UnknownError, xc.a0(t0Var), null);
             return;
         }
         if (tLObject instanceof TLRPC.Updates) {
@@ -140,9 +140,9 @@ public final class t0 extends n2 {
         }
     }
 
-    public static void W(final t0 t0Var, g61 g61Var, final View view) {
-        if (g61Var.g && !t0Var.v.h(g61Var)) {
-            int i10 = g61Var.d;
+    public static void W(final t0 t0Var, h61 h61Var, final View view) {
+        if (h61Var.g && !t0Var.v.h(h61Var)) {
+            int i10 = h61Var.d;
             if (i10 == U) {
                 a0 a0Var = t0Var.v;
                 t0Var.I = true;
@@ -165,8 +165,8 @@ public final class t0 extends n2 {
                 t0Var.Y(true);
                 return;
             }
-            if (g61Var.a == 13) {
-                TLRPC.User user = (TLRPC.User) t0Var.N.get(g61Var.x);
+            if (h61Var.a == 13) {
+                TLRPC.User user = (TLRPC.User) t0Var.N.get(h61Var.x);
                 if (user == null) {
                     return;
                 }
@@ -1013,12 +1013,12 @@ public final class t0 extends n2 {
         this.v = a0Var;
         TL_account.TL_connectedBot tL_connectedBot = this.H;
         a0Var.i(tL_connectedBot == null ? null : tL_connectedBot.recipients);
-        b71 b71Var = new b71(this, new hg.o(this, 5), new q0(this, 3), null);
-        this.c = b71Var;
-        b71Var.p1();
-        b71 b71Var2 = this.c;
-        b71Var2.W2.r = false;
-        frameLayout.addView(b71Var2, z5.c(-1.0f, -1));
+        c71 c71Var = new c71(this, new hg.o(this, 5), new q0(this, 3), null);
+        this.c = c71Var;
+        c71Var.p1();
+        c71 c71Var2 = this.c;
+        c71Var2.W2.r = false;
+        frameLayout.addView(c71Var2, z5.c(-1.0f, -1));
         this.actionBar.A(this.c, true);
         this.fragmentView = frameLayout;
         return frameLayout;

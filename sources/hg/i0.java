@@ -4,19 +4,19 @@ import android.animation.ValueAnimator;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.c91;
-import org.telegram.ui.Components.cl0;
-import org.telegram.ui.Components.e31;
+import org.telegram.ui.Components.d91;
+import org.telegram.ui.Components.dl0;
+import org.telegram.ui.Components.f31;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.ib0;
 import org.telegram.ui.Components.m00;
 import org.telegram.ui.Components.s00;
-import org.telegram.ui.Components.x81;
+import org.telegram.ui.Components.y81;
 import org.telegram.ui.StickersActivity;
 import org.telegram.ui.bw;
 import org.telegram.ui.hr;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class i0 extends s4.b0 {
     public final /* synthetic */ int I;
@@ -41,7 +41,7 @@ public final class i0 extends s4.b0 {
                 break;
             case 6:
                 super.S(eVar, y0Var, cVar);
-                if (((c91) this.J).V) {
+                if (((d91) this.J).V) {
                     cVar.p(false);
                     break;
                 }
@@ -56,7 +56,7 @@ public final class i0 extends s4.b0 {
     public int W0(s4.y0 y0Var) {
         switch (this.I) {
             case 5:
-                if (!((e31) this.J).Y2) {
+                if (!((f31) this.J).Y2) {
                     break;
                 } else {
                     break;
@@ -91,46 +91,46 @@ public final class i0 extends s4.b0 {
             default:
                 return super.m0(i10, eVar, y0Var);
             case 4:
-                cl0 cl0Var = (cl0) this.J;
-                ai.u1 u1Var = cl0Var.b;
-                if (i10 < 0 && cl0Var.B0 != 0.0f) {
-                    float pullingLeftProgress = cl0Var.getPullingLeftProgress();
-                    cl0Var.B0 += i10;
-                    if ((pullingLeftProgress > 1.0f) != (cl0Var.getPullingLeftProgress() > 1.0f)) {
+                dl0 dl0Var = (dl0) this.J;
+                ai.u1 u1Var = dl0Var.b;
+                if (i10 < 0 && dl0Var.B0 != 0.0f) {
+                    float pullingLeftProgress = dl0Var.getPullingLeftProgress();
+                    dl0Var.B0 += i10;
+                    if ((pullingLeftProgress > 1.0f) != (dl0Var.getPullingLeftProgress() > 1.0f)) {
                         try {
                             u1Var.performHapticFeedback(3);
                         } catch (Exception unused) {
                         }
                     }
-                    float f7 = cl0Var.B0;
+                    float f7 = dl0Var.B0;
                     if (f7 < 0.0f) {
                         i10 = (int) f7;
-                        cl0Var.B0 = 0.0f;
+                        dl0Var.B0 = 0.0f;
                     } else {
                         i10 = 0;
                     }
-                    ah.v vVar = cl0Var.S;
+                    ah.v vVar = dl0Var.S;
                     if (vVar != null) {
                         vVar.invalidate();
                     }
                     u1Var.invalidate();
                 }
                 int m0 = super.m0(i10, eVar, y0Var);
-                if (i10 > 0 && m0 == 0 && u1Var.getScrollState() == 1 && cl0Var.q()) {
-                    ValueAnimator valueAnimator = cl0Var.y0;
+                if (i10 > 0 && m0 == 0 && u1Var.getScrollState() == 1 && dl0Var.q()) {
+                    ValueAnimator valueAnimator = dl0Var.y0;
                     if (valueAnimator != null) {
                         valueAnimator.removeAllListeners();
-                        cl0Var.y0.cancel();
+                        dl0Var.y0.cancel();
                     }
-                    float pullingLeftProgress2 = cl0Var.getPullingLeftProgress();
-                    cl0Var.B0 = (i10 * (pullingLeftProgress2 > 1.0f ? 0.05f : 0.6f)) + cl0Var.B0;
-                    if ((pullingLeftProgress2 > 1.0f) != (cl0Var.getPullingLeftProgress() > 1.0f)) {
+                    float pullingLeftProgress2 = dl0Var.getPullingLeftProgress();
+                    dl0Var.B0 = (i10 * (pullingLeftProgress2 > 1.0f ? 0.05f : 0.6f)) + dl0Var.B0;
+                    if ((pullingLeftProgress2 > 1.0f) != (dl0Var.getPullingLeftProgress() > 1.0f)) {
                         try {
                             u1Var.performHapticFeedback(3);
                         } catch (Exception unused2) {
                         }
                     }
-                    ah.v vVar2 = cl0Var.S;
+                    ah.v vVar2 = dl0Var.S;
                     if (vVar2 != null) {
                         vVar2.invalidate();
                     }
@@ -162,9 +162,9 @@ public final class i0 extends s4.b0 {
                 w0(m00Var);
                 break;
             case 6:
-                x81 x81Var = new x81(this, recyclerView.getContext());
-                x81Var.a = i10;
-                w0(x81Var);
+                y81 y81Var = new y81(this, recyclerView.getContext());
+                y81Var.a = i10;
+                w0(y81Var);
                 break;
             default:
                 super.v0(recyclerView, y0Var, i10);

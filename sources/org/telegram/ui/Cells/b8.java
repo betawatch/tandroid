@@ -13,13 +13,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.i91;
 import org.telegram.ui.m91;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class b8 extends FrameLayout {
     public final z7 a;
@@ -50,7 +50,7 @@ public abstract class b8 extends FrameLayout {
         addView(z7Var, w7.z5.d(46, 46.0f, (!z10 ? 8388611 : 8388613) | 16, !z10 ? 12.0f : 16.0f, 0.0f, !z10 ? 16.0f : 12.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        LinearLayout e = kk.e(context, 0);
+        LinearLayout e = mk.e(context, 0);
         a8 a8Var = new a8(context);
         this.b = a8Var;
         NotificationCenter.listenEmojiLoading(a8Var);
@@ -87,7 +87,7 @@ public abstract class b8 extends FrameLayout {
         textView4.setTextSize(1, 13.0f);
         textView4.setTextColor(-16777216);
         textView4.setGravity(16);
-        LinearLayout e7 = kk.e(context, 0);
+        LinearLayout e7 = mk.e(context, 0);
         if (LocaleController.isRTL) {
             e7.addView(textView3, w7.z5.t(-2, -2, 16, 0, 0, 10, 0));
             e7.addView(textView4, w7.z5.q(-2, -2, 16));

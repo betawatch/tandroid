@@ -1,11 +1,11 @@
 package org.telegram.ui.Cells;
 
 import android.view.View;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.ko;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class l6 extends ci.y7 {
     public final /* synthetic */ int S = 0;
@@ -28,7 +28,7 @@ public final class l6 extends ci.y7 {
                 org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                 if (R != null) {
                     R.getOrCreateStoryViewer().getClass();
-                    R.getOrCreateStoryViewer().D(vaVar.getContext(), j10, ci.r7.a((im0) vaVar.getParent()));
+                    R.getOrCreateStoryViewer().D(vaVar.getContext(), j10, ci.r7.a((jm0) vaVar.getParent()));
                     break;
                 }
                 break;

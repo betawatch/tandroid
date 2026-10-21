@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.h6;
 import t7.u;
 import u2.f0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class f {
     public boolean a;
@@ -79,7 +79,7 @@ public final class f {
                                         case 2:
                                             return q.e((Class) this, bVar);
                                         default:
-                                            return new x0(bVar, (c3.m) ((jg.f) this).c);
+                                            return new y0(bVar, (c3.m) ((jg.f) this).c);
                                     }
                                 }
                             };
@@ -98,7 +98,7 @@ public final class f {
                                     case 2:
                                         return q.e((Class) asSubclass, bVar);
                                     default:
-                                        return new x0(bVar, (c3.m) ((jg.f) asSubclass).c);
+                                        return new y0(bVar, (c3.m) ((jg.f) asSubclass).c);
                                 }
                             }
                         };
@@ -116,7 +116,7 @@ public final class f {
                                 case 2:
                                     return q.e((Class) asSubclass2, bVar);
                                 default:
-                                    return new x0(bVar, (c3.m) ((jg.f) asSubclass2).c);
+                                    return new y0(bVar, (c3.m) ((jg.f) asSubclass2).c);
                             }
                         }
                     };
@@ -136,7 +136,7 @@ public final class f {
                             case 2:
                                 return q.e((Class) asSubclass3, bVar);
                             default:
-                                return new x0(bVar, (c3.m) ((jg.f) asSubclass3).c);
+                                return new y0(bVar, (c3.m) ((jg.f) asSubclass3).c);
                         }
                     }
                 };

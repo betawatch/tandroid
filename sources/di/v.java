@@ -32,14 +32,14 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.s7;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.c91;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.is0;
+import org.telegram.ui.Components.d91;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.js0;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.yq;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public abstract class v extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static LongSparseArray E;
@@ -52,7 +52,7 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
     public final ArrayList f;
     public final ArrayList h;
     public final a n;
-    public final c91 r;
+    public final d91 r;
     public Boolean s;
     public int v;
     public float w;
@@ -91,16 +91,16 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
             t6Var = t6Var2;
         }
         this.e = t6Var;
-        is0 is0Var = (is0) this;
-        a aVar = new a(is0Var, context);
+        js0 js0Var = (js0) this;
+        a aVar = new a(js0Var, context);
         this.n = aVar;
         aVar.setAllowDisallowInterceptTouch(true);
-        aVar.setAdapter(new b(is0Var, context));
+        aVar.setAdapter(new b(js0Var, context));
         addView(aVar, z5.e(-1, -1, 119));
-        c91 n10 = aVar.n(9, true);
+        d91 n10 = aVar.n(9, true);
         this.r = n10;
         n10.r = 12;
-        n10.setPreTabClick(new a1.c(is0Var, 28));
+        n10.setPreTabClick(new a1.c(js0Var, 28));
         addView(n10, z5.e(-1, 42, 48));
         i(false);
     }
@@ -314,7 +314,7 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
         return t6Var;
     }
 
-    public im0 getCurrentListView() {
+    public jm0 getCurrentListView() {
         View currentView = this.n.getCurrentView();
         if (currentView instanceof r) {
             return ((r) currentView).f;
@@ -415,9 +415,9 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
         yqVar.setScale(0.9f, 0.9f);
         yqVar.spaceScaleX = 0.85f;
         spannableString.setSpan(yqVar, 0, 1, 33);
-        c91 c91Var = this.r;
-        c91Var.a(-1, spannableString);
-        c91Var.x.l();
+        d91 d91Var = this.r;
+        d91Var.a(-1, spannableString);
+        d91Var.x.l();
         boolean z11 = arrayList3.size() + 1 > 1;
         Boolean bool = this.s;
         if (bool == null || bool.booleanValue() != z11) {
@@ -428,7 +428,7 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
             this.s = Boolean.valueOf(z11);
             if (!z10) {
                 this.w = z11 ? 1.0f : 0.0f;
-                c91Var.setTranslationY(AndroidUtilities.dp(z11 ? 0.0f : -42.0f));
+                d91Var.setTranslationY(AndroidUtilities.dp(z11 ? 0.0f : -42.0f));
                 aVar.setTranslationY(AndroidUtilities.dp(z11 ? 42.0f : 0.0f));
                 return;
             }

@@ -6,14 +6,14 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.nw0;
 import org.telegram.ui.Components.ow0;
+import org.telegram.ui.Components.pw0;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class v extends FrameLayout {
-    public final ow0 a;
+    public final pw0 a;
     public final View b;
 
     public v(Context context, d6 d6Var) {
@@ -22,13 +22,13 @@ public final class v extends FrameLayout {
         this.b = view;
         addView(view, z5.n(-1, -1));
         view.setBackgroundColor(h6.w0(h6.h5, d6Var));
-        ow0 ow0Var = new ow0(context, d6Var);
-        this.a = ow0Var;
-        addView(ow0Var, z5.d(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
+        pw0 pw0Var = new pw0(context, d6Var);
+        this.a = pw0Var;
+        addView(pw0Var, z5.d(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
         setBackground(h6.W0(getContext(), R.drawable.greydivider_top, h6.b7));
     }
 
-    public void setCallBack(nw0 nw0Var) {
-        this.a.setCallback(nw0Var);
+    public void setCallBack(ow0 ow0Var) {
+        this.a.setCallback(ow0Var);
     }
 }

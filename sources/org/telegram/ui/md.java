@@ -36,7 +36,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class md extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.d50 {
     public String E;
@@ -44,7 +44,7 @@ public final class md extends org.telegram.ui.ActionBar.n2 implements Notificati
     public org.telegram.ui.Cells.l4 G;
     public EditTextBoldCursor H;
     public boolean I;
-    public org.telegram.ui.Components.uj0 J;
+    public org.telegram.ui.Components.vj0 J;
     public LinearLayout K;
     public LinearLayout L;
     public LinearLayout M;
@@ -261,7 +261,7 @@ public final class md extends org.telegram.ui.ActionBar.n2 implements Notificati
             boolean z11 = LocaleController.isRTL;
             frameLayout.addView(g6Var2, w7.z5.d(64, 64.0f, (z11 ? 5 : 3) | 48, z11 ? 0.0f : 16.0f, 12.0f, z11 ? 16.0f : 0.0f, 12.0f));
             mdVar.f.setOnClickListener(new ed(mdVar, i10));
-            mdVar.J = new org.telegram.ui.Components.uj0(R.raw.camera, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null);
+            mdVar.J = new org.telegram.ui.Components.vj0(R.raw.camera, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null);
             jd jdVar = new jd(mdVar, context, 0);
             mdVar.h = jdVar;
             jdVar.setScaleType(ImageView.ScaleType.CENTER);

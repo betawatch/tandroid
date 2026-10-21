@@ -16,7 +16,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.messenger.voip.VoipAudioManager;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a20 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -169,20 +169,20 @@ public final /* synthetic */ class a20 implements View.OnClickListener {
                 break;
             case 10:
                 ArrayList arrayList = q50Var.Y1;
-                org.telegram.ui.Components.uj0 uj0Var = q50Var.G2;
+                org.telegram.ui.Components.vj0 vj0Var = q50Var.G2;
                 q50Var.a2.e();
                 VoIPService sharedInstance2 = VoIPService.getSharedInstance();
                 if (sharedInstance2 != null && sharedInstance2.getVideoState(false) == 2) {
                     sharedInstance2.switchCamera();
                     if (q50Var.H2 == 18) {
                         q50Var.H2 = 39;
-                        uj0Var.P(39);
-                        uj0Var.start();
+                        vj0Var.P(39);
+                        vj0Var.start();
                     } else {
-                        uj0Var.N(0, false, false);
+                        vj0Var.N(0, false, false);
                         q50Var.H2 = 18;
-                        uj0Var.P(18);
-                        uj0Var.start();
+                        vj0Var.P(18);
+                        vj0Var.start();
                     }
                     for (int i16 = 0; i16 < arrayList.size(); i16++) {
                         org.telegram.ui.Components.voip.t tVar = (org.telegram.ui.Components.voip.t) arrayList.get(i16);

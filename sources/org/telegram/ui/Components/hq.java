@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hq implements Runnable {
     public final /* synthetic */ int a;
@@ -77,7 +77,7 @@ public final /* synthetic */ class hq implements Runnable {
                 AndroidUtilities.runOnUIThread(ssVar.f, 3000L);
                 break;
             case 6:
-                ((qo0) obj).V(false);
+                ((ro0) obj).V(false);
                 break;
             case 7:
                 ((vt) obj).a();
@@ -254,7 +254,7 @@ public final /* synthetic */ class hq implements Runnable {
                 ((i30) obj).g(true);
                 break;
             case 20:
-                org.telegram.ui.lx lxVar = ((mo0) ((n40) obj)).c0;
+                org.telegram.ui.lx lxVar = ((no0) ((n40) obj)).c0;
                 if (!lxVar.u0.canScrollVertically(-1)) {
                     lxVar.t0.h1(0, 0);
                     break;
@@ -268,25 +268,25 @@ public final /* synthetic */ class hq implements Runnable {
                 break;
             case 23:
                 g50 g50Var = (g50) obj;
-                xj0 xj0Var = g50Var.f;
+                yj0 yj0Var = g50Var.f;
                 if (g50Var.n) {
-                    xj0Var.getAnimatedDrawable().K(0);
-                    xj0Var.setAnimation(g50Var.r);
-                    xj0Var.d();
+                    yj0Var.getAnimatedDrawable().K(0);
+                    yj0Var.setAnimation(g50Var.r);
+                    yj0Var.d();
                     break;
                 }
                 break;
             case 24:
                 m60 m60Var = (m60) ((e6.r) obj).b;
                 try {
-                    b81 b81Var = m60Var.T;
-                    if (b81Var != null && (videoEditedInfo = m60Var.S) != null && videoEditedInfo.endTime > 0) {
-                        long n10 = b81Var.n();
+                    c81 c81Var = m60Var.T;
+                    if (c81Var != null && (videoEditedInfo = m60Var.S) != null && videoEditedInfo.endTime > 0) {
+                        long n10 = c81Var.n();
                         VideoEditedInfo videoEditedInfo2 = m60Var.S;
                         if (n10 >= videoEditedInfo2.endTime) {
-                            b81 b81Var2 = m60Var.T;
+                            c81 c81Var2 = m60Var.T;
                             long j10 = videoEditedInfo2.startTime;
-                            b81Var2.K(j10 > 0 ? j10 : 0L);
+                            c81Var2.K(j10 > 0 ? j10 : 0L);
                             break;
                         }
                     }

@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ke implements Runnable {
     public final /* synthetic */ int a;
@@ -103,7 +103,7 @@ public final /* synthetic */ class ke implements Runnable {
                 qnVar.presentFragment(a02);
                 break;
             case 7:
-                qnVar.fc(true);
+                qnVar.gc(true);
                 break;
             case 8:
                 qnVar.j1.d(true);
@@ -126,7 +126,7 @@ public final /* synthetic */ class ke implements Runnable {
                 break;
             case 11:
                 qnVar.Bb = true;
-                qnVar.Bc(true);
+                qnVar.Cc(true);
                 break;
             case 12:
                 vk vkVar = qnVar.bb;
@@ -139,7 +139,7 @@ public final /* synthetic */ class ke implements Runnable {
                 qn.J0(qnVar);
                 break;
             case 14:
-                qnVar.zb(false, true);
+                qnVar.Ab(false, true);
                 break;
             case 15:
                 qnVar.resumeDelayedFragmentAnimation();
@@ -150,7 +150,7 @@ public final /* synthetic */ class ke implements Runnable {
                 break;
             case 16:
                 TLRPC.UserFull userFull = qnVar.a8;
-                qnVar.mb(userFull != null ? userFull.theme : null);
+                qnVar.nb(userFull != null ? userFull.theme : null);
                 break;
             case 17:
                 qn.u0(qnVar);
@@ -164,7 +164,7 @@ public final /* synthetic */ class ke implements Runnable {
                 qnVar.R7 = null;
                 qnVar.S7 = -1;
                 qnVar.M7 = false;
-                qnVar.ad(false);
+                qnVar.bd(false);
                 qnVar.U7 = null;
                 break;
             case 19:
@@ -332,7 +332,7 @@ public final /* synthetic */ class ke implements Runnable {
                 AndroidUtilities.runOnUIThread(qnVar.G1, 6000L);
                 break;
             default:
-                qnVar.yc();
+                qnVar.zc();
                 break;
         }
     }

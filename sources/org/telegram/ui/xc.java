@@ -17,9 +17,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class xc extends org.telegram.ui.Components.hm0 {
+public final class xc extends org.telegram.ui.Components.im0 {
     public final /* synthetic */ int c;
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 d;
     public final /* synthetic */ zc e;
@@ -30,7 +30,7 @@ public final class xc extends org.telegram.ui.Components.hm0 {
         this.d = d6Var;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         return true;
     }
@@ -52,7 +52,7 @@ public final class xc extends org.telegram.ui.Components.hm0 {
         int v;
         int intValue;
         String[] split;
-        org.telegram.ui.Components.q21 q21Var = (org.telegram.ui.Components.q21) b1Var.a;
+        org.telegram.ui.Components.r21 r21Var = (org.telegram.ui.Components.r21) b1Var.a;
         zc zcVar = this.e;
         ArrayList arrayList = zcVar.c;
         org.telegram.ui.ActionBar.g6 i11 = ((org.telegram.ui.Components.vp) arrayList.get(i10)).a.i(((org.telegram.ui.Components.vp) arrayList.get(i10)).c);
@@ -215,11 +215,11 @@ public final class xc extends org.telegram.ui.Components.hm0 {
                     z10 = true;
                     i11.T = true;
                     org.telegram.ui.Components.vp vpVar = (org.telegram.ui.Components.vp) arrayList.get(i10);
-                    q21Var.setEnabled(z10);
-                    q21Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i5, false));
-                    q21Var.f(vpVar, 0L, false);
-                    q21Var.g(vpVar.d, false);
-                    q21Var.setFallbackWallpaper(vpVar.a.b ? null : zcVar.v);
+                    r21Var.setEnabled(z10);
+                    r21Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i5, false));
+                    r21Var.f(vpVar, 0L, false);
+                    r21Var.g(vpVar.d, false);
+                    r21Var.setFallbackWallpaper(vpVar.a.b ? null : zcVar.v);
                 }
                 if (!hashMap.containsKey(i11)) {
                     hashMap.put(i11, i11.e);
@@ -233,16 +233,16 @@ public final class xc extends org.telegram.ui.Components.hm0 {
         }
         z10 = true;
         org.telegram.ui.Components.vp vpVar2 = (org.telegram.ui.Components.vp) arrayList.get(i10);
-        q21Var.setEnabled(z10);
-        q21Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i5, false));
-        q21Var.f(vpVar2, 0L, false);
-        q21Var.g(vpVar2.d, false);
-        q21Var.setFallbackWallpaper(vpVar2.a.b ? null : zcVar.v);
+        r21Var.setEnabled(z10);
+        r21Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i5, false));
+        r21Var.f(vpVar2, 0L, false);
+        r21Var.g(vpVar2.d, false);
+        r21Var.setFallbackWallpaper(vpVar2.a.b ? null : zcVar.v);
     }
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.sl0(new wc(this.c, 3, viewGroup.getContext(), this.d));
+        return new org.telegram.ui.Components.tl0(new wc(this.c, 3, viewGroup.getContext(), this.d));
     }
 
     @Override // s4.g0
@@ -255,8 +255,8 @@ public final class xc extends org.telegram.ui.Components.hm0 {
             return;
         }
         org.telegram.ui.Components.vp vpVar = (org.telegram.ui.Components.vp) arrayList.get(b10);
-        org.telegram.ui.Components.q21 q21Var = (org.telegram.ui.Components.q21) view;
-        q21Var.g(vpVar.d, false);
-        q21Var.setFallbackWallpaper(vpVar.a.b ? null : zcVar.v);
+        org.telegram.ui.Components.r21 r21Var = (org.telegram.ui.Components.r21) view;
+        r21Var.g(vpVar.d, false);
+        r21Var.setFallbackWallpaper(vpVar.a.b ? null : zcVar.v);
     }
 }

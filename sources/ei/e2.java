@@ -14,8 +14,8 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.j20;
 import org.telegram.ui.Components.k20;
 import org.telegram.ui.Components.rd0;
-import org.telegram.ui.Components.un0;
 import org.telegram.ui.Components.v30;
+import org.telegram.ui.Components.vn0;
 import org.telegram.ui.UsersSelectActivity;
 import org.telegram.ui.de0;
 import org.telegram.ui.dz;
@@ -26,7 +26,7 @@ import org.telegram.ui.r70;
 import org.telegram.ui.s10;
 import org.telegram.ui.wo;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class e2 extends EditTextBoldCursor {
     public final /* synthetic */ int b;
@@ -43,7 +43,7 @@ public final class e2 extends EditTextBoldCursor {
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.b) {
             case 6:
-                ((un0) this.c).getClass();
+                ((vn0) this.c).getClass();
                 break;
         }
         return super.dispatchTouchEvent(motionEvent);
@@ -236,7 +236,7 @@ public final class e2 extends EditTextBoldCursor {
             case 6:
                 if (isEnabled()) {
                     if (motionEvent.getAction() == 1) {
-                        ((un0) this.c).getClass();
+                        ((vn0) this.c).getClass();
                     }
                     break;
                 }

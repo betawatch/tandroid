@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class sg extends FrameLayout {
     public final Drawable E;
@@ -133,9 +133,9 @@ public final class sg extends FrameLayout {
             ei.x3 x3Var3 = this.b;
             int i10 = R.raw.fire_on;
             x3Var3.getClass();
-            uj0 uj0Var = new uj0(i10, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f));
-            uj0Var.start();
-            x3Var3.j(uj0Var);
+            vj0 vj0Var = new vj0(i10, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f));
+            vj0Var.start();
+            x3Var3.j(vj0Var);
         } else {
             MessagesController.getGlobalMainSettings().edit().putInt("voiceoncehint", MessagesController.getGlobalMainSettings().getInt("voiceoncehint", 0) + 1).apply();
         }
@@ -918,9 +918,9 @@ public final class sg extends FrameLayout {
                     if (x3Var != null && x3Var.V) {
                         a();
                     }
-                    dl0 dl0Var = chatActivityEnterView.h1;
-                    if (dl0Var != null) {
-                        dl0Var.setPlaying(false);
+                    el0 el0Var = chatActivityEnterView.h1;
+                    if (el0Var != null) {
+                        el0Var.setPlaying(false);
                     }
                     if (!MediaController.getInstance().isRecordingPaused() || (chatActivityEnterView.h1.getAudioLeft() <= 0.01f && chatActivityEnterView.h1.getAudioRight() >= 0.99f)) {
                         pgVar.run();

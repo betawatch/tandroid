@@ -7,11 +7,11 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.ui.Components.l60;
 import org.telegram.ui.Components.q60;
-import org.telegram.ui.Components.q81;
+import org.telegram.ui.Components.r81;
 import org.telegram.ui.fk;
 import org.telegram.ui.pe;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f0 implements Runnable {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class f0 implements Runnable {
     public final void run() {
         File file;
         fk fkVar;
-        q81 q81Var;
+        r81 r81Var;
         switch (this.a) {
             case 0:
                 s0 s0Var = this.b;
@@ -93,11 +93,11 @@ public final /* synthetic */ class f0 implements Runnable {
                         float f7 = j13 / max;
                         float f10 = j14 / max;
                         q60 q60Var = l60Var4.b;
-                        if (q60Var != null && (fkVar = ((pe) q60Var).b.Y) != null && (q81Var = fkVar.f1) != null) {
+                        if (q60Var != null && (fkVar = ((pe) q60Var).b.Y) != null && (r81Var = fkVar.f1) != null) {
                             float max2 = Math.max(0.0f, Math.min(1.0f, f7));
-                            q81Var.b = max2;
-                            q81Var.c = Math.max(max2, Math.min(1.0f, f10));
-                            q81Var.invalidate();
+                            r81Var.b = max2;
+                            r81Var.c = Math.max(max2, Math.min(1.0f, f10));
+                            r81Var.invalidate();
                         }
                     }
                     s0Var2.q();

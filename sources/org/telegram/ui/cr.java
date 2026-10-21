@@ -1,8 +1,8 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cr implements org.telegram.ui.Cells.z4, org.telegram.ui.Components.nw0 {
+public final /* synthetic */ class cr implements org.telegram.ui.Cells.z4, org.telegram.ui.Components.ow0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ dr b;
 
@@ -17,7 +17,7 @@ public final /* synthetic */ class cr implements org.telegram.ui.Cells.z4, org.t
         return hrVar.h0(hrVar.a.E(((Integer) a5Var.getTag()).intValue()), !z10, a5Var);
     }
 
-    @Override // org.telegram.ui.Components.nw0
+    @Override // org.telegram.ui.Components.ow0
     public void h(int i10) {
         switch (this.a) {
             case 1:
@@ -41,7 +41,7 @@ public final /* synthetic */ class cr implements org.telegram.ui.Cells.z4, org.t
         }
     }
 
-    @Override // org.telegram.ui.Components.nw0
+    @Override // org.telegram.ui.Components.ow0
     public /* synthetic */ void m() {
         int i10 = this.a;
     }

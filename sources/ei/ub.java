@@ -16,14 +16,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.cl0;
-import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.dl0;
+import org.telegram.ui.Components.lw0;
 import org.telegram.ui.Components.tz;
 import org.telegram.ui.Components.u20;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class ub extends kw0 {
+public final class ub extends lw0 {
     public boolean A0;
     public float B0;
     public float C0;
@@ -100,7 +100,7 @@ public final class ub extends kw0 {
     /* JADX WARN: Type inference failed for: r11v3, types: [boolean] */
     /* JADX WARN: Type inference failed for: r11v5 */
     /* JADX WARN: Type inference failed for: r11v7 */
-    @Override // org.telegram.ui.Components.kw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -295,7 +295,7 @@ public final class ub extends kw0 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.lw0
     public int getBottomPadding() {
         int height = getHeight();
         vb vbVar = this.E0;
@@ -306,7 +306,7 @@ public final class ub extends kw0 {
         return getHeight() - this.E0.r.getBottom();
     }
 
-    @Override // org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.lw0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
@@ -317,7 +317,7 @@ public final class ub extends kw0 {
         return (height - vbVar.b0) - vbVar.r.getBottom();
     }
 
-    @Override // org.telegram.ui.Components.kw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int i14;
         tz emojiView;
@@ -370,10 +370,10 @@ public final class ub extends kw0 {
             if (tzVar != null) {
                 tzVar.layout(vbVar.Y, (measuredHeight - vbVar.b0) - tzVar.getMeasuredHeight(), measuredWidth - vbVar.a0, measuredHeight - vbVar.b0);
             }
-            cl0 cl0Var = vbVar.v1.Z1;
-            if (cl0Var != null) {
+            dl0 dl0Var = vbVar.v1.Z1;
+            if (dl0Var != null) {
                 int i21 = vbVar.Y;
-                cl0Var.layout(i21, vbVar.Z, cl0Var.getMeasuredWidth() + i21, vbVar.v1.Z1.getMeasuredHeight() + vbVar.Z);
+                dl0Var.layout(i21, vbVar.Z, dl0Var.getMeasuredWidth() + i21, vbVar.v1.Z1.getMeasuredHeight() + vbVar.Z);
                 ah.v vVar = vbVar.v1.Z1.getReactionsWindow() != null ? vbVar.v1.Z1.getReactionsWindow().c : null;
                 if (vVar != null) {
                     int i22 = vbVar.Y;
@@ -453,9 +453,9 @@ public final class ub extends kw0 {
             if (tzVar != null) {
                 tzVar.measure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(vbVar.v1.p2.getLayoutParams().height, TLObject.FLAG_30));
             }
-            cl0 cl0Var = vbVar.v1.Z1;
-            if (cl0Var != null) {
-                measureChild(cl0Var, i10, i11);
+            dl0 dl0Var = vbVar.v1.Z1;
+            if (dl0Var != null) {
+                measureChild(dl0Var, i10, i11);
                 if (vbVar.v1.Z1.getReactionsWindow() != null) {
                     measureChild(vbVar.v1.Z1.getReactionsWindow().c, i10, i11);
                 }

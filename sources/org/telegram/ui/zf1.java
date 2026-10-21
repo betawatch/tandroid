@@ -5,7 +5,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zf1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -22,9 +22,9 @@ public final /* synthetic */ class zf1 implements Utilities.Callback {
             case 0:
                 UserInfoActivity userInfoActivity = this.b;
                 userInfoActivity.J = (TL_account.TL_birthday) obj;
-                org.telegram.ui.Components.v61 v61Var = userInfoActivity.x;
-                if (v61Var != null) {
-                    v61Var.W2.N(true);
+                org.telegram.ui.Components.w61 w61Var = userInfoActivity.x;
+                if (w61Var != null) {
+                    w61Var.W2.N(true);
                 }
                 userInfoActivity.b0(true);
                 break;
@@ -37,9 +37,9 @@ public final /* synthetic */ class zf1 implements Utilities.Callback {
                         org.telegram.messenger.g0.q(R.string.EditProfileChannelSet, org.telegram.ui.Components.xc.a0(userInfoActivity2), R.raw.contact_check, 36);
                     }
                     userInfoActivity2.b0(true);
-                    org.telegram.ui.Components.v61 v61Var2 = userInfoActivity2.x;
-                    if (v61Var2 != null) {
-                        v61Var2.W2.N(true);
+                    org.telegram.ui.Components.w61 w61Var2 = userInfoActivity2.x;
+                    if (w61Var2 != null) {
+                        w61Var2.W2.N(true);
                         break;
                     }
                 }

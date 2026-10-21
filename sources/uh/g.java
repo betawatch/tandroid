@@ -13,16 +13,16 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.j3;
 import org.telegram.ui.ActionBar.y;
 import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.b91;
 import org.telegram.ui.p91;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class g extends bb {
-    public t61 X;
+    public u61 X;
     public final b91 Y;
 
     public g(Activity activity, d6 d6Var, TL_stats.TL_statsPollStats tL_statsPollStats) {
@@ -33,9 +33,9 @@ public final class g extends bb {
         this.L = false;
         this.K = AndroidUtilities.dp(12.0f);
         this.Y = p91.f0(tL_statsPollStats.votes_graph, LocaleController.getString(R.string.PollV2StatsVoteTimeline), 2, false);
-        im0 im0Var = this.d;
+        jm0 jm0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        im0Var.setPadding(i10, 0, i10, AndroidUtilities.navigationBarHeight);
+        jm0Var.setPadding(i10, 0, i10, AndroidUtilities.navigationBarHeight);
         this.d.setClipToPadding(false);
         this.d.setSections(true);
         y n10 = this.e.n();
@@ -57,10 +57,10 @@ public final class g extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
-        t61 t61Var = new t61(im0Var, getContext(), this.currentAccount, 0, true, new o(this, 20), this.resourcesProvider);
-        this.X = t61Var;
-        t61Var.r = false;
-        return t61Var;
+    public final im0 x(jm0 jm0Var) {
+        u61 u61Var = new u61(jm0Var, getContext(), this.currentAccount, 0, true, new o(this, 20), this.resourcesProvider);
+        this.X = u61Var;
+        u61Var.r = false;
+        return u61Var;
     }
 }

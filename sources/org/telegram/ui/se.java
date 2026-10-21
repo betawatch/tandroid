@@ -6,7 +6,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class se implements Runnable {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final /* synthetic */ class se implements Runnable {
                 qn qnVar5 = this.b;
                 qnVar5.bb(id2, 0, true, 0, true, 0, null, null, new kf(qnVar5, 23));
                 if (qnVar5.h6.isEmpty()) {
-                    qnVar5.Pb(false);
+                    qnVar5.Qb(false);
                     break;
                 }
                 break;

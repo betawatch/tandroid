@@ -28,7 +28,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yt implements Runnable {
     public final /* synthetic */ int a;
@@ -425,70 +425,70 @@ public final /* synthetic */ class yt implements Runnable {
                 ((HashMap) fVar.b).remove(runnable);
                 break;
             case 25:
-                th0 th0Var = (th0) obj2;
+                uh0 uh0Var = (uh0) obj2;
                 TLObject tLObject3 = (TLObject) obj;
-                th0Var.M = false;
+                uh0Var.M = false;
                 if (tLObject3 instanceof TLRPC.SearchPostsFlood) {
                     TLRPC.SearchPostsFlood searchPostsFlood = (TLRPC.SearchPostsFlood) tLObject3;
-                    th0Var.d = searchPostsFlood;
+                    uh0Var.d = searchPostsFlood;
                     if (!searchPostsFlood.query_is_free) {
-                        th0Var.d();
-                        th0Var.c.W2.N(true);
+                        uh0Var.d();
+                        uh0Var.c.W2.N(true);
                         break;
                     } else {
-                        th0Var.a(false);
+                        uh0Var.a(false);
                         break;
                     }
                 }
                 break;
             case 26:
-                yh0 yh0Var = (yh0) obj2;
+                zh0 zh0Var = (zh0) obj2;
                 ArrayList arrayList8 = (ArrayList) obj;
-                ArrayList arrayList9 = yh0Var.a;
-                int i19 = yh0Var.x;
+                ArrayList arrayList9 = zh0Var.a;
+                int i19 = zh0Var.x;
                 int size3 = arrayList8.size();
-                yh0Var.x = size3;
-                if (i19 != size3 && yh0Var.S != null) {
-                    yh0Var.g();
+                zh0Var.x = size3;
+                if (i19 != size3 && zh0Var.S != null) {
+                    zh0Var.g();
                 }
                 int size4 = arrayList9.size();
                 int i20 = 0;
                 while (i20 < size4) {
-                    vh0 vh0Var = (vh0) arrayList9.get(i20);
-                    if (vh0Var.o && !vh0Var.p) {
-                        arrayList8.add(vh0Var);
-                    } else if (yh0.j(vh0Var.a, arrayList8) == null) {
-                        yh0 yh0Var2 = vh0Var.y;
-                        float f7 = yh0Var2.N;
-                        RectF rectF = vh0Var.c;
-                        RectF rectF2 = vh0Var.f;
-                        ba0 ba0Var = vh0Var.r;
+                    wh0 wh0Var = (wh0) arrayList9.get(i20);
+                    if (wh0Var.o && !wh0Var.p) {
+                        arrayList8.add(wh0Var);
+                    } else if (zh0.j(wh0Var.a, arrayList8) == null) {
+                        zh0 zh0Var2 = wh0Var.y;
+                        float f7 = zh0Var2.N;
+                        RectF rectF = wh0Var.c;
+                        RectF rectF2 = wh0Var.f;
+                        ba0 ba0Var = wh0Var.r;
                         if (ba0Var != null) {
                             ba0Var.a();
-                            vh0Var.t = z11;
-                            vh0Var.s = z11;
+                            wh0Var.t = z11;
+                            wh0Var.s = z11;
                         }
-                        vh0Var.o = z12;
+                        wh0Var.o = z12;
                         boolean z13 = rectF.left - 1.0f <= f7 ? z12 : z11;
-                        boolean z14 = rectF.right + 1.0f >= ((float) yh0Var2.getMeasuredWidth()) - f7;
+                        boolean z14 = rectF.right + 1.0f >= ((float) zh0Var2.getMeasuredWidth()) - f7;
                         if (z13 && z14) {
                             z14 = false;
                             z13 = false;
                         }
-                        vh0Var.g.set(rectF);
+                        wh0Var.g.set(rectF);
                         rectF2.set(rectF);
                         if (z13) {
                             rectF2.right = rectF2.left;
                         } else if (z14) {
                             rectF2.left = rectF2.right;
                         } else {
-                            int i21 = vh0Var.a;
+                            int i21 = wh0Var.a;
                             if (i21 == 3 || i21 == 2) {
                                 z10 = true;
-                                if (yh0Var2.H == 1) {
+                                if (zh0Var2.H == 1) {
                                     rectF2.left = rectF2.right;
-                                    vh0Var.e.d(0.0f, z10);
-                                    arrayList8.add(vh0Var);
+                                    wh0Var.e.d(0.0f, z10);
+                                    arrayList8.add(wh0Var);
                                 }
                             } else {
                                 z10 = true;
@@ -496,12 +496,12 @@ public final /* synthetic */ class yt implements Runnable {
                             float centerX = rectF2.centerX();
                             rectF2.right = centerX;
                             rectF2.left = centerX;
-                            vh0Var.e.d(0.0f, z10);
-                            arrayList8.add(vh0Var);
+                            wh0Var.e.d(0.0f, z10);
+                            arrayList8.add(wh0Var);
                         }
                         z10 = true;
-                        vh0Var.e.d(0.0f, z10);
-                        arrayList8.add(vh0Var);
+                        wh0Var.e.d(0.0f, z10);
+                        arrayList8.add(wh0Var);
                     }
                     i20++;
                     z11 = false;
@@ -509,14 +509,14 @@ public final /* synthetic */ class yt implements Runnable {
                 }
                 arrayList9.clear();
                 arrayList9.addAll(arrayList8);
-                yh0Var.invalidate();
+                zh0Var.invalidate();
                 break;
             case 27:
-                vh0 vh0Var2 = (vh0) obj;
-                xh0 xh0Var = ((yh0) obj2).F;
-                int i22 = vh0Var2.a;
-                RectF rectF3 = vh0Var2.d;
-                ProfileActivity.e0(((org.telegram.ui.mx0) xh0Var).b, i22, rectF3.left, rectF3.top);
+                wh0 wh0Var2 = (wh0) obj;
+                yh0 yh0Var = ((zh0) obj2).F;
+                int i22 = wh0Var2.a;
+                RectF rectF3 = wh0Var2.d;
+                ProfileActivity.e0(((org.telegram.ui.mx0) yh0Var).b, i22, rectF3.left, rectF3.top);
                 break;
             case 28:
                 RLottieNative rLottieNative = (RLottieNative) obj2;
@@ -530,39 +530,39 @@ public final /* synthetic */ class yt implements Runnable {
                 }
                 break;
             default:
-                ck0 ck0Var = (ck0) obj2;
+                dk0 dk0Var = (dk0) obj2;
                 ArrayList arrayList10 = (ArrayList) obj;
-                ArrayList arrayList11 = ck0Var.r;
-                ck0Var.n.addAll(arrayList10);
+                ArrayList arrayList11 = dk0Var.r;
+                dk0Var.n.addAll(arrayList10);
                 int size5 = arrayList10.size();
                 int i23 = 0;
                 while (i23 < size5) {
                     Object obj3 = arrayList10.get(i23);
                     i23++;
-                    bk0 bk0Var = (bk0) obj3;
+                    ck0 ck0Var = (ck0) obj3;
                     int i24 = 0;
                     while (true) {
                         if (i24 >= arrayList11.size()) {
-                            arrayList11.add(bk0Var);
-                        } else if (MessageObject.getObjectPeerId(((bk0) arrayList11.get(i24)).a) != MessageObject.getObjectPeerId(bk0Var.a)) {
+                            arrayList11.add(ck0Var);
+                        } else if (MessageObject.getObjectPeerId(((ck0) arrayList11.get(i24)).a) != MessageObject.getObjectPeerId(ck0Var.a)) {
                             i24++;
-                        } else if (bk0Var.c > 0) {
-                            ((bk0) arrayList11.get(i24)).c = bk0Var.c;
+                        } else if (ck0Var.c > 0) {
+                            ((ck0) arrayList11.get(i24)).c = ck0Var.c;
                         }
                     }
                 }
-                q0.a aVar = ck0Var.w;
+                q0.a aVar = dk0Var.w;
                 if (aVar != null) {
                     aVar.accept(arrayList10);
                 }
-                ck0Var.a();
+                dk0Var.a();
                 break;
         }
     }
 
-    public /* synthetic */ yt(k71 k71Var, EditTextBoldCursor editTextBoldCursor, int i10) {
+    public /* synthetic */ yt(l71 l71Var, EditTextBoldCursor editTextBoldCursor, int i10) {
         this.a = i10;
-        this.c = k71Var;
+        this.c = l71Var;
         this.b = editTextBoldCursor;
     }
 }

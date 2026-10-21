@@ -20,25 +20,25 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.u61;
 import org.webrtc.MediaStreamTrack;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class l1 extends bb {
     public final int X;
     public final String Y;
-    public t61 Z;
+    public u61 Z;
     public final i1 a0;
     public boolean b0;
     public boolean c0;
@@ -297,7 +297,7 @@ public final class l1 extends bb {
         g1 g1Var = new g1(context, i11);
         g1Var.setDelegate(new h1());
         g1Var.X3(k1Var, null, false, false, false, false);
-        LinearLayout e = kk.e(context, r11);
+        LinearLayout e = mk.e(context, r11);
         e.addView(w0Var, z5.n(-1, -2));
         e.addView(g1Var, z5.n(-1, -2));
         i1 i1Var = new i1(context, null);
@@ -305,16 +305,16 @@ public final class l1 extends bb {
         i1Var.V(r6.e(null, i11, j10, h6.I.q()));
         i1Var.addView(e, z5.d(-1, -1.0f, 119, 4.0f, 8.0f, 4.0f, 8.0f));
         FrameLayout frameLayout = new FrameLayout(context);
-        ei.d f7 = kk.f(24, context, d6Var, r11);
+        ei.d f7 = mk.f(24, context, d6Var, r11);
         f7.g(LocaleController.getString(R.string.BotShareMessageShare), false, r11);
         f7.setOnClickListener(new ai.e1(this, tL_messages_preparedInlineMessage, s0Var, i11, j10, tVar));
         frameLayout.addView(f7, z5.d(-1, 48.0f, 119, 10.0f, 10.0f, 10.0f, 10.0f));
         ViewGroup viewGroup = this.containerView;
         int i13 = this.backgroundPaddingLeft;
         viewGroup.addView(frameLayout, z5.f(-2.0f, 87, i13, 0, i13, 0));
-        im0 im0Var = this.d;
+        jm0 jm0Var = this.d;
         int i14 = this.backgroundPaddingLeft;
-        im0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(68.0f) + r11);
+        jm0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(68.0f) + r11);
         this.d.p1();
         int i15 = h6.a7;
         setBackgroundColor(getThemedColor(i15));
@@ -476,14 +476,14 @@ public final class l1 extends bb {
     @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        im0 im0Var = this.d;
-        im0Var.u0(Math.max((im0Var.getAdapter() == null ? 0 : im0Var.getAdapter().h()) - 1, 0));
+        jm0 jm0Var = this.d;
+        jm0Var.u0(Math.max((jm0Var.getAdapter() == null ? 0 : jm0Var.getAdapter().h()) - 1, 0));
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
-        t61 t61Var = new t61(im0Var, getContext(), this.X, 0, true, new ai.q(this, 26), this.resourcesProvider);
-        this.Z = t61Var;
-        return t61Var;
+    public final im0 x(jm0 jm0Var) {
+        u61 u61Var = new u61(jm0Var, getContext(), this.X, 0, true, new ai.q(this, 26), this.resourcesProvider);
+        this.Z = u61Var;
+        return u61Var;
     }
 }

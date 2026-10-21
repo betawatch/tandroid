@@ -56,8 +56,8 @@ import org.telegram.ui.Cells.g5;
 import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.db0;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.hm0;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.tl0;
 import org.telegram.ui.Components.un;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yq;
@@ -65,9 +65,9 @@ import org.telegram.ui.Components.zq;
 import org.telegram.ui.qn;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class j1 extends hm0 implements NotificationCenter.NotificationCenterDelegate {
+public final class j1 extends im0 implements NotificationCenter.NotificationCenterDelegate {
     public ArrayList A0;
     public HashMap B0;
     public String D0;
@@ -177,7 +177,7 @@ public final class j1 extends hm0 implements NotificationCenter.NotificationCent
         return false;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         return (this.w0 == null || this.h0) && this.A0 == null;
     }
@@ -1930,12 +1930,12 @@ public final class j1 extends hm0 implements NotificationCenter.NotificationCent
                 f2Var.setDelegate(new v0(this));
                 view2 = f2Var;
             }
-            return new sl0(view2);
+            return new tl0(view2);
         }
         g5 g5Var = new g5(context, d6Var);
         g5Var.setIsDarkTheme(false);
         view = g5Var;
         view2 = view;
-        return new sl0(view2);
+        return new tl0(view2);
     }
 }

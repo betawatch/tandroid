@@ -21,7 +21,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a3 implements Utilities.Callback2 {
     public final /* synthetic */ int a = 0;
@@ -123,7 +123,7 @@ public final /* synthetic */ class a3 implements Utilities.Callback2 {
                             chat = MessagesController.getInstance(i14).getChat(Long.valueOf(-peerDialogId));
                         }
                         TLObject user = j13 >= 0 ? MessagesController.getInstance(i14).getUser(Long.valueOf(j13)) : MessagesController.getInstance(i14).getChat(Long.valueOf(-j13));
-                        LinearLayout e = org.telegram.messenger.kk.e(context2, 1);
+                        LinearLayout e = org.telegram.messenger.mk.e(context2, 1);
                         e.addView(new ai.i7(context2, chat, user), w7.z5.t(-1, -2, 48, 0, -4, 0, 0));
                         TextView textView = new TextView(context2);
                         NotificationCenter.listenEmojiLoading(textView);
@@ -133,14 +133,14 @@ public final /* synthetic */ class a3 implements Utilities.Callback2 {
                         textView.setGravity(LocaleController.isRTL ? 5 : 3);
                         e.addView(textView, w7.z5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 24.0f, 19.0f, 24.0f, 2.0f));
                         TextView textView2 = new TextView(context2);
-                        org.telegram.messenger.kk.o(i15, d6Var, textView2, 1, 16.0f);
+                        org.telegram.messenger.mk.o(i15, d6Var, textView2, 1, 16.0f);
                         int i16 = R.string.Gift2AuctionsChangeRecipient2;
                         String shortName = DialogObject.getShortName(peerDialogId);
                         String shortName2 = DialogObject.getShortName(j13);
                         Object[] objArr = new Object[2];
                         objArr[i10] = shortName;
                         objArr[1] = shortName2;
-                        org.telegram.messenger.kk.r(i16, objArr, textView2);
+                        org.telegram.messenger.mk.r(i16, objArr, textView2);
                         e.addView(textView2, w7.z5.t(-1, -2, 48, 24, 4, 24, 4));
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context2, i10, d6Var);
                         alertDialog$Builder.n(e);
@@ -160,23 +160,23 @@ public final /* synthetic */ class a3 implements Utilities.Callback2 {
                 }
                 break;
             default:
-                zh.q0 q0Var = (zh.q0) obj5;
-                zh.p0 p0Var = (zh.p0) obj3;
+                zh.r0 r0Var = (zh.r0) obj5;
+                zh.q0 q0Var = (zh.q0) obj3;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                if (q0Var.w == ((int[]) obj4)[0]) {
-                    q0Var.w = 0;
+                if (r0Var.w == ((int[]) obj4)[0]) {
+                    r0Var.w = 0;
                 }
-                if (p0Var != null && zh.q0.g(i12).get(j10) == p0Var) {
+                if (q0Var != null && zh.r0.g(i12).get(j10) == q0Var) {
                     if (tL_error2 == null) {
-                        p0Var.b = SystemClock.elapsedRealtime();
+                        q0Var.b = SystemClock.elapsedRealtime();
                     } else {
-                        zh.q0.g(i12).remove(j10);
+                        zh.r0.g(i12).remove(j10);
                     }
                 }
                 if (tL_error2 != null) {
                     FileLog.e("QrShare: setShareTheme " + tL_error2.text);
-                    if (!q0Var.E) {
-                        zh.c1 c1Var = q0Var.b;
+                    if (!r0Var.E) {
+                        zh.c1 c1Var = r0Var.b;
                         c1Var.getClass();
                         c1Var.d1(R.drawable.msg_warning, LocaleController.getString(R.string.ErrorOccurred), null);
                         break;
@@ -202,10 +202,10 @@ public final /* synthetic */ class a3 implements Utilities.Callback2 {
         this.c = i10;
     }
 
-    public /* synthetic */ a3(zh.q0 q0Var, int[] iArr, zh.p0 p0Var, int i10, long j10) {
-        this.d = q0Var;
+    public /* synthetic */ a3(zh.r0 r0Var, int[] iArr, zh.q0 q0Var, int i10, long j10) {
+        this.d = r0Var;
         this.e = iArr;
-        this.f = p0Var;
+        this.f = q0Var;
         this.c = i10;
         this.b = j10;
     }

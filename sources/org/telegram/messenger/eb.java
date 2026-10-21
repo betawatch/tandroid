@@ -1,26 +1,28 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+import android.util.SparseArray;
+
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class eb implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q0.a b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ SparseArray c;
 
-    public /* synthetic */ eb(q0.a aVar, int i10, int i11) {
-        this.a = i11;
-        this.b = aVar;
-        this.c = i10;
+    public /* synthetic */ eb(MessagesController messagesController, SparseArray sparseArray, int i10) {
+        this.a = i10;
+        this.b = messagesController;
+        this.c = sparseArray;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                MessagesController.lambda$getNextReactionMentionInternal$1(this.b, this.c);
+                this.b.lambda$getDifference$351(this.c);
                 break;
             default:
-                MessagesController.lambda$getNextReactionMentionInternal$2(this.b, this.c);
+                this.b.lambda$getChannelDifference$338(this.c);
                 break;
         }
     }

@@ -1,80 +1,61 @@
 package org.telegram.messenger;
 
-import android.app.Activity;
+import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.ui.Components.nn;
-import org.telegram.ui.Components.qy;
-import org.telegram.ui.Components.we0;
-import org.telegram.ui.cy;
-import org.telegram.ui.kv;
-import org.telegram.ui.pj0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q1 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ContactsController b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ HashMap d;
+    public final /* synthetic */ HashMap e;
 
-    public /* synthetic */ q1(ContactsController contactsController, HashMap hashMap, boolean z10, boolean z11, boolean z12) {
-        this.e = contactsController;
-        this.f = hashMap;
-        this.b = z10;
-        this.c = z11;
-        this.d = z12;
+    public /* synthetic */ q1(ArrayList arrayList, HashMap hashMap, HashMap hashMap2, ContactsController contactsController) {
+        this.a = 1;
+        this.b = contactsController;
+        this.c = arrayList;
+        this.d = hashMap;
+        this.e = hashMap2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((ContactsController) this.e).lambda$syncPhoneBookByAlert$7((HashMap) this.f, this.b, this.c, this.d);
+                ArrayList arrayList = this.c;
+                HashMap hashMap = this.e;
+                this.b.lambda$performSyncPhoneBook$15(this.d, arrayList, hashMap);
+                break;
+            case 1:
+                HashMap hashMap2 = this.d;
+                HashMap hashMap3 = this.e;
+                this.b.lambda$mergePhonebookAndTelegramContacts$40(this.c, hashMap2, hashMap3);
+                break;
+            case 2:
+                ArrayList arrayList2 = this.c;
+                HashMap hashMap4 = this.e;
+                this.b.lambda$performSyncPhoneBook$21(this.d, arrayList2, hashMap4);
+                break;
+            case 3:
+                ArrayList arrayList3 = this.c;
+                HashMap hashMap5 = this.e;
+                this.b.lambda$performSyncPhoneBook$17(this.d, arrayList3, hashMap5);
                 break;
             default:
-                cy cyVar = (cy) this.e;
-                Activity activity = (Activity) this.f;
-                if (cyVar.getParentActivity() != null) {
-                    cyVar.t2 = false;
-                    boolean z10 = this.b;
-                    boolean z11 = this.c;
-                    boolean z12 = this.d;
-                    if (z10 || z11 || z12) {
-                        cyVar.A0 = true;
-                        if (!z10 || !pj0.o(activity)) {
-                            if (!z11 || !cyVar.U1 || !cyVar.getUserConfig().syncContacts || !activity.shouldShowRequestPermissionRationale("android.permission.READ_CONTACTS")) {
-                                if (!z12 || !activity.shouldShowRequestPermissionRationale("android.permission.WRITE_EXTERNAL_STORAGE")) {
-                                    cyVar.h3(true);
-                                    break;
-                                } else if (activity instanceof org.telegram.ui.m5) {
-                                    org.telegram.ui.ActionBar.b2 v = ((org.telegram.ui.m5) activity).v(R.raw.permission_request_folder, LocaleController.getString(R.string.PermissionStorageWithHint));
-                                    cyVar.T1 = v;
-                                    cyVar.showDialog(v);
-                                    break;
-                                }
-                            } else {
-                                org.telegram.ui.ActionBar.b2 b2Var = org.telegram.ui.Components.f5.v(activity, new kv(cyVar, 0)).a;
-                                cyVar.T1 = b2Var;
-                                cyVar.showDialog(b2Var);
-                                break;
-                            }
-                        } else {
-                            we0.e(new String[]{"android.permission.POST_NOTIFICATIONS"}, new nn(1, new qy(8, cyVar, activity)));
-                            break;
-                        }
-                    }
-                }
+                ArrayList arrayList4 = this.c;
+                HashMap hashMap6 = this.e;
+                this.b.lambda$performSyncPhoneBook$23(this.d, arrayList4, hashMap6);
                 break;
         }
     }
 
-    public /* synthetic */ q1(cy cyVar, boolean z10, boolean z11, boolean z12, Activity activity) {
-        this.e = cyVar;
-        this.b = z10;
-        this.c = z11;
-        this.d = z12;
-        this.f = activity;
+    public /* synthetic */ q1(ContactsController contactsController, HashMap hashMap, ArrayList arrayList, HashMap hashMap2, int i10) {
+        this.a = i10;
+        this.b = contactsController;
+        this.d = hashMap;
+        this.c = arrayList;
+        this.e = hashMap2;
     }
 }

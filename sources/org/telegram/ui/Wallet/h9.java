@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.EditTextBoldCursor;
@@ -23,7 +23,7 @@ import org.telegram.ui.Components.bi;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.tf1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class h9 extends FrameLayout {
     public static final bs R = bs.h;
@@ -90,7 +90,7 @@ public final class h9 extends FrameLayout {
         TextView textView = new TextView(context);
         this.e = textView;
         int i10 = org.telegram.ui.ActionBar.h6.z6;
-        kk.o(i10, d6Var, textView, 1, 44.0f);
+        mk.o(i10, d6Var, textView, 1, 44.0f);
         textView.setTypeface(AndroidUtilities.getTypeface("fonts/gram.ttf"));
         textView.setGravity(16);
         textView.setIncludeFontPadding(false);
@@ -353,7 +353,7 @@ public final class h9 extends FrameLayout {
         FrameLayout frameLayout = this.d;
         m6 m6Var = this.c;
         frameLayout.setTranslationX((((width - frameLayout.getLeft()) - m6Var.getLeft()) - (m6Var.getWidth() / 2.0f)) * f11);
-        frameLayout.setTranslationY(kk.z(m6Var.getHeight(), 2.0f, (((getHeight() / 2.0f) - linearLayout.getTop()) - frameLayout.getTop()) - m6Var.getTop(), f11) - (AndroidUtilities.dp(36.0f) * ((float) Math.sin(f7 * 3.141592653589793d))));
+        frameLayout.setTranslationY(mk.z(m6Var.getHeight(), 2.0f, (((getHeight() / 2.0f) - linearLayout.getTop()) - frameLayout.getTop()) - m6Var.getTop(), f11) - (AndroidUtilities.dp(36.0f) * ((float) Math.sin(f7 * 3.141592653589793d))));
         org.telegram.ui.Cells.t3 t3Var = this.f;
         int visibility = t3Var.getVisibility();
         d9 d9Var = this.b;

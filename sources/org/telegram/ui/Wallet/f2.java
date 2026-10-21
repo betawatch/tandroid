@@ -38,8 +38,8 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.eh;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.gh;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -48,7 +48,7 @@ import org.telegram.ui.cf0;
 import org.telegram.ui.eb0;
 import org.telegram.ui.l80;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class f2 {
     public final int a;
@@ -109,7 +109,7 @@ public final class f2 {
         boolean z11 = tL_urlAuthResultRequest != null;
         final TL_wallet.tonConnectSession tonconnectsession = z11 ? null : a2Var.e;
         final TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = {null};
-        LinearLayout e = kk.e(context, 1);
+        LinearLayout e = mk.e(context, 1);
         FrameLayout frameLayout = new FrameLayout(context);
         ImageView imageView2 = new ImageView(context);
         imageView2.setImageResource(R.drawable.ic_ab_close);
@@ -191,7 +191,7 @@ public final class f2 {
                         dVar.d();
                         dVar.setText(LocaleController.getString(R.string.WalletCancel));
                         linearLayout.addView(dVar, w7.z5.m(1.0f, 0, 44, 0, 6, 0));
-                        final ei.d f7 = kk.f(24, context, d6Var, true);
+                        final ei.d f7 = mk.f(24, context, d6Var, true);
                         f7.setText(LocaleController.getString(R.string.WalletConnect));
                         linearLayout.addView(f7, w7.z5.m(1.0f, 0, 44, 6, 0, 0));
                         final k2 k2Var = new k2(context, e, d6Var);
@@ -314,7 +314,7 @@ public final class f2 {
                 dVar2.d();
                 dVar2.setText(LocaleController.getString(R.string.WalletCancel));
                 linearLayout2.addView(dVar2, w7.z5.m(1.0f, 0, 44, 0, 6, 0));
-                final ei.d f72 = kk.f(24, context, d6Var, true);
+                final ei.d f72 = mk.f(24, context, d6Var, true);
                 f72.setText(LocaleController.getString(R.string.WalletConnect));
                 linearLayout2.addView(f72, w7.z5.m(1.0f, 0, 44, 6, 0, 0));
                 final k2 k2Var2 = new k2(context, e, d6Var);
@@ -456,7 +456,7 @@ public final class f2 {
         dVar22.d();
         dVar22.setText(LocaleController.getString(R.string.WalletCancel));
         linearLayout22.addView(dVar22, w7.z5.m(1.0f, 0, 44, 0, 6, 0));
-        final ei.d f722 = kk.f(24, context, d6Var, true);
+        final ei.d f722 = mk.f(24, context, d6Var, true);
         f722.setText(LocaleController.getString(R.string.WalletConnect));
         linearLayout22.addView(f722, w7.z5.m(1.0f, 0, 44, 6, 0, 0));
         final k2 k2Var22 = new k2(context, e, d6Var);
@@ -548,7 +548,7 @@ public final class f2 {
     }
 
     public static LinearLayout D(Context context, String str, org.telegram.ui.ActionBar.d6 d6Var) {
-        LinearLayout e = kk.e(context, 1);
+        LinearLayout e = mk.e(context, 1);
         e.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(16.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, d6Var)));
         org.telegram.ui.Cells.l4 l4Var = new org.telegram.ui.Cells.l4(context, d6Var);
         l4Var.setText(str);
@@ -659,7 +659,7 @@ public final class f2 {
         linearLayout2.setOrientation(1);
         linearLayout2.setGravity((charSequence2 == null && str == null) ? 16 : 48);
         TextView textView = new TextView(context);
-        kk.k(16.0f, 1, textView);
+        mk.k(16.0f, 1, textView);
         int i11 = org.telegram.ui.ActionBar.h6.G6;
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
         textView.setSingleLine(charSequence2 != null);
@@ -750,7 +750,7 @@ public final class f2 {
 
     public static TextView g(Context context, String str, org.telegram.ui.ActionBar.d6 d6Var) {
         TextView textView = new TextView(context);
-        kk.k(14.0f, 1, textView);
+        mk.k(14.0f, 1, textView);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) str);
@@ -787,19 +787,19 @@ public final class f2 {
     public static void o(Context context, int i10, long j10, int i11, org.telegram.ui.ActionBar.d6 d6Var, eb0 eb0Var) {
         m0 w9 = m0.w(i10);
         f2 f2Var = w9.g;
-        eh ehVar = new eh(context, i10, w9, d6Var, eb0Var);
+        gh ghVar = new gh(context, i10, w9, d6Var, eb0Var);
         if (f2Var.h || f2Var.g != null) {
-            ehVar.run(null, "A TON Connect request is already open");
+            ghVar.run(null, "A TON Connect request is already open");
             return;
         }
         String string = MessagesController.getMainSettings(f2Var.a).getString(j(j10, i11), null);
         if (string == null) {
             f2Var.h = true;
-            f2Var.b.j0(new xb(f2Var, j10, ehVar, i11, 17));
+            f2Var.b.j0(new xb(f2Var, j10, ghVar, i11, 17));
             return;
         }
         f2Var.h = true;
-        x xVar = new x(1, f2Var, ehVar);
+        x xVar = new x(1, f2Var, ghVar);
         try {
             f2Var.C(j10, i11, new JSONObject(string), xVar);
         } catch (Exception e) {

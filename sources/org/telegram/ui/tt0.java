@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class tt0 extends rg.d2 {
     public final Path o0;
@@ -40,7 +40,7 @@ public final class tt0 extends rg.d2 {
         if (this == photoViewer.v5 || this == photoViewer.w5) {
             canvas.translate(-photoViewer.u5.getX(), -photoViewer.u5.getY());
         }
-        photoViewer.U0(canvas, this.h0, -13948117, 855638016, false, true, false);
+        photoViewer.V0(canvas, this.h0, -13948117, 855638016, false, true, false);
         float e = this.q0.e(this.p0);
         if (e > 0.0f) {
             canvas.drawColor(org.telegram.ui.ActionBar.h6.m1(e, -1));

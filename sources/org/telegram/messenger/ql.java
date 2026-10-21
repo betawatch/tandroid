@@ -1,24 +1,35 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
-/* loaded from: classes.dex */
-public final /* synthetic */ class ql implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ VideoEncodingService b;
+import org.telegram.messenger.UnconfirmedAuthController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ ql(VideoEncodingService videoEncodingService, int i10) {
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class ql implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ UnconfirmedAuthController.UnconfirmedAuth b;
+    public final /* synthetic */ Utilities.Callback c;
+
+    public /* synthetic */ ql(UnconfirmedAuthController.UnconfirmedAuth unconfirmedAuth, Utilities.Callback callback, int i10) {
         this.a = i10;
-        this.b = videoEncodingService;
+        this.b = unconfirmedAuth;
+        this.c = callback;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$didReceivedNotification$0();
+                this.b.lambda$deny$4(this.c, tLObject, tL_error);
+                break;
+            case 1:
+                this.b.lambda$deny$6(this.c, tLObject, tL_error);
                 break;
             default:
-                this.b.updateNotification();
+                this.b.lambda$confirm$2(this.c, tLObject, tL_error);
                 break;
         }
     }

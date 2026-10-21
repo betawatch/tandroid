@@ -25,7 +25,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class ng extends iu {
     public fd c;
@@ -134,8 +134,8 @@ public abstract class ng extends iu {
         }
         MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) arrayList.get(0);
         if (!chatActivityEnterView.z2) {
-            PhotoViewer.t1().K2(null, qnVar, chatActivityEnterView.W3);
-            PhotoViewer.t1().g2(arrayList, 0, 2, false, new mg(this, photoEntry, file), chatActivityEnterView.P2);
+            PhotoViewer.u1().M2(null, qnVar, chatActivityEnterView.W3);
+            PhotoViewer.u1().i2(arrayList, 0, 2, false, new mg(this, photoEntry, file), chatActivityEnterView.P2);
         } else {
             AndroidUtilities.hideKeyboard(this);
             AndroidUtilities.runOnUIThread(new c5.w(this, arrayList, file, false, 8), 100L);
@@ -149,12 +149,12 @@ public abstract class ng extends iu {
         org.telegram.ui.qn qnVar = chatActivityEnterView.P2;
         mf mfVar = chatActivityEnterView.L0;
         if (mfVar != null) {
-            mfVar.h(true);
+            mfVar.g(true);
             chatActivityEnterView.L0 = null;
         }
         org.telegram.ui.gn gnVar = chatActivityEnterView.V2;
         if (gnVar != null && qnVar != null && gnVar.f) {
-            qnVar.Vb();
+            qnVar.Wb();
             return;
         }
         t0.h hVar = iVar.a;
@@ -379,8 +379,8 @@ public abstract class ng extends iu {
         super.setOffsetY(f7);
         ChatActivityEnterView chatActivityEnterView = this.d;
         if (chatActivityEnterView.m1.getForeground() != null) {
-            kw0 kw0Var = chatActivityEnterView.m1;
-            kw0Var.invalidateDrawable(kw0Var.getForeground());
+            lw0 lw0Var = chatActivityEnterView.m1;
+            lw0Var.invalidateDrawable(lw0Var.getForeground());
         }
     }
 }

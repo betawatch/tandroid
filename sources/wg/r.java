@@ -18,7 +18,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
@@ -29,7 +29,7 @@ import org.telegram.ui.Components.x90;
 import sg.w1;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class r extends FrameLayout {
     public final zd a;
@@ -44,7 +44,7 @@ public final class r extends FrameLayout {
     public r(Context context, d6 d6Var) {
         super(context);
         this.e = d6Var;
-        LinearLayout e = kk.e(context, 1);
+        LinearLayout e = mk.e(context, 1);
         zd zdVar = new zd(context, 1, 0, 4);
         this.a = zdVar;
         Bitmap createBitmap = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
@@ -71,7 +71,7 @@ public final class r extends FrameLayout {
         zdVar.setStarParticlesView(oVar);
         TextView textView = new TextView(context);
         this.c = textView;
-        kk.k(22.0f, 1, textView);
+        mk.k(22.0f, 1, textView);
         int i11 = h6.G6;
         c1.q(i11, d6Var, textView, 1);
         e.addView(textView, z5.t(-2, -2, 1, 24, -8, 24, 0));

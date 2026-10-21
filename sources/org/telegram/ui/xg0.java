@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xg0 implements Runnable {
     public final /* synthetic */ int a;
@@ -482,9 +482,9 @@ public final /* synthetic */ class xg0 implements Runnable {
                 break;
             case 24:
                 xs0 xs0Var = (xs0) this.b;
-                org.telegram.ui.Components.b81 b81Var = (org.telegram.ui.Components.b81) this.c;
+                org.telegram.ui.Components.c81 c81Var = (org.telegram.ui.Components.c81) this.c;
                 xs0Var.getClass();
-                if (b81Var.p() > 0 && b81Var.n() >= b81Var.p() - 590) {
+                if (c81Var.p() > 0 && c81Var.n() >= c81Var.p() - 590) {
                     xs0Var.a.e0.invalidate();
                     break;
                 }

@@ -12,13 +12,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.x90;
+import org.telegram.ui.Components.y31;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.gt0;
 import org.telegram.ui.z70;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j implements Runnable {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class j implements Runnable {
                 break;
             case 2:
                 p5 p5Var = (p5) obj;
-                AndroidUtilities.runOnUIThread(new x31(p5Var, i11, p5.h(p5Var.R, i11), 19));
+                AndroidUtilities.runOnUIThread(new y31(p5Var, i11, p5.h(p5Var.R, i11), 19));
                 break;
             case 3:
                 m6 m6Var = (m6) obj;

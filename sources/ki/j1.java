@@ -13,7 +13,7 @@ import org.telegram.ui.Components.tz;
 import org.telegram.ui.Components.yg;
 import org.telegram.ui.mi0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -227,7 +227,7 @@ public final /* synthetic */ class j1 implements View.OnClickListener {
                 d2Var7.r0();
                 mi0 mi0Var = d2Var7.O0;
                 if (mi0Var != null) {
-                    mi0Var.h(true);
+                    mi0Var.g(true);
                     d2Var7.O0 = null;
                     break;
                 }

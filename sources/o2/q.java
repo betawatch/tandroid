@@ -35,14 +35,14 @@ import k2.w0;
 import ki.t1;
 import ki.u;
 import si.z;
-import u2.b1;
-import u2.f1;
-import u2.r1;
+import u2.c1;
+import u2.g1;
+import u2.s1;
 import v7.u6;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final class q implements y2.g, y2.j, f1, c3.q, b1 {
+public final class q implements y2.g, y2.j, g1, c3.q, c1 {
     public static final Set p0 = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList(1, 2, 5)));
     public final List E;
     public final n F;
@@ -64,7 +64,7 @@ public final class q implements y2.g, y2.j, f1, c3.q, b1 {
     public w V;
     public w W;
     public boolean X;
-    public r1 Y;
+    public s1 Y;
     public Set Z;
     public final String a;
     public int[] a0;
@@ -268,9 +268,9 @@ public final class q implements y2.g, y2.j, f1, c3.q, b1 {
                     return;
                 }
             }
-            r1 r1Var = this.Y;
-            if (r1Var != null) {
-                int i12 = r1Var.a;
+            s1 s1Var = this.Y;
+            if (s1Var != null) {
+                int i12 = s1Var.a;
                 int[] iArr = new int[i12];
                 this.a0 = iArr;
                 Arrays.fill(iArr, -1);
@@ -504,7 +504,7 @@ public final class q implements y2.g, y2.j, f1, c3.q, b1 {
         }
     }
 
-    @Override // u2.b1
+    @Override // u2.c1
     public final void a() {
         this.H.post(this.F);
     }
@@ -522,12 +522,12 @@ public final class q implements y2.g, y2.j, f1, c3.q, b1 {
         }
     }
 
-    @Override // u2.f1
+    @Override // u2.g1
     public final boolean c() {
         return this.s.d();
     }
 
-    @Override // u2.f1
+    @Override // u2.g1
     public final long d() {
         if (A()) {
             return this.g0;
@@ -684,7 +684,7 @@ public final class q implements y2.g, y2.j, f1, c3.q, b1 {
     /* JADX WARN: Type inference failed for: r5v1 */
     /* JADX WARN: Type inference failed for: r5v2 */
     /* JADX WARN: Type inference failed for: r5v3, types: [c3.j0] */
-    /* JADX WARN: Type inference failed for: r5v4, types: [o2.p, u2.c1] */
+    /* JADX WARN: Type inference failed for: r5v4, types: [o2.p, u2.d1] */
     /* JADX WARN: Type inference failed for: r5v6, types: [c3.n] */
     /* JADX WARN: Type inference failed for: r5v7 */
     /* JADX WARN: Type inference failed for: r5v8 */
@@ -830,7 +830,7 @@ public final class q implements y2.g, y2.j, f1, c3.q, b1 {
     /* JADX WARN: Removed duplicated region for block: B:46:0x013d  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x0498  */
     /* JADX WARN: Removed duplicated region for block: B:52:0x04a2  */
-    @Override // u2.f1
+    @Override // u2.g1
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1047,12 +1047,12 @@ public final class q implements y2.g, y2.j, f1, c3.q, b1 {
                                         p2.k kVar3 = lVar3.b;
                                         long j29 = lVar3.e;
                                         Uri g10 = (kVar3 == null || (str = kVar3.h) == null) ? null : e2.e.g(str2, str);
-                                        e g11 = iVar2.g(l4, g10, true);
+                                        e g11 = iVar2.g(g10, l4, true);
                                         oVar.b = g11;
                                         if (g11 == null) {
                                             String str3 = lVar3.h;
                                             Uri g12 = str3 == null ? null : e2.e.g(str2, str3);
-                                            e g13 = iVar2.g(l4, g12, false);
+                                            e g13 = iVar2.g(g12, l4, false);
                                             oVar.b = g13;
                                             if (g13 == null) {
                                                 boolean z24 = lVar3 instanceof p2.i ? ((p2.i) lVar3).w || (f10.c == 0 && z22) : z22;
@@ -1325,7 +1325,7 @@ public final class q implements y2.g, y2.j, f1, c3.q, b1 {
         return false;
     }
 
-    @Override // u2.f1
+    @Override // u2.g1
     public final long s() {
         if (this.j0) {
             return Long.MIN_VALUE;
@@ -1350,7 +1350,7 @@ public final class q implements y2.g, y2.j, f1, c3.q, b1 {
         return j10;
     }
 
-    @Override // u2.f1
+    @Override // u2.g1
     public final void u(long j10) {
         y2.l lVar = this.s;
         if (lVar.c() || A()) {
@@ -1400,7 +1400,7 @@ public final class q implements y2.g, y2.j, f1, c3.q, b1 {
         }
     }
 
-    public final r1 v(p1[] p1VarArr) {
+    public final s1 v(p1[] p1VarArr) {
         for (int i10 = 0; i10 < p1VarArr.length; i10++) {
             p1 p1Var = p1VarArr[i10];
             w[] wVarArr = new w[p1Var.a];
@@ -1413,7 +1413,7 @@ public final class q implements y2.g, y2.j, f1, c3.q, b1 {
             }
             p1VarArr[i10] = new p1(p1Var.b, wVarArr);
         }
-        return new r1(p1VarArr);
+        return new s1(p1VarArr);
     }
 
     public final void x(int i10) {

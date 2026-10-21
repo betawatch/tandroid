@@ -6,9 +6,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class za1 implements ImageReceiver.ImageReceiverDelegate, org.telegram.ui.Components.xl0, org.telegram.ui.Components.f91, org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class za1 implements ImageReceiver.ImageReceiverDelegate, org.telegram.ui.Components.yl0, org.telegram.ui.Components.g91, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ kc1 b;
 
@@ -17,12 +17,12 @@ public final /* synthetic */ class za1 implements ImageReceiver.ImageReceiverDel
         this.b = kc1Var;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ boolean P0(View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public void d(float f7, float f10, int i10, View view) {
         if (view instanceof org.telegram.ui.Cells.u1) {
             org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view;
@@ -61,10 +61,10 @@ public final /* synthetic */ class za1 implements ImageReceiver.ImageReceiverDel
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.k5.a(this, i10, str, drawable);
+        org.telegram.messenger.m5.a(this, i10, str, drawable);
     }
 
-    @Override // org.telegram.ui.Components.f91
+    @Override // org.telegram.ui.Components.g91
     public void e(int i10, int i11) {
         kc1 kc1Var = this.b;
         if (kc1Var.E1) {
@@ -181,10 +181,10 @@ public final /* synthetic */ class za1 implements ImageReceiver.ImageReceiverDel
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.k5.b(this, imageReceiver);
+        org.telegram.messenger.m5.b(this, imageReceiver);
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ void a0(View view, float f7, float f10) {
     }
 }

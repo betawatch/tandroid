@@ -2,13 +2,13 @@ package rg;
 
 import android.view.ViewGroup;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.Components.hm0;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.tl0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class s1 extends hm0 {
-    @Override // org.telegram.ui.Components.hm0
+public final class s1 extends im0 {
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         return true;
     }
@@ -35,6 +35,6 @@ public final class s1 extends hm0 {
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         n1 n1Var = new n1(viewGroup.getContext());
         n1Var.setLayoutParams(new s4.o0(-1, -2));
-        return new sl0(n1Var);
+        return new tl0(n1Var);
     }
 }

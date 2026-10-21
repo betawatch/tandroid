@@ -61,13 +61,13 @@ import java.util.zip.InflaterInputStream;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.ui.Components.bl0;
 import org.telegram.ui.Components.cl0;
-import org.telegram.ui.Components.e01;
+import org.telegram.ui.Components.dl0;
+import org.telegram.ui.Components.f01;
 import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.n71;
 import org.telegram.ui.Components.nk;
-import org.telegram.ui.Components.qz0;
+import org.telegram.ui.Components.o71;
+import org.telegram.ui.Components.rz0;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.iq0;
 import org.telegram.ui.qn;
@@ -77,9 +77,9 @@ import v7.q7;
 import v7.u6;
 import w7.i6;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public class g3 implements bl0, iq0, n5.b, t0.h {
+public class g3 implements cl0, iq0, n5.b, t0.h {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -110,7 +110,7 @@ public class g3 implements bl0, iq0, n5.b, t0.h {
     public static Object[] u(Object[] objArr, int[] iArr) {
         int length = objArr.length;
         Class<?> componentType = objArr.getClass().getComponentType();
-        qz0 qz0Var = e01.R;
+        rz0 rz0Var = f01.R;
         int i10 = -1;
         for (int i11 : iArr) {
             i10 = Math.max(i10, i11);
@@ -764,7 +764,7 @@ public class g3 implements bl0, iq0, n5.b, t0.h {
         f5.Z(tiVar.M1, tiVar.l1() + arrayList2.size(), tiVar.p1(), new ci.y2(i10, 2, nkVar, arrayList2, z11));
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public /* synthetic */ boolean i() {
         return true;
     }
@@ -786,7 +786,7 @@ public class g3 implements bl0, iq0, n5.b, t0.h {
         }
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public /* synthetic */ boolean m() {
         return false;
     }
@@ -814,7 +814,7 @@ public class g3 implements bl0, iq0, n5.b, t0.h {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:9:0x0063  */
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -834,7 +834,7 @@ public class g3 implements bl0, iq0, n5.b, t0.h {
             if (l10 == null) {
                 f11 = 0.0f;
                 f7 = f11;
-                qnVar.eb(t82, (MessageObject) this.b, (cl0) this.c, view, f12, f7, i1Var, false, (i1Var == null && i1Var.a) ? true : z10, z11, false);
+                qnVar.eb(t82, (MessageObject) this.b, (dl0) this.c, view, f12, f7, i1Var, false, (i1Var == null && i1Var.a) ? true : z10, z11, false);
             } else {
                 f12 = j1Var2.c + l10.x + (l10.A / 2.0f);
                 f10 = j1Var2.d + l10.y;
@@ -842,7 +842,7 @@ public class g3 implements bl0, iq0, n5.b, t0.h {
             }
         } else if (!(t82 instanceof org.telegram.ui.Cells.w0) || (l4 = (j1Var = ((org.telegram.ui.Cells.w0) t82).E0).l(i1Var)) == null) {
             f7 = 0.0f;
-            qnVar.eb(t82, (MessageObject) this.b, (cl0) this.c, view, f12, f7, i1Var, false, (i1Var == null && i1Var.a) ? true : z10, z11, false);
+            qnVar.eb(t82, (MessageObject) this.b, (dl0) this.c, view, f12, f7, i1Var, false, (i1Var == null && i1Var.a) ? true : z10, z11, false);
         } else {
             f12 = j1Var.c + l4.x + (l4.A / 2.0f);
             f10 = j1Var.d + l4.y;
@@ -850,7 +850,7 @@ public class g3 implements bl0, iq0, n5.b, t0.h {
         }
         f11 = f10 + (i10 / 2.0f);
         f7 = f11;
-        qnVar.eb(t82, (MessageObject) this.b, (cl0) this.c, view, f12, f7, i1Var, false, (i1Var == null && i1Var.a) ? true : z10, z11, false);
+        qnVar.eb(t82, (MessageObject) this.b, (dl0) this.c, view, f12, f7, i1Var, false, (i1Var == null && i1Var.a) ? true : z10, z11, false);
     }
 
     public void r(View view, int i10, ViewGroup.LayoutParams layoutParams, boolean z10) {
@@ -945,7 +945,7 @@ public class g3 implements bl0, iq0, n5.b, t0.h {
         }
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public /* synthetic */ boolean w() {
         return false;
     }
@@ -1012,9 +1012,9 @@ public class g3 implements bl0, iq0, n5.b, t0.h {
     public g3(View view) {
         this.a = 15;
         this.d = view;
-        n71 n71Var = new n71(this, view);
-        this.b = n71Var;
-        view.addOnLayoutChangeListener(n71Var);
+        o71 o71Var = new o71(this, view);
+        this.b = o71Var;
+        view.addOnLayoutChangeListener(o71Var);
     }
 
     public g3(int i10) {
@@ -1050,7 +1050,7 @@ public class g3 implements bl0, iq0, n5.b, t0.h {
     public void k() {
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public /* synthetic */ void v() {
     }
 
@@ -1138,7 +1138,7 @@ public class g3 implements bl0, iq0, n5.b, t0.h {
         this.d = u(objArr2, iArr);
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.cl0
     public /* synthetic */ void q(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

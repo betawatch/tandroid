@@ -23,17 +23,17 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.Components.AnimatedFileNative;
-import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.r51;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z1 implements Runnable {
     public final /* synthetic */ int a;
@@ -376,12 +376,12 @@ public final /* synthetic */ class z1 implements Runnable {
                 String str5 = ((TLRPC.TL_messages_searchStickerSets) obj2).q;
                 hg.e2 e2Var = c2Var.a;
                 String str6 = e2Var.R;
-                q51 q51Var = e2Var.e;
+                r51 r51Var = e2Var.e;
                 if (str5.equals(str6)) {
                     c2Var.a();
-                    q51Var.b.h.getProgressDrawable().e = false;
+                    r51Var.b.h.getProgressDrawable().e = false;
                     e2Var.N = 0;
-                    q51Var.b(true);
+                    r51Var.b(true);
                     e2Var.E.addAll(tL_messages_foundStickerSets.sets);
                     e2Var.l();
                     break;
@@ -424,7 +424,7 @@ public final /* synthetic */ class z1 implements Runnable {
                     break;
                 } else if (tLObject5 instanceof TLRPC.TL_boolFalse) {
                     cVar.a.a(0.0f);
-                    kk.q(R.string.UnknownError, xc.a0(cVar), null);
+                    mk.q(R.string.UnknownError, xc.a0(cVar), null);
                     break;
                 } else {
                     cVar.finishFragment();
@@ -440,7 +440,7 @@ public final /* synthetic */ class z1 implements Runnable {
                     break;
                 } else if (tLObject6 instanceof TLRPC.TL_boolFalse) {
                     mVar.e.a(0.0f);
-                    kk.q(R.string.UnknownError, xc.a0(mVar), null);
+                    mk.q(R.string.UnknownError, xc.a0(mVar), null);
                     break;
                 } else {
                     if (mVar.E != null) {
@@ -483,7 +483,7 @@ public final /* synthetic */ class z1 implements Runnable {
                     break;
                 } else if (tLObject7 instanceof TLRPC.TL_boolFalse) {
                     v0Var.a.a(0.0f);
-                    kk.q(R.string.UnknownError, xc.a0(v0Var), null);
+                    mk.q(R.string.UnknownError, xc.a0(v0Var), null);
                     break;
                 } else {
                     v0Var.finishFragment();

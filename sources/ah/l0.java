@@ -17,8 +17,8 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.ch;
 import org.telegram.ui.Components.gb;
-import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.iu;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.li;
 import org.telegram.ui.Components.si;
 import org.telegram.ui.Components.su;
@@ -28,10 +28,10 @@ import org.telegram.ui.Components.voip.a3;
 import org.telegram.ui.Components.voip.m3;
 import org.telegram.ui.Components.voip.o1;
 import org.telegram.ui.Components.voip.x2;
-import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.wy0;
 import org.telegram.ui.Components.xl;
+import org.telegram.ui.Components.xy0;
 import org.telegram.ui.Components.zh;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.Stories.ProfileStoriesView;
@@ -44,7 +44,7 @@ import org.telegram.ui.kh1;
 import org.telegram.ui.qn;
 import rg.b2;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -269,15 +269,15 @@ public final /* synthetic */ class l0 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 18:
-                wy0 wy0Var = (wy0) this.b;
-                vy0[] vy0VarArr = (vy0[]) this.c;
-                wy0Var.getClass();
+                xy0 xy0Var = (xy0) this.b;
+                wy0[] wy0VarArr = (wy0[]) this.c;
+                xy0Var.getClass();
                 float floatValue9 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                while (i10 < vy0VarArr.length) {
-                    wy0Var.c[i10] = (wy0Var.d[i10] * floatValue9) + ((1.0f - floatValue9) * wy0Var.e[i10]);
+                while (i10 < wy0VarArr.length) {
+                    xy0Var.c[i10] = (xy0Var.d[i10] * floatValue9) + ((1.0f - floatValue9) * xy0Var.e[i10]);
                     i10++;
                 }
-                wy0Var.invalidate();
+                xy0Var.invalidate();
                 break;
             case 19:
                 org.telegram.ui.Components.voip.l0 l0Var = (org.telegram.ui.Components.voip.l0) this.b;
@@ -344,7 +344,7 @@ public final /* synthetic */ class l0 implements ValueAnimator.AnimatorUpdateLis
                 aVar2.getClass();
                 int intValue2 = ((Integer) valueAnimator.getAnimatedValue()).intValue();
                 int i13 = intValue2 - aVar2.b;
-                ((im0) aVar2.d).scrollBy(0, i13);
+                ((jm0) aVar2.d).scrollBy(0, i13);
                 iArr2[0] = iArr2[0] + i13;
                 aVar2.b = intValue2;
                 break;

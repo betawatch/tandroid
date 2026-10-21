@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.qy;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.df0;
 import sg.m1;
@@ -33,7 +33,7 @@ import yh.l1;
 import yh.o1;
 import yh.p2;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -393,9 +393,9 @@ public final /* synthetic */ class p implements Runnable {
                 ((c0) this.b).onBackPressed();
                 return;
             case 15:
-                t61 t61Var = ((o1) this.b).Y;
-                if (t61Var != null) {
-                    t61Var.N(false);
+                u61 u61Var = ((o1) this.b).Y;
+                if (u61Var != null) {
+                    u61Var.N(false);
                     return;
                 }
                 return;

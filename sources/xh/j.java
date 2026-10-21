@@ -28,16 +28,16 @@ import org.telegram.ui.ActionBar.e1;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.dn0;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.ki0;
+import org.telegram.ui.Components.en0;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.li0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.c9;
 import org.telegram.ui.qn;
 import tg.p;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class j extends Dialog {
     public final /* synthetic */ k E;
@@ -47,7 +47,7 @@ public final class j extends Dialog {
     public final TextView d;
     public final TextView e;
     public final ActionBarPopupWindow$ActionBarPopupWindowLayout f;
-    public final ki0 h;
+    public final li0 h;
     public final h n;
     public TLRPC.TL_chatInviteImporter r;
     public ValueAnimator s;
@@ -57,7 +57,7 @@ public final class j extends Dialog {
     public final i y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j(k kVar, Activity activity, im0 im0Var, d6 d6Var, boolean z10) {
+    public j(k kVar, Activity activity, jm0 jm0Var, d6 d6Var, boolean z10) {
         super(activity, R.style.TransparentDialog2);
         this.E = kVar;
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.popup_fixed_alert2).mutate();
@@ -85,11 +85,11 @@ public final class j extends Dialog {
         iVar.addView(actionBarPopupWindow$ActionBarPopupWindowLayout);
         h hVar = new h(getContext());
         this.n = hVar;
-        ki0 ki0Var = new ki0(activity, n2Var.getActionBar(), im0Var, hVar);
-        this.h = ki0Var;
-        ki0Var.setCreateThumbFromParent(true);
-        iVar.addView(ki0Var);
-        hVar.setProfileGalleryView(ki0Var);
+        li0 li0Var = new li0(activity, n2Var.getActionBar(), jm0Var, hVar);
+        this.h = li0Var;
+        li0Var.setCreateThumbFromParent(true);
+        iVar.addView(li0Var);
+        hVar.setProfileGalleryView(li0Var);
         iVar.addView(hVar);
         textView.setMaxLines(1);
         textView.setTextColor(h6.w0(h6.G6, n2Var.getResourceProvider()));
@@ -265,18 +265,18 @@ public final class j extends Dialog {
         }
         int[] iArr = new int[2];
         this.v.getLocationOnScreen(iArr);
-        ki0 ki0Var = this.h;
-        float width = (this.v.getWidth() * 1.0f) / ki0Var.getMeasuredWidth();
+        li0 li0Var = this.h;
+        float width = (this.v.getWidth() * 1.0f) / li0Var.getMeasuredWidth();
         float width2 = (this.v.getWidth() / 2.0f) / width;
         float f7 = 1.0f - width;
-        float left = iArr[0] - (ki0Var.getLeft() + ((int) ((ki0Var.getMeasuredWidth() * f7) / 2.0f)));
+        float left = iArr[0] - (li0Var.getLeft() + ((int) ((li0Var.getMeasuredWidth() * f7) / 2.0f)));
         int i10 = 1;
-        float top = iArr[1] - (ki0Var.getTop() + ((int) ((d() * f7) / 2.0f)));
+        float top = iArr[1] - (li0Var.getTop() + ((int) ((d() * f7) / 2.0f)));
         int i11 = (-this.f.getTop()) / 2;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(z10 ? 0.0f : 1.0f, z10 ? 1.0f : 0.0f);
         this.s = ofFloat;
         ofFloat.addUpdateListener(new c9(this, width, left, top, width2, i11, 1));
-        this.s.addListener(new dn0(this, z10, width, i10));
+        this.s.addListener(new en0(this, z10, width, i10));
         this.s.setDuration(220L);
         this.s.setInterpolator(bs.f);
         this.s.start();

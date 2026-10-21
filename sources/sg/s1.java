@@ -9,9 +9,9 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.q8;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class s1 extends q8 {
     public final de R;
@@ -49,9 +49,9 @@ public final class s1 extends q8 {
     @Override // org.telegram.ui.Cells.q8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
-        xj0 xj0Var = this.e;
-        float width = (xj0Var.getWidth() / 2.0f) + xj0Var.getX();
-        float height = ((xj0Var.getHeight() / 2.0f) + (xj0Var.getY() + xj0Var.getPaddingTop())) - AndroidUtilities.dp(3.0f);
+        yj0 yj0Var = this.e;
+        float width = (yj0Var.getWidth() / 2.0f) + yj0Var.getX();
+        float height = ((yj0Var.getHeight() / 2.0f) + (yj0Var.getY() + yj0Var.getPaddingTop())) - AndroidUtilities.dp(3.0f);
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(width - AndroidUtilities.dp(16.0f), height - AndroidUtilities.dp(16.0f), width + AndroidUtilities.dp(16.0f), height + AndroidUtilities.dp(16.0f));
         this.R.g(rectF);

@@ -79,11 +79,11 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.s7;
 import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.is0;
-import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.js0;
 import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.zl0;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.Wallet.s1;
@@ -96,9 +96,9 @@ import s4.l0;
 import wh.k;
 import zf.m;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, a2, m, ne.d, Utilities.Callback5, do0, yl0, Utilities.Callback2Return, xl0, q7, u9, k, n, Continuation, OnCompleteListener {
+public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, a2, m, ne.d, Utilities.Callback5, do0, zl0, Utilities.Callback2Return, yl0, q7, u9, k, n, Continuation, OnCompleteListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -140,7 +140,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
         }
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ boolean P0(View view) {
         return false;
     }
@@ -162,7 +162,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
     /* JADX WARN: Removed duplicated region for block: B:85:0x02af A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:92:0x02cb  */
     /* JADX WARN: Removed duplicated region for block: B:95:0x02df  */
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.zl0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1591,15 +1591,15 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
                 }
                 return false;
             default:
-                is0 is0Var = ((r) this.b).W;
-                if (is0Var.G.C1 || !(view instanceof s7)) {
+                js0 js0Var = ((r) this.b).W;
+                if (js0Var.G.C1 || !(view instanceof s7)) {
                     return false;
                 }
                 MessageObject messageObject = ((s7) view).getMessageObject();
-                if (is0Var.c(messageObject)) {
-                    is0Var.g(messageObject);
+                if (js0Var.c(messageObject)) {
+                    js0Var.g(messageObject);
                 } else {
-                    is0Var.e(messageObject);
+                    js0Var.e(messageObject);
                 }
                 return true;
         }
@@ -1666,7 +1666,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
         }
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public void d(float f7, float f10, int i10, View view) {
         long j10;
         int i11;
@@ -1867,11 +1867,11 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
             case 14:
                 return x0.a((x0) this.b, (Long) obj2);
             default:
-                is0 is0Var = (is0) this.b;
+                js0 js0Var = (js0) this.b;
                 if (((Integer) obj).intValue() != -1) {
                     return Boolean.FALSE;
                 }
-                new di.u(is0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new r0(is0Var, 10)).show();
+                new di.u(js0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new r0(js0Var, 10)).show();
                 return Boolean.TRUE;
         }
     }
@@ -1910,13 +1910,13 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
                 break;
             default:
                 jd jdVar = (jd) this.b;
-                g61 g61Var = (g61) obj;
+                h61 h61Var = (h61) obj;
                 ((Integer) obj3).intValue();
                 ((Float) obj4).floatValue();
                 ((Float) obj5).floatValue();
                 jdVar.getClass();
-                if (g61Var.G instanceof TL_stars.StarsTransaction) {
-                    md.i1(jdVar.getContext(), false, 0L, jdVar.c, (TL_stars.StarsTransaction) g61Var.G, jdVar.b);
+                if (h61Var.G instanceof TL_stars.StarsTransaction) {
+                    md.i1(jdVar.getContext(), false, 0L, jdVar.c, (TL_stars.StarsTransaction) h61Var.G, jdVar.b);
                     break;
                 }
                 break;
@@ -1927,7 +1927,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
     public /* synthetic */ void H(float f7, int i10) {
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ void a0(View view, float f7, float f10) {
     }
 }

@@ -1,34 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n31 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q31 b;
+public final class n31 {
+    public static final n31 a;
+    public static final n31 b;
+    public static final n31 c;
+    public static final /* synthetic */ n31[] d;
 
-    public /* synthetic */ n31(q31 q31Var, int i10) {
-        this.a = i10;
-        this.b = q31Var;
+    static {
+        n31 n31Var = new n31("TOP", 0);
+        a = n31Var;
+        n31 n31Var2 = new n31("LEFT", 1);
+        b = n31Var2;
+        n31 n31Var3 = new n31("BOTTOM", 2);
+        c = n31Var3;
+        d = new n31[]{n31Var, n31Var2, n31Var3};
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                q31 q31Var = this.b;
-                q31Var.getClass();
-                q31Var.Q = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                q31Var.h();
-                q31Var.g();
-                break;
-            default:
-                float max = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                q31 q31Var2 = this.b;
-                q31Var2.K = max;
-                q31Var2.h.invalidate();
-                break;
-        }
+    public static n31 valueOf(String str) {
+        return (n31) Enum.valueOf(n31.class, str);
+    }
+
+    public static n31[] values() {
+        return (n31[]) d.clone();
     }
 }

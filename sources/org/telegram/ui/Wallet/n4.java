@@ -13,12 +13,12 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.d91;
+import org.telegram.ui.Components.e91;
 import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
-public final class n4 extends d91 {
+public final class n4 extends e91 {
     public boolean T;
     public final m4 U;
     public final /* synthetic */ l0 V;
@@ -65,7 +65,7 @@ public final class n4 extends d91 {
         };
     }
 
-    @Override // org.telegram.ui.Components.d91
+    @Override // org.telegram.ui.Components.e91
     public final void E(View view, float f7) {
         view.setTranslationX(f7);
         if (getMeasuredWidth() <= 0) {
@@ -156,7 +156,7 @@ public final class n4 extends d91 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.d91
+    @Override // org.telegram.ui.Components.e91
     public final float getAvailableTranslationX() {
         int measuredWidth = getMeasuredWidth();
         Rect rect = this.b0;
@@ -192,7 +192,7 @@ public final class n4 extends d91 {
         super.onMeasure(i10, i11);
     }
 
-    @Override // org.telegram.ui.Components.d91
+    @Override // org.telegram.ui.Components.e91
     public final void t(View view, View view2, int i10, int i11) {
         requestLayout();
         View childAt = ((FrameLayout) view).getChildAt(0);
@@ -206,7 +206,7 @@ public final class n4 extends d91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.d91
+    @Override // org.telegram.ui.Components.e91
     public final void w(boolean z10) {
         requestLayout();
         View view = this.c0[0];

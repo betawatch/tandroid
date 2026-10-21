@@ -15,13 +15,13 @@ import k2.w0;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.by0;
+import org.telegram.ui.Components.a11;
+import org.telegram.ui.Components.cy0;
 import org.telegram.ui.Components.l60;
 import org.telegram.ui.Components.tv;
-import org.telegram.ui.Components.z01;
 import w7.m7;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class s0 {
     public boolean A;
@@ -182,7 +182,7 @@ public final class s0 {
             this.P = o0Var;
             this.Q = new w(d, this.n.a, z10, this.m, new org.telegram.ui.web.m(10, this, o0Var));
             this.m.b("output generation started: id=" + j10 + ", includeAudio=" + z10 + ", file=" + d.getName());
-            this.k.execute(new by0(this, o0Var, d, 22));
+            this.k.execute(new cy0(this, o0Var, d, 22));
         }
     }
 
@@ -231,9 +231,9 @@ public final class s0 {
             l60 l60Var = (l60) this.d.b;
             l60Var.x();
             FileLog.e(exc);
-            z01 z01Var = l60Var.T;
-            if (z01Var != null) {
-                z01Var.d(true);
+            a11 a11Var = l60Var.T;
+            if (a11Var != null) {
+                a11Var.d(true);
             }
             l60Var.T = null;
             MediaController.getInstance().requestRecordAudioFocus(false);

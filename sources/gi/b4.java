@@ -4,14 +4,14 @@ import ai.c5;
 import android.view.ViewGroup;
 import java.util.LinkedList;
 import org.telegram.ui.Components.gh;
-import org.telegram.ui.Components.le0;
 import org.telegram.ui.Components.lg;
+import org.telegram.ui.Components.me0;
 import org.telegram.ui.Components.pg;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.ub;
 import org.telegram.ui.Components.wc0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b4 implements o1.f {
     public final /* synthetic */ int a;
@@ -76,10 +76,10 @@ public final /* synthetic */ class b4 implements o1.f {
                 tiVar.e2(0);
                 break;
             default:
-                le0 le0Var = (le0) this.b;
+                me0 me0Var = (me0) this.b;
                 wc0 wc0Var = (wc0) this.c;
-                LinkedList linkedList = le0Var.U;
-                le0Var.T = null;
+                LinkedList linkedList = me0Var.U;
+                me0Var.T = null;
                 wc0Var.D = null;
                 wc0Var.y();
                 if (!z10) {
@@ -87,7 +87,7 @@ public final /* synthetic */ class b4 implements o1.f {
                     wc0Var.y();
                     if (!linkedList.isEmpty()) {
                         ((Runnable) linkedList.poll()).run();
-                        le0Var.V.poll();
+                        me0Var.V.poll();
                         break;
                     }
                 }

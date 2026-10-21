@@ -1,51 +1,55 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
-import java.util.ArrayList;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class di0 implements z4.e {
-    public final /* synthetic */ org.telegram.ui.sy0 a;
+    public final /* synthetic */ li0 a;
 
-    public di0(org.telegram.ui.sy0 sy0Var) {
-        this.a = sy0Var;
+    public di0(li0 li0Var) {
+        this.a = li0Var;
     }
 
     @Override // z4.e
     public final void a(float f7, int i10, int i11) {
         ImageLocation imageLocation;
-        org.telegram.ui.sy0 sy0Var = this.a;
-        ji0 ji0Var = sy0Var.D0;
-        ArrayList arrayList = sy0Var.W0;
-        sy0Var.B(f7, i10);
+        li0 li0Var = this.a;
+        li0Var.B(f7, i10);
         if (i11 == 0) {
-            int k10 = ji0Var.k(i10);
-            sy0Var.getCurrentItemView();
-            int childCount = sy0Var.getChildCount();
+            int k10 = li0Var.D0.k(i10);
+            if (li0Var.i1) {
+                k10--;
+            }
+            li0Var.getCurrentItemView();
+            int childCount = li0Var.getChildCount();
             for (int i12 = 0; i12 < childCount; i12++) {
-                View childAt = sy0Var.getChildAt(i12);
+                View childAt = li0Var.getChildAt(i12);
                 if (childAt instanceof w9) {
-                    int k11 = ji0Var.k(ji0Var.d.indexOf(childAt));
+                    ki0 ki0Var = li0Var.D0;
+                    int k11 = ki0Var.k(ki0Var.d.indexOf(childAt));
+                    if (li0Var.i1) {
+                        k11--;
+                    }
                     ImageReceiver imageReceiver = ((w9) childAt).getImageReceiver();
                     boolean allowStartAnimation = imageReceiver.getAllowStartAnimation();
-                    if (k11 >= 0 && k11 < arrayList.size()) {
+                    if (k11 >= 0 && k11 < li0Var.W0.size()) {
                         if (k11 == k10) {
                             if (!allowStartAnimation) {
                                 imageReceiver.setAllowStartAnimation(true);
                                 imageReceiver.startAnimation();
                             }
-                            ImageLocation imageLocation2 = (ImageLocation) arrayList.get(k11);
+                            ImageLocation imageLocation2 = (ImageLocation) li0Var.W0.get(k11);
                             if (imageLocation2 != null) {
-                                FileLoader.getInstance(sy0Var.L0).setForceStreamLoadingFile(imageLocation2.location, "mp4");
+                                FileLoader.getInstance(li0Var.L0).setForceStreamLoadingFile(imageLocation2.location, "mp4");
                             }
                         } else if (allowStartAnimation) {
                             e6 animation = imageReceiver.getAnimation();
-                            if (animation != null && (imageLocation = (ImageLocation) arrayList.get(k11)) != null) {
+                            if (animation != null && (imageLocation = (ImageLocation) li0Var.W0.get(k11)) != null) {
                                 animation.y(imageLocation.videoSeekTo, false, true);
                             }
                             imageReceiver.setAllowStartAnimation(false);
@@ -59,16 +63,17 @@ public final class di0 implements z4.e {
 
     @Override // z4.e
     public final void b(int i10) {
-        org.telegram.ui.sy0 sy0Var = this.a;
-        int i11 = sy0Var.o1;
+        li0 li0Var = this.a;
+        int i11 = li0Var.o1;
         boolean z10 = i10 >= i11;
         if (i10 != i11) {
-            sy0Var.o1 = i10;
+            li0Var.getClass();
+            li0Var.o1 = i10;
         }
-        MessagesController.DialogPhotos dialogPhotos = sy0Var.S0;
+        MessagesController.DialogPhotos dialogPhotos = li0Var.S0;
         if (dialogPhotos != null) {
-            ji0 ji0Var = sy0Var.D0;
-            dialogPhotos.loadAfter(i10 - (ji0Var != null ? ji0Var.j() : 0), z10);
+            ki0 ki0Var = li0Var.D0;
+            dialogPhotos.loadAfter(i10 - (ki0Var != null ? ki0Var.j() : 0), z10);
         }
     }
 

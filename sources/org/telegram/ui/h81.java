@@ -21,7 +21,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class h81 extends org.telegram.ui.Components.bb {
     public static final /* synthetic */ int d0 = 0;
@@ -30,7 +30,7 @@ public final class h81 extends org.telegram.ui.Components.bb {
     public final LinearLayout Z;
     public boolean a0;
     public boolean b0;
-    public org.telegram.ui.Components.t61 c0;
+    public org.telegram.ui.Components.u61 c0;
 
     public h81(final Context context, final int i10, final org.telegram.ui.ActionBar.d6 d6Var, final org.telegram.ui.ActionBar.j3 j3Var) {
         super(1, context, d6Var, true);
@@ -77,19 +77,19 @@ public final class h81 extends org.telegram.ui.Components.bb {
             TextView b12 = w7.d6.b(context, 14.0f, org.telegram.ui.ActionBar.h6.L6, true, null);
             b12.setText(LocaleController.getString(R.string.StakeDiceReturns));
             linearLayout2.addView(b12, w7.z5.k(0.0f, 0.0f, 0.0f, 8.0f, -1, -2));
-            org.telegram.ui.Components.k01 k01Var = new org.telegram.ui.Components.k01(context, d6Var);
-            linearLayout2.addView(k01Var, w7.z5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
+            org.telegram.ui.Components.l01 l01Var = new org.telegram.ui.Components.l01(context, d6Var);
+            linearLayout2.addView(l01Var, w7.z5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
             TableRow tableRow = new TableRow(context);
-            k01Var.addView(tableRow);
+            l01Var.addView(tableRow);
             TableRow tableRow2 = new TableRow(context);
-            k01Var.addView(tableRow2);
+            l01Var.addView(tableRow2);
             int i12 = R.drawable.dice1;
             int i13 = R.drawable.dice2;
             int i14 = R.drawable.dice3;
             int i15 = R.drawable.dice4;
             int i16 = R.drawable.dice5;
             int i17 = R.drawable.dice6;
-            a1.d dVar = new a1.d(context, new int[]{i12, i13, i14, i15, i16, i17, i17}, d6Var, k01Var, 20);
+            a1.d dVar = new a1.d(context, new int[]{i12, i13, i14, i15, i16, i17, i17}, d6Var, l01Var, 20);
             float f7 = 1.0f;
             if (tL_emojiGameDiceInfo.params.size() == 7) {
                 tableRow.addView((View) dVar.run((Object) 1, (Object) Float.valueOf(tL_emojiGameDiceInfo.params.get(0).intValue() / 1000.0f)), new TableRow.LayoutParams(0, -1, 1.0f));
@@ -178,7 +178,7 @@ public final class h81 extends org.telegram.ui.Components.bb {
             long[] jArr = MessagesController.getInstance(i10).tonStakediceStakeSuggestedAmounts;
             int i18 = 0;
             while (i18 < Utilities.divCeil(jArr.length, 3)) {
-                LinearLayout e = org.telegram.messenger.kk.e(context, 0);
+                LinearLayout e = org.telegram.messenger.mk.e(context, 0);
                 int i19 = 0;
                 while (true) {
                     int i20 = i18 * 3;
@@ -245,9 +245,9 @@ public final class h81 extends org.telegram.ui.Components.bb {
             ViewGroup viewGroup = this.containerView;
             int i21 = this.backgroundPaddingLeft;
             viewGroup.addView(frameLayout, w7.z5.f(-2.0f, 87, i21, 0, i21, 0));
-            org.telegram.ui.Components.im0 im0Var = this.d;
+            org.telegram.ui.Components.jm0 jm0Var = this.d;
             int i22 = this.backgroundPaddingLeft;
-            im0Var.setPadding(i22, 0, i22, AndroidUtilities.dp(68.0f));
+            jm0Var.setPadding(i22, 0, i22, AndroidUtilities.dp(68.0f));
             this.c0.N(false);
         }
     }
@@ -265,7 +265,7 @@ public final class h81 extends org.telegram.ui.Components.bb {
             if (cVar != null) {
                 cVar.setEnabled(z10);
                 cVar.setClickable(z10);
-                org.telegram.messenger.kk.s(cVar.animate().scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f), z10 ? 1.0f : 0.0f, 180L);
+                org.telegram.messenger.mk.s(cVar.animate().scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f), z10 ? 1.0f : 0.0f, 180L);
             }
         }
     }
@@ -300,9 +300,9 @@ public final class h81 extends org.telegram.ui.Components.bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final org.telegram.ui.Components.hm0 x(org.telegram.ui.Components.im0 im0Var) {
-        org.telegram.ui.Components.t61 t61Var = new org.telegram.ui.Components.t61(im0Var, getContext(), this.currentAccount, 0, false, new g5(this, 27), this.resourcesProvider);
-        this.c0 = t61Var;
-        return t61Var;
+    public final org.telegram.ui.Components.im0 x(org.telegram.ui.Components.jm0 jm0Var) {
+        org.telegram.ui.Components.u61 u61Var = new org.telegram.ui.Components.u61(jm0Var, getContext(), this.currentAccount, 0, false, new g5(this, 27), this.resourcesProvider);
+        this.c0 = u61Var;
+        return u61Var;
     }
 }

@@ -38,9 +38,9 @@ import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.DataSettingsActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q2 implements org.telegram.ui.ActionBar.a2, e5, org.telegram.ui.Cells.r5, ImageReceiver.ImageReceiverDelegate, cj, org.telegram.ui.ActionBar.l1, yl0, MessagesStorage.BooleanCallback, xl0, zl0 {
+public final /* synthetic */ class q2 implements org.telegram.ui.ActionBar.a2, e5, org.telegram.ui.Cells.r5, ImageReceiver.ImageReceiverDelegate, cj, org.telegram.ui.ActionBar.l1, zl0, MessagesStorage.BooleanCallback, yl0, am0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -103,14 +103,14 @@ public final /* synthetic */ class q2 implements org.telegram.ui.ActionBar.a2, e
         }
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ boolean P0(View view) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.zl0
     public boolean a(int i10, View view) {
         a6 a6Var;
         aw awVar = (aw) this.b;
@@ -148,7 +148,7 @@ public final /* synthetic */ class q2 implements org.telegram.ui.ActionBar.a2, e
         return true;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ void a0(View view, float f7, float f10) {
         int i10 = this.a;
     }
@@ -227,13 +227,13 @@ public final /* synthetic */ class q2 implements org.telegram.ui.ActionBar.a2, e
         }
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public void d(float f7, float f10, int i10, View view) {
         switch (this.a) {
             case 22:
-                b71 b71Var = (b71) this.b;
+                c71 c71Var = (c71) this.b;
                 Utilities.Callback5 callback5 = (Utilities.Callback5) this.c;
-                g61 G = b71Var.W2.G(i10);
+                h61 G = c71Var.W2.G(i10);
                 if (G != null) {
                     callback5.run(G, view, Integer.valueOf(i10), Float.valueOf(f7), Float.valueOf(f10));
                     break;
@@ -261,7 +261,7 @@ public final /* synthetic */ class q2 implements org.telegram.ui.ActionBar.a2, e
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.k5.a(this, i10, str, drawable);
+        org.telegram.messenger.m5.a(this, i10, str, drawable);
     }
 
     @Override // org.telegram.ui.ActionBar.a2
@@ -358,12 +358,12 @@ public final /* synthetic */ class q2 implements org.telegram.ui.ActionBar.a2, e
                 wa0Var.V.L(false);
                 break;
             case 19:
-                vo0 vo0Var = (vo0) this.b;
+                wo0 wo0Var = (wo0) this.b;
                 ArrayList<MessageObject> arrayList3 = (ArrayList) this.c;
-                vo0Var.getClass();
+                wo0Var.getClass();
                 b2Var.dismiss();
-                vo0Var.J0.getDownloadController().deleteRecentFiles(arrayList3);
-                vo0Var.Q(false);
+                wo0Var.J0.getDownloadController().deleteRecentFiles(arrayList3);
+                wo0Var.Q(false);
                 break;
             case 21:
                 Runnable runnable2 = (Runnable) this.b;
@@ -421,22 +421,22 @@ public final /* synthetic */ class q2 implements org.telegram.ui.ActionBar.a2, e
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.k5.b(this, imageReceiver);
+        org.telegram.messenger.m5.b(this, imageReceiver);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
     public void run(boolean z10) {
-        xt0 xt0Var = (xt0) this.b;
+        yt0 yt0Var = (yt0) this.b;
         TLRPC.User user = (TLRPC.User) this.c;
-        tv0 tv0Var = xt0Var.d;
-        tv0Var.v1.finishFragment();
-        org.telegram.ui.ActionBar.n2 n2Var = tv0Var.v1;
+        uv0 uv0Var = yt0Var.d;
+        uv0Var.v1.finishFragment();
+        org.telegram.ui.ActionBar.n2 n2Var = uv0Var.v1;
         if (n2Var instanceof NotificationCenter.NotificationCenterDelegate) {
             n2Var.getNotificationCenter().removeObserver((NotificationCenter.NotificationCenterDelegate) n2Var, NotificationCenter.closeChats);
         }
         n2Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-        n2Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(tv0Var.j1), user, null, Boolean.valueOf(z10));
+        n2Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(uv0Var.j1), user, null, Boolean.valueOf(z10));
         n2Var.getMessagesController().setSavedViewAs(false);
     }
 
@@ -452,22 +452,22 @@ public final /* synthetic */ class q2 implements org.telegram.ui.ActionBar.a2, e
         this.c = user;
     }
 
-    @Override // org.telegram.ui.Components.zl0
+    @Override // org.telegram.ui.Components.am0
     public boolean d(float f7, float f10, int i10, View view) {
-        b71 b71Var = (b71) this.b;
+        c71 c71Var = (c71) this.b;
         Utilities.Callback5Return callback5Return = (Utilities.Callback5Return) this.c;
-        g61 G = b71Var.W2.G(i10);
+        h61 G = c71Var.W2.G(i10);
         if (G == null) {
             return false;
         }
         return ((Boolean) callback5Return.run(G, view, Integer.valueOf(i10), Float.valueOf(f7), Float.valueOf(f10))).booleanValue();
     }
 
-    @Override // org.telegram.ui.Components.zl0
+    @Override // org.telegram.ui.Components.am0
     public /* synthetic */ void h() {
     }
 
-    @Override // org.telegram.ui.Components.zl0
+    @Override // org.telegram.ui.Components.am0
     public /* synthetic */ void o(float f7) {
     }
 

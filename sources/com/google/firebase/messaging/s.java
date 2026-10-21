@@ -59,7 +59,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.is0;
+import org.telegram.ui.Components.js0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.w9;
@@ -67,7 +67,7 @@ import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 import sg.y0;
 import v7.s6;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -277,9 +277,9 @@ public final /* synthetic */ class s implements Runnable {
                 return;
             case 3:
                 di.r rVar = (di.r) this.b;
-                is0 is0Var = rVar.W;
+                js0 js0Var = rVar.W;
                 t6 t6Var = rVar.a;
-                is0Var.a(t6Var == null ? "" : t6Var.E);
+                js0Var.a(t6Var == null ? "" : t6Var.E);
                 return;
             case 4:
                 a();

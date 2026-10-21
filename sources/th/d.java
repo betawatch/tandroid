@@ -8,25 +8,25 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.p6;
-import org.telegram.ui.Components.yj0;
+import org.telegram.ui.Components.zj0;
 import zf.p;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class d extends c {
     public final p6 d;
-    public final yj0 e;
+    public final zj0 e;
     public final ne.b f;
     public float h;
 
     public d(u1 u1Var, d6 d6Var) {
         super(d6Var);
-        yj0 yj0Var = new yj0(u1Var);
-        this.e = yj0Var;
-        yj0Var.d(null, true, false);
-        yj0Var.v = 650.0f;
-        yj0Var.e(0.69f, false);
-        yj0Var.p.setStrokeWidth(AndroidUtilities.dp(1.5f));
+        zj0 zj0Var = new zj0(u1Var);
+        this.e = zj0Var;
+        zj0Var.d(null, true, false);
+        zj0Var.v = 650.0f;
+        zj0Var.e(0.69f, false);
+        zj0Var.p.setStrokeWidth(AndroidUtilities.dp(1.5f));
         this.f = new ne.b(u1Var, bs.h, 260L);
         p6 p6Var = new p6(true, false, false);
         this.d = p6Var;

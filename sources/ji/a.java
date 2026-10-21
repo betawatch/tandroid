@@ -22,16 +22,16 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.i6;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.u61;
 import s4.o0;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class a extends bb {
-    public t61 X;
+    public u61 X;
     public boolean Y;
     public final FrameLayout Z;
     public final boolean a0;
@@ -64,9 +64,9 @@ public final class a extends bb {
             }
         }
         frameLayout.addView(h6Var, z5.c(-2.0f, i10));
-        im0 im0Var = this.d;
+        jm0 jm0Var = this.d;
         int i11 = this.backgroundPaddingLeft;
-        im0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f) + AndroidUtilities.navigationBarHeight);
+        jm0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f) + AndroidUtilities.navigationBarHeight);
         this.d.p1();
         this.d.setClipToPadding(false);
         this.d.setOnItemClickListener(new wa(this, 16));
@@ -103,15 +103,15 @@ public final class a extends bb {
         }
         this.Y = z10;
         int i10 = this.c0 + 1;
-        im0 im0Var = this.d;
-        View U0 = im0Var.U0(i10);
+        jm0 jm0Var = this.d;
+        View U0 = jm0Var.U0(i10);
         if (U0 instanceof i6) {
             ((i6) U0).a(!z10);
             z11 = false;
         } else {
             z11 = true;
         }
-        View U02 = im0Var.U0(this.c0 + 2);
+        View U02 = jm0Var.U0(this.c0 + 2);
         if (U02 instanceof i6) {
             ((i6) U02).a(z10);
         } else {
@@ -123,10 +123,10 @@ public final class a extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
-        t61 t61Var = new t61(this.d, getContext(), this.currentAccount, 0, false, new o(this, 11), this.resourcesProvider);
-        this.X = t61Var;
-        t61Var.r = false;
-        return t61Var;
+    public final im0 x(jm0 jm0Var) {
+        u61 u61Var = new u61(this.d, getContext(), this.currentAccount, 0, false, new o(this, 11), this.resourcesProvider);
+        this.X = u61Var;
+        u61Var.r = false;
+        return u61Var;
     }
 }

@@ -1,55 +1,90 @@
 package org.telegram.ui.Components;
 
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.tf1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class bm0 implements Runnable {
-    public final /* synthetic */ View a;
-    public final /* synthetic */ int b;
+public final /* synthetic */ class bm0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
     public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ cm0 e;
+    public final /* synthetic */ Object d;
 
-    public bm0(cm0 cm0Var, View view, int i10, float f7, float f10) {
-        this.e = cm0Var;
-        this.a = view;
-        this.b = i10;
-        this.c = f7;
-        this.d = f10;
+    public /* synthetic */ bm0(Object obj, float f7, float f10, int i10) {
+        this.a = i10;
+        this.d = obj;
+        this.b = f7;
+        this.c = f10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        dm0 dm0Var = this.e.b;
-        im0 im0Var = (im0) dm0Var.b;
-        if (this == im0Var.Q1) {
-            im0Var.Q1 = null;
-        }
-        View view = this.a;
-        if (view != null) {
-            im0Var.h1(view, 0.0f, 0.0f, false);
-            if (((im0) dm0Var.b).P1) {
-                return;
-            }
-            try {
-                view.playSoundEffect(0);
-            } catch (Exception unused) {
-            }
-            view.sendAccessibilityEvent(1);
-            int i10 = this.b;
-            if (i10 != -1) {
-                im0 im0Var2 = (im0) dm0Var.b;
-                wl0 wl0Var = im0Var2.T0;
-                if (wl0Var != null) {
-                    wl0Var.a(i10, view);
-                    return;
+        View view;
+        int i10 = this.a;
+        float f7 = this.c;
+        float f10 = this.b;
+        Object obj = this.d;
+        switch (i10) {
+            case 0:
+                jm0 jm0Var = (jm0) ((em0) obj).b;
+                if (jm0Var.c1 != null && (view = jm0Var.L1) != null) {
+                    jm0Var.h1(view, f10, f7, true);
+                    jm0Var.c1 = null;
+                    break;
                 }
-                xl0 xl0Var = im0Var2.U0;
-                if (xl0Var != null) {
-                    xl0Var.d(this.c - view.getX(), this.d - view.getY(), i10, view);
+                break;
+            default:
+                tg.i iVar = (tg.i) obj;
+                tg.n nVar = iVar.b;
+                ValueAnimator valueAnimator = nVar.c0;
+                tg.h hVar = nVar.h0;
+                tg.h hVar2 = nVar.g0;
+                if (valueAnimator != null) {
+                    valueAnimator.removeAllListeners();
+                    nVar.c0.cancel();
+                    nVar.c0 = null;
                 }
-            }
+                AnimatorSet animatorSet = nVar.d0;
+                if (animatorSet != null) {
+                    animatorSet.removeAllListeners();
+                    nVar.d0.cancel();
+                    nVar.d0 = null;
+                }
+                if (Math.abs(nVar.b.d) <= 10.0f) {
+                    AndroidUtilities.cancelRunOnUIThread(nVar.e0);
+                    nVar.d0 = new AnimatorSet();
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(nVar.b.d, f10);
+                    ofFloat.addUpdateListener(hVar2);
+                    long j10 = 220;
+                    ofFloat.setDuration(j10);
+                    bs bsVar = bs.h;
+                    ofFloat.setInterpolator(bsVar);
+                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f10, 0.0f);
+                    ofFloat2.addUpdateListener(hVar2);
+                    ofFloat2.setStartDelay(j10);
+                    ofFloat2.setDuration(600L);
+                    ofFloat2.setInterpolator(AndroidUtilities.overshootInterpolator);
+                    ValueAnimator ofFloat3 = ValueAnimator.ofFloat(nVar.b.i, f7);
+                    ofFloat3.addUpdateListener(hVar);
+                    ofFloat3.setDuration(j10);
+                    ofFloat3.setInterpolator(bsVar);
+                    ValueAnimator ofFloat4 = ValueAnimator.ofFloat(f7, 0.0f);
+                    ofFloat4.addUpdateListener(hVar);
+                    ofFloat4.setStartDelay(j10);
+                    ofFloat4.setDuration(600L);
+                    ofFloat4.setInterpolator(AndroidUtilities.overshootInterpolator);
+                    nVar.d0.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4);
+                    nVar.d0.addListener(new tf1(iVar, 19));
+                    nVar.d0.start();
+                    break;
+                } else {
+                    nVar.l();
+                    break;
+                }
         }
     }
 }

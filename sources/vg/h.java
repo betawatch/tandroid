@@ -24,23 +24,24 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.q8;
 import org.telegram.ui.Cells.t3;
 import org.telegram.ui.Cells.u3;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.sx0;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.tx0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.xp;
 import qg.n;
 import s4.b1;
 import s4.o0;
+import u2.j0;
 import w7.z5;
 import yg.k;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class h extends pg.b {
     public final d6 d;
     public final Context e;
-    public im0 f;
+    public jm0 f;
     public ArrayList n;
     public boolean s;
     public u3 v;
@@ -56,10 +57,10 @@ public final class h extends pg.b {
         this.d = d6Var;
         l0 l0Var = new l0(this, 24);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(UserConfig.selectedAccount);
-        messagesStorage.getStorageQueue().postRunnable(new uf.c(4, messagesStorage, l0Var));
+        messagesStorage.getStorageQueue().postRunnable(new j0(6, messagesStorage, l0Var));
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(b1 b1Var) {
         int i10 = b1Var.f;
         return i10 == 3 || i10 == 6 || i10 == 9;
@@ -138,7 +139,7 @@ public final class h extends pg.b {
             }
             if (i12 == 5) {
                 try {
-                    ((sx0) view).b.getImageReceiver().startAnimation();
+                    ((tx0) view).b.getImageReceiver().startAnimation();
                     return;
                 } catch (Exception unused) {
                     return;
@@ -276,11 +277,11 @@ public final class h extends pg.b {
         } else {
             d6 d6Var = this.d;
             if (i10 == 5) {
-                sx0 sx0Var = new sx0(context, null, 1, d6Var);
-                sx0Var.d.setText(LocaleController.getString(R.string.NoResult));
-                sx0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                sx0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
-                kVar = sx0Var;
+                tx0 tx0Var = new tx0(context, null, 1, d6Var);
+                tx0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                tx0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                tx0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
+                kVar = tx0Var;
             } else {
                 boolean z10 = this.h;
                 if (i10 == 7) {
@@ -317,7 +318,7 @@ public final class h extends pg.b {
                 }
             }
         }
-        return new sl0(kVar);
+        return new tl0(kVar);
     }
 
     @Override // s4.g0

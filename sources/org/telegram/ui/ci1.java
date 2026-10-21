@@ -24,7 +24,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class ci1 extends org.telegram.ui.ActionBar.n2 {
     public WebView a;
@@ -133,7 +133,7 @@ public final class ci1 extends org.telegram.ui.ActionBar.n2 {
         this.a.getSettings().setMixedContentMode(0);
         CookieManager.getInstance().setAcceptThirdPartyCookies(this.a, true);
         this.a.addJavascriptInterface(new bi1(this), "TelegramWebviewProxy");
-        this.a.setWebViewClient(new org.telegram.ui.Components.gg0(this, 1));
+        this.a.setWebViewClient(new org.telegram.ui.Components.hg0(this, 1));
         frameLayout.addView(this.a, w7.z5.c(-1.0f, -1));
         return this.fragmentView;
     }

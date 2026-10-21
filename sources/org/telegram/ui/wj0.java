@@ -4,7 +4,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class wj0 extends org.telegram.ui.Cells.q8 {
     public ImageView R;
@@ -13,7 +13,7 @@ public final class wj0 extends org.telegram.ui.Cells.q8 {
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         int dp = LocaleController.isRTL ? AndroidUtilities.dp(17.0f) : (i12 - i10) - AndroidUtilities.dp(41.0f);
-        int A = org.telegram.messenger.kk.A(24.0f, i13 - i11, 2);
+        int A = org.telegram.messenger.mk.A(24.0f, i13 - i11, 2);
         this.R.layout(dp, A, AndroidUtilities.dp(24.0f) + dp, AndroidUtilities.dp(24.0f) + A);
     }
 

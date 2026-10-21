@@ -1,28 +1,55 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class jo0 extends at {
-    public final /* synthetic */ org.telegram.ui.lx i0;
+public final class jo0 extends tx0 {
+    public final /* synthetic */ int K;
+    public final /* synthetic */ org.telegram.ui.lx L;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jo0(org.telegram.ui.lx lxVar, im0 im0Var, Context context, int i10, int i11) {
-        super(im0Var, context, i10, i11, false, null);
-        this.i0 = lxVar;
+    public /* synthetic */ jo0(org.telegram.ui.lx lxVar, Context context, b10 b10Var, int i10) {
+        super(context, b10Var, 1, null);
+        this.K = i10;
+        this.L = lxVar;
     }
 
-    @Override // org.telegram.ui.Components.t61
-    public final void N(boolean z10) {
-        ArrayList arrayList;
-        super.N(z10);
-        io0 io0Var = this.i0.l0;
-        io0Var.e(this.Z || this.a0 || (arrayList = this.T) == null || !arrayList.isEmpty(), z10);
-        io0Var.d.setText(LocaleController.getString(R.string.NoResult));
-        io0Var.e.setVisibility(8);
+    @Override // org.telegram.ui.Components.tx0, android.view.View
+    public final void setVisibility(int i10) {
+        switch (this.K) {
+            case 0:
+                if (this.L.M0.getTag() == null) {
+                    super.setVisibility(i10);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
+            case 1:
+                if (this.L.M0.getTag() == null) {
+                    super.setVisibility(i10);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
+            case 2:
+                if (this.L.M0.getTag() == null) {
+                    super.setVisibility(i10);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
+            default:
+                if (this.L.M0.getTag() == null) {
+                    super.setVisibility(i10);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
+        }
     }
 }

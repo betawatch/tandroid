@@ -74,7 +74,7 @@ import org.webrtc.RendererCommon;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class hh1 implements VoIPService.StateListener, NotificationCenter.NotificationCenterDelegate, tf.a {
     public static hh1 n1;
@@ -323,7 +323,7 @@ public final class hh1 implements VoIPService.StateListener, NotificationCenter.
             calendar.get(12);
             calendar.get(11);
             if ((i13 == 11 && i14 >= 24 && i14 <= 31) || (i13 == 0 && i14 == 1)) {
-                c3Var.a = new org.telegram.ui.Components.vw0(0);
+                c3Var.a = new org.telegram.ui.Components.ww0(0);
             }
         }
         hh1Var3.x = c3Var;
@@ -493,7 +493,7 @@ public final class hh1 implements VoIPService.StateListener, NotificationCenter.
                 if (max == 1 && (groupParticipants == null || groupParticipants.size() == 0 || (groupParticipants.size() == 1 && DialogObject.getPeerDialogId(groupParticipants.get(0).peer) == j11))) {
                     gh1Var.setVisibility(8);
                 } else {
-                    gh1Var.c = new org.telegram.ui.Components.e11(LocaleController.formatPluralStringComma("Participants", max), 14.0f, AndroidUtilities.bold());
+                    gh1Var.c = new org.telegram.ui.Components.f11(LocaleController.formatPluralStringComma("Participants", max), 14.0f, AndroidUtilities.bold());
                     gh1Var.setVisibility(0);
                     gh1Var.invalidate();
                 }
@@ -971,7 +971,7 @@ public final class hh1 implements VoIPService.StateListener, NotificationCenter.
                         r62[i17].setAlpha(0.0f);
                         r62[i17].setScaleX(0.0f);
                         r62[i17].setScaleY(0.0f);
-                        org.telegram.messenger.kk.t(r62[i17].animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), org.telegram.ui.Components.bs.k, 250L);
+                        org.telegram.messenger.mk.t(r62[i17].animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), org.telegram.ui.Components.bs.k, 250L);
                     }
                 }
             }
@@ -1279,7 +1279,7 @@ public final class hh1 implements VoIPService.StateListener, NotificationCenter.
                                 this.E.animate().alpha(0.0f).setDuration(70L).setListener(new yg1(this)).start();
                                 ViewPropertyAnimator alpha = this.K.animate().alpha(0.0f);
                                 org.telegram.ui.Components.bs bsVar2 = org.telegram.ui.Components.bs.f;
-                                org.telegram.messenger.kk.t(alpha, bsVar2, 250L);
+                                org.telegram.messenger.mk.t(alpha, bsVar2, 250L);
                                 this.K.setVisibility(8);
                                 this.F.d(false, true);
                                 this.F.c(false);
@@ -2249,7 +2249,7 @@ public final class hh1 implements VoIPService.StateListener, NotificationCenter.
                 this.O.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(340L).setInterpolator(org.telegram.ui.Components.bs.g).start();
                 ViewPropertyAnimator translationY = this.N.animate().scaleX(1.72f).scaleY(1.72f).translationY(AndroidUtilities.dp(140.0f));
                 org.telegram.ui.Components.bs bsVar = org.telegram.ui.Components.bs.f;
-                org.telegram.messenger.kk.t(translationY, bsVar, 400L);
+                org.telegram.messenger.mk.t(translationY, bsVar, 400L);
                 this.R.animate().setListener(null).cancel();
                 this.R.setVisibility(0);
                 this.R.setTranslationY(-AndroidUtilities.dp(120.0f));
@@ -2497,7 +2497,7 @@ public final class hh1 implements VoIPService.StateListener, NotificationCenter.
         animatorSet.playTogether(ofFloat, ofFloat2, ofFloat3, ObjectAnimator.ofFloat(eVar5, (Property<org.telegram.ui.Components.voip.e, Float>) View.ALPHA, eVar5.getAlpha(), this.e0.getAlpha(), 0.0f, 0.0f));
         animatorSet.setDuration(400L);
         animatorSet.setInterpolator(new LinearInterpolator());
-        animatorSet.addListener(new org.telegram.ui.Components.ml0(17, this, runnable));
+        animatorSet.addListener(new org.telegram.ui.Components.nl0(17, this, runnable));
         animatorSet.start();
         AndroidUtilities.runOnUIThread(new rg1(this, 7), 133L);
     }

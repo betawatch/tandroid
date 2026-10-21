@@ -10,16 +10,16 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j00 implements xl0, yl0 {
+public final /* synthetic */ class j00 implements yl0, zl0 {
     public final /* synthetic */ s00 a;
 
     public /* synthetic */ j00(s00 s00Var) {
         this.a = s00Var;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ boolean P0(View view) {
         return false;
     }
@@ -44,7 +44,7 @@ public final /* synthetic */ class j00 implements xl0, yl0 {
     /* JADX WARN: Type inference failed for: r8v39 */
     /* JADX WARN: Type inference failed for: r8v40 */
     /* JADX WARN: Type inference failed for: r8v6, types: [int] */
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.zl0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -229,7 +229,7 @@ public final /* synthetic */ class j00 implements xl0, yl0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public void d(float f7, float f10, int i10, View view) {
         s00 s00Var = this.a;
         n00 n00Var = s00Var.J;
@@ -258,7 +258,7 @@ public final /* synthetic */ class j00 implements xl0, yl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ void a0(View view, float f7, float f10) {
     }
 }

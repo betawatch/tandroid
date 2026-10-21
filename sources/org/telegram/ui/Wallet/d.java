@@ -8,13 +8,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
 
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
-        t61 t61Var;
+        u61 u61Var;
         String str;
         switch (this.a) {
             case 0:
@@ -84,7 +84,7 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                     break;
                 }
             case 5:
-                ((ArrayList) obj).add(g61.k(((k2) this.b).Y));
+                ((ArrayList) obj).add(h61.k(((k2) this.b).Y));
                 break;
             case 6:
                 z2 z2Var = (z2) this.b;
@@ -109,9 +109,9 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                 if (password != null) {
                     o5Var.Q0 = true;
                     o5Var.R0 = password.has_password;
-                    v61 v61Var = o5Var.a;
-                    if (v61Var != null && (t61Var = v61Var.W2) != null) {
-                        t61Var.N(true);
+                    w61 w61Var = o5Var.a;
+                    if (w61Var != null && (u61Var = w61Var.W2) != null) {
+                        u61Var.N(true);
                         break;
                     }
                 }

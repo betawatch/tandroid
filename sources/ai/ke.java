@@ -17,10 +17,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class ke extends View {
     public final boolean a;
@@ -242,7 +242,7 @@ public final class ke extends View {
             r92.a = (arrayList3.size() - r82) - i12;
             long j10 = eeVar3.d;
             Paint paint = r92.h;
-            r92.o = new e11(md.S0(org.telegram.messenger.g0.h(j10, ',', new StringBuilder("⭐️")), 0.85f, yqVarArr), 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+            r92.o = new f11(md.S0(org.telegram.messenger.g0.h(j10, ',', new StringBuilder("⭐️")), 0.85f, yqVarArr), 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
             boolean z13 = keVar.a;
             int i15 = leVar.c;
             if (z13) {
@@ -262,7 +262,7 @@ public final class ke extends View {
             if (this.a) {
                 int i17 = i12 + 1;
                 r92.v = i17;
-                r92.u = new e11(i2.e.j(i17, ""), 10.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+                r92.u = new f11(i2.e.j(i17, ""), 10.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
                 if (i17 > 0 && r92.s == null) {
                     Drawable mutate = keVar.getContext().getResources().getDrawable(R.drawable.filled_stream_crown).mutate();
                     r92.s = mutate;
@@ -281,7 +281,7 @@ public final class ke extends View {
                 if (!r92.i && r92.p != z14) {
                     r92.p = z14;
                     yqVarArr = null;
-                    r92.n = new e11(z14 ? LocaleController.getString(R.string.StarsReactionAnonymous) : DialogObject.getShortName(r92.j), 12.0f, null);
+                    r92.n = new f11(z14 ? LocaleController.getString(R.string.StarsReactionAnonymous) : DialogObject.getShortName(r92.j), 12.0f, null);
                     keVar.invalidate();
                     i12++;
                     arrayList3 = arrayList;

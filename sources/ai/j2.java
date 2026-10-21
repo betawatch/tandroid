@@ -12,16 +12,16 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.az0;
+import org.telegram.ui.Components.bz0;
 import org.telegram.ui.Components.g30;
 import org.telegram.ui.Components.i90;
 import org.telegram.ui.Components.lg;
 import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.ny;
-import org.telegram.ui.Components.py0;
+import org.telegram.ui.Components.qy0;
 import org.telegram.ui.g01;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -91,10 +91,10 @@ public final /* synthetic */ class j2 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new i90(tL_error, (ei.d) this.b, (org.telegram.ui.ActionBar.f3) this.c, (Runnable) this.d));
                 break;
             case 17:
-                AndroidUtilities.runOnUIThread(new g30((py0) this.b, (String) this.c, tL_error, tLObject, (TextView) this.d, 1));
+                AndroidUtilities.runOnUIThread(new g30((qy0) this.b, (String) this.c, tL_error, tLObject, (TextView) this.d, 1));
                 break;
             case 18:
-                AndroidUtilities.runOnUIThread(new g30((az0) this.b, tLObject, (TLRPC.UserFull) this.c, (TL_account.TL_birthday) this.d, tL_error, 2));
+                AndroidUtilities.runOnUIThread(new g30((bz0) this.b, tLObject, (TLRPC.UserFull) this.c, (TL_account.TL_birthday) this.d, tL_error, 2));
                 break;
             case 19:
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.web.b0((org.telegram.ui.web.a1) this.b, tL_error, (String) this.c, (TLRPC.TL_inputInvoiceSlug) this.d, tLObject));
@@ -106,7 +106,7 @@ public final /* synthetic */ class j2 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new g01(tL_error, (Utilities.Callback) this.b, tLObject, (MessagesController) this.c, (Utilities.Callback) this.d, 9));
                 break;
             case 22:
-                AndroidUtilities.runOnUIThread(new g01(tL_error, (org.telegram.messenger.w) this.b, tLObject, (MessagesController) this.c, (org.telegram.messenger.j2) this.d, 10));
+                AndroidUtilities.runOnUIThread(new g01(tL_error, (org.telegram.messenger.w) this.b, tLObject, (MessagesController) this.c, (org.telegram.messenger.k2) this.d, 10));
                 break;
             case 23:
                 ug.u uVar = (ug.u) this.b;
@@ -119,7 +119,7 @@ public final /* synthetic */ class j2 implements RequestDelegate {
                         break;
                     }
                 } else {
-                    AndroidUtilities.runOnUIThread(new uf.c(2, uVar, tL_error));
+                    AndroidUtilities.runOnUIThread(new u2.j0(4, uVar, tL_error));
                     break;
                 }
                 break;

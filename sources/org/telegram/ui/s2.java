@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class s2 extends FrameLayout implements org.telegram.ui.Cells.m9 {
     public final n2 a;
@@ -181,7 +181,7 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Cells.m9 {
             TL_iv.pageBlockSlideshow pageblockslideshow2 = this.d;
             TL_iv.RichText richText2 = pageblockslideshow2.caption.credit;
             if (this.w.G) {
-                alignment = org.telegram.ui.Components.ex0.a();
+                alignment = org.telegram.ui.Components.fx0.a();
             }
             d3 p9 = l4.p(l4Var, this, null, richText2, dp2, 0, pageblockslideshow2, alignment, 0, this.w);
             this.f = p9;

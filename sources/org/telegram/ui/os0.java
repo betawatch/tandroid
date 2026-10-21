@@ -9,7 +9,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class os0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -28,10 +28,10 @@ public final class os0 extends AnimatorListenerAdapter {
         switch (i10) {
             case 0:
                 photoViewer.p6 = null;
-                org.telegram.ui.Components.nf0 nf0Var = photoViewer.C1;
-                if (nf0Var != null) {
-                    if (nf0Var.b.j()) {
-                        photoViewer.a1.setColorFilter(new PorterDuffColorFilter(photoViewer.z1(org.telegram.ui.ActionBar.h6.zf), PorterDuff.Mode.MULTIPLY));
+                org.telegram.ui.Components.of0 of0Var = photoViewer.C1;
+                if (of0Var != null) {
+                    if (of0Var.b.j()) {
+                        photoViewer.a1.setColorFilter(new PorterDuffColorFilter(photoViewer.A1(org.telegram.ui.ActionBar.h6.zf), PorterDuff.Mode.MULTIPLY));
                     } else {
                         photoViewer.a1.setColorFilter((ColorFilter) null);
                     }
@@ -45,7 +45,7 @@ public final class os0 extends AnimatorListenerAdapter {
                 break;
             case 2:
                 Drawable[] drawableArr = PhotoViewer.U8;
-                photoViewer.g3();
+                photoViewer.i3();
                 break;
             case 3:
                 photoViewer.L1.o0(false);
@@ -61,23 +61,23 @@ public final class os0 extends AnimatorListenerAdapter {
                 }
                 photoViewer.p6 = null;
                 photoViewer.u4 = 3;
-                photoViewer.f1().L.b(photoViewer.u4 != 0);
+                photoViewer.g1().L.b(photoViewer.u4 != 0);
                 ei.b4 b4Var = photoViewer.K1;
                 if (b4Var != null) {
                     b4Var.b(photoViewer.u4 != 3);
                 }
                 photoViewer.o6 = -1;
-                float r22 = photoViewer.r2(false);
-                photoViewer.a6 = r22;
-                photoViewer.e6 = r22;
+                float t22 = photoViewer.t2(false);
+                photoViewer.a6 = t22;
+                photoViewer.e6 = t22;
                 photoViewer.c6 = 0.0f;
                 photoViewer.d6 = 0.0f;
-                photoViewer.w3(r22);
+                photoViewer.y3(t22);
                 photoViewer.t2 = true;
                 photoViewer.e0.invalidate();
                 hu0 hu0Var = photoViewer.d;
                 if (hu0Var == null || !hu0Var.P()) {
-                    photoViewer.S1();
+                    photoViewer.U1();
                     break;
                 }
                 break;

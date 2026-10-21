@@ -1,47 +1,71 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import android.animation.TimeAnimator;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class zw0 extends bb {
-    public at X;
+public final class zw0 extends TimeAnimator {
+    public int a;
+    public int b;
+    public ValueAnimator.AnimatorUpdateListener c;
+    public Float d;
+    public float[] e;
 
-    public zw0(Context context) {
-        super(context, null, true, false, null);
-        fixNavigationBar();
-        this.E = true;
-        this.y = true;
-        L();
-        im0 im0Var = this.d;
-        int i10 = this.backgroundPaddingLeft;
-        im0Var.setPadding(i10, 0, i10, 0);
-        this.d.j(new kv(this, 10));
-        this.d.setOnItemClickListener(new j(this, 14));
+    @Override // android.animation.ValueAnimator
+    public final void addUpdateListener(ValueAnimator.AnimatorUpdateListener animatorUpdateListener) {
+        this.c = animatorUpdateListener;
     }
 
-    public static void Q(zw0 zw0Var, int i10) {
-        g61 G = zw0Var.X.G(i10 - 1);
-        Object obj = G != null ? G.G : null;
-        if (obj instanceof TLRPC.User) {
-            MessagesController.getInstance(zw0Var.currentAccount).openApp(zw0Var.attachedFragment, (TLRPC.User) obj, null, 0, null);
-        }
+    @Override // android.animation.ValueAnimator, android.animation.Animator
+    public final void end() {
+        this.c = null;
+        super.end();
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final CharSequence A() {
-        return LocaleController.getString(R.string.SearchAppsExamples);
+    @Override // android.animation.ValueAnimator
+    public final Object getAnimatedValue() {
+        return this.d;
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
-        at atVar = new at(im0Var, getContext(), this.currentAccount, 0, true, this.resourcesProvider);
-        this.X = atVar;
-        atVar.r = false;
-        return atVar;
+    @Override // android.animation.ValueAnimator
+    public final void setFloatValues(float[] fArr) {
+        super.setFloatValues(fArr);
+        this.e = fArr;
+    }
+
+    @Override // android.animation.TimeAnimator, android.animation.ValueAnimator, android.animation.Animator
+    public final void start() {
+        setTimeListener(new TimeAnimator.TimeListener() { // from class: org.telegram.ui.Components.yw0
+            @Override // android.animation.TimeAnimator.TimeListener
+            public final void onTimeUpdate(TimeAnimator timeAnimator, long j10, long j11) {
+                int i10;
+                zw0 zw0Var = zw0.this;
+                int i11 = zw0Var.a;
+                if (i11 <= 0 || (i10 = zw0Var.b) <= 0) {
+                    zw0Var.end();
+                    return;
+                }
+                int i12 = i11 - 1;
+                zw0Var.a = i12;
+                if (zw0Var.c != null) {
+                    float[] fArr = zw0Var.e;
+                    if (fArr == null || fArr.length != 2) {
+                        zw0Var.end();
+                        return;
+                    }
+                    float interpolation = zw0Var.getInterpolator().getInterpolation(1.0f - (i12 / i10));
+                    float[] fArr2 = zw0Var.e;
+                    float f7 = fArr2[0];
+                    zw0Var.d = Float.valueOf(((fArr2[1] - f7) * interpolation) + f7);
+                    zw0Var.c.onAnimationUpdate(zw0Var);
+                }
+            }
+        });
+        int duration = (int) (getDuration() / AndroidUtilities.screenRefreshTime);
+        this.a = duration;
+        this.b = duration;
+        super.start();
     }
 }

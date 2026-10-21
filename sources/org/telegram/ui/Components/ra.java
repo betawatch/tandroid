@@ -16,7 +16,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class ra extends View {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -50,30 +50,30 @@ public abstract class ra extends View {
             boolean z11 = ((float) Math.abs(this.e - i10)) < (qaVarArr[i10].l ? 0.25f : 0.35f);
             int i11 = qaVar.k;
             int i12 = qaVar.j;
-            uj0 uj0Var = qaVar.b;
+            vj0 vj0Var = qaVar.b;
             if (qaVar.l != z11) {
                 if (qaVar.n.b[qaVar.a].j != 0) {
                     if (z11) {
-                        uj0Var.P(i12);
-                        if (uj0Var.a0 >= i11 - 2) {
-                            uj0Var.N(0, false, false);
+                        vj0Var.P(i12);
+                        if (vj0Var.a0 >= i11 - 2) {
+                            vj0Var.N(0, false, false);
                         }
-                        if (uj0Var.a0 <= i12) {
-                            uj0Var.start();
+                        if (vj0Var.a0 <= i12) {
+                            vj0Var.start();
                         } else {
-                            uj0Var.M(i12);
+                            vj0Var.M(i12);
                         }
-                    } else if (uj0Var.a0 >= i12 - 1) {
-                        uj0Var.P(i11 - 1);
-                        uj0Var.start();
+                    } else if (vj0Var.a0 >= i12 - 1) {
+                        vj0Var.P(i11 - 1);
+                        vj0Var.start();
                     } else {
-                        uj0Var.P(0);
-                        uj0Var.M(0);
+                        vj0Var.P(0);
+                        vj0Var.M(0);
                     }
                 } else if (z11) {
-                    uj0Var.M(0);
+                    vj0Var.M(0);
                     if (z10) {
-                        uj0Var.start();
+                        vj0Var.start();
                     }
                 }
                 qaVar.l = z11;
@@ -126,7 +126,7 @@ public abstract class ra extends View {
             StaticLayout staticLayout = qaVar.e;
             org.telegram.ui.Cells.z zVar = qaVar.c;
             float f16 = f12;
-            uj0 uj0Var = qaVar.b;
+            vj0 vj0Var = qaVar.b;
             int i12 = length;
             qa[] qaVarArr2 = qaVarArr;
             rectF2.set(paddingLeft2, 0.0f, paddingLeft2 + length, raVar.getHeight());
@@ -137,7 +137,7 @@ public abstract class ra extends View {
             qaVar.d.setColor(f17);
             if (qaVar.m != f17) {
                 qaVar.m = f17;
-                uj0Var.setColorFilter(new PorterDuffColorFilter(f17, PorterDuff.Mode.SRC_IN));
+                vj0Var.setColorFilter(new PorterDuffColorFilter(f17, PorterDuff.Mode.SRC_IN));
             }
             Rect rect = AndroidUtilities.rectTmp2;
             float f18 = min / f7;
@@ -154,8 +154,8 @@ public abstract class ra extends View {
             zVar.draw(canvas);
             float dp = AndroidUtilities.dp(29.0f) / f7;
             rect.set((int) (rectF2.centerX() - dp), (int) (AndroidUtilities.dpf2(24.66f) - dp), (int) (rectF2.centerX() + dp), (int) (AndroidUtilities.dpf2(24.66f) + dp));
-            uj0Var.setBounds(rect);
-            uj0Var.draw(canvas);
+            vj0Var.setBounds(rect);
+            vj0Var.draw(canvas);
             canvas.save();
             canvas.translate((rectF2.centerX() - (qaVar.f / f7)) - qaVar.g, AndroidUtilities.dp(50.0f) - (staticLayout.getHeight() / f7));
             staticLayout.draw(canvas);

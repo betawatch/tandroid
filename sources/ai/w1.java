@@ -18,14 +18,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.o90;
-import org.telegram.ui.Components.q31;
 import org.telegram.ui.Components.q90;
+import org.telegram.ui.Components.r31;
 import org.telegram.ui.l60;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class w1 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -77,16 +77,16 @@ public final class w1 extends FrameLayout {
                 super.dispatchDraw(canvas);
                 break;
             case 9:
-                q31 q31Var = (q31) this.d;
-                float i12 = q31Var.f.i();
+                r31 r31Var = (r31) this.d;
+                float i12 = r31Var.f.i();
                 int i13 = (i12 > 0.0f ? 1 : (i12 == 0.0f ? 0 : -1));
                 boolean z10 = i13 > 0;
-                float lerp = AndroidUtilities.lerp(0.5f, 1.0f, i12) * q31Var.K;
+                float lerp = AndroidUtilities.lerp(0.5f, 1.0f, i12) * r31Var.K;
                 float dp = AndroidUtilities.dp(10.0f);
                 float dp2 = AndroidUtilities.dp(8.33f);
                 float width2 = (getWidth() / 2.0f) + AndroidUtilities.dp(12.0f);
                 float dp3 = AndroidUtilities.dp(12.0f);
-                float max = Math.max(dp2 + dp2, q31Var.f.c() + AndroidUtilities.dp(10.0f));
+                float max = Math.max(dp2 + dp2, r31Var.f.c() + AndroidUtilities.dp(10.0f));
                 if (z10) {
                     i10 = i13;
                     f10 = dp3;
@@ -114,10 +114,10 @@ public final class w1 extends FrameLayout {
                     float f13 = max / 2.0f;
                     rectF4.set(f7 - f13, f10 - dp2, f7 + f13, f10 + dp2);
                     org.telegram.ui.Components.j6 j6Var = (org.telegram.ui.Components.j6) this.c;
-                    j6Var.setColor(org.telegram.ui.ActionBar.h6.m1(i12, j6Var.b.a(org.telegram.ui.ActionBar.h6.w0(q31Var.E, j6Var.a), false)));
+                    j6Var.setColor(org.telegram.ui.ActionBar.h6.m1(i12, j6Var.b.a(org.telegram.ui.ActionBar.h6.w0(r31Var.E, j6Var.a), false)));
                     canvas.drawRoundRect(rectF4, dp2, dp2, j6Var);
-                    q31Var.f.p(rectF4);
-                    org.telegram.ui.Components.p6 p6Var = q31Var.f;
+                    r31Var.f.p(rectF4);
+                    org.telegram.ui.Components.p6 p6Var = r31Var.f;
                     p6Var.B = (int) (i12 * 255.0f);
                     p6Var.draw(canvas);
                     canvas.restore();
@@ -256,7 +256,7 @@ public final class w1 extends FrameLayout {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 9:
-                return ((q31) this.d).f == drawable || super.verifyDrawable(drawable);
+                return ((r31) this.d).f == drawable || super.verifyDrawable(drawable);
             default:
                 return super.verifyDrawable(drawable);
         }
@@ -275,7 +275,7 @@ public final class w1 extends FrameLayout {
         }
         TextView textView = new TextView(context);
         this.b = textView;
-        kk.k(16.0f, 1, textView);
+        mk.k(16.0f, 1, textView);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.j5, d6Var));
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -380,7 +380,7 @@ public final class w1 extends FrameLayout {
         this.d = q90Var;
         o90 o90Var = new o90(this, context);
         this.c = o90Var;
-        LinearLayout e = kk.e(context, 0);
+        LinearLayout e = mk.e(context, 0);
         addView(e, w7.z5.e(-2, -1, 1));
         TextView textView = new TextView(context);
         this.b = textView;
@@ -402,15 +402,15 @@ public final class w1 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w1(q31 q31Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public w1(r31 r31Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.a = 9;
-        this.d = q31Var;
+        this.d = r31Var;
         Paint paint = new Paint(1);
         this.b = paint;
         this.c = new org.telegram.ui.Components.j6(this, d6Var);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        q31Var.f.setCallback(this);
+        r31Var.f.setCallback(this);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

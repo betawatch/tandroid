@@ -1,38 +1,35 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z21 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r31 b;
+public final /* synthetic */ class z21 implements ne.d, Utilities.Callback5, Utilities.Callback5Return {
+    public final /* synthetic */ s31 a;
 
-    public /* synthetic */ z21(r31 r31Var, int i10) {
-        this.a = i10;
-        this.b = r31Var;
+    @Override // ne.d
+    public void r(int i10, float f7, float f10, ne.e eVar) {
+        this.a.g();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                r31 r31Var = this.b;
-                g31 g31Var = r31Var.G;
-                g31Var.x1(true);
-                e31 e31Var = r31Var.s;
-                e31Var.x1(true);
-                r31Var.J.a(true, true);
-                AndroidUtilities.updateVisibleRows(e31Var);
-                AndroidUtilities.updateVisibleRows(g31Var);
-                break;
-            default:
-                r31 r31Var2 = this.b;
-                if (r31Var2.k()) {
-                    r31Var2.l();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        return Boolean.valueOf(s31.c(this.a, (h61) obj, (View) obj2));
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        s31.a(this.a, (h61) obj);
+    }
+
+    @Override // ne.d
+    public /* synthetic */ void H(float f7, int i10) {
     }
 }

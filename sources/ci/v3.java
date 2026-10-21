@@ -20,23 +20,23 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.j61;
 import org.telegram.ui.Components.k40;
 import org.telegram.ui.Components.k61;
-import org.telegram.ui.Components.m11;
-import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.n11;
 import org.telegram.ui.Components.n61;
+import org.telegram.ui.Components.o61;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.wa0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class v3 extends s8 {
     public final /* synthetic */ aa x0;
@@ -78,36 +78,36 @@ public final class v3 extends s8 {
 
     @Override // ci.s8
     public final void G(CharacterStyle characterStyle, View view) {
-        boolean z10 = characterStyle instanceof n61;
+        boolean z10 = characterStyle instanceof o61;
         aa aaVar = this.x0;
         q4 q4Var = this.z0;
         if (z10) {
-            TLRPC.User user = MessagesController.getInstance(q4Var.C2).getUser(Utilities.parseLong(((n61) characterStyle).getURL()));
+            TLRPC.User user = MessagesController.getInstance(q4Var.C2).getUser(Utilities.parseLong(((o61) characterStyle).getURL()));
             if (user != null) {
                 MessagesController.getInstance(q4Var.C2).openChatOrProfileWith(user, null, aaVar.f, 0, false);
                 return;
             }
             return;
         }
-        if (!(characterStyle instanceof k61)) {
+        if (!(characterStyle instanceof l61)) {
             if (characterStyle instanceof URLSpan) {
-                M(2, ((URLSpan) characterStyle).getURL(), characterStyle, characterStyle instanceof m61);
+                M(2, ((URLSpan) characterStyle).getURL(), characterStyle, characterStyle instanceof n61);
                 return;
             }
-            if (!(characterStyle instanceof j61)) {
+            if (!(characterStyle instanceof k61)) {
                 if (characterStyle instanceof ClickableSpan) {
                     ((ClickableSpan) characterStyle).onClick(view);
                     return;
                 }
                 return;
             } else {
-                j61 j61Var = (j61) characterStyle;
-                AndroidUtilities.addToClipboard(j61Var.a.subSequence(j61Var.b, j61Var.c).toString());
-                kk.p(R.string.TextCopied, new xc(q4Var.c1, this.y0));
+                k61 k61Var = (k61) characterStyle;
+                AndroidUtilities.addToClipboard(k61Var.a.subSequence(k61Var.b, k61Var.c).toString());
+                mk.p(R.string.TextCopied, new xc(q4Var.c1, this.y0));
                 return;
             }
         }
-        String url = ((k61) characterStyle).getURL();
+        String url = ((l61) characterStyle).getURL();
         if (url != null && (url.startsWith("#") || url.startsWith("$"))) {
             if (url.contains("@")) {
                 aaVar.H(new k40(url, null));
@@ -296,11 +296,11 @@ public final class v3 extends s8 {
     }
 
     public final void M(int i10, String str, CharacterStyle characterStyle, boolean z10) {
-        m11 m11Var;
+        n11 n11Var;
         if (z10 || AndroidUtilities.shouldShowUrlInAlert(str)) {
             aa aaVar = this.x0;
             if (i10 == 0 || i10 == 2) {
-                org.telegram.ui.Components.f5.q0(aaVar.f, str, true, true, true, (!(characterStyle instanceof m61) || (m11Var = ((m61) characterStyle).a) == null || (m11Var.a & 1024) == 0) ? false : true, null, null, this.y0);
+                org.telegram.ui.Components.f5.q0(aaVar.f, str, true, true, true, (!(characterStyle instanceof n61) || (n11Var = ((n61) characterStyle).a) == null || (n11Var.a & 1024) == 0) ? false : true, null, null, this.y0);
                 return;
             } else {
                 if (i10 == 1) {

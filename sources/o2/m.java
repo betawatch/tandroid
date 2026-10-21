@@ -5,13 +5,13 @@ import com.google.android.gms.internal.cast.z4;
 import e2.m0;
 import java.util.ArrayList;
 import java.util.Iterator;
-import u2.d1;
+import u2.e1;
 import v7.b8;
 import v7.u6;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final class m implements d1 {
+public final class m implements e1 {
     public final int a;
     public final q b;
     public int c = -1;
@@ -21,7 +21,7 @@ public final class m implements d1 {
         this.a = i10;
     }
 
-    @Override // u2.d1
+    @Override // u2.e1
     public final void a() {
         int i10 = this.c;
         q qVar = this.b;
@@ -65,7 +65,7 @@ public final class m implements d1 {
         return (i10 == -1 || i10 == -3 || i10 == -2) ? false : true;
     }
 
-    @Override // u2.d1
+    @Override // u2.e1
     public final boolean f() {
         if (this.c == -3) {
             return true;
@@ -78,7 +78,7 @@ public final class m implements d1 {
         return !qVar.A() && qVar.L[i10].A(qVar.j0);
     }
 
-    @Override // u2.d1
+    @Override // u2.e1
     public final int g(qf.b bVar, h2.h hVar, int i10) {
         w wVar;
         if (this.c == -3) {
@@ -138,7 +138,7 @@ public final class m implements d1 {
         return -3;
     }
 
-    @Override // u2.d1
+    @Override // u2.e1
     public final int m(long j10) {
         Object next;
         Object obj;

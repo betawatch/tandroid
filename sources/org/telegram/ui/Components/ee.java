@@ -25,7 +25,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ee implements Runnable {
     public final /* synthetic */ int a;
@@ -238,11 +238,11 @@ public final /* synthetic */ class ee implements Runnable {
                     xrVar2.c0 = groupcallstreamrtmpurl.key;
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(xrVar2.c0);
                     xrVar2.d0 = spannableStringBuilder;
-                    m11 m11Var = new m11();
-                    m11Var.a |= 256;
-                    m11Var.b = 0;
-                    m11Var.c = spannableStringBuilder.length();
-                    xrVar2.d0.setSpan(new n11(m11Var, 0), 0, xrVar2.d0.length(), 0);
+                    n11 n11Var = new n11();
+                    n11Var.a |= 256;
+                    n11Var.b = 0;
+                    n11Var.c = spannableStringBuilder.length();
+                    xrVar2.d0.setSpan(new o11(n11Var, 0), 0, xrVar2.d0.length(), 0);
                     xrVar2.e0.N(false);
                     break;
                 }

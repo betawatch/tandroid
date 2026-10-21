@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b70 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -13,11 +13,11 @@ public final /* synthetic */ class b70 implements View.OnClickListener {
     public final /* synthetic */ boolean d;
     public final /* synthetic */ boolean e;
     public final /* synthetic */ boolean f;
-    public final /* synthetic */ hm0 h;
+    public final /* synthetic */ im0 h;
 
-    public /* synthetic */ b70(hm0 hm0Var, TLRPC.User user, String str, boolean z10, boolean z11, boolean z12, int i10) {
+    public /* synthetic */ b70(im0 im0Var, TLRPC.User user, String str, boolean z10, boolean z11, boolean z12, int i10) {
         this.a = i10;
-        this.h = hm0Var;
+        this.h = im0Var;
         this.b = user;
         this.c = str;
         this.d = z10;
@@ -36,11 +36,11 @@ public final /* synthetic */ class b70 implements View.OnClickListener {
                 i10 = ((org.telegram.ui.ActionBar.f3) l70Var).currentAccount;
                 long j10 = -l70Var.g0;
                 d6Var = ((org.telegram.ui.ActionBar.f3) l70Var).resourcesProvider;
-                w01.b(context, i10, j10, this.b, this.c, this.d, this.e, this.f, d6Var);
+                x01.b(context, i10, j10, this.b, this.c, this.d, this.e, this.f, d6Var);
                 break;
             default:
-                tv0 tv0Var = ((du0) this.h).f;
-                w01.b(tv0Var.getContext(), tv0Var.v1.getCurrentAccount(), tv0Var.j1, this.b, this.c, this.d, this.e, this.f, tv0Var.F1);
+                uv0 uv0Var = ((eu0) this.h).f;
+                x01.b(uv0Var.getContext(), uv0Var.v1.getCurrentAccount(), uv0Var.j1, this.b, this.c, this.d, this.e, this.f, uv0Var.F1);
                 break;
         }
     }

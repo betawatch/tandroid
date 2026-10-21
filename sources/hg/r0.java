@@ -30,9 +30,9 @@ import org.telegram.ui.ActionBar.l2;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.r3;
 import org.telegram.ui.Components.q6;
-import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.y31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ah1;
@@ -40,7 +40,7 @@ import org.telegram.ui.kg;
 import org.telegram.ui.mi0;
 import rg.t2;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -134,7 +134,7 @@ public final /* synthetic */ class r0 implements View.OnClickListener {
                 qVar.K(0, true, 0, false, 0L);
                 mi0 mi0Var = qVar.O;
                 if (mi0Var != null) {
-                    mi0Var.h(true);
+                    mi0Var.g(true);
                     qVar.O = null;
                     break;
                 }
@@ -225,7 +225,7 @@ public final /* synthetic */ class r0 implements View.OnClickListener {
                 ((qg.y) this.b).dismiss();
                 break;
             case 17:
-                ((x31) this.b).run();
+                ((y31) this.b).run();
                 break;
             case 18:
                 ((t2) this.b).onBackPressed();

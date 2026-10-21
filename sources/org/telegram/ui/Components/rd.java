@@ -18,7 +18,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rd implements Runnable {
     public final /* synthetic */ int a;
@@ -104,7 +104,7 @@ public final /* synthetic */ class rd implements Runnable {
             case 7:
                 mf mfVar = chatActivityEnterView.L0;
                 if (mfVar != null) {
-                    mfVar.h(chatActivityEnterView.E4);
+                    mfVar.g(chatActivityEnterView.E4);
                     chatActivityEnterView.L0 = null;
                     break;
                 }
@@ -157,7 +157,7 @@ public final /* synthetic */ class rd implements Runnable {
             case 17:
                 mf mfVar2 = chatActivityEnterView.L0;
                 if (mfVar2 != null) {
-                    mfVar2.h(false);
+                    mfVar2.g(false);
                     chatActivityEnterView.L0 = null;
                 }
                 AndroidUtilities.runOnUIThread(new ie(chatActivityEnterView, i12), 600L);
@@ -171,7 +171,7 @@ public final /* synthetic */ class rd implements Runnable {
                 chatActivityEnterView2.R0(2147483646, true, 0, true, 0L);
                 mf mfVar3 = chatActivityEnterView2.L0;
                 if (mfVar3 != null) {
-                    mfVar3.h(false);
+                    mfVar3.g(false);
                     chatActivityEnterView2.L0 = null;
                     break;
                 }
@@ -193,7 +193,7 @@ public final /* synthetic */ class rd implements Runnable {
                                     i12++;
                                 }
                             }
-                            pj0.a(spannableStringBuilder);
+                            qj0.a(spannableStringBuilder);
                             chatActivityEnterView.M();
                             chatActivityEnterView.setFieldText(spannableStringBuilder);
                             chatActivityEnterView.Q0();

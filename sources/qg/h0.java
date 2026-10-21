@@ -37,15 +37,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.k5;
-import org.telegram.messenger.w2;
+import org.telegram.messenger.m5;
+import org.telegram.messenger.x2;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ry;
-import org.telegram.ui.Components.uj0;
-import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.vj0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.gt0;
 import org.telegram.ui.qq0;
@@ -54,9 +54,9 @@ import rg.o2;
 import rg.y1;
 import w7.p6;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h0 implements k0, a5.b, t5.b, r9.d, v1, a2, y7, OnSuccessListener, ImageReceiver.ImageReceiverDelegate, ne.d, t0.e, qa.a, xl0, vh.a, x2.k, Continuation, zf.m, r0.n {
+public final /* synthetic */ class h0 implements k0, a5.b, t5.b, r9.d, v1, a2, y7, OnSuccessListener, ImageReceiver.ImageReceiverDelegate, ne.d, t0.e, qa.a, yl0, vh.a, x2.k, Continuation, zf.m, r0.n {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -71,7 +71,7 @@ public final /* synthetic */ class h0 implements k0, a5.b, t5.b, r9.d, v1, a2, y
         return r0.k1.b;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ boolean P0(View view) {
         return false;
     }
@@ -132,14 +132,14 @@ public final /* synthetic */ class h0 implements k0, a5.b, t5.b, r9.d, v1, a2, y
         }
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public void d(float f7, float f10, int i10, View view) {
         ug.y0.R((ug.y0) this.b, view);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        uj0 lottieAnimation;
+        vj0 lottieAnimation;
         o2 o2Var = (o2) this.b;
         if (!z10 || z11 || (lottieAnimation = imageReceiver.getLottieAnimation()) == null) {
             return;
@@ -149,7 +149,7 @@ public final /* synthetic */ class h0 implements k0, a5.b, t5.b, r9.d, v1, a2, y
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        k5.a(this, i10, str, drawable);
+        m5.a(this, i10, str, drawable);
     }
 
     @Override // qg.v1
@@ -218,7 +218,7 @@ public final /* synthetic */ class h0 implements k0, a5.b, t5.b, r9.d, v1, a2, y
                 }
                 break;
             case 21:
-                ((w2) this.b).run();
+                ((x2) this.b).run();
                 break;
             case 22:
                 ((ug.s0) this.b).run();
@@ -324,7 +324,7 @@ public final /* synthetic */ class h0 implements k0, a5.b, t5.b, r9.d, v1, a2, y
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        k5.b(this, imageReceiver);
+        m5.b(this, imageReceiver);
     }
 
     @Override // com.google.android.gms.tasks.OnSuccessListener
@@ -411,7 +411,7 @@ public final /* synthetic */ class h0 implements k0, a5.b, t5.b, r9.d, v1, a2, y
     public /* synthetic */ void H(float f7, int i10) {
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ void a0(View view, float f7, float f10) {
     }
 }

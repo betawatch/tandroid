@@ -82,8 +82,8 @@ import org.telegram.ui.Components.gu;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.xl0;
 import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.zl0;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.bc0;
 import org.telegram.ui.hf1;
@@ -91,9 +91,9 @@ import org.telegram.ui.ic0;
 import org.telegram.ui.nc0;
 import org.telegram.ui.x41;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h0 implements x41, hf1, a2, ih.h, OnFailureListener, v8, OnCompleteListener, Continuation, r9.d, xl0, yl0, Utilities.Callback3Return, ic0, e2.p, e2.o, ki.o0, gu, i4, m4.o0, e2.j {
+public final /* synthetic */ class h0 implements x41, hf1, a2, ih.h, OnFailureListener, v8, OnCompleteListener, Continuation, r9.d, yl0, zl0, Utilities.Callback3Return, ic0, e2.p, e2.o, ki.o0, gu, i4, m4.o0, e2.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -129,12 +129,12 @@ public final /* synthetic */ class h0 implements x41, hf1, a2, ih.h, OnFailureLi
         }
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ boolean P0(View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.zl0
     public boolean a(int i10, View view) {
         return u3.C0((u3) this.b, (Context) this.c, view, i10);
     }
@@ -255,7 +255,7 @@ public final /* synthetic */ class h0 implements x41, hf1, a2, ih.h, OnFailureLi
         bVar.d((b2.f1) this.c, new qf.b(uVar, ((j2.f) this.b).e));
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public void d(float f7, float f10, int i10, View view) {
         d6 d6Var;
         int i11;
@@ -808,7 +808,7 @@ public final /* synthetic */ class h0 implements x41, hf1, a2, ih.h, OnFailureLi
         return Boolean.TRUE;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public /* synthetic */ void a0(View view, float f7, float f10) {
     }
 }

@@ -9,16 +9,16 @@ import org.telegram.messenger.LanguageDetector;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rr implements org.telegram.ui.Components.bw0, org.telegram.ui.Components.cw0, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.kd0, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.md0 {
+public final /* synthetic */ class rr implements org.telegram.ui.Components.cw0, org.telegram.ui.Components.dw0, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.kd0, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.md0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ rr(int i10) {
         this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.cw0
+    @Override // org.telegram.ui.Components.dw0
     public void b(Object obj, float f7) {
         tr trVar = (tr) obj;
         switch (this.a) {
@@ -162,7 +162,7 @@ public final /* synthetic */ class rr implements org.telegram.ui.Components.bw0,
         }
     }
 
-    @Override // org.telegram.ui.Components.bw0
+    @Override // org.telegram.ui.Components.cw0
     public float get(Object obj) {
         tr trVar = (tr) obj;
         switch (this.a) {

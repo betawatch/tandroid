@@ -19,16 +19,16 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.js0;
-import org.telegram.ui.Components.n41;
+import org.telegram.ui.Components.ks0;
+import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.vb0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.ex;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f2 implements Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ l2 a;
@@ -39,21 +39,21 @@ public final /* synthetic */ class f2 implements Utilities.Callback5, Utilities.
 
     @Override // org.telegram.messenger.Utilities.Callback5
     public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        g61 g61Var = (g61) obj;
+        h61 h61Var = (h61) obj;
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
         l2 l2Var = this.a;
-        js0 js0Var = l2Var.a;
+        ks0 ks0Var = l2Var.a;
         int i10 = l2Var.b;
         if (l2Var.e == null) {
             return;
         }
-        Object obj6 = g61Var.G;
+        Object obj6 = h61Var.G;
         if (obj6 instanceof TL_stars.SavedStarGift) {
             TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj6;
             if (!l2Var.n) {
-                l7 l7Var = new l7(l2Var.getContext(), l2Var.b, js0Var.c, l2Var.c, null);
+                l7 l7Var = new l7(l2Var.getContext(), l2Var.b, ks0Var.c, l2Var.c, null);
                 l7Var.k1 = new a2(l2Var, 2);
                 l7Var.R0 = new org.telegram.ui.web.m(23, l2Var, savedStarGift);
                 l7Var.M2(savedStarGift, l2Var.e);
@@ -71,7 +71,7 @@ public final /* synthetic */ class f2 implements Utilities.Callback5, Utilities.
                     ConnectionsManager.getInstance(i10).sendRequest(savestargift, null, 64);
                 }
                 if (l2Var.e.o(savedStarGift, z11, true)) {
-                    xc.a0(js0Var.a).Q(R.raw.chats_infotip, 36, LocaleController.formatPluralStringComma("GiftsPinLimit", MessagesController.getInstance(i10).stargiftsPinnedToTopLimit)).j();
+                    xc.a0(ks0Var.a).Q(R.raw.chats_infotip, 36, LocaleController.formatPluralStringComma("GiftsPinLimit", MessagesController.getInstance(i10).stargiftsPinnedToTopLimit)).j();
                 }
                 if (z10) {
                     return;
@@ -85,12 +85,12 @@ public final /* synthetic */ class f2 implements Utilities.Callback5, Utilities.
     public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
         boolean z10;
         l2 l2Var;
-        js0 js0Var;
+        ks0 ks0Var;
         g1 g1Var;
         v9 v9Var;
         String str;
         final l2 l2Var2;
-        js0 js0Var2;
+        ks0 ks0Var2;
         g1 g1Var2;
         boolean z11;
         String str2;
@@ -98,7 +98,7 @@ public final /* synthetic */ class f2 implements Utilities.Callback5, Utilities.
         boolean z12;
         d6 d6Var;
         Object obj6;
-        g61 g61Var = (g61) obj;
+        h61 h61Var = (h61) obj;
         View view = (View) obj2;
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
@@ -106,18 +106,18 @@ public final /* synthetic */ class f2 implements Utilities.Callback5, Utilities.
         l2 l2Var3 = this.a;
         d6 d6Var2 = l2Var3.c;
         int i10 = l2Var3.b;
-        js0 js0Var3 = l2Var3.a;
+        ks0 ks0Var3 = l2Var3.a;
         boolean z13 = false;
         if (l2Var3.e != null) {
             if (view instanceof g1) {
-                Object obj7 = g61Var.G;
+                Object obj7 = h61Var.G;
                 if (obj7 instanceof TL_stars.SavedStarGift) {
                     g1 g1Var3 = (g1) view;
                     final TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj7;
-                    org.telegram.ui.ActionBar.n2 n2Var = js0Var3.a;
-                    v9 v9Var2 = js0Var3.e;
+                    org.telegram.ui.ActionBar.n2 n2Var = ks0Var3.a;
+                    v9 v9Var2 = ks0Var3.e;
                     i80 I = i80.I(n2Var, view);
-                    js0Var3.I = I;
+                    ks0Var3.I = I;
                     if (v9Var2.h()) {
                         if (!l2Var3.d) {
                             v9Var2.d().size();
@@ -138,7 +138,7 @@ public final /* synthetic */ class f2 implements Utilities.Callback5, Utilities.
                             e1Var.c(h6.w0(i11, d6Var2), h6.w0(h6.F8, d6Var2));
                             e1Var.setSelectorColor(h6.m1(0.12f, h6.w0(i11, d6Var2)));
                             e1Var.g(LocaleController.getString(R.string.Gift2NewCollection), R.drawable.menu_folder_add, null);
-                            e1Var.setOnClickListener(new n41(l2Var3, I, savedStarGift, 8));
+                            e1Var.setOnClickListener(new o41(l2Var3, I, savedStarGift, 8));
                             linearLayout2.addView(e1Var, z5.n(-1, -2));
                         }
                         ArrayList d = v9Var2.d();
@@ -148,7 +148,7 @@ public final /* synthetic */ class f2 implements Utilities.Callback5, Utilities.
                             int i13 = i12 + 1;
                             TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) d.get(i12);
                             ArrayList arrayList = v9Var2.e(tL_starGiftCollection.collection_id).l;
-                            js0 js0Var4 = js0Var3;
+                            ks0 ks0Var4 = ks0Var3;
                             int size2 = arrayList.size();
                             g1 g1Var4 = g1Var3;
                             int i14 = 0;
@@ -192,7 +192,7 @@ public final /* synthetic */ class f2 implements Utilities.Callback5, Utilities.
                             linearLayout3.addView(e1Var2, z5.n(-1, -2));
                             linearLayout2 = linearLayout3;
                             l2Var3 = l2Var4;
-                            js0Var3 = js0Var4;
+                            ks0Var3 = ks0Var4;
                             i12 = i13;
                             g1Var3 = g1Var4;
                             v9Var2 = v9Var3;
@@ -201,7 +201,7 @@ public final /* synthetic */ class f2 implements Utilities.Callback5, Utilities.
                             d6Var2 = d6Var;
                         }
                         l2Var = l2Var3;
-                        js0Var = js0Var3;
+                        ks0Var = ks0Var3;
                         g1Var = g1Var3;
                         v9Var = v9Var2;
                         str = null;
@@ -210,26 +210,26 @@ public final /* synthetic */ class f2 implements Utilities.Callback5, Utilities.
                         I.k();
                     } else {
                         l2Var = l2Var3;
-                        js0Var = js0Var3;
+                        ks0Var = ks0Var3;
                         g1Var = g1Var3;
                         v9Var = v9Var2;
                         str = null;
                     }
                     if (savedStarGift.gift instanceof TL_stars.TL_starGiftUnique) {
-                        if (js0Var.c() && !l2Var.d && (!savedStarGift.unsaved || !savedStarGift.pinned_to_top)) {
+                        if (ks0Var.c() && !l2Var.d && (!savedStarGift.unsaved || !savedStarGift.pinned_to_top)) {
                             boolean z15 = savedStarGift.pinned_to_top;
                             l2Var2 = l2Var;
-                            js0Var2 = js0Var;
+                            ks0Var2 = ks0Var;
                             g1Var2 = g1Var;
                             z10 = z13;
                             I.c(z15 ? R.drawable.msg_unpin : R.drawable.msg_pin, LocaleController.getString(z15 ? R.string.Gift2Unpin : R.string.Gift2Pin), new si.o(l2Var2, savedStarGift, g1Var2, view, 2), z10);
                             I.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2Reorder), new a2(l2Var2, 0), savedStarGift.pinned_to_top);
                         } else {
                             l2Var2 = l2Var;
-                            js0Var2 = js0Var;
+                            ks0Var2 = ks0Var;
                             g1Var2 = g1Var;
                             z10 = z13;
-                            if (js0Var2.c() && l2Var2.d) {
+                            if (ks0Var2.c() && l2Var2.d) {
                                 I.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2Reorder), new a2(l2Var2, 1), z10);
                             }
                         }
@@ -269,7 +269,7 @@ public final /* synthetic */ class f2 implements Utilities.Callback5, Utilities.
                                 }
                             }, z10);
                         }
-                        I.l(R.drawable.msg_link2, LocaleController.getString(R.string.CopyLink), new uf.c(19, l2Var2, str2), str2 != null ? true : z10);
+                        I.l(R.drawable.msg_link2, LocaleController.getString(R.string.CopyLink), new u2.j0(21, l2Var2, str2), str2 != null ? true : z10);
                         final int i18 = 1;
                         I.l(R.drawable.msg_share, LocaleController.getString(R.string.ShareFile), new Runnable() { // from class: yh.b2
                             @Override // java.lang.Runnable
@@ -298,14 +298,14 @@ public final /* synthetic */ class f2 implements Utilities.Callback5, Utilities.
                         }, str2 != null ? true : z10);
                     } else {
                         l2Var2 = l2Var;
-                        js0Var2 = js0Var;
+                        ks0Var2 = ks0Var;
                         g1Var2 = g1Var;
                         z10 = z13;
-                        if (js0Var2.c() && l2Var2.d) {
+                        if (ks0Var2.c() && l2Var2.d) {
                             I.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2Reorder), new a2(l2Var2, 3), z10);
                         }
                     }
-                    if (l7.j2(i10, js0Var2.c)) {
+                    if (l7.j2(i10, ks0Var2.c)) {
                         boolean z16 = savedStarGift.unsaved;
                         I.c(z16 ? R.drawable.msg_message : R.drawable.menu_hide_gift, LocaleController.getString(z16 ? R.string.Gift2ShowGift : R.string.Gift2HideGift), new s1(l2Var2, savedStarGift, g1Var2, 2), z10);
                     }

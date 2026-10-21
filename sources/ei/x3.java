@@ -29,18 +29,18 @@ import android.view.ViewConfiguration;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.e61;
 import org.telegram.ui.Components.r90;
 import org.telegram.ui.Components.u90;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.vj0;
 import org.telegram.ui.Components.y90;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.ck0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public class x3 extends View {
     public boolean A0;
@@ -78,7 +78,7 @@ public class x3 extends View {
     public float b;
     public Paint b0;
     public float c;
-    public uj0 c0;
+    public vj0 c0;
     public long d;
     public float d0;
     public boolean e;
@@ -252,7 +252,7 @@ public class x3 extends View {
             return textPaint.measureText(charSequence.toString());
         }
         Spanned spanned = (Spanned) charSequence;
-        d61[] d61VarArr = (d61[]) spanned.getSpans(0, charSequence.length(), d61.class);
+        e61[] e61VarArr = (e61[]) spanned.getSpans(0, charSequence.length(), e61.class);
         ReplacementSpan[] replacementSpanArr = (ReplacementSpan[]) spanned.getSpans(0, charSequence.length(), ReplacementSpan.class);
         int i10 = 0;
         int i11 = 0;
@@ -266,13 +266,13 @@ public class x3 extends View {
         }
         CharSequence charSequence2 = charSequence;
         TextPaint textPaint3 = textPaint;
-        if (d61VarArr == null || d61VarArr.length == 0) {
+        if (e61VarArr == null || e61VarArr.length == 0) {
             return textPaint3.measureText(charSequence2.toString()) + i11;
         }
         int i12 = 0;
-        for (int i13 = 0; i13 < d61VarArr.length; i13++) {
-            int spanStart = spanned.getSpanStart(d61VarArr[i13]);
-            int spanEnd = spanned.getSpanEnd(d61VarArr[i13]);
+        for (int i13 = 0; i13 < e61VarArr.length; i13++) {
+            int spanStart = spanned.getSpanStart(e61VarArr[i13]);
+            int spanEnd = spanned.getSpanEnd(e61VarArr[i13]);
             int max = Math.max(i12, spanStart);
             if (max - i12 > 0) {
                 f7 += textPaint3.measureText(spanned, i12, max);
@@ -280,7 +280,7 @@ public class x3 extends View {
             i12 = Math.max(max, spanEnd);
             if (i12 - max > 0) {
                 Typeface typeface = textPaint3.getTypeface();
-                textPaint3.setTypeface(d61VarArr[i13].a);
+                textPaint3.setTypeface(e61VarArr[i13].a);
                 float measureText = textPaint3.measureText(spanned, max, i12) + f7;
                 textPaint3.setTypeface(typeface);
                 f7 = measureText;
@@ -317,7 +317,7 @@ public class x3 extends View {
         paint.setAlpha(alpha);
         if (this.A0) {
             int dp = AndroidUtilities.dp(64.0f);
-            float b10 = kk.b(this.w0 * 4.0f, dp * 2, ((System.currentTimeMillis() - this.I0) % 4000) / 4000.0f, -dp);
+            float b10 = mk.b(this.w0 * 4.0f, dp * 2, ((System.currentTimeMillis() - this.I0) % 4000) / 4000.0f, -dp);
             this.G0.reset();
             this.G0.postTranslate(this.r0.left + b10, 0.0f);
             this.F0.setLocalMatrix(this.G0);
@@ -543,21 +543,21 @@ public class x3 extends View {
             this.a0.draw(canvas);
         }
         float f18 = ((rectF.top + rectF2.top) + (rectF.bottom - rectF2.bottom)) / 2.0f;
-        uj0 uj0Var = this.c0;
-        if (uj0Var != null) {
+        vj0 vj0Var = this.c0;
+        if (vj0Var != null) {
             if (this.h0) {
                 float f19 = (rectF2.left / 2.0f) + rectF.left + 0.0f;
                 float f20 = this.d0 + f18;
                 f7 = 255.0f;
                 float f21 = this.g0 / 2.0f;
-                uj0Var.setBounds((int) f19, (int) (f20 - f21), (int) (f19 + this.f0), (int) (f21 + f20));
+                vj0Var.setBounds((int) f19, (int) (f20 - f21), (int) (f19 + this.f0), (int) (f21 + f20));
                 f11 = this.f0 + this.e0 + 0.0f;
             } else {
                 f7 = 255.0f;
                 float f22 = (0.0f + rectF.right) - (rectF2.right / 2.0f);
                 float f23 = this.d0 + f18;
                 float f24 = this.g0 / 2.0f;
-                uj0Var.setBounds((int) (f22 - this.f0), (int) (f23 - f24), (int) f22, (int) (f24 + f23));
+                vj0Var.setBounds((int) (f22 - this.f0), (int) (f23 - f24), (int) f22, (int) (f24 + f23));
                 f11 = 0.0f;
             }
             this.c0.setAlpha((int) (f16 * f7));
@@ -679,20 +679,20 @@ public class x3 extends View {
         this.w.set(AndroidUtilities.dp(11.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.r ? 15.0f : 11.0f), AndroidUtilities.dp(7.0f));
     }
 
-    public final void j(uj0 uj0Var) {
-        uj0 uj0Var2 = this.c0;
-        if (uj0Var2 != null) {
-            uj0Var2.setCallback(null);
+    public final void j(vj0 vj0Var) {
+        vj0 vj0Var2 = this.c0;
+        if (vj0Var2 != null) {
+            vj0Var2.setCallback(null);
         }
-        this.c0 = uj0Var;
-        uj0Var.setCallback(this);
-        uj0 uj0Var3 = this.c0;
-        if (com.google.android.gms.internal.play_billing.k3.s(uj0Var3)) {
-            this.d = Math.max(this.d, uj0Var3.r());
+        this.c0 = vj0Var;
+        vj0Var.setCallback(this);
+        vj0 vj0Var3 = this.c0;
+        if (com.google.android.gms.internal.play_billing.k3.s(vj0Var3)) {
+            this.d = Math.max(this.d, vj0Var3.r());
         }
-        uj0 uj0Var4 = this.c0;
-        this.f0 = uj0Var4.b;
-        this.g0 = uj0Var4.c;
+        vj0 vj0Var4 = this.c0;
+        this.f0 = vj0Var4.b;
+        this.g0 = vj0Var4.c;
         this.h0 = true;
     }
 

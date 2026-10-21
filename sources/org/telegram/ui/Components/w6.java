@@ -19,7 +19,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class w6 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
@@ -57,7 +57,7 @@ public final class w6 extends FrameLayout implements NotificationCenter.Notifica
         linearLayout.addView(a(R.drawable.msg_archive_hide, LocaleController.getString("ArchiveHintSection2"), LocaleController.getString("ArchiveHintSection2Info"), d6Var), w7.z5.t(-1, -2, 7, 32, 0, 32, 16));
         linearLayout.addView(a(R.drawable.msg_archive_stories, LocaleController.getString("ArchiveHintSection3"), LocaleController.getString("ArchiveHintSection3Info"), d6Var), w7.z5.t(-1, -2, 7, 32, 0, 32, 16));
         if (tiVar != null) {
-            ei.d f7 = org.telegram.messenger.kk.f(24, context, d6Var, true);
+            ei.d f7 = org.telegram.messenger.mk.f(24, context, d6Var, true);
             f7.g(LocaleController.getString("GotIt"), false, true);
             f7.setOnClickListener(new v6(0, tiVar));
             linearLayout.addView(f7, w7.z5.k(14.0f, 18.0f, 14.0f, 0.0f, -1, 48));

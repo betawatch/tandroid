@@ -5,11 +5,11 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
-import org.telegram.ui.Components.cn0;
-import org.telegram.ui.Components.py0;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.dn0;
+import org.telegram.ui.Components.qy0;
+import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -40,9 +40,9 @@ public final /* synthetic */ class u4 implements ValueAnimator.AnimatorUpdateLis
                 org.telegram.ui.Cells.d4 d4Var = (org.telegram.ui.Cells.d4) obj;
                 d4Var.getClass();
                 int offsetColor = AndroidUtilities.getOffsetColor(i12, i11, valueAnimator.getAnimatedFraction(), 1.0f);
-                xj0 xj0Var = d4Var.f;
-                xj0Var.setColorFilter(new PorterDuffColorFilter(offsetColor, PorterDuff.Mode.SRC_IN));
-                org.telegram.ui.ActionBar.h6.C1(xj0Var.getDrawable(), offsetColor & 620756991, true);
+                yj0 yj0Var = d4Var.f;
+                yj0Var.setColorFilter(new PorterDuffColorFilter(offsetColor, PorterDuff.Mode.SRC_IN));
+                org.telegram.ui.ActionBar.h6.C1(yj0Var.getDrawable(), offsetColor & 620756991, true);
                 break;
             case 2:
                 org.telegram.ui.Components.p6 p6Var = (org.telegram.ui.Components.p6) obj;
@@ -61,13 +61,13 @@ public final /* synthetic */ class u4 implements ValueAnimator.AnimatorUpdateLis
                 break;
             case 4:
                 float animatedFraction = valueAnimator.getAnimatedFraction();
-                py0 py0Var = (py0) ((cn0) obj).b;
-                py0Var.c.setAlpha(animatedFraction);
-                py0Var.h.setAlpha(animatedFraction);
+                qy0 qy0Var = (qy0) ((dn0) obj).b;
+                qy0Var.c.setAlpha(animatedFraction);
+                qy0Var.h.setAlpha(animatedFraction);
                 if (i12 != 0) {
                     int i14 = (int) ((1.0f - animatedFraction) * i12);
-                    py0Var.z0(i11 + i14);
-                    py0Var.c.setTranslationY(i14);
+                    qy0Var.z0(i11 + i14);
+                    qy0Var.c.setTranslationY(i14);
                     break;
                 }
                 break;

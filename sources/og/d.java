@@ -39,7 +39,7 @@ import org.telegram.ui.Components.zq;
 import org.telegram.ui.qn;
 import org.telegram.ui.re1;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class d {
     public static final /* synthetic */ int a = 0;
@@ -57,7 +57,7 @@ public abstract class d {
             if (UserObject.isBotForum(qnVar.getMessagesController().getUser(Long.valueOf(topicKey.dialogId)))) {
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(new MessageObject(qnVar.getCurrentAccount(), findTopic.topicStartMessage, false, false));
-                qnVar.tb(arrayList, null, findTopic.id, findTopic.read_inbox_max_id, findTopic.read_outbox_max_id, findTopic);
+                qnVar.ub(arrayList, null, findTopic.id, findTopic.read_inbox_max_id, findTopic.read_outbox_max_id, findTopic);
                 qnVar.getMessagesController().setForumLastTopicId(-topicKey.dialogId, topicKey.topicId);
                 return;
             }
@@ -70,7 +70,7 @@ public abstract class d {
         if (!ChatObject.isMonoForum(chat)) {
             ArrayList arrayList2 = new ArrayList();
             arrayList2.add(new MessageObject(qnVar.getCurrentAccount(), findTopic.topicStartMessage, false, false));
-            qnVar.tb(arrayList2, chat, findTopic.id, findTopic.read_inbox_max_id, findTopic.read_outbox_max_id, findTopic);
+            qnVar.ub(arrayList2, chat, findTopic.id, findTopic.read_inbox_max_id, findTopic.read_outbox_max_id, findTopic);
         } else if (ChatObject.canManageMonoForum(UserConfig.selectedAccount, chat)) {
             int i10 = findTopic.read_inbox_max_id;
             int i11 = findTopic.read_outbox_max_id;
@@ -78,9 +78,9 @@ public abstract class d {
             qnVar.l4 = i11;
             qnVar.m4 = Math.max(1, i10);
             qnVar.d4 = DialogObject.getPeerDialogId(findTopic.from_id);
-            qnVar.Dc();
-            qnVar.Uc(false);
-            qnVar.lc(false);
+            qnVar.Ec();
+            qnVar.Vc(false);
+            qnVar.mc(false);
         }
         qnVar.getMessagesController().setForumLastTopicId(-topicKey.dialogId, topicKey.topicId);
     }
@@ -165,7 +165,7 @@ public abstract class d {
         }
         ArrayList arrayList = new ArrayList();
         arrayList.add(new MessageObject(n2Var.getCurrentAccount(), message, false, false));
-        qnVar.tb(arrayList, chat, tL_forumTopic2.id, tL_forumTopic2.read_inbox_max_id, tL_forumTopic2.read_outbox_max_id, tL_forumTopic2);
+        qnVar.ub(arrayList, chat, tL_forumTopic2.id, tL_forumTopic2.read_inbox_max_id, tL_forumTopic2.read_outbox_max_id, tL_forumTopic2);
         if (i10 != 0) {
             qnVar.L7 = i10;
         }

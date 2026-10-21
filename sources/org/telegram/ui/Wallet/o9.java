@@ -7,9 +7,9 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.w61;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o9 implements hg.f0, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ r9 a;
@@ -37,9 +37,9 @@ public final /* synthetic */ class o9 implements hg.f0, org.telegram.ui.ActionBa
                 arrayList2.add((TLRPC.User) g0Var.a);
             }
         }
-        v61 v61Var = r9Var.a;
-        if (v61Var != null) {
-            v61Var.W2.N(true);
+        w61 w61Var = r9Var.a;
+        if (w61Var != null) {
+            w61Var.W2.N(true);
         }
     }
 

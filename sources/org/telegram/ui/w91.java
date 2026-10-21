@@ -4,31 +4,31 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class w91 extends org.telegram.ui.Components.f61 {
+public final class w91 extends org.telegram.ui.Components.g61 {
     public static final /* synthetic */ int b = 0;
     public org.telegram.ui.Cells.r7 a;
 
     static {
-        org.telegram.ui.Components.f61.setup(new w91());
+        org.telegram.ui.Components.g61.setup(new w91());
     }
 
-    @Override // org.telegram.ui.Components.f61
-    public final void attachedView(org.telegram.ui.Components.im0 im0Var, View view, org.telegram.ui.Components.g61 g61Var) {
-        ((org.telegram.ui.Cells.s7) view).l(g61Var != null && g61Var.h, false);
+    @Override // org.telegram.ui.Components.g61
+    public final void attachedView(org.telegram.ui.Components.jm0 jm0Var, View view, org.telegram.ui.Components.h61 h61Var) {
+        ((org.telegram.ui.Cells.s7) view).l(h61Var != null && h61Var.h, false);
     }
 
-    @Override // org.telegram.ui.Components.f61
-    public final void bindView(View view, org.telegram.ui.Components.g61 g61Var, boolean z10, org.telegram.ui.Components.t61 t61Var, org.telegram.ui.Components.b71 b71Var) {
+    @Override // org.telegram.ui.Components.g61
+    public final void bindView(View view, org.telegram.ui.Components.h61 h61Var, boolean z10, org.telegram.ui.Components.u61 u61Var, org.telegram.ui.Components.c71 c71Var) {
         org.telegram.ui.Cells.s7 s7Var = (org.telegram.ui.Cells.s7) view;
-        s7Var.k((MessageObject) g61Var.G, g61Var.v, false);
-        s7Var.i(g61Var.e, false);
-        s7Var.l(g61Var.h, false);
+        s7Var.k((MessageObject) h61Var.G, h61Var.v, false);
+        s7Var.i(h61Var.e, false);
+        s7Var.l(h61Var.h, false);
     }
 
-    @Override // org.telegram.ui.Components.f61
-    public final View createView(Context context, org.telegram.ui.Components.im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+    @Override // org.telegram.ui.Components.g61
+    public final View createView(Context context, org.telegram.ui.Components.jm0 jm0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
         if (this.a == null) {
             this.a = new org.telegram.ui.Cells.r7(context, d6Var);
         }
@@ -38,8 +38,8 @@ public final class w91 extends org.telegram.ui.Components.f61 {
         return s7Var;
     }
 
-    @Override // org.telegram.ui.Components.f61
-    public final boolean equals(org.telegram.ui.Components.g61 g61Var, org.telegram.ui.Components.g61 g61Var2) {
-        return g61Var.q == g61Var2.q && g61Var.e == g61Var2.e && g61Var.B == g61Var2.B;
+    @Override // org.telegram.ui.Components.g61
+    public final boolean equals(org.telegram.ui.Components.h61 h61Var, org.telegram.ui.Components.h61 h61Var2) {
+        return h61Var.q == h61Var2.q && h61Var.e == h61Var2.e && h61Var.B == h61Var2.B;
     }
 }

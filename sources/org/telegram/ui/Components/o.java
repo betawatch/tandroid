@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -84,10 +84,10 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
                 break;
             default:
                 ArrayList arrayList = (ArrayList) obj;
-                t61 t61Var = (t61) obj2;
+                u61 u61Var = (u61) obj2;
                 org.telegram.ui.Wallet.o5 o5Var = ((org.telegram.ui.Wallet.k4) obj3).b;
                 if (i11 == 0) {
-                    t61Var.U();
+                    u61Var.U();
                     org.telegram.ui.Wallet.l0 l0Var = o5Var.C0;
                     boolean z10 = (l0Var == null || l0Var.c.isEmpty()) ? false : true;
                     if (z10) {
@@ -95,7 +95,7 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
                             TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) o5Var.C0.c.get(i13);
                             org.telegram.ui.Wallet.f3 f3Var = o5Var.C0.a;
                             int i14 = org.telegram.ui.Wallet.e3.a;
-                            g61 J = g61.J(org.telegram.ui.Wallet.e3.class);
+                            h61 J = h61.J(org.telegram.ui.Wallet.e3.class);
                             org.telegram.ui.Wallet.d3 d3Var = new org.telegram.ui.Wallet.d3(wallettransaction2);
                             d3Var.set(wallettransaction2);
                             d3Var.id = wallettransaction2.id;
@@ -113,15 +113,15 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
                     }
                     org.telegram.ui.Wallet.l0 l0Var2 = o5Var.C0;
                     if (l0Var2 != null && !l0Var2.h) {
-                        arrayList.add(g61.o(-1, 37));
-                        arrayList.add(g61.o(-2, 37));
-                        arrayList.add(g61.o(-3, 37));
+                        arrayList.add(h61.o(-1, 37));
+                        arrayList.add(h61.o(-2, 37));
+                        arrayList.add(h61.o(-3, 37));
                     }
-                    t61Var.T();
+                    u61Var.T();
                     if (z10) {
                         long j10 = o5Var.getMessagesController().config.walletTransferMinNanos.get();
                         if (j10 > 0) {
-                            arrayList.add(g61.B(LocaleController.formatSpannable(R.string.WalletHiddenTransactions, org.telegram.ui.Wallet.m0.r(j10, false))));
+                            arrayList.add(h61.B(LocaleController.formatSpannable(R.string.WalletHiddenTransactions, org.telegram.ui.Wallet.m0.r(j10, false))));
                             break;
                         }
                     }
@@ -139,14 +139,14 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
                                 if (nftitem.gift != null) {
                                     org.telegram.ui.Wallet.t7 t7Var = o5Var.i0;
                                     int i16 = org.telegram.ui.Wallet.f7.a;
-                                    g61 J2 = g61.J(org.telegram.ui.Wallet.f7.class);
+                                    h61 J2 = h61.J(org.telegram.ui.Wallet.f7.class);
                                     J2.u = 1;
                                     J2.G = nftitem;
                                     J2.H = t7Var;
                                     arrayList.add(J2);
                                 } else {
                                     int i17 = org.telegram.ui.Wallet.b.a;
-                                    g61 J3 = g61.J(org.telegram.ui.Wallet.b.class);
+                                    h61 J3 = h61.J(org.telegram.ui.Wallet.b.class);
                                     J3.G = nftitem;
                                     J3.u = 1;
                                     arrayList.add(J3);
@@ -156,19 +156,19 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
                         if (arrayList.isEmpty() && !o5Var.j0.isEmpty()) {
                             org.telegram.ui.Wallet.e0 e0Var2 = o5Var.D0;
                             if (!e0Var2.i && e0Var2.g) {
-                                arrayList.add(g61.q(LocaleController.getString(R.string.NoResult)));
+                                arrayList.add(h61.q(LocaleController.getString(R.string.NoResult)));
                             }
                         }
                         org.telegram.ui.Wallet.e0 e0Var3 = o5Var.D0;
                         if (e0Var3.i) {
                             for (int i18 = 0; i18 < 3; i18++) {
-                                g61 o10 = g61.o((-1) - i18, 35);
+                                h61 o10 = h61.o((-1) - i18, 35);
                                 o10.u = 1;
                                 arrayList.add(o10);
                             }
                             break;
                         } else if (e0Var3.k != null) {
-                            arrayList.add(g61.e(-10001, LocaleController.getString(R.string.Retry)));
+                            arrayList.add(h61.e(-10001, LocaleController.getString(R.string.Retry)));
                             break;
                         }
                     }

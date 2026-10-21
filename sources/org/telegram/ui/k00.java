@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class k00 extends pg.b {
     public final Context d;
@@ -26,7 +26,7 @@ public final class k00 extends pg.b {
         this.d = context;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         int i10 = b1Var.f;
         return (i10 == 3 || i10 == 0 || i10 == 2 || i10 == 5 || i10 == 9 || i10 == 11) ? false : true;
@@ -194,10 +194,10 @@ public final class k00 extends pg.b {
                 view = vaVar;
                 break;
             case 2:
-                org.telegram.ui.Components.kw0 kw0Var = (org.telegram.ui.Components.kw0) n00Var.fragmentView;
+                org.telegram.ui.Components.lw0 lw0Var = (org.telegram.ui.Components.lw0) n00Var.fragmentView;
                 String string = LocaleController.getString(R.string.FilterNameHint);
                 d6Var = ((org.telegram.ui.ActionBar.n2) n00Var).resourceProvider;
-                h00 h00Var = new h00(this.d, kw0Var, string, false, 12, d6Var);
+                h00 h00Var = new h00(this.d, lw0Var, string, false, 12, d6Var);
                 n00Var.K = h00Var;
                 h00Var.n = false;
                 org.telegram.ui.Cells.d3 d3Var = h00Var.b;
@@ -238,13 +238,13 @@ public final class k00 extends pg.b {
                 break;
             case 5:
                 d00 d00Var = new d00(context);
-                org.telegram.ui.Components.xj0 xj0Var = new org.telegram.ui.Components.xj0(context);
-                d00Var.a = xj0Var;
-                xj0Var.f(R.raw.filter_new, 100, 100, null);
-                xj0Var.setScaleType(ImageView.ScaleType.CENTER);
-                xj0Var.d();
-                d00Var.addView(xj0Var, w7.z5.d(100, 100.0f, 17, 0.0f, 0.0f, 0.0f, 0.0f));
-                xj0Var.setOnClickListener(new a(d00Var, 24));
+                org.telegram.ui.Components.yj0 yj0Var = new org.telegram.ui.Components.yj0(context);
+                d00Var.a = yj0Var;
+                yj0Var.f(R.raw.filter_new, 100, 100, null);
+                yj0Var.setScaleType(ImageView.ScaleType.CENTER);
+                yj0Var.d();
+                d00Var.addView(yj0Var, w7.z5.d(100, 100.0f, 17, 0.0f, 0.0f, 0.0f, 0.0f));
+                yj0Var.setOnClickListener(new a(d00Var, 24));
                 view = d00Var;
                 break;
             case 6:
@@ -272,7 +272,7 @@ public final class k00 extends pg.b {
                 view = new c00(context, d6Var3);
                 break;
         }
-        return new org.telegram.ui.Components.sl0(view);
+        return new org.telegram.ui.Components.tl0(view);
     }
 
     @Override // s4.g0

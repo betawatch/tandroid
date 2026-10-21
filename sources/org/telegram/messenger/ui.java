@@ -1,63 +1,29 @@
 package org.telegram.messenger;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ui implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ SendMessagesHelper b;
+    public final /* synthetic */ TLRPC.Updates c;
 
-    public /* synthetic */ ui(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
+    public /* synthetic */ ui(SendMessagesHelper sendMessagesHelper, TLRPC.Updates updates, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-        this.e = obj4;
+        this.b = sendMessagesHelper;
+        this.c = updates;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$60((TLObject) this.c, (SendMessagesHelper.DelayedMessage) this.d, (String) this.e);
-                break;
-            case 1:
-                ((SendMessagesHelper) this.b).lambda$sendMessage$22((TLRPC.TL_messages_forwardMessages) this.c, (ArrayList) this.d, (nj) this.e);
-                break;
-            case 2:
-                ((SendMessagesHelper) this.b).lambda$didReceivedNotification$4((SendMessagesHelper.DelayedMessage) this.d, (File) this.c, (MessageObject) this.e);
-                break;
-            case 3:
-                ((UnconfirmedAuthController) this.b).lambda$readCache$0((ArrayList) this.c, (HashSet) this.d, (ArrayList) this.e);
+                this.b.lambda$performSendMessageRequest$97(this.c);
                 break;
             default:
-                ((UserNameResolver) this.b).lambda$resolve$0((String) this.e, (TLRPC.TL_error) this.d, (TLObject) this.c);
+                this.b.lambda$performSendMessageRequestMulti$75(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ ui(String str, UserNameResolver userNameResolver, TLObject tLObject, TLRPC.TL_error tL_error) {
-        this.a = 4;
-        this.b = userNameResolver;
-        this.e = str;
-        this.d = tL_error;
-        this.c = tLObject;
-    }
-
-    public /* synthetic */ ui(SendMessagesHelper sendMessagesHelper, SendMessagesHelper.DelayedMessage delayedMessage, File file, MessageObject messageObject) {
-        this.a = 2;
-        this.b = sendMessagesHelper;
-        this.d = delayedMessage;
-        this.c = file;
-        this.e = messageObject;
     }
 }

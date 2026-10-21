@@ -33,12 +33,12 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.i6;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.c71;
 import org.telegram.ui.Components.d50;
 import org.telegram.ui.Components.e50;
 import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.w9;
@@ -49,7 +49,7 @@ import org.telegram.ui.qn;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class o extends n2 implements d50, NotificationCenter.NotificationCenterDelegate, ne.d {
     public e50 E;
@@ -62,7 +62,7 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
     public final ne.b a;
     public long b;
     public w1 c;
-    public b71 d;
+    public c71 d;
     public String e;
     public boolean f;
     public boolean h;
@@ -81,12 +81,12 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
         this.K = new m(this);
     }
 
-    public static boolean U(o oVar, g61 g61Var, View view) {
+    public static boolean U(o oVar, h61 h61Var, View view) {
         long j10;
         boolean canRemoveBotFromCommunity;
         boolean z10;
         boolean z11;
-        Object obj = g61Var.G;
+        Object obj = h61Var.G;
         if (!(obj instanceof TLRPC.Chat)) {
             if (obj instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) obj;
@@ -119,16 +119,16 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
         return false;
     }
 
-    public static void V(o oVar, g61 g61Var) {
+    public static void V(o oVar, h61 h61Var) {
         TLRPC.Chat chat;
         TLRPC.ChatPhoto chatPhoto;
-        int i10 = g61Var.d;
+        int i10 = h61Var.d;
         if (i10 == 140) {
             if (oVar.E.g() || (chatPhoto = (chat = oVar.getMessagesController().getChat(Long.valueOf(oVar.b))).photo) == null || chatPhoto.photo_big == null) {
                 return;
             }
             ImageLocation imageLocation = null;
-            PhotoViewer.t1().K2(null, oVar, null);
+            PhotoViewer.u1().M2(null, oVar, null);
             TLRPC.ChatPhoto chatPhoto2 = chat.photo;
             int i11 = chatPhoto2.dc_id;
             if (i11 != 0) {
@@ -141,7 +141,7 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
                     imageLocation = ImageLocation.getForPhoto(oVar.I.chat_photo.video_sizes.get(0), oVar.I.chat_photo);
                 }
             }
-            PhotoViewer.t1().f2(null, chat.photo.photo_big, null, imageLocation, null, null, null, 0, oVar.K, null, 0L, 0L, 0L, true, null, null);
+            PhotoViewer.u1().g2(null, chat.photo.photo_big, null, imageLocation, null, null, null, 0, oVar.K, null, 0L, 0L, 0L, true, null, null);
             return;
         }
         if (i10 == 141) {
@@ -188,7 +188,7 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
             t0.e(oVar.J, oVar, oVar.currentAccount, oVar.H);
             return;
         }
-        Object obj = g61Var.G;
+        Object obj = h61Var.G;
         if (obj instanceof TLRPC.Chat) {
             oVar.presentFragment(qn.W9(-((TLRPC.Chat) obj).id));
         } else if (obj instanceof TLRPC.User) {
@@ -354,12 +354,12 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
         this.x.setNoProgress(false);
         this.r.addView(this.x, z5.d(64, 64.0f, 81, 0.0f, 0.0f, 0.0f, 32.0f));
         a0(false, false);
-        b71 b71Var = new b71(this, new i(this, i10), new j(this), new j(this));
-        this.d = b71Var;
-        b71Var.setClipToPadding(false);
-        b71 b71Var2 = this.d;
-        b71Var2.W2.r = false;
-        b71Var2.p1();
+        c71 c71Var = new c71(this, new i(this, i10), new j(this), new j(this));
+        this.d = c71Var;
+        c71Var.setClipToPadding(false);
+        c71 c71Var2 = this.d;
+        c71Var2.W2.r = false;
+        c71Var2.p1();
         this.actionBar.setBackground(null);
         this.c.addView(this.d, z5.c(-1.0f, -1));
         this.c.addView(this.actionBar, z5.e(-1, -2, 48));

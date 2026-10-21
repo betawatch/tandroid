@@ -16,14 +16,14 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.dw0;
+import org.telegram.ui.Components.ew0;
 import org.telegram.ui.Components.un;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class p1 implements NotificationCenter.NotificationCenterDelegate, tf.a {
-    public static final dw0 X = new dw0(new i1(0), new i1(1));
-    public static final dw0 Y = new dw0(new i1(2), new i1(3));
+    public static final ew0 X = new ew0(new i1(0), new i1(1));
+    public static final ew0 Y = new ew0(new i1(2), new i1(3));
     public static final p1 Z;
     public boolean E;
     public boolean F;

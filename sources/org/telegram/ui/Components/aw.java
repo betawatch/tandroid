@@ -31,11 +31,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static Pattern V;
-    public final ll0 E;
+    public final ml0 E;
     public final dq F;
     public org.telegram.ui.ActionBar.m1 G;
     public final boolean H;
@@ -115,11 +115,11 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
         vVar.j(new kv(this, i10));
         gn gnVar = new gn(this, arrayList, n2Var, resourceProvider);
         vVar.setOnItemClickListener(gnVar);
-        vVar.setOnItemLongClickListener((yl0) new q2(16, this, context));
+        vVar.setOnItemLongClickListener((zl0) new q2(16, this, context));
         vVar.setOnTouchListener(new ei.p1(3, this, gnVar));
         sVar.k1(false);
         sVar.O = new mv(this);
-        this.E = new ll0(vVar, sVar);
+        this.E = new ml0(vVar, sVar);
         this.containerView.addView(vVar, w7.z5.e(-1, -1, 51));
         View view = new View(context);
         this.r = view;
@@ -251,7 +251,7 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
                                     if (z11 && view2 != null) {
                                         Context context = n2Var3.getFragmentView().getContext();
                                         TLObject tLObject4 = tL_messages_stickerSet2;
-                                        qc.g(n2Var3, new ux0(context, tLObject4 == null ? stickerSet4 : tLObject4, 1, 2, null, n2Var3.getResourceProvider()), 1500).j();
+                                        qc.g(n2Var3, new vx0(context, tLObject4 == null ? stickerSet4 : tLObject4, 1, 2, null, n2Var3.getResourceProvider()), 1500).j();
                                     }
                                     if (tLObject3 instanceof TLRPC.TL_messages_stickerSetInstallResultArchive) {
                                         MediaDataController.getInstance(i12).processStickerSetInstallResultArchive(n2Var3, true, i11, (TLRPC.TL_messages_stickerSetInstallResultArchive) tLObject3);
@@ -358,7 +358,7 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
         SpannableString spannableString = new SpannableString(MessageObject.findAnimatedEmojiEmoticon(r5.f(awVar.currentAccount, a6Var.getDocumentId())));
         spannableString.setSpan(a6Var, 0, spannableString.length(), 33);
         if (AndroidUtilities.addToClipboard(spannableString)) {
-            org.telegram.messenger.kk.p(R.string.EmojiCopied, new xc((FrameLayout) awVar.containerView, awVar.resourcesProvider));
+            org.telegram.messenger.mk.p(R.string.EmojiCopied, new xc((FrameLayout) awVar.containerView, awVar.resourcesProvider));
         }
     }
 
@@ -446,9 +446,9 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
             int E = this.n.E(this.O);
             if (Math.abs(L0 - E) > 54) {
                 int i14 = L0 < E ? 0 : 1;
-                ll0 ll0Var = this.E;
-                ll0Var.b = i14;
-                ll0Var.c(E, (AndroidUtilities.displaySize.y / 2) - AndroidUtilities.dp(170.0f), false, false);
+                ml0 ml0Var = this.E;
+                ml0Var.b = i14;
+                ml0Var.c(E, (AndroidUtilities.displaySize.y / 2) - AndroidUtilities.dp(170.0f), false, false);
             } else {
                 vVar.x0(E);
             }
@@ -751,7 +751,7 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
                         org.telegram.ui.ActionBar.n2 n2Var = awVar.c;
                         TLRPC.InputStickerSet inputStickerSet = (TLRPC.InputStickerSet) jvVar.a.get(i12);
                         org.telegram.ui.ActionBar.n2 n2Var2 = awVar.c;
-                        new py0(context, n2Var, inputStickerSet, null, n2Var2 instanceof org.telegram.ui.qn ? ((org.telegram.ui.qn) n2Var2).Y : null, awVar.resourcesProvider).show();
+                        new qy0(context, n2Var, inputStickerSet, null, n2Var2 instanceof org.telegram.ui.qn ? ((org.telegram.ui.qn) n2Var2).Y : null, awVar.resourcesProvider).show();
                     }
                 } else {
                     aw awVar2 = jvVar.h;

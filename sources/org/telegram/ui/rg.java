@@ -4,7 +4,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rg implements Utilities.Callback0Return {
     public final /* synthetic */ int a;
@@ -20,22 +20,22 @@ public final /* synthetic */ class rg implements Utilities.Callback0Return {
         switch (this.a) {
             case 0:
                 this.b.getClass();
-                return Boolean.valueOf(org.telegram.ui.Components.u11.c() && LiteMode.isEnabled(65536));
+                return Boolean.valueOf(org.telegram.ui.Components.v11.c() && LiteMode.isEnabled(65536));
             default:
-                if (LiteMode.isEnabled(65536) && org.telegram.ui.Components.u11.c()) {
+                if (LiteMode.isEnabled(65536) && org.telegram.ui.Components.v11.c()) {
                     qn qnVar = this.b;
-                    org.telegram.ui.Components.u11 u11Var = qnVar.v0;
-                    if (u11Var == null || u11Var.e) {
-                        if (qnVar.getParentActivity() != null && org.telegram.ui.Components.u11.c() && qnVar.x0 != null && qnVar.X0 != null) {
-                            org.telegram.ui.Components.u11 u11Var2 = qnVar.v0;
-                            if (u11Var2 != null) {
-                                AndroidUtilities.removeFromParent(u11Var2);
+                    org.telegram.ui.Components.v11 v11Var = qnVar.v0;
+                    if (v11Var == null || v11Var.e) {
+                        if (qnVar.getParentActivity() != null && org.telegram.ui.Components.v11.c() && qnVar.x0 != null && qnVar.X0 != null) {
+                            org.telegram.ui.Components.v11 v11Var2 = qnVar.v0;
+                            if (v11Var2 != null) {
+                                AndroidUtilities.removeFromParent(v11Var2);
                             }
-                            org.telegram.ui.Components.u11 u11Var3 = new org.telegram.ui.Components.u11(qnVar.getParentActivity(), new i0(22, qnVar, r2));
-                            qnVar.v0 = u11Var3;
-                            org.telegram.ui.Components.u11[] u11VarArr = {u11Var3};
+                            org.telegram.ui.Components.v11 v11Var3 = new org.telegram.ui.Components.v11(qnVar.getParentActivity(), new i0(22, qnVar, r2));
+                            qnVar.v0 = v11Var3;
+                            org.telegram.ui.Components.v11[] v11VarArr = {v11Var3};
                             jm jmVar = qnVar.X0;
-                            jmVar.addView(u11Var3, jmVar.indexOfChild(qnVar.x0) + 1, w7.z5.c(-1.0f, -1));
+                            jmVar.addView(v11Var3, jmVar.indexOfChild(qnVar.x0) + 1, w7.z5.c(-1.0f, -1));
                         }
                     }
                     return qnVar.v0;

@@ -12,9 +12,9 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.vj0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class s7 {
     public int[] A;
@@ -150,7 +150,7 @@ public final class s7 {
         if (bitmap == null || bitmap.isRecycled()) {
             return this.u;
         }
-        uj0 lottieAnimation = g3Var.getLottieAnimation();
+        vj0 lottieAnimation = g3Var.getLottieAnimation();
         int i10 = lottieAnimation == null ? 0 : lottieAnimation.a0;
         Bitmap bitmap2 = this.v;
         if (bitmap2 != null && this.G == bitmap && this.E == i10) {

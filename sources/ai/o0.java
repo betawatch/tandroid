@@ -6,10 +6,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class o0 extends org.telegram.ui.Components.bb {
     public l0 X;
@@ -19,9 +19,9 @@ public final class o0 extends org.telegram.ui.Components.bb {
         super(context, null, false, false, null);
         this.v = 0.1f;
         fixNavigationBar();
-        im0 im0Var = this.d;
+        jm0 jm0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        im0Var.setPadding(i10, 0, i10, 0);
+        jm0Var.setPadding(i10, 0, i10, 0);
         LinearLayout linearLayout = new LinearLayout(context);
         this.Y = linearLayout;
         linearLayout.setOrientation(1);
@@ -67,8 +67,8 @@ public final class o0 extends org.telegram.ui.Components.bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
-        l0 l0Var = new l0(im0Var, getContext(), this.currentAccount, 0, true, new q(this, 1), this.resourcesProvider);
+    public final im0 x(jm0 jm0Var) {
+        l0 l0Var = new l0(jm0Var, getContext(), this.currentAccount, 0, true, new q(this, 1), this.resourcesProvider);
         this.X = l0Var;
         return l0Var;
     }

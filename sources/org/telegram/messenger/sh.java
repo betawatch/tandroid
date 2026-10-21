@@ -1,37 +1,37 @@
 package org.telegram.messenger;
 
+import android.animation.ValueAnimator;
 import android.view.View;
+import android.view.Window;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.RichMessageLayout;
+import org.telegram.ui.Components.c81;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class sh implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ RichMessageLayout.Text b;
-    public final /* synthetic */ RichMessageLayout c;
-    public final /* synthetic */ View d;
+public final /* synthetic */ class sh implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ sh(RichMessageLayout.Text text, View view, RichMessageLayout richMessageLayout) {
-        this.b = text;
-        this.d = view;
-        this.c = richMessageLayout;
+    public /* synthetic */ sh(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                this.b.lambda$revealSpoilers$4(this.d, this.c);
+                ((RichMessageLayout.SpoilerReveal) this.b).lambda$start$0((View) this.c, valueAnimator);
+                break;
+            case 1:
+                AndroidUtilities.lambda$setNavigationBarColor$23((AndroidUtilities.IntColorCallback) this.b, (Window) this.c, valueAnimator);
                 break;
             default:
-                this.b.lambda$revealSpoilers$3(this.c, this.d);
+                ((MediaController) this.b).lambda$cleanupPlayer$10((c81) this.c, valueAnimator);
                 break;
         }
-    }
-
-    public /* synthetic */ sh(RichMessageLayout.Text text, RichMessageLayout richMessageLayout, View view) {
-        this.b = text;
-        this.c = richMessageLayout;
-        this.d = view;
     }
 }

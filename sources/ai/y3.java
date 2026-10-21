@@ -15,7 +15,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.d50;
-import org.telegram.ui.Components.ym0;
+import org.telegram.ui.Components.zm0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.cy;
 import org.telegram.ui.ju0;
@@ -23,7 +23,7 @@ import org.telegram.ui.jz0;
 import org.telegram.ui.q50;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y3 implements org.telegram.ui.ActionBar.a2, ei.y7, org.telegram.ui.Components.e5, t5.b, s9.g, d50 {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class y3 implements org.telegram.ui.ActionBar.a2, e
 
     @Override // org.telegram.ui.Components.e5
     public void C(int i10, int i11, boolean z10) {
-        qn.h0((qn) this.c, (ArrayList) this.d, this.b, (ym0) this.e, z10, i10);
+        qn.h0((qn) this.c, (ArrayList) this.d, this.b, (zm0) this.e, z10, i10);
     }
 
     @Override // org.telegram.ui.Components.d50
@@ -86,7 +86,7 @@ public final /* synthetic */ class y3 implements org.telegram.ui.ActionBar.a2, e
                 return fVar2.b.schedule(new Callable() { // from class: s9.e
                     @Override // java.util.concurrent.Callable
                     public final Object call() {
-                        return f.this.a.submit(new p2.b(16, callable, bVar));
+                        return f.this.a.submit(new p2.b(18, callable, bVar));
                     }
                 }, this.b, (TimeUnit) this.e);
         }

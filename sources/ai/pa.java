@@ -29,7 +29,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
@@ -42,7 +42,7 @@ import org.telegram.ui.Components.xp;
 import org.telegram.ui.ProfileActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class pa implements Runnable {
     public final /* synthetic */ int a;
@@ -135,7 +135,7 @@ public final /* synthetic */ class pa implements Runnable {
                     ci.l0 l0Var = new ci.l0();
                     org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, context2, (org.telegram.ui.ActionBar.d6) l0Var, false);
                     f3Var.fixNavigationBar();
-                    LinearLayout e = kk.e(context2, 1);
+                    LinearLayout e = mk.e(context2, 1);
                     TextView f7 = org.telegram.messenger.g0.f(context2, 1, 20.0f);
                     f7.setTextColor(l0Var.w(org.telegram.ui.ActionBar.h6.j5));
                     f7.setTypeface(AndroidUtilities.bold());

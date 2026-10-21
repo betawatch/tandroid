@@ -1,52 +1,32 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.FileLoadOperation;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import zf.r;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class bb implements RequestDelegate {
+public final /* synthetic */ class bb implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ r c;
 
-    public /* synthetic */ bb(Object obj, int i10, Object obj2, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
-        this.d = obj2;
+    public /* synthetic */ bb(MessagesController messagesController, r rVar, int i10) {
+        this.a = i10;
+        this.b = messagesController;
+        this.c = rVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.c).lambda$checkChatlistFolderUpdate$481(this.b, (MessagesController.ChatlistUpdatesStat) this.d, tLObject, tL_error);
+                this.b.lambda$processUpdateArray$402(this.c);
                 break;
             case 1:
-                ((FileLoadOperation) this.c).lambda$startDownloadRequest$29(this.b, (FileLoadOperation.RequestInfo) this.d, tLObject, tL_error);
-                break;
-            case 2:
-                ((MediaDataController) this.c).lambda$toggleStickerSetInternal$117((TLRPC.StickerSet) this.d, this.b, tLObject, tL_error);
-                break;
-            case 3:
-                ((MediaDataController) this.c).lambda$loadStickers$97(this.b, (Utilities.Callback) this.d, tLObject, tL_error);
+                this.b.lambda$processUpdateArray$405(this.c);
                 break;
             default:
-                ((MessagesController) this.c).lambda$registerForPush$323(this.b, (String) this.d, tLObject, tL_error);
+                this.b.lambda$processUpdateArray$407(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ bb(MediaDataController mediaDataController, TLRPC.StickerSet stickerSet, int i10) {
-        this.a = 2;
-        this.c = mediaDataController;
-        this.d = stickerSet;
-        this.b = i10;
     }
 }

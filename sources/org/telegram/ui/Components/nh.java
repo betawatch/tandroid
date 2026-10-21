@@ -5,10 +5,10 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nh implements o1.g {
-    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int a = 0;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ float c;
     public final /* synthetic */ float d;
@@ -48,21 +48,21 @@ public final /* synthetic */ class nh implements o1.g {
                 linearLayout2.setTranslationX(f12 * AndroidUtilities.dp(16.0f));
                 break;
             default:
-                sp0 sp0Var = (sp0) this.e;
+                tp0 tp0Var = (tp0) this.e;
                 boolean z10 = this.b;
                 if (z10) {
-                    if (f7 > this.c / 2.0f || !sp0Var.s) {
+                    if (f7 > this.c / 2.0f || !tp0Var.s) {
                     }
-                } else if (f7 < this.d / 2.0f || !sp0Var.r) {
+                } else if (f7 < this.d / 2.0f || !tp0Var.r) {
                 }
-                sp0Var.s = !z10;
-                sp0Var.r = z10;
+                tp0Var.s = !z10;
+                tp0Var.r = z10;
                 break;
         }
     }
 
-    public /* synthetic */ nh(sp0 sp0Var, boolean z10, float f7, float f10) {
-        this.e = sp0Var;
+    public /* synthetic */ nh(tp0 tp0Var, boolean z10, float f7, float f10) {
+        this.e = tp0Var;
         this.b = z10;
         this.c = f7;
         this.d = f10;

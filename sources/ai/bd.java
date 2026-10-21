@@ -8,10 +8,10 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.x90;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class bd extends LinearLayout {
     public final /* synthetic */ int a = 1;
@@ -20,12 +20,12 @@ public final class bd extends LinearLayout {
     public final ViewGroup d;
     public final Object e;
 
-    public bd(Context context, org.telegram.ui.ActionBar.d6 d6Var, im0 im0Var) {
+    public bd(Context context, org.telegram.ui.ActionBar.d6 d6Var, jm0 jm0Var) {
         super(context);
         this.b = new Paint(1);
         this.e = new org.telegram.ui.Components.f6(this);
         this.c = d6Var;
-        this.d = im0Var;
+        this.d = jm0Var;
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -36,9 +36,9 @@ public final class bd extends LinearLayout {
                 super.dispatchDraw(canvas);
                 Paint paint = (Paint) this.b;
                 paint.setColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.a7, (org.telegram.ui.ActionBar.d6) this.c));
-                im0 im0Var = (im0) this.d;
-                if (im0Var != null) {
-                    paint.setAlpha((int) (f6Var.d(im0Var.canScrollVertically(1) ? 1.0f : 0.0f, false) * 255.0f));
+                jm0 jm0Var = (jm0) this.d;
+                if (jm0Var != null) {
+                    paint.setAlpha((int) (f6Var.d(jm0Var.canScrollVertically(1) ? 1.0f : 0.0f, false) * 255.0f));
                 } else {
                     paint.setAlpha((int) (f6Var.d(1.0f, false) * 255.0f));
                 }

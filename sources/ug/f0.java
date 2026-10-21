@@ -9,17 +9,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.cy;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public final class f0 extends sg.m1 {
     public static f0 S0;
@@ -31,9 +31,9 @@ public final class f0 extends sg.m1 {
         this.R0 = str;
         qc.a((FrameLayout) this.containerView, new o8(15));
         if (!z10) {
-            im0 im0Var = this.d;
+            jm0 jm0Var = this.d;
             int i11 = this.backgroundPaddingLeft;
-            im0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(68.0f));
+            jm0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(68.0f));
             wg.a aVar = new wg.a(getContext(), this.resourcesProvider);
             this.Q0 = aVar;
             aVar.setOnClickListener(new hg.r0(this, 22));
@@ -63,7 +63,7 @@ public final class f0 extends sg.m1 {
 
     public static void f0(f0 f0Var) {
         String str = "https://t.me/giftcode/" + f0Var.R0;
-        cy cyVar = new cy(kk.d(3, "onlySelect", "dialogsType", true));
+        cy cyVar = new cy(mk.d(3, "onlySelect", "dialogsType", true));
         cyVar.C2 = new org.telegram.ui.web.m(17, f0Var, str);
         f0Var.n.presentFragment(cyVar);
         f0Var.dismiss();

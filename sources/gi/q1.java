@@ -38,7 +38,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.j5;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.q21;
+import org.telegram.ui.Components.r21;
 import org.telegram.ui.Components.r5;
 import org.telegram.ui.Components.sd0;
 import org.telegram.ui.Components.vp;
@@ -49,7 +49,7 @@ import org.telegram.ui.re1;
 import org.telegram.ui.vx;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q1 implements vx, org.telegram.ui.ActionBar.a2, mi.n, ResultCallback {
     public final /* synthetic */ int a;
@@ -184,7 +184,7 @@ public final /* synthetic */ class q1 implements vx, org.telegram.ui.ActionBar.a
 
     @Override // org.telegram.tgnet.ResultCallback
     public void onComplete(Object obj) {
-        q21 q21Var = (q21) this.d;
+        r21 r21Var = (r21) this.d;
         vp vpVar = (vp) this.e;
         Pair pair = (Pair) obj;
         if (pair == null || ((Long) pair.first).longValue() != this.c) {
@@ -193,10 +193,10 @@ public final /* synthetic */ class q1 implements vx, org.telegram.ui.ActionBar.a
         Drawable drawable = vpVar.b;
         if (drawable instanceof wc0) {
             wc0 wc0Var = (wc0) drawable;
-            wc0Var.s(q21.e((Bitmap) pair.second), this.b >= 0 ? 100 : -100);
-            wc0Var.t(q21Var.L);
+            wc0Var.s(r21.e((Bitmap) pair.second), this.b >= 0 ? 100 : -100);
+            wc0Var.t(r21Var.L);
         }
-        q21Var.invalidate();
+        r21Var.invalidate();
     }
 
     @Override // org.telegram.tgnet.ResultCallback

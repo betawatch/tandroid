@@ -22,9 +22,9 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class h51 extends org.telegram.ui.Components.hm0 {
+public final class h51 extends org.telegram.ui.Components.im0 {
     public int c;
     public int d;
     public int h;
@@ -38,7 +38,7 @@ public final class h51 extends org.telegram.ui.Components.hm0 {
         this.s = x51Var;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         int i10 = b1Var.f;
         return i10 == 3 || i10 == 4;
@@ -391,6 +391,6 @@ public final class h51 extends org.telegram.ui.Components.hm0 {
             g51Var.setScaleX(0.0f);
             g51Var.setScaleY(0.0f);
         }
-        return new org.telegram.ui.Components.sl0(g51Var);
+        return new org.telegram.ui.Components.tl0(g51Var);
     }
 }

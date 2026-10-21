@@ -24,16 +24,16 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jm0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public abstract class aa {
     public final l9 A;
     public final Rect B;
     public z9 C;
     public w7.j0 D;
-    public im0 E;
+    public jm0 E;
     public ViewGroup F;
     public Magnifier G;
     public float H;
@@ -363,8 +363,8 @@ public abstract class aa {
     }
 
     public final void S(ViewGroup viewGroup) {
-        if (viewGroup instanceof im0) {
-            this.E = (im0) viewGroup;
+        if (viewGroup instanceof jm0) {
+            this.E = (jm0) viewGroup;
         }
         this.F = viewGroup;
     }

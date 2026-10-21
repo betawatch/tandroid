@@ -18,7 +18,7 @@ import k2.w0;
 import org.telegram.messenger.MediaController;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class m implements s {
     public long A;
@@ -356,7 +356,7 @@ public final class m implements s {
         this.f.a(sb2.toString(), runtimeException);
         if (this.h.compareAndSet(false, true)) {
             w0 w0Var = this.g.a;
-            ((s0) w0Var.b).i.post(new p2.b(25, w0Var, runtimeException));
+            ((s0) w0Var.b).i.post(new p2.b(27, w0Var, runtimeException));
         }
     }
 

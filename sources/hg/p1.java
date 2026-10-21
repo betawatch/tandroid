@@ -2,19 +2,19 @@ package hg;
 
 import ai.ic;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.hm0;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.tl0;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
-public final class p1 extends hm0 {
+public final class p1 extends im0 {
     public j1 c;
     public Integer d;
     public ic e;
     public boolean f;
     public int h;
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean D(s4.b1 b1Var) {
         if (b1Var.b() == 0) {
             return false;
@@ -52,6 +52,6 @@ public final class p1 extends hm0 {
         }
         ic icVar = new ic(this, viewGroup.getContext(), 4);
         this.e = icVar;
-        return new sl0(icVar);
+        return new tl0(icVar);
     }
 }

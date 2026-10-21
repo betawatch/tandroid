@@ -17,16 +17,16 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.js0;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.ks0;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.vj0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class l2 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final LinearLayout E;
@@ -34,7 +34,7 @@ public final class l2 extends FrameLayout implements NotificationCenter.Notifica
     public final TextView G;
     public final ei.d H;
     public boolean I;
-    public final js0 a;
+    public final ks0 a;
     public final int b;
     public final d6 c;
     public boolean d;
@@ -49,30 +49,30 @@ public final class l2 extends FrameLayout implements NotificationCenter.Notifica
     public final TextView x;
     public final FrameLayout y;
 
-    public l2(js0 js0Var, int i10, d6 d6Var) {
-        super(js0Var.getContext());
+    public l2(ks0 ks0Var, int i10, d6 d6Var) {
+        super(ks0Var.getContext());
         this.r = AndroidUtilities.displaySize.y;
-        Context context = js0Var.getContext();
-        this.a = js0Var;
+        Context context = ks0Var.getContext();
+        this.a = ks0Var;
         this.b = i10;
         this.c = d6Var;
-        g2 g2Var = new g2(context, i10, new hg.o(this, 28), new f2(this), new f2(this), d6Var, js0Var);
+        g2 g2Var = new g2(context, i10, new hg.o(this, 28), new f2(this), new f2(this), d6Var, ks0Var);
         this.f = g2Var;
         g2Var.W2.r = false;
         g2Var.setSelectorType(9);
         g2Var.setSelectorDrawableColor(0);
-        g2Var.setPadding(AndroidUtilities.dp(9.0f), js0Var.K, AndroidUtilities.dp(9.0f), AndroidUtilities.dp(86.0f));
+        g2Var.setPadding(AndroidUtilities.dp(9.0f), ks0Var.K, AndroidUtilities.dp(9.0f), AndroidUtilities.dp(86.0f));
         g2Var.setClipToPadding(false);
         g2Var.setClipChildren(false);
         addView(g2Var, z5.e(-1, -1, 119));
-        g2Var.j(new ki.m3(9, this, js0Var));
-        h2 h2Var = new h2(js0Var);
+        g2Var.j(new ki.m3(9, this, ks0Var));
+        h2 h2Var = new h2(ks0Var);
         h2Var.m = false;
         h2Var.C = false;
         h2Var.o(bs.h);
         h2Var.n(350L);
         g2Var.setItemAnimator(h2Var);
-        new s4.y(new i2(this, js0Var)).d(g2Var);
+        new s4.y(new i2(this, ks0Var)).d(g2Var);
         View view = this.s;
         if (view != null) {
             removeView(view);
@@ -81,7 +81,7 @@ public final class l2 extends FrameLayout implements NotificationCenter.Notifica
         if (view2 != null) {
             removeView(view2);
         }
-        if (js0Var.d != this.e) {
+        if (ks0Var.d != this.e) {
             this.s = null;
             this.w = null;
             this.x = null;
@@ -140,7 +140,7 @@ public final class l2 extends FrameLayout implements NotificationCenter.Notifica
             g2Var.setEmptyView(this.y);
             LinearLayout linearLayout2 = this.E;
             if (linearLayout2 != null) {
-                linearLayout2.setVisibility(js0Var.e.h() ? 0 : 8);
+                linearLayout2.setVisibility(ks0Var.e.h() ? 0 : 8);
                 return;
             }
             return;
@@ -156,7 +156,7 @@ public final class l2 extends FrameLayout implements NotificationCenter.Notifica
         linearLayout3.setOrientation(1);
         this.s.addView(this.v, z5.e(-2, -2, 17));
         w9 w9Var = new w9(getContext());
-        w9Var.setImageDrawable(new uj0(R.raw.utyan_empty, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f)));
+        w9Var.setImageDrawable(new vj0(R.raw.utyan_empty, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f)));
         this.v.addView(w9Var, z5.t(120, 120, 1, 0, 0, 0, 0));
         TextView textView3 = new TextView(getContext());
         this.w = textView3;
@@ -215,8 +215,8 @@ public final class l2 extends FrameLayout implements NotificationCenter.Notifica
             return;
         }
         this.n = z10;
-        js0 js0Var = this.a;
-        js0Var.p(js0Var.g());
+        ks0 ks0Var = this.a;
+        ks0Var.p(ks0Var.g());
         int i10 = 0;
         while (true) {
             g2Var = this.f;
@@ -229,9 +229,9 @@ public final class l2 extends FrameLayout implements NotificationCenter.Notifica
             }
             i10++;
         }
-        t61 t61Var = g2Var.W2;
-        if (t61Var != null) {
-            t61Var.S();
+        u61 u61Var = g2Var.W2;
+        if (u61Var != null) {
+            u61Var.S();
         }
         if (z10) {
             org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
@@ -273,13 +273,13 @@ public final class l2 extends FrameLayout implements NotificationCenter.Notifica
     }
 
     public final void f(boolean z10) {
-        t61 t61Var;
+        u61 u61Var;
         g2 g2Var = this.f;
-        if (g2Var == null || (t61Var = g2Var.W2) == null) {
+        if (g2Var == null || (u61Var = g2Var.W2) == null) {
             return;
         }
         boolean canScrollVertically = g2Var.canScrollVertically(-1);
-        t61Var.N(z10);
+        u61Var.N(z10);
         if (canScrollVertically) {
             return;
         }

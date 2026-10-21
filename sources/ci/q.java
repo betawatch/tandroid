@@ -30,10 +30,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.x20;
 import org.telegram.ui.Components.yc;
-import org.telegram.ui.Components.yj0;
+import org.telegram.ui.Components.zj0;
 import org.telegram.ui.tw;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public final class q extends FrameLayout {
     public long E;
@@ -49,7 +49,7 @@ public final class q extends FrameLayout {
     public final y7 O;
     public float P;
     public float Q;
-    public yj0 R;
+    public zj0 R;
     public h S;
     public final float T;
     public boolean U;
@@ -208,7 +208,7 @@ public final class q extends FrameLayout {
         float f15;
         ImageReceiver imageReceiver2;
         boolean[] zArr;
-        yj0 yj0Var;
+        zj0 zj0Var;
         float dp = AndroidUtilities.dp(48.0f);
         float dp2 = AndroidUtilities.dp(26.33f);
         float dp3 = AndroidUtilities.dp(8.0f);
@@ -267,7 +267,7 @@ public final class q extends FrameLayout {
         }
         ArrayList arrayList = (ArrayList) i7Var.c.f(this.E);
         boolean z13 = (arrayList == null || arrayList.isEmpty()) ? false : true;
-        if (z13 || (this.W && (yj0Var = this.R) != null && yj0Var.f < 0.98f)) {
+        if (z13 || (this.W && (zj0Var = this.R) != null && zj0Var.f < 0.98f)) {
             canvas2 = canvas;
             y7Var = y7Var2;
             ImageReceiver imageReceiver4 = imageReceiver;
@@ -288,14 +288,14 @@ public final class q extends FrameLayout {
             }
             invalidate();
             if (this.R == null) {
-                yj0 yj0Var2 = twVar3.n;
-                if (yj0Var2 != null) {
-                    this.R = yj0Var2;
+                zj0 zj0Var2 = twVar3.n;
+                if (zj0Var2 != null) {
+                    this.R = zj0Var2;
                 } else {
-                    yj0 yj0Var3 = new yj0(this);
-                    this.R = yj0Var3;
-                    twVar3.n = yj0Var3;
-                    yj0Var3.d(null, true, false);
+                    zj0 zj0Var3 = new zj0(this);
+                    this.R = zj0Var3;
+                    twVar3.n = zj0Var3;
+                    zj0Var3.d(null, true, false);
                 }
             }
             if (this.w) {
@@ -308,9 +308,9 @@ public final class q extends FrameLayout {
             this.R.q = 0;
             Paint o10 = z11 ? d8.o(imageReceiver4) : d8.t(imageReceiver4, true);
             o10.setAlpha(255);
-            yj0 yj0Var4 = this.R;
-            yj0Var4.t = o10;
-            yj0Var4.f((int) (imageReceiver4.getImageX() - AndroidUtilities.dp(3.0f)), (int) (imageReceiver4.getImageY() - AndroidUtilities.dp(3.0f)), (int) (imageReceiver4.getImageX2() + AndroidUtilities.dp(3.0f)), (int) (imageReceiver4.getImageY2() + AndroidUtilities.dp(3.0f)));
+            zj0 zj0Var4 = this.R;
+            zj0Var4.t = o10;
+            zj0Var4.f((int) (imageReceiver4.getImageX() - AndroidUtilities.dp(3.0f)), (int) (imageReceiver4.getImageY() - AndroidUtilities.dp(3.0f)), (int) (imageReceiver4.getImageX2() + AndroidUtilities.dp(3.0f)), (int) (imageReceiver4.getImageY2() + AndroidUtilities.dp(3.0f)));
             this.R.e(Utilities.clamp(size, 1.0f, 0.0f), this.W);
             if (imageReceiver4.getVisible()) {
                 this.R.a(canvas2);

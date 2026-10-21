@@ -50,15 +50,15 @@ import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.f4;
 import org.telegram.ui.Components.aa0;
 import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.bz0;
+import org.telegram.ui.Components.cz0;
 import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.fr;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.kw0;
-import org.telegram.ui.Components.nl0;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.ol0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.ry;
 import org.telegram.ui.Components.w9;
@@ -76,7 +76,7 @@ import org.telegram.ui.v10;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes3.dex */
 public class k0 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int V0 = 0;
@@ -89,7 +89,7 @@ public class k0 extends bb implements NotificationCenter.NotificationCenterDeleg
     public ei.d G0;
     public Runnable H0;
     public boolean I0;
-    public nl0 J0;
+    public ol0 J0;
     public final n2 K0;
     public v10 L0;
     public androidx.emoji2.text.p M0;
@@ -281,7 +281,7 @@ public class k0 extends bb implements NotificationCenter.NotificationCenterDeleg
 
     public static void S(k0 k0Var, ArrayList arrayList, int i10, TLRPC.TL_messages_inactiveChats tL_messages_inactiveChats) {
         int i11;
-        im0 im0Var = k0Var.d;
+        jm0 jm0Var = k0Var.d;
         ArrayList arrayList2 = k0Var.A0;
         arrayList2.clear();
         ArrayList arrayList3 = k0Var.z0;
@@ -294,12 +294,12 @@ public class k0 extends bb implements NotificationCenter.NotificationCenterDeleg
         k0Var.J0.b(k0Var.n0 + 4);
         int i13 = 0;
         while (true) {
-            if (i13 >= im0Var.getChildCount()) {
+            if (i13 >= jm0Var.getChildCount()) {
                 i11 = 0;
                 break;
             } else {
-                if (im0Var.getChildAt(i13) instanceof j0) {
-                    i11 = im0Var.getChildAt(i13).getTop();
+                if (jm0Var.getChildAt(i13) instanceof j0) {
+                    i11 = jm0Var.getChildAt(i13).getTop();
                     break;
                 }
                 i13++;
@@ -307,7 +307,7 @@ public class k0 extends bb implements NotificationCenter.NotificationCenterDeleg
         }
         k0Var.N1();
         if (k0Var.l0 >= 0 && i11 != 0) {
-            ((s4.b0) im0Var.getLayoutManager()).h1(k0Var.l0 + 1, i11);
+            ((s4.b0) jm0Var.getLayoutManager()).h1(k0Var.l0 + 1, i11);
         }
         if (k0Var.M0 == null) {
             k0Var.M0 = v1(k0Var.h0, k0Var.currentAccount);
@@ -419,7 +419,7 @@ public class k0 extends bb implements NotificationCenter.NotificationCenterDeleg
                     arrayList.add(LocaleController.formatString("InactiveChatSignature", R.string.InactiveChatSignature, LocaleController.formatPluralString("Members", chat.participants_count, new Object[0]), formatPluralString));
                 }
             }
-            AndroidUtilities.runOnUIThread(new bz0(k0Var, arrayList, min, tL_messages_inactiveChats, 21, false));
+            AndroidUtilities.runOnUIThread(new cz0(k0Var, arrayList, min, tL_messages_inactiveChats, 21, false));
         }
     }
 
@@ -975,9 +975,9 @@ public class k0 extends bb implements NotificationCenter.NotificationCenterDeleg
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final void G(kw0 kw0Var) {
+    public final void G(lw0 lw0Var) {
         int i10;
-        Context context = kw0Var.getContext();
+        Context context = lw0Var.getContext();
         ei.d dVar = new ei.d(context, this.resourcesProvider, true);
         this.G0 = dVar;
         dVar.setFlickeringLoading(true);
@@ -990,21 +990,21 @@ public class k0 extends bb implements NotificationCenter.NotificationCenterDeleg
             v10 v10Var = new v10(this, context, 12);
             this.L0 = v10Var;
             v10Var.setBackgroundColor(h6.w0(h6.h5, this.resourcesProvider));
-            kw0Var.addView(this.L0, z5.d(-1, 72.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
+            lw0Var.addView(this.L0, z5.d(-1, 72.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         }
         a0 a0Var2 = this.E0;
         float f7 = (this.backgroundPaddingLeft / AndroidUtilities.density) + 16.0f;
-        kw0Var.addView(a0Var2, z5.d(-1, 48.0f, 80, f7, 0.0f, f7, 12.0f));
+        lw0Var.addView(a0Var2, z5.d(-1, 48.0f, 80, f7, 0.0f, f7, 12.0f));
         int dp = AndroidUtilities.dp(72.0f);
-        im0 im0Var = this.d;
-        im0Var.setPadding(0, 0, 0, dp);
-        im0Var.setClipToPadding(false);
-        im0Var.setClipChildren(false);
-        im0Var.setOnItemClickListener(new wa(this, 20));
-        im0Var.setOnItemLongClickListener(new x(this, 2));
+        jm0 jm0Var = this.d;
+        jm0Var.setPadding(0, 0, 0, dp);
+        jm0Var.setClipToPadding(false);
+        jm0Var.setClipChildren(false);
+        jm0Var.setOnItemClickListener(new wa(this, 20));
+        jm0Var.setOnItemLongClickListener(new x(this, 2));
         this.E0.r.setOnClickListener(new qg.n(3, this, context));
         this.E0.e.setOnClickListener(new u(this, 3));
-        this.J0 = new nl0(im0Var, true);
+        this.J0 = new ol0(jm0Var, true);
     }
 
     public final void G1(TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, boolean z10) {
@@ -1064,9 +1064,9 @@ public class k0 extends bb implements NotificationCenter.NotificationCenterDeleg
             if (v10Var != null && v10Var.getParent() != null) {
                 ((ViewGroup) this.L0.getParent()).removeView(this.L0);
             }
-            im0 im0Var = this.d;
-            if (im0Var != null) {
-                im0Var.setPadding(0, 0, 0, 0);
+            jm0 jm0Var = this.d;
+            if (jm0Var != null) {
+                jm0Var.setPadding(0, 0, 0, 0);
             }
         }
     }
@@ -1560,7 +1560,7 @@ public class k0 extends bb implements NotificationCenter.NotificationCenterDeleg
                             if (startsWith) {
                                 int intValue = Utilities.parseInt((CharSequence) tL_error.text).intValue();
                                 if (intValue <= 5) {
-                                    AndroidUtilities.runOnUIThread(new p2.b(18, this.b, aa0Var2), intValue * 1000);
+                                    AndroidUtilities.runOnUIThread(new p2.b(20, this.b, aa0Var2), intValue * 1000);
                                     break;
                                 } else {
                                     ug.i.g(intValue);
@@ -1592,7 +1592,7 @@ public class k0 extends bb implements NotificationCenter.NotificationCenterDeleg
                             if (startsWith) {
                                 int intValue = Utilities.parseInt((CharSequence) tL_error.text).intValue();
                                 if (intValue <= 5) {
-                                    AndroidUtilities.runOnUIThread(new p2.b(18, this.b, aa0Var2), intValue * 1000);
+                                    AndroidUtilities.runOnUIThread(new p2.b(20, this.b, aa0Var2), intValue * 1000);
                                     break;
                                 } else {
                                     ug.i.g(intValue);
@@ -1750,7 +1750,7 @@ public class k0 extends bb implements NotificationCenter.NotificationCenterDeleg
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final hm0 x(im0 im0Var) {
+    public final im0 x(jm0 jm0Var) {
         return new d0(this);
     }
 

@@ -40,14 +40,14 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.e61;
 import org.telegram.ui.Components.fd;
 import org.telegram.ui.Components.x20;
-import org.telegram.ui.Components.yj0;
+import org.telegram.ui.Components.zj0;
 import org.telegram.ui.cy;
 import org.telegram.ui.tw;
 
-/* compiled from: r8-map-id-425f9d3693dca7cdb7b1343a62ca29dd4bfbf482fa37d742abbdfab31448a8bd */
+/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
 /* loaded from: classes4.dex */
 public abstract class r extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, ne.d {
     public boolean A0;
@@ -103,7 +103,7 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
     public p k0;
     public boolean l0;
     public boolean m0;
-    public yj0 n;
+    public zj0 n;
     public float n0;
     public int o0;
     public q p0;
@@ -1234,7 +1234,7 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
             SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getString("StoriesPremiumHint2").replace('\n', ' '), org.telegram.ui.ActionBar.h6.Gi, 0, new d(this, 1));
             ClickableSpan[] clickableSpanArr = (ClickableSpan[]) replaceSingleTag.getSpans(0, replaceSingleTag.length(), ClickableSpan.class);
             if (clickableSpanArr != null && clickableSpanArr.length >= 1) {
-                replaceSingleTag.setSpan(new d61(AndroidUtilities.bold()), replaceSingleTag.getSpanStart(clickableSpanArr[0]), replaceSingleTag.getSpanEnd(clickableSpanArr[0]), 33);
+                replaceSingleTag.setSpan(new e61(AndroidUtilities.bold()), replaceSingleTag.getSpanStart(clickableSpanArr[0]), replaceSingleTag.getSpanEnd(clickableSpanArr[0]), 33);
             }
             ei.x3 x3Var2 = this.J;
             x3Var2.h = ei.x3.a(replaceSingleTag, x3Var2.getTextPaint());
